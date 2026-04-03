@@ -332,6 +332,12 @@ const state = {
   page: document.body?.dataset.page || "home",
   filters: getStoredFilters(),
 };
+const THEME_OPTIONS = [
+  { value: "default", label: "W", title: "Warm" },
+  { value: "tohoku", label: "I", title: "Iris" },
+  { value: "toyama", label: "M", title: "Mist" },
+  { value: "usst", label: "C", title: "Crimson" },
+];
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -344,9 +350,6 @@ async function init() {
   renderLocaleSwitcher();
   renderThemeSwitcher();
   applyI18n();
-  initHeaderControlsPosition();
-  initTopnavMenus();
-  initTopnavOverflowHints();
   bindSharedHashState();
   routePage();
   revealPage();
@@ -435,6 +438,24 @@ function routePage() {
   }
 }
 
+function nextLocaleName(currentLocale = state.locale) {
+  const sequence = ["zh", "en"];
+  const pointer = sequence.indexOf(currentLocale);
+  if (pointer === -1) {
+    return sequence[0];
+  }
+  return sequence[(pointer + 1) % sequence.length];
+}
+
+function nextThemeName(currentTheme = state.theme) {
+  const sequence = THEME_OPTIONS.map((option) => option.value);
+  const pointer = sequence.indexOf(currentTheme);
+  if (pointer === -1) {
+    return sequence[0];
+  }
+  return sequence[(pointer + 1) % sequence.length];
+}
+
 function renderLocaleSwitcher() {
   const container = document.querySelector(".locale-switcher");
   if (!container) {
@@ -442,7 +463,7 @@ function renderLocaleSwitcher() {
   }
   const currentLabel = state.locale === "zh" ? "ZH" : "EN";
   container.innerHTML = `
-    <button class="locale-trigger" type="button" aria-label="${escapeHtml(t("common.language"))}">
+    <button class="locale-trigger" type="button" data-locale-trigger aria-label="${escapeHtml(t("common.language"))}">
       <span class="locale-label">${currentLabel}</span>
     </button>
     <div class="locale-tray">
@@ -462,6 +483,7 @@ function renderLocaleSwitcher() {
       routePage();
     });
   });
+  syncHomepageShell();
 }
 
 function renderThemeSwitcher() {
@@ -469,19 +491,13 @@ function renderThemeSwitcher() {
   if (!container) {
     return;
   }
-  const themes = [
-    { value: "default", label: "W", title: "Warm" },
-    { value: "tohoku", label: "I", title: "Iris" },
-    { value: "toyama", label: "M", title: "Mist" },
-    { value: "usst", label: "C", title: "Crimson" },
-  ];
-  const active = themes.find((item) => item.value === state.theme) || themes[0];
+  const active = THEME_OPTIONS.find((item) => item.value === state.theme) || THEME_OPTIONS[0];
   container.innerHTML = `
-    <button class="theme-trigger" type="button" aria-label="${escapeHtml(t("common.theme"))}">
+    <button class="theme-trigger" type="button" data-theme-trigger aria-label="${escapeHtml(t("common.theme"))}">
       <span class="locale-label">${active.label}</span>
     </button>
     <div class="theme-tray">
-      ${themes
+      ${THEME_OPTIONS
         .map(
           (theme) =>
             `<button class="theme-chip" type="button" data-theme-choice="${theme.value}" aria-label="${theme.title}" title="${theme.title}">${theme.label}</button>`
@@ -504,6 +520,7 @@ function renderThemeSwitcher() {
       renderThemeSwitcher();
     });
   });
+  syncHomepageShell();
 }
 
 function applyI18n() {
@@ -525,7 +542,65 @@ function applyI18n() {
     }
   });
   updateDocumentTitle();
-  refreshTopnavOverflowHints();
+  syncHomepageShell();
+}
+
+function syncHomepageShell() {
+  if (!window.HomepageSharedShell) {
+    return;
+  }
+
+  window.HomepageSharedShell.sync({
+    switchers: {
+      root: document,
+      localeCycleLabel: state.locale === "zh" ? "切换语言" : "Cycle language",
+      themeCycleLabel: state.locale === "zh" ? "切换配色" : "Cycle theme",
+      onCycleLocale: () => {
+        state.locale = nextLocaleName();
+        try {
+          localStorage.setItem(LOCALE_KEY, state.locale);
+        } catch {}
+        document.documentElement.lang = state.locale === "zh" ? "zh-CN" : "en";
+        renderLocaleSwitcher();
+        applyI18n();
+        routePage();
+      },
+      onCycleTheme: () => {
+        state.theme = nextThemeName();
+        if (state.theme === "default") {
+          delete document.documentElement.dataset.theme;
+        } else {
+          document.documentElement.dataset.theme = state.theme;
+        }
+        try {
+          localStorage.setItem(THEME_KEY, state.theme);
+        } catch {}
+        renderThemeSwitcher();
+      },
+    },
+    controls: {
+      root: document,
+      controlsSelector: ".header-controls",
+      navSelector: ".topnav-shell, .topnav",
+      headerSelector: ".site-header",
+      breakpoint: 760,
+      desktopGap: 12,
+      mobileGap: 8,
+    },
+    topnav: {
+      root: document,
+      navSelector: ".topnav",
+      navAriaLabel: state.locale === "zh" ? "页面导航" : "Page navigation",
+      menuLabel: t("common.menu"),
+      showMenuLabel: t("common.showMenu"),
+      hideMenuLabel: t("common.hideMenu"),
+      toggleInnerHTML:
+        '<svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-menu"></use></svg><span class="topnav-toggle-label"></span>',
+      hintInnerHTML:
+        '<svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-up"></use></svg>',
+      breakpoint: 760,
+    },
+  });
 }
 
 function updateDocumentTitle() {

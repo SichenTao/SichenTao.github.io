@@ -899,6 +899,24 @@ function currentLocale() {
   );
 }
 
+function nextLocaleName(currentLanguage = state.language || currentLocale()) {
+  const sequence = Object.keys(LOCALE_CATALOG);
+  const pointer = sequence.indexOf(currentLanguage);
+  if (pointer === -1) {
+    return sequence[0] || "en";
+  }
+  return sequence[(pointer + 1) % sequence.length];
+}
+
+function nextThemeName(currentTheme = state.theme || loadInitialTheme()) {
+  const sequence = Object.keys(THEME_CATALOG);
+  const pointer = sequence.indexOf(currentTheme);
+  if (pointer === -1) {
+    return sequence[0] || "tohoku";
+  }
+  return sequence[(pointer + 1) % sequence.length];
+}
+
 function pageFilename(page = currentPage()) {
   return page === "overview" ? "index.html" : `${page}.html`;
 }
@@ -1675,33 +1693,12 @@ function renderLocaleSwitcher() {
   trigger.dataset.localeTrigger = "true";
   trigger.setAttribute("aria-haspopup", "true");
   trigger.setAttribute("aria-expanded", switcher.classList.contains("is-open") ? "true" : "false");
-  trigger.setAttribute("aria-label", ui("showLanguagesLabel"));
-  trigger.title = ui("showLanguagesLabel");
+  trigger.setAttribute("aria-label", ui("cycleLanguagesLabel") || ui("showLanguagesLabel"));
+  trigger.title = ui("cycleLanguagesLabel") || ui("showLanguagesLabel");
   trigger.appendChild(el("span", "locale-label", activeLocale.label));
-  trigger.addEventListener("click", (event) => {
-    event.preventDefault();
-    const willOpen = !switcher.classList.contains("is-open");
-    closeAllSwitchers();
-    setSwitcherExpandedState(switcher, willOpen);
-  });
 
   switcher.appendChild(trigger);
   switcher.appendChild(tray);
-
-  if (!localeUiBound) {
-    localeUiBound = true;
-    bindSwitcherHoverBehavior();
-    document.addEventListener("click", (event) => {
-      if (!event.target.closest(".control-switcher")) {
-        closeAllSwitchers();
-      }
-    });
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeAllSwitchers();
-      }
-    });
-  }
 }
 
 function renderThemeSwitcher() {
@@ -1734,26 +1731,52 @@ function renderThemeSwitcher() {
   trigger.dataset.themeTrigger = "true";
   trigger.setAttribute("aria-haspopup", "true");
   trigger.setAttribute("aria-expanded", switcher.classList.contains("is-open") ? "true" : "false");
-  trigger.setAttribute("aria-label", ui("showThemesLabel"));
-  trigger.title = ui("showThemesLabel");
+  trigger.setAttribute("aria-label", ui("cycleThemesLabel") || ui("showThemesLabel"));
+  trigger.title = ui("cycleThemesLabel") || ui("showThemesLabel");
   const currentSwatch = el("span", `theme-swatch ${activeTheme.swatchClass}`);
   currentSwatch.dataset.themeCurrentSwatch = "true";
   currentSwatch.setAttribute("aria-hidden", "true");
   trigger.appendChild(currentSwatch);
-  trigger.addEventListener("click", (event) => {
-    event.preventDefault();
-    const willOpen = !switcher.classList.contains("is-open");
-    closeAllSwitchers();
-    setSwitcherExpandedState(switcher, willOpen);
-  });
 
   switcher.appendChild(trigger);
   switcher.appendChild(tray);
+}
 
-  if (!themeUiBound) {
-    themeUiBound = true;
-    bindSwitcherHoverBehavior();
+function syncHomepageShell() {
+  if (!window.HomepageSharedShell) {
+    return;
   }
+
+  window.HomepageSharedShell.sync({
+    switchers: {
+      root: document,
+      localeCycleLabel: ui("cycleLanguagesLabel") || ui("showLanguagesLabel"),
+      themeCycleLabel: ui("cycleThemesLabel") || ui("showThemesLabel"),
+      onCycleLocale: () => setLanguage(nextLocaleName()),
+      onCycleTheme: () => applyTheme(nextThemeName()),
+    },
+    controls: {
+      root: document,
+      controlsSelector: ".header-controls",
+      navSelector: ".topnav-shell, .topnav",
+      headerSelector: ".site-header",
+      breakpoint: 760,
+      desktopGap: 12,
+      mobileGap: 8,
+    },
+    topnav: {
+      root: document,
+      navSelector: ".topnav",
+      navAriaLabel: ui("primaryNavigationLabel"),
+      menuLabel: ui("menuLabel"),
+      showMenuLabel: ui("showMenuLabel"),
+      hideMenuLabel: ui("hideMenuLabel"),
+      toggleInnerHTML: `${iconSvg("menu")}<span class="topnav-toggle-label"></span>`,
+      hintInnerHTML: iconSvg("up"),
+      breakpoint: 760,
+      transientBlurSelector: ".publication-metric-menu, .publication-head-actions",
+    },
+  });
 }
 
 function clearSwitcherCloseTimer(switcher) {
@@ -2095,11 +2118,11 @@ function applyTheme(themeName, persist = true) {
   });
 
   document.querySelectorAll("[data-theme-trigger]").forEach((trigger) => {
-    trigger.setAttribute("aria-label", ui("showThemesLabel"));
-    trigger.title = ui("showThemesLabel");
+    trigger.setAttribute("aria-label", ui("cycleThemesLabel") || ui("showThemesLabel"));
+    trigger.title = ui("cycleThemesLabel") || ui("showThemesLabel");
   });
 
-  closeThemeSwitchers();
+  window.HomepageSharedShell?.closeAllSwitchers?.();
 
   if (persist) {
     writeStoredValue(STORAGE_KEY_THEME, nextTheme);
@@ -2899,9 +2922,7 @@ function renderAll() {
     renderDownloads();
     renderGuide();
     renderWorkflow();
-    initTopnavMenus();
-    initTopnavOverflowHints();
-    initHeaderControlsPosition();
+    syncHomepageShell();
   } catch (error) {
     console.error("Frontier Radar render failed", error);
     document.body.classList.add("is-ready");
