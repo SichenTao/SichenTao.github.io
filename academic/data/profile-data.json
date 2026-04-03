@@ -636,17 +636,17 @@
         "cas_quartile": "Q1",
         "cas_year": 2025,
         "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "IEEE Transactions on Evolutionary Computation",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5kwBz5",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "IEEE Transactions on Evolutionary Computation",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/1089778X/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "IEEE Transactions on Evolutionary Computation",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5kwBz5"
       }
@@ -663,17 +663,17 @@
         "cas_quartile": "Q1",
         "cas_year": 2025,
         "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5ObXEp",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/21682216/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5ObXEp"
       }
@@ -690,17 +690,17 @@
         "cas_quartile": "Q2",
         "cas_year": 2025,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "Swarm and Evolutionary Computation",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pB4NJD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Swarm and Evolutionary Computation",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/22106502/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Swarm and Evolutionary Computation",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=pB4NJD"
       }
@@ -717,17 +717,17 @@
         "cas_quartile": "Q1",
         "cas_year": 2025,
         "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "Transportation Research Part E: Logistics and Transportation Review",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=rw4R1p",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Transportation Research Part E: Logistics and Transportation Review",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/13665545/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Transportation Research Part E: Logistics and Transportation Review",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=rw4R1p"
       }
@@ -744,17 +744,17 @@
         "cas_quartile": "Q1",
         "cas_year": 2025,
         "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "Engineering Applications of Artificial Intelligence",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pP3GOr",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Engineering Applications of Artificial Intelligence",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/09521976/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Engineering Applications of Artificial Intelligence",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=pP3GOr"
       }
@@ -779,9 +779,9 @@
         "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Applied Soft Computing",
         "jcr_public_source_url": "https://jrank.net/journals/appl-soft-comput/metrics",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Applied Soft Computing",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=yp1WdD"
       }
@@ -806,9 +806,9 @@
         "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Neural Networks",
         "jcr_public_source_url": "https://jrank.net/journals/neural-networks/metrics",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Neural Networks",
         "cas_public_source_url": "https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=11534"
       }
@@ -825,17 +825,17 @@
         "cas_quartile": "Q4",
         "cas_year": 2025,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "Heliyon",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5KwYd5",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Heliyon",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/24058440/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Heliyon",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5KwYd5"
       }
@@ -860,9 +860,9 @@
         "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "International Journal of Bio-Inspired Computation",
         "jcr_public_source_url": "https://jrank.net/journals/int-j-bio_inspir-com/metrics",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "International Journal of Bio-Inspired Computation",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5dZ1kr"
       }
@@ -879,17 +879,17 @@
         "cas_quartile": "Q4",
         "cas_year": 2025,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "CMC-Computers Materials & Continua",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "CMC-Computers Materials & Continua",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/15462218/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "CMC-Computers Materials & Continua",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=Q5yWPr"
       }
@@ -914,9 +914,9 @@
         "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "International Journal of Computational Intelligence Systems",
         "jcr_public_source_url": "https://jrank.net/journals/int-j-comput-int-sys/metrics",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "International Journal of Computational Intelligence Systems",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5x6mzr"
       }
@@ -933,17 +933,17 @@
         "cas_quartile": "Q2",
         "cas_year": 2025,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "Journal of Computational Design and Engineering",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pWGm3p",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Journal of Computational Design and Engineering",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/22885048/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Journal of Computational Design and Engineering",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=pWGm3p"
       }
@@ -968,9 +968,9 @@
         "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Mathematics",
         "jcr_public_source_url": "https://www.iit.comillas.edu/publicacion/info_revista/en/486/Mathematics",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Mathematics",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5kPKjD"
       }
@@ -987,17 +987,17 @@
         "cas_quartile": "Q4",
         "cas_year": 2025,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "Applied Sciences",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=DYYORD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Applied Sciences",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/20763417/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Applied Sciences",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=DYYORD"
       }
@@ -1014,17 +1014,17 @@
         "cas_quartile": "Q3",
         "cas_year": 2025,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr/home",
-        "if_source_mode": "official_search",
+        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
+        "if_source_mode": "official_profile_fallback",
         "if_search_copy_text": "Biomimetics",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5NgPMD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
-        "jcr_source_mode": "official_search",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Biomimetics",
         "jcr_public_source_url": "https://www.fabiao.com.cn/sci/23137673/",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Biomimetics",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5NgPMD"
       }
@@ -1049,9 +1049,9 @@
         "jcr_source_mode": "official_profile_fallback",
         "jcr_search_copy_text": "Symmetry",
         "jcr_public_source_url": "https://jrank.net/journals/symmetry_basel/metrics",
-        "cas_official_source_url": "https://www.fenqubiao.com/",
+        "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
         "cas_official_platform_url": "https://www.fenqubiao.com/",
-        "cas_source_mode": "official_search",
+        "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Symmetry",
         "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=DXd2YD"
       }
@@ -1353,8 +1353,8 @@
       "ccf": {
         "class": "B",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_portal_official.html"
+        "source_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_portal_official.html"
       }
     },
     {
@@ -1849,8 +1849,8 @@
       "ccf": {
         "class": "B",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_portal_official.html"
+        "source_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_portal_official.html"
       }
     },
     {
@@ -2059,8 +2059,8 @@
       "ccf": {
         "class": "C",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_ai_category_official.html",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf"
+        "source_url": "/assets/docs/official/ccf_ai_category_official.html",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf"
       }
     },
     {
@@ -2118,8 +2118,8 @@
       "ccf": {
         "class": "C",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_ai_category_official.html",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf"
+        "source_url": "/assets/docs/official/ccf_ai_category_official.html",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf"
       }
     },
     {
@@ -2221,8 +2221,8 @@
       "ccf": {
         "class": "C",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_portal_official.html"
+        "source_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_portal_official.html"
       }
     },
     {
@@ -2377,8 +2377,8 @@
       "ccf": {
         "class": "B",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_portal_official.html"
+        "source_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_portal_official.html"
       }
     },
     {
@@ -2434,8 +2434,8 @@
       "ccf": {
         "class": "B",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_portal_official.html"
+        "source_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_portal_official.html"
       }
     },
     {
@@ -2933,8 +2933,8 @@
       "ccf": {
         "class": "C",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_ai_category_official.html",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf"
+        "source_url": "/assets/docs/official/ccf_ai_category_official.html",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf"
       }
     },
     {
@@ -3037,8 +3037,8 @@
       "ccf": {
         "class": "C",
         "year": 2022,
-        "source_url": "./assets/docs/official/ccf_ai_category_official.html",
-        "supporting_url": "./assets/docs/official/ccf_recommended_venues_2022_official.pdf"
+        "source_url": "/assets/docs/official/ccf_ai_category_official.html",
+        "supporting_url": "/assets/docs/official/ccf_recommended_venues_2022_official.pdf"
       }
     },
     {

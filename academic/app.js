@@ -1707,7 +1707,13 @@ function publicationPrimaryUrl(item) {
   return item.publisher_url || item.url || (item.doi ? `https://doi.org/${item.doi}` : "");
 }
 
-const CAS_OFFICIAL_ARCHIVE_URL = "./assets/docs/official/cas_platform_home_official.html";
+const OFFICIAL_DOCS_BASE = "/assets/docs/official";
+const METRIC_OFFICIAL_PAGE_LABEL = "Official Page";
+const METRIC_PUBLIC_EVIDENCE_LABEL = "Public Evidence";
+const JCR_OFFICIAL_SEARCH_URL = "https://jcr.clarivate.com/jcr/home";
+const CAS_OFFICIAL_ARCHIVE_URL = `${OFFICIAL_DOCS_BASE}/cas_journal_ranking_explanation_official.pdf`;
+const CCF_OFFICIAL_ARCHIVE_URL = `${OFFICIAL_DOCS_BASE}/ccf_recommended_venues_2022_official.pdf`;
+const CCF_PUBLIC_EVIDENCE_URL = `${OFFICIAL_DOCS_BASE}/ccf_recommended_venues_portal_official.html`;
 
 function isScholarProfileCitationUrl(url = "") {
   const value = normalizeString(url);
@@ -1846,23 +1852,11 @@ function metricLinkBundle(item, metricKind) {
   const venue = publicationMetricVenue(item);
 
   if (metricKind === "impact") {
-    const officialCandidate = normalizeString(verification.if_source_url);
-    const metricYear = metricYearNumber(publicationMetricYear(item, "if"));
-    const officialYear = metricYearNumber(verification.if_source_official_year || verification.if_year);
-    const officialMode = normalizeString(verification.if_source_mode);
-    const menuOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
-      && (
-        officialMode === "official_profile"
-        || officialMode === "official_profile_fallback"
-        || (!officialMode && officialYear !== null && metricYear !== null && officialYear === metricYear)
-      )
-      ? officialCandidate
-      : "";
     return {
-      officialLabel: t("actions.metric_official_page"),
-      officialUrl: menuOfficialUrl,
+      officialLabel: METRIC_OFFICIAL_PAGE_LABEL,
+      officialUrl: "",
       publicUrl: normalizeString(verification.if_public_source_url || verification.if_supporting_source_url),
-      searchFallbackUrl: isClarivateSearchUrl(officialCandidate) ? officialCandidate : "",
+      searchFallbackUrl: JCR_OFFICIAL_SEARCH_URL,
       searchCopyText: verification.if_search_copy_text || venue || "",
       searchTooltip: t("actions.open_jcr_search_copy"),
       searchCopySuccessLabel: t("actions.copied_journal_name"),
@@ -1870,28 +1864,16 @@ function metricLinkBundle(item, metricKind) {
   }
 
   if (metricKind === "jcr") {
-    const officialCandidate = normalizeString(verification.jcr_source_url || verification.if_source_url);
-    const metricYear = metricYearNumber(publicationMetricYear(item, "jcr"));
-    const officialYear = metricYearNumber(verification.jcr_source_official_year || verification.jcr_year || verification.if_source_official_year);
-    const officialMode = normalizeString(verification.jcr_source_mode || verification.if_source_mode);
-    const menuOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
-      && (
-        officialMode === "official_profile"
-        || officialMode === "official_profile_fallback"
-        || (!officialMode && officialYear !== null && metricYear !== null && officialYear === metricYear)
-      )
-      ? officialCandidate
-      : "";
     return {
-      officialLabel: t("actions.metric_official_page"),
-      officialUrl: menuOfficialUrl,
+      officialLabel: METRIC_OFFICIAL_PAGE_LABEL,
+      officialUrl: "",
       publicUrl: normalizeString(
         verification.jcr_public_source_url
         || verification.jcr_supporting_source_url
         || verification.if_public_source_url
         || verification.if_supporting_source_url
       ),
-      searchFallbackUrl: isClarivateSearchUrl(officialCandidate) ? officialCandidate : "",
+      searchFallbackUrl: JCR_OFFICIAL_SEARCH_URL,
       searchCopyText: verification.jcr_search_copy_text || verification.if_search_copy_text || venue || "",
       searchTooltip: t("actions.open_jcr_search_copy"),
       searchCopySuccessLabel: t("actions.copied_journal_name"),
@@ -1900,7 +1882,7 @@ function metricLinkBundle(item, metricKind) {
 
   if (metricKind === "cas") {
     return {
-      officialLabel: t("actions.metric_official_platform"),
+      officialLabel: METRIC_OFFICIAL_PAGE_LABEL,
       officialUrl: CAS_OFFICIAL_ARCHIVE_URL,
       publicUrl: normalizeString(
         verification.cas_public_source_url || verification.cas_supporting_source_url || verification.cas_source_url
@@ -1936,25 +1918,18 @@ function metricOptionsForPublication(item, metricKind) {
       }
     : null;
 
-  if (metricKind === "cas" && bundle.publicUrl) {
-    options.push({
-      label: t("actions.metric_public_evidence"),
-      href: bundle.publicUrl,
-    });
-  }
-
   if (bundle.officialUrl) {
     options.push({
-      label: bundle.officialLabel,
+      label: METRIC_OFFICIAL_PAGE_LABEL,
       href: bundle.officialUrl,
     });
   } else if (metricKind !== "cas" && officialFallbackOption) {
     options.push(officialFallbackOption);
   }
 
-  if (metricKind !== "cas" && bundle.publicUrl) {
+  if (bundle.publicUrl) {
     options.push({
-      label: t("actions.metric_public_evidence"),
+      label: METRIC_PUBLIC_EVIDENCE_LABEL,
       href: bundle.publicUrl,
     });
   }
@@ -2133,12 +2108,23 @@ function publicationMetricsMarkup(item) {
   }
 
   if (item.ccf?.class) {
+    const ccfOptions = buildPublicationMetricOptions([
+      {
+        label: METRIC_OFFICIAL_PAGE_LABEL,
+        href: normalizeString(item.ccf.source_url) || CCF_OFFICIAL_ARCHIVE_URL,
+      },
+      {
+        label: METRIC_PUBLIC_EVIDENCE_LABEL,
+        href: normalizeString(item.ccf.supporting_url) || CCF_PUBLIC_EVIDENCE_URL,
+      },
+    ]);
     metrics.push({
       label: t("labels.ccf"),
       value: item.ccf.class,
       meta: item.ccf.year ? String(item.ccf.year) : "",
       tone: "ccf",
-      href: item.ccf.source_url || "",
+      href: ccfOptions.length === 1 ? ccfOptions[0].href : (ccfOptions[0]?.href || ""),
+      options: ccfOptions,
     });
   }
 
@@ -2437,22 +2423,46 @@ function bindSwitcherHoverBehavior() {
   });
 }
 
+function ensureHeaderControlsAnchor(controls) {
+  const container = controls?.closest(".header-tools");
+  if (!container) {
+    return null;
+  }
+
+  let anchor = container.querySelector(".header-controls-anchor");
+  if (!anchor) {
+    anchor = document.createElement("div");
+    anchor.className = "header-controls-anchor";
+    anchor.setAttribute("aria-hidden", "true");
+    container.insertBefore(anchor, controls);
+  }
+
+  return anchor;
+}
+
 function updateHeaderControlsPosition() {
   const controls = els.headerControls || document.querySelector(".header-controls");
-  const anchor = document.querySelector(".header-controls-anchor");
-  if (!controls) {
+  const nav = document.querySelector(".topnav-shell") || document.querySelector(".topnav");
+  if (!controls || !nav) {
     return;
   }
 
+  const anchor = ensureHeaderControlsAnchor(controls);
   if (!anchor) {
     controls.style.removeProperty("--header-controls-top");
     controls.style.removeProperty("--header-controls-left");
     return;
   }
 
+  const anchorWidth = Math.max(controls.offsetWidth || 0, 78);
+  const anchorHeight = Math.max(controls.offsetHeight || 0, 34);
+  anchor.style.width = `${anchorWidth}px`;
+  anchor.style.height = `${anchorHeight}px`;
+
   const anchorRect = anchor.getBoundingClientRect();
+  const navRect = nav.getBoundingClientRect();
   const controlsRect = controls.getBoundingClientRect();
-  const nextTop = Math.round(anchorRect.top + (anchorRect.height - controlsRect.height) / 2);
+  const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
   const nextLeft = Math.round(anchorRect.left);
 
   controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
@@ -2479,7 +2489,6 @@ function initHeaderControlsPosition() {
   }
 
   headerControlsPositionBound = true;
-  window.addEventListener("scroll", scheduleHeaderControlsPositionUpdate, { passive: true });
   window.addEventListener("resize", scheduleHeaderControlsPositionUpdate);
   window.addEventListener("orientationchange", scheduleHeaderControlsPositionUpdate);
   window.addEventListener("load", scheduleHeaderControlsPositionUpdate);
@@ -3202,7 +3211,7 @@ function updateTopnavOverflowState(nav) {
   const atStart = nav.scrollLeft <= 8;
   const atEnd = nav.scrollLeft >= maxScrollLeft - 8;
   const forceMenu = window.matchMedia("(max-width: 760px)").matches;
-  const useMenu = forceMenu || overflowing;
+  const useMenu = forceMenu;
 
   shell.classList.toggle("has-overflow", overflowing);
   shell.classList.toggle("is-scrolled", overflowing && !atStart);

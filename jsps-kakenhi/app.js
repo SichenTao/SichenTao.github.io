@@ -3,6 +3,10 @@ const DATA_BUNDLE = window.KAKENHI_PORTAL_DATA || null;
 const THEME_KEY = "kakenhi-portal-theme";
 const LOCALE_KEY = "kakenhi-portal-locale";
 const FILTER_KEY = "kakenhi-portal-filters";
+let topnavOverflowBound = false;
+let topnavMenuBound = false;
+let headerControlsPositionBound = false;
+let headerControlsPositionTicking = false;
 
 const I18N = {
   zh: {
@@ -42,6 +46,12 @@ const I18N = {
       all: "全部",
       showMore: "更多",
       openLink: "打开链接",
+      menu: "菜单",
+      showMenu: "展开菜单",
+      hideMenu: "收起菜单",
+      displayControls: "显示控制",
+      language: "语言",
+      theme: "配色主题",
     },
     status: {
       open: "开放中",
@@ -193,6 +203,12 @@ const I18N = {
       all: "All",
       showMore: "More",
       openLink: "Open link",
+      menu: "Menu",
+      showMenu: "Open navigation menu",
+      hideMenu: "Close navigation menu",
+      displayControls: "Display controls",
+      language: "Language",
+      theme: "Color theme",
     },
     status: {
       open: "Open",
@@ -328,6 +344,9 @@ async function init() {
   renderLocaleSwitcher();
   renderThemeSwitcher();
   applyI18n();
+  initHeaderControlsPosition();
+  initTopnavMenus();
+  initTopnavOverflowHints();
   bindSharedHashState();
   routePage();
   revealPage();
@@ -423,7 +442,7 @@ function renderLocaleSwitcher() {
   }
   const currentLabel = state.locale === "zh" ? "ZH" : "EN";
   container.innerHTML = `
-    <button class="locale-trigger" type="button" aria-label="Locale">
+    <button class="locale-trigger" type="button" aria-label="${escapeHtml(t("common.language"))}">
       <span class="locale-label">${currentLabel}</span>
     </button>
     <div class="locale-tray">
@@ -458,7 +477,7 @@ function renderThemeSwitcher() {
   ];
   const active = themes.find((item) => item.value === state.theme) || themes[0];
   container.innerHTML = `
-    <button class="theme-trigger" type="button" aria-label="Theme">
+    <button class="theme-trigger" type="button" aria-label="${escapeHtml(t("common.theme"))}">
       <span class="locale-label">${active.label}</span>
     </button>
     <div class="theme-tray">
@@ -491,6 +510,10 @@ function applyI18n() {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
+  const controls = document.querySelector(".header-controls");
+  if (controls) {
+    controls.setAttribute("aria-label", t("common.displayControls"));
+  }
   const placeholderMap = {
     "call-search": t("calls.searchPlaceholder"),
     "form-search": t("forms.searchPlaceholder"),
@@ -502,6 +525,7 @@ function applyI18n() {
     }
   });
   updateDocumentTitle();
+  refreshTopnavOverflowHints();
 }
 
 function updateDocumentTitle() {
@@ -516,6 +540,241 @@ function updateDocumentTitle() {
   };
   if (titleMap[state.page]) {
     document.title = titleMap[state.page];
+  }
+}
+
+function ensureHeaderControlsAnchor(controls) {
+  const container = controls?.closest(".header-tools");
+  if (!container) {
+    return null;
+  }
+
+  let anchor = container.querySelector(".header-controls-anchor");
+  if (!anchor) {
+    anchor = document.createElement("div");
+    anchor.className = "header-controls-anchor";
+    anchor.setAttribute("aria-hidden", "true");
+    container.insertBefore(anchor, controls);
+  }
+
+  return anchor;
+}
+
+function updateHeaderControlsPosition() {
+  const controls = document.querySelector(".header-controls");
+  const nav = document.querySelector(".topnav-shell") || document.querySelector(".topnav");
+  if (!controls || !nav) {
+    return;
+  }
+
+  const anchor = ensureHeaderControlsAnchor(controls);
+  if (!anchor) {
+    controls.style.removeProperty("--header-controls-top");
+    controls.style.removeProperty("--header-controls-left");
+    return;
+  }
+
+  const anchorWidth = Math.max(controls.offsetWidth || 0, 78);
+  const anchorHeight = Math.max(controls.offsetHeight || 0, 34);
+  anchor.style.width = `${anchorWidth}px`;
+  anchor.style.height = `${anchorHeight}px`;
+
+  const anchorRect = anchor.getBoundingClientRect();
+  const navRect = nav.getBoundingClientRect();
+  const controlsRect = controls.getBoundingClientRect();
+  const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
+  const nextLeft = Math.round(anchorRect.left);
+
+  controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
+  controls.style.setProperty("--header-controls-left", `${Math.max(8, nextLeft)}px`);
+}
+
+function scheduleHeaderControlsPositionUpdate() {
+  if (headerControlsPositionTicking) {
+    return;
+  }
+
+  headerControlsPositionTicking = true;
+  window.requestAnimationFrame(() => {
+    headerControlsPositionTicking = false;
+    updateHeaderControlsPosition();
+  });
+}
+
+function initHeaderControlsPosition() {
+  scheduleHeaderControlsPositionUpdate();
+
+  if (headerControlsPositionBound) {
+    return;
+  }
+
+  headerControlsPositionBound = true;
+  window.addEventListener("resize", scheduleHeaderControlsPositionUpdate);
+  window.addEventListener("orientationchange", scheduleHeaderControlsPositionUpdate);
+  window.addEventListener("load", scheduleHeaderControlsPositionUpdate);
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(scheduleHeaderControlsPositionUpdate).catch(() => {});
+  }
+}
+
+function ensureTopnavOverflowShell(nav) {
+  if (!nav) {
+    return null;
+  }
+
+  if (nav.parentElement?.classList.contains("topnav-shell")) {
+    return nav.parentElement;
+  }
+
+  const shell = document.createElement("div");
+  shell.className = "topnav-shell";
+  nav.parentNode?.insertBefore(shell, nav);
+
+  const toggle = document.createElement("button");
+  toggle.type = "button";
+  toggle.className = "topnav-toggle";
+  toggle.dataset.topnavToggle = "true";
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-haspopup", "true");
+  toggle.innerHTML = `<span class="topnav-toggle-label">${escapeHtml(t("common.menu"))}</span>`;
+
+  shell.appendChild(toggle);
+  shell.appendChild(nav);
+  return shell;
+}
+
+function updateTopnavOverflowState(nav) {
+  const shell = ensureTopnavOverflowShell(nav);
+  if (!shell) {
+    return;
+  }
+
+  shell.classList.remove("use-menu");
+  const maxScrollLeft = Math.max(0, nav.scrollWidth - nav.clientWidth);
+  const overflowing = maxScrollLeft > 12;
+  const atStart = nav.scrollLeft <= 8;
+  const atEnd = nav.scrollLeft >= maxScrollLeft - 8;
+  const forceMenu = window.matchMedia("(max-width: 760px)").matches;
+  const useMenu = forceMenu;
+
+  shell.classList.toggle("has-overflow", overflowing);
+  shell.classList.toggle("is-scrolled", overflowing && !atStart);
+  shell.classList.toggle("is-at-end", !overflowing || atEnd);
+  shell.classList.toggle("use-menu", useMenu);
+
+  if (!useMenu) {
+    setTopnavMenuExpanded(shell, false);
+  }
+}
+
+function refreshTopnavOverflowHints() {
+  document.querySelectorAll(".topnav").forEach((nav) => {
+    updateTopnavOverflowState(nav);
+  });
+  scheduleHeaderControlsPositionUpdate();
+}
+
+function setTopnavMenuExpanded(shell, expanded) {
+  if (!shell) {
+    return;
+  }
+  shell.classList.toggle("is-open", expanded);
+  const trigger = shell.querySelector("[data-topnav-toggle]");
+  if (trigger) {
+    trigger.setAttribute("aria-expanded", expanded ? "true" : "false");
+    trigger.setAttribute("aria-label", expanded ? t("common.hideMenu") : t("common.showMenu"));
+    trigger.textContent = t("common.menu");
+  }
+}
+
+function closeTopnavMenus() {
+  document.querySelectorAll(".topnav-shell.is-open").forEach((shell) => {
+    setTopnavMenuExpanded(shell, false);
+  });
+}
+
+function initTopnavMenus() {
+  document.querySelectorAll(".topnav").forEach((nav) => {
+    ensureTopnavOverflowShell(nav);
+  });
+
+  document.querySelectorAll("[data-topnav-toggle]").forEach((button) => {
+    if (button.dataset.topnavBound === "true") {
+      return;
+    }
+    button.dataset.topnavBound = "true";
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const shell = button.closest(".topnav-shell");
+      const willOpen = !shell?.classList.contains("is-open");
+      closeTopnavMenus();
+      setTopnavMenuExpanded(shell, willOpen);
+    });
+  });
+
+  document.querySelectorAll(".topnav a").forEach((link) => {
+    if (link.dataset.topnavLinkBound === "true") {
+      return;
+    }
+    link.dataset.topnavLinkBound = "true";
+    link.addEventListener("click", () => {
+      closeTopnavMenus();
+    });
+  });
+
+  if (topnavMenuBound) {
+    return;
+  }
+
+  topnavMenuBound = true;
+
+  document.addEventListener("click", (event) => {
+    if (event.target.closest(".topnav-shell")) {
+      return;
+    }
+    closeTopnavMenus();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeTopnavMenus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 760) {
+      closeTopnavMenus();
+    }
+  });
+}
+
+function initTopnavOverflowHints() {
+  document.querySelectorAll(".topnav").forEach((nav) => {
+    ensureTopnavOverflowShell(nav);
+  });
+
+  refreshTopnavOverflowHints();
+
+  if (topnavOverflowBound) {
+    return;
+  }
+
+  topnavOverflowBound = true;
+
+  document.querySelectorAll(".topnav").forEach((nav) => {
+    nav.addEventListener("scroll", () => updateTopnavOverflowState(nav), { passive: true });
+  });
+
+  window.addEventListener("resize", refreshTopnavOverflowHints, { passive: true });
+  window.addEventListener("load", refreshTopnavOverflowHints, { passive: true });
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => {
+      refreshTopnavOverflowHints();
+      window.setTimeout(refreshTopnavOverflowHints, 120);
+    });
+  } else {
+    window.setTimeout(refreshTopnavOverflowHints, 120);
   }
 }
 
