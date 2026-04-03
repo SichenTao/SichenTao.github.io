@@ -1484,7 +1484,8 @@ body[data-lang="ja"] .hero-role {
 }
 
 .publication-copy-button[data-tooltip]:not([data-tooltip=""])::after,
-.publication-metric-link[data-tooltip]::after {
+.publication-metric-link[data-tooltip]::after,
+.publication-metric-option[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
   right: 0;
@@ -1517,7 +1518,10 @@ body[data-lang="ja"] .hero-role {
 .publication-copy-button.is-copied::after,
 .publication-metric-link[data-tooltip]:hover::after,
 .publication-metric-link[data-tooltip]:focus-visible::after,
-.publication-metric-link.is-copied::after {
+.publication-metric-link.is-copied::after,
+.publication-metric-option[data-tooltip]:hover::after,
+.publication-metric-option[data-tooltip]:focus-visible::after,
+.publication-metric-option.is-copied::after {
   opacity: 1;
   transform: translateY(0);
 }
@@ -1604,6 +1608,7 @@ body[data-lang="ja"] .hero-role {
   background: rgba(var(--white-rgb), 0.7);
   border: 0.5px solid rgba(var(--teal-rgb), 0.08);
   text-decoration: none;
+  position: relative;
   transition:
     transform 160ms ease,
     border-color 160ms ease,

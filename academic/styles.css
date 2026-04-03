@@ -2724,7 +2724,8 @@ a {
 }
 
 .publication-copy-button[data-tooltip]:not([data-tooltip=""])::after,
-.publication-metric-link[data-tooltip]::after {
+.publication-metric-link[data-tooltip]::after,
+.publication-metric-option[data-tooltip]::after {
   content: attr(data-tooltip);
   position: absolute;
   right: 0;
@@ -2757,7 +2758,10 @@ a {
 .publication-copy-button.is-copied::after,
 .publication-metric-link[data-tooltip]:hover::after,
 .publication-metric-link[data-tooltip]:focus-visible::after,
-.publication-metric-link.is-copied::after {
+.publication-metric-link.is-copied::after,
+.publication-metric-option[data-tooltip]:hover::after,
+.publication-metric-option[data-tooltip]:focus-visible::after,
+.publication-metric-option.is-copied::after {
   opacity: 1;
   transform: translateY(0);
 }
@@ -3027,6 +3031,7 @@ a {
   white-space: nowrap;
   background: rgba(var(--white-rgb), 0.7);
   border: 0.5px solid rgba(var(--teal-rgb), 0.08);
+  position: relative;
 }
 
 .publication-metric-option:hover,

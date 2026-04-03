@@ -2173,7 +2173,7 @@ function publicationMetricsMarkup(item) {
                             role="menuitem"
                             ${
                               option.copyText
-                                ? `data-copy-on-open="true" data-copy-text="${escapeHtml(option.copyText)}" data-tooltip="${escapeHtml(option.tooltip || t("actions.open_jcr_search_copy"))}" data-copy-success-label="${escapeHtml(option.copySuccessLabel || t("actions.copied_journal_name"))}"`
+                                ? `data-copy-on-open="true" data-copy-text="${escapeHtml(option.copyText)}" data-tooltip="${escapeHtml(option.tooltip || t("actions.open_jcr_search_copy"))}" data-copy-success-label="${escapeHtml(option.copySuccessLabel || t("actions.copied_journal_name"))}" aria-label="${escapeHtml(option.tooltip || t("actions.open_jcr_search_copy"))}" title="${escapeHtml(option.tooltip || t("actions.open_jcr_search_copy"))}"`
                                 : ""
                             }
                           >
@@ -5205,11 +5205,9 @@ function bindEvents() {
     els.publicationList.addEventListener("click", async (event) => {
       const metricLink = event.target.closest("[data-copy-on-open='true']");
       if (metricLink) {
-        event.preventDefault();
         const targetUrl = metricLink.getAttribute("href") || "";
         const defaultTooltip = metricLink.dataset.tooltip || t("actions.open_jcr_search_copy");
         const successLabel = metricLink.dataset.copySuccessLabel || t("actions.copied_journal_name");
-        const openedWindow = window.open(targetUrl, "_blank", "noopener,noreferrer");
         const copyText = metricLink.dataset.copyText || "";
         if (copyText) {
           const copied = await copyTextToClipboard(copyText);
@@ -5226,8 +5224,8 @@ function bindEvents() {
             }, 1400);
           }
         }
-        if (!openedWindow) {
-          window.location.href = targetUrl;
+        if (!targetUrl) {
+          event.preventDefault();
         }
         return;
       }

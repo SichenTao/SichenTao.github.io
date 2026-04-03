@@ -2352,6 +2352,8 @@ function addMetric(container, tone, label, value, meta, options = []) {
       link.dataset.copyText = option.copyText;
       link.dataset.tooltip = option.tooltip || ui("openJcrSearchCopyLabel");
       link.dataset.copySuccessLabel = option.copySuccessLabel || ui("copiedJournalNameLabel");
+      link.setAttribute("aria-label", option.tooltip || ui("openJcrSearchCopyLabel"));
+      link.title = option.tooltip || ui("openJcrSearchCopyLabel");
     }
     link.appendChild(el("span", "", option.label));
     optionTray.appendChild(link);
@@ -2772,11 +2774,9 @@ function bindMetricCopyHandlers() {
     const metricLink = event.target.closest("[data-copy-on-open='true']");
     if (!metricLink) return;
 
-    event.preventDefault();
     const targetUrl = metricLink.getAttribute("href") || "";
     const defaultTooltip = metricLink.dataset.tooltip || ui("openJcrSearchCopyLabel");
     const successLabel = metricLink.dataset.copySuccessLabel || ui("copiedJournalNameLabel");
-    const openedWindow = window.open(targetUrl, "_blank", "noopener,noreferrer");
     const copyText = metricLink.dataset.copyText || "";
     if (copyText) {
       const copied = await copyTextToClipboard(copyText);
@@ -2793,8 +2793,8 @@ function bindMetricCopyHandlers() {
         }, 1400);
       }
     }
-    if (!openedWindow) {
-      window.location.href = targetUrl;
+    if (!targetUrl) {
+      event.preventDefault();
     }
     return;
   });
