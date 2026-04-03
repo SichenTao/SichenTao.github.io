@@ -323,9 +323,9 @@ const translations = {
       open_repository: "Open repository",
       open_record: "Open record",
       open_doi: "Open DOI / source",
-      open_jcr_search_copy: "Open official JCR search and copy journal name",
+      open_jcr_search_copy: "Copy journal name and open official JCR search",
       open_official_platform_copy: "Open official platform and copy journal name",
-      open_search_copy: "Open search page and copy citation query",
+      open_search_copy: "Copy citation query and open search page",
       copied_journal_name: "Journal name copied",
       copied_search_query: "Citation query copied",
       open_public_evidence: "Open public evidence",
@@ -563,9 +563,9 @@ const translations = {
       open_repository: "リポジトリを開く",
       open_record: "記録を開く",
       open_doi: "DOI / 出典を開く",
-      open_jcr_search_copy: "JCR 公式検索を開き、誌名をコピー",
+      open_jcr_search_copy: "誌名をコピーして JCR 公式検索を開く",
       open_official_platform_copy: "公式プラットフォームを開き、誌名をコピー",
-      open_search_copy: "検索ページを開き、引用検索語をコピー",
+      open_search_copy: "引用検索語をコピーして検索ページを開く",
       copied_journal_name: "誌名をコピーしました",
       copied_search_query: "引用検索語をコピーしました",
       open_public_evidence: "公開証拠ページを開く",
@@ -803,9 +803,9 @@ const translations = {
       open_repository: "打开仓库",
       open_record: "打开记录",
       open_doi: "打开 DOI / 来源",
-      open_jcr_search_copy: "打开 JCR 官方搜索并复制期刊名",
+      open_jcr_search_copy: "复制期刊名并打开 JCR 官方搜索页",
       open_official_platform_copy: "打开官方平台并复制期刊名",
-      open_search_copy: "打开搜索页并复制引用检索字段",
+      open_search_copy: "复制引用检索字段并打开搜索页",
       copied_journal_name: "已复制期刊名",
       copied_search_query: "已复制引用检索字段",
       open_public_evidence: "打开公开证据页",
@@ -1822,16 +1822,16 @@ function buildSemanticScholarCitationUrl(item) {
 }
 
 function publicationCitationUrl(item) {
-  const openAlexDirect = normalizeString(item?.citation_sources?.openalex?.url);
-  const openAlexMode = normalizeString(item?.citation_sources?.openalex?.mode);
-  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct")) {
-    return openAlexDirect;
-  }
-
   const scholarSource = normalizeString(item?.citation_sources?.google_scholar?.url);
   const scholarMode = normalizeString(item?.citation_sources?.google_scholar?.mode);
   if (scholarSource && scholarMode === "direct" && !isScholarProfileCitationUrl(scholarSource)) {
     return scholarSource;
+  }
+
+  const openAlexDirect = normalizeString(item?.citation_sources?.openalex?.url);
+  const openAlexMode = normalizeString(item?.citation_sources?.openalex?.mode);
+  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct")) {
+    return openAlexDirect;
   }
 
   const semanticSource = normalizeString(item?.citation_sources?.semantic_scholar?.url);
@@ -2022,7 +2022,7 @@ function publicationMetricsMarkup(item) {
   const citationOptions = buildPublicationMetricOptions([
     {
       label: "Google Scholar",
-      href: publicationCitationUrl(item),
+      href: buildGoogleScholarCitationUrl(item),
       copyText:
         normalizeString(item?.citation_sources?.google_scholar?.mode) === "search"
           ? normalizeString(item?.citation_sources?.google_scholar?.copy_text)
@@ -2134,7 +2134,7 @@ function publicationMetricsMarkup(item) {
       value: String(item.citations || 0),
       meta: "",
       tone: "citation",
-      href: publicationCitationUrl(item),
+      href: buildGoogleScholarCitationUrl(item),
       options: citationOptions,
     });
   }
@@ -2443,30 +2443,21 @@ function ensureHeaderControlsAnchor(controls) {
 function updateHeaderControlsPosition() {
   const controls = els.headerControls || document.querySelector(".header-controls");
   const nav = document.querySelector(".topnav-shell") || document.querySelector(".topnav");
-  if (!controls || !nav) {
+  const header = document.querySelector(".site-header");
+  if (!controls || !nav || !header) {
     return;
   }
-
-  const anchor = ensureHeaderControlsAnchor(controls);
-  if (!anchor) {
-    controls.style.removeProperty("--header-controls-top");
-    controls.style.removeProperty("--header-controls-left");
-    return;
-  }
-
-  const anchorWidth = Math.max(controls.offsetWidth || 0, 78);
-  const anchorHeight = Math.max(controls.offsetHeight || 0, 34);
-  anchor.style.width = `${anchorWidth}px`;
-  anchor.style.height = `${anchorHeight}px`;
-
-  const anchorRect = anchor.getBoundingClientRect();
+ 
   const navRect = nav.getBoundingClientRect();
+  const headerRect = header.getBoundingClientRect();
   const controlsRect = controls.getBoundingClientRect();
+  const gutterGap = window.matchMedia("(max-width: 760px)").matches ? 8 : 12;
+  const referenceLeft = Math.min(headerRect.left, navRect.left);
   const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
-  const nextLeft = Math.round(anchorRect.left);
+  const nextLeft = Math.round(Math.max(8, referenceLeft - controlsRect.width - gutterGap));
 
   controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
-  controls.style.setProperty("--header-controls-left", `${Math.max(8, nextLeft)}px`);
+  controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
 }
 
 function scheduleHeaderControlsPositionUpdate() {
@@ -3248,6 +3239,16 @@ function closeTopnavMenus() {
   });
 }
 
+function blurTransientMenuFocus() {
+  const active = document.activeElement;
+  if (!(active instanceof HTMLElement)) {
+    return;
+  }
+  if (active.closest(".publication-metric-menu, .publication-head-actions, .award-link-actions")) {
+    active.blur();
+  }
+}
+
 function initTopnavMenus() {
   document.querySelectorAll(".topnav").forEach((nav) => {
     ensureTopnavOverflowShell(nav);
@@ -3293,6 +3294,14 @@ function initTopnavMenus() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeTopnavMenus();
+    }
+  });
+
+  window.addEventListener("blur", blurTransientMenuFocus);
+  window.addEventListener("pageshow", blurTransientMenuFocus);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      blurTransientMenuFocus();
     }
   });
 
@@ -5224,6 +5233,12 @@ function bindEvents() {
             }, 1400);
           }
         }
+        if (metricLink instanceof HTMLElement) {
+          metricLink.blur();
+        }
+        window.requestAnimationFrame(() => {
+          blurTransientMenuFocus();
+        });
         if (!targetUrl) {
           event.preventDefault();
         }

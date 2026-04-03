@@ -240,10 +240,9 @@ a {
 }
 
 .header-tools {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0;
   width: 100%;
   min-width: 0;
   position: relative;
@@ -292,15 +291,20 @@ a {
 }
 
 .header-controls-anchor {
-  display: block;
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden;
+  pointer-events: none;
   visibility: hidden;
-  min-width: 78px;
-  min-height: 34px;
 }
 
 .topnav,
 .topnav-shell {
-  grid-column: 2;
+  grid-column: auto;
 }
 
 .control-switcher {
@@ -512,12 +516,14 @@ a {
 .topnav-shell {
   position: relative;
   flex: 1 1 auto;
+  width: 100%;
   min-width: 0;
+  margin-left: 0;
 }
 
 .topnav-shell.use-menu {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -3194,8 +3200,10 @@ a {
   }
 
   .header-controls-anchor {
-    min-width: 70px;
-    min-height: 30px;
+    width: 0 !important;
+    height: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
   }
 
   .filters,
@@ -3344,8 +3352,10 @@ a {
   }
 
   .header-controls-anchor {
-    min-width: 68px;
-    min-height: 30px;
+    width: 0 !important;
+    height: 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
   }
 
   .locale-trigger,

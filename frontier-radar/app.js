@@ -163,9 +163,9 @@ const UI_TEXT = {
     metricOfficialPageLabel: "Official page",
     metricPublicEvidenceLabel: "Public Evidence",
     metricOfficialPlatformLabel: "Official Platform",
-    openJcrSearchCopyLabel: "Open official JCR search and copy journal name",
+    openJcrSearchCopyLabel: "Copy journal name and open official JCR search",
     openCasSearchCopyLabel: "Open CAS official platform and copy journal name",
-    openSearchCopyLabel: "Open search and copy query",
+    openSearchCopyLabel: "Copy citation query and open search page",
     copiedJournalNameLabel: "Copied journal name",
     copiedSearchQueryLabel: "Copied search query",
     primaryNavigationLabel: "Primary navigation",
@@ -284,9 +284,9 @@ const UI_TEXT = {
     metricOfficialPageLabel: "官方页面",
     metricPublicEvidenceLabel: "公开参考页",
     metricOfficialPlatformLabel: "官方平台",
-    openJcrSearchCopyLabel: "打开 JCR 官方搜索并复制期刊名",
+    openJcrSearchCopyLabel: "复制期刊名并打开 JCR 官方搜索页",
     openCasSearchCopyLabel: "打开 CAS 官方平台并复制期刊名",
-    openSearchCopyLabel: "打开搜索并复制检索词",
+    openSearchCopyLabel: "复制检索词并打开搜索页",
     copiedJournalNameLabel: "已复制期刊名",
     copiedSearchQueryLabel: "已复制检索词",
     primaryNavigationLabel: "主导航",
@@ -407,9 +407,9 @@ const UI_TEXT = {
     metricOfficialPageLabel: "公式ページ",
     metricPublicEvidenceLabel: "公開参照ページ",
     metricOfficialPlatformLabel: "公式プラットフォーム",
-    openJcrSearchCopyLabel: "JCR 公式検索を開き、誌名をコピー",
+    openJcrSearchCopyLabel: "誌名をコピーして JCR 公式検索を開く",
     openCasSearchCopyLabel: "CAS 公式プラットフォームを開き、誌名をコピー",
-    openSearchCopyLabel: "検索を開いてクエリをコピー",
+    openSearchCopyLabel: "検索語をコピーして検索ページを開く",
     copiedJournalNameLabel: "誌名をコピーしました",
     copiedSearchQueryLabel: "検索語をコピーしました",
     primaryNavigationLabel: "主要ナビゲーション",
@@ -1282,16 +1282,16 @@ function buildSemanticScholarCitationUrl(item) {
 }
 
 function publicationCitationUrl(item) {
-  const openAlexDirect = normalizeUrl(item?.openAlexUrl || item?.citation_sources?.openalex?.url);
-  const openAlexMode = normalizeUrl(item?.citation_sources?.openalex?.mode);
-  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct")) {
-    return openAlexDirect;
-  }
-
   const scholarSource = normalizeUrl(item?.citation_sources?.google_scholar?.url);
   const scholarMode = normalizeUrl(item?.citation_sources?.google_scholar?.mode);
   if (scholarSource && scholarMode === "direct" && !isScholarProfileCitationUrl(scholarSource)) {
     return scholarSource;
+  }
+
+  const openAlexDirect = normalizeUrl(item?.openAlexUrl || item?.citation_sources?.openalex?.url);
+  const openAlexMode = normalizeUrl(item?.citation_sources?.openalex?.mode);
+  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct")) {
+    return openAlexDirect;
   }
 
   const semanticSource = normalizeUrl(item?.citation_sources?.semantic_scholar?.url);
@@ -1843,30 +1843,20 @@ function ensureHeaderControlsAnchor(controls) {
 function updateHeaderControlsPosition() {
   const controls = document.querySelector(".header-controls");
   const nav = document.querySelector(".topnav-shell") || document.querySelector(".topnav");
-  if (!controls || !nav) {
+  const header = document.querySelector(".site-header");
+  if (!controls || !nav || !header) {
     return;
   }
-
-  const anchor = ensureHeaderControlsAnchor(controls);
-  if (!anchor) {
-    controls.style.removeProperty("--header-controls-top");
-    controls.style.removeProperty("--header-controls-left");
-    return;
-  }
-
-  const anchorWidth = Math.max(controls.offsetWidth || 0, 78);
-  const anchorHeight = Math.max(controls.offsetHeight || 0, 34);
-  anchor.style.width = `${anchorWidth}px`;
-  anchor.style.height = `${anchorHeight}px`;
-
-  const anchorRect = anchor.getBoundingClientRect();
   const navRect = nav.getBoundingClientRect();
+  const headerRect = header.getBoundingClientRect();
   const controlsRect = controls.getBoundingClientRect();
+  const gutterGap = window.matchMedia("(max-width: 760px)").matches ? 8 : 12;
+  const referenceLeft = Math.min(headerRect.left, navRect.left);
   const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
-  const nextLeft = Math.round(anchorRect.left);
+  const nextLeft = Math.round(Math.max(8, referenceLeft - controlsRect.width - gutterGap));
 
   controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
-  controls.style.setProperty("--header-controls-left", `${Math.max(8, nextLeft)}px`);
+  controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
 }
 
 function initHeaderControlsPosition() {
@@ -1965,6 +1955,16 @@ function closeTopnavMenus() {
   });
 }
 
+function blurTransientMenuFocus() {
+  const active = document.activeElement;
+  if (!(active instanceof HTMLElement)) {
+    return;
+  }
+  if (active.closest(".publication-metric-menu, .publication-head-actions")) {
+    active.blur();
+  }
+}
+
 function initTopnavMenus() {
   document.querySelectorAll(".topnav").forEach((nav) => {
     ensureTopnavOverflowShell(nav);
@@ -2019,6 +2019,14 @@ function initTopnavMenus() {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeTopnavMenus();
+    }
+  });
+
+  window.addEventListener("blur", blurTransientMenuFocus);
+  window.addEventListener("pageshow", blurTransientMenuFocus);
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      blurTransientMenuFocus();
     }
   });
 
@@ -2793,6 +2801,12 @@ function bindMetricCopyHandlers() {
         }, 1400);
       }
     }
+    if (metricLink instanceof HTMLElement) {
+      metricLink.blur();
+    }
+    window.requestAnimationFrame(() => {
+      blurTransientMenuFocus();
+    });
     if (!targetUrl) {
       event.preventDefault();
     }

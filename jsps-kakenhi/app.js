@@ -563,30 +563,20 @@ function ensureHeaderControlsAnchor(controls) {
 function updateHeaderControlsPosition() {
   const controls = document.querySelector(".header-controls");
   const nav = document.querySelector(".topnav-shell") || document.querySelector(".topnav");
-  if (!controls || !nav) {
+  const header = document.querySelector(".site-header");
+  if (!controls || !nav || !header) {
     return;
   }
-
-  const anchor = ensureHeaderControlsAnchor(controls);
-  if (!anchor) {
-    controls.style.removeProperty("--header-controls-top");
-    controls.style.removeProperty("--header-controls-left");
-    return;
-  }
-
-  const anchorWidth = Math.max(controls.offsetWidth || 0, 78);
-  const anchorHeight = Math.max(controls.offsetHeight || 0, 34);
-  anchor.style.width = `${anchorWidth}px`;
-  anchor.style.height = `${anchorHeight}px`;
-
-  const anchorRect = anchor.getBoundingClientRect();
   const navRect = nav.getBoundingClientRect();
+  const headerRect = header.getBoundingClientRect();
   const controlsRect = controls.getBoundingClientRect();
+  const gutterGap = window.matchMedia("(max-width: 760px)").matches ? 8 : 12;
+  const referenceLeft = Math.min(headerRect.left, navRect.left);
   const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
-  const nextLeft = Math.round(anchorRect.left);
+  const nextLeft = Math.round(Math.max(8, referenceLeft - controlsRect.width - gutterGap));
 
   controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
-  controls.style.setProperty("--header-controls-left", `${Math.max(8, nextLeft)}px`);
+  controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
 }
 
 function scheduleHeaderControlsPositionUpdate() {
