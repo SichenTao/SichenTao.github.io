@@ -1850,21 +1850,17 @@ function metricLinkBundle(item, metricKind) {
     const metricYear = metricYearNumber(publicationMetricYear(item, "if"));
     const officialYear = metricYearNumber(verification.if_source_official_year || verification.if_year);
     const officialMode = normalizeString(verification.if_source_mode);
-    const exactOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
+    const menuOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
       && (
         officialMode === "official_profile"
+        || officialMode === "official_profile_fallback"
         || (!officialMode && officialYear !== null && metricYear !== null && officialYear === metricYear)
-      )
-      && (
-        metricYear === null
-        || officialYear === null
-        || officialYear === metricYear
       )
       ? officialCandidate
       : "";
     return {
       officialLabel: t("actions.metric_official_page"),
-      officialUrl: exactOfficialUrl,
+      officialUrl: menuOfficialUrl,
       publicUrl: normalizeString(verification.if_public_source_url || verification.if_supporting_source_url),
       searchFallbackUrl: isClarivateSearchUrl(officialCandidate) ? officialCandidate : "",
       searchCopyText: verification.if_search_copy_text || venue || "",
@@ -1878,21 +1874,17 @@ function metricLinkBundle(item, metricKind) {
     const metricYear = metricYearNumber(publicationMetricYear(item, "jcr"));
     const officialYear = metricYearNumber(verification.jcr_source_official_year || verification.jcr_year || verification.if_source_official_year);
     const officialMode = normalizeString(verification.jcr_source_mode || verification.if_source_mode);
-    const exactOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
+    const menuOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
       && (
         officialMode === "official_profile"
+        || officialMode === "official_profile_fallback"
         || (!officialMode && officialYear !== null && metricYear !== null && officialYear === metricYear)
-      )
-      && (
-        metricYear === null
-        || officialYear === null
-        || officialYear === metricYear
       )
       ? officialCandidate
       : "";
     return {
       officialLabel: t("actions.metric_official_page"),
-      officialUrl: exactOfficialUrl,
+      officialUrl: menuOfficialUrl,
       publicUrl: normalizeString(
         verification.jcr_public_source_url
         || verification.jcr_supporting_source_url
@@ -1934,6 +1926,15 @@ function metricLinkBundle(item, metricKind) {
 function metricOptionsForPublication(item, metricKind) {
   const bundle = metricLinkBundle(item, metricKind);
   const options = [];
+  const officialFallbackOption = !bundle.officialUrl && bundle.searchFallbackUrl
+    ? {
+        label: bundle.officialLabel,
+        href: bundle.searchFallbackUrl,
+        copyText: bundle.searchCopyText,
+        tooltip: bundle.searchTooltip,
+        copySuccessLabel: bundle.searchCopySuccessLabel,
+      }
+    : null;
 
   if (metricKind === "cas" && bundle.publicUrl) {
     options.push({
@@ -1947,22 +1948,14 @@ function metricOptionsForPublication(item, metricKind) {
       label: bundle.officialLabel,
       href: bundle.officialUrl,
     });
+  } else if (metricKind !== "cas" && officialFallbackOption) {
+    options.push(officialFallbackOption);
   }
 
   if (metricKind !== "cas" && bundle.publicUrl) {
     options.push({
       label: t("actions.metric_public_evidence"),
       href: bundle.publicUrl,
-    });
-  }
-
-  if (!options.length && bundle.searchFallbackUrl) {
-    options.push({
-      label: bundle.officialLabel,
-      href: bundle.searchFallbackUrl,
-      copyText: bundle.searchCopyText,
-      tooltip: bundle.searchTooltip,
-      copySuccessLabel: bundle.searchCopySuccessLabel,
     });
   }
 
