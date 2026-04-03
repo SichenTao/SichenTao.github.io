@@ -278,11 +278,11 @@ a {
 
 .header-controls {
   position: fixed;
-  top: calc(env(safe-area-inset-top, 0px) + 18px);
-  left: calc(env(safe-area-inset-left, 0px) + 18px);
+  top: var(--header-controls-top, calc(env(safe-area-inset-top, 0px) + 18px));
+  left: var(--header-controls-left, calc(env(safe-area-inset-left, 0px) + 18px));
   z-index: 24;
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   margin: 0;
 }
@@ -3317,8 +3317,6 @@ a {
 
   .header-controls {
     gap: 8px;
-    top: calc(env(safe-area-inset-top, 0px) + 12px);
-    left: calc(env(safe-area-inset-left, 0px) + 12px);
   }
 
   .locale-trigger,

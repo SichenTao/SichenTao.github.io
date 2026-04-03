@@ -1,4 +1,5 @@
 const els = {
+  headerControls: document.querySelector(".header-controls"),
   localeChoices: [],
   localeSwitchers: Array.from(document.querySelectorAll(".locale-switcher")),
   localeTriggers: [],
@@ -171,6 +172,7 @@ const translations = {
       language: "Language",
       language_choices: "Language choices",
       show_languages: "Show language options",
+      cycle_languages: "Switch to the next language",
       menu: "Menu",
       show_menu: "Open navigation menu",
       hide_menu: "Close navigation menu",
@@ -178,6 +180,7 @@ const translations = {
       display_controls: "Display controls",
       theme_choices: "Theme choices",
       show_themes: "Show color themes",
+      cycle_themes: "Switch to the next color theme",
       section_navigation: "Section navigation",
       page_navigation: "Page navigation",
       venue_filters: "Venue filters",
@@ -408,6 +411,7 @@ const translations = {
       language: "言語",
       language_choices: "言語選択",
       show_languages: "言語を切り替える",
+      cycle_languages: "次の言語に切り替える",
       menu: "メニュー",
       show_menu: "メニューを開く",
       hide_menu: "メニューを閉じる",
@@ -415,6 +419,7 @@ const translations = {
       display_controls: "表示コントロール",
       theme_choices: "配色選択",
       show_themes: "配色を切り替える",
+      cycle_themes: "次の配色に切り替える",
       section_navigation: "セクション案内",
       page_navigation: "ページ案内",
       venue_filters: "掲載先フィルター",
@@ -645,6 +650,7 @@ const translations = {
       language: "语言",
       language_choices: "语言选项",
       show_languages: "切换语言",
+      cycle_languages: "切换到下一种语言",
       menu: "菜单",
       show_menu: "打开导航菜单",
       hide_menu: "关闭导航菜单",
@@ -652,6 +658,7 @@ const translations = {
       display_controls: "显示控制",
       theme_choices: "配色选项",
       show_themes: "切换配色",
+      cycle_themes: "切换到下一套配色",
       section_navigation: "分区导航",
       page_navigation: "页面导航",
       venue_filters: "刊物筛选",
@@ -868,12 +875,15 @@ const translations = {
 
 const THEME_STORAGE_KEY = "sichen-homepage-theme";
 const LOCALE_STORAGE_KEY = "sichen-homepage-locale";
+const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst", "base"];
+const LOCALE_SWITCH_SEQUENCE = ["en", "ja", "zh"];
 let themeUiBound = false;
 let localeUiBound = false;
 let switcherHoverBound = false;
 let scrollTopUiBound = false;
 let topnavOverflowBound = false;
 let topnavMenuBound = false;
+let headerControlsPositionBound = false;
 let scrollTopButton = null;
 let dataReady = false;
 const switcherCloseTimers = new WeakMap();
@@ -1230,6 +1240,15 @@ function resolveLocaleName() {
     return "zh";
   }
   return "en";
+}
+
+function nextLocaleName(currentLocale = resolveLocaleName()) {
+  const sequence = LOCALE_SWITCH_SEQUENCE.filter((localeName) => localeCatalog[localeName]);
+  const pointer = sequence.indexOf(currentLocale);
+  if (pointer === -1) {
+    return sequence[0] || "en";
+  }
+  return sequence[(pointer + 1) % sequence.length];
 }
 
 function t(key, values = {}) {
@@ -2076,6 +2095,15 @@ function resolveThemeName() {
   return "base";
 }
 
+function nextThemeName(currentTheme = resolveThemeName()) {
+  const sequence = THEME_SWITCH_SEQUENCE.filter((themeName) => themeCatalog[themeName]);
+  const pointer = sequence.indexOf(currentTheme);
+  if (pointer === -1) {
+    return sequence[0] || "base";
+  }
+  return sequence[(pointer + 1) % sequence.length];
+}
+
 function renderLocaleSwitchers() {
   if (!els.localeSwitchers.length) {
     els.localeChoices = Array.from(document.querySelectorAll("[data-locale-choice]"));
@@ -2110,8 +2138,8 @@ function renderLocaleSwitchers() {
         data-locale-trigger
         aria-haspopup="true"
         aria-expanded="false"
-        aria-label="${escapeHtml(t("controls.show_languages"))}"
-        title="${escapeHtml(activeLocale.name)}"
+        aria-label="${escapeHtml(t("controls.cycle_languages"))}"
+        title="${escapeHtml(t("controls.cycle_languages"))}"
       >
         <span class="locale-label" data-locale-current-label>${escapeHtml(activeLocale.label)}</span>
       </button>
@@ -2159,8 +2187,8 @@ function renderThemeSwitchers() {
         data-theme-trigger
         aria-haspopup="true"
         aria-expanded="false"
-        aria-label="${escapeHtml(t("controls.show_themes"))}"
-        title="${escapeHtml(translatedThemeLabel(activeThemeName))}"
+        aria-label="${escapeHtml(t("controls.cycle_themes"))}"
+        title="${escapeHtml(t("controls.cycle_themes"))}"
       >
         <span class="theme-swatch ${escapeHtml(activeTheme.swatchClass)}" data-theme-current-swatch aria-hidden="true"></span>
       </button>
@@ -2248,6 +2276,44 @@ function bindSwitcherHoverBehavior() {
   });
 }
 
+function updateHeaderControlsPosition() {
+  const controls = els.headerControls || document.querySelector(".header-controls");
+  const shell = document.querySelector(".topnav-shell");
+  if (!controls || !shell) {
+    return;
+  }
+
+  const compactViewport = window.matchMedia("(max-width: 760px)").matches;
+  const viewportInset = compactViewport ? 10 : 18;
+  const controlGap = compactViewport ? 8 : 10;
+  const shellRect = shell.getBoundingClientRect();
+  const controlsRect = controls.getBoundingClientRect();
+  const nextTop = Math.max(viewportInset, shellRect.top + (shellRect.height - controlsRect.height) / 2);
+  const nextLeft = Math.max(viewportInset, shellRect.left - controlsRect.width - controlGap);
+
+  controls.style.setProperty("--header-controls-top", `${Math.round(nextTop)}px`);
+  controls.style.setProperty("--header-controls-left", `${Math.round(nextLeft)}px`);
+}
+
+function initHeaderControlsPosition() {
+  updateHeaderControlsPosition();
+
+  if (headerControlsPositionBound) {
+    return;
+  }
+
+  headerControlsPositionBound = true;
+  window.addEventListener("resize", updateHeaderControlsPosition, { passive: true });
+  window.addEventListener("load", updateHeaderControlsPosition, { passive: true });
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => {
+      updateHeaderControlsPosition();
+      window.setTimeout(updateHeaderControlsPosition, 120);
+    });
+  }
+}
+
 function applyTheme(themeName, persist = true) {
   const nextTheme = themeCatalog[themeName] ? themeName : "base";
   document.documentElement.dataset.theme = nextTheme;
@@ -2268,8 +2334,8 @@ function applyTheme(themeName, persist = true) {
   });
 
   els.themeTriggers.forEach((trigger) => {
-    trigger.setAttribute("aria-label", t("controls.show_themes"));
-    trigger.setAttribute("title", translatedThemeLabel(nextTheme));
+    trigger.setAttribute("aria-label", t("controls.cycle_themes"));
+    trigger.setAttribute("title", t("controls.cycle_themes"));
   });
 
   closeThemeSwitchers();
@@ -2298,8 +2364,8 @@ function applyLocale(localeName, persist = true) {
   });
 
   els.localeTriggers.forEach((trigger) => {
-    trigger.setAttribute("aria-label", t("controls.show_languages"));
-    trigger.setAttribute("title", localeCatalog[nextLocale].name);
+    trigger.setAttribute("aria-label", t("controls.cycle_languages"));
+    trigger.setAttribute("title", t("controls.cycle_languages"));
   });
   if (scrollTopButton) {
     scrollTopButton.setAttribute("aria-label", t("actions.scroll_top"));
@@ -2341,14 +2407,8 @@ function bindThemeButtons() {
     trigger.dataset.themeBound = "true";
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-      const switcher = trigger.closest(".theme-switcher");
-      if (!switcher) {
-        return;
-      }
-      clearSwitcherCloseTimer(switcher);
-      const willOpen = !switcher.classList.contains("is-open");
       closeAllSwitchers();
-      setSwitcherExpandedState(switcher, willOpen);
+      applyTheme(nextThemeName());
     });
   });
 }
@@ -2399,14 +2459,8 @@ function initLocaleControls() {
     trigger.dataset.localeBound = "true";
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-      const switcher = trigger.closest(".locale-switcher");
-      if (!switcher) {
-        return;
-      }
-      clearSwitcherCloseTimer(switcher);
-      const willOpen = !switcher.classList.contains("is-open");
       closeAllSwitchers();
-      setSwitcherExpandedState(switcher, willOpen);
+      applyLocale(nextLocaleName());
     });
   });
 
@@ -2990,6 +3044,7 @@ function refreshTopnavOverflowHints() {
   document.querySelectorAll(".topnav").forEach((nav) => {
     updateTopnavOverflowState(nav);
   });
+  updateHeaderControlsPosition();
 }
 
 function setTopnavMenuExpanded(shell, expanded) {
@@ -5156,6 +5211,7 @@ async function init() {
   initThemeControls();
   initTopnavMenus();
   initTopnavOverflowHints();
+  initHeaderControlsPosition();
   initScrollTopButton();
   state.data = await loadData();
   dataReady = true;
