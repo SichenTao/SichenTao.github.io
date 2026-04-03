@@ -282,6 +282,7 @@ a {
   position: fixed;
   top: var(--header-controls-top, calc(env(safe-area-inset-top, 0px) + 18px));
   left: var(--header-controls-left, calc(env(safe-area-inset-left, 0px) + 18px));
+  transform: translateX(calc(-1 * var(--header-controls-shift, 0px)));
   z-index: 24;
   display: inline-flex;
   align-items: center;

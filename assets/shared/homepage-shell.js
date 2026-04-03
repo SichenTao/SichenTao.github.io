@@ -28,6 +28,18 @@
     }
   }
 
+  function suspendTransientOverlays() {
+    const body = document.body;
+    if (!body) {
+      return;
+    }
+    body.classList.add("transient-overlay-reset");
+    global.clearTimeout(body.__transientOverlayResetTimer);
+    body.__transientOverlayResetTimer = global.setTimeout(() => {
+      body.classList.remove("transient-overlay-reset");
+    }, 220);
+  }
+
   function setSwitcherExpandedState(switcher, expanded) {
     if (!switcher) {
       return;
@@ -171,15 +183,17 @@
     const desktopGap = config.desktopGap ?? 12;
     const mobileGap = config.mobileGap ?? 8;
     const navRect = nav.getBoundingClientRect();
-    const headerRect = header.getBoundingClientRect();
     const controlsRect = controls.getBoundingClientRect();
-    const gutterGap = global.matchMedia(`(max-width: ${breakpoint}px)`).matches ? mobileGap : desktopGap;
-    const referenceLeft = Math.min(headerRect.left, navRect.left);
+    const useMobileLayout = global.matchMedia(`(max-width: ${breakpoint}px)`).matches;
+    const gutterGap = useMobileLayout ? mobileGap : desktopGap;
+    const referenceLeft = navRect.left;
     const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
-    const nextLeft = Math.round(Math.max(8, referenceLeft - controlsRect.width - gutterGap));
+    const nextLeft = Math.round(Math.max(8, referenceLeft));
+    const nextShift = useMobileLayout ? 0 : Math.round(controlsRect.width + gutterGap);
 
     controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
     controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
+    controls.style.setProperty("--header-controls-shift", `${nextShift}px`);
   }
 
   function scheduleHeaderControlsPositionUpdate() {
@@ -305,6 +319,7 @@
     if (active.closest(selectors)) {
       active.blur();
     }
+    suspendTransientOverlays();
   }
 
   function refreshTopnavOverflowHints() {
@@ -380,10 +395,12 @@
         return;
       }
       closeTopnavMenus(runtime.root);
+      suspendTransientOverlays();
     });
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         closeTopnavMenus(runtime.root);
+        suspendTransientOverlays();
       }
     });
     global.addEventListener("resize", () => {
@@ -394,10 +411,20 @@
       refreshTopnavOverflowHints();
     }, { passive: true });
     global.addEventListener("load", refreshTopnavOverflowHints, { passive: true });
-    global.addEventListener("blur", blurTransientMenuFocus);
-    global.addEventListener("pageshow", blurTransientMenuFocus);
+    global.addEventListener("blur", () => {
+      closeAllSwitchers(runtime.root);
+      closeTopnavMenus(runtime.root);
+      blurTransientMenuFocus();
+    });
+    global.addEventListener("pageshow", () => {
+      closeAllSwitchers(runtime.root);
+      closeTopnavMenus(runtime.root);
+      blurTransientMenuFocus();
+    });
     document.addEventListener("visibilitychange", () => {
       if (document.visibilityState === "hidden") {
+        closeAllSwitchers(runtime.root);
+        closeTopnavMenus(runtime.root);
         blurTransientMenuFocus();
       }
     });

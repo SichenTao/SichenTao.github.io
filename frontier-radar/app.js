@@ -60,8 +60,8 @@ const UI_TEXT = {
     pageDescription:
       "A local-first radar for tracking frontier teams, papers, signals, and contribution opportunities across multiple research domains.",
     brandTitle: "Frontier Radar",
-    heroEyebrow: "Active frontier",
-    heroPrimaryAction: "Open latest papers",
+    heroEyebrow: "Live radar",
+    heroPrimaryAction: "Open papers",
     heroSecondaryAction: "Review the guide",
     snapshotLabel: "Snapshot",
     nextRunLabel: "Next planned run",
@@ -81,8 +81,8 @@ const UI_TEXT = {
     teamsTitle: "Who looks structurally important",
     teamsNote: "Curated to favor signal density, not name recognition alone.",
     paperLaneKicker: "Latest papers",
-    papersTitle: "Latest and most important papers for the active domain",
-    papersNote: "Each card is designed as a reading and download decision surface.",
+    papersTitle: "Priority papers for this domain",
+    papersNote: "Read, verify, or queue next.",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
     searchPlaceholder: "Find a title, venue, author, or clue",
@@ -183,8 +183,8 @@ const UI_TEXT = {
     pageTitle: "前沿雷达",
     pageDescription: "一个面向多研究方向的本地优先前沿雷达，用于追踪关键团队、论文、信号与潜在贡献机会。",
     brandTitle: "前沿雷达",
-    heroEyebrow: "当前前沿焦点",
-    heroPrimaryAction: "查看最新论文",
+    heroEyebrow: "当前雷达",
+    heroPrimaryAction: "查看论文",
     heroSecondaryAction: "查看说明",
     snapshotLabel: "快照时间",
     nextRunLabel: "下次计划运行",
@@ -204,8 +204,8 @@ const UI_TEXT = {
     teamsTitle: "哪些团队最值得重点盯住",
     teamsNote: "筛选标准更偏向信号密度，而不只是名气大小。",
     paperLaneKicker: "最新论文",
-    papersTitle: "当前方向下最新且最重要的论文",
-    papersNote: "每张卡片都被设计成一个可直接决策阅读与下载的工作面。",
+    papersTitle: "当前方向的重点论文",
+    papersNote: "直接判断阅读、核验或加入队列。",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
     searchPlaceholder: "搜索标题、期刊、作者或线索",
@@ -306,8 +306,8 @@ const UI_TEXT = {
     pageDescription:
       "複数の研究領域にまたがって重要チーム、論文、シグナル、次の貢献機会を追跡するためのローカルファーストなフロンティア・レーダー。",
     brandTitle: "フロンティア・レーダー",
-    heroEyebrow: "現在の前線焦点",
-    heroPrimaryAction: "最新論文を見る",
+    heroEyebrow: "ライブレーダー",
+    heroPrimaryAction: "論文を見る",
     heroSecondaryAction: "ガイドを見る",
     snapshotLabel: "スナップショット",
     nextRunLabel: "次回予定実行",
@@ -327,8 +327,8 @@ const UI_TEXT = {
     teamsTitle: "構造的に重要そうなチーム",
     teamsNote: "知名度よりも信号密度を優先してキュレーションしています。",
     paperLaneKicker: "最新論文",
-    papersTitle: "現在の領域で最も重要な最新論文",
-    papersNote: "各カードは、読むか取得するかをすぐ判断できる作業面として設計しています。",
+    papersTitle: "現在の領域の重点論文",
+    papersNote: "読む・確認する・取得するをすぐ判断できます。",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
     searchPlaceholder: "タイトル、会場、著者、手がかりで検索",
@@ -1242,10 +1242,25 @@ function isScholarProfileCitationUrl(url = "") {
   return Boolean(value && /scholar\.google\.com\/citations\?user=/i.test(value));
 }
 
+function isGoogleScholarDirectUrl(url = "") {
+  const value = normalizeUrl(url);
+  return Boolean(value && /scholar\.google\./i.test(value) && !isScholarProfileCitationUrl(value));
+}
+
+function isOpenAlexDirectUrl(url = "") {
+  const value = normalizeUrl(url);
+  return Boolean(value && /openalex\.org\//i.test(value));
+}
+
+function isSemanticScholarDirectUrl(url = "") {
+  const value = normalizeUrl(url);
+  return Boolean(value && /semanticscholar\.org\//i.test(value));
+}
+
 function buildGoogleScholarCitationUrl(item) {
   const direct = normalizeUrl(item?.citation_sources?.google_scholar?.url);
   const mode = normalizeUrl(item?.citation_sources?.google_scholar?.mode);
-  if (direct && mode === "direct" && !isScholarProfileCitationUrl(direct)) {
+  if (direct && mode === "direct" && isGoogleScholarDirectUrl(direct)) {
     return direct;
   }
 
@@ -1268,7 +1283,7 @@ function buildScholarCitationSearchUrl(item) {
 function buildOpenAlexCitationUrl(item) {
   const direct = normalizeUrl(item?.citation_sources?.openalex?.url || item?.openAlexUrl);
   const mode = normalizeUrl(item?.citation_sources?.openalex?.mode);
-  if (direct && mode === "direct") {
+  if (direct && mode === "direct" && isOpenAlexDirectUrl(direct)) {
     return direct;
   }
 
@@ -1287,7 +1302,7 @@ function buildOpenAlexCitationUrl(item) {
 function buildSemanticScholarCitationUrl(item) {
   const direct = normalizeUrl(item?.citation_sources?.semantic_scholar?.url);
   const mode = normalizeUrl(item?.citation_sources?.semantic_scholar?.mode);
-  if (direct && mode === "direct") {
+  if (direct && mode === "direct" && isSemanticScholarDirectUrl(direct)) {
     return direct;
   }
 
@@ -1306,24 +1321,24 @@ function buildSemanticScholarCitationUrl(item) {
 function publicationCitationUrl(item) {
   const scholarSource = normalizeUrl(item?.citation_sources?.google_scholar?.url);
   const scholarMode = normalizeUrl(item?.citation_sources?.google_scholar?.mode);
-  if (scholarSource && scholarMode === "direct" && !isScholarProfileCitationUrl(scholarSource)) {
+  if (scholarSource && scholarMode === "direct" && isGoogleScholarDirectUrl(scholarSource)) {
     return scholarSource;
   }
 
   const openAlexDirect = normalizeUrl(item?.openAlexUrl || item?.citation_sources?.openalex?.url);
   const openAlexMode = normalizeUrl(item?.citation_sources?.openalex?.mode);
-  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct")) {
+  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct") && isOpenAlexDirectUrl(openAlexDirect)) {
     return openAlexDirect;
   }
 
   const semanticSource = normalizeUrl(item?.citation_sources?.semantic_scholar?.url);
   const semanticMode = normalizeUrl(item?.citation_sources?.semantic_scholar?.mode);
-  if (semanticSource && semanticMode === "direct") {
+  if (semanticSource && semanticMode === "direct" && isSemanticScholarDirectUrl(semanticSource)) {
     return semanticSource;
   }
 
   const sourceUrl = normalizeUrl(item?.citation_source_url || item?.citationSourceUrl);
-  if (sourceUrl && !isScholarProfileCitationUrl(sourceUrl)) {
+  if (sourceUrl && (isGoogleScholarDirectUrl(sourceUrl) || isOpenAlexDirectUrl(sourceUrl) || isSemanticScholarDirectUrl(sourceUrl))) {
     return sourceUrl;
   }
 

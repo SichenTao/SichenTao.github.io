@@ -1764,10 +1764,25 @@ function isFenqubiaoPlatformUrl(url = "") {
   return Boolean(value && /fenqubiao\.com\/?$/i.test(value));
 }
 
+function isGoogleScholarDirectUrl(url = "") {
+  const value = normalizeString(url);
+  return Boolean(value && /scholar\.google\./i.test(value) && !isScholarProfileCitationUrl(value));
+}
+
+function isOpenAlexDirectUrl(url = "") {
+  const value = normalizeString(url);
+  return Boolean(value && /openalex\.org\//i.test(value));
+}
+
+function isSemanticScholarDirectUrl(url = "") {
+  const value = normalizeString(url);
+  return Boolean(value && /semanticscholar\.org\//i.test(value));
+}
+
 function buildGoogleScholarCitationUrl(item) {
   const direct = normalizeString(item?.citation_sources?.google_scholar?.url);
   const mode = normalizeString(item?.citation_sources?.google_scholar?.mode);
-  if (direct && mode === "direct" && !isScholarProfileCitationUrl(direct)) {
+  if (direct && mode === "direct" && isGoogleScholarDirectUrl(direct)) {
     return direct;
   }
 
@@ -1790,7 +1805,7 @@ function buildScholarCitationSearchUrl(item) {
 function buildOpenAlexCitationUrl(item) {
   const direct = normalizeString(item?.citation_sources?.openalex?.url);
   const mode = normalizeString(item?.citation_sources?.openalex?.mode);
-  if (direct && mode === "direct") {
+  if (direct && mode === "direct" && isOpenAlexDirectUrl(direct)) {
     return direct;
   }
   const doi = normalizeString(item?.doi);
@@ -1808,7 +1823,7 @@ function buildOpenAlexCitationUrl(item) {
 function buildSemanticScholarCitationUrl(item) {
   const direct = normalizeString(item?.citation_sources?.semantic_scholar?.url);
   const mode = normalizeString(item?.citation_sources?.semantic_scholar?.mode);
-  if (direct && mode === "direct") {
+  if (direct && mode === "direct" && isSemanticScholarDirectUrl(direct)) {
     return direct;
   }
 
@@ -1827,24 +1842,24 @@ function buildSemanticScholarCitationUrl(item) {
 function publicationCitationUrl(item) {
   const scholarSource = normalizeString(item?.citation_sources?.google_scholar?.url);
   const scholarMode = normalizeString(item?.citation_sources?.google_scholar?.mode);
-  if (scholarSource && scholarMode === "direct" && !isScholarProfileCitationUrl(scholarSource)) {
+  if (scholarSource && scholarMode === "direct" && isGoogleScholarDirectUrl(scholarSource)) {
     return scholarSource;
   }
 
   const openAlexDirect = normalizeString(item?.citation_sources?.openalex?.url);
   const openAlexMode = normalizeString(item?.citation_sources?.openalex?.mode);
-  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct")) {
+  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct") && isOpenAlexDirectUrl(openAlexDirect)) {
     return openAlexDirect;
   }
 
   const semanticSource = normalizeString(item?.citation_sources?.semantic_scholar?.url);
   const semanticMode = normalizeString(item?.citation_sources?.semantic_scholar?.mode);
-  if (semanticSource && semanticMode === "direct") {
+  if (semanticSource && semanticMode === "direct" && isSemanticScholarDirectUrl(semanticSource)) {
     return semanticSource;
   }
 
   const sourceUrl = normalizeString(item?.citation_source_url);
-  if (sourceUrl && !isScholarProfileCitationUrl(sourceUrl)) {
+  if (sourceUrl && (isGoogleScholarDirectUrl(sourceUrl) || isOpenAlexDirectUrl(sourceUrl) || isSemanticScholarDirectUrl(sourceUrl))) {
     return sourceUrl;
   }
   return buildGoogleScholarCitationUrl(item);

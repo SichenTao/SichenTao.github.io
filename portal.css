@@ -147,6 +147,36 @@ a {
   padding: 26px;
 }
 
+.portal-card-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.portal-app-icon {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid rgba(77, 37, 148, 0.12);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 8px;
+}
+
+.portal-card-academic .portal-app-icon {
+  background: rgba(75, 33, 141, 0.08);
+}
+
+.portal-card-radar .portal-app-icon {
+  background: rgba(79, 122, 144, 0.12);
+}
+
+.portal-card-jsps .portal-app-icon {
+  background: rgba(180, 68, 91, 0.08);
+}
+
 .portal-card h2 {
   margin: 0 0 14px;
   font-size: clamp(1.45rem, 2.2vw, 2rem);

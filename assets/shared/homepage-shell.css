@@ -340,6 +340,14 @@
   display: none;
 }
 
+body.transient-overlay-reset .publication-metric-options,
+body.transient-overlay-reset .publication-copy-menu,
+body.transient-overlay-reset .award-link-menu {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateY(6px) !important;
+}
+
 .topnav a {
   display: inline-flex;
   align-items: center;
