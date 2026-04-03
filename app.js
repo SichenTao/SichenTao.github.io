@@ -3209,7 +3209,7 @@ function updateTopnavOverflowState(nav) {
   const atStart = nav.scrollLeft <= 8;
   const atEnd = nav.scrollLeft >= maxScrollLeft - 8;
   const forceMenu = window.matchMedia("(max-width: 760px)").matches;
-  const useMenu = forceMenu;
+  const useMenu = forceMenu || overflowing;
 
   shell.classList.toggle("has-overflow", overflowing);
   shell.classList.toggle("is-scrolled", overflowing && !atStart);
