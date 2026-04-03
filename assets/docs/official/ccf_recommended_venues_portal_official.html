@@ -1,0 +1,1624 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta name="referrer" content="never">
+    <title>CCFæ¨èå½éå­¦æ¯ä¼è®®åæåç®å½-è¯ä»·-ä¸­å½è®¡ç®æºå­¦ä¼</title>
+    <meta name="keywords" content="" />
+  <meta name="description" content="CCFæ¨èå½éå­¦æ¯æåä¼è®®åè¡¨ï¼åæ¬åä¸ªé¢åçéè¦å½éå­¦æ¯ä¼è®®åæåï¼å·²è¢«ä¼å¤&#32;é«æ ¡å
+ç§ç æéç¨ãCCFæ¨èå½éå­¦æ¯æåä¼è®®åè¡¨ï¼åæ¬åä¸ªé¢åçéè¦å½éå­¦æ¯ä¼è®®åæåï¼å·²
+è¢«ä¼å¤&#32;é«æ ¡åç§ç æéç¨ã" />
+    <!-- åå«  -->
+    
+<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" href="/v3/css/bootstrap.min.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="${prefix("v3/css/animate.css")}" type="text/css" /> -->
+    <link rel="stylesheet" href="/v3/css/font-awesome.min.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="${prefix("v3/css/font-opensans.css")}" type="text/css" /> -->
+    <link rel="stylesheet" href="/v3/css/v3-framework.css" type="text/css" />
+    <link rel="stylesheet" href="/v3/css/v3-common.css" type="text/css" />
+    <link rel="stylesheet" href="/v3/css/v3-site.css" type="text/css" />
+
+    <link rel="stylesheet" href="/v3/css/lib.css" />
+		<link rel="stylesheet" href="/v3/css/cui.css" />
+    <link rel="stylesheet" href="/v3/css/style-gb.css" />
+    <link rel="stylesheet" href="/v3/css/less.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    
+
+<link rel="stylesheet" href="/css/slick.css" type="text/css" />
+   <link rel="stylesheet" href="/v3/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/v3/css/style-rel.css" type="text/css" /> 
+
+    <script>
+        var frontAppContext = 'https://www.ccf.org.cn/ccf/';
+        var siteID = "122";
+    </script>
+
+	<script src="/v3/js/zcms_require.js" contextpath="https://www.ccf.org.cn/ccf/"></script>
+
+	<script src="/v3/js/bootstrap.min.js"  ></script>
+    <script>
+        if (isIE && ieVersion < 9 || isIE8) {
+            importJS('../v3/js/ie/html5shiv.js')
+            if (!isIE6 && !isIE7) {
+                importJS('../v3/js/ie/respond.min.js')
+            }
+            importJS('../v3/js/ie/excanvas.js')
+        }
+        if (/MSIE (6|7)\.0/.test(navigator.userAgent)) {
+            importCSS('../v3/css/bootstrap-ie6.css')
+            importJS('../v3/js/ie/bootstrap-ie6.js')
+        }
+        if (isIE && ieVersion < 9 || isIE8) {
+            importCSS('../v3/css/v3-site-ie.css')
+        }
+        if (inTouch) {
+            importJS('../v3/js/hammer.min.js')
+        }
+        importJS('../js/responsiveslides.js')
+    </script>
+
+	 <script type="text/javascript" src="/v3/js/v3_common.js"></script>
+    <script type="text/javascript" src="/v3/js/v3_site.js"></script>
+    <script type="text/javascript" src="/js/slick.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.SuperSlide.2.1.js"></script>
+    <script type="text/javascript" src="/js/jquery-select.js"></script>
+    <script type="text/javascript" src="/v3/js/lib.js"></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+  $(function(){// å¨é¡µé¢å è½½å®æ¯åæ§è¡ï¼é²æ­¢å jqueryæ¾ä¸å°é æææºé¦æ¬¡æå¼éè¯¯
+    setTimeout(function(){
+    var imgUrl = "https://www.ccf.org.cn/images/images/logo.png";//é»è®¤å¾ç
+    var desc="";
+     if($("#content img,.article img").size()>0){
+        imgUrl=$("#content img,.article img")[0].src;
+    };
+      
+    if($(".sr_face_img img").size()>0){
+        imgUrl=$(".sr_face_img img")[0].src;
+    };
+    
+    if($("#ArticleUserLogoFile").size()>0){
+        imgUrl=$("#ArticleUserLogoFile")[0].src;
+    };
+    if($("#logofile").val()!=''&&$("#logofile").val()!=undefined){
+     	imgUrl=$("#logofile").val();
+    };
+    if($("#wximg").val()!=''&&$("#wximg").val()!=undefined){
+     	imgUrl=$("#wximg").val();
+    };
+    if($("head").children("[name='description']").attr("content")!=""){
+      desc=$("head").children("[name='description']").attr("content");
+    };
+    if($("#ArticleUserIntr").size()>0){
+      desc=$("#ArticleUserIntr").text().trim();
+    };
+    if($("#Summary").val()!=''&&$("#Summary").val()!=undefined){
+		desc=$("#Summary").val();
+    };
+    if(desc == undefined) {
+        desc = "";
+    }
+     var param = {
+                "href":window.location.href,
+                "imgPath":imgUrl,
+                "title":$("title").text(),
+                "desc":desc,
+                "siteID":"122"
+            }
+     Share(param);
+    },2000)
+  })
+</script>
+<script src="/js/share.js" type="text/javascript"></script> 
+     
+    
+    <script type="text/javascript">
+      //ä¼åæ¶è
+      addFavorites = function(id, favtype) {
+        Server.sendRequest('member/logined', {}, function(result) {
+          if (result.IsLogin) {
+            if (!id || !favtype) {
+              MsgPop(Lang.get("Verify.HasError"));
+              return;
+            }
+            Server.sendRequest('memberFavorites/add', {
+              ID : id,
+              FavType : favtype
+            }, function(data) {
+              $("#favorite").addClass("collection-ed");
+              $("#favorite2").addClass("collection-ed");   
+              $("#fav").text("å·²æ¶è");
+              $("#fav2").text("å·²æ¶è");
+              MsgPop(data.message);
+            });
+          } else {
+            // ç»å½
+            MsgPop(Lang.get("Member.MustLogin"));
+          }
+        });
+      };
+      
+      
+      
+      //ææ¬ä¸è½½
+      function downloadText(ArticleID){
+        Server.sendRequest('member/logined', {}, function(result) {
+          if (result.IsLogin) {
+            if (ArticleID!='') {
+              window.location = frontAppContext + "Attachment/textDownload?ArticleID="+ArticleID+"&SiteID="+siteID;
+            }
+          } else {
+            // æéè¦ç»é
+            MsgPop(Lang.get("Member.MustLogin"));
+          }
+        });
+        
+      }
+      
+       $(function(){
+      var dc = {
+        contentid : '814278',
+		};
+		Server.sendRequest('comment/count', dc, function(response) {
+			if (response.CommentTotal) {
+				$(".comment-total").text(response.CommentTotal);
+			}
+			if (response.PersonTotal) {
+				$(".comment-persontotal").text(response.PersonTotal);
+			}
+		});
+      });
+    </script>
+    
+  </head>
+  <body>
+    <!-- å¤´é¨ -->
+    
+
+
+
+    <div class="container">
+      <div class="hd-top" style="padding:0 15px">
+        	<a href="https://www.ccf.org.cn/" style="font-size: 16px;font-weight: bold;color: #006699;line-height: 35px;"><img src="/images/home.png" alt="" style="padding-bottom: 6px;" />è¿åé¦é¡µ</a>
+        <div class="rr">
+         
+        	<!-- English -->
+        		
+            	<a href="/en/">English</a>
+            
+            <!-- ç«ç¹å°å¾ -->
+            
+            	<a href="/Map/">ç«ç¹å°å¾</a>
+            
+            <!-- èç³»æä»¬ -->
+            
+            	<a href="/About_CCF/Governance/Secretariat/">èç³»æä»¬</a>
+            
+            <!-- å¸¸è§é®é¢ -->
+            
+            	<a href="/FAQ/Membership/">å¸¸è§é®é¢</a>
+            
+          <!-- ä¸è½½CCFLink -->
+        		
+            	<a href="/CCFLink/">ä¸è½½CCFLink</a>
+            
+            <!-- CCFæè -->
+            
+            	<a href="/Career_Center/Join_Us/">CCFæè</a>
+            
+            <a href="" id="header_login"  class="logn">ç»å½</a>
+            <a href="javascript:memberLoginOut();" id="header_logout" style="display:none;">éåº</a>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+    Server.sendRequest("member/clickMyCCF", null, function(response) {
+      if (response.Status == 1) {
+    	var vd = response.Prop3;
+    	if(vd && vd!='null' && vd>Date.parse(new Date())){
+    		$("#header_joinccf").hide();		
+            $("#header_joinccf_m").hide();
+    	} else {
+          $('#header_joinccf').attr("href","https://web.ccf.org.cn/CCF/frame.action?menuShowFlag=B00021");
+            $("#header_joinccf").text("ä¼åç¼´è´¹");
+            $('#header_joinccf_m').attr("href","href","https://web.ccf.org.cn/CCF/reg_phone.html");
+            $("#header_joinccf_m").text("ä¼åç¼´è´¹");
+    	}
+        $('#header_login').attr("href","https://ccflinkapp.ccf.org.cn/pc/p/myNew");
+        $("#header_login").text("æçä¸»é¡µ");
+        $('#mlg').attr("href","https://ccflinkapp.ccf.org.cn/pc/p/myNew");
+         //æ°çªå£æå¼ä¼åä¸­å¿
+         $("#header_login").click(function(event) {
+                event.preventDefault(); // é»æ­¢åç´ çé»è®¤ç¹å»è¡ä¸º
+                var href = $(this).attr("href"); // è·ååç´ ç href å±æ§å¼
+                window.open(href, "_blank"); // å¨æ°çªå£æå¼é¾æ¥
+            });
+        //æ°çªå£æå¼ä¼åä¸­å¿ç»æ
+        
+        
+        
+        $("#header_logout").show();
+        
+      } else {
+    	  $('#header_login').attr("href","javascript:memberLogin();");
+        $('#mlg').attr("href","javascript:memberLogin();");
+          $("#header_login").text("ç»å½");
+          $("#header_joinccf").show();
+          $("#header_joinccf_m").show();
+          $("#header_logout").hide();
+      }
+    });
+  });
+  
+  function memberLogin(){
+    var curURL= window.location.href;
+    window.location.href = frontAppContext + 'sso/login?SiteID=' + siteID + '&Refer='+curURL;
+  }
+  
+  function memberLoginOut(){
+    window.location.href = frontAppContext + 'logout';
+  }
+  
+</script>
+
+<!--start é¡µå¤´-->
+<div class="header">
+  <div class="wp">
+    <div class="hdt">
+      <div class="tt"><a href="https://www.ccf.org.cn/" class="header_sy" style="display: block;float: right;margin-top: 22px;font-size: 14px;line-height: 27px;">  é¦é¡µ</a>
+        <a href="" id="mlg" class="user">ç»å½</a>
+        <div class="logo">
+          <a href="https://www.ccf.org.cn/">
+            <img src="/images/images/2023logo.png" alt="" class="img-hide" />
+            <img src="/images/images/clip_image001.png" alt="" class="hide img2 img-hide" />
+            <img src="/images/images/2023logo.png" alt="" class="img-show" />
+          </a>
+        </div>
+      </div>
+      <span class="menuBtn"></span>
+      
+			<div class="sobox">
+                <div class="so">
+                    <form id="LuceneSearchFrom" name="LuceneSearchFrom" method="post" action="https://www.ccf.org.cn/ccf/search/result">
+                        <input type="text" id="Query" name="Query" class="inp" placeholder="CNCC" />
+                        <input type="button" value="" onclick="queryLucene()" class="sub" />
+                        <input type="hidden" id="SiteID" name="SiteID" value="122">
+                        <input type="hidden" id="SearchType" name="SearchType" value="2">
+                        <input type="hidden" id="AllSite" name="AllSite">
+                        <input type="hidden" id="TitleOnly" name="TitleOnly" value="N">
+                        <!-- <input type="hidden" id="Sort" name="Sort" value="PUBLISHDATE"> -->
+                        <input type="hidden" id="usingSynonym" name="usingSynonym" value="Y">
+                        <input type="hidden" id="PageIndex" name="PageIndex">
+                    </form>
+                    <a href="https://web.ccf.org.cn/CCF/regTo.action?flag=0&amp;url=" class="hidden-sm hidden-xs" id="header_joinccf">å å¥CCF</a>
+                  	<a href="https://web.ccf.org.cn/CCF/reg_phone.html" class="hidden-md hidden-lg">å å¥CCF</a>
+                </div>
+                <div class="bot">
+                	
+					    <a href="javascript:toSearch('è®¡ç®æºåç©é¦');">è®¡ç®æºåç©é¦</a><a href="javascript:toSearch('NOI');">NOI</a><a href="javascript:toSearch('FCES');">FCES</a><a href="javascript:toSearch('CNCC');">CNCC</a>
+					
+                </div>
+            </div>
+<script>
+  function queryLucene(){
+    toSearch($V("Query"));
+  }
+  
+  function toSearch(query){
+	  if(query==null||query==""){
+	    query = "CNCC";
+	  }
+    $S("Query",query);
+	  $("#LuceneSearchFrom").submit();
+  }
+  
+  //ä¼åæ¶è
+   function addFavorites(id, favtype) {
+    Server.sendRequest('member/logined', {}, function(result) {
+      if (result.IsLogin) {
+        if (!id || !favtype) {
+          MsgPop(Lang.get("Verify.HasError"));
+          return;
+        }
+        Server.sendRequest('memberFavorites/add', {
+          ID : id,
+          FavType : favtype
+        }, function(data) {
+          $("#favorite").addClass("collection-ed");
+          $("#favorite2").addClass("collection-ed");   
+          $("#fav").text("å·²æ¶è");
+          $("#fav2").text("å·²æ¶è");
+          MsgPop(data.message);
+        });
+      } else {
+        // ç»å½
+        MsgPop(Lang.get("Member.MustLogin"));
+      }
+    });
+  }
+</script>            
+    </div>
+    <div class="nav hb">
+      <div class="bg"></div>
+      <ul>
+        
+          <li id="001401">
+            <a href="/Intro_CCF/2021-03-16/533517.shtml" class="v1">å³äºCCF</a>
+            <dl>
+              
+                
+                  <dd><a href="/Intro_CCF/2021-03-16/533517.shtml">CCFç®ä»</a></dd>
+                  <dd><a href="/Governance/Governance/Member_Congress/">ç»ç»æºæ</a></dd>
+                  <dd><a href="/About_CCF/CCF_Constitution/">è§ç« </a></dd>
+                  <dd><a href="https://www.ccf.org.cn/service/">æå¡é¡¹ç®</a></dd>
+                  <dd><a href="/About_CCF/Key_Milestone/">CCFå¤§äºè®°</a></dd>
+                  <dd><a href="/About_CCF/60anniv/">CCFåå»º60å¨å¹´</a></dd>
+                  <dd><a href="/About_CCF/Contact_Us/">èç³»æä»¬</a></dd>
+              
+            </dl>
+          </li>
+        
+        
+          <li id="001400">
+            <a href="/Media_list/" class="v1">æ°é»</a>
+            <dl>
+              
+                
+                  <dd><a href="/Media_list/">CCFæ°é»</a></dd>
+                  <dd><a href="/Focus/">CCFèç¦</a></dd>
+                  <dd><a href="/ACM_News/">ACMä¿¡æ¯</a></dd>
+              
+            </dl>
+          </li>
+        
+        
+ <li id="001402" class="">
+            <a href="javascript:;" class="v1">ä¼å</a>
+            <dl style="overflow: visible; display: none; height: 250px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">
+              <!--<dd><a href="${catalog.link}" href="${catalog(catalog.parentID).link}">é¦é¡µ</a></dd>-->
+              
+                
+                  <dd class="hy-dd"><a href="/Membership/Individual_member/">ä¸ªäººä¼å<span class="pull-right">&gt;</span></a>
+                    <ul class="hy-childul">
+                      <li class="hy-childli">
+                        
+                          
+                            <a href="/Membership/Individual_member/Why_Join/">å¥ä¼çç±</a>
+                            <a href="/Membership/Individual_member/How_to_Join/">å¦ä½å å¥</a>
+                             <!-- <a href="/Membership/Individual_member/Benefits/">ä¼åæç</a>  --->
+                                                         <a href="/Membership/Individual_member/Benefits/Benefits_profession/">ä¸ä¸ä¼åæç</a>
+                                                         <a href="/Membership/Individual_member/Benefits/Benefits_student/">å­¦çä¼åæç</a>
+                            <a href="/Membership/Individual_member/Fees/">ä¼è´¹æ ååäº¤è´¹æ¹å¼</a>
+                        
+                      </li>
+                    </ul>
+                  </dd>
+              
+                  <dd class="hy-dd"><a href="https://www.ccf.org.cn/Membership/Individual_member/Stories/">ä¼åæäº</a>
+                   
+                  </dd>
+                <dd class="hy-dd"><a href="https://www.ccf.org.cn/Membership/Individual_member/Honor/">ä¼åè£èª</a>
+                   
+                  </dd>
+                <dd class="hy-dd"><a href="https://www.ccf.org.cn/Membership/Individual_member/Rules/">ä¼åæ¡ä¾</a>
+                   
+                  </dd>
+                <dd class="hy-dd"><a href="https://www.ccf.org.cn/Membership/Individual_member/Join_Sister_Societies/Join_ACM/">å å¥åå¼å­¦ä¼</a>
+                   
+                  </dd>
+              <dd class="hy-dd"><a href="https://www.ccf.org.cn/FAQ/Membership/2019-12-01/674742.shtml">å­¦çä¼ååçº§</a>
+                   
+                  </dd>
+                  
+                  <dd class="hy-dd"><a href="/Membership/Contact_Us/">èç³»æä»¬</a>
+                    <ul class="hy-childul">
+                       <li class="hy-childli">
+                        
+                          </li> 
+                
+                    </ul>
+                  </dd>
+              
+            </dl>
+          </li>
+        
+        
+        
+        
+    <!------ä¼å(åæ ·å¼)   
+            <cms:catalog alias="hy">
+          <li id="${Catalog.InnerCode}">
+            <a href="${catalog.link}" class="v1">${catalog.name}</a>
+            <dl style="overflow: visible;">  -----> 
+              <!--<dd><a href="${catalog.link}" href="${catalog(catalog.parentID).link}">é¦é¡µ</a></dd>-->
+       <!------ä¼å(åæ ·å¼)         <cms:catalog level='child'>
+                <z:list>
+                  <dd class="hy-dd"><a href="${catalog.link}">${catalog.name}<z:if condition="${!IsLeaf}"><span class="pull-right">&gt;</span></z:if></a>
+                    <ul class="hy-childul">
+                      <li class="hy-childli">
+                        <cms:catalog level='child' begin='2' count='4'>
+                          <z:list>
+                            <a href="${catalog.link}">${catalog.name}</a>
+                          </z:list>
+                        </cms:catalog>
+                      </li>
+                    </ul>
+                  </dd>
+                </z:list>
+              </cms:catalog>
+            </dl>
+          </li>
+        </cms:catalog>
+        -----> 
+        
+        
+         <li id="001394">
+            <a href="/Activities/Activities/" class="v1">æ´»å¨</a>
+            <dl style="overflow: visible;">
+              
+                
+                  					
+                  <dd class="hy-dd"><a href="/Activities/Activities/">å¨é¨
+                     </a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/ConferenceS/">ä¼è®®
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="http://cncc.ccf.org.cn">CNCC</a>
+                            <a href="/Chapters/TC/">ä¸å§ä¼è®®</a>
+                            <a href="https://yef.ccf.org.cn/">YEF</a>
+                            <a href="https://ccf.org.cn/fces2025">FCES</a>
+                            <a href="/Activities/Training/InspiringNewIdeas/">å¯æºä¼</a>
+                            <a href="/Activities/ConferenceS/CTO_Club/">CTO&#32;Club</a>
+                            <a href="/Activities/ConferenceS/uic/gyuic/">CCF&#32;UIC</a>
+                            <a href="https://www.ccf.org.cn/CCF_BC/News/2023-04-22/767423.shtml">CCF&#32;CIMC</a>
+                            <a href="https://ccf.org.cn/ccde2026">CCDE</a>
+                            <a href="https://bls.ccf.org.cn/">ç§æ¹ä¼è®®</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/Training/">å¹è®­
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="/Activities/Training/ADL/">ADL</a>
+                            <a href="/Activities/Training/TF/">TF</a>
+                            <a href="/Activities/Training/CCF_AT_U/">CCF@Uï¼èµ°è¿é«æ ¡ï¼</a>
+                            <a href="https://ccf.org.cn/CCD2024">CCD</a>
+                            <a href="/DRAGON_STAR_PROGRAM/">é¾æè®¡å</a>
+                            <a href="/Chapters/Student_Chapters/ccfxszx/">SPP</a>
+                            <a href="https://www.ccf.org.cn/TCIP/">TCIP</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/Contests/">ç«èµ
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="https://www.noi.cn/">NOI</a>
+                            <a href="/ccsp/">CCSP</a>
+                            <a href="https://ccf.org.cn/tecagi2025">CCF&#32;TEC</a>
+                            <a href="https://cacc.ccf.org.cn/">CCFç®æ³è½åå¤§èµ</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/Certification/">è®¤è¯
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="https://csp.ccf.org.cn/">CSP</a>
+                            <a href="https://pta.ccf.org.cn/">PTA</a>
+                            <a href="http://gesp.ccf.org.cn">GESP</a>
+                            <a href="https://lmcc.ccf.org.cn/">LMCC</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/Forum/">è®ºå
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="/YOCSEF/">YOCSEF</a>
+                            <a href="http://tc.ccf.org.cn/cde50f/">ä¸­å½æ°å­ç»æµ50äººè®ºå</a>
+                            <a href="/CDF/">ä¼æºä¼</a>
+                            <a href="/Activities/Forum/wcet/index/">WCET</a>
+                            <a href="/CCFFoLM/">å¤§æ¨¡åè®ºå</a>
+                            <a href="/CCFSEIF/">ç§å­¦æè²åæ°è®ºå</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/Social_Responsibility/">å¬ç
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="/Activities/Social_Responsibility/Lv_Liang_Poverty_Alleviation_Program/">åæ¢æ¯å´</a>
+                            <a href="/Activities/Social_Responsibility/jsgyalj/">ææ¯å¬çæ¡ä¾é</a>
+                            <a href="https://ccf.org.cn/NOIPre2024">NOI-Pre</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/kpnew/">ç§æ®
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="https://www.ccf.org.cn/About_CCF/Governance/Working_Committees/Science_Popularization/gzdt/">ç§æ®å·¥å§</a>
+                            <a href="https://ccfbc.ccf.org.cn/CCF_BC/popular_science/order/">ç§æ®ç å­¦</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/pjyzx/">è¯ä»·ä¸å¨è¯¢
+                      <span class="pull-right" >&gt;</span></a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                            <a href="https://www.ccf.org.cn/STAEC/index/">ç§æææè¯ä»·</a>
+                            <a href="https://www.ccf.org.cn/STCC/index/">ç§æå¨è¯¢</a>
+                            <a href="https://www.ccf.org.cn/About_CCF/Governance/RC/">æ¨èå§åä¼</a>
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  <dd class="hy-dd"><a href="/Activities/Recommended_Activities/">ä¼åæ¨èä¼è®®
+                     </a>          
+                       <ul class="hy-childul">
+                        <li class="hy-childli">
+                         
+                          
+                        
+                          </li>
+                          </ul>
+                  </dd>
+                                   
+                  				    
+                  					
+                  				    
+                                      <dd class="hy-dd"><a href="https://www.ccf.org.cn/ccf/eventcalendar/ch?SiteID=122">æ´»å¨æ¥å</a>
+                      
+                  </dd>
+                                      
+                                      
+                                      
+                                    
+              
+            </dl>
+          </li>
+        
+        
+        
+         <!------æ´»å¨(åæ ·å¼)
+        <cms:catalog alias="hd">
+          <li id="${Catalog.InnerCode}">
+            <a href="${catalog.link}" class="v1">${catalog.name}</a>
+            <dl>
+              <cms:catalog level='child'>
+                <z:list>
+                  <dd><a href="${Catalog.Link}">${Catalog.Name}</a></dd>
+                </z:list>
+              </cms:catalog>
+            </dl>
+          </li>
+        </cms:catalog>
+        -----> 
+        
+        
+        
+          <li id="001403">
+            <a href="/cbw/" class="v1">åºçç©</a>
+            <dl>
+              
+                
+                  <dd><a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=cccf&amp;pageNum_p=1">CCCF</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=journal&amp;pageNum_p=1">ä¼å</a></dd>
+                  <dd><a href="https://pro.jd.com/mall/active/2uUoVpXaVYecYSdvCd4z1s1KhPmb/index.html">å¾ä¹¦</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=nj">å¹´é´</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=fzbg">å¹´åº¦åå±æ¥å</a></dd>
+              
+            </dl>
+          </li>
+        
+        
+          <li id="001404">
+            <a href="/ccfdl/" onclick="openUrl('https://dl.ccf.org.cn');" class="v1">æ°å­å¾ä¹¦é¦</a>
+            <dl>
+              
+                
+                  <dd><a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=cccf&amp;pageNum_p=1">CCCF</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=journal&amp;pageNum_p=1">æå</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/albumList/albumSecondary.html?selectType=hy&amp;pageNum_p=1">ä¼è®®</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/ppt/pptIndex.html?pageNum_p=1">è®²ç¨¿</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/video/videoIndex.html?pageNum_p=1">è§é¢</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/albumList/albumSecondary.html?selectType=hy&amp;pageNum_p=1">ä¸è¾</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/atlas/altasIndex.html?pageNum_p=1">å¾é</a></dd>
+                  <dd><a href="/ccfdl/ccfdlcommittee/">æ°å¾ç¼å®¡å§åä¼</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/sharenews/ccfdluserupload/">ä¸ä¼ /åå¸ä½å</a></dd>
+                  <dd><a href="/ccfdl/ccf_dl_focus/">CCF&#32;DL&#32;Focus</a></dd>
+                  <dd><a href="http://www.ccfdl.cn/course/courseList.html?pageNum_p=1">è®¢éãè®¡ç®ã</a></dd>
+              
+            </dl>
+          </li>
+        
+        
+          <li id="001393">
+            <a href="javascript:void(0);" class="v1">åæ¯æºæ</a>
+            <dl class="fzdl">
+              
+                
+                  <dd><a href="/Chapters/TC/">ä¸ä¸å§åä¼/ä¸ä¸ç»</a></dd>
+                  <dd><a href="/Chapters/CCF_Chapters/CCF_CA/">è®¡ç®+è¡ä¸åä¼</a></dd>
+                  <dd><a href="/Chapters/DC/zyjyfzwyh/">ææ¯å§åä¼</a></dd>
+                  <dd><a href="/About_CCF/Governance/Working_Committees/Introduction/">å·¥ä½å§åä¼</a></dd>
+              
+            </dl>
+          </li>
+                      
+        
+      
+         <li>
+            <a href="javascript:;" class="v1">ä»£è¡¨æºæ</a>
+            <dl class="fzdl">
+              
+                  <dd><a href="/Chapters/Chapters/">ä¼åæ´»å¨ä¸­å¿</a></dd>
+                  <dd><a href="/Chapters/Student_Chapters/">å­¦çåä¼</a></dd>
+              
+            </dl>
+          </li>
+        
+         
+          <li id="001508">
+            <a href="/ccf_office/" class="v1">åäºæºæ</a>
+            <dl>
+              
+                
+                  <dd><a href="https://www.ccf.org.cn/About_CCF/Governance/Secretariat/nwb/2016-11-19/533537.shtml">CCFåäº¬æ¬é¨</a></dd>
+                  <dd><a href="https://ccfbc.ccf.org.cn/">CCF&#32;BC</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/ccfdb/">CCFä¸ååäºå¤</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/ccfxb/">CCFè¥¿ååäºå¤</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/ccfdwqbsc/">CCFå¤§æ¹¾åºåäºå¤</a></dd>
+              
+            </dl>
+          </li>
+        
+          
+<li id="001530">
+    <a href="/rewardsandincentives/" class="v1">å¥å±æ¿å±</a>
+    <dl style="overflow: visible;">
+        
+            
+                
+                
+                  <dd class="hy-dd">
+                     <a href="https://www.ccf.org.cn/Awards/">
+                            ç§å­¦ææ¯å¥
+                           
+                                <span class="pull-right" >></span>
+                            
+                        </a>
+                        <ul class="hy-childul">
+                            <li class="hy-childli">
+                                
+                                    
+                                        <a href="/Awards/Awards/">å¥å±å¨æ</a>
+                                        <a href="/Awardsnew/jlml/">å¥å±ç®å½</a>
+                                        <a href="/Awardsnew/lnhjmd/2025/qb/">åå¹´è·å¥åå</a>
+                                        <a href="/Awards/recommendations/">å¥é¡¹æ¨è</a>
+                                        <a href="/Awards/Policy/">è¯å¥æ¡ä¾</a>
+                                        <a href="/Awardsnew/pjjg/jlwyh/">è¯å¥æºæ</a>
+                                        <a href="/Awards/Sponsors/">åä½åä½</a>
+                                        <a href="/Awards/Contact_Us/">èç³»æä»¬</a>
+                                
+                            </li>
+                        </ul>
+                      </dd>
+                
+                
+                    <dd class="hy-dd">
+                        <a href="javascript:void(0)">
+                            æ¿å±é¡¹ç®
+                            
+                                <span class="pull-right" >></span>
+                            
+                        </a>
+                        <ul class="hy-childul">
+                            <li class="hy-childli">
+                                
+                                    
+                                        <a href="/rewardsandincentives/incentiveproject/bsxwlwjljh/">åå£«å­¦ä½è®ºææ¿å±è®¡å</a>
+                                        <a href="/rewardsandincentives/incentiveproject/yxdxsqhjh/">å¤§å­¦çå¯èªè®¡å</a>
+                                
+                            </li>
+                        </ul>
+                    </dd>
+                
+                
+                
+                    <dd class="hy-dd">
+                        <a href="javascript:void(0)">
+                            åé¨è¡¨å½°
+                            
+                                <span class="pull-right" >></span>
+                            
+                        </a>
+                        <ul class="hy-childul">
+                            <li class="hy-childli">
+                                
+                                    
+                                        <a href="/rewardsandincentives/internalaward/ccfndzyzgxl/">CCFå¹´åº¦å¿æ¿èï¼è´¡ç®ç±»ï¼</a>
+                                        <a href="/rewardsandincentives/internalaward/ccfndzyzfwl/">CCFå¹´åº¦å¿æ¿èï¼æå¡ç±»ï¼</a>
+                                
+                            </li>
+                        </ul>
+                    </dd>
+                
+                
+        
+    </dl>
+</li>
+        
+        
+        <!---- æ§çå¥å±ç®å½
+        <cms:catalog alias="ccfawards">
+          <li id="${Catalog.InnerCode}">
+            <a href="${catalog.link}" class="v1">${catalog.name}</a>
+            <dl>
+              <cms:catalog level='child' count='7'>
+                <z:list>
+                  <dd><a href="${catalog.link}">${catalog.name}</a></dd>
+                </z:list>
+              </cms:catalog>
+            </dl>
+          </li>
+        </cms:catalog>
+--->
+        <li>
+            <a href="javascript:;" class="v1">åç©é¦</a>
+            <dl class="fzdl">
+              
+                  <dd><a href="http://ccfcm.org.cn/">è®¡ç®æºåç©é¦</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/Computing_history/">è®¡ç®æºåå²</a></dd>
+              
+            </dl>
+          </li>
+        
+              <!------è®¡ç®æºåå²åå²æ¾ç½®äºçº§
+        <cms:catalog alias="history">
+          <li id="${Catalog.InnerCode}">
+            <a href="${catalog.link}" class="v1">${Catalog.Name}</a>
+            <dl>
+              <cms:catalog level='child'>
+                <z:list>
+                  <dd><a href="${Catalog.Link}">${Catalog.Name}</a></dd>
+                </z:list>
+              </cms:catalog>
+            </dl>
+          </li>
+        </cms:catalog>
+                --->
+        
+          <li id="001395">
+            <a href="javascript:void(0);" class="v1">åä½</a>
+            <dl>
+              
+                
+                  <dd><a href="/Membership/Group_Member/">åä½ä¼ä¼´</a></dd>
+                  <dd><a href="/Collaboration/CAST/CAST_Home/">CASTéæå·¥ç¨</a></dd>
+                  <dd><a href="/Collaboration/Enterprise_Fund/">äº§å­¦åä½åºé</a></dd>
+              
+            </dl>
+          </li>
+        
+        
+          <li id="001355" style="float: right;font-size: 20px;font-family: 'æ¥·ä½','æ¥·ä½_GB2312';">
+            <a href="/Party_Committee/" style="padding-left: 7px;padding-right: 7px" class="v1">åå»º</a>
+            <dl>
+              
+                
+                  <dd><a href="/Party_Committee/">åå»ºé¦é¡µ</a></dd>
+                  <dd><a href="/Party_Committee/News/">åå»ºå¨æ</a></dd>
+                  <dd><a href="/Party_Committee/Organization/Party_Committee/">åå§ç»ç»æºæ</a></dd>
+              
+            </dl>
+          </li>
+        
+        <!--<cms:catalog alias="lshhj">
+<li id="${Catalog.InnerCode}">
+<a href="${catalog.link}" class="v1">${catalog.name}</a>
+</li>
+</cms:catalog>-->
+      </ul>
+      <ul class="nav-m">
+        <li>
+          <a href="" class="v1"><em style="display:none">IEEE Sites</em><span>å¸¸ç¨å¯¼èª</span><i>+</i></a>
+          <dl>
+            <!-- English -->
+            
+              <dd><a href="/en/">English</a></dd>
+            
+            <!-- ç«ç¹å°å¾ -->
+            
+              <dd><a href="/Map/">ç«ç¹å°å¾</a></dd>
+            
+            <!-- èç³»æä»¬ -->
+            
+              <dd><a href="/About_CCF/Governance/Secretariat/">èç³»æä»¬</a></dd>
+            
+            <!-- å¸¸è§é®é¢ -->
+            
+              <dd><a href="/FAQ/Membership/">å¸¸è§é®é¢</a></dd>
+            
+            <!-- CCFæè -->
+            
+              <dd><a href="/Career_Center/Join_Us/">CCFæè</a></dd>
+            
+          </dl>
+        </li>
+        <li>
+          
+            <a href="/Intro_CCF/2021-03-16/533517.shtml" class="v1"><em style="display:none">About</em><span>å³äºCCF</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Intro_CCF/2021-03-16/533517.shtml">CCFç®ä»</a></dd>
+                  <dd><a href="/Governance/Governance/Member_Congress/">ç»ç»æºæ</a></dd>
+                  <dd><a href="/About_CCF/CCF_Constitution/">è§ç« </a></dd>
+                  <dd><a href="https://www.ccf.org.cn/service/">æå¡é¡¹ç®</a></dd>
+                  <dd><a href="/About_CCF/Key_Milestone/">CCFå¤§äºè®°</a></dd>
+                  <dd><a href="/About_CCF/60anniv/">CCFåå»º60å¨å¹´</a></dd>
+                  <dd><a href="/About_CCF/Contact_Us/">èç³»æä»¬</a></dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="/Media_list/" class="v1"><em style="display:none">Membership</em><span>æ°é»</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Media_list/">CCFæ°é»</a></dd>
+                  <dd><a href="/Focus/">CCFèç¦</a></dd>
+                  <dd><a href="/ACM_News/">ACMä¿¡æ¯</a></dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="javascript:void(0);" class="v1"><em style="display:none">Communities</em><span>ä¼å</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Membership/Individual_member/">ä¸ªäººä¼å</a>
+                    <div class="hy-xsdiv">
+                      
+                        
+                          <a href="/Membership/Individual_member/Why_Join/">å¥ä¼çç±</a>
+                          <a href="/Membership/Individual_member/How_to_Join/">å¦ä½å å¥</a>
+                          <a href="/Membership/Individual_member/Benefits/">ä¼åæç</a>
+                          <a href="/Membership/Individual_member/Fees/">ä¼è´¹æ ååäº¤è´¹æ¹å¼</a>
+                      
+                    </div>
+                  </dd>
+                  <dd><a href="/Membership/dwhy/">åä½ä¼å</a>
+                    <div class="hy-xsdiv">
+                      
+                        
+                      
+                    </div>
+                  </dd>
+                  <dd><a href="/Membership/Contact_Us/">èç³»æä»¬</a>
+                    <div class="hy-xsdiv">
+                      
+                        
+                      
+                    </div>
+                  </dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="/Activities/Activities/" class="v1"><em style="display:none">Standards</em><span>æ´»å¨</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Activities/Activities/">å¨é¨</a></dd>
+                  <dd><a href="/Activities/ConferenceS/">ä¼è®®</a></dd>
+                  <dd><a href="/Activities/Training/">å¹è®­</a></dd>
+                  <dd><a href="/Activities/Contests/">ç«èµ</a></dd>
+                  <dd><a href="/Activities/Certification/">è®¤è¯</a></dd>
+                  <dd><a href="/Activities/Forum/">è®ºå</a></dd>
+                  <dd><a href="/Activities/Social_Responsibility/">å¬ç</a></dd>
+                  <dd><a href="/Activities/kpnew/">ç§æ®</a></dd>
+                  <dd><a href="/Activities/pjyzx/">è¯ä»·ä¸å¨è¯¢</a></dd>
+                  <dd><a href="/Activities/Recommended_Activities/">ä¼åæ¨èä¼è®®</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/ccf/eventcalendar/ch?SiteID=122">æ´»å¨æ¥å</a></dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="/cbw/"
+            class="v1"><em style="display:none">Publications</em><span>åºçç©</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="https://dl.ccf.org.cn/wechat/institude/wxInstitudeIndex?_ack=3">CCCF</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/journal/journalIndex?_ack=1">ä¼å</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/books/booksList.html?_ack=1">å¾ä¹¦</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/books/booksList.html?_ack=1">å¹´é´</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/books/booksList.html?_ack=1">å¹´åº¦åå±æ¥å</a></dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="/ccfdl/"
+            class="v1"><em style="display:none">Publications</em><span>æ°å­å¾ä¹¦é¦</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="https://dl.ccf.org.cn/wechat/institude/wxInstitudeIndex?_ack=1">CCCF</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/journal/journalIndex?_ack=1">æå</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/meeting/meetingIndex.html?_ack=1">ä¼è®®</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/lecture/lectureIndex?_ack=1">è®²ç¨¿</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/audioVideo/audioVideoList.html?_ack=1">è§é¢</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/topic/index?_ack=1">ä¸è¾</a></dd>
+                  <dd><a href="https://dl.ccf.org.cn/wechat/atlas/atlas.html?_ack=1">å¾é</a></dd>
+                  <dd><a href="">æ°å¾ç¼å®¡å§åä¼</a></dd>
+                  <dd><a href="">ä¸ä¼ /åå¸ä½å</a></dd>
+                  <dd><a href="">CCF&#32;DL&#32;Focus</a></dd>
+                  <dd><a href="">è®¢éãè®¡ç®ã</a></dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="javascript:void(0);" class="v1"><em style="display:none">Branch</em><span>åæ¯æºæ</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Chapters/TC/">ä¸ä¸å§åä¼/ä¸ä¸ç»</a></dd>
+                  <dd><a href="/Chapters/CCF_Chapters/CCF_CA/">è®¡ç®+è¡ä¸åä¼</a></dd>
+                  <dd><a href="/Chapters/DC/zyjyfzwyh/">ææ¯å§åä¼</a></dd>
+                  <dd><a href="/About_CCF/Governance/Working_Committees/Introduction/">å·¥ä½å§åä¼</a></dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="javascript:;" class="v1"><em style="display:none">Branch</em><span>ä»£è¡¨æºæ</span><i>+</i></a>
+            <dl style="display: none;">
+                 <dd><a href="/Chapters/Chapters/">ä¼åæ´»å¨ä¸­å¿</a></dd>
+                  <dd><a href="/Chapters/Student_Chapters/">å­¦çåä¼</a></dd>
+            </dl>
+          
+        </li>
+          
+          <li id="001508">
+            <a href="/ccf_office/" class="v1"><em style="display:none">åäºæºæ</em><span>åäºæºæ</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="https://www.ccf.org.cn/About_CCF/Governance/Secretariat/nwb/2016-11-19/533537.shtml">CCFåäº¬æ¬é¨</a></dd>
+                  <dd><a href="https://ccfbc.ccf.org.cn/">CCF&#32;BC</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/ccfdb/">CCFä¸ååäºå¤</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/ccfxb/">CCFè¥¿ååäºå¤</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/ccfdwqbsc/">CCFå¤§æ¹¾åºåäºå¤</a></dd>
+              
+            </dl>
+          </li>
+        
+
+        
+        
+        <li>
+          
+            <a href="/Awards/" class="v1"><em style="display:none">Reward</em><span>å¥å±</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Awards/Awards/">å¥å±å¨æ</a></dd>
+                  <dd><a href="/Awardsnew/jlml/">å¥å±ç®å½</a></dd>
+                  <dd><a href="/Awardsnew/lnhjmd/2025/qb/">åå¹´è·å¥åå</a></dd>
+                  <dd><a href="/Awards/recommendations/">å¥é¡¹æ¨è</a></dd>
+                  <dd><a href="/Awards/Policy/">è¯å¥æ¡ä¾</a></dd>
+                  <dd><a href="/Awardsnew/pjjg/jlwyh/">è¯å¥æºæ</a></dd>
+                  <dd><a href="/Awards/Sponsors/">åä½åä½</a></dd>
+              
+            </dl>
+          
+        </li>
+       
+         <li>
+            <a href="javascript:;" class="v1"><em style="display:none">åç©é¦</em><span>åç©é¦</span><i>+</i></a>
+            <dl class="fzdl">
+              
+                  <dd><a href="http://ccfcm.org.cn/">è®¡ç®æºåç©é¦</a></dd>
+                  <dd><a href="https://www.ccf.org.cn/Computing_history/">è®¡ç®æºåå²</a></dd>
+              
+            </dl>
+          </li>
+        
+        
+        
+        <!--
+        <li>
+          <cms:catalog alias="history">
+            <a href="${catalog.link}" class="v1"><em style="display:none">Computer
+              History</em><span>${catalog.name}</span><i>+</i></a>
+            <dl>
+              <cms:catalog level='child'>
+                <z:list>
+                  <dd><a href="${catalog.link}">${catalog.name}</a></dd>
+                </z:list>
+              </cms:catalog>
+            </dl>
+          </cms:catalog>
+        </li>
+        -->
+        
+        
+        
+        
+        
+        <li>
+          
+            <a href="javascript:void(0);" class="v1"><em style="display:none">Cooperation</em><span>åä½</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Membership/Group_Member/">åä½ä¼ä¼´</a></dd>
+                  <dd><a href="/Collaboration/CAST/CAST_Home/">CASTéæå·¥ç¨</a></dd>
+                  <dd><a href="/Collaboration/Enterprise_Fund/">äº§å­¦åä½åºé</a></dd>
+              
+            </dl>
+          
+        </li>
+        <li>
+          
+            <a href="/Party_Committee/" class="v1"><em style="display:none">Cooperation</em><span>åå»º</span><i>+</i></a>
+            <dl>
+              
+                
+                  <dd><a href="/Party_Committee/">åå»ºé¦é¡µ</a></dd>
+                  <dd><a href="/Party_Committee/News/">åå»ºå¨æ</a></dd>
+                  <dd><a href="/Party_Committee/Organization/Party_Committee/">åå§ç»ç»æºæ</a></dd>
+              
+            </dl>
+          
+        </li>
+      </ul>
+      <div class="sobox">
+        <div class="so">
+          <form action="">
+            <input type="text" class="inp" placeholder="CNCC2019" />
+            <input type="submit" value="" class="sub" />
+          </form>
+          <a href="https://web.ccf.org.cn/CCF/regTo.action?flag=0&amp;url=" class="hidden-sm hidden-xs" id="header_joinccf_m">å å¥CCF</a>
+          <a href="https://web.ccf.org.cn/CCF/reg_phone.html" class="hidden-md hidden-lg">å å¥CCF</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function openUrl(url){
+    window.location.href = url; 
+  }
+</script>
+<!--endé¡µå¤´-->
+    <!-- ä¸»åå®¹ -->
+    <div class="main m-b-md">
+      <!-- <div class="title-main clear">
+<div class="container">
+æ ç®åç§°
+<h3 class="pull-left">${Catalog.Name}</h3>
+</div>
+</div> -->
+      <div class="container">
+        <div class="cur">
+          
+          
+            æ¨çä½ç½®ï¼<a href='/'>é¦é¡µ</a> > <a href='/service/'>é¡¹ç®ä¸æå¡</a> > <a href='/service/pj/'>è¯ä»·</a>
+          
+        </div>
+        <div class="focusList row">
+          <div class="col-md-8">
+            <div class="borderAll">
+              <!-- æ é¢ -->
+              <h2 class="text-left detailTit p-l-md p-r-md">CCFæ¨èå½éå­¦æ¯ä¼è®®åæåç®å½ </h2>
+              <h4 class="text-left detailTit p-l-md p-r-md"></h4>
+              <div class="detailFun p-b-sm clearfix">
+                <!-- éè¯»é -->
+                <div class="col-md-4 col-sm-4 col-xs-4">éè¯»éï¼<span id="hitcount814278">16</span><script src="https://www.ccf.org.cn/ccf/counter?Type=Article&ID=814278&DomID=hitcount814278"></script></div>
+                <!-- ä½è -->
+                <div class="col-md-4 text-center col-sm-4 col-xs-4">2024-03-14</div>
+                <!-- æ¶èåè½ -->
+                <div class="col-md-4 text-right col-sm-4 col-xs-4">
+                  
+                    
+                    
+                      <span id="favorite" class="collection">
+                        <a href="javascript:void(0)" id="fav" onclick="addFavorites('814278','Content')">æ¶èæ¬æ</a>
+                      </span>
+                                               
+                    
+                </div>
+              </div>
+              <div class="p-l-md p-r-md b-t-gray">                       	
+                <div class="p-t-sm p-b-md">
+                  <!-- åå®¹ -->
+                  <div class="articleCon"><p>CCFæ¨èå½éå­¦æ¯æåä¼è®®åè¡¨ï¼åæ¬åä¸ªé¢åçéè¦å½éå­¦æ¯ä¼è®®åæåï¼å·²è¢«ä¼å¤ é«æ ¡å</p><p>ç§ç æéç¨ãCCFæ¨èå½éå­¦æ¯æåä¼è®®åè¡¨ï¼åæ¬åä¸ªé¢åçéè¦å½éå­¦æ¯ä¼è®®åæåï¼å·²</p><p>è¢«ä¼å¤ é«æ ¡åç§ç æéç¨ã</p><p><br/></p></div>
+                  
+                  <div class="row m-t-md pageEnd">
+                    <div class="col-md-6">
+                      <span class="detailNum"></span>
+                      <span class="detailNum"></span>
+                    </div>      
+                    <div class="col-md-6 text-right p-t-sm">
+                      
+                        
+                        
+                          <span id="favorite2" class="collection">
+                            <a href="javascript:void(0)" id="fav2" onclick="addFavorites('814278','Content')">æ¶èæ¬æ</a>
+                          </span>
+                                                   
+                        
+                    </div>
+                  </div>
+                </div>
+                <div class="contentPage clearfix p-t-md p-b-md"> 
+                  <!--ä¸ä¸ç¯  -->  
+                   
+                  
+                    <div class="col-md-6"><span><<< ä¸ä¸ç¯
+                      </span>&nbsp;                            	                            	
+                      æ 
+                    </div>
+                    
+                  
+                  <!--ä¸ä¸ç¯  -->                           	
+                  
+                  
+                    <div class="col-md-6 text-right hidden-xs">æ &nbsp;<span>ä¸ä¸ç¯  >>></span></div>
+                    <div class="col-md-6 col-xs-12 visible-xs m-t-sm" style="padding:0;"><span><<< ä¸ä¸ç¯</span>&nbsp;æ </div>                                                               
+                  
+                </div>
+              </div>
+            </div>
+            <!-- ç¸å³éè¯»  -->
+               
+               
+            
+            
+             
+              <div class="borderAll m-t-md p-l-md p-r-md p-b-md">
+                <script type="text/javascript">
+window.variablesForComment={"IsNeedLogin":false,"ContentID":814278,"CatalogID":28338,"ContentType":"Article","CommentTotal":"0","PersonTotal":"0","Prefix":"/"};</script>
+
+
+<div class="mood m-xs p-xs">
+	<div class="m-sm">
+		<div class="font14">è¯»å®è¿ç¯æç« åï¼æ¨å¿æå¦ä½ï¼</div>
+		<div class="moods row m-t-sm "></div>
+		<div class="mood_template hidden">
+			<div class="col-md-{Size} col-sm-{Size} col-xs-{Size} m-t-sm text-center">
+				<a href="#;" onClick="Member.addFaceVote('{faceId}');"><img src="{srcurl}" width="24" height="24"/><br/>{VoteMood}({VoteResult})</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="comment m-xs p-xs">
+ <div>
+  <div class="m-sm">
+   <div class="row">
+    <div class="col-md-6">
+     <span class="member-span-logined hide"> <span style="color: #555">æ¬¢è¿ <a class="member-username bold"></a>
+     </span> è¯è®º
+     </span> <span class="member-span-login hide"> <a href="https://web.ccf.org.cn/CCF/regTo.action?flag=0&url=">æ³¨å</a> &nbsp;|&nbsp;<a href="javascript:void();" onclick="memberLogin()">ç»å½</a>
+     </span>
+    </div>
+    <div class="col-md-6" align="right">
+     <a class="comment-listlink" target="_blank">[<span class="comment-persontotal darkred"> 0 </span>]äººåä¸ (<span class="darkred">ç¹å»æ¥ç</span>)
+     </a>
+    </div>
+   </div>
+   <div class="m-t-sm">
+    <textarea class="form-control comment-content" rows="5" autocomplete="off" placeholder="ææä¸ç½ï¼ç»å½è¯è®º"></textarea>
+    <div class="m-sm">
+     <div style="display: inline">
+      <input type="button" onclick="Member.addComment(this);" value="åè¡¨è¯è®º"
+       class="comment-submit btn btn-primary input-sm" />
+     </div>
+     <p class="m-l-md" style="display: inline">
+      <label> <input type="checkbox" class="comment-anonymous" value="true" /> <span>å¿åè¯è®º</span>
+      </label> <span class="pull-right hidden-xs">ææè¯è®ºä»ä»£è¡¨ç½åæè§</span>
+     </p>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+              </div>
+            
+          </div>
+          <div class="col-md-4">
+            
+              
+                                                                   
+          </div>
+          <!--æ¨èåå®¹  -->
+          
+				<div class="col-md-4">
+    				<div class="title-com clear">
+			        	<h3 class="pull-left">æ¨èåå®¹</h3>
+			        	 
+			            <a class="pull-right" href="/Focus/">More  >>></a>
+			            
+			        </div>
+			        <div class="recommendCon">
+			         <!--æ¨èåå®¹ -->
+			        	<ul class="list-unstyled m-t-md b-b">     	
+			             
+                                  
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-31/870863.shtml">&middot;&nbsp;ç®æ³æ¹åæªæ¥ï¼ç¬¬äºå±CCFç®æ³å¤§ä¼æ¥åä¸­</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-31/870156.shtml">&middot;&nbsp;ç¬¬åå±ä¸­å½æ°å­ç»æµäº§ä¸åå±å¤§ä¼å¨CCFä¸å¡æ»</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-26/866328.shtml">&middot;&nbsp;ä½ çCCFå­¦çä¼åï¼ççç©å°½å¶ç¨äºåï¼</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-26/866397.shtml">&middot;&nbsp;ãå¾ç¨¿éç¥ãç¬¬29å±å¨å½è®¡ç®æºè¾å©è®¾è®¡ä¸å¾å½¢</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-25/865918.shtml">&middot;&nbsp;ä¸­å½è®¡ç®æºå­¦ä¼å³äº&#32;NeurIPS&#32;ç¦æ­¢é¨åæºæå</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-25/866270.shtml">&middot;&nbsp;ä¸åªæ¯OpenClawå®æ&#32;|&#32;ADL167ãæºè½ä½ãå¼ç­</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-24/865376.shtml">&middot;&nbsp;CCDE2026å¤§ä¼è®®ç¨æ­£å¼å¬å¸ï¼èç¦æ°å­ç»æµåæ²¿</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-24/865273.shtml">&middot;&nbsp;CCDE2026å¤§ä¼è®ºåï¼èç¦âAI+åºæ¯âï¼å¯¹è¯æ</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-24/865006.shtml">&middot;&nbsp;CCCF&#32;2026å¹´3æååå¸âââå¤§æ¨¡åæ¶ä»£çç§å­¦</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-20/861614.shtml">&middot;&nbsp;AIåçé©±å¨ï¼è¶çº§ä¸ªä½å´èµ·ï¼éå¡ä¼ä¸ç»ç»æ°æ¶</a>
+			        		</li>      
+                            <li class="m-b-sm">
+				        		<!-- <span class="pull-right">${format(Article.PublishDate, 'yyyy-MM-dd')}</span> -->
+				        		<a href="/Focus/2026-03-20/863384.shtml">&middot;&nbsp;âæ®éé«ç­å­¦æ ¡äººå·¥æºè½éè¯âç³»åææç¬¬äºè½®</a>
+			        		</li>                     
+                              			        		        	
+			        	</ul>
+			        </div>
+			      <div class="advImg m-t-md text-center">
+			        	 <span id='apjs_326'></span><script language='javascript' src='/upload/xwdt/xwlb/js/ggbw1/326.js'></script>
+			        </div>
+			        <div class="advImg m-t-md text-center">
+			        	<span id='apjs_325'></span><script language='javascript' src='/upload/xwdt/xwlb/js/ggbw2/325.js'></script>
+			        </div>
+			        <div class="advImg m-t-md text-center m-b-lg">
+			        	<span id='apjs_327'></span><script language='javascript' src='/upload/xwdt/xwlb/js/ggbw3/327.js'></script>
+			        </div> 			      		       			       
+    			</div>  
+        </div>
+      </div>
+    </div>
+    <!-- åºé¨ -->
+    
+
+<!--start é¡µè-->
+<div class="footer">
+    <div class="fd-top">
+        <div class="container">
+            <div class="fd-nav">
+                <dl>
+                  <dt><span>æ´»å¨<i class="ft-m">+</i></span></dt>
+                    <dd>
+                        
+                            <a href="https://www.ccf.org.cn/Activities/ConferenceS/">ä¼è®®</a>
+                        
+                        
+                          <a href="https://www.ccf.org.cn/Activities/Contests/">ç«èµ</a>
+                        
+                        
+                          <a href="https://www.ccf.org.cn/Activities/Certification/">è®¤è¯</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Activities/Training/">å¹è®­</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/YOCSEF/">YOCSEF</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Activities/Training/TF/">TF</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Activities/Social_Responsibility/Lv_Liang_Poverty_Alleviation_Program/">åæ¢æ¶è´«</a>
+                        
+                    						  
+                            <a href="https://www.ccf.org.cn/CDF/">ä¼æºä¼</a>
+                        
+                        <!--<cms:catalog alias='hd' level="Child">
+                          <z:list>
+                          <a href="${Catalog.Link}">${Catalog.Name}</a>
+                          </z:list>
+                        </cms:catalog>-->
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><span>ä¼å<i class="ft-m">+</i></span></dt>
+                    <dd>
+                        
+                            <a href="https://www.ccf.org.cn/Membership/Individual_member/Individual_member/">ä¼åç®ä»</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Membership/Individual_member/Benefits/">ä¼åæç</a>
+                        
+                        <a href="https://web.ccf.org.cn/CCF/regTo.action?flag=0&amp;url=">å å¥CCF</a>
+                        
+                            <a href="http://web.ccf.org.cn/CCF/frame.action?menuShowFlag=B00021">ä¼åäº¤è´¹</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Membership/Group_Member/">åä½ä¼å</a>
+                        
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><span>æ°å­å¾ä¹¦é¦<i class="ft-m">+</i></span></dt>
+                    <dd>
+                        
+                            
+                                
+                                    <a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=cccf&amp;pageNum_p=1">CCCF</a>
+                                
+                                
+                                    <a href="https://dl.ccf.org.cn/article/articleIndex.html?typeClassVal=journal&amp;pageNum_p=1">æå</a>
+                                
+                                
+                                    <a href="https://dl.ccf.org.cn/albumList/albumSecondary.html?selectType=hy&amp;pageNum_p=1">ä¼è®®</a>
+                                
+                                
+                                    <a href="https://dl.ccf.org.cn/ppt/pptIndex.html?pageNum_p=1">è®²ç¨¿</a>
+                                
+                                
+                                
+                                
+                                    <a href="https://dl.ccf.org.cn/atlas/altasIndex.html?pageNum_p=1">å¾é</a>
+                                
+                                
+                                    <a href="/ccfdl/ccfdlcommittee/">æ°å¾ç¼å®¡å§åä¼</a>
+                                
+                                
+                                    <a href="https://www.ccf.org.cn/sharenews/ccfdluserupload/">ä¸ä¼ /åå¸ä½å</a>
+                                
+                                
+                                    <a href="/ccfdl/ccf_dl_focus/">CCF&#32;DL&#32;Focus</a>
+                                
+                                
+                                    <a href="http://www.ccfdl.cn/course/courseList.html?pageNum_p=1">è®¢éãè®¡ç®ã</a>
+                                
+                        
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><span>ä¸å§<i class="ft-m">+</i></span></dt>
+                    <dd>
+                        
+                            <a href="https://www.ccf.org.cn/Chapters/TC/About/">ä¸å§ç®ä»</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Chapters/TC/About/">ä¸å§æ¡ä¾</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Collaboration/Enterprise_Fund/yxxmal/2024/">ç¸å³è§å®</a>
+                        
+                        
+                            <a href="https://www.ccf.org.cn/Chapters/TC/TC_Listing/TCMT/">ä¸å§åå</a>
+                        
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><span>å¥å±<i class="ft-m">+</i></span></dt>
+                    <dd>
+                        
+                            
+                                <a href="https://www.ccf.org.cn/Awards/Awards/">å¥å±å¨æ</a>
+                                <a href="https://www.ccf.org.cn/Awardsnew/jlml/">å¥å±ç®å½</a>
+                                <a href="https://www.ccf.org.cn/Awardsnew/lnhjmd/2025/qb/">åå¹´è·å¥åå</a>
+                                <a href="https://www.ccf.org.cn/Awards/recommendations/">å¥é¡¹æ¨è</a>
+                                <a href="https://www.ccf.org.cn/Awards/Policy/">è¯å¥æ¡ä¾</a>
+                        
+                    </dd>
+                </dl>
+                <dl>
+                    <dt><span>å³äºCCF<i class="ft-m">+</i></span></dt>
+                    <dd>
+                        
+                            
+                                <a href="https://www.ccf.org.cn/Intro_CCF/2021-03-16/533517.shtml">CCFç®ä»</a>
+                                <a href="https://www.ccf.org.cn/Governance/Governance/Member_Congress/">ç»ç»æºæ</a>
+                                <a href="https://www.ccf.org.cn/About_CCF/CCF_Constitution/">è§ç« </a>
+                                <a href="https://www.ccf.org.cnhttps://www.ccf.org.cn/service/">æå¡é¡¹ç®</a>
+                                <a href="https://www.ccf.org.cn/About_CCF/Key_Milestone/">CCFå¤§äºè®°</a>
+                                <a href="https://www.ccf.org.cn/About_CCF/60anniv/">CCFåå»º60å¨å¹´</a>
+                                <a href="https://www.ccf.org.cn/About_CCF/Contact_Us/">èç³»æä»¬</a>
+                        
+                    </dd>
+                </dl>
+            </div>
+            <div class="fd-qr">
+              <div class="item" style="display:none">
+                  <div class="pic"><img width="120" height="120" src="/images/images/pic1.jpg" alt="" /></div>
+                    <span>CCFå¨çº¿</span>
+                </div>
+                <div class="item">
+                    <div class="pic"><img width="120" height="120" src="/images/images/pic2.jpg" alt="" /></div>
+                    <span>æ°å­å¾ä¹¦é¦</span>
+                </div>
+                <div class="item">
+                    <div class="pic"><img width="120" height="120" src="/images/images/pic3.jpg" alt="" /></div>
+                    <span>å¾®ä¿¡å¬ä¼å·</span>
+                </div>
+                <div class="item">
+                  <div class="pic"><a href="http://weibo.com/ccforgcn"><img width="120" height="120" src="/images/images/pic4.png" alt="" /></a></div>
+                    <span>å®æ¹å¾®å</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fd-copy">
+        <div class="container">
+            <p>çæææ ä¸­å½è®¡ç®æºå­¦ä¼&nbsp;&nbsp;ææ¯æ¯æï¼æ³½åè½¯ä»¶<br>
+
+              èç³»çµè¯ï¼ (+86)10 6256 2503&nbsp;é®ä»¶ï¼ccf@ccf.org.cn&nbsp;&nbsp;<br>
+<p>
+<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802032778" style="display:inline-block;color:#fff;"><img src="/images/icon.png" style="float:left;"/>äº¬å¬ç½å®å¤ 11010802032778å·</a> &nbsp;&nbsp;<a style="color:#fff" href="https://beian.miit.gov.cn/" target="_blank">äº¬ICPå¤13000930å·-4</a>
+</p>
+                ç½ç«å»ºè®®æèæè§è¯·åéé®ä»¶ï¼suggest@ccf.org.cn</p>
+        </div>
+    </div>
+</div>
+<!--endé¡µè-->
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_share_slide jiathis_share_32x32 hidden-xs hidden-sm" id="jiathis_share_slide">
+
+  <!--åäº«-->
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="åäº«å°QQå¥½å"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="åäº«å°å¾®ä¿¡"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="åäº«å°æ°æµªå¾®å"></a>
+  </div>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["sqq","weixin","tsina"],"viewText":"åäº«å°ï¼","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["sqq","weixin","tsina"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='https://www.ccf.org.cn/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</div>
+<!-- JiaThis Button END -->
+<style>
+  .bd_weixin_popup{min-width:250px;min-height: 315px;}
+  .bdshare-button-style0-32 a{width:42px;height:42px;}
+  #jiathis_share_slide{ position:fixed!important; right:0px!important;left: inherit!important; background:#006699!important; width:45px!important; height:154px;top:50%;margin-top:-127px;border:none; border-radius:0px; text-align:center;}
+  .bdsharebuttonbox .jiathis_share_gotop{ background:url(/images/share-icon4.png) no-repeat!important; height:32px; width:26px;position: absolute;bottom: 5px;right: 9px; border-bottom:none;}
+  .bdsharebuttonbox .jiathis_share_slide_top{ display:none;}
+  #jiathis_share_slide .jiathis_style_32x32{padding-left:5px!important;margin-top: 7px;}
+  .bdsharebuttonbox .bds_sqq{ background:url(/images/share-icon1.png) no-repeat center center;}
+  .bdsharebuttonbox .bds_weixin{ background:url(/images/share-icon2.png) no-repeat center center;}
+  .bdsharebuttonbox .bds_tsina{ background:url(/images/share-icon3.png) no-repeat center center;}
+  .bdsharebuttonbox a.jtico_jiathis{ display:none!important;}
+  .bdsharebuttonbox a span{margin-top:3px;}
+</style>   
+    
+    <script type="text/javascript">
+      //å³é®è¯çæå
+      
+      var curCatalogInnerCode = "001506000008";  
+      for ( var i = 1, len = curCatalogInnerCode.length; i < len / 6 + 1; i++) {
+        var innerCode = curCatalogInnerCode.substring(0, i * 6);
+        var catalogElement = document.getElementById(innerCode);
+        if (catalogElement) {
+          catalogElement.className += " on";
+        }
+      }
+      
+      //è¯¦ç»é¡µå¾çå¤ç
+      $(function(){
+        if($(window).width() < 992){
+          $(".articleCon img").removeAttr("style");
+          $(".articleCon img").addClass("img-responsive center-block");
+        }
+      })
+      
+    </script>    
+    
+  
+<script src="https://www.ccf.org.cn/ccf/stat/front/stat.js" type="text/javascript"></script>
+<script>
+if(window._zcms_stat)_zcms_stat("SiteID=122&CatalogInnerCode=001506000008&Type=Article&LeafID=814278&Dest=https://www.ccf.org.cn/ccf/stat/dealer");
+</script>
+
+<!-- App=ZCMS(CCFåå®¹ç®¡çç³»ç») 2.5.28290,CostTime=8,PublishDate=2024-03-15 17:20:18 -->
+</body>
+</html>

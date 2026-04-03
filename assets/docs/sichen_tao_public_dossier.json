@@ -1,0 +1,1482 @@
+{
+  "generated_on": "2026-03-24",
+  "profile_name": "Sichen Tao",
+  "scholar": {
+    "name": "Sichen Tao",
+    "affiliation": "Tohoku University",
+    "verified_email": "Verified email at tohoku.ac.jp - Homepage",
+    "homepage_url": "https://www.researchgate.net/profile/Sichen-Tao/publications",
+    "interests": [
+      "AI",
+      "Deep Learning",
+      "Neural Networks",
+      "Optimization"
+    ],
+    "stats": {
+      "Citations": {
+        "all": "540",
+        "since_2021": "539"
+      },
+      "h-index": {
+        "all": "11",
+        "since_2021": "11"
+      },
+      "i10-index": {
+        "all": "11",
+        "since_2021": "11"
+      }
+    },
+    "works_count": 45,
+    "yearly_counts": {
+      "2025": 12,
+      "2024": 11,
+      "2023": 6,
+      "2022": 9,
+      "2021": 3,
+      "2020": 4
+    },
+    "top_coauthors": [
+      {
+        "name": "Zheng Tang",
+        "count": 19
+      },
+      {
+        "name": "Shangce Gao",
+        "count": 17
+      },
+      {
+        "name": "Yuki Todo",
+        "count": 17
+      },
+      {
+        "name": "Ruihan Zhao",
+        "count": 14
+      },
+      {
+        "name": "Kaiyu Wang",
+        "count": 12
+      },
+      {
+        "name": "Haichuan Yang",
+        "count": 9
+      },
+      {
+        "name": "Yifei Yang",
+        "count": 8
+      },
+      {
+        "name": "Zhenyu Lei",
+        "count": 5
+      },
+      {
+        "name": "Zhiming Zhang",
+        "count": 5
+      },
+      {
+        "name": "Yuxiao Hua",
+        "count": 5
+      },
+      {
+        "name": "Pengzhong Li",
+        "count": 4
+      },
+      {
+        "name": "Sicheng Liu",
+        "count": 4
+      }
+    ],
+    "works": [
+      {
+        "title": "Safety-efficiency integrated assembly: The next-stage adaptive task allocation and planning framework for human–robot collaboration",
+        "authors": [
+          "Ruihan Zhao",
+          "Sichen Tao",
+          "Pengzhong Li"
+        ],
+        "author_line": "Ruihan Zhao, Sichen Tao, Pengzhong Li",
+        "venue": "Robotics and Computer-Integrated Manufacturing",
+        "venue_line": "Robotics and Computer-Integrated Manufacturing",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "94",
+        "issue": "",
+        "pages": "102942-102942",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 16,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A State-of-the-Art Fractional Order-Driven Differential Evolution for Wind Farm Layout Optimization",
+        "authors": [
+          "Sichen Tao",
+          "Sicheng Liu",
+          "Ruihan Zhao",
+          "Yifei Yang",
+          "Hiroyoshi Todo",
+          "Haichuan Yang"
+        ],
+        "author_line": "Sichen Tao, Sicheng Liu, Ruihan Zhao, Yifei Yang, Hiroyoshi Todo, Haichuan Yang",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "13",
+        "issue": "2",
+        "pages": "282-282",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 8,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Enhancing Convolutional Neural Network Robustness Against Image Noise via an Artificial Visual System",
+        "authors": [
+          "Bin Li",
+          "Yuki Todo",
+          "Sichen Tao",
+          "Cheng Tang",
+          "Yu Wang"
+        ],
+        "author_line": "Bin Li, Yuki Todo, Sichen Tao, Cheng Tang, Yu Wang",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "13",
+        "issue": "1",
+        "pages": "142-142",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 7,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "AI-powered model for predicting mortality risk in VA-ECMO patients: a multicenter cohort study",
+        "authors": [
+          "Shuai Wang",
+          "Sichen Tao",
+          "Ying Zhu",
+          "Qiao Gu",
+          "Peifeng Ni",
+          "Weidong Zhang",
+          "Chenxi Wu",
+          "Ruihan Zhao",
+          "Wei Hu",
+          "Mengyuan Diao"
+        ],
+        "author_line": "Shuai Wang, Sichen Tao, Ying Zhu, Qiao Gu, Peifeng Ni, Weidong Zhang, Chenxi Wu, Ruihan Zhao, Wei Hu, Mengyuan Diao",
+        "venue": "Scientific Reports",
+        "venue_line": "Scientific Reports",
+        "publication_date": "2025-3-26",
+        "year": 2025,
+        "volume": "15",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Springer Science and Business Media LLC",
+        "description": "",
+        "citations": 6,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "Crossref"
+      },
+      {
+        "title": "A Novel Detection-and-Replacement-Based Order-Operator for Differential Evolution in Solving Complex Bound Constrained Optimization Problems",
+        "authors": [
+          "Sichen Tao",
+          "Sicheng Liu",
+          "Shinichi Ohta",
+          "Ruihan Zhao",
+          "Zheng Tang",
+          "Yifei Yang"
+        ],
+        "author_line": "Sichen Tao, Sicheng Liu, Shinichi Ohta, Ruihan Zhao, Zheng Tang, Yifei Yang",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "13",
+        "issue": "9",
+        "pages": "1389-1389",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 2,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Human-centric assembly planning framework for human–robot collaborative systems with efficient reinforcement self-learning multi-objective evolutionary optimizer",
+        "authors": [
+          "Ruihan Zhao",
+          "Sichen Tao",
+          "Pengzhong Li"
+        ],
+        "author_line": "Ruihan Zhao, Sichen Tao, Pengzhong Li",
+        "venue": "Advanced Engineering Informatics",
+        "venue_line": "Advanced Engineering Informatics",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "67",
+        "issue": "",
+        "pages": "103508-103508",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 2,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "ReLU Neural Networks and Their Training",
+        "authors": [
+          "Ge Luo",
+          "X. G. Wang",
+          "Weizun Zhao",
+          "Sichen Tao",
+          "Zheng Tang"
+        ],
+        "author_line": "Ge Luo, X. G. Wang, Weizun Zhao, Sichen Tao, Zheng Tang",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "14",
+        "issue": "1",
+        "pages": "39-39",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 1,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Biologically Inspired Model for Detecting Object Motion Direction in Stereoscopic Vision",
+        "authors": [
+          "Yuxiao Hua",
+          "Sichen Tao",
+          "Yuki Todo",
+          "Tianqi Chen",
+          "Zhiyu Qiu",
+          "Zheng Tang"
+        ],
+        "author_line": "Yuxiao Hua, Sichen Tao, Yuki Todo, Tianqi Chen, Zhiyu Qiu, Zheng Tang",
+        "venue": "Symmetry",
+        "venue_line": "Symmetry",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "17",
+        "issue": "2",
+        "pages": "162-162",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Reinforcement Learning-Assisted Fractional-Order Differential Evolution for Solving Wind Farm Layout Optimization Problems",
+        "authors": [
+          "Yufei Wang",
+          "Yifei Yang",
+          "Sichen Tao",
+          "Lianzhi Qi",
+          "Hao Shen"
+        ],
+        "author_line": "Yufei Wang, Yifei Yang, Sichen Tao, Lianzhi Qi, Hao Shen",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "13",
+        "issue": "18",
+        "pages": "2935-2935",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Adversarial game optimization: A game-theoretic metaheuristic for efficient complex optimization and engineering applications",
+        "authors": [
+          "Conglin Li",
+          "Qingke Zhang",
+          "Junqing Li",
+          "Sichen Tao",
+          "Diego Oliva"
+        ],
+        "author_line": "Conglin Li, Qingke Zhang, Junqing Li, Sichen Tao, Diego Oliva",
+        "venue": "Information Sciences",
+        "venue_line": "Information Sciences",
+        "publication_date": "2026-4",
+        "year": 2025,
+        "volume": "735",
+        "issue": "",
+        "pages": "123022",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "Crossref"
+      },
+      {
+        "title": "Human-robot Collaborative Resource and Task Planning for Assembly Systems with Self-learning Multi-objective Evolutionary Optimizer",
+        "authors": [
+          "Ruihan Zhao",
+          "Sichen Tao",
+          "Pengzhong Li"
+        ],
+        "author_line": "Ruihan Zhao, Sichen Tao, Pengzhong Li",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "",
+        "issue": "",
+        "pages": "1272-1277",
+        "publisher": "",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Improved spherical search algorithm with memory-based dynamic population for optimization",
+        "authors": [
+          "Sicheng Liu",
+          "Sichen Tao",
+          "Kaiyu Wang",
+          "Zhenyu Lei",
+          "Shangce Gao"
+        ],
+        "author_line": "Sicheng Liu, Sichen Tao, Kaiyu Wang, Zhenyu Lei, Shangce Gao",
+        "venue": "The Journal of Supercomputing",
+        "venue_line": "The Journal of Supercomputing",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "81",
+        "issue": "5",
+        "pages": "",
+        "publisher": "Springer Science+Business Media",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Spherical search algorithm with memory-guided population stage-wise control for bound-constrained global optimization problems",
+        "authors": [
+          "Sichen Tao",
+          "Kaiyu Wang",
+          "Ting Jin",
+          "Zhengwei Wu",
+          "Zhenyu Lei",
+          "Shangce Gao"
+        ],
+        "author_line": "Sichen Tao, Kaiyu Wang, Ting Jin, Zhengwei Wu, Zhenyu Lei, Shangce Gao",
+        "venue": "Applied Soft Computing",
+        "venue_line": "Applied Soft Computing",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "161",
+        "issue": "",
+        "pages": "111677-111677",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 13,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "An Efficient Reconstructed Differential Evolution Variant by Some of the Current State-of-the-art Strategies for Solving Single Objective Bound Constrained Problems",
+        "authors": [
+          "Sichen Tao",
+          "Ruihan Zhao",
+          "Kaiyu Wang",
+          "Shangce Gao"
+        ],
+        "author_line": "Sichen Tao, Ruihan Zhao, Kaiyu Wang, Shangce Gao",
+        "venue": "arXiv (Cornell University)",
+        "venue_line": "arXiv (Cornell University)",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "description": "",
+        "citations": 12,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A novel artificial visual system for motion direction detection in color images",
+        "authors": [
+          "Sichen Tao",
+          "Zhiming Zhang",
+          "Ruihan Zhao",
+          "Zheng Tang",
+          "Yuki Todo"
+        ],
+        "author_line": "Sichen Tao, Zhiming Zhang, Ruihan Zhao, Zheng Tang, Yuki Todo",
+        "venue": "Knowledge-Based Systems",
+        "venue_line": "Knowledge-Based Systems",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "295",
+        "issue": "",
+        "pages": "111816-111816",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 8,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Bio-inspired computational model for direction and speed detection",
+        "authors": [
+          "Yuxiao Hua",
+          "Yuki Todo",
+          "Sichen Tao",
+          "Zheng Tang",
+          "Tianqi Cheng",
+          "Zhiyu Qiu"
+        ],
+        "author_line": "Yuxiao Hua, Yuki Todo, Sichen Tao, Zheng Tang, Tianqi Cheng, Zhiyu Qiu",
+        "venue": "Knowledge-Based Systems",
+        "venue_line": "Knowledge-Based Systems",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "300",
+        "issue": "",
+        "pages": "112195-112195",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 7,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Multi-Local Search-Based SHADE for Wind Farm Layout Optimization",
+        "authors": [
+          "Yifei Yang",
+          "Sichen Tao",
+          "Haotian Li",
+          "Haichuan Yang",
+          "Zheng Tang"
+        ],
+        "author_line": "Yifei Yang, Sichen Tao, Haotian Li, Haichuan Yang, Zheng Tang",
+        "venue": "Electronics",
+        "venue_line": "Electronics",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "13",
+        "issue": "16",
+        "pages": "3196-3196",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 3,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Competitive Elimination Improved Differential Evolution for Wind Farm Layout Optimization Problems",
+        "authors": [
+          "Sichen Tao",
+          "Yifei Yang",
+          "Ruihan Zhao",
+          "Hiroyoshi Todo",
+          "Zheng Tang"
+        ],
+        "author_line": "Sichen Tao, Yifei Yang, Ruihan Zhao, Hiroyoshi Todo, Zheng Tang",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "12",
+        "issue": "23",
+        "pages": "3762-3762",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 3,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Artificial Visual Network with Fully Modeled Retinal Direction-Selective Neural Pathway for Motion Direction Detection in Grayscale Scenes",
+        "authors": [
+          "Sichen Tao",
+          "Ruihan Zhao",
+          "Yifei Yang",
+          "Hiroyoshi Todo",
+          "Zheng Tang",
+          "Yuki Todo"
+        ],
+        "author_line": "Sichen Tao, Ruihan Zhao, Yifei Yang, Hiroyoshi Todo, Zheng Tang, Yuki Todo",
+        "venue": "Symmetry",
+        "venue_line": "Symmetry",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "16",
+        "issue": "12",
+        "pages": "1592-1592",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 1,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Differential Search Integrated Music Harmony Search Algorithm for Solving Bound Constrained Optimization Problems",
+        "authors": [
+          "Sha Sun",
+          "Ruihan Zhao",
+          "Chenxi Wang",
+          "Zheng Tang",
+          "Sichen Tao"
+        ],
+        "author_line": "Sha Sun, Ruihan Zhao, Chenxi Wang, Zheng Tang, Sichen Tao",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "231-235",
+        "publisher": "",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Novel Artificial Visual System with Fully Modeled Retinal Direction-selectivity Ganglion Cell Pathway for Motion Direction Detection in Grayscale Images",
+        "authors": [
+          "Yumekatsu Shoji",
+          "Sichen Tao",
+          "Yuki Todo",
+          "Zheng Tang",
+          "Ruihan Zhao"
+        ],
+        "author_line": "Yumekatsu Shoji, Sichen Tao, Yuki Todo, Zheng Tang, Ruihan Zhao",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "212-215",
+        "publisher": "",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A bio-inspired model for object motion direction and speed detection against colored backgrounds",
+        "authors": [
+          "Yuxiao Hua",
+          "Yuki Todo",
+          "Sichen Tao",
+          "Tianqi Chen",
+          "Zhiyu Qiu",
+          "Minhui Dong",
+          "Zheng Tang"
+        ],
+        "author_line": "Yuxiao Hua, Yuki Todo, Sichen Tao, Tianqi Chen, Zhiyu Qiu, Minhui Dong, Zheng Tang",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "8-8",
+        "publisher": "",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Improving the Music Harmony Search Using a Differential Exploration Phase for Solving Bound Constrained Optimization Problems",
+        "authors": [
+          "Sha Sun",
+          "Ruihan Zhao",
+          "Chenxi Wang",
+          "Zheng Tang",
+          "Sichen Tao"
+        ],
+        "author_line": "Sha Sun, Ruihan Zhao, Chenxi Wang, Zheng Tang, Sichen Tao",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "1337-1341",
+        "publisher": "",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Spherical search algorithm with adaptive population control for global continuous optimization problems",
+        "authors": [
+          "Kaiyu Wang",
+          "Yirui Wang",
+          "Sichen Tao",
+          "Zonghui Cai",
+          "Zhenyu Lei",
+          "Shangce Gao"
+        ],
+        "author_line": "Kaiyu Wang, Yirui Wang, Sichen Tao, Zonghui Cai, Zhenyu Lei, Shangce Gao",
+        "venue": "Applied Soft Computing",
+        "venue_line": "Applied Soft Computing",
+        "publication_date": "2022",
+        "year": 2023,
+        "volume": "132",
+        "issue": "",
+        "pages": "109845-109845",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 39,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Hierarchical Manta Ray Foraging Optimization with Weighted Fitness-Distance Balance Selection",
+        "authors": [
+          "Zhentao Tang",
+          "Kaiyu Wang",
+          "Sichen Tao",
+          "Yuki Todo",
+          "Rong‐Long Wang",
+          "Shangce Gao"
+        ],
+        "author_line": "Zhentao Tang, Kaiyu Wang, Sichen Tao, Yuki Todo, Rong‐Long Wang, Shangce Gao",
+        "venue": "International Journal of Computational Intelligence Systems",
+        "venue_line": "International Journal of Computational Intelligence Systems",
+        "publication_date": "2023",
+        "year": 2023,
+        "volume": "16",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Springer Nature",
+        "description": "",
+        "citations": 17,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Novel Artificial Visual System for Motion Direction Detection with Completely Modeled Retinal Direction-Selective Pathway",
+        "authors": [
+          "Sichen Tao",
+          "Xiliang Zhang",
+          "Yuxiao Hua",
+          "Zheng Tang",
+          "Yuki Todo"
+        ],
+        "author_line": "Sichen Tao, Xiliang Zhang, Yuxiao Hua, Zheng Tang, Yuki Todo",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2023",
+        "year": 2023,
+        "volume": "11",
+        "issue": "17",
+        "pages": "3732-3732",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 7,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Dynamic Complex Network, Exploring Differential Evolution Algorithms from Another Perspective",
+        "authors": [
+          "Yifei Yang",
+          "Sichen Tao",
+          "Haichuan Yang",
+          "Zijing Yuan",
+          "Zheng Tang"
+        ],
+        "author_line": "Yifei Yang, Sichen Tao, Haichuan Yang, Zijing Yuan, Zheng Tang",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2023",
+        "year": 2023,
+        "volume": "11",
+        "issue": "13",
+        "pages": "2979-2979",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 6,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "An Adaptive Dimension Weighting Spherical Evolution to Solve Continuous Optimization Problems",
+        "authors": [
+          "Yifei Yang",
+          "Sichen Tao",
+          "Shibo Dong",
+          "Masahiro Nomura",
+          "Zheng Tang"
+        ],
+        "author_line": "Yifei Yang, Sichen Tao, Shibo Dong, Masahiro Nomura, Zheng Tang",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2023",
+        "year": 2023,
+        "volume": "11",
+        "issue": "17",
+        "pages": "3733-3733",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 1,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "The Mechanism of Orientation Detection Based on Artificial Visual System for Greyscale Images",
+        "authors": [
+          "Xiliang Zhang",
+          "Sichen Tao",
+          "Zheng Tang",
+          "Shuxin Zheng",
+          "Yuki Todo"
+        ],
+        "author_line": "Xiliang Zhang, Sichen Tao, Zheng Tang, Shuxin Zheng, Yuki Todo",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2023",
+        "year": 2023,
+        "volume": "11",
+        "issue": "12",
+        "pages": "2715-2715",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 1,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Spatial information sampling: another feedback mechanism of realising adaptive parameter control in meta-heuristic algorithms",
+        "authors": [
+          "Haichuan Yang",
+          "Sichen Tao",
+          "Zhiming Zhang",
+          "Zonghui Cai",
+          "Shangce Gao"
+        ],
+        "author_line": "Haichuan Yang, Sichen Tao, Zhiming Zhang, Zonghui Cai, Shangce Gao",
+        "venue": "International Journal of Bio-Inspired Computation",
+        "venue_line": "International Journal of Bio-Inspired Computation",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "19",
+        "issue": "1",
+        "pages": "48-48",
+        "publisher": "Inderscience Publishers",
+        "description": "",
+        "citations": 21,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Chaotic Wind Driven Optimization with Fitness Distance Balance Strategy",
+        "authors": [
+          "Zhentao Tang",
+          "Sichen Tao",
+          "Kaiyu Wang",
+          "Bo Lü",
+          "Yuki Todo",
+          "Shangce Gao"
+        ],
+        "author_line": "Zhentao Tang, Sichen Tao, Kaiyu Wang, Bo Lü, Yuki Todo, Shangce Gao",
+        "venue": "International Journal of Computational Intelligence Systems",
+        "venue_line": "International Journal of Computational Intelligence Systems",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "15",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Springer Nature",
+        "description": "",
+        "citations": 19,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "PAIDDE: A Permutation-Archive Information Directed Differential Evolution Algorithm",
+        "authors": [
+          "Xiaosi Li",
+          "Kaiyu Wang",
+          "Haichuan Yang",
+          "Sichen Tao",
+          "Shuai Feng",
+          "Shangce Gao"
+        ],
+        "author_line": "Xiaosi Li, Kaiyu Wang, Haichuan Yang, Sichen Tao, Shuai Feng, Shangce Gao",
+        "venue": "IEEE Access",
+        "venue_line": "IEEE Access",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "10",
+        "issue": "",
+        "pages": "50384-50402",
+        "publisher": "Institute of Electrical and Electronics Engineers",
+        "description": "",
+        "citations": 17,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
+        "authors": [
+          "Sichen Tao",
+          "Yuki Todo",
+          "Zheng Tang",
+          "Bin Li",
+          "Zhiming Zhang",
+          "Riku Inoue"
+        ],
+        "author_line": "Sichen Tao, Yuki Todo, Zheng Tang, Bin Li, Zhiming Zhang, Riku Inoue",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "10",
+        "issue": "16",
+        "pages": "2975-2975",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 14,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Hierarchical Water Wave Optimization",
+        "authors": [
+          "Shibo Dong",
+          "Haichuan Yang",
+          "Haotian Li",
+          "Baohang Zhang",
+          "Sichen Tao",
+          "Shangce Gao"
+        ],
+        "author_line": "Shibo Dong, Haichuan Yang, Haotian Li, Baohang Zhang, Sichen Tao, Shangce Gao",
+        "venue": "2022 IEEE International Conference on Networking, Sensing and Control (ICNSC)",
+        "venue_line": "2022 IEEE International Conference on Networking, Sensing and Control (ICNSC)",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "",
+        "issue": "",
+        "pages": "1-5",
+        "publisher": "",
+        "description": "",
+        "citations": 3,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Novel Bio-Inspired Motion Direction Detection Mechanism in Binary and Grayscale Background",
+        "authors": [
+          "Yuxiao Hua",
+          "Yuki Todo",
+          "Zheng Tang",
+          "Sichen Tao",
+          "Bin Li",
+          "Riku Inoue"
+        ],
+        "author_line": "Yuxiao Hua, Yuki Todo, Zheng Tang, Sichen Tao, Bin Li, Riku Inoue",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "10",
+        "issue": "20",
+        "pages": "3767-3767",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 2,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "An Optimal-Parent-Crossover based Differential Evolution",
+        "authors": [
+          "Ruihan Zhao",
+          "Sichen Tao",
+          "Pengzhong Li"
+        ],
+        "author_line": "Ruihan Zhao, Sichen Tao, Pengzhong Li",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "11",
+        "issue": "",
+        "pages": "276-281",
+        "publisher": "",
+        "description": "",
+        "citations": 2,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Population Resource Allocation-based Adaptive Spherical Search Algorithm",
+        "authors": [
+          "Lin Zhong",
+          "Sichen Tao",
+          "Qingya Sui",
+          "Haichuan Yang",
+          "Zhenyu Lei",
+          "Shangce Gao"
+        ],
+        "author_line": "Lin Zhong, Sichen Tao, Qingya Sui, Haichuan Yang, Zhenyu Lei, Shangce Gao",
+        "venue": "2022 IEEE International Conference on Networking, Sensing and Control (ICNSC)",
+        "venue_line": "2022 IEEE International Conference on Networking, Sensing and Control (ICNSC)",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "",
+        "issue": "",
+        "pages": "1-4",
+        "publisher": "",
+        "description": "",
+        "citations": 1,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "An Immigration Strategy-based Spherical Search Algorithm",
+        "authors": [
+          "Qingya Sui",
+          "Sichen Tao",
+          "Lin Zhong",
+          "Haichuan Yang",
+          "Zhenyu Lei",
+          "Shangce Gao"
+        ],
+        "author_line": "Qingya Sui, Sichen Tao, Lin Zhong, Haichuan Yang, Zhenyu Lei, Shangce Gao",
+        "venue": "2022 IEEE International Conference on Networking, Sensing and Control (ICNSC)",
+        "venue_line": "2022 IEEE International Conference on Networking, Sensing and Control (ICNSC)",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "",
+        "issue": "",
+        "pages": "1-5",
+        "publisher": "",
+        "description": "",
+        "citations": 1,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A state-of-the-art differential evolution algorithm for parameter estimation of solar photovoltaic models",
+        "authors": [
+          "Shangce Gao",
+          "Kaiyu Wang",
+          "Sichen Tao",
+          "Ting Jin",
+          "Hongwei Dai",
+          "Jiujun Cheng"
+        ],
+        "author_line": "Shangce Gao, Kaiyu Wang, Sichen Tao, Ting Jin, Hongwei Dai, Jiujun Cheng",
+        "venue": "Energy Conversion and Management",
+        "venue_line": "Energy Conversion and Management",
+        "publication_date": "2021",
+        "year": 2021,
+        "volume": "230",
+        "issue": "",
+        "pages": "113784-113784",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 281,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Fitness-Distance Balance with Functional Weights: A New Selection Method for Evolutionary Algorithms",
+        "authors": [
+          "Kaiyu Wang",
+          "Sichen Tao",
+          "Rong‐Long Wang",
+          "Yuki Todo",
+          "Shangce Gao"
+        ],
+        "author_line": "Kaiyu Wang, Sichen Tao, Rong‐Long Wang, Yuki Todo, Shangce Gao",
+        "venue": "IEICE Transactions on Information and Systems",
+        "venue_line": "IEICE Transactions on Information and Systems",
+        "publication_date": "2021",
+        "year": 2021,
+        "volume": "E104.D",
+        "issue": "10",
+        "pages": "1789-1792",
+        "publisher": "Institute of Electronics, Information and Communication Engineers",
+        "description": "",
+        "citations": 12,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Motion Direction Detective Mechanism for Greyscale Images",
+        "authors": [
+          "Sichen Tao",
+          "Riku Inoue",
+          "Yuki Todo",
+          "Zheng Tang"
+        ],
+        "author_line": "Sichen Tao, Riku Inoue, Yuki Todo, Zheng Tang",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2021",
+        "year": 2021,
+        "volume": "",
+        "issue": "",
+        "pages": "18-25",
+        "publisher": "",
+        "description": "",
+        "citations": 0,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Hybrid Spherical Search and Sine Cosine Algorithm",
+        "authors": [
+          "Kaiyu Wang",
+          "Sichen Tao",
+          "Zhiming Zhang",
+          "Yuki Todo",
+          "Shangce Gao"
+        ],
+        "author_line": "Kaiyu Wang, Sichen Tao, Zhiming Zhang, Yuki Todo, Shangce Gao",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2020",
+        "year": 2020,
+        "volume": "",
+        "issue": "",
+        "pages": "205-210",
+        "publisher": "",
+        "description": "",
+        "citations": 2,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Novel Optimization Algorithm Inherited From Gravitational and Spherical Search Dynamics",
+        "authors": [
+          "Zhentao Tang",
+          "Kaiyu Wang",
+          "Jiarui Shi",
+          "Sichen Tao",
+          "Yuki Todo",
+          "Shangce Gao"
+        ],
+        "author_line": "Zhentao Tang, Kaiyu Wang, Jiarui Shi, Sichen Tao, Yuki Todo, Shangce Gao",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2020",
+        "year": 2020,
+        "volume": "220",
+        "issue": "",
+        "pages": "91-96",
+        "publisher": "",
+        "description": "",
+        "citations": 2,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Using Grey Wolf Hunting Mechanism to Improve Spherical Search",
+        "authors": [
+          "Sicheng Liu",
+          "Sichen Tao",
+          "Haichuan Yang",
+          "Lin Jiang",
+          "Yuki Todo",
+          "Shangce Gao"
+        ],
+        "author_line": "Sicheng Liu, Sichen Tao, Haichuan Yang, Lin Jiang, Yuki Todo, Shangce Gao",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2020",
+        "year": 2020,
+        "volume": "2",
+        "issue": "",
+        "pages": "67-71",
+        "publisher": "",
+        "description": "",
+        "citations": 2,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Hybrid Spherical Search and Moth-flame optimization Algorithm",
+        "authors": [
+          "Sichen Tao",
+          "Kaiyu Wang",
+          "Zhiming Zhang",
+          "Chiyan Lee",
+          "Yuki Todo",
+          "Shangce Gao"
+        ],
+        "author_line": "Sichen Tao, Kaiyu Wang, Zhiming Zhang, Chiyan Lee, Yuki Todo, Shangce Gao",
+        "venue": "",
+        "venue_line": "",
+        "publication_date": "2020",
+        "year": 2020,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "",
+        "description": "",
+        "citations": 1,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      }
+    ],
+    "first_author_count": 11,
+    "top_cited": [
+      {
+        "title": "A state-of-the-art differential evolution algorithm for parameter estimation of solar photovoltaic models",
+        "authors": [
+          "Shangce Gao",
+          "Kaiyu Wang",
+          "Sichen Tao",
+          "Ting Jin",
+          "Hongwei Dai",
+          "Jiujun Cheng"
+        ],
+        "author_line": "Shangce Gao, Kaiyu Wang, Sichen Tao, Ting Jin, Hongwei Dai, Jiujun Cheng",
+        "venue": "Energy Conversion and Management",
+        "venue_line": "Energy Conversion and Management",
+        "publication_date": "2021",
+        "year": 2021,
+        "volume": "230",
+        "issue": "",
+        "pages": "113784-113784",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 281,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Spherical search algorithm with adaptive population control for global continuous optimization problems",
+        "authors": [
+          "Kaiyu Wang",
+          "Yirui Wang",
+          "Sichen Tao",
+          "Zonghui Cai",
+          "Zhenyu Lei",
+          "Shangce Gao"
+        ],
+        "author_line": "Kaiyu Wang, Yirui Wang, Sichen Tao, Zonghui Cai, Zhenyu Lei, Shangce Gao",
+        "venue": "Applied Soft Computing",
+        "venue_line": "Applied Soft Computing",
+        "publication_date": "2022",
+        "year": 2023,
+        "volume": "132",
+        "issue": "",
+        "pages": "109845-109845",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 39,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Spatial information sampling: another feedback mechanism of realising adaptive parameter control in meta-heuristic algorithms",
+        "authors": [
+          "Haichuan Yang",
+          "Sichen Tao",
+          "Zhiming Zhang",
+          "Zonghui Cai",
+          "Shangce Gao"
+        ],
+        "author_line": "Haichuan Yang, Sichen Tao, Zhiming Zhang, Zonghui Cai, Shangce Gao",
+        "venue": "International Journal of Bio-Inspired Computation",
+        "venue_line": "International Journal of Bio-Inspired Computation",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "19",
+        "issue": "1",
+        "pages": "48-48",
+        "publisher": "Inderscience Publishers",
+        "description": "",
+        "citations": 21,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Chaotic Wind Driven Optimization with Fitness Distance Balance Strategy",
+        "authors": [
+          "Zhentao Tang",
+          "Sichen Tao",
+          "Kaiyu Wang",
+          "Bo Lü",
+          "Yuki Todo",
+          "Shangce Gao"
+        ],
+        "author_line": "Zhentao Tang, Sichen Tao, Kaiyu Wang, Bo Lü, Yuki Todo, Shangce Gao",
+        "venue": "International Journal of Computational Intelligence Systems",
+        "venue_line": "International Journal of Computational Intelligence Systems",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "15",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Springer Nature",
+        "description": "",
+        "citations": 19,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Hierarchical Manta Ray Foraging Optimization with Weighted Fitness-Distance Balance Selection",
+        "authors": [
+          "Zhentao Tang",
+          "Kaiyu Wang",
+          "Sichen Tao",
+          "Yuki Todo",
+          "Rong‐Long Wang",
+          "Shangce Gao"
+        ],
+        "author_line": "Zhentao Tang, Kaiyu Wang, Sichen Tao, Yuki Todo, Rong‐Long Wang, Shangce Gao",
+        "venue": "International Journal of Computational Intelligence Systems",
+        "venue_line": "International Journal of Computational Intelligence Systems",
+        "publication_date": "2023",
+        "year": 2023,
+        "volume": "16",
+        "issue": "1",
+        "pages": "",
+        "publisher": "Springer Nature",
+        "description": "",
+        "citations": 17,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "PAIDDE: A Permutation-Archive Information Directed Differential Evolution Algorithm",
+        "authors": [
+          "Xiaosi Li",
+          "Kaiyu Wang",
+          "Haichuan Yang",
+          "Sichen Tao",
+          "Shuai Feng",
+          "Shangce Gao"
+        ],
+        "author_line": "Xiaosi Li, Kaiyu Wang, Haichuan Yang, Sichen Tao, Shuai Feng, Shangce Gao",
+        "venue": "IEEE Access",
+        "venue_line": "IEEE Access",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "10",
+        "issue": "",
+        "pages": "50384-50402",
+        "publisher": "Institute of Electrical and Electronics Engineers",
+        "description": "",
+        "citations": 17,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Safety-efficiency integrated assembly: The next-stage adaptive task allocation and planning framework for human–robot collaboration",
+        "authors": [
+          "Ruihan Zhao",
+          "Sichen Tao",
+          "Pengzhong Li"
+        ],
+        "author_line": "Ruihan Zhao, Sichen Tao, Pengzhong Li",
+        "venue": "Robotics and Computer-Integrated Manufacturing",
+        "venue_line": "Robotics and Computer-Integrated Manufacturing",
+        "publication_date": "2025",
+        "year": 2025,
+        "volume": "94",
+        "issue": "",
+        "pages": "102942-102942",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 16,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
+        "authors": [
+          "Sichen Tao",
+          "Yuki Todo",
+          "Zheng Tang",
+          "Bin Li",
+          "Zhiming Zhang",
+          "Riku Inoue"
+        ],
+        "author_line": "Sichen Tao, Yuki Todo, Zheng Tang, Bin Li, Zhiming Zhang, Riku Inoue",
+        "venue": "Mathematics",
+        "venue_line": "Mathematics",
+        "publication_date": "2022",
+        "year": 2022,
+        "volume": "10",
+        "issue": "16",
+        "pages": "2975-2975",
+        "publisher": "Multidisciplinary Digital Publishing Institute",
+        "description": "",
+        "citations": 14,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "Spherical search algorithm with memory-guided population stage-wise control for bound-constrained global optimization problems",
+        "authors": [
+          "Sichen Tao",
+          "Kaiyu Wang",
+          "Ting Jin",
+          "Zhengwei Wu",
+          "Zhenyu Lei",
+          "Shangce Gao"
+        ],
+        "author_line": "Sichen Tao, Kaiyu Wang, Ting Jin, Zhengwei Wu, Zhenyu Lei, Shangce Gao",
+        "venue": "Applied Soft Computing",
+        "venue_line": "Applied Soft Computing",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "161",
+        "issue": "",
+        "pages": "111677-111677",
+        "publisher": "Elsevier BV",
+        "description": "",
+        "citations": 13,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      },
+      {
+        "title": "An Efficient Reconstructed Differential Evolution Variant by Some of the Current State-of-the-art Strategies for Solving Single Objective Bound Constrained Problems",
+        "authors": [
+          "Sichen Tao",
+          "Ruihan Zhao",
+          "Kaiyu Wang",
+          "Shangce Gao"
+        ],
+        "author_line": "Sichen Tao, Ruihan Zhao, Kaiyu Wang, Shangce Gao",
+        "venue": "arXiv (Cornell University)",
+        "venue_line": "arXiv (Cornell University)",
+        "publication_date": "2024",
+        "year": 2024,
+        "volume": "",
+        "issue": "",
+        "pages": "",
+        "publisher": "Cornell University",
+        "description": "",
+        "citations": 12,
+        "scholar_detail_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+        "metadata_source": "OpenAlex"
+      }
+    ],
+    "profile_url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100",
+    "used_fallback": true
+  },
+  "jglobal": {
+    "update_date": "Feb. 21, 2026",
+    "affiliation": "Tohoku University",
+    "job_title": "Assistant Professor",
+    "research_fields": [
+      "Intelligent informatics",
+      "High-performance computing"
+    ],
+    "research_keywords": [
+      "Artificial Intelligence",
+      "Computational Intelligence",
+      "High Performance Computing",
+      "Machince Learning",
+      "Optimization",
+      "Deep Learning",
+      "Reinforcement Learning",
+      "Neural Networks",
+      "Large Language Models",
+      "Applied Medical Engineering",
+      "AI4Science"
+    ],
+    "education": [
+      "2022 - 2025 University of Toyama Graduate School of Science and Engineering for Education",
+      "2020 - 2022 University of Toyama Graduate School of Science and Engineering for Education"
+    ],
+    "work_history": [
+      "2025/10 - 現在 Tohoku University Assistant Professor"
+    ],
+    "awards": [
+      "2023/04 - Japan Science and Technology Agency Support for Pioneering Research Initiated by the Next Generation",
+      "2022/10 - Japan Science and Technology Agency The Establishment of University Fellowships towards the Creation of Science Technology Innovation"
+    ],
+    "memberships": [
+      "The Japan Society for Evolutionary Computation",
+      "IEEE"
+    ],
+    "paper_count": 27,
+    "profile_url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202601018035308144"
+  },
+  "takizawa": {
+    "member_role": "Assistant Professor",
+    "event_intro": [
+      "My name is Sichen Tao, and I joined the institute on October 1st. This is my first assignment in the Tohoku region, and I am very excited to begin a new chapter of my research life in Sendai, a city rich in nature and full of energy.",
+      "My research focuses primarily on artificial intelligence (AI), including fundamental technologies such as machine learning, deep learning, reinforcement learning, brain-inspired neural networks, computational intelligence, and optimization. I am also engaged in applying these techniques to various domains such as new energy systems, high-performance computing (HPC), Industry 5.0, autonomous driving, human-machine collaboration systems, healthcare, AI for science, and automated AI algorithm design.",
+      "My hobbies include sports, singing, photography, traveling, and computer games. I value broadening my perspectives through diverse experiences and incorporating fresh ideas into my research and teaching.",
+      "I look forward to working with you all."
+    ],
+    "member_url": "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    "event_url": "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/"
+  },
+  "senac": {
+    "appointment_effective_date": "2025-10-01",
+    "appointment_line": "スーパーコンピューティング研究部 特任助教",
+    "source_url": "https://www.ss.cc.tohoku.ac.jp/sscc/refer/pdf_data/v59-1/v59-1_p54-55.pdf"
+  },
+  "dissertation": {
+    "title": "Development of Artificial Intelligence Systems for Data Analysis and Optimization Based on Brain-inspired and Evolutionary Intelligence",
+    "publication_date": "2025-09-26",
+    "author": "陶, 思晨",
+    "institution": "University of Toyama",
+    "record_url": "https://toyama.repo.nii.ac.jp/records/2001776"
+  },
+  "dblp": {
+    "orcid": "0000-0001-9858-4208",
+    "profile_url": "https://dblp.org/pid/283/6924.html"
+  },
+  "notes": {
+    "title_discrepancy": "Public sources differ slightly: Takizawa Lab and J-GLOBAL describe the role as \"Assistant Professor\", while the SENAC staff notice identifies the appointment as \"Specially Appointed Assistant Professor\" in the Supercomputing Research Division.",
+    "source_scope": "This dossier synthesizes public internet sources only. Counts can differ across Google Scholar and J-GLOBAL because the underlying databases index different records.",
+    "scholar_rate_limit": "Google Scholar temporarily returned HTTP 429 during automated refresh. When that happened, this script reused the live stats already captured in-session and normalized publication metadata through OpenAlex and Crossref."
+  },
+  "sources": [
+    {
+      "label": "Google Scholar profile",
+      "url": "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en&cstart=0&pagesize=100"
+    },
+    {
+      "label": "J-GLOBAL researcher profile",
+      "url": "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202601018035308144"
+    },
+    {
+      "label": "Takizawa Lab member page",
+      "url": "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/"
+    },
+    {
+      "label": "Takizawa Lab joining announcement",
+      "url": "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/"
+    },
+    {
+      "label": "SENAC staff note",
+      "url": "https://www.ss.cc.tohoku.ac.jp/sscc/refer/pdf_data/v59-1/v59-1_p54-55.pdf"
+    },
+    {
+      "label": "University of Toyama dissertation record",
+      "url": "https://toyama.repo.nii.ac.jp/records/2001776"
+    },
+    {
+      "label": "DBLP author page",
+      "url": "https://dblp.org/pid/283/6924.html"
+    }
+  ]
+}

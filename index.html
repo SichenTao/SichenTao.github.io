@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Academic homepage and research archive for Sichen Tao, covering AI, optimization, brain-inspired systems, and high-performance computing."
+    />
+    <link rel="canonical" href="https://sichentao.github.io/" />
+    <meta name="theme-color" content="#f5eee4" />
+    <meta property="og:title" content="Sichen Tao | Academic Homepage" />
+    <meta
+      property="og:description"
+      content="Academic homepage and research archive for Sichen Tao, covering AI, optimization, brain-inspired systems, and high-performance computing."
+    />
+    <meta property="og:url" content="https://sichentao.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://sichentao.github.io/sichen_portal.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sichen Tao | Academic Homepage" />
+    <meta
+      name="twitter:description"
+      content="Academic homepage and research archive for Sichen Tao, covering AI, optimization, brain-inspired systems, and high-performance computing."
+    />
+    <meta name="twitter:image" content="https://sichentao.github.io/sichen_portal.png" />
+    <title>Sichen Tao | Academic Homepage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/images/favicon-portrait.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./assets/images/favicon-portrait.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("sichen-homepage-theme");
+        if (savedTheme) {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+        const savedLocale = localStorage.getItem("sichen-homepage-locale");
+        if (savedLocale) {
+          document.documentElement.lang = savedLocale === "zh" ? "zh-CN" : savedLocale;
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./data/profile-data.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="page-wash"></div>
+    <div class="page-grid"></div>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <header class="shell site-header">
+      <div class="header-tools">
+        <div class="header-controls" aria-label="Display controls">
+          <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
+          <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
+        </div>
+        <nav class="topnav" aria-label="Section navigation">
+          <a href="./index.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span>Home</span></a>
+          <a href="./profiles.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-profiles"></use></svg><span>Profiles</span></a>
+          <a href="./publications.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span>Publications</span></a>
+          <a href="./awards.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-awards"></use></svg><span>Awards</span></a>
+          <a href="./projects.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-projects"></use></svg><span>Projects</span></a>
+          <a href="./service.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-service"></use></svg><span>Service</span></a>
+          <a href="./timeline.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span>Timeline</span></a>
+          <a href="./research.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span>Research</span></a>
+          <a href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span>Sources</span></a>
+          <a href="./archive.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-archive"></use></svg><span>Archive</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell layout">
+      <section id="home" class="panel hero reveal">
+        <div class="hero-top">
+          <div class="hero-primary">
+            <div class="hero-photo-inline">
+              <div class="portrait-frame">
+                <img id="hero-portrait" src="./assets/images/avatar-openai.jpg" alt="Portrait of Sichen Tao" />
+              </div>
+              <div class="institution-switcher" role="group" aria-label="Institution themes">
+                <button
+                  class="institution-mark"
+                  type="button"
+                  data-theme-choice="tohoku"
+                  aria-pressed="false"
+                  aria-label="Switch to Tohoku University theme"
+                  title="Tohoku University"
+                >
+                  <img src="./assets/institutions/tohoku-logo.svg" alt="" aria-hidden="true" />
+                </button>
+                <button
+                  class="institution-mark"
+                  type="button"
+                  data-theme-choice="toyama"
+                  aria-pressed="false"
+                  aria-label="Switch to University of Toyama theme"
+                  title="University of Toyama"
+                >
+                  <img src="./assets/institutions/toyama-symbol.svg" alt="" aria-hidden="true" />
+                </button>
+                <button
+                  class="institution-mark"
+                  type="button"
+                  data-theme-choice="usst"
+                  aria-pressed="false"
+                  aria-label="Switch to University of Shanghai for Science and Technology theme"
+                  title="University of Shanghai for Science and Technology"
+                >
+                  <img src="./assets/institutions/usst-logo.svg" alt="" aria-hidden="true" />
+                </button>
+              </div>
+              <div id="hero-shortcuts" class="shortcut-grid" aria-label="Quick profile links"></div>
+            </div>
+            <div class="hero-heading">
+              <div class="eyebrow hero-keylines" id="hero-keylines" aria-label="Research focus">High Performance Computing · Artificial Intelligence · Optimization</div>
+              <p id="hero-native" class="native-name">Loading name...</p>
+              <div class="hero-title-row">
+                <h1 id="hero-title">Loading profile...</h1>
+                <button
+                  id="hero-name-copy"
+                  class="publication-copy-button contact-copy-button hero-name-copy-button"
+                  type="button"
+                  aria-label="Copy name"
+                  title="Copy name"
+                >
+                  <svg class="ui-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/ui-icons.svg#icon-copy"></use></svg>
+                </button>
+              </div>
+              <div class="hero-identity">
+                <p class="eyebrow">Current appointment</p>
+                <p id="portrait-role" class="hero-role">Assistant Professor</p>
+                <p id="portrait-affiliation" class="hero-affiliation">Tohoku University</p>
+              </div>
+              <p class="lede" id="hero-bio">Loading structured data.</p>
+            </div>
+          </div>
+          <article class="hero-card hero-profile-card">
+            <div class="subhead">
+              <h3>Contact & Identity</h3>
+            </div>
+            <div class="hero-profile-stack">
+              <div id="hero-contact-list" class="stack-list"></div>
+            </div>
+          </article>
+        </div>
+        <div id="record-nav" class="record-nav"></div>
+      </section>
+    </main>
+
+    <footer class="shell footer-shell reveal">
+      <div class="footer-panel footer-panel-compact">
+        <div class="footer-actions">
+          <a class="button button-primary" href="./assets/docs/CV_SichenTao.pdf"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-file"></use></svg><span>Curriculum vitae</span></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
