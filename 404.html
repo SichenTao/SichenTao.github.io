@@ -1,83 +1,31 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f5eee4" />
-    <title>Page Not Found | Sichen Tao</title>
-    <link rel="icon" href="./assets/images/favicon-portrait.png" type="image/png" />
-    <link rel="apple-touch-icon" href="./assets/images/favicon-portrait.png" />
-    <link rel="manifest" href="./site.webmanifest" />
-    <script>
-      try {
-        const savedTheme = localStorage.getItem("sichen-homepage-theme");
-        if (savedTheme) {
-          document.documentElement.dataset.theme = savedTheme;
-          const themeColors = {
-            base: "#f5eee4",
-            tohoku: "#f3eef9",
-            toyama: "#edf4f7",
-            usst: "#f7eded",
-          };
-          document
-            .querySelector('meta[name="theme-color"]')
-            ?.setAttribute("content", themeColors[savedTheme] || themeColors.base);
-        }
-        const queryLocale = new URLSearchParams(window.location.search).get("lang");
-        const savedLocale = localStorage.getItem("sichen-homepage-locale");
-        const nextLocale = queryLocale || savedLocale || "en";
-        document.documentElement.lang = nextLocale === "zh" ? "zh-CN" : nextLocale;
-      } catch {}
-    </script>
-    <link rel="stylesheet" href="./styles.css?v=20260403-05" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Not Found | Sichen Tao Research Portals</title>
+    <link rel="canonical" href="https://sichentao.github.io/404.html" />
+    <link rel="icon" href="./academic/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="./portal.css" />
   </head>
-  <body class="is-ready">
-    <main class="shell layout" style="min-height: 100vh; padding-top: 80px">
-      <section class="panel section-card reveal is-visible">
-        <p class="eyebrow">404</p>
-        <h1 id="not-found-title" style="margin-top: 0">This page could not be found.</h1>
-        <p id="not-found-body" class="lede">
-          The link may be outdated, or the page may have moved during a site update. The homepage remains the best starting point.
-        </p>
-        <div class="hero-actions">
-          <a id="not-found-home" class="button button-primary" href="./index.html">Return to homepage</a>
-          <a id="not-found-github" class="button button-secondary" href="https://github.com/SichenTao" target="_blank" rel="noreferrer">GitHub profile</a>
+  <body>
+    <div class="portal-shell not-found-shell">
+      <section class="hero-card not-found-card">
+        <div class="hero-copy">
+          <p class="eyebrow">404</p>
+          <h1>Page not found</h1>
+          <p class="hero-description">
+            The page you requested is not available here. Use the unified portal below to return to one of the three
+            active research sites.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="./">Back to portal</a>
+            <a class="button" href="./academic/">Academic homepage</a>
+            <a class="button" href="./frontier-radar/">Frontier Radar</a>
+            <a class="button" href="./jsps-kakenhi/">JSPS workspace</a>
+          </div>
         </div>
       </section>
-    </main>
-    <script>
-      (() => {
-        const locale = document.documentElement.lang === "zh-CN" ? "zh" : document.documentElement.lang || "en";
-        const copy = {
-          en: {
-            title: "Page Not Found | Sichen Tao",
-            heading: "This page could not be found.",
-            body: "The link may be outdated, or the page may have moved during a site update. The homepage remains the best starting point.",
-            home: "Return to homepage",
-            github: "GitHub profile",
-          },
-          ja: {
-            title: "ページが見つかりません | Sichen Tao",
-            heading: "ページが見つかりませんでした。",
-            body: "リンクが古い可能性があるか、サイト更新に伴ってページが移動した可能性があります。まずはホームページをご覧ください。",
-            home: "ホームへ戻る",
-            github: "GitHub プロフィール",
-          },
-          zh: {
-            title: "未找到页面 | Sichen Tao",
-            heading: "未找到该页面。",
-            body: "该链接可能已经失效，或页面在站点更新后已移动位置。建议先返回主页继续浏览。",
-            home: "返回主页",
-            github: "GitHub 主页",
-          },
-        };
-        const text = copy[locale] || copy.en;
-        document.title = text.title;
-        document.getElementById("not-found-title").textContent = text.heading;
-        document.getElementById("not-found-body").textContent = text.body;
-        document.getElementById("not-found-home").textContent = text.home;
-        document.getElementById("not-found-github").textContent = text.github;
-      })();
-    </script>
+    </div>
   </body>
 </html>

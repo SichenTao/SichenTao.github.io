@@ -1,0 +1,207 @@
+{
+  "IEEE Transactions on Evolutionary Computation": {
+    "venueType": "journal",
+    "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235",
+    "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=1089-778X",
+    "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5kwBz5",
+    "ifSourceMode": "official_search",
+    "ifSearchCopyText": "IEEE Transactions on Evolutionary Computation",
+    "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=1089-778X",
+    "jcrPublicSourceUrl": "https://www.fabiao.com.cn/sci/1089778X/",
+    "jcrSourceMode": "official_search",
+    "jcrSearchCopyText": "IEEE Transactions on Evolutionary Computation",
+    "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
+    "casSourceMode": "official_search",
+    "casSearchCopyText": "IEEE Transactions on Evolutionary Computation",
+    "byPublicationYear": {
+      "2026": {
+        "impactFactor": "12.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
+        "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Evolutionary%20Computation&y=2025",
+        "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5kwBz5"
+      }
+    }
+  },
+  "Swarm and Evolutionary Computation": {
+    "venueType": "journal",
+    "sourceUrl": "https://www.sciencedirect.com/journal/swarm-and-evolutionary-computation",
+    "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=2210-6502",
+    "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=pB4NJD",
+    "ifSourceMode": "official_search",
+    "ifSearchCopyText": "Swarm and Evolutionary Computation",
+    "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=2210-6502",
+    "jcrPublicSourceUrl": "https://www.fabiao.com.cn/sci/22106502/",
+    "jcrSourceMode": "official_search",
+    "jcrSearchCopyText": "Swarm and Evolutionary Computation",
+    "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
+    "casSourceMode": "official_search",
+    "casSearchCopyText": "Swarm and Evolutionary Computation",
+    "byPublicationYear": {
+      "2025": {
+        "impactFactor": "8.5",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": false,
+        "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=Swarm%20and%20Evolutionary%20Computation&y=2025",
+        "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=pB4NJD"
+      }
+    }
+  },
+  "Expert Systems with Applications": {
+    "venueType": "journal",
+    "sourceUrl": "https://www.sciencedirect.com/journal/expert-systems-with-applications",
+    "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=0957-4174",
+    "ifPublicSourceUrl": "https://www.iikx.com/sci/technology/12439.html",
+    "ifSourceMode": "official_search",
+    "ifSearchCopyText": "Expert Systems with Applications",
+    "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=0957-4174",
+    "jcrPublicSourceUrl": "https://www.fabiao.com.cn/sci/09574174/",
+    "jcrSourceMode": "official_search",
+    "jcrSearchCopyText": "Expert Systems with Applications",
+    "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
+    "casSourceMode": "official_search",
+    "casSearchCopyText": "Expert Systems with Applications",
+    "byPublicationYear": {
+      "2025": {
+        "impactFactor": "7.5",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
+        "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=Expert%20Systems%20with%20Applications&y=2025",
+        "casPublicSourceUrl": "https://www.iikx.com/sci/technology/12439.html"
+      }
+    }
+  },
+  "International Journal of Parallel Emergent and Distributed Systems": {
+    "venueType": "journal",
+    "sourceUrl": "https://www.tandfonline.com/journals/gpaa20",
+    "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=1744-5760",
+    "ifPublicSourceUrl": "https://www.iikx.com/sci/technology/23927.html",
+    "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=1744-5760",
+    "jcrPublicSourceUrl": "https://www.fabiao.com.cn/sci/17445760/",
+    "jcrSourceMode": "official_search",
+    "jcrSearchCopyText": "International Journal of Parallel Emergent and Distributed Systems",
+    "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
+    "casSourceMode": "official_search",
+    "casSearchCopyText": "International Journal of Parallel Emergent and Distributed Systems",
+    "byPublicationYear": {
+      "2025": {
+        "impactFactor": "0.6",
+        "impactYear": "2025",
+        "jcrQuartile": "N/A",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
+        "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=International%20Journal%20of%20Parallel%20Emergent%20and%20Distributed%20Systems&y=2025",
+        "casPublicSourceUrl": "https://www.iikx.com/sci/technology/23927.html"
+      }
+    }
+  },
+  "ACM Transactions on Evolutionary Learning and Optimization": {
+    "venueType": "journal",
+    "sourceUrl": "https://dl.acm.org/journal/telo",
+    "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=2688-3007",
+    "ifPublicSourceUrl": "https://eshukan.com/sci/scidisplayj.aspx?jid=51654&jtype=936",
+    "ifSourceMode": "official_search",
+    "ifSearchCopyText": "ACM Transactions on Evolutionary Learning and Optimization",
+    "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=2688-3007",
+    "jcrPublicSourceUrl": "https://eshukan.com/sci/scidisplayj.aspx?jid=51654&jtype=936",
+    "jcrSourceMode": "official_search",
+    "jcrSearchCopyText": "ACM Transactions on Evolutionary Learning and Optimization",
+    "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
+    "casPublicSourceUrl": "https://eshukan.com/sci/scidisplayj.aspx?jid=51654&jtype=936",
+    "casSourceMode": "official_search",
+    "casSearchCopyText": "ACM Transactions on Evolutionary Learning and Optimization",
+    "byPublicationYear": {
+      "2025": {
+        "impactFactor": "__not_listed__",
+        "impactYear": "2025",
+        "jcrQuartile": "__not_listed__",
+        "jcrYear": "2025",
+        "casQuartile": "__not_listed__",
+        "casYear": "2025",
+        "casTop": false
+      }
+    }
+  },
+  "2025 IEEE Congress on Evolutionary Computation (CEC)": {
+    "impactFactor": null,
+    "impactYear": null,
+    "jcrQuartile": null,
+    "casQuartile": null,
+    "venueType": "conference",
+    "sourceUrl": "https://2025.ieeewcci.org/cec/"
+  },
+  "arXiv": {
+    "impactFactor": null,
+    "impactYear": null,
+    "jcrQuartile": null,
+    "casQuartile": null,
+    "venueType": "preprint",
+    "sourceUrl": "https://arxiv.org/"
+  },
+  "NeurIPS": {
+    "impactFactor": null,
+    "impactYear": null,
+    "jcrQuartile": null,
+    "casQuartile": null,
+    "venueType": "conference",
+    "sourceUrl": "https://neurips.cc/"
+  },
+  "SC": {
+    "impactFactor": null,
+    "impactYear": null,
+    "jcrQuartile": null,
+    "casQuartile": null,
+    "venueType": "conference",
+    "sourceUrl": "https://sc24.supercomputing.org/"
+  },
+  "TPDS": {
+    "venueType": "journal",
+    "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71",
+    "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=1045-9219",
+    "ifPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html",
+    "ifSourceMode": "official_search",
+    "ifSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
+    "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=1045-9219",
+    "jcrPublicSourceUrl": "https://www.fabiao.com.cn/sci/10459219/",
+    "jcrSourceMode": "official_search",
+    "jcrSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
+    "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
+    "casSourceMode": "official_search",
+    "casSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
+    "byPublicationYear": {
+      "2024": {
+        "impactFactor": "5.3",
+        "impactYear": "2024",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2024",
+        "casQuartile": "Q2",
+        "casYear": "2023",
+        "casTop": true,
+        "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Parallel%20and%20Distributed%20Systems&y=2023",
+        "casPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html"
+      }
+    }
+  },
+  "CHI": {
+    "impactFactor": null,
+    "impactYear": null,
+    "jcrQuartile": null,
+    "casQuartile": null,
+    "venueType": "conference",
+    "sourceUrl": "https://chi2026.acm.org/"
+  }
+}

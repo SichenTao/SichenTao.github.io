@@ -1,0 +1,109 @@
+{
+  "generatedAt": "2026-04-03 16:03 JST",
+  "items": [
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4416548789",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4416548789",
+      "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+      "source": "https://arxiv.org/pdf/2508.00380",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1109/tevc.2026.3664432",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/11396036/",
+      "pdfUrl": "https://arxiv.org/pdf/2508.00380"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414581553",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414581553",
+      "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+      "source": "https://arxiv.org/pdf/2505.18681",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1080/17445760.2025.2609138",
+      "publisherUrl": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
+      "pdfUrl": "https://arxiv.org/pdf/2505.18681"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414444197",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414444197",
+      "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+      "source": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102149",
+      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414151930",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414151930",
+      "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+      "source": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102144",
+      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414140555",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+      "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+      "source": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1016/j.eswa.2025.129364",
+      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4413243632",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4413243632",
+      "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+      "source": "https://dl.acm.org/doi/10.1145/3750053",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1145/3750053",
+      "publisherUrl": "https://dl.acm.org/doi/10.1145/3750053",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4411600078",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4411600078",
+      "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+      "source": "https://ieeexplore.ieee.org/document/11043108/",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1109/cec65147.2025.11043108",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/11043108/",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4409486142",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4409486142",
+      "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+      "source": "https://dl.acm.org/doi/10.1145/3730406",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1145/3730406",
+      "publisherUrl": "https://dl.acm.org/doi/10.1145/3730406",
+      "pdfUrl": null
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="tohoku">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="複数の研究領域にまたがって重要チーム、論文、シグナル、次の貢献機会を追跡するためのローカルファーストなフロンティア・レーダー。"/>
+<meta name="theme-color" content="#f3eef9"/>
+<title>フロンティア・レーダー · ガイド</title>
+<link rel="icon" href="data:,"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;family=Sora:wght@300;400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+window.FRONTIER_RADAR_DEFAULT_LANGUAGE = "ja";
+window.FRONTIER_RADAR_DEFAULT_THEME = "tohoku";
+window.FRONTIER_RADAR_LOCALE_HREFS = {"en": "../guide.html", "zh": "../zh/guide.html", "ja": "./guide.html"};
+(function() {
+  var themeCatalog = {"tohoku": "#f3eef9", "toyama": "#edf4f7", "usst": "#f7eded"};
+  var localeCatalog = window.FRONTIER_RADAR_LOCALE_HREFS || {};
+  var currentLocale = "ja";
+  var theme = "tohoku";
+  try {
+    var savedLocale = window.localStorage.getItem("sichen-homepage-locale") || window.localStorage.getItem("frontier-radar-language");
+    if (savedLocale && localeCatalog[savedLocale] && savedLocale !== currentLocale) {
+      var redirectUrl = new URL(localeCatalog[savedLocale], window.location.href);
+      redirectUrl.search = window.location.search;
+      redirectUrl.hash = window.location.hash;
+      if (redirectUrl.pathname !== window.location.pathname) {
+        window.location.replace(redirectUrl.toString());
+        return;
+      }
+    }
+    var queryTheme = new URLSearchParams(window.location.search).get("theme");
+    if (queryTheme && themeCatalog[queryTheme]) {
+      theme = queryTheme;
+    } else {
+      var savedTheme = window.localStorage.getItem("sichen-homepage-theme");
+      if (savedTheme && themeCatalog[savedTheme]) {
+        theme = savedTheme;
+      }
+    }
+  } catch (error) {}
+  document.documentElement.dataset.theme = theme;
+  var themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute("content", themeCatalog[theme] || themeCatalog.tohoku);
+  window.FRONTIER_RADAR_DEFAULT_THEME = theme;
+})();
+</script>
+<link rel="stylesheet" href="../styles.css?v=20260403-29"/>
+<script defer src="../data/frontier_data.js?v=20260403-29"></script>
+<script defer src="../app.js?v=20260403-29"></script>
+</head>
+<body class="is-ready" data-page="guide" data-default-language="ja">
+<div class="page-wash"></div>
+<div class="page-grid"></div>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+<header class="shell site-header"><div class="header-tools"><div class="header-controls" aria-label="表示コントロール"><div class="locale-switcher control-switcher" id="localeSwitcher" role="group" aria-label="言語"><button class="locale-trigger" type="button" data-locale-trigger aria-haspopup="true" aria-expanded="false" aria-label="言語オプションを表示" title="言語オプションを表示"><span class="locale-label">日</span></button><div class="locale-tray" role="group" aria-label="言語選択"><a class="locale-chip" href="../guide.html" data-locale-choice="en" aria-label="English" title="English"><span class="locale-label">En</span></a><a class="locale-chip" href="../zh/guide.html" data-locale-choice="zh" aria-label="中文" title="中文"><span class="locale-label">中</span></a><a class="locale-chip is-active" href="./guide.html" data-locale-choice="ja" aria-label="日本語" title="日本語" aria-current="page"><span class="locale-label">日</span></a></div></div><div class="theme-switcher control-switcher" id="themeSwitcher" role="group" aria-label="配色テーマ"><button class="theme-trigger" type="button" data-theme-trigger aria-haspopup="true" aria-expanded="false" aria-label="配色を切り替える" title="配色を切り替える"><span class="theme-swatch theme-tohoku" data-theme-current-swatch aria-hidden="true"></span></button><div class="theme-tray" role="group" aria-label="配色選択"><button class="theme-chip is-active" type="button" data-theme-choice="tohoku" aria-pressed="true" aria-label="東北大学" title="東北大学"><span class="theme-swatch theme-tohoku" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="toyama" aria-pressed="false" aria-label="富山大学" title="富山大学"><span class="theme-swatch theme-toyama" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="usst" aria-pressed="false" aria-label="上海理工大学" title="上海理工大学"><span class="theme-swatch theme-usst" aria-hidden="true"></span></button></div></div></div><nav class="topnav" aria-label="主要ナビゲーション"><a href="./index.html" id="navOverview">概要</a><a href="./papers.html" id="navPapers">論文</a><a href="./signals.html" id="navSignals">シグナル</a><a href="./teams.html" id="navTeams">チーム</a><a href="./downloads.html" id="navDownloads">取得</a><a href="./guide.html" id="navGuide" aria-current="page">ガイド</a></nav></div></header>
+<main class="shell layout"><section class="panel hero reveal" id="overview"><div class="hero-top"><div class="hero-primary"><div class="hero-heading"><div class="eyebrow hero-keylines" id="heroEyebrow">現在の前線焦点</div><p class="native-name" id="heroNative">フロンティア・レーダー</p><h1 id="heroTitle">進化計算</h1><div class="hero-identity"><p class="eyebrow" id="activeFocusLabel">現在の焦点</p><p class="hero-role is-key" id="heroRole">高優先度 · 勢い 96/100</p><p class="hero-affiliation" id="heroAffiliation">次回予定実行: 明日 08:00 JST、OpenClaw cron 経由</p></div><p class="lede emphasis-surface rich-text" id="headline">最初のライブ収集スライスでは、オープンソースのアルゴリズム基盤、多目的最適化、GPU ネイティブな進化システムを中心に、研究者起点の EC シグナルを追跡します。論文を出すだけでなく、再利用可能な基盤や現実的な次の方向性を形作っている人を追うのが目的です。</p></div><div class="hero-domain-rack"><p class="eyebrow hero-section-label" id="domainSwitcherLabelText">領域を選ぶ</p><div class="chip-row domain-switcher domain-switcher-hero" id="domainSwitcher" role="tablist" aria-label="領域を選ぶ"><button class="chip is-active" type="button" role="tab" aria-selected="true">進化計算</button></div></div><div id="heroShortcuts" class="shortcut-grid" aria-label="クイックリンク"><a class="button button-primary" href="./papers.html">最新論文を見る</a><a class="button" href="./downloads.html">取得</a><a class="button" href="./guide.html">ガイド</a></div></div><article class="hero-card hero-profile-card"><div class="subhead"><h3 id="statusCardTitle">スナップショットとキュー</h3></div><div id="heroStatusList" class="stack-list"><div class="stack-item"><div class="stack-label">スナップショット</div><div class="stack-value">2026-04-03 16:30 JST</div></div><div class="stack-item"><div class="stack-label">次回予定実行</div><div class="stack-value">明日 08:00 JST、OpenClaw cron 経由</div></div><div class="stack-item"><div class="stack-label">カバー済みソース</div><div class="stack-value">8</div></div><div class="stack-item"><div class="stack-label">ローカル PDF</div><div class="stack-value">0</div></div><div class="stack-item"><div class="stack-label">ブラウザ取得待ち</div><div class="stack-value">6</div></div></div></article></div><div id="recordNav" class="record-nav"><article class="record-card"><div class="stack-label">追跡チーム数</div><div class="record-value">3</div><div class="record-meta">現在の領域で追跡中の人とチーム</div></article><article class="record-card"><div class="stack-label">現在の論文数</div><div class="record-value">8</div><div class="record-meta">この領域の論文カード数</div></article><article class="record-card"><div class="stack-label">ローカル PDF</div><div class="record-value">0</div><div class="record-meta">このマシンへ保存済み</div></article><article class="record-card"><div class="stack-label">ブラウザ取得待ち</div><div class="record-value">6</div><div class="record-meta">OpenClaw ブラウザ取得待ち</div></article></div></section><section class="panel section-card reveal" id="guide" aria-labelledby="guide-title"><div class="section-head"><div><p class="eyebrow" id="guideKicker">ガイド</p><h2 id="guide-title">このレーダーを私たちのためにどう機能させるか</h2></div><p class="section-note" id="guideNote">プロダクトの説明はここへ移し、ホームは運用画面のままにします。</p></div><div class="tri-grid" id="guideGrid"><article class="guide-card"><h4>論文作業面から入る</h4><p class="rich-text">ホームは領域選択から始まり、すぐに論文作業面へ入るべきです。引用、要旨、DOI、掲載先指標、ローカル取得動作を一枚に集約します。</p></article><article class="guide-card"><h4>購読 PDF はローカルに置く</h4><p class="rich-text">PDF 取得はこのマシンで完結させます。オープンアクセスは自動保存し、出版社制限のあるものは GitHub Pages に出さず OpenClaw のブラウザキューへ流します。</p></article><article class="guide-card"><h4>追跡を研究レバレッジに変える</h4><p class="rich-text">このレーダーは監視のためだけではありません。前線の証拠を継続的に読み順、統合メモ、次の実質的な貢献候補へ圧縮するべきです。</p></article></div><div class="subhead workflow-subhead"><h3 id="workflow-title">日々のマシンをどう回すか</h3></div><div class="card-grid" id="workflowLane"><article class="workflow-card"><div class="tag-row"><span class="tag is-strong">収集</span><span class="tag">cron + ブラウザ</span></div><h4>GitHub、論文フィード、研究室サイト、ウォッチリストを探索し、宇宙全体を無差別に集めるのではなく、高シグナル候補を収集します。</h4><ul class="mini-list"><li><span class="rich-text">生のソースヒット</span></li><li><span class="rich-text">正規化メタデータ</span></li><li><span class="rich-text">候補 PDF リンク</span></li></ul></article><article class="workflow-card"><div class="tag-row"><span class="tag is-strong">整理</span><span class="tag">Codex 要約</span></div><h4>項目を採点し、重複を見つけ、「なぜ重要か」を抽出し、弱い項目を早めにアクティブレーンから外します。</h4><ul class="mini-list"><li><span class="rich-text">採点済みカード</span></li><li><span class="rich-text">トレンド証拠</span></li><li><span class="rich-text">チーム監視アップデート</span></li></ul></article><article class="workflow-card"><div class="tag-row"><span class="tag is-strong">統合</span><span class="tag">人手レビュー</span></div><h4>日々の証拠の流れを、トレンド、機会のギャップ、そして具体的な次の研究課題へ変換します。</h4><ul class="mini-list"><li><span class="rich-text">トレンドマップ</span></li><li><span class="rich-text">インサイトメモ</span></li><li><span class="rich-text">候補となる貢献テーマ</span></li></ul></article><article class="workflow-card"><div class="tag-row"><span class="tag is-strong">実行</span><span class="tag">混合モード</span></div><h4>強いシグナルを、読むべきキュー、再現対象、アイデアノート、現実的なプロジェクト方向へ変換します。</h4><ul class="mini-list"><li><span class="rich-text">ダウンロードキュー</span></li><li><span class="rich-text">アジェンダ一覧</span></li><li><span class="rich-text">プロジェクトの種</span></li></ul></article></div></section></main>
+<footer class="shell footer-shell reveal"><div class="footer-panel footer-panel-compact"><div class="footer-actions"><a class="button button-primary" href="./index.html" id="footerBackHome">フロンティア・レーダー</a></div></div></footer><button class="scroll-top-button" id="scrollTopButton" type="button" aria-label="トップへ戻る"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5l-6 6 1.4 1.4 3.6-3.6V19h2V9.3l3.6 3.6 1.4-1.4-6-6z" fill="currentColor"/></svg></button>
+</body>
+</html>

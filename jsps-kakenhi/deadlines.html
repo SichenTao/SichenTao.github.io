@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JSPS 科研费时间线页，集中展示研究活動スタート支援与若手研究的通知、系统开放与截止时间。"
+    />
+    <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/deadlines.html" />
+    <meta name="theme-color" content="#f5eee4" />
+    <title>时间线 | JSPS 科研费门户</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("kakenhi-portal-theme");
+        if (savedTheme && savedTheme !== "default") {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+        const savedLocale = localStorage.getItem("kakenhi-portal-locale");
+        if (savedLocale) {
+          document.documentElement.lang = savedLocale === "zh" ? "zh-CN" : savedLocale;
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./data/kakenhi-data.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body data-page="deadlines">
+    <div class="page-wash"></div>
+    <div class="page-grid"></div>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <header class="shell site-header">
+      <div class="header-tools">
+        <div class="header-controls" aria-label="Display controls">
+          <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
+          <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
+        </div>
+        <nav class="topnav" aria-label="Page navigation">
+          <a href="./index.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span data-i18n="nav.home">首页</span></a>
+          <a href="./calls.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-projects"></use></svg><span data-i18n="nav.calls">项目目录</span></a>
+          <a href="./deadlines.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
+          <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">表格材料</span></a>
+          <a href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指引</span></a>
+          <a href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="nav.sources">官方来源</span></a>
+          <a href="./archive.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-archive"></use></svg><span data-i18n="nav.archive">快照归档</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell layout">
+      <section class="panel detail-hero reveal">
+        <div class="detail-kicker">
+          <span class="icon-badge gold"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg></span>
+          <p class="eyebrow" data-i18n="deadlines.kicker">Schedule</p>
+        </div>
+        <h1 data-i18n="deadlines.title">时间线与截止</h1>
+        <p class="lede" data-i18n="deadlines.lede">
+          用一页看清重点项目的通知发布、公募开始、电子系统开放和 JSPS 官方截止时间，避免只看网页却错过时间节点。
+        </p>
+        <div id="deadlines-detail-metrics" class="meta-strip"></div>
+      </section>
+
+      <section class="panel section-card reveal">
+        <div class="section-head">
+          <div>
+            <h2 data-i18n="deadlines.timelineTitle">关键事件时间线</h2>
+          </div>
+        </div>
+        <div id="deadline-timeline" class="timeline"></div>
+      </section>
+
+      <section class="panel section-card reveal">
+        <div class="section-head">
+          <div>
+            <h2 data-i18n="deadlines.tableTitle">精确时间表</h2>
+          </div>
+        </div>
+        <div class="portal-table-wrap">
+          <table class="portal-table">
+            <thead>
+              <tr>
+                <th data-i18n="deadlines.colProgram">项目</th>
+                <th data-i18n="deadlines.colType">节点</th>
+                <th data-i18n="deadlines.colDate">日期</th>
+                <th data-i18n="deadlines.colNote">说明</th>
+              </tr>
+            </thead>
+            <tbody id="deadline-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="shell footer-shell reveal">
+      <div class="footer-panel">
+        <div>
+          <p class="eyebrow" data-i18n="footer.resources">Resources</p>
+          <h2 data-i18n="deadlines.footerTitle">时间确认后，就进入材料准备阶段</h2>
+        </div>
+        <div class="footer-actions">
+          <a class="button button-primary" href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="footer.forms">查看表格材料</span></a>
+          <a class="button button-secondary" href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="footer.guides">查看申请指引</span></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

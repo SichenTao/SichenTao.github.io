@@ -1,0 +1,77 @@
+{
+  "domain": {
+    "id": "evolutionary-computation",
+    "name": "Evolutionary Computation",
+    "priority": "high",
+    "thesis": "This first live slice tracks researcher-centered EC signals around open-source algorithm stacks, multiobjective optimization, and GPU-native evolutionary systems. The goal is to follow people who are not only publishing, but also shaping reusable infrastructure and realistic next-step directions.",
+    "questions": [
+      "Which EC researchers are still pairing strong methods with durable code and infrastructure?",
+      "Where is the frontier moving from benchmark wins toward scalable, reusable systems?",
+      "Which recent papers look like genuine starting points for new contributions rather than isolated demonstrations?"
+    ],
+    "watchSignals": [
+      "recent TEVC, GECCO, and Swarm and Evolutionary Computation papers from tracked people",
+      "public repositories that still receive meaningful updates after publication",
+      "open-access PDFs that can be pulled automatically into the local archive"
+    ]
+  },
+  "filters": {
+    "from_publication_date": "2024-01-01",
+    "max_works_per_author": 4,
+    "max_papers": 8,
+    "keywords": [
+      "evolutionary",
+      "genetic",
+      "multi-objective",
+      "multiobjective",
+      "pareto",
+      "differential evolution",
+      "metaheuristic",
+      "genetic programming",
+      "swarm and evolutionary computation",
+      "transactions on evolutionary computation",
+      "genetic and evolutionary computation conference",
+      "optimization algorithms"
+    ]
+  },
+  "researchers": [
+    {
+      "id": "ran-cheng",
+      "name": "Ran Cheng",
+      "institution": "Hong Kong Polytechnic University",
+      "region": "Hong Kong",
+      "strength": "GPU-native EC systems",
+      "focus": "GPU-native evolutionary systems, multiobjective optimization, and open-source EC infrastructure",
+      "homepage": "https://chengran.tech/",
+      "openalex_author_id": "A5004036087",
+      "github_repos": [
+        "EMI-Group/evox",
+        "EMI-Group/metade",
+        "EMI-Group/evogp",
+        "EMI-Group/evogo"
+      ]
+    },
+    {
+      "id": "julian-blank",
+      "name": "Julian Blank",
+      "institution": "Michigan State University",
+      "region": "United States",
+      "strength": "multiobjective toolchains",
+      "focus": "parallel multiobjective optimization and practical optimization tooling",
+      "openalex_author_id": "A5047107500",
+      "github_repos": [
+        "anyoptimization/pymoo"
+      ]
+    },
+    {
+      "id": "kalyanmoy-deb",
+      "name": "Kalyanmoy Deb",
+      "institution": "Indian Institute of Technology Madras",
+      "region": "India",
+      "strength": "multiobjective foundations",
+      "focus": "multiobjective optimization, EC problem structure, and durable benchmark-setting ideas",
+      "openalex_author_id": "A5088394271",
+      "github_repos": []
+    }
+  ]
+}

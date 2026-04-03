@@ -1,0 +1,15 @@
+{
+  "name": "JSPS KAKENHI Grant Portal",
+  "short_name": "KAKENHI Portal",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5eee4",
+  "theme_color": "#f5eee4",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

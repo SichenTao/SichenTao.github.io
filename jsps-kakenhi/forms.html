@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JSPS 科研费表格与材料页，集中整理 S-21、S-22 及对应的上传说明、PDF 版和相关官方文档。"
+    />
+    <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/forms.html" />
+    <meta name="theme-color" content="#f5eee4" />
+    <title>表格材料 | JSPS 科研费门户</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("kakenhi-portal-theme");
+        if (savedTheme && savedTheme !== "default") {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+        const savedLocale = localStorage.getItem("kakenhi-portal-locale");
+        if (savedLocale) {
+          document.documentElement.lang = savedLocale === "zh" ? "zh-CN" : savedLocale;
+        }
+      } catch {}
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./data/kakenhi-data.js"></script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body data-page="forms">
+    <div class="page-wash"></div>
+    <div class="page-grid"></div>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <header class="shell site-header">
+      <div class="header-tools">
+        <div class="header-controls" aria-label="Display controls">
+          <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
+          <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
+        </div>
+        <nav class="topnav" aria-label="Page navigation">
+          <a href="./index.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span data-i18n="nav.home">首页</span></a>
+          <a href="./calls.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-projects"></use></svg><span data-i18n="nav.calls">项目目录</span></a>
+          <a href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
+          <a href="./forms.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">表格材料</span></a>
+          <a href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指引</span></a>
+          <a href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="nav.sources">官方来源</span></a>
+          <a href="./archive.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-archive"></use></svg><span data-i18n="nav.archive">快照归档</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell layout">
+      <section class="panel detail-hero reveal">
+        <div class="detail-kicker">
+          <span class="icon-badge clay"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg></span>
+          <p class="eyebrow" data-i18n="forms.kicker">Form Families</p>
+        </div>
+        <h1 data-i18n="forms.title">表格与材料</h1>
+        <p class="lede" data-i18n="forms.lede">
+          这一页专门看 S-21、S-22 以及它们所在页面的相关输入要领、上传说明、PDF 版与配套链接，方便从“截止”直接过渡到“写材料”。
+        </p>
+        <div id="forms-detail-metrics" class="meta-strip"></div>
+      </section>
+
+      <section class="panel section-card reveal">
+        <div class="section-head publication-head">
+          <div class="section-head-main">
+            <div class="publication-title-lockup">
+              <h2 data-i18n="forms.filterTitle">检索表格家族</h2>
+            </div>
+            <div class="filter-search-row">
+              <input id="form-search" class="input" type="search" placeholder="搜索 S-21、S-22、项目名、章节名或官方说明" />
+            </div>
+          </div>
+          <div class="filters publication-filters">
+            <div class="filter-control-row">
+              <select id="form-program-filter" class="input"></select>
+              <select id="form-sort-filter" class="input"></select>
+              <button id="form-reset" class="button button-secondary filter-reset icon-only" type="button" aria-label="Reset" title="Reset">
+                <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-reset"></use></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="form-grid" class="card-grid portal-card-grid"></div>
+      </section>
+    </main>
+
+    <footer class="shell footer-shell reveal">
+      <div class="footer-panel">
+        <div>
+          <p class="eyebrow" data-i18n="footer.resources">Resources</p>
+          <h2 data-i18n="forms.footerTitle">表格找到了，再去补流程和 FAQ</h2>
+        </div>
+        <div class="footer-actions">
+          <a class="button button-primary" href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="footer.guides">查看申请指引</span></a>
+          <a class="button button-secondary" href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="footer.sources">查看官方来源</span></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
