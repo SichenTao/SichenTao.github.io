@@ -240,6 +240,12 @@
   ],
   "featured_projects": [
     {
+      "title": "Frontier Radar",
+      "tag": "Research Radar",
+      "description": "Local-first research radar for tracking frontier teams, papers, repositories, and emerging directions across multiple domains.",
+      "url": "https://github.com/SichenTao/frontier-radar"
+    },
+    {
       "title": "CEC 2025 RDEx Competition System",
       "tag": "Optimization",
       "description": "Competition-oriented implementation around reconstructed differential evolution and benchmark-driven optimization.",
