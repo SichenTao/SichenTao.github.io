@@ -173,6 +173,7 @@ const translations = {
       language_choices: "Language choices",
       show_languages: "Show language options",
       cycle_languages: "Switch to the next language",
+      open_portal: "Return to homepage portal",
       menu: "Menu",
       show_menu: "Open navigation menu",
       hide_menu: "Close navigation menu",
@@ -413,6 +414,7 @@ const translations = {
       language_choices: "言語選択",
       show_languages: "言語を切り替える",
       cycle_languages: "次の言語に切り替える",
+      open_portal: "ホームポータルへ戻る",
       menu: "メニュー",
       show_menu: "メニューを開く",
       hide_menu: "メニューを閉じる",
@@ -653,6 +655,7 @@ const translations = {
       language_choices: "语言选项",
       show_languages: "切换语言",
       cycle_languages: "切换到下一种语言",
+      open_portal: "返回主页导航页",
       menu: "菜单",
       show_menu: "打开导航菜单",
       hide_menu: "关闭导航菜单",
@@ -2298,6 +2301,7 @@ function renderLocaleSwitchers() {
 
   els.localeChoices = Array.from(document.querySelectorAll("[data-locale-choice]"));
   els.localeTriggers = Array.from(document.querySelectorAll("[data-locale-trigger]"));
+  renderPortalReturnControl();
 }
 
 function renderThemeSwitchers() {
@@ -2347,6 +2351,26 @@ function renderThemeSwitchers() {
 
   els.themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
   els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
+  renderPortalReturnControl();
+}
+
+function renderPortalReturnControl() {
+  if (!els.headerControls) {
+    return;
+  }
+
+  let link = els.headerControls.querySelector(".portal-return-link");
+  if (!link) {
+    link = document.createElement("a");
+    link.className = "portal-return-link";
+    link.href = "../index.html";
+    link.innerHTML = iconSprite("home");
+    els.headerControls.appendChild(link);
+  }
+
+  const label = t("controls.open_portal");
+  link.setAttribute("aria-label", label);
+  link.setAttribute("title", label);
 }
 
 function closeLocaleSwitchers() {

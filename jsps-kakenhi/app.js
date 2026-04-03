@@ -52,6 +52,7 @@ const I18N = {
       displayControls: "显示控制",
       language: "语言",
       theme: "配色主题",
+      openPortal: "返回主页导航页",
     },
     status: {
       open: "开放中",
@@ -209,6 +210,7 @@ const I18N = {
       displayControls: "Display controls",
       language: "Language",
       theme: "Color theme",
+      openPortal: "Return to homepage portal",
     },
     status: {
       open: "Open",
@@ -483,6 +485,7 @@ function renderLocaleSwitcher() {
       routePage();
     });
   });
+  renderPortalReturnControl();
   syncHomepageShell();
 }
 
@@ -601,6 +604,26 @@ function syncHomepageShell() {
       breakpoint: 760,
     },
   });
+  renderPortalReturnControl();
+}
+
+function renderPortalReturnControl() {
+  const controls = document.querySelector(".header-controls");
+  if (!controls) {
+    return;
+  }
+
+  let link = controls.querySelector(".portal-return-link");
+  if (!link) {
+    link = document.createElement("a");
+    link.className = "portal-return-link";
+    link.href = "../index.html";
+    link.innerHTML = '<svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg>';
+    controls.appendChild(link);
+  }
+
+  link.setAttribute("aria-label", t("common.openPortal"));
+  link.setAttribute("title", t("common.openPortal"));
 }
 
 function updateDocumentTitle() {

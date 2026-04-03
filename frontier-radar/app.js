@@ -105,6 +105,7 @@ const UI_TEXT = {
     languageChoicesLabel: "Language choices",
     languageMenuLabel: "Language menu",
     showLanguagesLabel: "Show language options",
+    openPortalLabel: "Return to homepage portal",
     languageTriggerLabel: "En",
     menuLabel: "Menu",
     showMenuLabel: "Open navigation menu",
@@ -226,6 +227,7 @@ const UI_TEXT = {
     languageChoicesLabel: "语言选项",
     languageMenuLabel: "语言菜单",
     showLanguagesLabel: "显示语言选项",
+    openPortalLabel: "返回主页导航页",
     languageTriggerLabel: "中",
     menuLabel: "菜单",
     showMenuLabel: "打开导航菜单",
@@ -349,6 +351,7 @@ const UI_TEXT = {
     languageChoicesLabel: "言語選択",
     languageMenuLabel: "言語メニュー",
     showLanguagesLabel: "言語オプションを表示",
+    openPortalLabel: "ホームポータルへ戻る",
     languageTriggerLabel: "日",
     menuLabel: "メニュー",
     showMenuLabel: "メニューを開く",
@@ -1699,6 +1702,7 @@ function renderLocaleSwitcher() {
 
   switcher.appendChild(trigger);
   switcher.appendChild(tray);
+  renderPortalReturnControl();
 }
 
 function renderThemeSwitcher() {
@@ -1740,6 +1744,23 @@ function renderThemeSwitcher() {
 
   switcher.appendChild(trigger);
   switcher.appendChild(tray);
+  renderPortalReturnControl();
+}
+
+function renderPortalReturnControl() {
+  const controls = document.querySelector(".header-controls");
+  if (!controls) return;
+
+  let link = controls.querySelector(".portal-return-link");
+  if (!link) {
+    link = el("a", "portal-return-link");
+    link.href = "../index.html";
+    link.innerHTML = iconSvg("home");
+    controls.appendChild(link);
+  }
+
+  link.setAttribute("aria-label", ui("openPortalLabel"));
+  link.title = ui("openPortalLabel");
 }
 
 function syncHomepageShell() {
