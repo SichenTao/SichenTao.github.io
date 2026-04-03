@@ -887,6 +887,7 @@ let scrollTopUiBound = false;
 let topnavOverflowBound = false;
 let topnavMenuBound = false;
 let headerControlsPositionBound = false;
+let headerControlsPositionTicking = false;
 let scrollTopButton = null;
 let dataReady = false;
 const switcherCloseTimers = new WeakMap();
@@ -1727,6 +1728,11 @@ function publicationMetricVenue(item) {
   return normalizeString(item?.venue) || "";
 }
 
+function metricYearNumber(value) {
+  const parsed = Number.parseInt(String(value || ""), 10);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
 function isClarivateJournalProfileUrl(url = "") {
   const value = normalizeString(url);
   return Boolean(value && /jcr\.clarivate\.com\/jcr(?:-jp)?\/journal-profile/i.test(value));
@@ -1841,9 +1847,24 @@ function metricLinkBundle(item, metricKind) {
 
   if (metricKind === "impact") {
     const officialCandidate = normalizeString(verification.if_source_url);
+    const metricYear = metricYearNumber(publicationMetricYear(item, "if"));
+    const officialYear = metricYearNumber(verification.if_source_official_year || verification.if_year);
+    const officialMode = normalizeString(verification.if_source_mode);
+    const exactOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
+      && (
+        officialMode === "official_profile"
+        || (!officialMode && officialYear !== null && metricYear !== null && officialYear === metricYear)
+      )
+      && (
+        metricYear === null
+        || officialYear === null
+        || officialYear === metricYear
+      )
+      ? officialCandidate
+      : "";
     return {
       officialLabel: t("actions.metric_official_page"),
-      officialUrl: isClarivateJournalProfileUrl(officialCandidate) ? officialCandidate : "",
+      officialUrl: exactOfficialUrl,
       publicUrl: normalizeString(verification.if_public_source_url || verification.if_supporting_source_url),
       searchFallbackUrl: isClarivateSearchUrl(officialCandidate) ? officialCandidate : "",
       searchCopyText: verification.if_search_copy_text || venue || "",
@@ -1854,9 +1875,24 @@ function metricLinkBundle(item, metricKind) {
 
   if (metricKind === "jcr") {
     const officialCandidate = normalizeString(verification.jcr_source_url || verification.if_source_url);
+    const metricYear = metricYearNumber(publicationMetricYear(item, "jcr"));
+    const officialYear = metricYearNumber(verification.jcr_source_official_year || verification.jcr_year || verification.if_source_official_year);
+    const officialMode = normalizeString(verification.jcr_source_mode || verification.if_source_mode);
+    const exactOfficialUrl = isClarivateJournalProfileUrl(officialCandidate)
+      && (
+        officialMode === "official_profile"
+        || (!officialMode && officialYear !== null && metricYear !== null && officialYear === metricYear)
+      )
+      && (
+        metricYear === null
+        || officialYear === null
+        || officialYear === metricYear
+      )
+      ? officialCandidate
+      : "";
     return {
       officialLabel: t("actions.metric_official_page"),
-      officialUrl: isClarivateJournalProfileUrl(officialCandidate) ? officialCandidate : "",
+      officialUrl: exactOfficialUrl,
       publicUrl: normalizeString(
         verification.jcr_public_source_url
         || verification.jcr_supporting_source_url
@@ -2410,22 +2446,53 @@ function bindSwitcherHoverBehavior() {
 
 function updateHeaderControlsPosition() {
   const controls = els.headerControls || document.querySelector(".header-controls");
+  const anchor = document.querySelector(".header-controls-anchor");
   if (!controls) {
     return;
   }
 
-  controls.style.removeProperty("--header-controls-top");
-  controls.style.removeProperty("--header-controls-left");
+  if (!anchor) {
+    controls.style.removeProperty("--header-controls-top");
+    controls.style.removeProperty("--header-controls-left");
+    return;
+  }
+
+  const anchorRect = anchor.getBoundingClientRect();
+  const controlsRect = controls.getBoundingClientRect();
+  const nextTop = Math.round(anchorRect.top + (anchorRect.height - controlsRect.height) / 2);
+  const nextLeft = Math.round(anchorRect.left);
+
+  controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
+  controls.style.setProperty("--header-controls-left", `${Math.max(8, nextLeft)}px`);
+}
+
+function scheduleHeaderControlsPositionUpdate() {
+  if (headerControlsPositionTicking) {
+    return;
+  }
+
+  headerControlsPositionTicking = true;
+  window.requestAnimationFrame(() => {
+    headerControlsPositionTicking = false;
+    updateHeaderControlsPosition();
+  });
 }
 
 function initHeaderControlsPosition() {
-  updateHeaderControlsPosition();
+  scheduleHeaderControlsPositionUpdate();
 
   if (headerControlsPositionBound) {
     return;
   }
 
   headerControlsPositionBound = true;
+  window.addEventListener("scroll", scheduleHeaderControlsPositionUpdate, { passive: true });
+  window.addEventListener("resize", scheduleHeaderControlsPositionUpdate);
+  window.addEventListener("orientationchange", scheduleHeaderControlsPositionUpdate);
+  window.addEventListener("load", scheduleHeaderControlsPositionUpdate);
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(scheduleHeaderControlsPositionUpdate).catch(() => {});
+  }
 }
 
 function applyTheme(themeName, persist = true) {
@@ -3142,7 +3209,7 @@ function updateTopnavOverflowState(nav) {
   const atStart = nav.scrollLeft <= 8;
   const atEnd = nav.scrollLeft >= maxScrollLeft - 8;
   const forceMenu = window.matchMedia("(max-width: 760px)").matches;
-  const useMenu = forceMenu || overflowing;
+  const useMenu = forceMenu;
 
   shell.classList.toggle("has-overflow", overflowing);
   shell.classList.toggle("is-scrolled", overflowing && !atStart);
