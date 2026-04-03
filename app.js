@@ -324,6 +324,7 @@ const translations = {
       open_record: "Open record",
       open_doi: "Open DOI / source",
       open_jcr_search_copy: "Open official JCR search and copy journal name",
+      open_official_platform_copy: "Open official platform and copy journal name",
       open_search_copy: "Open search page and copy citation query",
       copied_journal_name: "Journal name copied",
       copied_search_query: "Citation query copied",
@@ -563,6 +564,7 @@ const translations = {
       open_record: "記録を開く",
       open_doi: "DOI / 出典を開く",
       open_jcr_search_copy: "JCR 公式検索を開き、誌名をコピー",
+      open_official_platform_copy: "公式プラットフォームを開き、誌名をコピー",
       open_search_copy: "検索ページを開き、引用検索語をコピー",
       copied_journal_name: "誌名をコピーしました",
       copied_search_query: "引用検索語をコピーしました",
@@ -802,6 +804,7 @@ const translations = {
       open_record: "打开记录",
       open_doi: "打开 DOI / 来源",
       open_jcr_search_copy: "打开 JCR 官方搜索并复制期刊名",
+      open_official_platform_copy: "打开官方平台并复制期刊名",
       open_search_copy: "打开搜索页并复制引用检索字段",
       copied_journal_name: "已复制期刊名",
       copied_search_query: "已复制引用检索字段",
@@ -1703,9 +1706,57 @@ function publicationPrimaryUrl(item) {
   return item.publisher_url || item.url || (item.doi ? `https://doi.org/${item.doi}` : "");
 }
 
+const CAS_OFFICIAL_ARCHIVE_URL = "./assets/docs/official/cas_platform_home_official.html";
+
 function isScholarProfileCitationUrl(url = "") {
   const value = normalizeString(url);
   return /scholar\.google\.com\/citations\?user=/i.test(value);
+}
+
+function publicationMetricYear(item, metricKind) {
+  const verification = item?.verification || {};
+  const metricYear = verification?.[`${metricKind}_year`];
+  if (metricYear !== undefined && metricYear !== null && metricYear !== "") {
+    return String(metricYear);
+  }
+
+  return normalizeString(item?.year) || "";
+}
+
+function publicationMetricVenue(item) {
+  return normalizeString(item?.venue) || "";
+}
+
+function isClarivateJournalProfileUrl(url = "") {
+  const value = normalizeString(url);
+  return Boolean(value && /jcr\.clarivate\.com\/jcr(?:-jp)?\/journal-profile/i.test(value));
+}
+
+function isClarivateSearchUrl(url = "") {
+  const value = normalizeString(url);
+  return Boolean(
+    value
+    && (
+      /mjl\.clarivate\.com\/search-results/i.test(value)
+      || /jcr\.clarivate\.com\/jcr(?:-jp)?\/home/i.test(value)
+      || /clarivate\.com\/search-results/i.test(value)
+    )
+  );
+}
+
+function isFenqubiaoPlatformUrl(url = "") {
+  const value = normalizeString(url);
+  return Boolean(value && /fenqubiao\.com\/?$/i.test(value));
+}
+
+function buildGoogleScholarCitationUrl(item) {
+  const direct = normalizeString(item?.citation_sources?.google_scholar?.url);
+  const mode = normalizeString(item?.citation_sources?.google_scholar?.mode);
+  if (direct && mode === "direct" && !isScholarProfileCitationUrl(direct)) {
+    return direct;
+  }
+
+  return buildScholarCitationSearchUrl(item);
 }
 
 function buildScholarCitationSearchUrl(item) {
@@ -1759,15 +1810,127 @@ function buildSemanticScholarCitationUrl(item) {
 }
 
 function publicationCitationUrl(item) {
+  const openAlexDirect = normalizeString(item?.citation_sources?.openalex?.url);
+  const openAlexMode = normalizeString(item?.citation_sources?.openalex?.mode);
+  if (openAlexDirect && (!openAlexMode || openAlexMode === "direct")) {
+    return openAlexDirect;
+  }
+
   const scholarSource = normalizeString(item?.citation_sources?.google_scholar?.url);
-  if (scholarSource) {
+  const scholarMode = normalizeString(item?.citation_sources?.google_scholar?.mode);
+  if (scholarSource && scholarMode === "direct" && !isScholarProfileCitationUrl(scholarSource)) {
     return scholarSource;
   }
+
+  const semanticSource = normalizeString(item?.citation_sources?.semantic_scholar?.url);
+  const semanticMode = normalizeString(item?.citation_sources?.semantic_scholar?.mode);
+  if (semanticSource && semanticMode === "direct") {
+    return semanticSource;
+  }
+
   const sourceUrl = normalizeString(item?.citation_source_url);
   if (sourceUrl && !isScholarProfileCitationUrl(sourceUrl)) {
     return sourceUrl;
   }
-  return buildScholarCitationSearchUrl(item);
+  return buildGoogleScholarCitationUrl(item);
+}
+
+function metricLinkBundle(item, metricKind) {
+  const verification = item?.verification || {};
+  const venue = publicationMetricVenue(item);
+
+  if (metricKind === "impact") {
+    const officialCandidate = normalizeString(verification.if_source_url);
+    return {
+      officialLabel: t("actions.metric_official_page"),
+      officialUrl: isClarivateJournalProfileUrl(officialCandidate) ? officialCandidate : "",
+      publicUrl: normalizeString(verification.if_public_source_url || verification.if_supporting_source_url),
+      searchFallbackUrl: isClarivateSearchUrl(officialCandidate) ? officialCandidate : "",
+      searchCopyText: verification.if_search_copy_text || venue || "",
+      searchTooltip: t("actions.open_jcr_search_copy"),
+      searchCopySuccessLabel: t("actions.copied_journal_name"),
+    };
+  }
+
+  if (metricKind === "jcr") {
+    const officialCandidate = normalizeString(verification.jcr_source_url || verification.if_source_url);
+    return {
+      officialLabel: t("actions.metric_official_page"),
+      officialUrl: isClarivateJournalProfileUrl(officialCandidate) ? officialCandidate : "",
+      publicUrl: normalizeString(
+        verification.jcr_public_source_url
+        || verification.jcr_supporting_source_url
+        || verification.if_public_source_url
+        || verification.if_supporting_source_url
+      ),
+      searchFallbackUrl: isClarivateSearchUrl(officialCandidate) ? officialCandidate : "",
+      searchCopyText: verification.jcr_search_copy_text || verification.if_search_copy_text || venue || "",
+      searchTooltip: t("actions.open_jcr_search_copy"),
+      searchCopySuccessLabel: t("actions.copied_journal_name"),
+    };
+  }
+
+  if (metricKind === "cas") {
+    return {
+      officialLabel: t("actions.metric_official_platform"),
+      officialUrl: CAS_OFFICIAL_ARCHIVE_URL,
+      publicUrl: normalizeString(
+        verification.cas_public_source_url || verification.cas_supporting_source_url || verification.cas_source_url
+      ),
+      searchFallbackUrl: "",
+      searchCopyText: "",
+      searchTooltip: "",
+      searchCopySuccessLabel: "",
+    };
+  }
+
+  return {
+    officialLabel: "",
+    officialUrl: "",
+    publicUrl: "",
+    searchFallbackUrl: "",
+    searchCopyText: "",
+    searchTooltip: "",
+    searchCopySuccessLabel: "",
+  };
+}
+
+function metricOptionsForPublication(item, metricKind) {
+  const bundle = metricLinkBundle(item, metricKind);
+  const options = [];
+
+  if (metricKind === "cas" && bundle.publicUrl) {
+    options.push({
+      label: t("actions.metric_public_evidence"),
+      href: bundle.publicUrl,
+    });
+  }
+
+  if (bundle.officialUrl) {
+    options.push({
+      label: bundle.officialLabel,
+      href: bundle.officialUrl,
+    });
+  }
+
+  if (metricKind !== "cas" && bundle.publicUrl) {
+    options.push({
+      label: t("actions.metric_public_evidence"),
+      href: bundle.publicUrl,
+    });
+  }
+
+  if (!options.length && bundle.searchFallbackUrl) {
+    options.push({
+      label: bundle.officialLabel,
+      href: bundle.searchFallbackUrl,
+      copyText: bundle.searchCopyText,
+      tooltip: bundle.searchTooltip,
+      copySuccessLabel: bundle.searchCopySuccessLabel,
+    });
+  }
+
+  return buildPublicationMetricOptions(options);
 }
 
 function publicationDoiMarkup(item) {
@@ -1847,42 +2010,11 @@ function buildPublicationMetricOptions(definitions) {
 function publicationMetricsMarkup(item) {
   const verification = item?.verification || {};
   const metrics = [];
-  const ifOfficialSearch = verification.if_source_mode === "official_search";
-  const jcrOfficialSearch = verification.jcr_source_mode === "official_search";
-  const ifOptions = buildPublicationMetricOptions([
-    {
-      label: t("actions.metric_official_page"),
-      href: verification.if_source_url || "",
-      copyText: ifOfficialSearch ? verification.if_search_copy_text || item.venue || "" : "",
-      tooltip: ifOfficialSearch ? t("actions.open_jcr_search_copy") : "",
-    },
-    {
-      label: t("actions.metric_public_evidence"),
-      href: verification.if_public_source_url || verification.if_supporting_source_url || "",
-    },
-  ]);
-  const jcrOptions = buildPublicationMetricOptions([
-    {
-      label: t("actions.metric_official_page"),
-      href: verification.jcr_source_url || "",
-      copyText: jcrOfficialSearch ? verification.jcr_search_copy_text || item.venue || "" : "",
-      tooltip: jcrOfficialSearch ? t("actions.open_jcr_search_copy") : "",
-    },
-    {
-      label: t("actions.metric_public_evidence"),
-      href: verification.jcr_public_source_url || verification.jcr_supporting_source_url || "",
-    },
-  ]);
-  const casOptions = buildPublicationMetricOptions([
-    {
-      label: t("actions.metric_official_platform"),
-      href: verification.cas_official_source_url || verification.cas_official_platform_url || "",
-    },
-    {
-      label: t("actions.metric_public_evidence"),
-      href: verification.cas_public_source_url || verification.cas_supporting_source_url || verification.cas_source_url || "",
-    },
-  ]);
+  const ifBundle = metricLinkBundle(item, "impact");
+  const jcrBundle = metricLinkBundle(item, "jcr");
+  const ifOptions = metricOptionsForPublication(item, "impact");
+  const jcrOptions = metricOptionsForPublication(item, "jcr");
+  const casOptions = metricOptionsForPublication(item, "cas");
   const citationOptions = buildPublicationMetricOptions([
     {
       label: "Google Scholar",
@@ -1940,10 +2072,10 @@ function publicationMetricsMarkup(item) {
       value: verification.if_value,
       meta: verification.if_year ? String(verification.if_year) : "",
       tone: "impact",
-      href: verification.if_source_url || "",
+      href: ifOptions.length === 1 ? ifOptions[0].href : ifBundle.officialUrl || ifBundle.publicUrl || ifBundle.searchFallbackUrl || "",
       options: ifOptions,
-      copyText: ifOptions.length <= 1 && ifOfficialSearch ? verification.if_search_copy_text || item.venue || "" : "",
-      tooltip: ifOptions.length <= 1 && ifOfficialSearch ? t("actions.open_jcr_search_copy") : "",
+      copyText: ifOptions.length <= 1 && ifBundle.searchFallbackUrl ? ifBundle.searchCopyText : "",
+      tooltip: ifOptions.length <= 1 && ifBundle.searchFallbackUrl ? ifBundle.searchTooltip : "",
     });
   }
 
@@ -1953,10 +2085,10 @@ function publicationMetricsMarkup(item) {
       value: verification.jcr_quartile,
       meta: verification.jcr_year ? String(verification.jcr_year) : "",
       tone: "jcr",
-      href: verification.jcr_source_url || "",
+      href: jcrOptions.length === 1 ? jcrOptions[0].href : jcrBundle.officialUrl || jcrBundle.publicUrl || jcrBundle.searchFallbackUrl || "",
       options: jcrOptions,
-      copyText: jcrOptions.length <= 1 && jcrOfficialSearch ? verification.jcr_search_copy_text || item.venue || "" : "",
-      tooltip: jcrOptions.length <= 1 && jcrOfficialSearch ? t("actions.open_jcr_search_copy") : "",
+      copyText: jcrOptions.length <= 1 && jcrBundle.searchFallbackUrl ? jcrBundle.searchCopyText : "",
+      tooltip: jcrOptions.length <= 1 && jcrBundle.searchFallbackUrl ? jcrBundle.searchTooltip : "",
     });
   }
 
@@ -1966,7 +2098,7 @@ function publicationMetricsMarkup(item) {
       value: verification.cas_quartile,
       meta: [verification.cas_top ? t("labels.top") : "", verification.cas_year ? String(verification.cas_year) : ""].filter(Boolean).join(" · "),
       tone: "cas",
-      href: verification.cas_official_source_url || verification.cas_official_platform_url || verification.cas_source_url || "",
+      href: casOptions.length === 1 ? casOptions[0].href : (casOptions[0]?.href || ""),
       options: casOptions,
     });
   }
@@ -2278,21 +2410,12 @@ function bindSwitcherHoverBehavior() {
 
 function updateHeaderControlsPosition() {
   const controls = els.headerControls || document.querySelector(".header-controls");
-  const shell = document.querySelector(".topnav-shell");
-  if (!controls || !shell) {
+  if (!controls) {
     return;
   }
 
-  const compactViewport = window.matchMedia("(max-width: 760px)").matches;
-  const viewportInset = compactViewport ? 10 : 18;
-  const controlGap = compactViewport ? 8 : 10;
-  const shellRect = shell.getBoundingClientRect();
-  const controlsRect = controls.getBoundingClientRect();
-  const nextTop = Math.max(viewportInset, shellRect.top + (shellRect.height - controlsRect.height) / 2);
-  const nextLeft = Math.max(viewportInset, shellRect.left - controlsRect.width - controlGap);
-
-  controls.style.setProperty("--header-controls-top", `${Math.round(nextTop)}px`);
-  controls.style.setProperty("--header-controls-left", `${Math.round(nextLeft)}px`);
+  controls.style.removeProperty("--header-controls-top");
+  controls.style.removeProperty("--header-controls-left");
 }
 
 function initHeaderControlsPosition() {
@@ -2303,15 +2426,6 @@ function initHeaderControlsPosition() {
   }
 
   headerControlsPositionBound = true;
-  window.addEventListener("resize", updateHeaderControlsPosition, { passive: true });
-  window.addEventListener("load", updateHeaderControlsPosition, { passive: true });
-
-  if (document.fonts?.ready) {
-    document.fonts.ready.then(() => {
-      updateHeaderControlsPosition();
-      window.setTimeout(updateHeaderControlsPosition, 120);
-    });
-  }
 }
 
 function applyTheme(themeName, persist = true) {

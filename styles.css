@@ -240,7 +240,10 @@ a {
 }
 
 .header-tools {
-  display: block;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
   width: 100%;
   min-width: 0;
   position: relative;
@@ -277,14 +280,17 @@ a {
 }
 
 .header-controls {
-  position: fixed;
-  top: var(--header-controls-top, calc(env(safe-area-inset-top, 0px) + 18px));
-  left: var(--header-controls-left, calc(env(safe-area-inset-left, 0px) + 18px));
+  position: relative;
   z-index: 24;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   margin: 0;
+  justify-self: start;
+}
+
+.header-controls-anchor {
+  display: none;
 }
 
 .control-switcher {
@@ -3154,8 +3160,6 @@ a {
   }
 
   .header-tools {
-    display: flex;
-    align-items: center;
     gap: 10px;
     padding: 10px 12px 12px;
   }
@@ -3172,6 +3176,10 @@ a {
     flex: none;
     margin: 0;
     transform: none;
+  }
+
+  .header-controls-anchor {
+    display: none;
   }
 
   .filters,
@@ -3317,6 +3325,10 @@ a {
 
   .header-controls {
     gap: 8px;
+  }
+
+  .header-controls-anchor {
+    display: none;
   }
 
   .locale-trigger,
