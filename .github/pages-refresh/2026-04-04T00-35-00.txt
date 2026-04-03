@@ -1,0 +1,2 @@
+Force a fresh GitHub Pages deployment after retiring the standalone frontier-radar Pages site.
+Timestamp: 2026-04-04T00:35:00+09:00
