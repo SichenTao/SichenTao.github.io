@@ -1239,13 +1239,6 @@ function resolveLocaleName() {
     }
   } catch {}
 
-  const documentLocale = document.documentElement.lang || "en";
-  if (documentLocale.startsWith("ja")) {
-    return "ja";
-  }
-  if (documentLocale.startsWith("zh")) {
-    return "zh";
-  }
   return "en";
 }
 
@@ -2406,6 +2399,12 @@ function renderPortalReturnControl() {
 
   const currentPath = window.location.pathname;
   const items = [
+    {
+      href: "/",
+      label: labels.portal,
+      icon: iconSprite("home"),
+      active: currentPath === "/",
+    },
     {
       href: "/academic/",
       label: labels.academic,

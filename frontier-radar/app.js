@@ -829,22 +829,10 @@ const PATTERN_TRANSLATORS = [
 ];
 
 function loadInitialLanguage() {
-  const pageLanguage =
-    window.FRONTIER_RADAR_DEFAULT_LANGUAGE ||
-    document.body?.dataset?.defaultLanguage ||
-    document.documentElement?.lang?.toLowerCase();
-  if (pageLanguage && UI_TEXT[pageLanguage]) {
-    return pageLanguage;
-  }
-
   const saved = readStoredValue(STORAGE_KEY_LANGUAGE) || readStoredValue(LEGACY_STORAGE_KEY_LANGUAGE);
   if (saved && UI_TEXT[saved]) {
     return saved;
   }
-
-  const browserLanguage = navigator.language.toLowerCase();
-  if (browserLanguage.startsWith("zh")) return "zh";
-  if (browserLanguage.startsWith("ja")) return "ja";
   return "en";
 }
 
@@ -905,7 +893,6 @@ const switcherCloseTimers = new WeakMap();
 function currentLocale() {
   return (
     window.FRONTIER_RADAR_DEFAULT_LANGUAGE ||
-    document.body?.dataset?.defaultLanguage ||
     state.language ||
     "en"
   );
@@ -1813,6 +1800,12 @@ function renderPortalReturnControl() {
 
   const currentPath = window.location.pathname;
   const items = [
+    {
+      href: "/",
+      label: labels.portal,
+      icon: iconSvg("home"),
+      active: currentPath === "/",
+    },
     {
       href: "/academic/",
       label: labels.academic,

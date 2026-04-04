@@ -2,7 +2,8 @@ const DATA_URL = "./data/kakenhi-data.json";
 const DATA_BUNDLE = window.KAKENHI_PORTAL_DATA || null;
 const THEME_KEY = "sichen-homepage-theme";
 const LEGACY_THEME_KEY = "kakenhi-portal-theme";
-const LOCALE_KEY = "kakenhi-portal-locale";
+const LOCALE_KEY = "sichen-homepage-locale";
+const LEGACY_LOCALE_KEY = "kakenhi-portal-locale";
 const FILTER_KEY = "kakenhi-portal-filters";
 let topnavOverflowBound = false;
 let topnavMenuBound = false;
@@ -338,10 +339,10 @@ const state = {
   filters: getStoredFilters(),
 };
 const THEME_OPTIONS = [
-  { value: "tohoku", label: "I", title: "Tohoku University theme" },
-  { value: "toyama", label: "M", title: "University of Toyama theme" },
-  { value: "usst", label: "C", title: "University of Shanghai for Science and Technology theme" },
-  { value: "default", label: "W", title: "Base theme" },
+  { value: "tohoku", label: "Tohoku", title: "Tohoku University theme", swatchClass: "theme-tohoku", themeColor: "#f3eef9" },
+  { value: "toyama", label: "Toyama", title: "University of Toyama theme", swatchClass: "theme-toyama", themeColor: "#edf4f7" },
+  { value: "usst", label: "USST", title: "USST theme", swatchClass: "theme-usst", themeColor: "#f7eded" },
+  { value: "default", label: "Base", title: "Base theme", swatchClass: "theme-base", themeColor: "#f5eee4" },
 ];
 
 document.addEventListener("DOMContentLoaded", init);
@@ -362,10 +363,10 @@ async function init() {
 
 function getStoredLocale() {
   try {
-    const saved = localStorage.getItem(LOCALE_KEY);
-    return saved === "en" ? "en" : "zh";
+    const saved = localStorage.getItem(LOCALE_KEY) || localStorage.getItem(LEGACY_LOCALE_KEY);
+    return saved === "zh" ? "zh" : "en";
   } catch {
-    return "zh";
+    return "en";
   }
 }
 
@@ -512,14 +513,14 @@ function renderThemeSwitcher() {
   }
   const active = THEME_OPTIONS.find((item) => item.value === state.theme) || THEME_OPTIONS[0];
   container.innerHTML = `
-    <button class="theme-trigger" type="button" data-theme-trigger aria-label="${escapeHtml(t("common.theme"))}" title="${escapeHtml(translatedThemeTooltip(active))}">
-      <span class="locale-label">${active.label}</span>
+    <button class="theme-trigger" type="button" data-theme-trigger aria-haspopup="true" aria-expanded="false" aria-label="${escapeHtml(t("common.theme"))}" title="${escapeHtml(translatedThemeTooltip(active))}">
+      <span class="theme-swatch ${escapeHtml(active.swatchClass)}" aria-hidden="true"></span>
     </button>
-    <div class="theme-tray">
+    <div class="theme-tray" role="group" aria-label="${escapeHtml(t("common.theme"))}">
       ${THEME_OPTIONS
         .map(
           (theme) =>
-            `<button class="theme-chip" type="button" data-theme-choice="${theme.value}" aria-label="${escapeHtml(translatedThemeTooltip(theme))}" title="${escapeHtml(translatedThemeTooltip(theme))}">${theme.label}</button>`
+            `<button class="theme-chip" type="button" data-theme-choice="${theme.value}" aria-label="${escapeHtml(translatedThemeTooltip(theme))}" title="${escapeHtml(translatedThemeTooltip(theme))}"><span class="theme-swatch ${escapeHtml(theme.swatchClass)}" aria-hidden="true"></span></button>`
         )
         .join("")}
     </div>
@@ -528,10 +529,15 @@ function renderThemeSwitcher() {
     button.addEventListener("click", () => {
       const nextTheme = button.dataset.themeChoice;
       state.theme = nextTheme;
+      const themeOption = THEME_OPTIONS.find((opt) => opt.value === nextTheme);
       if (nextTheme === "default") {
         delete document.documentElement.dataset.theme;
       } else {
         document.documentElement.dataset.theme = nextTheme;
+      }
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor && themeOption) {
+        metaThemeColor.setAttribute("content", themeOption.themeColor);
       }
       try {
         localStorage.setItem(THEME_KEY, nextTheme);
@@ -649,6 +655,12 @@ function renderPortalReturnControl() {
 
   const currentPath = window.location.pathname;
   const items = [
+    {
+      href: "/",
+      label: labels.portal,
+      icon: '<svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg>',
+      active: currentPath === "/",
+    },
     {
       href: "/academic/",
       label: labels.academic,

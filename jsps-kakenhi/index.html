@@ -1,22 +1,22 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="JSPS 科研费信息网站，围绕研究活動スタート支援与若手研究整理官方页面、表格、截止时间、FAQ、归档快照与 GitHub Pages 源码发布。"
+      content="JSPS KAKENHI portal for official pages, forms, deadlines, guides, and archived snapshots, with priority coverage for Research Activity Start-up Support and Early-Career Scientists."
     />
     <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/" />
-    <meta name="theme-color" content="#f5eee4" />
-    <meta property="og:title" content="JSPS 科研费门户" />
+    <meta name="theme-color" content="#f3eef9" />
+    <meta property="og:title" content="JSPS KAKENHI Portal" />
     <meta
       property="og:description"
-      content="全面整理 JSPS 科研费官方信息的网站，重点追踪研究活動スタート支援与若手研究。"
+      content="A compact JSPS KAKENHI portal for official pages, forms, deadlines, and archived snapshots."
     />
     <meta property="og:url" content="https://sichentao.github.io/jsps-kakenhi/" />
     <meta property="og:type" content="website" />
-    <title>JSPS 科研费门户</title>
+    <title>JSPS KAKENHI Portal</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,22 +28,30 @@
     <link rel="manifest" href="./site.webmanifest" />
     <script>
       try {
-        const savedTheme = localStorage.getItem("kakenhi-portal-theme");
+        const savedTheme =
+          localStorage.getItem("sichen-homepage-theme") ||
+          localStorage.getItem("kakenhi-portal-theme");
         if (savedTheme && savedTheme !== "default") {
           document.documentElement.dataset.theme = savedTheme;
+        } else {
+          document.documentElement.dataset.theme = "tohoku";
         }
-        const savedLocale = localStorage.getItem("kakenhi-portal-locale");
-        if (savedLocale) {
-          document.documentElement.lang = savedLocale === "zh" ? "zh-CN" : savedLocale;
-        }
-      } catch {}
+        const savedLocale =
+          localStorage.getItem("sichen-homepage-locale") ||
+          localStorage.getItem("kakenhi-portal-locale");
+        document.documentElement.lang =
+          savedLocale === "zh" ? "zh-CN" : savedLocale === "ja" ? "ja" : "en";
+      } catch {
+        document.documentElement.dataset.theme = "tohoku";
+        document.documentElement.lang = "en";
+      }
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260404-062819" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260404-062819" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260404-062819" />
-    <script src="./data/kakenhi-data.js?v=20260404-062819"></script>
-        <script defer src="/assets/shared/homepage-shell.js?v=20260404-062819"></script>
-<script defer src="./app.js?v=20260404-062819"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260404-072235" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260404-072235" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260404-072235" />
+    <script src="./data/kakenhi-data.js?v=20260404-072235"></script>
+        <script defer src="/assets/shared/homepage-shell.js?v=20260404-072235"></script>
+<script defer src="./app.js?v=20260404-072235"></script>
   </head>
   <body data-page="home">
     <div class="page-wash"></div>

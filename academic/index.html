@@ -37,18 +37,22 @@
     <script>
       try {
         const savedTheme = localStorage.getItem("sichen-homepage-theme");
-        if (savedTheme) {
+        if (savedTheme && savedTheme !== "default") {
           document.documentElement.dataset.theme = savedTheme;
+        } else {
+          document.documentElement.dataset.theme = "tohoku";
         }
         const savedLocale = localStorage.getItem("sichen-homepage-locale");
         if (savedLocale) {
           document.documentElement.lang = savedLocale === "zh" ? "zh-CN" : savedLocale;
         }
-      } catch {}
+      } catch {
+        document.documentElement.dataset.theme = "tohoku";
+      }
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260404-062819" />
-    <script src="./data/profile-data.js?v=20260404-062819"></script>
-    <script defer src="./app.js?v=20260404-062819"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260404-072235" />
+    <script src="./data/profile-data.js?v=20260404-072235"></script>
+    <script defer src="./app.js?v=20260404-072235"></script>
   </head>
   <body>
     <div class="page-wash"></div>
