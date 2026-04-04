@@ -38,11 +38,11 @@
         }
       } catch {}
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260403-175049" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260403-175049" />
-    <script src="./data/kakenhi-data.js?v=20260403-175049"></script>
-        <script defer src="/assets/shared/homepage-shell.js?v=20260403-175049"></script>
-<script defer src="./app.js?v=20260403-175049"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260404-043914" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260404-043914" />
+    <script src="./data/kakenhi-data.js?v=20260404-043914"></script>
+        <script defer src="/assets/shared/homepage-shell.js?v=20260404-043914"></script>
+<script defer src="./app.js?v=20260404-043914"></script>
   </head>
   <body data-page="home">
     <div class="page-wash"></div>
@@ -52,6 +52,7 @@
 
     <header class="shell site-header">
       <div class="header-tools">
+        <div class="header-controls-anchor" aria-hidden="true"></div>
         <div class="header-controls" aria-label="Display controls">
           <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
           <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
@@ -72,11 +73,29 @@
       <section class="panel hero reveal">
         <div class="hero-top">
           <div class="hero-primary">
+            <div class="hero-photo-inline">
+              <div class="portrait-frame app-portrait-frame">
+                <img src="./favicon.png" alt="" aria-hidden="true" />
+              </div>
+              <div class="shortcut-grid" aria-label="Quick portal links">
+                <a class="shortcut-link" href="./calls.html">
+                  <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-projects"></use></svg>
+                  <span data-i18n="nav.calls">项目目录</span>
+                </a>
+                <a class="shortcut-link" href="./deadlines.html">
+                  <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg>
+                  <span data-i18n="nav.deadlines">时间线</span>
+                </a>
+                <a class="shortcut-link" href="./forms.html">
+                  <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg>
+                  <span data-i18n="nav.forms">表格材料</span>
+                </a>
+              </div>
+            </div>
             <div class="hero-heading">
               <div class="eyebrow hero-keylines" data-i18n="home.keyline">官方页面 · 表格 · 截止时间</div>
               <p class="native-name">科研费信息网站</p>
               <div class="hero-title-row">
-                <img class="hero-app-icon" src="./favicon.png" alt="" aria-hidden="true" />
                 <h1 data-i18n="home.heroTitle">JSPS 科研费门户</h1>
               </div>
               <div class="hero-identity">
