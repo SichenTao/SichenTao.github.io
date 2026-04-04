@@ -2407,15 +2407,9 @@ function renderPortalReturnControl() {
   const currentPath = window.location.pathname;
   const items = [
     {
-      href: "/",
-      label: labels.portal,
-      icon: iconSprite("home"),
-      active: currentPath === "/",
-    },
-    {
       href: "/academic/",
       label: labels.academic,
-      icon: '<img class="portal-chip-logo" src="/assets/images/favicon-portrait.png" alt="" loading="lazy" />',
+      icon: '<img class="portal-chip-logo" src="/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
       active: currentPath.startsWith("/academic/"),
       extraClass: "portal-chip--portrait",
     },
@@ -2432,6 +2426,8 @@ function renderPortalReturnControl() {
       active: currentPath.startsWith("/jsps-kakenhi/"),
     },
   ];
+  const activeItem = items.find((item) => item.active) || items[0];
+  const trayItems = items.filter((item) => item.href !== activeItem.href);
 
   els.headerControls.querySelectorAll(".portal-return-link").forEach((node) => node.remove());
 
@@ -2444,24 +2440,23 @@ function renderPortalReturnControl() {
 
   switcher.innerHTML = `
     <button
-      class="portal-trigger"
+      class="portal-trigger ${activeItem.extraClass || ""}"
       type="button"
       data-portal-trigger
       aria-haspopup="true"
       aria-expanded="false"
-      aria-label="${escapeHtml(labels.trigger)}"
-      title="${escapeHtml(labels.trigger)}"
+      aria-label="${escapeHtml(activeItem.label)}"
+      title="${escapeHtml(activeItem.label)}"
     >
-      ${iconSprite("home")}
+      ${activeItem.icon}
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
-      ${items.map((item) => `
+      ${trayItems.map((item) => `
         <a
-          class="portal-chip ${item.extraClass || ""} ${item.active ? "is-active" : ""}"
+          class="portal-chip ${item.extraClass || ""}"
           href="${item.href}"
           aria-label="${escapeHtml(item.label)}"
           title="${escapeHtml(item.label)}"
-          ${item.active ? 'aria-current="page"' : ""}
         >
           ${item.icon}
         </a>

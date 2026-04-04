@@ -1,6 +1,7 @@
 const DATA_URL = "./data/kakenhi-data.json";
 const DATA_BUNDLE = window.KAKENHI_PORTAL_DATA || null;
-const THEME_KEY = "kakenhi-portal-theme";
+const THEME_KEY = "sichen-homepage-theme";
+const LEGACY_THEME_KEY = "kakenhi-portal-theme";
 const LOCALE_KEY = "kakenhi-portal-locale";
 const FILTER_KEY = "kakenhi-portal-filters";
 let topnavOverflowBound = false;
@@ -370,7 +371,7 @@ function getStoredLocale() {
 
 function getStoredTheme() {
   try {
-    const saved = localStorage.getItem(THEME_KEY);
+    const saved = localStorage.getItem(THEME_KEY) || localStorage.getItem(LEGACY_THEME_KEY);
     return saved === "default" || !saved ? "tohoku" : saved;
   } catch {
     return "tohoku";
@@ -649,15 +650,9 @@ function renderPortalReturnControl() {
   const currentPath = window.location.pathname;
   const items = [
     {
-      href: "/",
-      label: labels.portal,
-      icon: '<svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg>',
-      active: currentPath === "/",
-    },
-    {
       href: "/academic/",
       label: labels.academic,
-      icon: '<img class="portal-chip-logo" src="/assets/images/favicon-portrait.png" alt="" loading="lazy" />',
+      icon: '<img class="portal-chip-logo" src="/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
       active: currentPath.startsWith("/academic/"),
       extraClass: "portal-chip--portrait",
     },
@@ -674,6 +669,8 @@ function renderPortalReturnControl() {
       active: currentPath.startsWith("/jsps-kakenhi/"),
     },
   ];
+  const activeItem = items.find((item) => item.active) || items[0];
+  const trayItems = items.filter((item) => item.href !== activeItem.href);
 
   controls.querySelectorAll(".portal-return-link").forEach((node) => node.remove());
 
@@ -686,24 +683,23 @@ function renderPortalReturnControl() {
 
   switcher.innerHTML = `
     <button
-      class="portal-trigger"
+      class="portal-trigger ${activeItem.extraClass || ""}"
       type="button"
       data-portal-trigger
       aria-haspopup="true"
       aria-expanded="false"
-      aria-label="${escapeHtml(labels.trigger)}"
-      title="${escapeHtml(labels.trigger)}"
+      aria-label="${escapeHtml(activeItem.label)}"
+      title="${escapeHtml(activeItem.label)}"
     >
-      <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg>
+      ${activeItem.icon}
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
-      ${items.map((item) => `
+      ${trayItems.map((item) => `
         <a
-          class="portal-chip ${item.extraClass || ""} ${item.active ? "is-active" : ""}"
+          class="portal-chip ${item.extraClass || ""}"
           href="${item.href}"
           aria-label="${escapeHtml(item.label)}"
           title="${escapeHtml(item.label)}"
-          ${item.active ? 'aria-current="page"' : ""}
         >
           ${item.icon}
         </a>
