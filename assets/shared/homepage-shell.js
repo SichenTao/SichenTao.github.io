@@ -183,17 +183,17 @@
     const desktopGap = config.desktopGap ?? 12;
     const mobileGap = config.mobileGap ?? 8;
     const navRect = nav.getBoundingClientRect();
+    const headerRect = header.getBoundingClientRect();
     const controlsRect = controls.getBoundingClientRect();
     const useMobileLayout = global.matchMedia(`(max-width: ${breakpoint}px)`).matches;
     const gutterGap = useMobileLayout ? mobileGap : desktopGap;
-    const referenceLeft = navRect.left;
+    const referenceLeft = Math.min(headerRect.left, navRect.left);
     const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
-    const nextLeft = Math.round(Math.max(8, referenceLeft));
-    const nextShift = useMobileLayout ? 0 : Math.round(controlsRect.width + gutterGap);
+    const nextLeft = Math.round(Math.max(8, referenceLeft - (useMobileLayout ? 0 : controlsRect.width + gutterGap)));
 
     controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
     controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
-    controls.style.setProperty("--header-controls-shift", `${nextShift}px`);
+    controls.style.setProperty("--header-controls-shift", "0px");
   }
 
   function scheduleHeaderControlsPositionUpdate() {
