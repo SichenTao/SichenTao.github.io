@@ -102,11 +102,6 @@ const state = {
 };
 
 const themeCatalog = {
-  base: {
-    label: "Base",
-    themeColor: "#f5eee4",
-    swatchClass: "theme-base",
-  },
   tohoku: {
     label: "Tohoku",
     themeColor: "#f3eef9",
@@ -121,6 +116,11 @@ const themeCatalog = {
     label: "USST",
     themeColor: "#f7eded",
     swatchClass: "theme-usst",
+  },
+  base: {
+    label: "Base",
+    themeColor: "#f5eee4",
+    swatchClass: "theme-base",
   },
 };
 
@@ -2247,6 +2247,9 @@ function resolveThemeName() {
 
   try {
     const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+    if (savedTheme === "base") {
+      return "tohoku";
+    }
     if (savedTheme && themeCatalog[savedTheme]) {
       return savedTheme;
     }
@@ -2257,7 +2260,7 @@ function resolveThemeName() {
     return documentTheme;
   }
 
-  return "base";
+  return "tohoku";
 }
 
 function nextThemeName(currentTheme = resolveThemeName()) {
@@ -2336,8 +2339,8 @@ function renderThemeSwitchers() {
           type="button"
           data-theme-choice="${escapeHtml(themeName)}"
           aria-pressed="false"
-          aria-label="${escapeHtml(translatedThemeLabel(themeName))}"
-          title="${escapeHtml(translatedThemeLabel(themeName))}"
+          aria-label="${escapeHtml(translatedThemeTooltip(themeName))}"
+          title="${escapeHtml(translatedThemeTooltip(themeName))}"
         >
           <span class="theme-swatch ${escapeHtml(theme.swatchClass)}" aria-hidden="true"></span>
         </button>
@@ -2354,7 +2357,7 @@ function renderThemeSwitchers() {
         aria-haspopup="true"
         aria-expanded="false"
         aria-label="${escapeHtml(t("controls.cycle_themes"))}"
-        title="${escapeHtml(t("controls.cycle_themes"))}"
+        title="${escapeHtml(translatedThemeTooltip(activeThemeName))}"
       >
         <span class="theme-swatch ${escapeHtml(activeTheme.swatchClass)}" data-theme-current-swatch aria-hidden="true"></span>
       </button>
@@ -3089,6 +3092,32 @@ function translatedThemeLabel(themeName) {
     usst: "University of Shanghai for Science and Technology",
   };
   return lt(labels[themeName] || "") || themeCatalog[themeName]?.label || themeName;
+}
+
+function translatedThemeTooltip(themeName) {
+  const labels = {
+    base: {
+      en: "Base theme",
+      ja: "標準テーマ色",
+      zh: "基础主题色",
+    },
+    tohoku: {
+      en: "Tohoku University theme",
+      ja: "東北大学テーマ色",
+      zh: "东北大学主题色",
+    },
+    toyama: {
+      en: "University of Toyama theme",
+      ja: "富山大学テーマ色",
+      zh: "富山大学主题色",
+    },
+    usst: {
+      en: "University of Shanghai for Science and Technology theme",
+      ja: "上海理工大学テーマ色",
+      zh: "上海理工大学主题色",
+    },
+  };
+  return lt(labels[themeName]?.en || "", labels[themeName]?.ja || "", labels[themeName]?.zh || "");
 }
 
 function updateLocalizedMeta(page) {

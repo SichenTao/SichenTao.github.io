@@ -337,10 +337,10 @@ const state = {
   filters: getStoredFilters(),
 };
 const THEME_OPTIONS = [
-  { value: "default", label: "W", title: "Warm" },
-  { value: "tohoku", label: "I", title: "Iris" },
-  { value: "toyama", label: "M", title: "Mist" },
-  { value: "usst", label: "C", title: "Crimson" },
+  { value: "tohoku", label: "I", title: "Tohoku University theme" },
+  { value: "toyama", label: "M", title: "University of Toyama theme" },
+  { value: "usst", label: "C", title: "University of Shanghai for Science and Technology theme" },
+  { value: "default", label: "W", title: "Base theme" },
 ];
 
 document.addEventListener("DOMContentLoaded", init);
@@ -370,9 +370,10 @@ function getStoredLocale() {
 
 function getStoredTheme() {
   try {
-    return localStorage.getItem(THEME_KEY) || "default";
+    const saved = localStorage.getItem(THEME_KEY);
+    return saved === "default" || !saved ? "tohoku" : saved;
   } catch {
-    return "default";
+    return "tohoku";
   }
 }
 
@@ -460,6 +461,18 @@ function nextThemeName(currentTheme = state.theme) {
   return sequence[(pointer + 1) % sequence.length];
 }
 
+function translatedThemeTooltip(theme) {
+  if (state.locale === "zh") {
+    return {
+      tohoku: "东北大学主题色",
+      toyama: "富山大学主题色",
+      usst: "上海理工大学主题色",
+      default: "基础主题色",
+    }[theme.value] || theme.title;
+  }
+  return theme.title;
+}
+
 function renderLocaleSwitcher() {
   const container = document.querySelector(".locale-switcher");
   if (!container) {
@@ -498,14 +511,14 @@ function renderThemeSwitcher() {
   }
   const active = THEME_OPTIONS.find((item) => item.value === state.theme) || THEME_OPTIONS[0];
   container.innerHTML = `
-    <button class="theme-trigger" type="button" data-theme-trigger aria-label="${escapeHtml(t("common.theme"))}">
+    <button class="theme-trigger" type="button" data-theme-trigger aria-label="${escapeHtml(t("common.theme"))}" title="${escapeHtml(translatedThemeTooltip(active))}">
       <span class="locale-label">${active.label}</span>
     </button>
     <div class="theme-tray">
       ${THEME_OPTIONS
         .map(
           (theme) =>
-            `<button class="theme-chip" type="button" data-theme-choice="${theme.value}" aria-label="${theme.title}" title="${theme.title}">${theme.label}</button>`
+            `<button class="theme-chip" type="button" data-theme-choice="${theme.value}" aria-label="${escapeHtml(translatedThemeTooltip(theme))}" title="${escapeHtml(translatedThemeTooltip(theme))}">${theme.label}</button>`
         )
         .join("")}
     </div>

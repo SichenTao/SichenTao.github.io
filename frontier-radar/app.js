@@ -858,6 +858,15 @@ function translatedThemeLabel(themeName) {
   );
 }
 
+function translatedThemeTooltip(themeName) {
+  const suffix = {
+    en: " theme",
+    zh: "主题色",
+    ja: "テーマ色",
+  }[currentLocale()] || " theme";
+  return `${translatedThemeLabel(themeName)}${suffix}`;
+}
+
 function loadInitialTheme() {
   const queryTheme = new URLSearchParams(window.location.search).get("theme");
   if (queryTheme && THEME_CATALOG[queryTheme]) {
@@ -1736,8 +1745,8 @@ function renderThemeSwitcher() {
     button.type = "button";
     button.dataset.themeChoice = themeName;
     button.setAttribute("aria-pressed", themeName === activeThemeName ? "true" : "false");
-    button.setAttribute("aria-label", translatedThemeLabel(themeName));
-    button.title = translatedThemeLabel(themeName);
+    button.setAttribute("aria-label", translatedThemeTooltip(themeName));
+    button.title = translatedThemeTooltip(themeName);
     const swatch = el("span", `theme-swatch ${theme.swatchClass}`);
     swatch.setAttribute("aria-hidden", "true");
     button.appendChild(swatch);
@@ -1752,7 +1761,7 @@ function renderThemeSwitcher() {
   trigger.setAttribute("aria-haspopup", "true");
   trigger.setAttribute("aria-expanded", switcher.classList.contains("is-open") ? "true" : "false");
   trigger.setAttribute("aria-label", ui("cycleThemesLabel") || ui("showThemesLabel"));
-  trigger.title = ui("cycleThemesLabel") || ui("showThemesLabel");
+  trigger.title = translatedThemeTooltip(activeThemeName);
   const currentSwatch = el("span", `theme-swatch ${activeTheme.swatchClass}`);
   currentSwatch.dataset.themeCurrentSwatch = "true";
   currentSwatch.setAttribute("aria-hidden", "true");
