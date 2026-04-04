@@ -641,7 +641,7 @@ function renderPortalReturnControl() {
         tray: "功能主页",
         portal: "主页导航",
         academic: "学术主页",
-        radar: "前沿雷达",
+        radar: "学术前沿",
         jsps: "JSPS 科研费",
       }
     : {
@@ -649,7 +649,7 @@ function renderPortalReturnControl() {
         tray: "Site sections",
         portal: "Homepage portal",
         academic: "Academic homepage",
-        radar: "Frontier Radar",
+        radar: "Academic Frontier",
         jsps: "JSPS KAKENHI",
       };
 

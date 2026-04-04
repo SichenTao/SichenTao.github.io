@@ -240,7 +240,7 @@ window.SICHEN_PORTAL_DATA = {
   ],
   "featured_projects": [
     {
-      "title": "Frontier Radar",
+      "title": "Academic Frontier",
       "tag": "Research Radar",
       "description": "Local-first research radar for tracking frontier teams, papers, repositories, and emerging directions across multiple domains.",
       "url": "https://github.com/SichenTao/frontier-radar"

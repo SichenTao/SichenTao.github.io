@@ -56,10 +56,10 @@ const PAGE_PATHS = {
 const UI_TEXT = {
   en: {
     htmlLang: "en",
-    pageTitle: "Frontier Radar",
+    pageTitle: "Academic Frontier",
     pageDescription:
       "A local-first radar for tracking frontier teams, papers, signals, and contribution opportunities across multiple research domains.",
-    brandTitle: "Frontier Radar",
+    brandTitle: "Academic Frontier",
     heroEyebrow: "Live radar",
     heroPrimaryAction: "Open papers",
     heroSecondaryAction: "Review the guide",
@@ -180,9 +180,9 @@ const UI_TEXT = {
   },
   zh: {
     htmlLang: "zh-CN",
-    pageTitle: "前沿雷达",
-    pageDescription: "一个面向多研究方向的本地优先前沿雷达，用于追踪关键团队、论文、信号与潜在贡献机会。",
-    brandTitle: "前沿雷达",
+    pageTitle: "学术前沿",
+    pageDescription: "一个面向多研究方向的本地优先学术前沿工作台，用于追踪关键团队、论文、信号与潜在贡献机会。",
+    brandTitle: "学术前沿",
     heroEyebrow: "当前雷达",
     heroPrimaryAction: "查看论文",
     heroSecondaryAction: "查看说明",
@@ -1770,7 +1770,7 @@ function renderPortalReturnControl() {
       tray: "Site sections",
       portal: "Homepage portal",
       academic: "Academic homepage",
-      radar: "Frontier Radar",
+      radar: "Academic Frontier",
       jsps: "JSPS KAKENHI",
     },
     zh: {
@@ -1778,7 +1778,7 @@ function renderPortalReturnControl() {
       tray: "功能主页",
       portal: "主页导航",
       academic: "学术主页",
-      radar: "前沿雷达",
+      radar: "学术前沿",
       jsps: "JSPS 科研费",
     },
     ja: {
@@ -1794,7 +1794,7 @@ function renderPortalReturnControl() {
     tray: "Site sections",
     portal: "Homepage portal",
     academic: "Academic homepage",
-    radar: "Frontier Radar",
+    radar: "Academic Frontier",
     jsps: "JSPS KAKENHI",
   };
 
@@ -3048,7 +3048,7 @@ function renderAll() {
     renderWorkflow();
     syncHomepageShell();
   } catch (error) {
-    console.error("Frontier Radar render failed", error);
+    console.error("Academic Frontier render failed", error);
     document.body.classList.add("is-ready");
   }
 }
