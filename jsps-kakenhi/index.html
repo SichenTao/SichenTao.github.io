@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="JSPS KAKENHI portal for official pages, forms, deadlines, guides, and archived snapshots, with priority coverage for Research Activity Start-up Support and Early-Career Scientists."
+      content="JSPS KAKENHI workspace for priority calls, deadlines, forms, official sources, and archived snapshots, centered on Research Activity Start-up Support and Early-Career Scientists."
     />
     <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/" />
     <meta name="theme-color" content="#f3eef9" />
-    <meta property="og:title" content="JSPS KAKENHI Portal" />
+    <meta property="og:title" content="JSPS KAKENHI Workspace" />
     <meta
       property="og:description"
-      content="A compact JSPS KAKENHI portal for official pages, forms, deadlines, and archived snapshots."
+      content="A compact JSPS KAKENHI workspace for priority calls, forms, deadlines, official sources, and archived snapshots."
     />
     <meta property="og:url" content="https://sichentao.github.io/jsps-kakenhi/" />
     <meta property="og:type" content="website" />
-    <title>JSPS KAKENHI Portal</title>
+    <title>JSPS KAKENHI Workspace</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -46,12 +46,12 @@
         document.documentElement.lang = "en";
       }
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260404-123906" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260404-123906" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260404-123906" />
-    <script src="./data/kakenhi-data.js?v=20260404-123906"></script>
-        <script defer src="/assets/shared/homepage-shell.js?v=20260404-123906"></script>
-<script defer src="./app.js?v=20260404-123906"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260404-131621" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260404-131621" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260404-131621" />
+    <script src="./data/kakenhi-data.js?v=20260404-131621"></script>
+        <script defer src="/assets/shared/homepage-shell.js?v=20260404-131621"></script>
+<script defer src="./app.js?v=20260404-131621"></script>
   </head>
   <body data-page="home">
     <div class="page-wash"></div>
@@ -102,18 +102,18 @@
               </div>
             </div>
             <div class="hero-heading">
-              <div class="eyebrow hero-keylines" data-i18n="home.keyline">官方页面 · 表格 · 截止时间</div>
-              <p class="native-name">科研费信息网站</p>
+              <div class="eyebrow hero-keylines" data-i18n="home.keyline">重点项目 · 时间线 · 表格</div>
+              <p class="native-name" data-i18n="home.nativeName">科研费项目调查与汇总</p>
               <div class="hero-title-row">
-                <h1 data-i18n="home.heroTitle">JSPS 科研费门户</h1>
+                <h1 data-i18n="home.heroTitle">JSPS KAKENHI</h1>
               </div>
               <div class="hero-identity">
-                <p class="eyebrow" data-i18n="home.focusLabel">今年重点</p>
-                <p class="hero-role">研究活動スタート支援 / 若手研究</p>
-                <p class="hero-affiliation" data-i18n="home.focusNote">从官方页面、PDF、表格家族到申请时间线的一站式入口。</p>
+                <p class="eyebrow" data-i18n="home.focusLabel">当前重点</p>
+                <p class="hero-role" data-i18n="home.focusRole">研究活动启动支援 · 若手研究</p>
+                <p class="hero-affiliation" data-i18n="home.focusNote">当前开放项目、近期截止与关键表格的一体化工作台。</p>
               </div>
               <p class="lede" data-i18n="home.lede">
-                这个站点只围绕 JSPS 官方页面做整理，优先把今年最关键的研究活動スタート支援和若手研究放在最前，同时保留快照归档与 GitHub Pages 风格的公开发布结构。
+                先看今年最值得关注的重点项目，再沿着时间线、表格与官方来源进入细节。
               </p>
             </div>
           </div>
@@ -130,19 +130,21 @@
       <section class="panel section-card reveal">
         <div class="section-head">
           <div>
-            <h2 data-i18n="home.prioritySection">重点项目总览</h2>
+            <p class="eyebrow" data-i18n="home.priorityKicker">当前重点</p>
+            <h2 data-i18n="home.prioritySection">重点项目</h2>
           </div>
         </div>
-        <div id="home-overview-grid" class="overview-grid"></div>
         <div id="home-priority-grid" class="card-grid portal-card-grid"></div>
       </section>
 
       <section class="panel section-card reveal">
         <div class="section-head">
           <div>
-            <h2 data-i18n="home.guideSection">今年最该盯住的内容</h2>
+            <p class="eyebrow" data-i18n="home.workflowKicker">工作流程</p>
+            <h2 data-i18n="home.workflowSection">工作流程</h2>
           </div>
         </div>
+        <div id="home-workflow-grid" class="module-grid"></div>
         <div class="dual-grid">
           <article class="feature-card">
             <h3 data-i18n="home.watchTitle">行动提醒</h3>
@@ -158,8 +160,19 @@
       <section class="panel section-card reveal">
         <div class="section-head">
           <div>
-            <h2 data-i18n="home.sourceSection">官方入口与本地镜像</h2>
+            <p class="eyebrow" data-i18n="home.sourceKicker">来源与归档</p>
+            <h2 data-i18n="home.sourceSection">官方来源与归档</h2>
           </div>
+        </div>
+        <div class="dual-grid">
+          <article class="feature-card">
+            <h3 data-i18n="home.archiveTitle">Archive snapshots</h3>
+            <div id="home-archive-list" class="stack-list"></div>
+          </article>
+          <article class="feature-card">
+            <h3 data-i18n="home.sourceGuideTitle">How to use this workspace</h3>
+            <div id="home-source-guide-list" class="stack-list"></div>
+          </article>
         </div>
         <div id="home-source-grid" class="card-grid portal-card-grid"></div>
       </section>

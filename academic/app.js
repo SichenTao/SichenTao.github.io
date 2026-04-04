@@ -153,9 +153,9 @@ const localeCatalog = {
 const translations = {
   en: {
     site: {
-      home_title: "Academic Homepage",
+      home_title: "Personal Homepage",
       home_description:
-        "Academic homepage and research archive for Sichen Tao, covering AI, optimization, brain-inspired systems, and high-performance computing.",
+        "Personal homepage and research archive for Sichen Tao, covering AI, optimization, brain-inspired systems, and high-performance computing.",
       profiles_description: "External profiles and research identifiers for Sichen Tao.",
       publications_description: "Complete publications page for Sichen Tao, including filters, source grouping, and external records.",
       awards_description: "Awards and distinctions page for Sichen Tao.",
@@ -397,8 +397,8 @@ const translations = {
   },
   ja: {
     site: {
-      home_title: "学術ホームページ",
-      home_description: "Sichen Tao の学術ホームページと研究アーカイブ。AI、最適化、脳着想システム、高性能計算を扱います。",
+      home_title: "個人ホームページ",
+      home_description: "Sichen Tao の個人ホームページと研究アーカイブ。AI、最適化、脳着想システム、高性能計算を扱います。",
       profiles_description: "Sichen Tao の外部プロフィールと研究者識別子をまとめたページ。",
       publications_description: "Sichen Tao の論文一覧ページ。検索、分類、外部記録へのリンクを含みます。",
       awards_description: "Sichen Tao の受賞一覧ページ。",
@@ -638,8 +638,8 @@ const translations = {
   },
   zh: {
     site: {
-      home_title: "学术主页",
-      home_description: "Sichen Tao 的学术主页与研究档案，涵盖人工智能、优化、脑启发系统与高性能计算。",
+      home_title: "个人主页",
+      home_description: "Sichen Tao 的个人主页与研究档案，涵盖人工智能、优化、脑启发系统与高性能计算。",
       profiles_description: "Sichen Tao 的外部主页与研究者标识页面。",
       publications_description: "Sichen Tao 的论文列表页面，包含检索、分类和外部记录链接。",
       awards_description: "Sichen Tao 的获奖页面。",
@@ -992,7 +992,6 @@ const staticTextCatalog = {
     "CAS Platform Home Snapshot": "中科院分区プラットフォーム保存版",
     "CEC 2025 RDEx Competition System": "CEC 2025 RDEx 競技システム",
     "CEC 2024 Multi-objective Benchmark Suite": "CEC 2024 多目的ベンチマークスイート",
-    "Frontier Radar": "Academic Frontier",
     "Reconstructed Differential Evolution": "Reconstructed Differential Evolution",
     "GitHub Research Code Archive": "GitHub 研究コードアーカイブ",
     "Local-first research radar for tracking frontier teams, papers, repositories, and emerging directions across multiple domains.": "フロンティア研究チーム、論文、リポジトリ、新興方向を横断的に追跡するローカルファースト研究レーダー。",
@@ -1133,7 +1132,6 @@ const staticTextCatalog = {
     "CAS Platform Home Snapshot": "中科院分区平台首页快照",
     "CEC 2025 RDEx Competition System": "CEC 2025 RDEx 竞赛系统",
     "CEC 2024 Multi-objective Benchmark Suite": "CEC 2024 多目标基准套件",
-    "Frontier Radar": "Academic Frontier",
     "Reconstructed Differential Evolution": "Reconstructed Differential Evolution",
     "GitHub Research Code Archive": "GitHub 研究代码档案",
     "Local-first research radar for tracking frontier teams, papers, repositories, and emerging directions across multiple domains.": "面向前沿团队、论文、代码仓库与新兴方向追踪的本地优先研究雷达平台。",
@@ -2375,7 +2373,7 @@ function renderPortalReturnControl() {
       trigger: "Open portal menu",
       tray: "Site sections",
       portal: "Homepage portal",
-      academic: "Academic homepage",
+      academic: "Personal homepage",
       radar: "Academic Frontier",
       jsps: "JSPS KAKENHI",
     },
@@ -2383,7 +2381,7 @@ function renderPortalReturnControl() {
       trigger: "打开功能主页菜单",
       tray: "功能主页",
       portal: "主页导航",
-      academic: "学术主页",
+      academic: "个人主页",
       radar: "学术前沿",
       jsps: "JSPS 科研费",
     },
@@ -2391,7 +2389,7 @@ function renderPortalReturnControl() {
       trigger: "機能ページメニューを開く",
       tray: "機能ページ",
       portal: "ホームポータル",
-      academic: "学術ホームページ",
+      academic: "個人ホームページ",
       radar: "フロンティアレーダー",
       jsps: "JSPS 科研費",
     },

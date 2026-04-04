@@ -72,17 +72,36 @@ const I18N = {
       upcoming: "待到来",
     },
     home: {
-      keyline: "官方入口 · 表格 · 截止时间",
-      heroTitle: "JSPS 科研费门户",
+      keyline: "重点项目 · 时间线 · 表格",
+      nativeName: "科研费项目调查与汇总",
+      heroTitle: "JSPS KAKENHI",
       focusLabel: "今年重点",
-      focusNote: "研究活動スタート支援与若手研究优先入口。",
-      lede: "围绕 JSPS 官方页面，集中整理今年最需要反复查看的项目、表格、时间线与快照。",
+      focusRole: "研究活动启动支援 · 若手研究",
+      focusNote: "当前开放项目、近期截止与关键表格的一体化工作台。",
+      lede: "先看今年最值得关注的重点项目，再沿着时间线、表格与官方来源进入细节。",
       snapshotTitle: "当前快照",
+      priorityKicker: "重点项目",
       prioritySection: "重点项目",
-      guideSection: "今年应重点关注",
+      workflowKicker: "工作流程",
+      workflowSection: "工作流程",
+      sourceKicker: "来源与归档",
+      sourceSection: "官方来源与归档",
       watchTitle: "行动提醒",
       jumpTitle: "官方快速跳转",
-      sourceSection: "官方入口与镜像",
+      archiveTitle: "归档快照",
+      sourceGuideTitle: "如何使用此工作台",
+      callsLead: "先在全部项目中锁定感兴趣的申请项目与赛道。",
+      deadlinesLead: "把开放时间、系统开放与官方截止时间放在同一条时间线上确认。",
+      formsLead: "围绕 S-21、S-22 与配套说明进入材料准备阶段。",
+      guidesLead: "把 FAQ、e-Rad、电子系统与重点指南集中检查。",
+      sourceGuideProgramsTitle: "先看重点项目",
+      sourceGuideProgramsText: "先从开放中或优先级最高的项目卡进入，再扩展到完整项目目录。",
+      sourceGuideDatesTitle: "再核对时间线",
+      sourceGuideDatesText: "用时间线确认通知、公募开始、系统开放与最终提交节点。",
+      sourceGuideFormsTitle: "然后进入表格",
+      sourceGuideFormsText: "确定项目后立即查看对应表格家族、填写要领与上传说明。",
+      sourceGuideSourcesTitle: "最后回到官方来源",
+      sourceGuideSourcesText: "站内页面负责整理，真正提交前仍应回到官方页面与快照交叉核对。",
     },
     calls: {
       kicker: "项目浏览",
@@ -231,17 +250,36 @@ const I18N = {
       upcoming: "Upcoming",
     },
     home: {
-      keyline: "Official sources · forms · deadlines",
-      heroTitle: "JSPS KAKENHI Portal",
+      keyline: "Priority calls · timeline · forms",
+      nativeName: "Project tracking and summary",
+      heroTitle: "JSPS KAKENHI",
       focusLabel: "Current priorities",
-      focusNote: "Priority entry for Start-up Support and Early-Career Scientists.",
-      lede: "A compact JSPS workspace for the priority calls, forms, deadlines, and local snapshots that matter most this year.",
+      focusRole: "Research Activity Start-up Support · Early-Career Scientists",
+      focusNote: "A single workspace for open calls, upcoming deadlines, and the forms that matter most.",
+      lede: "Start from the calls that deserve attention this year, then move into the timeline, forms, and official evidence.",
       snapshotTitle: "Current snapshot",
+      priorityKicker: "Priority calls",
       prioritySection: "Priority programs",
-      guideSection: "What to watch",
+      workflowKicker: "Workflow",
+      workflowSection: "Workflow shortcuts",
+      sourceKicker: "Sources & archive",
+      sourceSection: "Official sources and archive",
       watchTitle: "Action reminders",
       jumpTitle: "Official quick links",
-      sourceSection: "Official sources and mirrors",
+      archiveTitle: "Archive snapshots",
+      sourceGuideTitle: "How to use this workspace",
+      callsLead: "Start by identifying the calls that deserve attention from the full catalog.",
+      deadlinesLead: "Confirm notice dates, system opening, and the final official deadline in one place.",
+      formsLead: "Move from a selected call directly into the relevant form family and instructions.",
+      guidesLead: "Keep FAQ, e-Rad, electronic systems, and key guidance in the same review loop.",
+      sourceGuideProgramsTitle: "Start from the priority calls",
+      sourceGuideProgramsText: "Begin with the currently relevant or open programs, then expand into the broader catalog only when needed.",
+      sourceGuideDatesTitle: "Confirm the timeline next",
+      sourceGuideDatesText: "Use the timeline to align notice dates, system opening, and the final submission deadline before preparing materials.",
+      sourceGuideFormsTitle: "Then prepare forms",
+      sourceGuideFormsText: "Once the call is fixed, move immediately into the matching form family, entry guidance, and upload instructions.",
+      sourceGuideSourcesTitle: "Finish with official evidence",
+      sourceGuideSourcesText: "The workspace organizes the information, but every final check should still go back to the official page or archived snapshot.",
     },
     calls: {
       kicker: "Program Explorer",
@@ -640,7 +678,7 @@ function renderPortalReturnControl() {
         trigger: "打开功能主页菜单",
         tray: "功能主页",
         portal: "主页导航",
-        academic: "学术主页",
+        academic: "个人主页",
         radar: "学术前沿",
         jsps: "JSPS 科研费",
       }
@@ -648,7 +686,7 @@ function renderPortalReturnControl() {
         trigger: "Open portal menu",
         tray: "Site sections",
         portal: "Homepage portal",
-        academic: "Academic homepage",
+        academic: "Personal homepage",
         radar: "Academic Frontier",
         jsps: "JSPS KAKENHI",
       };
@@ -722,13 +760,13 @@ function renderPortalReturnControl() {
 
 function updateDocumentTitle() {
   const titleMap = {
-    home: state.locale === "zh" ? "JSPS 科研费门户" : "JSPS KAKENHI Portal",
-    calls: state.locale === "zh" ? "项目目录 | JSPS 科研费门户" : "Call Catalog | JSPS KAKENHI Portal",
-    deadlines: state.locale === "zh" ? "时间线 | JSPS 科研费门户" : "Timeline | JSPS KAKENHI Portal",
-    forms: state.locale === "zh" ? "表格材料 | JSPS 科研费门户" : "Forms | JSPS KAKENHI Portal",
-    guides: state.locale === "zh" ? "申请指引 | JSPS 科研费门户" : "Guides | JSPS KAKENHI Portal",
-    sources: state.locale === "zh" ? "官方来源 | JSPS 科研费门户" : "Sources | JSPS KAKENHI Portal",
-    archive: state.locale === "zh" ? "快照归档 | JSPS 科研费门户" : "Archive | JSPS KAKENHI Portal",
+    home: state.locale === "zh" ? "JSPS 科研费工作台" : "JSPS KAKENHI Workspace",
+    calls: state.locale === "zh" ? "项目目录 | JSPS 科研费工作台" : "Call Catalog | JSPS KAKENHI Workspace",
+    deadlines: state.locale === "zh" ? "时间线 | JSPS 科研费工作台" : "Timeline | JSPS KAKENHI Workspace",
+    forms: state.locale === "zh" ? "表格材料 | JSPS 科研费工作台" : "Forms | JSPS KAKENHI Workspace",
+    guides: state.locale === "zh" ? "申请指引 | JSPS 科研费工作台" : "Guides | JSPS KAKENHI Workspace",
+    sources: state.locale === "zh" ? "官方来源 | JSPS 科研费工作台" : "Sources | JSPS KAKENHI Workspace",
+    archive: state.locale === "zh" ? "快照归档 | JSPS 科研费工作台" : "Archive | JSPS KAKENHI Workspace",
   };
   if (titleMap[state.page]) {
     document.title = titleMap[state.page];
@@ -988,29 +1026,55 @@ function revealPage() {
 }
 
 function renderHomePage() {
-  const overviewGrid = document.getElementById("home-overview-grid");
   const priorityGrid = document.getElementById("home-priority-grid");
+  const workflowGrid = document.getElementById("home-workflow-grid");
   const watchList = document.getElementById("home-watch-list");
   const jumpList = document.getElementById("home-jump-list");
   const sourceGrid = document.getElementById("home-source-grid");
   const snapshotStack = document.getElementById("snapshot-stack");
+  const archiveList = document.getElementById("home-archive-list");
+  const sourceGuideList = document.getElementById("home-source-guide-list");
   const recordNav = document.getElementById("home-record-nav");
 
-  if (!overviewGrid || !priorityGrid || !watchList || !jumpList || !sourceGrid || !snapshotStack || !recordNav) {
+  if (!priorityGrid || !workflowGrid || !watchList || !jumpList || !sourceGrid || !snapshotStack || !archiveList || !sourceGuideList || !recordNav) {
     return;
   }
 
   const { overview, programs, guides, source_registry: sourceRegistry, archive } = state.data;
   const snapshot = state.data.site.snapshot_date;
   const nextDeadline = overview.next_deadline;
-  const latestArchiveCount = archive.length;
-
-  overviewGrid.innerHTML = [
-    metricCard(t("common.status"), snapshot),
-    metricCard(t("common.openPrograms"), String(overview.open_program_count)),
-    metricCard(t("common.nextDeadline"), nextDeadline ? `${nextDeadline.program_title} · ${formatDate(nextDeadline.date)}` : "--"),
-    metricCard(t("common.trackedForms"), String(overview.form_count)),
-  ].join("");
+  const totalFiles = archive.reduce((sum, item) => sum + item.files.length, 0);
+  const priorityPrograms = programs.filter((program) => program.priority);
+  const workflowCards = [
+    {
+      kicker: t("nav.calls"),
+      title: t("nav.calls"),
+      text: t("home.callsLead"),
+      meta: `${state.data.call_catalog.length} ${state.locale === "zh" ? "条目录" : "entries"}`,
+      href: "./calls.html",
+    },
+    {
+      kicker: t("nav.deadlines"),
+      title: t("nav.deadlines"),
+      text: t("home.deadlinesLead"),
+      meta: `${state.data.timeline.length} ${state.locale === "zh" ? "个节点" : "milestones"}`,
+      href: "./deadlines.html",
+    },
+    {
+      kicker: t("nav.forms"),
+      title: t("nav.forms"),
+      text: t("home.formsLead"),
+      meta: `${overview.form_count} ${state.locale === "zh" ? "份表格" : "forms"}`,
+      href: "./forms.html",
+    },
+    {
+      kicker: t("nav.guides"),
+      title: t("nav.guides"),
+      text: t("home.guidesLead"),
+      meta: `${guides.length} ${state.locale === "zh" ? "条指引" : "guides"}`,
+      href: "./guides.html",
+    },
+  ];
 
   priorityGrid.innerHTML = programs
     .map(
@@ -1039,18 +1103,40 @@ function renderHomePage() {
     )
     .join("");
 
+  workflowGrid.innerHTML = workflowCards
+    .map(
+      (card) => `
+        <article class="feature-card">
+          <div class="portal-card-head">
+            <div>
+              <p class="eyebrow">${escapeHtml(card.kicker)}</p>
+              <h3>${escapeHtml(card.title)}</h3>
+            </div>
+          </div>
+          <p>${escapeHtml(card.text)}</p>
+          <div class="meta-strip">
+            ${metaPill(card.meta)}
+          </div>
+          <div class="link-row">
+            <a class="button button-secondary" href="${card.href}">${escapeHtml(card.title)}</a>
+          </div>
+        </article>
+      `
+    )
+    .join("");
+
   watchList.innerHTML = programs
     .flatMap((program) => programWatchItems(program).slice(0, 2))
     .map((item) => stackItem(item.title, item.text))
     .join("");
 
-  jumpList.innerHTML = guides
-    .slice(0, 6)
-    .map((guide) => stackItem(localeField(guide, "title"), localeField(guide, "summary"), guide.href))
+  jumpList.innerHTML = sourceRegistry
+    .slice(0, 4)
+    .map((source) => stackItem(localeField(source, "title"), localeField(source, "summary"), source.official_url))
     .join("");
 
   sourceGrid.innerHTML = sourceRegistry
-    .slice(0, 3)
+    .slice(0, 4)
     .map(
       (source) => `
         <article class="link-card">
@@ -1071,17 +1157,27 @@ function renderHomePage() {
   snapshotStack.innerHTML = [
     stackItem(t("common.status"), snapshot),
     stackItem(t("common.openPrograms"), `${overview.open_program_count}`),
-    stackItem(t("common.archiveSnapshots"), `${latestArchiveCount}`),
+    stackItem(t("common.trackedForms"), `${overview.form_count}`),
     stackItem(t("common.nextDeadline"), nextDeadline ? `${nextDeadline.program_title} · ${formatDateTime(nextDeadline.datetime || nextDeadline.date)}` : "--"),
   ].join("");
 
+  archiveList.innerHTML = archive
+    .slice(0, 3)
+    .map((snapshotEntry) => stackItem(snapshotEntry.snapshot_date, `${snapshotEntry.files.length} ${state.locale === "zh" ? "份文件" : "files"} · ${snapshotEntry.fetched_at || "--"}`, snapshotEntry.files[0]?.local_path || ""))
+    .join("");
+
+  sourceGuideList.innerHTML = [
+    stackItem(t("home.sourceGuideProgramsTitle"), t("home.sourceGuideProgramsText")),
+    stackItem(t("home.sourceGuideDatesTitle"), t("home.sourceGuideDatesText")),
+    stackItem(t("home.sourceGuideFormsTitle"), t("home.sourceGuideFormsText")),
+    stackItem(t("home.sourceGuideSourcesTitle"), t("home.sourceGuideSourcesText")),
+  ].join("");
+
   recordNav.innerHTML = [
-    navChip("./calls.html", t("nav.calls")),
-    navChip("./deadlines.html", t("nav.deadlines")),
-    navChip("./forms.html", t("nav.forms")),
-    navChip("./guides.html", t("nav.guides")),
-    navChip("./sources.html", t("nav.sources")),
-    navChip("./archive.html", t("nav.archive")),
+    recordCard("projects", "teal", t("common.openPrograms"), `${overview.open_program_count}`, state.locale === "zh" ? "项目" : "programs", `${priorityPrograms.length} ${t("common.priority")}`, "./calls.html"),
+    recordCard("timeline", "gold", t("common.nextDeadline"), nextDeadline ? formatDate(nextDeadline.date) : "--", state.locale === "zh" ? "截止" : "next", nextDeadline ? nextDeadline.program_title : "--", "./deadlines.html"),
+    recordCard("publications", "teal", t("common.trackedForms"), `${overview.form_count}`, state.locale === "zh" ? "表格" : "forms", `${guides.length} ${state.locale === "zh" ? "条指引" : "guides"}`, "./forms.html"),
+    recordCard("archive", "clay", t("common.archiveSnapshots"), `${archive.length}`, state.locale === "zh" ? "快照" : "snapshots", `${totalFiles} ${state.locale === "zh" ? "份文件" : "files"}`, "./archive.html"),
   ].join("");
 }
 
@@ -1673,6 +1769,20 @@ function metricCard(label, value) {
       <p class="eyebrow">${escapeHtml(label)}</p>
       <h3>${escapeHtml(value)}</h3>
     </article>
+  `;
+}
+
+function recordCard(icon, tone, label, value, unit, meta, href) {
+  return `
+    <a class="record-card" href="${escapeHtml(href)}">
+      <span class="record-head">
+        ${iconBadge(icon, tone)}
+        <span class="stack-label">${escapeHtml(label)}</span>
+      </span>
+      <span class="record-value">${escapeHtml(value)}</span>
+      <span class="record-unit">${escapeHtml(unit)}</span>
+      <span class="record-meta">${escapeHtml(meta)}</span>
+    </a>
   `;
 }
 

@@ -3,15 +3,15 @@
 Assistant Professor  
 High Performance Computing Laboratory, Cyberscience Center, Tohoku University
 
-Academic homepage: <https://sichentao.github.io/>
+Personal homepage: <https://sichentao.github.io/>
 
 <p align="center">
-  <img src="./assets/images/readme-homepage-preview.png" alt="Current preview of the Sichen Tao academic homepage" width="100%" />
+  <img src="./assets/images/readme-homepage-preview.png" alt="Current preview of the Sichen Tao personal homepage" width="100%" />
 </p>
 
 ## Overview
 
-This repository hosts the public academic homepage of **Sichen Tao**, featuring research, publications, awards, academic service, career milestones, public profiles, and supporting reference materials in a multilingual interface.
+This repository hosts the public personal homepage of **Sichen Tao**, featuring research, publications, awards, academic service, career milestones, public profiles, and supporting reference materials in a multilingual interface.
 
 Research is centered on:
 
