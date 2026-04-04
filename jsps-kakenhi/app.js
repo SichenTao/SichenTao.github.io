@@ -1031,20 +1031,14 @@ function renderHomePage() {
   const watchList = document.getElementById("home-watch-list");
   const jumpList = document.getElementById("home-jump-list");
   const sourceGrid = document.getElementById("home-source-grid");
-  const snapshotStack = document.getElementById("snapshot-stack");
   const archiveList = document.getElementById("home-archive-list");
   const sourceGuideList = document.getElementById("home-source-guide-list");
-  const recordNav = document.getElementById("home-record-nav");
 
-  if (!priorityGrid || !workflowGrid || !watchList || !jumpList || !sourceGrid || !snapshotStack || !archiveList || !sourceGuideList || !recordNav) {
+  if (!priorityGrid || !workflowGrid || !watchList || !jumpList || !sourceGrid || !archiveList || !sourceGuideList) {
     return;
   }
 
-  const { overview, programs, guides, source_registry: sourceRegistry, archive } = state.data;
-  const snapshot = state.data.site.snapshot_date;
-  const nextDeadline = overview.next_deadline;
-  const totalFiles = archive.reduce((sum, item) => sum + item.files.length, 0);
-  const priorityPrograms = programs.filter((program) => program.priority);
+  const { programs, guides, source_registry: sourceRegistry, archive } = state.data;
   const workflowCards = [
     {
       kicker: t("nav.calls"),
@@ -1154,13 +1148,6 @@ function renderHomePage() {
     )
     .join("");
 
-  snapshotStack.innerHTML = [
-    stackItem(t("common.status"), snapshot),
-    stackItem(t("common.openPrograms"), `${overview.open_program_count}`),
-    stackItem(t("common.trackedForms"), `${overview.form_count}`),
-    stackItem(t("common.nextDeadline"), nextDeadline ? `${nextDeadline.program_title} · ${formatDateTime(nextDeadline.datetime || nextDeadline.date)}` : "--"),
-  ].join("");
-
   archiveList.innerHTML = archive
     .slice(0, 3)
     .map((snapshotEntry) => stackItem(snapshotEntry.snapshot_date, `${snapshotEntry.files.length} ${state.locale === "zh" ? "份文件" : "files"} · ${snapshotEntry.fetched_at || "--"}`, snapshotEntry.files[0]?.local_path || ""))
@@ -1171,13 +1158,6 @@ function renderHomePage() {
     stackItem(t("home.sourceGuideDatesTitle"), t("home.sourceGuideDatesText")),
     stackItem(t("home.sourceGuideFormsTitle"), t("home.sourceGuideFormsText")),
     stackItem(t("home.sourceGuideSourcesTitle"), t("home.sourceGuideSourcesText")),
-  ].join("");
-
-  recordNav.innerHTML = [
-    recordCard("projects", "teal", t("common.openPrograms"), `${overview.open_program_count}`, state.locale === "zh" ? "项目" : "programs", `${priorityPrograms.length} ${t("common.priority")}`, "./calls.html"),
-    recordCard("timeline", "gold", t("common.nextDeadline"), nextDeadline ? formatDate(nextDeadline.date) : "--", state.locale === "zh" ? "截止" : "next", nextDeadline ? nextDeadline.program_title : "--", "./deadlines.html"),
-    recordCard("publications", "teal", t("common.trackedForms"), `${overview.form_count}`, state.locale === "zh" ? "表格" : "forms", `${guides.length} ${state.locale === "zh" ? "条指引" : "guides"}`, "./forms.html"),
-    recordCard("archive", "clay", t("common.archiveSnapshots"), `${archive.length}`, state.locale === "zh" ? "快照" : "snapshots", `${totalFiles} ${state.locale === "zh" ? "份文件" : "files"}`, "./archive.html"),
   ].join("");
 }
 
@@ -1192,7 +1172,7 @@ function renderCallsPage() {
   const callDetail = document.getElementById("call-detail");
   const metrics = document.getElementById("calls-detail-metrics");
 
-  if (!searchInput || !statusFilter || !groupFilter || !sortFilter || !resetButton || !quickFilters || !callList || !callDetail || !metrics) {
+  if (!searchInput || !statusFilter || !groupFilter || !sortFilter || !resetButton || !quickFilters || !callList || !callDetail) {
     return;
   }
 
@@ -1313,11 +1293,13 @@ function renderCallsPage() {
     state.filters.calls.selectedId = filtered[0]?.id || "";
   }
 
-  metrics.innerHTML = [
-    metaPill(`${t("common.links")} ${allEntries.length}`),
-    metaPill(`${t("common.openPrograms")} ${state.data.programs.filter((program) => program.status === "open").length}`),
-    metaPill(`${t("common.priority")} ${state.data.programs.filter((program) => program.priority).length}`),
-  ].join("");
+  if (metrics) {
+    metrics.innerHTML = [
+      metaPill(`${t("common.links")} ${allEntries.length}`),
+      metaPill(`${t("common.openPrograms")} ${state.data.programs.filter((program) => program.status === "open").length}`),
+      metaPill(`${t("common.priority")} ${state.data.programs.filter((program) => program.priority).length}`),
+    ].join("");
+  }
 
   callList.innerHTML = filtered.length
     ? filtered
@@ -1430,16 +1412,18 @@ function renderDeadlinesPage() {
   const timelineEl = document.getElementById("deadline-timeline");
   const tableBody = document.getElementById("deadline-table-body");
   const metrics = document.getElementById("deadlines-detail-metrics");
-  if (!timelineEl || !tableBody || !metrics) {
+  if (!timelineEl || !tableBody) {
     return;
   }
   const events = state.data.timeline;
   const nextDeadline = events.find((event) => event.type === "deadline" && (event.status === "today" || event.status === "upcoming"));
-  metrics.innerHTML = [
-    metaPill(`${t("common.links")} ${events.length}`),
-    metaPill(nextDeadline ? `${t("common.nextDeadline")} ${nextDeadline.program_title}` : `${t("common.nextDeadline")} --`),
-    metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
-  ].join("");
+  if (metrics) {
+    metrics.innerHTML = [
+      metaPill(`${t("common.links")} ${events.length}`),
+      metaPill(nextDeadline ? `${t("common.nextDeadline")} ${nextDeadline.program_title}` : `${t("common.nextDeadline")} --`),
+      metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
+    ].join("");
+  }
 
   timelineEl.innerHTML = events
     .map(
@@ -1486,7 +1470,7 @@ function renderFormsPage() {
   const resetButton = document.getElementById("form-reset");
   const grid = document.getElementById("form-grid");
   const metrics = document.getElementById("forms-detail-metrics");
-  if (!searchInput || !programFilter || !sortFilter || !resetButton || !grid || !metrics) {
+  if (!searchInput || !programFilter || !sortFilter || !resetButton || !grid) {
     return;
   }
 
@@ -1531,11 +1515,13 @@ function renderFormsPage() {
     searchInput.dataset.bound = "true";
   }
 
-  metrics.innerHTML = [
-    metaPill(`${t("common.forms")} ${forms.length}`),
-    metaPill(`${t("common.openPrograms")} ${programs.filter((program) => program.status === "open").length}`),
-    metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
-  ].join("");
+  if (metrics) {
+    metrics.innerHTML = [
+      metaPill(`${t("common.forms")} ${forms.length}`),
+      metaPill(`${t("common.openPrograms")} ${programs.filter((program) => program.status === "open").length}`),
+      metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
+    ].join("");
+  }
 
   const query = state.filters.forms.search.toLowerCase();
   let filtered = forms.filter((form) => {
@@ -1586,7 +1572,7 @@ function renderGuidesPage() {
   const startupWatch = document.getElementById("guide-startup-watch");
   const youngWatch = document.getElementById("guide-young-watch");
   const metrics = document.getElementById("guides-detail-metrics");
-  if (!guideGrid || !startupWatch || !youngWatch || !metrics) {
+  if (!guideGrid || !startupWatch || !youngWatch) {
     return;
   }
 
@@ -1594,11 +1580,13 @@ function renderGuidesPage() {
   const startup = state.data.programs.find((program) => program.id === "startup_support");
   const young = state.data.programs.find((program) => program.id === "young_research");
 
-  metrics.innerHTML = [
-    metaPill(`${t("common.links")} ${guides.length}`),
-    metaPill(`${t("common.officialDocs")} ${state.data.programs.reduce((sum, program) => sum + program.featured_documents.length, 0)}`),
-    metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
-  ].join("");
+  if (metrics) {
+    metrics.innerHTML = [
+      metaPill(`${t("common.links")} ${guides.length}`),
+      metaPill(`${t("common.officialDocs")} ${state.data.programs.reduce((sum, program) => sum + program.featured_documents.length, 0)}`),
+      metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
+    ].join("");
+  }
 
   guideGrid.innerHTML = guides
     .map(
@@ -1628,15 +1616,17 @@ function renderSourcesPage() {
   const sourceGrid = document.getElementById("source-grid");
   const categoryGrid = document.getElementById("category-grid");
   const metrics = document.getElementById("sources-detail-metrics");
-  if (!sourceGrid || !categoryGrid || !metrics) {
+  if (!sourceGrid || !categoryGrid) {
     return;
   }
 
-  metrics.innerHTML = [
-    metaPill(`${t("common.links")} ${state.data.source_registry.length}`),
-    metaPill(`${t("common.group")} ${state.data.public_call_categories.length}`),
-    metaPill(`${t("common.archiveSnapshots")} ${state.data.archive.length}`),
-  ].join("");
+  if (metrics) {
+    metrics.innerHTML = [
+      metaPill(`${t("common.links")} ${state.data.source_registry.length}`),
+      metaPill(`${t("common.group")} ${state.data.public_call_categories.length}`),
+      metaPill(`${t("common.archiveSnapshots")} ${state.data.archive.length}`),
+    ].join("");
+  }
 
   sourceGrid.innerHTML = state.data.source_registry
     .map(
@@ -1681,16 +1671,18 @@ function renderSourcesPage() {
 function renderArchivePage() {
   const archiveGrid = document.getElementById("archive-grid");
   const metrics = document.getElementById("archive-detail-metrics");
-  if (!archiveGrid || !metrics) {
+  if (!archiveGrid) {
     return;
   }
   const archive = state.data.archive;
   const totalFiles = archive.reduce((sum, snapshot) => sum + snapshot.files.length, 0);
-  metrics.innerHTML = [
-    metaPill(`${t("common.archiveSnapshots")} ${archive.length}`),
-    metaPill(`${t("common.links")} ${totalFiles}`),
-    metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
-  ].join("");
+  if (metrics) {
+    metrics.innerHTML = [
+      metaPill(`${t("common.archiveSnapshots")} ${archive.length}`),
+      metaPill(`${t("common.links")} ${totalFiles}`),
+      metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
+    ].join("");
+  }
 
   archiveGrid.innerHTML = archive
     .map(

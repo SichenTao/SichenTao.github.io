@@ -3032,8 +3032,6 @@ function renderAll() {
     renderLocaleSwitcher();
     renderThemeSwitcher();
     applyTheme(state.theme, false);
-    renderHero();
-    renderRecordNav();
     renderDomainSwitcher();
     renderDomainFocus();
     renderPapers();
