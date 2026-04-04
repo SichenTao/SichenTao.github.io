@@ -117,8 +117,9 @@
 }
 
 .portal-tray {
-  grid-template-columns: repeat(4, minmax(0, auto));
-  padding-inline: 10px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  padding-inline: 8px;
 }
 
 .portal-switcher:hover .portal-tray,
