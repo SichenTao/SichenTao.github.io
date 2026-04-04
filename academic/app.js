@@ -2374,18 +2374,97 @@ function renderPortalReturnControl() {
     return;
   }
 
-  let link = els.headerControls.querySelector(".portal-return-link");
-  if (!link) {
-    link = document.createElement("a");
-    link.className = "portal-return-link";
-    link.href = "../index.html";
-    link.innerHTML = iconSprite("home");
-    els.headerControls.appendChild(link);
+  const labels = {
+    en: {
+      trigger: "Open portal menu",
+      tray: "Site sections",
+      portal: "Homepage portal",
+      academic: "Academic homepage",
+      radar: "Frontier Radar",
+      jsps: "JSPS KAKENHI",
+    },
+    zh: {
+      trigger: "打开功能主页菜单",
+      tray: "功能主页",
+      portal: "主页导航",
+      academic: "学术主页",
+      radar: "前沿雷达",
+      jsps: "JSPS 科研费",
+    },
+    ja: {
+      trigger: "機能ページメニューを開く",
+      tray: "機能ページ",
+      portal: "ホームポータル",
+      academic: "学術ホームページ",
+      radar: "フロンティアレーダー",
+      jsps: "JSPS 科研費",
+    },
+  }[currentLocale || "en"];
+
+  const currentPath = window.location.pathname;
+  const items = [
+    {
+      href: "/",
+      label: labels.portal,
+      icon: iconSprite("home"),
+      active: currentPath === "/",
+    },
+    {
+      href: "/academic/",
+      label: labels.academic,
+      icon: '<img class="portal-chip-logo" src="/assets/images/favicon-portrait.png" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/academic/"),
+      extraClass: "portal-chip--portrait",
+    },
+    {
+      href: "/frontier-radar/",
+      label: labels.radar,
+      icon: '<img class="portal-chip-logo" src="/frontier-radar/favicon.svg" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/frontier-radar/"),
+    },
+    {
+      href: "/jsps-kakenhi/",
+      label: labels.jsps,
+      icon: '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/jsps-kakenhi/"),
+    },
+  ];
+
+  els.headerControls.querySelectorAll(".portal-return-link").forEach((node) => node.remove());
+
+  let switcher = els.headerControls.querySelector(".portal-switcher");
+  if (!switcher) {
+    switcher = document.createElement("div");
+    switcher.className = "portal-switcher control-switcher";
+    els.headerControls.insertBefore(switcher, els.headerControls.firstElementChild);
   }
 
-  const label = t("controls.open_portal");
-  link.setAttribute("aria-label", label);
-  link.setAttribute("title", label);
+  switcher.innerHTML = `
+    <button
+      class="portal-trigger"
+      type="button"
+      data-portal-trigger
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-label="${escapeHtml(labels.trigger)}"
+      title="${escapeHtml(labels.trigger)}"
+    >
+      ${iconSprite("home")}
+    </button>
+    <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
+      ${items.map((item) => `
+        <a
+          class="portal-chip ${item.extraClass || ""} ${item.active ? "is-active" : ""}"
+          href="${item.href}"
+          aria-label="${escapeHtml(item.label)}"
+          title="${escapeHtml(item.label)}"
+          ${item.active ? 'aria-current="page"' : ""}
+        >
+          ${item.icon}
+        </a>
+      `).join("")}
+    </div>
+  `;
 }
 
 function closeLocaleSwitchers() {
@@ -2403,8 +2482,10 @@ function closeThemeSwitchers() {
 }
 
 function closeAllSwitchers() {
-  closeLocaleSwitchers();
-  closeThemeSwitchers();
+  document.querySelectorAll(".control-switcher").forEach((switcher) => {
+    clearSwitcherCloseTimer(switcher);
+    setSwitcherExpandedState(switcher, false);
+  });
 }
 
 function clearSwitcherCloseTimer(switcher) {
@@ -2420,7 +2501,7 @@ function setSwitcherExpandedState(switcher, expanded) {
     return;
   }
   switcher.classList.toggle("is-open", expanded);
-  const trigger = switcher.querySelector("[data-theme-trigger], [data-locale-trigger]");
+  const trigger = switcher.querySelector("[data-theme-trigger], [data-locale-trigger], [data-portal-trigger]");
   if (trigger) {
     trigger.setAttribute("aria-expanded", expanded ? "true" : "false");
   }

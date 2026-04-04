@@ -1767,16 +1767,104 @@ function renderPortalReturnControl() {
   const controls = document.querySelector(".header-controls");
   if (!controls) return;
 
-  let link = controls.querySelector(".portal-return-link");
-  if (!link) {
-    link = el("a", "portal-return-link");
-    link.href = "../index.html";
-    link.innerHTML = iconSvg("home");
-    controls.appendChild(link);
+  const locale = currentLocale();
+  const labels = {
+    en: {
+      trigger: "Open portal menu",
+      tray: "Site sections",
+      portal: "Homepage portal",
+      academic: "Academic homepage",
+      radar: "Frontier Radar",
+      jsps: "JSPS KAKENHI",
+    },
+    zh: {
+      trigger: "打开功能主页菜单",
+      tray: "功能主页",
+      portal: "主页导航",
+      academic: "学术主页",
+      radar: "前沿雷达",
+      jsps: "JSPS 科研费",
+    },
+    ja: {
+      trigger: "機能ページメニューを開く",
+      tray: "機能ページ",
+      portal: "ホームポータル",
+      academic: "学術ホームページ",
+      radar: "フロンティアレーダー",
+      jsps: "JSPS 科研費",
+    },
+  }[locale] || {
+    trigger: "Open portal menu",
+    tray: "Site sections",
+    portal: "Homepage portal",
+    academic: "Academic homepage",
+    radar: "Frontier Radar",
+    jsps: "JSPS KAKENHI",
+  };
+
+  const currentPath = window.location.pathname;
+  const items = [
+    {
+      href: "/",
+      label: labels.portal,
+      icon: iconSvg("home"),
+      active: currentPath === "/",
+    },
+    {
+      href: "/academic/",
+      label: labels.academic,
+      icon: '<img class="portal-chip-logo" src="/assets/images/favicon-portrait.png" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/academic/"),
+      extraClass: "portal-chip--portrait",
+    },
+    {
+      href: "/frontier-radar/",
+      label: labels.radar,
+      icon: '<img class="portal-chip-logo" src="/frontier-radar/favicon.svg" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/frontier-radar/"),
+    },
+    {
+      href: "/jsps-kakenhi/",
+      label: labels.jsps,
+      icon: '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/jsps-kakenhi/"),
+    },
+  ];
+
+  controls.querySelectorAll(".portal-return-link").forEach((node) => node.remove());
+
+  let switcher = controls.querySelector(".portal-switcher");
+  if (!switcher) {
+    switcher = el("div", "portal-switcher control-switcher");
+    controls.insertBefore(switcher, controls.firstElementChild);
   }
 
-  link.setAttribute("aria-label", ui("openPortalLabel"));
-  link.title = ui("openPortalLabel");
+  switcher.innerHTML = `
+    <button
+      class="portal-trigger"
+      type="button"
+      data-portal-trigger
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-label="${escapeHtml(labels.trigger)}"
+      title="${escapeHtml(labels.trigger)}"
+    >
+      ${iconSvg("home")}
+    </button>
+    <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
+      ${items.map((item) => `
+        <a
+          class="portal-chip ${item.extraClass || ""} ${item.active ? "is-active" : ""}"
+          href="${item.href}"
+          aria-label="${escapeHtml(item.label)}"
+          title="${escapeHtml(item.label)}"
+          ${item.active ? 'aria-current="page"' : ""}
+        >
+          ${item.icon}
+        </a>
+      `).join("")}
+    </div>
+  `;
 }
 
 function syncHomepageShell() {
@@ -1827,7 +1915,7 @@ function clearSwitcherCloseTimer(switcher) {
 function setSwitcherExpandedState(switcher, expanded) {
   if (!switcher) return;
   switcher.classList.toggle("is-open", expanded);
-  const trigger = switcher.querySelector("[data-locale-trigger], [data-theme-trigger]");
+  const trigger = switcher.querySelector("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]");
   if (trigger) {
     trigger.setAttribute("aria-expanded", expanded ? "true" : "false");
   }
@@ -1857,8 +1945,10 @@ function closeThemeSwitchers() {
 }
 
 function closeAllSwitchers() {
-  closeLocaleSwitchers();
-  closeThemeSwitchers();
+  document.querySelectorAll(".control-switcher").forEach((switcher) => {
+    clearSwitcherCloseTimer(switcher);
+    setSwitcherExpandedState(switcher, false);
+  });
 }
 
 function bindSwitcherHoverBehavior() {

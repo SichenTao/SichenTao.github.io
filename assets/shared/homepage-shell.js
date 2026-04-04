@@ -45,7 +45,7 @@
       return;
     }
     switcher.classList.toggle("is-open", expanded);
-    const trigger = switcher.querySelector("[data-locale-trigger], [data-theme-trigger]");
+    const trigger = switcher.querySelector("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]");
     if (trigger) {
       trigger.setAttribute("aria-expanded", expanded ? "true" : "false");
     }
