@@ -2399,7 +2399,7 @@ function renderPortalReturnControl() {
       radar: "フロンティアレーダー",
       jsps: "JSPS 科研費",
     },
-  }[currentLocale || "en"];
+  }[resolveLocaleName() || "en"];
 
   const currentPath = window.location.pathname;
   const items = [
