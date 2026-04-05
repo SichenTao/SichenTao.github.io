@@ -805,9 +805,7 @@ body[data-lang="ja"] .stack-label,
 body[data-lang="zh"] .publication-metric-label,
 body[data-lang="ja"] .publication-metric-label,
 body[data-lang="zh"] .doi-label,
-body[data-lang="ja"] .doi-label,
-body[data-lang="zh"] .filter-toolbar-label,
-body[data-lang="ja"] .filter-toolbar-label {
+body[data-lang="ja"] .doi-label {
   text-transform: none;
   letter-spacing: 0.08em;
 }
@@ -1270,8 +1268,8 @@ body[data-lang="ja"] .hero-role {
 
 .frontier-reference-item {
   display: grid;
-  gap: 10px;
-  padding: 18px 20px;
+  gap: 8px;
+  padding: 16px 20px;
   border-radius: 28px;
   border: 1px solid rgba(var(--teal-rgb), 0.12);
   background: rgba(var(--white-rgb), 0.84);
@@ -1280,47 +1278,20 @@ body[data-lang="ja"] .hero-role {
 
 .frontier-reference-head {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
   gap: 14px;
 }
 
 .frontier-reference-citation {
   margin: 0;
   color: var(--ink);
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.985rem;
+  line-height: 1.72;
 }
 
-.frontier-reference-citation-link {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-color: rgba(var(--teal-rgb), 0.32);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
-}
-
-.frontier-reference-citation-link:hover,
-.frontier-reference-citation-link:focus-visible {
-  color: var(--teal);
-  text-decoration-color: rgba(var(--teal-rgb), 0.54);
-  outline: none;
-}
-
-.frontier-reference-meta {
-  margin: 0;
-  color: var(--ink-soft);
-  line-height: 1.65;
-}
-
-.frontier-reference-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px;
-}
-
-.frontier-reference-link {
+.frontier-reference-inline-link,
+.frontier-reference-inline-action {
   color: var(--teal);
   text-decoration: underline;
   text-decoration-color: rgba(var(--teal-rgb), 0.32);
@@ -1328,11 +1299,17 @@ body[data-lang="ja"] .hero-role {
   text-underline-offset: 0.14em;
 }
 
-.frontier-reference-link:hover,
-.frontier-reference-link:focus-visible {
+.frontier-reference-inline-link:hover,
+.frontier-reference-inline-link:focus-visible,
+.frontier-reference-inline-action:hover,
+.frontier-reference-inline-action:focus-visible {
   color: var(--teal-strong);
   text-decoration-color: rgba(var(--teal-rgb), 0.54);
   outline: none;
+}
+
+.frontier-reference-inline-actions {
+  color: var(--ink-soft);
 }
 
 .publication-card .publication-head {

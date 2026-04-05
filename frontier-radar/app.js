@@ -101,7 +101,7 @@ const UI_TEXT = {
     typeOptionAll: "All types",
     typeOptionJournal: "Journal",
     typeOptionConference: "Conference",
-    statusOptionAll: "All states",
+    statusOptionAll: "All statuses",
     statusOptionMustRead: "Must-read",
     statusOptionMonitor: "Monitor",
     statusOptionArchive: "Archive",
@@ -403,7 +403,7 @@ const UI_TEXT = {
     typeOptionAll: "全種別",
     typeOptionJournal: "ジャーナル",
     typeOptionConference: "会議",
-    statusOptionAll: "すべて",
+    statusOptionAll: "全ステータス",
     statusOptionMustRead: "必読",
     statusOptionMonitor: "監視",
     statusOptionArchive: "アーカイブ",
@@ -1429,6 +1429,61 @@ function publicationCitationUrl(item) {
   }
 
   return buildGoogleScholarCitationUrl(item);
+}
+
+function replaceEscapedFragmentOnce(html, target, replacement) {
+  if (!html || !target || !html.includes(target)) {
+    return html;
+  }
+  const index = html.indexOf(target);
+  return `${html.slice(0, index)}${replacement}${html.slice(index + target.length)}`;
+}
+
+function paperReferenceCitationMarkup(paper) {
+  let citationHtml = escapeHtml(paper.citationText || localizeText(paper.title) || "");
+  const venueText = localizeText(paper.venue) || "";
+  const venueHref = normalizeUrl(paper.venue_url || paper.venueUrl);
+  const doiHref = publicationPrimaryUrl(paper) || normalizeUrl(paper.doiUrl || paper.doi_url);
+  const doiLabel = normalizeUrl(paper.doi || paper.doiUrl || paper.doi_url || "");
+
+  if (venueText && venueHref) {
+    citationHtml = replaceEscapedFragmentOnce(
+      citationHtml,
+      escapeHtml(venueText),
+      `<a class="frontier-reference-inline-link" href="${escapeHtml(venueHref)}" target="_blank" rel="noreferrer">${escapeHtml(venueText)}</a>`
+    );
+  }
+
+  if (doiHref && doiLabel) {
+    const escapedDoi = escapeHtml(doiLabel);
+    const doiMarkup = `<a class="frontier-reference-inline-link" href="${escapeHtml(doiHref)}" target="_blank" rel="noreferrer">${escapedDoi}</a>`;
+    citationHtml = citationHtml.includes(`doi: ${escapedDoi}`)
+      ? citationHtml.replace(`doi: ${escapedDoi}`, `doi: ${doiMarkup}`)
+      : replaceEscapedFragmentOnce(citationHtml, escapedDoi, doiMarkup);
+  }
+
+  return citationHtml;
+}
+
+function paperReferenceInlineActionsMarkup(paper, detailHref) {
+  const links = [
+    `<a class="frontier-reference-inline-action" href="${escapeHtml(detailHref)}">${escapeHtml(ui("detailAction"))}</a>`,
+  ];
+
+  if (paper.pdfUrl) {
+    links.push(
+      `<a class="frontier-reference-inline-action" href="${escapeHtml(paper.pdfUrl)}" target="_blank" rel="noreferrer">${escapeHtml(ui("sourcePdfAction"))}</a>`
+    );
+  }
+
+  const doiActionUrl = publicationPrimaryUrl(paper) || normalizeUrl(paper.doiUrl || paper.doi_url);
+  if (doiActionUrl) {
+    links.push(
+      `<a class="frontier-reference-inline-action" href="${escapeHtml(doiActionUrl)}" target="_blank" rel="noreferrer">${escapeHtml(ui("doiAction"))}</a>`
+    );
+  }
+
+  return links.length ? `<span class="frontier-reference-inline-actions"> · ${links.join(" · ")}</span>` : "";
 }
 
 function metricOptionsForPaper(paper, metricKind) {
@@ -2843,37 +2898,9 @@ function renderPapers() {
 
   papers.forEach((paper) => {
     if (layout === "ledger") {
-      const localArchive = localArchiveEntry(paper.id);
-      const relatedTeams = paperTeamNames(paper);
       const detailHref = paperDetailHref(paper);
-      const doiActionUrl = publicationPrimaryUrl(paper) || normalizeUrl(paper.doiUrl || paper.doi_url);
       const article = el("article", "frontier-reference-item");
       const head = el("div", "frontier-reference-head");
-      const tags = el("div", "tag-row");
-      tags.appendChild(el("span", tagVariant(paper.status), localizeText(paper.status)));
-      tags.appendChild(
-        el(
-          "span",
-          tagVariant(
-            localArchive
-              ? ui("localArchiveReady")
-              : paper.downloadMode === "direct-http"
-                ? ui("downloadModeDirect")
-                : paper.downloadMode === "openclaw-browser"
-                  ? ui("downloadModeBrowser")
-                  : ui("downloadModeManual")
-          ),
-          localArchive
-            ? ui("localArchiveReady")
-            : paper.downloadMode === "direct-http"
-              ? ui("downloadModeDirect")
-              : paper.downloadMode === "openclaw-browser"
-                ? ui("downloadModeBrowser")
-                : ui("downloadModeManual")
-        )
-      );
-      head.appendChild(tags);
-
       const headActions = el("div", "publication-head-actions");
       const copyTrigger = el("button", "publication-copy-button publication-copy-trigger");
       copyTrigger.type = "button";
@@ -2907,30 +2934,8 @@ function renderPapers() {
       article.appendChild(head);
 
       const citation = el("p", "frontier-reference-citation");
-      citation.innerHTML = `<a class="frontier-reference-citation-link" href="${escapeHtml(detailHref)}">${escapeHtml(
-        paper.citationText || localizeText(paper.title) || ""
-      )}</a>`;
+      citation.innerHTML = `${paperReferenceCitationMarkup(paper)}${paperReferenceInlineActionsMarkup(paper, detailHref)}`;
       article.appendChild(citation);
-
-      if (relatedTeams.length) {
-        const teamMeta = el("p", "frontier-reference-meta");
-        teamMeta.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("detailTeamLabel"))}:</strong> ${escapeHtml(relatedTeams.join(" · "))}`;
-        article.appendChild(teamMeta);
-      }
-
-      const actions = el("div", "frontier-reference-actions");
-      const detailLink = el("a", "frontier-reference-link", ui("detailAction"));
-      detailLink.href = detailHref;
-      actions.appendChild(detailLink);
-      if (localArchive?.browserUrl) {
-        actions.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl, "frontier-reference-link"));
-      } else if (paper.pdfUrl) {
-        actions.appendChild(actionLink(ui("sourcePdfAction"), paper.pdfUrl, "frontier-reference-link"));
-      }
-      if (doiActionUrl) {
-        actions.appendChild(actionLink(ui("doiAction"), doiActionUrl, "frontier-reference-link"));
-      }
-      article.appendChild(actions);
 
       list.appendChild(article);
       return;
