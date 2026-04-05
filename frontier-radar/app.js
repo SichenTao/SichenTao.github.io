@@ -37,7 +37,12 @@ function writeStoredValue(key, value) {
 
 const state = {
   activeDomainId: null,
+  yearFilter: "all",
+  typeFilter: "all",
   statusFilter: "all",
+  teamFilter: "all",
+  sortFilter: "recent",
+  quickFilter: "all",
   paperQuery: "",
   language: window.FRONTIER_RADAR_DEFAULT_LANGUAGE || "en",
   theme: window.FRONTIER_RADAR_DEFAULT_THEME || "tohoku",
@@ -58,13 +63,14 @@ const UI_TEXT = {
     htmlLang: "en",
     pageTitle: "Academic Frontier",
     pageDescription:
-      "A local-first academic frontier workbench for discovering active teams, filtering key papers, and deciding what deserves deeper research next.",
+      "A local-first academic frontier for tracking active teams, strong signals, and high-value papers across multiple research domains.",
     brandTitle: "Academic Frontier",
-    heroEyebrow: "Frontier workbench",
+    heroEyebrow: "Academic frontier",
     heroPrimaryAction: "Open paper board",
     heroSecondaryAction: "Review the guide",
     heroHeadline:
-      "Search a field, filter the current lane, inspect key papers, and queue deeper reads from one research workbench.",
+      "Use this overview to identify strong signals, active teams, and where the paper board deserves closer attention next.",
+    statusCardTitle: "Current focus",
     snapshotLabel: "Latest snapshot",
     nextRunLabel: "Next planned run",
     sourcesCoveredLabel: "Sources",
@@ -82,16 +88,34 @@ const UI_TEXT = {
     teamsKicker: "Tracked teams",
     teamsTitle: "Teams and researchers worth following",
     teamsNote: "Prioritized by signal density, not name recognition alone.",
-    paperLaneKicker: "Paper board",
-    papersTitle: "Latest signals and key papers",
+    paperLaneKicker: "Paper list",
+    papersTitle: "Searchable frontier papers",
     papersNote: "Search, filter, and decide what to read next.",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
     searchPlaceholder: "Find a title, venue, author, or clue",
+    filtersLabel: "Search & filter",
+    quickTagsLabel: "Tags",
+    resetLabel: "Reset",
+    yearOptionAll: "All years",
+    typeOptionAll: "All types",
+    typeOptionJournal: "Journal",
+    typeOptionConference: "Conference",
     statusOptionAll: "All states",
     statusOptionMustRead: "Must-read",
     statusOptionMonitor: "Monitor",
     statusOptionArchive: "Archive",
+    teamOptionAll: "All teams",
+    sortRecent: "Sort by recent",
+    sortCitations: "Sort by citations",
+    sortImpact: "Sort by IF",
+    sortTitle: "Sort by title",
+    quickAll: "All",
+    quickJournal: "Journal",
+    quickConference: "Conference",
+    quickMustRead: "Must-read",
+    quickReadyPdf: "Ready PDF",
+    quickBrowserPull: "Browser pull",
     downloadKicker: "Download queue",
     downloadTitle: "What OpenClaw should fetch next",
     guideKicker: "Workflow",
@@ -118,7 +142,7 @@ const UI_TEXT = {
     themeTohokuLabel: "Tohoku University",
     themeToyamaLabel: "University of Toyama",
     themeUsstLabel: "University of Shanghai for Science and Technology",
-    navOverview: "Workbench",
+    navOverview: "Overview",
     navPapers: "Papers",
     navSignals: "Signals",
     navTeams: "Teams",
@@ -179,16 +203,25 @@ const UI_TEXT = {
     copiedCitationLabel: "IEEE citation copied",
     copiedBibtexLabel: "BibTeX copied",
     topLabel: "Top",
+    detailAction: "Open detail",
+    detailBackAction: "Back to paper board",
+    detailSummaryKicker: "Paper detail",
+    detailSummaryTitle: "Reading file",
+    detailContextTitle: "Tracking context",
+    detailSourceTitle: "Source bundle",
+    detailTeamLabel: "Tracked team",
+    detailArchiveLabel: "Archive status",
   },
   zh: {
     htmlLang: "zh-CN",
     pageTitle: "学术前沿",
-    pageDescription: "一个面向多研究方向的本地优先学术前沿工作台，用于发现活跃团队、筛选关键论文，并决定下一步值得深挖什么。",
+    pageDescription: "一个面向多研究方向的本地优先学术前沿总览，用于发现活跃团队、强信号与高价值论文，并决定下一步值得深挖什么。",
     brandTitle: "学术前沿",
-    heroEyebrow: "前沿工作台",
+    heroEyebrow: "学术前沿",
     heroPrimaryAction: "打开论文面板",
     heroSecondaryAction: "查看说明",
-    heroHeadline: "在同一个研究工作台里完成领域筛选、论文判断、证据整理与深度研究排队。",
+    heroHeadline: "先用这张总览快速判断当前方向的强信号与活跃团队，再进入论文列表决定下一步读什么。",
+    statusCardTitle: "当前聚焦",
     snapshotLabel: "最新快照",
     nextRunLabel: "下次计划运行",
     sourcesCoveredLabel: "来源",
@@ -206,16 +239,34 @@ const UI_TEXT = {
     teamsKicker: "跟踪团队",
     teamsTitle: "值得持续关注的团队与研究者",
     teamsNote: "优先看证据密度，而不只是名气。",
-    paperLaneKicker: "论文工作面",
-    papersTitle: "最新强信号与关键论文",
+    paperLaneKicker: "论文列表",
+    papersTitle: "可筛选的前沿论文",
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
     searchPlaceholder: "搜索标题、期刊、作者或线索",
+    filtersLabel: "搜索与筛选",
+    quickTagsLabel: "标签",
+    resetLabel: "重置",
+    yearOptionAll: "全部年份",
+    typeOptionAll: "全部类型",
+    typeOptionJournal: "期刊",
+    typeOptionConference: "会议",
     statusOptionAll: "全部状态",
     statusOptionMustRead: "必读",
     statusOptionMonitor: "持续观察",
     statusOptionArchive: "归档",
+    teamOptionAll: "全部团队",
+    sortRecent: "按时间排序",
+    sortCitations: "按引用排序",
+    sortImpact: "按 IF 排序",
+    sortTitle: "按标题排序",
+    quickAll: "全部",
+    quickJournal: "期刊",
+    quickConference: "会议",
+    quickMustRead: "必读",
+    quickReadyPdf: "PDF 就绪",
+    quickBrowserPull: "待浏览器抓取",
     downloadKicker: "下载队列",
     downloadTitle: "接下来应由 OpenClaw 抓取的内容",
     guideKicker: "工作流程",
@@ -241,7 +292,7 @@ const UI_TEXT = {
     themeTohokuLabel: "东北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "工作台",
+    navOverview: "概览",
     navPapers: "论文",
     navSignals: "趋势",
     navTeams: "团队",
@@ -302,17 +353,26 @@ const UI_TEXT = {
     copiedCitationLabel: "已复制 IEEE 格式引用",
     copiedBibtexLabel: "已复制 BibTeX",
     topLabel: "Top",
+    detailAction: "打开详情",
+    detailBackAction: "返回论文面板",
+    detailSummaryKicker: "论文详情",
+    detailSummaryTitle: "阅读档案",
+    detailContextTitle: "跟踪背景",
+    detailSourceTitle: "来源入口",
+    detailTeamLabel: "关联团队",
+    detailArchiveLabel: "归档状态",
   },
   ja: {
     htmlLang: "ja",
     pageTitle: "学術フロンティア",
     pageDescription:
-      "複数領域の活発なチーム、重要論文、強いシグナルを見つけ、次に何を深掘りすべきかを判断するためのローカルファーストな学術フロンティアワークベンチ。",
+      "複数領域の活発なチーム、強いシグナル、高価値な論文を見つけ、次に何を深掘りすべきかを判断するためのローカルファーストな学術フロンティア総覧。",
     brandTitle: "学術フロンティア",
-    heroEyebrow: "フロンティアワークベンチ",
+    heroEyebrow: "学術フロンティア",
     heroPrimaryAction: "論文ボードを開く",
     heroSecondaryAction: "ガイドを見る",
-    heroHeadline: "同じ研究ワークベンチ上で、分野選択、論文判断、証拠整理、深掘りキュー化までを行う。",
+    heroHeadline: "まずこの総覧で強いシグナルと活発なチームを見極め、次に論文リストで何を読むべきかを判断します。",
+    statusCardTitle: "現在の焦点",
     snapshotLabel: "最新スナップショット",
     nextRunLabel: "次回予定実行",
     sourcesCoveredLabel: "ソース数",
@@ -330,16 +390,34 @@ const UI_TEXT = {
     teamsKicker: "追跡チーム",
     teamsTitle: "継続監視したいチームと研究者",
     teamsNote: "知名度よりも証拠密度を優先。",
-    paperLaneKicker: "論文ボード",
-    papersTitle: "最新の強いシグナルと重要論文",
+    paperLaneKicker: "論文リスト",
+    papersTitle: "絞り込み可能なフロンティア論文",
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
     searchPlaceholder: "タイトル、会場、著者、手がかりで検索",
+    filtersLabel: "検索とフィルター",
+    quickTagsLabel: "タグ",
+    resetLabel: "リセット",
+    yearOptionAll: "全年度",
+    typeOptionAll: "全種別",
+    typeOptionJournal: "ジャーナル",
+    typeOptionConference: "会議",
     statusOptionAll: "すべて",
     statusOptionMustRead: "必読",
     statusOptionMonitor: "監視",
     statusOptionArchive: "アーカイブ",
+    teamOptionAll: "全チーム",
+    sortRecent: "新しい順",
+    sortCitations: "被引用順",
+    sortImpact: "IF 順",
+    sortTitle: "タイトル順",
+    quickAll: "すべて",
+    quickJournal: "ジャーナル",
+    quickConference: "会議",
+    quickMustRead: "必読",
+    quickReadyPdf: "PDF 準備済み",
+    quickBrowserPull: "ブラウザ取得待ち",
     downloadKicker: "ダウンロードキュー",
     downloadTitle: "次に OpenClaw が取得すべきもの",
     guideKicker: "ワークフロー",
@@ -366,7 +444,7 @@ const UI_TEXT = {
     themeTohokuLabel: "東北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "ワークベンチ",
+    navOverview: "概観",
     navPapers: "論文",
     navSignals: "シグナル",
     navTeams: "チーム",
@@ -427,6 +505,14 @@ const UI_TEXT = {
     copiedCitationLabel: "IEEE形式の引用をコピーしました",
     copiedBibtexLabel: "BibTeX をコピーしました",
     topLabel: "Top",
+    detailAction: "詳細を見る",
+    detailBackAction: "論文ボードへ戻る",
+    detailSummaryKicker: "論文詳細",
+    detailSummaryTitle: "読解ファイル",
+    detailContextTitle: "追跡コンテキスト",
+    detailSourceTitle: "ソース導線",
+    detailTeamLabel: "関連チーム",
+    detailArchiveLabel: "アーカイブ状態",
   },
 };
 
@@ -1600,6 +1686,67 @@ function localizePrioritySummary(priority, momentum) {
   return `${String(priority).toUpperCase()} priority · Momentum ${momentum}/100`;
 }
 
+function slugify(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "paper";
+}
+
+function paperDetailHref(paper) {
+  return `./paper/${slugify(paper?.title || paper?.id)}.html`;
+}
+
+function teamsForDomain(domainId = state.activeDomainId) {
+  return domainData().teams.filter((team) => team.domainId === domainId);
+}
+
+function paperTeamNames(paper) {
+  const matches = teamsForDomain().filter((team) => (team.papers || []).includes(paper?.title));
+  return [...new Set(matches.map((team) => localizeText(team.name)).filter(Boolean))];
+}
+
+function paperYearValue(paper) {
+  if (paper?.year) {
+    return String(paper.year);
+  }
+  const date = String(paper?.publicationDate || "");
+  return date ? date.slice(0, 4) : "";
+}
+
+function paperTypeValue(paper) {
+  const raw = String(paper?.metrics?.venueType || paper?.type || "").toLowerCase();
+  if (raw.includes("journal")) {
+    return "journal";
+  }
+  if (raw.includes("conference") || raw.includes("proceeding")) {
+    return "conference";
+  }
+  return "";
+}
+
+function paperStatusValue(paper) {
+  return String(paper?.status || "monitor");
+}
+
+function paperHasReadyPdf(paper) {
+  return Boolean(localArchiveEntry(paper?.id));
+}
+
+function paperNeedsBrowserPull(paper) {
+  return !paperHasReadyPdf(paper) && paper?.downloadMode === "openclaw-browser";
+}
+
+function paperImpactFactorValue(paper) {
+  const value = Number.parseFloat(String(paper?.metrics?.impactFactor || ""));
+  return Number.isFinite(value) ? value : -1;
+}
+
+function normalizedPaperQuery() {
+  return String(state.paperQuery || "").trim().toLowerCase();
+}
+
 function metricValue(value) {
   if (value === "__not_listed__") return ui("notListedMetric");
   return value === undefined || value === null || value === "" ? ui("pendingMetric") : String(value);
@@ -1631,14 +1778,8 @@ function renderStaticText() {
     ["watchSignalsTitle", ui("whatShouldTriggerActionNext")],
     ["paperLaneKicker", ui("paperLaneKicker")],
     ["papers-title", ui("papersTitle")],
-    ["papersNote", ui("papersNote")],
     ["filterToolbarLabel", filterToolbarLabel()],
-    ["statusFieldLabel", ui("statusFieldLabel")],
-    ["searchFieldLabel", ui("searchFieldLabel")],
-    ["statusOptionAll", ui("statusOptionAll")],
-    ["statusOptionMustRead", ui("statusOptionMustRead")],
-    ["statusOptionMonitor", ui("statusOptionMonitor")],
-    ["statusOptionArchive", ui("statusOptionArchive")],
+    ["quickFilterLabel", ui("quickTagsLabel")],
     ["trendKicker", ui("trendKicker")],
     ["trend-title", ui("trendTitle")],
     ["teamsKicker", ui("teamsKicker")],
@@ -1669,6 +1810,8 @@ function renderStaticText() {
   document.querySelectorAll("#heroShortcuts").forEach((node) => node.setAttribute("aria-label", ui("quickLinksLabel")));
   setAttr("footerBackHome", "href", PAGE_PATHS.overview);
   setProp("paperSearch", "placeholder", ui("searchPlaceholder"));
+  setAttr("paperReset", "aria-label", ui("resetLabel"));
+  setAttr("paperReset", "title", ui("resetLabel"));
   setAttr("scrollTopButton", "aria-label", ui("backToTop"));
 }
 
@@ -2403,17 +2546,50 @@ function renderDomainFocus() {
 function sortPapers(papers) {
   const statusWeight = { "must-read": 3, monitor: 2, archive: 1 };
   return [...papers].sort((left, right) => {
-    const statusDelta = (statusWeight[right.status] || 0) - (statusWeight[left.status] || 0);
+    if (state.sortFilter === "title") {
+      return localizeText(left.title).localeCompare(localizeText(right.title), currentLocale());
+    }
+
+    if (state.sortFilter === "citations") {
+      const citationDelta = (right.citationCount || 0) - (left.citationCount || 0);
+      if (citationDelta !== 0) return citationDelta;
+    }
+
+    if (state.sortFilter === "impact_factor") {
+      const impactDelta = paperImpactFactorValue(right) - paperImpactFactorValue(left);
+      if (impactDelta !== 0) return impactDelta;
+      const citationDelta = (right.citationCount || 0) - (left.citationCount || 0);
+      if (citationDelta !== 0) return citationDelta;
+    }
+
+    const statusDelta = (statusWeight[paperStatusValue(right)] || 0) - (statusWeight[paperStatusValue(left)] || 0);
     if (statusDelta !== 0) return statusDelta;
-    const dateDelta = (right.publicationDate || "").localeCompare(left.publicationDate || "");
+    const dateDelta = String(right.publicationDate || "").localeCompare(String(left.publicationDate || ""));
     if (dateDelta !== 0) return dateDelta;
     return (right.citationCount || 0) - (left.citationCount || 0);
   });
 }
 
 function filteredPapers() {
-  return sortPapers(papersForDomain()).filter((paper) => {
-    const matchesStatus = state.statusFilter === "all" || paper.status === state.statusFilter;
+  const query = normalizedPaperQuery();
+  return sortPapers(papersForDomain().filter((paper) => {
+    const matchesYear = state.yearFilter === "all" || paperYearValue(paper) === state.yearFilter;
+    const matchesType = state.typeFilter === "all" || paperTypeValue(paper) === state.typeFilter;
+    const matchesStatus = state.statusFilter === "all" || paperStatusValue(paper) === state.statusFilter;
+    const teams = paperTeamNames(paper);
+    const matchesTeam = state.teamFilter === "all" || teams.includes(state.teamFilter);
+    const matchesQuick = (() => {
+      if (state.quickFilter === "all") return true;
+      if (state.quickFilter === "journal") return paperTypeValue(paper) === "journal";
+      if (state.quickFilter === "conference") return paperTypeValue(paper) === "conference";
+      if (state.quickFilter === "must-read") return paperStatusValue(paper) === "must-read";
+      if (state.quickFilter === "ready-pdf") return paperHasReadyPdf(paper);
+      if (state.quickFilter === "browser-pull") return paperNeedsBrowserPull(paper);
+      if (state.quickFilter.startsWith("team:")) {
+        return teams.includes(state.quickFilter.slice(5));
+      }
+      return true;
+    })();
     const haystack = [
       paper.title,
       localizeText(paper.title),
@@ -2423,14 +2599,15 @@ function filteredPapers() {
       localizeText(paper.whyItMatters),
       paper.abstract,
       localizeText(paper.abstract),
-      paper.citationText,
+      ...teams,
       ...(paper.authors || []),
     ]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
-    return matchesStatus && haystack.includes(state.paperQuery.toLowerCase());
-  });
+    const matchesQuery = !query || haystack.includes(query);
+    return matchesYear && matchesType && matchesStatus && matchesTeam && matchesQuick && matchesQuery;
+  }));
 }
 
 function tagVariant(value) {
@@ -2523,6 +2700,109 @@ function actionLink(label, href, className = "button") {
   return link;
 }
 
+function syncSelectOptions(select, options, currentValue = "all") {
+  if (!select) return;
+  select.innerHTML = "";
+  options.forEach((option) => {
+    const node = document.createElement("option");
+    node.value = option.value;
+    node.textContent = option.label;
+    select.appendChild(node);
+  });
+  const hasCurrent = options.some((option) => option.value === currentValue);
+  select.value = hasCurrent ? currentValue : "all";
+}
+
+function renderPaperControls() {
+  const paperSearch = byId("paperSearch");
+  const yearFilter = byId("yearFilter");
+  const typeFilter = byId("typeFilter");
+  const statusFilter = byId("statusFilter");
+  const teamFilter = byId("teamFilter");
+  const sortFilter = byId("sortFilter");
+  const resetButton = byId("paperReset");
+  const quickFilterChips = byId("quickFilterChips");
+
+  if (!paperSearch || !yearFilter || !typeFilter || !statusFilter || !teamFilter || !sortFilter || !quickFilterChips) {
+    return;
+  }
+
+  const papers = papersForDomain();
+  const years = [...new Set(papers.map((paper) => paperYearValue(paper)).filter(Boolean))]
+    .sort((left, right) => Number(right) - Number(left));
+  const teams = [...new Set(teamsForDomain().map((team) => localizeText(team.name)).filter(Boolean))]
+    .sort((left, right) => left.localeCompare(right, currentLocale()));
+
+  syncSelectOptions(yearFilter, [
+    { value: "all", label: ui("yearOptionAll") },
+    ...years.map((year) => ({ value: year, label: year })),
+  ], state.yearFilter);
+  state.yearFilter = yearFilter.value;
+
+  syncSelectOptions(typeFilter, [
+    { value: "all", label: ui("typeOptionAll") },
+    { value: "journal", label: ui("typeOptionJournal") },
+    { value: "conference", label: ui("typeOptionConference") },
+  ], state.typeFilter);
+  state.typeFilter = typeFilter.value;
+
+  syncSelectOptions(statusFilter, [
+    { value: "all", label: ui("statusOptionAll") },
+    { value: "must-read", label: ui("statusOptionMustRead") },
+    { value: "monitor", label: ui("statusOptionMonitor") },
+    { value: "archive", label: ui("statusOptionArchive") },
+  ], state.statusFilter);
+  state.statusFilter = statusFilter.value;
+
+  syncSelectOptions(teamFilter, [
+    { value: "all", label: ui("teamOptionAll") },
+    ...teams.map((team) => ({ value: team, label: team })),
+  ], state.teamFilter);
+  state.teamFilter = teamFilter.value;
+
+  syncSelectOptions(sortFilter, [
+    { value: "recent", label: ui("sortRecent") },
+    { value: "citations", label: ui("sortCitations") },
+    { value: "impact_factor", label: ui("sortImpact") },
+    { value: "title", label: ui("sortTitle") },
+  ], state.sortFilter);
+  state.sortFilter = sortFilter.value;
+
+  paperSearch.value = state.paperQuery;
+
+  const chipDefinitions = [
+    { value: "all", label: ui("quickAll") },
+    { value: "journal", label: ui("quickJournal") },
+    { value: "conference", label: ui("quickConference") },
+    { value: "must-read", label: ui("quickMustRead") },
+    { value: "ready-pdf", label: ui("quickReadyPdf") },
+    { value: "browser-pull", label: ui("quickBrowserPull") },
+    ...teams.map((team) => ({ value: `team:${team}`, label: team })),
+  ];
+
+  quickFilterChips.innerHTML = "";
+  chipDefinitions.forEach((chip) => {
+    const button = el("button", `chip${state.quickFilter === chip.value ? " is-active" : ""}`);
+    button.type = "button";
+    button.dataset.quickFilter = chip.value;
+    button.setAttribute("aria-pressed", String(state.quickFilter === chip.value));
+    button.textContent = chip.label;
+    quickFilterChips.appendChild(button);
+  });
+
+  if (resetButton) {
+    const isDefault =
+      state.yearFilter === "all"
+      && state.typeFilter === "all"
+      && state.statusFilter === "all"
+      && state.teamFilter === "all"
+      && state.sortFilter === "recent"
+      && state.quickFilter === "all"
+      && !state.paperQuery;
+    resetButton.disabled = isDefault;
+  }
+}
+
 function renderPapers() {
   const list = byId("paperList");
   if (!list) return;
@@ -2544,11 +2824,12 @@ function renderPapers() {
     const publisherUrl = normalizeUrl(paper.publisherUrl || paper.publisher_url);
     const doiActionUrl = primaryUrl || normalizeUrl(paper.doiUrl || paper.doi_url);
     const featured = paper.status === "must-read";
+    const relatedTeams = paperTeamNames(paper);
     const article = el("article", `publication-card${featured ? " is-featured" : ""}`);
     const head = el("div", "publication-head");
     const titleBlock = el("div", "");
     const tags = el("div", "tag-row");
-    tags.appendChild(el("span", "tag", `${localizeText(paper.venue)} ${paper.year || ""}`.trim()));
+    tags.appendChild(el("span", "tag", `${localizeText(paper.venue)} ${paperYearValue(paper)}`.trim()));
     tags.appendChild(el("span", tagVariant(paper.status), localizeText(paper.status)));
     tags.appendChild(
       el(
@@ -2576,7 +2857,7 @@ function renderPapers() {
     }
     titleBlock.appendChild(tags);
     const title = el("h4", `publication-title${featured ? " is-featured" : ""}`);
-    title.innerHTML = richTextHtml(paper.title);
+    title.innerHTML = `<a class="publication-title-link" href="${escapeHtml(paperDetailHref(paper))}">${richTextHtml(paper.title)}</a>`;
     titleBlock.appendChild(title);
     head.appendChild(titleBlock);
 
@@ -2618,6 +2899,12 @@ function renderPapers() {
     )}`;
     article.appendChild(authors);
 
+    if (relatedTeams.length) {
+      const teamNote = el("p", "publication-note publication-note-accent");
+      teamNote.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("detailTeamLabel"))}:</strong> ${escapeHtml(relatedTeams.join(" · "))}`;
+      article.appendChild(teamNote);
+    }
+
     const venueLine = el("p", "venue-line");
     venueLine.innerHTML = `<span class="doi-label">${ui("venueLabel")}</span> ${
       normalizeUrl(paper?.venue_url || paper?.venueUrl)
@@ -2658,16 +2945,10 @@ function renderPapers() {
     addMetric(metrics, "citation", ui("citationsMetricLabel"), paper.citationCount || 0, null, metricOptionsForPaper(paper, "citation"));
     article.appendChild(metrics);
 
-    const citation = el("p", "publication-note publication-note-accent");
-    citation.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("citationLabel"))}:</strong> ${escapeHtml(
-      paper.citationText || ui("pendingMetric")
-    )}`;
-    article.appendChild(citation);
-
     const abstract = el("p", `abstract-block${featured ? " abstract-highlight" : ""}`);
     abstract.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("abstractLabel"))}:</strong> <span class="rich-text">${richTextHtml(
       paper.abstract || ui("abstractUnavailable"),
-      { truncate: 560 }
+      { truncate: 420 }
     )}</span>`;
     article.appendChild(abstract);
 
@@ -2678,10 +2959,13 @@ function renderPapers() {
     article.appendChild(strategic);
 
     const links = el("div", "link-row");
+    const detailLink = el("a", "button button-primary", ui("detailAction"));
+    detailLink.href = paperDetailHref(paper);
+    links.appendChild(detailLink);
     if (localArchive?.browserUrl) {
-      links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl, "button button-primary"));
+      links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl));
     } else if (paper.pdfUrl) {
-      links.appendChild(actionLink(ui("sourcePdfAction"), paper.pdfUrl, "button button-primary"));
+      links.appendChild(actionLink(ui("sourcePdfAction"), paper.pdfUrl));
     } else {
       links.appendChild(el("span", "tag", ui("queueAction")));
     }
@@ -2845,16 +3129,62 @@ function renderWorkflow() {
 }
 
 function bindControls() {
+  const yearFilter = byId("yearFilter");
+  const typeFilter = byId("typeFilter");
   const statusFilter = byId("statusFilter");
+  const teamFilter = byId("teamFilter");
+  const sortFilter = byId("sortFilter");
   const paperSearch = byId("paperSearch");
+  const paperReset = byId("paperReset");
+  const quickFilterChips = byId("quickFilterChips");
   if (!statusFilter || !paperSearch) return;
 
+  yearFilter?.addEventListener("change", (event) => {
+    state.yearFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
+  typeFilter?.addEventListener("change", (event) => {
+    state.typeFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
   statusFilter.addEventListener("change", (event) => {
     state.statusFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
+  teamFilter?.addEventListener("change", (event) => {
+    state.teamFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
+  sortFilter?.addEventListener("change", (event) => {
+    state.sortFilter = event.target.value;
+    renderPaperControls();
     renderPapers();
   });
   paperSearch.addEventListener("input", (event) => {
     state.paperQuery = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
+  paperReset?.addEventListener("click", () => {
+    state.yearFilter = "all";
+    state.typeFilter = "all";
+    state.statusFilter = "all";
+    state.teamFilter = "all";
+    state.sortFilter = "recent";
+    state.quickFilter = "all";
+    state.paperQuery = "";
+    renderPaperControls();
+    renderPapers();
+  });
+  quickFilterChips?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-quick-filter]");
+    if (!button) return;
+    state.quickFilter = button.dataset.quickFilter || "all";
+    renderPaperControls();
     renderPapers();
   });
 }
@@ -3034,6 +3364,7 @@ function renderAll() {
     applyTheme(state.theme, false);
     renderDomainSwitcher();
     renderDomainFocus();
+    renderPaperControls();
     renderPapers();
     renderTrends();
     renderTeams();
