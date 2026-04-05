@@ -1201,23 +1201,27 @@ body[data-lang="ja"] .hero-role {
 }
 
 .chip {
-  appearance: none;
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 14px;
-  background: rgba(var(--white-rgb), 0.78);
-  color: var(--ink-soft);
-  font: inherit;
   cursor: pointer;
+  color: var(--muted);
+  font: inherit;
 }
 
-.chip.is-active,
-.chip[aria-pressed="true"] {
+.chip-count {
+  color: var(--clay);
+  font-size: 0.88em;
+}
+
+.chip.is-active {
   color: var(--ink);
   border-color: rgba(var(--teal-rgb), 0.22);
   background: var(--teal-soft);
-  box-shadow: 0 12px 22px rgba(var(--ink-rgb), 0.06);
+}
+
+.chip.is-active .chip-count {
+  color: var(--teal);
 }
 
 .filter-chip-row {

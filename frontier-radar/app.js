@@ -89,12 +89,12 @@ const UI_TEXT = {
     teamsTitle: "Teams and researchers worth following",
     teamsNote: "Prioritized by signal density, not name recognition alone.",
     paperLaneKicker: "Paper list",
-    papersTitle: "Searchable frontier papers",
+    papersTitle: "Browse & Filter",
     papersNote: "Search, filter, and decide what to read next.",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
-    searchPlaceholder: "Find a title, venue, author, or clue",
-    filtersLabel: "Search & filter",
+    searchPlaceholder: "Search title, author, venue, or tag",
+    filtersLabel: "Filters",
     quickTagsLabel: "Tags",
     resetLabel: "Reset",
     yearOptionAll: "All years",
@@ -240,12 +240,12 @@ const UI_TEXT = {
     teamsTitle: "值得持续关注的团队与研究者",
     teamsNote: "优先看证据密度，而不只是名气。",
     paperLaneKicker: "论文列表",
-    papersTitle: "可筛选的前沿论文",
+    papersTitle: "检索与筛选",
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
-    searchPlaceholder: "搜索标题、期刊、作者或线索",
-    filtersLabel: "搜索与筛选",
+    searchPlaceholder: "搜索标题、作者、刊物或标签",
+    filtersLabel: "筛选",
     quickTagsLabel: "标签",
     resetLabel: "重置",
     yearOptionAll: "全部年份",
@@ -391,12 +391,12 @@ const UI_TEXT = {
     teamsTitle: "継続監視したいチームと研究者",
     teamsNote: "知名度よりも証拠密度を優先。",
     paperLaneKicker: "論文リスト",
-    papersTitle: "絞り込み可能なフロンティア論文",
+    papersTitle: "検索と絞り込み",
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
-    searchPlaceholder: "タイトル、会場、著者、手がかりで検索",
-    filtersLabel: "検索とフィルター",
+    searchPlaceholder: "タイトル・著者・掲載先・タグで検索",
+    filtersLabel: "フィルター",
     quickTagsLabel: "タグ",
     resetLabel: "リセット",
     yearOptionAll: "全年度",
@@ -2570,44 +2570,57 @@ function sortPapers(papers) {
   });
 }
 
+function paperMatchesActiveFilters(paper, overrides = {}) {
+  const activeYear = overrides.year ?? state.yearFilter;
+  const activeType = overrides.type ?? state.typeFilter;
+  const activeStatus = overrides.status ?? state.statusFilter;
+  const activeTeam = overrides.team ?? state.teamFilter;
+  const activeQuick = overrides.quick ?? state.quickFilter;
+  const activeQuery = overrides.query ?? normalizedPaperQuery();
+
+  const teams = paperTeamNames(paper);
+  const matchesYear = activeYear === "all" || paperYearValue(paper) === activeYear;
+  const matchesType = activeType === "all" || paperTypeValue(paper) === activeType;
+  const matchesStatus = activeStatus === "all" || paperStatusValue(paper) === activeStatus;
+  const matchesTeam = activeTeam === "all" || teams.includes(activeTeam);
+  const matchesQuick = (() => {
+    if (activeQuick === "all") return true;
+    if (activeQuick === "journal") return paperTypeValue(paper) === "journal";
+    if (activeQuick === "conference") return paperTypeValue(paper) === "conference";
+    if (activeQuick === "must-read") return paperStatusValue(paper) === "must-read";
+    if (activeQuick === "ready-pdf") return paperHasReadyPdf(paper);
+    if (activeQuick === "browser-pull") return paperNeedsBrowserPull(paper);
+    if (activeQuick.startsWith("team:")) {
+      return teams.includes(activeQuick.slice(5));
+    }
+    return true;
+  })();
+  const haystack = [
+    paper.title,
+    localizeText(paper.title),
+    paper.venue,
+    localizeText(paper.venue),
+    paper.whyItMatters,
+    localizeText(paper.whyItMatters),
+    paper.abstract,
+    localizeText(paper.abstract),
+    ...teams,
+    ...(paper.authors || []),
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  const matchesQuery = !activeQuery || haystack.includes(activeQuery);
+
+  return matchesYear && matchesType && matchesStatus && matchesTeam && matchesQuick && matchesQuery;
+}
+
 function filteredPapers() {
-  const query = normalizedPaperQuery();
-  return sortPapers(papersForDomain().filter((paper) => {
-    const matchesYear = state.yearFilter === "all" || paperYearValue(paper) === state.yearFilter;
-    const matchesType = state.typeFilter === "all" || paperTypeValue(paper) === state.typeFilter;
-    const matchesStatus = state.statusFilter === "all" || paperStatusValue(paper) === state.statusFilter;
-    const teams = paperTeamNames(paper);
-    const matchesTeam = state.teamFilter === "all" || teams.includes(state.teamFilter);
-    const matchesQuick = (() => {
-      if (state.quickFilter === "all") return true;
-      if (state.quickFilter === "journal") return paperTypeValue(paper) === "journal";
-      if (state.quickFilter === "conference") return paperTypeValue(paper) === "conference";
-      if (state.quickFilter === "must-read") return paperStatusValue(paper) === "must-read";
-      if (state.quickFilter === "ready-pdf") return paperHasReadyPdf(paper);
-      if (state.quickFilter === "browser-pull") return paperNeedsBrowserPull(paper);
-      if (state.quickFilter.startsWith("team:")) {
-        return teams.includes(state.quickFilter.slice(5));
-      }
-      return true;
-    })();
-    const haystack = [
-      paper.title,
-      localizeText(paper.title),
-      paper.venue,
-      localizeText(paper.venue),
-      paper.whyItMatters,
-      localizeText(paper.whyItMatters),
-      paper.abstract,
-      localizeText(paper.abstract),
-      ...teams,
-      ...(paper.authors || []),
-    ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-    const matchesQuery = !query || haystack.includes(query);
-    return matchesYear && matchesType && matchesStatus && matchesTeam && matchesQuick && matchesQuery;
-  }));
+  return sortPapers(papersForDomain().filter((paper) => paperMatchesActiveFilters(paper)));
+}
+
+function formatPaperFilterOptionLabel(label, count) {
+  return `${label} (${count})`;
 }
 
 function tagVariant(value) {
@@ -2732,31 +2745,39 @@ function renderPaperControls() {
     .sort((left, right) => Number(right) - Number(left));
   const teams = [...new Set(teamsForDomain().map((team) => localizeText(team.name)).filter(Boolean))]
     .sort((left, right) => left.localeCompare(right, currentLocale()));
+  const facetCount = (overrides = {}) =>
+    papers.filter((paper) => paperMatchesActiveFilters(paper, overrides)).length;
+
+  const allYearCount = facetCount({ year: "all" });
+  const allTypeCount = facetCount({ type: "all" });
+  const allStatusCount = facetCount({ status: "all" });
+  const allTeamCount = facetCount({ team: "all" });
+  const allQuickCount = facetCount({ quick: "all" });
 
   syncSelectOptions(yearFilter, [
-    { value: "all", label: ui("yearOptionAll") },
-    ...years.map((year) => ({ value: year, label: year })),
+    { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), allYearCount) },
+    ...years.map((year) => ({ value: year, label: formatPaperFilterOptionLabel(year, facetCount({ year })) })),
   ], state.yearFilter);
   state.yearFilter = yearFilter.value;
 
   syncSelectOptions(typeFilter, [
-    { value: "all", label: ui("typeOptionAll") },
-    { value: "journal", label: ui("typeOptionJournal") },
-    { value: "conference", label: ui("typeOptionConference") },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), allTypeCount) },
+    { value: "journal", label: formatPaperFilterOptionLabel(ui("typeOptionJournal"), facetCount({ type: "journal" })) },
+    { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: "conference" })) },
   ], state.typeFilter);
   state.typeFilter = typeFilter.value;
 
   syncSelectOptions(statusFilter, [
-    { value: "all", label: ui("statusOptionAll") },
-    { value: "must-read", label: ui("statusOptionMustRead") },
-    { value: "monitor", label: ui("statusOptionMonitor") },
-    { value: "archive", label: ui("statusOptionArchive") },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("statusOptionAll"), allStatusCount) },
+    { value: "must-read", label: formatPaperFilterOptionLabel(ui("statusOptionMustRead"), facetCount({ status: "must-read" })) },
+    { value: "monitor", label: formatPaperFilterOptionLabel(ui("statusOptionMonitor"), facetCount({ status: "monitor" })) },
+    { value: "archive", label: formatPaperFilterOptionLabel(ui("statusOptionArchive"), facetCount({ status: "archive" })) },
   ], state.statusFilter);
   state.statusFilter = statusFilter.value;
 
   syncSelectOptions(teamFilter, [
-    { value: "all", label: ui("teamOptionAll") },
-    ...teams.map((team) => ({ value: team, label: team })),
+    { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), allTeamCount) },
+    ...teams.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team })) })),
   ], state.teamFilter);
   state.teamFilter = teamFilter.value;
 
@@ -2786,7 +2807,8 @@ function renderPaperControls() {
     button.type = "button";
     button.dataset.quickFilter = chip.value;
     button.setAttribute("aria-pressed", String(state.quickFilter === chip.value));
-    button.textContent = chip.label;
+    const count = chip.value === "all" ? allQuickCount : facetCount({ quick: chip.value });
+    button.innerHTML = `<span>${escapeHtml(chip.label)}</span><span class="chip-count">(${escapeHtml(count)})</span>`;
     quickFilterChips.appendChild(button);
   });
 
