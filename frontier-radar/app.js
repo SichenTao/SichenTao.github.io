@@ -1030,8 +1030,28 @@ function assetBasePath() {
   return currentLocale() === "en" ? "." : "..";
 }
 
+const DOM_ID_ALIASES = {
+  "filter-toolbar-label": ["filterToolbarLabel"],
+  "quick-filter-label": ["quickFilterLabel"],
+  "pub-search": ["paperSearch"],
+  "pub-reset": ["paperReset"],
+  "year-filter": ["yearFilter"],
+  "type-filter": ["typeFilter"],
+  "status-filter": ["statusFilter"],
+  "venue-filter": ["teamFilter"],
+  "sort-filter": ["sortFilter"],
+  "quick-filter-chips": ["quickFilterChips"],
+};
+
 function byId(id) {
-  return document.getElementById(id);
+  const direct = document.getElementById(id);
+  if (direct) return direct;
+  const aliases = DOM_ID_ALIASES[id] || [];
+  for (const alias of aliases) {
+    const fallback = document.getElementById(alias);
+    if (fallback) return fallback;
+  }
+  return null;
 }
 
 function setText(id, value) {
@@ -1833,8 +1853,8 @@ function renderStaticText() {
     ["watchSignalsTitle", ui("whatShouldTriggerActionNext")],
     ["paperLaneKicker", ui("paperLaneKicker")],
     ["papers-title", ui("papersTitle")],
-    ["filterToolbarLabel", filterToolbarLabel()],
-    ["quickFilterLabel", ui("quickTagsLabel")],
+    ["filter-toolbar-label", filterToolbarLabel()],
+    ["quick-filter-label", ui("quickTagsLabel")],
     ["trendKicker", ui("trendKicker")],
     ["trend-title", ui("trendTitle")],
     ["teamsKicker", ui("teamsKicker")],
@@ -1864,9 +1884,9 @@ function renderStaticText() {
   });
   document.querySelectorAll("#heroShortcuts").forEach((node) => node.setAttribute("aria-label", ui("quickLinksLabel")));
   setAttr("footerBackHome", "href", PAGE_PATHS.overview);
-  setProp("paperSearch", "placeholder", ui("searchPlaceholder"));
-  setAttr("paperReset", "aria-label", ui("resetLabel"));
-  setAttr("paperReset", "title", ui("resetLabel"));
+  setProp("pub-search", "placeholder", ui("searchPlaceholder"));
+  setAttr("pub-reset", "aria-label", ui("resetLabel"));
+  setAttr("pub-reset", "title", ui("resetLabel"));
   setAttr("scrollTopButton", "aria-label", ui("backToTop"));
 }
 
@@ -2782,14 +2802,14 @@ function syncSelectOptions(select, options, currentValue = "all") {
 }
 
 function renderPaperControls() {
-  const paperSearch = byId("paperSearch");
-  const yearFilter = byId("yearFilter");
-  const typeFilter = byId("typeFilter");
-  const statusFilter = byId("statusFilter");
-  const teamFilter = byId("teamFilter");
-  const sortFilter = byId("sortFilter");
-  const resetButton = byId("paperReset");
-  const quickFilterChips = byId("quickFilterChips");
+  const paperSearch = byId("pub-search");
+  const yearFilter = byId("year-filter");
+  const typeFilter = byId("type-filter");
+  const statusFilter = byId("status-filter");
+  const teamFilter = byId("venue-filter");
+  const sortFilter = byId("sort-filter");
+  const resetButton = byId("pub-reset");
+  const quickFilterChips = byId("quick-filter-chips");
 
   if (!paperSearch || !yearFilter || !typeFilter || !statusFilter || !teamFilter || !sortFilter || !quickFilterChips) {
     return;
@@ -3251,14 +3271,14 @@ function renderWorkflow() {
 }
 
 function bindControls() {
-  const yearFilter = byId("yearFilter");
-  const typeFilter = byId("typeFilter");
-  const statusFilter = byId("statusFilter");
-  const teamFilter = byId("teamFilter");
-  const sortFilter = byId("sortFilter");
-  const paperSearch = byId("paperSearch");
-  const paperReset = byId("paperReset");
-  const quickFilterChips = byId("quickFilterChips");
+  const yearFilter = byId("year-filter");
+  const typeFilter = byId("type-filter");
+  const statusFilter = byId("status-filter");
+  const teamFilter = byId("venue-filter");
+  const sortFilter = byId("sort-filter");
+  const paperSearch = byId("pub-search");
+  const paperReset = byId("pub-reset");
+  const quickFilterChips = byId("quick-filter-chips");
   if (!statusFilter || !paperSearch) return;
 
   yearFilter?.addEventListener("change", (event) => {

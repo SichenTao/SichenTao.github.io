@@ -2777,9 +2777,9 @@ window.SICHEN_PORTAL_DATA = {
           "copy_text": ""
         },
         "semantic_scholar": {
-          "url": "https://www.semanticscholar.org/paper/b2fc7edaba992724dfd4e6022b8e49ff247af576",
-          "mode": "direct",
-          "copy_text": ""
+          "url": "https://www.semanticscholar.org/search?q=10.1016%2Fj.asoc.2024.111677",
+          "mode": "search",
+          "copy_text": "10.1016/j.asoc.2024.111677"
         }
       }
     },
