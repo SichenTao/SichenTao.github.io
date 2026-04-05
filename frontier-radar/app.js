@@ -2808,6 +2808,7 @@ function renderPapers() {
   if (!list) return;
   list.innerHTML = "";
   const papers = filteredPapers();
+  const layout = list.dataset.paperLayout || (currentPage() === "overview" ? "ledger" : "cards");
 
   if (!papers.length) {
     list.appendChild(el("div", "empty", plainTextByLanguage({
@@ -2819,6 +2820,100 @@ function renderPapers() {
   }
 
   papers.forEach((paper) => {
+    if (layout === "ledger") {
+      const localArchive = localArchiveEntry(paper.id);
+      const relatedTeams = paperTeamNames(paper);
+      const detailHref = paperDetailHref(paper);
+      const doiActionUrl = publicationPrimaryUrl(paper) || normalizeUrl(paper.doiUrl || paper.doi_url);
+      const article = el("article", "frontier-reference-item");
+      const head = el("div", "frontier-reference-head");
+      const tags = el("div", "tag-row");
+      tags.appendChild(el("span", tagVariant(paper.status), localizeText(paper.status)));
+      tags.appendChild(
+        el(
+          "span",
+          tagVariant(
+            localArchive
+              ? ui("localArchiveReady")
+              : paper.downloadMode === "direct-http"
+                ? ui("downloadModeDirect")
+                : paper.downloadMode === "openclaw-browser"
+                  ? ui("downloadModeBrowser")
+                  : ui("downloadModeManual")
+          ),
+          localArchive
+            ? ui("localArchiveReady")
+            : paper.downloadMode === "direct-http"
+              ? ui("downloadModeDirect")
+              : paper.downloadMode === "openclaw-browser"
+                ? ui("downloadModeBrowser")
+                : ui("downloadModeManual")
+        )
+      );
+      head.appendChild(tags);
+
+      const headActions = el("div", "publication-head-actions");
+      const copyTrigger = el("button", "publication-copy-button publication-copy-trigger");
+      copyTrigger.type = "button";
+      copyTrigger.setAttribute("aria-label", publicationCopyMenuLabel());
+      copyTrigger.innerHTML = iconSvg("copy");
+      const copyMenu = el("div", "publication-copy-menu");
+      copyMenu.setAttribute("role", "menu");
+      copyMenu.setAttribute("aria-label", publicationCopyMenuLabel());
+
+      const citationCopy = el("button", "publication-copy-button publication-copy-option");
+      citationCopy.type = "button";
+      citationCopy.dataset.copyPublicationId = paper.id;
+      citationCopy.dataset.copyFormat = "ieee";
+      citationCopy.setAttribute("aria-label", publicationCopyActionLabel("ieee"));
+      citationCopy.innerHTML = `${iconSvg("copy")}<span>${escapeHtml(ui("copyCitationAction"))}</span>`;
+      copyMenu.appendChild(citationCopy);
+
+      if (paper.bibtexText) {
+        const bibtexCopy = el("button", "publication-copy-button publication-copy-button-bibtex publication-copy-option");
+        bibtexCopy.type = "button";
+        bibtexCopy.dataset.copyPublicationId = paper.id;
+        bibtexCopy.dataset.copyFormat = "bibtex";
+        bibtexCopy.setAttribute("aria-label", publicationCopyActionLabel("bibtex"));
+        bibtexCopy.innerHTML = `${iconSvg("code")}<span>${escapeHtml(ui("copyBibtexAction"))}</span>`;
+        copyMenu.appendChild(bibtexCopy);
+      }
+
+      headActions.appendChild(copyTrigger);
+      headActions.appendChild(copyMenu);
+      head.appendChild(headActions);
+      article.appendChild(head);
+
+      const citation = el("p", "frontier-reference-citation");
+      citation.innerHTML = `<a class="frontier-reference-citation-link" href="${escapeHtml(detailHref)}">${escapeHtml(
+        paper.citationText || localizeText(paper.title) || ""
+      )}</a>`;
+      article.appendChild(citation);
+
+      if (relatedTeams.length) {
+        const teamMeta = el("p", "frontier-reference-meta");
+        teamMeta.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("detailTeamLabel"))}:</strong> ${escapeHtml(relatedTeams.join(" · "))}`;
+        article.appendChild(teamMeta);
+      }
+
+      const actions = el("div", "frontier-reference-actions");
+      const detailLink = el("a", "frontier-reference-link", ui("detailAction"));
+      detailLink.href = detailHref;
+      actions.appendChild(detailLink);
+      if (localArchive?.browserUrl) {
+        actions.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl, "frontier-reference-link"));
+      } else if (paper.pdfUrl) {
+        actions.appendChild(actionLink(ui("sourcePdfAction"), paper.pdfUrl, "frontier-reference-link"));
+      }
+      if (doiActionUrl) {
+        actions.appendChild(actionLink(ui("doiAction"), doiActionUrl, "frontier-reference-link"));
+      }
+      article.appendChild(actions);
+
+      list.appendChild(article);
+      return;
+    }
+
     const localArchive = localArchiveEntry(paper.id);
     const primaryUrl = publicationPrimaryUrl(paper);
     const publisherUrl = normalizeUrl(paper.publisherUrl || paper.publisher_url);
