@@ -45,10 +45,11 @@ const state = {
   typeFilter: "all",
   problemFieldFilters: [],
   methodFieldFilters: [],
-  statusFilter: "all",
+  jcrFilter: "all",
+  casFilter: "all",
+  impactFilter: "all",
   teamFilter: "all",
   sortFilter: "recent",
-  quickFilter: "all",
   paperQuery: "",
   focusPrompt: "",
   language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || "en",
@@ -133,7 +134,17 @@ const UI_TEXT = {
     typeOptionAll: "All types",
     problemFieldPlaceholder: "Add problem field",
     methodFieldPlaceholder: "Add method field",
-    activeFieldTagsLabel: "Selected fields",
+    jcrOptionAll: "All JCR",
+    casOptionAll: "All CAS",
+    impactOptionAll: "All IF",
+    activeFieldTagsLabel: "Selected tags",
+    jcrNotListedOption: "JCR not listed",
+    casTopOption: "CAS Top",
+    casNotListedOption: "CAS not listed",
+    impactRange10Plus: "IF >= 10",
+    impactRange5To10: "IF 5-10",
+    impactRange0To5: "IF 0-5",
+    impactNotListedOption: "IF not listed",
     typeOptionJournal: "Journal",
     typeOptionConference: "Conference",
     statusOptionAll: "All statuses",
@@ -317,7 +328,17 @@ const UI_TEXT = {
     typeOptionAll: "全部类型",
     problemFieldPlaceholder: "添加问题领域",
     methodFieldPlaceholder: "添加方法领域",
-    activeFieldTagsLabel: "已选领域",
+    jcrOptionAll: "全部 JCR",
+    casOptionAll: "全部中科院",
+    impactOptionAll: "全部 IF",
+    activeFieldTagsLabel: "已选标签",
+    jcrNotListedOption: "JCR 未公开",
+    casTopOption: "中科院 Top",
+    casNotListedOption: "中科院未公开",
+    impactRange10Plus: "IF >= 10",
+    impactRange5To10: "IF 5-10",
+    impactRange0To5: "IF 0-5",
+    impactNotListedOption: "IF 未公开",
     typeOptionJournal: "期刊",
     typeOptionConference: "会议",
     statusOptionAll: "全部状态",
@@ -501,7 +522,17 @@ const UI_TEXT = {
     typeOptionAll: "全種別",
     problemFieldPlaceholder: "問題領域を追加",
     methodFieldPlaceholder: "手法領域を追加",
-    activeFieldTagsLabel: "選択中の分野",
+    jcrOptionAll: "全 JCR",
+    casOptionAll: "全 CAS",
+    impactOptionAll: "全 IF",
+    activeFieldTagsLabel: "選択中のタグ",
+    jcrNotListedOption: "JCR 未公開",
+    casTopOption: "CAS Top",
+    casNotListedOption: "CAS 未公開",
+    impactRange10Plus: "IF >= 10",
+    impactRange5To10: "IF 5-10",
+    impactRange0To5: "IF 0-5",
+    impactNotListedOption: "IF 未公開",
     typeOptionJournal: "ジャーナル",
     typeOptionConference: "会議",
     statusOptionAll: "全ステータス",
@@ -1170,7 +1201,6 @@ function assetBasePath() {
 
 const DOM_ID_ALIASES = {
   "filter-toolbar-label": ["filterToolbarLabel"],
-  "quick-filter-label": ["quickFilterLabel"],
   "active-field-tags-label": ["activeFieldTagsLabel"],
   "pub-search": ["paperSearch"],
   "pub-reset": ["paperReset"],
@@ -1178,11 +1208,12 @@ const DOM_ID_ALIASES = {
   "type-filter": ["typeFilter"],
   "problem-filter": ["problemFilter"],
   "method-filter": ["methodFilter"],
-  "status-filter": ["statusFilter"],
+  "jcr-filter": ["jcrFilter"],
+  "cas-filter": ["casFilter"],
+  "impact-filter": ["impactFilter"],
   "venue-filter": ["teamFilter"],
   "sort-filter": ["sortFilter"],
   "active-field-tags": ["activeFieldTags"],
-  "quick-filter-chips": ["quickFilterChips"],
 };
 
 function byId(id) {
@@ -2325,6 +2356,71 @@ function paperImpactFactorValue(paper) {
   return Number.isFinite(value) ? value : -1;
 }
 
+function normalizeQuartileValue(value) {
+  const normalized = String(value || "").trim().toUpperCase();
+  if (!normalized || normalized === "NONE" || normalized === "N/A" || normalized === "NA" || normalized === "__NOT_LISTED__") {
+    return "__not_listed__";
+  }
+  return normalized;
+}
+
+function paperJcrQuartileValue(paper) {
+  return normalizeQuartileValue(paper?.metrics?.jcrQuartile);
+}
+
+function paperCasQuartileValue(paper) {
+  return normalizeQuartileValue(paper?.metrics?.casQuartile);
+}
+
+function paperCasTopValue(paper) {
+  return Boolean(paper?.metrics?.casTop);
+}
+
+function paperImpactBucketValue(paper) {
+  const value = paperImpactFactorValue(paper);
+  if (value < 0) return "not-listed";
+  if (value >= 10) return "10+";
+  if (value >= 5) return "5-10";
+  return "0-5";
+}
+
+function paperMatchesJcrFilter(paper, filterValue) {
+  if (filterValue === "all") return true;
+  if (filterValue === "not-listed") return paperJcrQuartileValue(paper) === "__not_listed__";
+  return paperJcrQuartileValue(paper) === String(filterValue || "").toUpperCase();
+}
+
+function paperMatchesCasFilter(paper, filterValue) {
+  if (filterValue === "all") return true;
+  if (filterValue === "top") return paperCasTopValue(paper);
+  if (filterValue === "not-listed") return paperCasQuartileValue(paper) === "__not_listed__";
+  return paperCasQuartileValue(paper) === String(filterValue || "").toUpperCase();
+}
+
+function paperMatchesImpactFilter(paper, filterValue) {
+  if (filterValue === "all") return true;
+  return paperImpactBucketValue(paper) === filterValue;
+}
+
+function jcrFilterTagLabel(value) {
+  if (value === "not-listed") return ui("jcrNotListedOption");
+  return `JCR ${String(value || "").toUpperCase()}`;
+}
+
+function casFilterTagLabel(value) {
+  if (value === "top") return ui("casTopOption");
+  if (value === "not-listed") return ui("casNotListedOption");
+  return currentLocale() === "zh" ? `中科院 ${String(value || "").toUpperCase()}` : `CAS ${String(value || "").toUpperCase()}`;
+}
+
+function impactFilterTagLabel(value) {
+  if (value === "10+") return ui("impactRange10Plus");
+  if (value === "5-10") return ui("impactRange5To10");
+  if (value === "0-5") return ui("impactRange0To5");
+  if (value === "not-listed") return ui("impactNotListedOption");
+  return String(value || "");
+}
+
 function normalizedPaperQuery() {
   return String(state.paperQuery || "").trim().toLowerCase();
 }
@@ -2362,7 +2458,6 @@ function renderStaticText() {
     ["papers-title", ui("papersTitle")],
     ["filter-toolbar-label", filterToolbarLabel()],
     ["active-field-tags-label", ui("activeFieldTagsLabel")],
-    ["quick-filter-label", ui("quickTagsLabel")],
     ["trendKicker", ui("trendKicker")],
     ["trend-title", ui("trendTitle")],
     ["teamsKicker", ui("teamsKicker")],
@@ -3163,9 +3258,10 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
   const activeType = overrides.type ?? state.typeFilter;
   const activeProblemTags = overrides.problemTags ?? state.problemFieldFilters;
   const activeMethodTags = overrides.methodTags ?? state.methodFieldFilters;
-  const activeStatus = overrides.status ?? state.statusFilter;
+  const activeJcr = overrides.jcr ?? state.jcrFilter;
+  const activeCas = overrides.cas ?? state.casFilter;
+  const activeImpact = overrides.impact ?? state.impactFilter;
   const activeTeam = overrides.team ?? state.teamFilter;
-  const activeQuick = overrides.quick ?? state.quickFilter;
   const activeQuery = overrides.query ?? normalizedPaperQuery();
 
   const teams = paperTeamNames(paper);
@@ -3173,24 +3269,10 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
   const matchesType = activeType === "all" || paperTypeValue(paper) === activeType;
   const matchesProblemTags = activeProblemTags.every((tag) => paperProblemFields(paper).includes(tag));
   const matchesMethodTags = activeMethodTags.every((tag) => paperMethodFields(paper).includes(tag));
-  const matchesStatus = activeStatus === "all" || paperStatusValue(paper) === activeStatus;
+  const matchesJcr = paperMatchesJcrFilter(paper, activeJcr);
+  const matchesCas = paperMatchesCasFilter(paper, activeCas);
+  const matchesImpact = paperMatchesImpactFilter(paper, activeImpact);
   const matchesTeam = activeTeam === "all" || teams.includes(activeTeam);
-  const matchesQuick = (() => {
-    if (activeQuick === "all") return true;
-    if (activeQuick === "journal") return paperTypeValue(paper) === "journal";
-    if (activeQuick === "conference") return paperTypeValue(paper) === "conference";
-    if (activeQuick === "jcr-q1") return paperHasObjectiveTag(paper, "JCR Q1");
-    if (activeQuick === "cas-top") return paperHasObjectiveTag(paper, "CAS Top");
-    if (activeQuick === "cas-q1") return paperHasObjectiveTag(paper, "CAS Q1");
-    if (activeQuick === "ccf-a") return paperHasObjectiveTag(paper, "CCF A");
-    if (activeQuick === "must-read") return paperStatusValue(paper) === "must-read";
-    if (activeQuick === "ready-pdf") return paperHasReadyPdf(paper);
-    if (activeQuick === "browser-pull") return paperNeedsBrowserPull(paper);
-    if (activeQuick.startsWith("team:")) {
-      return teams.includes(activeQuick.slice(5));
-    }
-    return true;
-  })();
   const haystack = [
     paper.title,
     localizeText(paper.title),
@@ -3209,7 +3291,7 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
     .toLowerCase();
   const matchesQuery = !activeQuery || haystack.includes(activeQuery);
 
-  return matchesYear && matchesType && matchesProblemTags && matchesMethodTags && matchesStatus && matchesTeam && matchesQuick && matchesQuery;
+  return matchesYear && matchesType && matchesProblemTags && matchesMethodTags && matchesJcr && matchesCas && matchesImpact && matchesTeam && matchesQuery;
 }
 
 function filteredPapers() {
@@ -3220,18 +3302,31 @@ function formatPaperFilterOptionLabel(label, count) {
   return `${label} (${count})`;
 }
 
-function fieldFilterEntries() {
+function selectedTagEntries() {
   return [
     ...state.problemFieldFilters.map((value) => ({ category: "problem", value })),
     ...state.methodFieldFilters.map((value) => ({ category: "method", value })),
+    ...(state.jcrFilter !== "all" ? [{ category: "jcr", value: state.jcrFilter }] : []),
+    ...(state.casFilter !== "all" ? [{ category: "cas", value: state.casFilter }] : []),
+    ...(state.impactFilter !== "all" ? [{ category: "impact", value: state.impactFilter }] : []),
   ];
+}
+
+function selectedTagLabel(entry) {
+  if (entry.category === "problem" || entry.category === "method") {
+    return localizeText(entry.value);
+  }
+  if (entry.category === "jcr") return jcrFilterTagLabel(entry.value);
+  if (entry.category === "cas") return casFilterTagLabel(entry.value);
+  if (entry.category === "impact") return impactFilterTagLabel(entry.value);
+  return String(entry.value || "");
 }
 
 function renderActiveFieldTags(container) {
   if (!container) return;
 
   const row = container.closest(".filter-chip-row");
-  const entries = fieldFilterEntries();
+  const entries = selectedTagEntries();
   container.innerHTML = "";
 
   if (!entries.length) {
@@ -3242,12 +3337,13 @@ function renderActiveFieldTags(container) {
   if (row) row.hidden = false;
 
   entries.forEach((entry) => {
+    const label = selectedTagLabel(entry);
     const button = el("button", "chip chip-active-filter is-active");
     button.type = "button";
     button.dataset.removeFieldTag = entry.value;
     button.dataset.fieldCategory = entry.category;
-    button.setAttribute("aria-label", `Remove #${localizeText(entry.value)}`);
-    button.innerHTML = `<span>#${escapeHtml(localizeText(entry.value))}</span><span class="chip-count">×</span>`;
+    button.setAttribute("aria-label", `Remove #${label}`);
+    button.innerHTML = `<span>#${escapeHtml(label)}</span><span class="chip-count">×</span>`;
     container.appendChild(button);
   });
 }
@@ -3372,14 +3468,15 @@ function renderPaperControls() {
   const typeFilter = byId("type-filter");
   const problemFilter = byId("problem-filter");
   const methodFilter = byId("method-filter");
-  const statusFilter = byId("status-filter");
+  const jcrFilter = byId("jcr-filter");
+  const casFilter = byId("cas-filter");
+  const impactFilter = byId("impact-filter");
   const teamFilter = byId("venue-filter");
   const sortFilter = byId("sort-filter");
   const resetButton = byId("pub-reset");
   const activeFieldTags = byId("active-field-tags");
-  const quickFilterChips = byId("quick-filter-chips");
 
-  if (!paperSearch || !yearFilter || !typeFilter || !problemFilter || !methodFilter || !statusFilter || !teamFilter || !sortFilter || !activeFieldTags || !quickFilterChips) {
+  if (!paperSearch || !yearFilter || !typeFilter || !problemFilter || !methodFilter || !jcrFilter || !casFilter || !impactFilter || !teamFilter || !sortFilter || !activeFieldTags) {
     return;
   }
 
@@ -3390,6 +3487,9 @@ function renderPaperControls() {
     .sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale()));
   const methodFields = [...new Set(papers.flatMap((paper) => paperMethodFields(paper)).filter(Boolean))]
     .sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale()));
+  const jcrBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesJcrFilter(paper, value)));
+  const casBands = ["top", "Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesCasFilter(paper, value)));
+  const impactBands = ["10+", "5-10", "0-5", "not-listed"].filter((value) => papers.some((paper) => paperMatchesImpactFilter(paper, value)));
   const teams = [...new Set(teamsForDomain().map((team) => localizeText(team.name)).filter(Boolean))]
     .sort((left, right) => left.localeCompare(right, currentLocale()));
   const facetCount = (overrides = {}) =>
@@ -3400,9 +3500,10 @@ function renderPaperControls() {
 
   const allYearCount = facetCount({ year: "all" });
   const allTypeCount = facetCount({ type: "all" });
-  const allStatusCount = facetCount({ status: "all" });
+  const allJcrCount = facetCount({ jcr: "all" });
+  const allCasCount = facetCount({ cas: "all" });
+  const allImpactCount = facetCount({ impact: "all" });
   const allTeamCount = facetCount({ team: "all" });
-  const allQuickCount = facetCount({ quick: "all" });
 
   syncSelectOptions(yearFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), allYearCount) },
@@ -3443,13 +3544,32 @@ function renderPaperControls() {
       })),
   ], "all");
 
-  syncSelectOptions(statusFilter, [
-    { value: "all", label: formatPaperFilterOptionLabel(ui("statusOptionAll"), allStatusCount) },
-    { value: "must-read", label: formatPaperFilterOptionLabel(ui("statusOptionMustRead"), facetCount({ status: "must-read" })) },
-    { value: "monitor", label: formatPaperFilterOptionLabel(ui("statusOptionMonitor"), facetCount({ status: "monitor" })) },
-    { value: "archive", label: formatPaperFilterOptionLabel(ui("statusOptionArchive"), facetCount({ status: "archive" })) },
-  ], state.statusFilter);
-  state.statusFilter = statusFilter.value;
+  syncSelectOptions(jcrFilter, [
+    { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), allJcrCount) },
+    ...jcrBands.map((band) => ({
+      value: band,
+      label: formatPaperFilterOptionLabel(jcrFilterTagLabel(band), facetCount({ jcr: band })),
+    })),
+  ], state.jcrFilter);
+  state.jcrFilter = jcrFilter.value;
+
+  syncSelectOptions(casFilter, [
+    { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), allCasCount) },
+    ...casBands.map((band) => ({
+      value: band,
+      label: formatPaperFilterOptionLabel(casFilterTagLabel(band), facetCount({ cas: band })),
+    })),
+  ], state.casFilter);
+  state.casFilter = casFilter.value;
+
+  syncSelectOptions(impactFilter, [
+    { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), allImpactCount) },
+    ...impactBands.map((band) => ({
+      value: band,
+      label: formatPaperFilterOptionLabel(impactFilterTagLabel(band), facetCount({ impact: band })),
+    })),
+  ], state.impactFilter);
+  state.impactFilter = impactFilter.value;
 
   syncSelectOptions(teamFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), allTeamCount) },
@@ -3468,41 +3588,17 @@ function renderPaperControls() {
   paperSearch.value = state.paperQuery;
   renderActiveFieldTags(activeFieldTags);
 
-  const chipDefinitions = [
-    { value: "all", label: ui("quickAll") },
-    { value: "journal", label: ui("quickJournal") },
-    { value: "conference", label: ui("quickConference") },
-    ...(facetCount({ quick: "jcr-q1" }) ? [{ value: "jcr-q1", label: ui("quickJcrQ1") }] : []),
-    ...(facetCount({ quick: "cas-top" }) ? [{ value: "cas-top", label: ui("quickCasTop") }] : []),
-    ...(facetCount({ quick: "cas-q1" }) ? [{ value: "cas-q1", label: ui("quickCasQ1") }] : []),
-    ...(facetCount({ quick: "ccf-a" }) ? [{ value: "ccf-a", label: ui("quickCcfA") }] : []),
-    { value: "must-read", label: ui("quickMustRead") },
-    { value: "ready-pdf", label: ui("quickReadyPdf") },
-    { value: "browser-pull", label: ui("quickBrowserPull") },
-    ...teams.map((team) => ({ value: `team:${team}`, label: team })),
-  ];
-
-  quickFilterChips.innerHTML = "";
-  chipDefinitions.forEach((chip) => {
-    const button = el("button", `chip${state.quickFilter === chip.value ? " is-active" : ""}`);
-    button.type = "button";
-    button.dataset.quickFilter = chip.value;
-    button.setAttribute("aria-pressed", String(state.quickFilter === chip.value));
-    const count = chip.value === "all" ? allQuickCount : facetCount({ quick: chip.value });
-    button.innerHTML = `<span>${escapeHtml(chip.label)}</span><span class="chip-count">(${escapeHtml(count)})</span>`;
-    quickFilterChips.appendChild(button);
-  });
-
   if (resetButton) {
     const isDefault =
       state.yearFilter === "all"
       && state.typeFilter === "all"
       && !state.problemFieldFilters.length
       && !state.methodFieldFilters.length
-      && state.statusFilter === "all"
+      && state.jcrFilter === "all"
+      && state.casFilter === "all"
+      && state.impactFilter === "all"
       && state.teamFilter === "all"
       && state.sortFilter === "recent"
-      && state.quickFilter === "all"
       && !state.paperQuery;
     resetButton.disabled = isDefault;
   }
@@ -3890,14 +3986,15 @@ function bindControls() {
   const typeFilter = byId("type-filter");
   const problemFilter = byId("problem-filter");
   const methodFilter = byId("method-filter");
-  const statusFilter = byId("status-filter");
+  const jcrFilter = byId("jcr-filter");
+  const casFilter = byId("cas-filter");
+  const impactFilter = byId("impact-filter");
   const teamFilter = byId("venue-filter");
   const sortFilter = byId("sort-filter");
   const paperSearch = byId("pub-search");
   const paperReset = byId("pub-reset");
   const activeFieldTags = byId("active-field-tags");
-  const quickFilterChips = byId("quick-filter-chips");
-  if (!statusFilter || !paperSearch) return;
+  if (!paperSearch) return;
 
   yearFilter?.addEventListener("change", (event) => {
     state.yearFilter = event.target.value;
@@ -3927,8 +4024,18 @@ function bindControls() {
     renderPaperControls();
     renderPapers();
   });
-  statusFilter.addEventListener("change", (event) => {
-    state.statusFilter = event.target.value;
+  jcrFilter?.addEventListener("change", (event) => {
+    state.jcrFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
+  casFilter?.addEventListener("change", (event) => {
+    state.casFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
+  impactFilter?.addEventListener("change", (event) => {
+    state.impactFilter = event.target.value;
     renderPaperControls();
     renderPapers();
   });
@@ -3952,10 +4059,11 @@ function bindControls() {
     state.typeFilter = "all";
     state.problemFieldFilters = [];
     state.methodFieldFilters = [];
-    state.statusFilter = "all";
+    state.jcrFilter = "all";
+    state.casFilter = "all";
+    state.impactFilter = "all";
     state.teamFilter = "all";
     state.sortFilter = "recent";
-    state.quickFilter = "all";
     state.paperQuery = "";
     renderPaperControls();
     renderPapers();
@@ -3969,14 +4077,13 @@ function bindControls() {
       state.problemFieldFilters = state.problemFieldFilters.filter((item) => item !== tag);
     } else if (category === "method") {
       state.methodFieldFilters = state.methodFieldFilters.filter((item) => item !== tag);
+    } else if (category === "jcr") {
+      state.jcrFilter = "all";
+    } else if (category === "cas") {
+      state.casFilter = "all";
+    } else if (category === "impact") {
+      state.impactFilter = "all";
     }
-    renderPaperControls();
-    renderPapers();
-  });
-  quickFilterChips?.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-quick-filter]");
-    if (!button) return;
-    state.quickFilter = button.dataset.quickFilter || "all";
     renderPaperControls();
     renderPapers();
   });
