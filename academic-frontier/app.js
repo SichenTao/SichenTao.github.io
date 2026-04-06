@@ -43,6 +43,7 @@ const state = {
   activeDomainId: null,
   yearFilter: "all",
   typeFilter: "all",
+  fieldFilter: "all",
   statusFilter: "all",
   teamFilter: "all",
   sortFilter: "recent",
@@ -129,6 +130,7 @@ const UI_TEXT = {
     resetLabel: "Reset",
     yearOptionAll: "All years",
     typeOptionAll: "All types",
+    fieldOptionAll: "All fields",
     typeOptionJournal: "Journal",
     typeOptionConference: "Conference",
     statusOptionAll: "All statuses",
@@ -310,6 +312,7 @@ const UI_TEXT = {
     resetLabel: "重置",
     yearOptionAll: "全部年份",
     typeOptionAll: "全部类型",
+    fieldOptionAll: "全部领域",
     typeOptionJournal: "期刊",
     typeOptionConference: "会议",
     statusOptionAll: "全部状态",
@@ -491,6 +494,7 @@ const UI_TEXT = {
     resetLabel: "リセット",
     yearOptionAll: "全年度",
     typeOptionAll: "全種別",
+    fieldOptionAll: "全分野",
     typeOptionJournal: "ジャーナル",
     typeOptionConference: "会議",
     statusOptionAll: "全ステータス",
@@ -674,6 +678,15 @@ const EXACT_TRANSLATIONS = {
     zh: "明天 08:00 JST，通过 OpenClaw cron 运行",
     ja: "明日 08:00 JST、OpenClaw cron 経由",
   },
+  "Multi-objective Optimization": { zh: "多目标优化", ja: "多目的最適化" },
+  "Large-scale Optimization": { zh: "大规模优化", ja: "大規模最適化" },
+  "GPU Acceleration": { zh: "GPU 加速", ja: "GPU 加速" },
+  "Evolutionary Reinforcement Learning": { zh: "进化强化学习", ja: "進化的強化学習" },
+  Neuroevolution: { zh: "神经进化", ja: "神経進化" },
+  "High-performance Computing": { zh: "高性能计算", ja: "高性能計算" },
+  "Combinatorial Optimization": { zh: "组合优化", ja: "組合せ最適化" },
+  "Robotics Optimization": { zh: "机器人优化", ja: "ロボティクス最適化" },
+  "Data-driven Evolutionary Optimization": { zh: "数据驱动进化优化", ja: "データ駆動型進化最適化" },
   high: { zh: "高", ja: "高" },
   exploratory: { zh: "探索", ja: "探索的" },
   "Scientific AI Systems": { zh: "科学智能系统", ja: "科学 AI システム" },
@@ -1015,7 +1028,6 @@ const PATTERN_TRANSLATORS = [
 
 function loadInitialLanguage() {
   const saved =
-    readStoredValue("sichen-homepage-locale") ||
     readStoredValue(STORAGE_KEY_LANGUAGE) ||
     readStoredValue(STORAGE_KEY_LOCAL_LANGUAGE) ||
     null;
@@ -1082,8 +1094,17 @@ const switcherCloseTimers = new WeakMap();
 
 function currentLocale() {
   return (
-    window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE ||
     state.language ||
+    window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE ||
+    document.body?.dataset?.defaultLanguage ||
+    "en"
+  );
+}
+
+function pageLocale() {
+  return (
+    document.body?.dataset?.defaultLanguage ||
+    window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE ||
     "en"
   );
 }
@@ -1111,7 +1132,7 @@ function pageFilename(page = currentPage()) {
 }
 
 function localePageHref(targetLocale, page = currentPage()) {
-  const activeLocale = currentLocale();
+  const activeLocale = pageLocale();
   const filename = pageFilename(page);
 
   if (activeLocale === targetLocale) {
@@ -1127,7 +1148,7 @@ function localePageHref(targetLocale, page = currentPage()) {
 }
 
 function assetBasePath() {
-  return currentLocale() === "en" ? "." : "..";
+  return pageLocale() === "en" ? "." : "..";
 }
 
 const DOM_ID_ALIASES = {
@@ -1137,6 +1158,7 @@ const DOM_ID_ALIASES = {
   "pub-reset": ["paperReset"],
   "year-filter": ["yearFilter"],
   "type-filter": ["typeFilter"],
+  "field-filter": ["fieldFilter"],
   "status-filter": ["statusFilter"],
   "venue-filter": ["teamFilter"],
   "sort-filter": ["sortFilter"],
@@ -2190,6 +2212,10 @@ function paperAuthorNames(paper) {
   ]);
 }
 
+function paperProfessionalFields(paper) {
+  return uniqueStrings((paper?.classification?.fields || []).map((field) => String(field || "").trim()));
+}
+
 function paperYearValue(paper) {
   if (paper?.year) {
     return String(paper.year);
@@ -2227,6 +2253,7 @@ function paperObjectiveTags(paper) {
     ...(classification?.tags || []),
     ...(classification?.qualityTags || []),
     ...(classification?.domains || []),
+    ...(classification?.fields || []),
     ...(classification?.topics || []),
     venueName,
     venueType ? humanizeIdentifier(venueType) : "",
@@ -3092,6 +3119,7 @@ function sortPapers(papers) {
 function paperMatchesActiveFilters(paper, overrides = {}) {
   const activeYear = overrides.year ?? state.yearFilter;
   const activeType = overrides.type ?? state.typeFilter;
+  const activeField = overrides.field ?? state.fieldFilter;
   const activeStatus = overrides.status ?? state.statusFilter;
   const activeTeam = overrides.team ?? state.teamFilter;
   const activeQuick = overrides.quick ?? state.quickFilter;
@@ -3100,6 +3128,7 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
   const teams = paperTeamNames(paper);
   const matchesYear = activeYear === "all" || paperYearValue(paper) === activeYear;
   const matchesType = activeType === "all" || paperTypeValue(paper) === activeType;
+  const matchesField = activeField === "all" || paperProfessionalFields(paper).includes(activeField);
   const matchesStatus = activeStatus === "all" || paperStatusValue(paper) === activeStatus;
   const matchesTeam = activeTeam === "all" || teams.includes(activeTeam);
   const matchesQuick = (() => {
@@ -3136,7 +3165,7 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
     .toLowerCase();
   const matchesQuery = !activeQuery || haystack.includes(activeQuery);
 
-  return matchesYear && matchesType && matchesStatus && matchesTeam && matchesQuick && matchesQuery;
+  return matchesYear && matchesType && matchesField && matchesStatus && matchesTeam && matchesQuick && matchesQuery;
 }
 
 function filteredPapers() {
@@ -3254,19 +3283,22 @@ function renderPaperControls() {
   const paperSearch = byId("pub-search");
   const yearFilter = byId("year-filter");
   const typeFilter = byId("type-filter");
+  const fieldFilter = byId("field-filter");
   const statusFilter = byId("status-filter");
   const teamFilter = byId("venue-filter");
   const sortFilter = byId("sort-filter");
   const resetButton = byId("pub-reset");
   const quickFilterChips = byId("quick-filter-chips");
 
-  if (!paperSearch || !yearFilter || !typeFilter || !statusFilter || !teamFilter || !sortFilter || !quickFilterChips) {
+  if (!paperSearch || !yearFilter || !typeFilter || !fieldFilter || !statusFilter || !teamFilter || !sortFilter || !quickFilterChips) {
     return;
   }
 
   const papers = papersForDomain();
   const years = [...new Set(papers.map((paper) => paperYearValue(paper)).filter(Boolean))]
     .sort((left, right) => Number(right) - Number(left));
+  const fields = [...new Set(papers.flatMap((paper) => paperProfessionalFields(paper)).filter(Boolean))]
+    .sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale()));
   const teams = [...new Set(teamsForDomain().map((team) => localizeText(team.name)).filter(Boolean))]
     .sort((left, right) => left.localeCompare(right, currentLocale()));
   const facetCount = (overrides = {}) =>
@@ -3274,6 +3306,7 @@ function renderPaperControls() {
 
   const allYearCount = facetCount({ year: "all" });
   const allTypeCount = facetCount({ type: "all" });
+  const allFieldCount = facetCount({ field: "all" });
   const allStatusCount = facetCount({ status: "all" });
   const allTeamCount = facetCount({ team: "all" });
   const allQuickCount = facetCount({ quick: "all" });
@@ -3290,6 +3323,12 @@ function renderPaperControls() {
     { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: "conference" })) },
   ], state.typeFilter);
   state.typeFilter = typeFilter.value;
+
+  syncSelectOptions(fieldFilter, [
+    { value: "all", label: formatPaperFilterOptionLabel(ui("fieldOptionAll"), allFieldCount) },
+    ...fields.map((field) => ({ value: field, label: formatPaperFilterOptionLabel(localizeText(field), facetCount({ field })) })),
+  ], state.fieldFilter);
+  state.fieldFilter = fieldFilter.value;
 
   syncSelectOptions(statusFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("statusOptionAll"), allStatusCount) },
@@ -3344,6 +3383,7 @@ function renderPaperControls() {
     const isDefault =
       state.yearFilter === "all"
       && state.typeFilter === "all"
+      && state.fieldFilter === "all"
       && state.statusFilter === "all"
       && state.teamFilter === "all"
       && state.sortFilter === "recent"
@@ -3729,6 +3769,7 @@ function renderWorkflow() {
 function bindControls() {
   const yearFilter = byId("year-filter");
   const typeFilter = byId("type-filter");
+  const fieldFilter = byId("field-filter");
   const statusFilter = byId("status-filter");
   const teamFilter = byId("venue-filter");
   const sortFilter = byId("sort-filter");
@@ -3744,6 +3785,11 @@ function bindControls() {
   });
   typeFilter?.addEventListener("change", (event) => {
     state.typeFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
+  fieldFilter?.addEventListener("change", (event) => {
+    state.fieldFilter = event.target.value;
     renderPaperControls();
     renderPapers();
   });
@@ -3770,6 +3816,7 @@ function bindControls() {
   paperReset?.addEventListener("click", () => {
     state.yearFilter = "all";
     state.typeFilter = "all";
+    state.fieldFilter = "all";
     state.statusFilter = "all";
     state.teamFilter = "all";
     state.sortFilter = "recent";

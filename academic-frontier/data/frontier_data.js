@@ -272,6 +272,9 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "Data-driven Evolutionary Optimization"
+        ],
         "topics": [],
         "venue": {
           "name": "IEEE Transactions on Evolutionary Computation",
@@ -290,6 +293,7 @@ window.FRONTIER_DATA = {
           "IEEE Transactions on Evolutionary Computation",
           "Journal",
           "2026",
+          "Data-driven Evolutionary Optimization",
           "IF 12.0",
           "JCR Q1",
           "CAS Q1",
@@ -301,6 +305,7 @@ window.FRONTIER_DATA = {
         "IEEE Transactions on Evolutionary Computation",
         "Journal",
         "2026",
+        "Data-driven Evolutionary Optimization",
         "IF 12.0",
         "JCR Q1",
         "CAS Q1",
@@ -439,6 +444,10 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "Large-scale Optimization",
+          "High-performance Computing"
+        ],
         "topics": [],
         "venue": {
           "name": "International Journal of Parallel Emergent and Distributed Systems",
@@ -456,6 +465,8 @@ window.FRONTIER_DATA = {
           "International Journal of Parallel Emergent and Distributed Systems",
           "Journal",
           "2025",
+          "Large-scale Optimization",
+          "High-performance Computing",
           "IF 0.6",
           "JCR N/A",
           "CAS Q4"
@@ -466,6 +477,8 @@ window.FRONTIER_DATA = {
         "International Journal of Parallel Emergent and Distributed Systems",
         "Journal",
         "2025",
+        "Large-scale Optimization",
+        "High-performance Computing",
         "IF 0.6",
         "JCR N/A",
         "CAS Q4"
@@ -607,6 +620,10 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "Multi-objective Optimization",
+          "Large-scale Optimization"
+        ],
         "topics": [],
         "venue": {
           "name": "Swarm and Evolutionary Computation",
@@ -624,6 +641,8 @@ window.FRONTIER_DATA = {
           "Swarm and Evolutionary Computation",
           "Journal",
           "2025",
+          "Multi-objective Optimization",
+          "Large-scale Optimization",
           "IF 8.5",
           "JCR Q1",
           "CAS Q2"
@@ -634,6 +653,8 @@ window.FRONTIER_DATA = {
         "Swarm and Evolutionary Computation",
         "Journal",
         "2025",
+        "Multi-objective Optimization",
+        "Large-scale Optimization",
         "IF 8.5",
         "JCR Q1",
         "CAS Q2"
@@ -773,6 +794,10 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "Multi-objective Optimization",
+          "Robotics Optimization"
+        ],
         "topics": [],
         "venue": {
           "name": "Swarm and Evolutionary Computation",
@@ -790,6 +815,8 @@ window.FRONTIER_DATA = {
           "Swarm and Evolutionary Computation",
           "Journal",
           "2025",
+          "Multi-objective Optimization",
+          "Robotics Optimization",
           "IF 8.5",
           "JCR Q1",
           "CAS Q2"
@@ -800,6 +827,8 @@ window.FRONTIER_DATA = {
         "Swarm and Evolutionary Computation",
         "Journal",
         "2025",
+        "Multi-objective Optimization",
+        "Robotics Optimization",
         "IF 8.5",
         "JCR Q1",
         "CAS Q2"
@@ -941,6 +970,10 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "Large-scale Optimization",
+          "Combinatorial Optimization"
+        ],
         "topics": [],
         "venue": {
           "name": "Expert Systems with Applications",
@@ -959,6 +992,8 @@ window.FRONTIER_DATA = {
           "Expert Systems with Applications",
           "Journal",
           "2025",
+          "Large-scale Optimization",
+          "Combinatorial Optimization",
           "IF 7.5",
           "JCR Q1",
           "CAS Q1",
@@ -970,6 +1005,8 @@ window.FRONTIER_DATA = {
         "Expert Systems with Applications",
         "Journal",
         "2025",
+        "Large-scale Optimization",
+        "Combinatorial Optimization",
         "IF 7.5",
         "JCR Q1",
         "CAS Q1",
@@ -1110,6 +1147,10 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "GPU Acceleration",
+          "Evolutionary Reinforcement Learning"
+        ],
         "topics": [],
         "venue": {
           "name": "ACM Transactions on Evolutionary Learning and Optimization",
@@ -1125,6 +1166,8 @@ window.FRONTIER_DATA = {
           "ACM Transactions on Evolutionary Learning and Optimization",
           "Journal",
           "2025",
+          "GPU Acceleration",
+          "Evolutionary Reinforcement Learning",
           "IF __not_listed__"
         ]
       },
@@ -1133,6 +1176,8 @@ window.FRONTIER_DATA = {
         "ACM Transactions on Evolutionary Learning and Optimization",
         "Journal",
         "2025",
+        "GPU Acceleration",
+        "Evolutionary Reinforcement Learning",
         "IF __not_listed__"
       ]
     },
@@ -1270,6 +1315,10 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "Multi-objective Optimization",
+          "GPU Acceleration"
+        ],
         "topics": [],
         "venue": {
           "name": "2025 IEEE Congress on Evolutionary Computation (CEC)",
@@ -1282,14 +1331,18 @@ window.FRONTIER_DATA = {
           "Evolutionary Computation",
           "2025 IEEE Congress on Evolutionary Computation (CEC)",
           "Conference",
-          "2025"
+          "2025",
+          "Multi-objective Optimization",
+          "GPU Acceleration"
         ]
       },
       "tags": [
         "Evolutionary Computation",
         "2025 IEEE Congress on Evolutionary Computation (CEC)",
         "Conference",
-        "2025"
+        "2025",
+        "Multi-objective Optimization",
+        "GPU Acceleration"
       ]
     },
     {
@@ -1430,6 +1483,10 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "fields": [
+          "GPU Acceleration",
+          "Neuroevolution"
+        ],
         "topics": [],
         "venue": {
           "name": "ACM Transactions on Evolutionary Learning and Optimization",
@@ -1445,6 +1502,8 @@ window.FRONTIER_DATA = {
           "ACM Transactions on Evolutionary Learning and Optimization",
           "Journal",
           "2025",
+          "GPU Acceleration",
+          "Neuroevolution",
           "IF __not_listed__"
         ]
       },
@@ -1453,6 +1512,8 @@ window.FRONTIER_DATA = {
         "ACM Transactions on Evolutionary Learning and Optimization",
         "Journal",
         "2025",
+        "GPU Acceleration",
+        "Neuroevolution",
         "IF __not_listed__"
       ]
     }
