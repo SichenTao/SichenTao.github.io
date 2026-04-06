@@ -2858,8 +2858,8 @@ function renderPaperControls() {
 
   syncSelectOptions(sortFilter, [
     { value: "recent", label: ui("sortRecent") },
-    { value: "citations", label: ui("sortCitations") },
     { value: "impact_factor", label: ui("sortImpact") },
+    { value: "citations", label: ui("sortCitations") },
     { value: "title", label: ui("sortTitle") },
   ], state.sortFilter);
   state.sortFilter = sortFilter.value;
