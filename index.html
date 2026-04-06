@@ -3,93 +3,113 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sichen Tao Research Portals</title>
     <meta
       name="description"
-      content="Unified entry portal for Sichen Tao's personal homepage, 学术前沿, and JSPS KAKENHI workspace."
+      content="Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, and JSPS KAKENHI workspace."
     />
+    <meta name="theme-color" content="#eee7f8" />
     <link rel="canonical" href="https://sichentao.github.io/" />
-    <meta property="og:title" content="Sichen Tao Research Portals" />
+    <meta property="og:title" content="Sichen Tao | Research Portal" />
     <meta
       property="og:description"
-      content="Open the personal homepage, 学术前沿, and JSPS KAKENHI workspace from one unified research portal."
+      content="Open the personal homepage, Academic Frontier, and JSPS KAKENHI workspace from one unified research portal."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sichentao.github.io/" />
     <meta property="og:image" content="https://sichentao.github.io/academic/sichen_portal.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sichen Tao Research Portals" />
+    <meta name="twitter:title" content="Sichen Tao | Research Portal" />
     <meta
       name="twitter:description"
-      content="Open the personal homepage, 学术前沿, and JSPS KAKENHI workspace from one unified research portal."
+      content="Open the personal homepage, Academic Frontier, and JSPS KAKENHI workspace from one unified research portal."
     />
     <meta name="twitter:image" content="https://sichentao.github.io/academic/sichen_portal.png" />
-    <link rel="icon" href="./academic/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="./portal.css?v=20260406-172002" />
+    <title>Sichen Tao | Research Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/academic/favicon.png" type="image/png" />
+    <script>
+      (function () {
+        const themeCatalog = {
+          tohoku: "#eee7f8",
+          toyama: "#edf4f7",
+          usst: "#f7eded",
+        };
+        try {
+          const savedLocale = localStorage.getItem("sichen-homepage-locale");
+          document.documentElement.lang =
+            savedLocale === "zh" ? "zh-CN" : savedLocale === "ja" ? "ja" : "en";
+          const savedTheme = localStorage.getItem("sichen-homepage-theme");
+          const theme = themeCatalog[savedTheme] ? savedTheme : "tohoku";
+          document.documentElement.dataset.theme = theme;
+          const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+          if (metaThemeColor) {
+            metaThemeColor.setAttribute("content", themeCatalog[theme]);
+          }
+        } catch {
+          document.documentElement.lang = "en";
+          document.documentElement.dataset.theme = "tohoku";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-173706" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-173706" />
+    <link rel="stylesheet" href="./portal.css?v=20260406-173706" />
+    <script defer src="/assets/shared/homepage-shell.js?v=20260406-173706"></script>
+    <script defer src="./portal.js?v=20260406-173706"></script>
   </head>
-  <body>
-    <div class="portal-shell">
-      <header class="hero-card">
-        <div class="hero-copy">
-          <p class="eyebrow">Unified Research Web Portal</p>
-          <h1>Sichen Tao</h1>
-          <p class="hero-role">Assistant Professor</p>
-          <p class="hero-affiliation">High Performance Computing Laboratory, Cyberscience Center, Tohoku University</p>
-          <p class="hero-description">One portal for the personal homepage, 学术前沿, and the JSPS KAKENHI workspace.</p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="./academic/">Personal Homepage</a>
-            <a class="button" href="./academic-frontier/">学术前沿</a>
-            <a class="button" href="./jsps-kakenhi/">JSPS KAKENHI</a>
+  <body data-page="portal">
+    <div class="page-wash"></div>
+    <div class="page-grid"></div>
+    <div class="orb orb-a"></div>
+    <div class="orb orb-b"></div>
+
+    <header class="shell site-header">
+      <div class="header-tools">
+        <div class="header-controls-anchor" aria-hidden="true"></div>
+        <div class="header-controls" aria-label="Display controls">
+          <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
+          <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
+        </div>
+        <nav class="topnav" id="portalTopnav" aria-label="Page navigation"></nav>
+      </div>
+    </header>
+
+    <main class="shell layout">
+      <section class="panel portal-hero reveal">
+        <div class="portal-hero-copy">
+          <p class="eyebrow" id="portalEyebrow"></p>
+          <p class="native-name" id="portalNativeName"></p>
+          <h1 id="portalTitle"></h1>
+          <div class="hero-identity">
+            <p class="eyebrow" id="portalRoleLabel"></p>
+            <p class="hero-role" id="portalRole"></p>
+            <p class="hero-affiliation" id="portalAffiliation"></p>
+          </div>
+          <p class="lede hero-description" id="portalDescription"></p>
+          <div class="hero-actions" id="portalHeroActions"></div>
+        </div>
+        <div class="portal-portrait-card">
+          <img id="portalPortrait" src="/academic/assets/images/avatar-openai.jpg" alt="" />
+        </div>
+      </section>
+
+      <section class="panel section-card reveal">
+        <div class="section-head">
+          <div class="section-head-main">
+            <div>
+              <p class="eyebrow" id="portalCardsKicker"></p>
+              <h2 id="portalCardsTitle"></h2>
+            </div>
+            <p class="section-note" id="portalCardsLede"></p>
           </div>
         </div>
-        <div class="portrait-card">
-          <img src="./academic/assets/images/avatar-openai.jpg" alt="Portrait of Sichen Tao" />
-        </div>
-      </header>
-
-      <main class="portal-grid" aria-label="Research portal menu">
-        <article class="portal-card portal-card-academic">
-          <div class="portal-card-top">
-            <img class="portal-app-icon" src="./academic/favicon.png" alt="" aria-hidden="true" />
-            <div class="portal-tag">Personal Homepage</div>
-          </div>
-          <h2><a href="./academic/">Profile, publications, awards, and service</a></h2>
-          <p>The public-facing academic site for profile, papers, honors, service, and career milestones.</p>
-          <div class="portal-links">
-            <a href="./academic/">Open site</a>
-            <a href="./academic/publications.html">Publications</a>
-            <a href="./academic/awards.html">Awards</a>
-          </div>
-        </article>
-
-        <article class="portal-card portal-card-radar">
-          <div class="portal-card-top">
-            <img class="portal-app-icon" src="./academic-frontier/favicon.svg" alt="" aria-hidden="true" />
-            <div class="portal-tag">学术前沿</div>
-          </div>
-          <h2><a href="./academic-frontier/">Signals, papers, and tracked teams</a></h2>
-          <p>A monitoring workspace for frontier papers, teams, signals, and download priorities.</p>
-          <div class="portal-links">
-            <a href="./academic-frontier/">Open 学术前沿</a>
-            <a href="./academic-frontier/papers.html">Papers</a>
-            <a href="./academic-frontier/teams.html">Teams</a>
-          </div>
-        </article>
-
-        <article class="portal-card portal-card-jsps">
-          <div class="portal-card-top">
-            <img class="portal-app-icon" src="./jsps-kakenhi/favicon.png" alt="" aria-hidden="true" />
-            <div class="portal-tag">JSPS KAKENHI</div>
-          </div>
-          <h2><a href="./jsps-kakenhi/">Calls, forms, and deadlines</a></h2>
-          <p>A practical JSPS working space for calls, forms, deadlines, guides, and official source pages.</p>
-          <div class="portal-links">
-            <a href="./jsps-kakenhi/">Open workspace</a>
-            <a href="./jsps-kakenhi/deadlines.html">Deadlines</a>
-            <a href="./jsps-kakenhi/forms.html">Forms</a>
-          </div>
-        </article>
-      </main>
-    </div>
+        <div class="portal-grid" id="portalGrid" aria-label=""></div>
+      </section>
+    </main>
   </body>
 </html>
