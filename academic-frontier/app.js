@@ -2421,6 +2421,12 @@ function impactFilterTagLabel(value) {
   return String(value || "");
 }
 
+function typeFilterTagLabel(value) {
+  if (value === "journal") return ui("typeOptionJournal");
+  if (value === "conference") return ui("typeOptionConference");
+  return String(value || "");
+}
+
 function normalizedPaperQuery() {
   return String(state.paperQuery || "").trim().toLowerCase();
 }
@@ -3304,21 +3310,27 @@ function formatPaperFilterOptionLabel(label, count) {
 
 function selectedTagEntries() {
   return [
+    ...(state.yearFilter !== "all" ? [{ category: "year", value: state.yearFilter }] : []),
+    ...(state.typeFilter !== "all" ? [{ category: "type", value: state.typeFilter }] : []),
     ...state.problemFieldFilters.map((value) => ({ category: "problem", value })),
     ...state.methodFieldFilters.map((value) => ({ category: "method", value })),
     ...(state.jcrFilter !== "all" ? [{ category: "jcr", value: state.jcrFilter }] : []),
     ...(state.casFilter !== "all" ? [{ category: "cas", value: state.casFilter }] : []),
     ...(state.impactFilter !== "all" ? [{ category: "impact", value: state.impactFilter }] : []),
+    ...(state.teamFilter !== "all" ? [{ category: "team", value: state.teamFilter }] : []),
   ];
 }
 
 function selectedTagLabel(entry) {
+  if (entry.category === "year") return String(entry.value || "");
+  if (entry.category === "type") return typeFilterTagLabel(entry.value);
   if (entry.category === "problem" || entry.category === "method") {
     return localizeText(entry.value);
   }
   if (entry.category === "jcr") return jcrFilterTagLabel(entry.value);
   if (entry.category === "cas") return casFilterTagLabel(entry.value);
   if (entry.category === "impact") return impactFilterTagLabel(entry.value);
+  if (entry.category === "team") return String(entry.value || "");
   return String(entry.value || "");
 }
 
@@ -4073,7 +4085,11 @@ function bindControls() {
     if (!button) return;
     const tag = button.dataset.removeFieldTag || "";
     const category = button.dataset.fieldCategory || "";
-    if (category === "problem") {
+    if (category === "year") {
+      state.yearFilter = "all";
+    } else if (category === "type") {
+      state.typeFilter = "all";
+    } else if (category === "problem") {
       state.problemFieldFilters = state.problemFieldFilters.filter((item) => item !== tag);
     } else if (category === "method") {
       state.methodFieldFilters = state.methodFieldFilters.filter((item) => item !== tag);
@@ -4083,6 +4099,8 @@ function bindControls() {
       state.casFilter = "all";
     } else if (category === "impact") {
       state.impactFilter = "all";
+    } else if (category === "team") {
+      state.teamFilter = "all";
     }
     renderPaperControls();
     renderPapers();
