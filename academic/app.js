@@ -2406,14 +2406,14 @@ function renderPortalReturnControl() {
     {
       href: "/academic/",
       label: labels.academic,
-      icon: '<img class="portal-chip-logo" src="/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
+      icon: '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
       active: currentPath.startsWith("/academic/"),
       extraClass: "portal-chip--portrait",
     },
     {
       href: "/academic-frontier/",
       label: labels.radar,
-      icon: '<img class="portal-chip-logo" src="/academic-frontier/favicon.svg" alt="" loading="lazy" />',
+      icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
       active: currentPath.startsWith("/academic-frontier/"),
     },
     {
