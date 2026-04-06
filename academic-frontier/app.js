@@ -47,23 +47,24 @@ const state = {
   methodFieldFilters: [],
   jcrFilter: "all",
   casFilter: "all",
+  casTopFilter: "all",
   impactFilter: "all",
   teamFilter: "all",
   sortFilter: "recent",
   paperQuery: "",
   focusPrompt: "",
+  researchProblemFieldFilters: [],
+  researchMethodFieldFilters: [],
+  researchJcrFilter: "all",
+  researchCasFilter: "all",
+  researchCasTopFilter: "all",
+  researchImpactFilter: "all",
+  researchAuthorFilter: "all",
+  researchYearStart: "",
+  researchYearEnd: "",
   language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || "en",
   theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || "tohoku",
   localArchiveIndex: {},
-};
-
-const PAGE_PATHS = {
-  overview: "./index.html",
-  papers: "./papers.html",
-  signals: "./signals.html",
-  teams: "./teams.html",
-  downloads: "./downloads.html",
-  guide: "./guide.html",
 };
 
 const UI_TEXT = {
@@ -97,9 +98,25 @@ const UI_TEXT = {
     directionsTitle: "Direction cockpit",
     directionsNote: "Auto-derived from homepage, publications, and current radar evidence. Manual prompt edits only refine the ranking in this browser.",
     focusDeskTitle: "Current interest correction",
-    focusDeskNote: "Keep the default auto-led behavior, then use a prompt to raise or lower specific directions, methods, teams, or venues.",
+    focusDeskNote: "Keep the default auto-led behavior, then use a prompt to raise or lower specific directions, methods, authors, or venues.",
     focusPromptLabel: "Correction prompt",
     focusPromptPlaceholder: "Example: prioritize AI for science, classic foundational papers, and latest top-tier systems with strong code evidence.",
+    researchLauncherTitle: "Deep research launcher",
+    researchLauncherNote: "Use objective filters and custom keywords to prepare the next agent-ready frontier sweep.",
+    researchSelectedFiltersLabel: "Selected constraints",
+    researchPromptPreviewTitle: "Agent-ready brief",
+    researchLaunchAction: "Start deep research",
+    researchLaunchCopiedLabel: "Research brief copied",
+    researchCustomPromptLabel: "Custom keywords / correction prompt",
+    researchCustomPromptPlaceholder: "Example: prioritize AI for science, optimization problems, evolutionary algorithms, and rigorous top-tier journals with reusable code.",
+    researchYearRangeLabel: "Year range",
+    researchYearStartLabel: "From",
+    researchYearEndLabel: "To",
+    researchAuthorLabel: "Author",
+    researchProblemLabel: "Problem field",
+    researchMethodLabel: "Method field",
+    researchMatchedPapersLabel: "Matching papers",
+    researchBriefEmpty: "Select objective filters or add custom keywords to generate the next research brief.",
     applyFocusAction: "Apply refinement",
     resetFocusAction: "Reset to auto",
     focusPresetsLabel: "Quick presets",
@@ -126,16 +143,17 @@ const UI_TEXT = {
     papersNote: "Search, filter, and decide what to read next.",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
-    searchPlaceholder: "Search title, author, venue, rank, or tag",
+    searchPlaceholder: "Search title, author, venue, DOI, or exact tag",
     filtersLabel: "Filters",
     quickTagsLabel: "Tags",
     resetLabel: "Reset",
     yearOptionAll: "All years",
     typeOptionAll: "All types",
-    problemFieldPlaceholder: "Add problem field",
-    methodFieldPlaceholder: "Add method field",
+    problemFieldPlaceholder: "All problem fields",
+    methodFieldPlaceholder: "All method fields",
     jcrOptionAll: "All JCR",
     casOptionAll: "All CAS",
+    casTopOptionAll: "All Top",
     impactOptionAll: "All IF",
     activeFieldTagsLabel: "Selected tags",
     jcrNotListedOption: "JCR not listed",
@@ -151,7 +169,7 @@ const UI_TEXT = {
     statusOptionMustRead: "Must-read",
     statusOptionMonitor: "Monitor",
     statusOptionArchive: "Archive",
-    teamOptionAll: "All teams",
+    teamOptionAll: "All authors",
     sortRecent: "Sort by recent",
     sortCitations: "Sort by citations",
     sortImpact: "Sort by IF",
@@ -250,8 +268,10 @@ const UI_TEXT = {
     quickLinksLabel: "Quick 学术前沿 links",
     copyMenuLabel: "Copy citation",
     copyCitationAction: "Copy IEEE citation",
+    copyDoiAction: "Copy DOI",
     copyBibtexAction: "Copy BibTeX",
     copiedCitationLabel: "IEEE citation copied",
+    copiedDoiLabel: "DOI copied",
     copiedBibtexLabel: "BibTeX copied",
     topLabel: "Top",
     detailAction: "Open detail",
@@ -260,7 +280,7 @@ const UI_TEXT = {
     detailSummaryTitle: "Reading file",
     detailContextTitle: "Tracking context",
     detailSourceTitle: "Source bundle",
-    detailTeamLabel: "Tracked team",
+    detailTeamLabel: "Tracked author",
     detailArchiveLabel: "Archive status",
   },
   zh: {
@@ -291,9 +311,25 @@ const UI_TEXT = {
     directionsTitle: "调查方向与修正面板",
     directionsNote: "基于主页、发表与当前雷达证据自动推断。手动 prompt 只修正当前浏览器中的优先级，不会破坏自动主导逻辑。",
     focusDeskTitle: "当前关心方向修正",
-    focusDeskNote: "默认保持自动主导；如果你想提高或压低某些方向、方法、团队或期刊，再用 prompt 进行局部修正。",
+    focusDeskNote: "默认保持自动主导；如果你想提高或压低某些方向、方法、作者或期刊，再用 prompt 进行局部修正。",
     focusPromptLabel: "修正 prompt",
     focusPromptPlaceholder: "例如：优先 AI for Science、经典基础论文、以及最新且有强代码证据的顶级系统论文。",
+    researchLauncherTitle: "深度研究启动器",
+    researchLauncherNote: "先用客观筛选约束范围，再用自定义关键词生成可直接交给 agent 的前沿研究简报。",
+    researchSelectedFiltersLabel: "已选约束",
+    researchPromptPreviewTitle: "Agent 研究简报",
+    researchLaunchAction: "开始深度研究",
+    researchLaunchCopiedLabel: "研究简报已复制",
+    researchCustomPromptLabel: "自定义关键词 / 修正 prompt",
+    researchCustomPromptPlaceholder: "例如：优先 AI、优化问题、进化算法、经典基础论文、以及最新且有强代码证据的高质量研究。",
+    researchYearRangeLabel: "年份范围",
+    researchYearStartLabel: "起始",
+    researchYearEndLabel: "结束",
+    researchAuthorLabel: "作者",
+    researchProblemLabel: "问题领域",
+    researchMethodLabel: "方法领域",
+    researchMatchedPapersLabel: "匹配论文",
+    researchBriefEmpty: "先选择客观筛选条件，或补充自定义关键词，再生成下一步研究简报。",
     applyFocusAction: "应用修正",
     resetFocusAction: "恢复自动",
     focusPresetsLabel: "快捷预设",
@@ -320,16 +356,17 @@ const UI_TEXT = {
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
-    searchPlaceholder: "搜索标题、作者、刊物、等级或标签",
+    searchPlaceholder: "搜索标题、作者、刊物、DOI 或精确标签",
     filtersLabel: "筛选",
     quickTagsLabel: "标签",
     resetLabel: "重置",
     yearOptionAll: "全部年份",
     typeOptionAll: "全部类型",
-    problemFieldPlaceholder: "添加问题领域",
-    methodFieldPlaceholder: "添加方法领域",
+    problemFieldPlaceholder: "全部问题",
+    methodFieldPlaceholder: "全部方法",
     jcrOptionAll: "全部 JCR",
     casOptionAll: "全部中科院",
+    casTopOptionAll: "全部 Top",
     impactOptionAll: "全部 IF",
     activeFieldTagsLabel: "已选标签",
     jcrNotListedOption: "JCR 未公开",
@@ -345,7 +382,7 @@ const UI_TEXT = {
     statusOptionMustRead: "必读",
     statusOptionMonitor: "持续观察",
     statusOptionArchive: "归档",
-    teamOptionAll: "全部团队",
+    teamOptionAll: "全部作者",
     sortRecent: "按时间排序",
     sortCitations: "按引用排序",
     sortImpact: "按 IF 排序",
@@ -443,8 +480,10 @@ const UI_TEXT = {
     quickLinksLabel: "快捷入口",
     copyMenuLabel: "复制引文",
     copyCitationAction: "复制 IEEE 格式引用",
+    copyDoiAction: "复制 DOI",
     copyBibtexAction: "复制 BibTeX",
     copiedCitationLabel: "已复制 IEEE 格式引用",
+    copiedDoiLabel: "已复制 DOI",
     copiedBibtexLabel: "已复制 BibTeX",
     topLabel: "Top",
     detailAction: "打开详情",
@@ -453,7 +492,7 @@ const UI_TEXT = {
     detailSummaryTitle: "阅读档案",
     detailContextTitle: "跟踪背景",
     detailSourceTitle: "来源入口",
-    detailTeamLabel: "关联团队",
+    detailTeamLabel: "关联作者",
     detailArchiveLabel: "归档状态",
   },
   ja: {
@@ -485,9 +524,25 @@ const UI_TEXT = {
     directionsTitle: "探索方向と修正パネル",
     directionsNote: "ホームページ、発表、現在のレーダー証拠から自動推定する。手動プロンプトはこのブラウザ内の優先度だけを調整する。",
     focusDeskTitle: "現在の関心方向の修正",
-    focusDeskNote: "既定では自動主導のままにし、特定の方向、手法、チーム、会場の優先度だけをプロンプトで補正する。",
+    focusDeskNote: "既定では自動主導のままにし、特定の方向、手法、著者、会場の優先度だけをプロンプトで補正する。",
     focusPromptLabel: "修正プロンプト",
     focusPromptPlaceholder: "例: AI for Science、古典的基礎論文、そして強いコード証拠を持つ最新トップシステム論文を優先する。",
+    researchLauncherTitle: "深度研究ランチャー",
+    researchLauncherNote: "客観的フィルターとカスタムキーワードを使って、agent に渡せる前沿研究ブリーフを組み立てます。",
+    researchSelectedFiltersLabel: "選択中の条件",
+    researchPromptPreviewTitle: "Agent 向け研究ブリーフ",
+    researchLaunchAction: "深度研究を開始",
+    researchLaunchCopiedLabel: "研究ブリーフをコピーしました",
+    researchCustomPromptLabel: "カスタムキーワード / 修正プロンプト",
+    researchCustomPromptPlaceholder: "例: AI、最適化問題、進化計算、古典的基礎論文、そして強いコード証拠を持つ高品質研究を優先する。",
+    researchYearRangeLabel: "年度範囲",
+    researchYearStartLabel: "開始",
+    researchYearEndLabel: "終了",
+    researchAuthorLabel: "著者",
+    researchProblemLabel: "問題領域",
+    researchMethodLabel: "手法領域",
+    researchMatchedPapersLabel: "一致論文数",
+    researchBriefEmpty: "まず客観的フィルターを選ぶか、カスタムキーワードを追加して次の研究ブリーフを生成してください。",
     applyFocusAction: "補正を適用",
     resetFocusAction: "自動へ戻す",
     focusPresetsLabel: "クイックプリセット",
@@ -514,16 +569,17 @@ const UI_TEXT = {
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
-    searchPlaceholder: "タイトル・著者・掲載先・ランク・タグで検索",
+    searchPlaceholder: "タイトル・著者・掲載先・DOI・厳密タグで検索",
     filtersLabel: "フィルター",
     quickTagsLabel: "タグ",
     resetLabel: "リセット",
     yearOptionAll: "全年度",
     typeOptionAll: "全種別",
-    problemFieldPlaceholder: "問題領域を追加",
-    methodFieldPlaceholder: "手法領域を追加",
+    problemFieldPlaceholder: "全問題",
+    methodFieldPlaceholder: "全手法",
     jcrOptionAll: "全 JCR",
     casOptionAll: "全 CAS",
+    casTopOptionAll: "全 Top",
     impactOptionAll: "全 IF",
     activeFieldTagsLabel: "選択中のタグ",
     jcrNotListedOption: "JCR 未公開",
@@ -539,7 +595,7 @@ const UI_TEXT = {
     statusOptionMustRead: "必読",
     statusOptionMonitor: "監視",
     statusOptionArchive: "アーカイブ",
-    teamOptionAll: "全チーム",
+    teamOptionAll: "全著者",
     sortRecent: "新しい順",
     sortCitations: "被引用順",
     sortImpact: "IF 順",
@@ -638,8 +694,10 @@ const UI_TEXT = {
     quickLinksLabel: "クイックリンク",
     copyMenuLabel: "引用をコピー",
     copyCitationAction: "IEEE形式の引用をコピー",
+    copyDoiAction: "DOI をコピー",
     copyBibtexAction: "BibTeX をコピー",
     copiedCitationLabel: "IEEE形式の引用をコピーしました",
+    copiedDoiLabel: "DOI をコピーしました",
     copiedBibtexLabel: "BibTeX をコピーしました",
     topLabel: "Top",
     detailAction: "詳細を見る",
@@ -648,7 +706,7 @@ const UI_TEXT = {
     detailSummaryTitle: "読解ファイル",
     detailContextTitle: "追跡コンテキスト",
     detailSourceTitle: "ソース導線",
-    detailTeamLabel: "関連チーム",
+    detailTeamLabel: "関連著者",
     detailArchiveLabel: "アーカイブ状態",
   },
 };
@@ -1135,6 +1193,7 @@ let switcherHoverBound = false;
 let scrollTopUiBound = false;
 let metricCopyUiBound = false;
 let focusDeskUiBound = false;
+let researchLauncherUiBound = false;
 let topnavMenuBound = false;
 let topnavOverflowBound = false;
 let headerControlsPositionBound = false;
@@ -1179,24 +1238,23 @@ function pageFilename(page = currentPage()) {
   return page === "overview" ? "index.html" : `${page}.html`;
 }
 
-function localePageHref(targetLocale, page = currentPage()) {
-  const activeLocale = pageLocale();
-  const filename = pageFilename(page);
+function localeBasePath(locale = pageLocale()) {
+  return `${PUBLIC_SITE_BASE_PATH}${locale === "en" ? "" : `/${locale}`}`;
+}
 
-  if (activeLocale === targetLocale) {
-    return `./${filename}`;
+function pageHref(page = currentPage(), locale = pageLocale()) {
+  return `${localeBasePath(locale)}/${pageFilename(page)}`;
+}
+
+function localePageHref(targetLocale, page = currentPage()) {
+  if (window.ACADEMIC_FRONTIER_LOCALE_HREFS?.[targetLocale]) {
+    return window.ACADEMIC_FRONTIER_LOCALE_HREFS[targetLocale];
   }
-  if (activeLocale === "en" && targetLocale !== "en") {
-    return `./${targetLocale}/${filename}`;
-  }
-  if (activeLocale !== "en" && targetLocale === "en") {
-    return `../${filename}`;
-  }
-  return `../${targetLocale}/${filename}`;
+  return pageHref(page, targetLocale);
 }
 
 function assetBasePath() {
-  return pageLocale() === "en" ? "." : "..";
+  return PUBLIC_SITE_BASE_PATH;
 }
 
 const DOM_ID_ALIASES = {
@@ -1210,6 +1268,7 @@ const DOM_ID_ALIASES = {
   "method-filter": ["methodFilter"],
   "jcr-filter": ["jcrFilter"],
   "cas-filter": ["casFilter"],
+  "cas-top-filter": ["casTopFilter"],
   "impact-filter": ["impactFilter"],
   "venue-filter": ["teamFilter"],
   "sort-filter": ["sortFilter"],
@@ -1264,6 +1323,7 @@ function escapeHtml(value) {
 const ICON_PATHS = {
   copy: "M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z",
   code: "M8.7 16.6 3.1 12l5.6-4.6 1.3 1.5L6.2 12l3.8 3.1-1.3 1.5zm6.6 0-1.3-1.5 3.8-3.1-3.8-3.1 1.3-1.5 5.6 4.6-5.6 4.6z",
+  link: "M10.6 13.4 9.2 12l3.2-3.2a3 3 0 0 1 4.2 4.2l-1.7 1.7-1.4-1.4 1.7-1.7a1 1 0 0 0-1.4-1.4L10.6 13.4zm2.8-2.8 1.4 1.4-3.2 3.2a3 3 0 0 1-4.2-4.2l1.7-1.7 1.4 1.4-1.7 1.7a1 1 0 1 0 1.4 1.4l3.2-3.2z",
   home: "M3 11.2 12 4l9 7.2V21h-6v-6H9v6H3v-9.8z",
   menu: "M4 7h16v2H4V7zm0 4h16v2H4v-2zm0 4h16v2H4v-2z",
   up: "M12 5.5l-6 6 1.4 1.4 3.6-3.6V19h2V9.3l3.6 3.6 1.4-1.4-6-6z",
@@ -1353,6 +1413,21 @@ function buildMetricOptions(definitions) {
 function publicationPrimaryUrl(item) {
   return normalizeUrl(item?.paper_url || item?.paperUrl || item?.publisher_url || item?.publisherUrl || item?.url)
     || (normalizeUrl(item?.doi) ? `https://doi.org/${normalizeUrl(item.doi)}` : "");
+}
+
+function publicationDoiText(item) {
+  const explicit = normalizeUrl(item?.doi);
+  if (explicit) {
+    return explicit.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "");
+  }
+
+  const doiUrl = normalizeUrl(item?.doiUrl || item?.doi_url);
+  if (doiUrl) {
+    return doiUrl.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "");
+  }
+
+  const primary = publicationPrimaryUrl(item);
+  return /doi\.org\//i.test(primary) ? primary.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "") : "";
 }
 
 function publicationMetricYear(item, metricKind) {
@@ -1856,11 +1931,15 @@ function setRichHtml(id, value, options = {}) {
 }
 
 function publicationCopyActionLabel(format) {
-  return format === "bibtex" ? ui("copyBibtexAction") : ui("copyCitationAction");
+  if (format === "bibtex") return ui("copyBibtexAction");
+  if (format === "doi") return ui("copyDoiAction");
+  return ui("copyCitationAction");
 }
 
 function publicationCopySuccessLabel(format) {
-  return format === "bibtex" ? ui("copiedBibtexLabel") : ui("copiedCitationLabel");
+  if (format === "bibtex") return ui("copiedBibtexLabel");
+  if (format === "doi") return ui("copiedDoiLabel");
+  return ui("copiedCitationLabel");
 }
 
 function publicationCopyMenuLabel() {
@@ -1896,11 +1975,15 @@ function normalizeSearchText(value) {
     .trim();
 }
 
+function escapeRegExp(value) {
+  return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
 function normalizedFocusPrompt() {
   return String(state.focusPrompt || "").trim();
 }
 
-function focusPromptTokens(prompt = normalizedFocusPrompt()) {
+function focusPromptTokens(prompt = combinedFocusPrompt()) {
   const phrases = String(prompt || "")
     .split(/[\n,;，；、]+/g)
     .map((item) => item.trim())
@@ -2040,6 +2123,166 @@ function focusPresetMarkup() {
   )).join("");
 }
 
+function availableResearchYears(papers = papersForDomain()) {
+  return [...new Set(papers.map((paper) => Number.parseInt(paperYearValue(paper), 10)).filter(Number.isFinite))]
+    .sort((left, right) => right - left);
+}
+
+function syncResearchLauncherState(papers = papersForDomain()) {
+  const years = availableResearchYears(papers);
+  const maxYear = years[0] || new Date().getFullYear();
+  const minYear = years[years.length - 1] || maxYear;
+  const problemFields = [...new Set(papers.flatMap((paper) => paperProblemFields(paper)).filter(Boolean))];
+  const methodFields = [...new Set(papers.flatMap((paper) => paperMethodFields(paper)).filter(Boolean))];
+  const authors = [...new Set(papers.flatMap((paper) => paperAuthorNames(paper)).filter(Boolean))];
+  const jcrBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesJcrFilter(paper, value)));
+  const casBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesCasFilter(paper, value)));
+  const impactBands = ["10+", "5-10", "0-5", "not-listed"].filter((value) => papers.some((paper) => paperMatchesImpactFilter(paper, value)));
+
+  state.researchProblemFieldFilters = state.researchProblemFieldFilters.filter((field) => problemFields.includes(field));
+  state.researchMethodFieldFilters = state.researchMethodFieldFilters.filter((field) => methodFields.includes(field));
+  if (state.researchAuthorFilter !== "all" && !authors.includes(state.researchAuthorFilter)) {
+    state.researchAuthorFilter = "all";
+  }
+  if (state.researchJcrFilter !== "all" && !jcrBands.includes(state.researchJcrFilter)) {
+    state.researchJcrFilter = "all";
+  }
+  if (state.researchCasFilter !== "all" && !casBands.includes(state.researchCasFilter)) {
+    state.researchCasFilter = "all";
+  }
+  if (state.researchImpactFilter !== "all" && !impactBands.includes(state.researchImpactFilter)) {
+    state.researchImpactFilter = "all";
+  }
+
+  const start = Number.parseInt(state.researchYearStart, 10);
+  const end = Number.parseInt(state.researchYearEnd, 10);
+  const safeStart = Number.isFinite(start) ? Math.min(Math.max(start, minYear), maxYear) : minYear;
+  const safeEnd = Number.isFinite(end) ? Math.min(Math.max(end, minYear), maxYear) : maxYear;
+
+  state.researchYearStart = String(Math.min(safeStart, safeEnd));
+  state.researchYearEnd = String(Math.max(safeStart, safeEnd));
+
+  return {
+    years,
+    minYear,
+    maxYear,
+    problemFields: problemFields.sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale())),
+    methodFields: methodFields.sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale())),
+    authors: authors.sort((left, right) => left.localeCompare(right, currentLocale())),
+    jcrBands,
+    casBands,
+    impactBands,
+  };
+}
+
+function researchSelectedTagEntries(papers = papersForDomain()) {
+  const years = availableResearchYears(papers);
+  const maxYear = years[0] || "";
+  const minYear = years[years.length - 1] || "";
+  const entries = [
+    ...state.researchProblemFieldFilters.map((value) => ({ category: "problem", value })),
+    ...state.researchMethodFieldFilters.map((value) => ({ category: "method", value })),
+    ...(state.researchJcrFilter !== "all" ? [{ category: "jcr", value: state.researchJcrFilter }] : []),
+    ...(state.researchCasFilter !== "all" ? [{ category: "cas", value: state.researchCasFilter }] : []),
+    ...(state.researchCasTopFilter !== "all" ? [{ category: "casTop", value: state.researchCasTopFilter }] : []),
+    ...(state.researchImpactFilter !== "all" ? [{ category: "impact", value: state.researchImpactFilter }] : []),
+    ...(state.researchAuthorFilter !== "all" ? [{ category: "author", value: state.researchAuthorFilter }] : []),
+  ];
+
+  if (String(state.researchYearStart || "") !== String(minYear || "") || String(state.researchYearEnd || "") !== String(maxYear || "")) {
+    entries.unshift({
+      category: "yearRange",
+      value: `${state.researchYearStart}-${state.researchYearEnd}`,
+    });
+  }
+
+  return entries;
+}
+
+function researchSelectedTagLabel(entry) {
+  if (entry.category === "problem" || entry.category === "method") return localizeText(entry.value);
+  if (entry.category === "jcr") return jcrFilterTagLabel(entry.value);
+  if (entry.category === "cas") return casFilterTagLabel(entry.value);
+  if (entry.category === "casTop") return ui("casTopOption");
+  if (entry.category === "impact") return impactFilterTagLabel(entry.value);
+  if (entry.category === "author") return String(entry.value || "");
+  if (entry.category === "yearRange") {
+    const [start, end] = String(entry.value || "").split("-");
+    return `${start} - ${end}`;
+  }
+  return String(entry.value || "");
+}
+
+function combinedFocusPrompt() {
+  return uniqueStrings([
+    ...researchSelectedTagEntries().map((entry) => researchSelectedTagLabel(entry)),
+    normalizedFocusPrompt(),
+  ]).join(", ");
+}
+
+function paperMatchesResearchFilters(paper, overrides = {}) {
+  const yearStart = Number.parseInt(overrides.yearStart ?? state.researchYearStart, 10);
+  const yearEnd = Number.parseInt(overrides.yearEnd ?? state.researchYearEnd, 10);
+  const paperYear = Number.parseInt(paperYearValue(paper), 10);
+  const matchesYearRange = !Number.isFinite(paperYear)
+    || (!Number.isFinite(yearStart) || paperYear >= yearStart)
+    && (!Number.isFinite(yearEnd) || paperYear <= yearEnd);
+
+  return matchesYearRange && paperMatchesActiveFilters(paper, {
+    year: "all",
+    type: "all",
+    problemTags: overrides.problemTags ?? state.researchProblemFieldFilters,
+    methodTags: overrides.methodTags ?? state.researchMethodFieldFilters,
+    jcr: overrides.jcr ?? state.researchJcrFilter,
+    cas: overrides.cas ?? state.researchCasFilter,
+    casTop: overrides.casTop ?? state.researchCasTopFilter,
+    impact: overrides.impact ?? state.researchImpactFilter,
+    team: overrides.team ?? state.researchAuthorFilter,
+    query: overrides.query ?? normalizedFocusPrompt(),
+  });
+}
+
+function matchingResearchPapers() {
+  return sortPapers(papersForDomain().filter((paper) => paperMatchesResearchFilters(paper)));
+}
+
+function buildResearchBrief(directions, matchedPapers) {
+  const domainName = localizeText(activeDomain()?.name || ui("brandTitle"));
+  const selectedConstraints = researchSelectedTagEntries().map((entry) => researchSelectedTagLabel(entry));
+  const customPrompt = normalizedFocusPrompt();
+  const alignedDirections = directions.slice(0, 3).map((direction) => localizeText(direction.title || "")).filter(Boolean);
+
+  return plainTextByLanguage({
+    en: [
+      `Investigate the academic frontier around ${domainName}.`,
+      selectedConstraints.length ? `Objective constraints: ${selectedConstraints.join(", ")}.` : "",
+      customPrompt ? `Custom keywords: ${customPrompt}.` : "",
+      `Prioritize the highest-quality papers from top journals and conferences, but keep classic foundational work when it remains central to the field.`,
+      `For each retained paper, preserve objective metadata including authors, problem fields, method fields, venue, JCR, CAS, IF, CCF, and DOI.`,
+      alignedDirections.length ? `Most aligned directions now: ${alignedDirections.join(" · ")}.` : "",
+      `Current matched papers in this lane: ${matchedPapers.length}.`,
+    ].filter(Boolean).join("\n"),
+    zh: [
+      `围绕“${domainName}”开展学术前沿深度研究。`,
+      selectedConstraints.length ? `客观约束：${selectedConstraints.join("，")}。` : "",
+      customPrompt ? `自定义关键词：${customPrompt}。` : "",
+      "优先收集顶级期刊与顶会中的高质量论文，同时保留仍然处于核心位置的经典基础论文。",
+      "对每篇保留论文，都应保留作者、问题领域、方法领域、发表渠道、JCR、中科院、IF、CCF 与 DOI 等客观字段。",
+      alignedDirections.length ? `当前最匹配的方向：${alignedDirections.join(" · ")}。` : "",
+      `当前该方向下匹配论文数：${matchedPapers.length}。`,
+    ].filter(Boolean).join("\n"),
+    ja: [
+      `「${domainName}」を中心に学術前沿の深度研究を行う。`,
+      selectedConstraints.length ? `客観条件: ${selectedConstraints.join("、")}。` : "",
+      customPrompt ? `カスタムキーワード: ${customPrompt}。` : "",
+      "トップジャーナルとトップ会議の高品質論文を優先しつつ、その分野で依然として重要な古典的基礎論文も保持する。",
+      "各論文について、著者、問題領域、手法領域、掲載先、JCR、CAS、IF、CCF、DOI などの客観フィールドを保持する。",
+      alignedDirections.length ? `現在もっとも整合する方向: ${alignedDirections.join(" · ")}。` : "",
+      `このレーンで現在一致する論文数: ${matchedPapers.length}。`,
+    ].filter(Boolean).join("\n"),
+  });
+}
+
 function renderDirectionCockpit() {
   const mount = byId("directionCockpit");
   if (!mount) return;
@@ -2089,14 +2332,20 @@ function renderDirectionWorkspace() {
   const mount = byId("directionWorkspace");
   if (!mount) return;
 
+  const launcher = syncResearchLauncherState();
   const directions = adjustedDirections();
   const seed = researchData().seedProfile || {};
   const tokens = focusPromptTokens();
+  const matchedPapers = matchingResearchPapers();
+  const selectedConstraints = researchSelectedTagEntries();
+  const researchBrief = buildResearchBrief(directions, matchedPapers);
   const seedChips = [
     ...(seed?.keywords || []).slice(0, 5),
     ...(seed?.methods || []).slice(0, 3),
     ...(seed?.topPublicationTags || []).slice(0, 4),
   ].slice(0, 12);
+  const researchFacetCount = (overrides = {}) =>
+    papersForDomain().filter((paper) => paperMatchesResearchFilters(paper, overrides)).length;
 
   mount.innerHTML = `<div class="section-head">
       <div>
@@ -2107,30 +2356,89 @@ function renderDirectionWorkspace() {
     </div>
     <div class="direction-workspace-summary">
       <aside class="focus-card focus-card-accent">
-        <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3><span class="tag is-strong">${escapeHtml(tokens.length ? ui("focusModeManual") : ui("focusModeAuto"))}</span></div>
-        <p class="section-note">${escapeHtml(ui("focusDeskNote"))}</p>
-        <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("focusPromptLabel"))}</label>
-        <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="6" placeholder="${escapeHtml(ui("focusPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
-        <div class="focus-action-row">
-          <button class="button button-primary" type="button" data-focus-apply="true">${escapeHtml(ui("applyFocusAction"))}</button>
-          <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
-        </div>
-        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
-        <div class="chip-row compact">${focusPresetMarkup()}</div>
-        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
-        <div class="chip-row compact">${tokens.length ? tokens.map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
-      </aside>
-      <article class="focus-card">
-        <div class="subhead"><h3>${escapeHtml(ui("seedProfileTitle"))}</h3><span class="tag">${escapeHtml(String(directions.length))}</span></div>
+        <div class="subhead"><h3>${escapeHtml(ui("researchLauncherTitle"))}</h3><span class="tag is-strong">${escapeHtml(`${ui("researchMatchedPapersLabel")} ${matchedPapers.length}`)}</span></div>
+        <p class="section-note">${escapeHtml(ui("researchLauncherNote"))}</p>
         <div class="publication-domain-rack investigation-domain-rack">
           <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
           <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
         </div>
+        <div class="filter-control-row investigation-filter-row">
+          <select id="research-problem-filter" class="input">
+            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length))}</option>
+            ${launcher.problemFields
+              .filter((field) => !state.researchProblemFieldFilters.includes(field))
+              .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: [...state.researchProblemFieldFilters, field] })))}</option>`)
+              .join("")}
+          </select>
+          <select id="research-method-filter" class="input">
+            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), launcher.methodFields.length))}</option>
+            ${launcher.methodFields
+              .filter((field) => !state.researchMethodFieldFilters.includes(field))
+              .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: [...state.researchMethodFieldFilters, field] })))}</option>`)
+              .join("")}
+          </select>
+          <select id="research-jcr-filter" class="input">
+            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchFacetCount({ jcr: "all" })))}</option>
+            ${launcher.jcrBands
+              .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchJcrFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: band })))}</option>`)
+              .join("")}
+          </select>
+          <select id="research-cas-filter" class="input">
+            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casOptionAll"), researchFacetCount({ cas: "all" })))}</option>
+            ${launcher.casBands
+              .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchCasFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: band })))}</option>`)
+              .join("")}
+          </select>
+          <select id="research-cas-top-filter" class="input">
+            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchFacetCount({ casTop: "all" })))}</option>
+            <option value="top"${state.researchCasTopFilter === "top" ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: "top" })))}</option>
+          </select>
+          <select id="research-impact-filter" class="input">
+            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("impactOptionAll"), researchFacetCount({ impact: "all" })))}</option>
+            ${launcher.impactBands
+              .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchImpactFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: band })))}</option>`)
+              .join("")}
+          </select>
+          <select id="research-author-filter" class="input">
+            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("teamOptionAll"), researchFacetCount({ team: "all" })))}</option>
+            ${launcher.authors
+              .map((author) => `<option value="${escapeHtml(author)}"${author === state.researchAuthorFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: author })))}</option>`)
+              .join("")}
+          </select>
+        </div>
+        <div class="research-range-grid">
+          <label class="research-range-control">
+            <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
+            <span class="research-range-value">${escapeHtml(state.researchYearStart)}</span>
+            <input id="research-year-start" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
+          </label>
+          <label class="research-range-control">
+            <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
+            <span class="research-range-value">${escapeHtml(state.researchYearEnd)}</span>
+            <input id="research-year-end" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
+          </label>
+        </div>
+        <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("researchCustomPromptLabel"))}</label>
+        <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="6" placeholder="${escapeHtml(ui("researchCustomPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
+        <div class="focus-action-row">
+          <button class="button button-primary" type="button" data-research-launch="true">${escapeHtml(ui("researchLaunchAction"))}</button>
+          <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
+        </div>
+        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
+        <div class="chip-row compact">${focusPresetMarkup()}</div>
+        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
+        <div class="chip-row compact">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="chip is-static">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
+      </aside>
+      <article class="focus-card">
+        <div class="subhead"><h3>${escapeHtml(ui("researchPromptPreviewTitle"))}</h3><span class="tag">${escapeHtml(String(directions.length))}</span></div>
         <div class="chip-row compact">${seedChips.length ? seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div>
         <div class="direction-summary-list">
           <p class="direction-summary-item"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 4).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ") || escapeHtml(ui("pendingMetric"))}</span></p>
           <p class="direction-summary-item"><strong class="accent-strong">${escapeHtml(ui("signalsToWatch"))}:</strong> <span class="rich-text">${directions[0]?.signals?.slice(0, 1).map((item) => richTextHtml(item)).join("") || escapeHtml(ui("pendingMetric"))}</span></p>
         </div>
+        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
+        <div class="chip-row compact">${tokens.length ? tokens.map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
+        <p class="research-brief">${escapeHtml(researchBrief)}</p>
       </article>
     </div>
     <div class="direction-card-grid direction-card-grid-workspace">${directions.map((direction) => directionCardMarkup(direction, { detailed: true })).join("")}</div>`;
@@ -2177,11 +2485,11 @@ function currentPageTitle() {
 
 function markCurrentPage() {
   const page = currentPage();
-  Object.entries(PAGE_PATHS).forEach(([key, href]) => {
+  ["overview", "papers", "signals", "teams", "downloads", "guide"].forEach((key) => {
     const navId = `nav${key.charAt(0).toUpperCase()}${key.slice(1)}`;
     const link = byId(navId);
     if (!link) return;
-    link.setAttribute("href", href);
+    link.setAttribute("href", pageHref(key));
     if (key === page) {
       link.setAttribute("aria-current", "page");
     } else {
@@ -2392,9 +2700,13 @@ function paperMatchesJcrFilter(paper, filterValue) {
 
 function paperMatchesCasFilter(paper, filterValue) {
   if (filterValue === "all") return true;
-  if (filterValue === "top") return paperCasTopValue(paper);
   if (filterValue === "not-listed") return paperCasQuartileValue(paper) === "__not_listed__";
   return paperCasQuartileValue(paper) === String(filterValue || "").toUpperCase();
+}
+
+function paperMatchesCasTopFilter(paper, filterValue) {
+  if (filterValue === "all") return true;
+  return filterValue === "top" ? paperCasTopValue(paper) : true;
 }
 
 function paperMatchesImpactFilter(paper, filterValue) {
@@ -2408,7 +2720,6 @@ function jcrFilterTagLabel(value) {
 }
 
 function casFilterTagLabel(value) {
-  if (value === "top") return ui("casTopOption");
   if (value === "not-listed") return ui("casNotListedOption");
   return currentLocale() === "zh" ? `中科院 ${String(value || "").toUpperCase()}` : `CAS ${String(value || "").toUpperCase()}`;
 }
@@ -2428,7 +2739,7 @@ function typeFilterTagLabel(value) {
 }
 
 function normalizedPaperQuery() {
-  return String(state.paperQuery || "").trim().toLowerCase();
+  return normalizeSearchText(state.paperQuery || "");
 }
 
 function metricValue(value) {
@@ -2492,7 +2803,7 @@ function renderStaticText() {
     button.setAttribute("title", ui("menuLabel"));
   });
   document.querySelectorAll("#heroShortcuts").forEach((node) => node.setAttribute("aria-label", ui("quickLinksLabel")));
-  setAttr("footerBackHome", "href", PAGE_PATHS.overview);
+  setAttr("footerBackHome", "href", pageHref("overview"));
   setProp("pub-search", "placeholder", ui("searchPlaceholder"));
   setAttr("pub-reset", "aria-label", ui("resetLabel"));
   setAttr("pub-reset", "title", ui("resetLabel"));
@@ -3116,9 +3427,9 @@ function renderHero() {
   if (!shortcuts) return;
   shortcuts.innerHTML = "";
   [
-    { href: PAGE_PATHS.papers, label: ui("heroPrimaryAction"), className: "button button-primary" },
-    { href: PAGE_PATHS.signals, label: ui("navSignals"), className: "button" },
-    { href: PAGE_PATHS.teams, label: ui("navTeams"), className: "button" },
+    { href: pageHref("papers"), label: ui("heroPrimaryAction"), className: "button button-primary" },
+    { href: pageHref("signals"), label: ui("navSignals"), className: "button" },
+    { href: pageHref("teams"), label: ui("navTeams"), className: "button" },
   ].forEach((item) => {
     const link = el("a", item.className, item.label);
     link.href = item.href;
@@ -3259,6 +3570,99 @@ function sortPapers(papers) {
   });
 }
 
+function paperMetricSearchTerms(paper) {
+  const terms = [];
+  const type = paperTypeValue(paper);
+  const year = paperYearValue(paper);
+  const jcr = paperJcrQuartileValue(paper);
+  const cas = paperCasQuartileValue(paper);
+  const impact = paperImpactBucketValue(paper);
+
+  if (type === "journal") {
+    terms.push("Journal", "期刊", "ジャーナル");
+  } else if (type === "conference") {
+    terms.push("Conference", "会议", "会議");
+  }
+
+  if (year) {
+    terms.push(year);
+  }
+
+  if (jcr === "__not_listed__") {
+    terms.push("JCR not listed", "JCR 未公开", "JCR 未公開");
+  } else if (jcr) {
+    terms.push(`JCR ${jcr}`);
+  }
+
+  if (cas === "__not_listed__") {
+    terms.push("CAS not listed", "中科院未公开", "CAS 未公開");
+  } else if (cas) {
+    terms.push(`CAS ${cas}`, `中科院 ${cas}`);
+  }
+
+  if (paperCasTopValue(paper)) {
+    terms.push("CAS Top", "中科院 Top");
+  }
+
+  if (impact === "10+") {
+    terms.push("IF >= 10");
+  } else if (impact === "5-10") {
+    terms.push("IF 5-10");
+  } else if (impact === "0-5") {
+    terms.push("IF 0-5");
+  } else if (impact === "not-listed") {
+    terms.push("IF not listed", "IF 未公开", "IF 未公開");
+  }
+
+  return uniqueStrings(terms);
+}
+
+function preciseFieldMatch(field, query) {
+  const normalizedField = normalizeSearchText(field);
+  if (!normalizedField || !query) return false;
+  if (normalizedField === query) return true;
+
+  const hasCjk = /[\u4e00-\u9fff\u3040-\u30ff]/.test(query);
+  const isStructured = /[0-9./:_-]/.test(query);
+  if (hasCjk || isStructured || query.includes(" ")) {
+    return normalizedField.includes(query);
+  }
+
+  const wordPattern = new RegExp(`(^|[^\\p{L}\\p{N}])${escapeRegExp(query)}(?=[^\\p{L}\\p{N}]|$)`, "iu");
+  return wordPattern.test(normalizedField);
+}
+
+function exactFacetMatch(values, query) {
+  return values.some((value) => normalizeSearchText(value) === query);
+}
+
+function paperMatchesSearchQuery(paper, query) {
+  if (!query) return true;
+
+  const searchableFields = uniqueStrings([
+    paper.title,
+    localizeText(paper.title),
+    paper.venue,
+    localizeText(paper.venue),
+    paper.citationText,
+    publicationDoiText(paper),
+    paper.doi,
+    paper.doiUrl,
+    ...paperAuthorNames(paper),
+  ]);
+
+  if (searchableFields.some((field) => preciseFieldMatch(field, query))) {
+    return true;
+  }
+
+  const metricTerms = paperMetricSearchTerms(paper);
+  if (metricTerms.some((field) => preciseFieldMatch(field, query))) {
+    return true;
+  }
+
+  return exactFacetMatch(paperObjectiveTags(paper), query);
+}
+
 function paperMatchesActiveFilters(paper, overrides = {}) {
   const activeYear = overrides.year ?? state.yearFilter;
   const activeType = overrides.type ?? state.typeFilter;
@@ -3266,38 +3670,33 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
   const activeMethodTags = overrides.methodTags ?? state.methodFieldFilters;
   const activeJcr = overrides.jcr ?? state.jcrFilter;
   const activeCas = overrides.cas ?? state.casFilter;
+  const activeCasTop = overrides.casTop ?? state.casTopFilter;
   const activeImpact = overrides.impact ?? state.impactFilter;
   const activeTeam = overrides.team ?? state.teamFilter;
   const activeQuery = overrides.query ?? normalizedPaperQuery();
 
-  const teams = paperTeamNames(paper);
+  const authors = paperAuthorNames(paper);
   const matchesYear = activeYear === "all" || paperYearValue(paper) === activeYear;
   const matchesType = activeType === "all" || paperTypeValue(paper) === activeType;
   const matchesProblemTags = activeProblemTags.every((tag) => paperProblemFields(paper).includes(tag));
   const matchesMethodTags = activeMethodTags.every((tag) => paperMethodFields(paper).includes(tag));
   const matchesJcr = paperMatchesJcrFilter(paper, activeJcr);
   const matchesCas = paperMatchesCasFilter(paper, activeCas);
+  const matchesCasTop = paperMatchesCasTopFilter(paper, activeCasTop);
   const matchesImpact = paperMatchesImpactFilter(paper, activeImpact);
-  const matchesTeam = activeTeam === "all" || teams.includes(activeTeam);
-  const haystack = [
-    paper.title,
-    localizeText(paper.title),
-    paper.venue,
-    localizeText(paper.venue),
-    paperSummaryNote(paper),
-    localizeText(paperSummaryNote(paper)),
-    paper.abstract,
-    localizeText(paper.abstract),
-    ...teams,
-    ...paperAuthorNames(paper),
-    ...paperObjectiveTags(paper),
-  ]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-  const matchesQuery = !activeQuery || haystack.includes(activeQuery);
+  const matchesTeam = activeTeam === "all" || authors.includes(activeTeam);
+  const matchesQuery = paperMatchesSearchQuery(paper, activeQuery);
 
-  return matchesYear && matchesType && matchesProblemTags && matchesMethodTags && matchesJcr && matchesCas && matchesImpact && matchesTeam && matchesQuery;
+  return matchesYear
+    && matchesType
+    && matchesProblemTags
+    && matchesMethodTags
+    && matchesJcr
+    && matchesCas
+    && matchesCasTop
+    && matchesImpact
+    && matchesTeam
+    && matchesQuery;
 }
 
 function filteredPapers() {
@@ -3316,6 +3715,7 @@ function selectedTagEntries() {
     ...state.methodFieldFilters.map((value) => ({ category: "method", value })),
     ...(state.jcrFilter !== "all" ? [{ category: "jcr", value: state.jcrFilter }] : []),
     ...(state.casFilter !== "all" ? [{ category: "cas", value: state.casFilter }] : []),
+    ...(state.casTopFilter !== "all" ? [{ category: "casTop", value: state.casTopFilter }] : []),
     ...(state.impactFilter !== "all" ? [{ category: "impact", value: state.impactFilter }] : []),
     ...(state.teamFilter !== "all" ? [{ category: "team", value: state.teamFilter }] : []),
   ];
@@ -3329,6 +3729,7 @@ function selectedTagLabel(entry) {
   }
   if (entry.category === "jcr") return jcrFilterTagLabel(entry.value);
   if (entry.category === "cas") return casFilterTagLabel(entry.value);
+  if (entry.category === "casTop") return ui("casTopOption");
   if (entry.category === "impact") return impactFilterTagLabel(entry.value);
   if (entry.category === "team") return String(entry.value || "");
   return String(entry.value || "");
@@ -3482,13 +3883,14 @@ function renderPaperControls() {
   const methodFilter = byId("method-filter");
   const jcrFilter = byId("jcr-filter");
   const casFilter = byId("cas-filter");
+  const casTopFilter = byId("cas-top-filter");
   const impactFilter = byId("impact-filter");
   const teamFilter = byId("venue-filter");
   const sortFilter = byId("sort-filter");
   const resetButton = byId("pub-reset");
   const activeFieldTags = byId("active-field-tags");
 
-  if (!paperSearch || !yearFilter || !typeFilter || !problemFilter || !methodFilter || !jcrFilter || !casFilter || !impactFilter || !teamFilter || !sortFilter || !activeFieldTags) {
+  if (!paperSearch || !yearFilter || !typeFilter || !problemFilter || !methodFilter || !jcrFilter || !casFilter || !casTopFilter || !impactFilter || !teamFilter || !sortFilter || !activeFieldTags) {
     return;
   }
 
@@ -3500,9 +3902,9 @@ function renderPaperControls() {
   const methodFields = [...new Set(papers.flatMap((paper) => paperMethodFields(paper)).filter(Boolean))]
     .sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale()));
   const jcrBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesJcrFilter(paper, value)));
-  const casBands = ["top", "Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesCasFilter(paper, value)));
+  const casBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesCasFilter(paper, value)));
   const impactBands = ["10+", "5-10", "0-5", "not-listed"].filter((value) => papers.some((paper) => paperMatchesImpactFilter(paper, value)));
-  const teams = [...new Set(teamsForDomain().map((team) => localizeText(team.name)).filter(Boolean))]
+  const authors = [...new Set(papers.flatMap((paper) => paperAuthorNames(paper)).filter(Boolean))]
     .sort((left, right) => left.localeCompare(right, currentLocale()));
   const facetCount = (overrides = {}) =>
     papers.filter((paper) => paperMatchesActiveFilters(paper, overrides)).length;
@@ -3514,6 +3916,7 @@ function renderPaperControls() {
   const allTypeCount = facetCount({ type: "all" });
   const allJcrCount = facetCount({ jcr: "all" });
   const allCasCount = facetCount({ cas: "all" });
+  const allCasTopCount = facetCount({ casTop: "all" });
   const allImpactCount = facetCount({ impact: "all" });
   const allTeamCount = facetCount({ team: "all" });
 
@@ -3531,7 +3934,7 @@ function renderPaperControls() {
   state.typeFilter = typeFilter.value;
 
   syncSelectOptions(problemFilter, [
-    { value: "all", label: ui("problemFieldPlaceholder") },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), problemFields.length) },
     ...problemFields
       .filter((field) => !state.problemFieldFilters.includes(field))
       .map((field) => ({
@@ -3544,7 +3947,7 @@ function renderPaperControls() {
   ], "all");
 
   syncSelectOptions(methodFilter, [
-    { value: "all", label: ui("methodFieldPlaceholder") },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), methodFields.length) },
     ...methodFields
       .filter((field) => !state.methodFieldFilters.includes(field))
       .map((field) => ({
@@ -3574,6 +3977,12 @@ function renderPaperControls() {
   ], state.casFilter);
   state.casFilter = casFilter.value;
 
+  syncSelectOptions(casTopFilter, [
+    { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), allCasTopCount) },
+    { value: "top", label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: "top" })) },
+  ], state.casTopFilter);
+  state.casTopFilter = casTopFilter.value;
+
   syncSelectOptions(impactFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), allImpactCount) },
     ...impactBands.map((band) => ({
@@ -3585,7 +3994,7 @@ function renderPaperControls() {
 
   syncSelectOptions(teamFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), allTeamCount) },
-    ...teams.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team })) })),
+    ...authors.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team })) })),
   ], state.teamFilter);
   state.teamFilter = teamFilter.value;
 
@@ -3608,6 +4017,7 @@ function renderPaperControls() {
       && !state.methodFieldFilters.length
       && state.jcrFilter === "all"
       && state.casFilter === "all"
+      && state.casTopFilter === "all"
       && state.impactFilter === "all"
       && state.teamFilter === "all"
       && state.sortFilter === "recent"
@@ -3654,6 +4064,16 @@ function renderPapers() {
       citationCopy.setAttribute("aria-label", publicationCopyActionLabel("ieee"));
       citationCopy.innerHTML = `${iconSvg("copy")}<span>${escapeHtml(ui("copyCitationAction"))}</span>`;
       copyMenu.appendChild(citationCopy);
+
+      if (publicationDoiText(paper)) {
+        const doiCopy = el("button", "publication-copy-button publication-copy-option");
+        doiCopy.type = "button";
+        doiCopy.dataset.copyPublicationId = paper.id;
+        doiCopy.dataset.copyFormat = "doi";
+        doiCopy.setAttribute("aria-label", publicationCopyActionLabel("doi"));
+        doiCopy.innerHTML = `${iconSvg("link")}<span>${escapeHtml(ui("copyDoiAction"))}</span>`;
+        copyMenu.appendChild(doiCopy);
+      }
 
       if (paper.bibtexText) {
         const bibtexCopy = el("button", "publication-copy-button publication-copy-button-bibtex publication-copy-option");
@@ -3737,6 +4157,16 @@ function renderPapers() {
     citationCopy.setAttribute("aria-label", publicationCopyActionLabel("ieee"));
     citationCopy.innerHTML = `${iconSvg("copy")}<span>${escapeHtml(ui("copyCitationAction"))}</span>`;
     copyMenu.appendChild(citationCopy);
+
+    if (publicationDoiText(paper)) {
+      const doiCopy = el("button", "publication-copy-button publication-copy-option");
+      doiCopy.type = "button";
+      doiCopy.dataset.copyPublicationId = paper.id;
+      doiCopy.dataset.copyFormat = "doi";
+      doiCopy.setAttribute("aria-label", publicationCopyActionLabel("doi"));
+      doiCopy.innerHTML = `${iconSvg("link")}<span>${escapeHtml(ui("copyDoiAction"))}</span>`;
+      copyMenu.appendChild(doiCopy);
+    }
 
     if (paper.bibtexText) {
       const bibtexCopy = el("button", "publication-copy-button publication-copy-button-bibtex publication-copy-option");
@@ -4000,6 +4430,7 @@ function bindControls() {
   const methodFilter = byId("method-filter");
   const jcrFilter = byId("jcr-filter");
   const casFilter = byId("cas-filter");
+  const casTopFilter = byId("cas-top-filter");
   const impactFilter = byId("impact-filter");
   const teamFilter = byId("venue-filter");
   const sortFilter = byId("sort-filter");
@@ -4046,6 +4477,11 @@ function bindControls() {
     renderPaperControls();
     renderPapers();
   });
+  casTopFilter?.addEventListener("change", (event) => {
+    state.casTopFilter = event.target.value;
+    renderPaperControls();
+    renderPapers();
+  });
   impactFilter?.addEventListener("change", (event) => {
     state.impactFilter = event.target.value;
     renderPaperControls();
@@ -4073,6 +4509,7 @@ function bindControls() {
     state.methodFieldFilters = [];
     state.jcrFilter = "all";
     state.casFilter = "all";
+    state.casTopFilter = "all";
     state.impactFilter = "all";
     state.teamFilter = "all";
     state.sortFilter = "recent";
@@ -4097,6 +4534,8 @@ function bindControls() {
       state.jcrFilter = "all";
     } else if (category === "cas") {
       state.casFilter = "all";
+    } else if (category === "casTop") {
+      state.casTopFilter = "all";
     } else if (category === "impact") {
       state.impactFilter = "all";
     } else if (category === "team") {
@@ -4197,11 +4636,120 @@ function bindFocusDesk() {
     const resetButton = event.target.closest("[data-focus-reset]");
     if (resetButton) {
       state.focusPrompt = "";
+      state.researchProblemFieldFilters = [];
+      state.researchMethodFieldFilters = [];
+      state.researchJcrFilter = "all";
+      state.researchCasFilter = "all";
+      state.researchCasTopFilter = "all";
+      state.researchImpactFilter = "all";
+      state.researchAuthorFilter = "all";
+      state.researchYearStart = "";
+      state.researchYearEnd = "";
       writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, "");
       renderDirectionCockpit();
       renderDirectionWorkspace();
       renderDomainSwitcher();
     }
+  });
+}
+
+function bindResearchLauncher() {
+  if (researchLauncherUiBound) return;
+  researchLauncherUiBound = true;
+
+  document.addEventListener("change", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    if (target.id === "research-problem-filter") {
+      const value = target.value;
+      if (value && value !== "all" && !state.researchProblemFieldFilters.includes(value)) {
+        state.researchProblemFieldFilters = [...state.researchProblemFieldFilters, value];
+      }
+      target.value = "all";
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
+    if (target.id === "research-method-filter") {
+      const value = target.value;
+      if (value && value !== "all" && !state.researchMethodFieldFilters.includes(value)) {
+        state.researchMethodFieldFilters = [...state.researchMethodFieldFilters, value];
+      }
+      target.value = "all";
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
+    if (target.id === "research-jcr-filter") {
+      state.researchJcrFilter = target.value;
+    } else if (target.id === "research-cas-filter") {
+      state.researchCasFilter = target.value;
+    } else if (target.id === "research-cas-top-filter") {
+      state.researchCasTopFilter = target.value;
+    } else if (target.id === "research-impact-filter") {
+      state.researchImpactFilter = target.value;
+    } else if (target.id === "research-author-filter") {
+      state.researchAuthorFilter = target.value;
+    } else {
+      return;
+    }
+
+    renderDirectionCockpit();
+    renderDirectionWorkspace();
+    renderDomainSwitcher();
+  });
+
+  document.addEventListener("input", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    if (target.id === "research-year-start") {
+      state.researchYearStart = String(target.value || "");
+      if (Number.parseInt(state.researchYearStart, 10) > Number.parseInt(state.researchYearEnd, 10)) {
+        state.researchYearEnd = state.researchYearStart;
+      }
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
+    if (target.id === "research-year-end") {
+      state.researchYearEnd = String(target.value || "");
+      if (Number.parseInt(state.researchYearEnd, 10) < Number.parseInt(state.researchYearStart, 10)) {
+        state.researchYearStart = state.researchYearEnd;
+      }
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+    }
+  });
+
+  document.addEventListener("click", async (event) => {
+    const launchButton = event.target.closest("[data-research-launch]");
+    if (!launchButton) return;
+
+    const promptInput = document.querySelector("[data-focus-prompt-input]");
+    state.focusPrompt = String(promptInput?.value || "").trim();
+    writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
+    const copied = await copyTextToClipboard(buildResearchBrief(adjustedDirections(), matchingResearchPapers()));
+    if (copied) {
+      const defaultLabel = ui("researchLaunchAction");
+      launchButton.textContent = ui("researchLaunchCopiedLabel");
+      launchButton.setAttribute("aria-label", ui("researchLaunchCopiedLabel"));
+      window.setTimeout(() => {
+        launchButton.textContent = defaultLabel;
+        launchButton.setAttribute("aria-label", defaultLabel);
+      }, 1400);
+    }
+    renderDirectionCockpit();
+    renderDirectionWorkspace();
+    renderDomainSwitcher();
   });
 }
 
@@ -4250,11 +4798,19 @@ function bindMetricCopyHandlers() {
 
     event.preventDefault();
     const publicationId = button.dataset.copyPublicationId || "";
-    const format = button.dataset.copyFormat === "bibtex" ? "bibtex" : "ieee";
+    const format = button.dataset.copyFormat === "bibtex"
+      ? "bibtex"
+      : button.dataset.copyFormat === "doi"
+        ? "doi"
+        : "ieee";
     const item = (domainData().papers || []).find((entry) => entry.id === publicationId);
     if (!item) return;
 
-    const payload = format === "bibtex" ? item.bibtexText : item.citationText;
+    const payload = format === "bibtex"
+      ? item.bibtexText
+      : format === "doi"
+        ? publicationDoiText(item)
+        : item.citationText;
     const copied = await copyTextToClipboard(payload || "");
     if (!copied) return;
 
@@ -4348,6 +4904,7 @@ function init() {
   bindControls();
   bindScrollTopButton();
   bindFocusDesk();
+  bindResearchLauncher();
   bindMetricCopyHandlers();
   renderAll();
   bindRevealObserver();

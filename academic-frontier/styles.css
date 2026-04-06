@@ -1155,6 +1155,43 @@ body[data-lang="ja"] .hero-role {
   gap: 10px;
 }
 
+.investigation-filter-row {
+  grid-column: auto;
+}
+
+.research-range-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.research-range-control {
+  display: grid;
+  gap: 8px;
+}
+
+.research-range-value {
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.research-range-input {
+  width: 100%;
+  accent-color: var(--teal);
+}
+
+.research-brief {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  background: rgba(var(--white-rgb), 0.72);
+  color: var(--ink);
+  white-space: pre-wrap;
+  line-height: 1.7;
+}
+
 .direction-priority-stack,
 .direction-score-grid,
 .direction-card-grid,
@@ -1503,6 +1540,7 @@ body[data-lang="ja"] .hero-role {
 #method-filter,
 #jcr-filter,
 #cas-filter,
+#cas-top-filter,
 #impact-filter,
 #venue-filter {
   min-width: 0;
@@ -2473,6 +2511,7 @@ body[data-lang="ja"] .hero-role {
   .direction-cockpit-grid,
   .direction-workspace-grid,
   .direction-workspace-summary,
+  .research-range-grid,
   .direction-meta-grid {
     grid-template-columns: 1fr;
   }
