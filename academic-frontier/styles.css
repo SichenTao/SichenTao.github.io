@@ -1488,7 +1488,7 @@ body[data-lang="ja"] .hero-role {
 
 .filter-control-row {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 10px;
   width: 100%;
   grid-column: 3;
@@ -1499,9 +1499,44 @@ body[data-lang="ja"] .hero-role {
   width: 100%;
 }
 
-#field-filter,
+#problem-filter,
+#method-filter,
 #venue-filter {
   min-width: 0;
+}
+
+.active-field-chip-row[hidden] {
+  display: none;
+}
+
+.chip-active-filter {
+  color: var(--ink);
+  border-color: rgba(var(--teal-rgb), 0.18);
+  background: rgba(var(--teal-rgb), 0.08);
+}
+
+.field-hash-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.field-hash-row-ledger {
+  margin: 10px 0 0;
+}
+
+.field-hash-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(var(--teal-rgb), 0.08);
+  border: 1px solid rgba(var(--teal-rgb), 0.14);
+  color: var(--teal);
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .filter-reset {

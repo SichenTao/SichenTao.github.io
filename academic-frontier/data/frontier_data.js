@@ -272,8 +272,21 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "problemFields": [
+          "Optimization"
+        ],
+        "methodFields": [
+          "AI",
+          "Evolutionary Computation",
+          "Machine Learning",
+          "Data-driven Learning"
+        ],
         "fields": [
-          "Data-driven Evolutionary Optimization"
+          "Optimization",
+          "AI",
+          "Evolutionary Computation",
+          "Machine Learning",
+          "Data-driven Learning"
         ],
         "topics": [],
         "venue": {
@@ -293,7 +306,10 @@ window.FRONTIER_DATA = {
           "IEEE Transactions on Evolutionary Computation",
           "Journal",
           "2026",
-          "Data-driven Evolutionary Optimization",
+          "Optimization",
+          "AI",
+          "Machine Learning",
+          "Data-driven Learning",
           "IF 12.0",
           "JCR Q1",
           "CAS Q1",
@@ -305,7 +321,10 @@ window.FRONTIER_DATA = {
         "IEEE Transactions on Evolutionary Computation",
         "Journal",
         "2026",
-        "Data-driven Evolutionary Optimization",
+        "Optimization",
+        "AI",
+        "Machine Learning",
+        "Data-driven Learning",
         "IF 12.0",
         "JCR Q1",
         "CAS Q1",
@@ -444,9 +463,21 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "problemFields": [
+          "Large-scale Optimization",
+          "Sorting and Data Processing"
+        ],
+        "methodFields": [
+          "AI",
+          "Evolutionary Computation",
+          "HPC"
+        ],
         "fields": [
           "Large-scale Optimization",
-          "High-performance Computing"
+          "Sorting and Data Processing",
+          "AI",
+          "Evolutionary Computation",
+          "HPC"
         ],
         "topics": [],
         "venue": {
@@ -466,7 +497,9 @@ window.FRONTIER_DATA = {
           "Journal",
           "2025",
           "Large-scale Optimization",
-          "High-performance Computing",
+          "Sorting and Data Processing",
+          "AI",
+          "HPC",
           "IF 0.6",
           "JCR N/A",
           "CAS Q4"
@@ -478,7 +511,9 @@ window.FRONTIER_DATA = {
         "Journal",
         "2025",
         "Large-scale Optimization",
-        "High-performance Computing",
+        "Sorting and Data Processing",
+        "AI",
+        "HPC",
         "IF 0.6",
         "JCR N/A",
         "CAS Q4"
@@ -620,9 +655,21 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
-        "fields": [
+        "problemFields": [
+          "Optimization",
           "Multi-objective Optimization",
           "Large-scale Optimization"
+        ],
+        "methodFields": [
+          "AI",
+          "Evolutionary Computation"
+        ],
+        "fields": [
+          "Optimization",
+          "Multi-objective Optimization",
+          "Large-scale Optimization",
+          "AI",
+          "Evolutionary Computation"
         ],
         "topics": [],
         "venue": {
@@ -641,8 +688,10 @@ window.FRONTIER_DATA = {
           "Swarm and Evolutionary Computation",
           "Journal",
           "2025",
+          "Optimization",
           "Multi-objective Optimization",
           "Large-scale Optimization",
+          "AI",
           "IF 8.5",
           "JCR Q1",
           "CAS Q2"
@@ -653,8 +702,10 @@ window.FRONTIER_DATA = {
         "Swarm and Evolutionary Computation",
         "Journal",
         "2025",
+        "Optimization",
         "Multi-objective Optimization",
         "Large-scale Optimization",
+        "AI",
         "IF 8.5",
         "JCR Q1",
         "CAS Q2"
@@ -794,9 +845,21 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
-        "fields": [
+        "problemFields": [
+          "Optimization",
           "Multi-objective Optimization",
           "Robotics Optimization"
+        ],
+        "methodFields": [
+          "AI",
+          "Evolutionary Computation"
+        ],
+        "fields": [
+          "Optimization",
+          "Multi-objective Optimization",
+          "Robotics Optimization",
+          "AI",
+          "Evolutionary Computation"
         ],
         "topics": [],
         "venue": {
@@ -815,8 +878,10 @@ window.FRONTIER_DATA = {
           "Swarm and Evolutionary Computation",
           "Journal",
           "2025",
+          "Optimization",
           "Multi-objective Optimization",
           "Robotics Optimization",
+          "AI",
           "IF 8.5",
           "JCR Q1",
           "CAS Q2"
@@ -827,8 +892,10 @@ window.FRONTIER_DATA = {
         "Swarm and Evolutionary Computation",
         "Journal",
         "2025",
+        "Optimization",
         "Multi-objective Optimization",
         "Robotics Optimization",
+        "AI",
         "IF 8.5",
         "JCR Q1",
         "CAS Q2"
@@ -970,9 +1037,19 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
-        "fields": [
+        "problemFields": [
           "Large-scale Optimization",
           "Combinatorial Optimization"
+        ],
+        "methodFields": [
+          "AI",
+          "Evolutionary Computation"
+        ],
+        "fields": [
+          "Large-scale Optimization",
+          "Combinatorial Optimization",
+          "AI",
+          "Evolutionary Computation"
         ],
         "topics": [],
         "venue": {
@@ -994,6 +1071,7 @@ window.FRONTIER_DATA = {
           "2025",
           "Large-scale Optimization",
           "Combinatorial Optimization",
+          "AI",
           "IF 7.5",
           "JCR Q1",
           "CAS Q1",
@@ -1007,6 +1085,7 @@ window.FRONTIER_DATA = {
         "2025",
         "Large-scale Optimization",
         "Combinatorial Optimization",
+        "AI",
         "IF 7.5",
         "JCR Q1",
         "CAS Q1",
@@ -1147,9 +1226,25 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "problemFields": [
+          "Optimization"
+        ],
+        "methodFields": [
+          "AI",
+          "Evolutionary Computation",
+          "Reinforcement Learning",
+          "HPC",
+          "GPU Computing",
+          "Machine Learning"
+        ],
         "fields": [
-          "GPU Acceleration",
-          "Evolutionary Reinforcement Learning"
+          "Optimization",
+          "AI",
+          "Evolutionary Computation",
+          "Reinforcement Learning",
+          "HPC",
+          "GPU Computing",
+          "Machine Learning"
         ],
         "topics": [],
         "venue": {
@@ -1166,8 +1261,12 @@ window.FRONTIER_DATA = {
           "ACM Transactions on Evolutionary Learning and Optimization",
           "Journal",
           "2025",
-          "GPU Acceleration",
-          "Evolutionary Reinforcement Learning",
+          "Optimization",
+          "AI",
+          "Reinforcement Learning",
+          "HPC",
+          "GPU Computing",
+          "Machine Learning",
           "IF __not_listed__"
         ]
       },
@@ -1176,8 +1275,12 @@ window.FRONTIER_DATA = {
         "ACM Transactions on Evolutionary Learning and Optimization",
         "Journal",
         "2025",
-        "GPU Acceleration",
-        "Evolutionary Reinforcement Learning",
+        "Optimization",
+        "AI",
+        "Reinforcement Learning",
+        "HPC",
+        "GPU Computing",
+        "Machine Learning",
         "IF __not_listed__"
       ]
     },
@@ -1315,9 +1418,23 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "problemFields": [
+          "Optimization",
+          "Multi-objective Optimization"
+        ],
+        "methodFields": [
+          "AI",
+          "Evolutionary Computation",
+          "HPC",
+          "GPU Computing"
+        ],
         "fields": [
+          "Optimization",
           "Multi-objective Optimization",
-          "GPU Acceleration"
+          "AI",
+          "Evolutionary Computation",
+          "HPC",
+          "GPU Computing"
         ],
         "topics": [],
         "venue": {
@@ -1332,8 +1449,11 @@ window.FRONTIER_DATA = {
           "2025 IEEE Congress on Evolutionary Computation (CEC)",
           "Conference",
           "2025",
+          "Optimization",
           "Multi-objective Optimization",
-          "GPU Acceleration"
+          "AI",
+          "HPC",
+          "GPU Computing"
         ]
       },
       "tags": [
@@ -1341,8 +1461,11 @@ window.FRONTIER_DATA = {
         "2025 IEEE Congress on Evolutionary Computation (CEC)",
         "Conference",
         "2025",
+        "Optimization",
         "Multi-objective Optimization",
-        "GPU Acceleration"
+        "AI",
+        "HPC",
+        "GPU Computing"
       ]
     },
     {
@@ -1483,9 +1606,21 @@ window.FRONTIER_DATA = {
         "domains": [
           "Evolutionary Computation"
         ],
+        "problemFields": [
+          "Optimization"
+        ],
+        "methodFields": [
+          "AI",
+          "Neuroevolution",
+          "HPC",
+          "GPU Computing"
+        ],
         "fields": [
-          "GPU Acceleration",
-          "Neuroevolution"
+          "Optimization",
+          "AI",
+          "Neuroevolution",
+          "HPC",
+          "GPU Computing"
         ],
         "topics": [],
         "venue": {
@@ -1502,8 +1637,11 @@ window.FRONTIER_DATA = {
           "ACM Transactions on Evolutionary Learning and Optimization",
           "Journal",
           "2025",
-          "GPU Acceleration",
+          "Optimization",
+          "AI",
           "Neuroevolution",
+          "HPC",
+          "GPU Computing",
           "IF __not_listed__"
         ]
       },
@@ -1512,8 +1650,11 @@ window.FRONTIER_DATA = {
         "ACM Transactions on Evolutionary Learning and Optimization",
         "Journal",
         "2025",
-        "GPU Acceleration",
+        "Optimization",
+        "AI",
         "Neuroevolution",
+        "HPC",
+        "GPU Computing",
         "IF __not_listed__"
       ]
     }
