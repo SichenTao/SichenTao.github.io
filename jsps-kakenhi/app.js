@@ -618,14 +618,6 @@ I18N.ja = {
   },
 };
 
-const state = {
-  locale: getStoredLocale(),
-  theme: getStoredTheme(),
-  data: null,
-  page: document.body?.dataset.page || "home",
-  filters: getStoredFilters(),
-};
-
 const LOCALE_CATALOG = {
   en: { label: "En", name: "English", lang: "en" },
   zh: { label: "中", name: "中文", lang: "zh-CN" },
@@ -639,6 +631,14 @@ const THEME_OPTIONS = [
 ];
 
 const THEME_CATALOG = Object.fromEntries(THEME_OPTIONS.map((option) => [option.value, option]));
+
+const state = {
+  locale: getStoredLocale(),
+  theme: getStoredTheme(),
+  data: null,
+  page: document.body?.dataset.page || "home",
+  filters: getStoredFilters(),
+};
 
 document.addEventListener("DOMContentLoaded", init);
 

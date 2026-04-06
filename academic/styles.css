@@ -2605,10 +2605,11 @@ a {
 }
 
 .filter-chip-row {
-  display: grid;
-  grid-template-columns: 104px minmax(0, 1fr);
-  align-items: start;
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  column-gap: 14px;
+  row-gap: 10px;
   margin-bottom: 16px;
 }
 
@@ -2618,12 +2619,14 @@ a {
   align-items: center;
   gap: 8px;
   min-height: 42px;
+  flex: 0 0 auto;
+  min-width: max-content;
   color: var(--clay);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   white-space: nowrap;
-  width: 104px;
+  width: auto;
 }
 
 .filter-toolbar-label .ui-icon,
@@ -2633,6 +2636,8 @@ a {
 }
 
 .filter-chip-row .chip-row {
+  flex: 1 1 0;
+  min-width: 0;
   margin-bottom: 0;
 }
 
@@ -3288,12 +3293,17 @@ a {
   }
 
   .filter-chip-row {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: stretch;
     gap: 8px;
   }
 
   .filter-chip-label {
     min-height: 0;
+  }
+
+  .filter-chip-row .chip-row {
+    width: 100%;
   }
 
   .filter-control-row {
