@@ -240,7 +240,7 @@
   ],
   "featured_projects": [
     {
-      "title": "Academic Frontier",
+      "title": "学术前沿",
       "tag": "Research Radar",
       "description": "Local-first research radar for tracking frontier teams, papers, repositories, and emerging directions across multiple domains.",
       "url": "https://github.com/SichenTao/frontier-radar"

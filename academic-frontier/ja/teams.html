@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="tohoku">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="学术前沿 は、複数領域の活発なチーム、強いシグナル、高価値な論文を見つけ、次に何を深掘りすべきかを判断するためのローカルファーストな総覧です。"/>
+<meta name="theme-color" content="#f3eef9"/>
+<title>学术前沿 · チーム</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;family=Sora:wght@300;400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+window.FRONTIER_RADAR_DEFAULT_LANGUAGE = "ja";
+window.FRONTIER_RADAR_DEFAULT_THEME = "tohoku";
+window.FRONTIER_RADAR_LOCALE_HREFS = {"en": "../teams.html", "zh": "../zh/teams.html", "ja": "./teams.html"};
+(function() {
+  var themeCatalog = {"tohoku": "#f3eef9", "toyama": "#edf4f7", "usst": "#f7eded"};
+  var localeCatalog = window.FRONTIER_RADAR_LOCALE_HREFS || {};
+  var currentLocale = "ja";
+  var theme = "tohoku";
+  try {
+    var savedLocale = window.localStorage.getItem("sichen-homepage-locale") || window.localStorage.getItem("学术前沿-language") || window.localStorage.getItem("frontier-radar-language");
+    if (savedLocale && localeCatalog[savedLocale] && savedLocale !== currentLocale) {
+      var redirectUrl = new URL(localeCatalog[savedLocale], window.location.href);
+      redirectUrl.search = window.location.search;
+      redirectUrl.hash = window.location.hash;
+      if (redirectUrl.pathname !== window.location.pathname) {
+        window.location.replace(redirectUrl.toString());
+        return;
+      }
+    }
+    var queryTheme = new URLSearchParams(window.location.search).get("theme");
+    if (queryTheme && themeCatalog[queryTheme]) {
+      theme = queryTheme;
+    } else {
+      var savedTheme = window.localStorage.getItem("sichen-homepage-theme");
+      if (savedTheme && themeCatalog[savedTheme]) {
+        theme = savedTheme;
+      }
+    }
+  } catch (error) {}
+  document.documentElement.dataset.theme = theme;
+  var themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute("content", themeCatalog[theme] || themeCatalog.tohoku);
+  window.FRONTIER_RADAR_DEFAULT_THEME = theme;
+})();
+</script>
+<link rel="stylesheet" href="../styles.css?v=20260406-172359"/>
+<link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-172359"/>
+<link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-172359"/>
+<script defer src="../data/frontier_data.js?v=20260406-172359"></script>
+<script defer src="/assets/shared/homepage-shell.js?v=20260406-172359"></script>
+<script defer src="../app.js?v=20260406-172359"></script>
+</head>
+<body class="is-ready" data-page="teams" data-default-language="ja">
+<div class="page-wash"></div>
+<div class="page-grid"></div>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+<header class="shell site-header"><div class="header-tools"><div class="header-controls-anchor" aria-hidden="true"></div><div class="header-controls" aria-label="表示コントロール"><div class="locale-switcher control-switcher" id="localeSwitcher" role="group" aria-label="言語"><button class="locale-trigger" type="button" data-locale-trigger aria-haspopup="true" aria-expanded="false" aria-label="言語オプションを表示" title="言語オプションを表示"><span class="locale-label">日</span></button><div class="locale-tray" role="group" aria-label="言語選択"><a class="locale-chip" href="../teams.html" data-locale-choice="en" aria-label="English" title="English"><span class="locale-label">En</span></a><a class="locale-chip" href="../zh/teams.html" data-locale-choice="zh" aria-label="中文" title="中文"><span class="locale-label">中</span></a><a class="locale-chip is-active" href="./teams.html" data-locale-choice="ja" aria-label="日本語" title="日本語" aria-current="page"><span class="locale-label">日</span></a></div></div><div class="theme-switcher control-switcher" id="themeSwitcher" role="group" aria-label="配色テーマ"><button class="theme-trigger" type="button" data-theme-trigger aria-haspopup="true" aria-expanded="false" aria-label="配色を切り替える" title="配色を切り替える"><span class="theme-swatch theme-tohoku" data-theme-current-swatch aria-hidden="true"></span></button><div class="theme-tray" role="group" aria-label="配色選択"><button class="theme-chip is-active" type="button" data-theme-choice="tohoku" aria-pressed="true" aria-label="東北大学" title="東北大学"><span class="theme-swatch theme-tohoku" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="toyama" aria-pressed="false" aria-label="富山大学" title="富山大学"><span class="theme-swatch theme-toyama" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="usst" aria-pressed="false" aria-label="上海理工大学" title="上海理工大学"><span class="theme-swatch theme-usst" aria-hidden="true"></span></button></div></div></div><nav class="topnav" aria-label="主要ナビゲーション"><a href="./index.html" id="navOverview"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg><span>概観</span></a><a href="./papers.html" id="navPapers"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-publications"></use></svg><span>論文</span></a><a href="./signals.html" id="navSignals"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-research"></use></svg><span>シグナル</span></a><a href="./teams.html" id="navTeams" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-profiles"></use></svg><span>チーム</span></a><a href="./downloads.html" id="navDownloads"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-projects"></use></svg><span>取得</span></a><a href="./guide.html" id="navGuide"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg><span>ガイド</span></a></nav></div></header>
+<main class="shell layout"><section class="panel section-card reveal" id="teams" aria-labelledby="teams-title"><div class="section-head"><div><p class="eyebrow" id="teamsKicker">追跡チーム</p><h2 id="teams-title">継続監視したいチームと研究者</h2></div><p class="section-note" id="teamsNote">知名度よりも証拠密度を優先。</p></div><div class="card-grid" id="teamGrid"><article class="team-card"><div class="tag-row"><span class="tag">香港</span><span class="tag is-strong">GPU ネイティブな EC システム</span></div><h4>Ran Cheng</h4><p class="team-thesis emphasis-surface rich-text">Ran Cheng（Hong Kong Polytechnic University）は継続的に追う価値があります。焦点はGPU ネイティブな進化システム、多目的最適化、オープンソース EC 基盤です。現在のフィードでは 2024-01-01 以降の最近の EC 論文を 4 件取得しています。コード面のシグナルとして EMI-Group/evox（2085★、最終更新 2026-03-30） も確認できます。</p><ul class="mini-list"><li><span class="rich-text">2024-01-01 以降に EC 関連論文を 4 件取得</span></li><li><span class="rich-text">OpenAlex h-index 54、直近 2 年平均被引用度 3.06</span></li><li><span class="rich-text">EMI-Group/evox（2085★、最終更新 2026-03-30）</span></li><li><span class="rich-text">EMI-Group/evogp（262★、最終更新 2026-02-28）</span></li></ul><p class="publication-note publication-note-accent"><strong class="accent-strong">リポジトリ：</strong> <span class="rich-text">EMI-Group/evox（2085★、最終更新 2026-03-30）, EMI-Group/evogp（262★、最終更新 2026-02-28）, EMI-Group/evogo（8★、最終更新 2026-02-13）, EMI-Group/metade（220★、最終更新 2026-02-09）</span><br/><strong class="accent-strong">論文：</strong> <span class="rich-text">進化的生成最適化：生成学習による完全データ駆動型進化最適化へ, EvoRL：進化的強化学習のための GPU 加速フレームワーク</span></p></article><article class="team-card"><div class="tag-row"><span class="tag">米国</span><span class="tag is-strong">多目的最適化ツールチェーン</span></div><h4>Julian Blank</h4><p class="team-thesis emphasis-surface rich-text">Julian Blank（Michigan State University）は継続的に追う価値があります。焦点は並列多目的最適化と実用的な最適化ツールです。現在のフィードでは 2024-01-01 以降の最近の EC 論文を 2 件取得しています。コード面のシグナルとして anyoptimization/pymoo（2833★、最終更新 2026-02-22） も確認できます。</p><ul class="mini-list"><li><span class="rich-text">2024-01-01 以降に EC 関連論文を 2 件取得</span></li><li><span class="rich-text">OpenAlex h-index 11、直近 2 年平均被引用度 7.67</span></li><li><span class="rich-text">anyoptimization/pymoo（2833★、最終更新 2026-02-22）</span></li></ul><p class="publication-note publication-note-accent"><strong class="accent-strong">リポジトリ：</strong> <span class="rich-text">anyoptimization/pymoo（2833★、最終更新 2026-02-22）</span><br/><strong class="accent-strong">論文：</strong> <span class="rich-text">最新論文：高コスト・低コストの目的と制約に対する並列多目的最適化, 高コスト・低コストの目的と制約に対する並列多目的最適化</span></p></article><article class="team-card"><div class="tag-row"><span class="tag">インド</span><span class="tag is-strong">多目的最適化の基盤</span></div><h4>Kalyanmoy Deb</h4><p class="team-thesis emphasis-surface rich-text">Kalyanmoy Deb（Indian Institute of Technology Madras）は継続的に追う価値があります。焦点は多目的最適化、EC 問題構造、長く効くベンチマーク発想です。現在のフィードでは 2024-01-01 以降の最近の EC 論文を 4 件取得しています。</p><ul class="mini-list"><li><span class="rich-text">2024-01-01 以降に EC 関連論文を 4 件取得</span></li><li><span class="rich-text">OpenAlex h-index 118、直近 2 年平均被引用度 1.53</span></li></ul><p class="publication-note publication-note-accent"><strong class="accent-strong">リポジトリ：</strong> <span class="rich-text">追跡対象の GitHub リポジトリはまだ設定されていません</span><br/><strong class="accent-strong">論文：</strong> <span class="rich-text">EvoSort：大規模 HPC 向け遺伝的アルゴリズムベース適応並列ソート枠組み, 決定変数グルーピングに基づく大規模多目的最適化のための適応重み最適化アルゴリズム</span></p></article></div></section></main>
+<footer class="shell footer-shell reveal"><div class="footer-panel footer-panel-compact"><div class="footer-actions"><a class="button button-primary" href="./index.html" id="footerBackHome">学术前沿</a></div></div></footer><button class="scroll-top-button" id="scrollTopButton" type="button" aria-label="トップへ戻る"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5l-6 6 1.4 1.4 3.6-3.6V19h2V9.3l3.6 3.6 1.4-1.4-6-6z" fill="currentColor"/></svg></button>
+</body>
+</html>

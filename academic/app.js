@@ -2374,7 +2374,7 @@ function renderPortalReturnControl() {
       tray: "Site sections",
       portal: "Homepage portal",
       academic: "Personal homepage",
-      radar: "Academic Frontier",
+      radar: "学术前沿",
       jsps: "JSPS KAKENHI",
     },
     zh: {
@@ -2390,12 +2390,12 @@ function renderPortalReturnControl() {
       tray: "機能ページ",
       portal: "ホームポータル",
       academic: "個人ホームページ",
-      radar: "フロンティアレーダー",
+      radar: "学术前沿",
       jsps: "JSPS 科研費",
     },
   }[resolveLocaleName() || "en"];
 
-  const currentPath = window.location.pathname;
+  const currentPath = decodeURIComponent(window.location.pathname);
   const items = [
     {
       href: "/",
@@ -2411,10 +2411,10 @@ function renderPortalReturnControl() {
       extraClass: "portal-chip--portrait",
     },
     {
-      href: "/frontier-radar/",
+      href: "/academic-frontier/",
       label: labels.radar,
-      icon: '<img class="portal-chip-logo" src="/frontier-radar/favicon.svg" alt="" loading="lazy" />',
-      active: currentPath.startsWith("/frontier-radar/"),
+      icon: '<img class="portal-chip-logo" src="/academic-frontier/favicon.svg" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/academic-frontier/"),
     },
     {
       href: "/jsps-kakenhi/",

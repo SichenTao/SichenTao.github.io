@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="tohoku">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="学术前沿 は、複数領域の活発なチーム、強いシグナル、高価値な論文を見つけ、次に何を深掘りすべきかを判断するためのローカルファーストな総覧です。"/>
+<meta name="theme-color" content="#f3eef9"/>
+<title>学术前沿 · シグナル</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;family=Sora:wght@300;400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+window.FRONTIER_RADAR_DEFAULT_LANGUAGE = "ja";
+window.FRONTIER_RADAR_DEFAULT_THEME = "tohoku";
+window.FRONTIER_RADAR_LOCALE_HREFS = {"en": "../signals.html", "zh": "../zh/signals.html", "ja": "./signals.html"};
+(function() {
+  var themeCatalog = {"tohoku": "#f3eef9", "toyama": "#edf4f7", "usst": "#f7eded"};
+  var localeCatalog = window.FRONTIER_RADAR_LOCALE_HREFS || {};
+  var currentLocale = "ja";
+  var theme = "tohoku";
+  try {
+    var savedLocale = window.localStorage.getItem("sichen-homepage-locale") || window.localStorage.getItem("学术前沿-language") || window.localStorage.getItem("frontier-radar-language");
+    if (savedLocale && localeCatalog[savedLocale] && savedLocale !== currentLocale) {
+      var redirectUrl = new URL(localeCatalog[savedLocale], window.location.href);
+      redirectUrl.search = window.location.search;
+      redirectUrl.hash = window.location.hash;
+      if (redirectUrl.pathname !== window.location.pathname) {
+        window.location.replace(redirectUrl.toString());
+        return;
+      }
+    }
+    var queryTheme = new URLSearchParams(window.location.search).get("theme");
+    if (queryTheme && themeCatalog[queryTheme]) {
+      theme = queryTheme;
+    } else {
+      var savedTheme = window.localStorage.getItem("sichen-homepage-theme");
+      if (savedTheme && themeCatalog[savedTheme]) {
+        theme = savedTheme;
+      }
+    }
+  } catch (error) {}
+  document.documentElement.dataset.theme = theme;
+  var themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute("content", themeCatalog[theme] || themeCatalog.tohoku);
+  window.FRONTIER_RADAR_DEFAULT_THEME = theme;
+})();
+</script>
+<link rel="stylesheet" href="../styles.css?v=20260406-172359"/>
+<link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-172359"/>
+<link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-172359"/>
+<script defer src="../data/frontier_data.js?v=20260406-172359"></script>
+<script defer src="/assets/shared/homepage-shell.js?v=20260406-172359"></script>
+<script defer src="../app.js?v=20260406-172359"></script>
+</head>
+<body class="is-ready" data-page="signals" data-default-language="ja">
+<div class="page-wash"></div>
+<div class="page-grid"></div>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+<header class="shell site-header"><div class="header-tools"><div class="header-controls-anchor" aria-hidden="true"></div><div class="header-controls" aria-label="表示コントロール"><div class="locale-switcher control-switcher" id="localeSwitcher" role="group" aria-label="言語"><button class="locale-trigger" type="button" data-locale-trigger aria-haspopup="true" aria-expanded="false" aria-label="言語オプションを表示" title="言語オプションを表示"><span class="locale-label">日</span></button><div class="locale-tray" role="group" aria-label="言語選択"><a class="locale-chip" href="../signals.html" data-locale-choice="en" aria-label="English" title="English"><span class="locale-label">En</span></a><a class="locale-chip" href="../zh/signals.html" data-locale-choice="zh" aria-label="中文" title="中文"><span class="locale-label">中</span></a><a class="locale-chip is-active" href="./signals.html" data-locale-choice="ja" aria-label="日本語" title="日本語" aria-current="page"><span class="locale-label">日</span></a></div></div><div class="theme-switcher control-switcher" id="themeSwitcher" role="group" aria-label="配色テーマ"><button class="theme-trigger" type="button" data-theme-trigger aria-haspopup="true" aria-expanded="false" aria-label="配色を切り替える" title="配色を切り替える"><span class="theme-swatch theme-tohoku" data-theme-current-swatch aria-hidden="true"></span></button><div class="theme-tray" role="group" aria-label="配色選択"><button class="theme-chip is-active" type="button" data-theme-choice="tohoku" aria-pressed="true" aria-label="東北大学" title="東北大学"><span class="theme-swatch theme-tohoku" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="toyama" aria-pressed="false" aria-label="富山大学" title="富山大学"><span class="theme-swatch theme-toyama" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="usst" aria-pressed="false" aria-label="上海理工大学" title="上海理工大学"><span class="theme-swatch theme-usst" aria-hidden="true"></span></button></div></div></div><nav class="topnav" aria-label="主要ナビゲーション"><a href="./index.html" id="navOverview"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg><span>概観</span></a><a href="./papers.html" id="navPapers"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-publications"></use></svg><span>論文</span></a><a href="./signals.html" id="navSignals" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-research"></use></svg><span>シグナル</span></a><a href="./teams.html" id="navTeams"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-profiles"></use></svg><span>チーム</span></a><a href="./downloads.html" id="navDownloads"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-projects"></use></svg><span>取得</span></a><a href="./guide.html" id="navGuide"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg><span>ガイド</span></a></nav></div></header>
+<main class="shell layout"><section class="panel section-card reveal" id="domains" aria-labelledby="domains-title"><div class="section-head"><div><p class="eyebrow" id="domainsKicker">分野フォーカス</p><h2 id="domains-title">より深く追うべき方向</h2></div><p class="section-note emphasis-signal" id="domainSummary">高優先度 · 勢い 96/100</p></div><div class="signal-layout"><article class="feature-card highlight-primary"><div class="subhead"><h3 id="whyThisDomainMattersLabel">なぜこのレーンが重要か</h3></div><p id="domainThesis" class="rich-text">最初のライブ収集スライスでは、オープンソースのアルゴリズム基盤、多目的最適化、GPU ネイティブな進化システムを中心に、研究者起点の EC シグナルを追跡します。論文を出すだけでなく、再利用可能な基盤や現実的な次の方向性を形作っている人を追うのが目的です。</p><ul id="domainQuestions" class="mini-list"><li><span class="rich-text">どの EC 研究者が、強い手法と持続するコード・基盤を結び付け続けているのか。</span></li><li><span class="rich-text">フロンティアは、ベンチマークでの勝利から、拡張可能で再利用可能なシステムへどう移っているのか。</span></li><li><span class="rich-text">どの最近の論文が、孤立したデモではなく新しい貢献の本当の出発点に見えるか。</span></li></ul></article><article class="feature-card highlight-secondary"><div class="subhead"><h3 id="signalsToWatchLabel">次に見るべきもの</h3></div><p id="watchSignalsTitle" class="warm-strong">行動を起こすべきシグナル</p><ul id="watchSignalsList" class="mini-list"><li><span class="rich-text">追跡対象から出ている最近の TEVC、GECCO、Swarm and Evolutionary Computation 論文</span></li><li><span class="rich-text">公開後も意味のある更新が続いている公開リポジトリ</span></li><li><span class="rich-text">ローカルアーカイブへ自動取得できるオープンアクセス PDF</span></li></ul></article></div></section><section class="panel section-card reveal" id="signals" aria-labelledby="trend-title"><div class="section-head"><div><p class="eyebrow" id="trendKicker">最新シグナル</p><h2 id="trend-title">いま確認すべき強いシグナル</h2></div></div><div class="card-grid" id="trendStack"><article class="trend-card"><div class="tag-row"><span class="tag is-strong">生きたコード信号</span><span class="tag is-warm">直近 120 日で更新のあった追跡リポジトリは 5 件</span></div><h4>オープンソース EC スタックはいまもレバレッジが積み上がる中心にある</h4><p class="rich-text">強い EC シグナルは論文だけではありません。EvoX や pymoo のような再利用可能なコードベースに支えられ、公開後も動き続ける論文です。</p><p class="publication-note publication-note-accent"><strong class="warm-strong">緊張点：</strong> <span class="rich-text">ツールの質は向上していますが、有望に見える多くの論文が、依然として持続的な公開システムへはつながっていません。</span></p></article><article class="trend-card"><div class="tag-row"><span class="tag is-strong">手法圧力</span><span class="tag is-warm">今回の取得分には最近の多目的論文が 2 本</span></div><h4>多目的最適化はいまも生きたフロンティアの中核である</h4><p class="rich-text">最近の活動は依然として多目的最適化に集中しており、特に手法が並列化され、実用的になり、実際の工学ワークフローへ接続しやすくなる領域で顕著です。</p><p class="publication-note publication-note-accent"><strong class="warm-strong">緊張点：</strong> <span class="rich-text">多目的最適化の研究は手法寄りになりがちで、より難しい問いは、どのアイデアが現実的な評価と実運用に耐えるかです。</span></p></article><article class="trend-card"><div class="tag-row"><span class="tag is-strong">ワークフローのギャップ</span><span class="tag is-warm">取得済み 8 本のうち PDF 即取得可能なのは 2 本</span></div><h4>論文取得のばらつきは大きく、ブラウザ自動化を導入する十分な理由がある</h4><p class="rich-text">EC のように比較的輪郭のはっきりした分野でも、すぐ開ける重要項目がある一方で、出版社アクセスや手作業のブラウザ操作を要する項目もあります。</p><p class="publication-note publication-note-accent"><strong class="warm-strong">緊張点：</strong> <span class="rich-text">まさにここが、OpenClaw 駆動のダウンロードワークフローによって読書 backlog を本当のアーカイブへ変えられるポイントです。</span></p></article></div></section></main>
+<footer class="shell footer-shell reveal"><div class="footer-panel footer-panel-compact"><div class="footer-actions"><a class="button button-primary" href="./index.html" id="footerBackHome">学术前沿</a></div></div></footer><button class="scroll-top-button" id="scrollTopButton" type="button" aria-label="トップへ戻る"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5l-6 6 1.4 1.4 3.6-3.6V19h2V9.3l3.6 3.6 1.4-1.4-6-6z" fill="currentColor"/></svg></button>
+</body>
+</html>
