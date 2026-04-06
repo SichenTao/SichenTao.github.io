@@ -3505,6 +3505,12 @@ a {
   border-color: rgba(var(--clay-rgb), 0.14);
 }
 
+.portal-status-suspended {
+  background: rgba(var(--clay-rgb), 0.14);
+  color: var(--clay);
+  border-color: rgba(var(--clay-rgb), 0.22);
+}
+
 .portal-status-reference,
 .portal-status-unknown {
   background: rgba(var(--gold-rgb), 0.12);
@@ -3634,6 +3640,36 @@ a {
 
 .portal-list li + li {
   margin-top: 8px;
+}
+
+.portal-history-groups {
+  display: grid;
+  gap: 12px;
+}
+
+.portal-history-group {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.78), rgba(var(--white-rgb), 0.52)),
+    var(--surface-strong);
+}
+
+.portal-history-group h5 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.portal-history-group .portal-list {
+  margin-top: 2px;
+}
+
+.portal-history-links {
+  padding-left: 18px;
 }
 
 .portal-inline-muted {

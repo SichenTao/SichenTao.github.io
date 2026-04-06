@@ -2,31 +2,31 @@ window.KAKENHI_PORTAL_DATA = {
   "site": {
     "title": "JSPS KAKENHI Grant Portal",
     "snapshot_date": "2026-04-07",
-    "generated_at": "2026-04-07T00:57:26+09:00"
+    "generated_at": "2026-04-07T02:12:09+09:00"
   },
   "overview": {
     "snapshot_date": "2026-04-07",
-    "open_program_count": 2,
-    "priority_program_count": 14,
+    "open_program_count": 8,
+    "priority_program_count": 21,
     "form_count": 23,
     "next_deadline": {
-      "id": "startup_support-deadline",
-      "program_id": "startup_support",
-      "program_title": "研究活動スタート支援",
-      "program_title_ja": "研究活動スタート支援",
-      "program_title_zh": "研究活动启动支援",
-      "program_title_en": "Research Activity Start-up Support",
-      "theme": "toyama",
+      "id": "invitational_fellowships_for_research_in_japan-deadline",
+      "program_id": "invitational_fellowships_for_research_in_japan",
+      "program_title": "外国人招へい研究者（長期・短期）",
+      "program_title_ja": "外国人招へい研究者（長期・短期）",
+      "program_title_zh": "外国人招聘研究者（长期／短期）",
+      "program_title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term)",
+      "theme": "usst",
       "type": "deadline",
       "title_ja": "JSPS 締切",
       "title_zh": "JSPS 截止",
       "title_en": "JSPS deadline",
-      "date": "2026-05-08",
-      "datetime": "2026-05-08T16:30:00+09:00",
+      "date": "2026-04-28",
+      "datetime": "2026-04-28T17:00:00+09:00",
       "status": "upcoming",
-      "note_ja": "研究活動スタート支援の JSPS 公式締切です。",
-      "note_zh": "研究活动启动支援 的 JSPS 官方截止时间。",
-      "note_en": "Official JSPS deadline for Research Activity Start-up Support."
+      "note_ja": "外国人招へい研究者（長期・短期）の JSPS 公式締切です。",
+      "note_zh": "外国人招聘研究者（长期／短期） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Invitational Fellowships for Research in Japan (Long-Term and Short-Term)."
     }
   },
   "programs": [
@@ -325,7 +325,58 @@ window.KAKENHI_PORTAL_DATA = {
         "研究活動スタート支援",
         "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について",
         "S-22"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 2 件を保存。",
+          "summary_zh": "保存了 2 个相关页面。",
+          "summary_en": "2 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "22_startup_support__download.html",
+              "href": "external/jsps/2026-04-07/22_startup_support__download.html"
+            },
+            {
+              "title": "22_startup_support__index.html",
+              "href": "external/jsps/2026-04-07/22_startup_support__index.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-04-03 スナップショット",
+          "title_zh": "2026-04-03 快照",
+          "title_en": "2026-04-03 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "startup_support.html",
+              "href": "external/jsps/2026-04-03/startup_support.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-03-24 スナップショット",
+          "title_zh": "2026-03-24 快照",
+          "title_en": "2026-03-24 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "startup_support.html",
+              "href": "external/jsps/2026-03-24/startup_support.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "young_research",
@@ -966,7 +1017,2098 @@ window.KAKENHI_PORTAL_DATA = {
         "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
         "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
         "S-21"
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 3 件を保存。",
+          "summary_zh": "保存了 3 个相关页面。",
+          "summary_en": "3 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "02_koubo__kiban.html",
+              "href": "external/jsps/2026-04-07/02_koubo__kiban.html"
+            },
+            {
+              "title": "12_kiban__index.html",
+              "href": "external/jsps/2026-04-07/12_kiban__index.html"
+            },
+            {
+              "title": "36_dokuritsu_kiban__download.html",
+              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-04-03 スナップショット",
+          "title_zh": "2026-04-03 快照",
+          "title_en": "2026-04-03 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "kiban.html",
+              "href": "external/jsps/2026-04-03/kiban.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-03-24 スナップショット",
+          "title_zh": "2026-03-24 快照",
+          "title_en": "2026-03-24 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "kiban.html",
+              "href": "external/jsps/2026-03-24/kiban.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": [
+        {
+          "id": "scientific_research_abc",
+          "title": "基盤研究（A/B/C）",
+          "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+          "title_zh": "基盘研究（A/B/C）",
+          "title_en": "Scientific Research (A/B/C)",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        },
+        {
+          "id": "challenging_research",
+          "title": "挑戦的研究",
+          "title_ja": "挑戦的研究",
+          "title_zh": "挑战性研究",
+          "title_en": "Challenging Research",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        }
       ]
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan",
+      "source_name": "invitation_docs",
+      "title": "外国人招へい研究者（長期・短期）",
+      "title_ja": "外国人招へい研究者（長期・短期）",
+      "title_zh": "外国人招聘研究者（长期／短期）",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term)",
+      "family_title": "外国人招へい研究者",
+      "family_title_ja": "外国人招へい研究者",
+      "family_title_zh": "外国人招聘研究者",
+      "family_title_en": "Invitational Fellowships for Research in Japan",
+      "group": "Inbound Fellowships",
+      "group_ja": "外国人研究者招へい",
+      "group_zh": "外国研究者招募与来访",
+      "group_en": "Inbound fellowships",
+      "priority": false,
+      "theme": "usst",
+      "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
+      "page_headline": "募集要項・申請書",
+      "page_last_updated": "2026-02-25 10:10:07",
+      "status": "open",
+      "notice_date": null,
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": "2026-04-28",
+      "deadline_at": "2026-04-28T17:00:00+09:00",
+      "summary_ja": "外国人招へい研究者の長期・短期プログラムをまとめて追うためのカードです。募集要項・申請書ページと申請スケジュールページを合わせると、現行年度の募集回と前年資料を並べて確認できます。",
+      "summary_zh": "这是把外国人招聘研究者的长期与短期项目合并追踪的项目卡。把募集要项／申请书页与申请日程页放在一起后，可以同时查看本年度募集回与上一年度资料。",
+      "summary_en": "This card follows the long-term and short-term Invitational Fellowships for Research in Japan together. Reading the guideline page alongside the schedule page makes it possible to keep the current rounds and prior-year reference materials in view at the same time.",
+      "eligibility_ja": "長期・短期は同じ申請スケジュール表の中で扱われますが、募集回ごとに対象プログラムが異なります。どの募集回で長期・短期のどちらが受け付けられるのかを最初に切り分けてから、必要資料を確認してください。",
+      "eligibility_zh": "长期与短期项目共用同一张申请日程表，但每一轮所覆盖的项目类型并不完全相同。建议先分清当前募集回究竟接受长期、短期还是两者，再去核对对应资料。",
+      "eligibility_en": "The long-term and short-term routes appear in the same schedule table, but each round does not necessarily cover the same program mix. Identify first which round covers which route, then review the relevant materials.",
+      "watchpoints_ja": [
+        "令和8（2026）年度では、第2回の短期プログラム締切が 2026-04-28 17:00 JST と案内されています。",
+        "申請スケジュールページでは第1回に長期・短期の両方、第2回に短期のみが掲載されているため、募集回ごとの対象プログラム差に注意が必要です。",
+        "募集要項・申請書ページには令和8（2026）年度と令和7（2025）年度の資料が残っており、審査セットや記入要領の比較参照に使えます。"
+      ],
+      "watchpoints_zh": [
+        "令和8（2026）年度中，第2回短期项目截止为 2026-04-28 17:00 JST。",
+        "申请日程页显示，第1回同时覆盖长期与短期，第2回仅覆盖短期，因此一定要先确认各募集回对应的项目范围。",
+        "募集要项／申请书页保留了令和8（2026）年度与令和7（2025）年度资料，可直接用于比对审查セット与记入要领的变化。"
+      ],
+      "watchpoints_en": [
+        "For FY2026, the second-round short-term deadline is listed as 2026-04-28 17:00 JST.",
+        "The schedule page shows that round 1 covers both the long-term and short-term routes, while round 2 covers only the short-term route, so the round-to-route mapping needs to be checked first.",
+        "The guideline page still retains both FY2026 and FY2025 document sets, which is useful for comparing the review set and preparation instructions across cycles."
+      ],
+      "overview_url": "",
+      "overview_snapshot_path": "",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "申请日程",
+          "label_ja": "申請スケジュール",
+          "label_en": "Application schedule",
+          "href": "https://www.jsps.go.jp/j-inv/boshu/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "制度主页",
+          "label_ja": "制度トップ",
+          "label_en": "Scheme hub",
+          "href": "https://www.jsps.go.jp/j-inv/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "来日研究者总览",
+          "label_ja": "招へい研究者ハブ",
+          "label_en": "Inbound researchers hub",
+          "href": "https://www.jsps.go.jp/j-inv_researchers/index.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和8（2026）年度 募集要項（PDF/652KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査区分表（PDF/596KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査セット（PDF/659KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_reviewsectionset_invi_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "申請書作成・記入要領（PDF/230KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_instruction_j.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請書作成・記入要領、選考方法"
+        },
+        {
+          "title": "資料（PDF/2.5MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-inv-movie/shinsei_annai.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書"
+        },
+        {
+          "title": "令和7（2025）年度 募集要項（PDF/876KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_applicationguideline_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        }
+      ],
+      "documents": [
+        {
+          "title": "資料（PDF/2.5MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-inv-movie/shinsei_annai.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書"
+        },
+        {
+          "title": "令和8（2026）年度 募集要項（PDF/652KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査区分表（PDF/596KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査セット（PDF/659KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_reviewsectionset_invi_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和7（2025）年度 募集要項（PDF/876KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_applicationguideline_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和7（2025）年度 審査区分表（PDF/588KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectiontable_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和7（2025）年度 審査セット（PDF/770KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-inv/application_requirements/2025/2025_reviewsectionset_inv_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "L-2 研究計画調書（日本語）（Word/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_applicationform_l2_j.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "S-2 研究計画調書（日本語）（Word/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_applicationform_s2_j.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "L-3 外国人研究者調書（Word/24KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_applicationform_l3.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "S-3 外国人研究者調書（Word/24KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_applicationform_s3.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "長期 申請書全体のイメージ（PDF/322KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_applicationform_long_j.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "短期 申請書全体のイメージ（PDF/391KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_applicationform_short_j.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "申請書作成・記入要領（PDF/230KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_instruction_j.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請書作成・記入要領、選考方法"
+        },
+        {
+          "title": "（参考）令和7年度中に公募予定のある学術国際交流事業一覧（PDF/89KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2025_kokusai_boshuichiran.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
+          "kind": "file",
+          "section": null
+        },
+        {
+          "title": "【日本語】 外国人研究者招へい事業 令和8（2026）年度 リーフレット（PDF/3.3MB)",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
+          "kind": "file",
+          "section": null
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/e-inv/pamphlet/fellowship_2026_EN.pdf",
+          "kind": "file",
+          "section": null
+        },
+        {
+          "title": "【英語】 外国人研究者招へい事業 令和8（2028）年度 リーフレット (PDF/1.9MB)",
+          "url": "https://www.jsps.go.jp/file/storage/e-inv/pamphlet/fellowship_2026_EN.pdf",
+          "kind": "file",
+          "section": null
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 35,
+      "document_count": 19,
+      "form_count": 0,
+      "search_terms": [
+        "外国人招へい研究者（長期・短期）",
+        "外国人招聘研究者（长期／短期）",
+        "Invitational Fellowships for Research in Japan (Long-Term and Short-Term)",
+        "外国人招へい研究者",
+        "募集要項・申請書",
+        "申請スケジュール",
+        "新着情報",
+        "JSPSのフェローシップ",
+        "令和8（2026）年度",
+        "令和7（2025）年度"
+      ],
+      "timeline_events": [
+        {
+          "id": "short-round-2",
+          "type": "deadline",
+          "title_ja": "短期 第2回締切",
+          "title_zh": "短期 第2回截止",
+          "title_en": "Short-Term round 2 deadline",
+          "date": "2026-04-28",
+          "datetime": "2026-04-28T17:00:00+09:00",
+          "note_ja": "申請スケジュールページ掲載の令和8（2026）年度第2回短期締切。",
+          "note_zh": "申请日程页公布的令和8（2026）年度第2回短期截止。",
+          "note_en": "FY2026 second-round short-term deadline listed on the official schedule page."
+        }
+      ],
+      "recent_cycles": [
+        {
+          "title_ja": "令和8（2026）年度",
+          "title_zh": "令和8（2026）年度",
+          "title_en": "FY2026",
+          "notes_ja": [
+            "第1回は長期・短期の両方を対象に 2025-08-29 17:00 締切、第2回は短期のみ 2026-04-28 17:00 締切です。",
+            "募集要項・審査区分表・審査セット・記入要領を現行年度分としてまとめて確認できます。"
+          ],
+          "notes_zh": [
+            "第1回同时覆盖长期与短期，截止为 2025-08-29 17:00；第2回仅覆盖短期，截止为 2026-04-28 17:00。",
+            "当前年度的募集要项、审查区分表、审查セット与记入要领都能在同一页里集中查看。"
+          ],
+          "notes_en": [
+            "Round 1 covers both long-term and short-term invitations with a 2025-08-29 17:00 deadline, while round 2 covers only the short-term route with a 2026-04-28 17:00 deadline.",
+            "The current-year guideline page keeps the guideline, review table, review set, and preparation instructions together."
+          ],
+          "links": [
+            {
+              "title": "令和8（2026）年度 募集要項（PDF/652KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和8（2026）年度 審査区分表（PDF/596KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和8（2026）年度 審査セット（PDF/659KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_reviewsectionset_invi_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "【日本語】 外国人研究者招へい事業 令和8（2026）年度 リーフレット（PDF/3.3MB)",
+              "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
+              "kind": "file",
+              "section": null
+            }
+          ]
+        },
+        {
+          "title_ja": "令和7（2025）年度",
+          "title_zh": "令和7（2025）年度",
+          "title_en": "FY2025",
+          "notes_ja": [
+            "現行ページには令和7（2025）年度の募集要項・審査区分表・審査セットも残されており、前年比較の参照に使えます。"
+          ],
+          "notes_zh": [
+            "当前页面仍保留令和7（2025）年度的募集要项、审查区分表与审查セット，可直接用于上一年度参考。"
+          ],
+          "notes_en": [
+            "The current page still retains the FY2025 guideline set, review table, and review set for direct prior-cycle comparison."
+          ],
+          "links": [
+            {
+              "title": "令和7（2025）年度 募集要項（PDF/876KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_applicationguideline_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和7（2025）年度 審査区分表（PDF/588KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectiontable_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和7（2025）年度 審査セット（PDF/770KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-inv/application_requirements/2025/2025_reviewsectionset_inv_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            }
+          ]
+        }
+      ],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 4 件を保存。",
+          "summary_zh": "保存了 4 个相关页面。",
+          "summary_en": "4 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "j-inv__boshu_index.html",
+              "href": "external/jsps/2026-04-07/j-inv__boshu_index.html"
+            },
+            {
+              "title": "j-inv__boshuyoko.html",
+              "href": "external/jsps/2026-04-07/j-inv__boshuyoko.html"
+            },
+            {
+              "title": "j-inv__index.html",
+              "href": "external/jsps/2026-04-07/j-inv__index.html"
+            },
+            {
+              "title": "j-inv_researchers__index.html",
+              "href": "external/jsps/2026-04-07/j-inv_researchers__index.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
+    },
+    {
+      "id": "foreign_jsps_fellowship_open",
+      "source_name": "foreign_fellow_docs",
+      "title": "外国人特別研究員（一般・欧米短期・公募）",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)",
+      "family_title": "外国人特別研究員",
+      "family_title_ja": "外国人特別研究員",
+      "family_title_zh": "外国人特别研究员",
+      "family_title_en": "JSPS Postdoctoral Fellowships for Research in Japan",
+      "group": "Inbound Fellowships",
+      "group_ja": "外国人研究者招へい",
+      "group_zh": "外国研究者招募与来访",
+      "group_en": "Inbound fellowships",
+      "priority": false,
+      "theme": "usst",
+      "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
+      "page_headline": "募集要項・申請書（公募）",
+      "page_last_updated": "2026-03-30 10:00:06",
+      "status": "open",
+      "notice_date": null,
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": "2026-04-28",
+      "deadline_at": "2026-04-28T17:00:00+09:00",
+      "summary_ja": "外国人特別研究員のうち、一般・欧米短期・公募の募集要項とスケジュールをまとめたカードです。募集要項ページ自体に令和8（2026）年度と令和7（2025）年度の両方が並んでいるため、今年の応募準備と前年比較を 1 か所で行えます。",
+      "summary_zh": "这是把外国人特别研究员中“一般／欧美短期／公募”的募集要项与日程合并整理的项目卡。官方募集要项页本身就并列保留了令和8（2026）年度与令和7（2025）年度材料，因此可以在一个入口里同时做今年准备与去年的对照。",
+      "summary_en": "This card consolidates the guideline and schedule pages for the General and Open Short-Term tracks of the JSPS Postdoctoral Fellowships for Research in Japan. The official guideline page itself retains both FY2026 and FY2025 materials, making current preparation and prior-cycle comparison possible in one place.",
+      "eligibility_ja": "同じ募集要項ページに一般と欧米短期の年度資料が併記されていますが、申請スケジュールは一般系と欧米短期系で別ページです。制度比較では募集要項ページを主軸にしつつ、締切確認では必ず各スケジュールページへ戻るのが安全です。",
+      "eligibility_zh": "一般与欧美短期的年度材料在同一张募集要项页并列，但申请日程分别放在两张 schedule 页面里。做制度比较时可以以募集要项页为主轴，但核对截止时一定要回到各自的日程页。",
+      "eligibility_en": "The yearly guideline materials for the General and Open Short-Term tracks are shown together on one official page, but the application schedules are split across separate schedule pages. Use the guideline page for scheme comparison, then return to the relevant schedule page for deadline confirmation.",
+      "watchpoints_ja": [
+        "令和8（2026）年度では、一般・公募の第2回締切が 2026-04-28 17:00 JST、欧米短期・公募の第3回締切が 2026-06-05 17:00 JST と案内されています。",
+        "募集要項ページには令和8（2026）年度と令和7（2025）年度の双方の募集要項・審査区分表・審査セット・作成要領が並んでおり、前年との差分確認に向いています。",
+        "一般系と欧米短期系では募集回の構成が異なるため、ホスト機関側でどの回に合わせるかを早めに整理しておくと混乱が減ります。"
+      ],
+      "watchpoints_zh": [
+        "令和8（2026）年度中，一般／公募第2回截止为 2026-04-28 17:00 JST，欧美短期／公募第3回截止为 2026-06-05 17:00 JST。",
+        "募集要项页面并列保留了令和8（2026）年度和令和7（2025）年度的募集要项、审查区分表、审查セット与作成要领，非常适合直接做年度差异对照。",
+        "一般系与欧美短期系的募集回构成不同，因此最好让接收机构尽早确定要对应哪一轮，以减少时间安排上的混乱。"
+      ],
+      "watchpoints_en": [
+        "For FY2026, the General/Open call lists its second-round deadline as 2026-04-28 17:00 JST, while the Open Short-Term track lists its third-round deadline as 2026-06-05 17:00 JST.",
+        "The guideline page retains both FY2026 and FY2025 guideline sets, review tables, review sets, and preparation notes, which makes direct year-to-year comparison unusually easy.",
+        "Because the General and Open Short-Term tracks use different round structures, it helps to align early with the host institution on which round is the real target."
+      ],
+      "overview_url": "",
+      "overview_snapshot_path": "",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "一般・公募日程",
+          "label_ja": "一般・公募日程",
+          "label_en": "General/Open schedule",
+          "href": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html",
+          "kind": "page"
+        },
+        {
+          "label": "欧美短期・公募日程",
+          "label_ja": "欧米短期・公募日程",
+          "label_en": "Open Short-Term schedule",
+          "href": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html",
+          "kind": "page"
+        },
+        {
+          "label": "制度主页",
+          "label_ja": "制度トップ",
+          "label_en": "Scheme hub",
+          "href": "https://www.jsps.go.jp/j-fellow/index.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和8（2026）年度 募集要項（PDF/652KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査区分表（PDF/596KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査セット（一般）（PDF/444KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_sta_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査セット（欧米短期）（PDF/442KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_short_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "申請書作成・記入要領（PDF/600KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_instructions_j.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請書作成・記入要領、参照資料"
+        },
+        {
+          "title": "資料（PDF/1.81MB）",
+          "url": "https://www.jsps.go.jp//file/storage/j-fellow_sinsei/sinsei_annai.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書（公募）"
+        }
+      ],
+      "documents": [
+        {
+          "title": "資料（PDF/1.81MB）",
+          "url": "https://www.jsps.go.jp//file/storage/j-fellow_sinsei/sinsei_annai.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書（公募）"
+        },
+        {
+          "title": "令和8（2026）年度 募集要項（PDF/652KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査区分表（PDF/596KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査セット（一般）（PDF/444KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_sta_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和8（2026）年度 審査セット（欧米短期）（PDF/442KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_short_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和7（2025）年度 募集要項（PDF/876KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_applicationguideline_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和7（2025）年度 審査区分表（PDF/588KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectiontable_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和7（2025）年度 審査セット（一般）（PDF/291KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectionset_sta_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "令和7（2025）年度 審査セット（欧米短期）（PDF/769KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectionset_short_j.pdf",
+          "kind": "file",
+          "section": "募集要項ダウンロード"
+        },
+        {
+          "title": "一般様式1（参考）（PDF/12.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/form1_standard.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期様式1（参考）（PDF/12.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/form1_short.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "一般様式1（Word/56.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/format_for_preparation.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期様式1（Word/56.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/format_for_preparation.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "一般様式2（Word/48.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_form2_standard.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期様式2（Word/44.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_form2_short.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "一般推薦書サンプル（Word/20.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/Sample_Letter_of_Recommendation.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期推薦書サンプル（Word/20.0KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/Sample_Letter_of_Recommendation.docx",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "申請書作成・記入要領（PDF/600KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_instructions_j.pdf",
+          "kind": "file",
+          "section": "令和8（2026）年度 申請書作成・記入要領、参照資料"
+        },
+        {
+          "title": "一般様式1（参考）（PDF/10.7KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/form1_standard.pdf",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期様式1（参考）（PDF/10.6KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/form1_short.pdf",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "一般様式1（Word/52.8KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/format_for_preparation.docx",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期様式1（Word/52.8KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/format_for_preparation.docx",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "一般様式2（Word/43.4KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_form2_standard.docx",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期様式2（Word/41.9KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_form2_short.docx",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "一般推薦書サンプル（Word/17.3KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/Sample_Letter_of_Recommendation.docx",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "欧米短期推薦書サンプル（Word/17.3KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/Sample_Letter_of_Recommendation.docx",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請様式ダウンロード"
+        },
+        {
+          "title": "申請書作成・記入要領（PDF/591KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_instructions_j.pdf",
+          "kind": "file",
+          "section": "令和7（2025）年度 申請書作成・記入要領、参照資料"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
+          "kind": "file",
+          "section": "博士号取得後"
+        },
+        {
+          "title": "【日本語】 外国人研究者招へい事業 令和8（2026）年度 リーフレット（PDF/3.3MB)",
+          "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
+          "kind": "file",
+          "section": "博士号取得後"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/e-inv/pamphlet/fellowship_2026_EN.pdf",
+          "kind": "file",
+          "section": "博士号取得後"
+        },
+        {
+          "title": "【英語】 外国人研究者招へい事業 令和8（2026）年度 リーフレット (PDF/1.9MB)",
+          "url": "https://www.jsps.go.jp/file/storage/e-inv/pamphlet/fellowship_2026_EN.pdf",
+          "kind": "file",
+          "section": "博士号取得後"
+        },
+        {
+          "title": "資料（PDF/3.55MB）",
+          "url": "https://www.jsps.go.jp//file/storage/kikanmuke/R6_kikanmuke.pdf",
+          "kind": "file",
+          "section": "事務担当者の方へ"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 47,
+      "document_count": 32,
+      "form_count": 0,
+      "search_terms": [
+        "外国人特別研究員（一般・欧米短期・公募）",
+        "外国人特别研究员（一般／欧美短期／公募）",
+        "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)",
+        "外国人特別研究員",
+        "募集要項・申請書（公募）",
+        "申請スケジュール（公募）",
+        "新着情報",
+        "令和8（2026）年度",
+        "令和7（2025）年度"
+      ],
+      "timeline_events": [
+        {
+          "id": "general-round-2",
+          "type": "deadline",
+          "title_ja": "一般・公募 第2回締切",
+          "title_zh": "一般／公募 第2回截止",
+          "title_en": "General/Open round 2 deadline",
+          "date": "2026-04-28",
+          "datetime": "2026-04-28T17:00:00+09:00",
+          "note_ja": "一般・公募スケジュールページ掲載の令和8（2026）年度第2回締切。",
+          "note_zh": "一般／公募日程页公布的令和8（2026）年度第2回截止。",
+          "note_en": "FY2026 round-2 deadline listed on the official General/Open schedule page."
+        },
+        {
+          "id": "short-round-3",
+          "type": "deadline",
+          "title_ja": "欧米短期・公募 第3回締切",
+          "title_zh": "欧美短期／公募 第3回截止",
+          "title_en": "Open Short-Term round 3 deadline",
+          "date": "2026-06-05",
+          "datetime": "2026-06-05T17:00:00+09:00",
+          "note_ja": "欧米短期・公募スケジュールページ掲載の令和8（2026）年度第3回締切。",
+          "note_zh": "欧美短期／公募日程页公布的令和8（2026）年度第3回截止。",
+          "note_en": "FY2026 round-3 deadline listed on the official Open Short-Term schedule page."
+        }
+      ],
+      "recent_cycles": [
+        {
+          "title_ja": "令和8（2026）年度",
+          "title_zh": "令和8（2026）年度",
+          "title_en": "FY2026",
+          "notes_ja": [
+            "一般・公募は第1回 2025-08-29 17:00、第2回 2026-04-28 17:00 の 2 回構成です。",
+            "欧米短期・公募は第1回 2025-09-26 17:00、第2回 2026-01-09 17:00、第3回 2026-06-05 17:00 の 3 回構成です。"
+          ],
+          "notes_zh": [
+            "一般／公募在这一年度分为两轮：第1回 2025-08-29 17:00，第2回 2026-04-28 17:00。",
+            "欧美短期／公募在这一年度分为三轮：第1回 2025-09-26 17:00，第2回 2026-01-09 17:00，第3回 2026-06-05 17:00。"
+          ],
+          "notes_en": [
+            "The FY2026 General/Open route uses two rounds: 2025-08-29 17:00 and 2026-04-28 17:00.",
+            "The FY2026 Open Short-Term route uses three rounds: 2025-09-26 17:00, 2026-01-09 17:00, and 2026-06-05 17:00."
+          ],
+          "links": [
+            {
+              "title": "令和8（2026）年度 募集要項（PDF/652KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和8（2026）年度 審査区分表（PDF/596KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和8（2026）年度 審査セット（一般）（PDF/444KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_sta_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和8（2026）年度 審査セット（欧米短期）（PDF/442KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_short_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和8（2026）年度 申請様式ダウンロード",
+              "url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html#u20230419123310",
+              "kind": "page",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和8（2026）年度 申請書作成・記入要領、参照資料",
+              "url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html#u20230419115617",
+              "kind": "page",
+              "section": "募集要項ダウンロード"
+            }
+          ]
+        },
+        {
+          "title_ja": "令和7（2025）年度",
+          "title_zh": "令和7（2025）年度",
+          "title_en": "FY2025",
+          "notes_ja": [
+            "一般・公募は第1回 2024-08-30 17:00、第2回 2025-04-25 17:00 の日程で実施されました。",
+            "欧米短期・公募は第1回 2024-09-27 17:00、第2回 2025-01-10 17:00、第3回 2025-06-06 17:00 の構成でした。"
+          ],
+          "notes_zh": [
+            "一般／公募上一年度为两轮：第1回 2024-08-30 17:00，第2回 2025-04-25 17:00。",
+            "欧美短期／公募上一年度为三轮：第1回 2024-09-27 17:00，第2回 2025-01-10 17:00，第3回 2025-06-06 17:00。"
+          ],
+          "notes_en": [
+            "In FY2025, the General/Open route used two rounds: 2024-08-30 17:00 and 2025-04-25 17:00.",
+            "In FY2025, the Open Short-Term route used three rounds: 2024-09-27 17:00, 2025-01-10 17:00, and 2025-06-06 17:00."
+          ],
+          "links": [
+            {
+              "title": "令和7（2025）年度 募集要項（PDF/876KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_applicationguideline_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和7（2025）年度 審査区分表（PDF/588KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectiontable_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和7（2025）年度 審査セット（一般）（PDF/291KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectionset_sta_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和7（2025）年度 審査セット（欧米短期）（PDF/769KB）",
+              "url": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2025/2025_reviewsectionset_short_j.pdf",
+              "kind": "file",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和7（2025）年度 申請様式ダウンロード",
+              "url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html#u20230421030213",
+              "kind": "page",
+              "section": "募集要項ダウンロード"
+            },
+            {
+              "title": "令和7（2025）年度 申請書作成・記入要領、参照資料",
+              "url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html#u20241112175442",
+              "kind": "page",
+              "section": "募集要項ダウンロード"
+            }
+          ]
+        }
+      ],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 4 件を保存。",
+          "summary_zh": "保存了 4 个相关页面。",
+          "summary_en": "4 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "j-fellow_14__31_boshuyoko.html",
+              "href": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html"
+            },
+            {
+              "title": "j-fellow__index.html",
+              "href": "external/jsps/2026-04-07/j-fellow__index.html"
+            },
+            {
+              "title": "j-ippan__boshu.html",
+              "href": "external/jsps/2026-04-07/j-ippan__boshu.html"
+            },
+            {
+              "title": "j-oubei-s__boshu.html",
+              "href": "external/jsps/2026-04-07/j-oubei-s__boshu.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
+    },
+    {
+      "id": "overseas_research_fellowship",
+      "source_name": "overseas_guidelines",
+      "title": "海外特別研究員",
+      "title_ja": "海外特別研究員",
+      "title_zh": "海外特别研究员",
+      "title_en": "Overseas Research Fellowships",
+      "family_title": "海外特別研究員",
+      "family_title_ja": "海外特別研究員",
+      "family_title_zh": "海外特别研究员",
+      "family_title_en": "Overseas Research Fellowships",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "priority": false,
+      "theme": "toyama",
+      "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-ab__ab_sin.html",
+      "page_headline": "募集要項",
+      "page_last_updated": "2026-02-17 14:01:12",
+      "status": "open",
+      "notice_date": null,
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": "2026-05-11",
+      "deadline_at": null,
+      "summary_ja": "海外特別研究員の募集要項と選考日程を一体で確認するためのカードです。令和9（2027）年度採用分の募集要項・申請書作成要領・見本類が揃っており、海外派遣前提の応募準備に直接使えます。",
+      "summary_zh": "这是把海外特别研究员的募集要项与选考日程整合在一起的项目卡。令和9（2027）年度采用分的募集要项、申请书作成要领和样本资料已经齐备，可直接用于海外派遣前提下的申请准备。",
+      "summary_en": "This card keeps the Overseas Research Fellowships guidelines and schedule in one place. The FY2027 guideline set, preparation instructions, and sample documents are already posted and directly usable for outbound fellowship preparation.",
+      "eligibility_ja": "海外派遣先との調整が必要な制度なので、募集要項だけでなく受入意思確認書や評価書の見本も早めに確認して、受入機関との連絡計画を前倒しで組むのが重要です。",
+      "eligibility_zh": "由于该制度需要与海外接收机构协调，除了募集要项外，也应尽早查看受入意思确认书和评价书样本，提前安排与接收机构的沟通计划。",
+      "eligibility_en": "Because this scheme depends on coordination with an overseas host, it is important to review not only the guidelines but also the host-confirmation and evaluation-document samples early, then work backwards on the host-contact schedule.",
+      "watchpoints_ja": [
+        "選考日程ページでは、令和9（2027）年度採用分の申請受付を 2026-05-11 までと案内しています。",
+        "見本類と電子申請システム取り込み時の注意点まで同じページ群で確認できるため、申請書本文だけでなく添付・提出手順も同時に確認すると効率的です。",
+        "結果開示は 2026-10 上旬頃までと案内されており、派遣準備の逆算では採否開示時期も重要です。"
+      ],
+      "watchpoints_zh": [
+        "选考日程页面显示，令和9（2027）年度采用分的申请受理截至 2026-05-11。",
+        "该页面组同时提供样本文件和电子系统导入注意事项，因此最好不要只看申请书正文，也要把附件与提交流程一起核对。",
+        "页面还说明结果公开预计在 2026-10 上旬前后，因此做派遣准备时也要把结果公布时间纳入倒排计划。"
+      ],
+      "watchpoints_en": [
+        "The official schedule page shows that the FY2027 application window runs through 2026-05-11.",
+        "Because the same page group also provides sample documents and system-upload cautions, it is more efficient to review the attachment and submission flow alongside the proposal text.",
+        "The result release is indicated for around early October 2026, so outbound planning should be scheduled with that decision window in mind."
+      ],
+      "overview_url": "",
+      "overview_snapshot_path": "",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-ab/ab_sin.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/j-ab__ab_sin.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "选考日程",
+          "label_ja": "選考日程",
+          "label_en": "Selection schedule",
+          "href": "https://www.jsps.go.jp/j-ab/ab_nittei.html",
+          "kind": "page"
+        },
+        {
+          "label": "制度主页",
+          "label_ja": "制度トップ",
+          "label_en": "Scheme hub",
+          "href": "https://www.jsps.go.jp/j-ab/index.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "海外特別研究員 令和9（2027）年度採用分募集要項（PDF/333KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_bosyuyoko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "今回募集からの主な変更点（PDF/98KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-0_henko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "海外特別研究員 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
+          "kind": "file",
+          "section": "申請書作成要領"
+        },
+        {
+          "title": "令和9（2027）年度採用分海外特別研究員の募集について（通知）（PDF/131KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "申請書提出にあたっての事務担当者用チェック要領（PDF/507KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/08_checkyoryo.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "海外特別研究員 【見本】申請書情報（申請書1~3ページ）（PDF/170KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/01_shinsei1_jyoho.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        }
+      ],
+      "documents": [
+        {
+          "title": "海外特別研究員 令和9（2027）年度採用分募集要項（PDF/333KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_bosyuyoko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "今回募集からの主な変更点（PDF/98KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-0_henko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "海外特別研究員 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
+          "kind": "file",
+          "section": "申請書作成要領"
+        },
+        {
+          "title": "海外特別研究員 【見本】申請書情報（申請書1~3ページ）（PDF/170KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/01_shinsei1_jyoho.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 申請内容ファイル（申請書4～10ページ）（Word/52KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/02_shinsei2_keikaku.docx",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 【見本】受入意思確認書（申請書11ページ）（PDF/97KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/03_shinsei3_ukeire.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 【見本】評価書（申請書12ページ）（PDF/108KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/04_shinsei4_hyoka.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "学歴、博士課程、研究・職歴等別紙（Word/27KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/05_shinsei5_bessi.docx",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 申請内容ファイル等を電子申請システムに取り込む際の注意点（PDF/589KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/naiyo_torikomi.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "令和9（2027）年度採用分海外特別研究員の募集について（通知）（PDF/131KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "申請書提出にあたっての事務担当者用チェック要領（PDF/507KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/08_checkyoryo.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "日本学術振興会電子申請システム（研究者養成事業用）の部局マスタの登録について（PDF/1.39MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/bukyoku_touroku.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "海外特別研究員 令和9（2027）年度採用分ポスター（PDF/1.69MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/11_poster.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 18,
+      "document_count": 13,
+      "form_count": 0,
+      "search_terms": [
+        "海外特別研究員",
+        "海外特别研究员",
+        "Overseas Research Fellowships",
+        "募集要項",
+        "選考日程"
+      ],
+      "timeline_events": [
+        {
+          "id": "deadline",
+          "type": "deadline",
+          "title_ja": "海外特別研究員 申請締切",
+          "title_zh": "海外特别研究员申请截止",
+          "title_en": "Overseas Research Fellowships deadline",
+          "date": "2026-05-11",
+          "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分受付終了日。",
+          "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请截止日。",
+          "note_en": "Application closing date for the FY2027 recruitment shown on the official schedule page."
+        }
+      ],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 2 件を保存。",
+          "summary_zh": "保存了 2 个相关页面。",
+          "summary_en": "2 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "j-ab__ab_nittei.html",
+              "href": "external/jsps/2026-04-07/j-ab__ab_nittei.html"
+            },
+            {
+              "title": "j-ab__ab_sin.html",
+              "href": "external/jsps/2026-04-07/j-ab__ab_sin.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
+    },
+    {
+      "id": "overseas_research_fellowship_rra",
+      "source_name": "rra_guidelines",
+      "title": "海外特別研究員（RRA）",
+      "title_ja": "海外特別研究員（RRA）",
+      "title_zh": "海外特别研究员（RRA）",
+      "title_en": "Overseas Research Fellowships (RRA)",
+      "family_title": "海外特別研究員",
+      "family_title_ja": "海外特別研究員",
+      "family_title_zh": "海外特别研究员",
+      "family_title_en": "Overseas Research Fellowships",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "priority": false,
+      "theme": "toyama",
+      "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-ab__rra_sin.html",
+      "page_headline": "募集要項（RRA）",
+      "page_last_updated": "2026-02-17 14:01:28",
+      "status": "open",
+      "notice_date": null,
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": "2026-05-11",
+      "deadline_at": null,
+      "summary_ja": "海外特別研究員のうち RRA 募集を独立して追うためのカードです。通常枠と同じ日程ページを使いながら、募集要項・申請書作成要領・別紙様式は RRA 専用版で管理されています。",
+      "summary_zh": "这是单独追踪海外特别研究员 RRA 募集的项目卡。虽然与常规路线共用同一张日程页面，但募集要项、申请书作成要领以及附表样式都按 RRA 单独管理。",
+      "summary_en": "This card tracks the RRA call under the Overseas Research Fellowships scheme. It shares the official schedule page with the standard route, but the guidelines, preparation notes, and supplemental forms are maintained separately for RRA.",
+      "eligibility_ja": "RRA は通常の海外特別研究員と日程を共有しますが、申請書の別紙や制度趣旨の確認ポイントが追加されます。RRA 専用の募集要項・別紙様式まで含めて一式で見てください。",
+      "eligibility_zh": "RRA 与通常海外特别研究员共享日程，但申请书附表和制度目的上的核对重点会额外增加。建议把 RRA 专用募集要项与附表样式一起成套查看。",
+      "eligibility_en": "RRA shares the calendar of the standard Overseas Research Fellowships track, but it adds RRA-specific supplemental forms and scheme-purpose checks. Review the RRA guidelines and annexed forms as a full set.",
+      "watchpoints_ja": [
+        "選考日程ページでは、RRA も令和9（2027）年度採用分として 2026-05-11 までの受付と整理されています。",
+        "RRA では通常枠にない別紙様式が加わるため、通常枠の資料だけを見て準備を進めると不足が生じやすいです。",
+        "審査方針の中で本事業による支援の必要性も考慮されると案内されているため、制度趣旨への適合を申請書で明確に示す必要があります。"
+      ],
+      "watchpoints_zh": [
+        "选考日程页面显示，RRA 作为令和9（2027）年度采用分，同样截至 2026-05-11。",
+        "RRA 比常规路线多出附表样式，因此如果只看常规版资料来准备，往往会遗漏关键文件。",
+        "官方还说明审查时会考虑本项目支援的必要性，因此申请书中需要更明确地回应制度目的。"
+      ],
+      "watchpoints_en": [
+        "The official schedule page shows that the FY2027 RRA route also remains open through 2026-05-11.",
+        "Because RRA adds annex forms not used in the standard route, relying only on the standard materials can easily leave gaps.",
+        "The scheme notes that the need for RRA support is considered during review, so the application should address that program rationale explicitly."
+      ],
+      "overview_url": "",
+      "overview_snapshot_path": "",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-ab/rra_sin.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/j-ab__rra_sin.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "选考日程",
+          "label_ja": "選考日程",
+          "label_en": "Selection schedule",
+          "href": "https://www.jsps.go.jp/j-ab/ab_nittei.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "海外特別研究員 - RRA 令和9（2027）年度採用分募集要項（PDF/325KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_RRA_bosyuyoko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "海外特別研究員 - RRA 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
+          "kind": "file",
+          "section": "申請書作成要領"
+        },
+        {
+          "title": "海外特別研究員 - RRA 学歴、博士課程、研究・職歴等別紙（Word/27KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/05_shinsei5RRA_bessi.docx",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "令和9（2027）年度採用分海外特別研究員 - RRAの募集について（通知）（PDF/131KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "今回募集からの主な変更点（PDF/98KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-0_henko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "海外特別研究員 - RRA 【見本】申請書情報（申請書1~3ページ）（PDF/154KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/01_shinsei1RRA_jyoho.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        }
+      ],
+      "documents": [
+        {
+          "title": "海外特別研究員 - RRA 令和9（2027）年度採用分募集要項（PDF/325KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_RRA_bosyuyoko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "今回募集からの主な変更点（PDF/98KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-0_henko.pdf",
+          "kind": "file",
+          "section": "募集要項"
+        },
+        {
+          "title": "海外特別研究員 - RRA 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
+          "kind": "file",
+          "section": "申請書作成要領"
+        },
+        {
+          "title": "海外特別研究員 - RRA 【見本】申請書情報（申請書1~3ページ）（PDF/154KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/01_shinsei1RRA_jyoho.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 - RRA 申請内容ファイル（申請書4～10ページ）（Word/53KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/02_shinsei2RRA_keikaku.docx",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 - RRA 【見本】受入意思確認書（申請書11ページ）（PDF/97KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/03_shinsei3RRA_ukeire.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 - RRA 【見本】評価書（申請書12ページ）（PDF/108KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/04_shinsei4RRA_hyoka.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 - RRA 学歴、博士課程、研究・職歴等別紙（Word/27KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/05_shinsei5RRA_bessi.docx",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "海外特別研究員 申請内容ファイル等を電子申請システムに取り込む際の注意点（PDF/589KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/naiyo_torikomi.pdf",
+          "kind": "file",
+          "section": "申請書等様式（令和9（2027）年度採用分）"
+        },
+        {
+          "title": "令和9（2027）年度採用分海外特別研究員 - RRAの募集について（通知）（PDF/131KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "申請書提出にあたっての事務担当者用チェック要領（PDF/507KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/08_checkyoryo.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "日本学術振興会電子申請システム（研究者養成事業用）の部局マスタの登録について（PDF/1.39MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/bukyoku_touroku.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "海外特別研究員 - RRA 令和9（2027）年度採用分ポスター（PDF/1.30MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/11_RRA_poster.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 18,
+      "document_count": 13,
+      "form_count": 0,
+      "search_terms": [
+        "海外特別研究員（RRA）",
+        "海外特别研究员（RRA）",
+        "Overseas Research Fellowships (RRA)",
+        "海外特別研究員",
+        "募集要項（RRA）",
+        "選考日程"
+      ],
+      "timeline_events": [
+        {
+          "id": "deadline",
+          "type": "deadline",
+          "title_ja": "海外特別研究員（RRA）申請締切",
+          "title_zh": "海外特别研究员（RRA）申请截止",
+          "title_en": "Overseas Research Fellowships (RRA) deadline",
+          "date": "2026-05-11",
+          "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分受付終了日。",
+          "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请截止日。",
+          "note_en": "Application closing date for the FY2027 recruitment shown on the official schedule page."
+        }
+      ],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 2 件を保存。",
+          "summary_zh": "保存了 2 个相关页面。",
+          "summary_en": "2 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "j-ab__ab_nittei.html",
+              "href": "external/jsps/2026-04-07/j-ab__ab_nittei.html"
+            },
+            {
+              "title": "j-ab__rra_sin.html",
+              "href": "external/jsps/2026-04-07/j-ab__rra_sin.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
+    },
+    {
+      "id": "jsps_fellow_pd_dc",
+      "source_name": "pd_guidelines",
+      "title": "特別研究員（PD・DC1・DC2）",
+      "title_ja": "特別研究員（PD・DC1・DC2）",
+      "title_zh": "特别研究员（PD／DC1／DC2）",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2)",
+      "family_title": "特別研究員",
+      "family_title_ja": "特別研究員",
+      "family_title_zh": "特别研究员",
+      "family_title_en": "Research Fellowships for Young Scientists",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "priority": false,
+      "theme": "tohoku",
+      "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__pd_sin.html",
+      "page_headline": "募集要項（PD・DC2・DC1）",
+      "page_last_updated": "2026-04-01 15:30:06",
+      "status": "open",
+      "notice_date": null,
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": "2026-06-03",
+      "deadline_at": "2026-06-03T17:00:00+09:00",
+      "summary_ja": "PD・DC1・DC2 の募集要項と選考日程を一体で追うための整理カードです。令和9（2027）年度採用分は公式に公表済みで、PD と DC の募集要項・作成要領を同じページ群から確認できます。",
+      "summary_zh": "这是把 PD、DC1、DC2 的募集要项与选考日程合并整理的项目卡。令和9（2027）年度采用分已经公开，PD 与 DC 的募集要项和作成要领都可从这一组官方页面统一核对。",
+      "summary_en": "This card consolidates the application guidelines and selection schedule for PD, DC1, and DC2. The FY2027 recruitment materials are already posted, and both the PD and DC guideline sets are traceable from this official page group.",
+      "eligibility_ja": "PD と DC は同じ制度ページ群で管理されますが、募集要項と申請書作成要領は区分ごとに分かれています。PD か DC かを先に確定し、該当する募集要項・作成要領・Q&A を対応づけて確認するのが安全です。",
+      "eligibility_zh": "PD 与 DC 共享同一组制度页面，但募集要项和申请书作成要领按区分分别发布。建议先确定是 PD 还是 DC，再一一对应核对募集要项、作成要领与 Q&A。",
+      "eligibility_en": "PD and DC are managed under the same scheme pages, but the application guidelines and preparation instructions are separated by track. Decide first whether the application is for PD or DC, then review the matching guidelines, preparation notes, and FAQ together.",
+      "watchpoints_ja": [
+        "選考日程ページでは、令和9（2027）年度採用分 PD・DC2・DC1 の申請期限を 2026-06-03 17:00 JST と案内しています。",
+        "PD 用と DC 用で募集要項・作成要領の PDF が分かれているため、資料の取り違えを避けるためにも先に応募区分を固定してください。",
+        "第一次・第二次選考結果の開示時期も制度ページ上で分かれて案内されているので、学内締切だけでなく公式の日程確認が欠かせません。"
+      ],
+      "watchpoints_zh": [
+        "选考日程页面明确写明，令和9（2027）年度采用分 PD／DC2／DC1 的申请期限为 2026-06-03 17:00 JST。",
+        "PD 与 DC 的募集要项和作成要领 PDF 是分别发布的，最好先固定申请区分，再开始整理资料，以免混用文件。",
+        "制度页面还分别说明了第一次与第二次结果公开时期，因此不能只盯校内截止，也要持续回到官方日程页核对。"
+      ],
+      "watchpoints_en": [
+        "The schedule page states that the FY2027 PD/DC2/DC1 application deadline is 2026-06-03 17:00 JST.",
+        "Because the PD and DC guideline PDFs are separated, lock in the application track before drafting so the wrong document set is not used.",
+        "The official pages also distinguish the first- and second-stage result-release windows, so the institutional deadline should always be checked against the JSPS schedule page."
+      ],
+      "overview_url": "",
+      "overview_snapshot_path": "",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-pd/pd_sin.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/j-pd__pd_sin.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "选考日程",
+          "label_ja": "選考日程",
+          "label_en": "Selection schedule",
+          "href": "https://www.jsps.go.jp/j-pd/pd_nittei.html",
+          "kind": "page"
+        },
+        {
+          "label": "申请 Q&A",
+          "label_ja": "申請Q&A",
+          "label_en": "Application FAQ",
+          "href": "https://www.jsps.go.jp/j-pd/pd_qa.html",
+          "kind": "page"
+        },
+        {
+          "label": "样式集",
+          "label_ja": "様式集",
+          "label_en": "Forms collection",
+          "href": "https://www.jsps.go.jp/j-pd/pd_tebiki/yoshiki/index.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和9（2027）年度採用分特別研究員-PD募集要項（PDF/619KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_pd_yoko.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書様式（特別研究員-PD）"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-PD申請書作成要領等（PDF/1,626KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_pd.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書様式（特別研究員-PD）"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-DC募集要項（PDF/610KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書等様式（特別研究員-DC）"
+        },
+        {
+          "title": "FY2027 JSPS Doctral Course (DC) Research Fellowships Application Guidelines（PDF/560KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko_en.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書等様式（特別研究員-DC）"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-DC申請書作成要領等（PDF/1670KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_dc.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書等様式（特別研究員-DC）"
+        },
+        {
+          "title": "申請書情報見本（PDF/136KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_01_pd_shinseishojoho.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和9（2027）年度採用分特別研究員-PD募集要項（PDF/619KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_pd_yoko.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書様式（特別研究員-PD）"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-PD申請書作成要領等（PDF/1,626KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_pd.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書様式（特別研究員-PD）"
+        },
+        {
+          "title": "申請書情報見本（PDF/136KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_01_pd_shinseishojoho.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "申請内容ファイル様式（Word/71KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_pd_naiyo.docx",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "申請内容ファイル様式見本（PDF/169KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_pd_naiyo.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "評価書１見本（PDF/324KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_04_pd_hyouka1.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "評価書２見本（PDF/272KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_04_pd_hyouka2.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "特別研究員奨励費応募調書見本（PDF/103KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_06_pd_kenkyukeikakuchosho.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "「⑧学歴、⑨博士学位取得機関の情報、⑩研究・職歴等別紙」様式（Word/32KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_02_pd_besshi.docx",
+          "kind": "file",
+          "section": "【希望者のみ】"
+        },
+        {
+          "title": "「⑧学歴、⑨博士学位取得機関の情報、⑩研究・職歴等別紙」様式見本（PDF/87KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_02_pd_besshi.pdf",
+          "kind": "file",
+          "section": "【希望者のみ】"
+        },
+        {
+          "title": "特例措置希望理由書見本（PDF/106KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_05_pd_tokurei.pdf",
+          "kind": "file",
+          "section": "【希望者のみ】"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-DC募集要項（PDF/610KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書等様式（特別研究員-DC）"
+        },
+        {
+          "title": "FY2027 JSPS Doctral Course (DC) Research Fellowships Application Guidelines（PDF/560KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko_en.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書等様式（特別研究員-DC）"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-DC申請書作成要領等（PDF/1670KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_dc.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書等様式（特別研究員-DC）"
+        },
+        {
+          "title": "FY2027 JSPS Doctral Course (DC) Research Fellowships Procedures for Preparing the Application Documents （PDF/1710KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_dc_en.pdf",
+          "kind": "file",
+          "section": "募集要項・申請書作成要領・申請書等様式（特別研究員-DC）"
+        },
+        {
+          "title": "申請書情報 様式見本（PDF/114KB） Sample of \"Application information\" form（PDF/233KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_01_dc_shinseishojoho.pdf,https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_01_dc_shinseishojoho_en.pdf",
+          "kind": "file",
+          "section": "【申請者全員 For all applicants】"
+        },
+        {
+          "title": "申請内容ファイル様式ダウンロード（Word/89KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_dc_naiyo.docx",
+          "kind": "file",
+          "section": "【申請者全員 For all applicants】"
+        },
+        {
+          "title": "申請内容ファイル 様式見本（PDF / 186KB） Sample of \"Application content file\" form（PDF/380KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_dc_naiyo.pdf,https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_dc_naiyo_en.pdf",
+          "kind": "file",
+          "section": "【申請者全員 For all applicants】"
+        },
+        {
+          "title": "評価書 様式見本（PDF/316KB） Sample of \"Evaluation report\" form（PDF/156KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_04_dc_hyoka.pdf,https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_04_dc_hyoka_en.pdf",
+          "kind": "file",
+          "section": "【申請者全員 For all applicants】"
+        },
+        {
+          "title": "特別研究員奨励費応募調書 様式見本（PDF/100KB） Sample of \"Envisaged Budget for Grant-in-Aid for JSPS Fellows\" form （PDF/126KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_06_dc_kenkyukeikakuchosho.pdf,https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_06_dc_kenkyukeikakuchosho_en.pdf",
+          "kind": "file",
+          "section": "【申請者全員 For all applicants】"
+        },
+        {
+          "title": "「⑧学歴、⑨博士の状況、⑩研究・職歴等別紙」様式（Word/32KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_02_dc_besshi.docx",
+          "kind": "file",
+          "section": "【希望者のみ If applicable】"
+        },
+        {
+          "title": "「学歴、博士の状況、研究・職歴等別紙」様式見本（PDF/195KB） Sample of \"Additional page for (viii) Academic degrees, (ix) Status of doctoral course studies, and (x) Research, job experience, etc. \" form（PDF/174KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_02_dc_besshi.pdf,https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_02_dc_besshi_en.pdf",
+          "kind": "file",
+          "section": "【希望者のみ If applicable】"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員の募集について（通知）（PDF/129KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_tuti_pddc.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "申請書提出にあたっての事務担当者チェック要領（PDF/814KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_pddc_checkyoryo.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "研究者養成事業電子申請システムの利用手続について（事務連絡）（PDF/207KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_tuti.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "研究者養成事業電子申請システムの部局マスタの登録について（PDF/1.4MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/bukyoku_touroku.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "令和3（2021）年度採用分まで使用していた部局マスタ（Excel/90KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/master_bukyoku.xlsx",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "PD用ポスター（機関記入欄あり）（PDF/2MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_pd_kikan.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "PD用ポスター（機関記入欄なし）（PDF/2MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_pd.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "DC用ポスター（機関記入欄あり）（PDF/2.7MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_dc_kikan.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "DC用ポスター（機関記入欄なし）（PDF/2.7MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_dc.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 47,
+      "document_count": 31,
+      "form_count": 0,
+      "search_terms": [
+        "特別研究員（PD・DC1・DC2）",
+        "特别研究员（PD／DC1／DC2）",
+        "Research Fellowships for Young Scientists (PD/DC1/DC2)",
+        "特別研究員",
+        "募集要項（PD・DC2・DC1）",
+        "選考日程"
+      ],
+      "timeline_events": [
+        {
+          "id": "deadline",
+          "type": "deadline",
+          "title_ja": "PD・DC1・DC2 JSPS 締切",
+          "title_zh": "PD／DC1／DC2 JSPS 截止",
+          "title_en": "PD/DC1/DC2 JSPS deadline",
+          "date": "2026-06-03",
+          "datetime": "2026-06-03T17:00:00+09:00",
+          "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分申請期限。",
+          "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请期限。",
+          "note_en": "Application deadline for the FY2027 recruitment shown on the official schedule page."
+        }
+      ],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 2 件を保存。",
+          "summary_zh": "保存了 2 个相关页面。",
+          "summary_en": "2 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "j-pd__pd_nittei.html",
+              "href": "external/jsps/2026-04-07/j-pd__pd_nittei.html"
+            },
+            {
+              "title": "j-pd__pd_sin.html",
+              "href": "external/jsps/2026-04-07/j-pd__pd_sin.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
+    },
+    {
+      "id": "jsps_fellow_rpd",
+      "source_name": "rpd_guidelines",
+      "title": "特別研究員（RPD）",
+      "title_ja": "特別研究員（RPD）",
+      "title_zh": "特别研究员（RPD）",
+      "title_en": "Research Fellowships for Young Scientists (RPD)",
+      "family_title": "特別研究員",
+      "family_title_ja": "特別研究員",
+      "family_title_zh": "特别研究员",
+      "family_title_en": "Research Fellowships for Young Scientists",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "priority": false,
+      "theme": "tohoku",
+      "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
+      "page_headline": "募集要項（RPD）",
+      "page_last_updated": "2026-03-16 15:00:18",
+      "status": "open",
+      "notice_date": null,
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": "2026-05-11",
+      "deadline_at": "2026-05-11T17:00:00+09:00",
+      "summary_ja": "RPD の募集要項、事務手引、選考日程をまとめて確認するためのカードです。PD/DC 系と制度ページは共通ですが、募集要項と日程は RPD で独立管理されています。",
+      "summary_zh": "这是用来集中核对 RPD 募集要项、事务手引与选考日程的项目卡。虽然制度页面与 PD/DC 同属一组，但募集要项和日程对 RPD 是独立管理的。",
+      "summary_en": "This card keeps the RPD application guidelines, administrative instructions, and schedule together. The wider scheme pages are shared with PD/DC, but the RPD call documents and timing are managed separately.",
+      "eligibility_ja": "RPD は PD/DC と別の募集要項・提出確認資料で運用されます。育児等による研究中断からの復帰支援という制度趣旨に沿って、RPD 専用の募集要項・チェック要領・採用開始日の扱いを先に確認してください。",
+      "eligibility_zh": "RPD 使用独立于 PD/DC 的募集要项和提交确认资料。由于其制度目的在于支持因育儿等原因中断研究后的复归，建议优先核对 RPD 专用的募集要项、检查要领与采用开始日安排。",
+      "eligibility_en": "RPD uses its own guideline set and submission checks separate from PD/DC. Because the scheme is designed for restarting research after interruptions such as childcare, start with the RPD-specific guidelines, check sheets, and appointment-start options.",
+      "watchpoints_ja": [
+        "選考日程ページでは、令和9（2027）年度採用分 RPD の申請期限を 2026-05-11 17:00 JST と案内しています。",
+        "RPD は採用開始日が複数提示されるため、学内手続と生活設計を含めて開始希望日を早めに整理しておくと安全です。",
+        "事務担当者用チェック要領や電子申請システム関連の事務連絡も RPD 側にまとまっているので、本人用資料だけでなく事務側資料も同時に確認すると抜け漏れを減らせます。"
+      ],
+      "watchpoints_zh": [
+        "选考日程页面明确列出，令和9（2027）年度采用分 RPD 的申请期限为 2026-05-11 17:00 JST。",
+        "RPD 提供多个采用开始日，因此最好尽早把校内手续安排和个人时间规划一起考虑，先确定希望的开始时间。",
+        "RPD 页面也集中放置了事务担当者检查要领与电子系统相关通知，除了申请人材料外，最好把事务侧资料也一起过一遍。"
+      ],
+      "watchpoints_en": [
+        "The official schedule page lists the FY2027 RPD deadline as 2026-05-11 17:00 JST.",
+        "Because RPD offers multiple appointment-start dates, it helps to coordinate the preferred start window with institutional paperwork and personal planning early.",
+        "The RPD page also aggregates administrator-side check guidance and electronic-system notices, so reviewing both applicant and office materials reduces omissions."
+      ],
+      "overview_url": "",
+      "overview_snapshot_path": "",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "选考日程",
+          "label_ja": "選考日程",
+          "label_en": "Selection schedule",
+          "href": "https://www.jsps.go.jp/j-pd/pd_nittei.html",
+          "kind": "page"
+        },
+        {
+          "label": "申请 Q&A",
+          "label_ja": "申請Q&A",
+          "label_en": "Application FAQ",
+          "href": "https://www.jsps.go.jp/j-pd/rpd_qa.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和9（2027）年度採用分特別研究員-RPD募集要項（PDF/625KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_yoko.pdf",
+          "kind": "file",
+          "section": "受付期間"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-RPD申請書作成要領等（PDF/1,834KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_rpd.pdf",
+          "kind": "file",
+          "section": "受付期間"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員の募集について（通知）（PDF/132KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_tuti_rpd.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "申請書提出にあたっての事務担当者チェック要領（PDF/695KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_checkyoryo.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "申請書情報見本（PDF/143KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_01_rpd_shinseishojoho.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "申請内容ファイル様式（Word/65KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_rpd_naiyo.docx",
+          "kind": "file",
+          "section": "【申請者全員】"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和9（2027）年度採用分特別研究員-RPD募集要項（PDF/625KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_yoko.pdf",
+          "kind": "file",
+          "section": "受付期間"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員-RPD申請書作成要領等（PDF/1,834KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_rpd.pdf",
+          "kind": "file",
+          "section": "受付期間"
+        },
+        {
+          "title": "申請書情報見本（PDF/143KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_01_rpd_shinseishojoho.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "申請内容ファイル様式（Word/65KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_rpd_naiyo.docx",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "申請内容ファイル様式見本（PDF/166KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_03_rpd_naiyo.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "評価書１見本（PDF/269KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_04_rpd_hyouka1.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "評価書２見本（PDF/267KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_04_rpd_hyouka2.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "特別研究員奨励費応募調書見本（PDF/102KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_06_rpd_kenkyukeikakuchosho.pdf",
+          "kind": "file",
+          "section": "【申請者全員】"
+        },
+        {
+          "title": "「⑨博士学位取得機関の情報、⑩履歴別紙」様式（Word/32KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_02_rpd_besshi.docx",
+          "kind": "file",
+          "section": "【希望者のみ】"
+        },
+        {
+          "title": "「⑨博士学位取得機関の情報、⑩履歴別紙」様式見本（PDF/177KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_02_rpd_besshi.pdf",
+          "kind": "file",
+          "section": "【希望者のみ】"
+        },
+        {
+          "title": "令和9（2027）年度採用分特別研究員の募集について（通知）（PDF/132KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_tuti_rpd.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "申請書提出にあたっての事務担当者チェック要領（PDF/695KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_checkyoryo.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "研究者養成事業電子申請システムの利用手続について（事務連絡）（PDF/207KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_tuti.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "研究者養成事業電子申請システムの部局マスタの登録について（PDF/1.4MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/bukyoku_touroku.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "令和3（2021）年度採用分まで使用していた部局マスタ（Excel/90KB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/master_bukyoku.xlsx",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "機関記入欄あり①（PDF/2.1MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_rpd_kikan.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "機関記入欄あり②（PDF/2.8MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_rpd_2_kikan.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "機関記入欄なし①（PDF/2.1MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_rpd.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        },
+        {
+          "title": "機関記入欄なし②（PDF/2.8MB）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/data/poster/2_poster_rpd_2.pdf",
+          "kind": "file",
+          "section": "申請機関事務担当者用"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 31,
+      "document_count": 19,
+      "form_count": 0,
+      "search_terms": [
+        "特別研究員（RPD）",
+        "特别研究员（RPD）",
+        "Research Fellowships for Young Scientists (RPD)",
+        "特別研究員",
+        "募集要項（RPD）",
+        "選考日程"
+      ],
+      "timeline_events": [
+        {
+          "id": "deadline",
+          "type": "deadline",
+          "title_ja": "RPD JSPS 締切",
+          "title_zh": "RPD JSPS 截止",
+          "title_en": "RPD JSPS deadline",
+          "date": "2026-05-11",
+          "datetime": "2026-05-11T17:00:00+09:00",
+          "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分申請期限。",
+          "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请期限。",
+          "note_en": "Application deadline for the FY2027 recruitment shown on the official schedule page."
+        }
+      ],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 2 件を保存。",
+          "summary_zh": "保存了 2 个相关页面。",
+          "summary_en": "2 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "j-pd__pd_nittei.html",
+              "href": "external/jsps/2026-04-07/j-pd__pd_nittei.html"
+            },
+            {
+              "title": "j-pd__rpd_sin.html",
+              "href": "external/jsps/2026-04-07/j-pd__rpd_sin.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "independent_base_building_support",
@@ -1128,7 +3270,26 @@ window.KAKENHI_PORTAL_DATA = {
         "独立基盤形成支援（試行）",
         "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
         "令和８(2026)年度「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）の公募について"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "36_dokuritsu_kiban__download.html",
+              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "international_leading_research",
@@ -1465,7 +3626,26 @@ window.KAKENHI_PORTAL_DATA = {
         "国際共同研究加速基金（国際先導研究）",
         "令和８(2026)年度国際共同研究加速基金（国際先導研究）の公募について",
         "S-64"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "05_sendou__koubo.html",
+              "href": "external/jsps/2026-04-07/05_sendou__koubo.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "international_research_strengthening",
@@ -1772,7 +3952,26 @@ window.KAKENHI_PORTAL_DATA = {
         "国際共同研究加速基金（国際共同研究強化）",
         "令和７(2025)年度国際共同研究加速基金（国際共同研究強化）の公募について",
         "S-61"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "01_kyoka__koubo.html",
+              "href": "external/jsps/2026-04-07/01_kyoka__koubo.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "returning_researchers_development",
@@ -2049,7 +4248,26 @@ window.KAKENHI_PORTAL_DATA = {
         "国際共同研究加速基金（帰国発展研究）",
         "令和７(2025)年度国際共同研究加速基金（帰国発展研究）の公募について",
         "S-62"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "03_kikoku__koubo.html",
+              "href": "external/jsps/2026-04-07/03_kikoku__koubo.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "overseas_partnership_research",
@@ -2423,7 +4641,26 @@ window.KAKENHI_PORTAL_DATA = {
         "国際共同研究加速基金（海外連携研究）の公募について",
         "S-63-1",
         "S-63-2"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "04_renkei__koubo.html",
+              "href": "external/jsps/2026-04-07/04_renkei__koubo.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "scientific_research_abc",
@@ -3175,6 +5412,80 @@ window.KAKENHI_PORTAL_DATA = {
         "S-12",
         "S-13",
         "S-14"
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 3 件を保存。",
+          "summary_zh": "保存了 3 个相关页面。",
+          "summary_en": "3 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "02_koubo__kiban.html",
+              "href": "external/jsps/2026-04-07/02_koubo__kiban.html"
+            },
+            {
+              "title": "12_kiban__index.html",
+              "href": "external/jsps/2026-04-07/12_kiban__index.html"
+            },
+            {
+              "title": "36_dokuritsu_kiban__download.html",
+              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-04-03 スナップショット",
+          "title_zh": "2026-04-03 快照",
+          "title_en": "2026-04-03 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "kiban.html",
+              "href": "external/jsps/2026-04-03/kiban.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-03-24 スナップショット",
+          "title_zh": "2026-03-24 快照",
+          "title_en": "2026-03-24 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "kiban.html",
+              "href": "external/jsps/2026-03-24/kiban.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": [
+        {
+          "id": "young_research",
+          "title": "若手研究",
+          "title_ja": "若手研究",
+          "title_zh": "青年研究（若手研究）",
+          "title_en": "Early-Career Scientists",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        },
+        {
+          "id": "challenging_research",
+          "title": "挑戦的研究",
+          "title_ja": "挑戦的研究",
+          "title_zh": "挑战性研究",
+          "title_en": "Challenging Research",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        }
       ]
     },
     {
@@ -3554,6 +5865,35 @@ window.KAKENHI_PORTAL_DATA = {
         "特別推進研究・基盤研究（Ｓ）",
         "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
         "S-11"
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "02_koubo__toku_s.html",
+              "href": "external/jsps/2026-04-07/02_koubo__toku_s.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": [
+        {
+          "id": "special_promotion_research",
+          "title": "特別推進研究",
+          "title_ja": "特別推進研究",
+          "title_zh": "特别推进研究",
+          "title_en": "Specially Promoted Research",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html"
+        }
       ]
     },
     {
@@ -3836,7 +6176,38 @@ window.KAKENHI_PORTAL_DATA = {
         "奨励研究",
         "令和８(2026)年度奨励研究の公募について",
         "S-31"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 4 件を保存。",
+          "summary_zh": "保存了 4 个相关页面。",
+          "summary_en": "4 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "11_shourei__index.html",
+              "href": "external/jsps/2026-04-07/11_shourei__index.html"
+            },
+            {
+              "title": "11_shourei__koubo.html",
+              "href": "external/jsps/2026-04-07/11_shourei__koubo.html"
+            },
+            {
+              "title": "20_tokushourei__download.html",
+              "href": "external/jsps/2026-04-07/20_tokushourei__download.html"
+            },
+            {
+              "title": "20_tokushourei__index.html",
+              "href": "external/jsps/2026-04-07/20_tokushourei__index.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "challenging_research",
@@ -4632,6 +7003,80 @@ window.KAKENHI_PORTAL_DATA = {
         "S-41-2",
         "S-42-1",
         "S-42-2"
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 3 件を保存。",
+          "summary_zh": "保存了 3 个相关页面。",
+          "summary_en": "3 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "02_koubo__kiban.html",
+              "href": "external/jsps/2026-04-07/02_koubo__kiban.html"
+            },
+            {
+              "title": "12_kiban__index.html",
+              "href": "external/jsps/2026-04-07/12_kiban__index.html"
+            },
+            {
+              "title": "36_dokuritsu_kiban__download.html",
+              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-04-03 スナップショット",
+          "title_zh": "2026-04-03 快照",
+          "title_en": "2026-04-03 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "kiban.html",
+              "href": "external/jsps/2026-04-03/kiban.html"
+            }
+          ]
+        },
+        {
+          "title_ja": "2026-03-24 スナップショット",
+          "title_zh": "2026-03-24 快照",
+          "title_en": "2026-03-24 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "kiban.html",
+              "href": "external/jsps/2026-03-24/kiban.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": [
+        {
+          "id": "young_research",
+          "title": "若手研究",
+          "title_ja": "若手研究",
+          "title_zh": "青年研究（若手研究）",
+          "title_en": "Early-Career Scientists",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        },
+        {
+          "id": "scientific_research_abc",
+          "title": "基盤研究（A/B/C）",
+          "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+          "title_zh": "基盘研究（A/B/C）",
+          "title_en": "Scientific Research (A/B/C)",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        }
       ]
     },
     {
@@ -5023,6 +7468,35 @@ window.KAKENHI_PORTAL_DATA = {
         "特別推進研究・基盤研究（Ｓ）",
         "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
         "S-1"
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "02_koubo__toku_s.html",
+              "href": "external/jsps/2026-04-07/02_koubo__toku_s.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": [
+        {
+          "id": "scientific_research_s",
+          "title": "基盤研究（S）",
+          "title_ja": "基盤研究（Ｓ）",
+          "title_zh": "基盘研究（S）",
+          "title_en": "Scientific Research (S)",
+          "status": "closed",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html"
+        }
       ]
     },
     {
@@ -5236,7 +7710,225 @@ window.KAKENHI_PORTAL_DATA = {
         "特別研究員奨励費",
         "特別研究員奨励費",
         "令和８(2026)年度特別研究員奨励費（外国人特別研究員）の募集について"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 2 件を保存。",
+          "summary_zh": "保存了 2 个相关页面。",
+          "summary_en": "2 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "20_tokushourei__download.html",
+              "href": "external/jsps/2026-04-07/20_tokushourei__download.html"
+            },
+            {
+              "title": "20_tokushourei__index.html",
+              "href": "external/jsps/2026-04-07/20_tokushourei__index.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
+    },
+    {
+      "id": "jsps_fellow_cpd",
+      "source_name": "cpd_guidelines",
+      "title": "特別研究員（CPD）",
+      "title_ja": "特別研究員（CPD）",
+      "title_zh": "特别研究员（CPD）",
+      "title_en": "Research Fellowships for Young Scientists (CPD)",
+      "family_title": "特別研究員",
+      "family_title_ja": "特別研究員",
+      "family_title_zh": "特别研究员",
+      "family_title_en": "Research Fellowships for Young Scientists",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "priority": false,
+      "theme": "tohoku",
+      "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
+      "page_headline": "募集要項（CPD）",
+      "page_last_updated": "2024-11-18 17:00:08",
+      "status": "suspended",
+      "notice_date": null,
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": null,
+      "deadline_at": null,
+      "summary_ja": "CPD は現行ページ上でも募集停止と明示されているため、制度比較と過去運用確認のための参照カードとして保持しています。",
+      "summary_zh": "CPD 在当前官方页面上已明确标注为“募集停止”，因此这里只把它保留为制度比较与既往运用核对用的参考卡片。",
+      "summary_en": "CPD is explicitly marked as suspended on the current official page, so this card is retained as a reference point for scheme comparison and historical checking rather than active application work.",
+      "eligibility_ja": "現行の公開情報では新規公募の準備ページではありません。制度比較や過去の位置付け確認に限定して参照し、実際の応募検討では PD/DC・RPD など現行募集中の制度を優先してください。",
+      "eligibility_zh": "按当前公开信息来看，它不是新一轮公募准备页面。建议仅在制度比较或确认过去定位时参考，实际申请判断应优先回到 PD/DC、RPD 等当前制度。",
+      "eligibility_en": "The current page is not an active call-preparation page. Use it only for scheme comparison or historical positioning, and rely on the live PD/DC or RPD pages for actual application planning.",
+      "watchpoints_ja": [
+        "公式ページの見出しと本文の双方で CPD は募集停止と表示されています。",
+        "現行ワークフローで応募先候補として扱うのではなく、制度変遷の参照先として整理しておくのが適切です。"
+      ],
+      "watchpoints_zh": [
+        "官方页面标题和正文都把 CPD 标记为“募集停止”。",
+        "因此它不应再作为当前申请去向来处理，而更适合作为制度演变背景材料保存。"
+      ],
+      "watchpoints_en": [
+        "Both the page title and body mark CPD as suspended.",
+        "It should therefore be handled as a historical reference rather than as a live application target in the current workflow."
+      ],
+      "overview_url": "",
+      "overview_snapshot_path": "",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
+          "kind": "snapshot"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和５（2023）年度採用分 募集要項",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_yoko.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "申請手続の流れ",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_tetsuzuki.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "特別研究員-CPD申請システムの使い方（申請者向け）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/manual_shinseisya_cpd.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "令和５（2023）年度採用分 申請書作成要領",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/sakusei_cpd.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/01_cpd_shinseishojoho.pdf",
+          "kind": "file",
+          "section": "申請書等様式"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/02_cpd_naiyo.pdf,https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/02_cpd_naiyo.docx",
+          "kind": "file",
+          "section": "申請書等様式"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和５（2023）年度採用分 募集要項",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_yoko.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "申請手続の流れ",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_tetsuzuki.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "特別研究員-CPD申請システムの使い方（申請者向け）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/manual_shinseisya_cpd.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "令和５（2023）年度採用分 申請書作成要領",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/sakusei_cpd.pdf",
+          "kind": "file",
+          "section": "申請方法"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/01_cpd_shinseishojoho.pdf",
+          "kind": "file",
+          "section": "申請書等様式"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/02_cpd_naiyo.pdf,https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/02_cpd_naiyo.docx",
+          "kind": "file",
+          "section": "申請書等様式"
+        },
+        {
+          "title": "令和５（2023）年度採用分特別研究員-CPDの募集について（通知）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/tuti_cpd.pdf",
+          "kind": "file",
+          "section": "申請機関担当者用"
+        },
+        {
+          "title": "申請書提出にあたっての事務担当者チェック要領",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/yoryo_cpd.pdf",
+          "kind": "file",
+          "section": "申請機関担当者用"
+        },
+        {
+          "title": "特別研究員-CPD申請システムの使い方（申請機関事務担当者向け）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/manual_kikan_cpd.pdf",
+          "kind": "file",
+          "section": "申請機関担当者用"
+        },
+        {
+          "title": "特別研究員-CPD申請システムの使い方（国内受入研究者向け）",
+          "url": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/manual_ukeire_cpd.pdf",
+          "kind": "file",
+          "section": "申請機関担当者用"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 16,
+      "document_count": 10,
+      "form_count": 0,
+      "search_terms": [
+        "特別研究員（CPD）",
+        "特别研究员（CPD）",
+        "Research Fellowships for Young Scientists (CPD)",
+        "特別研究員",
+        "募集要項（CPD）"
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 1 件を保存。",
+          "summary_zh": "保存了 1 个相关页面。",
+          "summary_en": "1 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "j-pd__cpd_sin.html",
+              "href": "external/jsps/2026-04-07/j-pd__cpd_sin.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     },
     {
       "id": "research_results_publication",
@@ -5914,7 +8606,30 @@ window.KAKENHI_PORTAL_DATA = {
         "研究成果公開促進費",
         "研究成果公開促進費",
         "令和８(2026)年度研究成果公開促進費の公募について"
-      ]
+      ],
+      "timeline_events": [],
+      "recent_cycles": [],
+      "snapshot_history": [
+        {
+          "title_ja": "2026-04-07 スナップショット",
+          "title_zh": "2026-04-07 快照",
+          "title_en": "2026-04-07 snapshot",
+          "summary_ja": "関連ページ 2 件を保存。",
+          "summary_zh": "保存了 2 个相关页面。",
+          "summary_en": "2 related pages saved in this snapshot.",
+          "links": [
+            {
+              "title": "13_seika__index.html",
+              "href": "external/jsps/2026-04-07/13_seika__index.html"
+            },
+            {
+              "title": "13_seika__keikaku_dl.html",
+              "href": "external/jsps/2026-04-07/13_seika__keikaku_dl.html"
+            }
+          ]
+        }
+      ],
+      "related_programs": []
     }
   ],
   "timeline": [
@@ -6755,6 +9470,82 @@ window.KAKENHI_PORTAL_DATA = {
       "note_en": "Call period opens; the JSPS deadline is 2026-05-15 16:30 JST."
     },
     {
+      "id": "invitational_fellowships_for_research_in_japan-deadline",
+      "program_id": "invitational_fellowships_for_research_in_japan",
+      "program_title": "外国人招へい研究者（長期・短期）",
+      "program_title_ja": "外国人招へい研究者（長期・短期）",
+      "program_title_zh": "外国人招聘研究者（长期／短期）",
+      "program_title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term)",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-04-28",
+      "datetime": "2026-04-28T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "外国人招へい研究者（長期・短期）の JSPS 公式締切です。",
+      "note_zh": "外国人招聘研究者（长期／短期） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Invitational Fellowships for Research in Japan (Long-Term and Short-Term)."
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-short-round-2",
+      "program_id": "invitational_fellowships_for_research_in_japan",
+      "program_title": "外国人招へい研究者（長期・短期）",
+      "program_title_ja": "外国人招へい研究者（長期・短期）",
+      "program_title_zh": "外国人招聘研究者（长期／短期）",
+      "program_title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term)",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "短期 第2回締切",
+      "title_zh": "短期 第2回截止",
+      "title_en": "Short-Term round 2 deadline",
+      "date": "2026-04-28",
+      "datetime": "2026-04-28T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "申請スケジュールページ掲載の令和8（2026）年度第2回短期締切。",
+      "note_zh": "申请日程页公布的令和8（2026）年度第2回短期截止。",
+      "note_en": "FY2026 second-round short-term deadline listed on the official schedule page."
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-deadline",
+      "program_id": "foreign_jsps_fellowship_open",
+      "program_title": "外国人特別研究員（一般・欧米短期・公募）",
+      "program_title_ja": "外国人特別研究員（一般・欧米短期・公募）",
+      "program_title_zh": "外国人特别研究员（一般／欧美短期／公募）",
+      "program_title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-04-28",
+      "datetime": "2026-04-28T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "外国人特別研究員（一般・欧米短期・公募）の JSPS 公式締切です。",
+      "note_zh": "外国人特别研究员（一般／欧美短期／公募） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)."
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-general-round-2",
+      "program_id": "foreign_jsps_fellowship_open",
+      "program_title": "外国人特別研究員（一般・欧米短期・公募）",
+      "program_title_ja": "外国人特別研究員（一般・欧米短期・公募）",
+      "program_title_zh": "外国人特别研究员（一般／欧美短期／公募）",
+      "program_title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "一般・公募 第2回締切",
+      "title_zh": "一般／公募 第2回截止",
+      "title_en": "General/Open round 2 deadline",
+      "date": "2026-04-28",
+      "datetime": "2026-04-28T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "一般・公募スケジュールページ掲載の令和8（2026）年度第2回締切。",
+      "note_zh": "一般／公募日程页公布的令和8（2026）年度第2回截止。",
+      "note_en": "FY2026 round-2 deadline listed on the official General/Open schedule page."
+    },
+    {
       "id": "startup_support-deadline",
       "program_id": "startup_support",
       "program_title": "研究活動スタート支援",
@@ -6774,6 +9565,120 @@ window.KAKENHI_PORTAL_DATA = {
       "note_en": "Official JSPS deadline for Research Activity Start-up Support."
     },
     {
+      "id": "overseas_research_fellowship-deadline",
+      "program_id": "overseas_research_fellowship",
+      "program_title": "海外特別研究員",
+      "program_title_ja": "海外特別研究員",
+      "program_title_zh": "海外特别研究员",
+      "program_title_en": "Overseas Research Fellowships",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-05-11",
+      "datetime": null,
+      "status": "upcoming",
+      "note_ja": "海外特別研究員の JSPS 公式締切です。",
+      "note_zh": "海外特别研究员 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Overseas Research Fellowships."
+    },
+    {
+      "id": "overseas_research_fellowship-deadline",
+      "program_id": "overseas_research_fellowship",
+      "program_title": "海外特別研究員",
+      "program_title_ja": "海外特別研究員",
+      "program_title_zh": "海外特别研究员",
+      "program_title_en": "Overseas Research Fellowships",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "海外特別研究員 申請締切",
+      "title_zh": "海外特别研究员申请截止",
+      "title_en": "Overseas Research Fellowships deadline",
+      "date": "2026-05-11",
+      "datetime": null,
+      "status": "upcoming",
+      "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分受付終了日。",
+      "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请截止日。",
+      "note_en": "Application closing date for the FY2027 recruitment shown on the official schedule page."
+    },
+    {
+      "id": "overseas_research_fellowship_rra-deadline",
+      "program_id": "overseas_research_fellowship_rra",
+      "program_title": "海外特別研究員（RRA）",
+      "program_title_ja": "海外特別研究員（RRA）",
+      "program_title_zh": "海外特别研究员（RRA）",
+      "program_title_en": "Overseas Research Fellowships (RRA)",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-05-11",
+      "datetime": null,
+      "status": "upcoming",
+      "note_ja": "海外特別研究員（RRA）の JSPS 公式締切です。",
+      "note_zh": "海外特别研究员（RRA） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Overseas Research Fellowships (RRA)."
+    },
+    {
+      "id": "overseas_research_fellowship_rra-deadline",
+      "program_id": "overseas_research_fellowship_rra",
+      "program_title": "海外特別研究員（RRA）",
+      "program_title_ja": "海外特別研究員（RRA）",
+      "program_title_zh": "海外特别研究员（RRA）",
+      "program_title_en": "Overseas Research Fellowships (RRA)",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "海外特別研究員（RRA）申請締切",
+      "title_zh": "海外特别研究员（RRA）申请截止",
+      "title_en": "Overseas Research Fellowships (RRA) deadline",
+      "date": "2026-05-11",
+      "datetime": null,
+      "status": "upcoming",
+      "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分受付終了日。",
+      "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请截止日。",
+      "note_en": "Application closing date for the FY2027 recruitment shown on the official schedule page."
+    },
+    {
+      "id": "jsps_fellow_rpd-deadline",
+      "program_id": "jsps_fellow_rpd",
+      "program_title": "特別研究員（RPD）",
+      "program_title_ja": "特別研究員（RPD）",
+      "program_title_zh": "特别研究员（RPD）",
+      "program_title_en": "Research Fellowships for Young Scientists (RPD)",
+      "theme": "tohoku",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-05-11",
+      "datetime": "2026-05-11T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "特別研究員（RPD）の JSPS 公式締切です。",
+      "note_zh": "特别研究员（RPD） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Research Fellowships for Young Scientists (RPD)."
+    },
+    {
+      "id": "jsps_fellow_rpd-deadline",
+      "program_id": "jsps_fellow_rpd",
+      "program_title": "特別研究員（RPD）",
+      "program_title_ja": "特別研究員（RPD）",
+      "program_title_zh": "特别研究员（RPD）",
+      "program_title_en": "Research Fellowships for Young Scientists (RPD)",
+      "theme": "tohoku",
+      "type": "deadline",
+      "title_ja": "RPD JSPS 締切",
+      "title_zh": "RPD JSPS 截止",
+      "title_en": "RPD JSPS deadline",
+      "date": "2026-05-11",
+      "datetime": "2026-05-11T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分申請期限。",
+      "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请期限。",
+      "note_en": "Application deadline for the FY2027 recruitment shown on the official schedule page."
+    },
+    {
       "id": "independent_base_building_support-deadline",
       "program_id": "independent_base_building_support",
       "program_title": "独立基盤形成支援（試行）",
@@ -6791,6 +9696,63 @@ window.KAKENHI_PORTAL_DATA = {
       "note_ja": "独立基盤形成支援（試行）の JSPS 公式締切です。",
       "note_zh": "独立基盘形成支援（试行） 的 JSPS 官方截止时间。",
       "note_en": "Official JSPS deadline for Independent Research Base Building Support (Pilot)."
+    },
+    {
+      "id": "jsps_fellow_pd_dc-deadline",
+      "program_id": "jsps_fellow_pd_dc",
+      "program_title": "特別研究員（PD・DC1・DC2）",
+      "program_title_ja": "特別研究員（PD・DC1・DC2）",
+      "program_title_zh": "特别研究员（PD／DC1／DC2）",
+      "program_title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2)",
+      "theme": "tohoku",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-06-03",
+      "datetime": "2026-06-03T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "特別研究員（PD・DC1・DC2）の JSPS 公式締切です。",
+      "note_zh": "特别研究员（PD／DC1／DC2） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Research Fellowships for Young Scientists (PD/DC1/DC2)."
+    },
+    {
+      "id": "jsps_fellow_pd_dc-deadline",
+      "program_id": "jsps_fellow_pd_dc",
+      "program_title": "特別研究員（PD・DC1・DC2）",
+      "program_title_ja": "特別研究員（PD・DC1・DC2）",
+      "program_title_zh": "特别研究员（PD／DC1／DC2）",
+      "program_title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2)",
+      "theme": "tohoku",
+      "type": "deadline",
+      "title_ja": "PD・DC1・DC2 JSPS 締切",
+      "title_zh": "PD／DC1／DC2 JSPS 截止",
+      "title_en": "PD/DC1/DC2 JSPS deadline",
+      "date": "2026-06-03",
+      "datetime": "2026-06-03T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "選考日程ページ掲載の令和9（2027）年度採用分申請期限。",
+      "note_zh": "选考日程页面公布的令和9（2027）年度采用分申请期限。",
+      "note_en": "Application deadline for the FY2027 recruitment shown on the official schedule page."
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-short-round-3",
+      "program_id": "foreign_jsps_fellowship_open",
+      "program_title": "外国人特別研究員（一般・欧米短期・公募）",
+      "program_title_ja": "外国人特別研究員（一般・欧米短期・公募）",
+      "program_title_zh": "外国人特别研究员（一般／欧美短期／公募）",
+      "program_title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "欧米短期・公募 第3回締切",
+      "title_zh": "欧美短期／公募 第3回截止",
+      "title_en": "Open Short-Term round 3 deadline",
+      "date": "2026-06-05",
+      "datetime": "2026-06-05T17:00:00+09:00",
+      "status": "upcoming",
+      "note_ja": "欧米短期・公募スケジュールページ掲載の令和8（2026）年度第3回締切。",
+      "note_zh": "欧美短期／公募日程页公布的令和8（2026）年度第3回截止。",
+      "note_en": "FY2026 round-3 deadline listed on the official Open Short-Term schedule page."
     }
   ],
   "forms_catalog": [
@@ -8266,7 +11228,727 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "independent_base_building_support-23",
+      "id": "invitational_fellowships_for_research_in_japan-23",
+      "title_ja": "外国人招へい研究者（長期・短期）：公式ページ",
+      "title_zh": "外国人招聘研究者（长期／短期）：官方页面",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): Official page",
+      "summary_ja": "外国人招へい研究者（長期・短期） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人招聘研究者（长期／短期） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Invitational Fellowships for Research in Japan (Long-Term and Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-24",
+      "title_ja": "外国人招へい研究者（長期・短期）：ローカルスナップショット",
+      "title_zh": "外国人招聘研究者（长期／短期）：本地快照",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): Local snapshot",
+      "summary_ja": "外国人招へい研究者（長期・短期） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人招聘研究者（长期／短期） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Invitational Fellowships for Research in Japan (Long-Term and Short-Term) page.",
+      "href": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-25",
+      "title_ja": "外国人招へい研究者（長期・短期）：申請スケジュール",
+      "title_zh": "外国人招聘研究者（长期／短期）：申请日程",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): Application schedule",
+      "summary_ja": "外国人招へい研究者（長期・短期） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人招聘研究者（长期／短期） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Invitational Fellowships for Research in Japan (Long-Term and Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-inv/boshu/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-26",
+      "title_ja": "外国人招へい研究者（長期・短期）：制度トップ",
+      "title_zh": "外国人招聘研究者（长期／短期）：制度主页",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): Scheme hub",
+      "summary_ja": "外国人招へい研究者（長期・短期） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人招聘研究者（长期／短期） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Invitational Fellowships for Research in Japan (Long-Term and Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-inv/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-27",
+      "title_ja": "外国人招へい研究者（長期・短期）：招へい研究者ハブ",
+      "title_zh": "外国人招聘研究者（长期／短期）：来日研究者总览",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): Inbound researchers hub",
+      "summary_ja": "外国人招へい研究者（長期・短期） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人招聘研究者（长期／短期） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Invitational Fellowships for Research in Japan (Long-Term and Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-inv_researchers/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-doc-28",
+      "title_ja": "外国人招へい研究者（長期・短期）：令和8（2026）年度 募集要項（PDF/652KB）",
+      "title_zh": "外国人招聘研究者（长期／短期）：令和8（2026）年度 募集要項（PDF/652KB）",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): 令和8（2026）年度 募集要項（PDF/652KB）",
+      "summary_ja": "外国人招へい研究者（長期・短期） の確認優先度が高い資料です。",
+      "summary_zh": "外国人招聘研究者（长期／短期） 的重点参考材料。",
+      "summary_en": "Priority reference document for Invitational Fellowships for Research in Japan (Long-Term and Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-doc-29",
+      "title_ja": "外国人招へい研究者（長期・短期）：令和8（2026）年度 審査区分表（PDF/596KB）",
+      "title_zh": "外国人招聘研究者（长期／短期）：令和8（2026）年度 審査区分表（PDF/596KB）",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): 令和8（2026）年度 審査区分表（PDF/596KB）",
+      "summary_ja": "外国人招へい研究者（長期・短期） の確認優先度が高い資料です。",
+      "summary_zh": "外国人招聘研究者（长期／短期） 的重点参考材料。",
+      "summary_en": "Priority reference document for Invitational Fellowships for Research in Japan (Long-Term and Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-doc-30",
+      "title_ja": "外国人招へい研究者（長期・短期）：令和8（2026）年度 審査セット（PDF/659KB）",
+      "title_zh": "外国人招聘研究者（长期／短期）：令和8（2026）年度 審査セット（PDF/659KB）",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): 令和8（2026）年度 審査セット（PDF/659KB）",
+      "summary_ja": "外国人招へい研究者（長期・短期） の確認優先度が高い資料です。",
+      "summary_zh": "外国人招聘研究者（长期／短期） 的重点参考材料。",
+      "summary_en": "Priority reference document for Invitational Fellowships for Research in Japan (Long-Term and Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_reviewsectionset_invi_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan-doc-31",
+      "title_ja": "外国人招へい研究者（長期・短期）：申請書作成・記入要領（PDF/230KB）",
+      "title_zh": "外国人招聘研究者（长期／短期）：申請書作成・記入要領（PDF/230KB）",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): 申請書作成・記入要領（PDF/230KB）",
+      "summary_ja": "外国人招へい研究者（長期・短期） の確認優先度が高い資料です。",
+      "summary_zh": "外国人招聘研究者（长期／短期） 的重点参考材料。",
+      "summary_en": "Priority reference document for Invitational Fellowships for Research in Japan (Long-Term and Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_instruction_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-32",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：公式ページ",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：官方页面",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): Official page",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人特别研究员（一般／欧美短期／公募） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-33",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：ローカルスナップショット",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：本地快照",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): Local snapshot",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人特别研究员（一般／欧美短期／公募） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) page.",
+      "href": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-34",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：一般・公募日程",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：一般・公募日程",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): General/Open schedule",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人特别研究员（一般／欧美短期／公募） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-35",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：欧米短期・公募日程",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：欧美短期・公募日程",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): Open Short-Term schedule",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人特别研究员（一般／欧美短期／公募） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-36",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：制度トップ",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：制度主页",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): Scheme hub",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 外国人特别研究员（一般／欧美短期／公募） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) page.",
+      "href": "https://www.jsps.go.jp/j-fellow/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-doc-37",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：令和8（2026）年度 募集要項（PDF/652KB）",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：令和8（2026）年度 募集要項（PDF/652KB）",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): 令和8（2026）年度 募集要項（PDF/652KB）",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の確認優先度が高い資料です。",
+      "summary_zh": "外国人特别研究员（一般／欧美短期／公募） 的重点参考材料。",
+      "summary_en": "Priority reference document for JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-doc-38",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：令和8（2026）年度 審査区分表（PDF/596KB）",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：令和8（2026）年度 審査区分表（PDF/596KB）",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): 令和8（2026）年度 審査区分表（PDF/596KB）",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の確認優先度が高い資料です。",
+      "summary_zh": "外国人特别研究员（一般／欧美短期／公募） 的重点参考材料。",
+      "summary_en": "Priority reference document for JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-doc-39",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：令和8（2026）年度 審査セット（一般）（PDF/444KB）",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：令和8（2026）年度 審査セット（一般）（PDF/444KB）",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): 令和8（2026）年度 審査セット（一般）（PDF/444KB）",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の確認優先度が高い資料です。",
+      "summary_zh": "外国人特别研究员（一般／欧美短期／公募） 的重点参考材料。",
+      "summary_en": "Priority reference document for JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_sta_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open-doc-40",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）：令和8（2026）年度 審査セット（欧米短期）（PDF/442KB）",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）：令和8（2026）年度 審査セット（欧米短期）（PDF/442KB）",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): 令和8（2026）年度 審査セット（欧米短期）（PDF/442KB）",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の確認優先度が高い資料です。",
+      "summary_zh": "外国人特别研究员（一般／欧美短期／公募） 的重点参考材料。",
+      "summary_en": "Priority reference document for JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term).",
+      "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_short_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship-41",
+      "title_ja": "海外特別研究員：公式ページ",
+      "title_zh": "海外特别研究员：官方页面",
+      "title_en": "Overseas Research Fellowships: Official page",
+      "summary_ja": "海外特別研究員 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 海外特别研究员 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Overseas Research Fellowships page.",
+      "href": "https://www.jsps.go.jp/j-ab/ab_sin.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_research_fellowship-42",
+      "title_ja": "海外特別研究員：ローカルスナップショット",
+      "title_zh": "海外特别研究员：本地快照",
+      "title_en": "Overseas Research Fellowships: Local snapshot",
+      "summary_ja": "海外特別研究員 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 海外特别研究员 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Overseas Research Fellowships page.",
+      "href": "external/jsps/2026-04-07/j-ab__ab_sin.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_research_fellowship-43",
+      "title_ja": "海外特別研究員：選考日程",
+      "title_zh": "海外特别研究员：选考日程",
+      "title_en": "Overseas Research Fellowships: Selection schedule",
+      "summary_ja": "海外特別研究員 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 海外特别研究员 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Overseas Research Fellowships page.",
+      "href": "https://www.jsps.go.jp/j-ab/ab_nittei.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_research_fellowship-44",
+      "title_ja": "海外特別研究員：制度トップ",
+      "title_zh": "海外特别研究员：制度主页",
+      "title_en": "Overseas Research Fellowships: Scheme hub",
+      "summary_ja": "海外特別研究員 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 海外特别研究员 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Overseas Research Fellowships page.",
+      "href": "https://www.jsps.go.jp/j-ab/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_research_fellowship-doc-45",
+      "title_ja": "海外特別研究員：海外特別研究員 令和9（2027）年度採用分募集要項（PDF/333KB）",
+      "title_zh": "海外特别研究员：海外特別研究員 令和9（2027）年度採用分募集要項（PDF/333KB）",
+      "title_en": "Overseas Research Fellowships: 海外特別研究員 令和9（2027）年度採用分募集要項（PDF/333KB）",
+      "summary_ja": "海外特別研究員 の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships.",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_bosyuyoko.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship-doc-46",
+      "title_ja": "海外特別研究員：今回募集からの主な変更点（PDF/98KB）",
+      "title_zh": "海外特别研究员：今回募集からの主な変更点（PDF/98KB）",
+      "title_en": "Overseas Research Fellowships: 今回募集からの主な変更点（PDF/98KB）",
+      "summary_ja": "海外特別研究員 の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships.",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-0_henko.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship-doc-47",
+      "title_ja": "海外特別研究員：海外特別研究員 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+      "title_zh": "海外特别研究员：海外特別研究員 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+      "title_en": "Overseas Research Fellowships: 海外特別研究員 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+      "summary_ja": "海外特別研究員 の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships.",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship-doc-48",
+      "title_ja": "海外特別研究員：令和9（2027）年度採用分海外特別研究員の募集について（通知）（PDF/131KB）",
+      "title_zh": "海外特别研究员：令和9（2027）年度採用分海外特別研究員の募集について（通知）（PDF/131KB）",
+      "title_en": "Overseas Research Fellowships: 令和9（2027）年度採用分海外特別研究員の募集について（通知）（PDF/131KB）",
+      "summary_ja": "海外特別研究員 の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships.",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship_rra-49",
+      "title_ja": "海外特別研究員（RRA）：公式ページ",
+      "title_zh": "海外特别研究员（RRA）：官方页面",
+      "title_en": "Overseas Research Fellowships (RRA): Official page",
+      "summary_ja": "海外特別研究員（RRA） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 海外特别研究员（RRA） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Overseas Research Fellowships (RRA) page.",
+      "href": "https://www.jsps.go.jp/j-ab/rra_sin.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_research_fellowship_rra-50",
+      "title_ja": "海外特別研究員（RRA）：ローカルスナップショット",
+      "title_zh": "海外特别研究员（RRA）：本地快照",
+      "title_en": "Overseas Research Fellowships (RRA): Local snapshot",
+      "summary_ja": "海外特別研究員（RRA） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 海外特别研究员（RRA） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Overseas Research Fellowships (RRA) page.",
+      "href": "external/jsps/2026-04-07/j-ab__rra_sin.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_research_fellowship_rra-doc-51",
+      "title_ja": "海外特別研究員（RRA）：海外特別研究員 - RRA 令和9（2027）年度採用分募集要項（PDF/325KB）",
+      "title_zh": "海外特别研究员（RRA）：海外特別研究員 - RRA 令和9（2027）年度採用分募集要項（PDF/325KB）",
+      "title_en": "Overseas Research Fellowships (RRA): 海外特別研究員 - RRA 令和9（2027）年度採用分募集要項（PDF/325KB）",
+      "summary_ja": "海外特別研究員（RRA） の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员（RRA） 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships (RRA).",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_RRA_bosyuyoko.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship_rra-doc-52",
+      "title_ja": "海外特別研究員（RRA）：海外特別研究員 - RRA 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+      "title_zh": "海外特别研究员（RRA）：海外特別研究員 - RRA 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+      "title_en": "Overseas Research Fellowships (RRA): 海外特別研究員 - RRA 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
+      "summary_ja": "海外特別研究員（RRA） の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员（RRA） 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships (RRA).",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship_rra-doc-53",
+      "title_ja": "海外特別研究員（RRA）：海外特別研究員 - RRA 学歴、博士課程、研究・職歴等別紙（Word/27KB）",
+      "title_zh": "海外特别研究员（RRA）：海外特別研究員 - RRA 学歴、博士課程、研究・職歴等別紙（Word/27KB）",
+      "title_en": "Overseas Research Fellowships (RRA): 海外特別研究員 - RRA 学歴、博士課程、研究・職歴等別紙（Word/27KB）",
+      "summary_ja": "海外特別研究員（RRA） の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员（RRA） 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships (RRA).",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/05_shinsei5RRA_bessi.docx",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_research_fellowship_rra-doc-54",
+      "title_ja": "海外特別研究員（RRA）：令和9（2027）年度採用分海外特別研究員 - RRAの募集について（通知）（PDF/131KB）",
+      "title_zh": "海外特别研究员（RRA）：令和9（2027）年度採用分海外特別研究員 - RRAの募集について（通知）（PDF/131KB）",
+      "title_en": "Overseas Research Fellowships (RRA): 令和9（2027）年度採用分海外特別研究員 - RRAの募集について（通知）（PDF/131KB）",
+      "summary_ja": "海外特別研究員（RRA） の確認優先度が高い資料です。",
+      "summary_zh": "海外特别研究员（RRA） 的重点参考材料。",
+      "summary_en": "Priority reference document for Overseas Research Fellowships (RRA).",
+      "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-55",
+      "title_ja": "特別研究員（PD・DC1・DC2）：公式ページ",
+      "title_zh": "特别研究员（PD／DC1／DC2）：官方页面",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): Official page",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（PD／DC1／DC2） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (PD/DC1/DC2) page.",
+      "href": "https://www.jsps.go.jp/j-pd/pd_sin.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-56",
+      "title_ja": "特別研究員（PD・DC1・DC2）：ローカルスナップショット",
+      "title_zh": "特别研究员（PD／DC1／DC2）：本地快照",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): Local snapshot",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（PD／DC1／DC2） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (PD/DC1/DC2) page.",
+      "href": "external/jsps/2026-04-07/j-pd__pd_sin.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-57",
+      "title_ja": "特別研究員（PD・DC1・DC2）：選考日程",
+      "title_zh": "特别研究员（PD／DC1／DC2）：选考日程",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): Selection schedule",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（PD／DC1／DC2） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (PD/DC1/DC2) page.",
+      "href": "https://www.jsps.go.jp/j-pd/pd_nittei.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-58",
+      "title_ja": "特別研究員（PD・DC1・DC2）：申請Q&A",
+      "title_zh": "特别研究员（PD／DC1／DC2）：申请 Q&A",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): Application FAQ",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（PD／DC1／DC2） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (PD/DC1/DC2) page.",
+      "href": "https://www.jsps.go.jp/j-pd/pd_qa.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-59",
+      "title_ja": "特別研究員（PD・DC1・DC2）：様式集",
+      "title_zh": "特别研究员（PD／DC1／DC2）：样式集",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): Forms collection",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（PD／DC1／DC2） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (PD/DC1/DC2) page.",
+      "href": "https://www.jsps.go.jp/j-pd/pd_tebiki/yoshiki/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-doc-60",
+      "title_ja": "特別研究員（PD・DC1・DC2）：令和9（2027）年度採用分特別研究員-PD募集要項（PDF/619KB）",
+      "title_zh": "特别研究员（PD／DC1／DC2）：令和9（2027）年度採用分特別研究員-PD募集要項（PDF/619KB）",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): 令和9（2027）年度採用分特別研究員-PD募集要項（PDF/619KB）",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（PD／DC1／DC2） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (PD/DC1/DC2).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_pd_yoko.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-doc-61",
+      "title_ja": "特別研究員（PD・DC1・DC2）：令和9（2027）年度採用分特別研究員-PD申請書作成要領等（PDF/1,626KB）",
+      "title_zh": "特别研究员（PD／DC1／DC2）：令和9（2027）年度採用分特別研究員-PD申請書作成要領等（PDF/1,626KB）",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): 令和9（2027）年度採用分特別研究員-PD申請書作成要領等（PDF/1,626KB）",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（PD／DC1／DC2） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (PD/DC1/DC2).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_pd.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-doc-62",
+      "title_ja": "特別研究員（PD・DC1・DC2）：令和9（2027）年度採用分特別研究員-DC募集要項（PDF/610KB）",
+      "title_zh": "特别研究员（PD／DC1／DC2）：令和9（2027）年度採用分特別研究員-DC募集要項（PDF/610KB）",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): 令和9（2027）年度採用分特別研究員-DC募集要項（PDF/610KB）",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（PD／DC1／DC2） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (PD/DC1/DC2).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_pd_dc-doc-63",
+      "title_ja": "特別研究員（PD・DC1・DC2）：FY2027 JSPS Doctral Course (DC) Research Fellowships Application Guidelines（PDF/560KB）",
+      "title_zh": "特别研究员（PD／DC1／DC2）：FY2027 JSPS Doctral Course (DC) Research Fellowships Application Guidelines（PDF/560KB）",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2): FY2027 JSPS Doctral Course (DC) Research Fellowships Application Guidelines（PDF/560KB）",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（PD／DC1／DC2） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (PD/DC1/DC2).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko_en.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_rpd-64",
+      "title_ja": "特別研究員（RPD）：公式ページ",
+      "title_zh": "特别研究员（RPD）：官方页面",
+      "title_en": "Research Fellowships for Young Scientists (RPD): Official page",
+      "summary_ja": "特別研究員（RPD） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（RPD） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (RPD) page.",
+      "href": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_rpd-65",
+      "title_ja": "特別研究員（RPD）：ローカルスナップショット",
+      "title_zh": "特别研究员（RPD）：本地快照",
+      "title_en": "Research Fellowships for Young Scientists (RPD): Local snapshot",
+      "summary_ja": "特別研究員（RPD） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（RPD） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (RPD) page.",
+      "href": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_rpd-66",
+      "title_ja": "特別研究員（RPD）：申請Q&A",
+      "title_zh": "特别研究员（RPD）：申请 Q&A",
+      "title_en": "Research Fellowships for Young Scientists (RPD): Application FAQ",
+      "summary_ja": "特別研究員（RPD） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（RPD） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (RPD) page.",
+      "href": "https://www.jsps.go.jp/j-pd/rpd_qa.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_rpd-doc-67",
+      "title_ja": "特別研究員（RPD）：令和9（2027）年度採用分特別研究員-RPD募集要項（PDF/625KB）",
+      "title_zh": "特别研究员（RPD）：令和9（2027）年度採用分特別研究員-RPD募集要項（PDF/625KB）",
+      "title_en": "Research Fellowships for Young Scientists (RPD): 令和9（2027）年度採用分特別研究員-RPD募集要項（PDF/625KB）",
+      "summary_ja": "特別研究員（RPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（RPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (RPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_yoko.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_rpd-doc-68",
+      "title_ja": "特別研究員（RPD）：令和9（2027）年度採用分特別研究員-RPD申請書作成要領等（PDF/1,834KB）",
+      "title_zh": "特别研究员（RPD）：令和9（2027）年度採用分特別研究員-RPD申請書作成要領等（PDF/1,834KB）",
+      "title_en": "Research Fellowships for Young Scientists (RPD): 令和9（2027）年度採用分特別研究員-RPD申請書作成要領等（PDF/1,834KB）",
+      "summary_ja": "特別研究員（RPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（RPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (RPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_rpd.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_rpd-doc-69",
+      "title_ja": "特別研究員（RPD）：令和9（2027）年度採用分特別研究員の募集について（通知）（PDF/132KB）",
+      "title_zh": "特别研究员（RPD）：令和9（2027）年度採用分特別研究員の募集について（通知）（PDF/132KB）",
+      "title_en": "Research Fellowships for Young Scientists (RPD): 令和9（2027）年度採用分特別研究員の募集について（通知）（PDF/132KB）",
+      "summary_ja": "特別研究員（RPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（RPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (RPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_tuti_rpd.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_rpd-doc-70",
+      "title_ja": "特別研究員（RPD）：申請書提出にあたっての事務担当者チェック要領（PDF/695KB）",
+      "title_zh": "特别研究员（RPD）：申請書提出にあたっての事務担当者チェック要領（PDF/695KB）",
+      "title_en": "Research Fellowships for Young Scientists (RPD): 申請書提出にあたっての事務担当者チェック要領（PDF/695KB）",
+      "summary_ja": "特別研究員（RPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（RPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (RPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_checkyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "independent_base_building_support-71",
       "title_ja": "独立基盤形成支援（試行）：公式ページ",
       "title_zh": "独立基盘形成支援（试行）：官方页面",
       "title_en": "Independent Research Base Building Support (Pilot): Official page",
@@ -8281,7 +11963,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "independent_base_building_support-24",
+      "id": "independent_base_building_support-72",
       "title_ja": "独立基盤形成支援（試行）：ローカルスナップショット",
       "title_zh": "独立基盘形成支援（试行）：本地快照",
       "title_en": "Independent Research Base Building Support (Pilot): Local snapshot",
@@ -8296,7 +11978,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "independent_base_building_support-doc-25",
+      "id": "independent_base_building_support-doc-73",
       "title_ja": "独立基盤形成支援（試行）：令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
       "title_zh": "独立基盘形成支援（试行）：令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
       "title_en": "Independent Research Base Building Support (Pilot): 令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
@@ -8311,7 +11993,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "independent_base_building_support-doc-26",
+      "id": "independent_base_building_support-doc-74",
       "title_ja": "独立基盤形成支援（試行）：公募要領（PDF/476KB）",
       "title_zh": "独立基盘形成支援（试行）：公募要領（PDF/476KB）",
       "title_en": "Independent Research Base Building Support (Pilot): 公募要領（PDF/476KB）",
@@ -8326,7 +12008,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "independent_base_building_support-doc-27",
+      "id": "independent_base_building_support-doc-75",
       "title_ja": "独立基盤形成支援（試行）：別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
       "title_zh": "独立基盘形成支援（试行）：別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
       "title_en": "Independent Research Base Building Support (Pilot): 別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
@@ -8341,7 +12023,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "independent_base_building_support-doc-28",
+      "id": "independent_base_building_support-doc-76",
       "title_ja": "独立基盤形成支援（試行）：ＦＡＱ（PDF/322KB）",
       "title_zh": "独立基盘形成支援（试行）：ＦＡＱ（PDF/322KB）",
       "title_en": "Independent Research Base Building Support (Pilot): ＦＡＱ（PDF/322KB）",
@@ -8356,7 +12038,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_leading_research-29",
+      "id": "international_leading_research-77",
       "title_ja": "国際共同研究加速基金（国際先導研究）：公式ページ",
       "title_zh": "国际共同研究加速基金（国际先导研究）：官方页面",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Official page",
@@ -8371,7 +12053,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "international_leading_research-30",
+      "id": "international_leading_research-78",
       "title_ja": "国際共同研究加速基金（国際先導研究）：ローカルスナップショット",
       "title_zh": "国际共同研究加速基金（国际先导研究）：本地快照",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Local snapshot",
@@ -8386,7 +12068,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "international_leading_research-31",
+      "id": "international_leading_research-79",
       "title_ja": "国際共同研究加速基金（国際先導研究）：種目ページ",
       "title_zh": "国际共同研究加速基金（国际先导研究）：种目页面",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Program page",
@@ -8401,7 +12083,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "international_leading_research-32",
+      "id": "international_leading_research-80",
       "title_ja": "国際共同研究加速基金（国際先導研究）：種目ページの快照",
       "title_zh": "国际共同研究加速基金（国际先导研究）：种目快照",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Program snapshot",
@@ -8416,7 +12098,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "international_leading_research-33",
+      "id": "international_leading_research-81",
       "title_ja": "国際共同研究加速基金（国際先導研究）：説明会資料",
       "title_zh": "国际共同研究加速基金（国际先导研究）：说明会资料",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Explanation meeting materials",
@@ -8431,7 +12113,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "international_leading_research-doc-34",
+      "id": "international_leading_research-doc-82",
       "title_ja": "国際共同研究加速基金（国際先導研究）：令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
       "title_zh": "国际共同研究加速基金（国际先导研究）：令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
@@ -8446,7 +12128,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_leading_research-doc-35",
+      "id": "international_leading_research-doc-83",
       "title_ja": "国際共同研究加速基金（国際先導研究）：公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
       "title_zh": "国际共同研究加速基金（国际先导研究）：公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
@@ -8461,7 +12143,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_leading_research-doc-36",
+      "id": "international_leading_research-doc-84",
       "title_ja": "国際共同研究加速基金（国際先導研究）：公募説明会資料",
       "title_zh": "国际共同研究加速基金（国际先导研究）：公募説明会資料",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 公募説明会資料",
@@ -8476,7 +12158,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_leading_research-doc-37",
+      "id": "international_leading_research-doc-85",
       "title_ja": "国際共同研究加速基金（国際先導研究）：国際先導研究応募について（PDF/441KB）",
       "title_zh": "国际共同研究加速基金（国际先导研究）：国際先導研究応募について（PDF/441KB）",
       "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 国際先導研究応募について（PDF/441KB）",
@@ -8491,7 +12173,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_research_strengthening-38",
+      "id": "international_research_strengthening-86",
       "title_ja": "国際共同研究加速基金（国際共同研究強化）：公式ページ",
       "title_zh": "国际共同研究加速基金（国际共同研究强化）：官方页面",
       "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): Official page",
@@ -8506,7 +12188,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "international_research_strengthening-39",
+      "id": "international_research_strengthening-87",
       "title_ja": "国際共同研究加速基金（国際共同研究強化）：ローカルスナップショット",
       "title_zh": "国际共同研究加速基金（国际共同研究强化）：本地快照",
       "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): Local snapshot",
@@ -8521,7 +12203,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "international_research_strengthening-doc-40",
+      "id": "international_research_strengthening-doc-88",
       "title_ja": "国際共同研究加速基金（国際共同研究強化）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
       "title_zh": "国际共同研究加速基金（国际共同研究强化）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): 令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
@@ -8536,7 +12218,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_research_strengthening-doc-41",
+      "id": "international_research_strengthening-doc-89",
       "title_ja": "国際共同研究加速基金（国際共同研究強化）：Application Procedures（PDF/1,703KB）",
       "title_zh": "国际共同研究加速基金（国际共同研究强化）：Application Procedures（PDF/1,703KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): Application Procedures（PDF/1,703KB）",
@@ -8551,7 +12233,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_research_strengthening-doc-42",
+      "id": "international_research_strengthening-doc-90",
       "title_ja": "国際共同研究加速基金（国際共同研究強化）：国際共同研究強化の公募に係るFAQ（PDF/562KB）",
       "title_zh": "国际共同研究加速基金（国际共同研究强化）：国際共同研究強化の公募に係るFAQ（PDF/562KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): 国際共同研究強化の公募に係るFAQ（PDF/562KB）",
@@ -8566,7 +12248,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "international_research_strengthening-doc-43",
+      "id": "international_research_strengthening-doc-91",
       "title_ja": "国際共同研究加速基金（国際共同研究強化）：公募要領（日本語版）（PDF/1,394KB）",
       "title_zh": "国际共同研究加速基金（国际共同研究强化）：公募要領（日本語版）（PDF/1,394KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): 公募要領（日本語版）（PDF/1,394KB）",
@@ -8581,7 +12263,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "returning_researchers_development-44",
+      "id": "returning_researchers_development-92",
       "title_ja": "国際共同研究加速基金（帰国発展研究）：公式ページ",
       "title_zh": "国际共同研究加速基金（归国发展研究）：官方页面",
       "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): Official page",
@@ -8596,7 +12278,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "returning_researchers_development-45",
+      "id": "returning_researchers_development-93",
       "title_ja": "国際共同研究加速基金（帰国発展研究）：ローカルスナップショット",
       "title_zh": "国际共同研究加速基金（归国发展研究）：本地快照",
       "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): Local snapshot",
@@ -8611,7 +12293,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "returning_researchers_development-46",
+      "id": "returning_researchers_development-94",
       "title_ja": "国際共同研究加速基金（帰国発展研究）：e-Rad",
       "title_zh": "国际共同研究加速基金（归国发展研究）：e-Rad",
       "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): e-Rad",
@@ -8626,7 +12308,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "returning_researchers_development-doc-47",
+      "id": "returning_researchers_development-doc-95",
       "title_ja": "国際共同研究加速基金（帰国発展研究）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
       "title_zh": "国际共同研究加速基金（归国发展研究）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
@@ -8641,7 +12323,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "returning_researchers_development-doc-48",
+      "id": "returning_researchers_development-doc-96",
       "title_ja": "国際共同研究加速基金（帰国発展研究）：帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
       "title_zh": "国际共同研究加速基金（归国发展研究）：帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
@@ -8656,7 +12338,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "returning_researchers_development-doc-49",
+      "id": "returning_researchers_development-doc-97",
       "title_ja": "国際共同研究加速基金（帰国発展研究）：令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
       "title_zh": "国际共同研究加速基金（归国发展研究）：令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
@@ -8671,7 +12353,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "returning_researchers_development-doc-50",
+      "id": "returning_researchers_development-doc-98",
       "title_ja": "国際共同研究加速基金（帰国発展研究）：公募要領 （PDF/1,026KB）",
       "title_zh": "国际共同研究加速基金（归国发展研究）：公募要領 （PDF/1,026KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 公募要領 （PDF/1,026KB）",
@@ -8686,7 +12368,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "overseas_partnership_research-51",
+      "id": "overseas_partnership_research-99",
       "title_ja": "国際共同研究加速基金（海外連携研究）：公式ページ",
       "title_zh": "国际共同研究加速基金（海外联携研究）：官方页面",
       "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): Official page",
@@ -8701,7 +12383,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "overseas_partnership_research-52",
+      "id": "overseas_partnership_research-100",
       "title_ja": "国際共同研究加速基金（海外連携研究）：ローカルスナップショット",
       "title_zh": "国际共同研究加速基金（海外联携研究）：本地快照",
       "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): Local snapshot",
@@ -8716,7 +12398,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "overseas_partnership_research-doc-53",
+      "id": "overseas_partnership_research-doc-101",
       "title_ja": "国際共同研究加速基金（海外連携研究）：科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
       "title_zh": "国际共同研究加速基金（海外联携研究）：科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): 科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
@@ -8731,7 +12413,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "overseas_partnership_research-doc-54",
+      "id": "overseas_partnership_research-doc-102",
       "title_ja": "国際共同研究加速基金（海外連携研究）：公募要領 Application Procedures（日本語）（PDF/2,147KB）",
       "title_zh": "国际共同研究加速基金（海外联携研究）：公募要領 Application Procedures（日本語）（PDF/2,147KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): 公募要領 Application Procedures（日本語）（PDF/2,147KB）",
@@ -8746,7 +12428,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "overseas_partnership_research-doc-55",
+      "id": "overseas_partnership_research-doc-103",
       "title_ja": "国際共同研究加速基金（海外連携研究）：FAQ (日本語のみ）（PDF/327KB）",
       "title_zh": "国际共同研究加速基金（海外联携研究）：FAQ (日本語のみ）（PDF/327KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): FAQ (日本語のみ）（PDF/327KB）",
@@ -8761,7 +12443,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "overseas_partnership_research-doc-56",
+      "id": "overseas_partnership_research-doc-104",
       "title_ja": "国際共同研究加速基金（海外連携研究）：公募要領 Application Procedures（English)（PDF/2,167KB）",
       "title_zh": "国际共同研究加速基金（海外联携研究）：公募要領 Application Procedures（English)（PDF/2,167KB）",
       "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): 公募要領 Application Procedures（English)（PDF/2,167KB）",
@@ -8776,7 +12458,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_abc-doc-57",
+      "id": "scientific_research_abc-doc-105",
       "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "title_zh": "基盘研究（A/B/C）：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "title_en": "Scientific Research (A/B/C): 令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
@@ -8791,7 +12473,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_abc-doc-58",
+      "id": "scientific_research_abc-doc-106",
       "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：公募要領（日本語版）（PDF/2,219KB）",
       "title_zh": "基盘研究（A/B/C）：公募要領（日本語版）（PDF/2,219KB）",
       "title_en": "Scientific Research (A/B/C): 公募要領（日本語版）（PDF/2,219KB）",
@@ -8806,7 +12488,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_abc-doc-59",
+      "id": "scientific_research_abc-doc-107",
       "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：公募要領（英語版）（PDF/3,595KB）",
       "title_zh": "基盘研究（A/B/C）：公募要領（英語版）（PDF/3,595KB）",
       "title_en": "Scientific Research (A/B/C): 公募要領（英語版）（PDF/3,595KB）",
@@ -8821,7 +12503,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_abc-doc-60",
+      "id": "scientific_research_abc-doc-108",
       "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "title_zh": "基盘研究（A/B/C）：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "title_en": "Scientific Research (A/B/C): 別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
@@ -8836,7 +12518,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_s-61",
+      "id": "scientific_research_s-109",
       "title_ja": "基盤研究（Ｓ）：公式ページ",
       "title_zh": "基盘研究（S）：官方页面",
       "title_en": "Scientific Research (S): Official page",
@@ -8851,7 +12533,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "scientific_research_s-62",
+      "id": "scientific_research_s-110",
       "title_ja": "基盤研究（Ｓ）：ローカルスナップショット",
       "title_zh": "基盘研究（S）：本地快照",
       "title_en": "Scientific Research (S): Local snapshot",
@@ -8866,7 +12548,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "scientific_research_s-63",
+      "id": "scientific_research_s-111",
       "title_ja": "基盤研究（Ｓ）：種目ページ",
       "title_zh": "基盘研究（S）：种目页面",
       "title_en": "Scientific Research (S): Program page",
@@ -8881,7 +12563,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "scientific_research_s-64",
+      "id": "scientific_research_s-112",
       "title_ja": "基盤研究（Ｓ）：種目ページの快照",
       "title_zh": "基盘研究（S）：种目快照",
       "title_en": "Scientific Research (S): Program snapshot",
@@ -8896,7 +12578,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "scientific_research_s-65",
+      "id": "scientific_research_s-113",
       "title_ja": "基盤研究（Ｓ）：英語ページ",
       "title_zh": "基盘研究（S）：英文页面",
       "title_en": "Scientific Research (S): English page",
@@ -8911,7 +12593,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "scientific_research_s-doc-66",
+      "id": "scientific_research_s-doc-114",
       "title_ja": "基盤研究（Ｓ）：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
       "title_zh": "基盘研究（S）：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
       "title_en": "Scientific Research (S): 令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
@@ -8926,7 +12608,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_s-doc-67",
+      "id": "scientific_research_s-doc-115",
       "title_ja": "基盤研究（Ｓ）：公募要領（日本語版）(PDF/1,759KB)",
       "title_zh": "基盘研究（S）：公募要領（日本語版）(PDF/1,759KB)",
       "title_en": "Scientific Research (S): 公募要領（日本語版）(PDF/1,759KB)",
@@ -8941,7 +12623,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_s-doc-68",
+      "id": "scientific_research_s-doc-116",
       "title_ja": "基盤研究（Ｓ）：公募要領（英語版）(PDF/3,664KB)",
       "title_zh": "基盘研究（S）：公募要領（英語版）(PDF/3,664KB)",
       "title_en": "Scientific Research (S): 公募要領（英語版）(PDF/3,664KB)",
@@ -8956,7 +12638,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "scientific_research_s-doc-69",
+      "id": "scientific_research_s-doc-117",
       "title_ja": "基盤研究（Ｓ）：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
       "title_zh": "基盘研究（S）：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
       "title_en": "Scientific Research (S): 研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
@@ -8971,7 +12653,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "incentive_research-70",
+      "id": "incentive_research-118",
       "title_ja": "奨励研究：公式ページ",
       "title_zh": "奖励研究：官方页面",
       "title_en": "Encouragement of Scientists: Official page",
@@ -8986,7 +12668,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "incentive_research-71",
+      "id": "incentive_research-119",
       "title_ja": "奨励研究：ローカルスナップショット",
       "title_zh": "奖励研究：本地快照",
       "title_en": "Encouragement of Scientists: Local snapshot",
@@ -9001,7 +12683,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "incentive_research-72",
+      "id": "incentive_research-120",
       "title_ja": "奨励研究：種目ページ",
       "title_zh": "奖励研究：种目页面",
       "title_en": "Encouragement of Scientists: Program page",
@@ -9016,7 +12698,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "incentive_research-73",
+      "id": "incentive_research-121",
       "title_ja": "奨励研究：種目ページの快照",
       "title_zh": "奖励研究：种目快照",
       "title_en": "Encouragement of Scientists: Program snapshot",
@@ -9031,7 +12713,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "incentive_research-doc-74",
+      "id": "incentive_research-doc-122",
       "title_ja": "奨励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
       "title_zh": "奖励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
       "title_en": "Encouragement of Scientists: 令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
@@ -9046,7 +12728,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "incentive_research-doc-75",
+      "id": "incentive_research-doc-123",
       "title_ja": "奨励研究：公募要領（PDF/1,785KB）",
       "title_zh": "奖励研究：公募要領（PDF/1,785KB）",
       "title_en": "Encouragement of Scientists: 公募要領（PDF/1,785KB）",
@@ -9061,7 +12743,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "incentive_research-doc-76",
+      "id": "incentive_research-doc-124",
       "title_ja": "奨励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
       "title_zh": "奖励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
       "title_en": "Encouragement of Scientists: 令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
@@ -9076,7 +12758,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "incentive_research-doc-77",
+      "id": "incentive_research-doc-125",
       "title_ja": "奨励研究：科研費電子申請システムを利用した応募フロー（PDF/726KB）",
       "title_zh": "奖励研究：科研費電子申請システムを利用した応募フロー（PDF/726KB）",
       "title_en": "Encouragement of Scientists: 科研費電子申請システムを利用した応募フロー（PDF/726KB）",
@@ -9091,7 +12773,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "challenging_research-doc-78",
+      "id": "challenging_research-doc-126",
       "title_ja": "挑戦的研究：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "title_zh": "挑战性研究：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "title_en": "Challenging Research: 令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
@@ -9106,7 +12788,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "challenging_research-doc-79",
+      "id": "challenging_research-doc-127",
       "title_ja": "挑戦的研究：公募要領（日本語版）（PDF/2,219KB）",
       "title_zh": "挑战性研究：公募要領（日本語版）（PDF/2,219KB）",
       "title_en": "Challenging Research: 公募要領（日本語版）（PDF/2,219KB）",
@@ -9121,7 +12803,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "challenging_research-doc-80",
+      "id": "challenging_research-doc-128",
       "title_ja": "挑戦的研究：公募要領（英語版）（PDF/3,595KB）",
       "title_zh": "挑战性研究：公募要領（英語版）（PDF/3,595KB）",
       "title_en": "Challenging Research: 公募要領（英語版）（PDF/3,595KB）",
@@ -9136,7 +12818,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "challenging_research-doc-81",
+      "id": "challenging_research-doc-129",
       "title_ja": "挑戦的研究：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "title_zh": "挑战性研究：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "title_en": "Challenging Research: 別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
@@ -9151,7 +12833,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "special_promotion_research-82",
+      "id": "special_promotion_research-130",
       "title_ja": "特別推進研究：種目ページ",
       "title_zh": "特别推进研究：种目页面",
       "title_en": "Specially Promoted Research: Program page",
@@ -9166,7 +12848,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "special_promotion_research-83",
+      "id": "special_promotion_research-131",
       "title_ja": "特別推進研究：種目ページの快照",
       "title_zh": "特别推进研究：种目快照",
       "title_en": "Specially Promoted Research: Program snapshot",
@@ -9181,7 +12863,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "special_promotion_research-doc-84",
+      "id": "special_promotion_research-doc-132",
       "title_ja": "特別推進研究：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
       "title_zh": "特别推进研究：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
       "title_en": "Specially Promoted Research: 令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
@@ -9196,7 +12878,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "special_promotion_research-doc-85",
+      "id": "special_promotion_research-doc-133",
       "title_ja": "特別推進研究：公募要領（日本語版）(PDF/1,759KB)",
       "title_zh": "特别推进研究：公募要領（日本語版）(PDF/1,759KB)",
       "title_en": "Specially Promoted Research: 公募要領（日本語版）(PDF/1,759KB)",
@@ -9211,7 +12893,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "special_promotion_research-doc-86",
+      "id": "special_promotion_research-doc-134",
       "title_ja": "特別推進研究：公募要領（英語版）(PDF/3,664KB)",
       "title_zh": "特别推进研究：公募要領（英語版）(PDF/3,664KB)",
       "title_en": "Specially Promoted Research: 公募要領（英語版）(PDF/3,664KB)",
@@ -9226,7 +12908,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "special_promotion_research-doc-87",
+      "id": "special_promotion_research-doc-135",
       "title_ja": "特別推進研究：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
       "title_zh": "特别推进研究：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
       "title_en": "Specially Promoted Research: 研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
@@ -9241,7 +12923,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "jsps_fellows_incentive-88",
+      "id": "jsps_fellows_incentive-136",
       "title_ja": "特別研究員奨励費：公式ページ",
       "title_zh": "特别研究员奖励费：官方页面",
       "title_en": "Grant-in-Aid for JSPS Fellows: Official page",
@@ -9256,7 +12938,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "jsps_fellows_incentive-89",
+      "id": "jsps_fellows_incentive-137",
       "title_ja": "特別研究員奨励費：ローカルスナップショット",
       "title_zh": "特别研究员奖励费：本地快照",
       "title_en": "Grant-in-Aid for JSPS Fellows: Local snapshot",
@@ -9271,7 +12953,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "jsps_fellows_incentive-90",
+      "id": "jsps_fellows_incentive-138",
       "title_ja": "特別研究員奨励費：種目ページ",
       "title_zh": "特别研究员奖励费：种目页面",
       "title_en": "Grant-in-Aid for JSPS Fellows: Program page",
@@ -9286,7 +12968,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "jsps_fellows_incentive-91",
+      "id": "jsps_fellows_incentive-139",
       "title_ja": "特別研究員奨励費：種目ページの快照",
       "title_zh": "特别研究员奖励费：种目快照",
       "title_en": "Grant-in-Aid for JSPS Fellows: Program snapshot",
@@ -9301,7 +12983,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "jsps_fellows_incentive-doc-92",
+      "id": "jsps_fellows_incentive-doc-140",
       "title_ja": "特別研究員奨励費：令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
       "title_zh": "特别研究员奖励费：令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
       "title_en": "Grant-in-Aid for JSPS Fellows: 令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
@@ -9316,7 +12998,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "jsps_fellows_incentive-doc-93",
+      "id": "jsps_fellows_incentive-doc-141",
       "title_ja": "特別研究員奨励費：日本語 Japanese（PDF/1,191KB）",
       "title_zh": "特别研究员奖励费：日本語 Japanese（PDF/1,191KB）",
       "title_en": "Grant-in-Aid for JSPS Fellows: 日本語 Japanese（PDF/1,191KB）",
@@ -9331,7 +13013,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "jsps_fellows_incentive-doc-94",
+      "id": "jsps_fellows_incentive-doc-142",
       "title_ja": "特別研究員奨励費：英語 English（PDF/605KB）",
       "title_zh": "特别研究员奖励费：英語 English（PDF/605KB）",
       "title_en": "Grant-in-Aid for JSPS Fellows: 英語 English（PDF/605KB）",
@@ -9346,7 +13028,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "jsps_fellows_incentive-doc-95",
+      "id": "jsps_fellows_incentive-doc-143",
       "title_ja": "特別研究員奨励費：別冊 日本語 Japanese（PDF/1,223KB）",
       "title_zh": "特别研究员奖励费：別冊 日本語 Japanese（PDF/1,223KB）",
       "title_en": "Grant-in-Aid for JSPS Fellows: 別冊 日本語 Japanese（PDF/1,223KB）",
@@ -9361,7 +13043,97 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "research_results_publication-96",
+      "id": "jsps_fellow_cpd-144",
+      "title_ja": "特別研究員（CPD）：公式ページ",
+      "title_zh": "特别研究员（CPD）：官方页面",
+      "title_en": "Research Fellowships for Young Scientists (CPD): Official page",
+      "summary_ja": "特別研究員（CPD） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（CPD） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (CPD) page.",
+      "href": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_cpd-145",
+      "title_ja": "特別研究員（CPD）：ローカルスナップショット",
+      "title_zh": "特别研究员（CPD）：本地快照",
+      "title_en": "Research Fellowships for Young Scientists (CPD): Local snapshot",
+      "summary_ja": "特別研究員（CPD） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员（CPD） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (CPD) page.",
+      "href": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellow_cpd-doc-146",
+      "title_ja": "特別研究員（CPD）：令和５（2023）年度採用分 募集要項",
+      "title_zh": "特别研究员（CPD）：令和５（2023）年度採用分 募集要項",
+      "title_en": "Research Fellowships for Young Scientists (CPD): 令和５（2023）年度採用分 募集要項",
+      "summary_ja": "特別研究員（CPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（CPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (CPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_yoko.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_cpd-doc-147",
+      "title_ja": "特別研究員（CPD）：申請手続の流れ",
+      "title_zh": "特别研究员（CPD）：申請手続の流れ",
+      "title_en": "Research Fellowships for Young Scientists (CPD): 申請手続の流れ",
+      "summary_ja": "特別研究員（CPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（CPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (CPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_tetsuzuki.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_cpd-doc-148",
+      "title_ja": "特別研究員（CPD）：特別研究員-CPD申請システムの使い方（申請者向け）",
+      "title_zh": "特别研究员（CPD）：特別研究員-CPD申請システムの使い方（申請者向け）",
+      "title_en": "Research Fellowships for Young Scientists (CPD): 特別研究員-CPD申請システムの使い方（申請者向け）",
+      "summary_ja": "特別研究員（CPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（CPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (CPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/manual_shinseisya_cpd.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellow_cpd-doc-149",
+      "title_ja": "特別研究員（CPD）：令和５（2023）年度採用分 申請書作成要領",
+      "title_zh": "特别研究员（CPD）：令和５（2023）年度採用分 申請書作成要領",
+      "title_en": "Research Fellowships for Young Scientists (CPD): 令和５（2023）年度採用分 申請書作成要領",
+      "summary_ja": "特別研究員（CPD） の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员（CPD） 的重点参考材料。",
+      "summary_en": "Priority reference document for Research Fellowships for Young Scientists (CPD).",
+      "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/sakusei_cpd.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "research_results_publication-150",
       "title_ja": "研究成果公開促進費：公式ページ",
       "title_zh": "研究成果公开促进费：官方页面",
       "title_en": "Publication of Scientific Research Results: Official page",
@@ -9376,7 +13148,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "research_results_publication-97",
+      "id": "research_results_publication-151",
       "title_ja": "研究成果公開促進費：ローカルスナップショット",
       "title_zh": "研究成果公开促进费：本地快照",
       "title_en": "Publication of Scientific Research Results: Local snapshot",
@@ -9391,7 +13163,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "research_results_publication-98",
+      "id": "research_results_publication-152",
       "title_ja": "研究成果公開促進費：種目ページ",
       "title_zh": "研究成果公开促进费：种目页面",
       "title_en": "Publication of Scientific Research Results: Program page",
@@ -9406,7 +13178,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "research_results_publication-99",
+      "id": "research_results_publication-153",
       "title_ja": "研究成果公開促進費：種目ページの快照",
       "title_zh": "研究成果公开促进费：种目快照",
       "title_en": "Publication of Scientific Research Results: Program snapshot",
@@ -9421,7 +13193,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "research_results_publication-doc-100",
+      "id": "research_results_publication-doc-154",
       "title_ja": "研究成果公開促進費：令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
       "title_zh": "研究成果公开促进费：令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
       "title_en": "Publication of Scientific Research Results: 令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
@@ -9436,7 +13208,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "research_results_publication-doc-101",
+      "id": "research_results_publication-doc-155",
       "title_ja": "研究成果公開促進費：公募要領（PDF/1,152KB）",
       "title_zh": "研究成果公开促进费：公募要領（PDF/1,152KB）",
       "title_en": "Publication of Scientific Research Results: 公募要領（PDF/1,152KB）",
@@ -9451,7 +13223,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "research_results_publication-doc-102",
+      "id": "research_results_publication-doc-156",
       "title_ja": "研究成果公開促進費：令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
       "title_zh": "研究成果公开促进费：令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
       "title_en": "Publication of Scientific Research Results: 令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
@@ -9466,7 +13238,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "research_results_publication-doc-103",
+      "id": "research_results_publication-doc-157",
       "title_ja": "研究成果公開促進費：令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
       "title_zh": "研究成果公开促进费：令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
       "title_en": "Publication of Scientific Research Results: 令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
@@ -9481,7 +13253,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "faq-resource-104",
+      "id": "faq-resource-158",
       "title_ja": "（参考）過去の更新履歴のページへリンク",
       "title_zh": "（参考）過去の更新履歴のページへリンク",
       "title_en": "（参考）過去の更新履歴のページへリンク",
@@ -9496,7 +13268,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-105",
+      "id": "faq-resource-159",
       "title_ja": "オープンアクセスに関するFAQ",
       "title_zh": "オープンアクセスに関するFAQ",
       "title_en": "オープンアクセスに関するFAQ",
@@ -9511,7 +13283,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-106",
+      "id": "faq-resource-160",
       "title_ja": "令和７(2025)年度科学研究費助成事業等説明会に関するFAQ（Excel/34KB）（令和７年８月更新）",
       "title_zh": "令和７(2025)年度科学研究費助成事業等説明会に関するFAQ（Excel/34KB）（令和７年８月更新）",
       "title_en": "令和７(2025)年度科学研究費助成事業等説明会に関するFAQ（Excel/34KB）（令和７年８月更新）",
@@ -9526,7 +13298,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-107",
+      "id": "faq-resource-161",
       "title_ja": "令和６(2024)年度科学研究費助成事業等説明会に関するFAQ（Excel/30KB）（令和６年９月更新）",
       "title_zh": "令和６(2024)年度科学研究費助成事業等説明会に関するFAQ（Excel/30KB）（令和６年９月更新）",
       "title_en": "令和６(2024)年度科学研究費助成事業等説明会に関するFAQ（Excel/30KB）（令和６年９月更新）",
@@ -9541,7 +13313,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-108",
+      "id": "faq-resource-162",
       "title_ja": "令和５(2023)年度科学研究費助成事業等説明会に関するFAQ（Excel/28KB）（令和６年８月更新）",
       "title_zh": "令和５(2023)年度科学研究費助成事業等説明会に関するFAQ（Excel/28KB）（令和６年８月更新）",
       "title_en": "令和５(2023)年度科学研究費助成事業等説明会に関するFAQ（Excel/28KB）（令和６年８月更新）",
@@ -9556,7 +13328,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-109",
+      "id": "faq-resource-163",
       "title_ja": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（日本語 Japanese）（PDF/477KB）",
       "title_zh": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（日本語 Japanese）（PDF/477KB）",
       "title_en": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（日本語 Japanese）（PDF/477KB）",
@@ -9571,7 +13343,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-110",
+      "id": "faq-resource-164",
       "title_ja": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（英語 English）（PDF/293KB）",
       "title_zh": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（英語 English）（PDF/293KB）",
       "title_en": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（英語 English）（PDF/293KB）",
@@ -9586,7 +13358,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-111",
+      "id": "faq-resource-165",
       "title_ja": "国際共同研究強化の公募に係るFAQ（令和7月7月版）（PDF/562KB）",
       "title_zh": "国際共同研究強化の公募に係るFAQ（令和7月7月版）（PDF/562KB）",
       "title_en": "国際共同研究強化の公募に係るFAQ（令和7月7月版）（PDF/562KB）",
@@ -9641,6 +13413,90 @@ window.KAKENHI_PORTAL_DATA = {
       "summary_zh": "青年研究（若手研究） 对应的官方页面，含 68 个文档资源和 8 个表格家族线索。",
       "summary_en": "Official page for Early-Career Scientists, with 68 document resources and 8 form-family traces.",
       "resource_count": 74,
+      "kind": "program"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan",
+      "title": "外国人招へい研究者（長期・短期）",
+      "title_ja": "外国人招へい研究者（長期・短期）",
+      "title_zh": "外国人招聘研究者（长期／短期）",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term)",
+      "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
+      "summary_ja": "外国人招へい研究者（長期・短期） の公式ページです。19 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "外国人招聘研究者（长期／短期） 对应的官方页面，含 19 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Invitational Fellowships for Research in Japan (Long-Term and Short-Term), with 19 document resources and 0 form-family traces.",
+      "resource_count": 35,
+      "kind": "program"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open",
+      "title": "外国人特別研究員（一般・欧米短期・公募）",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)",
+      "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
+      "summary_ja": "外国人特別研究員（一般・欧米短期・公募） の公式ページです。32 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "外国人特别研究员（一般／欧美短期／公募） 对应的官方页面，含 32 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term), with 32 document resources and 0 form-family traces.",
+      "resource_count": 47,
+      "kind": "program"
+    },
+    {
+      "id": "overseas_research_fellowship",
+      "title": "海外特別研究員",
+      "title_ja": "海外特別研究員",
+      "title_zh": "海外特别研究员",
+      "title_en": "Overseas Research Fellowships",
+      "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-ab__ab_sin.html",
+      "summary_ja": "海外特別研究員 の公式ページです。13 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "海外特别研究员 对应的官方页面，含 13 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Overseas Research Fellowships, with 13 document resources and 0 form-family traces.",
+      "resource_count": 18,
+      "kind": "program"
+    },
+    {
+      "id": "overseas_research_fellowship_rra",
+      "title": "海外特別研究員（RRA）",
+      "title_ja": "海外特別研究員（RRA）",
+      "title_zh": "海外特别研究员（RRA）",
+      "title_en": "Overseas Research Fellowships (RRA)",
+      "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-ab__rra_sin.html",
+      "summary_ja": "海外特別研究員（RRA） の公式ページです。13 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "海外特别研究员（RRA） 对应的官方页面，含 13 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Overseas Research Fellowships (RRA), with 13 document resources and 0 form-family traces.",
+      "resource_count": 18,
+      "kind": "program"
+    },
+    {
+      "id": "jsps_fellow_pd_dc",
+      "title": "特別研究員（PD・DC1・DC2）",
+      "title_ja": "特別研究員（PD・DC1・DC2）",
+      "title_zh": "特别研究员（PD／DC1／DC2）",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2)",
+      "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__pd_sin.html",
+      "summary_ja": "特別研究員（PD・DC1・DC2） の公式ページです。31 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "特别研究员（PD／DC1／DC2） 对应的官方页面，含 31 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Research Fellowships for Young Scientists (PD/DC1/DC2), with 31 document resources and 0 form-family traces.",
+      "resource_count": 47,
+      "kind": "program"
+    },
+    {
+      "id": "jsps_fellow_rpd",
+      "title": "特別研究員（RPD）",
+      "title_ja": "特別研究員（RPD）",
+      "title_zh": "特别研究员（RPD）",
+      "title_en": "Research Fellowships for Young Scientists (RPD)",
+      "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
+      "summary_ja": "特別研究員（RPD） の公式ページです。19 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "特别研究员（RPD） 对应的官方页面，含 19 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Research Fellowships for Young Scientists (RPD), with 19 document resources and 0 form-family traces.",
+      "resource_count": 31,
       "kind": "program"
     },
     {
@@ -9798,6 +13654,20 @@ window.KAKENHI_PORTAL_DATA = {
       "kind": "program"
     },
     {
+      "id": "jsps_fellow_cpd",
+      "title": "特別研究員（CPD）",
+      "title_ja": "特別研究員（CPD）",
+      "title_zh": "特别研究员（CPD）",
+      "title_en": "Research Fellowships for Young Scientists (CPD)",
+      "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
+      "summary_ja": "特別研究員（CPD） の公式ページです。10 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "特别研究员（CPD） 对应的官方页面，含 10 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Research Fellowships for Young Scientists (CPD), with 10 document resources and 0 form-family traces.",
+      "resource_count": 16,
+      "kind": "program"
+    },
+    {
       "id": "research_results_publication",
       "title": "研究成果公開促進費",
       "title_ja": "研究成果公開促進費",
@@ -9879,6 +13749,48 @@ window.KAKENHI_PORTAL_DATA = {
       "summary_en": "FAQ landing page with 12 linked official resources in this snapshot.",
       "resource_count": 12,
       "kind": "guide"
+    },
+    {
+      "id": "foreign_fellow_hub",
+      "title": "外国人特別研究員ハブ",
+      "title_ja": "外国人特別研究員ハブ",
+      "title_zh": "外国人特别研究员总入口",
+      "title_en": "Foreign JSPS Fellows hub",
+      "official_url": "https://www.jsps.go.jp/j-fellow/index.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-fellow__index.html",
+      "summary_ja": "外国人特別研究員の制度トップです。一般、公募、欧米短期などの主要導線を横断確認できます。",
+      "summary_zh": "外国人特别研究员制度总入口，可横向进入一般、公募与欧美短期等主要路线。",
+      "summary_en": "Top-level hub for the Foreign JSPS Fellows scheme, linking across the general, open, and open short-term routes.",
+      "resource_count": 13,
+      "kind": "guide"
+    },
+    {
+      "id": "invitation_hub",
+      "title": "外国人招へい研究者ハブ",
+      "title_ja": "外国人招へい研究者ハブ",
+      "title_zh": "外国人招聘研究者总入口",
+      "title_en": "Invitational Fellowships hub",
+      "official_url": "https://www.jsps.go.jp/j-inv/index.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-inv__index.html",
+      "summary_ja": "外国人招へい研究者の制度トップです。募集要項、日程、各種案内への公式導線をまとめて確認できます。",
+      "summary_zh": "外国人招聘研究者制度总入口，可统一进入募集要项、日程与相关官方说明。",
+      "summary_en": "Top-level hub for the Invitational Fellowships for Research in Japan, linking to the guidelines, schedule, and related official notices.",
+      "resource_count": 6,
+      "kind": "guide"
+    },
+    {
+      "id": "invited_researchers_hub",
+      "title": "諸外国の優秀な研究者の招へい",
+      "title_ja": "諸外国の優秀な研究者の招へい",
+      "title_zh": "海外优秀研究者来日项目总览",
+      "title_en": "Inviting excellent researchers from abroad",
+      "official_url": "https://www.jsps.go.jp/j-inv_researchers/index.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-inv_researchers__index.html",
+      "summary_ja": "JSPS の来日研究者招へい関連事業を俯瞰するための上位ハブです。",
+      "summary_zh": "用于总览 JSPS 各类来日研究者招募与邀请项目的上位入口。",
+      "summary_en": "Upper-level JSPS hub for surveying inbound-researcher invitation schemes as a whole.",
+      "resource_count": 10,
+      "kind": "guide"
     }
   ],
   "call_catalog": [
@@ -9941,6 +13853,174 @@ window.KAKENHI_PORTAL_DATA = {
       "document_count": 68,
       "resource_count": 74,
       "search_blob": "若手研究 基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究 令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について S-21 S-21"
+    },
+    {
+      "id": "invitational_fellowships_for_research_in_japan",
+      "type": "detailed",
+      "title": "外国人招へい研究者（長期・短期）",
+      "title_ja": "外国人招へい研究者（長期・短期）",
+      "title_zh": "外国人招聘研究者（长期／短期）",
+      "title_en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term)",
+      "subtitle": "外国人招へい研究者",
+      "subtitle_ja": "外国人招へい研究者",
+      "subtitle_zh": "外国人招聘研究者",
+      "subtitle_en": "Invitational Fellowships for Research in Japan",
+      "group": "Inbound Fellowships",
+      "group_ja": "外国人研究者招へい",
+      "group_zh": "外国研究者招募与来访",
+      "group_en": "Inbound fellowships",
+      "status": "open",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
+      "summary_ja": "外国人招へい研究者の長期・短期プログラムをまとめて追うためのカードです。募集要項・申請書ページと申請スケジュールページを合わせると、現行年度の募集回と前年資料を並べて確認できます。",
+      "summary_zh": "这是把外国人招聘研究者的长期与短期项目合并追踪的项目卡。把募集要项／申请书页与申请日程页放在一起后，可以同时查看本年度募集回与上一年度资料。",
+      "summary_en": "This card follows the long-term and short-term Invitational Fellowships for Research in Japan together. Reading the guideline page alongside the schedule page makes it possible to keep the current rounds and prior-year reference materials in view at the same time.",
+      "form_codes": [],
+      "theme": "usst",
+      "document_count": 19,
+      "resource_count": 35,
+      "search_blob": "外国人招へい研究者（長期・短期） 外国人招聘研究者（长期／短期） Invitational Fellowships for Research in Japan (Long-Term and Short-Term) 外国人招へい研究者 募集要項・申請書 申請スケジュール 新着情報 JSPSのフェローシップ 令和8（2026）年度 令和7（2025）年度"
+    },
+    {
+      "id": "foreign_jsps_fellowship_open",
+      "type": "detailed",
+      "title": "外国人特別研究員（一般・欧米短期・公募）",
+      "title_ja": "外国人特別研究員（一般・欧米短期・公募）",
+      "title_zh": "外国人特别研究员（一般／欧美短期／公募）",
+      "title_en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term)",
+      "subtitle": "外国人特別研究員",
+      "subtitle_ja": "外国人特別研究員",
+      "subtitle_zh": "外国人特别研究员",
+      "subtitle_en": "JSPS Postdoctoral Fellowships for Research in Japan",
+      "group": "Inbound Fellowships",
+      "group_ja": "外国人研究者招へい",
+      "group_zh": "外国研究者招募与来访",
+      "group_en": "Inbound fellowships",
+      "status": "open",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
+      "summary_ja": "外国人特別研究員のうち、一般・欧米短期・公募の募集要項とスケジュールをまとめたカードです。募集要項ページ自体に令和8（2026）年度と令和7（2025）年度の両方が並んでいるため、今年の応募準備と前年比較を 1 か所で行えます。",
+      "summary_zh": "这是把外国人特别研究员中“一般／欧美短期／公募”的募集要项与日程合并整理的项目卡。官方募集要项页本身就并列保留了令和8（2026）年度与令和7（2025）年度材料，因此可以在一个入口里同时做今年准备与去年的对照。",
+      "summary_en": "This card consolidates the guideline and schedule pages for the General and Open Short-Term tracks of the JSPS Postdoctoral Fellowships for Research in Japan. The official guideline page itself retains both FY2026 and FY2025 materials, making current preparation and prior-cycle comparison possible in one place.",
+      "form_codes": [],
+      "theme": "usst",
+      "document_count": 32,
+      "resource_count": 47,
+      "search_blob": "外国人特別研究員（一般・欧米短期・公募） 外国人特别研究员（一般／欧美短期／公募） JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) 外国人特別研究員 募集要項・申請書（公募） 申請スケジュール（公募） 新着情報 令和8（2026）年度 令和7（2025）年度"
+    },
+    {
+      "id": "overseas_research_fellowship",
+      "type": "detailed",
+      "title": "海外特別研究員",
+      "title_ja": "海外特別研究員",
+      "title_zh": "海外特别研究员",
+      "title_en": "Overseas Research Fellowships",
+      "subtitle": "海外特別研究員",
+      "subtitle_ja": "海外特別研究員",
+      "subtitle_zh": "海外特别研究员",
+      "subtitle_en": "Overseas Research Fellowships",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "status": "open",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-ab__ab_sin.html",
+      "summary_ja": "海外特別研究員の募集要項と選考日程を一体で確認するためのカードです。令和9（2027）年度採用分の募集要項・申請書作成要領・見本類が揃っており、海外派遣前提の応募準備に直接使えます。",
+      "summary_zh": "这是把海外特别研究员的募集要项与选考日程整合在一起的项目卡。令和9（2027）年度采用分的募集要项、申请书作成要领和样本资料已经齐备，可直接用于海外派遣前提下的申请准备。",
+      "summary_en": "This card keeps the Overseas Research Fellowships guidelines and schedule in one place. The FY2027 guideline set, preparation instructions, and sample documents are already posted and directly usable for outbound fellowship preparation.",
+      "form_codes": [],
+      "theme": "toyama",
+      "document_count": 13,
+      "resource_count": 18,
+      "search_blob": "海外特別研究員 海外特别研究员 Overseas Research Fellowships 募集要項 選考日程"
+    },
+    {
+      "id": "overseas_research_fellowship_rra",
+      "type": "detailed",
+      "title": "海外特別研究員（RRA）",
+      "title_ja": "海外特別研究員（RRA）",
+      "title_zh": "海外特别研究员（RRA）",
+      "title_en": "Overseas Research Fellowships (RRA)",
+      "subtitle": "海外特別研究員",
+      "subtitle_ja": "海外特別研究員",
+      "subtitle_zh": "海外特别研究员",
+      "subtitle_en": "Overseas Research Fellowships",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "status": "open",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-ab__rra_sin.html",
+      "summary_ja": "海外特別研究員のうち RRA 募集を独立して追うためのカードです。通常枠と同じ日程ページを使いながら、募集要項・申請書作成要領・別紙様式は RRA 専用版で管理されています。",
+      "summary_zh": "这是单独追踪海外特别研究员 RRA 募集的项目卡。虽然与常规路线共用同一张日程页面，但募集要项、申请书作成要领以及附表样式都按 RRA 单独管理。",
+      "summary_en": "This card tracks the RRA call under the Overseas Research Fellowships scheme. It shares the official schedule page with the standard route, but the guidelines, preparation notes, and supplemental forms are maintained separately for RRA.",
+      "form_codes": [],
+      "theme": "toyama",
+      "document_count": 13,
+      "resource_count": 18,
+      "search_blob": "海外特別研究員（RRA） 海外特别研究员（RRA） Overseas Research Fellowships (RRA) 海外特別研究員 募集要項（RRA） 選考日程"
+    },
+    {
+      "id": "jsps_fellow_pd_dc",
+      "type": "detailed",
+      "title": "特別研究員（PD・DC1・DC2）",
+      "title_ja": "特別研究員（PD・DC1・DC2）",
+      "title_zh": "特别研究员（PD／DC1／DC2）",
+      "title_en": "Research Fellowships for Young Scientists (PD/DC1/DC2)",
+      "subtitle": "特別研究員",
+      "subtitle_ja": "特別研究員",
+      "subtitle_zh": "特别研究员",
+      "subtitle_en": "Research Fellowships for Young Scientists",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "status": "open",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__pd_sin.html",
+      "summary_ja": "PD・DC1・DC2 の募集要項と選考日程を一体で追うための整理カードです。令和9（2027）年度採用分は公式に公表済みで、PD と DC の募集要項・作成要領を同じページ群から確認できます。",
+      "summary_zh": "这是把 PD、DC1、DC2 的募集要项与选考日程合并整理的项目卡。令和9（2027）年度采用分已经公开，PD 与 DC 的募集要项和作成要领都可从这一组官方页面统一核对。",
+      "summary_en": "This card consolidates the application guidelines and selection schedule for PD, DC1, and DC2. The FY2027 recruitment materials are already posted, and both the PD and DC guideline sets are traceable from this official page group.",
+      "form_codes": [],
+      "theme": "tohoku",
+      "document_count": 31,
+      "resource_count": 47,
+      "search_blob": "特別研究員（PD・DC1・DC2） 特别研究员（PD／DC1／DC2） Research Fellowships for Young Scientists (PD/DC1/DC2) 特別研究員 募集要項（PD・DC2・DC1） 選考日程"
+    },
+    {
+      "id": "jsps_fellow_rpd",
+      "type": "detailed",
+      "title": "特別研究員（RPD）",
+      "title_ja": "特別研究員（RPD）",
+      "title_zh": "特别研究员（RPD）",
+      "title_en": "Research Fellowships for Young Scientists (RPD)",
+      "subtitle": "特別研究員",
+      "subtitle_ja": "特別研究員",
+      "subtitle_zh": "特别研究员",
+      "subtitle_en": "Research Fellowships for Young Scientists",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "status": "open",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
+      "summary_ja": "RPD の募集要項、事務手引、選考日程をまとめて確認するためのカードです。PD/DC 系と制度ページは共通ですが、募集要項と日程は RPD で独立管理されています。",
+      "summary_zh": "这是用来集中核对 RPD 募集要项、事务手引与选考日程的项目卡。虽然制度页面与 PD/DC 同属一组，但募集要项和日程对 RPD 是独立管理的。",
+      "summary_en": "This card keeps the RPD application guidelines, administrative instructions, and schedule together. The wider scheme pages are shared with PD/DC, but the RPD call documents and timing are managed separately.",
+      "form_codes": [],
+      "theme": "tohoku",
+      "document_count": 19,
+      "resource_count": 31,
+      "search_blob": "特別研究員（RPD） 特别研究员（RPD） Research Fellowships for Young Scientists (RPD) 特別研究員 募集要項（RPD） 選考日程"
     },
     {
       "id": "independent_base_building_support",
@@ -10275,6 +14355,34 @@ window.KAKENHI_PORTAL_DATA = {
       "search_blob": "特別研究員奨励費 特別研究員奨励費 令和８(2026)年度特別研究員奨励費（外国人特別研究員）の募集について"
     },
     {
+      "id": "jsps_fellow_cpd",
+      "type": "detailed",
+      "title": "特別研究員（CPD）",
+      "title_ja": "特別研究員（CPD）",
+      "title_zh": "特别研究员（CPD）",
+      "title_en": "Research Fellowships for Young Scientists (CPD)",
+      "subtitle": "特別研究員",
+      "subtitle_ja": "特別研究員",
+      "subtitle_zh": "特别研究员",
+      "subtitle_en": "Research Fellowships for Young Scientists",
+      "group": "JSPS Fellowships",
+      "group_ja": "特別研究員・海外特別研究員",
+      "group_zh": "特别研究员与海外特别研究员",
+      "group_en": "JSPS fellowships",
+      "status": "suspended",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
+      "snapshot_path": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
+      "summary_ja": "CPD は現行ページ上でも募集停止と明示されているため、制度比較と過去運用確認のための参照カードとして保持しています。",
+      "summary_zh": "CPD 在当前官方页面上已明确标注为“募集停止”，因此这里只把它保留为制度比较与既往运用核对用的参考卡片。",
+      "summary_en": "CPD is explicitly marked as suspended on the current official page, so this card is retained as a reference point for scheme comparison and historical checking rather than active application work.",
+      "form_codes": [],
+      "theme": "tohoku",
+      "document_count": 10,
+      "resource_count": 16,
+      "search_blob": "特別研究員（CPD） 特别研究员（CPD） Research Fellowships for Young Scientists (CPD) 特別研究員 募集要項（CPD）"
+    },
+    {
       "id": "research_results_publication",
       "type": "detailed",
       "title": "研究成果公開促進費",
@@ -10508,273 +14616,6 @@ window.KAKENHI_PORTAL_DATA = {
         "The page links out to many individual area websites, so it helps to separate tasks: use the official scheme pages for rules and forms, and the area websites for research-content context."
       ],
       "search_blob": "学術変革領域研究 学术变革领域研究 Transformative Research Areas 各種目のページ 公募・審査に関するお知らせ〈文部科学省HPへのリンク〉 交付申請時に使用する様式（A様式関係） 交付決定後に使用する様式（B・C様式関係） 使用ルール 学術変革領域研究（A）〈文部科学省HPへのリンク〉 学術変革領域研究（B）〈文部科学省HPへのリンク〉"
-    },
-    {
-      "id": "overview-03_keikaku__index",
-      "type": "overview",
-      "title": "基盤研究（A・B・C）・挑戦的研究・若手研究",
-      "title_ja": "基盤研究（A・B・C）・挑戦的研究・若手研究",
-      "title_zh": "基盘研究（A/B/C）・挑战性研究・青年研究",
-      "title_en": "Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各项目页面",
-      "subtitle_en": "Program pages",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各项目页面",
-      "group_en": "Program pages",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-      "snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html",
-      "summary_ja": "基盤研究（A・B・C）、挑戦的研究、若手研究を横断して、公募、審査、交付、年間スケジュールの共通導線をまとめた総合ページです。個別の締切や様式は各詳細ページで確認しつつ、制度横断の整理にはこのハブが最も使いやすい入口です。",
-      "summary_zh": "这是横向统筹“基盘研究（A/B/C）”“挑战性研究”“青年研究”的综合入口，集中串联公募、审查、交付与年度日程。具体截止与样式仍应回到各细分项目卡核对，但做制度级梳理时，这个页面最适合作为总枢纽。",
-      "summary_en": "This is the shared hub for Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists, tying together the common routes for calls, review, grant administration, and the annual schedule. Use the individual program entries for specific deadlines and forms, but use this page when you need the cross-program structure.",
-      "form_codes": [
-        "S-21",
-        "S-12",
-        "S-13",
-        "S-14",
-        "S-41-1",
-        "S-41-2"
-      ],
-      "theme": "tohoku",
-      "document_count": 0,
-      "resource_count": 8,
-      "page_last_updated": "2024-11-27 15:50:19",
-      "page_headline": "基盤研究（A・B・C）・挑戦的研究・若手研究",
-      "key_links": [
-        {
-          "label": "官方页面",
-          "label_ja": "公式ページ",
-          "label_en": "Official page",
-          "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-          "kind": "page"
-        },
-        {
-          "label": "本地快照",
-          "label_ja": "ローカルスナップショット",
-          "label_en": "Local snapshot",
-          "href": "external/jsps/2026-04-07/03_keikaku__index.html",
-          "kind": "snapshot"
-        }
-      ],
-      "page_highlights": [
-        {
-          "title": "研究活動スタート支援",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
-          "kind": "page",
-          "section": "基盤研究（A・B・C）・挑戦的研究・若手研究"
-        },
-        {
-          "title": "基盤研究（A･B･C）、挑戦的研究、若手研究の公募について",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-          "kind": "page",
-          "section": "公募について"
-        },
-        {
-          "title": "科学研究費助成事業の審査について",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/03_shinsa/index.html",
-          "kind": "page",
-          "section": "審査について"
-        },
-        {
-          "title": "使用ルール",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/rule.html",
-          "kind": "page",
-          "section": "交付について"
-        },
-        {
-          "title": "交付申請時の様式（A・D様式）",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/17_koufu/index.html",
-          "kind": "page",
-          "section": "交付について"
-        },
-        {
-          "title": "交付決定後の様式（B・C／E・F様式）",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/index.html",
-          "kind": "page",
-          "section": "交付について"
-        }
-      ],
-      "related_programs": [
-        {
-          "id": "young_research",
-          "title": "若手研究",
-          "title_ja": "若手研究",
-          "title_zh": "青年研究（若手研究）",
-          "title_en": "Early-Career Scientists",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
-        },
-        {
-          "id": "independent_base_building_support",
-          "title": "独立基盤形成支援（試行）",
-          "title_ja": "独立基盤形成支援（試行）",
-          "title_zh": "独立基盘形成支援（试行）",
-          "title_en": "Independent Research Base Building Support (Pilot)",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html"
-        },
-        {
-          "id": "scientific_research_abc",
-          "title": "基盤研究（A/B/C）",
-          "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
-          "title_zh": "基盘研究（A/B/C）",
-          "title_en": "Scientific Research (A/B/C)",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
-        },
-        {
-          "id": "challenging_research",
-          "title": "挑戦的研究",
-          "title_ja": "挑戦的研究",
-          "title_zh": "挑战性研究",
-          "title_en": "Challenging Research",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
-        }
-      ],
-      "watchpoints_ja": [
-        "公式更新日は 2024-11-27 で、公募、審査、交付、年間スケジュールを横断して確認できる整理用ハブとして有用です。",
-        "個別の締切や様式番号は詳細カード側で確定し、このページでは審査制度、使用ルール、科研費ハンドブックなど共通情報を補完する使い方が安全です。",
-        "研究活動スタート支援への導線も同居しているため、初年度立ち上げ案件と若手・基盤研究系を比較するときの出発点にも向いています。"
-      ],
-      "watchpoints_zh": [
-        "该页官方更新日期为 2024-11-27，适合用来横向梳理公募、审查、交付与年度日程等共通事项。",
-        "具体截止与样式编号应在各细分项目卡中最终确认，而这个页面更适合补充审查制度、使用规则与科研费手册等共通信息。",
-        "页面同时串联了“研究活动启动支援”，因此也适合作为比较首年启动型项目与若手/基盘研究体系时的起点。"
-      ],
-      "watchpoints_en": [
-        "The official page was updated on 2024-11-27 and works best as the organizing hub across calls, review, grant administration, and the annual schedule.",
-        "Confirm specific deadlines and form codes in the individual program entries, and use this page for the shared context such as review structure, rules of use, and the KAKENHI handbook.",
-        "Because the page also links to Research Activity Start-up Support, it is a useful starting point when comparing first-year start-up cases with the broader Early-Career and Scientific Research tracks."
-      ],
-      "search_blob": "基盤研究（A・B・C）・挑戦的研究・若手研究 基盘研究（A/B/C）・挑战性研究・青年研究 Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists 各種目のページ 研究活動スタート支援 基盤研究（A･B･C）、挑戦的研究、若手研究の公募について 科学研究費助成事業の審査について 使用ルール 交付申請時の様式（A・D様式） 交付決定後の様式（B・C／E・F様式） 若手研究 独立基盤形成支援（試行） 基盤研究（Ａ・Ｂ・Ｃ） 挑戦的研究 S-21 S-12 S-13 S-14 S-41-1 S-41-2"
-    },
-    {
-      "id": "overview-35_kokusai__index",
-      "type": "overview",
-      "title": "国際共同研究加速基金",
-      "title_ja": "国際共同研究加速基金",
-      "title_zh": "国际共同研究加速基金",
-      "title_en": "Fund for the Promotion of Joint International Research",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各项目页面",
-      "subtitle_en": "Program pages",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各项目页面",
-      "group_en": "Program pages",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-      "snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html",
-      "summary_ja": "国際先導研究、国際共同研究強化、海外連携研究、帰国発展研究の 4 系統へ分岐する公式ハブです。国際連携の計画をどのスキームに載せるべきかを整理するとき、最初に開く価値が高い入口になっています。",
-      "summary_zh": "这是通向“国际先导研究”“国际共同研究强化”“海外合作研究”“回国发展研究”四个方向的官方总入口。需要先判断国际合作计划应归入哪一类时，这个页面最适合作为第一站。",
-      "summary_en": "This is the official hub that branches to International Leading Research, International Research Strengthening, Overseas Partnership Research, and Returning Researchers Development. It is the best first stop when you need to decide which international-collaboration track fits a project plan.",
-      "form_codes": [
-        "S-64",
-        "S-61",
-        "S-62",
-        "S-63-1",
-        "S-63-2"
-      ],
-      "theme": "toyama",
-      "document_count": 0,
-      "resource_count": 4,
-      "page_last_updated": "2025-04-11 14:00:19",
-      "page_headline": "国際共同研究加速基金",
-      "key_links": [
-        {
-          "label": "官方页面",
-          "label_ja": "公式ページ",
-          "label_en": "Official page",
-          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-          "kind": "page"
-        },
-        {
-          "label": "本地快照",
-          "label_ja": "ローカルスナップショット",
-          "label_en": "Local snapshot",
-          "href": "external/jsps/2026-04-07/35_kokusai__index.html",
-          "kind": "snapshot"
-        }
-      ],
-      "page_highlights": [
-        {
-          "title": "国際先導研究",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/",
-          "kind": "page",
-          "section": "国際共同研究加速基金"
-        },
-        {
-          "title": "国際共同研究強化",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/",
-          "kind": "page",
-          "section": "国際共同研究加速基金"
-        },
-        {
-          "title": "海外連携研究",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/",
-          "kind": "page",
-          "section": "国際共同研究加速基金"
-        },
-        {
-          "title": "帰国発展研究",
-          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/",
-          "kind": "page",
-          "section": "国際共同研究加速基金"
-        }
-      ],
-      "related_programs": [
-        {
-          "id": "international_leading_research",
-          "title": "国際共同研究加速基金（国際先導研究）",
-          "title_ja": "国際共同研究加速基金（国際先導研究）",
-          "title_zh": "国际共同研究加速基金（国际先导研究）",
-          "title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html"
-        },
-        {
-          "id": "international_research_strengthening",
-          "title": "国際共同研究加速基金（国際共同研究強化）",
-          "title_ja": "国際共同研究加速基金（国際共同研究強化）",
-          "title_zh": "国际共同研究加速基金（国际共同研究强化）",
-          "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html"
-        },
-        {
-          "id": "returning_researchers_development",
-          "title": "国際共同研究加速基金（帰国発展研究）",
-          "title_ja": "国際共同研究加速基金（帰国発展研究）",
-          "title_zh": "国际共同研究加速基金（归国发展研究）",
-          "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html"
-        },
-        {
-          "id": "overseas_partnership_research",
-          "title": "国際共同研究加速基金（海外連携研究）",
-          "title_ja": "国際共同研究加速基金（海外連携研究）",
-          "title_zh": "国际共同研究加速基金（海外联携研究）",
-          "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html"
-        }
-      ],
-      "watchpoints_ja": [
-        "4 つの国際系サブプログラムを振り分ける入口なので、まず対象スキームを見極めてから個別公募ページへ進むと混乱しにくくなります。",
-        "2026-04-07 のスナップショット時点では、当ワークスペースで追跡している 4 系統はいずれも新規公募中ではなく、比較検討と次回準備の参照ハブとして使う位置付けです。",
-        "国際連携の設計、応募資格、対象経費は種目ごとの差が大きいため、分岐後は必ず各詳細ページの公募要領と FAQ を確認してください。"
-      ],
-      "watchpoints_zh": [
-        "这是四个国际类子项目的分流入口，先判断应走哪一条资助轨道，再进入对应项目页，会更不容易混淆。",
-        "以 2026-04-07 这一版快照为准，我们当前追踪到的四个方向都不处于新一轮公募中，因此这里更适合作为比较与下一轮准备的参考总入口。",
-        "国际合作设计、申请资格与经费范围在不同子项目之间差异很大，进入分支后仍应逐一核对各项目页的公募要领与 FAQ。"
-      ],
-      "watchpoints_en": [
-        "Use this page first to identify the right track across the four international subprograms before diving into the individual call pages.",
-        "As of the 2026-04-07 snapshot, none of the four tracked subprograms is newly open in this workspace, so this page currently serves mainly as a comparison and next-cycle preparation hub.",
-        "Collaboration design, eligibility, and allowable cost scope differ substantially across the subprograms, so always confirm the application procedures and FAQ again on the destination page."
-      ],
-      "search_blob": "国際共同研究加速基金 国际共同研究加速基金 Fund for the Promotion of Joint International Research 各種目のページ 国際先導研究 国際共同研究強化 海外連携研究 帰国発展研究 国際共同研究加速基金（国際先導研究） 国際共同研究加速基金（国際共同研究強化） 国際共同研究加速基金（帰国発展研究） 国際共同研究加速基金（海外連携研究） S-64 S-61 S-62 S-63-1 S-63-2"
     }
   ],
   "public_call_categories": [
@@ -11013,7 +14854,7 @@ window.KAKENHI_PORTAL_DATA = {
   "archive": [
     {
       "snapshot_date": "2026-04-07",
-      "fetched_at": "2026-04-07T00:57:26+09:00",
+      "fetched_at": "2026-04-07T02:12:09+09:00",
       "local_dir": "external/jsps/2026-04-07",
       "files": [
         {
@@ -11127,6 +14968,81 @@ window.KAKENHI_PORTAL_DATA = {
           "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
         },
         {
+          "name": "j-ab__ab_nittei.html",
+          "local_path": "external/jsps/2026-04-07/j-ab__ab_nittei.html",
+          "official_url": "https://www.jsps.go.jp/j-ab/ab_nittei.html"
+        },
+        {
+          "name": "j-ab__ab_sin.html",
+          "local_path": "external/jsps/2026-04-07/j-ab__ab_sin.html",
+          "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html"
+        },
+        {
+          "name": "j-ab__rra_sin.html",
+          "local_path": "external/jsps/2026-04-07/j-ab__rra_sin.html",
+          "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html"
+        },
+        {
+          "name": "j-fellow_14__31_boshuyoko.html",
+          "local_path": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
+          "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html"
+        },
+        {
+          "name": "j-fellow__index.html",
+          "local_path": "external/jsps/2026-04-07/j-fellow__index.html",
+          "official_url": "https://www.jsps.go.jp/j-fellow/index.html"
+        },
+        {
+          "name": "j-inv__boshu_index.html",
+          "local_path": "external/jsps/2026-04-07/j-inv__boshu_index.html",
+          "official_url": "https://www.jsps.go.jp/j-inv/boshu/index.html"
+        },
+        {
+          "name": "j-inv__boshuyoko.html",
+          "local_path": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
+          "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html"
+        },
+        {
+          "name": "j-inv__index.html",
+          "local_path": "external/jsps/2026-04-07/j-inv__index.html",
+          "official_url": "https://www.jsps.go.jp/j-inv/index.html"
+        },
+        {
+          "name": "j-inv_researchers__index.html",
+          "local_path": "external/jsps/2026-04-07/j-inv_researchers__index.html",
+          "official_url": "https://www.jsps.go.jp/j-inv_researchers/index.html"
+        },
+        {
+          "name": "j-ippan__boshu.html",
+          "local_path": "external/jsps/2026-04-07/j-ippan__boshu.html",
+          "official_url": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html"
+        },
+        {
+          "name": "j-oubei-s__boshu.html",
+          "local_path": "external/jsps/2026-04-07/j-oubei-s__boshu.html",
+          "official_url": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html"
+        },
+        {
+          "name": "j-pd__cpd_sin.html",
+          "local_path": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
+          "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html"
+        },
+        {
+          "name": "j-pd__pd_nittei.html",
+          "local_path": "external/jsps/2026-04-07/j-pd__pd_nittei.html",
+          "official_url": "https://www.jsps.go.jp/j-pd/pd_nittei.html"
+        },
+        {
+          "name": "j-pd__pd_sin.html",
+          "local_path": "external/jsps/2026-04-07/j-pd__pd_sin.html",
+          "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html"
+        },
+        {
+          "name": "j-pd__rpd_sin.html",
+          "local_path": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
+          "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html"
+        },
+        {
           "name": "public_call_index.html",
           "local_path": "external/jsps/2026-04-07/public_call_index.html",
           "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
@@ -11185,7 +15101,7 @@ window.KAKENHI_PORTAL_DATA = {
   ],
   "source_manifest": {
     "snapshot_date": "2026-04-07",
-    "fetched_at": "2026-04-07T00:57:26+09:00",
+    "fetched_at": "2026-04-07T02:12:09+09:00",
     "public_call_index_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html",
     "faq_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
     "entries_json": "entries.json"
@@ -11305,6 +15221,81 @@ window.KAKENHI_PORTAL_DATA = {
       "name": "国際共同研究加速基金",
       "local_path": "external/jsps/2026-04-07/35_kokusai__index.html",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html"
+    },
+    {
+      "name": "募集要項（PD・DC2・DC1）",
+      "local_path": "external/jsps/2026-04-07/j-pd__pd_sin.html",
+      "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html"
+    },
+    {
+      "name": "選考日程（PD・DC2・DC1・RPD）",
+      "local_path": "external/jsps/2026-04-07/j-pd__pd_nittei.html",
+      "official_url": "https://www.jsps.go.jp/j-pd/pd_nittei.html"
+    },
+    {
+      "name": "募集要項（RPD）",
+      "local_path": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
+      "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html"
+    },
+    {
+      "name": "募集要項（CPD）（募集停止）",
+      "local_path": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
+      "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html"
+    },
+    {
+      "name": "募集要項（海外特別研究員）",
+      "local_path": "external/jsps/2026-04-07/j-ab__ab_sin.html",
+      "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html"
+    },
+    {
+      "name": "選考日程（海外特別研究員・RRA）",
+      "local_path": "external/jsps/2026-04-07/j-ab__ab_nittei.html",
+      "official_url": "https://www.jsps.go.jp/j-ab/ab_nittei.html"
+    },
+    {
+      "name": "募集要項（RRA）",
+      "local_path": "external/jsps/2026-04-07/j-ab__rra_sin.html",
+      "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html"
+    },
+    {
+      "name": "外国人特別研究員",
+      "local_path": "external/jsps/2026-04-07/j-fellow__index.html",
+      "official_url": "https://www.jsps.go.jp/j-fellow/index.html"
+    },
+    {
+      "name": "募集要項・申請書（一般、欧米短期・公募）",
+      "local_path": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
+      "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html"
+    },
+    {
+      "name": "申請スケジュール（一般・公募）",
+      "local_path": "external/jsps/2026-04-07/j-ippan__boshu.html",
+      "official_url": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html"
+    },
+    {
+      "name": "申請スケジュール（欧米短期・公募）",
+      "local_path": "external/jsps/2026-04-07/j-oubei-s__boshu.html",
+      "official_url": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html"
+    },
+    {
+      "name": "外国人招へい研究者",
+      "local_path": "external/jsps/2026-04-07/j-inv__index.html",
+      "official_url": "https://www.jsps.go.jp/j-inv/index.html"
+    },
+    {
+      "name": "申請スケジュール（外国人招へい研究者）",
+      "local_path": "external/jsps/2026-04-07/j-inv__boshu_index.html",
+      "official_url": "https://www.jsps.go.jp/j-inv/boshu/index.html"
+    },
+    {
+      "name": "募集要項・申請書（外国人招へい研究者）",
+      "local_path": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
+      "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html"
+    },
+    {
+      "name": "諸外国の優秀な研究者の招へい",
+      "local_path": "external/jsps/2026-04-07/j-inv_researchers__index.html",
+      "official_url": "https://www.jsps.go.jp/j-inv_researchers/index.html"
     }
   ]
 };

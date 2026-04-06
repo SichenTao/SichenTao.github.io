@@ -24,6 +24,7 @@ const I18N = {
     common: {
       open: "公募中",
       closed: "已结束",
+      suspended: "停止募集",
       reference: "参考入口",
       unknown: "待确认",
       priority: "重点项目",
@@ -67,6 +68,7 @@ const I18N = {
     status: {
       open: "公募中",
       closed: "已结束",
+      suspended: "停止募集",
       reference: "参考",
       unknown: "待确认",
     },
@@ -114,14 +116,14 @@ const I18N = {
     calls: {
       kicker: "项目浏览",
       title: "项目目录",
-      lede: "将重点项目、已抓取的官方公募页与 JSPS 公募总索引放在同一页中统一筛选，既可以优先查看研究活动启动支援与青年研究，也可以继续扩展到其他科研费种目。",
+      lede: "这一页把重点科研费项目、已抓取的官方公募页、特别研究员与海外特别研究员、外国人特别研究员与外国研究者招访项目等 JSPS 相关项目放在同一目录中统一筛选；共享官方页面的项目会互相关联，资料同时尽量保留今年与上一年度的参考入口。",
       filterTitle: "浏览与筛选",
       quickFilters: "快速筛选",
       footerTitle: "项目定位后，下一步就去看时间线和表格",
       searchPlaceholder: "搜索项目、表格号、官方入口或关键词",
       statusAll: "全部状态",
       statusOpen: "仅看公募中",
-      statusClosed: "已结束 / 参考",
+      statusClosed: "已结束 / 参考 / 停止募集",
       groupAll: "全部分组",
       sortPriority: "按优先级",
       sortTitle: "按标题",
@@ -138,6 +140,8 @@ const I18N = {
       featuredForms: "重点表格",
       pageHighlights: "页面重点链接",
       relatedPrograms: "关联项目",
+      recentCycles: "今年与往年参考",
+      snapshotHistory: "本地快照历史",
     },
     deadlines: {
       kicker: "时间安排",
@@ -201,6 +205,8 @@ const I18N = {
     groupLabel: {
       priority: "重点项目",
       programs: "科研费项目",
+      jspsFellowships: "特别研究员相关项目",
+      inboundFellowships: "外国研究者来访项目",
       core: "核心入口",
       program: "项目入口",
       documents: "重点资料",
@@ -241,6 +247,7 @@ const I18N = {
     common: {
       open: "Open",
       closed: "Closed",
+      suspended: "Suspended",
       reference: "Reference",
       unknown: "Unknown",
       priority: "Priority programs",
@@ -284,6 +291,7 @@ const I18N = {
     status: {
       open: "Open",
       closed: "Closed",
+      suspended: "Suspended",
       reference: "Reference",
       unknown: "Unknown",
     },
@@ -331,14 +339,14 @@ const I18N = {
     calls: {
       kicker: "Program Explorer",
       title: "Call Catalog",
-      lede: "Browse the priority programs, the captured official call pages, and the JSPS public-call index in one place, starting with Research Activity Start-up Support and Early-Career Scientists and then expanding to the wider KAKENHI catalog.",
+      lede: "Browse KAKENHI priority calls, captured official JSPS call pages, JSPS fellowship schemes, and inbound-researcher programs in one place. Entries that share the same official page are cross-linked, and when the official site keeps both current and prior-year materials, those references are surfaced together.",
       filterTitle: "Browse and filter",
       quickFilters: "Quick filters",
       footerTitle: "Once you identify the call, move straight to the timeline and forms",
       searchPlaceholder: "Search calls, form codes, official entries, or keywords",
       statusAll: "All statuses",
       statusOpen: "Open only",
-      statusClosed: "Closed / reference",
+      statusClosed: "Closed / reference / suspended",
       groupAll: "All groups",
       sortPriority: "Priority first",
       sortTitle: "By title",
@@ -355,6 +363,8 @@ const I18N = {
       featuredForms: "Form families",
       pageHighlights: "Page highlights",
       relatedPrograms: "Related programs",
+      recentCycles: "Current and prior-cycle references",
+      snapshotHistory: "Local snapshot history",
     },
     deadlines: {
       kicker: "Schedule",
@@ -418,6 +428,8 @@ const I18N = {
     groupLabel: {
       priority: "Priority programs",
       programs: "KAKENHI programs",
+      jspsFellowships: "JSPS fellowships",
+      inboundFellowships: "Inbound fellowships",
       core: "Core entry points",
       program: "Program entry points",
       documents: "Key documents",
@@ -460,6 +472,7 @@ I18N.ja = {
   common: {
     open: "公募中",
     closed: "終了",
+    suspended: "募集停止",
     reference: "参考",
     unknown: "要確認",
     priority: "重点種目",
@@ -503,6 +516,7 @@ I18N.ja = {
   status: {
     open: "公募中",
     closed: "終了",
+    suspended: "募集停止",
     reference: "参考",
     unknown: "要確認",
   },
@@ -518,14 +532,14 @@ I18N.ja = {
   calls: {
     kicker: "ホーム",
     title: "ホーム",
-    lede: "重点種目、取得済みの公募ページ、JSPS 公募情報総索引を同じ画面で確認し、研究活動スタート支援や若手研究から他の科研費種目へ広げて整理できます。",
+    lede: "重点科研費種目だけでなく、特別研究員、海外特別研究員、外国人特別研究員、外国人招へい研究者などの JSPS 関連制度を同じ画面で横断整理できます。共通ページを使う種目は相互に関連づけ、現行年度と前年度の比較参照も追いやすくしています。",
     filterTitle: "検索と絞り込み",
     quickFilters: "クイックフィルタ",
     footerTitle: "対象種目を決めたら、次はタイムラインと様式を確認します",
     searchPlaceholder: "種目、様式番号、公式入口、キーワードで検索",
     statusAll: "すべての状態",
     statusOpen: "公募中のみ",
-    statusClosed: "終了 / 参考",
+    statusClosed: "終了 / 参考 / 募集停止",
     groupAll: "すべての区分",
     sortPriority: "優先順",
     sortTitle: "タイトル順",
@@ -542,6 +556,8 @@ I18N.ja = {
     featuredForms: "主要様式",
     pageHighlights: "ページ内の注目リンク",
     relatedPrograms: "関連種目",
+    recentCycles: "現行年度と過年度の参照",
+    snapshotHistory: "ローカル快照履歴",
   },
   deadlines: {
     kicker: "スケジュール",
@@ -605,6 +621,8 @@ I18N.ja = {
   groupLabel: {
     priority: "重点種目",
     programs: "科研費種目",
+    jspsFellowships: "特別研究員関連",
+    inboundFellowships: "外国人研究者招へい",
     core: "共通入口",
     program: "種目別入口",
     documents: "主要資料",
@@ -1681,7 +1699,7 @@ function renderCallsPage() {
     const matchesStatus =
       state.filters.calls.status === "all" ||
       (state.filters.calls.status === "closed"
-        ? entry.status === "closed" || entry.status === "reference"
+        ? entry.status === "closed" || entry.status === "reference" || entry.status === "suspended"
         : entry.status === state.filters.calls.status);
     const matchesGroup = state.filters.calls.group === "all" || entry.group === state.filters.calls.group;
     return matchesSearch && matchesStatus && matchesGroup;
@@ -1846,6 +1864,12 @@ function renderCallDetail(entry) {
   if (!program) {
     return `<div class="empty">${t("common.detailHint")}</div>`;
   }
+  const relatedPrograms = program.related_programs || [];
+  const featuredDocuments = program.featured_documents || [];
+  const featuredForms = program.forms || [];
+  const recentCycles = program.recent_cycles || [];
+  const snapshotHistory = program.snapshot_history || [];
+  const watchpoints = localeList(program, "watchpoints");
   return `
     <div class="portal-card-head">
       <div>
@@ -1866,30 +1890,117 @@ function renderCallDetail(entry) {
         ${program.key_links.map((link) => `<a href="${resolveHref(link.href)}" ${link.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""}>${escapeHtml(localeField(link, "label"))}</a>`).join("")}
       </div>
     </div>
+    ${
+      relatedPrograms.length
+        ? `
+    <div class="portal-detail-block">
+      <h4>${t("calls.relatedPrograms")}</h4>
+      <ul class="portal-list">
+        ${relatedPrograms
+          .map(
+            (related) =>
+              `<li><a href="./index.html#${related.id}">${escapeHtml(localeField(related, "title"))}</a><span class="portal-inline-muted"> · ${escapeHtml(t(`status.${related.status}`))}</span></li>`
+          )
+          .join("")}
+      </ul>
+    </div>`
+        : ""
+    }
+    ${
+      featuredDocuments.length
+        ? `
     <div class="portal-detail-block">
       <h4>${t("calls.featuredDocs")}</h4>
       <ul class="portal-list">
-        ${program.featured_documents
+        ${featuredDocuments
           .slice(0, 6)
           .map((document) => `<li><a href="${document.url}" target="_blank" rel="noreferrer">${escapeHtml(document.title)}</a></li>`)
           .join("")}
       </ul>
-    </div>
+    </div>`
+        : ""
+    }
+    ${
+      featuredForms.length
+        ? `
     <div class="portal-detail-block">
       <h4>${t("calls.featuredForms")}</h4>
       <ul class="portal-list">
-        ${program.forms
+        ${featuredForms
           .slice(0, 4)
           .map((form) => `<li>${escapeHtml(form.form_number)} · ${escapeHtml((form.family_names || [localeField(program, "title")])[0])}</li>`)
           .join("")}
       </ul>
-    </div>
+    </div>`
+        : ""
+    }
+    ${
+      recentCycles.length
+        ? `
+    <div class="portal-detail-block">
+      <h4>${t("calls.recentCycles")}</h4>
+      <div class="portal-history-groups">
+        ${recentCycles
+          .map(
+            (cycle) => `
+              <section class="portal-history-group">
+                <h5>${escapeHtml(localeField(cycle, "title"))}</h5>
+                ${
+                  localeList(cycle, "notes").length
+                    ? `<ul class="portal-list">${localeList(cycle, "notes").map((note) => `<li>${escapeHtml(note)}</li>`).join("")}</ul>`
+                    : ""
+                }
+                ${
+                  (cycle.links || []).length
+                    ? `<ul class="portal-list portal-history-links">${cycle.links
+                        .map((link) => `<li><a href="${link.url}" target="_blank" rel="noreferrer">${escapeHtml(link.title)}</a></li>`)
+                        .join("")}</ul>`
+                    : ""
+                }
+              </section>
+            `
+          )
+          .join("")}
+      </div>
+    </div>`
+        : ""
+    }
+    ${
+      snapshotHistory.length
+        ? `
+    <div class="portal-detail-block">
+      <h4>${t("calls.snapshotHistory")}</h4>
+      <div class="portal-history-groups">
+        ${snapshotHistory
+          .map(
+            (snapshot) => `
+              <section class="portal-history-group">
+                <h5>${escapeHtml(localeField(snapshot, "title"))}</h5>
+                <p class="portal-inline-muted">${escapeHtml(localeValue(snapshot, "summary"))}</p>
+                <ul class="portal-list portal-history-links">
+                  ${(snapshot.links || [])
+                    .map((link) => `<li><a href="${resolveHref(link.href)}">${escapeHtml(link.title)}</a></li>`)
+                    .join("")}
+                </ul>
+              </section>
+            `
+          )
+          .join("")}
+      </div>
+    </div>`
+        : ""
+    }
+    ${
+      watchpoints.length
+        ? `
     <div class="portal-detail-block">
       <h4>${t("common.watchpoints")}</h4>
       <ul class="portal-list">
-        ${localeList(program, "watchpoints").map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
+        ${watchpoints.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
       </ul>
-    </div>
+    </div>`
+        : ""
+    }
   `;
 }
 
@@ -2288,6 +2399,8 @@ function displayGroupLabel(group) {
   const key = {
     "重点项目": "priority",
     Programs: "programs",
+    "JSPS Fellowships": "jspsFellowships",
+    "Inbound Fellowships": "inboundFellowships",
     Core: "core",
     Program: "program",
     Documents: "documents",
@@ -2319,7 +2432,7 @@ function t(key) {
 }
 
 function statusWeight(status) {
-  return { open: 0, closed: 1, reference: 2, unknown: 3 }[status] ?? 4;
+  return { open: 0, closed: 1, suspended: 2, reference: 3, unknown: 4 }[status] ?? 5;
 }
 
 function statusPill(status) {
