@@ -123,7 +123,7 @@ const UI_TEXT = {
     papersNote: "Search, filter, and decide what to read next.",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
-    searchPlaceholder: "Search title, author, venue, or tag",
+    searchPlaceholder: "Search title, author, venue, rank, or tag",
     filtersLabel: "Filters",
     quickTagsLabel: "Tags",
     resetLabel: "Reset",
@@ -143,6 +143,10 @@ const UI_TEXT = {
     quickAll: "All",
     quickJournal: "Journal",
     quickConference: "Conference",
+    quickJcrQ1: "JCR Q1",
+    quickCasTop: "CAS Top",
+    quickCasQ1: "CAS Q1",
+    quickCcfA: "CCF A",
     quickMustRead: "Must-read",
     quickReadyPdf: "Ready PDF",
     quickBrowserPull: "Browser pull",
@@ -199,6 +203,7 @@ const UI_TEXT = {
     impactFactorLabel: "IF",
     jcrLabel: "JCR",
     casLabel: "CAS",
+    ccfLabel: "CCF",
     citationsMetricLabel: "Citations",
     pendingMetric: "Pending",
     notListedMetric: "Not publicly listed",
@@ -299,7 +304,7 @@ const UI_TEXT = {
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
-    searchPlaceholder: "搜索标题、作者、刊物或标签",
+    searchPlaceholder: "搜索标题、作者、刊物、等级或标签",
     filtersLabel: "筛选",
     quickTagsLabel: "标签",
     resetLabel: "重置",
@@ -319,6 +324,10 @@ const UI_TEXT = {
     quickAll: "全部",
     quickJournal: "期刊",
     quickConference: "会议",
+    quickJcrQ1: "JCR Q1",
+    quickCasTop: "中科院 Top",
+    quickCasQ1: "中科院 Q1",
+    quickCcfA: "CCF A",
     quickMustRead: "必读",
     quickReadyPdf: "PDF 就绪",
     quickBrowserPull: "待浏览器抓取",
@@ -374,6 +383,7 @@ const UI_TEXT = {
     impactFactorLabel: "IF",
     jcrLabel: "JCR",
     casLabel: "CAS",
+    ccfLabel: "CCF",
     citationsMetricLabel: "被引",
     pendingMetric: "待补充",
     notListedMetric: "公开未列出",
@@ -475,7 +485,7 @@ const UI_TEXT = {
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
-    searchPlaceholder: "タイトル・著者・掲載先・タグで検索",
+    searchPlaceholder: "タイトル・著者・掲載先・ランク・タグで検索",
     filtersLabel: "フィルター",
     quickTagsLabel: "タグ",
     resetLabel: "リセット",
@@ -495,6 +505,10 @@ const UI_TEXT = {
     quickAll: "すべて",
     quickJournal: "ジャーナル",
     quickConference: "会議",
+    quickJcrQ1: "JCR Q1",
+    quickCasTop: "CAS Top",
+    quickCasQ1: "CAS Q1",
+    quickCcfA: "CCF A",
     quickMustRead: "必読",
     quickReadyPdf: "PDF 準備済み",
     quickBrowserPull: "ブラウザ取得待ち",
@@ -551,6 +565,7 @@ const UI_TEXT = {
     impactFactorLabel: "IF",
     jcrLabel: "JCR",
     casLabel: "CAS",
+    ccfLabel: "CCF",
     citationsMetricLabel: "被引用",
     pendingMetric: "保留",
     notListedMetric: "公開未収載",
@@ -1220,6 +1235,35 @@ function normalizeUrl(value) {
   return normalized || null;
 }
 
+function uniqueStrings(values = []) {
+  const deduped = [];
+  const seen = new Set();
+
+  values.forEach((value) => {
+    const normalized = String(value ?? "").trim();
+    if (!normalized) return;
+    const key = normalized.toLowerCase();
+    if (seen.has(key)) return;
+    seen.add(key);
+    deduped.push(normalized);
+  });
+
+  return deduped;
+}
+
+function humanizeIdentifier(value) {
+  const normalized = String(value || "").trim();
+  if (!normalized) {
+    return "";
+  }
+
+  return normalized
+    .split(/[-_]+/g)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
 function buildMetricOptions(definitions) {
   const seen = new Set();
   return definitions.filter((option) => {
@@ -1334,7 +1378,6 @@ function metricYearNumber(value) {
 function metricLinkBundle(paper, metricKind) {
   const metrics = paper?.metrics || {};
   const verification = paper?.verification || {};
-  const venue = publicationMetricVenue(paper);
 
   if (metricKind === "impact") {
     return {
@@ -1378,6 +1421,18 @@ function metricLinkBundle(paper, metricKind) {
         || verification.cas_source_url
         || metrics.casSourceUrl
       ),
+      searchFallbackUrl: "",
+      searchCopyText: "",
+      searchTooltip: "",
+      searchCopySuccessLabel: "",
+    };
+  }
+
+  if (metricKind === "ccf") {
+    return {
+      officialLabel: METRIC_OFFICIAL_PAGE_LABEL,
+      officialUrl: normalizeUrl(verification.ccf_source_url || metrics.ccfSourceUrl) || CCF_OFFICIAL_ARCHIVE_URL,
+      publicUrl: normalizeUrl(verification.ccf_public_source_url || metrics.ccfPublicSourceUrl) || CCF_PUBLIC_EVIDENCE_URL,
       searchFallbackUrl: "",
       searchCopyText: "",
       searchTooltip: "",
@@ -1602,6 +1657,10 @@ function metricOptionsForPaper(paper, metricKind) {
 
   if (metricKind === "cas") {
     return metricOptionsForDirectLinks(paper, "cas");
+  }
+
+  if (metricKind === "ccf") {
+    return metricOptionsForDirectLinks(paper, "ccf");
   }
 
   if (metricKind === "citation") {
@@ -1872,6 +1931,13 @@ function directionCardMarkup(direction, { detailed = false } = {}) {
   const signals = (direction?.signals || []).slice(0, detailed ? 3 : 2);
   const badgeClass = direction?.isManualHit ? "tag is-strong" : "tag";
   const manualBadge = direction?.isManualHit ? `<span class="${badgeClass}">${escapeHtml(ui("focusModeManual"))}</span>` : "";
+  const counts = direction?.counts || {};
+  const countSummary = [
+    `${ui("foundationLaneLabel")} ${counts.foundation || 0}`,
+    `${ui("frontierLaneLabel")} ${counts.frontier || 0}`,
+    `${ui("bridgeLaneLabel")} ${counts.bridge || 0}`,
+    `${ui("papersInLaneLabel")} ${counts.total || 0}`,
+  ].join(" · ");
 
   return `<article class="direction-card${detailed ? " is-detailed" : ""}">
     <div class="direction-card-head">
@@ -1882,27 +1948,16 @@ function directionCardMarkup(direction, { detailed = false } = {}) {
         </div>
         <h3>${richTextHtml(direction?.title)}</h3>
       </div>
-      <div class="direction-lane-counts">
-        <span>${escapeHtml(ui("foundationLaneLabel"))} ${escapeHtml(direction?.counts?.foundation || 0)}</span>
-        <span>${escapeHtml(ui("frontierLaneLabel"))} ${escapeHtml(direction?.counts?.frontier || 0)}</span>
-        <span>${escapeHtml(ui("bridgeLaneLabel"))} ${escapeHtml(direction?.counts?.bridge || 0)}</span>
-      </div>
+      <p class="direction-count-summary">${escapeHtml(countSummary)}</p>
     </div>
     <p class="direction-thesis rich-text">${richTextHtml(direction?.thesis)}</p>
     <p class="publication-note publication-note-highlight"><strong class="warm-strong">${escapeHtml(ui("strategicLabel"))}:</strong> <span class="rich-text">${richTextHtml(direction?.whyNow)}</span></p>
-    ${directionLaneBar(direction)}
-    <div class="direction-score-grid">
-      ${directionScoreBar(ui("alignmentScoreLabel"), direction?.scores?.alignment)}
-      ${directionScoreBar(ui("momentumScoreLabel"), direction?.scores?.momentum, "is-warm")}
-      ${directionScoreBar(ui("qualityScoreLabel"), direction?.scores?.quality, "is-strong")}
-    </div>
     <div class="direction-meta-grid">
-      <div><strong class="accent-strong">${escapeHtml(ui("activeKeywordsLabel"))}</strong><div class="chip-row compact">${keywords.map((keyword) => `<span class="chip is-static">${escapeHtml(keyword)}</span>`).join("")}</div></div>
-      <div><strong class="accent-strong">${escapeHtml(ui("venueTargetsTitle"))}</strong><p class="direction-inline-list">${venues.map(escapeHtml).join(" · ") || escapeHtml(ui("pendingMetric"))}</p></div>
+      <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("activeKeywordsLabel"))}</strong><div class="chip-row compact">${keywords.map((keyword) => `<span class="chip is-static">${escapeHtml(keyword)}</span>`).join("") || `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div></div>
+      <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("venueTargetsTitle"))}</strong><p class="direction-inline-list">${venues.map(escapeHtml).join(" · ") || escapeHtml(ui("pendingMetric"))}</p></div>
     </div>
-    <div class="direction-signal-list">${signals.map((item) => `<p class="direction-signal-item">${richTextHtml(item)}</p>`).join("")}</div>
+    ${signals.length ? `<div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("signalsToWatch"))}</strong><div class="direction-signal-list">${signals.map((item) => `<p class="direction-signal-item">${richTextHtml(item)}</p>`).join("")}</div></div>` : ""}
     ${teams.length ? `<p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("teamsTitle"))}:</strong> <span class="rich-text">${teams.map((team) => escapeHtml(localizeText(team?.name || ""))).join(" · ")}</span></p>` : ""}
-    ${detailed ? `<div class="direction-reading-grid">${readingListMarkup(direction?.readingLanes?.foundation, "foundation")}${readingListMarkup(direction?.readingLanes?.frontier, "frontier")}${readingListMarkup(direction?.readingLanes?.bridge, "bridge")}</div>` : ""}
   </article>`;
 }
 
@@ -1978,16 +2033,6 @@ function renderDirectionWorkspace() {
       <p class="section-note">${escapeHtml(ui("directionsNote"))}</p>
     </div>
     <div class="direction-workspace-summary">
-      <article class="focus-card">
-        <div class="subhead"><h3>${escapeHtml(ui("seedProfileTitle"))}</h3></div>
-        <div class="publication-domain-rack investigation-domain-rack">
-          <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
-          <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
-        </div>
-        <div class="chip-row compact">${seedChips.length ? seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div>
-        <div class="direction-priority-stack">${directions.slice(0, 4).map((direction) => directionScoreBar(localizeText(direction.title), direction.adjustedPriority, direction.isManualHit ? "is-strong" : "")).join("")}</div>
-        <p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 4).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ") || escapeHtml(ui("pendingMetric"))}</span></p>
-      </article>
       <aside class="focus-card focus-card-accent">
         <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3><span class="tag is-strong">${escapeHtml(tokens.length ? ui("focusModeManual") : ui("focusModeAuto"))}</span></div>
         <p class="section-note">${escapeHtml(ui("focusDeskNote"))}</p>
@@ -2002,6 +2047,18 @@ function renderDirectionWorkspace() {
         <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
         <div class="chip-row compact">${tokens.length ? tokens.map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
       </aside>
+      <article class="focus-card">
+        <div class="subhead"><h3>${escapeHtml(ui("seedProfileTitle"))}</h3><span class="tag">${escapeHtml(String(directions.length))}</span></div>
+        <div class="publication-domain-rack investigation-domain-rack">
+          <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
+          <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
+        </div>
+        <div class="chip-row compact">${seedChips.length ? seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div>
+        <div class="direction-summary-list">
+          <p class="direction-summary-item"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 4).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ") || escapeHtml(ui("pendingMetric"))}</span></p>
+          <p class="direction-summary-item"><strong class="accent-strong">${escapeHtml(ui("signalsToWatch"))}:</strong> <span class="rich-text">${directions[0]?.signals?.slice(0, 1).map((item) => richTextHtml(item)).join("") || escapeHtml(ui("pendingMetric"))}</span></p>
+        </div>
+      </article>
     </div>
     <div class="direction-card-grid direction-card-grid-workspace">${directions.map((direction) => directionCardMarkup(direction, { detailed: true })).join("")}</div>`;
 }
@@ -2126,6 +2183,13 @@ function paperTeamNames(paper) {
   return [...new Set(matches.map((team) => localizeText(team.name)).filter(Boolean))];
 }
 
+function paperAuthorNames(paper) {
+  return uniqueStrings([
+    ...((paper?.classification?.authors || []).map((author) => localizeText(author))),
+    ...((paper?.authors || []).map((author) => localizeText(author))),
+  ]);
+}
+
 function paperYearValue(paper) {
   if (paper?.year) {
     return String(paper.year);
@@ -2135,7 +2199,7 @@ function paperYearValue(paper) {
 }
 
 function paperTypeValue(paper) {
-  const raw = String(paper?.metrics?.venueType || paper?.type || "").toLowerCase();
+  const raw = String(paper?.metrics?.venueType || paper?.classification?.venueType || paper?.type || "").toLowerCase();
   if (raw.includes("journal")) {
     return "journal";
   }
@@ -2145,8 +2209,39 @@ function paperTypeValue(paper) {
   return "";
 }
 
+function paperReadingStatus(paper) {
+  return String(paper?.curation?.readingStatus || paper?.status || "monitor");
+}
+
+function paperSummaryNote(paper) {
+  return paper?.curation?.summaryNote || paper?.whyItMatters || "";
+}
+
+function paperObjectiveTags(paper) {
+  const classification = paper?.classification || {};
+  const venue = classification?.venue;
+  const venueName = typeof venue === "string" ? venue : venue?.name;
+  const venueType = classification?.venueType || (typeof venue === "object" ? venue?.type : "");
+  const tags = [
+    ...(paper?.tags || []),
+    ...(classification?.tags || []),
+    ...(classification?.qualityTags || []),
+    ...(classification?.domains || []),
+    ...(classification?.topics || []),
+    venueName,
+    venueType ? humanizeIdentifier(venueType) : "",
+  ];
+  return uniqueStrings(tags.map((item) => localizeText(item)));
+}
+
+function paperHasObjectiveTag(paper, tag) {
+  const target = String(tag || "").trim().toLowerCase();
+  if (!target) return false;
+  return paperObjectiveTags(paper).some((item) => String(item || "").trim().toLowerCase() === target);
+}
+
 function paperStatusValue(paper) {
-  return String(paper?.status || "monitor");
+  return paperReadingStatus(paper);
 }
 
 function paperHasReadyPdf(paper) {
@@ -2154,7 +2249,7 @@ function paperHasReadyPdf(paper) {
 }
 
 function paperNeedsBrowserPull(paper) {
-  return !paperHasReadyPdf(paper) && paper?.downloadMode === "openclaw-browser";
+  return !paperHasReadyPdf(paper) && (paper?.archive?.downloadMode || paper?.downloadMode) === "openclaw-browser";
 }
 
 function paperImpactFactorValue(paper) {
@@ -3011,6 +3106,10 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
     if (activeQuick === "all") return true;
     if (activeQuick === "journal") return paperTypeValue(paper) === "journal";
     if (activeQuick === "conference") return paperTypeValue(paper) === "conference";
+    if (activeQuick === "jcr-q1") return paperHasObjectiveTag(paper, "JCR Q1");
+    if (activeQuick === "cas-top") return paperHasObjectiveTag(paper, "CAS Top");
+    if (activeQuick === "cas-q1") return paperHasObjectiveTag(paper, "CAS Q1");
+    if (activeQuick === "ccf-a") return paperHasObjectiveTag(paper, "CCF A");
     if (activeQuick === "must-read") return paperStatusValue(paper) === "must-read";
     if (activeQuick === "ready-pdf") return paperHasReadyPdf(paper);
     if (activeQuick === "browser-pull") return paperNeedsBrowserPull(paper);
@@ -3024,12 +3123,13 @@ function paperMatchesActiveFilters(paper, overrides = {}) {
     localizeText(paper.title),
     paper.venue,
     localizeText(paper.venue),
-    paper.whyItMatters,
-    localizeText(paper.whyItMatters),
+    paperSummaryNote(paper),
+    localizeText(paperSummaryNote(paper)),
     paper.abstract,
     localizeText(paper.abstract),
     ...teams,
-    ...(paper.authors || []),
+    ...paperAuthorNames(paper),
+    ...paperObjectiveTags(paper),
   ]
     .filter(Boolean)
     .join(" ")
@@ -3219,6 +3319,10 @@ function renderPaperControls() {
     { value: "all", label: ui("quickAll") },
     { value: "journal", label: ui("quickJournal") },
     { value: "conference", label: ui("quickConference") },
+    ...(facetCount({ quick: "jcr-q1" }) ? [{ value: "jcr-q1", label: ui("quickJcrQ1") }] : []),
+    ...(facetCount({ quick: "cas-top" }) ? [{ value: "cas-top", label: ui("quickCasTop") }] : []),
+    ...(facetCount({ quick: "cas-q1" }) ? [{ value: "cas-q1", label: ui("quickCasQ1") }] : []),
+    ...(facetCount({ quick: "ccf-a" }) ? [{ value: "ccf-a", label: ui("quickCcfA") }] : []),
     { value: "must-read", label: ui("quickMustRead") },
     { value: "ready-pdf", label: ui("quickReadyPdf") },
     { value: "browser-pull", label: ui("quickBrowserPull") },
@@ -3313,14 +3417,15 @@ function renderPapers() {
     const primaryUrl = publicationPrimaryUrl(paper);
     const publisherUrl = normalizeUrl(paper.publisherUrl || paper.publisher_url);
     const doiActionUrl = primaryUrl || normalizeUrl(paper.doiUrl || paper.doi_url);
-    const featured = paper.status === "must-read";
+    const readingStatus = paperStatusValue(paper);
+    const featured = readingStatus === "must-read";
     const relatedTeams = paperTeamNames(paper);
     const article = el("article", `publication-card${featured ? " is-featured" : ""}`);
     const head = el("div", "publication-head");
     const titleBlock = el("div", "");
     const tags = el("div", "tag-row");
     tags.appendChild(el("span", "tag", `${localizeText(paper.venue)} ${paperYearValue(paper)}`.trim()));
-    tags.appendChild(el("span", tagVariant(paper.status), localizeText(paper.status)));
+    tags.appendChild(el("span", tagVariant(readingStatus), localizeText(readingStatus)));
     tags.appendChild(
       el(
         "span",
@@ -3385,7 +3490,7 @@ function renderPapers() {
 
     const authors = el("p", "authors");
     authors.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("authorsLabel"))}:</strong> ${escapeHtml(
-      (paper.authors || []).join(", ")
+      paperAuthorNames(paper).join(", ")
     )}`;
     article.appendChild(authors);
 
@@ -3432,6 +3537,9 @@ function renderPapers() {
         metricOptionsForPaper(paper, "cas")
       );
     }
+    if (paper.metrics?.ccfRank) {
+      addMetric(metrics, "ccf", ui("ccfLabel"), paper.metrics?.ccfRank, paper.metrics?.ccfYear, metricOptionsForPaper(paper, "ccf"));
+    }
     addMetric(metrics, "citation", ui("citationsMetricLabel"), paper.citationCount || 0, null, metricOptionsForPaper(paper, "citation"));
     article.appendChild(metrics);
 
@@ -3444,7 +3552,7 @@ function renderPapers() {
 
     const strategic = el("p", "publication-note publication-note-highlight");
     strategic.innerHTML = `<strong class="warm-strong">${escapeHtml(ui("strategicLabel"))}:</strong> <span class="rich-text">${richTextHtml(
-      paper.whyItMatters || ui("pendingMetric")
+      paperSummaryNote(paper) || ui("pendingMetric")
     )}</span>`;
     article.appendChild(strategic);
 

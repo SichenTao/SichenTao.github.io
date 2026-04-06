@@ -159,6 +159,7 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/pdf/2508.00380",
       "pdfUrl": "https://arxiv.org/pdf/2508.00380",
       "archivePath": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf",
+      "topics": [],
       "citationText": "T. Jiang, K. Sun, Z. Liang, R. Cheng, Y. Jin, and K. C. Tan, \"Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning\", IEEE Transactions on Evolutionary Computation, 2026, doi: 10.1109/tevc.2026.3664432.",
       "metrics": {
         "impactFactor": "12.0",
@@ -184,7 +185,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "IEEE Transactions on Evolutionary Computation"
+        "casSearchCopyText": "IEEE Transactions on Evolutionary Computation",
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@article{jiang2026evolutionary-generative-,\n  title = {Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning},\n  author = {Tao Jiang and Kebin Sun and Zhenyu Liang and Ran Cheng and Yan Jin and Kay Chen Tan},\n  journal = {IEEE Transactions on Evolutionary Computation},\n  year = {2026},\n  doi = {10.1109/tevc.2026.3664432},\n  url = {https://doi.org/10.1109/tevc.2026.3664432}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/11396036/",
@@ -204,6 +211,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": "Q1",
         "cas_year": "2025",
         "cas_top": true,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5kwBz5",
         "if_source_mode": "official_profile_fallback",
@@ -218,7 +227,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": "official_archive",
-        "cas_search_copy_text": "IEEE Transactions on Evolutionary Computation"
+        "cas_search_copy_text": "IEEE Transactions on Evolutionary Computation",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "IEEE Transactions on Evolutionary Computation"
       },
       "citation_sources": {
         "google_scholar": {
@@ -237,7 +250,62 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1109/tevc.2026.3664432",
-      "downloadMode": "direct-http"
+      "downloadMode": "direct-http",
+      "archive": {
+        "path": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf",
+        "pdfState": "ready",
+        "downloadMode": "direct-http"
+      },
+      "curation": {
+        "readingStatus": "must-read",
+        "summaryNote": "Ran Cheng is still active around advanced multi-objective optimization algorithms; this recent IEEE Transactions on Evolutionary Computation paper is a strong EC signal."
+      },
+      "classification": {
+        "authors": [
+          "Tao Jiang",
+          "Kebin Sun",
+          "Zhenyu Liang",
+          "Ran Cheng",
+          "Yan Jin",
+          "Kay Chen Tan"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "IEEE Transactions on Evolutionary Computation",
+          "type": "journal"
+        },
+        "venueType": "journal",
+        "publicationYear": "2026",
+        "qualityTags": [
+          "IF 12.0",
+          "JCR Q1",
+          "CAS Q1",
+          "CAS Top"
+        ],
+        "tags": [
+          "Evolutionary Computation",
+          "IEEE Transactions on Evolutionary Computation",
+          "Journal",
+          "2026",
+          "IF 12.0",
+          "JCR Q1",
+          "CAS Q1",
+          "CAS Top"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "IEEE Transactions on Evolutionary Computation",
+        "Journal",
+        "2026",
+        "IF 12.0",
+        "JCR Q1",
+        "CAS Q1",
+        "CAS Top"
+      ]
     },
     {
       "id": "evolutionary-computation-kalyanmoy-deb-W4414581553",
@@ -262,6 +330,7 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/pdf/2505.18681",
       "pdfUrl": "https://arxiv.org/pdf/2505.18681",
       "archivePath": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
+      "topics": [],
       "citationText": "S. N. Raj and K. Deb, \"EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing\", International Journal of Parallel Emergent and Distributed Systems, 2025, doi: 10.1080/17445760.2025.2609138.",
       "metrics": {
         "impactFactor": "0.6",
@@ -287,7 +356,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": "official_search",
-        "casSearchCopyText": "International Journal of Parallel Emergent and Distributed Systems"
+        "casSearchCopyText": "International Journal of Parallel Emergent and Distributed Systems",
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@article{raj2025evosort-a-genetic-algori,\n  title = {EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing},\n  author = {S. NagaMallik Raj and Kalyanmoy Deb},\n  journal = {International Journal of Parallel Emergent and Distributed Systems},\n  year = {2025},\n  doi = {10.1080/17445760.2025.2609138},\n  url = {https://doi.org/10.1080/17445760.2025.2609138}\n}",
       "primaryUrl": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
@@ -307,6 +382,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": "Q4",
         "cas_year": "2025",
         "cas_top": false,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": "https://mjl.clarivate.com/search-results?issn=1744-5760",
         "if_public_source_url": "https://www.iikx.com/sci/technology/23927.html",
         "if_source_mode": null,
@@ -321,7 +398,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": "official_search",
-        "cas_search_copy_text": "International Journal of Parallel Emergent and Distributed Systems"
+        "cas_search_copy_text": "International Journal of Parallel Emergent and Distributed Systems",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "International Journal of Parallel Emergent and Distributed Systems"
       },
       "citation_sources": {
         "google_scholar": {
@@ -340,7 +421,55 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1080/17445760.2025.2609138",
-      "downloadMode": "direct-http"
+      "downloadMode": "direct-http",
+      "archive": {
+        "path": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
+        "pdfState": "ready",
+        "downloadMode": "direct-http"
+      },
+      "curation": {
+        "readingStatus": "monitor",
+        "summaryNote": "Kalyanmoy Deb is still active around evolutionary algorithms and applications; this recent International Journal of Parallel Emergent and Distributed Systems paper is a strong EC signal."
+      },
+      "classification": {
+        "authors": [
+          "S. NagaMallik Raj",
+          "Kalyanmoy Deb"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "International Journal of Parallel Emergent and Distributed Systems",
+          "type": "journal"
+        },
+        "venueType": "journal",
+        "publicationYear": "2025",
+        "qualityTags": [
+          "IF 0.6",
+          "JCR N/A",
+          "CAS Q4"
+        ],
+        "tags": [
+          "Evolutionary Computation",
+          "International Journal of Parallel Emergent and Distributed Systems",
+          "Journal",
+          "2025",
+          "IF 0.6",
+          "JCR N/A",
+          "CAS Q4"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "International Journal of Parallel Emergent and Distributed Systems",
+        "Journal",
+        "2025",
+        "IF 0.6",
+        "JCR N/A",
+        "CAS Q4"
+      ]
     },
     {
       "id": "evolutionary-computation-kalyanmoy-deb-W4414444197",
@@ -367,6 +496,7 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1016/j.swevo.2025.102149",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf",
+      "topics": [],
       "citationText": "H. Wang, S. Zhu, W. Fang, and K. Deb, \"An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems\", Swarm and Evolutionary Computation, 2025, doi: 10.1016/j.swevo.2025.102149.",
       "metrics": {
         "impactFactor": "8.5",
@@ -392,7 +522,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Swarm and Evolutionary Computation"
+        "casSearchCopyText": "Swarm and Evolutionary Computation",
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@article{wang2025an-adaptive-weight-optim,\n  title = {An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems},\n  author = {Hao Wang and Shuwei Zhu and Wei Fang and Kalyanmoy Deb},\n  journal = {Swarm and Evolutionary Computation},\n  year = {2025},\n  doi = {10.1016/j.swevo.2025.102149},\n  url = {https://doi.org/10.1016/j.swevo.2025.102149}\n}",
       "primaryUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
@@ -412,6 +548,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": "Q2",
         "cas_year": "2025",
         "cas_top": false,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pB4NJD",
         "if_source_mode": "official_profile_fallback",
@@ -426,7 +564,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": "official_archive",
-        "cas_search_copy_text": "Swarm and Evolutionary Computation"
+        "cas_search_copy_text": "Swarm and Evolutionary Computation",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "Swarm and Evolutionary Computation"
       },
       "citation_sources": {
         "google_scholar": {
@@ -445,7 +587,57 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1016/j.swevo.2025.102149",
-      "downloadMode": "openclaw-browser"
+      "downloadMode": "openclaw-browser",
+      "archive": {
+        "path": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf",
+        "pdfState": "queued",
+        "downloadMode": "openclaw-browser"
+      },
+      "curation": {
+        "readingStatus": "monitor",
+        "summaryNote": "Kalyanmoy Deb is still active around advanced multi-objective optimization algorithms; this recent Swarm and Evolutionary Computation paper is a strong EC signal."
+      },
+      "classification": {
+        "authors": [
+          "Hao Wang",
+          "Shuwei Zhu",
+          "Wei Fang",
+          "Kalyanmoy Deb"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "Swarm and Evolutionary Computation",
+          "type": "journal"
+        },
+        "venueType": "journal",
+        "publicationYear": "2025",
+        "qualityTags": [
+          "IF 8.5",
+          "JCR Q1",
+          "CAS Q2"
+        ],
+        "tags": [
+          "Evolutionary Computation",
+          "Swarm and Evolutionary Computation",
+          "Journal",
+          "2025",
+          "IF 8.5",
+          "JCR Q1",
+          "CAS Q2"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "Swarm and Evolutionary Computation",
+        "Journal",
+        "2025",
+        "IF 8.5",
+        "JCR Q1",
+        "CAS Q2"
+      ]
     },
     {
       "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
@@ -471,6 +663,7 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1016/j.swevo.2025.102144",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf",
+      "topics": [],
       "citationText": "P. Gupta, D. K. Pratihar, and K. Deb, \"Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot\", Swarm and Evolutionary Computation, 2025, doi: 10.1016/j.swevo.2025.102144.",
       "metrics": {
         "impactFactor": "8.5",
@@ -496,7 +689,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Swarm and Evolutionary Computation"
+        "casSearchCopyText": "Swarm and Evolutionary Computation",
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@article{gupta2025dynamic-performance-eval,\n  title = {Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot},\n  author = {Pushpendra Gupta and Dilip Kumar Pratihar and Kalyanmoy Deb},\n  journal = {Swarm and Evolutionary Computation},\n  year = {2025},\n  doi = {10.1016/j.swevo.2025.102144},\n  url = {https://doi.org/10.1016/j.swevo.2025.102144}\n}",
       "primaryUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
@@ -516,6 +715,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": "Q2",
         "cas_year": "2025",
         "cas_top": false,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
         "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pB4NJD",
         "if_source_mode": "official_profile_fallback",
@@ -530,7 +731,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": "official_archive",
-        "cas_search_copy_text": "Swarm and Evolutionary Computation"
+        "cas_search_copy_text": "Swarm and Evolutionary Computation",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "Swarm and Evolutionary Computation"
       },
       "citation_sources": {
         "google_scholar": {
@@ -549,7 +754,56 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1016/j.swevo.2025.102144",
-      "downloadMode": "openclaw-browser"
+      "downloadMode": "openclaw-browser",
+      "archive": {
+        "path": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf",
+        "pdfState": "queued",
+        "downloadMode": "openclaw-browser"
+      },
+      "curation": {
+        "readingStatus": "monitor",
+        "summaryNote": "Kalyanmoy Deb remains active in multiobjective optimization, ec problem structure, and durable benchmark-setting ideas; this recent Swarm and Evolutionary Computation paper is worth monitoring."
+      },
+      "classification": {
+        "authors": [
+          "Pushpendra Gupta",
+          "Dilip Kumar Pratihar",
+          "Kalyanmoy Deb"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "Swarm and Evolutionary Computation",
+          "type": "journal"
+        },
+        "venueType": "journal",
+        "publicationYear": "2025",
+        "qualityTags": [
+          "IF 8.5",
+          "JCR Q1",
+          "CAS Q2"
+        ],
+        "tags": [
+          "Evolutionary Computation",
+          "Swarm and Evolutionary Computation",
+          "Journal",
+          "2025",
+          "IF 8.5",
+          "JCR Q1",
+          "CAS Q2"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "Swarm and Evolutionary Computation",
+        "Journal",
+        "2025",
+        "IF 8.5",
+        "JCR Q1",
+        "CAS Q2"
+      ]
     },
     {
       "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
@@ -576,6 +830,7 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1016/j.eswa.2025.129364",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf",
+      "topics": [],
       "citationText": "X. Li, S. Zhu, W. Fang, and K. Deb, \"A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems\", Expert Systems with Applications, 2025, doi: 10.1016/j.eswa.2025.129364.",
       "metrics": {
         "impactFactor": "7.5",
@@ -601,7 +856,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": "official_search",
-        "casSearchCopyText": "Expert Systems with Applications"
+        "casSearchCopyText": "Expert Systems with Applications",
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@article{li2025a-cooperative-co-evoluti,\n  title = {A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems},\n  author = {Xiaotong Li and Shuwei Zhu and Wei Fang and Kalyanmoy Deb},\n  journal = {Expert Systems with Applications},\n  year = {2025},\n  doi = {10.1016/j.eswa.2025.129364},\n  url = {https://doi.org/10.1016/j.eswa.2025.129364}\n}",
       "primaryUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
@@ -621,6 +882,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": "Q1",
         "cas_year": "2025",
         "cas_top": true,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": "https://mjl.clarivate.com/search-results?issn=0957-4174",
         "if_public_source_url": "https://www.iikx.com/sci/technology/12439.html",
         "if_source_mode": "official_search",
@@ -635,7 +898,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": "official_search",
-        "cas_search_copy_text": "Expert Systems with Applications"
+        "cas_search_copy_text": "Expert Systems with Applications",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "Expert Systems with Applications"
       },
       "citation_sources": {
         "google_scholar": {
@@ -654,7 +921,60 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1016/j.eswa.2025.129364",
-      "downloadMode": "openclaw-browser"
+      "downloadMode": "openclaw-browser",
+      "archive": {
+        "path": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf",
+        "pdfState": "queued",
+        "downloadMode": "openclaw-browser"
+      },
+      "curation": {
+        "readingStatus": "monitor",
+        "summaryNote": "Kalyanmoy Deb is still active around optimization and packing problems; this recent Expert Systems with Applications paper is a strong EC signal."
+      },
+      "classification": {
+        "authors": [
+          "Xiaotong Li",
+          "Shuwei Zhu",
+          "Wei Fang",
+          "Kalyanmoy Deb"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "Expert Systems with Applications",
+          "type": "journal"
+        },
+        "venueType": "journal",
+        "publicationYear": "2025",
+        "qualityTags": [
+          "IF 7.5",
+          "JCR Q1",
+          "CAS Q1",
+          "CAS Top"
+        ],
+        "tags": [
+          "Evolutionary Computation",
+          "Expert Systems with Applications",
+          "Journal",
+          "2025",
+          "IF 7.5",
+          "JCR Q1",
+          "CAS Q1",
+          "CAS Top"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "Expert Systems with Applications",
+        "Journal",
+        "2025",
+        "IF 7.5",
+        "JCR Q1",
+        "CAS Q1",
+        "CAS Top"
+      ]
     },
     {
       "id": "evolutionary-computation-ran-cheng-W4413243632",
@@ -680,6 +1000,7 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1145/3750053",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
+      "topics": [],
       "citationText": "B. Zheng, R. Cheng, and K. C. Tan, \"EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning\", ACM Transactions on Evolutionary Learning and Optimization, 2025, doi: 10.1145/3750053.",
       "metrics": {
         "impactFactor": "__not_listed__",
@@ -705,7 +1026,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": "official_search",
-        "casSearchCopyText": "ACM Transactions on Evolutionary Learning and Optimization"
+        "casSearchCopyText": "ACM Transactions on Evolutionary Learning and Optimization",
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@article{zheng2025evorl-a-gpu-accelerated-,\n  title = {EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning},\n  author = {Bowen Zheng and Ran Cheng and Kay Chen Tan},\n  journal = {ACM Transactions on Evolutionary Learning and Optimization},\n  year = {2025},\n  doi = {10.1145/3750053},\n  url = {https://doi.org/10.1145/3750053}\n}",
       "primaryUrl": "https://dl.acm.org/doi/10.1145/3750053",
@@ -725,6 +1052,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": "__not_listed__",
         "cas_year": "2025",
         "cas_top": false,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": "https://mjl.clarivate.com/search-results?issn=2688-3007",
         "if_public_source_url": "https://eshukan.com/sci/scidisplayj.aspx?jid=51654&jtype=936",
         "if_source_mode": "official_search",
@@ -739,7 +1068,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": "official_search",
-        "cas_search_copy_text": "ACM Transactions on Evolutionary Learning and Optimization"
+        "cas_search_copy_text": "ACM Transactions on Evolutionary Learning and Optimization",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "ACM Transactions on Evolutionary Learning and Optimization"
       },
       "citation_sources": {
         "google_scholar": {
@@ -758,7 +1091,50 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1145/3750053",
-      "downloadMode": "openclaw-browser"
+      "downloadMode": "openclaw-browser",
+      "archive": {
+        "path": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
+        "pdfState": "queued",
+        "downloadMode": "openclaw-browser"
+      },
+      "curation": {
+        "readingStatus": "monitor",
+        "summaryNote": "Ran Cheng is still active around evolutionary algorithms and applications; this recent ACM Transactions on Evolutionary Learning and Optimization paper is a strong EC signal."
+      },
+      "classification": {
+        "authors": [
+          "Bowen Zheng",
+          "Ran Cheng",
+          "Kay Chen Tan"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "ACM Transactions on Evolutionary Learning and Optimization",
+          "type": "journal"
+        },
+        "venueType": "journal",
+        "publicationYear": "2025",
+        "qualityTags": [
+          "IF __not_listed__"
+        ],
+        "tags": [
+          "Evolutionary Computation",
+          "ACM Transactions on Evolutionary Learning and Optimization",
+          "Journal",
+          "2025",
+          "IF __not_listed__"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "ACM Transactions on Evolutionary Learning and Optimization",
+        "Journal",
+        "2025",
+        "IF __not_listed__"
+      ]
     },
     {
       "id": "evolutionary-computation-ran-cheng-W4411600078",
@@ -784,6 +1160,7 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1109/cec65147.2025.11043108",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
+      "topics": [],
       "citationText": "H. Li, Z. Liang, and R. Cheng, \"GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III\", 2025 IEEE Congress on Evolutionary Computation (CEC), 2025, doi: 10.1109/cec65147.2025.11043108.",
       "metrics": {
         "impactFactor": null,
@@ -809,7 +1186,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": null,
-        "casSearchCopyText": null
+        "casSearchCopyText": null,
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@inproceedings{li2025gpu-accelerated-evolutio,\n  title = {GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III},\n  author = {Hao Li and Zhenyu Liang and Ran Cheng},\n  booktitle = {2025 IEEE Congress on Evolutionary Computation (CEC)},\n  year = {2025},\n  doi = {10.1109/cec65147.2025.11043108},\n  url = {https://doi.org/10.1109/cec65147.2025.11043108}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/11043108/",
@@ -829,6 +1212,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": null,
         "cas_year": null,
         "cas_top": false,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": null,
         "if_public_source_url": null,
         "if_source_mode": null,
@@ -843,7 +1228,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": null,
-        "cas_search_copy_text": "2025 IEEE Congress on Evolutionary Computation (CEC)"
+        "cas_search_copy_text": "2025 IEEE Congress on Evolutionary Computation (CEC)",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "2025 IEEE Congress on Evolutionary Computation (CEC)"
       },
       "citation_sources": {
         "google_scholar": {
@@ -862,7 +1251,46 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1109/cec65147.2025.11043108",
-      "downloadMode": "openclaw-browser"
+      "downloadMode": "openclaw-browser",
+      "archive": {
+        "path": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
+        "pdfState": "queued",
+        "downloadMode": "openclaw-browser"
+      },
+      "curation": {
+        "readingStatus": "monitor",
+        "summaryNote": "Ran Cheng is still active around advanced multi-objective optimization algorithms; this recent 2025 IEEE Congress on Evolutionary Computation (CEC) paper is a strong EC signal."
+      },
+      "classification": {
+        "authors": [
+          "Hao Li",
+          "Zhenyu Liang",
+          "Ran Cheng"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "2025 IEEE Congress on Evolutionary Computation (CEC)",
+          "type": "conference"
+        },
+        "venueType": "conference",
+        "publicationYear": "2025",
+        "qualityTags": [],
+        "tags": [
+          "Evolutionary Computation",
+          "2025 IEEE Congress on Evolutionary Computation (CEC)",
+          "Conference",
+          "2025"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "2025 IEEE Congress on Evolutionary Computation (CEC)",
+        "Conference",
+        "2025"
+      ]
     },
     {
       "id": "evolutionary-computation-ran-cheng-W4409486142",
@@ -890,6 +1318,7 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1145/3730406",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
+      "topics": [],
       "citationText": "L. Wang, M. Zhao, E. Liu, K. Sun, and R. Cheng, \"TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies\", ACM Transactions on Evolutionary Learning and Optimization, 2025, doi: 10.1145/3730406.",
       "metrics": {
         "impactFactor": "__not_listed__",
@@ -915,7 +1344,13 @@ window.FRONTIER_DATA = {
         "casSupportingSourceUrl": null,
         "casSourceUrl": null,
         "casSourceMode": "official_search",
-        "casSearchCopyText": "ACM Transactions on Evolutionary Learning and Optimization"
+        "casSearchCopyText": "ACM Transactions on Evolutionary Learning and Optimization",
+        "ccfRank": null,
+        "ccfYear": null,
+        "ccfSourceUrl": null,
+        "ccfPublicSourceUrl": null,
+        "ccfSourceMode": null,
+        "ccfSearchCopyText": null
       },
       "bibtexText": "@article{wang2025tensorneat-a-gpu-acceler,\n  title = {TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies},\n  author = {Lishuang Wang and Mengfei Zhao and Enyu Liu and Kebin Sun and Ran Cheng},\n  journal = {ACM Transactions on Evolutionary Learning and Optimization},\n  year = {2025},\n  doi = {10.1145/3730406},\n  url = {https://doi.org/10.1145/3730406}\n}",
       "primaryUrl": "https://dl.acm.org/doi/10.1145/3730406",
@@ -935,6 +1370,8 @@ window.FRONTIER_DATA = {
         "cas_quartile": "__not_listed__",
         "cas_year": "2025",
         "cas_top": false,
+        "ccf_rank": null,
+        "ccf_year": null,
         "if_source_url": "https://mjl.clarivate.com/search-results?issn=2688-3007",
         "if_public_source_url": "https://eshukan.com/sci/scidisplayj.aspx?jid=51654&jtype=936",
         "if_source_mode": "official_search",
@@ -949,7 +1386,11 @@ window.FRONTIER_DATA = {
         "cas_supporting_source_url": null,
         "cas_source_url": null,
         "cas_source_mode": "official_search",
-        "cas_search_copy_text": "ACM Transactions on Evolutionary Learning and Optimization"
+        "cas_search_copy_text": "ACM Transactions on Evolutionary Learning and Optimization",
+        "ccf_source_url": null,
+        "ccf_public_source_url": null,
+        "ccf_source_mode": null,
+        "ccf_search_copy_text": "ACM Transactions on Evolutionary Learning and Optimization"
       },
       "citation_sources": {
         "google_scholar": {
@@ -968,7 +1409,52 @@ window.FRONTIER_DATA = {
         }
       },
       "citationSourceUrl": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.1145/3730406",
-      "downloadMode": "openclaw-browser"
+      "downloadMode": "openclaw-browser",
+      "archive": {
+        "path": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
+        "pdfState": "queued",
+        "downloadMode": "openclaw-browser"
+      },
+      "curation": {
+        "readingStatus": "monitor",
+        "summaryNote": "Ran Cheng remains active in gpu-native evolutionary systems, multiobjective optimization, and open-source ec infrastructure; this recent ACM Transactions on Evolutionary Learning and Optimization paper is worth monitoring."
+      },
+      "classification": {
+        "authors": [
+          "Lishuang Wang",
+          "Mengfei Zhao",
+          "Enyu Liu",
+          "Kebin Sun",
+          "Ran Cheng"
+        ],
+        "domains": [
+          "Evolutionary Computation"
+        ],
+        "topics": [],
+        "venue": {
+          "name": "ACM Transactions on Evolutionary Learning and Optimization",
+          "type": "journal"
+        },
+        "venueType": "journal",
+        "publicationYear": "2025",
+        "qualityTags": [
+          "IF __not_listed__"
+        ],
+        "tags": [
+          "Evolutionary Computation",
+          "ACM Transactions on Evolutionary Learning and Optimization",
+          "Journal",
+          "2025",
+          "IF __not_listed__"
+        ]
+      },
+      "tags": [
+        "Evolutionary Computation",
+        "ACM Transactions on Evolutionary Learning and Optimization",
+        "Journal",
+        "2025",
+        "IF __not_listed__"
+      ]
     }
   ],
   "workflow": [
