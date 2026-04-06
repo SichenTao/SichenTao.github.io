@@ -17,13 +17,13 @@ const I18N = {
       calls: "项目目录",
       deadlines: "时间线",
       forms: "表格材料",
-      guides: "申请指引",
+      guides: "申请指南",
       sources: "官方来源",
       archive: "快照归档",
     },
     common: {
-      open: "开放中",
-      closed: "已截止",
+      open: "公募中",
+      closed: "已结束",
       reference: "参考入口",
       unknown: "待确认",
       priority: "重点项目",
@@ -36,18 +36,19 @@ const I18N = {
       viewOfficial: "打开官方页面",
       viewSnapshot: "打开本地快照",
       nextDeadline: "下一截止",
-      updated: "页面更新时间",
+      updated: "官方页更新",
       status: "状态",
       group: "分组",
-      openPrograms: "开放项目",
+      openPrograms: "公募中项目",
       trackedForms: "追踪表格",
       archiveSnapshots: "归档快照",
-      officialDocs: "重点文档",
+      officialDocs: "重点资料",
       watchpoints: "提醒",
-      detailHint: "点选左侧条目查看更细内容。",
+      detailHint: "点击左侧条目查看详细内容。",
       all: "全部",
       showMore: "更多",
       openLink: "打开链接",
+      resetFilters: "重置筛选",
       menu: "菜单",
       showMenu: "展开菜单",
       hideMenu: "收起菜单",
@@ -60,11 +61,12 @@ const I18N = {
       themeChoices: "配色选项",
       showThemes: "显示配色选项",
       cycleThemes: "切换到下一种配色",
+      pageNavigation: "页面导航",
       openPortal: "返回主页导航页",
     },
     status: {
-      open: "开放中",
-      closed: "已截止",
+      open: "公募中",
+      closed: "已结束",
       reference: "参考",
       unknown: "待确认",
     },
@@ -112,27 +114,27 @@ const I18N = {
     calls: {
       kicker: "项目浏览",
       title: "项目目录",
-      lede: "把重点项目与 JSPS 公募索引条目放在同一页里筛选，你可以先锁定研究活動スタート支援和若手研究，再沿着官方总索引扩展到其他种目。",
+      lede: "将重点项目与 JSPS 公募总索引放在同一页中统一筛选，建议先锁定研究活动启动支援与青年研究（若手研究），再沿官方索引扩展到其他种目。",
       filterTitle: "浏览与筛选",
       quickFilters: "快速筛选",
       footerTitle: "项目定位后，下一步就去看时间线和表格",
       searchPlaceholder: "搜索项目、表格号、官方入口或关键词",
       statusAll: "全部状态",
-      statusOpen: "仅开放中",
-      statusClosed: "已截止/参考",
+      statusOpen: "仅看公募中",
+      statusClosed: "已结束 / 参考",
       groupAll: "全部分组",
       sortPriority: "按优先级",
       sortTitle: "按标题",
       sortStatus: "按状态",
       quickAll: "全部",
       quickPriority: "重点",
-      quickOpen: "开放中",
-      quickStartup: "Start-up",
-      quickYoung: "若手研究",
+      quickOpen: "公募中",
+      quickStartup: "启动支援",
+      quickYoung: "青年研究",
       quickForms: "S-21 / S-22",
       detailTitle: "条目详情",
       officialLinks: "官方入口",
-      featuredDocs: "重点文档",
+      featuredDocs: "重点资料",
       featuredForms: "重点表格",
     },
     deadlines: {
@@ -160,8 +162,8 @@ const I18N = {
     },
     guides: {
       kicker: "官方指引",
-      title: "申请指引",
-      lede: "这一页不只是罗列链接，而是把最值得反复查看的 FAQ、e-Rad、电子系统和重点文档集中放在一起，便于申请前反复核对。",
+      title: "申请指南",
+      lede: "这一页不只是罗列链接，而是把最值得反复核对的 FAQ、e-Rad、电子申报系统和重点资料集中到一起，便于申请前系统检查。",
       gridTitle: "关键申请入口",
       watchTitle: "重点项目提醒",
       startupWatch: "研究活動スタート支援",
@@ -171,9 +173,9 @@ const I18N = {
     sources: {
       kicker: "来源追踪",
       title: "官方来源",
-      lede: "这一页把“真正的官方页面”和“公募索引里的分类入口”分开展示，避免把整理后的站内信息误当作唯一来源。",
-      registryTitle: "核心来源注册表",
-      categoryTitle: "公募总索引条目",
+      lede: "这一页将“真正的官方页面”与“公募总索引中的分类入口”分开展示，避免把站内整理页误当作唯一依据。",
+      registryTitle: "核心来源索引",
+      categoryTitle: "公募总索引入口",
       footerTitle: "来源确认后，可以回到首页继续申请准备",
     },
     archive: {
@@ -184,15 +186,41 @@ const I18N = {
       footerTitle: "归档确认后，回到当前快照继续工作",
     },
     footer: {
-      resources: "Resources",
+      resources: "资源",
       homeTitle: "继续进入更细的申请页面",
       catalog: "查看项目目录",
       archive: "查看归档快照",
       deadlines: "查看时间线",
       forms: "查看表格材料",
-      guides: "查看申请指引",
+      guides: "查看申请指南",
       sources: "查看官方来源",
       home: "返回首页",
+    },
+    groupLabel: {
+      priority: "重点项目",
+      core: "核心入口",
+      program: "项目入口",
+      documents: "重点资料",
+      faq: "FAQ",
+      publicCallProcedures: "公募要领与计划书等",
+    },
+    kindLabel: {
+      page: "页面",
+      file: "文件",
+      system: "系统",
+      external: "外部链接",
+      snapshot: "快照",
+      faq: "FAQ",
+      registry: "索引",
+      program: "项目页",
+      guide: "指南",
+    },
+    unit: {
+      entries: "条目录",
+      milestones: "个节点",
+      forms: "份表格",
+      guides: "条指引",
+      files: "份文件",
     },
   },
   en: {
@@ -201,7 +229,7 @@ const I18N = {
       calls: "Calls",
       deadlines: "Timeline",
       forms: "Forms",
-      guides: "Guides",
+      guides: "Guidance",
       sources: "Sources",
       archive: "Archive",
     },
@@ -210,7 +238,7 @@ const I18N = {
       closed: "Closed",
       reference: "Reference",
       unknown: "Unknown",
-      priority: "Priority",
+      priority: "Priority programs",
       official: "Official page",
       snapshot: "Local snapshot",
       documents: "Documents",
@@ -220,18 +248,19 @@ const I18N = {
       viewOfficial: "Open official page",
       viewSnapshot: "Open local snapshot",
       nextDeadline: "Next deadline",
-      updated: "Page updated",
+      updated: "Official page updated",
       status: "Status",
       group: "Group",
       openPrograms: "Open programs",
       trackedForms: "Tracked forms",
       archiveSnapshots: "Archived snapshots",
-      officialDocs: "Featured docs",
+      officialDocs: "Key documents",
       watchpoints: "Watchpoints",
       detailHint: "Select an item on the left to inspect more detail.",
       all: "All",
       showMore: "More",
       openLink: "Open link",
+      resetFilters: "Reset filters",
       menu: "Menu",
       showMenu: "Open navigation menu",
       hideMenu: "Close navigation menu",
@@ -244,6 +273,7 @@ const I18N = {
       themeChoices: "Theme choices",
       showThemes: "Show color themes",
       cycleThemes: "Switch to the next color theme",
+      pageNavigation: "Page navigation",
       openPortal: "Return to homepage portal",
     },
     status: {
@@ -296,7 +326,7 @@ const I18N = {
     calls: {
       kicker: "Program Explorer",
       title: "Call Catalog",
-      lede: "Filter detailed priority programs and official JSPS index entries together, so you can focus on Start-up Support and Early-Career Scientists first, then expand outward into the broader catalog.",
+      lede: "Browse the priority programs and the official JSPS public-call index in one place, starting with Research Activity Start-up Support and Early-Career Scientists before expanding to the wider catalog.",
       filterTitle: "Browse and filter",
       quickFilters: "Quick filters",
       footerTitle: "Once you identify the call, move straight to the timeline and forms",
@@ -311,7 +341,7 @@ const I18N = {
       quickAll: "All",
       quickPriority: "Priority",
       quickOpen: "Open",
-      quickStartup: "Start-up",
+      quickStartup: "Start-up Support",
       quickYoung: "Early-Career",
       quickForms: "S-21 / S-22",
       detailTitle: "Entry detail",
@@ -344,8 +374,8 @@ const I18N = {
     },
     guides: {
       kicker: "Official Guides",
-      title: "Application Guides",
-      lede: "This page goes beyond a plain link dump by concentrating the FAQ, e-Rad, electronic system, and priority documents that are worth revisiting while preparing an application.",
+      title: "Application Guidance",
+      lede: "This page goes beyond a plain link list by consolidating the FAQ, e-Rad, the electronic application system, and the most useful reference documents for repeated checks during proposal preparation.",
       gridTitle: "Core application entry points",
       watchTitle: "Priority-program watchpoints",
       startupWatch: "Research Activity Start-up Support",
@@ -355,7 +385,7 @@ const I18N = {
     sources: {
       kicker: "Provenance",
       title: "Official Sources",
-      lede: "This page separates the true official pages from the classified entries inside the JSPS public-call index so the portal does not replace the original sources.",
+      lede: "This page separates the official source pages from the categorized entries inside the JSPS public-call index, so the workspace does not replace the original evidence trail.",
       registryTitle: "Core source registry",
       categoryTitle: "Public-call index entries",
       footerTitle: "Once the sources are verified, return to the homepage to continue preparation",
@@ -374,9 +404,35 @@ const I18N = {
       archive: "Open archive",
       deadlines: "Open timeline",
       forms: "Open forms",
-      guides: "Open guides",
+      guides: "Open guidance",
       sources: "Open sources",
       home: "Back home",
+    },
+    groupLabel: {
+      priority: "Priority programs",
+      core: "Core entry points",
+      program: "Program entry points",
+      documents: "Key documents",
+      faq: "FAQ",
+      publicCallProcedures: "Application procedures and proposal forms",
+    },
+    kindLabel: {
+      page: "Page",
+      file: "File",
+      system: "System",
+      external: "External link",
+      snapshot: "Snapshot",
+      faq: "FAQ",
+      registry: "Index",
+      program: "Program page",
+      guide: "Guide",
+    },
+    unit: {
+      entries: "entries",
+      milestones: "milestones",
+      forms: "forms",
+      guides: "guides",
+      files: "files",
     },
   },
 };
@@ -392,11 +448,11 @@ I18N.ja = {
     archive: "アーカイブ",
   },
   common: {
-    open: "受付中",
+    open: "公募中",
     closed: "終了",
     reference: "参考",
-    unknown: "未確認",
-    priority: "重点",
+    unknown: "要確認",
+    priority: "重点種目",
     official: "公式ページ",
     snapshot: "ローカルスナップショット",
     documents: "資料",
@@ -406,10 +462,10 @@ I18N.ja = {
     viewOfficial: "公式ページを開く",
     viewSnapshot: "ローカルスナップショットを開く",
     nextDeadline: "次の締切",
-    updated: "更新日時",
+    updated: "公式ページ更新",
     status: "状態",
     group: "区分",
-    openPrograms: "受付中の種目",
+    openPrograms: "公募中の種目",
     trackedForms: "追跡中の様式",
     archiveSnapshots: "アーカイブ済みスナップショット",
     officialDocs: "重要資料",
@@ -418,6 +474,7 @@ I18N.ja = {
     all: "すべて",
     showMore: "もっと見る",
     openLink: "リンクを開く",
+    resetFilters: "絞り込みをリセット",
     menu: "メニュー",
     showMenu: "ナビゲーションメニューを開く",
     hideMenu: "ナビゲーションメニューを閉じる",
@@ -430,13 +487,14 @@ I18N.ja = {
     themeChoices: "テーマの選択",
     showThemes: "配色オプションを表示",
     cycleThemes: "次の配色に切り替える",
+    pageNavigation: "ページナビゲーション",
     openPortal: "ホームポータルに戻る",
   },
   status: {
-    open: "受付中",
+    open: "公募中",
     closed: "終了",
     reference: "参考",
-    unknown: "未確認",
+    unknown: "要確認",
   },
   eventType: {
     notice: "告知",
@@ -450,13 +508,13 @@ I18N.ja = {
   calls: {
     kicker: "ホーム",
     title: "ホーム",
-    lede: "重点種目と JSPS 公募索引を同じ画面で絞り込み、まず研究活動スタート支援と若手研究から確認できます。",
-    filterTitle: "検索とフィルタ",
+    lede: "重点種目と JSPS 公募情報総索引を同じ画面で確認し、まず研究活動スタート支援と若手研究から整理できます。",
+    filterTitle: "検索と絞り込み",
     quickFilters: "クイックフィルタ",
     footerTitle: "対象種目を決めたら、次はタイムラインと様式を確認します",
     searchPlaceholder: "種目、様式番号、公式入口、キーワードで検索",
     statusAll: "すべての状態",
-    statusOpen: "受付中のみ",
+    statusOpen: "公募中のみ",
     statusClosed: "終了 / 参考",
     groupAll: "すべての区分",
     sortPriority: "優先順",
@@ -464,8 +522,8 @@ I18N.ja = {
     sortStatus: "状態順",
     quickAll: "すべて",
     quickPriority: "重点",
-    quickOpen: "受付中",
-    quickStartup: "Start-up",
+    quickOpen: "公募中",
+    quickStartup: "スタート支援",
     quickYoung: "若手研究",
     quickForms: "S-21 / S-22",
     detailTitle: "項目詳細",
@@ -499,7 +557,7 @@ I18N.ja = {
   guides: {
     kicker: "公式ガイド",
     title: "申請ガイド",
-    lede: "FAQ、e-Rad、電子申請システム、重要資料をひとまとめにして見直せるページです。",
+    lede: "FAQ、e-Rad、電子申請システム、重要資料をまとめて見直せるようにした確認ページです。",
     gridTitle: "主要な申請入口",
     watchTitle: "重点種目の確認ポイント",
     startupWatch: "研究活動スタート支援",
@@ -522,7 +580,7 @@ I18N.ja = {
     footerTitle: "履歴を確認したら、現行のホームへ戻ります",
   },
   footer: {
-    resources: "Resources",
+    resources: "リソース",
     homeTitle: "次の確認ページへ進む",
     catalog: "ホームを開く",
     archive: "アーカイブを開く",
@@ -531,6 +589,32 @@ I18N.ja = {
     guides: "申請ガイドを開く",
     sources: "公式ソースを開く",
     home: "ホームへ戻る",
+  },
+  groupLabel: {
+    priority: "重点種目",
+    core: "共通入口",
+    program: "種目別入口",
+    documents: "主要資料",
+    faq: "FAQ",
+    publicCallProcedures: "公募要領・計画調書等",
+  },
+  kindLabel: {
+    page: "ページ",
+    file: "ファイル",
+    system: "システム",
+    external: "外部リンク",
+    snapshot: "スナップショット",
+    faq: "FAQ",
+    registry: "索引",
+    program: "種目ページ",
+    guide: "ガイド",
+  },
+  unit: {
+    entries: "件の項目",
+    milestones: "件の節目",
+    forms: "件の様式",
+    guides: "件の案内",
+    files: "件のファイル",
   },
 };
 
@@ -851,9 +935,7 @@ function applyI18n() {
   }
   document.querySelectorAll(".locale-switcher").forEach((node) => node.setAttribute("aria-label", t("common.language")));
   document.querySelectorAll(".theme-switcher").forEach((node) => node.setAttribute("aria-label", t("common.theme")));
-  document.querySelectorAll(".topnav").forEach((node) =>
-    node.setAttribute("aria-label", state.locale === "zh" ? "页面导航" : state.locale === "ja" ? "ページナビゲーション" : "Page navigation"),
-  );
+  document.querySelectorAll(".topnav").forEach((node) => node.setAttribute("aria-label", t("common.pageNavigation")));
   const placeholderMap = {
     "call-search": t("calls.searchPlaceholder"),
     "form-search": t("forms.searchPlaceholder"),
@@ -864,6 +946,17 @@ function applyI18n() {
       input.setAttribute("placeholder", value);
     }
   });
+  ["call-reset", "form-reset"].forEach((id) => {
+    const button = document.getElementById(id);
+    if (button) {
+      button.setAttribute("aria-label", t("common.resetFilters"));
+      button.setAttribute("title", t("common.resetFilters"));
+    }
+  });
+  const quickFilters = document.getElementById("call-quick-filters");
+  if (quickFilters) {
+    quickFilters.setAttribute("aria-label", t("calls.quickFilters"));
+  }
   updateDocumentTitle();
   syncHomepageShell();
 }
@@ -893,7 +986,7 @@ function syncHomepageShell() {
     topnav: {
       root: document,
       navSelector: ".topnav",
-      navAriaLabel: state.locale === "zh" ? "页面导航" : state.locale === "ja" ? "ページナビゲーション" : "Page navigation",
+      navAriaLabel: t("common.pageNavigation"),
       menuLabel: t("common.menu"),
       showMenuLabel: t("common.showMenu"),
       hideMenuLabel: t("common.hideMenu"),
@@ -928,7 +1021,7 @@ function renderPortalReturnControl() {
           tray: "機能ページ",
           portal: "ホームポータル",
           academic: "個人ホームページ",
-          radar: "学术前沿",
+          radar: "学術フロンティア",
           jsps: "JSPS 科研費",
         }
     : {
@@ -936,7 +1029,7 @@ function renderPortalReturnControl() {
         tray: "Site sections",
         portal: "Homepage portal",
         academic: "Personal homepage",
-        radar: "学术前沿",
+        radar: "Academic Frontier",
         jsps: "JSPS KAKENHI",
       };
 
@@ -1030,8 +1123,8 @@ function updateDocumentTitle() {
       ja: "申請書類 | JSPS 科研費ワークスペース",
     },
     guides: {
-      zh: "申请指引 | JSPS 科研费工作台",
-      en: "Guides | JSPS KAKENHI Workspace",
+      zh: "申请指南 | JSPS 科研费工作台",
+      en: "Guidance | JSPS KAKENHI Workspace",
       ja: "申請ガイド | JSPS 科研費ワークスペース",
     },
     sources: {
@@ -1324,34 +1417,34 @@ function renderHomePage() {
     return;
   }
 
-  const { programs, guides, source_registry: sourceRegistry, archive } = state.data;
+  const { overview, programs, guides, source_registry: sourceRegistry, archive } = state.data;
   const workflowCards = [
     {
       kicker: t("nav.calls"),
       title: t("nav.calls"),
       text: t("home.callsLead"),
-      meta: `${state.data.call_catalog.length} ${state.locale === "zh" ? "条目录" : "entries"}`,
+      meta: countText(state.data.call_catalog.length, "entries"),
       href: "./index.html",
     },
     {
       kicker: t("nav.deadlines"),
       title: t("nav.deadlines"),
       text: t("home.deadlinesLead"),
-      meta: `${state.data.timeline.length} ${state.locale === "zh" ? "个节点" : "milestones"}`,
+      meta: countText(state.data.timeline.length, "milestones"),
       href: "./deadlines.html",
     },
     {
       kicker: t("nav.forms"),
       title: t("nav.forms"),
       text: t("home.formsLead"),
-      meta: `${overview.form_count} ${state.locale === "zh" ? "份表格" : "forms"}`,
+      meta: countText(overview.form_count, "forms"),
       href: "./forms.html",
     },
     {
       kicker: t("nav.guides"),
       title: t("nav.guides"),
       text: t("home.guidesLead"),
-      meta: `${guides.length} ${state.locale === "zh" ? "条指引" : "guides"}`,
+      meta: countText(guides.length, "guides"),
       href: "./guides.html",
     },
   ];
@@ -1362,8 +1455,8 @@ function renderHomePage() {
         <article class="feature-card program-spotlight">
           <div class="portal-card-head">
             <div>
-              <p class="eyebrow">${escapeHtml(program.family_title)}</p>
-              <h3>${escapeHtml(program.title)}</h3>
+              <p class="eyebrow">${escapeHtml(localeField(program, "family_title"))}</p>
+              <h3>${escapeHtml(localeField(program, "title"))}</h3>
             </div>
             ${statusPill(program.status)}
           </div>
@@ -1436,7 +1529,7 @@ function renderHomePage() {
 
   archiveList.innerHTML = archive
     .slice(0, 3)
-    .map((snapshotEntry) => stackItem(snapshotEntry.snapshot_date, `${snapshotEntry.files.length} ${state.locale === "zh" ? "份文件" : "files"} · ${snapshotEntry.fetched_at || "--"}`, snapshotEntry.files[0]?.local_path || ""))
+    .map((snapshotEntry) => stackItem(snapshotEntry.snapshot_date, `${countText(snapshotEntry.files.length, "files")} · ${snapshotEntry.fetched_at || "--"}`, snapshotEntry.files[0]?.local_path || ""))
     .join("");
 
   sourceGuideList.innerHTML = [
@@ -1480,7 +1573,7 @@ function renderCallsPage() {
     optionHtml("closed", t("calls.statusClosed"), state.filters.calls.status),
   ].join("");
   groupFilter.innerHTML = [optionHtml("all", t("calls.groupAll"), state.filters.calls.group)]
-    .concat(groups.map((group) => optionHtml(group, group, state.filters.calls.group)))
+    .concat(groups.map((group) => optionHtml(group, displayGroupLabel(group), state.filters.calls.group)))
     .join("");
   sortFilter.innerHTML = [
     optionHtml("priority", t("calls.sortPriority"), state.filters.calls.sort),
@@ -1551,7 +1644,21 @@ function renderCallsPage() {
     const query = state.filters.calls.search.toLowerCase();
     const matchesSearch =
       !query ||
-      [entry.title, entry.subtitle, entry.group, entry.search_blob]
+      [
+        entry.title,
+        entry.title_ja,
+        entry.title_zh,
+        entry.title_en,
+        entry.subtitle,
+        entry.subtitle_ja,
+        entry.subtitle_zh,
+        entry.subtitle_en,
+        entry.group,
+        entry.group_ja,
+        entry.group_zh,
+        entry.group_en,
+        entry.search_blob,
+      ]
         .filter(Boolean)
         .join(" ")
         .toLowerCase()
@@ -1563,15 +1670,15 @@ function renderCallsPage() {
 
   filtered = filtered.sort((left, right) => {
     if (state.filters.calls.sort === "title") {
-      return left.title.localeCompare(right.title, "ja");
+      return localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
     }
     if (state.filters.calls.sort === "status") {
-      return left.status.localeCompare(right.status, "en") || left.title.localeCompare(right.title, "ja");
+      return left.status.localeCompare(right.status, "en") || localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
     }
     return (
       Number(right.priority) - Number(left.priority) ||
       statusWeight(left.status) - statusWeight(right.status) ||
-      left.title.localeCompare(right.title, "ja")
+      localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en")
     );
   });
 
@@ -1594,14 +1701,14 @@ function renderCallsPage() {
             <button class="portal-select-card ${entry.id === state.filters.calls.selectedId ? "is-selected" : ""}" type="button" data-entry-id="${entry.id}">
               <span class="portal-select-head">
                 <span>
-                  <span class="eyebrow">${escapeHtml(entry.subtitle || entry.group)}</span>
-                  <strong>${escapeHtml(entry.title)}</strong>
+                  <span class="eyebrow">${escapeHtml(localeField(entry, "subtitle") || displayGroupLabel(entry.group))}</span>
+                  <strong>${escapeHtml(localeField(entry, "title"))}</strong>
                 </span>
                 ${statusPill(entry.status)}
               </span>
               <span class="portal-select-body">${escapeHtml(localeValue(entry, "summary"))}</span>
               <span class="portal-select-meta">
-                ${metaPill(entry.group)}
+                ${metaPill(displayGroupLabel(entry.group))}
                 ${entry.form_codes?.length ? metaPill(entry.form_codes.join(" / ")) : ""}
               </span>
             </button>
@@ -1628,14 +1735,14 @@ function renderCallDetail(entry) {
     return `
       <div class="portal-card-head">
         <div>
-          <p class="eyebrow">${escapeHtml(entry.group)}</p>
-          <h3>${escapeHtml(entry.title)}</h3>
+          <p class="eyebrow">${escapeHtml(displayGroupLabel(entry.group))}</p>
+          <h3>${escapeHtml(localeField(entry, "title"))}</h3>
         </div>
         ${statusPill(entry.status)}
       </div>
       <p>${escapeHtml(localeValue(entry, "summary"))}</p>
       <div class="meta-strip">
-        ${metaPill(entry.group)}
+        ${metaPill(displayGroupLabel(entry.group))}
       </div>
       <div class="link-row">
         <a href="${entry.official_url}" target="_blank" rel="noreferrer">${t("common.viewOfficial")}</a>
@@ -1650,8 +1757,8 @@ function renderCallDetail(entry) {
   return `
     <div class="portal-card-head">
       <div>
-        <p class="eyebrow">${escapeHtml(program.family_title)}</p>
-        <h3>${escapeHtml(program.title)}</h3>
+        <p class="eyebrow">${escapeHtml(localeField(program, "family_title"))}</p>
+        <h3>${escapeHtml(localeField(program, "title"))}</h3>
       </div>
       ${statusPill(program.status)}
     </div>
@@ -1681,7 +1788,7 @@ function renderCallDetail(entry) {
       <ul class="portal-list">
         ${program.forms
           .slice(0, 4)
-          .map((form) => `<li>${escapeHtml(form.form_number)} · ${escapeHtml((form.family_names || [program.title])[0])}</li>`)
+          .map((form) => `<li>${escapeHtml(form.form_number)} · ${escapeHtml((form.family_names || [localeField(program, "title")])[0])}</li>`)
           .join("")}
       </ul>
     </div>
@@ -1721,7 +1828,7 @@ function renderDeadlinesPage() {
           </time>
           <article class="timeline-card">
             <div class="timeline-heading">
-              <h4 class="timeline-title-text">${escapeHtml(event.program_title)} · ${escapeHtml(eventTypeLabel(event.type))}</h4>
+              <h4 class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(eventTypeLabel(event.type))}</h4>
               <span class="timeline-tag">${escapeHtml(t(`eventType.${event.status}`))}</span>
             </div>
             <p class="timeline-summary">
@@ -1739,7 +1846,7 @@ function renderDeadlinesPage() {
     .map(
       (event) => `
         <tr>
-          <td>${escapeHtml(event.program_title)}</td>
+          <td>${escapeHtml(localeField(event, "program_title"))}</td>
           <td>${escapeHtml(eventTypeLabel(event.type))}</td>
           <td>${escapeHtml(formatDateTime(event.datetime || event.date))}</td>
           <td>${escapeHtml(localeField(event, "note") || "--")}</td>
@@ -1770,7 +1877,7 @@ function renderFormsPage() {
 
   searchInput.value = state.filters.forms.search;
   programFilter.innerHTML = [optionHtml("all", t("forms.programAll"), state.filters.forms.program)]
-    .concat(programs.map((program) => optionHtml(program.id, program.title, state.filters.forms.program)))
+    .concat(programs.map((program) => optionHtml(program.id, localeField(program, "title"), state.filters.forms.program)))
     .join("");
   sortFilter.innerHTML = [
     optionHtml("code", t("forms.sortCode"), state.filters.forms.sort),
@@ -1812,7 +1919,16 @@ function renderFormsPage() {
   const query = state.filters.forms.search.toLowerCase();
   let filtered = forms.filter((form) => {
     const matchesProgram = state.filters.forms.program === "all" || form.program_id === state.filters.forms.program;
-    const haystack = [form.form_number, form.program_title, form.family_name, ...(form.page_sections || []), ...(form.row_texts || [])]
+    const haystack = [
+      form.form_number,
+      form.program_title,
+      form.program_title_ja,
+      form.program_title_zh,
+      form.program_title_en,
+      form.family_name,
+      ...(form.page_sections || []),
+      ...(form.row_texts || []),
+    ]
       .join(" ")
       .toLowerCase();
     const matchesSearch = !query || haystack.includes(query);
@@ -1821,9 +1937,9 @@ function renderFormsPage() {
 
   filtered = filtered.sort((left, right) => {
     if (state.filters.forms.sort === "program") {
-      return left.program_title.localeCompare(right.program_title, "ja") || left.form_number.localeCompare(right.form_number, "en");
+      return localeField(left, "program_title").localeCompare(localeField(right, "program_title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en") || left.form_number.localeCompare(right.form_number, "en");
     }
-    return left.form_number.localeCompare(right.form_number, "en") || left.program_title.localeCompare(right.program_title, "ja");
+    return left.form_number.localeCompare(right.form_number, "en") || localeField(left, "program_title").localeCompare(localeField(right, "program_title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
   });
 
   grid.innerHTML = filtered.length
@@ -1833,12 +1949,12 @@ function renderFormsPage() {
             <article class="document-card portal-form-card">
               <div class="portal-card-head">
                 <div>
-                  <p class="eyebrow">${escapeHtml(form.program_title)}</p>
+                  <p class="eyebrow">${escapeHtml(localeField(form, "program_title"))}</p>
                   <h3>${escapeHtml(form.form_number)} · ${escapeHtml(form.family_name)}</h3>
                 </div>
                 ${metaPill(form.form_number)}
               </div>
-              <p>${escapeHtml((form.page_sections || []).join(" / ") || form.program_title)}</p>
+              <p>${escapeHtml((form.page_sections || []).join(" / ") || localeField(form, "program_title"))}</p>
               ${form.row_texts?.length ? `<p class="portal-subtle">${escapeHtml(form.row_texts[0])}</p>` : ""}
               <div class="link-row">
                 ${form.links
@@ -1880,10 +1996,10 @@ function renderGuidesPage() {
         <article class="link-card">
           <div class="portal-card-head">
             <div>
-              <p class="eyebrow">${escapeHtml(guide.group)}</p>
+              <p class="eyebrow">${escapeHtml(localeField(guide, "group") || displayGroupLabel(guide.group))}</p>
               <h3 class="link-card-title">${escapeHtml(localeField(guide, "title"))}</h3>
             </div>
-            ${metaPill(guide.kind)}
+            ${metaPill(displayKindLabel(guide.kind))}
           </div>
           <p>${escapeHtml(localeField(guide, "summary"))}</p>
           <div class="link-row">
@@ -1894,8 +2010,8 @@ function renderGuidesPage() {
     )
     .join("");
 
-  startupWatch.innerHTML = startup ? localeList(startup, "watchpoints").map((note) => stackItem(startup.title, note)).join("") : "";
-  youngWatch.innerHTML = young ? localeList(young, "watchpoints").map((note) => stackItem(young.title, note)).join("") : "";
+  startupWatch.innerHTML = startup ? localeList(startup, "watchpoints").map((note) => stackItem(localeField(startup, "title"), note)).join("") : "";
+  youngWatch.innerHTML = young ? localeList(young, "watchpoints").map((note) => stackItem(localeField(young, "title"), note)).join("") : "";
 }
 
 function renderSourcesPage() {
@@ -1920,7 +2036,7 @@ function renderSourcesPage() {
         <article class="link-card">
           <div class="portal-card-head">
             <div>
-              <p class="eyebrow">${escapeHtml(source.kind)}</p>
+              <p class="eyebrow">${escapeHtml(displayKindLabel(source.kind))}</p>
               <h3 class="link-card-title">${escapeHtml(localeField(source, "title"))}</h3>
             </div>
             ${metaPill(`${source.resource_count}`)}
@@ -1941,8 +2057,8 @@ function renderSourcesPage() {
         <article class="feature-card">
           <div class="portal-card-head">
             <div>
-              <p class="eyebrow">${escapeHtml(category.group)}</p>
-              <h3>${escapeHtml(category.title)}</h3>
+              <p class="eyebrow">${escapeHtml(localeField(category, "group") || displayGroupLabel(category.group))}</p>
+              <h3>${escapeHtml(localeField(category, "title"))}</h3>
             </div>
           </div>
           <div class="link-row">
@@ -2006,10 +2122,10 @@ function localeValue(record, base) {
   }
   const candidates =
     state.locale === "ja"
-      ? [record[base], record[`${base}_zh`], record[`${base}_en`]]
+      ? [record[`${base}_ja`], record[base], record[`${base}_zh`], record[`${base}_en`]]
       : state.locale === "zh"
-        ? [record[`${base}_zh`], record[base], record[`${base}_en`]]
-        : [record[`${base}_en`], record[base], record[`${base}_zh`]];
+        ? [record[`${base}_zh`], record[base], record[`${base}_ja`], record[`${base}_en`]]
+        : [record[`${base}_en`], record[`${base}_ja`], record[base], record[`${base}_zh`]];
   for (const candidate of candidates) {
     if (candidate) {
       return candidate;
@@ -2031,16 +2147,37 @@ function localeList(record, base) {
   }
   const candidates =
     state.locale === "ja"
-      ? [record[base], record[`${base}_zh`], record[`${base}_en`]]
+      ? [record[`${base}_ja`], record[base], record[`${base}_zh`], record[`${base}_en`]]
       : state.locale === "zh"
-        ? [record[`${base}_zh`], record[base], record[`${base}_en`]]
-        : [record[`${base}_en`], record[base], record[`${base}_zh`]];
+        ? [record[`${base}_zh`], record[base], record[`${base}_ja`], record[`${base}_en`]]
+        : [record[`${base}_en`], record[`${base}_ja`], record[base], record[`${base}_zh`]];
   for (const candidate of candidates) {
     if (Array.isArray(candidate)) {
       return candidate;
     }
   }
   return [];
+}
+
+function displayGroupLabel(group) {
+  const key = {
+    "重点项目": "priority",
+    Core: "core",
+    Program: "program",
+    Documents: "documents",
+    FAQ: "faq",
+    "公募要領・計画調書等": "publicCallProcedures",
+  }[group];
+  return key ? t(`groupLabel.${key}`) : group;
+}
+
+function displayKindLabel(kind) {
+  const label = t(`kindLabel.${kind}`);
+  return label === `kindLabel.${kind}` ? kind : label;
+}
+
+function countText(value, unitKey) {
+  return `${value} ${t(`unit.${unitKey}`)}`;
 }
 
 function t(key) {
@@ -2106,7 +2243,7 @@ function optionHtml(value, label, current) {
 }
 
 function programWatchItems(program) {
-  return localeList(program, "watchpoints").map((note) => ({ title: program.title, text: note }));
+  return localeList(program, "watchpoints").map((note) => ({ title: localeField(program, "title"), text: note }));
 }
 
 function eventTypeLabel(type) {
