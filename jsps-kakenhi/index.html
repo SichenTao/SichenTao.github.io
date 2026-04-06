@@ -5,55 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="JSPS KAKENHI workspace for priority calls, deadlines, forms, official sources, and archived snapshots, centered on Research Activity Start-up Support and Early-Career Scientists."
+      content="JSPS 科研费首页，集中浏览研究活動スタート支援、若手研究及公募总索引中的官方入口。"
     />
     <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/" />
     <meta name="theme-color" content="#f3eef9" />
-    <meta property="og:title" content="JSPS KAKENHI Workspace" />
+    <meta property="og:title" content="JSPS KAKENHI Home" />
     <meta
       property="og:description"
-      content="A compact JSPS KAKENHI workspace for priority calls, forms, deadlines, official sources, and archived snapshots."
+      content="JSPS KAKENHI home for priority calls, forms, deadlines, official sources, and archived snapshots."
     />
     <meta property="og:url" content="https://sichentao.github.io/jsps-kakenhi/" />
     <meta property="og:type" content="website" />
-    <title>JSPS KAKENHI Workspace</title>
+    <title>首页 | JSPS 科研费工作台</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" href="./favicon.png" type="image/png" />
     <link rel="manifest" href="./site.webmanifest" />
     <script>
-      try {
-        const savedTheme =
-          localStorage.getItem("sichen-homepage-theme") ||
-          localStorage.getItem("kakenhi-portal-theme");
-        if (savedTheme && savedTheme !== "default") {
-          document.documentElement.dataset.theme = savedTheme;
-        } else {
+      (function () {
+        const themeCatalog = {
+          tohoku: "#f3eef9",
+          toyama: "#edf4f7",
+          usst: "#f7eded",
+        };
+        try {
+          const savedLocale =
+            localStorage.getItem("sichen-homepage-locale") ||
+            localStorage.getItem("kakenhi-portal-locale");
+          document.documentElement.lang =
+            savedLocale === "zh" ? "zh-CN" : savedLocale === "ja" ? "ja" : "en";
+          const savedTheme =
+            localStorage.getItem("sichen-homepage-theme") ||
+            localStorage.getItem("kakenhi-portal-theme");
+          const theme = themeCatalog[savedTheme] ? savedTheme : "tohoku";
+          document.documentElement.dataset.theme = theme;
+          const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+          if (metaThemeColor) {
+            metaThemeColor.setAttribute("content", themeCatalog[theme]);
+          }
+        } catch {
+          document.documentElement.lang = "en";
           document.documentElement.dataset.theme = "tohoku";
         }
-        const savedLocale =
-          localStorage.getItem("sichen-homepage-locale") ||
-          localStorage.getItem("kakenhi-portal-locale");
-        document.documentElement.lang =
-          savedLocale === "zh" ? "zh-CN" : savedLocale === "ja" ? "ja" : "en";
-      } catch {
-        document.documentElement.dataset.theme = "tohoku";
-        document.documentElement.lang = "en";
-      }
+      })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260406-133451" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-133451" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-133451" />
-    <script src="./data/kakenhi-data.js?v=20260406-133451"></script>
-        <script defer src="/assets/shared/homepage-shell.js?v=20260406-133451"></script>
-<script defer src="./app.js?v=20260406-133451"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260406-140013" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-140013" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-140013" />
+    <script src="./data/kakenhi-data.js?v=20260406-140013"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260406-140013"></script>
+    <script defer src="./app.js?v=20260406-140013"></script>
   </head>
-  <body data-page="home">
+  <body data-page="calls">
     <div class="page-wash"></div>
     <div class="page-grid"></div>
     <div class="orb orb-a"></div>
@@ -68,7 +76,6 @@
         </div>
         <nav class="topnav" aria-label="Page navigation">
           <a href="./index.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span data-i18n="nav.home">首页</span></a>
-          <a href="./calls.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-projects"></use></svg><span data-i18n="nav.calls">项目目录</span></a>
           <a href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
           <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">表格材料</span></a>
           <a href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指引</span></a>
@@ -80,53 +87,39 @@
 
     <main class="shell layout">
       <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow" data-i18n="home.priorityKicker">当前重点</p>
-            <h2 data-i18n="home.prioritySection">重点项目</h2>
+        <div class="section-head publication-head">
+          <div class="section-head-main">
+            <div class="publication-title-lockup">
+              <h2 data-i18n="calls.filterTitle">浏览与筛选</h2>
+            </div>
+            <div class="filter-search-row">
+              <input id="call-search" class="input" type="search" placeholder="搜索项目、表格号、官方入口或关键词" />
+            </div>
+          </div>
+          <div class="filters publication-filters">
+            <div class="filter-control-row">
+              <select id="call-status-filter" class="input"></select>
+              <select id="call-group-filter" class="input"></select>
+              <select id="call-sort-filter" class="input"></select>
+              <button id="call-reset" class="button button-secondary filter-reset icon-only" type="button" aria-label="Reset" title="Reset">
+                <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-reset"></use></svg>
+              </button>
+            </div>
           </div>
         </div>
-        <div id="home-priority-grid" class="card-grid portal-card-grid"></div>
-      </section>
-
-      <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow" data-i18n="home.workflowKicker">工作流程</p>
-            <h2 data-i18n="home.workflowSection">工作流程</h2>
+        <div class="filter-chip-row">
+          <div class="filter-chip-label">
+            <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-keyword"></use></svg>
+            <span data-i18n="calls.quickFilters">快速筛选</span>
           </div>
+          <div class="chip-row" id="call-quick-filters" aria-label="Quick call filters"></div>
         </div>
-        <div id="home-workflow-grid" class="module-grid"></div>
-        <div class="dual-grid">
-          <article class="feature-card">
-            <h3 data-i18n="home.watchTitle">行动提醒</h3>
-            <div id="home-watch-list" class="stack-list"></div>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="home.jumpTitle">官方快速跳转</h3>
-            <div id="home-jump-list" class="stack-list"></div>
-          </article>
+        <div class="feature-showcase portal-showcase">
+          <div id="call-list" class="stack-list program-stack"></div>
+          <aside class="summary-panel portal-detail-panel">
+            <div id="call-detail" class="summary-card portal-summary-card"></div>
+          </aside>
         </div>
-      </section>
-
-      <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow" data-i18n="home.sourceKicker">来源与归档</p>
-            <h2 data-i18n="home.sourceSection">官方来源与归档</h2>
-          </div>
-        </div>
-        <div class="dual-grid">
-          <article class="feature-card">
-            <h3 data-i18n="home.archiveTitle">Archive snapshots</h3>
-            <div id="home-archive-list" class="stack-list"></div>
-          </article>
-          <article class="feature-card">
-            <h3 data-i18n="home.sourceGuideTitle">How to use this workspace</h3>
-            <div id="home-source-guide-list" class="stack-list"></div>
-          </article>
-        </div>
-        <div id="home-source-grid" class="card-grid portal-card-grid"></div>
       </section>
     </main>
 
@@ -134,11 +127,11 @@
       <div class="footer-panel">
         <div>
           <p class="eyebrow" data-i18n="footer.resources">Resources</p>
-          <h2 data-i18n="footer.homeTitle">继续进入更细的申请页面</h2>
+          <h2 data-i18n="calls.footerTitle">项目定位后，下一步就去看时间线和表格</h2>
         </div>
         <div class="footer-actions">
-          <a class="button button-primary" href="./calls.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-projects"></use></svg><span data-i18n="footer.catalog">查看项目目录</span></a>
-          <a class="button button-secondary" href="./archive.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-archive"></use></svg><span data-i18n="footer.archive">查看归档快照</span></a>
+          <a class="button button-primary" href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="footer.deadlines">查看时间线</span></a>
+          <a class="button button-secondary" href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="footer.forms">查看表格材料</span></a>
         </div>
       </div>
     </footer>

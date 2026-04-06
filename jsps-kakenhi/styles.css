@@ -126,6 +126,14 @@ body {
   font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
 }
 
+body[data-lang="zh"] {
+  font-family: "Noto Sans SC", "Sora", sans-serif;
+}
+
+body[data-lang="ja"] {
+  font-family: "Noto Sans JP", "Sora", sans-serif;
+}
+
 :root[data-theme="tohoku"] body {
   background:
     radial-gradient(circle at 12% 10%, rgba(var(--teal-rgb), 0.24), transparent 24%),

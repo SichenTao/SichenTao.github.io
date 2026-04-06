@@ -53,7 +53,13 @@ const I18N = {
       hideMenu: "收起菜单",
       displayControls: "显示控制",
       language: "语言",
+      languageChoices: "语言选项",
+      showLanguages: "显示语言选项",
+      cycleLanguages: "切换到下一种语言",
       theme: "配色主题",
+      themeChoices: "配色选项",
+      showThemes: "显示配色选项",
+      cycleThemes: "切换到下一种配色",
       openPortal: "返回主页导航页",
     },
     status: {
@@ -168,7 +174,7 @@ const I18N = {
       lede: "这一页把“真正的官方页面”和“公募索引里的分类入口”分开展示，避免把整理后的站内信息误当作唯一来源。",
       registryTitle: "核心来源注册表",
       categoryTitle: "公募总索引条目",
-      footerTitle: "来源确认后，可以回到项目页继续申请准备",
+      footerTitle: "来源确认后，可以回到首页继续申请准备",
     },
     archive: {
       kicker: "快照归档",
@@ -231,7 +237,13 @@ const I18N = {
       hideMenu: "Close navigation menu",
       displayControls: "Display controls",
       language: "Language",
+      languageChoices: "Language choices",
+      showLanguages: "Show language options",
+      cycleLanguages: "Switch to the next language",
       theme: "Color theme",
+      themeChoices: "Theme choices",
+      showThemes: "Show color themes",
+      cycleThemes: "Switch to the next color theme",
       openPortal: "Return to homepage portal",
     },
     status: {
@@ -346,7 +358,7 @@ const I18N = {
       lede: "This page separates the true official pages from the classified entries inside the JSPS public-call index so the portal does not replace the original sources.",
       registryTitle: "Core source registry",
       categoryTitle: "Public-call index entries",
-      footerTitle: "Once the sources are verified, return to the call pages for preparation",
+      footerTitle: "Once the sources are verified, return to the homepage to continue preparation",
     },
     archive: {
       kicker: "Snapshot Archive",
@@ -369,6 +381,159 @@ const I18N = {
   },
 };
 
+I18N.ja = {
+  nav: {
+    home: "ホーム",
+    calls: "ホーム",
+    deadlines: "タイムライン",
+    forms: "申請書類",
+    guides: "申請ガイド",
+    sources: "公式ソース",
+    archive: "アーカイブ",
+  },
+  common: {
+    open: "受付中",
+    closed: "終了",
+    reference: "参考",
+    unknown: "未確認",
+    priority: "重点",
+    official: "公式ページ",
+    snapshot: "ローカルスナップショット",
+    documents: "資料",
+    forms: "様式",
+    links: "リンク",
+    noResults: "一致する結果はありません",
+    viewOfficial: "公式ページを開く",
+    viewSnapshot: "ローカルスナップショットを開く",
+    nextDeadline: "次の締切",
+    updated: "更新日時",
+    status: "状態",
+    group: "区分",
+    openPrograms: "受付中の種目",
+    trackedForms: "追跡中の様式",
+    archiveSnapshots: "アーカイブ済みスナップショット",
+    officialDocs: "重要資料",
+    watchpoints: "確認ポイント",
+    detailHint: "左側の項目を選ぶと詳細を確認できます。",
+    all: "すべて",
+    showMore: "もっと見る",
+    openLink: "リンクを開く",
+    menu: "メニュー",
+    showMenu: "ナビゲーションメニューを開く",
+    hideMenu: "ナビゲーションメニューを閉じる",
+    displayControls: "表示コントロール",
+    language: "言語",
+    languageChoices: "言語の選択",
+    showLanguages: "言語オプションを表示",
+    cycleLanguages: "次の言語に切り替える",
+    theme: "配色テーマ",
+    themeChoices: "テーマの選択",
+    showThemes: "配色オプションを表示",
+    cycleThemes: "次の配色に切り替える",
+    openPortal: "ホームポータルに戻る",
+  },
+  status: {
+    open: "受付中",
+    closed: "終了",
+    reference: "参考",
+    unknown: "未確認",
+  },
+  eventType: {
+    notice: "告知",
+    open: "公募開始",
+    system: "システム公開",
+    deadline: "JSPS 締切",
+    past: "過去",
+    today: "今日",
+    upcoming: "今後",
+  },
+  calls: {
+    kicker: "ホーム",
+    title: "ホーム",
+    lede: "重点種目と JSPS 公募索引を同じ画面で絞り込み、まず研究活動スタート支援と若手研究から確認できます。",
+    filterTitle: "検索とフィルタ",
+    quickFilters: "クイックフィルタ",
+    footerTitle: "対象種目を決めたら、次はタイムラインと様式を確認します",
+    searchPlaceholder: "種目、様式番号、公式入口、キーワードで検索",
+    statusAll: "すべての状態",
+    statusOpen: "受付中のみ",
+    statusClosed: "終了 / 参考",
+    groupAll: "すべての区分",
+    sortPriority: "優先順",
+    sortTitle: "タイトル順",
+    sortStatus: "状態順",
+    quickAll: "すべて",
+    quickPriority: "重点",
+    quickOpen: "受付中",
+    quickStartup: "Start-up",
+    quickYoung: "若手研究",
+    quickForms: "S-21 / S-22",
+    detailTitle: "項目詳細",
+    officialLinks: "公式リンク",
+    featuredDocs: "重要資料",
+    featuredForms: "主要様式",
+  },
+  deadlines: {
+    kicker: "スケジュール",
+    title: "タイムラインと締切",
+    lede: "重点種目の告知、公募開始、電子申請システム公開、公式締切を 1 ページで確認します。",
+    timelineTitle: "重要イベントのタイムライン",
+    tableTitle: "詳細スケジュール",
+    colProgram: "種目",
+    colType: "区分",
+    colDate: "日付",
+    colNote: "メモ",
+    footerTitle: "日程を確認したら、次は書類準備へ進みます",
+  },
+  forms: {
+    kicker: "様式群",
+    title: "様式と資料",
+    lede: "S-21、S-22、その記入要領、アップロード説明、PDF 版をまとめて確認できます。",
+    filterTitle: "様式を検索",
+    searchPlaceholder: "S-21、S-22、種目名、節名、公式説明を検索",
+    programAll: "すべての種目",
+    sortCode: "様式番号順",
+    sortProgram: "種目順",
+    footerTitle: "様式を確認したら、次は手順と FAQ を補います",
+  },
+  guides: {
+    kicker: "公式ガイド",
+    title: "申請ガイド",
+    lede: "FAQ、e-Rad、電子申請システム、重要資料をひとまとめにして見直せるページです。",
+    gridTitle: "主要な申請入口",
+    watchTitle: "重点種目の確認ポイント",
+    startupWatch: "研究活動スタート支援",
+    youngWatch: "若手研究",
+    footerTitle: "ガイド確認後は、公式ソースとアーカイブを見直します",
+  },
+  sources: {
+    kicker: "出典",
+    title: "公式ソース",
+    lede: "整理済みの情報だけでなく、元の公式ページと公募索引の入口を分けて確認できるようにします。",
+    registryTitle: "主要ソース一覧",
+    categoryTitle: "公募索引の分類入口",
+    footerTitle: "ソースを確認したら、ホームに戻って準備を進めます",
+  },
+  archive: {
+    kicker: "スナップショット",
+    title: "スナップショットアーカイブ",
+    lede: "取得日ごとのディレクトリを残し、JSPS 側の更新後でも当時の文面とリンク構造を追跡できます。",
+    gridTitle: "スナップショット一覧",
+    footerTitle: "履歴を確認したら、現行のホームへ戻ります",
+  },
+  footer: {
+    resources: "Resources",
+    homeTitle: "次の確認ページへ進む",
+    catalog: "ホームを開く",
+    archive: "アーカイブを開く",
+    deadlines: "タイムラインを開く",
+    forms: "申請書類を開く",
+    guides: "申請ガイドを開く",
+    sources: "公式ソースを開く",
+    home: "ホームへ戻る",
+  },
+};
+
 const state = {
   locale: getStoredLocale(),
   theme: getStoredTheme(),
@@ -376,12 +541,20 @@ const state = {
   page: document.body?.dataset.page || "home",
   filters: getStoredFilters(),
 };
+
+const LOCALE_CATALOG = {
+  en: { label: "En", name: "English", lang: "en" },
+  zh: { label: "中", name: "中文", lang: "zh-CN" },
+  ja: { label: "日", name: "日本語", lang: "ja" },
+};
+
 const THEME_OPTIONS = [
   { value: "tohoku", label: "Tohoku", title: "Tohoku University theme", swatchClass: "theme-tohoku", themeColor: "#f3eef9" },
   { value: "toyama", label: "Toyama", title: "University of Toyama theme", swatchClass: "theme-toyama", themeColor: "#edf4f7" },
   { value: "usst", label: "USST", title: "USST theme", swatchClass: "theme-usst", themeColor: "#f7eded" },
-  { value: "default", label: "Base", title: "Base theme", swatchClass: "theme-base", themeColor: "#f5eee4" },
 ];
+
+const THEME_CATALOG = Object.fromEntries(THEME_OPTIONS.map((option) => [option.value, option]));
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -393,6 +566,8 @@ async function init() {
 
   renderLocaleSwitcher();
   renderThemeSwitcher();
+  applyLocale(state.locale, false);
+  applyTheme(state.theme, false);
   applyI18n();
   bindSharedHashState();
   routePage();
@@ -402,7 +577,7 @@ async function init() {
 function getStoredLocale() {
   try {
     const saved = localStorage.getItem(LOCALE_KEY) || localStorage.getItem(LEGACY_LOCALE_KEY);
-    return saved === "zh" ? "zh" : "en";
+    return LOCALE_CATALOG[saved] ? saved : "en";
   } catch {
     return "en";
   }
@@ -411,7 +586,10 @@ function getStoredLocale() {
 function getStoredTheme() {
   try {
     const saved = localStorage.getItem(THEME_KEY) || localStorage.getItem(LEGACY_THEME_KEY);
-    return saved === "default" || !saved ? "tohoku" : saved;
+    if (!saved || saved === "default" || saved === "base") {
+      return "tohoku";
+    }
+    return THEME_CATALOG[saved] ? saved : "tohoku";
   } catch {
     return "tohoku";
   }
@@ -484,10 +662,10 @@ function routePage() {
 }
 
 function nextLocaleName(currentLocale = state.locale) {
-  const sequence = ["zh", "en"];
+  const sequence = Object.keys(LOCALE_CATALOG);
   const pointer = sequence.indexOf(currentLocale);
   if (pointer === -1) {
-    return sequence[0];
+    return sequence[0] || "en";
   }
   return sequence[(pointer + 1) % sequence.length];
 }
@@ -502,15 +680,22 @@ function nextThemeName(currentTheme = state.theme) {
 }
 
 function translatedThemeTooltip(theme) {
+  const themeValue = typeof theme === "string" ? theme : theme?.value;
   if (state.locale === "zh") {
     return {
       tohoku: "东北大学主题色",
       toyama: "富山大学主题色",
       usst: "上海理工大学主题色",
-      default: "基础主题色",
-    }[theme.value] || theme.title;
+    }[themeValue] || THEME_CATALOG[themeValue]?.title || "";
   }
-  return theme.title;
+  if (state.locale === "ja") {
+    return {
+      tohoku: "東北大学テーマ",
+      toyama: "富山大学テーマ",
+      usst: "上海理工大学テーマ",
+    }[themeValue] || THEME_CATALOG[themeValue]?.title || "";
+  }
+  return THEME_CATALOG[themeValue]?.title || "";
 }
 
 function renderLocaleSwitcher() {
@@ -518,26 +703,44 @@ function renderLocaleSwitcher() {
   if (!container) {
     return;
   }
-  const currentLabel = state.locale === "zh" ? "ZH" : "EN";
+  const activeLocale = LOCALE_CATALOG[state.locale] || LOCALE_CATALOG.en;
   container.innerHTML = `
-    <button class="locale-trigger" type="button" data-locale-trigger aria-label="${escapeHtml(t("common.language"))}">
-      <span class="locale-label">${currentLabel}</span>
+    <button
+      class="locale-trigger"
+      type="button"
+      data-locale-trigger
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-label="${escapeHtml(t("common.cycleLanguages"))}"
+      title="${escapeHtml(t("common.cycleLanguages"))}"
+    >
+      <span class="locale-label" data-locale-current-label>${escapeHtml(activeLocale.label)}</span>
     </button>
-    <div class="locale-tray">
-      <button class="locale-chip" type="button" data-locale="zh"><span class="locale-label">ZH</span></button>
-      <button class="locale-chip" type="button" data-locale="en"><span class="locale-label">EN</span></button>
+    <div class="locale-tray" role="group" aria-label="${escapeHtml(t("common.languageChoices"))}">
+      ${Object.entries(LOCALE_CATALOG)
+        .map(
+          ([localeName, locale]) => `
+            <button
+              class="locale-chip${localeName === state.locale ? " is-active" : ""}"
+              type="button"
+              data-locale-choice="${localeName}"
+              aria-pressed="${localeName === state.locale ? "true" : "false"}"
+              aria-label="${escapeHtml(locale.name)}"
+              title="${escapeHtml(locale.name)}"
+            >
+              <span class="locale-label" aria-hidden="true">${escapeHtml(locale.label)}</span>
+            </button>
+          `,
+        )
+        .join("")}
     </div>
   `;
-  container.querySelectorAll("[data-locale]").forEach((button) => {
+  container.querySelectorAll("[data-locale-choice]").forEach((button) => {
     button.addEventListener("click", () => {
-      state.locale = button.dataset.locale;
-      try {
-        localStorage.setItem(LOCALE_KEY, state.locale);
-      } catch {}
-      document.documentElement.lang = state.locale === "zh" ? "zh-CN" : "en";
+      applyLocale(button.dataset.localeChoice);
       renderLocaleSwitcher();
-      applyI18n();
-      routePage();
+      renderThemeSwitcher();
+      applyTheme(state.theme, false);
     });
   });
   renderPortalReturnControl();
@@ -549,51 +752,108 @@ function renderThemeSwitcher() {
   if (!container) {
     return;
   }
-  const active = THEME_OPTIONS.find((item) => item.value === state.theme) || THEME_OPTIONS[0];
+  const active = THEME_CATALOG[state.theme] || THEME_OPTIONS[0];
   container.innerHTML = `
-    <button class="theme-trigger" type="button" data-theme-trigger aria-haspopup="true" aria-expanded="false" aria-label="${escapeHtml(t("common.theme"))}" title="${escapeHtml(translatedThemeTooltip(active))}">
-      <span class="theme-swatch ${escapeHtml(active.swatchClass)}" aria-hidden="true"></span>
+    <button
+      class="theme-trigger"
+      type="button"
+      data-theme-trigger
+      aria-haspopup="true"
+      aria-expanded="false"
+      aria-label="${escapeHtml(t("common.cycleThemes"))}"
+      title="${escapeHtml(translatedThemeTooltip(active.value))}"
+    >
+      <span class="theme-swatch ${escapeHtml(active.swatchClass)}" data-theme-current-swatch aria-hidden="true"></span>
     </button>
-    <div class="theme-tray" role="group" aria-label="${escapeHtml(t("common.theme"))}">
+    <div class="theme-tray" role="group" aria-label="${escapeHtml(t("common.themeChoices"))}">
       ${THEME_OPTIONS
         .map(
           (theme) =>
-            `<button class="theme-chip" type="button" data-theme-choice="${theme.value}" aria-label="${escapeHtml(translatedThemeTooltip(theme))}" title="${escapeHtml(translatedThemeTooltip(theme))}"><span class="theme-swatch ${escapeHtml(theme.swatchClass)}" aria-hidden="true"></span></button>`
+            `<button class="theme-chip${theme.value === state.theme ? " is-active" : ""}" type="button" data-theme-choice="${theme.value}" aria-pressed="${theme.value === state.theme ? "true" : "false"}" aria-label="${escapeHtml(translatedThemeTooltip(theme.value))}" title="${escapeHtml(translatedThemeTooltip(theme.value))}"><span class="theme-swatch ${escapeHtml(theme.swatchClass)}" aria-hidden="true"></span></button>`
         )
         .join("")}
     </div>
   `;
   container.querySelectorAll("[data-theme-choice]").forEach((button) => {
     button.addEventListener("click", () => {
-      const nextTheme = button.dataset.themeChoice;
-      state.theme = nextTheme;
-      const themeOption = THEME_OPTIONS.find((opt) => opt.value === nextTheme);
-      if (nextTheme === "default") {
-        delete document.documentElement.dataset.theme;
-      } else {
-        document.documentElement.dataset.theme = nextTheme;
-      }
-      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-      if (metaThemeColor && themeOption) {
-        metaThemeColor.setAttribute("content", themeOption.themeColor);
-      }
-      try {
-        localStorage.setItem(THEME_KEY, nextTheme);
-      } catch {}
+      applyTheme(button.dataset.themeChoice);
       renderThemeSwitcher();
     });
   });
   syncHomepageShell();
 }
 
+function applyLocale(localeName, persist = true) {
+  const nextLocale = LOCALE_CATALOG[localeName] ? localeName : "en";
+  state.locale = nextLocale;
+  document.documentElement.lang = LOCALE_CATALOG[nextLocale].lang;
+  document.body.dataset.lang = nextLocale;
+
+  if (persist) {
+    try {
+      localStorage.setItem(LOCALE_KEY, nextLocale);
+      localStorage.setItem(LEGACY_LOCALE_KEY, nextLocale);
+    } catch {}
+  }
+
+  document.querySelectorAll("[data-locale-choice]").forEach((button) => {
+    const active = button.dataset.localeChoice === nextLocale;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+  document.querySelectorAll("[data-locale-current-label]").forEach((node) => {
+    node.textContent = LOCALE_CATALOG[nextLocale].label;
+  });
+
+  applyI18n();
+  routePage();
+  window.HomepageSharedShell?.closeAllSwitchers?.();
+}
+
+function applyTheme(themeName, persist = true) {
+  const nextTheme = THEME_CATALOG[themeName] ? themeName : "tohoku";
+  state.theme = nextTheme;
+  document.documentElement.dataset.theme = nextTheme;
+
+  const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  if (metaThemeColor) {
+    metaThemeColor.setAttribute("content", THEME_CATALOG[nextTheme].themeColor);
+  }
+
+  document.querySelectorAll("[data-theme-choice]").forEach((button) => {
+    const active = button.dataset.themeChoice === nextTheme;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", active ? "true" : "false");
+  });
+  document.querySelectorAll("[data-theme-current-swatch]").forEach((swatch) => {
+    swatch.className = `theme-swatch ${THEME_CATALOG[nextTheme].swatchClass}`;
+  });
+
+  if (persist) {
+    try {
+      localStorage.setItem(THEME_KEY, nextTheme);
+      localStorage.setItem(LEGACY_THEME_KEY, nextTheme);
+    } catch {}
+  }
+
+  window.HomepageSharedShell?.closeAllSwitchers?.();
+}
+
 function applyI18n() {
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
   });
+  document.documentElement.lang = LOCALE_CATALOG[state.locale]?.lang || "en";
+  document.body.dataset.lang = state.locale;
   const controls = document.querySelector(".header-controls");
   if (controls) {
     controls.setAttribute("aria-label", t("common.displayControls"));
   }
+  document.querySelectorAll(".locale-switcher").forEach((node) => node.setAttribute("aria-label", t("common.language")));
+  document.querySelectorAll(".theme-switcher").forEach((node) => node.setAttribute("aria-label", t("common.theme")));
+  document.querySelectorAll(".topnav").forEach((node) =>
+    node.setAttribute("aria-label", state.locale === "zh" ? "页面导航" : state.locale === "ja" ? "ページナビゲーション" : "Page navigation"),
+  );
   const placeholderMap = {
     "call-search": t("calls.searchPlaceholder"),
     "form-search": t("forms.searchPlaceholder"),
@@ -616,30 +876,10 @@ function syncHomepageShell() {
   window.HomepageSharedShell.sync({
     switchers: {
       root: document,
-      localeCycleLabel: state.locale === "zh" ? "切换语言" : "Cycle language",
-      themeCycleLabel: state.locale === "zh" ? "切换配色" : "Cycle theme",
-      onCycleLocale: () => {
-        state.locale = nextLocaleName();
-        try {
-          localStorage.setItem(LOCALE_KEY, state.locale);
-        } catch {}
-        document.documentElement.lang = state.locale === "zh" ? "zh-CN" : "en";
-        renderLocaleSwitcher();
-        applyI18n();
-        routePage();
-      },
-      onCycleTheme: () => {
-        state.theme = nextThemeName();
-        if (state.theme === "default") {
-          delete document.documentElement.dataset.theme;
-        } else {
-          document.documentElement.dataset.theme = state.theme;
-        }
-        try {
-          localStorage.setItem(THEME_KEY, state.theme);
-        } catch {}
-        renderThemeSwitcher();
-      },
+      localeCycleLabel: t("common.cycleLanguages"),
+      themeCycleLabel: t("common.cycleThemes"),
+      onCycleLocale: () => applyLocale(nextLocaleName()),
+      onCycleTheme: () => applyTheme(nextThemeName()),
     },
     controls: {
       root: document,
@@ -653,7 +893,7 @@ function syncHomepageShell() {
     topnav: {
       root: document,
       navSelector: ".topnav",
-      navAriaLabel: state.locale === "zh" ? "页面导航" : "Page navigation",
+      navAriaLabel: state.locale === "zh" ? "页面导航" : state.locale === "ja" ? "ページナビゲーション" : "Page navigation",
       menuLabel: t("common.menu"),
       showMenuLabel: t("common.showMenu"),
       hideMenuLabel: t("common.hideMenu"),
@@ -682,6 +922,15 @@ function renderPortalReturnControl() {
         radar: "学术前沿",
         jsps: "JSPS 科研费",
       }
+    : state.locale === "ja"
+      ? {
+          trigger: "機能ページメニューを開く",
+          tray: "機能ページ",
+          portal: "ホームポータル",
+          academic: "個人ホームページ",
+          radar: "学术前沿",
+          jsps: "JSPS 科研費",
+        }
     : {
         trigger: "Open portal menu",
         tray: "Site sections",
@@ -759,14 +1008,51 @@ function renderPortalReturnControl() {
 }
 
 function updateDocumentTitle() {
+  const localeTitles = {
+    home: {
+      zh: "首页 | JSPS 科研费工作台",
+      en: "Home | JSPS KAKENHI Workspace",
+      ja: "ホーム | JSPS 科研費ワークスペース",
+    },
+    calls: {
+      zh: "首页 | JSPS 科研费工作台",
+      en: "Home | JSPS KAKENHI Workspace",
+      ja: "ホーム | JSPS 科研費ワークスペース",
+    },
+    deadlines: {
+      zh: "时间线 | JSPS 科研费工作台",
+      en: "Timeline | JSPS KAKENHI Workspace",
+      ja: "タイムライン | JSPS 科研費ワークスペース",
+    },
+    forms: {
+      zh: "表格材料 | JSPS 科研费工作台",
+      en: "Forms | JSPS KAKENHI Workspace",
+      ja: "申請書類 | JSPS 科研費ワークスペース",
+    },
+    guides: {
+      zh: "申请指引 | JSPS 科研费工作台",
+      en: "Guides | JSPS KAKENHI Workspace",
+      ja: "申請ガイド | JSPS 科研費ワークスペース",
+    },
+    sources: {
+      zh: "官方来源 | JSPS 科研费工作台",
+      en: "Sources | JSPS KAKENHI Workspace",
+      ja: "公式ソース | JSPS 科研費ワークスペース",
+    },
+    archive: {
+      zh: "快照归档 | JSPS 科研费工作台",
+      en: "Archive | JSPS KAKENHI Workspace",
+      ja: "アーカイブ | JSPS 科研費ワークスペース",
+    },
+  };
   const titleMap = {
-    home: state.locale === "zh" ? "JSPS 科研费工作台" : "JSPS KAKENHI Workspace",
-    calls: state.locale === "zh" ? "项目目录 | JSPS 科研费工作台" : "Call Catalog | JSPS KAKENHI Workspace",
-    deadlines: state.locale === "zh" ? "时间线 | JSPS 科研费工作台" : "Timeline | JSPS KAKENHI Workspace",
-    forms: state.locale === "zh" ? "表格材料 | JSPS 科研费工作台" : "Forms | JSPS KAKENHI Workspace",
-    guides: state.locale === "zh" ? "申请指引 | JSPS 科研费工作台" : "Guides | JSPS KAKENHI Workspace",
-    sources: state.locale === "zh" ? "官方来源 | JSPS 科研费工作台" : "Sources | JSPS KAKENHI Workspace",
-    archive: state.locale === "zh" ? "快照归档 | JSPS 科研费工作台" : "Archive | JSPS KAKENHI Workspace",
+    home: localeTitles.home[state.locale] || localeTitles.home.en,
+    calls: localeTitles.calls[state.locale] || localeTitles.calls.en,
+    deadlines: localeTitles.deadlines[state.locale] || localeTitles.deadlines.en,
+    forms: localeTitles.forms[state.locale] || localeTitles.forms.en,
+    guides: localeTitles.guides[state.locale] || localeTitles.guides.en,
+    sources: localeTitles.sources[state.locale] || localeTitles.sources.en,
+    archive: localeTitles.archive[state.locale] || localeTitles.archive.en,
   };
   if (titleMap[state.page]) {
     document.title = titleMap[state.page];
@@ -1045,7 +1331,7 @@ function renderHomePage() {
       title: t("nav.calls"),
       text: t("home.callsLead"),
       meta: `${state.data.call_catalog.length} ${state.locale === "zh" ? "条目录" : "entries"}`,
-      href: "./calls.html",
+      href: "./index.html",
     },
     {
       kicker: t("nav.deadlines"),
@@ -1089,7 +1375,7 @@ function renderHomePage() {
             ${metaPill(`${t("common.updated")} ${program.page_last_updated || "--"}`)}
           </div>
           <div class="link-row">
-            <a class="button button-primary" href="./calls.html#${program.id}">${t("footer.catalog")}</a>
+            <a class="button button-primary" href="./index.html#${program.id}">${t("footer.catalog")}</a>
             <a class="button button-secondary" href="${resolveHref(program.snapshot_path)}">${t("common.snapshot")}</a>
           </div>
         </article>
@@ -1718,33 +2004,54 @@ function localeValue(record, base) {
   if (!record) {
     return "";
   }
-  if (state.locale === "en" && record[`${base}_en`]) {
-    return record[`${base}_en`];
+  const candidates =
+    state.locale === "ja"
+      ? [record[base], record[`${base}_zh`], record[`${base}_en`]]
+      : state.locale === "zh"
+        ? [record[`${base}_zh`], record[base], record[`${base}_en`]]
+        : [record[`${base}_en`], record[base], record[`${base}_zh`]];
+  for (const candidate of candidates) {
+    if (candidate) {
+      return candidate;
+    }
   }
-  return record[`${base}_zh`] || record[base] || record[`${base}_en`] || "";
+  return "";
 }
 
 function localeField(record, field) {
   if (!record) {
     return "";
   }
-  const altField = state.locale === "en" ? `${field}_en` : `${field}_zh`;
-  return record[altField] || record[field] || record[`${field}_en`] || record[`${field}_zh`] || "";
+  return localeValue(record, field);
 }
 
 function localeList(record, base) {
   if (!record) {
     return [];
   }
-  if (state.locale === "en" && Array.isArray(record[`${base}_en`])) {
-    return record[`${base}_en`];
+  const candidates =
+    state.locale === "ja"
+      ? [record[base], record[`${base}_zh`], record[`${base}_en`]]
+      : state.locale === "zh"
+        ? [record[`${base}_zh`], record[base], record[`${base}_en`]]
+        : [record[`${base}_en`], record[base], record[`${base}_zh`]];
+  for (const candidate of candidates) {
+    if (Array.isArray(candidate)) {
+      return candidate;
+    }
   }
-  return record[`${base}_zh`] || record[base] || record[`${base}_en`] || [];
+  return [];
 }
 
 function t(key) {
-  const source = I18N[state.locale] || I18N.zh;
-  return key.split(".").reduce((value, segment) => (value && value[segment] !== undefined ? value[segment] : null), source) || key;
+  const sources = [I18N[state.locale], I18N.en, I18N.zh].filter(Boolean);
+  for (const source of sources) {
+    const value = key.split(".").reduce((current, segment) => (current && current[segment] !== undefined ? current[segment] : null), source);
+    if (value !== null && value !== undefined) {
+      return value;
+    }
+  }
+  return key;
 }
 
 function statusWeight(status) {
@@ -1811,11 +2118,14 @@ function formatDate(isoDate) {
     return "--";
   }
   const date = new Date(`${isoDate}T00:00:00+09:00`);
-  return new Intl.DateTimeFormat(state.locale === "zh" ? "zh-CN" : "en-US", {
+  return new Intl.DateTimeFormat(
+    state.locale === "zh" ? "zh-CN" : state.locale === "ja" ? "ja-JP" : "en-US",
+    {
     year: "numeric",
     month: "short",
     day: "numeric",
-  }).format(date);
+    },
+  ).format(date);
 }
 
 function formatDateTime(value) {
@@ -1826,17 +2136,23 @@ function formatDateTime(value) {
   const opts = value.includes("T")
     ? { year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }
     : { year: "numeric", month: "short", day: "numeric" };
-  return new Intl.DateTimeFormat(state.locale === "zh" ? "zh-CN" : "en-US", opts).format(date);
+  return new Intl.DateTimeFormat(state.locale === "zh" ? "zh-CN" : state.locale === "ja" ? "ja-JP" : "en-US", opts).format(date);
 }
 
 function formatTimelineMonth(value) {
   const date = new Date(`${value}T00:00:00+09:00`);
+  if (state.locale === "ja") {
+    return new Intl.DateTimeFormat("ja-JP", { month: "numeric" }).format(date) + "月";
+  }
+  if (state.locale === "zh") {
+    return new Intl.DateTimeFormat("zh-CN", { month: "numeric" }).format(date) + "月";
+  }
   return new Intl.DateTimeFormat("en-US", { month: "short" }).format(date).toUpperCase();
 }
 
 function formatTimelineDay(value) {
   const date = new Date(`${value}T00:00:00+09:00`);
-  return new Intl.DateTimeFormat("en-US", { day: "2-digit" }).format(date);
+  return new Intl.DateTimeFormat(state.locale === "zh" ? "zh-CN" : state.locale === "ja" ? "ja-JP" : "en-US", { day: "2-digit" }).format(date);
 }
 
 function resolveHref(href) {

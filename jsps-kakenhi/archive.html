@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,35 +8,51 @@
       content="JSPS 科研费快照归档页，浏览不同日期抓取的官方 HTML 页面与本地存档。"
     />
     <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/archive.html" />
-    <meta name="theme-color" content="#f5eee4" />
+    <meta name="theme-color" content="#f3eef9" />
     <title>快照归档 | JSPS 科研费工作台</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" href="./favicon.png" type="image/png" />
     <link rel="manifest" href="./site.webmanifest" />
     <script>
-      try {
-        const savedTheme = localStorage.getItem("kakenhi-portal-theme");
-        if (savedTheme && savedTheme !== "default") {
-          document.documentElement.dataset.theme = savedTheme;
+      (function () {
+        const themeCatalog = {
+          tohoku: "#f3eef9",
+          toyama: "#edf4f7",
+          usst: "#f7eded",
+        };
+        try {
+          const savedLocale =
+            localStorage.getItem("sichen-homepage-locale") ||
+            localStorage.getItem("kakenhi-portal-locale");
+          document.documentElement.lang =
+            savedLocale === "zh" ? "zh-CN" : savedLocale === "ja" ? "ja" : "en";
+          const savedTheme =
+            localStorage.getItem("sichen-homepage-theme") ||
+            localStorage.getItem("kakenhi-portal-theme");
+          const theme = themeCatalog[savedTheme] ? savedTheme : "tohoku";
+          document.documentElement.dataset.theme = theme;
+          const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+          if (metaThemeColor) {
+            metaThemeColor.setAttribute("content", themeCatalog[theme]);
+          }
+        } catch {
+          document.documentElement.lang = "en";
+          document.documentElement.dataset.theme = "tohoku";
         }
-        const savedLocale = localStorage.getItem("kakenhi-portal-locale");
-        if (savedLocale) {
-          document.documentElement.lang = savedLocale === "zh" ? "zh-CN" : savedLocale;
-        }
-      } catch {}
+      })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260406-133451" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-133451" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-133451" />
-    <script src="./data/kakenhi-data.js?v=20260406-133451"></script>
-        <script defer src="/assets/shared/homepage-shell.js?v=20260406-133451"></script>
-<script defer src="./app.js?v=20260406-133451"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260406-140013" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-140013" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-140013" />
+    <script src="./data/kakenhi-data.js?v=20260406-140013"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260406-140013"></script>
+    <script defer src="./app.js?v=20260406-140013"></script>
   </head>
   <body data-page="archive">
     <div class="page-wash"></div>
@@ -46,13 +62,13 @@
 
     <header class="shell site-header">
       <div class="header-tools">
+        <div class="header-controls-anchor" aria-hidden="true"></div>
         <div class="header-controls" aria-label="Display controls">
           <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
           <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
         </div>
         <nav class="topnav" aria-label="Page navigation">
           <a href="./index.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span data-i18n="nav.home">首页</span></a>
-          <a href="./calls.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-projects"></use></svg><span data-i18n="nav.calls">项目目录</span></a>
           <a href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
           <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">表格材料</span></a>
           <a href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指引</span></a>
