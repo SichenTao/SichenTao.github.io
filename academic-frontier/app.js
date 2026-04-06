@@ -4,6 +4,7 @@ const LEGACY_STORAGE_KEY_LANGUAGE = "frontier-radar-language";
 const STORAGE_KEY_DOMAIN = "学术前沿-domain";
 const LEGACY_STORAGE_KEY_DOMAIN = "frontier-radar-domain";
 const STORAGE_KEY_THEME = "sichen-homepage-theme";
+const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
 
@@ -48,8 +49,9 @@ const state = {
   sortFilter: "recent",
   quickFilter: "all",
   paperQuery: "",
-  language: window.FRONTIER_RADAR_DEFAULT_LANGUAGE || "en",
-  theme: window.FRONTIER_RADAR_DEFAULT_THEME || "tohoku",
+  focusPrompt: "",
+  language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || window.FRONTIER_RADAR_DEFAULT_LANGUAGE || "en",
+  theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || window.FRONTIER_RADAR_DEFAULT_THEME || "tohoku",
   localArchiveIndex: {},
 };
 
@@ -89,6 +91,31 @@ const UI_TEXT = {
     browserPullsLabel: "Pending pulls",
     trendKicker: "Latest signals",
     trendTitle: "Strong signals worth checking now",
+    directionsKicker: "Directions",
+    directionsTitle: "Direction cockpit",
+    directionsNote: "Auto-derived from homepage, publications, and current radar evidence. Manual prompt edits only refine the ranking in this browser.",
+    focusDeskTitle: "Current interest correction",
+    focusDeskNote: "Keep the default auto-led behavior, then use a prompt to raise or lower specific directions, methods, teams, or venues.",
+    focusPromptLabel: "Correction prompt",
+    focusPromptPlaceholder: "Example: prioritize AI for science, classic foundational papers, and latest top-tier systems with strong code evidence.",
+    applyFocusAction: "Apply refinement",
+    resetFocusAction: "Reset to auto",
+    focusPresetsLabel: "Quick presets",
+    focusTokensLabel: "Active focus tokens",
+    focusModeAuto: "Auto-led",
+    focusModeManual: "Manual refinement active",
+    seedProfileTitle: "Derived seed profile",
+    focusTopDirectionsLabel: "Highest-priority directions now",
+    foundationLaneLabel: "Foundation",
+    frontierLaneLabel: "Frontier",
+    bridgeLaneLabel: "Bridge",
+    priorityLabel: "Priority",
+    alignmentScoreLabel: "Alignment",
+    momentumScoreLabel: "Momentum",
+    qualityScoreLabel: "Quality",
+    activeKeywordsLabel: "Keywords",
+    venueTargetsTitle: "Venue targets",
+    noFocusTokens: "No manual tokens yet. The system is still running in auto-led mode.",
     teamsKicker: "Tracked teams",
     teamsTitle: "Teams and researchers worth following",
     teamsNote: "Prioritized by signal density, not name recognition alone.",
@@ -148,7 +175,7 @@ const UI_TEXT = {
     themeUsstLabel: "University of Shanghai for Science and Technology",
     navOverview: "Overview",
     navPapers: "Papers",
-    navSignals: "Signals",
+    navSignals: "Directions",
     navTeams: "Teams",
     navDownloads: "Downloads",
     navGuide: "Guide",
@@ -240,6 +267,31 @@ const UI_TEXT = {
     browserPullsLabel: "待抓取项",
     trendKicker: "最新强信号",
     trendTitle: "现在最值得检查的强信号",
+    directionsKicker: "方向驾驶台",
+    directionsTitle: "调查方向与修正面板",
+    directionsNote: "基于主页、发表与当前雷达证据自动推断。手动 prompt 只修正当前浏览器中的优先级，不会破坏自动主导逻辑。",
+    focusDeskTitle: "当前关心方向修正",
+    focusDeskNote: "默认保持自动主导；如果你想提高或压低某些方向、方法、团队或期刊，再用 prompt 进行局部修正。",
+    focusPromptLabel: "修正 prompt",
+    focusPromptPlaceholder: "例如：优先 AI for Science、经典基础论文、以及最新且有强代码证据的顶级系统论文。",
+    applyFocusAction: "应用修正",
+    resetFocusAction: "恢复自动",
+    focusPresetsLabel: "快捷预设",
+    focusTokensLabel: "当前关注词",
+    focusModeAuto: "自动主导",
+    focusModeManual: "手动修正已启用",
+    seedProfileTitle: "自动生成的种子画像",
+    focusTopDirectionsLabel: "当前最高优先级方向",
+    foundationLaneLabel: "基础",
+    frontierLaneLabel: "前沿",
+    bridgeLaneLabel: "桥梁",
+    priorityLabel: "优先级",
+    alignmentScoreLabel: "匹配度",
+    momentumScoreLabel: "势能",
+    qualityScoreLabel: "质量",
+    activeKeywordsLabel: "关键词",
+    venueTargetsTitle: "重点期刊/会议",
+    noFocusTokens: "还没有手动关注词，当前仍处于自动主导模式。",
     teamsKicker: "跟踪团队",
     teamsTitle: "值得持续关注的团队与研究者",
     teamsNote: "优先看证据密度，而不只是名气。",
@@ -298,7 +350,7 @@ const UI_TEXT = {
     themeUsstLabel: "上海理工大学",
     navOverview: "概览",
     navPapers: "论文",
-    navSignals: "趋势",
+    navSignals: "方向",
     navTeams: "团队",
     navDownloads: "下载",
     navGuide: "说明",
@@ -391,6 +443,31 @@ const UI_TEXT = {
     browserPullsLabel: "取得待ち",
     trendKicker: "最新シグナル",
     trendTitle: "いま確認すべき強いシグナル",
+    directionsKicker: "方向コックピット",
+    directionsTitle: "探索方向と修正パネル",
+    directionsNote: "ホームページ、発表、現在のレーダー証拠から自動推定する。手動プロンプトはこのブラウザ内の優先度だけを調整する。",
+    focusDeskTitle: "現在の関心方向の修正",
+    focusDeskNote: "既定では自動主導のままにし、特定の方向、手法、チーム、会場の優先度だけをプロンプトで補正する。",
+    focusPromptLabel: "修正プロンプト",
+    focusPromptPlaceholder: "例: AI for Science、古典的基礎論文、そして強いコード証拠を持つ最新トップシステム論文を優先する。",
+    applyFocusAction: "補正を適用",
+    resetFocusAction: "自動へ戻す",
+    focusPresetsLabel: "クイックプリセット",
+    focusTokensLabel: "現在の注目トークン",
+    focusModeAuto: "自動主導",
+    focusModeManual: "手動補正を適用中",
+    seedProfileTitle: "自動生成シードプロファイル",
+    focusTopDirectionsLabel: "現在の最優先方向",
+    foundationLaneLabel: "基盤",
+    frontierLaneLabel: "最前線",
+    bridgeLaneLabel: "橋渡し",
+    priorityLabel: "優先度",
+    alignmentScoreLabel: "整合度",
+    momentumScoreLabel: "勢い",
+    qualityScoreLabel: "品質",
+    activeKeywordsLabel: "キーワード",
+    venueTargetsTitle: "重点ジャーナル・会議",
+    noFocusTokens: "まだ手動トークンはなく、現在は自動主導モードのままです。",
     teamsKicker: "追跡チーム",
     teamsTitle: "継続監視したいチームと研究者",
     teamsNote: "知名度よりも証拠密度を優先。",
@@ -450,7 +527,7 @@ const UI_TEXT = {
     themeUsstLabel: "上海理工大学",
     navOverview: "概観",
     navPapers: "論文",
-    navSignals: "シグナル",
+    navSignals: "方向",
     navTeams: "チーム",
     navDownloads: "取得",
     navGuide: "ガイド",
@@ -959,6 +1036,7 @@ function loadInitialTheme() {
   }
 
   const defaultTheme =
+    window.ACADEMIC_FRONTIER_DEFAULT_THEME ||
     window.FRONTIER_RADAR_DEFAULT_THEME ||
     document.documentElement?.dataset?.theme ||
     "tohoku";
@@ -982,6 +1060,7 @@ let themeUiBound = false;
 let switcherHoverBound = false;
 let scrollTopUiBound = false;
 let metricCopyUiBound = false;
+let focusDeskUiBound = false;
 let topnavMenuBound = false;
 let topnavOverflowBound = false;
 let headerControlsPositionBound = false;
@@ -989,6 +1068,7 @@ const switcherCloseTimers = new WeakMap();
 
 function currentLocale() {
   return (
+    window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE ||
     window.FRONTIER_RADAR_DEFAULT_LANGUAGE ||
     state.language ||
     "en"
@@ -1658,7 +1738,7 @@ function publicationCopyMenuLabel() {
 }
 
 function domainData() {
-  return window.FRONTIER_DATA || {
+  return window.ACADEMIC_FRONTIER_DATA || window.FRONTIER_DATA || {
     snapshot: {},
     domains: [],
     trendMap: [],
@@ -1667,6 +1747,247 @@ function domainData() {
     workflow: [],
     downloadQueue: [],
   };
+}
+
+function researchData() {
+  return window.ACADEMIC_FRONTIER_RESEARCH || {
+    generatedAt: "",
+    seedProfile: {},
+    focusDesk: { presets: [] },
+    directions: [],
+  };
+}
+
+function normalizeSearchText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9\u4e00-\u9fff\u3040-\u30ff+#]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizedFocusPrompt() {
+  return String(state.focusPrompt || "").trim();
+}
+
+function focusPromptTokens(prompt = normalizedFocusPrompt()) {
+  const phrases = String(prompt || "")
+    .split(/[\n,;，；、]+/g)
+    .map((item) => item.trim())
+    .filter(Boolean);
+  const tokens = [];
+  const seen = new Set();
+  const pushToken = (value) => {
+    const normalized = normalizeSearchText(value);
+    if (!normalized || seen.has(normalized) || normalized.length < 2) {
+      return;
+    }
+    seen.add(normalized);
+    tokens.push(normalized);
+  };
+
+  phrases.forEach((phrase) => {
+    pushToken(phrase);
+    phrase.split(/\s+/).forEach(pushToken);
+  });
+
+  return tokens.slice(0, 16);
+}
+
+function directionCorpus(direction) {
+  return normalizeSearchText([
+    localizeText(direction?.title),
+    localizeText(direction?.thesis),
+    localizeText(direction?.whyNow),
+    localizeText(direction?.promptSeed),
+    ...(direction?.keywords || []),
+    ...(direction?.venues || []),
+    ...((direction?.teams || []).map((team) => `${localizeText(team?.name)} ${localizeText(team?.strength)}`)),
+    ...((direction?.signals || []).map((item) => localizeText(item))),
+  ].join(" "));
+}
+
+function adjustedDirections() {
+  const tokens = focusPromptTokens();
+  return (researchData().directions || []).map((direction) => {
+    const corpus = directionCorpus(direction);
+    let manualBoost = 0;
+    tokens.forEach((token) => {
+      if (!token) return;
+      if (corpus.includes(token)) {
+        manualBoost += token.includes(" ") ? 14 : 8;
+      }
+    });
+    const adjustedPriority = Math.min(100, Number(direction?.priority || 0) + manualBoost);
+    return {
+      ...direction,
+      manualBoost,
+      adjustedPriority,
+      isManualHit: manualBoost > 0,
+    };
+  }).sort((left, right) => {
+    const priorityDelta = (right.adjustedPriority || 0) - (left.adjustedPriority || 0);
+    if (priorityDelta !== 0) return priorityDelta;
+    const totalDelta = Number(right?.counts?.total || 0) - Number(left?.counts?.total || 0);
+    if (totalDelta !== 0) return totalDelta;
+    return localizeText(left?.title || "").localeCompare(localizeText(right?.title || ""), currentLocale());
+  });
+}
+
+function directionScoreBar(label, value, modifier = "") {
+  const numeric = Math.max(0, Math.min(100, Number(value || 0)));
+  return `<div class="direction-score-row${modifier ? ` ${modifier}` : ""}"><span class="direction-score-label">${escapeHtml(label)}</span><div class="direction-score-track"><span style="width:${numeric}%"></span></div><strong class="direction-score-value">${escapeHtml(numeric)}</strong></div>`;
+}
+
+function directionLaneBar(direction) {
+  const counts = direction?.counts || {};
+  const total = Math.max(1, Number(counts.total || 0));
+  const foundation = Number(counts.foundation || 0);
+  const frontier = Number(counts.frontier || 0);
+  const bridge = Number(counts.bridge || 0);
+  return `<div class="direction-lane-bar"><span class="direction-lane-foundation" style="width:${(foundation / total) * 100}%"></span><span class="direction-lane-frontier" style="width:${(frontier / total) * 100}%"></span><span class="direction-lane-bridge" style="width:${(bridge / total) * 100}%"></span></div>`;
+}
+
+function readingListMarkup(items, laneKey) {
+  const entries = items || [];
+  const laneLabel = ui(`${laneKey}LaneLabel`);
+  const openByDefault = entries.length > 0 && laneKey === "foundation" && entries.length <= 6;
+  const listMarkup = entries.length
+    ? entries.map((item) => {
+      const href = normalizeUrl(item?.url);
+      const title = href
+        ? `<a href="${escapeHtml(href)}" target="_blank" rel="noreferrer">${escapeHtml(localizeText(item?.title || ""))}</a>`
+        : escapeHtml(localizeText(item?.title || ""));
+      const metaParts = [localizeText(item?.venue || ""), item?.year || "", (item?.citationCount || item?.citationCount === 0) ? `${ui("citationsMetricLabel")} ${item.citationCount}` : ""]
+        .filter(Boolean);
+      return `<li class="direction-reading-item"><div class="direction-reading-title">${title}</div><div class="direction-reading-meta">${metaParts.map(escapeHtml).join(" · ")}</div><p class="direction-reading-note">${richTextHtml(item?.note || "")}</p></li>`;
+    }).join("")
+    : `<li class="direction-reading-item is-empty">${escapeHtml(ui("emptyItems"))}</li>`;
+
+  return `<details class="direction-reading-lane" ${openByDefault ? "open" : ""}><summary>${escapeHtml(laneLabel)} <span class="tag">${escapeHtml(entries.length)}</span></summary><ul class="direction-reading-list">${listMarkup}</ul></details>`;
+}
+
+function directionCardMarkup(direction, { detailed = false } = {}) {
+  const keywords = (direction?.keywords || []).slice(0, detailed ? 10 : 6);
+  const venues = (direction?.venues || []).slice(0, detailed ? 8 : 5);
+  const teams = (direction?.teams || []).slice(0, detailed ? 4 : 3);
+  const signals = (direction?.signals || []).slice(0, detailed ? 3 : 2);
+  const badgeClass = direction?.isManualHit ? "tag is-strong" : "tag";
+  const manualBadge = direction?.isManualHit ? `<span class="${badgeClass}">${escapeHtml(ui("focusModeManual"))}</span>` : "";
+
+  return `<article class="direction-card${detailed ? " is-detailed" : ""}">
+    <div class="direction-card-head">
+      <div>
+        <div class="tag-row">
+          <span class="tag is-strong">${escapeHtml(ui("priorityLabel"))} ${escapeHtml(direction?.adjustedPriority || 0)}</span>
+          ${manualBadge}
+        </div>
+        <h3>${richTextHtml(direction?.title)}</h3>
+      </div>
+      <div class="direction-lane-counts">
+        <span>${escapeHtml(ui("foundationLaneLabel"))} ${escapeHtml(direction?.counts?.foundation || 0)}</span>
+        <span>${escapeHtml(ui("frontierLaneLabel"))} ${escapeHtml(direction?.counts?.frontier || 0)}</span>
+        <span>${escapeHtml(ui("bridgeLaneLabel"))} ${escapeHtml(direction?.counts?.bridge || 0)}</span>
+      </div>
+    </div>
+    <p class="direction-thesis rich-text">${richTextHtml(direction?.thesis)}</p>
+    <p class="publication-note publication-note-highlight"><strong class="warm-strong">${escapeHtml(ui("strategicLabel"))}:</strong> <span class="rich-text">${richTextHtml(direction?.whyNow)}</span></p>
+    ${directionLaneBar(direction)}
+    <div class="direction-score-grid">
+      ${directionScoreBar(ui("alignmentScoreLabel"), direction?.scores?.alignment)}
+      ${directionScoreBar(ui("momentumScoreLabel"), direction?.scores?.momentum, "is-warm")}
+      ${directionScoreBar(ui("qualityScoreLabel"), direction?.scores?.quality, "is-strong")}
+    </div>
+    <div class="direction-meta-grid">
+      <div><strong class="accent-strong">${escapeHtml(ui("activeKeywordsLabel"))}</strong><div class="chip-row compact">${keywords.map((keyword) => `<span class="chip is-static">${escapeHtml(keyword)}</span>`).join("")}</div></div>
+      <div><strong class="accent-strong">${escapeHtml(ui("venueTargetsTitle"))}</strong><p class="direction-inline-list">${venues.map(escapeHtml).join(" · ") || escapeHtml(ui("pendingMetric"))}</p></div>
+    </div>
+    <div class="direction-signal-list">${signals.map((item) => `<p class="direction-signal-item">${richTextHtml(item)}</p>`).join("")}</div>
+    ${teams.length ? `<p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("teamsTitle"))}:</strong> <span class="rich-text">${teams.map((team) => escapeHtml(localizeText(team?.name || ""))).join(" · ")}</span></p>` : ""}
+    ${detailed ? `<div class="direction-reading-grid">${readingListMarkup(direction?.readingLanes?.foundation, "foundation")}${readingListMarkup(direction?.readingLanes?.frontier, "frontier")}${readingListMarkup(direction?.readingLanes?.bridge, "bridge")}</div>` : ""}
+  </article>`;
+}
+
+function focusPresetMarkup() {
+  return (researchData().focusDesk?.presets || []).map((preset) => (
+    `<button class="chip" type="button" data-focus-preset="${escapeHtml(preset.id)}" title="${escapeHtml(localizeText(preset.hint || ""))}">${escapeHtml(localizeText(preset.label || ""))}</button>`
+  )).join("");
+}
+
+function renderDirectionCockpit() {
+  const mount = byId("directionCockpit");
+  if (!mount) return;
+
+  const directions = adjustedDirections();
+  const seed = researchData().seedProfile || {};
+  const tokens = focusPromptTokens();
+  const seedChips = [
+    ...(seed?.keywords || []).slice(0, 5),
+    ...(seed?.methods || []).slice(0, 3),
+    ...(seed?.topPublicationTags || []).slice(0, 4),
+  ].slice(0, 12);
+
+  mount.innerHTML = `<div class="section-head">
+      <div>
+        <p class="eyebrow">${escapeHtml(ui("directionsKicker"))}</p>
+        <h2>${escapeHtml(ui("directionsTitle"))}</h2>
+      </div>
+      <p class="section-note">${escapeHtml(ui("directionsNote"))}</p>
+    </div>
+    <div class="direction-cockpit-grid">
+      <article class="focus-card">
+        <div class="subhead"><h3>${escapeHtml(ui("seedProfileTitle"))}</h3></div>
+        <div class="chip-row compact">${seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("")}</div>
+        <div class="direction-priority-stack">${directions.slice(0, 4).map((direction) => directionScoreBar(localizeText(direction.title), direction.adjustedPriority, direction.isManualHit ? "is-strong" : "")).join("")}</div>
+      </article>
+      <article class="focus-card focus-card-accent">
+        <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3><span class="tag is-strong">${escapeHtml(tokens.length ? ui("focusModeManual") : ui("focusModeAuto"))}</span></div>
+        <p class="section-note">${escapeHtml(ui("focusDeskNote"))}</p>
+        <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("focusPromptLabel"))}</label>
+        <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="4" placeholder="${escapeHtml(ui("focusPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
+        <div class="focus-action-row">
+          <button class="button button-primary" type="button" data-focus-apply="true">${escapeHtml(ui("applyFocusAction"))}</button>
+          <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
+        </div>
+        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
+        <div class="chip-row compact">${focusPresetMarkup()}</div>
+        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
+        <div class="chip-row compact">${tokens.length ? tokens.map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
+        <p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 3).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ")}</span></p>
+      </article>
+    </div>
+    <div class="direction-card-grid">${directions.slice(0, 3).map((direction) => directionCardMarkup(direction)).join("")}</div>`;
+}
+
+function renderDirectionWorkspace() {
+  const mount = byId("directionWorkspace");
+  if (!mount) return;
+
+  const directions = adjustedDirections();
+  mount.innerHTML = `<div class="section-head">
+      <div>
+        <p class="eyebrow">${escapeHtml(ui("directionsKicker"))}</p>
+        <h2>${escapeHtml(ui("directionsTitle"))}</h2>
+      </div>
+      <p class="section-note">${escapeHtml(ui("directionsNote"))}</p>
+    </div>
+    <div class="direction-workspace-grid">
+      <aside class="focus-card focus-card-accent">
+        <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3><span class="tag is-strong">${escapeHtml(focusPromptTokens().length ? ui("focusModeManual") : ui("focusModeAuto"))}</span></div>
+        <p class="section-note">${escapeHtml(ui("focusDeskNote"))}</p>
+        <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("focusPromptLabel"))}</label>
+        <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="6" placeholder="${escapeHtml(ui("focusPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
+        <div class="focus-action-row">
+          <button class="button button-primary" type="button" data-focus-apply="true">${escapeHtml(ui("applyFocusAction"))}</button>
+          <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
+        </div>
+        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
+        <div class="chip-row compact">${focusPresetMarkup()}</div>
+        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
+        <div class="chip-row compact">${focusPromptTokens().length ? focusPromptTokens().map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
+      </aside>
+      <div class="direction-card-grid">${directions.map((direction) => directionCardMarkup(direction, { detailed: true })).join("")}</div>
+    </div>`;
 }
 
 function papersForDomain(domainId = state.activeDomainId) {
@@ -3398,6 +3719,43 @@ async function copyTextToClipboard(text) {
   }
 }
 
+function bindFocusDesk() {
+  if (focusDeskUiBound) return;
+  focusDeskUiBound = true;
+
+  document.addEventListener("click", (event) => {
+    const presetButton = event.target.closest("[data-focus-preset]");
+    if (presetButton) {
+      const presetId = presetButton.dataset.focusPreset || "";
+      const preset = (researchData().focusDesk?.presets || []).find((item) => item.id === presetId);
+      if (!preset) return;
+      state.focusPrompt = localizeText(preset.prompt || "");
+      writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      return;
+    }
+
+    const applyButton = event.target.closest("[data-focus-apply]");
+    if (applyButton) {
+      const promptInput = document.querySelector("[data-focus-prompt-input]");
+      state.focusPrompt = String(promptInput?.value || "").trim();
+      writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      return;
+    }
+
+    const resetButton = event.target.closest("[data-focus-reset]");
+    if (resetButton) {
+      state.focusPrompt = "";
+      writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, "");
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+    }
+  });
+}
+
 function bindMetricCopyHandlers() {
   if (metricCopyUiBound) return;
   metricCopyUiBound = true;
@@ -3513,8 +3871,11 @@ function renderAll() {
     renderLocaleSwitcher();
     renderThemeSwitcher();
     applyTheme(state.theme, false);
+    renderHero();
     renderDomainSwitcher();
     renderDomainFocus();
+    renderDirectionCockpit();
+    renderDirectionWorkspace();
     renderPaperControls();
     renderPapers();
     renderTrends();
@@ -3532,10 +3893,12 @@ function renderAll() {
 function init() {
   state.language = loadInitialLanguage();
   state.theme = loadInitialTheme();
+  state.focusPrompt = readStoredValue(STORAGE_KEY_FOCUS_PROMPT) || "";
   state.activeDomainId = chooseDefaultDomain();
   document.body.classList.add("is-ready");
   bindControls();
   bindScrollTopButton();
+  bindFocusDesk();
   bindMetricCopyHandlers();
   renderAll();
   bindRevealObserver();

@@ -243,7 +243,7 @@ window.SICHEN_PORTAL_DATA = {
       "title": "学术前沿",
       "tag": "Research Radar",
       "description": "Local-first research radar for tracking frontier teams, papers, repositories, and emerging directions across multiple domains.",
-      "url": "https://github.com/SichenTao/frontier-radar"
+      "url": "https://sichentao.github.io/academic-frontier/"
     },
     {
       "title": "CEC 2025 RDEx Competition System",

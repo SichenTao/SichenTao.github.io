@@ -1065,6 +1065,283 @@ body[data-lang="ja"] .hero-role {
   gap: 14px;
 }
 
+.direction-cockpit-grid,
+.direction-workspace-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.direction-cockpit-grid {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  margin-bottom: 18px;
+}
+
+.direction-workspace-grid {
+  grid-template-columns: minmax(320px, 0.84fr) minmax(0, 1.16fr);
+}
+
+.focus-card,
+.direction-card {
+  padding: 18px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.76), rgba(var(--white-rgb), 0.52)),
+    var(--surface-strong);
+}
+
+.focus-card {
+  display: grid;
+  gap: 12px;
+}
+
+.focus-card-accent {
+  background:
+    radial-gradient(circle at top right, rgba(var(--teal-rgb), 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.8), rgba(var(--white-rgb), 0.58)),
+    var(--surface-strong);
+}
+
+.compact-subhead {
+  margin-bottom: 0;
+}
+
+.compact-subhead h4 {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+
+.chip-row.compact {
+  gap: 8px;
+}
+
+.chip.is-static {
+  cursor: default;
+  background: rgba(var(--white-rgb), 0.7);
+}
+
+.focus-textarea {
+  width: 100%;
+  min-height: 112px;
+  resize: vertical;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: rgba(var(--white-rgb), 0.9);
+  color: var(--ink);
+  font: inherit;
+  line-height: 1.6;
+  box-shadow: inset 0 1px 0 rgba(var(--white-rgb), 0.5);
+}
+
+.focus-textarea:focus {
+  outline: none;
+  border-color: rgba(var(--teal-rgb), 0.28);
+  box-shadow:
+    0 0 0 3px rgba(var(--teal-rgb), 0.1),
+    inset 0 1px 0 rgba(var(--white-rgb), 0.5);
+}
+
+.focus-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.direction-priority-stack,
+.direction-score-grid,
+.direction-card-grid,
+.direction-reading-grid,
+.direction-signal-list {
+  display: grid;
+  gap: 12px;
+}
+
+.direction-score-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.direction-score-label,
+.direction-empty-note {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.direction-score-track {
+  position: relative;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(var(--ink-rgb), 0.08);
+}
+
+.direction-score-track span {
+  position: absolute;
+  inset: 0 auto 0 0;
+  display: block;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(var(--gold-rgb), 0.66), rgba(var(--teal-rgb), 0.86));
+}
+
+.direction-score-row.is-warm .direction-score-track span {
+  background: linear-gradient(90deg, rgba(var(--gold-rgb), 0.8), rgba(var(--clay-rgb), 0.86));
+}
+
+.direction-score-row.is-strong .direction-score-track span {
+  background: linear-gradient(90deg, rgba(var(--teal-rgb), 0.7), rgba(var(--teal-rgb), 0.98));
+}
+
+.direction-score-value {
+  font-size: 0.9rem;
+  color: var(--ink);
+}
+
+.direction-card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.direction-card {
+  display: grid;
+  gap: 14px;
+}
+
+.direction-card.is-detailed {
+  gap: 16px;
+}
+
+.direction-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.direction-card h3 {
+  margin: 0;
+  font-size: 1.22rem;
+  line-height: 1.18;
+}
+
+.direction-lane-counts {
+  display: grid;
+  gap: 4px;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+.direction-thesis {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.68;
+}
+
+.direction-lane-bar {
+  display: flex;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(var(--ink-rgb), 0.08);
+}
+
+.direction-lane-bar span {
+  display: block;
+  min-width: 0;
+}
+
+.direction-lane-foundation {
+  background: rgba(var(--gold-rgb), 0.72);
+}
+
+.direction-lane-frontier {
+  background: rgba(var(--teal-rgb), 0.72);
+}
+
+.direction-lane-bridge {
+  background: rgba(var(--clay-rgb), 0.72);
+}
+
+.direction-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.direction-inline-list {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.direction-signal-item {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.64;
+}
+
+.direction-reading-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.direction-reading-lane {
+  border-radius: 18px;
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  background: rgba(var(--white-rgb), 0.66);
+  overflow: hidden;
+}
+
+.direction-reading-lane summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  font-weight: 600;
+}
+
+.direction-reading-lane summary::-webkit-details-marker {
+  display: none;
+}
+
+.direction-reading-list {
+  margin: 0;
+  padding: 0 16px 16px;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.direction-reading-item {
+  display: grid;
+  gap: 6px;
+}
+
+.direction-reading-item.is-empty {
+  color: var(--ink-soft);
+}
+
+.direction-reading-title a {
+  color: var(--ink);
+  text-decoration-color: rgba(var(--teal-rgb), 0.24);
+}
+
+.direction-reading-meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.direction-reading-note {
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
 .tri-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2105,12 +2382,17 @@ body[data-lang="ja"] .hero-role {
   .record-nav,
   .card-grid,
   .tri-grid,
-  .publication-list {
+  .publication-list,
+  .direction-card-grid,
+  .direction-reading-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero-top,
-  .signal-layout {
+  .signal-layout,
+  .direction-cockpit-grid,
+  .direction-workspace-grid,
+  .direction-meta-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2243,8 +2525,20 @@ body[data-lang="ja"] .hero-role {
   .tri-grid,
   .publication-list,
   .signal-layout,
-  .hero-primary {
+  .hero-primary,
+  .direction-card-grid,
+  .direction-reading-grid,
+  .direction-meta-grid {
     grid-template-columns: 1fr;
+  }
+
+  .direction-card-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .direction-lane-counts {
+    text-align: left;
   }
 
   .portrait-frame {

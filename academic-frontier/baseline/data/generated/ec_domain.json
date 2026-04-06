@@ -1,0 +1,405 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-03 19:47 JST",
+    "sourcesCoveredDelta": 8
+  },
+  "domains": [
+    {
+      "id": "evolutionary-computation",
+      "name": "Evolutionary Computation",
+      "priority": "high",
+      "momentum": 96,
+      "thesis": "This first live slice tracks researcher-centered EC signals around open-source algorithm stacks, multiobjective optimization, and GPU-native evolutionary systems. The goal is to follow people who are not only publishing, but also shaping reusable infrastructure and realistic next-step directions.",
+      "questions": [
+        "Which EC researchers are still pairing strong methods with durable code and infrastructure?",
+        "Where is the frontier moving from benchmark wins toward scalable, reusable systems?",
+        "Which recent papers look like genuine starting points for new contributions rather than isolated demonstrations?"
+      ],
+      "watchSignals": [
+        "recent TEVC, GECCO, and Swarm and Evolutionary Computation papers from tracked people",
+        "public repositories that still receive meaningful updates after publication",
+        "open-access PDFs that can be pulled automatically into the local archive"
+      ]
+    }
+  ],
+  "trendMap": [
+    {
+      "id": "evolutionary-computation-open-source-stacks",
+      "domainId": "evolutionary-computation",
+      "name": "Open-source EC stacks are still where leverage compounds",
+      "momentumLabel": "live code signal",
+      "signal": "5 tracked repos pushed in the last 120 days",
+      "whyNow": "The strongest EC signals are not just papers. They are papers backed by reusable codebases like EvoX and pymoo that keep moving after publication.",
+      "tension": "Tooling quality is improving, but many promising papers still do not translate into durable public systems."
+    },
+    {
+      "id": "evolutionary-computation-multiobjective-core",
+      "domainId": "evolutionary-computation",
+      "name": "Multi-objective optimization remains a live frontier core",
+      "momentumLabel": "method pressure",
+      "signal": "2 recent multi-objective papers in the current capture",
+      "whyNow": "Recent activity still clusters around multi-objective optimization, especially where methods become parallel, practical, and easier to connect to real engineering workflows.",
+      "tension": "A lot of multi-objective work is method-heavy; the harder question is which ideas survive realistic evaluation and deployment."
+    },
+    {
+      "id": "evolutionary-computation-acquisition-friction",
+      "domainId": "evolutionary-computation",
+      "name": "Paper acquisition is uneven enough to justify browser automation",
+      "momentumLabel": "workflow gap",
+      "signal": "2 ready PDFs out of 8 captured papers",
+      "whyNow": "Even in a well-defined field like EC, some important items are open immediately while others still require publisher access or manual browser work.",
+      "tension": "This is exactly where OpenClaw-driven download workflows can turn a reading backlog into a real archive."
+    }
+  ],
+  "teams": [
+    {
+      "id": "ran-cheng",
+      "domainId": "evolutionary-computation",
+      "name": "Ran Cheng",
+      "region": "Hong Kong",
+      "strength": "GPU-native EC systems",
+      "thesis": "Ran Cheng at Hong Kong Polytechnic University is worth watching for gpu-native evolutionary systems, multiobjective optimization, and open-source ec infrastructure. The current feed captures 4 recent EC papers since 2024-01-01. Tracked code signal includes EMI-Group/evox (2085★, pushed 2026-03-30).",
+      "signals": [
+        "4 EC-relevant works captured since 2024-01-01",
+        "OpenAlex h-index 54, 2yr mean citedness 3.06",
+        "EMI-Group/evox (2085★, pushed 2026-03-30)",
+        "EMI-Group/evogp (262★, pushed 2026-02-28)"
+      ],
+      "repositories": [
+        "EMI-Group/evox (2085★, pushed 2026-03-30)",
+        "EMI-Group/evogp (262★, pushed 2026-02-28)",
+        "EMI-Group/evogo (8★, pushed 2026-02-13)",
+        "EMI-Group/metade (220★, pushed 2026-02-09)"
+      ],
+      "papers": [
+        "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+        "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning"
+      ],
+      "links": {
+        "homepage": "https://chengran.tech/",
+        "openalex": "https://openalex.org/A5004036087"
+      }
+    },
+    {
+      "id": "julian-blank",
+      "domainId": "evolutionary-computation",
+      "name": "Julian Blank",
+      "region": "United States",
+      "strength": "multiobjective toolchains",
+      "thesis": "Julian Blank at Michigan State University is worth watching for parallel multiobjective optimization and practical optimization tooling. The current feed captures 2 recent EC papers since 2024-01-01. Tracked code signal includes anyoptimization/pymoo (2833★, pushed 2026-02-22).",
+      "signals": [
+        "2 EC-relevant works captured since 2024-01-01",
+        "OpenAlex h-index 11, 2yr mean citedness 7.67",
+        "anyoptimization/pymoo (2833★, pushed 2026-02-22)"
+      ],
+      "repositories": [
+        "anyoptimization/pymoo (2833★, pushed 2026-02-22)"
+      ],
+      "papers": [
+        "Hot off the Press: Parallel Multi-Objective Optimization for Expensive and Inexpensive Objectives and Constraints",
+        "Parallel multi-objective optimization for expensive and inexpensive objectives and constraints"
+      ],
+      "links": {
+        "homepage": null,
+        "openalex": "https://openalex.org/A5047107500"
+      }
+    },
+    {
+      "id": "kalyanmoy-deb",
+      "domainId": "evolutionary-computation",
+      "name": "Kalyanmoy Deb",
+      "region": "India",
+      "strength": "multiobjective foundations",
+      "thesis": "Kalyanmoy Deb at Indian Institute of Technology Madras is worth watching for multiobjective optimization, ec problem structure, and durable benchmark-setting ideas. The current feed captures 4 recent EC papers since 2024-01-01.",
+      "signals": [
+        "4 EC-relevant works captured since 2024-01-01",
+        "OpenAlex h-index 118, 2yr mean citedness 1.53"
+      ],
+      "repositories": [
+        "No tracked GitHub repository configured yet"
+      ],
+      "papers": [
+        "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+        "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems"
+      ],
+      "links": {
+        "homepage": null,
+        "openalex": "https://openalex.org/A5088394271"
+      }
+    }
+  ],
+  "papers": [
+    {
+      "id": "evolutionary-computation-ran-cheng-W4416548789",
+      "domainId": "evolutionary-computation",
+      "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+      "venue": "IEEE Transactions on Evolutionary Computation",
+      "year": "2026",
+      "whyItMatters": "Ran Cheng is still active around advanced multi-objective optimization algorithms; this recent IEEE Transactions on Evolutionary Computation paper is a strong EC signal.",
+      "status": "must-read",
+      "pdfState": "ready",
+      "authors": [
+        "Tao Jiang",
+        "Kebin Sun",
+        "Zhenyu Liang",
+        "Ran Cheng",
+        "Yan Jin",
+        "Kay Chen Tan"
+      ],
+      "publicationDate": "2026-01-01",
+      "citationCount": 0,
+      "abstract": "Recent advances in data-driven evolutionary algorithms (EAs) have demonstrated the potential of leveraging historical data to improve optimization accuracy and adaptability. Despite these advancements, existing methods remain reliant on handcrafted process-level operators. In contrast, Evolutionary Generative Optimization (EvoGO) is a fully data-driven framework designed from the objective level, enabling autonomous learning of the entire search process. EvoGO streamlines the evolutionary optimization process into three stages: data preparation, model training, and population generation. The data preparation stage constructs a pairwise dataset to enrich training diversity without incurring additional evaluation costs. During model training, a tailored generative model learns to transform inferior solutions into superior ones. In the population generation stage, EvoGO replaces traditional reproduction operators with a scalable and parallelizable generative mechanism. Extensive experiments on numerical benchmarks, classical control problems, and high-dimensional robotic tasks demonstrate that EvoGO consistently converges within merely 10 generations and substantially outperforms a wide spectrum of optimization approaches, including traditional EAs, Bayesian optimization, and reinforcement learning based methods. Code is available at: https://github.com/EMI-Group/evogo.",
+      "openAlexUrl": "https://openalex.org/W4416548789",
+      "doi": "10.1109/tevc.2026.3664432",
+      "doiUrl": "https://doi.org/10.1109/tevc.2026.3664432",
+      "publisherUrl": "https://doi.org/10.1109/tevc.2026.3664432",
+      "url": "https://arxiv.org/pdf/2508.00380",
+      "pdfUrl": "https://arxiv.org/pdf/2508.00380",
+      "archivePath": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf"
+    },
+    {
+      "id": "evolutionary-computation-kalyanmoy-deb-W4414581553",
+      "domainId": "evolutionary-computation",
+      "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+      "venue": "International Journal of Parallel Emergent and Distributed Systems",
+      "year": "2025",
+      "whyItMatters": "Kalyanmoy Deb is still active around evolutionary algorithms and applications; this recent International Journal of Parallel Emergent and Distributed Systems paper is a strong EC signal.",
+      "status": "monitor",
+      "pdfState": "ready",
+      "authors": [
+        "S. NagaMallik Raj",
+        "Kalyanmoy Deb"
+      ],
+      "publicationDate": "2025-12-31",
+      "citationCount": 0,
+      "abstract": "We present EvoSort, a general-purpose adaptive parallel parallel sorting framework accessible at the Python level. EvoSort employs a Genetic Algorithm (GA) to automatically discover and refine critical parameters, including insertion sort thresholds and algorithm selection (e.g., versus LSD radix sort). By adapting continuously to input data and system architecture, EvoSort provides a drop-in replacement for standard Python routines like NumPy and Pandas. Experiments up to10 billion elements across nine data distributions and two hardware platforms demonstrate that EvoSort consistently outperforms competing methods. Results show speedups of up to 225x, exemplifying a powerful auto-tuning solution for large-scale data processing.",
+      "openAlexUrl": "https://openalex.org/W4414581553",
+      "doi": "10.1080/17445760.2025.2609138",
+      "doiUrl": "https://doi.org/10.1080/17445760.2025.2609138",
+      "publisherUrl": "https://doi.org/10.1080/17445760.2025.2609138",
+      "url": "https://arxiv.org/pdf/2505.18681",
+      "pdfUrl": "https://arxiv.org/pdf/2505.18681",
+      "archivePath": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf"
+    },
+    {
+      "id": "evolutionary-computation-kalyanmoy-deb-W4414444197",
+      "domainId": "evolutionary-computation",
+      "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+      "venue": "Swarm and Evolutionary Computation",
+      "year": "2025",
+      "whyItMatters": "Kalyanmoy Deb is still active around advanced multi-objective optimization algorithms; this recent Swarm and Evolutionary Computation paper is a strong EC signal.",
+      "status": "monitor",
+      "pdfState": "queued",
+      "authors": [
+        "Hao Wang",
+        "Shuwei Zhu",
+        "Wei Fang",
+        "Kalyanmoy Deb"
+      ],
+      "publicationDate": "2025-09-23",
+      "citationCount": 2,
+      "abstract": null,
+      "openAlexUrl": "https://openalex.org/W4414444197",
+      "doi": "10.1016/j.swevo.2025.102149",
+      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102149",
+      "publisherUrl": "https://doi.org/10.1016/j.swevo.2025.102149",
+      "url": "https://doi.org/10.1016/j.swevo.2025.102149",
+      "pdfUrl": null,
+      "archivePath": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf"
+    },
+    {
+      "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
+      "domainId": "evolutionary-computation",
+      "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+      "venue": "Swarm and Evolutionary Computation",
+      "year": "2025",
+      "whyItMatters": "Kalyanmoy Deb remains active in multiobjective optimization, ec problem structure, and durable benchmark-setting ideas; this recent Swarm and Evolutionary Computation paper is worth monitoring.",
+      "status": "monitor",
+      "pdfState": "queued",
+      "authors": [
+        "Pushpendra Gupta",
+        "Dilip Kumar Pratihar",
+        "Kalyanmoy Deb"
+      ],
+      "publicationDate": "2025-09-10",
+      "citationCount": 0,
+      "abstract": null,
+      "openAlexUrl": "https://openalex.org/W4414151930",
+      "doi": "10.1016/j.swevo.2025.102144",
+      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102144",
+      "publisherUrl": "https://doi.org/10.1016/j.swevo.2025.102144",
+      "url": "https://doi.org/10.1016/j.swevo.2025.102144",
+      "pdfUrl": null,
+      "archivePath": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf"
+    },
+    {
+      "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+      "domainId": "evolutionary-computation",
+      "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+      "venue": "Expert Systems with Applications",
+      "year": "2025",
+      "whyItMatters": "Kalyanmoy Deb is still active around optimization and packing problems; this recent Expert Systems with Applications paper is a strong EC signal.",
+      "status": "monitor",
+      "pdfState": "queued",
+      "authors": [
+        "Xiaotong Li",
+        "Shuwei Zhu",
+        "Wei Fang",
+        "Kalyanmoy Deb"
+      ],
+      "publicationDate": "2025-09-10",
+      "citationCount": 0,
+      "abstract": null,
+      "openAlexUrl": "https://openalex.org/W4414140555",
+      "doi": "10.1016/j.eswa.2025.129364",
+      "doiUrl": "https://doi.org/10.1016/j.eswa.2025.129364",
+      "publisherUrl": "https://doi.org/10.1016/j.eswa.2025.129364",
+      "url": "https://doi.org/10.1016/j.eswa.2025.129364",
+      "pdfUrl": null,
+      "archivePath": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf"
+    },
+    {
+      "id": "evolutionary-computation-ran-cheng-W4413243632",
+      "domainId": "evolutionary-computation",
+      "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+      "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+      "year": "2025",
+      "whyItMatters": "Ran Cheng is still active around evolutionary algorithms and applications; this recent ACM Transactions on Evolutionary Learning and Optimization paper is a strong EC signal.",
+      "status": "monitor",
+      "pdfState": "queued",
+      "authors": [
+        "Bowen Zheng",
+        "Ran Cheng",
+        "Kay Chen Tan"
+      ],
+      "publicationDate": "2025-08-08",
+      "citationCount": 1,
+      "abstract": "Evolutionary Reinforcement Learning (EvoRL) has emerged as a promising approach to overcoming the limitations of traditional reinforcement learning (RL) by integrating the Evolutionary Computation (EC) paradigm with RL. However, the population-based nature of EC significantly increases computational costs, thereby restricting the exploration of algorithmic design choices and scalability in large-scale settings. To address this challenge, we introduce EvoRL 1, the first end-to-end EvoRL framework optimized for GPU acceleration. The framework executes the entire training pipeline on accelerators, including environment simulations and EC processes, leveraging hierarchical parallelism through vectorization and compilation techniques to achieve superior speed and scalability. This design enables the efficient training of large populations on a single machine. In addition to its performance-oriented design, EvoRL offers a comprehensive platform for EvoRL research, encompassing implementations of traditional RL algorithms (e.g., A2C, PPO, DDPG, TD3, SAC), Evolutionary Algorithms (e.g., CMA-ES, OpenES, ARS), and hybrid EvoRL paradigms such as Evolutionary-guided RL (e.g., ERL, CEM-RL) and Population-Based AutoRL (e.g., PBT). The framework's modular architecture and user-friendly interface allow researchers to seamlessly integrate new components, customize algorithms, and conduct fair benchmarking and ablation studies. The project is open-source and available at: https://github.com/EMI-Group/evorl.",
+      "openAlexUrl": "https://openalex.org/W4413243632",
+      "doi": "10.1145/3750053",
+      "doiUrl": "https://doi.org/10.1145/3750053",
+      "publisherUrl": "https://doi.org/10.1145/3750053",
+      "url": "https://doi.org/10.1145/3750053",
+      "pdfUrl": null,
+      "archivePath": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf"
+    },
+    {
+      "id": "evolutionary-computation-ran-cheng-W4411600078",
+      "domainId": "evolutionary-computation",
+      "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+      "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
+      "year": "2025",
+      "whyItMatters": "Ran Cheng is still active around advanced multi-objective optimization algorithms; this recent 2025 IEEE Congress on Evolutionary Computation (CEC) paper is a strong EC signal.",
+      "status": "monitor",
+      "pdfState": "queued",
+      "authors": [
+        "Hao Li",
+        "Zhenyu Liang",
+        "Ran Cheng"
+      ],
+      "publicationDate": "2025-06-08",
+      "citationCount": 0,
+      "abstract": "NSGA-III is one of the most widely adopted algorithms for tackling many-objective optimization problems. However, its CPU-based design severely limits scalability and computational efficiency. To address the limitations, we propose TensorNSGA-III, a fully tensorized implementation of NSGA-III that leverages GPU parallelism for large-scale many-objective optimization. Unlike conventional GPU-accelerated evolutionary algorithms that rely on heuristic approximations to improve efficiency, TensorNSGA-III maintains the exact selection and variation mechanisms of NSGA-III while achieving significant acceleration. By reformulating the selection process with tensorized data structures and an optimized caching strategy, our approach effectively eliminates computational bottlenecks inherent in traditional CPU-based and naïve GPU implementations. Experimental results on widely used numerical benchmarks show that TensorNSGA-III achieves speedups of up to 3629× over the CPU version of NSGA-III. Additionally, we validate its effectiveness in multiobjective robotic control tasks, where it discovers diverse and high-quality behavioral solutions. Furthermore, we investigate the critical role of large population sizes in many-objective optimization and demonstrate the scalability of TensorNSGA-III in such scenarios. The source code is available at https://github.com/EMI-Group/evomo.",
+      "openAlexUrl": "https://openalex.org/W4411600078",
+      "doi": "10.1109/cec65147.2025.11043108",
+      "doiUrl": "https://doi.org/10.1109/cec65147.2025.11043108",
+      "publisherUrl": "https://doi.org/10.1109/cec65147.2025.11043108",
+      "url": "https://doi.org/10.1109/cec65147.2025.11043108",
+      "pdfUrl": null,
+      "archivePath": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf"
+    },
+    {
+      "id": "evolutionary-computation-ran-cheng-W4409486142",
+      "domainId": "evolutionary-computation",
+      "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+      "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+      "year": "2025",
+      "whyItMatters": "Ran Cheng remains active in gpu-native evolutionary systems, multiobjective optimization, and open-source ec infrastructure; this recent ACM Transactions on Evolutionary Learning and Optimization paper is worth monitoring.",
+      "status": "monitor",
+      "pdfState": "queued",
+      "authors": [
+        "Lishuang Wang",
+        "Mengfei Zhao",
+        "Enyu Liu",
+        "Kebin Sun",
+        "Ran Cheng"
+      ],
+      "publicationDate": "2025-04-16",
+      "citationCount": 1,
+      "abstract": "The NeuroEvolution of Augmenting Topologies (NEAT) algorithm has received considerable recognition in the field of neuroevolution. Its effectiveness is derived from initiating with simple networks and incrementally evolving both their topologies and weights. Although its capability across various challenges is evident, the algorithm's computational efficiency remains an impediment, limiting its scalability potential. To address these limitations, this paper introduces TensorNEAT, a GPU-accelerated library that applies tensorization to the NEAT algorithm. Tensorization reformulates NEAT's diverse network topologies and operations into uniformly shaped tensors, enabling efficient parallel execution across entire populations. TensorNEAT is built upon JAX, leveraging automatic function vectorization and hardware acceleration to significantly enhance computational efficiency. In addition to NEAT, the library supports variants such as CPPN and HyperNEAT, and integrates with benchmark environments like Gym, Brax, and gymnax. Experimental evaluations across various robotic control environments in Brax demonstrate that TensorNEAT delivers up to 500x speedups compared to existing implementations, such as NEAT-Python. The source code for TensorNEAT is publicly available at: https://github.com/EMI-Group/tensorneat.",
+      "openAlexUrl": "https://openalex.org/W4409486142",
+      "doi": "10.1145/3730406",
+      "doiUrl": "https://doi.org/10.1145/3730406",
+      "publisherUrl": "https://doi.org/10.1145/3730406",
+      "url": "https://doi.org/10.1145/3730406",
+      "pdfUrl": null,
+      "archivePath": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf"
+    }
+  ],
+  "downloadQueue": [
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4416548789",
+      "domainId": "evolutionary-computation",
+      "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+      "source": "https://arxiv.org/pdf/2508.00380",
+      "status": "ready",
+      "path": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414581553",
+      "domainId": "evolutionary-computation",
+      "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+      "source": "https://arxiv.org/pdf/2505.18681",
+      "status": "ready",
+      "path": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414444197",
+      "domainId": "evolutionary-computation",
+      "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+      "source": "https://doi.org/10.1016/j.swevo.2025.102149",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414151930",
+      "domainId": "evolutionary-computation",
+      "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+      "source": "https://doi.org/10.1016/j.swevo.2025.102144",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414140555",
+      "domainId": "evolutionary-computation",
+      "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+      "source": "https://doi.org/10.1016/j.eswa.2025.129364",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4413243632",
+      "domainId": "evolutionary-computation",
+      "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+      "source": "https://doi.org/10.1145/3750053",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4411600078",
+      "domainId": "evolutionary-computation",
+      "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+      "source": "https://doi.org/10.1109/cec65147.2025.11043108",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4409486142",
+      "domainId": "evolutionary-computation",
+      "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+      "source": "https://doi.org/10.1145/3730406",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf"
+    }
+  ]
+}

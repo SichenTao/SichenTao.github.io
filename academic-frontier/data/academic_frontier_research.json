@@ -1,0 +1,3847 @@
+{
+  "generatedAt": "2026-04-06 21:33 JST",
+  "seedProfile": {
+    "profileName": "Sichen Tao",
+    "summary": {
+      "en": "Auto-derived from homepage keywords, research methods, application domains, and retained publication history.",
+      "zh": "基于主页关键词、研究方法、应用领域与已保留发表历史自动抽象生成。",
+      "ja": "ホームページのキーワード、研究手法、応用領域、保持している発表履歴から自動抽出した。"
+    },
+    "keywords": [
+      "Artificial Intelligence",
+      "Computational Intelligence",
+      "High Performance Computing",
+      "Machine Learning",
+      "Optimization",
+      "Deep Learning",
+      "Reinforcement Learning",
+      "Neural Networks",
+      "Large Language Models",
+      "Applied Medical Engineering",
+      "AI4Science"
+    ],
+    "methods": [
+      "Artificial intelligence",
+      "Deep learning",
+      "Brain-inspired neural networks",
+      "Computational intelligence",
+      "Evolutionary optimization",
+      "Reinforcement learning",
+      "High-performance computing"
+    ],
+    "applications": [
+      "Wind farm layout optimization",
+      "Human-robot collaboration",
+      "Healthcare and medical AI",
+      "AI for science",
+      "Industry 5.0",
+      "Autonomous driving",
+      "Weather and spatiotemporal modeling"
+    ],
+    "topPublicationTags": [
+      "Optimization",
+      "Visual Systems",
+      "Wind Farm",
+      "Human-Robot",
+      "Computational Intelligence",
+      "Deep Learning",
+      "HPC",
+      "AI Theory",
+      "Healthcare",
+      "Reinforcement Learning"
+    ],
+    "venueTargets": [
+      "Mathematics",
+      "Knowledge-Based Systems",
+      "Applied Soft Computing",
+      "ICNSC 2022",
+      "Information Sciences",
+      "IEEE Access",
+      "Symmetry",
+      "SPML 2024",
+      "International Journal of Computational Intelligence Systems",
+      "ISCID 2020"
+    ],
+    "sourceCounts": {
+      "publications": 52,
+      "frontierPapers": 8,
+      "trackedTeams": 3
+    }
+  },
+  "focusDesk": {
+    "defaultPrompt": {
+      "en": "Prioritize highest-quality classic foundations, strongest latest papers, and bridge work that connects current strengths to one-hop adjacent opportunities.",
+      "zh": "优先经典高质量基础论文、最强最新论文，以及把当前能力连接到一跳邻近机会的桥梁工作。",
+      "ja": "最高品質の古典的基礎論文、最も強い最新論文、そして現在の強みを 1 ホップ隣接機会へつなぐ橋渡し研究を優先する。"
+    },
+    "description": {
+      "en": "This panel is local-first: agent-inferred directions stay automatic by default, while manual prompt edits only refine the current browser's priorities.",
+      "zh": "这个面板是本地优先的：默认仍由系统自动推断方向，而手动 prompt 只会修正当前浏览器中的优先级。",
+      "ja": "このパネルはローカルファーストであり、方向推定は自動のまま、手動プロンプト編集は現在のブラウザ内の優先度だけを調整する。"
+    },
+    "presets": [
+      {
+        "id": "quality-first",
+        "label": {
+          "en": "Quality first",
+          "zh": "质量优先",
+          "ja": "品質優先"
+        },
+        "hint": {
+          "en": "Classic + latest + strong evidence",
+          "zh": "经典 + 最新 + 强证据",
+          "ja": "古典 + 最新 + 強い証拠"
+        },
+        "prompt": {
+          "en": "Prioritize highest-quality classic foundations, newest top-tier papers, and work with strong system evidence.",
+          "zh": "优先经典高质量基础论文、最新顶级论文，以及具有强系统证据的工作。",
+          "ja": "最高品質の古典的基礎論文、最新のトップ論文、そして強いシステム証拠を持つ研究を優先する。"
+        }
+      },
+      {
+        "id": "adjacent-expansion",
+        "label": {
+          "en": "1-hop expansion",
+          "zh": "一跳扩展",
+          "ja": "1 ホップ拡張"
+        },
+        "hint": {
+          "en": "Stay near current strengths",
+          "zh": "贴近当前强项",
+          "ja": "現在の強みに近い範囲"
+        },
+        "prompt": {
+          "en": "Expand only to one-hop adjacent directions that connect my optimization, HPC, and AI system strengths to promising new frontiers.",
+          "zh": "只扩展到与我当前优化、HPC 和 AI 系统强项一跳相邻、且有潜力的新方向。",
+          "ja": "自分の最適化、HPC、AI システムの強みから 1 ホップ隣接する有望な方向にだけ拡張する。"
+        }
+      },
+      {
+        "id": "ai-for-science-boost",
+        "label": {
+          "en": "AI4Science boost",
+          "zh": "强化 AI4Science",
+          "ja": "AI4Science 強化"
+        },
+        "hint": {
+          "en": "Raise science-system priorities",
+          "zh": "提高科研系统优先级",
+          "ja": "科学システムの優先度を上げる"
+        },
+        "prompt": {
+          "en": "Increase priority for AI for science, spatiotemporal forecasting, scientific agents, and research infrastructure directions.",
+          "zh": "提高 AI for Science、时空预测、科研智能体和研究基础设施方向的优先级。",
+          "ja": "AI for Science、時空間予測、科学エージェント、研究インフラ方向の優先度を上げる。"
+        }
+      },
+      {
+        "id": "human-centered-systems",
+        "label": {
+          "en": "Human-centered",
+          "zh": "强化人中心系统",
+          "ja": "人間中心システム"
+        },
+        "hint": {
+          "en": "Human-robot and safety",
+          "zh": "人机协作与安全",
+          "ja": "人間ロボット協調と安全性"
+        },
+        "prompt": {
+          "en": "Emphasize human-robot collaboration, safety-aware planning, and deployable intelligent systems in real environments.",
+          "zh": "强调人机协作、安全约束规划以及可在真实环境部署的智能系统。",
+          "ja": "人間ロボット協調、安全性を考慮した計画、実環境に展開可能な知能システムを重視する。"
+        }
+      }
+    ]
+  },
+  "directions": [
+    {
+      "id": "gpu-native-evolutionary-systems",
+      "title": {
+        "en": "GPU-native evolutionary systems",
+        "zh": "GPU 原生进化系统",
+        "ja": "GPU ネイティブ進化システム"
+      },
+      "thesis": {
+        "en": "Prioritize research that turns evolutionary computation into reusable accelerated systems, not only isolated method papers.",
+        "zh": "优先关注把进化计算做成可复用加速系统的研究，而不只是孤立的方法论文。",
+        "ja": "進化計算を単発の手法論文ではなく、再利用可能な高速化システムへ変える研究を優先する。"
+      },
+      "whyNow": {
+        "en": "This is the clearest bridge between current optimization strength, HPC capability, and the newest high-quality infrastructure work.",
+        "zh": "这条线最直接连接了当前的优化积累、HPC 能力与最新高质量基础设施研究。",
+        "ja": "この方向は、現在の最適化の強み、HPC 能力、そして最新の高品質インフラ研究を最も直接につなぐ。"
+      },
+      "promptSeed": {
+        "en": "Search for top-tier evolutionary and learning systems papers with GPU acceleration, reusable code, and durable infrastructure evidence.",
+        "zh": "搜索具备 GPU 加速、可复用代码和持续基础设施证据的高质量进化与学习系统论文。",
+        "ja": "GPU 高速化、再利用可能なコード、継続するインフラ証拠を伴う高品質な進化・学習システム論文を探索する。"
+      },
+      "priority": 100,
+      "scores": {
+        "alignment": 100,
+        "momentum": 100,
+        "quality": 100
+      },
+      "counts": {
+        "foundation": 31,
+        "frontier": 8,
+        "bridge": 31,
+        "total": 39
+      },
+      "keywords": [
+        "optimization",
+        "evolutionary",
+        "multi objective",
+        "gpu",
+        "reinforcement learning",
+        "hpc",
+        "evorl",
+        "neuroevolution"
+      ],
+      "venues": [
+        "Mathematics",
+        "ICNSC 2022",
+        "Swarm and Evolutionary Computation",
+        "IEEE Access",
+        "Applied Soft Computing",
+        "International Journal of Computational Intelligence Systems",
+        "ACM Transactions on Evolutionary Learning and Optimization",
+        "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops"
+      ],
+      "teams": [
+        {
+          "name": "Ran Cheng",
+          "strength": "GPU-native EC systems",
+          "url": "https://chengran.tech/"
+        },
+        {
+          "name": "Julian Blank",
+          "strength": "multiobjective toolchains",
+          "url": "https://openalex.org/A5047107500"
+        },
+        {
+          "name": "Kalyanmoy Deb",
+          "strength": "multiobjective foundations",
+          "url": "https://openalex.org/A5088394271"
+        }
+      ],
+      "signals": [
+        {
+          "en": "8 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 8 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 8 件の関連最前線論文が見えている。"
+        },
+        {
+          "en": "31 retained publications provide immediate historical grounding.",
+          "zh": "31 篇已保留发表可提供即时历史基础。",
+          "ja": "31 件の保持済み発表が即時の歴史的土台を与える。"
+        },
+        {
+          "en": "3 tracked teams or researchers strengthen this direction.",
+          "zh": "3 个跟踪团队或研究者强化了这个方向。",
+          "ja": "3 件の追跡チームまたは研究者がこの方向を強めている。"
+        }
+      ],
+      "readingLanes": {
+        "foundation": [
+          {
+            "id": "a-state-of-the-art-differential-evolution-algorithm-for-parameter-estimation-of-solar-photovoltaic-models",
+            "source": "profile-publication",
+            "title": "A state-of-the-art differential evolution algorithm for parameter estimation of solar photovoltaic models",
+            "venue": "Energy Conversion and Management",
+            "year": 2021,
+            "citationCount": 281,
+            "url": "https://doi.org/10.1016/j.enconman.2020.113784",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-adaptive-population-control-for-global-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with adaptive population control for global continuous optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2023,
+            "citationCount": 39,
+            "url": "https://doi.org/10.1016/j.asoc.2022.109845",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "chaotic-wind-driven-optimization-with-fitness-distance-balance-strategy",
+            "source": "profile-publication",
+            "title": "Chaotic Wind Driven Optimization with Fitness Distance Balance Strategy",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2022,
+            "citationCount": 19,
+            "url": "https://link.springer.com/article/10.1007/s44196-022-00099-0",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "hierarchical-manta-ray-foraging-optimization-with-weighted-fitness-distance-balance-selection",
+            "source": "profile-publication",
+            "title": "Hierarchical Manta Ray Foraging Optimization with Weighted Fitness-Distance Balance Selection",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2023,
+            "citationCount": 17,
+            "url": "https://link.springer.com/article/10.1007/s44196-023-00289-4",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "paidde-a-permutation-archive-information-directed-differential-evolution-algorithm",
+            "source": "profile-publication",
+            "title": "PAIDDE: A Permutation-Archive Information Directed Differential Evolution Algorithm",
+            "venue": "IEEE Access",
+            "year": 2022,
+            "citationCount": 17,
+            "url": "https://doi.org/10.1109/ACCESS.2022.3173622",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-memory-guided-population-stage-wise-control-for-bound-constrained-global-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with memory-guided population stage-wise control for bound-constrained global optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2024,
+            "citationCount": 13,
+            "url": "https://doi.org/10.1016/j.asoc.2024.111677",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-efficient-reconstructed-differential-evolution-variant-by-some-of-the-current-state-of-the-art-strategies-for-solving-single-objective-bound-constrained-problems",
+            "source": "profile-publication",
+            "title": "An Efficient Reconstructed Differential Evolution Variant by Some of the Current State-of-the-art Strategies for Solving Single Objective Bound Constrained Problems",
+            "venue": "arXiv",
+            "year": 2024,
+            "citationCount": 12,
+            "url": "https://doi.org/10.48550/arXiv.2404.16280",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "fitness-distance-balance-with-functional-weights-a-new-selection-method-for-evolutionary-algorithms",
+            "source": "profile-publication",
+            "title": "Fitness-Distance Balance with Functional Weights: A New Selection Method for Evolutionary Algorithms",
+            "venue": "IEICE Transactions on Information and Systems",
+            "year": 2021,
+            "citationCount": 12,
+            "url": "https://www.jstage.jst.go.jp/article/transinf/E104.D/10/E104.D_2021EDL8033/_article",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-state-of-the-art-fractional-order-driven-differential-evolution-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A State-of-the-Art Fractional Order-Driven Differential Evolution for Wind Farm Layout Optimization",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 8,
+            "url": "https://www.mdpi.com/2227-7390/13/2/282",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "dynamic-complex-network-exploring-differential-evolution-algorithms-from-another-perspective",
+            "source": "profile-publication",
+            "title": "Dynamic Complex Network, Exploring Differential Evolution Algorithms from Another Perspective",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 6,
+            "url": "https://www.mdpi.com/2227-7390/11/13/2979",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "competitive-elimination-improved-differential-evolution-for-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "Competitive Elimination Improved Differential Evolution for Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2227-7390/12/23/3762",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-multi-local-search-based-shade-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A Multi-Local Search-Based SHADE for Wind Farm Layout Optimization",
+            "venue": "Electronics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2079-9292/13/16/3196",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "hierarchical-water-wave-optimization",
+            "source": "profile-publication",
+            "title": "Hierarchical Water Wave Optimization",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 3,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004174",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "human-centric-assembly-planning-framework-for-human-robot-collaborative-systems-with-efficient-reinforcement-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-centric assembly planning framework for human–robot collaborative systems with efficient reinforcement self-learning multi-objective evolutionary optimizer",
+            "venue": "Advanced Engineering Informatics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1016/j.aei.2025.103508",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-detection-and-replacement-based-order-operator-for-differential-evolution-in-solving-complex-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Novel Detection-and-Replacement-Based Order-Operator for Differential Evolution in Solving Complex Bound Constrained Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/13/9/1389",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-optimal-parent-crossover-based-differential-evolution",
+            "source": "profile-publication",
+            "title": "An Optimal-Parent-Crossover based Differential Evolution",
+            "venue": "ISCID 2022",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID56505.2022.00068",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-optimization-algorithm-inherited-from-gravitational-and-spherical-search-dynamics",
+            "source": "profile-publication",
+            "title": "A Novel Optimization Algorithm Inherited From Gravitational and Spherical Search Dynamics",
+            "venue": "ISCID 2020",
+            "year": 2020,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID51228.2020.00027",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-adaptive-dimension-weighting-spherical-evolution-to-solve-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "An Adaptive Dimension Weighting Spherical Evolution to Solve Continuous Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3733",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-immigration-strategy-based-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "An Immigration Strategy-based Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004149",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-population-resource-allocation-based-adaptive-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "A Population Resource Allocation-based Adaptive Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004116",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-hybrid-spherical-search-and-moth-flame-optimization-algorithm",
+            "source": "profile-publication",
+            "title": "A Hybrid Spherical Search and Moth-flame optimization Algorithm",
+            "venue": "IHMSC 2020",
+            "year": 2020,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/IHMSC49165.2020.00054",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "cityscalecast-spatiotemporal-gnn-for-city-scale-weather-prediction-with-graphcast-guided-parallel-modeling-and-multi-step-forecasting-in-sendai",
+            "source": "profile-publication",
+            "title": "CityScaleCast: Spatiotemporal GNN for City-Scale Weather Prediction with GraphCast-Guided Parallel Modeling and Multi-Step Forecasting in Sendai",
+            "venue": "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3784828.3785258",
+            "tags": [
+              "HPC"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "adversarial-game-optimization-a-game-theoretic-metaheuristic-for-efficient-complex-optimization-and-engineering-applications",
+            "source": "profile-publication",
+            "title": "Adversarial game optimization: A game-theoretic metaheuristic for efficient complex optimization and engineering applications",
+            "venue": "Information Sciences",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.ins.2025.123022",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "human-robot-collaborative-resource-and-task-planning-for-assembly-systems-with-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-robot Collaborative Resource and Task Planning for Assembly Systems with Self-learning Multi-objective Evolutionary Optimizer",
+            "venue": "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/RCAR65431.2025.11139773",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "gpu-cuda-accelerated-gradient-growth-optimizer-for-efficient-complex-numerical-global-optimization",
+            "source": "profile-publication",
+            "title": "GPU/CUDA-Accelerated Gradient Growth Optimizer for Efficient Complex Numerical Global Optimization",
+            "venue": "Parallel Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.parco.2025.103160",
+            "tags": [
+              "Optimization",
+              "HPC"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-reinforcement-learning-assisted-fractional-order-differential-evolution-for-solving-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Reinforcement Learning-Assisted Fractional-Order Differential Evolution for Solving Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2227-7390/13/18/2935",
+            "tags": [
+              "Optimization",
+              "Wind Farm",
+              "Reinforcement Learning"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "unleashing-the-inherent-potential-of-differential-evolution-using-nonlinear-population-size-reduction-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "Unleashing the Inherent Potential of Differential Evolution Using Nonlinear Population Size Reduction for Wind Farm Layout Optimization",
+            "venue": "IEEE Access",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeeaccess.ieee.org/",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "level-direction-guided-hierarchical-genetic-learning-particle-swarm-optimization-for-wind-farm-layout-optimization-considering-landowners-behavior",
+            "source": "profile-publication",
+            "title": "Level-Direction Guided Hierarchical Genetic Learning Particle Swarm Optimization for Wind Farm Layout Optimization Considering Landowners Behavior",
+            "venue": "Engineering Applications of Artificial Intelligence",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "improved-spherical-search-algorithm-with-memory-based-dynamic-population-for-optimization",
+            "source": "profile-publication",
+            "title": "Improved spherical search algorithm with memory-based dynamic population for optimization",
+            "venue": "The Journal of Supercomputing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://link.springer.com/article/10.1007/s11227-025-07095-z",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "improving-the-music-harmony-search-using-a-differential-exploration-phase-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "Improving the Music Harmony Search Using a Differential Exploration Phase for Solving Bound Constrained Optimization Problems",
+            "venue": "2024 IEEE 7th Information Technology, Networking, Electronic and Automation Control Conference (ITNEC)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/ITNEC60942.2024.10733307",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-differential-search-integrated-music-harmony-search-algorithm-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Differential Search Integrated Music Harmony Search Algorithm for Solving Bound Constrained Optimization Problems",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686524",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          }
+        ],
+        "frontier": [
+          {
+            "id": "evolutionary-computation-ran-cheng-W4416548789",
+            "source": "frontier-paper",
+            "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11396036/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414444197",
+            "source": "frontier-paper",
+            "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+            "venue": "Swarm and Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4409486142",
+            "source": "frontier-paper",
+            "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+            "year": 2025,
+            "citationCount": 1,
+            "url": "https://dl.acm.org/doi/10.1145/3730406",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4413243632",
+            "source": "frontier-paper",
+            "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+            "year": 2025,
+            "citationCount": 1,
+            "url": "https://dl.acm.org/doi/10.1145/3750053",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4411600078",
+            "source": "frontier-paper",
+            "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+            "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11043108/",
+            "tags": [
+              "monitor",
+              "conference"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
+            "source": "frontier-paper",
+            "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+            "venue": "Swarm and Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+            "source": "frontier-paper",
+            "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+            "venue": "Expert Systems with Applications",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414581553",
+            "source": "frontier-paper",
+            "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+            "venue": "International Journal of Parallel Emergent and Distributed Systems",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          }
+        ],
+        "bridge": [
+          {
+            "id": "cityscalecast-spatiotemporal-gnn-for-city-scale-weather-prediction-with-graphcast-guided-parallel-modeling-and-multi-step-forecasting-in-sendai",
+            "source": "profile-publication",
+            "title": "CityScaleCast: Spatiotemporal GNN for City-Scale Weather Prediction with GraphCast-Guided Parallel Modeling and Multi-Step Forecasting in Sendai",
+            "venue": "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3784828.3785258",
+            "tags": [
+              "HPC"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "adversarial-game-optimization-a-game-theoretic-metaheuristic-for-efficient-complex-optimization-and-engineering-applications",
+            "source": "profile-publication",
+            "title": "Adversarial game optimization: A game-theoretic metaheuristic for efficient complex optimization and engineering applications",
+            "venue": "Information Sciences",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.ins.2025.123022",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "human-centric-assembly-planning-framework-for-human-robot-collaborative-systems-with-efficient-reinforcement-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-centric assembly planning framework for human–robot collaborative systems with efficient reinforcement self-learning multi-objective evolutionary optimizer",
+            "venue": "Advanced Engineering Informatics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1016/j.aei.2025.103508",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "human-robot-collaborative-resource-and-task-planning-for-assembly-systems-with-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-robot Collaborative Resource and Task Planning for Assembly Systems with Self-learning Multi-objective Evolutionary Optimizer",
+            "venue": "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/RCAR65431.2025.11139773",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "gpu-cuda-accelerated-gradient-growth-optimizer-for-efficient-complex-numerical-global-optimization",
+            "source": "profile-publication",
+            "title": "GPU/CUDA-Accelerated Gradient Growth Optimizer for Efficient Complex Numerical Global Optimization",
+            "venue": "Parallel Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.parco.2025.103160",
+            "tags": [
+              "Optimization",
+              "HPC"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-reinforcement-learning-assisted-fractional-order-differential-evolution-for-solving-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Reinforcement Learning-Assisted Fractional-Order Differential Evolution for Solving Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2227-7390/13/18/2935",
+            "tags": [
+              "Optimization",
+              "Wind Farm",
+              "Reinforcement Learning"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-state-of-the-art-fractional-order-driven-differential-evolution-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A State-of-the-Art Fractional Order-Driven Differential Evolution for Wind Farm Layout Optimization",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 8,
+            "url": "https://www.mdpi.com/2227-7390/13/2/282",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-detection-and-replacement-based-order-operator-for-differential-evolution-in-solving-complex-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Novel Detection-and-Replacement-Based Order-Operator for Differential Evolution in Solving Complex Bound Constrained Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/13/9/1389",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "unleashing-the-inherent-potential-of-differential-evolution-using-nonlinear-population-size-reduction-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "Unleashing the Inherent Potential of Differential Evolution Using Nonlinear Population Size Reduction for Wind Farm Layout Optimization",
+            "venue": "IEEE Access",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeeaccess.ieee.org/",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "level-direction-guided-hierarchical-genetic-learning-particle-swarm-optimization-for-wind-farm-layout-optimization-considering-landowners-behavior",
+            "source": "profile-publication",
+            "title": "Level-Direction Guided Hierarchical Genetic Learning Particle Swarm Optimization for Wind Farm Layout Optimization Considering Landowners Behavior",
+            "venue": "Engineering Applications of Artificial Intelligence",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "improved-spherical-search-algorithm-with-memory-based-dynamic-population-for-optimization",
+            "source": "profile-publication",
+            "title": "Improved spherical search algorithm with memory-based dynamic population for optimization",
+            "venue": "The Journal of Supercomputing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://link.springer.com/article/10.1007/s11227-025-07095-z",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-memory-guided-population-stage-wise-control-for-bound-constrained-global-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with memory-guided population stage-wise control for bound-constrained global optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2024,
+            "citationCount": 13,
+            "url": "https://doi.org/10.1016/j.asoc.2024.111677",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-efficient-reconstructed-differential-evolution-variant-by-some-of-the-current-state-of-the-art-strategies-for-solving-single-objective-bound-constrained-problems",
+            "source": "profile-publication",
+            "title": "An Efficient Reconstructed Differential Evolution Variant by Some of the Current State-of-the-art Strategies for Solving Single Objective Bound Constrained Problems",
+            "venue": "arXiv",
+            "year": 2024,
+            "citationCount": 12,
+            "url": "https://doi.org/10.48550/arXiv.2404.16280",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "competitive-elimination-improved-differential-evolution-for-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "Competitive Elimination Improved Differential Evolution for Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2227-7390/12/23/3762",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-multi-local-search-based-shade-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A Multi-Local Search-Based SHADE for Wind Farm Layout Optimization",
+            "venue": "Electronics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2079-9292/13/16/3196",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "improving-the-music-harmony-search-using-a-differential-exploration-phase-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "Improving the Music Harmony Search Using a Differential Exploration Phase for Solving Bound Constrained Optimization Problems",
+            "venue": "2024 IEEE 7th Information Technology, Networking, Electronic and Automation Control Conference (ITNEC)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/ITNEC60942.2024.10733307",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-differential-search-integrated-music-harmony-search-algorithm-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Differential Search Integrated Music Harmony Search Algorithm for Solving Bound Constrained Optimization Problems",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686524",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-adaptive-population-control-for-global-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with adaptive population control for global continuous optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2023,
+            "citationCount": 39,
+            "url": "https://doi.org/10.1016/j.asoc.2022.109845",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "hierarchical-manta-ray-foraging-optimization-with-weighted-fitness-distance-balance-selection",
+            "source": "profile-publication",
+            "title": "Hierarchical Manta Ray Foraging Optimization with Weighted Fitness-Distance Balance Selection",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2023,
+            "citationCount": 17,
+            "url": "https://link.springer.com/article/10.1007/s44196-023-00289-4",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "dynamic-complex-network-exploring-differential-evolution-algorithms-from-another-perspective",
+            "source": "profile-publication",
+            "title": "Dynamic Complex Network, Exploring Differential Evolution Algorithms from Another Perspective",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 6,
+            "url": "https://www.mdpi.com/2227-7390/11/13/2979",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-adaptive-dimension-weighting-spherical-evolution-to-solve-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "An Adaptive Dimension Weighting Spherical Evolution to Solve Continuous Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3733",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "chaotic-wind-driven-optimization-with-fitness-distance-balance-strategy",
+            "source": "profile-publication",
+            "title": "Chaotic Wind Driven Optimization with Fitness Distance Balance Strategy",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2022,
+            "citationCount": 19,
+            "url": "https://link.springer.com/article/10.1007/s44196-022-00099-0",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "paidde-a-permutation-archive-information-directed-differential-evolution-algorithm",
+            "source": "profile-publication",
+            "title": "PAIDDE: A Permutation-Archive Information Directed Differential Evolution Algorithm",
+            "venue": "IEEE Access",
+            "year": 2022,
+            "citationCount": 17,
+            "url": "https://doi.org/10.1109/ACCESS.2022.3173622",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "hierarchical-water-wave-optimization",
+            "source": "profile-publication",
+            "title": "Hierarchical Water Wave Optimization",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 3,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004174",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-optimal-parent-crossover-based-differential-evolution",
+            "source": "profile-publication",
+            "title": "An Optimal-Parent-Crossover based Differential Evolution",
+            "venue": "ISCID 2022",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID56505.2022.00068",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-immigration-strategy-based-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "An Immigration Strategy-based Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004149",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-population-resource-allocation-based-adaptive-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "A Population Resource Allocation-based Adaptive Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004116",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "fitness-distance-balance-with-functional-weights-a-new-selection-method-for-evolutionary-algorithms",
+            "source": "profile-publication",
+            "title": "Fitness-Distance Balance with Functional Weights: A New Selection Method for Evolutionary Algorithms",
+            "venue": "IEICE Transactions on Information and Systems",
+            "year": 2021,
+            "citationCount": 12,
+            "url": "https://www.jstage.jst.go.jp/article/transinf/E104.D/10/E104.D_2021EDL8033/_article",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-state-of-the-art-differential-evolution-algorithm-for-parameter-estimation-of-solar-photovoltaic-models",
+            "source": "profile-publication",
+            "title": "A state-of-the-art differential evolution algorithm for parameter estimation of solar photovoltaic models",
+            "venue": "Energy Conversion and Management",
+            "year": 2021,
+            "citationCount": 281,
+            "url": "https://doi.org/10.1016/j.enconman.2020.113784",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-optimization-algorithm-inherited-from-gravitational-and-spherical-search-dynamics",
+            "source": "profile-publication",
+            "title": "A Novel Optimization Algorithm Inherited From Gravitational and Spherical Search Dynamics",
+            "venue": "ISCID 2020",
+            "year": 2020,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID51228.2020.00027",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-hybrid-spherical-search-and-moth-flame-optimization-algorithm",
+            "source": "profile-publication",
+            "title": "A Hybrid Spherical Search and Moth-flame optimization Algorithm",
+            "venue": "IHMSC 2020",
+            "year": 2020,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/IHMSC49165.2020.00054",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "optimization-for-real-engineering",
+      "title": {
+        "en": "Optimization for real engineering",
+        "zh": "面向真实工程的优化",
+        "ja": "実工学に向けた最適化"
+      },
+      "thesis": {
+        "en": "Track optimization work that survives contact with engineering constraints, deployment reality, and difficult objectives.",
+        "zh": "跟踪那些经得起工程约束、真实部署场景和复杂目标考验的优化研究。",
+        "ja": "工学的制約、実運用、難しい目的関数に耐える最適化研究を追跡する。"
+      },
+      "whyNow": {
+        "en": "This direction best matches the largest publication base and is still a reliable source of both classic and frontier papers.",
+        "zh": "这条线与现有发表基础最强匹配，同时也是经典论文与前沿论文都稳定出现的方向。",
+        "ja": "この方向は既存の発表基盤と最も強く一致し、古典的論文と最前線論文の両方が安定して現れる。"
+      },
+      "promptSeed": {
+        "en": "Prioritize highest-quality optimization papers with strong engineering validation, not only benchmark gains.",
+        "zh": "优先寻找具有扎实工程验证、而不只是 benchmark 提升的高质量优化论文。",
+        "ja": "ベンチマーク改善だけでなく、強い工学的検証を持つ高品質な最適化論文を優先する。"
+      },
+      "priority": 100,
+      "scores": {
+        "alignment": 100,
+        "momentum": 100,
+        "quality": 100
+      },
+      "counts": {
+        "foundation": 30,
+        "frontier": 7,
+        "bridge": 30,
+        "total": 37
+      },
+      "keywords": [
+        "optimization",
+        "differential evolution",
+        "wind farm",
+        "layout",
+        "multi objective",
+        "constrained",
+        "engineering",
+        "metaheuristic"
+      ],
+      "venues": [
+        "Mathematics",
+        "Applied Soft Computing",
+        "ICNSC 2022",
+        "Information Sciences",
+        "IEEE Access",
+        "Engineering Applications of Artificial Intelligence",
+        "International Journal of Computational Intelligence Systems",
+        "Swarm and Evolutionary Computation"
+      ],
+      "teams": [
+        {
+          "name": "Julian Blank",
+          "strength": "multiobjective toolchains",
+          "url": "https://openalex.org/A5047107500"
+        },
+        {
+          "name": "Kalyanmoy Deb",
+          "strength": "multiobjective foundations",
+          "url": "https://openalex.org/A5088394271"
+        },
+        {
+          "name": "Ran Cheng",
+          "strength": "GPU-native EC systems",
+          "url": "https://chengran.tech/"
+        }
+      ],
+      "signals": [
+        {
+          "en": "7 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 7 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 7 件の関連最前線論文が見えている。"
+        },
+        {
+          "en": "30 retained publications provide immediate historical grounding.",
+          "zh": "30 篇已保留发表可提供即时历史基础。",
+          "ja": "30 件の保持済み発表が即時の歴史的土台を与える。"
+        },
+        {
+          "en": "3 tracked teams or researchers strengthen this direction.",
+          "zh": "3 个跟踪团队或研究者强化了这个方向。",
+          "ja": "3 件の追跡チームまたは研究者がこの方向を強めている。"
+        }
+      ],
+      "readingLanes": {
+        "foundation": [
+          {
+            "id": "a-state-of-the-art-differential-evolution-algorithm-for-parameter-estimation-of-solar-photovoltaic-models",
+            "source": "profile-publication",
+            "title": "A state-of-the-art differential evolution algorithm for parameter estimation of solar photovoltaic models",
+            "venue": "Energy Conversion and Management",
+            "year": 2021,
+            "citationCount": 281,
+            "url": "https://doi.org/10.1016/j.enconman.2020.113784",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-adaptive-population-control-for-global-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with adaptive population control for global continuous optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2023,
+            "citationCount": 39,
+            "url": "https://doi.org/10.1016/j.asoc.2022.109845",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "chaotic-wind-driven-optimization-with-fitness-distance-balance-strategy",
+            "source": "profile-publication",
+            "title": "Chaotic Wind Driven Optimization with Fitness Distance Balance Strategy",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2022,
+            "citationCount": 19,
+            "url": "https://link.springer.com/article/10.1007/s44196-022-00099-0",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "hierarchical-manta-ray-foraging-optimization-with-weighted-fitness-distance-balance-selection",
+            "source": "profile-publication",
+            "title": "Hierarchical Manta Ray Foraging Optimization with Weighted Fitness-Distance Balance Selection",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2023,
+            "citationCount": 17,
+            "url": "https://link.springer.com/article/10.1007/s44196-023-00289-4",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "paidde-a-permutation-archive-information-directed-differential-evolution-algorithm",
+            "source": "profile-publication",
+            "title": "PAIDDE: A Permutation-Archive Information Directed Differential Evolution Algorithm",
+            "venue": "IEEE Access",
+            "year": 2022,
+            "citationCount": 17,
+            "url": "https://doi.org/10.1109/ACCESS.2022.3173622",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-memory-guided-population-stage-wise-control-for-bound-constrained-global-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with memory-guided population stage-wise control for bound-constrained global optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2024,
+            "citationCount": 13,
+            "url": "https://doi.org/10.1016/j.asoc.2024.111677",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-efficient-reconstructed-differential-evolution-variant-by-some-of-the-current-state-of-the-art-strategies-for-solving-single-objective-bound-constrained-problems",
+            "source": "profile-publication",
+            "title": "An Efficient Reconstructed Differential Evolution Variant by Some of the Current State-of-the-art Strategies for Solving Single Objective Bound Constrained Problems",
+            "venue": "arXiv",
+            "year": 2024,
+            "citationCount": 12,
+            "url": "https://doi.org/10.48550/arXiv.2404.16280",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "fitness-distance-balance-with-functional-weights-a-new-selection-method-for-evolutionary-algorithms",
+            "source": "profile-publication",
+            "title": "Fitness-Distance Balance with Functional Weights: A New Selection Method for Evolutionary Algorithms",
+            "venue": "IEICE Transactions on Information and Systems",
+            "year": 2021,
+            "citationCount": 12,
+            "url": "https://www.jstage.jst.go.jp/article/transinf/E104.D/10/E104.D_2021EDL8033/_article",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-state-of-the-art-fractional-order-driven-differential-evolution-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A State-of-the-Art Fractional Order-Driven Differential Evolution for Wind Farm Layout Optimization",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 8,
+            "url": "https://www.mdpi.com/2227-7390/13/2/282",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "dynamic-complex-network-exploring-differential-evolution-algorithms-from-another-perspective",
+            "source": "profile-publication",
+            "title": "Dynamic Complex Network, Exploring Differential Evolution Algorithms from Another Perspective",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 6,
+            "url": "https://www.mdpi.com/2227-7390/11/13/2979",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "competitive-elimination-improved-differential-evolution-for-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "Competitive Elimination Improved Differential Evolution for Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2227-7390/12/23/3762",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-multi-local-search-based-shade-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A Multi-Local Search-Based SHADE for Wind Farm Layout Optimization",
+            "venue": "Electronics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2079-9292/13/16/3196",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "hierarchical-water-wave-optimization",
+            "source": "profile-publication",
+            "title": "Hierarchical Water Wave Optimization",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 3,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004174",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "human-centric-assembly-planning-framework-for-human-robot-collaborative-systems-with-efficient-reinforcement-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-centric assembly planning framework for human–robot collaborative systems with efficient reinforcement self-learning multi-objective evolutionary optimizer",
+            "venue": "Advanced Engineering Informatics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1016/j.aei.2025.103508",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-detection-and-replacement-based-order-operator-for-differential-evolution-in-solving-complex-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Novel Detection-and-Replacement-Based Order-Operator for Differential Evolution in Solving Complex Bound Constrained Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/13/9/1389",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-optimal-parent-crossover-based-differential-evolution",
+            "source": "profile-publication",
+            "title": "An Optimal-Parent-Crossover based Differential Evolution",
+            "venue": "ISCID 2022",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID56505.2022.00068",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-optimization-algorithm-inherited-from-gravitational-and-spherical-search-dynamics",
+            "source": "profile-publication",
+            "title": "A Novel Optimization Algorithm Inherited From Gravitational and Spherical Search Dynamics",
+            "venue": "ISCID 2020",
+            "year": 2020,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID51228.2020.00027",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-adaptive-dimension-weighting-spherical-evolution-to-solve-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "An Adaptive Dimension Weighting Spherical Evolution to Solve Continuous Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3733",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-immigration-strategy-based-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "An Immigration Strategy-based Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004149",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-population-resource-allocation-based-adaptive-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "A Population Resource Allocation-based Adaptive Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004116",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-hybrid-spherical-search-and-moth-flame-optimization-algorithm",
+            "source": "profile-publication",
+            "title": "A Hybrid Spherical Search and Moth-flame optimization Algorithm",
+            "venue": "IHMSC 2020",
+            "year": 2020,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/IHMSC49165.2020.00054",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "adversarial-game-optimization-a-game-theoretic-metaheuristic-for-efficient-complex-optimization-and-engineering-applications",
+            "source": "profile-publication",
+            "title": "Adversarial game optimization: A game-theoretic metaheuristic for efficient complex optimization and engineering applications",
+            "venue": "Information Sciences",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.ins.2025.123022",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "unleashing-the-inherent-potential-of-differential-evolution-using-nonlinear-population-size-reduction-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "Unleashing the Inherent Potential of Differential Evolution Using Nonlinear Population Size Reduction for Wind Farm Layout Optimization",
+            "venue": "IEEE Access",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeeaccess.ieee.org/",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "level-direction-guided-hierarchical-genetic-learning-particle-swarm-optimization-for-wind-farm-layout-optimization-considering-landowners-behavior",
+            "source": "profile-publication",
+            "title": "Level-Direction Guided Hierarchical Genetic Learning Particle Swarm Optimization for Wind Farm Layout Optimization Considering Landowners Behavior",
+            "venue": "Engineering Applications of Artificial Intelligence",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-reinforcement-learning-assisted-fractional-order-differential-evolution-for-solving-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Reinforcement Learning-Assisted Fractional-Order Differential Evolution for Solving Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2227-7390/13/18/2935",
+            "tags": [
+              "Optimization",
+              "Wind Farm",
+              "Reinforcement Learning"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "human-robot-collaborative-resource-and-task-planning-for-assembly-systems-with-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-robot Collaborative Resource and Task Planning for Assembly Systems with Self-learning Multi-objective Evolutionary Optimizer",
+            "venue": "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/RCAR65431.2025.11139773",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "improved-spherical-search-algorithm-with-memory-based-dynamic-population-for-optimization",
+            "source": "profile-publication",
+            "title": "Improved spherical search algorithm with memory-based dynamic population for optimization",
+            "venue": "The Journal of Supercomputing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://link.springer.com/article/10.1007/s11227-025-07095-z",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "gpu-cuda-accelerated-gradient-growth-optimizer-for-efficient-complex-numerical-global-optimization",
+            "source": "profile-publication",
+            "title": "GPU/CUDA-Accelerated Gradient Growth Optimizer for Efficient Complex Numerical Global Optimization",
+            "venue": "Parallel Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.parco.2025.103160",
+            "tags": [
+              "Optimization",
+              "HPC"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "improving-the-music-harmony-search-using-a-differential-exploration-phase-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "Improving the Music Harmony Search Using a Differential Exploration Phase for Solving Bound Constrained Optimization Problems",
+            "venue": "2024 IEEE 7th Information Technology, Networking, Electronic and Automation Control Conference (ITNEC)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/ITNEC60942.2024.10733307",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-differential-search-integrated-music-harmony-search-algorithm-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Differential Search Integrated Music Harmony Search Algorithm for Solving Bound Constrained Optimization Problems",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686524",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          }
+        ],
+        "frontier": [
+          {
+            "id": "evolutionary-computation-ran-cheng-W4416548789",
+            "source": "frontier-paper",
+            "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11396036/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414444197",
+            "source": "frontier-paper",
+            "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+            "venue": "Swarm and Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4413243632",
+            "source": "frontier-paper",
+            "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+            "year": 2025,
+            "citationCount": 1,
+            "url": "https://dl.acm.org/doi/10.1145/3750053",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4409486142",
+            "source": "frontier-paper",
+            "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+            "year": 2025,
+            "citationCount": 1,
+            "url": "https://dl.acm.org/doi/10.1145/3730406",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
+            "source": "frontier-paper",
+            "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+            "venue": "Swarm and Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4411600078",
+            "source": "frontier-paper",
+            "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+            "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11043108/",
+            "tags": [
+              "monitor",
+              "conference"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+            "source": "frontier-paper",
+            "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+            "venue": "Expert Systems with Applications",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          }
+        ],
+        "bridge": [
+          {
+            "id": "adversarial-game-optimization-a-game-theoretic-metaheuristic-for-efficient-complex-optimization-and-engineering-applications",
+            "source": "profile-publication",
+            "title": "Adversarial game optimization: A game-theoretic metaheuristic for efficient complex optimization and engineering applications",
+            "venue": "Information Sciences",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.ins.2025.123022",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-state-of-the-art-fractional-order-driven-differential-evolution-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A State-of-the-Art Fractional Order-Driven Differential Evolution for Wind Farm Layout Optimization",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 8,
+            "url": "https://www.mdpi.com/2227-7390/13/2/282",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "unleashing-the-inherent-potential-of-differential-evolution-using-nonlinear-population-size-reduction-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "Unleashing the Inherent Potential of Differential Evolution Using Nonlinear Population Size Reduction for Wind Farm Layout Optimization",
+            "venue": "IEEE Access",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeeaccess.ieee.org/",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "level-direction-guided-hierarchical-genetic-learning-particle-swarm-optimization-for-wind-farm-layout-optimization-considering-landowners-behavior",
+            "source": "profile-publication",
+            "title": "Level-Direction Guided Hierarchical Genetic Learning Particle Swarm Optimization for Wind Farm Layout Optimization Considering Landowners Behavior",
+            "venue": "Engineering Applications of Artificial Intelligence",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-reinforcement-learning-assisted-fractional-order-differential-evolution-for-solving-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Reinforcement Learning-Assisted Fractional-Order Differential Evolution for Solving Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2227-7390/13/18/2935",
+            "tags": [
+              "Optimization",
+              "Wind Farm",
+              "Reinforcement Learning"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "human-centric-assembly-planning-framework-for-human-robot-collaborative-systems-with-efficient-reinforcement-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-centric assembly planning framework for human–robot collaborative systems with efficient reinforcement self-learning multi-objective evolutionary optimizer",
+            "venue": "Advanced Engineering Informatics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1016/j.aei.2025.103508",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-detection-and-replacement-based-order-operator-for-differential-evolution-in-solving-complex-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Novel Detection-and-Replacement-Based Order-Operator for Differential Evolution in Solving Complex Bound Constrained Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/13/9/1389",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "human-robot-collaborative-resource-and-task-planning-for-assembly-systems-with-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-robot Collaborative Resource and Task Planning for Assembly Systems with Self-learning Multi-objective Evolutionary Optimizer",
+            "venue": "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/RCAR65431.2025.11139773",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "improved-spherical-search-algorithm-with-memory-based-dynamic-population-for-optimization",
+            "source": "profile-publication",
+            "title": "Improved spherical search algorithm with memory-based dynamic population for optimization",
+            "venue": "The Journal of Supercomputing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://link.springer.com/article/10.1007/s11227-025-07095-z",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "gpu-cuda-accelerated-gradient-growth-optimizer-for-efficient-complex-numerical-global-optimization",
+            "source": "profile-publication",
+            "title": "GPU/CUDA-Accelerated Gradient Growth Optimizer for Efficient Complex Numerical Global Optimization",
+            "venue": "Parallel Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.parco.2025.103160",
+            "tags": [
+              "Optimization",
+              "HPC"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "competitive-elimination-improved-differential-evolution-for-wind-farm-layout-optimization-problems",
+            "source": "profile-publication",
+            "title": "Competitive Elimination Improved Differential Evolution for Wind Farm Layout Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2227-7390/12/23/3762",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-efficient-reconstructed-differential-evolution-variant-by-some-of-the-current-state-of-the-art-strategies-for-solving-single-objective-bound-constrained-problems",
+            "source": "profile-publication",
+            "title": "An Efficient Reconstructed Differential Evolution Variant by Some of the Current State-of-the-art Strategies for Solving Single Objective Bound Constrained Problems",
+            "venue": "arXiv",
+            "year": 2024,
+            "citationCount": 12,
+            "url": "https://doi.org/10.48550/arXiv.2404.16280",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-multi-local-search-based-shade-for-wind-farm-layout-optimization",
+            "source": "profile-publication",
+            "title": "A Multi-Local Search-Based SHADE for Wind Farm Layout Optimization",
+            "venue": "Electronics",
+            "year": 2024,
+            "citationCount": 3,
+            "url": "https://www.mdpi.com/2079-9292/13/16/3196",
+            "tags": [
+              "Optimization",
+              "Wind Farm"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-memory-guided-population-stage-wise-control-for-bound-constrained-global-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with memory-guided population stage-wise control for bound-constrained global optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2024,
+            "citationCount": 13,
+            "url": "https://doi.org/10.1016/j.asoc.2024.111677",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "improving-the-music-harmony-search-using-a-differential-exploration-phase-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "Improving the Music Harmony Search Using a Differential Exploration Phase for Solving Bound Constrained Optimization Problems",
+            "venue": "2024 IEEE 7th Information Technology, Networking, Electronic and Automation Control Conference (ITNEC)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/ITNEC60942.2024.10733307",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-differential-search-integrated-music-harmony-search-algorithm-for-solving-bound-constrained-optimization-problems",
+            "source": "profile-publication",
+            "title": "A Differential Search Integrated Music Harmony Search Algorithm for Solving Bound Constrained Optimization Problems",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686524",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "dynamic-complex-network-exploring-differential-evolution-algorithms-from-another-perspective",
+            "source": "profile-publication",
+            "title": "Dynamic Complex Network, Exploring Differential Evolution Algorithms from Another Perspective",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 6,
+            "url": "https://www.mdpi.com/2227-7390/11/13/2979",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "spherical-search-algorithm-with-adaptive-population-control-for-global-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "Spherical search algorithm with adaptive population control for global continuous optimization problems",
+            "venue": "Applied Soft Computing",
+            "year": 2023,
+            "citationCount": 39,
+            "url": "https://doi.org/10.1016/j.asoc.2022.109845",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "hierarchical-manta-ray-foraging-optimization-with-weighted-fitness-distance-balance-selection",
+            "source": "profile-publication",
+            "title": "Hierarchical Manta Ray Foraging Optimization with Weighted Fitness-Distance Balance Selection",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2023,
+            "citationCount": 17,
+            "url": "https://link.springer.com/article/10.1007/s44196-023-00289-4",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-adaptive-dimension-weighting-spherical-evolution-to-solve-continuous-optimization-problems",
+            "source": "profile-publication",
+            "title": "An Adaptive Dimension Weighting Spherical Evolution to Solve Continuous Optimization Problems",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3733",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "paidde-a-permutation-archive-information-directed-differential-evolution-algorithm",
+            "source": "profile-publication",
+            "title": "PAIDDE: A Permutation-Archive Information Directed Differential Evolution Algorithm",
+            "venue": "IEEE Access",
+            "year": 2022,
+            "citationCount": 17,
+            "url": "https://doi.org/10.1109/ACCESS.2022.3173622",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-optimal-parent-crossover-based-differential-evolution",
+            "source": "profile-publication",
+            "title": "An Optimal-Parent-Crossover based Differential Evolution",
+            "venue": "ISCID 2022",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID56505.2022.00068",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "chaotic-wind-driven-optimization-with-fitness-distance-balance-strategy",
+            "source": "profile-publication",
+            "title": "Chaotic Wind Driven Optimization with Fitness Distance Balance Strategy",
+            "venue": "International Journal of Computational Intelligence Systems",
+            "year": 2022,
+            "citationCount": 19,
+            "url": "https://link.springer.com/article/10.1007/s44196-022-00099-0",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "hierarchical-water-wave-optimization",
+            "source": "profile-publication",
+            "title": "Hierarchical Water Wave Optimization",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 3,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004174",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-immigration-strategy-based-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "An Immigration Strategy-based Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004149",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-population-resource-allocation-based-adaptive-spherical-search-algorithm",
+            "source": "profile-publication",
+            "title": "A Population Resource Allocation-based Adaptive Spherical Search Algorithm",
+            "venue": "ICNSC 2022",
+            "year": 2022,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/ICNSC55942.2022.10004116",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-state-of-the-art-differential-evolution-algorithm-for-parameter-estimation-of-solar-photovoltaic-models",
+            "source": "profile-publication",
+            "title": "A state-of-the-art differential evolution algorithm for parameter estimation of solar photovoltaic models",
+            "venue": "Energy Conversion and Management",
+            "year": 2021,
+            "citationCount": 281,
+            "url": "https://doi.org/10.1016/j.enconman.2020.113784",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "fitness-distance-balance-with-functional-weights-a-new-selection-method-for-evolutionary-algorithms",
+            "source": "profile-publication",
+            "title": "Fitness-Distance Balance with Functional Weights: A New Selection Method for Evolutionary Algorithms",
+            "venue": "IEICE Transactions on Information and Systems",
+            "year": 2021,
+            "citationCount": 12,
+            "url": "https://www.jstage.jst.go.jp/article/transinf/E104.D/10/E104.D_2021EDL8033/_article",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-optimization-algorithm-inherited-from-gravitational-and-spherical-search-dynamics",
+            "source": "profile-publication",
+            "title": "A Novel Optimization Algorithm Inherited From Gravitational and Spherical Search Dynamics",
+            "venue": "ISCID 2020",
+            "year": 2020,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1109/ISCID51228.2020.00027",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-hybrid-spherical-search-and-moth-flame-optimization-algorithm",
+            "source": "profile-publication",
+            "title": "A Hybrid Spherical Search and Moth-flame optimization Algorithm",
+            "venue": "IHMSC 2020",
+            "year": 2020,
+            "citationCount": 1,
+            "url": "https://doi.org/10.1109/IHMSC49165.2020.00054",
+            "tags": [
+              "Optimization"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "human-robot-collaboration",
+      "title": {
+        "en": "Human-robot collaboration systems",
+        "zh": "人机协作系统",
+        "ja": "人間ロボット協調システム"
+      },
+      "thesis": {
+        "en": "Follow systems that combine planning, safety, allocation, and learning in realistic human-centered settings.",
+        "zh": "关注在真实以人为中心场景中，把规划、安全、分配与学习结合起来的系统研究。",
+        "ja": "現実の人間中心環境で、計画・安全性・割当・学習を結びつけるシステム研究を追う。"
+      },
+      "whyNow": {
+        "en": "This is a strong adjacent opportunity where optimization and learning can be converted into tangible collaborative capability.",
+        "zh": "这是一个很强的邻近机会，可以把优化与学习转化为可落地的协作能力。",
+        "ja": "これは、最適化と学習を実際の協調能力へ変換できる有力な隣接機会である。"
+      },
+      "promptSeed": {
+        "en": "Look for top human-robot collaboration papers that combine system realism, safety, and optimization-based decision making.",
+        "zh": "寻找兼顾系统真实性、安全性与基于优化决策的人机协作高质量论文。",
+        "ja": "システムの現実性、安全性、最適化ベースの意思決定を組み合わせた高品質な人間ロボット協調論文を探す。"
+      },
+      "priority": 90,
+      "scores": {
+        "alignment": 100,
+        "momentum": 78,
+        "quality": 90
+      },
+      "counts": {
+        "foundation": 4,
+        "frontier": 4,
+        "bridge": 4,
+        "total": 8
+      },
+      "keywords": [
+        "robot",
+        "human robot",
+        "assembly",
+        "planning",
+        "collaboration",
+        "self learning",
+        "task allocation",
+        "safety"
+      ],
+      "venues": [
+        "Robotics and Computer-Integrated Manufacturing",
+        "Advanced Engineering Informatics",
+        "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
+        "Applied Soft Computing",
+        "IEEE Transactions on Evolutionary Computation",
+        "Swarm and Evolutionary Computation",
+        "2025 IEEE Congress on Evolutionary Computation (CEC)",
+        "ACM Transactions on Evolutionary Learning and Optimization"
+      ],
+      "teams": [],
+      "signals": [
+        {
+          "en": "4 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 4 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 4 件の関連最前線論文が見えている。"
+        },
+        {
+          "en": "4 retained publications provide immediate historical grounding.",
+          "zh": "4 篇已保留发表可提供即时历史基础。",
+          "ja": "4 件の保持済み発表が即時の歴史的土台を与える。"
+        }
+      ],
+      "readingLanes": {
+        "foundation": [
+          {
+            "id": "safety-efficiency-integrated-assembly-the-next-stage-adaptive-task-allocation-and-planning-framework-for-human-robot-collaboration",
+            "source": "profile-publication",
+            "title": "Safety-efficiency integrated assembly: The next-stage adaptive task allocation and planning framework for human–robot collaboration",
+            "venue": "Robotics and Computer-Integrated Manufacturing",
+            "year": 2025,
+            "citationCount": 16,
+            "url": "https://www.sciencedirect.com/science/article/pii/S0736584524002291",
+            "tags": [
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "human-centric-assembly-planning-framework-for-human-robot-collaborative-systems-with-efficient-reinforcement-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-centric assembly planning framework for human–robot collaborative systems with efficient reinforcement self-learning multi-objective evolutionary optimizer",
+            "venue": "Advanced Engineering Informatics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1016/j.aei.2025.103508",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "human-robot-collaborative-resource-and-task-planning-for-assembly-systems-with-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-robot Collaborative Resource and Task Planning for Assembly Systems with Self-learning Multi-objective Evolutionary Optimizer",
+            "venue": "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/RCAR65431.2025.11139773",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "adaptive-product-family-formation-a-medoid-based-fuzzy-clustering-method-for-mixed-products-assembly-in-the-shared-human-robot-collaborative-system",
+            "source": "profile-publication",
+            "title": "Adaptive product family formation: A medoid-based fuzzy clustering method for mixed products assembly in the shared human-robot collaborative system",
+            "venue": "Applied Soft Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/applied-soft-computing",
+            "tags": [
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          }
+        ],
+        "frontier": [
+          {
+            "id": "evolutionary-computation-ran-cheng-W4416548789",
+            "source": "frontier-paper",
+            "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11396036/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4409486142",
+            "source": "frontier-paper",
+            "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+            "year": 2025,
+            "citationCount": 1,
+            "url": "https://dl.acm.org/doi/10.1145/3730406",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
+            "source": "frontier-paper",
+            "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+            "venue": "Swarm and Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4411600078",
+            "source": "frontier-paper",
+            "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+            "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11043108/",
+            "tags": [
+              "monitor",
+              "conference"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          }
+        ],
+        "bridge": [
+          {
+            "id": "safety-efficiency-integrated-assembly-the-next-stage-adaptive-task-allocation-and-planning-framework-for-human-robot-collaboration",
+            "source": "profile-publication",
+            "title": "Safety-efficiency integrated assembly: The next-stage adaptive task allocation and planning framework for human–robot collaboration",
+            "venue": "Robotics and Computer-Integrated Manufacturing",
+            "year": 2025,
+            "citationCount": 16,
+            "url": "https://www.sciencedirect.com/science/article/pii/S0736584524002291",
+            "tags": [
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "human-centric-assembly-planning-framework-for-human-robot-collaborative-systems-with-efficient-reinforcement-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-centric assembly planning framework for human–robot collaborative systems with efficient reinforcement self-learning multi-objective evolutionary optimizer",
+            "venue": "Advanced Engineering Informatics",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://doi.org/10.1016/j.aei.2025.103508",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "human-robot-collaborative-resource-and-task-planning-for-assembly-systems-with-self-learning-multi-objective-evolutionary-optimizer",
+            "source": "profile-publication",
+            "title": "Human-robot Collaborative Resource and Task Planning for Assembly Systems with Self-learning Multi-objective Evolutionary Optimizer",
+            "venue": "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1109/RCAR65431.2025.11139773",
+            "tags": [
+              "Optimization",
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "adaptive-product-family-formation-a-medoid-based-fuzzy-clustering-method-for-mixed-products-assembly-in-the-shared-human-robot-collaborative-system",
+            "source": "profile-publication",
+            "title": "Adaptive product family formation: A medoid-based fuzzy clustering method for mixed products assembly in the shared human-robot collaborative system",
+            "venue": "Applied Soft Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/applied-soft-computing",
+            "tags": [
+              "Human-Robot"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "vision-and-robust-learning",
+      "title": {
+        "en": "Vision and robust learning",
+        "zh": "视觉与鲁棒学习",
+        "ja": "ビジョンと頑健学習"
+      },
+      "thesis": {
+        "en": "Keep an eye on brain-inspired visual models and robustness work that may become transferable learning primitives.",
+        "zh": "持续关注脑启发视觉模型与鲁棒性研究，它们可能成为可迁移的学习基本模块。",
+        "ja": "脳に着想を得た視覚モデルと頑健性研究に注目し、転用可能な学習プリミティブになり得るかを見る。"
+      },
+      "whyNow": {
+        "en": "The publication base is smaller than optimization, but it offers differentiated ideas that may transfer into broader intelligent systems.",
+        "zh": "这条线的论文基数不如优化大，但其中有不少可迁移到更广泛智能系统中的差异化想法。",
+        "ja": "最適化ほど論文数は多くないが、より広い知能システムへ転用できる差別化アイデアを含んでいる。"
+      },
+      "promptSeed": {
+        "en": "Search for strong vision papers that are mechanistically insightful and robust, not only high on leaderboard metrics.",
+        "zh": "寻找那些机理上有启发且具备鲁棒性的视觉论文，而不只是榜单分数高的工作。",
+        "ja": "単なるリーダーボード性能ではなく、機構的洞察と頑健性を備えた強いビジョン論文を探す。"
+      },
+      "priority": 73,
+      "scores": {
+        "alignment": 100,
+        "momentum": 34,
+        "quality": 78
+      },
+      "counts": {
+        "foundation": 14,
+        "frontier": 0,
+        "bridge": 14,
+        "total": 14
+      },
+      "keywords": [
+        "visual",
+        "motion",
+        "neural",
+        "vision",
+        "convolutional",
+        "robustness",
+        "explainable",
+        "brain inspired"
+      ],
+      "venues": [
+        "Mathematics",
+        "Knowledge-Based Systems",
+        "Symmetry",
+        "Information Sciences",
+        "SPML 2024",
+        "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
+        "SPML 2021",
+        "Applied Intelligence"
+      ],
+      "teams": [],
+      "signals": [
+        {
+          "en": "14 retained publications provide immediate historical grounding.",
+          "zh": "14 篇已保留发表可提供即时历史基础。",
+          "ja": "14 件の保持済み発表が即時の歴史的土台を与える。"
+        }
+      ],
+      "readingLanes": {
+        "foundation": [
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 14,
+            "url": "https://www.mdpi.com/2227-7390/10/16/2975",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-color-images",
+            "source": "profile-publication",
+            "title": "A novel artificial visual system for motion direction detection in color images",
+            "venue": "Knowledge-Based Systems",
+            "year": 2024,
+            "citationCount": 8,
+            "url": "https://www.sciencedirect.com/science/article/pii/S0950705124004507",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "enhancing-convolutional-neural-network-robustness-against-image-noise-via-an-artificial-visual-system",
+            "source": "profile-publication",
+            "title": "Enhancing Convolutional Neural Network Robustness Against Image Noise via an Artificial Visual System",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/13/1/142",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-with-completely-modeled-retinal-direction-selective-pathway",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection with Completely Modeled Retinal Direction-Selective Pathway",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3732",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-bio-inspired-motion-direction-detection-mechanism-in-binary-and-grayscale-background",
+            "source": "profile-publication",
+            "title": "A Novel Bio-Inspired Motion Direction Detection Mechanism in Binary and Grayscale Background",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/10/20/3767",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "relu-neural-networks-and-their-training",
+            "source": "profile-publication",
+            "title": "ReLU Neural Networks and Their Training",
+            "venue": "Mathematics",
+            "year": 2026,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/14/1/39",
+            "tags": [
+              "Deep Learning",
+              "AI Theory"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "artificial-visual-network-with-fully-modeled-retinal-direction-selective-neural-pathway-for-motion-direction-detection-in-grayscale-scenes",
+            "source": "profile-publication",
+            "title": "Artificial Visual Network with Fully Modeled Retinal Direction-Selective Neural Pathway for Motion Direction Detection in Grayscale Scenes",
+            "venue": "Symmetry",
+            "year": 2024,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2073-8994/16/12/1592",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "the-mechanism-of-orientation-detection-based-on-artificial-visual-system-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "The Mechanism of Orientation Detection Based on Artificial Visual System for Greyscale Images",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/12/2715",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "neurophysiological-knowledge-driven-artificial-visual-system-neural-network-for-explainable-motion-direction-detection",
+            "source": "profile-publication",
+            "title": "Neurophysiological Knowledge Driven Artificial Visual System Neural Network for Explainable Motion Direction Detection",
+            "venue": "Knowledge-Based Systems",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-biologically-inspired-model-for-detecting-object-motion-direction-in-stereoscopic-vision",
+            "source": "profile-publication",
+            "title": "A Biologically Inspired Model for Detecting Object Motion Direction in Stereoscopic Vision",
+            "venue": "Symmetry",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2073-8994/17/2/162",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-artificial-visual-system-constructed-by-fully-modeled-retinal-direction-selective-networks-on-detecting-motion-direction-in-color-images",
+            "source": "profile-publication",
+            "title": "An Artificial Visual System Constructed by Fully Modeled Retinal Direction-selective Networks on Detecting Motion Direction in Color Images",
+            "venue": "Information Sciences",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/information-sciences",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-bio-inspired-model-for-object-motion-direction-and-speed-detection-against-colored-backgrounds",
+            "source": "profile-publication",
+            "title": "A bio-inspired model for object motion direction and speed detection against colored backgrounds",
+            "venue": "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1117/12.3056633",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-with-fully-modeled-retinal-direction-selectivity-ganglion-cell-pathway-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System with Fully Modeled Retinal Direction-selectivity Ganglion Cell Pathway for Motion Direction Detection in Grayscale Images",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686521",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-motion-direction-detective-mechanism-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "A Motion Direction Detective Mechanism for Greyscale Images",
+            "venue": "SPML 2021",
+            "year": 2021,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3483207.3483211",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          }
+        ],
+        "frontier": [],
+        "bridge": [
+          {
+            "id": "relu-neural-networks-and-their-training",
+            "source": "profile-publication",
+            "title": "ReLU Neural Networks and Their Training",
+            "venue": "Mathematics",
+            "year": 2026,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/14/1/39",
+            "tags": [
+              "Deep Learning",
+              "AI Theory"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "enhancing-convolutional-neural-network-robustness-against-image-noise-via-an-artificial-visual-system",
+            "source": "profile-publication",
+            "title": "Enhancing Convolutional Neural Network Robustness Against Image Noise via an Artificial Visual System",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/13/1/142",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "neurophysiological-knowledge-driven-artificial-visual-system-neural-network-for-explainable-motion-direction-detection",
+            "source": "profile-publication",
+            "title": "Neurophysiological Knowledge Driven Artificial Visual System Neural Network for Explainable Motion Direction Detection",
+            "venue": "Knowledge-Based Systems",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-biologically-inspired-model-for-detecting-object-motion-direction-in-stereoscopic-vision",
+            "source": "profile-publication",
+            "title": "A Biologically Inspired Model for Detecting Object Motion Direction in Stereoscopic Vision",
+            "venue": "Symmetry",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2073-8994/17/2/162",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-artificial-visual-system-constructed-by-fully-modeled-retinal-direction-selective-networks-on-detecting-motion-direction-in-color-images",
+            "source": "profile-publication",
+            "title": "An Artificial Visual System Constructed by Fully Modeled Retinal Direction-selective Networks on Detecting Motion Direction in Color Images",
+            "venue": "Information Sciences",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/information-sciences",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "artificial-visual-network-with-fully-modeled-retinal-direction-selective-neural-pathway-for-motion-direction-detection-in-grayscale-scenes",
+            "source": "profile-publication",
+            "title": "Artificial Visual Network with Fully Modeled Retinal Direction-Selective Neural Pathway for Motion Direction Detection in Grayscale Scenes",
+            "venue": "Symmetry",
+            "year": 2024,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2073-8994/16/12/1592",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-bio-inspired-model-for-object-motion-direction-and-speed-detection-against-colored-backgrounds",
+            "source": "profile-publication",
+            "title": "A bio-inspired model for object motion direction and speed detection against colored backgrounds",
+            "venue": "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1117/12.3056633",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-color-images",
+            "source": "profile-publication",
+            "title": "A novel artificial visual system for motion direction detection in color images",
+            "venue": "Knowledge-Based Systems",
+            "year": 2024,
+            "citationCount": 8,
+            "url": "https://www.sciencedirect.com/science/article/pii/S0950705124004507",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-with-fully-modeled-retinal-direction-selectivity-ganglion-cell-pathway-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System with Fully Modeled Retinal Direction-selectivity Ganglion Cell Pathway for Motion Direction Detection in Grayscale Images",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686521",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-with-completely-modeled-retinal-direction-selective-pathway",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection with Completely Modeled Retinal Direction-Selective Pathway",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3732",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "the-mechanism-of-orientation-detection-based-on-artificial-visual-system-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "The Mechanism of Orientation Detection Based on Artificial Visual System for Greyscale Images",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/12/2715",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 14,
+            "url": "https://www.mdpi.com/2227-7390/10/16/2975",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-bio-inspired-motion-direction-detection-mechanism-in-binary-and-grayscale-background",
+            "source": "profile-publication",
+            "title": "A Novel Bio-Inspired Motion Direction Detection Mechanism in Binary and Grayscale Background",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/10/20/3767",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-motion-direction-detective-mechanism-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "A Motion Direction Detective Mechanism for Greyscale Images",
+            "venue": "SPML 2021",
+            "year": 2021,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3483207.3483211",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "ai-for-science-and-spatiotemporal-systems",
+      "title": {
+        "en": "AI for science and spatiotemporal systems",
+        "zh": "AI for Science 与时空系统",
+        "ja": "AI for Science と時空間システム"
+      },
+      "thesis": {
+        "en": "Track directions where large-scale modeling, scientific instrumentation, and spatiotemporal prediction become real systems.",
+        "zh": "跟踪那些把大规模建模、科学工具化和时空预测做成真实系统的方向。",
+        "ja": "大規模モデリング、科学的計測基盤、時空間予測が実システムになる方向を追跡する。"
+      },
+      "whyNow": {
+        "en": "This is a high-upside expansion from current strengths toward emerging AI for science infrastructure and scientific agents.",
+        "zh": "这是从当前能力扩展到新兴 AI for Science 基础设施与科学智能体的高上限方向。",
+        "ja": "現在の強みから、新興の AI for Science 基盤や科学エージェントへ広がる高ポテンシャル方向である。"
+      },
+      "promptSeed": {
+        "en": "Expand from current publications into AI for science systems with strong data, simulation, or scientific workflow grounding.",
+        "zh": "从当前发表基础扩展到那些具备数据、仿真或科研流程支撑的 AI for Science 系统研究。",
+        "ja": "現在の発表基盤から、データ・シミュレーション・科学ワークフローに根ざした AI for Science システムへ広げる。"
+      },
+      "priority": 69,
+      "scores": {
+        "alignment": 100,
+        "momentum": 34,
+        "quality": 62
+      },
+      "counts": {
+        "foundation": 3,
+        "frontier": 0,
+        "bridge": 3,
+        "total": 3
+      },
+      "keywords": [
+        "hpc",
+        "weather",
+        "spatiotemporal",
+        "graphcast",
+        "city scale",
+        "forecasting",
+        "scientific",
+        "ai4science"
+      ],
+      "venues": [
+        "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
+        "Scientific Reports",
+        "Parallel Computing",
+        "SC Asia",
+        "Nature Machine Intelligence",
+        "NeurIPS",
+        "ICLR"
+      ],
+      "teams": [],
+      "signals": [
+        {
+          "en": "3 retained publications provide immediate historical grounding.",
+          "zh": "3 篇已保留发表可提供即时历史基础。",
+          "ja": "3 件の保持済み発表が即時の歴史的土台を与える。"
+        }
+      ],
+      "readingLanes": {
+        "foundation": [
+          {
+            "id": "ai-powered-model-for-predicting-mortality-risk-in-va-ecmo-patients-a-multicenter-cohort-study",
+            "source": "profile-publication",
+            "title": "AI-powered model for predicting mortality risk in VA-ECMO patients: a multicenter cohort study",
+            "venue": "Scientific Reports",
+            "year": 2025,
+            "citationCount": 6,
+            "url": "https://www.nature.com/articles/s41598-025-94734-3",
+            "tags": [
+              "Healthcare"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "cityscalecast-spatiotemporal-gnn-for-city-scale-weather-prediction-with-graphcast-guided-parallel-modeling-and-multi-step-forecasting-in-sendai",
+            "source": "profile-publication",
+            "title": "CityScaleCast: Spatiotemporal GNN for City-Scale Weather Prediction with GraphCast-Guided Parallel Modeling and Multi-Step Forecasting in Sendai",
+            "venue": "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3784828.3785258",
+            "tags": [
+              "HPC"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "gpu-cuda-accelerated-gradient-growth-optimizer-for-efficient-complex-numerical-global-optimization",
+            "source": "profile-publication",
+            "title": "GPU/CUDA-Accelerated Gradient Growth Optimizer for Efficient Complex Numerical Global Optimization",
+            "venue": "Parallel Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.parco.2025.103160",
+            "tags": [
+              "Optimization",
+              "HPC"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          }
+        ],
+        "frontier": [],
+        "bridge": [
+          {
+            "id": "cityscalecast-spatiotemporal-gnn-for-city-scale-weather-prediction-with-graphcast-guided-parallel-modeling-and-multi-step-forecasting-in-sendai",
+            "source": "profile-publication",
+            "title": "CityScaleCast: Spatiotemporal GNN for City-Scale Weather Prediction with GraphCast-Guided Parallel Modeling and Multi-Step Forecasting in Sendai",
+            "venue": "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3784828.3785258",
+            "tags": [
+              "HPC"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "ai-powered-model-for-predicting-mortality-risk-in-va-ecmo-patients-a-multicenter-cohort-study",
+            "source": "profile-publication",
+            "title": "AI-powered model for predicting mortality risk in VA-ECMO patients: a multicenter cohort study",
+            "venue": "Scientific Reports",
+            "year": 2025,
+            "citationCount": 6,
+            "url": "https://www.nature.com/articles/s41598-025-94734-3",
+            "tags": [
+              "Healthcare"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "gpu-cuda-accelerated-gradient-growth-optimizer-for-efficient-complex-numerical-global-optimization",
+            "source": "profile-publication",
+            "title": "GPU/CUDA-Accelerated Gradient Growth Optimizer for Efficient Complex Numerical Global Optimization",
+            "venue": "Parallel Computing",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1016/j.parco.2025.103160",
+            "tags": [
+              "Optimization",
+              "HPC"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "medical-and-trustworthy-ai",
+      "title": {
+        "en": "Medical and trustworthy AI",
+        "zh": "医疗与可信 AI",
+        "ja": "医療と信頼できる AI"
+      },
+      "thesis": {
+        "en": "Monitor healthcare directions where modeling quality, evidence quality, and real-world consequence all matter at once.",
+        "zh": "关注那些模型质量、证据质量和真实后果同时重要的医疗方向。",
+        "ja": "モデル品質、証拠品質、現実世界での影響が同時に重要となる医療方向を監視する。"
+      },
+      "whyNow": {
+        "en": "The current base is smaller, but it is strategically useful because it forces quality control and real deployment thinking.",
+        "zh": "这条线当前规模较小，但战略上很有价值，因为它迫使我们同时考虑质量控制和真实部署。",
+        "ja": "現在の規模は小さいが、品質管理と実運用を同時に考えさせるため戦略的価値が高い。"
+      },
+      "promptSeed": {
+        "en": "Search for medical AI papers with strong validation, multicenter evidence, and realistic deployment relevance.",
+        "zh": "搜索具备扎实验证、多中心证据与真实部署相关性的医疗 AI 论文。",
+        "ja": "強い検証、多施設エビデンス、実運用との関連性を持つ医療 AI 論文を探す。"
+      },
+      "priority": 58,
+      "scores": {
+        "alignment": 77,
+        "momentum": 34,
+        "quality": 58
+      },
+      "counts": {
+        "foundation": 1,
+        "frontier": 0,
+        "bridge": 1,
+        "total": 1
+      },
+      "keywords": [
+        "healthcare",
+        "mortality",
+        "cohort",
+        "risk",
+        "patient",
+        "medical"
+      ],
+      "venues": [
+        "Scientific Reports",
+        "npj Digital Medicine",
+        "JAMIA"
+      ],
+      "teams": [],
+      "signals": [
+        {
+          "en": "1 retained publications provide immediate historical grounding.",
+          "zh": "1 篇已保留发表可提供即时历史基础。",
+          "ja": "1 件の保持済み発表が即時の歴史的土台を与える。"
+        }
+      ],
+      "readingLanes": {
+        "foundation": [
+          {
+            "id": "ai-powered-model-for-predicting-mortality-risk-in-va-ecmo-patients-a-multicenter-cohort-study",
+            "source": "profile-publication",
+            "title": "AI-powered model for predicting mortality risk in VA-ECMO patients: a multicenter cohort study",
+            "venue": "Scientific Reports",
+            "year": 2025,
+            "citationCount": 6,
+            "url": "https://www.nature.com/articles/s41598-025-94734-3",
+            "tags": [
+              "Healthcare"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          }
+        ],
+        "frontier": [],
+        "bridge": [
+          {
+            "id": "ai-powered-model-for-predicting-mortality-risk-in-va-ecmo-patients-a-multicenter-cohort-study",
+            "source": "profile-publication",
+            "title": "AI-powered model for predicting mortality risk in VA-ECMO patients: a multicenter cohort study",
+            "venue": "Scientific Reports",
+            "year": 2025,
+            "citationCount": 6,
+            "url": "https://www.nature.com/articles/s41598-025-94734-3",
+            "tags": [
+              "Healthcare"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
