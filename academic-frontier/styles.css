@@ -1420,10 +1420,7 @@ body[data-lang="ja"] .hero-role {
 }
 
 .publication-title-lockup {
-  display: grid;
-  gap: 10px;
-  width: 100%;
-  min-width: 0;
+  width: max-content;
 }
 
 .section-head-main {
