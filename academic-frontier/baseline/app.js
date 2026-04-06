@@ -1,8 +1,8 @@
 const STORAGE_KEY_LANGUAGE = "sichen-homepage-locale";
 const STORAGE_KEY_LOCAL_LANGUAGE = "学术前沿-language";
-const LEGACY_STORAGE_KEY_LANGUAGE = "frontier-radar-language";
+const LEGACY_STORAGE_KEY_LANGUAGE = "academic-frontier-language";
 const STORAGE_KEY_DOMAIN = "学术前沿-domain";
-const LEGACY_STORAGE_KEY_DOMAIN = "frontier-radar-domain";
+const LEGACY_STORAGE_KEY_DOMAIN = "academic-frontier-domain";
 const STORAGE_KEY_THEME = "sichen-homepage-theme";
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
@@ -48,8 +48,8 @@ const state = {
   sortFilter: "recent",
   quickFilter: "all",
   paperQuery: "",
-  language: window.FRONTIER_RADAR_DEFAULT_LANGUAGE || "en",
-  theme: window.FRONTIER_RADAR_DEFAULT_THEME || "tohoku",
+  language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || "en",
+  theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || "tohoku",
   localArchiveIndex: {},
 };
 
@@ -959,7 +959,7 @@ function loadInitialTheme() {
   }
 
   const defaultTheme =
-    window.FRONTIER_RADAR_DEFAULT_THEME ||
+    window.ACADEMIC_FRONTIER_DEFAULT_THEME ||
     document.documentElement?.dataset?.theme ||
     "tohoku";
 
@@ -989,7 +989,7 @@ const switcherCloseTimers = new WeakMap();
 
 function currentLocale() {
   return (
-    window.FRONTIER_RADAR_DEFAULT_LANGUAGE ||
+    window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE ||
     state.language ||
     "en"
   );

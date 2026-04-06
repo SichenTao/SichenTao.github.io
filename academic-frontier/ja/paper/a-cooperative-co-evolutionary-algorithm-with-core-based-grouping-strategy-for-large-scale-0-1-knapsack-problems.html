@@ -20,7 +20,7 @@ window.ACADEMIC_FRONTIER_LOCALE_HREFS = {"en": "/academic-frontier/paper/a-coope
   var currentLocale = "ja";
   var theme = "tohoku";
   try {
-    var savedLocale = window.localStorage.getItem("sichen-homepage-locale") || window.localStorage.getItem("学术前沿-language") || window.localStorage.getItem("frontier-radar-language");
+    var savedLocale = window.localStorage.getItem("sichen-homepage-locale") || window.localStorage.getItem("academic-frontier-language") || window.localStorage.getItem("学术前沿-language");
     if (savedLocale && localeCatalog[savedLocale] && savedLocale !== currentLocale) {
       window.location.replace(localeCatalog[savedLocale]);
       return;
@@ -41,13 +41,13 @@ window.ACADEMIC_FRONTIER_LOCALE_HREFS = {"en": "/academic-frontier/paper/a-coope
   window.ACADEMIC_FRONTIER_DEFAULT_THEME = theme;
 })();
 </script>
-<link rel="stylesheet" href="/academic-frontier/styles.css?v=20260406-213227"/>
-<link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-213227"/>
-<link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-213227"/>
-<script defer src="/academic-frontier/data/frontier_data.js?v=20260406-213227"></script>
-<script defer src="/academic-frontier/data/academic_frontier_research.js?v=20260406-213227"></script>
-<script defer src="/assets/shared/homepage-shell.js?v=20260406-213227"></script>
-<script defer src="/academic-frontier/app.js?v=20260406-213227"></script>
+<link rel="stylesheet" href="/academic-frontier/styles.css?v=20260406-214106"/>
+<link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260406-214106"/>
+<link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260406-214106"/>
+<script defer src="/academic-frontier/data/frontier_data.js?v=20260406-214106"></script>
+<script defer src="/academic-frontier/data/academic_frontier_research.js?v=20260406-214106"></script>
+<script defer src="/assets/shared/homepage-shell.js?v=20260406-214106"></script>
+<script defer src="/academic-frontier/app.js?v=20260406-214106"></script>
 </head>
 <body class="is-ready" data-page="papers" data-default-language="ja">
 <div class="page-wash"></div>

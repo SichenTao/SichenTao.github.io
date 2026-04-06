@@ -1,8 +1,7 @@
-const STORAGE_KEY_LANGUAGE = "sichen-homepage-locale";
+const STORAGE_KEY_LANGUAGE = "academic-frontier-language";
 const STORAGE_KEY_LOCAL_LANGUAGE = "学术前沿-language";
-const LEGACY_STORAGE_KEY_LANGUAGE = "frontier-radar-language";
-const STORAGE_KEY_DOMAIN = "学术前沿-domain";
-const LEGACY_STORAGE_KEY_DOMAIN = "frontier-radar-domain";
+const STORAGE_KEY_DOMAIN = "academic-frontier-domain";
+const STORAGE_KEY_LOCAL_DOMAIN = "学术前沿-domain";
 const STORAGE_KEY_THEME = "sichen-homepage-theme";
 const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
 const PUBLIC_SITE_NAME = "学术前沿";
@@ -50,8 +49,8 @@ const state = {
   quickFilter: "all",
   paperQuery: "",
   focusPrompt: "",
-  language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || window.FRONTIER_RADAR_DEFAULT_LANGUAGE || "en",
-  theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || window.FRONTIER_RADAR_DEFAULT_THEME || "tohoku",
+  language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || "en",
+  theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || "tohoku",
   localArchiveIndex: {},
 };
 
@@ -1001,9 +1000,10 @@ const PATTERN_TRANSLATORS = [
 
 function loadInitialLanguage() {
   const saved =
+    readStoredValue("sichen-homepage-locale") ||
     readStoredValue(STORAGE_KEY_LANGUAGE) ||
     readStoredValue(STORAGE_KEY_LOCAL_LANGUAGE) ||
-    readStoredValue(LEGACY_STORAGE_KEY_LANGUAGE);
+    null;
   if (saved && UI_TEXT[saved]) {
     return saved;
   }
@@ -1037,7 +1037,6 @@ function loadInitialTheme() {
 
   const defaultTheme =
     window.ACADEMIC_FRONTIER_DEFAULT_THEME ||
-    window.FRONTIER_RADAR_DEFAULT_THEME ||
     document.documentElement?.dataset?.theme ||
     "tohoku";
 
@@ -1069,7 +1068,6 @@ const switcherCloseTimers = new WeakMap();
 function currentLocale() {
   return (
     window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE ||
-    window.FRONTIER_RADAR_DEFAULT_LANGUAGE ||
     state.language ||
     "en"
   );
@@ -2046,7 +2044,7 @@ function markCurrentPage() {
 
 function chooseDefaultDomain() {
   const data = domainData();
-  const saved = readStoredValue(STORAGE_KEY_DOMAIN) || readStoredValue(LEGACY_STORAGE_KEY_DOMAIN);
+  const saved = readStoredValue(STORAGE_KEY_DOMAIN) || readStoredValue(STORAGE_KEY_LOCAL_DOMAIN);
   if (saved && data.domains.some((domain) => domain.id === saved)) {
     return saved;
   }
