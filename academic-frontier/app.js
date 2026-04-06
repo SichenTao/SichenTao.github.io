@@ -174,7 +174,7 @@ const UI_TEXT = {
     themeUsstLabel: "University of Shanghai for Science and Technology",
     navOverview: "Overview",
     navPapers: "Papers",
-    navSignals: "Directions",
+    navSignals: "Investigation",
     navTeams: "Teams",
     navDownloads: "Downloads",
     navGuide: "Guide",
@@ -349,7 +349,7 @@ const UI_TEXT = {
     themeUsstLabel: "上海理工大学",
     navOverview: "概览",
     navPapers: "论文",
-    navSignals: "方向",
+    navSignals: "调查",
     navTeams: "团队",
     navDownloads: "下载",
     navGuide: "说明",
@@ -526,7 +526,7 @@ const UI_TEXT = {
     themeUsstLabel: "上海理工大学",
     navOverview: "概観",
     navPapers: "論文",
-    navSignals: "方向",
+    navSignals: "調査",
     navTeams: "チーム",
     navDownloads: "取得",
     navGuide: "ガイド",
@@ -1962,6 +1962,14 @@ function renderDirectionWorkspace() {
   if (!mount) return;
 
   const directions = adjustedDirections();
+  const seed = researchData().seedProfile || {};
+  const tokens = focusPromptTokens();
+  const seedChips = [
+    ...(seed?.keywords || []).slice(0, 5),
+    ...(seed?.methods || []).slice(0, 3),
+    ...(seed?.topPublicationTags || []).slice(0, 4),
+  ].slice(0, 12);
+
   mount.innerHTML = `<div class="section-head">
       <div>
         <p class="eyebrow">${escapeHtml(ui("directionsKicker"))}</p>
@@ -1969,9 +1977,19 @@ function renderDirectionWorkspace() {
       </div>
       <p class="section-note">${escapeHtml(ui("directionsNote"))}</p>
     </div>
-    <div class="direction-workspace-grid">
+    <div class="direction-workspace-summary">
+      <article class="focus-card">
+        <div class="subhead"><h3>${escapeHtml(ui("seedProfileTitle"))}</h3></div>
+        <div class="publication-domain-rack investigation-domain-rack">
+          <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
+          <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
+        </div>
+        <div class="chip-row compact">${seedChips.length ? seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div>
+        <div class="direction-priority-stack">${directions.slice(0, 4).map((direction) => directionScoreBar(localizeText(direction.title), direction.adjustedPriority, direction.isManualHit ? "is-strong" : "")).join("")}</div>
+        <p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 4).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ") || escapeHtml(ui("pendingMetric"))}</span></p>
+      </article>
       <aside class="focus-card focus-card-accent">
-        <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3><span class="tag is-strong">${escapeHtml(focusPromptTokens().length ? ui("focusModeManual") : ui("focusModeAuto"))}</span></div>
+        <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3><span class="tag is-strong">${escapeHtml(tokens.length ? ui("focusModeManual") : ui("focusModeAuto"))}</span></div>
         <p class="section-note">${escapeHtml(ui("focusDeskNote"))}</p>
         <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("focusPromptLabel"))}</label>
         <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="6" placeholder="${escapeHtml(ui("focusPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
@@ -1982,10 +2000,10 @@ function renderDirectionWorkspace() {
         <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
         <div class="chip-row compact">${focusPresetMarkup()}</div>
         <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
-        <div class="chip-row compact">${focusPromptTokens().length ? focusPromptTokens().map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
+        <div class="chip-row compact">${tokens.length ? tokens.map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
       </aside>
-      <div class="direction-card-grid">${directions.map((direction) => directionCardMarkup(direction, { detailed: true })).join("")}</div>
-    </div>`;
+    </div>
+    <div class="direction-card-grid direction-card-grid-workspace">${directions.map((direction) => directionCardMarkup(direction, { detailed: true })).join("")}</div>`;
 }
 
 function papersForDomain(domainId = state.activeDomainId) {
@@ -2908,17 +2926,19 @@ function renderRecordNav() {
 }
 
 function renderDomainSwitcher() {
-  const switcher = byId("domainSwitcher");
-  if (!switcher) return;
-  switcher.innerHTML = "";
+  const switchers = [...document.querySelectorAll("[data-domain-switcher='true']")];
+  if (!switchers.length) return;
 
-  domainData().domains.forEach((domain) => {
-    const button = el("button", `chip${domain.id === state.activeDomainId ? " is-active" : ""}`, localizeText(domain.name));
-    button.type = "button";
-    button.setAttribute("role", "tab");
-    button.setAttribute("aria-selected", String(domain.id === state.activeDomainId));
-    button.addEventListener("click", () => setActiveDomain(domain.id));
-    switcher.appendChild(button);
+  switchers.forEach((switcher) => {
+    switcher.innerHTML = "";
+    domainData().domains.forEach((domain) => {
+      const button = el("button", `chip${domain.id === state.activeDomainId ? " is-active" : ""}`, localizeText(domain.name));
+      button.type = "button";
+      button.setAttribute("role", "tab");
+      button.setAttribute("aria-selected", String(domain.id === state.activeDomainId));
+      button.addEventListener("click", () => setActiveDomain(domain.id));
+      switcher.appendChild(button);
+    });
   });
 }
 
@@ -3731,6 +3751,7 @@ function bindFocusDesk() {
       writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
       renderDirectionCockpit();
       renderDirectionWorkspace();
+      renderDomainSwitcher();
       return;
     }
 
@@ -3741,6 +3762,7 @@ function bindFocusDesk() {
       writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
       renderDirectionCockpit();
       renderDirectionWorkspace();
+      renderDomainSwitcher();
       return;
     }
 
@@ -3750,6 +3772,7 @@ function bindFocusDesk() {
       writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, "");
       renderDirectionCockpit();
       renderDirectionWorkspace();
+      renderDomainSwitcher();
     }
   });
 }
@@ -3870,10 +3893,10 @@ function renderAll() {
     renderThemeSwitcher();
     applyTheme(state.theme, false);
     renderHero();
-    renderDomainSwitcher();
-    renderDomainFocus();
     renderDirectionCockpit();
     renderDirectionWorkspace();
+    renderDomainSwitcher();
+    renderDomainFocus();
     renderPaperControls();
     renderPapers();
     renderTrends();
