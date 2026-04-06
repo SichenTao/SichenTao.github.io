@@ -1,14 +1,14 @@
 window.KAKENHI_PORTAL_DATA = {
   "site": {
     "title": "JSPS KAKENHI Grant Portal",
-    "snapshot_date": "2026-04-03",
-    "generated_at": "2026-04-03T16:59:54+09:00"
+    "snapshot_date": "2026-04-07",
+    "generated_at": "2026-04-07T00:57:26+09:00"
   },
   "overview": {
-    "snapshot_date": "2026-04-03",
-    "open_program_count": 1,
-    "priority_program_count": 2,
-    "form_count": 2,
+    "snapshot_date": "2026-04-07",
+    "open_program_count": 2,
+    "priority_program_count": 14,
+    "form_count": 23,
     "next_deadline": {
       "id": "startup_support-deadline",
       "program_id": "startup_support",
@@ -48,9 +48,9 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": true,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
-      "snapshot_path": "external/jsps/2026-04-03/startup_support.html",
+      "snapshot_path": "external/jsps/2026-04-07/22_startup_support__download.html",
       "page_headline": "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について",
-      "page_last_updated": "2026-03-01 10:00:07",
+      "page_last_updated": "2026-04-03 17:00:07",
       "status": "open",
       "notice_date": {
         "raw": "2026年3月1日",
@@ -89,6 +89,8 @@ window.KAKENHI_PORTAL_DATA = {
         "The electronic application system has been available since 2026-03-19, but unresolved e-Rad eligibility can still delay submission readiness.",
         "The English application procedures, web-entry guidance, and S-22 materials are still marked as in preparation in the current snapshot."
       ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/22_startup_support__index.html",
       "key_links": [
         {
           "label": "官方页面",
@@ -101,7 +103,7 @@ window.KAKENHI_PORTAL_DATA = {
           "label": "本地快照",
           "label_ja": "ローカルスナップショット",
           "label_en": "Local snapshot",
-          "href": "external/jsps/2026-04-03/startup_support.html",
+          "href": "external/jsps/2026-04-07/22_startup_support__download.html",
           "kind": "snapshot"
         },
         {
@@ -119,6 +121,20 @@ window.KAKENHI_PORTAL_DATA = {
           "kind": "faq"
         },
         {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/22_startup_support__index.html",
+          "kind": "snapshot"
+        },
+        {
           "label": "英文页面",
           "label_ja": "英語ページ",
           "label_en": "English page",
@@ -128,7 +144,7 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "featured_documents": [
         {
-          "title": "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,207KB)",
+          "title": "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,158KB)",
           "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_koubotsuchi.pdf",
           "kind": "file",
           "section": "公募通知"
@@ -162,12 +178,6 @@ window.KAKENHI_PORTAL_DATA = {
           "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22.docx",
           "kind": "file",
           "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
-        },
-        {
-          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（日本語 ）(PDF/382KB)",
-          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_yoryo.pdf",
-          "kind": "file",
-          "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
         }
       ],
       "documents": [
@@ -178,7 +188,7 @@ window.KAKENHI_PORTAL_DATA = {
           "section": "公募期間"
         },
         {
-          "title": "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,207KB)",
+          "title": "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,158KB)",
           "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_koubotsuchi.pdf",
           "kind": "file",
           "section": "公募通知"
@@ -192,6 +202,18 @@ window.KAKENHI_PORTAL_DATA = {
         {
           "title": "公募要領 別冊（応募書類の様式・記入要領）（日本語 Japanese）(PDF/5,657KB)",
           "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_bessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "公募要領 Application Procedures（英語 English）（PDF/2,052KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_koubo_e.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "公募要領 別冊（応募書類の様式・記入要領）（英語 English）（PDF/5,084 KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_bessatsu_e.pdf",
           "kind": "file",
           "section": "公募要領 Application Procedures"
         },
@@ -208,8 +230,20 @@ window.KAKENHI_PORTAL_DATA = {
           "section": "1. 研究計画調書（Web入力項目） Application Forms (items to be entered in the Website)"
         },
         {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)（英語 English）（PDF/361KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_webyoryo_e.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目） Application Forms (items to be entered in the Website)"
+        },
+        {
           "title": "S-22（日本語 Japanese）(Word/45KB)",
           "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "S-22（英語 English）（Word/45KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22_e.docx",
           "kind": "file",
           "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
         },
@@ -220,8 +254,20 @@ window.KAKENHI_PORTAL_DATA = {
           "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
         },
         {
+          "title": "S-22（英語 English）（PDF版）（PDF/520KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
           "title": "研究計画調書（添付ファイル項目）の作成・記入要領（日本語 ）(PDF/382KB)",
           "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_yoryo.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded)（English）（PDF/195KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_yoryo_e.pdf",
           "kind": "file",
           "section": "研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
         }
@@ -240,7 +286,9 @@ window.KAKENHI_PORTAL_DATA = {
           "row_texts": [
             "添付ファイル項目 forms to be uploaded S-22",
             "S-22（日本語 Japanese）(Word/45KB)",
-            "S-22（日本語 Japanese）（PDF版）(PDF/286KB)"
+            "S-22（英語 English）（Word/45KB）",
+            "S-22（日本語 Japanese）（PDF版）(PDF/286KB)",
+            "S-22（英語 English）（PDF版）（PDF/520KB）"
           ],
           "links": [
             {
@@ -249,8 +297,18 @@ window.KAKENHI_PORTAL_DATA = {
               "kind": "file"
             },
             {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22_e.docx",
+              "title": "S-22（英語 English）（Word/45KB）",
+              "kind": "file"
+            },
+            {
               "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22.pdf",
               "title": "S-22（日本語 Japanese）（PDF版）(PDF/286KB)",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22_e.pdf",
+              "title": "S-22（英語 English）（PDF版）（PDF/520KB）",
               "kind": "file"
             }
           ]
@@ -259,8 +317,8 @@ window.KAKENHI_PORTAL_DATA = {
       "form_codes": [
         "S-22"
       ],
-      "resource_count": 12,
-      "document_count": 9,
+      "resource_count": 18,
+      "document_count": 15,
       "form_count": 1,
       "search_terms": [
         "研究活動スタート支援",
@@ -287,7 +345,7 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": true,
       "theme": "tohoku",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-03/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
       "page_headline": "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
       "page_last_updated": "2025-09-18 11:35:30",
       "status": "closed",
@@ -328,6 +386,8 @@ window.KAKENHI_PORTAL_DATA = {
         "The shared page is where you should review the S-21 form family, the uploaded-file guidance, the review section table, and the full proposal-image examples.",
         "For the next round, keep tracking internal university deadlines, FAQ updates, and explanation-meeting materials early."
       ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html",
       "key_links": [
         {
           "label": "官方页面",
@@ -340,7 +400,7 @@ window.KAKENHI_PORTAL_DATA = {
           "label": "本地快照",
           "label_ja": "ローカルスナップショット",
           "label_en": "Local snapshot",
-          "href": "external/jsps/2026-04-03/kiban.html",
+          "href": "external/jsps/2026-04-07/02_koubo__kiban.html",
           "kind": "snapshot"
         },
         {
@@ -356,6 +416,20 @@ window.KAKENHI_PORTAL_DATA = {
           "label_en": "KAKENHI FAQ",
           "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
           "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/03_keikaku__index.html",
+          "kind": "snapshot"
         },
         {
           "label": "e-Rad",
@@ -415,30 +489,6 @@ window.KAKENHI_PORTAL_DATA = {
           "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/review_section_table.pdf",
           "kind": "file",
           "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
-        },
-        {
-          "title": "研究計画調書（Web入力項目）の作成・入力要領（基盤研究（Ａ・Ｂ・Ｃ）、挑戦的研究（開拓・萌芽）、若手研究）（PDF/589KB）",
-          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/web_yoryo_kiban.pdf",
-          "kind": "file",
-          "section": "1. 研究計画調書（Web入力項目）"
-        },
-        {
-          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（基盤研究（Ａ・Ｂ・Ｃ）、若手研究）（PDF/331KB）",
-          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kiban_abc_wakate.pdf",
-          "kind": "file",
-          "section": "研究計画調書（添付ファイル項目）"
-        },
-        {
-          "title": "様式Ｓ-21（Word/45KB）",
-          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21.docx",
-          "kind": "file",
-          "section": "研究計画調書（添付ファイル項目）"
-        },
-        {
-          "title": "全体イメージ（PDF/1,337KB）",
-          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_a.pdf",
-          "kind": "file",
-          "section": "研究計画調書の全体イメージ（ダウンロード）"
         }
       ],
       "documents": [
@@ -854,7 +904,7 @@ window.KAKENHI_PORTAL_DATA = {
       "forms": [
         {
           "form_number": "S-21",
-          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）、挑戦的研究、若手研究",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
           "family_names": [
             "若手研究"
           ],
@@ -917,9 +967,5318 @@ window.KAKENHI_PORTAL_DATA = {
         "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
         "S-21"
       ]
+    },
+    {
+      "id": "independent_base_building_support",
+      "source_name": "dokuritsu_kiban",
+      "title": "独立基盤形成支援（試行）",
+      "title_ja": "独立基盤形成支援（試行）",
+      "title_zh": "独立基盘形成支援（试行）",
+      "title_en": "Independent Research Base Building Support (Pilot)",
+      "family_title": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
+      "family_title_ja": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
+      "family_title_zh": "“基盘研究（C）”与“青年研究”中的独立基盘形成支援（试行）",
+      "family_title_en": "Independent Research Base Building Support (Pilot) for Scientific Research (C) and Early-Career Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "toyama",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
+      "snapshot_path": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
+      "page_headline": "令和８(2026)年度「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）の公募について",
+      "page_last_updated": "2026-03-23 14:00:31",
+      "status": "open",
+      "notice_date": null,
+      "call_period": {
+        "raw": "令和8(2026)年3月23日(月)~5月15日(金)午後4時30分",
+        "start_date": "2026-03-23",
+        "deadline_date": "2026-05-15",
+        "deadline": "2026-05-15T16:30:00+09:00"
+      },
+      "system_available_from": null,
+      "submission_deadline": "2026-05-15",
+      "deadline_at": "2026-05-15T16:30:00+09:00",
+      "summary_ja": "独立基盤形成支援（試行）の公式公募ページです。現在の公募要領、主要様式、FAQ への導線を 1 か所で確認できます。",
+      "summary_zh": "这是 独立基盘形成支援（试行） 的官方公募页，可在这里集中核对当前公募要领、主要样式与 FAQ 入口。",
+      "summary_en": "This is the official call page for Independent Research Base Building Support (Pilot), bringing together the current application procedures, core forms, and FAQ routes.",
+      "eligibility_ja": "独立基盤形成支援（試行）を確認するときは、公募要領、関連 FAQ、主要様式（--）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 独立基盘形成支援（试行） 时，建议把公募要领、相关 FAQ 与主要样式（--）放在一起核对。",
+      "eligibility_en": "When reviewing Independent Research Base Building Support (Pilot), it is best to keep the application procedures, the related FAQ, and the main forms (--) side by side.",
+      "watchpoints_ja": [
+        "独立基盤形成支援（試行）は 2026-03-23 から 2026-05-15 16:30 JST までの公募期間が設定されており、現在は 公募中 として確認できます。",
+        "主要様式として -- を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "独立基盘形成支援（试行） 的公募期为 2026-03-23 起至 2026-05-15 16:30 JST，当前仍在公募中。",
+        "当前可直接追踪的主要样式包括 --，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Independent Research Base Building Support (Pilot) runs from 2026-03-23 to 2026-05-15 16:30 JST and is still open.",
+        "The main form family currently surfaced here includes --; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/03_keikaku__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8tsuchi_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（PDF/476KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8koubo_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "Ⅰ 公募要領（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8bessatsu_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "Ⅰ 公募要領（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））"
+        },
+        {
+          "title": "ＦＡＱ（PDF/322KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8faq_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "Ⅱ 公募に係るFAQ・提出マニュアル"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8tsuchi_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（PDF/476KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8koubo_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "Ⅰ 公募要領（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8bessatsu_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "Ⅰ 公募要領（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））"
+        },
+        {
+          "title": "ＦＡＱ（PDF/322KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8faq_dokuritsukiban.pdf",
+          "kind": "file",
+          "section": "Ⅱ 公募に係るFAQ・提出マニュアル"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 5,
+      "document_count": 4,
+      "form_count": 0,
+      "search_terms": [
+        "独立基盤形成支援（試行）",
+        "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
+        "令和８(2026)年度「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）の公募について"
+      ]
+    },
+    {
+      "id": "international_leading_research",
+      "source_name": "sendou",
+      "title": "国際共同研究加速基金（国際先導研究）",
+      "title_ja": "国際共同研究加速基金（国際先導研究）",
+      "title_zh": "国际共同研究加速基金（国际先导研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "family_title": "国際共同研究加速基金（国際先導研究）",
+      "family_title_ja": "国際共同研究加速基金（国際先導研究）",
+      "family_title_zh": "国际共同研究加速基金（国际先导研究）",
+      "family_title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "toyama",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/05_sendou__koubo.html",
+      "page_headline": "令和８(2026)年度国際共同研究加速基金（国際先導研究）の公募について",
+      "page_last_updated": "2026-03-26 17:40:05",
+      "status": "closed",
+      "notice_date": {
+        "raw": "2026年1月9日",
+        "iso": "2026-01-09"
+      },
+      "call_period": {
+        "raw": "令和8(2026)年1月9日(金)~3月13日(金)午後4時30分",
+        "start_date": "2026-01-09",
+        "deadline_date": "2026-03-13",
+        "deadline": "2026-03-13T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、1月19日(月)から利用することができます",
+        "iso": "2026-01-19"
+      },
+      "submission_deadline": "2026-03-13",
+      "deadline_at": "2026-03-13T16:30:00+09:00",
+      "summary_ja": "国際共同研究加速基金（国際先導研究）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（国际先导研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (International Leading Research) is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "国際共同研究加速基金（国際先導研究）を確認するときは、公募要領、関連 FAQ、主要様式（S-64）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 国际共同研究加速基金（国际先导研究） 时，建议把公募要领、相关 FAQ 与主要样式（S-64）放在一起核对。",
+      "eligibility_en": "When reviewing Fund for the Promotion of Joint International Research (International Leading Research), it is best to keep the application procedures, the related FAQ, and the main forms (S-64) side by side.",
+      "watchpoints_ja": [
+        "国際共同研究加速基金（国際先導研究）は 2026-01-09 から 2026-03-13 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2026-01-19 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-64 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "国际共同研究加速基金（国际先导研究） 的公募期为 2026-01-09 起至 2026-03-13 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2026-01-19 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-64，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Fund for the Promotion of Joint International Research (International Leading Research) runs from 2026-01-09 to 2026-03-13 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2026-01-19; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-64; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/05_sendou__koubo.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/35_kokusai__index.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "说明会资料",
+          "label_ja": "説明会資料",
+          "label_en": "Explanation meeting materials",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/06_jsps_info/2025/g_4341.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_applicationprocedures_j.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "公募説明会資料",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_g_4341/fy2026ks_koubosetsumei.pdf",
+          "kind": "file",
+          "section": "公募説明会"
+        },
+        {
+          "title": "国際先導研究応募について（PDF/441KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_oubokotohajime.pdf",
+          "kind": "file",
+          "section": "国際先導研究応募について・FAQ"
+        },
+        {
+          "title": "公募要領 Application Procedures（英語 English）（PDF/1,499KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_applicationprocedures_e.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "研究計画調書の全体イメージ Composition of the Research Proposal Document（日本語 Japanese）（PDF/600KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_proposal_j.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成 Composition of the Research Proposal Document"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募説明会資料",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_g_4341/fy2026ks_koubosetsumei.pdf",
+          "kind": "file",
+          "section": "公募説明会"
+        },
+        {
+          "title": "国際先導研究応募について（PDF/441KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_oubokotohajime.pdf",
+          "kind": "file",
+          "section": "国際先導研究応募について・FAQ"
+        },
+        {
+          "title": "公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_applicationprocedures_j.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "公募要領 Application Procedures（英語 English）（PDF/1,499KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_applicationprocedures_e.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "研究計画調書の全体イメージ Composition of the Research Proposal Document（日本語 Japanese）（PDF/600KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_proposal_j.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成 Composition of the Research Proposal Document"
+        },
+        {
+          "title": "研究計画調書の全体イメージ Composition of the Research Proposal Document（英語 English）（PDF/722KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_proposal_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成 Composition of the Research Proposal Document"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領 Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)（日本語 Japanese）（PDF/4,959KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_proceduresforwebsite_j.pdf",
+          "kind": "file",
+          "section": "研究計画調書（Web入力項目）の作成 Preparing and Entering a Research Proposal Document (items to be entered in the Website)"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領 Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)（英語 English）（PDF/502KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_proceduresforwebsite_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（Web入力項目）の作成 Preparing and Entering a Research Proposal Document (items to be entered in the Website)"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領 Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded)（日本語 Japanese）（PDF/299KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_proceduresforforms_j.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）の作成 Preparing and Entering a Research Proposal Document (forms to be uploaded)"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領 Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded)（英語 English）（PDF/259KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_proceduresforforms_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）の作成 Preparing and Entering a Research Proposal Document (forms to be uploaded)"
+        },
+        {
+          "title": "S-64(1) 概要 Summary of Research Proposal Document（日本語 Japanese）（Word/30KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/abs_s-64-1_j.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+        },
+        {
+          "title": "S-64(1) 概要 Summary of Research Proposal Document（英語 English）（Word/33KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/abs_s-64-1_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+        },
+        {
+          "title": "S-64(2) Framework and Significance of International Joint Research, etc.（英語 English）（Word/34KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/en_s-64-2_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+        },
+        {
+          "title": "S-64(3) Application Requirements that PI must meet and CVs（英語 English）（Word/33KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/cv_s-64-3_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+        },
+        {
+          "title": "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（日本語 Japanese）（Word/31KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/jp_s-64-4_j.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+        },
+        {
+          "title": "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（英語 English）（Word/31KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/jp_s-64-4_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+        },
+        {
+          "title": "S-64(L) Letter of Intent（英語 English）（Word/25KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/loi_s-64-L_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-64",
+          "call_name": "国際共同研究加速基金（国際先導研究）",
+          "family_names": [
+            "国際共同研究加速基金（国際先導研究）"
+          ],
+          "page_sections": [
+            "研究計画調書の構成 Composition of the Research Proposal Document",
+            "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+          ],
+          "row_texts": [
+            "添付ファイル項目（前半） forms to be uploaded S-64(1)、S-64(2)、S-64(3)、S-64(4)",
+            "添付ファイル項目（後半） forms to be uploaded S-64(L)",
+            "S-64(1) 概要 Summary of Research Proposal Document（日本語 Japanese）（Word/30KB）",
+            "S-64(1) 概要 Summary of Research Proposal Document（英語 English）（Word/33KB）",
+            "S-64(2) Framework and Significance of International Joint Research, etc.（英語 English）（Word/34KB）",
+            "S-64(3) Application Requirements that PI must meet and CVs（英語 English）（Word/33KB）",
+            "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（日本語 Japanese）（Word/31KB）",
+            "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（英語 English）（Word/31KB）",
+            "S-64(L) Letter of Intent（英語 English）（Word/25KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/abs_s-64-1_j.docx",
+              "title": "S-64(1) 概要 Summary of Research Proposal Document（日本語 Japanese）（Word/30KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/abs_s-64-1_e.docx",
+              "title": "S-64(1) 概要 Summary of Research Proposal Document（英語 English）（Word/33KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/en_s-64-2_e.docx",
+              "title": "S-64(2) Framework and Significance of International Joint Research, etc.（英語 English）（Word/34KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/cv_s-64-3_e.docx",
+              "title": "S-64(3) Application Requirements that PI must meet and CVs（英語 English）（Word/33KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/jp_s-64-4_j.docx",
+              "title": "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（日本語 Japanese）（Word/31KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/jp_s-64-4_e.docx",
+              "title": "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（英語 English）（Word/31KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/loi_s-64-L_e.docx",
+              "title": "S-64(L) Letter of Intent（英語 English）（Word/25KB）",
+              "kind": "file"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-64"
+      ],
+      "resource_count": 23,
+      "document_count": 18,
+      "form_count": 1,
+      "search_terms": [
+        "国際共同研究加速基金（国際先導研究）",
+        "国際共同研究加速基金（国際先導研究）",
+        "令和８(2026)年度国際共同研究加速基金（国際先導研究）の公募について",
+        "S-64"
+      ]
+    },
+    {
+      "id": "international_research_strengthening",
+      "source_name": "kyoka",
+      "title": "国際共同研究加速基金（国際共同研究強化）",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "family_title": "国際共同研究加速基金（国際共同研究強化）",
+      "family_title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "family_title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "family_title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "toyama",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/01_kyoka__koubo.html",
+      "page_headline": "令和７(2025)年度国際共同研究加速基金（国際共同研究強化）の公募について",
+      "page_last_updated": "2025-09-24 16:35:18",
+      "status": "closed",
+      "notice_date": null,
+      "call_period": {
+        "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
+        "start_date": "2025-07-14",
+        "deadline_date": "2025-09-17",
+        "deadline": "2025-09-17T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、7月22日(火)から利用することができます",
+        "iso": "2025-07-22"
+      },
+      "submission_deadline": "2025-09-17",
+      "deadline_at": "2025-09-17T16:30:00+09:00",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（国际共同研究强化） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (Fostering Joint International Research) is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "国際共同研究加速基金（国際共同研究強化）を確認するときは、公募要領、関連 FAQ、主要様式（S-61）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 国际共同研究加速基金（国际共同研究强化） 时，建议把公募要领、相关 FAQ 与主要样式（S-61）放在一起核对。",
+      "eligibility_en": "When reviewing Fund for the Promotion of Joint International Research (Fostering Joint International Research), it is best to keep the application procedures, the related FAQ, and the main forms (S-61) side by side.",
+      "watchpoints_ja": [
+        "国際共同研究加速基金（国際共同研究強化）は 2025-07-14 から 2025-09-17 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2025-07-22 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-61 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "国际共同研究加速基金（国际共同研究强化） 的公募期为 2025-07-14 起至 2025-09-17 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2025-07-22 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-61，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Fund for the Promotion of Joint International Research (Fostering Joint International Research) runs from 2025-07-14 to 2025-09-17 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2025-07-22; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-61; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/01_kyoka__koubo.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/35_kokusai__index.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "e-Rad",
+          "label_ja": "e-Rad",
+          "label_en": "e-Rad",
+          "href": "https://www.e-rad.go.jp/",
+          "kind": "external"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "Application Procedures（PDF/1,703KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_en_kyoka_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "国際共同研究強化の公募に係るFAQ（PDF/562KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_jp_kyoka_faq.pdf",
+          "kind": "file",
+          "section": "公募に係るＦＡＱ"
+        },
+        {
+          "title": "公募要領（日本語版）（PDF/1,394KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版)（PDF/2,681KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "Supplement (Forms / Procedures for Preparing and Entering a Research Proposal Document)（PDF/3,722KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_en_kyoka_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "国際共同研究強化の公募に係るFAQ（PDF/562KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_jp_kyoka_faq.pdf",
+          "kind": "file",
+          "section": "公募に係るＦＡＱ"
+        },
+        {
+          "title": "公募要領（日本語版）（PDF/1,394KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "Application Procedures（PDF/1,703KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_en_kyoka_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版)（PDF/2,681KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "Supplement (Forms / Procedures for Preparing and Entering a Research Proposal Document)（PDF/3,722KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_en_kyoka_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "研究計画調書全体のイメージ（PDF/445KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_webzentai.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成"
+        },
+        {
+          "title": "web入力項目（前半）（PDF/7KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_webzenhan.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成"
+        },
+        {
+          "title": "Web入力項目（後半）（PDF/7KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_webkouhan.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成"
+        },
+        {
+          "title": "令和７(2025)年度 研究計画調書 （Ｗｅｂ入力項目）（国際共同研究加速基金（国際共同研究強化））作成・入力要領（PDF/586KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_webyoryo.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "FY2025 Procedures for Preparing and Entering Application Information (to be entered in the Website)(PDF/562KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_webyoryo.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（PDF/280KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_yoryo.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-61（PDF/430KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_s-61.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-61 （Word/56KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_s-61.docx",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) （PDF/384KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_yoryo.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-61 （PDF/337KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_s-61.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-61 （Word/53KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_s-61.docx",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-61",
+          "call_name": "国際共同研究加速基金（国際共同研究強化）",
+          "family_names": [
+            "国際共同研究加速基金（国際共同研究強化）"
+          ],
+          "page_sections": [
+            "2. 研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "S-61（PDF/430KB）",
+            "S-61 （Word/56KB）",
+            "S-61 （PDF/337KB）",
+            "S-61 （Word/53KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_s-61.pdf",
+              "title": "S-61（PDF/430KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_s-61.docx",
+              "title": "S-61 （Word/56KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_s-61.pdf",
+              "title": "S-61 （PDF/337KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_s-61.docx",
+              "title": "S-61 （Word/53KB）",
+              "kind": "file"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-61"
+      ],
+      "resource_count": 21,
+      "document_count": 17,
+      "form_count": 1,
+      "search_terms": [
+        "国際共同研究加速基金（国際共同研究強化）",
+        "国際共同研究加速基金（国際共同研究強化）",
+        "令和７(2025)年度国際共同研究加速基金（国際共同研究強化）の公募について",
+        "S-61"
+      ]
+    },
+    {
+      "id": "returning_researchers_development",
+      "source_name": "kikoku",
+      "title": "国際共同研究加速基金（帰国発展研究）",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "title_zh": "国际共同研究加速基金（归国发展研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "family_title": "国際共同研究加速基金（帰国発展研究）",
+      "family_title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "family_title_zh": "国际共同研究加速基金（归国发展研究）",
+      "family_title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "toyama",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/03_kikoku__koubo.html",
+      "page_headline": "令和７(2025)年度国際共同研究加速基金（帰国発展研究）の公募について",
+      "page_last_updated": "2025-09-24 16:35:08",
+      "status": "closed",
+      "notice_date": null,
+      "call_period": {
+        "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
+        "start_date": "2025-07-14",
+        "deadline_date": "2025-09-17",
+        "deadline": "2025-09-17T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、7月22日(火)から利用することができます",
+        "iso": "2025-07-22"
+      },
+      "submission_deadline": "2025-09-17",
+      "deadline_at": "2025-09-17T16:30:00+09:00",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（归国发展研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (Returning Researcher Development) is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "国際共同研究加速基金（帰国発展研究）を確認するときは、公募要領、関連 FAQ、主要様式（S-62）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 国际共同研究加速基金（归国发展研究） 时，建议把公募要领、相关 FAQ 与主要样式（S-62）放在一起核对。",
+      "eligibility_en": "When reviewing Fund for the Promotion of Joint International Research (Returning Researcher Development), it is best to keep the application procedures, the related FAQ, and the main forms (S-62) side by side.",
+      "watchpoints_ja": [
+        "国際共同研究加速基金（帰国発展研究）は 2025-07-14 から 2025-09-17 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2025-07-22 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-62 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "国际共同研究加速基金（归国发展研究） 的公募期为 2025-07-14 起至 2025-09-17 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2025-07-22 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-62，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Fund for the Promotion of Joint International Research (Returning Researcher Development) runs from 2025-07-14 to 2025-09-17 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2025-07-22; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-62; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/03_kikoku__koubo.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/35_kokusai__index.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "e-Rad",
+          "label_ja": "e-Rad",
+          "label_en": "e-Rad",
+          "href": "https://www.e-rad.go.jp/researcher/index.html",
+          "kind": "external"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubo_faq.pdf",
+          "kind": "file",
+          "section": "公募に係るFAQ"
+        },
+        {
+          "title": "令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_poster.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領 （PDF/1,026KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領 （ダウンロード）"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（PDF/1,216KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領 （ダウンロード）"
+        },
+        {
+          "title": "令和７(2025)年度 研究計画調書 （Ｗｅｂ入力項目）（国際共同研究加速基金（帰国発展研究））作成・入力要領（PDF/352KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_webyoryo.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_poster.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubo_faq.pdf",
+          "kind": "file",
+          "section": "公募に係るFAQ"
+        },
+        {
+          "title": "公募要領 （PDF/1,026KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領 （ダウンロード）"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（PDF/1,216KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領 （ダウンロード）"
+        },
+        {
+          "title": "令和７(2025)年度 研究計画調書 （Ｗｅｂ入力項目）（国際共同研究加速基金（帰国発展研究））作成・入力要領（PDF/352KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_webyoryo.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "研究計画調書（全体）のイメージ（PDF/471KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_webzentai.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "web入力項目（前半）（PDF/5KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_webzenhan.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "Web入力項目（後半）（PDF/6KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_webkouhan.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（PDF/322KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_yoryo.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-62 様式（PDF/460KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_s-62.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-62 様式（Word/52KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_s-62.docx",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "個人情報の取扱いに係る同意書（PDF/230KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_consent_of_intent.pdf",
+          "kind": "file",
+          "section": "3. 個人情報の取扱いに係る同意書"
+        },
+        {
+          "title": "個人情報の取扱いに係る同意書（Word/21KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_consent_of_intent.docx",
+          "kind": "file",
+          "section": "3. 個人情報の取扱いに係る同意書"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-62",
+          "call_name": "国際共同研究加速基金（帰国発展研究）",
+          "family_names": [
+            "国際共同研究加速基金（帰国発展研究）"
+          ],
+          "page_sections": [
+            "2. 研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "S-62 様式（PDF/460KB）",
+            "S-62 様式（Word/52KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_s-62.pdf",
+              "title": "S-62 様式（PDF/460KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_s-62.docx",
+              "title": "S-62 様式（Word/52KB）",
+              "kind": "file"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-62"
+      ],
+      "resource_count": 19,
+      "document_count": 14,
+      "form_count": 1,
+      "search_terms": [
+        "国際共同研究加速基金（帰国発展研究）",
+        "国際共同研究加速基金（帰国発展研究）",
+        "令和７(2025)年度国際共同研究加速基金（帰国発展研究）の公募について",
+        "S-62"
+      ]
+    },
+    {
+      "id": "overseas_partnership_research",
+      "source_name": "renkei",
+      "title": "国際共同研究加速基金（海外連携研究）",
+      "title_ja": "国際共同研究加速基金（海外連携研究）",
+      "title_zh": "国际共同研究加速基金（海外联携研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "family_title": "国際共同研究加速基金（海外連携研究）",
+      "family_title_ja": "国際共同研究加速基金（海外連携研究）",
+      "family_title_zh": "国际共同研究加速基金（海外联携研究）",
+      "family_title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "toyama",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/04_renkei__koubo.html",
+      "page_headline": "国際共同研究加速基金（海外連携研究）の公募について",
+      "page_last_updated": "2025-07-14 10:00:39",
+      "status": "closed",
+      "notice_date": null,
+      "call_period": {
+        "raw": "令和6(2024)年3月1日(金)~5月9日(木)午後4時30分",
+        "start_date": "2024-03-01",
+        "deadline_date": "2024-05-09",
+        "deadline": "2024-05-09T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、3月8日(金)から利用することができます",
+        "iso": "2024-03-08"
+      },
+      "submission_deadline": "2024-05-09",
+      "deadline_at": "2024-05-09T16:30:00+09:00",
+      "summary_ja": "国際共同研究加速基金（海外連携研究）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（海外联携研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (Overseas Partnership Research) is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "国際共同研究加速基金（海外連携研究）を確認するときは、公募要領、関連 FAQ、主要様式（S-63-1, S-63-2）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 国际共同研究加速基金（海外联携研究） 时，建议把公募要领、相关 FAQ 与主要样式（S-63-1, S-63-2）放在一起核对。",
+      "eligibility_en": "When reviewing Fund for the Promotion of Joint International Research (Overseas Partnership Research), it is best to keep the application procedures, the related FAQ, and the main forms (S-63-1, S-63-2) side by side.",
+      "watchpoints_ja": [
+        "国際共同研究加速基金（海外連携研究）は 2024-03-01 から 2024-05-09 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2024-03-08 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-63-1, S-63-2 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "国际共同研究加速基金（海外联携研究） 的公募期为 2024-03-01 起至 2024-05-09 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2024-03-08 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-63-1, S-63-2，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Fund for the Promotion of Joint International Research (Overseas Partnership Research) runs from 2024-03-01 to 2024-05-09 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2024-03-08; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-63-1, S-63-2; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/04_renkei__koubo.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/35_kokusai__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領 Application Procedures（日本語）（PDF/2,147KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "FAQ (日本語のみ）（PDF/327KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_01_05_faq_2023_renkei/r6_jp_renkei_koubo_faq.pdf",
+          "kind": "file",
+          "section": "公募に係るFAQ"
+        },
+        {
+          "title": "公募要領 Application Procedures（English)（PDF/2,167KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "別冊 Supplement（応募書類の様式・記入要領）（日本語）（PDF/3,785KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "別冊 Supplement（応募書類の様式・記入要領）（English) （PDF/6,503KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        }
+      ],
+      "documents": [
+        {
+          "title": "科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領 Application Procedures（日本語）（PDF/2,147KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "公募要領 Application Procedures（English)（PDF/2,167KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_kouboyoryo.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "別冊 Supplement（応募書類の様式・記入要領）（日本語）（PDF/3,785KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "別冊 Supplement（応募書類の様式・記入要領）（English) （PDF/6,503KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_koubobessatsu.pdf",
+          "kind": "file",
+          "section": "公募要領 Application Procedures"
+        },
+        {
+          "title": "研究計画調書の全体イメージ (日本語）（PDF/685KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_proposals_zentai_j.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成 Composition of the Research Proposal Document"
+        },
+        {
+          "title": "研究計画調書の全体イメージ （English) （PDF/2,695KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_proposals_zentai.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成 Composition of the Research Proposal Document"
+        },
+        {
+          "title": "WEB入力項目（前半）（日本語）（PDF/26KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_webzenhan.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成 Composition of the Research Proposal Document"
+        },
+        {
+          "title": "WEB入力項目（後半）（日本語）（PDF/23KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_webkouhan.pdf",
+          "kind": "file",
+          "section": "研究計画調書の構成 Composition of the Research Proposal Document"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領 （日本語）（PDF/590KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_proceduresforwebsite.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目） Application Forms (items to be entered in the Website)"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)（English）（PDF/3,755KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_proceduresforwebsite.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目） Application Forms (items to be entered in the Website)"
+        },
+        {
+          "title": "S-63-1（日本語）（PDF/670KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_s-63-1.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "S-63-1（日本語）（Word/51KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_s-63-1.docx",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "S-63-1（English）（PDF/2,684KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_s-63-1.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "S-63-1（English）（Word/52KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_s-63-1.docx",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（日本語 ）（PDF/427KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_yoryo.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded)（English）（PDF/922KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_yoryo.pdf",
+          "kind": "file",
+          "section": "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+        },
+        {
+          "title": "記入例・作成上の注意（PDF/422KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_letter_of_intent_yoryo.pdf",
+          "kind": "file",
+          "section": "3. 海外の研究者からのLetter of Intent（同意書）"
+        },
+        {
+          "title": "S-63-2（Word/30KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_letter_of_intent.docx",
+          "kind": "file",
+          "section": "3. 海外の研究者からのLetter of Intent（同意書）"
+        },
+        {
+          "title": "Must read before filling out the form（English）（PDF/444KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_letter_of_intent_yoryo.pdf",
+          "kind": "file",
+          "section": "3. 海外の研究者からのLetter of Intent（同意書）"
+        },
+        {
+          "title": "S-63-2（English）（PDF/401KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_letter_of_intent.pdf",
+          "kind": "file",
+          "section": "3. 海外の研究者からのLetter of Intent（同意書）"
+        },
+        {
+          "title": "S-63-2（English）（Word/29KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_letter_of_intent.docx",
+          "kind": "file",
+          "section": "3. 海外の研究者からのLetter of Intent（同意書）"
+        },
+        {
+          "title": "FAQ (日本語のみ）（PDF/327KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_01_05_faq_2023_renkei/r6_jp_renkei_koubo_faq.pdf",
+          "kind": "file",
+          "section": "公募に係るFAQ"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-63-1",
+          "call_name": "国際共同研究加速基金（海外連携研究）",
+          "family_names": [
+            "国際共同研究加速基金（海外連携研究）"
+          ],
+          "page_sections": [
+            "研究計画調書の構成 Composition of the Research Proposal Document",
+            "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+          ],
+          "row_texts": [
+            "添付ファイル項目（前半） S-63-1",
+            "S-63-1（日本語）（PDF/670KB）",
+            "S-63-1（日本語）（Word/51KB）",
+            "S-63-1（English）（PDF/2,684KB）",
+            "S-63-1（English）（Word/52KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_s-63-1.pdf",
+              "title": "S-63-1（日本語）（PDF/670KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_s-63-1.docx",
+              "title": "S-63-1（日本語）（Word/51KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_s-63-1.pdf",
+              "title": "S-63-1（English）（PDF/2,684KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_s-63-1.docx",
+              "title": "S-63-1（English）（Word/52KB）",
+              "kind": "file"
+            }
+          ]
+        },
+        {
+          "form_number": "S-63-2",
+          "call_name": "国際共同研究加速基金（海外連携研究）",
+          "family_names": [
+            "国際共同研究加速基金（海外連携研究）"
+          ],
+          "page_sections": [
+            "研究計画調書の構成 Composition of the Research Proposal Document",
+            "3. 海外の研究者からのLetter of Intent（同意書）"
+          ],
+          "row_texts": [
+            "添付ファイル項目（後半） S-63-2（Letter of Intent）",
+            "S-63-2（Word/30KB）",
+            "S-63-2（English）（PDF/401KB）",
+            "S-63-2（English）（Word/29KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_letter_of_intent.docx",
+              "title": "S-63-2（Word/30KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_letter_of_intent.pdf",
+              "title": "S-63-2（English）（PDF/401KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_letter_of_intent.docx",
+              "title": "S-63-2（English）（Word/29KB）",
+              "kind": "file"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-63-1",
+        "S-63-2"
+      ],
+      "resource_count": 27,
+      "document_count": 23,
+      "form_count": 2,
+      "search_terms": [
+        "国際共同研究加速基金（海外連携研究）",
+        "国際共同研究加速基金（海外連携研究）",
+        "国際共同研究加速基金（海外連携研究）の公募について",
+        "S-63-1",
+        "S-63-2"
+      ]
+    },
+    {
+      "id": "scientific_research_abc",
+      "source_name": "kiban",
+      "title": "基盤研究（A/B/C）",
+      "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "title_zh": "基盘研究（A/B/C）",
+      "title_en": "Scientific Research (A/B/C)",
+      "family_title": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "family_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "family_title_zh": "基盘研究（A/B/C）、挑战性研究与青年研究",
+      "family_title_en": "Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "tohoku",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+      "page_headline": "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
+      "page_last_updated": "2025-09-18 11:35:30",
+      "status": "closed",
+      "notice_date": {
+        "raw": "2025年7月14日",
+        "iso": "2025-07-14"
+      },
+      "call_period": {
+        "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
+        "start_date": "2025-07-14",
+        "deadline_date": "2025-09-17",
+        "deadline": "2025-09-17T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、7月22日(火)から利用することができます",
+        "iso": "2025-07-22"
+      },
+      "submission_deadline": "2025-09-17",
+      "deadline_at": "2025-09-17T16:30:00+09:00",
+      "summary_ja": "基盤研究（Ａ・Ｂ・Ｃ）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "基盘研究（A/B/C） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Scientific Research (A/B/C) is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "基盤研究（Ａ・Ｂ・Ｃ）を確認するときは、公募要領、関連 FAQ、主要様式（S-12, S-13, S-14）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 基盘研究（A/B/C） 时，建议把公募要领、相关 FAQ 与主要样式（S-12, S-13, S-14）放在一起核对。",
+      "eligibility_en": "When reviewing Scientific Research (A/B/C), it is best to keep the application procedures, the related FAQ, and the main forms (S-12, S-13, S-14) side by side.",
+      "watchpoints_ja": [
+        "基盤研究（Ａ・Ｂ・Ｃ）は 2025-07-14 から 2025-09-17 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2025-07-22 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-12, S-13, S-14 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "基盘研究（A/B/C） 的公募期为 2025-07-14 起至 2025-09-17 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2025-07-22 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-12, S-13, S-14，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Scientific Research (A/B/C) runs from 2025-07-14 to 2025-09-17 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2025-07-22; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-12, S-13, S-14; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/02_koubo__kiban.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/03_keikaku__index.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "e-Rad",
+          "label_ja": "e-Rad",
+          "label_en": "e-Rad",
+          "href": "https://www.e-rad.go.jp/",
+          "kind": "external"
+        },
+        {
+          "label": "说明会资料",
+          "label_ja": "説明会資料",
+          "label_en": "Explanation meeting materials",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/06_jsps_info/2025/g_3278.html",
+          "kind": "page"
+        },
+        {
+          "label": "英文页面",
+          "label_ja": "英語ページ",
+          "label_en": "English page",
+          "href": "https://www.jsps.go.jp/english/e-grants/grants09_kiban.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）（PDF/2,219KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）（PDF/3,595KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（英語版）（PDF/13,850KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別表２ 科学研究費助成事業 審査区分表（PDF/470KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/review_section_table.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）（PDF/2,219KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）（PDF/3,595KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（英語版）（PDF/13,850KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別表１ 重複制限一覧表（PDF/579KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/table_of_restriction.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表２ 科学研究費助成事業 審査区分表（PDF/470KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/review_section_table.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表３ 審査の大括り化（基盤研究（B）における合同審査）の対象となる区分（PDF/113KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/godoshinsa.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "前半イメージ（PDF/127KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_a.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_a.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,337KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_a.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/117KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_b.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_b.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,322KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_b.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/117KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_c.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_c.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,313KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_c.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/118KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/556KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,278KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/117KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/521KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,090KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/25KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,172KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（基盤研究（Ａ・Ｂ・Ｃ）、挑戦的研究（開拓・萌芽）、若手研究）（PDF/589KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/web_yoryo_kiban.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "FY2026 Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)(Grant-in-Aid for Scientific Research (A/B/C), Challenging Research (Pioneering/Exploratory), and Early-Career Scientists)（PDF/352KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/web_yoryo_kiban_e.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "様式Ｓ-12 （Word/52KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-12（PDF/541KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-12（Word/53KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-12（PDF/417KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（Word/49KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（PDF/535KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（Word/52KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（PDF/413KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（Word/49KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（PDF/529KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（Word/49KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（PDF/412KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（Word/31KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（PDF/431KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（Word/34KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（PDF/202KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（Word/42KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（PDF/518KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（Word/44KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（PDF/305KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（Word/32KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（PDF/432KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（Word/34KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（PDF/203KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（Word/37KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（PDF/493KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（Word/39KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（PDF/280KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（Word/45KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（PDF/504KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（Word/46KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（PDF/311KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（基盤研究（Ａ・Ｂ・Ｃ）、若手研究）（PDF/331KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kiban_abc_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（挑戦的研究（開拓））（PDF/310KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（挑戦的研究（萌芽））（PDF/310KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Scientific Research (A/B/C) and Early-Career Scientists”（PDF/316KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kiban_abc_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Challenging Research (Pioneering) ”（PDF/229KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kaitaku_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Challenging Research (Exploratory) ”（PDF/185KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_houga_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-12",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+          "family_names": [
+            "基盤研究（Ａ）"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ（ダウンロード）",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "基盤研究（Ａ） 前半イメージ（PDF/127KB） 様式S-12を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,337KB）",
+            "基盤研究（Ａ） 様式Ｓ-12 （Word/52KB） 様式Ｓ-12（PDF/541KB） 様式Ｓ-12（Word/53KB） 様式Ｓ-12（PDF/417KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_a.pdf",
+              "title": "前半イメージ（PDF/127KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_a.pdf",
+              "title": "後半イメージ（PDF/28KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_a.pdf",
+              "title": "全体イメージ（PDF/1,337KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.docx",
+              "title": "様式Ｓ-12 （Word/52KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.pdf",
+              "title": "様式Ｓ-12（PDF/541KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.docx",
+              "title": "様式Ｓ-12（Word/53KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.pdf",
+              "title": "様式Ｓ-12（PDF/417KB）",
+              "kind": "file"
+            }
+          ]
+        },
+        {
+          "form_number": "S-13",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+          "family_names": [
+            "基盤研究（Ｂ）"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ（ダウンロード）",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "基盤研究（Ｂ） 前半イメージ（PDF/117KB） 様式S-13を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,322KB）",
+            "基盤研究（Ｂ） 様式Ｓ-13（Word/49KB） 様式Ｓ-13（PDF/535KB） 様式Ｓ-13（Word/52KB） 様式Ｓ-13（PDF/413KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_b.pdf",
+              "title": "前半イメージ（PDF/117KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_b.pdf",
+              "title": "後半イメージ（PDF/28KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_b.pdf",
+              "title": "全体イメージ（PDF/1,322KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.docx",
+              "title": "様式Ｓ-13（Word/49KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.pdf",
+              "title": "様式Ｓ-13（PDF/535KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.docx",
+              "title": "様式Ｓ-13（Word/52KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.pdf",
+              "title": "様式Ｓ-13（PDF/413KB）",
+              "kind": "file"
+            }
+          ]
+        },
+        {
+          "form_number": "S-14",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+          "family_names": [
+            "基盤研究（Ｃ）"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ（ダウンロード）",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "基盤研究（Ｃ） 前半イメージ（PDF/117KB） 様式S-14を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,313KB）",
+            "基盤研究（Ｃ） 様式Ｓ-14（Word/49KB） 様式Ｓ-14（PDF/529KB） 様式Ｓ-14（Word/49KB） 様式Ｓ-14（PDF/412KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_c.pdf",
+              "title": "前半イメージ（PDF/117KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_c.pdf",
+              "title": "後半イメージ（PDF/28KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_c.pdf",
+              "title": "全体イメージ（PDF/1,313KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.docx",
+              "title": "様式Ｓ-14（Word/49KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.pdf",
+              "title": "様式Ｓ-14（PDF/529KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.docx",
+              "title": "様式Ｓ-14（Word/49KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.pdf",
+              "title": "様式Ｓ-14（PDF/412KB）",
+              "kind": "file"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-12",
+        "S-13",
+        "S-14"
+      ],
+      "resource_count": 74,
+      "document_count": 68,
+      "form_count": 8,
+      "search_terms": [
+        "基盤研究（A/B/C）",
+        "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+        "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
+        "S-12",
+        "S-13",
+        "S-14"
+      ]
+    },
+    {
+      "id": "scientific_research_s",
+      "source_name": "toku_s",
+      "title": "基盤研究（S）",
+      "title_ja": "基盤研究（Ｓ）",
+      "title_zh": "基盘研究（S）",
+      "title_en": "Scientific Research (S)",
+      "family_title": "特別推進研究・基盤研究（Ｓ）",
+      "family_title_ja": "特別推進研究・基盤研究（Ｓ）",
+      "family_title_zh": "特别推进研究与基盘研究（S）",
+      "family_title_en": "Specially Promoted Research and Scientific Research (S)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "usst",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "page_headline": "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
+      "page_last_updated": "2025-06-17 16:30:29",
+      "status": "closed",
+      "notice_date": {
+        "raw": "2025年4月11日",
+        "iso": "2025-04-11"
+      },
+      "call_period": {
+        "raw": "令和7(2025)年4月11日(金)~6月17日(火)午後4時30分",
+        "start_date": "2025-04-11",
+        "deadline_date": "2025-06-17",
+        "deadline": "2025-06-17T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、4月18日(金)から利用することができます",
+        "iso": "2025-04-18"
+      },
+      "submission_deadline": "2025-06-17",
+      "deadline_at": "2025-06-17T16:30:00+09:00",
+      "summary_ja": "基盤研究（Ｓ）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "基盘研究（S） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Scientific Research (S) is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "基盤研究（Ｓ）を確認するときは、公募要領、関連 FAQ、主要様式（S-11）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 基盘研究（S） 时，建议把公募要领、相关 FAQ 与主要样式（S-11）放在一起核对。",
+      "eligibility_en": "When reviewing Scientific Research (S), it is best to keep the application procedures, the related FAQ, and the main forms (S-11) side by side.",
+      "watchpoints_ja": [
+        "基盤研究（Ｓ）は 2025-04-11 から 2025-06-17 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2025-04-18 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-11 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "基盘研究（S） 的公募期为 2025-04-11 起至 2025-06-17 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2025-04-18 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-11，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Scientific Research (S) runs from 2025-04-11 to 2025-06-17 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2025-04-18; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-11; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/12_kiban__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/12_kiban__index.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "英文页面",
+          "label_ja": "英語ページ",
+          "label_en": "English page",
+          "href": "https://www.jsps.go.jp/english/e-grants/grants09_toku_s.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）(PDF/1,759KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）(PDF/3,664KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（特別推進研究）(PDF/242KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）(PDF/12,129KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）(PDF/1,759KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）(PDF/12,129KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）(PDF/3,664KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（英語版）(PDF/11,169KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_suppl_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別表１ 重複制限一覧表(PDF/575KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/table_of_restriction.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表２ 科学研究費助成事業 審査区分表(PDF/470KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/review_section_table.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表３ 審査の大括り化（基盤研究（B）における合同審査）の対象となる区分(PDF/113KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/godoshinsa.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（基盤研究（Ｓ））(PDF/5,015KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_kiban_s.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)(Grant-in-Aid for Specially Promoted Research)(PDF/5,395KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui_e.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)(Grant-in-Aid for Scientific Research (S))(PDF/4,704KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_kiban_s_e.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "S-1(1) S-1(2) S-1(3)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-1(1) S-1(2) S-1(3)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-11",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-11",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（特別推進研究）(PDF/242KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（基盤研究（Ｓ））(PDF/159KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Specially Promoted Research”(PDF/421KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_tokusui_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Scientific Research (S)”(PDF/465KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_kiban_s_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-11",
+          "call_name": "特別推進研究・基盤研究（Ｓ）",
+          "family_names": [
+            "基盤研究（Ｓ）"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "基盤研究（Ｓ） 様式S-11 ー",
+            "基盤研究（Ｓ） S-11 S-11",
+            "S-11"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_kiban_s.pdf",
+              "title": "",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_kiban_s.pdf",
+              "title": "",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_kiban_s.pdf",
+              "title": "",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.pdf",
+              "title": "S-11",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.pdf",
+              "title": "S-11",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+              "title": "S-11",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+              "title": "",
+              "kind": "page"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-11"
+      ],
+      "resource_count": 31,
+      "document_count": 26,
+      "form_count": 2,
+      "search_terms": [
+        "基盤研究（S）",
+        "特別推進研究・基盤研究（Ｓ）",
+        "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
+        "S-11"
+      ]
+    },
+    {
+      "id": "incentive_research",
+      "source_name": "shourei",
+      "title": "奨励研究",
+      "title_ja": "奨励研究",
+      "title_zh": "奖励研究",
+      "title_en": "Encouragement of Scientists",
+      "family_title": "奨励研究",
+      "family_title_ja": "奨励研究",
+      "family_title_zh": "奖励研究",
+      "family_title_en": "Encouragement of Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "usst",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/11_shourei__koubo.html",
+      "page_headline": "令和８(2026)年度奨励研究の公募について",
+      "page_last_updated": "2025-09-24 13:40:09",
+      "status": "closed",
+      "notice_date": null,
+      "call_period": {
+        "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
+        "start_date": "2025-07-14",
+        "deadline_date": "2025-09-17",
+        "deadline": "2025-09-17T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、7月22日(火)から利用することができます",
+        "iso": "2025-07-22"
+      },
+      "submission_deadline": "2025-09-17",
+      "deadline_at": "2025-09-17T16:30:00+09:00",
+      "summary_ja": "奨励研究の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "奖励研究 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Encouragement of Scientists is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "奨励研究を確認するときは、公募要領、関連 FAQ、主要様式（S-31）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 奖励研究 时，建议把公募要领、相关 FAQ 与主要样式（S-31）放在一起核对。",
+      "eligibility_en": "When reviewing Encouragement of Scientists, it is best to keep the application procedures, the related FAQ, and the main forms (S-31) side by side.",
+      "watchpoints_ja": [
+        "奨励研究は 2025-07-14 から 2025-09-17 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2025-07-22 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-31 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "奖励研究 的公募期为 2025-07-14 起至 2025-09-17 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2025-07-22 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-31，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Encouragement of Scientists runs from 2025-07-14 to 2025-09-17 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2025-07-22; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-31; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/11_shourei__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/11_shourei__koubo.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/11_shourei__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_kikan.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（PDF/1,785KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_koubo_shourei.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_chizi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "科研費電子申請システムを利用した応募フロー（PDF/726KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_flow_shourei.pdf",
+          "kind": "file",
+          "section": "応募フロー、FAQ"
+        },
+        {
+          "title": "ＦＡＱ（PDF/216KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_faq_shourei.pdf",
+          "kind": "file",
+          "section": "応募フロー、FAQ"
+        },
+        {
+          "title": "別冊（PDF/3,742KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_bessatsu_shourei.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_kikan.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_chizi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "科研費電子申請システムを利用した応募フロー（PDF/726KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_flow_shourei.pdf",
+          "kind": "file",
+          "section": "応募フロー、FAQ"
+        },
+        {
+          "title": "ＦＡＱ（PDF/216KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_faq_shourei.pdf",
+          "kind": "file",
+          "section": "応募フロー、FAQ"
+        },
+        {
+          "title": "公募要領（PDF/1,785KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_koubo_shourei.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（PDF/3,742KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_bessatsu_shourei.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "Ｗｅｂ入力項目作成・入力要領（PDF/316KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_youryou_web.pdf",
+          "kind": "file",
+          "section": "１．Ｗｅｂ入力項目（研究計画調書の1ページ及び4ページ以降）"
+        },
+        {
+          "title": "Ｗｅｂ入力項目の入力画面イメージ（PDF/1,940KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_image_web.pdf",
+          "kind": "file",
+          "section": "１．Ｗｅｂ入力項目（研究計画調書の1ページ及び4ページ以降）"
+        },
+        {
+          "title": "研究計画調書作成・記入要領（PDF/225KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_youryou_tenpu.pdf",
+          "kind": "file",
+          "section": "２．添付ファイル項目（研究計画調書の2～3ページ）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）（様式S-３１）（PDF/234KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/s-31.pdf",
+          "kind": "file",
+          "section": "２．添付ファイル項目（研究計画調書の2～3ページ）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）（様式S-３１）（Word/35KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/s-31.docx",
+          "kind": "file",
+          "section": "２．添付ファイル項目（研究計画調書の2～3ページ）"
+        },
+        {
+          "title": "在籍確認書類（様式）（PDF/136KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/shourei_zaiseki.pdf",
+          "kind": "file",
+          "section": "３．在籍確認書類（様式）"
+        },
+        {
+          "title": "在籍確認書類（様式）（Word/23KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/shourei_zaiseki.docx",
+          "kind": "file",
+          "section": "３．在籍確認書類（様式）"
+        },
+        {
+          "title": "奨励研究研究代表者情報変更願（様式U-３１）（PDF/72KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_2245/u-31.pdf",
+          "kind": "file",
+          "section": "４．奨励研究研究代表者情報変更願（該当する場合のみ）"
+        },
+        {
+          "title": "奨励研究研究代表者情報変更願（様式U-３１）（Word/21KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_2245/u-31.docx",
+          "kind": "file",
+          "section": "４．奨励研究研究代表者情報変更願（該当する場合のみ）"
+        },
+        {
+          "title": "奨励研究研究代表者情報変更願 作成上の注意（PDF/115KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_2245/u-31_chui.pdf",
+          "kind": "file",
+          "section": "４．奨励研究研究代表者情報変更願（該当する場合のみ）"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-31",
+          "call_name": "奨励研究",
+          "family_names": [
+            "奨励研究"
+          ],
+          "page_sections": [
+            "２．添付ファイル項目（研究計画調書の2～3ページ）"
+          ],
+          "row_texts": [
+            "研究計画調書（添付ファイル項目）（様式S-３１）（PDF/234KB）",
+            "研究計画調書（添付ファイル項目）（様式S-３１）（Word/35KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/s-31.pdf",
+              "title": "研究計画調書（添付ファイル項目）（様式S-３１）（PDF/234KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/s-31.docx",
+              "title": "研究計画調書（添付ファイル項目）（様式S-３１）（Word/35KB）",
+              "kind": "file"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-31"
+      ],
+      "resource_count": 22,
+      "document_count": 16,
+      "form_count": 1,
+      "search_terms": [
+        "奨励研究",
+        "奨励研究",
+        "令和８(2026)年度奨励研究の公募について",
+        "S-31"
+      ]
+    },
+    {
+      "id": "challenging_research",
+      "source_name": "kiban",
+      "title": "挑戦的研究",
+      "title_ja": "挑戦的研究",
+      "title_zh": "挑战性研究",
+      "title_en": "Challenging Research",
+      "family_title": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "family_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "family_title_zh": "基盘研究（A/B/C）、挑战性研究与青年研究",
+      "family_title_en": "Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "tohoku",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+      "page_headline": "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
+      "page_last_updated": "2025-09-18 11:35:30",
+      "status": "closed",
+      "notice_date": {
+        "raw": "2025年7月14日",
+        "iso": "2025-07-14"
+      },
+      "call_period": {
+        "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
+        "start_date": "2025-07-14",
+        "deadline_date": "2025-09-17",
+        "deadline": "2025-09-17T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、7月22日(火)から利用することができます",
+        "iso": "2025-07-22"
+      },
+      "submission_deadline": "2025-09-17",
+      "deadline_at": "2025-09-17T16:30:00+09:00",
+      "summary_ja": "挑戦的研究の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "挑战性研究 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Challenging Research is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "挑戦的研究を確認するときは、公募要領、関連 FAQ、主要様式（S-41-1, S-41-2, S-42-1, S-42-2）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 挑战性研究 时，建议把公募要领、相关 FAQ 与主要样式（S-41-1, S-41-2, S-42-1, S-42-2）放在一起核对。",
+      "eligibility_en": "When reviewing Challenging Research, it is best to keep the application procedures, the related FAQ, and the main forms (S-41-1, S-41-2, S-42-1, S-42-2) side by side.",
+      "watchpoints_ja": [
+        "挑戦的研究は 2025-07-14 から 2025-09-17 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2025-07-22 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-41-1, S-41-2, S-42-1, S-42-2 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "挑战性研究 的公募期为 2025-07-14 起至 2025-09-17 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2025-07-22 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-41-1, S-41-2, S-42-1, S-42-2，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Challenging Research runs from 2025-07-14 to 2025-09-17 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2025-07-22; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-41-1, S-41-2, S-42-1, S-42-2; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/02_koubo__kiban.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/03_keikaku__index.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "e-Rad",
+          "label_ja": "e-Rad",
+          "label_en": "e-Rad",
+          "href": "https://www.e-rad.go.jp/",
+          "kind": "external"
+        },
+        {
+          "label": "说明会资料",
+          "label_ja": "説明会資料",
+          "label_en": "Explanation meeting materials",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/06_jsps_info/2025/g_3278.html",
+          "kind": "page"
+        },
+        {
+          "label": "英文页面",
+          "label_ja": "英語ページ",
+          "label_en": "English page",
+          "href": "https://www.jsps.go.jp/english/e-grants/grants09_kiban.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）（PDF/2,219KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）（PDF/3,595KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（英語版）（PDF/13,850KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（基盤研究（Ａ・Ｂ・Ｃ）、挑戦的研究（開拓・萌芽）、若手研究）（PDF/589KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/web_yoryo_kiban.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）（PDF/2,219KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）（PDF/3,595KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（英語版）（PDF/13,850KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別表１ 重複制限一覧表（PDF/579KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/table_of_restriction.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表２ 科学研究費助成事業 審査区分表（PDF/470KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/review_section_table.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表３ 審査の大括り化（基盤研究（B）における合同審査）の対象となる区分（PDF/113KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/godoshinsa.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "前半イメージ（PDF/127KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_a.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_a.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,337KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_a.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/117KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_b.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_b.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,322KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_b.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/117KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_c.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_c.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,313KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_c.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/118KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/556KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,278KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/117KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/521KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,090KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "前半イメージ（PDF/25KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "後半イメージ（PDF/28KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "全体イメージ（PDF/1,172KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ（ダウンロード）"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（基盤研究（Ａ・Ｂ・Ｃ）、挑戦的研究（開拓・萌芽）、若手研究）（PDF/589KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/web_yoryo_kiban.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "FY2026 Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)(Grant-in-Aid for Scientific Research (A/B/C), Challenging Research (Pioneering/Exploratory), and Early-Career Scientists)（PDF/352KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/web_yoryo_kiban_e.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "様式Ｓ-12 （Word/52KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-12（PDF/541KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-12（Word/53KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-12（PDF/417KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（Word/49KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（PDF/535KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（Word/52KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-13（PDF/413KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（Word/49KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（PDF/529KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（Word/49KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-14（PDF/412KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（Word/31KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（PDF/431KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（Word/34KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-1（PDF/202KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（Word/42KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（PDF/518KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（Word/44KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-41-2（PDF/305KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（Word/32KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（PDF/432KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（Word/34KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-1（PDF/203KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（Word/37KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（PDF/493KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（Word/39KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-42-2（PDF/280KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（Word/45KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（PDF/504KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（Word/46KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21_e.docx",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "様式Ｓ-21（PDF/311KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-21_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（基盤研究（Ａ・Ｂ・Ｃ）、若手研究）（PDF/331KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kiban_abc_wakate.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（挑戦的研究（開拓））（PDF/310KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kaitaku.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（挑戦的研究（萌芽））（PDF/310KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_houga.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Scientific Research (A/B/C) and Early-Career Scientists”（PDF/316KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kiban_abc_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Challenging Research (Pioneering) ”（PDF/229KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_kaitaku_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Challenging Research (Exploratory) ”（PDF/185KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/yoryo_houga_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-41-1",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+          "family_names": [
+            "挑戦的研究（開拓）【概要版】"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ（ダウンロード）",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "挑戦的研究（開拓）【概要版】 前半イメージ（PDF/118KB） 様式S-41-1を使用 - 全体イメージ（PDF/556KB）",
+            "挑戦的研究（開拓）【概要版】 様式Ｓ-41-1（Word/31KB） 様式Ｓ-41-1（PDF/431KB） 様式Ｓ-41-1（Word/34KB） 様式Ｓ-41-1（PDF/202KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kaitaku.pdf",
+              "title": "前半イメージ（PDF/118KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_kaitaku.pdf",
+              "title": "全体イメージ（PDF/556KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.docx",
+              "title": "様式Ｓ-41-1（Word/31KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.pdf",
+              "title": "様式Ｓ-41-1（PDF/431KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.docx",
+              "title": "様式Ｓ-41-1（Word/34KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.pdf",
+              "title": "様式Ｓ-41-1（PDF/202KB）",
+              "kind": "file"
+            }
+          ]
+        },
+        {
+          "form_number": "S-41-2",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+          "family_names": [
+            "挑戦的研究（開拓）"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ（ダウンロード）",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "挑戦的研究（開拓） 前半イメージ（PDF/118KB） 様式S-41-2を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,278KB）",
+            "挑戦的研究（開拓） 様式Ｓ-41-2（Word/42KB） 様式Ｓ-41-2（PDF/518KB） 様式Ｓ-41-2（Word/44KB） 様式Ｓ-41-2（PDF/305KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kaitaku.pdf",
+              "title": "前半イメージ（PDF/118KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kaitaku.pdf",
+              "title": "後半イメージ（PDF/28KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kaitaku.pdf",
+              "title": "全体イメージ（PDF/1,278KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.docx",
+              "title": "様式Ｓ-41-2（Word/42KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.pdf",
+              "title": "様式Ｓ-41-2（PDF/518KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.docx",
+              "title": "様式Ｓ-41-2（Word/44KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.pdf",
+              "title": "様式Ｓ-41-2（PDF/305KB）",
+              "kind": "file"
+            }
+          ]
+        },
+        {
+          "form_number": "S-42-1",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+          "family_names": [
+            "挑戦的研究（萌芽）【概要版】"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ（ダウンロード）",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "挑戦的研究（萌芽）【概要版】 前半イメージ（PDF/117KB） 様式S-42-1を使用 - 全体イメージ（PDF/521KB）",
+            "挑戦的研究（萌芽）【概要版】 様式Ｓ-42-1（Word/32KB） 様式Ｓ-42-1（PDF/432KB） 様式Ｓ-42-1（Word/34KB） 様式Ｓ-42-1（PDF/203KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_houga.pdf",
+              "title": "前半イメージ（PDF/117KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_houga.pdf",
+              "title": "全体イメージ（PDF/521KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.docx",
+              "title": "様式Ｓ-42-1（Word/32KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.pdf",
+              "title": "様式Ｓ-42-1（PDF/432KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.docx",
+              "title": "様式Ｓ-42-1（Word/34KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.pdf",
+              "title": "様式Ｓ-42-1（PDF/203KB）",
+              "kind": "file"
+            }
+          ]
+        },
+        {
+          "form_number": "S-42-2",
+          "call_name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+          "family_names": [
+            "挑戦的研究（萌芽）"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ（ダウンロード）",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "挑戦的研究（萌芽） 前半イメージ（PDF/117KB） 様式S-42-2を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,090KB）",
+            "挑戦的研究（萌芽） 様式Ｓ-42-2（Word/37KB） 様式Ｓ-42-2（PDF/493KB） 様式Ｓ-42-2（Word/39KB） 様式Ｓ-42-2（PDF/280KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_houga.pdf",
+              "title": "前半イメージ（PDF/117KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_houga.pdf",
+              "title": "後半イメージ（PDF/28KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_houga.pdf",
+              "title": "全体イメージ（PDF/1,090KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.docx",
+              "title": "様式Ｓ-42-2（Word/37KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.pdf",
+              "title": "様式Ｓ-42-2（PDF/493KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.docx",
+              "title": "様式Ｓ-42-2（Word/39KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.pdf",
+              "title": "様式Ｓ-42-2（PDF/280KB）",
+              "kind": "file"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-41-1",
+        "S-41-2",
+        "S-42-1",
+        "S-42-2"
+      ],
+      "resource_count": 74,
+      "document_count": 68,
+      "form_count": 8,
+      "search_terms": [
+        "挑戦的研究",
+        "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+        "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
+        "S-41-1",
+        "S-41-2",
+        "S-42-1",
+        "S-42-2"
+      ]
+    },
+    {
+      "id": "special_promotion_research",
+      "source_name": "toku_s",
+      "title": "特別推進研究",
+      "title_ja": "特別推進研究",
+      "title_zh": "特别推进研究",
+      "title_en": "Specially Promoted Research",
+      "family_title": "特別推進研究・基盤研究（Ｓ）",
+      "family_title_ja": "特別推進研究・基盤研究（Ｓ）",
+      "family_title_zh": "特别推进研究与基盘研究（S）",
+      "family_title_en": "Specially Promoted Research and Scientific Research (S)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "usst",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "page_headline": "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
+      "page_last_updated": "2025-06-17 16:30:29",
+      "status": "closed",
+      "notice_date": {
+        "raw": "2025年4月11日",
+        "iso": "2025-04-11"
+      },
+      "call_period": {
+        "raw": "令和7(2025)年4月11日(金)~6月17日(火)午後4時30分",
+        "start_date": "2025-04-11",
+        "deadline_date": "2025-06-17",
+        "deadline": "2025-06-17T16:30:00+09:00"
+      },
+      "system_available_from": {
+        "raw": "電子申請システムは、4月18日(金)から利用することができます",
+        "iso": "2025-04-18"
+      },
+      "submission_deadline": "2025-06-17",
+      "deadline_at": "2025-06-17T16:30:00+09:00",
+      "summary_ja": "特別推進研究の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "特别推进研究 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Specially Promoted Research is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "特別推進研究を確認するときは、公募要領、関連 FAQ、主要様式（S-1）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 特别推进研究 时，建议把公募要领、相关 FAQ 与主要样式（S-1）放在一起核对。",
+      "eligibility_en": "When reviewing Specially Promoted Research, it is best to keep the application procedures, the related FAQ, and the main forms (S-1) side by side.",
+      "watchpoints_ja": [
+        "特別推進研究は 2025-04-11 から 2025-06-17 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "電子申請システムの利用開始日は 2025-04-18 と案内されています。e-Rad や学内締切の確認も並行して進めてください。",
+        "主要様式として S-1 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "特别推进研究 的公募期为 2025-04-11 起至 2025-06-17 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "页面标注电子申报系统可自 2025-04-18 起使用，建议同步核对 e-Rad 与校内截止。",
+        "当前可直接追踪的主要样式包括 S-1，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Specially Promoted Research runs from 2025-04-11 to 2025-06-17 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The page indicates that the electronic application system becomes available on 2025-04-18; check e-Rad and your institutional deadline in parallel.",
+        "The main form family currently surfaced here includes S-1; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/25_tokusui__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/25_tokusui__index.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "英文页面",
+          "label_ja": "英語ページ",
+          "label_en": "English page",
+          "href": "https://www.jsps.go.jp/english/e-grants/grants09_toku_s.html",
+          "kind": "page"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）(PDF/1,759KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）(PDF/3,664KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（特別推進研究）(PDF/242KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）(PDF/12,129KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（日本語版）(PDF/1,759KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（日本語版）(PDF/12,129KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_suppl.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "公募要領（英語版）(PDF/3,664KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別冊（応募書類の様式・記入要領）（英語版）(PDF/11,169KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_suppl_e.pdf",
+          "kind": "file",
+          "section": "公募要領、別冊"
+        },
+        {
+          "title": "別表１ 重複制限一覧表(PDF/575KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/table_of_restriction.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表２ 科学研究費助成事業 審査区分表(PDF/470KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/review_section_table.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "別表３ 審査の大括り化（基盤研究（B）における合同審査）の対象となる区分(PDF/113KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/godoshinsa.pdf",
+          "kind": "file",
+          "section": "重複制限表、審査区分表、合同審査の対象区分一覧"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書の全体イメージ"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "研究計画調書（Web入力項目）の作成・入力要領（基盤研究（Ｓ））(PDF/5,015KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_kiban_s.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)(Grant-in-Aid for Specially Promoted Research)(PDF/5,395KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui_e.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (items to be entered in the Website)(Grant-in-Aid for Scientific Research (S))(PDF/4,704KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_kiban_s_e.pdf",
+          "kind": "file",
+          "section": "1. 研究計画調書（Web入力項目）"
+        },
+        {
+          "title": "S-1(1) S-1(2) S-1(3)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-1(1) S-1(2) S-1(3)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-11",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "S-11",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（特別推進研究）(PDF/242KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_tokusui.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "研究計画調書（添付ファイル項目）の作成・記入要領（基盤研究（Ｓ））(PDF/159KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_kiban_s.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Specially Promoted Research”(PDF/421KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_tokusui_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        },
+        {
+          "title": "Procedures for Preparing and Entering a Research Proposal Document (forms to be uploaded) “Scientific Research (S)”(PDF/465KB)",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/yoryo_kiban_s_e.pdf",
+          "kind": "file",
+          "section": "研究計画調書（添付ファイル項目）"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-1",
+          "call_name": "特別推進研究・基盤研究（Ｓ）",
+          "family_names": [
+            "特別推進研究"
+          ],
+          "page_sections": [
+            "研究計画調書の全体イメージ",
+            "研究計画調書（添付ファイル項目）"
+          ],
+          "row_texts": [
+            "特別推進研究 様式S-1(1)、S-1(2) 様式S-1(3)",
+            "特別推進研究 S-1(1) S-1(2) S-1(3) S-1(1) S-1(2) S-1(3)",
+            "S-1(1)",
+            "S-1(2)",
+            "S-1(3)"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_tokusui.pdf",
+              "title": "",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_tokusui.pdf",
+              "title": "",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_tokusui.pdf",
+              "title": "",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.pdf",
+              "title": "S-1(1) S-1(2) S-1(3)",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.pdf",
+              "title": "S-1(1) S-1(2) S-1(3)",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+              "title": "S-1(1)",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+              "title": "",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+              "title": "S-1(2)",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+              "title": "S-1(3)",
+              "kind": "page"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-1"
+      ],
+      "resource_count": 31,
+      "document_count": 26,
+      "form_count": 2,
+      "search_terms": [
+        "特別推進研究",
+        "特別推進研究・基盤研究（Ｓ）",
+        "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
+        "S-1"
+      ]
+    },
+    {
+      "id": "jsps_fellows_incentive",
+      "source_name": "tokushourei",
+      "title": "特別研究員奨励費",
+      "title_ja": "特別研究員奨励費",
+      "title_zh": "特别研究员奖励费",
+      "title_en": "Grant-in-Aid for JSPS Fellows",
+      "family_title": "特別研究員奨励費",
+      "family_title_ja": "特別研究員奨励費",
+      "family_title_zh": "特别研究员奖励费",
+      "family_title_en": "Grant-in-Aid for JSPS Fellows",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "usst",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
+      "snapshot_path": "external/jsps/2026-04-07/20_tokushourei__download.html",
+      "page_headline": "令和８(2026)年度特別研究員奨励費（外国人特別研究員）の募集について",
+      "page_last_updated": "2026-02-10 14:00:08",
+      "status": "closed",
+      "notice_date": {
+        "raw": "2026年1月22日",
+        "iso": "2026-01-22"
+      },
+      "call_period": {
+        "raw": "令和8(2026)年1月22日(木)~2月19日(木)午後4時30分",
+        "start_date": "2026-01-22",
+        "deadline_date": "2026-02-19",
+        "deadline": "2026-02-19T16:30:00+09:00"
+      },
+      "system_available_from": null,
+      "submission_deadline": "2026-02-19",
+      "deadline_at": "2026-02-19T16:30:00+09:00",
+      "summary_ja": "特別研究員奨励費の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "特别研究员奖励费 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Grant-in-Aid for JSPS Fellows is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "特別研究員奨励費を確認するときは、公募要領、関連 FAQ、主要様式（--）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 特别研究员奖励费 时，建议把公募要领、相关 FAQ 与主要样式（--）放在一起核对。",
+      "eligibility_en": "When reviewing Grant-in-Aid for JSPS Fellows, it is best to keep the application procedures, the related FAQ, and the main forms (--) side by side.",
+      "watchpoints_ja": [
+        "特別研究員奨励費は 2026-01-22 から 2026-02-19 16:30 JST までの公募期間が設定されており、現在は 公募終了後の参考期間 として確認できます。",
+        "主要様式として -- を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "特别研究员奖励费 的公募期为 2026-01-22 起至 2026-02-19 16:30 JST，当前本轮已结束，当前更适合作为参考页。",
+        "当前可直接追踪的主要样式包括 --，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "Grant-in-Aid for JSPS Fellows runs from 2026-01-22 to 2026-02-19 16:30 JST and is already closed and now primarily useful as a reference page.",
+        "The main form family currently surfaced here includes --; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/20_tokushourei__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/20_tokushourei__download.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/20_tokushourei__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_tsuchi.pdf",
+          "kind": "file",
+          "section": "募集通知"
+        },
+        {
+          "title": "日本語 Japanese（PDF/1,191KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "英語 English（PDF/605KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku_e.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "別冊 日本語 Japanese（PDF/1,223KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_yoryo_gaitoku.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "別冊 英語 English（PDF/1,113KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_yoryo_gaitoku_e.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "日本語 Japanese（PDF/754KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_gamenimage_gaitoku.pdf",
+          "kind": "file",
+          "section": "１．研究計画調書（Ｗｅｂ入力項目）"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_tsuchi.pdf",
+          "kind": "file",
+          "section": "募集通知"
+        },
+        {
+          "title": "日本語 Japanese（PDF/1,191KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "英語 English（PDF/605KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku_e.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "別冊 日本語 Japanese（PDF/1,223KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_yoryo_gaitoku.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "別冊 英語 English（PDF/1,113KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_yoryo_gaitoku_e.pdf",
+          "kind": "file",
+          "section": "募集要領 Application Procedures for Grant-in-Aid for JSPS Research Fellows"
+        },
+        {
+          "title": "日本語 Japanese（PDF/754KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_gamenimage_gaitoku.pdf",
+          "kind": "file",
+          "section": "１．研究計画調書（Ｗｅｂ入力項目）"
+        },
+        {
+          "title": "英語 English（PDF/738KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_gamenimage_gaitoku_e.pdf",
+          "kind": "file",
+          "section": "１．研究計画調書（Ｗｅｂ入力項目）"
+        },
+        {
+          "title": "別冊 日本語 Japanese（PDF/38KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_webimage_gaitoku.pdf",
+          "kind": "file",
+          "section": "１．研究計画調書（Ｗｅｂ入力項目）"
+        },
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（特別研究員奨励費）（外国人特別研究員）の応募等に係る確認書（PDF/332KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_kakunin.pdf",
+          "kind": "file",
+          "section": "２．応募等に係る確認書（外国人特別研究員）"
+        },
+        {
+          "title": "令和８(2026)年度科学研究費助成事業（特別研究員奨励費）（外国人特別研究員）の応募等に係る確認書（Word/38KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_kakunin.docx",
+          "kind": "file",
+          "section": "２．応募等に係る確認書（外国人特別研究員）"
+        }
+      ],
+      "forms": [],
+      "form_codes": [],
+      "resource_count": 12,
+      "document_count": 10,
+      "form_count": 0,
+      "search_terms": [
+        "特別研究員奨励費",
+        "特別研究員奨励費",
+        "令和８(2026)年度特別研究員奨励費（外国人特別研究員）の募集について"
+      ]
+    },
+    {
+      "id": "research_results_publication",
+      "source_name": "seika",
+      "title": "研究成果公開促進費",
+      "title_ja": "研究成果公開促進費",
+      "title_zh": "研究成果公开促进费",
+      "title_en": "Publication of Scientific Research Results",
+      "family_title": "研究成果公開促進費",
+      "family_title_ja": "研究成果公開促進費",
+      "family_title_zh": "研究成果公开促进费",
+      "family_title_en": "Publication of Scientific Research Results",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "priority": false,
+      "theme": "usst",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+      "snapshot_path": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
+      "page_headline": "令和８(2026)年度研究成果公開促進費の公募について",
+      "page_last_updated": "2025-09-17 16:30:08",
+      "status": "closed",
+      "notice_date": {
+        "raw": "2025年7月14日",
+        "iso": "2025-07-14"
+      },
+      "call_period": null,
+      "system_available_from": null,
+      "submission_deadline": null,
+      "deadline_at": null,
+      "summary_ja": "研究成果公開促進費の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "研究成果公开促进费 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Publication of Scientific Research Results is closed, but the page remains the main official reference point for the next round.",
+      "eligibility_ja": "研究成果公開促進費を確認するときは、公募要領、関連 FAQ、主要様式（S-51-1, S-51-2, S-51-3, S-51-4）をあわせて見ておくと全体像を掴みやすくなります。",
+      "eligibility_zh": "整理 研究成果公开促进费 时，建议把公募要领、相关 FAQ 与主要样式（S-51-1, S-51-2, S-51-3, S-51-4）放在一起核对。",
+      "eligibility_en": "When reviewing Publication of Scientific Research Results, it is best to keep the application procedures, the related FAQ, and the main forms (S-51-1, S-51-2, S-51-3, S-51-4) side by side.",
+      "watchpoints_ja": [
+        "研究成果公開促進費のページでは明確な公募期間が読めないため、制度案内と資料入口の確認ページとして見るのが安全です。",
+        "主要様式として S-51-1, S-51-2, S-51-3, S-51-4 を確認できます。作成要領や PDF 版も同じページから追えるかを必ず確認してください。",
+        "制度全体の構成や過年度資料を見返すときは、対応する種目ページもあわせて確認すると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "研究成果公开促进费 页面中没有清晰读出的公募期，当前更适合当作制度说明与资料入口页来使用。",
+        "当前可直接追踪的主要样式包括 S-51-1, S-51-2, S-51-3, S-51-4，建议同时核对对应填写要领与 PDF 版。",
+        "如果需要回看制度全貌或历年说明，建议同时打开对应的种目页面。"
+      ],
+      "watchpoints_en": [
+        "The page for Publication of Scientific Research Results does not expose a clearly parseable call period, so it is safest to use it as a scheme-and-documents reference page.",
+        "The main form family currently surfaced here includes S-51-1, S-51-2, S-51-3, S-51-4; make sure you also confirm the related preparation guidance and PDF variants.",
+        "If you need the broader scheme structure or older background materials, open the corresponding program page alongside this call page."
+      ],
+      "overview_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
+      "overview_snapshot_path": "external/jsps/2026-04-07/13_seika__index.html",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
+          "kind": "snapshot"
+        },
+        {
+          "label": "科研费电子申报系统",
+          "label_ja": "科研費電子申請システム",
+          "label_en": "Electronic application system",
+          "href": "https://www-shinsei.jsps.go.jp/kaken/index.html",
+          "kind": "system"
+        },
+        {
+          "label": "科研费 FAQ",
+          "label_ja": "科研費FAQ",
+          "label_en": "KAKENHI FAQ",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+          "kind": "faq"
+        },
+        {
+          "label": "种目页面",
+          "label_ja": "種目ページ",
+          "label_en": "Program page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "种目快照",
+          "label_ja": "種目ページの快照",
+          "label_en": "Program snapshot",
+          "href": "external/jsps/2026-04-07/13_seika__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "featured_documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08tsuuchibun.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "公募要領（PDF/1,152KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/i_r08_koubo00_all.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_idpw_yoryo.pdf",
+          "kind": "file",
+          "section": "応募書類の提出（送信）期限"
+        },
+        {
+          "title": "令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikagaiyo.pdf",
+          "kind": "file",
+          "section": "応募書類の提出（送信）期限"
+        },
+        {
+          "title": "研究成果公開促進費 科研費電子申請システムに関するＦＡＱ（個人、研究者グループ）（PDF/153KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikaqa_kojin.pdf",
+          "kind": "file",
+          "section": "ＦＡＱ・スケジュール"
+        },
+        {
+          "title": "研究成果公開促進費 科研費電子申請システムに関するＦＡＱ（学術団体等）（PDF/132KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikaqa_gakkai.pdf",
+          "kind": "file",
+          "section": "ＦＡＱ・スケジュール"
+        }
+      ],
+      "documents": [
+        {
+          "title": "令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08tsuuchibun.pdf",
+          "kind": "file",
+          "section": "公募通知"
+        },
+        {
+          "title": "令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_idpw_yoryo.pdf",
+          "kind": "file",
+          "section": "応募書類の提出（送信）期限"
+        },
+        {
+          "title": "令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikagaiyo.pdf",
+          "kind": "file",
+          "section": "応募書類の提出（送信）期限"
+        },
+        {
+          "title": "研究成果公開促進費 科研費電子申請システムに関するＦＡＱ（個人、研究者グループ）（PDF/153KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikaqa_kojin.pdf",
+          "kind": "file",
+          "section": "ＦＡＱ・スケジュール"
+        },
+        {
+          "title": "研究成果公開促進費 科研費電子申請システムに関するＦＡＱ（学術団体等）（PDF/132KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikaqa_gakkai.pdf",
+          "kind": "file",
+          "section": "ＦＡＱ・スケジュール"
+        },
+        {
+          "title": "令和８(2026)年度 研究成果公開促進費（ひらめき☆ときめきサイエンスを除く）の公募等に関するＦＡＱについて（PDF/202KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08seikaqa2.pdf",
+          "kind": "file",
+          "section": "ＦＡＱ・スケジュール"
+        },
+        {
+          "title": "公募要領（PDF/1,152KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/i_r08_koubo00_all.pdf",
+          "kind": "file",
+          "section": "公募要領"
+        },
+        {
+          "title": "S-52（PDF/103KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-52.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-52（Word/22KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-52.docx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "作成・記入要領（PDF/1,255KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_web_yoryo_happyoub.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "出力イメージ （PDF/16KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_webimage_happyoub.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-1 （PDF/217KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-1.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-1 （Word/30KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-1.docx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "作成・記入要領（PDF/2,527KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_web_yoryo_happyouc.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "出力イメージ（PDF/16 KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_webimage_happyouc.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-2（PDF/211KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-2.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-2 （Word/29KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-2.docx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "作成・記入要領 （PDF/1,506KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_web_yoryo_kokusai.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "出力イメージ（PDF/20KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_webimage_kokusai.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-3 （PDF/240KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-3.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-3 （Word/37KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-3.docx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "作成・記入要領 （PDF/1,391KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_web_yoryo_tosho.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "出力イメージ（PDF/21KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_webimage_tosho.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-4 （PDF/236KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-4.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-4（Word/39KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-4.docx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 紙媒体刊行用（PDF/112KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-04a.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 紙媒体刊行用（Excel/38KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-04a.xlsx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 電子媒体刊行用 （PDF/97KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-04b.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 電子媒体刊行用（Excel/31KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-04b.xlsx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 翻訳・校閲用（PDF/57KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-04c.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 翻訳・校閲用 （Excel/22KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-04c.xlsx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "発行部数積算書 記入例 （PDF/185KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-05.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "発行部数積算書 （PDF/55KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-06.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "発行部数積算書（Word/17KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_d-06.docx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "作成・記入要領（PDF/3,175KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_web_yoryo_db.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "出力イメージ（PDF/25KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_webimage_db.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-5 （PDF/223KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-5.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "S-51-5 （Word/36KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-5.docx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 入力作業委託費 （PDF/69KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_e-04a.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 入力作業委託費（Excel/14KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_e-04a.xlsx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 記録メディア作成委託費 （PDF/68KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_e-04b.pdf",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "見積書 記録メディア作成委託費 （Excel/14KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/ii_e-04b.xlsx",
+          "kind": "file",
+          "section": "２．計画調書（添付ファイル項目）等"
+        },
+        {
+          "title": "記入作成上の注意（PDF/105KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-51_yoryo.pdf",
+          "kind": "file",
+          "section": "３．応募者情報変更願"
+        },
+        {
+          "title": "U-51-1（PDF/102KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-51-1.pdf",
+          "kind": "file",
+          "section": "３．応募者情報変更願"
+        },
+        {
+          "title": "U-51-1（Word/21KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-51-1.docx",
+          "kind": "file",
+          "section": "３．応募者情報変更願"
+        },
+        {
+          "title": "U-51-2（PDF/100KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-51-2.pdf",
+          "kind": "file",
+          "section": "３．応募者情報変更願"
+        },
+        {
+          "title": "U-51-2（Word/22KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-51-2.docx",
+          "kind": "file",
+          "section": "３．応募者情報変更願"
+        },
+        {
+          "title": "記入作成上の注意 （PDF/158KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-60_yoryo.pdf",
+          "kind": "file",
+          "section": "研究機関が作成する様式"
+        },
+        {
+          "title": "U-60（PDF/90KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-60.pdf",
+          "kind": "file",
+          "section": "研究機関が作成する様式"
+        },
+        {
+          "title": "U-60（Excel/15KB）",
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/u-60.xlsx",
+          "kind": "file",
+          "section": "研究機関が作成する様式"
+        }
+      ],
+      "forms": [
+        {
+          "form_number": "S-51-1",
+          "call_name": "研究成果公開促進費",
+          "family_names": [
+            "研究成果公開促進費"
+          ],
+          "page_sections": [
+            "２．計画調書（添付ファイル項目）等"
+          ],
+          "row_texts": [
+            "添付ファイル項目様式（S-51-1） S-51-1 （PDF/217KB） S-51-1 （Word/30KB）",
+            "S-51-1 （PDF/217KB）",
+            "S-51-1 （Word/30KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-1.pdf",
+              "title": "S-51-1 （PDF/217KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-1.docx",
+              "title": "S-51-1 （Word/30KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-1 （PDF/217KB）",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-1 （Word/30KB）",
+              "kind": "page"
+            }
+          ]
+        },
+        {
+          "form_number": "S-51-2",
+          "call_name": "研究成果公開促進費",
+          "family_names": [
+            "研究成果公開促進費"
+          ],
+          "page_sections": [
+            "２．計画調書（添付ファイル項目）等"
+          ],
+          "row_texts": [
+            "添付ファイル項目様式（S-51-2） S-51-2（PDF/211KB） S-51-2 （Word/29KB）",
+            "S-51-2（PDF/211KB）",
+            "S-51-2 （Word/29KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-2.pdf",
+              "title": "S-51-2（PDF/211KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-2.docx",
+              "title": "S-51-2 （Word/29KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-2（PDF/211KB）",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-2 （Word/29KB）",
+              "kind": "page"
+            }
+          ]
+        },
+        {
+          "form_number": "S-51-3",
+          "call_name": "研究成果公開促進費",
+          "family_names": [
+            "研究成果公開促進費"
+          ],
+          "page_sections": [
+            "２．計画調書（添付ファイル項目）等"
+          ],
+          "row_texts": [
+            "添付ファイル項目様式（S-51-3） S-51-3 （PDF/240KB） S-51-3 （Word/37KB）",
+            "S-51-3 （PDF/240KB）",
+            "S-51-3 （Word/37KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-3.pdf",
+              "title": "S-51-3 （PDF/240KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-3.docx",
+              "title": "S-51-3 （Word/37KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-3 （PDF/240KB）",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-3 （Word/37KB）",
+              "kind": "page"
+            }
+          ]
+        },
+        {
+          "form_number": "S-51-4",
+          "call_name": "研究成果公開促進費",
+          "family_names": [
+            "研究成果公開促進費"
+          ],
+          "page_sections": [
+            "２．計画調書（添付ファイル項目）等"
+          ],
+          "row_texts": [
+            "添付ファイル項目様式（S-51-4） S-51-4 （PDF/236KB） S-51-4（Word/39KB）",
+            "S-51-4 （PDF/236KB）",
+            "S-51-4（Word/39KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-4.pdf",
+              "title": "S-51-4 （PDF/236KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-4.docx",
+              "title": "S-51-4（Word/39KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-4 （PDF/236KB）",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-4（Word/39KB）",
+              "kind": "page"
+            }
+          ]
+        },
+        {
+          "form_number": "S-51-5",
+          "call_name": "研究成果公開促進費",
+          "family_names": [
+            "研究成果公開促進費"
+          ],
+          "page_sections": [
+            "２．計画調書（添付ファイル項目）等"
+          ],
+          "row_texts": [
+            "添付ファイル項目様式（S-51-5） S-51-5 （PDF/223KB） S-51-5 （Word/36KB）",
+            "S-51-5 （PDF/223KB）",
+            "S-51-5 （Word/36KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-5.pdf",
+              "title": "S-51-5 （PDF/223KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-5.docx",
+              "title": "S-51-5 （Word/36KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-5 （PDF/223KB）",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-51-5 （Word/36KB）",
+              "kind": "page"
+            }
+          ]
+        },
+        {
+          "form_number": "S-52",
+          "call_name": "研究成果公開促進費",
+          "family_names": [
+            "研究成果公開促進費"
+          ],
+          "page_sections": [
+            "２．計画調書（添付ファイル項目）等"
+          ],
+          "row_texts": [
+            "添付ファイル項目様式（S-52） S-52（PDF/103KB） S-52（Word/22KB）",
+            "S-52（PDF/103KB）",
+            "S-52（Word/22KB）"
+          ],
+          "links": [
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-52.pdf",
+              "title": "S-52（PDF/103KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-52.docx",
+              "title": "S-52（Word/22KB）",
+              "kind": "file"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-52（PDF/103KB）",
+              "kind": "page"
+            },
+            {
+              "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+              "title": "S-52（Word/22KB）",
+              "kind": "page"
+            }
+          ]
+        }
+      ],
+      "form_codes": [
+        "S-51-1",
+        "S-51-2",
+        "S-51-3",
+        "S-51-4",
+        "S-51-5",
+        "S-52"
+      ],
+      "resource_count": 54,
+      "document_count": 50,
+      "form_count": 6,
+      "search_terms": [
+        "研究成果公開促進費",
+        "研究成果公開促進費",
+        "令和８(2026)年度研究成果公開促進費の公募について"
+      ]
     }
   ],
   "timeline": [
+    {
+      "id": "overseas_partnership_research-open",
+      "program_id": "overseas_partnership_research",
+      "program_title": "国際共同研究加速基金（海外連携研究）",
+      "program_title_ja": "国際共同研究加速基金（海外連携研究）",
+      "program_title_zh": "国际共同研究加速基金（海外联携研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "theme": "toyama",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2024-03-01",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2024-05-09 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2024-05-09 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2024-05-09 16:30 JST."
+    },
+    {
+      "id": "overseas_partnership_research-system",
+      "program_id": "overseas_partnership_research",
+      "program_title": "国際共同研究加速基金（海外連携研究）",
+      "program_title_ja": "国際共同研究加速基金（海外連携研究）",
+      "program_title_zh": "国际共同研究加速基金（海外联携研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "theme": "toyama",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2024-03-08",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 国際共同研究加速基金（海外連携研究） です。",
+      "note_zh": "电子申报系统可开始用于 国际共同研究加速基金（海外联携研究） 的日期。",
+      "note_en": "Electronic application system availability for Fund for the Promotion of Joint International Research (Overseas Partnership Research)."
+    },
+    {
+      "id": "overseas_partnership_research-deadline",
+      "program_id": "overseas_partnership_research",
+      "program_title": "国際共同研究加速基金（海外連携研究）",
+      "program_title_ja": "国際共同研究加速基金（海外連携研究）",
+      "program_title_zh": "国际共同研究加速基金（海外联携研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2024-05-09",
+      "datetime": "2024-05-09T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "国際共同研究加速基金（海外連携研究）の JSPS 公式締切です。",
+      "note_zh": "国际共同研究加速基金（海外联携研究） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Fund for the Promotion of Joint International Research (Overseas Partnership Research)."
+    },
+    {
+      "id": "scientific_research_s-notice",
+      "program_id": "scientific_research_s",
+      "program_title": "基盤研究（S）",
+      "program_title_ja": "基盤研究（Ｓ）",
+      "program_title_zh": "基盘研究（S）",
+      "program_title_en": "Scientific Research (S)",
+      "theme": "usst",
+      "type": "notice",
+      "title_ja": "公募通知の公開",
+      "title_zh": "官方通知发布",
+      "title_en": "Official notice posted",
+      "date": "2025-04-11",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "基盤研究（Ｓ）の公募通知が公開された日です。",
+      "note_zh": "基盘研究（S）的公募通知发布日期。",
+      "note_en": "Official notice date for Scientific Research (S)."
+    },
+    {
+      "id": "scientific_research_s-open",
+      "program_id": "scientific_research_s",
+      "program_title": "基盤研究（S）",
+      "program_title_ja": "基盤研究（Ｓ）",
+      "program_title_zh": "基盘研究（S）",
+      "program_title_en": "Scientific Research (S)",
+      "theme": "usst",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2025-04-11",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2025-06-17 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2025-06-17 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2025-06-17 16:30 JST."
+    },
+    {
+      "id": "special_promotion_research-notice",
+      "program_id": "special_promotion_research",
+      "program_title": "特別推進研究",
+      "program_title_ja": "特別推進研究",
+      "program_title_zh": "特别推进研究",
+      "program_title_en": "Specially Promoted Research",
+      "theme": "usst",
+      "type": "notice",
+      "title_ja": "公募通知の公開",
+      "title_zh": "官方通知发布",
+      "title_en": "Official notice posted",
+      "date": "2025-04-11",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "特別推進研究の公募通知が公開された日です。",
+      "note_zh": "特别推进研究的公募通知发布日期。",
+      "note_en": "Official notice date for Specially Promoted Research."
+    },
+    {
+      "id": "special_promotion_research-open",
+      "program_id": "special_promotion_research",
+      "program_title": "特別推進研究",
+      "program_title_ja": "特別推進研究",
+      "program_title_zh": "特别推进研究",
+      "program_title_en": "Specially Promoted Research",
+      "theme": "usst",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2025-04-11",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2025-06-17 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2025-06-17 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2025-06-17 16:30 JST."
+    },
+    {
+      "id": "scientific_research_s-system",
+      "program_id": "scientific_research_s",
+      "program_title": "基盤研究（S）",
+      "program_title_ja": "基盤研究（Ｓ）",
+      "program_title_zh": "基盘研究（S）",
+      "program_title_en": "Scientific Research (S)",
+      "theme": "usst",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2025-04-18",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 基盤研究（Ｓ） です。",
+      "note_zh": "电子申报系统可开始用于 基盘研究（S） 的日期。",
+      "note_en": "Electronic application system availability for Scientific Research (S)."
+    },
+    {
+      "id": "special_promotion_research-system",
+      "program_id": "special_promotion_research",
+      "program_title": "特別推進研究",
+      "program_title_ja": "特別推進研究",
+      "program_title_zh": "特别推进研究",
+      "program_title_en": "Specially Promoted Research",
+      "theme": "usst",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2025-04-18",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 特別推進研究 です。",
+      "note_zh": "电子申报系统可开始用于 特别推进研究 的日期。",
+      "note_en": "Electronic application system availability for Specially Promoted Research."
+    },
+    {
+      "id": "scientific_research_s-deadline",
+      "program_id": "scientific_research_s",
+      "program_title": "基盤研究（S）",
+      "program_title_ja": "基盤研究（Ｓ）",
+      "program_title_zh": "基盘研究（S）",
+      "program_title_en": "Scientific Research (S)",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2025-06-17",
+      "datetime": "2025-06-17T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "基盤研究（Ｓ）の JSPS 公式締切です。",
+      "note_zh": "基盘研究（S） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Scientific Research (S)."
+    },
+    {
+      "id": "special_promotion_research-deadline",
+      "program_id": "special_promotion_research",
+      "program_title": "特別推進研究",
+      "program_title_ja": "特別推進研究",
+      "program_title_zh": "特别推进研究",
+      "program_title_en": "Specially Promoted Research",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2025-06-17",
+      "datetime": "2025-06-17T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "特別推進研究の JSPS 公式締切です。",
+      "note_zh": "特别推进研究 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Specially Promoted Research."
+    },
+    {
+      "id": "international_research_strengthening-open",
+      "program_id": "international_research_strengthening",
+      "program_title": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "theme": "toyama",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2025-09-17 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2025-09-17 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2025-09-17 16:30 JST."
+    },
+    {
+      "id": "returning_researchers_development-open",
+      "program_id": "returning_researchers_development",
+      "program_title": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_zh": "国际共同研究加速基金（归国发展研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "theme": "toyama",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2025-09-17 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2025-09-17 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2025-09-17 16:30 JST."
+    },
+    {
+      "id": "scientific_research_abc-notice",
+      "program_id": "scientific_research_abc",
+      "program_title": "基盤研究（A/B/C）",
+      "program_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "program_title_zh": "基盘研究（A/B/C）",
+      "program_title_en": "Scientific Research (A/B/C)",
+      "theme": "tohoku",
+      "type": "notice",
+      "title_ja": "公募通知の公開",
+      "title_zh": "官方通知发布",
+      "title_en": "Official notice posted",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "基盤研究（Ａ・Ｂ・Ｃ）の公募通知が公開された日です。",
+      "note_zh": "基盘研究（A/B/C）的公募通知发布日期。",
+      "note_en": "Official notice date for Scientific Research (A/B/C)."
+    },
+    {
+      "id": "scientific_research_abc-open",
+      "program_id": "scientific_research_abc",
+      "program_title": "基盤研究（A/B/C）",
+      "program_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "program_title_zh": "基盘研究（A/B/C）",
+      "program_title_en": "Scientific Research (A/B/C)",
+      "theme": "tohoku",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2025-09-17 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2025-09-17 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2025-09-17 16:30 JST."
+    },
+    {
+      "id": "incentive_research-open",
+      "program_id": "incentive_research",
+      "program_title": "奨励研究",
+      "program_title_ja": "奨励研究",
+      "program_title_zh": "奖励研究",
+      "program_title_en": "Encouragement of Scientists",
+      "theme": "usst",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2025-09-17 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2025-09-17 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2025-09-17 16:30 JST."
+    },
+    {
+      "id": "challenging_research-notice",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "type": "notice",
+      "title_ja": "公募通知の公開",
+      "title_zh": "官方通知发布",
+      "title_en": "Official notice posted",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "挑戦的研究の公募通知が公開された日です。",
+      "note_zh": "挑战性研究的公募通知发布日期。",
+      "note_en": "Official notice date for Challenging Research."
+    },
+    {
+      "id": "challenging_research-open",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2025-09-17 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2025-09-17 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2025-09-17 16:30 JST."
+    },
+    {
+      "id": "research_results_publication-notice",
+      "program_id": "research_results_publication",
+      "program_title": "研究成果公開促進費",
+      "program_title_ja": "研究成果公開促進費",
+      "program_title_zh": "研究成果公开促进费",
+      "program_title_en": "Publication of Scientific Research Results",
+      "theme": "usst",
+      "type": "notice",
+      "title_ja": "公募通知の公開",
+      "title_zh": "官方通知发布",
+      "title_en": "Official notice posted",
+      "date": "2025-07-14",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "研究成果公開促進費の公募通知が公開された日です。",
+      "note_zh": "研究成果公开促进费的公募通知发布日期。",
+      "note_en": "Official notice date for Publication of Scientific Research Results."
+    },
     {
       "id": "young_research-notice",
       "program_id": "young_research",
@@ -959,6 +6318,101 @@ window.KAKENHI_PORTAL_DATA = {
       "note_en": "Call period opens; the JSPS deadline is 2025-09-17 16:30 JST."
     },
     {
+      "id": "international_research_strengthening-system",
+      "program_id": "international_research_strengthening",
+      "program_title": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "theme": "toyama",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2025-07-22",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 国際共同研究加速基金（国際共同研究強化） です。",
+      "note_zh": "电子申报系统可开始用于 国际共同研究加速基金（国际共同研究强化） 的日期。",
+      "note_en": "Electronic application system availability for Fund for the Promotion of Joint International Research (Fostering Joint International Research)."
+    },
+    {
+      "id": "returning_researchers_development-system",
+      "program_id": "returning_researchers_development",
+      "program_title": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_zh": "国际共同研究加速基金（归国发展研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "theme": "toyama",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2025-07-22",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 国際共同研究加速基金（帰国発展研究） です。",
+      "note_zh": "电子申报系统可开始用于 国际共同研究加速基金（归国发展研究） 的日期。",
+      "note_en": "Electronic application system availability for Fund for the Promotion of Joint International Research (Returning Researcher Development)."
+    },
+    {
+      "id": "scientific_research_abc-system",
+      "program_id": "scientific_research_abc",
+      "program_title": "基盤研究（A/B/C）",
+      "program_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "program_title_zh": "基盘研究（A/B/C）",
+      "program_title_en": "Scientific Research (A/B/C)",
+      "theme": "tohoku",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2025-07-22",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 基盤研究（Ａ・Ｂ・Ｃ） です。",
+      "note_zh": "电子申报系统可开始用于 基盘研究（A/B/C） 的日期。",
+      "note_en": "Electronic application system availability for Scientific Research (A/B/C)."
+    },
+    {
+      "id": "incentive_research-system",
+      "program_id": "incentive_research",
+      "program_title": "奨励研究",
+      "program_title_ja": "奨励研究",
+      "program_title_zh": "奖励研究",
+      "program_title_en": "Encouragement of Scientists",
+      "theme": "usst",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2025-07-22",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 奨励研究 です。",
+      "note_zh": "电子申报系统可开始用于 奖励研究 的日期。",
+      "note_en": "Electronic application system availability for Encouragement of Scientists."
+    },
+    {
+      "id": "challenging_research-system",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2025-07-22",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 挑戦的研究 です。",
+      "note_zh": "电子申报系统可开始用于 挑战性研究 的日期。",
+      "note_en": "Electronic application system availability for Challenging Research."
+    },
+    {
       "id": "young_research-system",
       "program_id": "young_research",
       "program_title": "若手研究",
@@ -978,6 +6432,101 @@ window.KAKENHI_PORTAL_DATA = {
       "note_en": "Electronic application system availability for Early-Career Scientists."
     },
     {
+      "id": "international_research_strengthening-deadline",
+      "program_id": "international_research_strengthening",
+      "program_title": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2025-09-17",
+      "datetime": "2025-09-17T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "国際共同研究加速基金（国際共同研究強化）の JSPS 公式締切です。",
+      "note_zh": "国际共同研究加速基金（国际共同研究强化） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Fund for the Promotion of Joint International Research (Fostering Joint International Research)."
+    },
+    {
+      "id": "returning_researchers_development-deadline",
+      "program_id": "returning_researchers_development",
+      "program_title": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_zh": "国际共同研究加速基金（归国发展研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2025-09-17",
+      "datetime": "2025-09-17T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "国際共同研究加速基金（帰国発展研究）の JSPS 公式締切です。",
+      "note_zh": "国际共同研究加速基金（归国发展研究） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Fund for the Promotion of Joint International Research (Returning Researcher Development)."
+    },
+    {
+      "id": "scientific_research_abc-deadline",
+      "program_id": "scientific_research_abc",
+      "program_title": "基盤研究（A/B/C）",
+      "program_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "program_title_zh": "基盘研究（A/B/C）",
+      "program_title_en": "Scientific Research (A/B/C)",
+      "theme": "tohoku",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2025-09-17",
+      "datetime": "2025-09-17T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "基盤研究（Ａ・Ｂ・Ｃ）の JSPS 公式締切です。",
+      "note_zh": "基盘研究（A/B/C） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Scientific Research (A/B/C)."
+    },
+    {
+      "id": "incentive_research-deadline",
+      "program_id": "incentive_research",
+      "program_title": "奨励研究",
+      "program_title_ja": "奨励研究",
+      "program_title_zh": "奖励研究",
+      "program_title_en": "Encouragement of Scientists",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2025-09-17",
+      "datetime": "2025-09-17T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "奨励研究の JSPS 公式締切です。",
+      "note_zh": "奖励研究 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Encouragement of Scientists."
+    },
+    {
+      "id": "challenging_research-deadline",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2025-09-17",
+      "datetime": "2025-09-17T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "挑戦的研究の JSPS 公式締切です。",
+      "note_zh": "挑战性研究 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Challenging Research."
+    },
+    {
       "id": "young_research-deadline",
       "program_id": "young_research",
       "program_title": "若手研究",
@@ -995,6 +6544,120 @@ window.KAKENHI_PORTAL_DATA = {
       "note_ja": "若手研究の JSPS 公式締切です。",
       "note_zh": "青年研究（若手研究） 的 JSPS 官方截止时间。",
       "note_en": "Official JSPS deadline for Early-Career Scientists."
+    },
+    {
+      "id": "international_leading_research-notice",
+      "program_id": "international_leading_research",
+      "program_title": "国際共同研究加速基金（国際先導研究）",
+      "program_title_ja": "国際共同研究加速基金（国際先導研究）",
+      "program_title_zh": "国际共同研究加速基金（国际先导研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "theme": "toyama",
+      "type": "notice",
+      "title_ja": "公募通知の公開",
+      "title_zh": "官方通知发布",
+      "title_en": "Official notice posted",
+      "date": "2026-01-09",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "国際共同研究加速基金（国際先導研究）の公募通知が公開された日です。",
+      "note_zh": "国际共同研究加速基金（国际先导研究）的公募通知发布日期。",
+      "note_en": "Official notice date for Fund for the Promotion of Joint International Research (International Leading Research)."
+    },
+    {
+      "id": "international_leading_research-open",
+      "program_id": "international_leading_research",
+      "program_title": "国際共同研究加速基金（国際先導研究）",
+      "program_title_ja": "国際共同研究加速基金（国際先導研究）",
+      "program_title_zh": "国际共同研究加速基金（国际先导研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "theme": "toyama",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2026-01-09",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2026-03-13 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2026-03-13 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2026-03-13 16:30 JST."
+    },
+    {
+      "id": "international_leading_research-system",
+      "program_id": "international_leading_research",
+      "program_title": "国際共同研究加速基金（国際先導研究）",
+      "program_title_ja": "国際共同研究加速基金（国際先導研究）",
+      "program_title_zh": "国际共同研究加速基金（国际先导研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "theme": "toyama",
+      "type": "system",
+      "title_ja": "電子申請システム利用開始",
+      "title_zh": "电子申报系统开放",
+      "title_en": "Electronic system opens",
+      "date": "2026-01-19",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "電子申請システムの利用開始日。対象種目は 国際共同研究加速基金（国際先導研究） です。",
+      "note_zh": "电子申报系统可开始用于 国际共同研究加速基金（国际先导研究） 的日期。",
+      "note_en": "Electronic application system availability for Fund for the Promotion of Joint International Research (International Leading Research)."
+    },
+    {
+      "id": "jsps_fellows_incentive-notice",
+      "program_id": "jsps_fellows_incentive",
+      "program_title": "特別研究員奨励費",
+      "program_title_ja": "特別研究員奨励費",
+      "program_title_zh": "特别研究员奖励费",
+      "program_title_en": "Grant-in-Aid for JSPS Fellows",
+      "theme": "usst",
+      "type": "notice",
+      "title_ja": "公募通知の公開",
+      "title_zh": "官方通知发布",
+      "title_en": "Official notice posted",
+      "date": "2026-01-22",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "特別研究員奨励費の公募通知が公開された日です。",
+      "note_zh": "特别研究员奖励费的公募通知发布日期。",
+      "note_en": "Official notice date for Grant-in-Aid for JSPS Fellows."
+    },
+    {
+      "id": "jsps_fellows_incentive-open",
+      "program_id": "jsps_fellows_incentive",
+      "program_title": "特別研究員奨励費",
+      "program_title_ja": "特別研究員奨励費",
+      "program_title_zh": "特别研究员奖励费",
+      "program_title_en": "Grant-in-Aid for JSPS Fellows",
+      "theme": "usst",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2026-01-22",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2026-02-19 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2026-02-19 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2026-02-19 16:30 JST."
+    },
+    {
+      "id": "jsps_fellows_incentive-deadline",
+      "program_id": "jsps_fellows_incentive",
+      "program_title": "特別研究員奨励費",
+      "program_title_ja": "特別研究員奨励費",
+      "program_title_zh": "特别研究员奖励费",
+      "program_title_en": "Grant-in-Aid for JSPS Fellows",
+      "theme": "usst",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-02-19",
+      "datetime": "2026-02-19T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "特別研究員奨励費の JSPS 公式締切です。",
+      "note_zh": "特别研究员奖励费 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Grant-in-Aid for JSPS Fellows."
     },
     {
       "id": "startup_support-notice",
@@ -1035,6 +6698,25 @@ window.KAKENHI_PORTAL_DATA = {
       "note_en": "Call period opens; the JSPS deadline is 2026-05-08 16:30 JST."
     },
     {
+      "id": "international_leading_research-deadline",
+      "program_id": "international_leading_research",
+      "program_title": "国際共同研究加速基金（国際先導研究）",
+      "program_title_ja": "国際共同研究加速基金（国際先導研究）",
+      "program_title_zh": "国际共同研究加速基金（国际先导研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-03-13",
+      "datetime": "2026-03-13T16:30:00+09:00",
+      "status": "past",
+      "note_ja": "国際共同研究加速基金（国際先導研究）の JSPS 公式締切です。",
+      "note_zh": "国际共同研究加速基金（国际先导研究） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Fund for the Promotion of Joint International Research (International Leading Research)."
+    },
+    {
       "id": "startup_support-system",
       "program_id": "startup_support",
       "program_title": "研究活動スタート支援",
@@ -1054,6 +6736,25 @@ window.KAKENHI_PORTAL_DATA = {
       "note_en": "Electronic application system availability for Research Activity Start-up Support."
     },
     {
+      "id": "independent_base_building_support-open",
+      "program_id": "independent_base_building_support",
+      "program_title": "独立基盤形成支援（試行）",
+      "program_title_ja": "独立基盤形成支援（試行）",
+      "program_title_zh": "独立基盘形成支援（试行）",
+      "program_title_en": "Independent Research Base Building Support (Pilot)",
+      "theme": "toyama",
+      "type": "open",
+      "title_ja": "公募受付開始",
+      "title_zh": "公募开始",
+      "title_en": "Call opens",
+      "date": "2026-03-23",
+      "datetime": null,
+      "status": "past",
+      "note_ja": "公募期間開始。JSPS 締切は 2026-05-15 16:30 JST です。",
+      "note_zh": "公募期开始；JSPS 截止为 2026-05-15 16:30 JST。",
+      "note_en": "Call period opens; the JSPS deadline is 2026-05-15 16:30 JST."
+    },
+    {
       "id": "startup_support-deadline",
       "program_id": "startup_support",
       "program_title": "研究活動スタート支援",
@@ -1071,9 +6772,327 @@ window.KAKENHI_PORTAL_DATA = {
       "note_ja": "研究活動スタート支援の JSPS 公式締切です。",
       "note_zh": "研究活动启动支援 的 JSPS 官方截止时间。",
       "note_en": "Official JSPS deadline for Research Activity Start-up Support."
+    },
+    {
+      "id": "independent_base_building_support-deadline",
+      "program_id": "independent_base_building_support",
+      "program_title": "独立基盤形成支援（試行）",
+      "program_title_ja": "独立基盤形成支援（試行）",
+      "program_title_zh": "独立基盘形成支援（试行）",
+      "program_title_en": "Independent Research Base Building Support (Pilot)",
+      "theme": "toyama",
+      "type": "deadline",
+      "title_ja": "JSPS 締切",
+      "title_zh": "JSPS 截止",
+      "title_en": "JSPS deadline",
+      "date": "2026-05-15",
+      "datetime": "2026-05-15T16:30:00+09:00",
+      "status": "upcoming",
+      "note_ja": "独立基盤形成支援（試行）の JSPS 公式締切です。",
+      "note_zh": "独立基盘形成支援（试行） 的 JSPS 官方截止时间。",
+      "note_en": "Official JSPS deadline for Independent Research Base Building Support (Pilot)."
     }
   ],
   "forms_catalog": [
+    {
+      "id": "special_promotion_research-S-1",
+      "program_id": "special_promotion_research",
+      "program_title": "特別推進研究",
+      "program_title_ja": "特別推進研究",
+      "program_title_zh": "特别推进研究",
+      "program_title_en": "Specially Promoted Research",
+      "theme": "usst",
+      "form_number": "S-1",
+      "family_name": "特別推進研究",
+      "page_sections": [
+        "研究計画調書の全体イメージ",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "特別推進研究 様式S-1(1)、S-1(2) 様式S-1(3)",
+        "特別推進研究 S-1(1) S-1(2) S-1(3) S-1(1) S-1(2) S-1(3)",
+        "S-1(1)",
+        "S-1(2)",
+        "S-1(3)"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_tokusui.pdf",
+          "title": "",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_tokusui.pdf",
+          "title": "",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_tokusui.pdf",
+          "title": "",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3.pdf",
+          "title": "S-1(1) S-1(2) S-1(3)",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-1_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-2_e.pdf,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-1-3_e.pdf",
+          "title": "S-1(1) S-1(2) S-1(3)",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "title": "S-1(1)",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "title": "",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "title": "S-1(2)",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "title": "S-1(3)",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "scientific_research_s-S-11",
+      "program_id": "scientific_research_s",
+      "program_title": "基盤研究（S）",
+      "program_title_ja": "基盤研究（Ｓ）",
+      "program_title_zh": "基盘研究（S）",
+      "program_title_en": "Scientific Research (S)",
+      "theme": "usst",
+      "form_number": "S-11",
+      "family_name": "基盤研究（Ｓ）",
+      "page_sections": [
+        "研究計画調書の全体イメージ",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "基盤研究（Ｓ） 様式S-11 ー",
+        "基盤研究（Ｓ） S-11 S-11",
+        "S-11"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zenhan_kiban_s.pdf",
+          "title": "",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/kohan_kiban_s.pdf",
+          "title": "",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/zentai_kiban_s.pdf",
+          "title": "",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11.pdf",
+          "title": "S-11",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.docx,https://www.jsps.go.jp/file/storage/kaken_tokus2025/s-11_e.pdf",
+          "title": "S-11",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "title": "S-11",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+          "title": "",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "scientific_research_abc-S-12",
+      "program_id": "scientific_research_abc",
+      "program_title": "基盤研究（A/B/C）",
+      "program_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "program_title_zh": "基盘研究（A/B/C）",
+      "program_title_en": "Scientific Research (A/B/C)",
+      "theme": "tohoku",
+      "form_number": "S-12",
+      "family_name": "基盤研究（Ａ）",
+      "page_sections": [
+        "研究計画調書の全体イメージ（ダウンロード）",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "基盤研究（Ａ） 前半イメージ（PDF/127KB） 様式S-12を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,337KB）",
+        "基盤研究（Ａ） 様式Ｓ-12 （Word/52KB） 様式Ｓ-12（PDF/541KB） 様式Ｓ-12（Word/53KB） 様式Ｓ-12（PDF/417KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_a.pdf",
+          "title": "前半イメージ（PDF/127KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_a.pdf",
+          "title": "後半イメージ（PDF/28KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_a.pdf",
+          "title": "全体イメージ（PDF/1,337KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.docx",
+          "title": "様式Ｓ-12 （Word/52KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12.pdf",
+          "title": "様式Ｓ-12（PDF/541KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.docx",
+          "title": "様式Ｓ-12（Word/53KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-12_e.pdf",
+          "title": "様式Ｓ-12（PDF/417KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "scientific_research_abc-S-13",
+      "program_id": "scientific_research_abc",
+      "program_title": "基盤研究（A/B/C）",
+      "program_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "program_title_zh": "基盘研究（A/B/C）",
+      "program_title_en": "Scientific Research (A/B/C)",
+      "theme": "tohoku",
+      "form_number": "S-13",
+      "family_name": "基盤研究（Ｂ）",
+      "page_sections": [
+        "研究計画調書の全体イメージ（ダウンロード）",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "基盤研究（Ｂ） 前半イメージ（PDF/117KB） 様式S-13を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,322KB）",
+        "基盤研究（Ｂ） 様式Ｓ-13（Word/49KB） 様式Ｓ-13（PDF/535KB） 様式Ｓ-13（Word/52KB） 様式Ｓ-13（PDF/413KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_b.pdf",
+          "title": "前半イメージ（PDF/117KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_b.pdf",
+          "title": "後半イメージ（PDF/28KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_b.pdf",
+          "title": "全体イメージ（PDF/1,322KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.docx",
+          "title": "様式Ｓ-13（Word/49KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13.pdf",
+          "title": "様式Ｓ-13（PDF/535KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.docx",
+          "title": "様式Ｓ-13（Word/52KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-13_e.pdf",
+          "title": "様式Ｓ-13（PDF/413KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "scientific_research_abc-S-14",
+      "program_id": "scientific_research_abc",
+      "program_title": "基盤研究（A/B/C）",
+      "program_title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "program_title_zh": "基盘研究（A/B/C）",
+      "program_title_en": "Scientific Research (A/B/C)",
+      "theme": "tohoku",
+      "form_number": "S-14",
+      "family_name": "基盤研究（Ｃ）",
+      "page_sections": [
+        "研究計画調書の全体イメージ（ダウンロード）",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "基盤研究（Ｃ） 前半イメージ（PDF/117KB） 様式S-14を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,313KB）",
+        "基盤研究（Ｃ） 様式Ｓ-14（Word/49KB） 様式Ｓ-14（PDF/529KB） 様式Ｓ-14（Word/49KB） 様式Ｓ-14（PDF/412KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kiban_c.pdf",
+          "title": "前半イメージ（PDF/117KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kiban_c.pdf",
+          "title": "後半イメージ（PDF/28KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kiban_c.pdf",
+          "title": "全体イメージ（PDF/1,313KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.docx",
+          "title": "様式Ｓ-14（Word/49KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14.pdf",
+          "title": "様式Ｓ-14（PDF/529KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.docx",
+          "title": "様式Ｓ-14（Word/49KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-14_e.pdf",
+          "title": "様式Ｓ-14（PDF/412KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
     {
       "id": "young_research-S-21",
       "program_id": "young_research",
@@ -1148,7 +7167,9 @@ window.KAKENHI_PORTAL_DATA = {
       "row_texts": [
         "添付ファイル項目 forms to be uploaded S-22",
         "S-22（日本語 Japanese）(Word/45KB)",
-        "S-22（日本語 Japanese）（PDF版）(PDF/286KB)"
+        "S-22（英語 English）（Word/45KB）",
+        "S-22（日本語 Japanese）（PDF版）(PDF/286KB)",
+        "S-22（英語 English）（PDF版）（PDF/520KB）"
       ],
       "links": [
         {
@@ -1157,12 +7178,745 @@ window.KAKENHI_PORTAL_DATA = {
           "kind": "file"
         },
         {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22_e.docx",
+          "title": "S-22（英語 English）（Word/45KB）",
+          "kind": "file"
+        },
+        {
           "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22.pdf",
           "title": "S-22（日本語 Japanese）（PDF版）(PDF/286KB)",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/s-22_e.pdf",
+          "title": "S-22（英語 English）（PDF版）（PDF/520KB）",
           "kind": "file"
         }
       ],
       "priority": true
+    },
+    {
+      "id": "incentive_research-S-31",
+      "program_id": "incentive_research",
+      "program_title": "奨励研究",
+      "program_title_ja": "奨励研究",
+      "program_title_zh": "奖励研究",
+      "program_title_en": "Encouragement of Scientists",
+      "theme": "usst",
+      "form_number": "S-31",
+      "family_name": "奨励研究",
+      "page_sections": [
+        "２．添付ファイル項目（研究計画調書の2～3ページ）"
+      ],
+      "row_texts": [
+        "研究計画調書（添付ファイル項目）（様式S-３１）（PDF/234KB）",
+        "研究計画調書（添付ファイル項目）（様式S-３１）（Word/35KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/s-31.pdf",
+          "title": "研究計画調書（添付ファイル項目）（様式S-３１）（PDF/234KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/s-31.docx",
+          "title": "研究計画調書（添付ファイル項目）（様式S-３１）（Word/35KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "challenging_research-S-41-1",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "form_number": "S-41-1",
+      "family_name": "挑戦的研究（開拓）【概要版】",
+      "page_sections": [
+        "研究計画調書の全体イメージ（ダウンロード）",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "挑戦的研究（開拓）【概要版】 前半イメージ（PDF/118KB） 様式S-41-1を使用 - 全体イメージ（PDF/556KB）",
+        "挑戦的研究（開拓）【概要版】 様式Ｓ-41-1（Word/31KB） 様式Ｓ-41-1（PDF/431KB） 様式Ｓ-41-1（Word/34KB） 様式Ｓ-41-1（PDF/202KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kaitaku.pdf",
+          "title": "前半イメージ（PDF/118KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_kaitaku.pdf",
+          "title": "全体イメージ（PDF/556KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.docx",
+          "title": "様式Ｓ-41-1（Word/31KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1.pdf",
+          "title": "様式Ｓ-41-1（PDF/431KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.docx",
+          "title": "様式Ｓ-41-1（Word/34KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-1_e.pdf",
+          "title": "様式Ｓ-41-1（PDF/202KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "challenging_research-S-41-2",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "form_number": "S-41-2",
+      "family_name": "挑戦的研究（開拓）",
+      "page_sections": [
+        "研究計画調書の全体イメージ（ダウンロード）",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "挑戦的研究（開拓） 前半イメージ（PDF/118KB） 様式S-41-2を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,278KB）",
+        "挑戦的研究（開拓） 様式Ｓ-41-2（Word/42KB） 様式Ｓ-41-2（PDF/518KB） 様式Ｓ-41-2（Word/44KB） 様式Ｓ-41-2（PDF/305KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_kaitaku.pdf",
+          "title": "前半イメージ（PDF/118KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_kaitaku.pdf",
+          "title": "後半イメージ（PDF/28KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_kaitaku.pdf",
+          "title": "全体イメージ（PDF/1,278KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.docx",
+          "title": "様式Ｓ-41-2（Word/42KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2.pdf",
+          "title": "様式Ｓ-41-2（PDF/518KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.docx",
+          "title": "様式Ｓ-41-2（Word/44KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-41-2_e.pdf",
+          "title": "様式Ｓ-41-2（PDF/305KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "challenging_research-S-42-1",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "form_number": "S-42-1",
+      "family_name": "挑戦的研究（萌芽）【概要版】",
+      "page_sections": [
+        "研究計画調書の全体イメージ（ダウンロード）",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "挑戦的研究（萌芽）【概要版】 前半イメージ（PDF/117KB） 様式S-42-1を使用 - 全体イメージ（PDF/521KB）",
+        "挑戦的研究（萌芽）【概要版】 様式Ｓ-42-1（Word/32KB） 様式Ｓ-42-1（PDF/432KB） 様式Ｓ-42-1（Word/34KB） 様式Ｓ-42-1（PDF/203KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_houga.pdf",
+          "title": "前半イメージ（PDF/117KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_gaiyou_houga.pdf",
+          "title": "全体イメージ（PDF/521KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.docx",
+          "title": "様式Ｓ-42-1（Word/32KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1.pdf",
+          "title": "様式Ｓ-42-1（PDF/432KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.docx",
+          "title": "様式Ｓ-42-1（Word/34KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-1_e.pdf",
+          "title": "様式Ｓ-42-1（PDF/203KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "challenging_research-S-42-2",
+      "program_id": "challenging_research",
+      "program_title": "挑戦的研究",
+      "program_title_ja": "挑戦的研究",
+      "program_title_zh": "挑战性研究",
+      "program_title_en": "Challenging Research",
+      "theme": "tohoku",
+      "form_number": "S-42-2",
+      "family_name": "挑戦的研究（萌芽）",
+      "page_sections": [
+        "研究計画調書の全体イメージ（ダウンロード）",
+        "研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "挑戦的研究（萌芽） 前半イメージ（PDF/117KB） 様式S-42-2を使用 後半イメージ（PDF/28KB） 全体イメージ（PDF/1,090KB）",
+        "挑戦的研究（萌芽） 様式Ｓ-42-2（Word/37KB） 様式Ｓ-42-2（PDF/493KB） 様式Ｓ-42-2（Word/39KB） 様式Ｓ-42-2（PDF/280KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zenhan_houga.pdf",
+          "title": "前半イメージ（PDF/117KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/kohan_houga.pdf",
+          "title": "後半イメージ（PDF/28KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/zentai_houga.pdf",
+          "title": "全体イメージ（PDF/1,090KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.docx",
+          "title": "様式Ｓ-42-2（Word/37KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2.pdf",
+          "title": "様式Ｓ-42-2（PDF/493KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.docx",
+          "title": "様式Ｓ-42-2（Word/39KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/s-42-2_e.pdf",
+          "title": "様式Ｓ-42-2（PDF/280KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "research_results_publication-S-51-1",
+      "program_id": "research_results_publication",
+      "program_title": "研究成果公開促進費",
+      "program_title_ja": "研究成果公開促進費",
+      "program_title_zh": "研究成果公开促进费",
+      "program_title_en": "Publication of Scientific Research Results",
+      "theme": "usst",
+      "form_number": "S-51-1",
+      "family_name": "研究成果公開促進費",
+      "page_sections": [
+        "２．計画調書（添付ファイル項目）等"
+      ],
+      "row_texts": [
+        "添付ファイル項目様式（S-51-1） S-51-1 （PDF/217KB） S-51-1 （Word/30KB）",
+        "S-51-1 （PDF/217KB）",
+        "S-51-1 （Word/30KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-1.pdf",
+          "title": "S-51-1 （PDF/217KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-1.docx",
+          "title": "S-51-1 （Word/30KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-1 （PDF/217KB）",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-1 （Word/30KB）",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "research_results_publication-S-51-2",
+      "program_id": "research_results_publication",
+      "program_title": "研究成果公開促進費",
+      "program_title_ja": "研究成果公開促進費",
+      "program_title_zh": "研究成果公开促进费",
+      "program_title_en": "Publication of Scientific Research Results",
+      "theme": "usst",
+      "form_number": "S-51-2",
+      "family_name": "研究成果公開促進費",
+      "page_sections": [
+        "２．計画調書（添付ファイル項目）等"
+      ],
+      "row_texts": [
+        "添付ファイル項目様式（S-51-2） S-51-2（PDF/211KB） S-51-2 （Word/29KB）",
+        "S-51-2（PDF/211KB）",
+        "S-51-2 （Word/29KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-2.pdf",
+          "title": "S-51-2（PDF/211KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-2.docx",
+          "title": "S-51-2 （Word/29KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-2（PDF/211KB）",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-2 （Word/29KB）",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "research_results_publication-S-51-3",
+      "program_id": "research_results_publication",
+      "program_title": "研究成果公開促進費",
+      "program_title_ja": "研究成果公開促進費",
+      "program_title_zh": "研究成果公开促进费",
+      "program_title_en": "Publication of Scientific Research Results",
+      "theme": "usst",
+      "form_number": "S-51-3",
+      "family_name": "研究成果公開促進費",
+      "page_sections": [
+        "２．計画調書（添付ファイル項目）等"
+      ],
+      "row_texts": [
+        "添付ファイル項目様式（S-51-3） S-51-3 （PDF/240KB） S-51-3 （Word/37KB）",
+        "S-51-3 （PDF/240KB）",
+        "S-51-3 （Word/37KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-3.pdf",
+          "title": "S-51-3 （PDF/240KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-3.docx",
+          "title": "S-51-3 （Word/37KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-3 （PDF/240KB）",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-3 （Word/37KB）",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "research_results_publication-S-51-4",
+      "program_id": "research_results_publication",
+      "program_title": "研究成果公開促進費",
+      "program_title_ja": "研究成果公開促進費",
+      "program_title_zh": "研究成果公开促进费",
+      "program_title_en": "Publication of Scientific Research Results",
+      "theme": "usst",
+      "form_number": "S-51-4",
+      "family_name": "研究成果公開促進費",
+      "page_sections": [
+        "２．計画調書（添付ファイル項目）等"
+      ],
+      "row_texts": [
+        "添付ファイル項目様式（S-51-4） S-51-4 （PDF/236KB） S-51-4（Word/39KB）",
+        "S-51-4 （PDF/236KB）",
+        "S-51-4（Word/39KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-4.pdf",
+          "title": "S-51-4 （PDF/236KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-4.docx",
+          "title": "S-51-4（Word/39KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-4 （PDF/236KB）",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-4（Word/39KB）",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "research_results_publication-S-51-5",
+      "program_id": "research_results_publication",
+      "program_title": "研究成果公開促進費",
+      "program_title_ja": "研究成果公開促進費",
+      "program_title_zh": "研究成果公开促进费",
+      "program_title_en": "Publication of Scientific Research Results",
+      "theme": "usst",
+      "form_number": "S-51-5",
+      "family_name": "研究成果公開促進費",
+      "page_sections": [
+        "２．計画調書（添付ファイル項目）等"
+      ],
+      "row_texts": [
+        "添付ファイル項目様式（S-51-5） S-51-5 （PDF/223KB） S-51-5 （Word/36KB）",
+        "S-51-5 （PDF/223KB）",
+        "S-51-5 （Word/36KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-5.pdf",
+          "title": "S-51-5 （PDF/223KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-51-5.docx",
+          "title": "S-51-5 （Word/36KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-5 （PDF/223KB）",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-51-5 （Word/36KB）",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "research_results_publication-S-52",
+      "program_id": "research_results_publication",
+      "program_title": "研究成果公開促進費",
+      "program_title_ja": "研究成果公開促進費",
+      "program_title_zh": "研究成果公开促进费",
+      "program_title_en": "Publication of Scientific Research Results",
+      "theme": "usst",
+      "form_number": "S-52",
+      "family_name": "研究成果公開促進費",
+      "page_sections": [
+        "２．計画調書（添付ファイル項目）等"
+      ],
+      "row_texts": [
+        "添付ファイル項目様式（S-52） S-52（PDF/103KB） S-52（Word/22KB）",
+        "S-52（PDF/103KB）",
+        "S-52（Word/22KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-52.pdf",
+          "title": "S-52（PDF/103KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/s-52.docx",
+          "title": "S-52（Word/22KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-52（PDF/103KB）",
+          "kind": "page"
+        },
+        {
+          "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+          "title": "S-52（Word/22KB）",
+          "kind": "page"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "international_research_strengthening-S-61",
+      "program_id": "international_research_strengthening",
+      "program_title": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "program_title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "theme": "toyama",
+      "form_number": "S-61",
+      "family_name": "国際共同研究加速基金（国際共同研究強化）",
+      "page_sections": [
+        "2. 研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "S-61（PDF/430KB）",
+        "S-61 （Word/56KB）",
+        "S-61 （PDF/337KB）",
+        "S-61 （Word/53KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_s-61.pdf",
+          "title": "S-61（PDF/430KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_s-61.docx",
+          "title": "S-61 （Word/56KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_s-61.pdf",
+          "title": "S-61 （PDF/337KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_en_kyoka_s-61.docx",
+          "title": "S-61 （Word/53KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "returning_researchers_development-S-62",
+      "program_id": "returning_researchers_development",
+      "program_title": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "program_title_zh": "国际共同研究加速基金（归国发展研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "theme": "toyama",
+      "form_number": "S-62",
+      "family_name": "国際共同研究加速基金（帰国発展研究）",
+      "page_sections": [
+        "2. 研究計画調書（添付ファイル項目）"
+      ],
+      "row_texts": [
+        "S-62 様式（PDF/460KB）",
+        "S-62 様式（Word/52KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_s-62.pdf",
+          "title": "S-62 様式（PDF/460KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_s-62.docx",
+          "title": "S-62 様式（Word/52KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "overseas_partnership_research-S-63-1",
+      "program_id": "overseas_partnership_research",
+      "program_title": "国際共同研究加速基金（海外連携研究）",
+      "program_title_ja": "国際共同研究加速基金（海外連携研究）",
+      "program_title_zh": "国际共同研究加速基金（海外联携研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "theme": "toyama",
+      "form_number": "S-63-1",
+      "family_name": "国際共同研究加速基金（海外連携研究）",
+      "page_sections": [
+        "研究計画調書の構成 Composition of the Research Proposal Document",
+        "2. 研究計画調書（添付ファイル項目） Application Forms (forms to be uploaded)"
+      ],
+      "row_texts": [
+        "添付ファイル項目（前半） S-63-1",
+        "S-63-1（日本語）（PDF/670KB）",
+        "S-63-1（日本語）（Word/51KB）",
+        "S-63-1（English）（PDF/2,684KB）",
+        "S-63-1（English）（Word/52KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_s-63-1.pdf",
+          "title": "S-63-1（日本語）（PDF/670KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_s-63-1.docx",
+          "title": "S-63-1（日本語）（Word/51KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_s-63-1.pdf",
+          "title": "S-63-1（English）（PDF/2,684KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_s-63-1.docx",
+          "title": "S-63-1（English）（Word/52KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "overseas_partnership_research-S-63-2",
+      "program_id": "overseas_partnership_research",
+      "program_title": "国際共同研究加速基金（海外連携研究）",
+      "program_title_ja": "国際共同研究加速基金（海外連携研究）",
+      "program_title_zh": "国际共同研究加速基金（海外联携研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "theme": "toyama",
+      "form_number": "S-63-2",
+      "family_name": "国際共同研究加速基金（海外連携研究）",
+      "page_sections": [
+        "研究計画調書の構成 Composition of the Research Proposal Document",
+        "3. 海外の研究者からのLetter of Intent（同意書）"
+      ],
+      "row_texts": [
+        "添付ファイル項目（後半） S-63-2（Letter of Intent）",
+        "S-63-2（Word/30KB）",
+        "S-63-2（English）（PDF/401KB）",
+        "S-63-2（English）（Word/29KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_letter_of_intent.docx",
+          "title": "S-63-2（Word/30KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_letter_of_intent.pdf",
+          "title": "S-63-2（English）（PDF/401KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_letter_of_intent.docx",
+          "title": "S-63-2（English）（Word/29KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
+    },
+    {
+      "id": "international_leading_research-S-64",
+      "program_id": "international_leading_research",
+      "program_title": "国際共同研究加速基金（国際先導研究）",
+      "program_title_ja": "国際共同研究加速基金（国際先導研究）",
+      "program_title_zh": "国际共同研究加速基金（国际先导研究）",
+      "program_title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "theme": "toyama",
+      "form_number": "S-64",
+      "family_name": "国際共同研究加速基金（国際先導研究）",
+      "page_sections": [
+        "研究計画調書の構成 Composition of the Research Proposal Document",
+        "研究計画調書（添付ファイル項目）のダウンロード Download Research Proposal Document (forｍs to be uploaded)"
+      ],
+      "row_texts": [
+        "添付ファイル項目（前半） forms to be uploaded S-64(1)、S-64(2)、S-64(3)、S-64(4)",
+        "添付ファイル項目（後半） forms to be uploaded S-64(L)",
+        "S-64(1) 概要 Summary of Research Proposal Document（日本語 Japanese）（Word/30KB）",
+        "S-64(1) 概要 Summary of Research Proposal Document（英語 English）（Word/33KB）",
+        "S-64(2) Framework and Significance of International Joint Research, etc.（英語 English）（Word/34KB）",
+        "S-64(3) Application Requirements that PI must meet and CVs（英語 English）（Word/33KB）",
+        "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（日本語 Japanese）（Word/31KB）",
+        "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（英語 English）（Word/31KB）",
+        "S-64(L) Letter of Intent（英語 English）（Word/25KB）"
+      ],
+      "links": [
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/abs_s-64-1_j.docx",
+          "title": "S-64(1) 概要 Summary of Research Proposal Document（日本語 Japanese）（Word/30KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/abs_s-64-1_e.docx",
+          "title": "S-64(1) 概要 Summary of Research Proposal Document（英語 English）（Word/33KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/en_s-64-2_e.docx",
+          "title": "S-64(2) Framework and Significance of International Joint Research, etc.（英語 English）（Word/34KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/cv_s-64-3_e.docx",
+          "title": "S-64(3) Application Requirements that PI must meet and CVs（英語 English）（Word/33KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/jp_s-64-4_j.docx",
+          "title": "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（日本語 Japanese）（Word/31KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/jp_s-64-4_e.docx",
+          "title": "S-64(4) 所属研究機関からの支援の内容等 Support from the Research Institution(s), etc.（英語 English）（Word/31KB）",
+          "kind": "file"
+        },
+        {
+          "url": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/loi_s-64-L_e.docx",
+          "title": "S-64(L) Letter of Intent（英語 English）（Word/25KB）",
+          "kind": "file"
+        }
+      ],
+      "priority": false
     }
   ],
   "guides": [
@@ -1249,7 +8003,7 @@ window.KAKENHI_PORTAL_DATA = {
       "summary_ja": "研究活動スタート支援 の公式ページからたどる主要導線です。",
       "summary_zh": "从 研究活动启动支援 官方入口整理出的关键跳转。",
       "summary_en": "Key jump-out link surfaced from the official Research Activity Start-up Support page.",
-      "href": "external/jsps/2026-04-03/startup_support.html",
+      "href": "external/jsps/2026-04-07/22_startup_support__download.html",
       "kind": "snapshot",
       "group": "Program",
       "group_ja": "種目別入口",
@@ -1258,6 +8012,36 @@ window.KAKENHI_PORTAL_DATA = {
     },
     {
       "id": "startup_support-6",
+      "title_ja": "研究活動スタート支援：種目ページ",
+      "title_zh": "研究活动启动支援：种目页面",
+      "title_en": "Research Activity Start-up Support: Program page",
+      "summary_ja": "研究活動スタート支援 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 研究活动启动支援 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Activity Start-up Support page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "startup_support-7",
+      "title_ja": "研究活動スタート支援：種目ページの快照",
+      "title_zh": "研究活动启动支援：种目快照",
+      "title_en": "Research Activity Start-up Support: Program snapshot",
+      "summary_ja": "研究活動スタート支援 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 研究活动启动支援 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Research Activity Start-up Support page.",
+      "href": "external/jsps/2026-04-07/22_startup_support__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "startup_support-8",
       "title_ja": "研究活動スタート支援：英語ページ",
       "title_zh": "研究活动启动支援：英文页面",
       "title_en": "Research Activity Start-up Support: English page",
@@ -1272,10 +8056,10 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "startup_support-doc-7",
-      "title_ja": "研究活動スタート支援：令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,207KB)",
-      "title_zh": "研究活动启动支援：令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,207KB)",
-      "title_en": "Research Activity Start-up Support: 令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,207KB)",
+      "id": "startup_support-doc-9",
+      "title_ja": "研究活動スタート支援：令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,158KB)",
+      "title_zh": "研究活动启动支援：令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,158KB)",
+      "title_en": "Research Activity Start-up Support: 令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,158KB)",
       "summary_ja": "研究活動スタート支援 の確認優先度が高い資料です。",
       "summary_zh": "研究活动启动支援 的重点参考材料。",
       "summary_en": "Priority reference document for Research Activity Start-up Support.",
@@ -1287,7 +8071,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "startup_support-doc-8",
+      "id": "startup_support-doc-10",
       "title_ja": "研究活動スタート支援：公募要領 Application Procedures（日本語 Japanese）(PDF/1,671KB)",
       "title_zh": "研究活动启动支援：公募要領 Application Procedures（日本語 Japanese）(PDF/1,671KB)",
       "title_en": "Research Activity Start-up Support: 公募要領 Application Procedures（日本語 Japanese）(PDF/1,671KB)",
@@ -1302,7 +8086,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "startup_support-doc-9",
+      "id": "startup_support-doc-11",
       "title_ja": "研究活動スタート支援：公募要領 別冊（応募書類の様式・記入要領）（日本語 Japanese）(PDF/5,657KB)",
       "title_zh": "研究活动启动支援：公募要領 別冊（応募書類の様式・記入要領）（日本語 Japanese）(PDF/5,657KB)",
       "title_en": "Research Activity Start-up Support: 公募要領 別冊（応募書類の様式・記入要領）（日本語 Japanese）(PDF/5,657KB)",
@@ -1317,7 +8101,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "startup_support-doc-10",
+      "id": "startup_support-doc-12",
       "title_ja": "研究活動スタート支援：Web入力開始スケジュール(PDF/375KB)",
       "title_zh": "研究活动启动支援：Web入力開始スケジュール(PDF/375KB)",
       "title_en": "Research Activity Start-up Support: Web入力開始スケジュール(PDF/375KB)",
@@ -1332,7 +8116,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "young_research-11",
+      "id": "young_research-13",
       "title_ja": "若手研究：公式ページ",
       "title_zh": "青年研究（若手研究）：官方页面",
       "title_en": "Early-Career Scientists: Official page",
@@ -1347,14 +8131,14 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "young_research-12",
+      "id": "young_research-14",
       "title_ja": "若手研究：ローカルスナップショット",
       "title_zh": "青年研究（若手研究）：本地快照",
       "title_en": "Early-Career Scientists: Local snapshot",
       "summary_ja": "若手研究 の公式ページからたどる主要導線です。",
       "summary_zh": "从 青年研究（若手研究） 官方入口整理出的关键跳转。",
       "summary_en": "Key jump-out link surfaced from the official Early-Career Scientists page.",
-      "href": "external/jsps/2026-04-03/kiban.html",
+      "href": "external/jsps/2026-04-07/02_koubo__kiban.html",
       "kind": "snapshot",
       "group": "Program",
       "group_ja": "種目別入口",
@@ -1362,7 +8146,37 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "young_research-13",
+      "id": "young_research-15",
+      "title_ja": "若手研究：種目ページ",
+      "title_zh": "青年研究（若手研究）：种目页面",
+      "title_en": "Early-Career Scientists: Program page",
+      "summary_ja": "若手研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 青年研究（若手研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Early-Career Scientists page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "young_research-16",
+      "title_ja": "若手研究：種目ページの快照",
+      "title_zh": "青年研究（若手研究）：种目快照",
+      "title_en": "Early-Career Scientists: Program snapshot",
+      "summary_ja": "若手研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 青年研究（若手研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Early-Career Scientists page.",
+      "href": "external/jsps/2026-04-07/03_keikaku__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "young_research-17",
       "title_ja": "若手研究：説明会資料",
       "title_zh": "青年研究（若手研究）：说明会资料",
       "title_en": "Early-Career Scientists: Explanation meeting materials",
@@ -1377,7 +8191,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "young_research-14",
+      "id": "young_research-18",
       "title_ja": "若手研究：英語ページ",
       "title_zh": "青年研究（若手研究）：英文页面",
       "title_en": "Early-Career Scientists: English page",
@@ -1392,7 +8206,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Program entry points"
     },
     {
-      "id": "young_research-doc-15",
+      "id": "young_research-doc-19",
       "title_ja": "若手研究：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "title_zh": "青年研究（若手研究）：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "title_en": "Early-Career Scientists: 令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
@@ -1407,7 +8221,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "young_research-doc-16",
+      "id": "young_research-doc-20",
       "title_ja": "若手研究：公募要領（日本語版）（PDF/2,219KB）",
       "title_zh": "青年研究（若手研究）：公募要領（日本語版）（PDF/2,219KB）",
       "title_en": "Early-Career Scientists: 公募要領（日本語版）（PDF/2,219KB）",
@@ -1422,7 +8236,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "young_research-doc-17",
+      "id": "young_research-doc-21",
       "title_ja": "若手研究：公募要領（英語版）（PDF/3,595KB）",
       "title_zh": "青年研究（若手研究）：公募要領（英語版）（PDF/3,595KB）",
       "title_en": "Early-Career Scientists: 公募要領（英語版）（PDF/3,595KB）",
@@ -1437,7 +8251,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "young_research-doc-18",
+      "id": "young_research-doc-22",
       "title_ja": "若手研究：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "title_zh": "青年研究（若手研究）：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "title_en": "Early-Career Scientists: 別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
@@ -1452,7 +8266,1222 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "Key documents"
     },
     {
-      "id": "faq-resource-19",
+      "id": "independent_base_building_support-23",
+      "title_ja": "独立基盤形成支援（試行）：公式ページ",
+      "title_zh": "独立基盘形成支援（试行）：官方页面",
+      "title_en": "Independent Research Base Building Support (Pilot): Official page",
+      "summary_ja": "独立基盤形成支援（試行） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 独立基盘形成支援（试行） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Independent Research Base Building Support (Pilot) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "independent_base_building_support-24",
+      "title_ja": "独立基盤形成支援（試行）：ローカルスナップショット",
+      "title_zh": "独立基盘形成支援（试行）：本地快照",
+      "title_en": "Independent Research Base Building Support (Pilot): Local snapshot",
+      "summary_ja": "独立基盤形成支援（試行） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 独立基盘形成支援（试行） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Independent Research Base Building Support (Pilot) page.",
+      "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "independent_base_building_support-doc-25",
+      "title_ja": "独立基盤形成支援（試行）：令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
+      "title_zh": "独立基盘形成支援（试行）：令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
+      "title_en": "Independent Research Base Building Support (Pilot): 令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
+      "summary_ja": "独立基盤形成支援（試行） の確認優先度が高い資料です。",
+      "summary_zh": "独立基盘形成支援（试行） 的重点参考材料。",
+      "summary_en": "Priority reference document for Independent Research Base Building Support (Pilot).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8tsuchi_dokuritsukiban.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "independent_base_building_support-doc-26",
+      "title_ja": "独立基盤形成支援（試行）：公募要領（PDF/476KB）",
+      "title_zh": "独立基盘形成支援（试行）：公募要領（PDF/476KB）",
+      "title_en": "Independent Research Base Building Support (Pilot): 公募要領（PDF/476KB）",
+      "summary_ja": "独立基盤形成支援（試行） の確認優先度が高い資料です。",
+      "summary_zh": "独立基盘形成支援（试行） 的重点参考材料。",
+      "summary_en": "Priority reference document for Independent Research Base Building Support (Pilot).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8koubo_dokuritsukiban.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "independent_base_building_support-doc-27",
+      "title_ja": "独立基盤形成支援（試行）：別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
+      "title_zh": "独立基盘形成支援（试行）：別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
+      "title_en": "Independent Research Base Building Support (Pilot): 別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
+      "summary_ja": "独立基盤形成支援（試行） の確認優先度が高い資料です。",
+      "summary_zh": "独立基盘形成支援（试行） 的重点参考材料。",
+      "summary_en": "Priority reference document for Independent Research Base Building Support (Pilot).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8bessatsu_dokuritsukiban.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "independent_base_building_support-doc-28",
+      "title_ja": "独立基盤形成支援（試行）：ＦＡＱ（PDF/322KB）",
+      "title_zh": "独立基盘形成支援（试行）：ＦＡＱ（PDF/322KB）",
+      "title_en": "Independent Research Base Building Support (Pilot): ＦＡＱ（PDF/322KB）",
+      "summary_ja": "独立基盤形成支援（試行） の確認優先度が高い資料です。",
+      "summary_zh": "独立基盘形成支援（试行） 的重点参考材料。",
+      "summary_en": "Priority reference document for Independent Research Base Building Support (Pilot).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8faq_dokuritsukiban.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_leading_research-29",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：公式ページ",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：官方页面",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Official page",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（国际先导研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (International Leading Research) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "international_leading_research-30",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：ローカルスナップショット",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：本地快照",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Local snapshot",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（国际先导研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (International Leading Research) page.",
+      "href": "external/jsps/2026-04-07/05_sendou__koubo.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "international_leading_research-31",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：種目ページ",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：种目页面",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Program page",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（国际先导研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (International Leading Research) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "international_leading_research-32",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：種目ページの快照",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：种目快照",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Program snapshot",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（国际先导研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (International Leading Research) page.",
+      "href": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "international_leading_research-33",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：説明会資料",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：说明会资料",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): Explanation meeting materials",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（国际先导研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (International Leading Research) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/06_jsps_info/2025/g_4341.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "international_leading_research-doc-34",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际先导研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (International Leading Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_leading_research-doc-35",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际先导研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (International Leading Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_applicationprocedures_j.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_leading_research-doc-36",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：公募説明会資料",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：公募説明会資料",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 公募説明会資料",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际先导研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (International Leading Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_g_4341/fy2026ks_koubosetsumei.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_leading_research-doc-37",
+      "title_ja": "国際共同研究加速基金（国際先導研究）：国際先導研究応募について（PDF/441KB）",
+      "title_zh": "国际共同研究加速基金（国际先导研究）：国際先導研究応募について（PDF/441KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research): 国際先導研究応募について（PDF/441KB）",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际先导研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (International Leading Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_oubokotohajime.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_research_strengthening-38",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）：公式ページ",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）：官方页面",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): Official page",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（国际共同研究强化） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Fostering Joint International Research) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "international_research_strengthening-39",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）：ローカルスナップショット",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）：本地快照",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): Local snapshot",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（国际共同研究强化） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Fostering Joint International Research) page.",
+      "href": "external/jsps/2026-04-07/01_kyoka__koubo.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "international_research_strengthening-doc-40",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): 令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际共同研究强化） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Fostering Joint International Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_research_strengthening-doc-41",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）：Application Procedures（PDF/1,703KB）",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）：Application Procedures（PDF/1,703KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): Application Procedures（PDF/1,703KB）",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际共同研究强化） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Fostering Joint International Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_en_kyoka_kouboyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_research_strengthening-doc-42",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）：国際共同研究強化の公募に係るFAQ（PDF/562KB）",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）：国際共同研究強化の公募に係るFAQ（PDF/562KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): 国際共同研究強化の公募に係るFAQ（PDF/562KB）",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际共同研究强化） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Fostering Joint International Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_jp_kyoka_faq.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "international_research_strengthening-doc-43",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）：公募要領（日本語版）（PDF/1,394KB）",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）：公募要領（日本語版）（PDF/1,394KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): 公募要領（日本語版）（PDF/1,394KB）",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（国际共同研究强化） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Fostering Joint International Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_kouboyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "returning_researchers_development-44",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）：公式ページ",
+      "title_zh": "国际共同研究加速基金（归国发展研究）：官方页面",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): Official page",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（归国发展研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Returning Researcher Development) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "returning_researchers_development-45",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）：ローカルスナップショット",
+      "title_zh": "国际共同研究加速基金（归国发展研究）：本地快照",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): Local snapshot",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（归国发展研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Returning Researcher Development) page.",
+      "href": "external/jsps/2026-04-07/03_kikoku__koubo.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "returning_researchers_development-46",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）：e-Rad",
+      "title_zh": "国际共同研究加速基金（归国发展研究）：e-Rad",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): e-Rad",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（归国发展研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Returning Researcher Development) page.",
+      "href": "https://www.e-rad.go.jp/researcher/index.html",
+      "kind": "external",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "returning_researchers_development-doc-47",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
+      "title_zh": "国际共同研究加速基金（归国发展研究）：令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（归国发展研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Returning Researcher Development).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "returning_researchers_development-doc-48",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）：帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
+      "title_zh": "国际共同研究加速基金（归国发展研究）：帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（归国发展研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Returning Researcher Development).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubo_faq.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "returning_researchers_development-doc-49",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）：令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
+      "title_zh": "国际共同研究加速基金（归国发展研究）：令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（归国发展研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Returning Researcher Development).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_poster.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "returning_researchers_development-doc-50",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）：公募要領 （PDF/1,026KB）",
+      "title_zh": "国际共同研究加速基金（归国发展研究）：公募要領 （PDF/1,026KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): 公募要領 （PDF/1,026KB）",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（归国发展研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Returning Researcher Development).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_kouboyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_partnership_research-51",
+      "title_ja": "国際共同研究加速基金（海外連携研究）：公式ページ",
+      "title_zh": "国际共同研究加速基金（海外联携研究）：官方页面",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): Official page",
+      "summary_ja": "国際共同研究加速基金（海外連携研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（海外联携研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Overseas Partnership Research) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_partnership_research-52",
+      "title_ja": "国際共同研究加速基金（海外連携研究）：ローカルスナップショット",
+      "title_zh": "国际共同研究加速基金（海外联携研究）：本地快照",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): Local snapshot",
+      "summary_ja": "国際共同研究加速基金（海外連携研究） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 国际共同研究加速基金（海外联携研究） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Overseas Partnership Research) page.",
+      "href": "external/jsps/2026-04-07/04_renkei__koubo.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "overseas_partnership_research-doc-53",
+      "title_ja": "国際共同研究加速基金（海外連携研究）：科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
+      "title_zh": "国际共同研究加速基金（海外联携研究）：科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): 科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
+      "summary_ja": "国際共同研究加速基金（海外連携研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（海外联携研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Overseas Partnership Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_partnership_research-doc-54",
+      "title_ja": "国際共同研究加速基金（海外連携研究）：公募要領 Application Procedures（日本語）（PDF/2,147KB）",
+      "title_zh": "国际共同研究加速基金（海外联携研究）：公募要領 Application Procedures（日本語）（PDF/2,147KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): 公募要領 Application Procedures（日本語）（PDF/2,147KB）",
+      "summary_ja": "国際共同研究加速基金（海外連携研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（海外联携研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Overseas Partnership Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_kouboyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_partnership_research-doc-55",
+      "title_ja": "国際共同研究加速基金（海外連携研究）：FAQ (日本語のみ）（PDF/327KB）",
+      "title_zh": "国际共同研究加速基金（海外联携研究）：FAQ (日本語のみ）（PDF/327KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): FAQ (日本語のみ）（PDF/327KB）",
+      "summary_ja": "国際共同研究加速基金（海外連携研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（海外联携研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Overseas Partnership Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_01_05_faq_2023_renkei/r6_jp_renkei_koubo_faq.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "overseas_partnership_research-doc-56",
+      "title_ja": "国際共同研究加速基金（海外連携研究）：公募要領 Application Procedures（English)（PDF/2,167KB）",
+      "title_zh": "国际共同研究加速基金（海外联携研究）：公募要領 Application Procedures（English)（PDF/2,167KB）",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): 公募要領 Application Procedures（English)（PDF/2,167KB）",
+      "summary_ja": "国際共同研究加速基金（海外連携研究） の確認優先度が高い資料です。",
+      "summary_zh": "国际共同研究加速基金（海外联携研究） 的重点参考材料。",
+      "summary_en": "Priority reference document for Fund for the Promotion of Joint International Research (Overseas Partnership Research).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_kouboyoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_abc-doc-57",
+      "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+      "title_zh": "基盘研究（A/B/C）：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+      "title_en": "Scientific Research (A/B/C): 令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+      "summary_ja": "基盤研究（Ａ・Ｂ・Ｃ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（A/B/C） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (A/B/C).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_abc-doc-58",
+      "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：公募要領（日本語版）（PDF/2,219KB）",
+      "title_zh": "基盘研究（A/B/C）：公募要領（日本語版）（PDF/2,219KB）",
+      "title_en": "Scientific Research (A/B/C): 公募要領（日本語版）（PDF/2,219KB）",
+      "summary_ja": "基盤研究（Ａ・Ｂ・Ｃ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（A/B/C） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (A/B/C).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_abc-doc-59",
+      "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：公募要領（英語版）（PDF/3,595KB）",
+      "title_zh": "基盘研究（A/B/C）：公募要領（英語版）（PDF/3,595KB）",
+      "title_en": "Scientific Research (A/B/C): 公募要領（英語版）（PDF/3,595KB）",
+      "summary_ja": "基盤研究（Ａ・Ｂ・Ｃ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（A/B/C） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (A/B/C).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_abc-doc-60",
+      "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+      "title_zh": "基盘研究（A/B/C）：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+      "title_en": "Scientific Research (A/B/C): 別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+      "summary_ja": "基盤研究（Ａ・Ｂ・Ｃ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（A/B/C） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (A/B/C).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_s-61",
+      "title_ja": "基盤研究（Ｓ）：公式ページ",
+      "title_zh": "基盘研究（S）：官方页面",
+      "title_en": "Scientific Research (S): Official page",
+      "summary_ja": "基盤研究（Ｓ） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 基盘研究（S） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Scientific Research (S) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "scientific_research_s-62",
+      "title_ja": "基盤研究（Ｓ）：ローカルスナップショット",
+      "title_zh": "基盘研究（S）：本地快照",
+      "title_en": "Scientific Research (S): Local snapshot",
+      "summary_ja": "基盤研究（Ｓ） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 基盘研究（S） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Scientific Research (S) page.",
+      "href": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "scientific_research_s-63",
+      "title_ja": "基盤研究（Ｓ）：種目ページ",
+      "title_zh": "基盘研究（S）：种目页面",
+      "title_en": "Scientific Research (S): Program page",
+      "summary_ja": "基盤研究（Ｓ） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 基盘研究（S） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Scientific Research (S) page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "scientific_research_s-64",
+      "title_ja": "基盤研究（Ｓ）：種目ページの快照",
+      "title_zh": "基盘研究（S）：种目快照",
+      "title_en": "Scientific Research (S): Program snapshot",
+      "summary_ja": "基盤研究（Ｓ） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 基盘研究（S） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Scientific Research (S) page.",
+      "href": "external/jsps/2026-04-07/12_kiban__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "scientific_research_s-65",
+      "title_ja": "基盤研究（Ｓ）：英語ページ",
+      "title_zh": "基盘研究（S）：英文页面",
+      "title_en": "Scientific Research (S): English page",
+      "summary_ja": "基盤研究（Ｓ） の公式ページからたどる主要導線です。",
+      "summary_zh": "从 基盘研究（S） 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Scientific Research (S) page.",
+      "href": "https://www.jsps.go.jp/english/e-grants/grants09_toku_s.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "scientific_research_s-doc-66",
+      "title_ja": "基盤研究（Ｓ）：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+      "title_zh": "基盘研究（S）：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+      "title_en": "Scientific Research (S): 令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+      "summary_ja": "基盤研究（Ｓ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（S） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (S).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_s-doc-67",
+      "title_ja": "基盤研究（Ｓ）：公募要領（日本語版）(PDF/1,759KB)",
+      "title_zh": "基盘研究（S）：公募要領（日本語版）(PDF/1,759KB)",
+      "title_en": "Scientific Research (S): 公募要領（日本語版）(PDF/1,759KB)",
+      "summary_ja": "基盤研究（Ｓ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（S） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (S).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_s-doc-68",
+      "title_ja": "基盤研究（Ｓ）：公募要領（英語版）(PDF/3,664KB)",
+      "title_zh": "基盘研究（S）：公募要領（英語版）(PDF/3,664KB)",
+      "title_en": "Scientific Research (S): 公募要領（英語版）(PDF/3,664KB)",
+      "summary_ja": "基盤研究（Ｓ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（S） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (S).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "scientific_research_s-doc-69",
+      "title_ja": "基盤研究（Ｓ）：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+      "title_zh": "基盘研究（S）：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+      "title_en": "Scientific Research (S): 研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+      "summary_ja": "基盤研究（Ｓ） の確認優先度が高い資料です。",
+      "summary_zh": "基盘研究（S） 的重点参考材料。",
+      "summary_en": "Priority reference document for Scientific Research (S).",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "incentive_research-70",
+      "title_ja": "奨励研究：公式ページ",
+      "title_zh": "奖励研究：官方页面",
+      "title_en": "Encouragement of Scientists: Official page",
+      "summary_ja": "奨励研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 奖励研究 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Encouragement of Scientists page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "incentive_research-71",
+      "title_ja": "奨励研究：ローカルスナップショット",
+      "title_zh": "奖励研究：本地快照",
+      "title_en": "Encouragement of Scientists: Local snapshot",
+      "summary_ja": "奨励研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 奖励研究 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Encouragement of Scientists page.",
+      "href": "external/jsps/2026-04-07/11_shourei__koubo.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "incentive_research-72",
+      "title_ja": "奨励研究：種目ページ",
+      "title_zh": "奖励研究：种目页面",
+      "title_en": "Encouragement of Scientists: Program page",
+      "summary_ja": "奨励研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 奖励研究 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Encouragement of Scientists page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "incentive_research-73",
+      "title_ja": "奨励研究：種目ページの快照",
+      "title_zh": "奖励研究：种目快照",
+      "title_en": "Encouragement of Scientists: Program snapshot",
+      "summary_ja": "奨励研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 奖励研究 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Encouragement of Scientists page.",
+      "href": "external/jsps/2026-04-07/11_shourei__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "incentive_research-doc-74",
+      "title_ja": "奨励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
+      "title_zh": "奖励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
+      "title_en": "Encouragement of Scientists: 令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
+      "summary_ja": "奨励研究 の確認優先度が高い資料です。",
+      "summary_zh": "奖励研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Encouragement of Scientists.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_kikan.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "incentive_research-doc-75",
+      "title_ja": "奨励研究：公募要領（PDF/1,785KB）",
+      "title_zh": "奖励研究：公募要領（PDF/1,785KB）",
+      "title_en": "Encouragement of Scientists: 公募要領（PDF/1,785KB）",
+      "summary_ja": "奨励研究 の確認優先度が高い資料です。",
+      "summary_zh": "奖励研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Encouragement of Scientists.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_koubo_shourei.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "incentive_research-doc-76",
+      "title_ja": "奨励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
+      "title_zh": "奖励研究：令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
+      "title_en": "Encouragement of Scientists: 令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
+      "summary_ja": "奨励研究 の確認優先度が高い資料です。",
+      "summary_zh": "奖励研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Encouragement of Scientists.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_chizi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "incentive_research-doc-77",
+      "title_ja": "奨励研究：科研費電子申請システムを利用した応募フロー（PDF/726KB）",
+      "title_zh": "奖励研究：科研費電子申請システムを利用した応募フロー（PDF/726KB）",
+      "title_en": "Encouragement of Scientists: 科研費電子申請システムを利用した応募フロー（PDF/726KB）",
+      "summary_ja": "奨励研究 の確認優先度が高い資料です。",
+      "summary_zh": "奖励研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Encouragement of Scientists.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_flow_shourei.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "challenging_research-doc-78",
+      "title_ja": "挑戦的研究：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+      "title_zh": "挑战性研究：令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+      "title_en": "Challenging Research: 令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
+      "summary_ja": "挑戦的研究 の確認優先度が高い資料です。",
+      "summary_zh": "挑战性研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Challenging Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "challenging_research-doc-79",
+      "title_ja": "挑戦的研究：公募要領（日本語版）（PDF/2,219KB）",
+      "title_zh": "挑战性研究：公募要領（日本語版）（PDF/2,219KB）",
+      "title_en": "Challenging Research: 公募要領（日本語版）（PDF/2,219KB）",
+      "summary_ja": "挑戦的研究 の確認優先度が高い資料です。",
+      "summary_zh": "挑战性研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Challenging Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "challenging_research-doc-80",
+      "title_ja": "挑戦的研究：公募要領（英語版）（PDF/3,595KB）",
+      "title_zh": "挑战性研究：公募要領（英語版）（PDF/3,595KB）",
+      "title_en": "Challenging Research: 公募要領（英語版）（PDF/3,595KB）",
+      "summary_ja": "挑戦的研究 の確認優先度が高い資料です。",
+      "summary_zh": "挑战性研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Challenging Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "challenging_research-doc-81",
+      "title_ja": "挑戦的研究：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+      "title_zh": "挑战性研究：別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+      "title_en": "Challenging Research: 別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
+      "summary_ja": "挑戦的研究 の確認優先度が高い資料です。",
+      "summary_zh": "挑战性研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Challenging Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "special_promotion_research-82",
+      "title_ja": "特別推進研究：種目ページ",
+      "title_zh": "特别推进研究：种目页面",
+      "title_en": "Specially Promoted Research: Program page",
+      "summary_ja": "特別推進研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别推进研究 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Specially Promoted Research page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "special_promotion_research-83",
+      "title_ja": "特別推進研究：種目ページの快照",
+      "title_zh": "特别推进研究：种目快照",
+      "title_en": "Specially Promoted Research: Program snapshot",
+      "summary_ja": "特別推進研究 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别推进研究 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Specially Promoted Research page.",
+      "href": "external/jsps/2026-04-07/25_tokusui__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "special_promotion_research-doc-84",
+      "title_ja": "特別推進研究：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+      "title_zh": "特别推进研究：令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+      "title_en": "Specially Promoted Research: 令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
+      "summary_ja": "特別推進研究 の確認優先度が高い資料です。",
+      "summary_zh": "特别推进研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Specially Promoted Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "special_promotion_research-doc-85",
+      "title_ja": "特別推進研究：公募要領（日本語版）(PDF/1,759KB)",
+      "title_zh": "特别推进研究：公募要領（日本語版）(PDF/1,759KB)",
+      "title_en": "Specially Promoted Research: 公募要領（日本語版）(PDF/1,759KB)",
+      "summary_ja": "特別推進研究 の確認優先度が高い資料です。",
+      "summary_zh": "特别推进研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Specially Promoted Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "special_promotion_research-doc-86",
+      "title_ja": "特別推進研究：公募要領（英語版）(PDF/3,664KB)",
+      "title_zh": "特别推进研究：公募要領（英語版）(PDF/3,664KB)",
+      "title_en": "Specially Promoted Research: 公募要領（英語版）(PDF/3,664KB)",
+      "summary_ja": "特別推進研究 の確認優先度が高い資料です。",
+      "summary_zh": "特别推进研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Specially Promoted Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "special_promotion_research-doc-87",
+      "title_ja": "特別推進研究：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+      "title_zh": "特别推进研究：研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+      "title_en": "Specially Promoted Research: 研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
+      "summary_ja": "特別推進研究 の確認優先度が高い資料です。",
+      "summary_zh": "特别推进研究 的重点参考材料。",
+      "summary_en": "Priority reference document for Specially Promoted Research.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellows_incentive-88",
+      "title_ja": "特別研究員奨励費：公式ページ",
+      "title_zh": "特别研究员奖励费：官方页面",
+      "title_en": "Grant-in-Aid for JSPS Fellows: Official page",
+      "summary_ja": "特別研究員奨励費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员奖励费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Grant-in-Aid for JSPS Fellows page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellows_incentive-89",
+      "title_ja": "特別研究員奨励費：ローカルスナップショット",
+      "title_zh": "特别研究员奖励费：本地快照",
+      "title_en": "Grant-in-Aid for JSPS Fellows: Local snapshot",
+      "summary_ja": "特別研究員奨励費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员奖励费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Grant-in-Aid for JSPS Fellows page.",
+      "href": "external/jsps/2026-04-07/20_tokushourei__download.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellows_incentive-90",
+      "title_ja": "特別研究員奨励費：種目ページ",
+      "title_zh": "特别研究员奖励费：种目页面",
+      "title_en": "Grant-in-Aid for JSPS Fellows: Program page",
+      "summary_ja": "特別研究員奨励費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员奖励费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Grant-in-Aid for JSPS Fellows page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellows_incentive-91",
+      "title_ja": "特別研究員奨励費：種目ページの快照",
+      "title_zh": "特别研究员奖励费：种目快照",
+      "title_en": "Grant-in-Aid for JSPS Fellows: Program snapshot",
+      "summary_ja": "特別研究員奨励費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 特别研究员奖励费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Grant-in-Aid for JSPS Fellows page.",
+      "href": "external/jsps/2026-04-07/20_tokushourei__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "jsps_fellows_incentive-doc-92",
+      "title_ja": "特別研究員奨励費：令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
+      "title_zh": "特别研究员奖励费：令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
+      "title_en": "Grant-in-Aid for JSPS Fellows: 令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
+      "summary_ja": "特別研究員奨励費 の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员奖励费 的重点参考材料。",
+      "summary_en": "Priority reference document for Grant-in-Aid for JSPS Fellows.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_tsuchi.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellows_incentive-doc-93",
+      "title_ja": "特別研究員奨励費：日本語 Japanese（PDF/1,191KB）",
+      "title_zh": "特别研究员奖励费：日本語 Japanese（PDF/1,191KB）",
+      "title_en": "Grant-in-Aid for JSPS Fellows: 日本語 Japanese（PDF/1,191KB）",
+      "summary_ja": "特別研究員奨励費 の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员奖励费 的重点参考材料。",
+      "summary_en": "Priority reference document for Grant-in-Aid for JSPS Fellows.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellows_incentive-doc-94",
+      "title_ja": "特別研究員奨励費：英語 English（PDF/605KB）",
+      "title_zh": "特别研究员奖励费：英語 English（PDF/605KB）",
+      "title_en": "Grant-in-Aid for JSPS Fellows: 英語 English（PDF/605KB）",
+      "summary_ja": "特別研究員奨励費 の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员奖励费 的重点参考材料。",
+      "summary_en": "Priority reference document for Grant-in-Aid for JSPS Fellows.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku_e.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "jsps_fellows_incentive-doc-95",
+      "title_ja": "特別研究員奨励費：別冊 日本語 Japanese（PDF/1,223KB）",
+      "title_zh": "特别研究员奖励费：別冊 日本語 Japanese（PDF/1,223KB）",
+      "title_en": "Grant-in-Aid for JSPS Fellows: 別冊 日本語 Japanese（PDF/1,223KB）",
+      "summary_ja": "特別研究員奨励費 の確認優先度が高い資料です。",
+      "summary_zh": "特别研究员奖励费 的重点参考材料。",
+      "summary_en": "Priority reference document for Grant-in-Aid for JSPS Fellows.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_yoryo_gaitoku.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "research_results_publication-96",
+      "title_ja": "研究成果公開促進費：公式ページ",
+      "title_zh": "研究成果公开促进费：官方页面",
+      "title_en": "Publication of Scientific Research Results: Official page",
+      "summary_ja": "研究成果公開促進費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 研究成果公开促进费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Publication of Scientific Research Results page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "research_results_publication-97",
+      "title_ja": "研究成果公開促進費：ローカルスナップショット",
+      "title_zh": "研究成果公开促进费：本地快照",
+      "title_en": "Publication of Scientific Research Results: Local snapshot",
+      "summary_ja": "研究成果公開促進費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 研究成果公开促进费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Publication of Scientific Research Results page.",
+      "href": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "research_results_publication-98",
+      "title_ja": "研究成果公開促進費：種目ページ",
+      "title_zh": "研究成果公开促进费：种目页面",
+      "title_en": "Publication of Scientific Research Results: Program page",
+      "summary_ja": "研究成果公開促進費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 研究成果公开促进费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Publication of Scientific Research Results page.",
+      "href": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
+      "kind": "page",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "research_results_publication-99",
+      "title_ja": "研究成果公開促進費：種目ページの快照",
+      "title_zh": "研究成果公开促进费：种目快照",
+      "title_en": "Publication of Scientific Research Results: Program snapshot",
+      "summary_ja": "研究成果公開促進費 の公式ページからたどる主要導線です。",
+      "summary_zh": "从 研究成果公开促进费 官方入口整理出的关键跳转。",
+      "summary_en": "Key jump-out link surfaced from the official Publication of Scientific Research Results page.",
+      "href": "external/jsps/2026-04-07/13_seika__index.html",
+      "kind": "snapshot",
+      "group": "Program",
+      "group_ja": "種目別入口",
+      "group_zh": "项目入口",
+      "group_en": "Program entry points"
+    },
+    {
+      "id": "research_results_publication-doc-100",
+      "title_ja": "研究成果公開促進費：令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
+      "title_zh": "研究成果公开促进费：令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
+      "title_en": "Publication of Scientific Research Results: 令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
+      "summary_ja": "研究成果公開促進費 の確認優先度が高い資料です。",
+      "summary_zh": "研究成果公开促进费 的重点参考材料。",
+      "summary_en": "Priority reference document for Publication of Scientific Research Results.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08tsuuchibun.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "research_results_publication-doc-101",
+      "title_ja": "研究成果公開促進費：公募要領（PDF/1,152KB）",
+      "title_zh": "研究成果公开促进费：公募要領（PDF/1,152KB）",
+      "title_en": "Publication of Scientific Research Results: 公募要領（PDF/1,152KB）",
+      "summary_ja": "研究成果公開促進費 の確認優先度が高い資料です。",
+      "summary_zh": "研究成果公开促进费 的重点参考材料。",
+      "summary_en": "Priority reference document for Publication of Scientific Research Results.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/i_r08_koubo00_all.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "research_results_publication-doc-102",
+      "title_ja": "研究成果公開促進費：令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
+      "title_zh": "研究成果公开促进费：令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
+      "title_en": "Publication of Scientific Research Results: 令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
+      "summary_ja": "研究成果公開促進費 の確認優先度が高い資料です。",
+      "summary_zh": "研究成果公开促进费 的重点参考材料。",
+      "summary_en": "Priority reference document for Publication of Scientific Research Results.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_idpw_yoryo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "research_results_publication-doc-103",
+      "title_ja": "研究成果公開促進費：令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
+      "title_zh": "研究成果公开促进费：令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
+      "title_en": "Publication of Scientific Research Results: 令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
+      "summary_ja": "研究成果公開促進費 の確認優先度が高い資料です。",
+      "summary_zh": "研究成果公开促进费 的重点参考材料。",
+      "summary_en": "Priority reference document for Publication of Scientific Research Results.",
+      "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikagaiyo.pdf",
+      "kind": "file",
+      "group": "Documents",
+      "group_ja": "主要資料",
+      "group_zh": "重点文档",
+      "group_en": "Key documents"
+    },
+    {
+      "id": "faq-resource-104",
       "title_ja": "（参考）過去の更新履歴のページへリンク",
       "title_zh": "（参考）過去の更新履歴のページへリンク",
       "title_en": "（参考）過去の更新履歴のページへリンク",
@@ -1467,7 +9496,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-20",
+      "id": "faq-resource-105",
       "title_ja": "オープンアクセスに関するFAQ",
       "title_zh": "オープンアクセスに関するFAQ",
       "title_en": "オープンアクセスに関するFAQ",
@@ -1482,7 +9511,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-21",
+      "id": "faq-resource-106",
       "title_ja": "令和７(2025)年度科学研究費助成事業等説明会に関するFAQ（Excel/34KB）（令和７年８月更新）",
       "title_zh": "令和７(2025)年度科学研究費助成事業等説明会に関するFAQ（Excel/34KB）（令和７年８月更新）",
       "title_en": "令和７(2025)年度科学研究費助成事業等説明会に関するFAQ（Excel/34KB）（令和７年８月更新）",
@@ -1497,7 +9526,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-22",
+      "id": "faq-resource-107",
       "title_ja": "令和６(2024)年度科学研究費助成事業等説明会に関するFAQ（Excel/30KB）（令和６年９月更新）",
       "title_zh": "令和６(2024)年度科学研究費助成事業等説明会に関するFAQ（Excel/30KB）（令和６年９月更新）",
       "title_en": "令和６(2024)年度科学研究費助成事業等説明会に関するFAQ（Excel/30KB）（令和６年９月更新）",
@@ -1512,7 +9541,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-23",
+      "id": "faq-resource-108",
       "title_ja": "令和５(2023)年度科学研究費助成事業等説明会に関するFAQ（Excel/28KB）（令和６年８月更新）",
       "title_zh": "令和５(2023)年度科学研究費助成事業等説明会に関するFAQ（Excel/28KB）（令和６年８月更新）",
       "title_en": "令和５(2023)年度科学研究費助成事業等説明会に関するFAQ（Excel/28KB）（令和６年８月更新）",
@@ -1527,7 +9556,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-24",
+      "id": "faq-resource-109",
       "title_ja": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（日本語 Japanese）（PDF/477KB）",
       "title_zh": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（日本語 Japanese）（PDF/477KB）",
       "title_en": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（日本語 Japanese）（PDF/477KB）",
@@ -1542,7 +9571,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-25",
+      "id": "faq-resource-110",
       "title_ja": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（英語 English）（PDF/293KB）",
       "title_zh": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（英語 English）（PDF/293KB）",
       "title_en": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（英語 English）（PDF/293KB）",
@@ -1557,7 +9586,7 @@ window.KAKENHI_PORTAL_DATA = {
       "group_en": "FAQ"
     },
     {
-      "id": "faq-resource-26",
+      "id": "faq-resource-111",
       "title_ja": "国際共同研究強化の公募に係るFAQ（令和7月7月版）（PDF/562KB）",
       "title_zh": "国際共同研究強化の公募に係るFAQ（令和7月7月版）（PDF/562KB）",
       "title_en": "国際共同研究強化の公募に係るFAQ（令和7月7月版）（PDF/562KB）",
@@ -1579,7 +9608,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title_ja": "科研費公募情報総索引",
       "title_en": "Public call index",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html",
-      "snapshot_path": "external/jsps/2026-04-03/public_call_index.html",
+      "snapshot_path": "external/jsps/2026-04-07/public_call_index.html",
       "summary_ja": "JSPS の公募情報総索引です。今回のスナップショットでは 21 件の公式項目を確認できます。",
       "summary_zh": "JSPS 公募信息总入口，本次解析到 21 个官方条目。",
       "summary_en": "Official KAKENHI public-call registry with 21 parsed entries in this snapshot.",
@@ -1593,11 +9622,11 @@ window.KAKENHI_PORTAL_DATA = {
       "title_zh": "研究活动启动支援",
       "title_en": "Research Activity Start-up Support",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
-      "snapshot_path": "external/jsps/2026-04-03/startup_support.html",
-      "summary_ja": "研究活動スタート支援 の重点公式ページです。9 件の文書資源と 1 件の様式系統を確認できます。",
-      "summary_zh": "研究活动启动支援 对应的重点官方页面，含 9 个文档资源和 1 个表格家族线索。",
-      "summary_en": "Priority official page for Research Activity Start-up Support, with 9 document resources and 1 form-family traces.",
-      "resource_count": 12,
+      "snapshot_path": "external/jsps/2026-04-07/22_startup_support__download.html",
+      "summary_ja": "研究活動スタート支援 の公式ページです。15 件の文書資源と 1 件の様式系統を確認できます。",
+      "summary_zh": "研究活动启动支援 对应的官方页面，含 15 个文档资源和 1 个表格家族线索。",
+      "summary_en": "Official page for Research Activity Start-up Support, with 15 document resources and 1 form-family traces.",
+      "resource_count": 18,
       "kind": "program"
     },
     {
@@ -1607,12 +9636,236 @@ window.KAKENHI_PORTAL_DATA = {
       "title_zh": "青年研究（若手研究）",
       "title_en": "Early-Career Scientists",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-03/kiban.html",
-      "summary_ja": "若手研究 の重点公式ページです。68 件の文書資源と 8 件の様式系統を確認できます。",
-      "summary_zh": "青年研究（若手研究） 对应的重点官方页面，含 68 个文档资源和 8 个表格家族线索。",
-      "summary_en": "Priority official page for Early-Career Scientists, with 68 document resources and 8 form-family traces.",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+      "summary_ja": "若手研究 の公式ページです。68 件の文書資源と 8 件の様式系統を確認できます。",
+      "summary_zh": "青年研究（若手研究） 对应的官方页面，含 68 个文档资源和 8 个表格家族线索。",
+      "summary_en": "Official page for Early-Career Scientists, with 68 document resources and 8 form-family traces.",
       "resource_count": 74,
       "kind": "program"
+    },
+    {
+      "id": "independent_base_building_support",
+      "title": "独立基盤形成支援（試行）",
+      "title_ja": "独立基盤形成支援（試行）",
+      "title_zh": "独立基盘形成支援（试行）",
+      "title_en": "Independent Research Base Building Support (Pilot)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
+      "snapshot_path": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
+      "summary_ja": "独立基盤形成支援（試行） の公式ページです。4 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "独立基盘形成支援（试行） 对应的官方页面，含 4 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Independent Research Base Building Support (Pilot), with 4 document resources and 0 form-family traces.",
+      "resource_count": 5,
+      "kind": "program"
+    },
+    {
+      "id": "international_leading_research",
+      "title": "国際共同研究加速基金（国際先導研究）",
+      "title_ja": "国際共同研究加速基金（国際先導研究）",
+      "title_zh": "国际共同研究加速基金（国际先导研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/05_sendou__koubo.html",
+      "summary_ja": "国際共同研究加速基金（国際先導研究） の公式ページです。18 件の文書資源と 1 件の様式系統を確認できます。",
+      "summary_zh": "国际共同研究加速基金（国际先导研究） 对应的官方页面，含 18 个文档资源和 1 个表格家族线索。",
+      "summary_en": "Official page for Fund for the Promotion of Joint International Research (International Leading Research), with 18 document resources and 1 form-family traces.",
+      "resource_count": 23,
+      "kind": "program"
+    },
+    {
+      "id": "international_research_strengthening",
+      "title": "国際共同研究加速基金（国際共同研究強化）",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/01_kyoka__koubo.html",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化） の公式ページです。17 件の文書資源と 1 件の様式系統を確認できます。",
+      "summary_zh": "国际共同研究加速基金（国际共同研究强化） 对应的官方页面，含 17 个文档资源和 1 个表格家族线索。",
+      "summary_en": "Official page for Fund for the Promotion of Joint International Research (Fostering Joint International Research), with 17 document resources and 1 form-family traces.",
+      "resource_count": 21,
+      "kind": "program"
+    },
+    {
+      "id": "returning_researchers_development",
+      "title": "国際共同研究加速基金（帰国発展研究）",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "title_zh": "国际共同研究加速基金（归国发展研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/03_kikoku__koubo.html",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究） の公式ページです。14 件の文書資源と 1 件の様式系統を確認できます。",
+      "summary_zh": "国际共同研究加速基金（归国发展研究） 对应的官方页面，含 14 个文档资源和 1 个表格家族线索。",
+      "summary_en": "Official page for Fund for the Promotion of Joint International Research (Returning Researcher Development), with 14 document resources and 1 form-family traces.",
+      "resource_count": 19,
+      "kind": "program"
+    },
+    {
+      "id": "overseas_partnership_research",
+      "title": "国際共同研究加速基金（海外連携研究）",
+      "title_ja": "国際共同研究加速基金（海外連携研究）",
+      "title_zh": "国际共同研究加速基金（海外联携研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/04_renkei__koubo.html",
+      "summary_ja": "国際共同研究加速基金（海外連携研究） の公式ページです。23 件の文書資源と 2 件の様式系統を確認できます。",
+      "summary_zh": "国际共同研究加速基金（海外联携研究） 对应的官方页面，含 23 个文档资源和 2 个表格家族线索。",
+      "summary_en": "Official page for Fund for the Promotion of Joint International Research (Overseas Partnership Research), with 23 document resources and 2 form-family traces.",
+      "resource_count": 27,
+      "kind": "program"
+    },
+    {
+      "id": "scientific_research_abc",
+      "title": "基盤研究（A/B/C）",
+      "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "title_zh": "基盘研究（A/B/C）",
+      "title_en": "Scientific Research (A/B/C)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+      "summary_ja": "基盤研究（Ａ・Ｂ・Ｃ） の公式ページです。68 件の文書資源と 8 件の様式系統を確認できます。",
+      "summary_zh": "基盘研究（A/B/C） 对应的官方页面，含 68 个文档资源和 8 个表格家族线索。",
+      "summary_en": "Official page for Scientific Research (A/B/C), with 68 document resources and 8 form-family traces.",
+      "resource_count": 74,
+      "kind": "program"
+    },
+    {
+      "id": "scientific_research_s",
+      "title": "基盤研究（S）",
+      "title_ja": "基盤研究（Ｓ）",
+      "title_zh": "基盘研究（S）",
+      "title_en": "Scientific Research (S)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "summary_ja": "基盤研究（Ｓ） の公式ページです。26 件の文書資源と 2 件の様式系統を確認できます。",
+      "summary_zh": "基盘研究（S） 对应的官方页面，含 26 个文档资源和 2 个表格家族线索。",
+      "summary_en": "Official page for Scientific Research (S), with 26 document resources and 2 form-family traces.",
+      "resource_count": 31,
+      "kind": "program"
+    },
+    {
+      "id": "incentive_research",
+      "title": "奨励研究",
+      "title_ja": "奨励研究",
+      "title_zh": "奖励研究",
+      "title_en": "Encouragement of Scientists",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/11_shourei__koubo.html",
+      "summary_ja": "奨励研究 の公式ページです。16 件の文書資源と 1 件の様式系統を確認できます。",
+      "summary_zh": "奖励研究 对应的官方页面，含 16 个文档资源和 1 个表格家族线索。",
+      "summary_en": "Official page for Encouragement of Scientists, with 16 document resources and 1 form-family traces.",
+      "resource_count": 22,
+      "kind": "program"
+    },
+    {
+      "id": "challenging_research",
+      "title": "挑戦的研究",
+      "title_ja": "挑戦的研究",
+      "title_zh": "挑战性研究",
+      "title_en": "Challenging Research",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+      "summary_ja": "挑戦的研究 の公式ページです。68 件の文書資源と 8 件の様式系統を確認できます。",
+      "summary_zh": "挑战性研究 对应的官方页面，含 68 个文档资源和 8 个表格家族线索。",
+      "summary_en": "Official page for Challenging Research, with 68 document resources and 8 form-family traces.",
+      "resource_count": 74,
+      "kind": "program"
+    },
+    {
+      "id": "special_promotion_research",
+      "title": "特別推進研究",
+      "title_ja": "特別推進研究",
+      "title_zh": "特别推进研究",
+      "title_en": "Specially Promoted Research",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "summary_ja": "特別推進研究 の公式ページです。26 件の文書資源と 2 件の様式系統を確認できます。",
+      "summary_zh": "特别推进研究 对应的官方页面，含 26 个文档资源和 2 个表格家族线索。",
+      "summary_en": "Official page for Specially Promoted Research, with 26 document resources and 2 form-family traces.",
+      "resource_count": 31,
+      "kind": "program"
+    },
+    {
+      "id": "jsps_fellows_incentive",
+      "title": "特別研究員奨励費",
+      "title_ja": "特別研究員奨励費",
+      "title_zh": "特别研究员奖励费",
+      "title_en": "Grant-in-Aid for JSPS Fellows",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
+      "snapshot_path": "external/jsps/2026-04-07/20_tokushourei__download.html",
+      "summary_ja": "特別研究員奨励費 の公式ページです。10 件の文書資源と 0 件の様式系統を確認できます。",
+      "summary_zh": "特别研究员奖励费 对应的官方页面，含 10 个文档资源和 0 个表格家族线索。",
+      "summary_en": "Official page for Grant-in-Aid for JSPS Fellows, with 10 document resources and 0 form-family traces.",
+      "resource_count": 12,
+      "kind": "program"
+    },
+    {
+      "id": "research_results_publication",
+      "title": "研究成果公開促進費",
+      "title_ja": "研究成果公開促進費",
+      "title_zh": "研究成果公开促进费",
+      "title_en": "Publication of Scientific Research Results",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+      "snapshot_path": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
+      "summary_ja": "研究成果公開促進費 の公式ページです。50 件の文書資源と 6 件の様式系統を確認できます。",
+      "summary_zh": "研究成果公开促进费 对应的官方页面，含 50 个文档资源和 6 个表格家族线索。",
+      "summary_en": "Official page for Publication of Scientific Research Results, with 50 document resources and 6 form-family traces.",
+      "resource_count": 54,
+      "kind": "program"
+    },
+    {
+      "id": "overview-34_new_scientific__index",
+      "title": "新学術領域研究（研究領域提案型）",
+      "title_ja": "新学術領域研究（研究領域提案型）",
+      "title_zh": "新学术领域研究（研究领域提案型）",
+      "title_en": "Scientific Research on Innovative Areas (Proposed Research Area)",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
+      "snapshot_path": "external/jsps/2026-04-07/34_new_scientific__index.html",
+      "summary_ja": "新学術領域研究（研究領域提案型） の公式ハブページです。今回のスナップショットでは 7 件の関連リソースを確認できます。",
+      "summary_zh": "新学术领域研究（研究领域提案型） 对应的官方总入口，本次快照中可追踪 7 个相关资源。",
+      "summary_en": "Official hub page for Scientific Research on Innovative Areas (Proposed Research Area), with 7 linked resources in this snapshot.",
+      "resource_count": 7,
+      "kind": "overview"
+    },
+    {
+      "id": "overview-39_transformative__index",
+      "title": "学術変革領域研究",
+      "title_ja": "学術変革領域研究",
+      "title_zh": "学术变革领域研究",
+      "title_en": "Transformative Research Areas",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
+      "snapshot_path": "external/jsps/2026-04-07/39_transformative__index.html",
+      "summary_ja": "学術変革領域研究 の公式ハブページです。今回のスナップショットでは 147 件の関連リソースを確認できます。",
+      "summary_zh": "学术变革领域研究 对应的官方总入口，本次快照中可追踪 147 个相关资源。",
+      "summary_en": "Official hub page for Transformative Research Areas, with 147 linked resources in this snapshot.",
+      "resource_count": 147,
+      "kind": "overview"
+    },
+    {
+      "id": "overview-03_keikaku__index",
+      "title": "基盤研究（A・B・C）・挑戦的研究・若手研究",
+      "title_ja": "基盤研究（A・B・C）・挑戦的研究・若手研究",
+      "title_zh": "基盘研究（A/B/C）・挑战性研究・青年研究",
+      "title_en": "Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+      "snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html",
+      "summary_ja": "基盤研究（A・B・C）・挑戦的研究・若手研究 の公式ハブページです。今回のスナップショットでは 8 件の関連リソースを確認できます。",
+      "summary_zh": "基盘研究（A/B/C）・挑战性研究・青年研究 对应的官方总入口，本次快照中可追踪 8 个相关资源。",
+      "summary_en": "Official hub page for Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists, with 8 linked resources in this snapshot.",
+      "resource_count": 8,
+      "kind": "overview"
+    },
+    {
+      "id": "overview-35_kokusai__index",
+      "title": "国際共同研究加速基金",
+      "title_ja": "国際共同研究加速基金",
+      "title_zh": "国际共同研究加速基金",
+      "title_en": "Fund for the Promotion of Joint International Research",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+      "snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "summary_ja": "国際共同研究加速基金 の公式ハブページです。今回のスナップショットでは 4 件の関連リソースを確認できます。",
+      "summary_zh": "国际共同研究加速基金 对应的官方总入口，本次快照中可追踪 4 个相关资源。",
+      "summary_en": "Official hub page for Fund for the Promotion of Joint International Research, with 4 linked resources in this snapshot.",
+      "resource_count": 4,
+      "kind": "overview"
     },
     {
       "id": "faq",
@@ -1620,7 +9873,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title_ja": "科研費FAQ",
       "title_en": "KAKENHI FAQ",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
-      "snapshot_path": "external/jsps/2026-04-03/faq.html",
+      "snapshot_path": "external/jsps/2026-04-07/faq.html",
       "summary_ja": "科研費 FAQ の入口ページです。今回のスナップショットでは 12 件の公式リソースを確認できます。",
       "summary_zh": "FAQ 入口页，当前快照抓取了 12 个官方资源链接。",
       "summary_en": "FAQ landing page with 12 linked official resources in this snapshot.",
@@ -1647,7 +9900,7 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": true,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
-      "snapshot_path": "external/jsps/2026-04-03/startup_support.html",
+      "snapshot_path": "external/jsps/2026-04-07/22_startup_support__download.html",
       "summary_ja": "現時点で最優先で確認したい公募中の種目です。この専用ページに、公募期間、電子申請システムの利用開始日、S-22、作成・入力要領、FAQ への主要導線がまとまっています。",
       "summary_zh": "这是当前最需要立即推进的重点公募项目。该专页把公募期间、电子申报系统开放时间、S-22、作成与输入要领以及 FAQ 入口集中到了一处。",
       "summary_en": "This is the priority call that is currently open for action. The dedicated page consolidates the call period, the electronic application system opening date, the S-22 form family, the preparation guidance, and the main FAQ links.",
@@ -1655,8 +9908,8 @@ window.KAKENHI_PORTAL_DATA = {
         "S-22"
       ],
       "theme": "toyama",
-      "document_count": 9,
-      "resource_count": 12,
+      "document_count": 15,
+      "resource_count": 18,
       "search_blob": "研究活動スタート支援 研究活動スタート支援 令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について S-22 S-22"
     },
     {
@@ -1677,7 +9930,7 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": true,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-03/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
       "summary_ja": "若手研究の公募情報は、基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究と共通の公募ページに掲載されています。令和8（2026）年度分の受付は終了していますが、次回公募に向けて公募要領、審査区分表、様式群を確認するための基準ページです。",
       "summary_zh": "“青年研究（若手研究）”的公募信息发布在基盘研究（A/B/C）・挑战性研究・若手研究的共用官方页面上。2026年度这一轮已经结束，但这里仍是为下一轮准备时最关键的官方基准页。",
       "summary_en": "The call information for Early-Career Scientists is published on the shared official page for Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists. The FY2026 round is closed, but the page remains the primary official reference point for the next cycle.",
@@ -1690,498 +9943,838 @@ window.KAKENHI_PORTAL_DATA = {
       "search_blob": "若手研究 基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究 令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について S-21 S-21"
     },
     {
-      "id": "catalog-2",
-      "type": "directory",
-      "title": "特別推進研究・基盤研究（Ｓ）",
-      "title_ja": "特別推進研究・基盤研究（Ｓ）",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
+      "id": "independent_base_building_support",
+      "type": "detailed",
+      "title": "独立基盤形成支援（試行）",
+      "title_ja": "独立基盤形成支援（試行）",
+      "title_zh": "独立基盘形成支援（试行）",
+      "title_en": "Independent Research Base Building Support (Pilot)",
+      "subtitle": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
+      "subtitle_ja": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
+      "subtitle_zh": "“基盘研究（C）”与“青年研究”中的独立基盘形成支援（试行）",
+      "subtitle_en": "Independent Research Base Building Support (Pilot) for Scientific Research (C) and Early-Career Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "open",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
+      "snapshot_path": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
+      "summary_ja": "独立基盤形成支援（試行）の公式公募ページです。現在の公募要領、主要様式、FAQ への導線を 1 か所で確認できます。",
+      "summary_zh": "这是 独立基盘形成支援（试行） 的官方公募页，可在这里集中核对当前公募要领、主要样式与 FAQ 入口。",
+      "summary_en": "This is the official call page for Independent Research Base Building Support (Pilot), bringing together the current application procedures, core forms, and FAQ routes.",
+      "form_codes": [],
+      "theme": "toyama",
+      "document_count": 4,
+      "resource_count": 5,
+      "search_blob": "独立基盤形成支援（試行） 「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行） 令和８(2026)年度「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）の公募について"
+    },
+    {
+      "id": "international_leading_research",
+      "type": "detailed",
+      "title": "国際共同研究加速基金（国際先導研究）",
+      "title_ja": "国際共同研究加速基金（国際先導研究）",
+      "title_zh": "国际共同研究加速基金（国际先导研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "subtitle": "国際共同研究加速基金（国際先導研究）",
+      "subtitle_ja": "国際共同研究加速基金（国際先導研究）",
+      "subtitle_zh": "国际共同研究加速基金（国际先导研究）",
+      "subtitle_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/05_sendou__koubo.html",
+      "summary_ja": "国際共同研究加速基金（国際先導研究）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（国际先导研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (International Leading Research) is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-64"
+      ],
+      "theme": "toyama",
+      "document_count": 18,
+      "resource_count": 23,
+      "search_blob": "国際共同研究加速基金（国際先導研究） 国際共同研究加速基金（国際先導研究） 令和８(2026)年度国際共同研究加速基金（国際先導研究）の公募について S-64 S-64"
+    },
+    {
+      "id": "international_research_strengthening",
+      "type": "detailed",
+      "title": "国際共同研究加速基金（国際共同研究強化）",
+      "title_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "title_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "subtitle": "国際共同研究加速基金（国際共同研究強化）",
+      "subtitle_ja": "国際共同研究加速基金（国際共同研究強化）",
+      "subtitle_zh": "国际共同研究加速基金（国际共同研究强化）",
+      "subtitle_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/01_kyoka__koubo.html",
+      "summary_ja": "国際共同研究加速基金（国際共同研究強化）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（国际共同研究强化） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (Fostering Joint International Research) is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-61"
+      ],
+      "theme": "toyama",
+      "document_count": 17,
+      "resource_count": 21,
+      "search_blob": "国際共同研究加速基金（国際共同研究強化） 国際共同研究加速基金（国際共同研究強化） 令和７(2025)年度国際共同研究加速基金（国際共同研究強化）の公募について S-61 S-61"
+    },
+    {
+      "id": "returning_researchers_development",
+      "type": "detailed",
+      "title": "国際共同研究加速基金（帰国発展研究）",
+      "title_ja": "国際共同研究加速基金（帰国発展研究）",
+      "title_zh": "国际共同研究加速基金（归国发展研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "subtitle": "国際共同研究加速基金（帰国発展研究）",
+      "subtitle_ja": "国際共同研究加速基金（帰国発展研究）",
+      "subtitle_zh": "国际共同研究加速基金（归国发展研究）",
+      "subtitle_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/03_kikoku__koubo.html",
+      "summary_ja": "国際共同研究加速基金（帰国発展研究）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（归国发展研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (Returning Researcher Development) is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-62"
+      ],
+      "theme": "toyama",
+      "document_count": 14,
+      "resource_count": 19,
+      "search_blob": "国際共同研究加速基金（帰国発展研究） 国際共同研究加速基金（帰国発展研究） 令和７(2025)年度国際共同研究加速基金（帰国発展研究）の公募について S-62 S-62"
+    },
+    {
+      "id": "overseas_partnership_research",
+      "type": "detailed",
+      "title": "国際共同研究加速基金（海外連携研究）",
+      "title_ja": "国際共同研究加速基金（海外連携研究）",
+      "title_zh": "国际共同研究加速基金（海外联携研究）",
+      "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "subtitle": "国際共同研究加速基金（海外連携研究）",
+      "subtitle_ja": "国際共同研究加速基金（海外連携研究）",
+      "subtitle_zh": "国际共同研究加速基金（海外联携研究）",
+      "subtitle_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/04_renkei__koubo.html",
+      "summary_ja": "国際共同研究加速基金（海外連携研究）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "国际共同研究加速基金（海外联携研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Fund for the Promotion of Joint International Research (Overseas Partnership Research) is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-63-1",
+        "S-63-2"
+      ],
+      "theme": "toyama",
+      "document_count": 23,
+      "resource_count": 27,
+      "search_blob": "国際共同研究加速基金（海外連携研究） 国際共同研究加速基金（海外連携研究） 国際共同研究加速基金（海外連携研究）の公募について S-63-1 S-63-2 S-63-1 S-63-2"
+    },
+    {
+      "id": "scientific_research_abc",
+      "type": "detailed",
+      "title": "基盤研究（A/B/C）",
+      "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+      "title_zh": "基盘研究（A/B/C）",
+      "title_en": "Scientific Research (A/B/C)",
+      "subtitle": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "subtitle_ja": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "subtitle_zh": "基盘研究（A/B/C）、挑战性研究与青年研究",
+      "subtitle_en": "Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+      "summary_ja": "基盤研究（Ａ・Ｂ・Ｃ）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "基盘研究（A/B/C） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Scientific Research (A/B/C) is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-12",
+        "S-13",
+        "S-14"
+      ],
+      "theme": "tohoku",
+      "document_count": 68,
+      "resource_count": 74,
+      "search_blob": "基盤研究（A/B/C） 基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究 令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について S-12 S-13 S-14 S-12 S-13 S-14"
+    },
+    {
+      "id": "scientific_research_s",
+      "type": "detailed",
+      "title": "基盤研究（S）",
+      "title_ja": "基盤研究（Ｓ）",
+      "title_zh": "基盘研究（S）",
+      "title_en": "Scientific Research (S)",
+      "subtitle": "特別推進研究・基盤研究（Ｓ）",
+      "subtitle_ja": "特別推進研究・基盤研究（Ｓ）",
+      "subtitle_zh": "特别推进研究与基盘研究（S）",
+      "subtitle_en": "Specially Promoted Research and Scientific Research (S)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "tohoku",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "特別推進研究・基盤研究（Ｓ） 公募要領・計画調書等"
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "summary_ja": "基盤研究（Ｓ）の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "基盘研究（S） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Scientific Research (S) is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-11"
+      ],
+      "theme": "usst",
+      "document_count": 26,
+      "resource_count": 31,
+      "search_blob": "基盤研究（S） 特別推進研究・基盤研究（Ｓ） 令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について S-11 S-11"
     },
     {
-      "id": "catalog-3",
-      "type": "directory",
+      "id": "incentive_research",
+      "type": "detailed",
       "title": "奨励研究",
       "title_ja": "奨励研究",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "奨励研究 公募要領・計画調書等"
-    },
-    {
-      "id": "catalog-4",
-      "type": "directory",
-      "title": "研究成果公開促進費",
-      "title_ja": "研究成果公開促進費",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "研究成果公開促進費 公募要領・計画調書等"
-    },
-    {
-      "id": "catalog-5",
-      "type": "directory",
-      "title": "特別研究員奨励費",
-      "title_ja": "特別研究員奨励費",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "特別研究員奨励費 公募要領・計画調書等"
-    },
-    {
-      "id": "catalog-6",
-      "type": "directory",
-      "title": "国際共同研究加速基金（国際先導研究）",
-      "title_ja": "国際共同研究加速基金（国際先導研究）",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "国際共同研究加速基金（国際先導研究） 公募要領・計画調書等"
-    },
-    {
-      "id": "catalog-7",
-      "type": "directory",
-      "title": "国際共同研究加速基金（国際共同研究強化）",
-      "title_ja": "国際共同研究加速基金（国際共同研究強化）",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "国際共同研究加速基金（国際共同研究強化） 公募要領・計画調書等"
-    },
-    {
-      "id": "catalog-8",
-      "type": "directory",
-      "title": "国際共同研究加速基金（海外連携研究）",
-      "title_ja": "国際共同研究加速基金（海外連携研究）",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "国際共同研究加速基金（海外連携研究） 公募要領・計画調書等"
-    },
-    {
-      "id": "catalog-9",
-      "type": "directory",
-      "title": "国際共同研究加速基金（帰国発展研究）",
-      "title_ja": "国際共同研究加速基金（帰国発展研究）",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "国際共同研究加速基金（帰国発展研究） 公募要領・計画調書等"
-    },
-    {
-      "id": "catalog-10",
-      "type": "directory",
-      "title": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
-      "title_ja": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
-      "subtitle": "公募要領・計画調書等",
-      "subtitle_ja": "公募要領・計画調書等",
-      "subtitle_zh": "公募要领与计划书等",
-      "subtitle_en": "Application procedures and proposal forms",
-      "group": "公募要領・計画調書等",
-      "group_ja": "公募要領・計画調書等",
-      "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms",
+      "title_zh": "奖励研究",
+      "title_en": "Encouragement of Scientists",
+      "subtitle": "奨励研究",
+      "subtitle_ja": "奨励研究",
+      "subtitle_zh": "奖励研究",
+      "subtitle_en": "Encouragement of Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
       "status": "closed",
       "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 公募要領・計画調書等。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“公募要领与计划书等”。",
-      "summary_en": "Official index entry listed under Application procedures and proposal forms.",
-      "form_codes": [],
-      "theme": "tohoku",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行） 公募要領・計画調書等"
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
+      "snapshot_path": "external/jsps/2026-04-07/11_shourei__koubo.html",
+      "summary_ja": "奨励研究の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "奖励研究 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Encouragement of Scientists is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-31"
+      ],
+      "theme": "usst",
+      "document_count": 16,
+      "resource_count": 22,
+      "search_blob": "奨励研究 奨励研究 令和８(2026)年度奨励研究の公募について S-31 S-31"
     },
     {
-      "id": "catalog-11",
-      "type": "directory",
+      "id": "challenging_research",
+      "type": "detailed",
+      "title": "挑戦的研究",
+      "title_ja": "挑戦的研究",
+      "title_zh": "挑战性研究",
+      "title_en": "Challenging Research",
+      "subtitle": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "subtitle_ja": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "subtitle_zh": "基盘研究（A/B/C）、挑战性研究与青年研究",
+      "subtitle_en": "Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+      "summary_ja": "挑戦的研究の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "挑战性研究 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Challenging Research is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-41-1",
+        "S-41-2",
+        "S-42-1",
+        "S-42-2"
+      ],
+      "theme": "tohoku",
+      "document_count": 68,
+      "resource_count": 74,
+      "search_blob": "挑戦的研究 基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究 令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について S-41-1 S-41-2 S-42-1 S-42-2 S-41-1 S-41-2 S-42-1 S-42-2"
+    },
+    {
+      "id": "special_promotion_research",
+      "type": "detailed",
       "title": "特別推進研究",
       "title_ja": "特別推進研究",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
-      "status": "reference",
+      "title_zh": "特别推进研究",
+      "title_en": "Specially Promoted Research",
+      "subtitle": "特別推進研究・基盤研究（Ｓ）",
+      "subtitle_ja": "特別推進研究・基盤研究（Ｓ）",
+      "subtitle_zh": "特别推进研究与基盘研究（S）",
+      "subtitle_en": "Specially Promoted Research and Scientific Research (S)",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
       "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "summary_ja": "特別推進研究の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "特别推进研究 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Specially Promoted Research is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-1"
+      ],
       "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "特別推進研究 各種目のページ"
+      "document_count": 26,
+      "resource_count": 31,
+      "search_blob": "特別推進研究 特別推進研究・基盤研究（Ｓ） 令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について S-1 S-1"
     },
     {
-      "id": "catalog-12",
-      "type": "directory",
+      "id": "jsps_fellows_incentive",
+      "type": "detailed",
+      "title": "特別研究員奨励費",
+      "title_ja": "特別研究員奨励費",
+      "title_zh": "特别研究员奖励费",
+      "title_en": "Grant-in-Aid for JSPS Fellows",
+      "subtitle": "特別研究員奨励費",
+      "subtitle_ja": "特別研究員奨励費",
+      "subtitle_zh": "特别研究员奖励费",
+      "subtitle_en": "Grant-in-Aid for JSPS Fellows",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
+      "snapshot_path": "external/jsps/2026-04-07/20_tokushourei__download.html",
+      "summary_ja": "特別研究員奨励費の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "特别研究员奖励费 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Grant-in-Aid for JSPS Fellows is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [],
+      "theme": "usst",
+      "document_count": 10,
+      "resource_count": 12,
+      "search_blob": "特別研究員奨励費 特別研究員奨励費 令和８(2026)年度特別研究員奨励費（外国人特別研究員）の募集について"
+    },
+    {
+      "id": "research_results_publication",
+      "type": "detailed",
+      "title": "研究成果公開促進費",
+      "title_ja": "研究成果公開促進費",
+      "title_zh": "研究成果公开促进费",
+      "title_en": "Publication of Scientific Research Results",
+      "subtitle": "研究成果公開促進費",
+      "subtitle_ja": "研究成果公開促進費",
+      "subtitle_zh": "研究成果公开促进费",
+      "subtitle_en": "Publication of Scientific Research Results",
+      "group": "Programs",
+      "group_ja": "科研費種目",
+      "group_zh": "科研费项目",
+      "group_en": "KAKENHI programs",
+      "status": "closed",
+      "priority": false,
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+      "snapshot_path": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
+      "summary_ja": "研究成果公開促進費の現行ページは今回分の公募を終えていますが、次回準備に向けて公募要領、主要様式、関連 FAQ を確認する基準ページとして使えます。",
+      "summary_zh": "研究成果公开促进费 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
+      "summary_en": "The current cycle for Publication of Scientific Research Results is closed, but the page remains the main official reference point for the next round.",
+      "form_codes": [
+        "S-51-1",
+        "S-51-2",
+        "S-51-3",
+        "S-51-4",
+        "S-51-5",
+        "S-52"
+      ],
+      "theme": "usst",
+      "document_count": 50,
+      "resource_count": 54,
+      "search_blob": "研究成果公開促進費 研究成果公開促進費 令和８(2026)年度研究成果公開促進費の公募について S-51-1 S-51-2 S-51-3 S-51-4 S-51-5 S-52"
+    },
+    {
+      "id": "overview-34_new_scientific__index",
+      "type": "overview",
       "title": "新学術領域研究（研究領域提案型）",
       "title_ja": "新学術領域研究（研究領域提案型）",
+      "title_zh": "新学术领域研究（研究领域提案型）",
+      "title_en": "Scientific Research on Innovative Areas (Proposed Research Area)",
       "subtitle": "各種目のページ",
       "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
+      "subtitle_zh": "各项目页面",
+      "subtitle_en": "Program pages",
       "group": "各種目のページ",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
       "status": "reference",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
+      "snapshot_path": "external/jsps/2026-04-07/34_new_scientific__index.html",
+      "summary_ja": "新学術領域研究（研究領域提案型）に関する通知、交付様式、使用ルールを確認するための公式参照ページです。現行の公開内容では、新規公募の入口というより、制度・交付管理の確認ハブとして読むのが適切です。",
+      "summary_zh": "这是核对“新学术领域研究（研究领域提案型）”相关通知、交付样式与使用规则的官方参考页。按当前公开结构来看，它更像制度与交付管理的核对入口，而不是面向新一轮公募的主页。",
+      "summary_en": "This is the official reference page for notices, grant-administration forms, and rules related to Scientific Research on Innovative Areas (Proposed Research Area). In its current public structure, the page functions more as a scheme-and-administration checkpoint than as a front door for a new call.",
       "form_codes": [],
       "theme": "usst",
       "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "新学術領域研究（研究領域提案型） 各種目のページ"
+      "resource_count": 7,
+      "page_last_updated": "2025-05-09 10:50:27",
+      "page_headline": "新学術領域研究（研究領域提案型）",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/34_new_scientific__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "page_highlights": [
+        {
+          "title": "公募・審査に関するお知らせ〈文部科学省HPへのリンク〉",
+          "url": "https://www.mext.go.jp/a_menu/shinkou/hojyo/1299598.htm",
+          "kind": "external",
+          "section": "NEWS一覧"
+        },
+        {
+          "title": "交付申請時に使用する様式（A様式関係）",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/17_koufu/index.html",
+          "kind": "page",
+          "section": "新学術領域研究（研究領域提案型）に係わる様式等"
+        },
+        {
+          "title": "交付決定後に使用する様式（B・C様式関係）",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/index.html",
+          "kind": "page",
+          "section": "新学術領域研究（研究領域提案型）に係わる様式等"
+        },
+        {
+          "title": "使用ルール",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/shiyourule.html",
+          "kind": "page",
+          "section": "新学術領域研究（研究領域提案型）に係わる様式等"
+        },
+        {
+          "title": "新学術領域研究〈文部科学省HPへのリンク〉",
+          "url": "https://www.mext.go.jp/a_menu/shinkou/hojyo/1218181.htm",
+          "kind": "external",
+          "section": "新学術領域研究（研究領域提案型）リンク集"
+        },
+        {
+          "title": "交付に関するお知らせ〈日本学術振興会HPへのリンク〉",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+          "kind": "page",
+          "section": "NEWS一覧"
+        }
+      ],
+      "related_programs": [],
+      "watchpoints_ja": [
+        "現行の公開内容は、新規公募の案内というより、通知、交付申請時の A 様式、交付決定後の B・C 様式、使用ルールを確認する参照ハブとして読むのが適切です。",
+        "申請準備よりも、継続案件や制度整理の文脈で使う比重が高いため、必要資料が交付前後のどちらに属するかを見分けながら確認すると効率的です。",
+        "現在の領域型制度と位置付けを比較したい場合は、学術変革領域研究のページも並行して見ると全体像を把握しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "按当前公开内容来看，这一页与其说是新一轮公募入口，不如说更适合用来核对通知、交付申请阶段 A 样式、交付决定后 B/C 样式与使用规则。",
+        "它更常用于持续项目或制度梳理场景，因此建议先区分所需材料属于交付前还是交付后，再进入对应链接会更高效。",
+        "如果需要对照当前的领域型资助体系，建议同时打开“学术变革领域研究”页面来把握制度演进后的整体位置。"
+      ],
+      "watchpoints_en": [
+        "In its current public form, the page reads less like the front page of a new call and more like a checkpoint for notices, pre-award A forms, post-award B/C forms, and rules of use.",
+        "It is most useful in the context of continuing projects or scheme mapping, so it helps to distinguish first whether the material you need belongs to the pre-award or post-award stage.",
+        "If you want to compare it with the current area-based framework, keep the Transformative Research Areas page open alongside it to understand the present scheme landscape."
+      ],
+      "search_blob": "新学術領域研究（研究領域提案型） 新学术领域研究（研究领域提案型） Scientific Research on Innovative Areas (Proposed Research Area) 各種目のページ 公募・審査に関するお知らせ〈文部科学省HPへのリンク〉 交付申請時に使用する様式（A様式関係） 交付決定後に使用する様式（B・C様式関係） 使用ルール 新学術領域研究〈文部科学省HPへのリンク〉 交付に関するお知らせ〈日本学術振興会HPへのリンク〉"
     },
     {
-      "id": "catalog-13",
-      "type": "directory",
+      "id": "overview-39_transformative__index",
+      "type": "overview",
       "title": "学術変革領域研究",
       "title_ja": "学術変革領域研究",
+      "title_zh": "学术变革领域研究",
+      "title_en": "Transformative Research Areas",
       "subtitle": "各種目のページ",
       "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
+      "subtitle_zh": "各项目页面",
+      "subtitle_en": "Program pages",
       "group": "各種目のページ",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
       "status": "reference",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
+      "snapshot_path": "external/jsps/2026-04-07/39_transformative__index.html",
+      "summary_ja": "学術変革領域研究の公式ハブで、公募・審査のお知らせ、交付様式、使用ルールに加え、(A)・(B)・学術研究支援基盤形成の関連リンクまで 1 ページでたどれます。大型の領域型制度を俯瞰するときに最も情報量の多い入口です。",
+      "summary_zh": "这是“学术变革领域研究”的官方总入口，除公募与审查通知、交付样式、使用规则外，还汇集了 A、B 与“学术研究支援基础形成”等相关链接。需要整体把握大型领域型制度时，这一页的信息密度最高。",
+      "summary_en": "This is the official hub for Transformative Research Areas, bringing together call and review notices, grant-administration forms, rules of use, and the related links for Areas (A), (B), and research-support platform formation. It is the densest single entry point when you need the whole area-based structure in view.",
       "form_codes": [],
       "theme": "usst",
       "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "学術変革領域研究 各種目のページ"
+      "resource_count": 147,
+      "page_last_updated": "2026-04-01 14:00:09",
+      "page_headline": "学術変革領域研究",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/39_transformative__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "page_highlights": [
+        {
+          "title": "公募・審査に関するお知らせ〈文部科学省HPへのリンク〉",
+          "url": "https://www.mext.go.jp/a_menu/shinkou/hojyo/1299598.htm",
+          "kind": "external",
+          "section": "NEWS一覧"
+        },
+        {
+          "title": "交付申請時に使用する様式（A様式関係）",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/17_koufu/index.html",
+          "kind": "page",
+          "section": "学術変革領域研究に係わる様式等"
+        },
+        {
+          "title": "交付決定後に使用する様式（B・C様式関係）",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/index.html",
+          "kind": "page",
+          "section": "学術変革領域研究に係わる様式等"
+        },
+        {
+          "title": "使用ルール",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/rule.html",
+          "kind": "page",
+          "section": "学術変革領域研究に係わる様式等"
+        },
+        {
+          "title": "学術変革領域研究（A）〈文部科学省HPへのリンク〉",
+          "url": "https://www.mext.go.jp/a_menu/shinkou/hojyo/1412385_00007.html",
+          "kind": "external",
+          "section": "学術変革領域研究リンク集"
+        },
+        {
+          "title": "学術変革領域研究（B）〈文部科学省HPへのリンク〉",
+          "url": "https://www.mext.go.jp/a_menu/shinkou/hojyo/1412385_00004.html",
+          "kind": "external",
+          "section": "学術変革領域研究リンク集"
+        }
+      ],
+      "related_programs": [],
+      "watchpoints_ja": [
+        "公式更新日は 2026-04-01 で、募集通知だけでなく、交付様式、使用ルール、領域サイト、支援プラットフォームへの導線まで含む大きなハブになっています。",
+        "新規公募の確認だけでなく、領域運営や交付後手続も同居しているため、制度確認ではまず JSPS 本体と文部科学省のページを優先して見るのが安全です。",
+        "個別領域サイトへのリンクが多いため、制度・様式の確認は公式制度ページ、研究内容の把握は各領域サイト、という使い分けをすると整理しやすくなります。"
+      ],
+      "watchpoints_zh": [
+        "该页官方更新时间为 2026-04-01，内容不仅包含募集通知，也包含交付样式、使用规则、领域站点与支援平台入口，是一个信息量很大的总枢纽。",
+        "页面同时覆盖新规募集、领域运行与交付后手续，因此做制度核对时，建议优先查看 JSPS 本站与文部科学省页面。",
+        "由于页面连出了大量各领域独立网站，建议把“制度与样式确认”放在官方制度页完成，把“研究内容理解”放到各领域网站补充。"
+      ],
+      "watchpoints_en": [
+        "The official page was updated on 2026-04-01 and now serves as a large hub covering not only call notices but also grant-administration forms, rules of use, area sites, and support-platform links.",
+        "Because the page mixes new-call information with area management and post-award procedures, start with the JSPS and MEXT scheme pages when you need authoritative rules.",
+        "The page links out to many individual area websites, so it helps to separate tasks: use the official scheme pages for rules and forms, and the area websites for research-content context."
+      ],
+      "search_blob": "学術変革領域研究 学术变革领域研究 Transformative Research Areas 各種目のページ 公募・審査に関するお知らせ〈文部科学省HPへのリンク〉 交付申請時に使用する様式（A様式関係） 交付決定後に使用する様式（B・C様式関係） 使用ルール 学術変革領域研究（A）〈文部科学省HPへのリンク〉 学術変革領域研究（B）〈文部科学省HPへのリンク〉"
     },
     {
-      "id": "catalog-14",
-      "type": "directory",
-      "title": "基盤研究（Ｓ）",
-      "title_ja": "基盤研究（Ｓ）",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
-      "status": "closed",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
-      "theme": "tohoku",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "基盤研究（Ｓ） 各種目のページ"
-    },
-    {
-      "id": "catalog-15",
-      "type": "directory",
+      "id": "overview-03_keikaku__index",
+      "type": "overview",
       "title": "基盤研究（A・B・C）・挑戦的研究・若手研究",
       "title_ja": "基盤研究（A・B・C）・挑戦的研究・若手研究",
+      "title_zh": "基盘研究（A/B/C）・挑战性研究・青年研究",
+      "title_en": "Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists",
       "subtitle": "各種目のページ",
       "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
+      "subtitle_zh": "各项目页面",
+      "subtitle_en": "Program pages",
       "group": "各種目のページ",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
-      "status": "closed",
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "status": "reference",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
+      "snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html",
+      "summary_ja": "基盤研究（A・B・C）、挑戦的研究、若手研究を横断して、公募、審査、交付、年間スケジュールの共通導線をまとめた総合ページです。個別の締切や様式は各詳細ページで確認しつつ、制度横断の整理にはこのハブが最も使いやすい入口です。",
+      "summary_zh": "这是横向统筹“基盘研究（A/B/C）”“挑战性研究”“青年研究”的综合入口，集中串联公募、审查、交付与年度日程。具体截止与样式仍应回到各细分项目卡核对，但做制度级梳理时，这个页面最适合作为总枢纽。",
+      "summary_en": "This is the shared hub for Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists, tying together the common routes for calls, review, grant administration, and the annual schedule. Use the individual program entries for specific deadlines and forms, but use this page when you need the cross-program structure.",
+      "form_codes": [
+        "S-21",
+        "S-12",
+        "S-13",
+        "S-14",
+        "S-41-1",
+        "S-41-2"
+      ],
       "theme": "tohoku",
       "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "基盤研究（A・B・C）・挑戦的研究・若手研究 各種目のページ"
+      "resource_count": 8,
+      "page_last_updated": "2024-11-27 15:50:19",
+      "page_headline": "基盤研究（A・B・C）・挑戦的研究・若手研究",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/03_keikaku__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "page_highlights": [
+        {
+          "title": "研究活動スタート支援",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
+          "kind": "page",
+          "section": "基盤研究（A・B・C）・挑戦的研究・若手研究"
+        },
+        {
+          "title": "基盤研究（A･B･C）、挑戦的研究、若手研究の公募について",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+          "kind": "page",
+          "section": "公募について"
+        },
+        {
+          "title": "科学研究費助成事業の審査について",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/03_shinsa/index.html",
+          "kind": "page",
+          "section": "審査について"
+        },
+        {
+          "title": "使用ルール",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/rule.html",
+          "kind": "page",
+          "section": "交付について"
+        },
+        {
+          "title": "交付申請時の様式（A・D様式）",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/17_koufu/index.html",
+          "kind": "page",
+          "section": "交付について"
+        },
+        {
+          "title": "交付決定後の様式（B・C／E・F様式）",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/16_rule/index.html",
+          "kind": "page",
+          "section": "交付について"
+        }
+      ],
+      "related_programs": [
+        {
+          "id": "young_research",
+          "title": "若手研究",
+          "title_ja": "若手研究",
+          "title_zh": "青年研究（若手研究）",
+          "title_en": "Early-Career Scientists",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        },
+        {
+          "id": "independent_base_building_support",
+          "title": "独立基盤形成支援（試行）",
+          "title_ja": "独立基盤形成支援（試行）",
+          "title_zh": "独立基盘形成支援（试行）",
+          "title_en": "Independent Research Base Building Support (Pilot)",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html"
+        },
+        {
+          "id": "scientific_research_abc",
+          "title": "基盤研究（A/B/C）",
+          "title_ja": "基盤研究（Ａ・Ｂ・Ｃ）",
+          "title_zh": "基盘研究（A/B/C）",
+          "title_en": "Scientific Research (A/B/C)",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        },
+        {
+          "id": "challenging_research",
+          "title": "挑戦的研究",
+          "title_ja": "挑戦的研究",
+          "title_zh": "挑战性研究",
+          "title_en": "Challenging Research",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        }
+      ],
+      "watchpoints_ja": [
+        "公式更新日は 2024-11-27 で、公募、審査、交付、年間スケジュールを横断して確認できる整理用ハブとして有用です。",
+        "個別の締切や様式番号は詳細カード側で確定し、このページでは審査制度、使用ルール、科研費ハンドブックなど共通情報を補完する使い方が安全です。",
+        "研究活動スタート支援への導線も同居しているため、初年度立ち上げ案件と若手・基盤研究系を比較するときの出発点にも向いています。"
+      ],
+      "watchpoints_zh": [
+        "该页官方更新日期为 2024-11-27，适合用来横向梳理公募、审查、交付与年度日程等共通事项。",
+        "具体截止与样式编号应在各细分项目卡中最终确认，而这个页面更适合补充审查制度、使用规则与科研费手册等共通信息。",
+        "页面同时串联了“研究活动启动支援”，因此也适合作为比较首年启动型项目与若手/基盘研究体系时的起点。"
+      ],
+      "watchpoints_en": [
+        "The official page was updated on 2024-11-27 and works best as the organizing hub across calls, review, grant administration, and the annual schedule.",
+        "Confirm specific deadlines and form codes in the individual program entries, and use this page for the shared context such as review structure, rules of use, and the KAKENHI handbook.",
+        "Because the page also links to Research Activity Start-up Support, it is a useful starting point when comparing first-year start-up cases with the broader Early-Career and Scientific Research tracks."
+      ],
+      "search_blob": "基盤研究（A・B・C）・挑戦的研究・若手研究 基盘研究（A/B/C）・挑战性研究・青年研究 Scientific Research (A/B/C), Challenging Research, and Early-Career Scientists 各種目のページ 研究活動スタート支援 基盤研究（A･B･C）、挑戦的研究、若手研究の公募について 科学研究費助成事業の審査について 使用ルール 交付申請時の様式（A・D様式） 交付決定後の様式（B・C／E・F様式） 若手研究 独立基盤形成支援（試行） 基盤研究（Ａ・Ｂ・Ｃ） 挑戦的研究 S-21 S-12 S-13 S-14 S-41-1 S-41-2"
     },
     {
-      "id": "catalog-16",
-      "type": "directory",
-      "title": "研究活動スタート支援",
-      "title_ja": "研究活動スタート支援",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
-      "status": "open",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
-      "theme": "toyama",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "研究活動スタート支援 各種目のページ"
-    },
-    {
-      "id": "catalog-17",
-      "type": "directory",
-      "title": "奨励研究",
-      "title_ja": "奨励研究",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "奨励研究 各種目のページ"
-    },
-    {
-      "id": "catalog-18",
-      "type": "directory",
-      "title": "研究成果公開促進費",
-      "title_ja": "研究成果公開促進費",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "研究成果公開促進費 各種目のページ"
-    },
-    {
-      "id": "catalog-19",
-      "type": "directory",
-      "title": "特別研究員奨励費",
-      "title_ja": "特別研究員奨励費",
-      "subtitle": "各種目のページ",
-      "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
-      "group": "各種目のページ",
-      "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
-      "status": "reference",
-      "priority": false,
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
-      "theme": "usst",
-      "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "特別研究員奨励費 各種目のページ"
-    },
-    {
-      "id": "catalog-20",
-      "type": "directory",
+      "id": "overview-35_kokusai__index",
+      "type": "overview",
       "title": "国際共同研究加速基金",
       "title_ja": "国際共同研究加速基金",
+      "title_zh": "国际共同研究加速基金",
+      "title_en": "Fund for the Promotion of Joint International Research",
       "subtitle": "各種目のページ",
       "subtitle_ja": "各種目のページ",
-      "subtitle_zh": "各種目のページ",
-      "subtitle_en": "各種目のページ",
+      "subtitle_zh": "各项目页面",
+      "subtitle_en": "Program pages",
       "group": "各種目のページ",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ",
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
       "status": "reference",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-      "snapshot_path": "",
-      "summary_ja": "JSPS 公募情報総索引に掲載されている公式入口です。区分: 各種目のページ。",
-      "summary_zh": "来自 JSPS 公募总索引中的官方入口，所属分类为“各種目のページ”。",
-      "summary_en": "Official index entry listed under 各種目のページ.",
-      "form_codes": [],
-      "theme": "usst",
+      "snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "summary_ja": "国際先導研究、国際共同研究強化、海外連携研究、帰国発展研究の 4 系統へ分岐する公式ハブです。国際連携の計画をどのスキームに載せるべきかを整理するとき、最初に開く価値が高い入口になっています。",
+      "summary_zh": "这是通向“国际先导研究”“国际共同研究强化”“海外合作研究”“回国发展研究”四个方向的官方总入口。需要先判断国际合作计划应归入哪一类时，这个页面最适合作为第一站。",
+      "summary_en": "This is the official hub that branches to International Leading Research, International Research Strengthening, Overseas Partnership Research, and Returning Researchers Development. It is the best first stop when you need to decide which international-collaboration track fits a project plan.",
+      "form_codes": [
+        "S-64",
+        "S-61",
+        "S-62",
+        "S-63-1",
+        "S-63-2"
+      ],
+      "theme": "toyama",
       "document_count": 0,
-      "resource_count": 0,
-      "search_blob": "国際共同研究加速基金 各種目のページ"
+      "resource_count": 4,
+      "page_last_updated": "2025-04-11 14:00:19",
+      "page_headline": "国際共同研究加速基金",
+      "key_links": [
+        {
+          "label": "官方页面",
+          "label_ja": "公式ページ",
+          "label_en": "Official page",
+          "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+          "kind": "page"
+        },
+        {
+          "label": "本地快照",
+          "label_ja": "ローカルスナップショット",
+          "label_en": "Local snapshot",
+          "href": "external/jsps/2026-04-07/35_kokusai__index.html",
+          "kind": "snapshot"
+        }
+      ],
+      "page_highlights": [
+        {
+          "title": "国際先導研究",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/",
+          "kind": "page",
+          "section": "国際共同研究加速基金"
+        },
+        {
+          "title": "国際共同研究強化",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/",
+          "kind": "page",
+          "section": "国際共同研究加速基金"
+        },
+        {
+          "title": "海外連携研究",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/",
+          "kind": "page",
+          "section": "国際共同研究加速基金"
+        },
+        {
+          "title": "帰国発展研究",
+          "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/",
+          "kind": "page",
+          "section": "国際共同研究加速基金"
+        }
+      ],
+      "related_programs": [
+        {
+          "id": "international_leading_research",
+          "title": "国際共同研究加速基金（国際先導研究）",
+          "title_ja": "国際共同研究加速基金（国際先導研究）",
+          "title_zh": "国际共同研究加速基金（国际先导研究）",
+          "title_en": "Fund for the Promotion of Joint International Research (International Leading Research)",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html"
+        },
+        {
+          "id": "international_research_strengthening",
+          "title": "国際共同研究加速基金（国際共同研究強化）",
+          "title_ja": "国際共同研究加速基金（国際共同研究強化）",
+          "title_zh": "国际共同研究加速基金（国际共同研究强化）",
+          "title_en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research)",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html"
+        },
+        {
+          "id": "returning_researchers_development",
+          "title": "国際共同研究加速基金（帰国発展研究）",
+          "title_ja": "国際共同研究加速基金（帰国発展研究）",
+          "title_zh": "国际共同研究加速基金（归国发展研究）",
+          "title_en": "Fund for the Promotion of Joint International Research (Returning Researcher Development)",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html"
+        },
+        {
+          "id": "overseas_partnership_research",
+          "title": "国際共同研究加速基金（海外連携研究）",
+          "title_ja": "国際共同研究加速基金（海外連携研究）",
+          "title_zh": "国际共同研究加速基金（海外联携研究）",
+          "title_en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research)",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html"
+        }
+      ],
+      "watchpoints_ja": [
+        "4 つの国際系サブプログラムを振り分ける入口なので、まず対象スキームを見極めてから個別公募ページへ進むと混乱しにくくなります。",
+        "2026-04-07 のスナップショット時点では、当ワークスペースで追跡している 4 系統はいずれも新規公募中ではなく、比較検討と次回準備の参照ハブとして使う位置付けです。",
+        "国際連携の設計、応募資格、対象経費は種目ごとの差が大きいため、分岐後は必ず各詳細ページの公募要領と FAQ を確認してください。"
+      ],
+      "watchpoints_zh": [
+        "这是四个国际类子项目的分流入口，先判断应走哪一条资助轨道，再进入对应项目页，会更不容易混淆。",
+        "以 2026-04-07 这一版快照为准，我们当前追踪到的四个方向都不处于新一轮公募中，因此这里更适合作为比较与下一轮准备的参考总入口。",
+        "国际合作设计、申请资格与经费范围在不同子项目之间差异很大，进入分支后仍应逐一核对各项目页的公募要领与 FAQ。"
+      ],
+      "watchpoints_en": [
+        "Use this page first to identify the right track across the four international subprograms before diving into the individual call pages.",
+        "As of the 2026-04-07 snapshot, none of the four tracked subprograms is newly open in this workspace, so this page currently serves mainly as a comparison and next-cycle preparation hub.",
+        "Collaboration design, eligibility, and allowable cost scope differ substantially across the subprograms, so always confirm the application procedures and FAQ again on the destination page."
+      ],
+      "search_blob": "国際共同研究加速基金 国际共同研究加速基金 Fund for the Promotion of Joint International Research 各種目のページ 国際先導研究 国際共同研究強化 海外連携研究 帰国発展研究 国際共同研究加速基金（国際先導研究） 国際共同研究加速基金（国際共同研究強化） 国際共同研究加速基金（帰国発展研究） 国際共同研究加速基金（海外連携研究） S-64 S-61 S-62 S-63-1 S-63-2"
     }
   ],
   "public_call_categories": [
@@ -2189,172 +10782,357 @@ window.KAKENHI_PORTAL_DATA = {
       "group": "公募要領・計画調書等",
       "title": "特別推進研究・基盤研究（Ｓ）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+      "filename": "02_koubo__toku_s.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__toku_s.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+      "filename": "02_koubo__kiban.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/02_koubo__kiban.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "研究活動スタート支援",
       "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
+      "filename": "22_startup_support__download.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/22_startup_support__download.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "奨励研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
+      "filename": "11_shourei__koubo.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/11_shourei__koubo.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "研究成果公開促進費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+      "filename": "13_seika__keikaku_dl.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/13_seika__keikaku_dl.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "特別研究員奨励費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
+      "filename": "20_tokushourei__download.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/20_tokushourei__download.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "国際共同研究加速基金（国際先導研究）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
+      "filename": "05_sendou__koubo.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/05_sendou__koubo.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "国際共同研究加速基金（国際共同研究強化）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
+      "filename": "01_kyoka__koubo.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/01_kyoka__koubo.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "国際共同研究加速基金（海外連携研究）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
+      "filename": "04_renkei__koubo.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/04_renkei__koubo.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "国際共同研究加速基金（帰国発展研究）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
+      "filename": "03_kikoku__koubo.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/03_kikoku__koubo.html"
     },
     {
       "group": "公募要領・計画調書等",
       "title": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
+      "filename": "36_dokuritsu_kiban__download.html",
+      "page_kind": "call",
       "group_ja": "公募要領・計画調書等",
       "group_zh": "公募要领与计划书等",
-      "group_en": "Application procedures and proposal forms"
+      "group_en": "Application procedures and proposal forms",
+      "snapshot_path": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
     },
     {
       "group": "各種目のページ",
       "title": "特別推進研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
+      "filename": "25_tokusui__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/25_tokusui__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "新学術領域研究（研究領域提案型）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
+      "filename": "34_new_scientific__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/34_new_scientific__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "学術変革領域研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
+      "filename": "39_transformative__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/39_transformative__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "基盤研究（Ｓ）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
+      "filename": "12_kiban__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/12_kiban__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "基盤研究（A・B・C）・挑戦的研究・若手研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+      "filename": "03_keikaku__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/03_keikaku__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "研究活動スタート支援",
       "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
+      "filename": "22_startup_support__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/22_startup_support__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "奨励研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
+      "filename": "11_shourei__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/11_shourei__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "研究成果公開促進費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
+      "filename": "13_seika__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/13_seika__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "特別研究員奨励費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
+      "filename": "20_tokushourei__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/20_tokushourei__index.html"
     },
     {
       "group": "各種目のページ",
       "title": "国際共同研究加速基金",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+      "filename": "35_kokusai__index.html",
+      "page_kind": "directory",
       "group_ja": "各種目のページ",
-      "group_zh": "各種目のページ",
-      "group_en": "各種目のページ"
+      "group_zh": "各项目页面",
+      "group_en": "Program pages",
+      "snapshot_path": "external/jsps/2026-04-07/35_kokusai__index.html"
     }
   ],
   "archive": [
+    {
+      "snapshot_date": "2026-04-07",
+      "fetched_at": "2026-04-07T00:57:26+09:00",
+      "local_dir": "external/jsps/2026-04-07",
+      "files": [
+        {
+          "name": "01_kyoka__koubo.html",
+          "local_path": "external/jsps/2026-04-07/01_kyoka__koubo.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html"
+        },
+        {
+          "name": "02_koubo__kiban.html",
+          "local_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+        },
+        {
+          "name": "02_koubo__toku_s.html",
+          "local_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html"
+        },
+        {
+          "name": "03_keikaku__index.html",
+          "local_path": "external/jsps/2026-04-07/03_keikaku__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html"
+        },
+        {
+          "name": "03_kikoku__koubo.html",
+          "local_path": "external/jsps/2026-04-07/03_kikoku__koubo.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html"
+        },
+        {
+          "name": "04_renkei__koubo.html",
+          "local_path": "external/jsps/2026-04-07/04_renkei__koubo.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html"
+        },
+        {
+          "name": "05_sendou__koubo.html",
+          "local_path": "external/jsps/2026-04-07/05_sendou__koubo.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html"
+        },
+        {
+          "name": "11_shourei__index.html",
+          "local_path": "external/jsps/2026-04-07/11_shourei__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html"
+        },
+        {
+          "name": "11_shourei__koubo.html",
+          "local_path": "external/jsps/2026-04-07/11_shourei__koubo.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html"
+        },
+        {
+          "name": "12_kiban__index.html",
+          "local_path": "external/jsps/2026-04-07/12_kiban__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html"
+        },
+        {
+          "name": "13_seika__index.html",
+          "local_path": "external/jsps/2026-04-07/13_seika__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html"
+        },
+        {
+          "name": "13_seika__keikaku_dl.html",
+          "local_path": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html"
+        },
+        {
+          "name": "20_tokushourei__download.html",
+          "local_path": "external/jsps/2026-04-07/20_tokushourei__download.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html"
+        },
+        {
+          "name": "20_tokushourei__index.html",
+          "local_path": "external/jsps/2026-04-07/20_tokushourei__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html"
+        },
+        {
+          "name": "22_startup_support__download.html",
+          "local_path": "external/jsps/2026-04-07/22_startup_support__download.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html"
+        },
+        {
+          "name": "22_startup_support__index.html",
+          "local_path": "external/jsps/2026-04-07/22_startup_support__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html"
+        },
+        {
+          "name": "25_tokusui__index.html",
+          "local_path": "external/jsps/2026-04-07/25_tokusui__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html"
+        },
+        {
+          "name": "34_new_scientific__index.html",
+          "local_path": "external/jsps/2026-04-07/34_new_scientific__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html"
+        },
+        {
+          "name": "35_kokusai__index.html",
+          "local_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html"
+        },
+        {
+          "name": "36_dokuritsu_kiban__download.html",
+          "local_path": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html"
+        },
+        {
+          "name": "39_transformative__index.html",
+          "local_path": "external/jsps/2026-04-07/39_transformative__index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html"
+        },
+        {
+          "name": "faq.html",
+          "local_path": "external/jsps/2026-04-07/faq.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
+        },
+        {
+          "name": "public_call_index.html",
+          "local_path": "external/jsps/2026-04-07/public_call_index.html",
+          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
+        }
+      ]
+    },
     {
       "snapshot_date": "2026-04-03",
       "fetched_at": "2026-04-03T16:59:54+09:00",
@@ -2368,7 +11146,7 @@ window.KAKENHI_PORTAL_DATA = {
         {
           "name": "kiban.html",
           "local_path": "external/jsps/2026-04-03/kiban.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+          "official_url": null
         },
         {
           "name": "public_call_index.html",
@@ -2378,7 +11156,7 @@ window.KAKENHI_PORTAL_DATA = {
         {
           "name": "startup_support.html",
           "local_path": "external/jsps/2026-04-03/startup_support.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html"
+          "official_url": null
         }
       ]
     },
@@ -2390,7 +11168,7 @@ window.KAKENHI_PORTAL_DATA = {
         {
           "name": "kiban.html",
           "local_path": "external/jsps/2026-03-24/kiban.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+          "official_url": null
         },
         {
           "name": "public_call_index.html",
@@ -2400,39 +11178,133 @@ window.KAKENHI_PORTAL_DATA = {
         {
           "name": "startup_support.html",
           "local_path": "external/jsps/2026-03-24/startup_support.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html"
+          "official_url": null
         }
       ]
     }
   ],
   "source_manifest": {
-    "snapshot_date": "2026-04-03",
-    "fetched_at": "2026-04-03T16:59:54+09:00",
+    "snapshot_date": "2026-04-07",
+    "fetched_at": "2026-04-07T00:57:26+09:00",
     "public_call_index_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html",
-    "kiban_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-    "startup_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
-    "faq_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
+    "faq_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
+    "entries_json": "entries.json"
   },
   "source_pages": [
     {
       "name": "public_call_index",
-      "local_path": "external/jsps/2026-04-03/public_call_index.html",
+      "local_path": "external/jsps/2026-04-07/public_call_index.html",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
     },
     {
-      "name": "kiban",
-      "local_path": "external/jsps/2026-04-03/kiban.html",
+      "name": "faq",
+      "local_path": "external/jsps/2026-04-07/faq.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
+    },
+    {
+      "name": "特別推進研究・基盤研究（Ｓ）",
+      "local_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html"
+    },
+    {
+      "name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+      "local_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
     },
     {
-      "name": "startup_support",
-      "local_path": "external/jsps/2026-04-03/startup_support.html",
+      "name": "研究活動スタート支援",
+      "local_path": "external/jsps/2026-04-07/22_startup_support__download.html",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html"
     },
     {
-      "name": "faq",
-      "local_path": "external/jsps/2026-04-03/faq.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
+      "name": "奨励研究",
+      "local_path": "external/jsps/2026-04-07/11_shourei__koubo.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html"
+    },
+    {
+      "name": "研究成果公開促進費",
+      "local_path": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html"
+    },
+    {
+      "name": "特別研究員奨励費",
+      "local_path": "external/jsps/2026-04-07/20_tokushourei__download.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html"
+    },
+    {
+      "name": "国際共同研究加速基金（国際先導研究）",
+      "local_path": "external/jsps/2026-04-07/05_sendou__koubo.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html"
+    },
+    {
+      "name": "国際共同研究加速基金（国際共同研究強化）",
+      "local_path": "external/jsps/2026-04-07/01_kyoka__koubo.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html"
+    },
+    {
+      "name": "国際共同研究加速基金（海外連携研究）",
+      "local_path": "external/jsps/2026-04-07/04_renkei__koubo.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html"
+    },
+    {
+      "name": "国際共同研究加速基金（帰国発展研究）",
+      "local_path": "external/jsps/2026-04-07/03_kikoku__koubo.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html"
+    },
+    {
+      "name": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
+      "local_path": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html"
+    },
+    {
+      "name": "特別推進研究",
+      "local_path": "external/jsps/2026-04-07/25_tokusui__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html"
+    },
+    {
+      "name": "新学術領域研究（研究領域提案型）",
+      "local_path": "external/jsps/2026-04-07/34_new_scientific__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html"
+    },
+    {
+      "name": "学術変革領域研究",
+      "local_path": "external/jsps/2026-04-07/39_transformative__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html"
+    },
+    {
+      "name": "基盤研究（Ｓ）",
+      "local_path": "external/jsps/2026-04-07/12_kiban__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html"
+    },
+    {
+      "name": "基盤研究（A・B・C）・挑戦的研究・若手研究",
+      "local_path": "external/jsps/2026-04-07/03_keikaku__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html"
+    },
+    {
+      "name": "研究活動スタート支援",
+      "local_path": "external/jsps/2026-04-07/22_startup_support__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html"
+    },
+    {
+      "name": "奨励研究",
+      "local_path": "external/jsps/2026-04-07/11_shourei__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html"
+    },
+    {
+      "name": "研究成果公開促進費",
+      "local_path": "external/jsps/2026-04-07/13_seika__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html"
+    },
+    {
+      "name": "特別研究員奨励費",
+      "local_path": "external/jsps/2026-04-07/20_tokushourei__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html"
+    },
+    {
+      "name": "国際共同研究加速基金",
+      "local_path": "external/jsps/2026-04-07/35_kokusai__index.html",
+      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html"
     }
   ]
 };

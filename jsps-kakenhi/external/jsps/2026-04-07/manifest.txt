@@ -1,0 +1,5 @@
+snapshot_date=2026-04-07
+fetched_at=2026-04-07T00:57:26+09:00
+public_call_index_url=https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html
+faq_url=https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html
+entries_json=entries.json

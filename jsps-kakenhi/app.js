@@ -114,7 +114,7 @@ const I18N = {
     calls: {
       kicker: "项目浏览",
       title: "项目目录",
-      lede: "将重点项目与 JSPS 公募总索引放在同一页中统一筛选，建议先锁定研究活动启动支援与青年研究（若手研究），再沿官方索引扩展到其他种目。",
+      lede: "将重点项目、已抓取的官方公募页与 JSPS 公募总索引放在同一页中统一筛选，既可以优先查看研究活动启动支援与青年研究，也可以继续扩展到其他科研费种目。",
       filterTitle: "浏览与筛选",
       quickFilters: "快速筛选",
       footerTitle: "项目定位后，下一步就去看时间线和表格",
@@ -136,11 +136,13 @@ const I18N = {
       officialLinks: "官方入口",
       featuredDocs: "重点资料",
       featuredForms: "重点表格",
+      pageHighlights: "页面重点链接",
+      relatedPrograms: "关联项目",
     },
     deadlines: {
       kicker: "时间安排",
       title: "时间线与截止",
-      lede: "用一页看清重点项目的通知发布、公募开始、电子系统开放和 JSPS 官方截止时间，避免只看网页却错过时间节点。",
+      lede: "用一页汇总已收录种目的通知发布、公募开始、电子系统开放和 JSPS 官方截止时间，避免只看网页却错过关键节点。",
       timelineTitle: "关键事件时间线",
       tableTitle: "精确时间表",
       colProgram: "项目",
@@ -152,7 +154,7 @@ const I18N = {
     forms: {
       kicker: "表格家族",
       title: "表格与材料",
-      lede: "这一页专门看 S-21、S-22 以及它们所在页面的相关输入要领、上传说明、PDF 版与配套链接，方便从“截止”直接过渡到“写材料”。",
+      lede: "这一页汇总各科研费种目的主要样式、输入要领、上传说明、PDF 版与配套链接，方便从“截止”直接过渡到“写材料”。",
       filterTitle: "检索表格家族",
       searchPlaceholder: "搜索 S-21、S-22、项目名、章节名或官方说明",
       programAll: "全部项目",
@@ -165,7 +167,7 @@ const I18N = {
       title: "申请指南",
       lede: "这一页不只是罗列链接，而是把最值得反复核对的 FAQ、e-Rad、电子申报系统和重点资料集中到一起，便于申请前系统检查。",
       gridTitle: "关键申请入口",
-      watchTitle: "重点项目提醒",
+      watchTitle: "重点项目与项目群提醒",
       startupWatch: "研究活動スタート支援",
       youngWatch: "若手研究",
       footerTitle: "官方指引核对完，再看来源和归档",
@@ -198,11 +200,13 @@ const I18N = {
     },
     groupLabel: {
       priority: "重点项目",
+      programs: "科研费项目",
       core: "核心入口",
       program: "项目入口",
       documents: "重点资料",
       faq: "FAQ",
       publicCallProcedures: "公募要领与计划书等",
+      programPages: "各项目页面",
     },
     kindLabel: {
       page: "页面",
@@ -212,6 +216,7 @@ const I18N = {
       snapshot: "快照",
       faq: "FAQ",
       registry: "索引",
+      overview: "总览",
       program: "项目页",
       guide: "指南",
     },
@@ -326,7 +331,7 @@ const I18N = {
     calls: {
       kicker: "Program Explorer",
       title: "Call Catalog",
-      lede: "Browse the priority programs and the official JSPS public-call index in one place, starting with Research Activity Start-up Support and Early-Career Scientists before expanding to the wider catalog.",
+      lede: "Browse the priority programs, the captured official call pages, and the JSPS public-call index in one place, starting with Research Activity Start-up Support and Early-Career Scientists and then expanding to the wider KAKENHI catalog.",
       filterTitle: "Browse and filter",
       quickFilters: "Quick filters",
       footerTitle: "Once you identify the call, move straight to the timeline and forms",
@@ -348,11 +353,13 @@ const I18N = {
       officialLinks: "Official links",
       featuredDocs: "Featured documents",
       featuredForms: "Form families",
+      pageHighlights: "Page highlights",
+      relatedPrograms: "Related programs",
     },
     deadlines: {
       kicker: "Schedule",
       title: "Timeline and Deadlines",
-      lede: "See notice dates, call opening dates, electronic system availability, and the official JSPS deadlines for the priority programs in one place.",
+      lede: "See notice dates, call opening dates, electronic system availability, and the official JSPS deadlines for the programs currently captured in this workspace.",
       timelineTitle: "Key event timeline",
       tableTitle: "Exact schedule table",
       colProgram: "Program",
@@ -364,7 +371,7 @@ const I18N = {
     forms: {
       kicker: "Form Families",
       title: "Forms and Materials",
-      lede: "This page keeps S-21, S-22, the related entry guidance, upload instructions, PDF versions, and companion links together so the move from schedule-checking to document-preparation is smooth.",
+      lede: "This page keeps the major KAKENHI form families, the related entry guidance, upload instructions, PDF versions, and companion links together so the move from schedule-checking to document-preparation is smooth.",
       filterTitle: "Search form families",
       searchPlaceholder: "Search S-21, S-22, program names, sections, or official instructions",
       programAll: "All programs",
@@ -377,7 +384,7 @@ const I18N = {
       title: "Application Guidance",
       lede: "This page goes beyond a plain link list by consolidating the FAQ, e-Rad, the electronic application system, and the most useful reference documents for repeated checks during proposal preparation.",
       gridTitle: "Core application entry points",
-      watchTitle: "Priority-program watchpoints",
+      watchTitle: "Priority calls and program-hub watchpoints",
       startupWatch: "Research Activity Start-up Support",
       youngWatch: "Early-Career Scientists",
       footerTitle: "After checking the guides, review the source registry and archive",
@@ -410,11 +417,13 @@ const I18N = {
     },
     groupLabel: {
       priority: "Priority programs",
+      programs: "KAKENHI programs",
       core: "Core entry points",
       program: "Program entry points",
       documents: "Key documents",
       faq: "FAQ",
       publicCallProcedures: "Application procedures and proposal forms",
+      programPages: "Program pages",
     },
     kindLabel: {
       page: "Page",
@@ -424,6 +433,7 @@ const I18N = {
       snapshot: "Snapshot",
       faq: "FAQ",
       registry: "Index",
+      overview: "Hub",
       program: "Program page",
       guide: "Guide",
     },
@@ -508,7 +518,7 @@ I18N.ja = {
   calls: {
     kicker: "ホーム",
     title: "ホーム",
-    lede: "重点種目と JSPS 公募情報総索引を同じ画面で確認し、まず研究活動スタート支援と若手研究から整理できます。",
+    lede: "重点種目、取得済みの公募ページ、JSPS 公募情報総索引を同じ画面で確認し、研究活動スタート支援や若手研究から他の科研費種目へ広げて整理できます。",
     filterTitle: "検索と絞り込み",
     quickFilters: "クイックフィルタ",
     footerTitle: "対象種目を決めたら、次はタイムラインと様式を確認します",
@@ -530,11 +540,13 @@ I18N.ja = {
     officialLinks: "公式リンク",
     featuredDocs: "重要資料",
     featuredForms: "主要様式",
+    pageHighlights: "ページ内の注目リンク",
+    relatedPrograms: "関連種目",
   },
   deadlines: {
     kicker: "スケジュール",
     title: "タイムラインと締切",
-    lede: "重点種目の告知、公募開始、電子申請システム公開、公式締切を 1 ページで確認します。",
+    lede: "収録済みの科研費種目について、告知、公募開始、電子申請システム公開、公式締切を 1 ページで確認します。",
     timelineTitle: "重要イベントのタイムライン",
     tableTitle: "詳細スケジュール",
     colProgram: "種目",
@@ -546,7 +558,7 @@ I18N.ja = {
   forms: {
     kicker: "様式群",
     title: "様式と資料",
-    lede: "S-21、S-22、その記入要領、アップロード説明、PDF 版をまとめて確認できます。",
+    lede: "各科研費種目の主要様式、その記入要領、アップロード説明、PDF 版をまとめて確認できます。",
     filterTitle: "様式を検索",
     searchPlaceholder: "S-21、S-22、種目名、節名、公式説明を検索",
     programAll: "すべての種目",
@@ -559,7 +571,7 @@ I18N.ja = {
     title: "申請ガイド",
     lede: "FAQ、e-Rad、電子申請システム、重要資料をまとめて見直せるようにした確認ページです。",
     gridTitle: "主要な申請入口",
-    watchTitle: "重点種目の確認ポイント",
+    watchTitle: "重点種目とプログラム群の確認ポイント",
     startupWatch: "研究活動スタート支援",
     youngWatch: "若手研究",
     footerTitle: "ガイド確認後は、公式ソースとアーカイブを見直します",
@@ -592,11 +604,13 @@ I18N.ja = {
   },
   groupLabel: {
     priority: "重点種目",
+    programs: "科研費種目",
     core: "共通入口",
     program: "種目別入口",
     documents: "主要資料",
     faq: "FAQ",
     publicCallProcedures: "公募要領・計画調書等",
+    programPages: "各種目のページ",
   },
   kindLabel: {
     page: "ページ",
@@ -606,6 +620,7 @@ I18N.ja = {
     snapshot: "スナップショット",
     faq: "FAQ",
     registry: "索引",
+    overview: "ハブ",
     program: "種目ページ",
     guide: "ガイド",
   },
@@ -1663,7 +1678,11 @@ function renderCallsPage() {
         .join(" ")
         .toLowerCase()
         .includes(query);
-    const matchesStatus = state.filters.calls.status === "all" || entry.status === state.filters.calls.status;
+    const matchesStatus =
+      state.filters.calls.status === "all" ||
+      (state.filters.calls.status === "closed"
+        ? entry.status === "closed" || entry.status === "reference"
+        : entry.status === state.filters.calls.status);
     const matchesGroup = state.filters.calls.group === "all" || entry.group === state.filters.calls.group;
     return matchesSearch && matchesStatus && matchesGroup;
   });
@@ -1731,6 +1750,78 @@ function renderCallsPage() {
 }
 
 function renderCallDetail(entry) {
+  if (entry.type === "overview") {
+    const relatedPrograms = entry.related_programs || [];
+    const highlights = entry.page_highlights || [];
+    const watchpoints = localeList(entry, "watchpoints");
+    return `
+      <div class="portal-card-head">
+        <div>
+          <p class="eyebrow">${escapeHtml(displayGroupLabel(entry.group))}</p>
+          <h3>${escapeHtml(localeField(entry, "title"))}</h3>
+        </div>
+        ${statusPill(entry.status)}
+      </div>
+      <p>${escapeHtml(localeValue(entry, "summary"))}</p>
+      <div class="meta-strip">
+        ${metaPill(displayGroupLabel(entry.group))}
+        ${entry.page_last_updated ? metaPill(`${t("common.updated")} ${entry.page_last_updated}`) : ""}
+        ${entry.resource_count ? metaPill(`${t("common.links")} ${entry.resource_count}`) : ""}
+      </div>
+      <div class="portal-detail-block">
+        <h4>${t("calls.officialLinks")}</h4>
+        <div class="link-row-inline">
+          ${(entry.key_links || [])
+            .map((link) => `<a href="${resolveHref(link.href)}" ${link.href.startsWith("http") ? 'target="_blank" rel="noreferrer"' : ""}>${escapeHtml(localeField(link, "label"))}</a>`)
+            .join("")}
+        </div>
+      </div>
+      ${
+        relatedPrograms.length
+          ? `
+      <div class="portal-detail-block">
+        <h4>${t("calls.relatedPrograms")}</h4>
+        <ul class="portal-list">
+          ${relatedPrograms
+            .map(
+              (program) =>
+                `<li><a href="${program.official_url}" target="_blank" rel="noreferrer">${escapeHtml(localeField(program, "title"))}</a></li>`
+            )
+            .join("")}
+        </ul>
+      </div>`
+          : ""
+      }
+      ${
+        highlights.length
+          ? `
+      <div class="portal-detail-block">
+        <h4>${t("calls.pageHighlights")}</h4>
+        <ul class="portal-list">
+          ${highlights
+            .map(
+              (resource) =>
+                `<li><a href="${resource.url}" target="_blank" rel="noreferrer">${escapeHtml(resource.title)}</a>${resource.section ? `<span class="portal-inline-muted"> · ${escapeHtml(resource.section)}</span>` : ""}</li>`
+            )
+            .join("")}
+        </ul>
+      </div>`
+          : ""
+      }
+      ${
+        watchpoints.length
+          ? `
+      <div class="portal-detail-block">
+        <h4>${t("common.watchpoints")}</h4>
+        <ul class="portal-list">
+          ${watchpoints.map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
+        </ul>
+      </div>`
+          : ""
+      }
+    `;
+  }
+
   if (entry.type !== "detailed") {
     return `
       <div class="portal-card-head">
@@ -1746,6 +1837,7 @@ function renderCallDetail(entry) {
       </div>
       <div class="link-row">
         <a href="${entry.official_url}" target="_blank" rel="noreferrer">${t("common.viewOfficial")}</a>
+        ${entry.snapshot_path ? `<a href="${resolveHref(entry.snapshot_path)}">${t("common.viewSnapshot")}</a>` : ""}
       </div>
     `;
   }
@@ -1971,21 +2063,35 @@ function renderFormsPage() {
 
 function renderGuidesPage() {
   const guideGrid = document.getElementById("guide-grid");
-  const startupWatch = document.getElementById("guide-startup-watch");
-  const youngWatch = document.getElementById("guide-young-watch");
+  const watchGrid = document.getElementById("guide-watch-grid");
   const metrics = document.getElementById("guides-detail-metrics");
-  if (!guideGrid || !startupWatch || !youngWatch) {
+  if (!guideGrid || !watchGrid) {
     return;
   }
 
   const guides = state.data.guides;
-  const startup = state.data.programs.find((program) => program.id === "startup_support");
-  const young = state.data.programs.find((program) => program.id === "young_research");
+  const featuredPrograms = state.data.programs
+    .filter((entry) => localeList(entry, "watchpoints").length)
+    .sort(
+      (left, right) =>
+        Number(right.priority) - Number(left.priority) ||
+        statusWeight(left.status) - statusWeight(right.status) ||
+        localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en")
+    )
+    .slice(0, 3);
+  const overviewWatches = state.data.call_catalog
+    .filter((entry) => entry.type === "overview" && localeList(entry, "watchpoints").length)
+    .sort((left, right) => (right.resource_count || 0) - (left.resource_count || 0))
+    .slice(0, 2);
+  const watchEntries = [...featuredPrograms, ...overviewWatches];
+  const extraHighlights = state.data.call_catalog
+    .filter((entry) => entry.type === "overview")
+    .reduce((sum, entry) => sum + ((entry.page_highlights && entry.page_highlights.length) || 0), 0);
 
   if (metrics) {
     metrics.innerHTML = [
       metaPill(`${t("common.links")} ${guides.length}`),
-      metaPill(`${t("common.officialDocs")} ${state.data.programs.reduce((sum, program) => sum + program.featured_documents.length, 0)}`),
+      metaPill(`${t("common.officialDocs")} ${state.data.programs.reduce((sum, program) => sum + program.featured_documents.length, 0) + extraHighlights}`),
       metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
     ].join("");
   }
@@ -2010,8 +2116,26 @@ function renderGuidesPage() {
     )
     .join("");
 
-  startupWatch.innerHTML = startup ? localeList(startup, "watchpoints").map((note) => stackItem(localeField(startup, "title"), note)).join("") : "";
-  youngWatch.innerHTML = young ? localeList(young, "watchpoints").map((note) => stackItem(localeField(young, "title"), note)).join("") : "";
+  watchGrid.innerHTML = watchEntries
+    .map(
+      (entry) => `
+        <article class="feature-card">
+          <div class="portal-card-head">
+            <div>
+              <p class="eyebrow">${escapeHtml(displayGroupLabel(entry.group))}</p>
+              <h3>${escapeHtml(localeField(entry, "title"))}</h3>
+            </div>
+            ${statusPill(entry.status)}
+          </div>
+          <div class="stack-list">
+            ${localeList(entry, "watchpoints")
+              .map((note) => stackItem(localeField(entry, "title"), note))
+              .join("")}
+          </div>
+        </article>
+      `
+    )
+    .join("");
 }
 
 function renderSourcesPage() {
@@ -2063,6 +2187,7 @@ function renderSourcesPage() {
           </div>
           <div class="link-row">
             <a href="${category.url}" target="_blank" rel="noreferrer">${t("common.viewOfficial")}</a>
+            ${category.snapshot_path ? `<a href="${resolveHref(category.snapshot_path)}">${t("common.viewSnapshot")}</a>` : ""}
           </div>
         </article>
       `
@@ -2162,11 +2287,13 @@ function localeList(record, base) {
 function displayGroupLabel(group) {
   const key = {
     "重点项目": "priority",
+    Programs: "programs",
     Core: "core",
     Program: "program",
     Documents: "documents",
     FAQ: "faq",
     "公募要領・計画調書等": "publicCallProcedures",
+    "各種目のページ": "programPages",
   }[group];
   return key ? t(`groupLabel.${key}`) : group;
 }
