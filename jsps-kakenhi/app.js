@@ -43,7 +43,7 @@ const I18N = {
       suspended: "停止募集",
       reference: "参考入口",
       unknown: "待确认",
-      priority: "重点项目",
+      priority: "优先确认",
       official: "官方页面",
       snapshot: "本地快照",
       documents: "文档",
@@ -285,7 +285,7 @@ const I18N = {
       suspended: "Suspended",
       reference: "Reference",
       unknown: "Unknown",
-      priority: "Priority programs",
+      priority: "Priority review",
       official: "Official page",
       snapshot: "Local snapshot",
       documents: "Documents",
@@ -529,7 +529,7 @@ I18N.ja = {
     suspended: "募集停止",
     reference: "参考",
     unknown: "要確認",
-    priority: "重点種目",
+    priority: "優先確認",
     official: "公式ページ",
     snapshot: "ローカルスナップショット",
     documents: "資料",
@@ -1680,8 +1680,7 @@ function renderHomePage() {
             </div>
             ${timingPillCluster(program)}
           </div>
-          <p>${escapeHtml(localeValue(program, "summary"))}</p>
-          <p class="portal-subtle">${escapeHtml(localeValue(program, "eligibility"))}</p>
+          <p>${escapeHtml(callCardDescription(program))}</p>
           <div class="meta-strip">
             ${metaPill(`${t("common.documents")} ${program.document_count}`)}
             ${metaPill(`${t("common.forms")} ${program.form_count}`)}
@@ -1979,7 +1978,7 @@ function renderCallRailCard(entry) {
           <strong>${escapeHtml(localeField(entry, "title"))}</strong>
         </span>
       </span>
-      <span class="portal-call-summary">${escapeHtml(localeValue(entry, "summary"))}</span>
+      <span class="portal-call-summary">${escapeHtml(callCardDescription(entry))}</span>
       <span class="portal-select-meta">
         ${callCardMeta(entry)}
       </span>
@@ -1988,32 +1987,64 @@ function renderCallRailCard(entry) {
   `;
 }
 
-function callHashTag(text, tone = "default") {
-  return `<span class="portal-hash-tag${tone !== "default" ? ` is-${escapeHtml(tone)}` : ""}">${escapeHtml(text)}</span>`;
+function callHashTag(text) {
+  return `<span class="portal-hash-tag">${escapeHtml(text)}</span>`;
+}
+
+function primaryFormCode(entry) {
+  return (entry?.form_focus || entry?.form_codes || []).find(Boolean) || "";
+}
+
+function displayFormCodeLabel(code) {
+  const normalized = String(code || "").trim().toUpperCase();
+  if (!normalized) {
+    return "";
+  }
+  const proposalLabel = {
+    zh: "计划书",
+    ja: "計画調書",
+    en: "Proposal",
+  };
+  const genericLabel = {
+    zh: "表格",
+    ja: "様式",
+    en: "Form",
+  };
+  const label = ["S-21", "S-22"].includes(normalized)
+    ? proposalLabel[state.locale] || proposalLabel.ja
+    : genericLabel[state.locale] || genericLabel.ja;
+  return `${label} ${normalized}`;
+}
+
+function callCardDescription(entry) {
+  return localeValue(entry, "eligibility") || localeValue(entry, "summary") || "";
 }
 
 function callCardMeta(entry) {
   const tags = [];
-  if (entry.priority) {
-    tags.push(callHashTag(t("common.priority"), "accent"));
-  }
   const preferredAudienceKeys = getCallAudienceKeys(entry)
     .filter((key) => key !== "japan_side")
-    .slice(0, 2);
-  if (preferredAudienceKeys[0]) {
-    tags.push(callHashTag(displayAudienceLabel(preferredAudienceKeys[0])));
+    .slice(0, 1);
+  const primaryAudience = preferredAudienceKeys[0];
+  const formCode = primaryFormCode(entry);
+
+  if (entry.priority) {
+    tags.push(callHashTag(t("common.priority")));
+  } else if (primaryAudience) {
+    tags.push(callHashTag(displayAudienceLabel(primaryAudience)));
   }
-  if ((entry.form_codes || [])[0]) {
-    tags.push(callHashTag(`${t("calls.formTag")} ${(entry.form_codes || [])[0]}`));
+
+  if (formCode) {
+    tags.push(callHashTag(displayFormCodeLabel(formCode)));
+  } else if (entry.priority && primaryAudience) {
+    tags.push(callHashTag(displayAudienceLabel(primaryAudience)));
   }
-  if (tags.length < 3 && preferredAudienceKeys[1]) {
-    tags.push(callHashTag(displayAudienceLabel(preferredAudienceKeys[1])));
-  }
+
   if (!tags.length) {
     const fallbackAudience = getCallAudienceKeys(entry)[0];
     tags.push(callHashTag(fallbackAudience ? displayAudienceLabel(fallbackAudience) : displayGroupLabel(entry.group)));
   }
-  return tags.join("");
+  return tags.slice(0, 2).join("");
 }
 
 function callRailSummary(count) {
