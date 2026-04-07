@@ -2402,15 +2402,10 @@ function renderDeadlinesPage() {
             <strong>${formatTimelineDay(event.date)}</strong>
           </time>
           <article class="timeline-card">
-            <div class="timeline-heading">
-              <h4 class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(eventTypeLabel(event.type))}</h4>
-              ${event.status === "past" ? "" : `<span class="timeline-tag">${escapeHtml(t(`eventType.${event.status}`))}</span>`}
-            </div>
+            <h4 class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))}</h4>
             <p class="timeline-summary">
               <span class="timeline-event-title">${escapeHtml(localeField(event, "title"))}</span>
-              <span class="timeline-event-meta">${escapeHtml(formatDateTime(event.datetime || event.date))}</span>
             </p>
-            ${event.note_zh || event.note_en ? `<p class="timeline-summary-note">${escapeHtml(localeField(event, "note"))}</p>` : ""}
           </article>
         </a>
       `
