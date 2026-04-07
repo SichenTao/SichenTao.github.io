@@ -1762,28 +1762,20 @@ body[data-lang="ja"] .hero-role {
 }
 
 .field-hash-tag-trigger {
-  appearance: none;
-  -webkit-appearance: none;
+  all: unset;
   display: inline-flex;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: inherit;
-  font: inherit;
-  line-height: inherit;
   cursor: pointer;
 }
 
 .field-hash-tag-removable {
   gap: 8px;
-  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
 .field-hash-tag-trigger:hover .field-hash-tag-removable,
 .field-hash-tag-trigger:focus-visible .field-hash-tag-removable {
-  background: rgba(var(--teal-rgb), 0.14);
-  border-color: rgba(var(--teal-rgb), 0.22);
-  color: var(--teal-deep);
+  background: rgba(var(--teal-rgb), 0.08);
+  border-color: rgba(var(--teal-rgb), 0.14);
+  color: var(--teal);
   outline: none;
 }
 
@@ -2826,7 +2818,7 @@ body[data-lang="ja"] .hero-role {
   }
 
   .filter-search-row {
-    justify-content: flex-end;
+    justify-content: stretch;
   }
 
   .filter-search-row .input {
