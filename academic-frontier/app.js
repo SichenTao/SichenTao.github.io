@@ -4254,12 +4254,10 @@ function renderPapers() {
     const primaryUrl = publicationPrimaryUrl(paper);
     const publisherUrl = normalizeUrl(paper.publisherUrl || paper.publisher_url);
     const doiActionUrl = primaryUrl || normalizeUrl(paper.doiUrl || paper.doi_url);
-    const readingStatus = paperStatusValue(paper);
-    const featured = readingStatus === "must-read";
-    const article = el("article", `publication-card${featured ? " is-featured" : ""}`);
+    const article = el("article", "publication-card");
     const head = el("div", "publication-head");
     const titleBlock = el("div", "");
-    const title = el("h4", `publication-title${featured ? " is-featured" : ""}`);
+    const title = el("h4", "publication-title");
     title.innerHTML = richTextHtml(paper.title);
     titleBlock.appendChild(title);
     head.appendChild(titleBlock);
