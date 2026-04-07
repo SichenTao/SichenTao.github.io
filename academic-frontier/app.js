@@ -79,28 +79,48 @@ function hasExplicitAllSelections(selectionState) {
   return Object.values(selectionState || {}).some(Boolean);
 }
 
+function selectionList(value) {
+  const values = Array.isArray(value) ? value : value && value !== "all" ? [value] : [];
+  return [...new Set(values.map((item) => String(item || "").trim()).filter((item) => item && item !== "all"))];
+}
+
+function appendSelectionValue(currentValues, value) {
+  if (!value || value === "all") return selectionList(currentValues);
+  const values = selectionList(currentValues);
+  return values.includes(value) ? values : [...values, value];
+}
+
+function removeSelectionValue(currentValues, value) {
+  return selectionList(currentValues).filter((item) => item !== value);
+}
+
+function tagEntriesForSelection(category, currentValues, explicitAll = false) {
+  if (explicitAll) return [{ category, value: "all" }];
+  return selectionList(currentValues).map((value) => ({ category, value }));
+}
+
 const state = {
   activeDomainId: null,
-  yearFilter: "all",
-  typeFilter: "all",
+  yearFilter: [],
+  typeFilter: [],
   problemFieldFilters: [],
   methodFieldFilters: [],
-  jcrFilter: "all",
-  casFilter: "all",
-  casTopFilter: "all",
-  impactFilter: "all",
-  teamFilter: "all",
+  jcrFilter: [],
+  casFilter: [],
+  casTopFilter: [],
+  impactFilter: [],
+  teamFilter: [],
   sortFilter: "recent",
   paperQuery: "",
   paperExplicitAll: createExplicitAllState(PAPER_EXPLICIT_ALL_CATEGORIES),
   focusPrompt: "",
   researchProblemFieldFilters: [],
   researchMethodFieldFilters: [],
-  researchJcrFilter: "all",
-  researchCasFilter: "all",
-  researchCasTopFilter: "all",
-  researchImpactFilter: "all",
-  researchAuthorFilter: "all",
+  researchJcrFilter: [],
+  researchCasFilter: [],
+  researchCasTopFilter: [],
+  researchImpactFilter: [],
+  researchAuthorFilter: [],
   researchExplicitAll: createExplicitAllState(RESEARCH_EXPLICIT_ALL_CATEGORIES),
   researchYearStart: "",
   researchYearEnd: "",
@@ -2333,6 +2353,11 @@ function syncResearchLauncherState(papers = papersForDomain()) {
 
   state.researchProblemFieldFilters = state.researchProblemFieldFilters.filter((field) => problemFields.includes(field));
   state.researchMethodFieldFilters = state.researchMethodFieldFilters.filter((field) => methodFields.includes(field));
+  state.researchAuthorFilter = selectionList(state.researchAuthorFilter).filter((author) => authors.includes(author));
+  state.researchJcrFilter = selectionList(state.researchJcrFilter).filter((band) => jcrBands.includes(band));
+  state.researchCasFilter = selectionList(state.researchCasFilter).filter((band) => casBands.includes(band));
+  state.researchCasTopFilter = selectionList(state.researchCasTopFilter).filter((band) => band === "top");
+  state.researchImpactFilter = selectionList(state.researchImpactFilter).filter((band) => impactBands.includes(band));
   if (state.researchExplicitAll.problem) {
     state.researchProblemFieldFilters = [];
   } else if (state.researchProblemFieldFilters.length) {
@@ -2344,31 +2369,29 @@ function syncResearchLauncherState(papers = papersForDomain()) {
     setExplicitAllSelection(state.researchExplicitAll, "method", false);
   }
   if (state.researchExplicitAll.author) {
-    state.researchAuthorFilter = "all";
-  }
-  if (state.researchAuthorFilter !== "all" && !authors.includes(state.researchAuthorFilter)) {
-    state.researchAuthorFilter = "all";
+    state.researchAuthorFilter = [];
+  } else if (state.researchAuthorFilter.length) {
+    setExplicitAllSelection(state.researchExplicitAll, "author", false);
   }
   if (state.researchExplicitAll.jcr) {
-    state.researchJcrFilter = "all";
-  }
-  if (state.researchJcrFilter !== "all" && !jcrBands.includes(state.researchJcrFilter)) {
-    state.researchJcrFilter = "all";
+    state.researchJcrFilter = [];
+  } else if (state.researchJcrFilter.length) {
+    setExplicitAllSelection(state.researchExplicitAll, "jcr", false);
   }
   if (state.researchExplicitAll.cas) {
-    state.researchCasFilter = "all";
-  }
-  if (state.researchCasFilter !== "all" && !casBands.includes(state.researchCasFilter)) {
-    state.researchCasFilter = "all";
+    state.researchCasFilter = [];
+  } else if (state.researchCasFilter.length) {
+    setExplicitAllSelection(state.researchExplicitAll, "cas", false);
   }
   if (state.researchExplicitAll.casTop) {
-    state.researchCasTopFilter = "all";
+    state.researchCasTopFilter = [];
+  } else if (state.researchCasTopFilter.length) {
+    setExplicitAllSelection(state.researchExplicitAll, "casTop", false);
   }
   if (state.researchExplicitAll.impact) {
-    state.researchImpactFilter = "all";
-  }
-  if (state.researchImpactFilter !== "all" && !impactBands.includes(state.researchImpactFilter)) {
-    state.researchImpactFilter = "all";
+    state.researchImpactFilter = [];
+  } else if (state.researchImpactFilter.length) {
+    setExplicitAllSelection(state.researchExplicitAll, "impact", false);
   }
 
   const start = Number.parseInt(state.researchYearStart, 10);
@@ -2397,13 +2420,13 @@ function syncResearchLauncherState(papers = papersForDomain()) {
 function researchSelectedTagEntries(papers = papersForDomain()) {
   const { minYear, maxYear } = researchYearBounds(papers);
   const entries = [
-    ...(state.researchExplicitAll.problem ? [{ category: "problem", value: "all" }] : state.researchProblemFieldFilters.map((value) => ({ category: "problem", value }))),
-    ...(state.researchExplicitAll.method ? [{ category: "method", value: "all" }] : state.researchMethodFieldFilters.map((value) => ({ category: "method", value }))),
-    ...(state.researchExplicitAll.jcr ? [{ category: "jcr", value: "all" }] : state.researchJcrFilter !== "all" ? [{ category: "jcr", value: state.researchJcrFilter }] : []),
-    ...(state.researchExplicitAll.cas ? [{ category: "cas", value: "all" }] : state.researchCasFilter !== "all" ? [{ category: "cas", value: state.researchCasFilter }] : []),
-    ...(state.researchExplicitAll.casTop ? [{ category: "casTop", value: "all" }] : state.researchCasTopFilter !== "all" ? [{ category: "casTop", value: state.researchCasTopFilter }] : []),
-    ...(state.researchExplicitAll.impact ? [{ category: "impact", value: "all" }] : state.researchImpactFilter !== "all" ? [{ category: "impact", value: state.researchImpactFilter }] : []),
-    ...(state.researchExplicitAll.author ? [{ category: "author", value: "all" }] : state.researchAuthorFilter !== "all" ? [{ category: "author", value: state.researchAuthorFilter }] : []),
+    ...tagEntriesForSelection("problem", state.researchProblemFieldFilters, state.researchExplicitAll.problem),
+    ...tagEntriesForSelection("method", state.researchMethodFieldFilters, state.researchExplicitAll.method),
+    ...tagEntriesForSelection("jcr", state.researchJcrFilter, state.researchExplicitAll.jcr),
+    ...tagEntriesForSelection("cas", state.researchCasFilter, state.researchExplicitAll.cas),
+    ...tagEntriesForSelection("casTop", state.researchCasTopFilter, state.researchExplicitAll.casTop),
+    ...tagEntriesForSelection("impact", state.researchImpactFilter, state.researchExplicitAll.impact),
+    ...tagEntriesForSelection("author", state.researchAuthorFilter, state.researchExplicitAll.author),
   ];
 
   if (
@@ -2441,7 +2464,7 @@ function removeResearchSelectedTag(entry) {
     if (entry.value === "all") {
       setExplicitAllSelection(state.researchExplicitAll, "problem", false);
     } else {
-      state.researchProblemFieldFilters = state.researchProblemFieldFilters.filter((value) => value !== entry.value);
+      state.researchProblemFieldFilters = removeSelectionValue(state.researchProblemFieldFilters, entry.value);
     }
     return;
   }
@@ -2449,33 +2472,48 @@ function removeResearchSelectedTag(entry) {
     if (entry.value === "all") {
       setExplicitAllSelection(state.researchExplicitAll, "method", false);
     } else {
-      state.researchMethodFieldFilters = state.researchMethodFieldFilters.filter((value) => value !== entry.value);
+      state.researchMethodFieldFilters = removeSelectionValue(state.researchMethodFieldFilters, entry.value);
     }
     return;
   }
   if (entry.category === "jcr") {
-    state.researchJcrFilter = "all";
-    setExplicitAllSelection(state.researchExplicitAll, "jcr", false);
+    if (entry.value === "all") {
+      setExplicitAllSelection(state.researchExplicitAll, "jcr", false);
+    } else {
+      state.researchJcrFilter = removeSelectionValue(state.researchJcrFilter, entry.value);
+    }
     return;
   }
   if (entry.category === "cas") {
-    state.researchCasFilter = "all";
-    setExplicitAllSelection(state.researchExplicitAll, "cas", false);
+    if (entry.value === "all") {
+      setExplicitAllSelection(state.researchExplicitAll, "cas", false);
+    } else {
+      state.researchCasFilter = removeSelectionValue(state.researchCasFilter, entry.value);
+    }
     return;
   }
   if (entry.category === "casTop") {
-    state.researchCasTopFilter = "all";
-    setExplicitAllSelection(state.researchExplicitAll, "casTop", false);
+    if (entry.value === "all") {
+      setExplicitAllSelection(state.researchExplicitAll, "casTop", false);
+    } else {
+      state.researchCasTopFilter = removeSelectionValue(state.researchCasTopFilter, entry.value);
+    }
     return;
   }
   if (entry.category === "impact") {
-    state.researchImpactFilter = "all";
-    setExplicitAllSelection(state.researchExplicitAll, "impact", false);
+    if (entry.value === "all") {
+      setExplicitAllSelection(state.researchExplicitAll, "impact", false);
+    } else {
+      state.researchImpactFilter = removeSelectionValue(state.researchImpactFilter, entry.value);
+    }
     return;
   }
   if (entry.category === "author") {
-    state.researchAuthorFilter = "all";
-    setExplicitAllSelection(state.researchExplicitAll, "author", false);
+    if (entry.value === "all") {
+      setExplicitAllSelection(state.researchExplicitAll, "author", false);
+    } else {
+      state.researchAuthorFilter = removeSelectionValue(state.researchAuthorFilter, entry.value);
+    }
     return;
   }
   if (entry.category === "yearRange") {
@@ -2676,41 +2714,41 @@ function renderDirectionWorkspace() {
               <select id="research-problem-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length))}</option>
                 ${launcher.problemFields
-                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: [...state.researchProblemFieldFilters, field] })))}</option>`)
+                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: appendSelectionValue(state.researchProblemFieldFilters, field) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-method-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), launcher.methodFields.length))}</option>
                 ${launcher.methodFields
-                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: [...state.researchMethodFieldFilters, field] })))}</option>`)
+                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: appendSelectionValue(state.researchMethodFieldFilters, field) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-jcr-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchFacetCount({ jcr: "all" })))}</option>
                 ${launcher.jcrBands
-                  .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchJcrFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: band })))}</option>`)
+                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: appendSelectionValue(state.researchJcrFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-cas-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casOptionAll"), researchFacetCount({ cas: "all" })))}</option>
                 ${launcher.casBands
-                  .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchCasFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: band })))}</option>`)
+                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: appendSelectionValue(state.researchCasFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-cas-top-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchFacetCount({ casTop: "all" })))}</option>
-                <option value="top"${state.researchCasTopFilter === "top" ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: "top" })))}</option>
+                <option value="top">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: appendSelectionValue(state.researchCasTopFilter, "top") })))}</option>
               </select>
               <select id="research-impact-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("impactOptionAll"), researchFacetCount({ impact: "all" })))}</option>
                 ${launcher.impactBands
-                  .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchImpactFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: band })))}</option>`)
+                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: appendSelectionValue(state.researchImpactFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-author-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("teamOptionAll"), researchFacetCount({ team: "all" })))}</option>
                 ${launcher.authors
-                  .map((author) => `<option value="${escapeHtml(author)}"${author === state.researchAuthorFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: author })))}</option>`)
+                  .map((author) => `<option value="${escapeHtml(author)}">${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: appendSelectionValue(state.researchAuthorFilter, author) })))}</option>`)
                   .join("")}
               </select>
             </div>
@@ -3992,27 +4030,27 @@ function paperMatchesSearchQuery(paper, query) {
 }
 
 function paperMatchesActiveFilters(paper, overrides = {}) {
-  const activeYear = overrides.year ?? state.yearFilter;
-  const activeType = overrides.type ?? state.typeFilter;
-  const activeProblemTags = overrides.problemTags ?? state.problemFieldFilters;
-  const activeMethodTags = overrides.methodTags ?? state.methodFieldFilters;
-  const activeJcr = overrides.jcr ?? state.jcrFilter;
-  const activeCas = overrides.cas ?? state.casFilter;
-  const activeCasTop = overrides.casTop ?? state.casTopFilter;
-  const activeImpact = overrides.impact ?? state.impactFilter;
-  const activeTeam = overrides.team ?? state.teamFilter;
+  const activeYear = selectionList(overrides.year ?? state.yearFilter);
+  const activeType = selectionList(overrides.type ?? state.typeFilter);
+  const activeProblemTags = selectionList(overrides.problemTags ?? state.problemFieldFilters);
+  const activeMethodTags = selectionList(overrides.methodTags ?? state.methodFieldFilters);
+  const activeJcr = selectionList(overrides.jcr ?? state.jcrFilter);
+  const activeCas = selectionList(overrides.cas ?? state.casFilter);
+  const activeCasTop = selectionList(overrides.casTop ?? state.casTopFilter);
+  const activeImpact = selectionList(overrides.impact ?? state.impactFilter);
+  const activeTeam = selectionList(overrides.team ?? state.teamFilter);
   const activeQuery = overrides.query ?? normalizedPaperQuery();
 
   const authors = paperAuthorNames(paper);
-  const matchesYear = activeYear === "all" || paperYearValue(paper) === activeYear;
-  const matchesType = activeType === "all" || paperTypeValue(paper) === activeType;
-  const matchesProblemTags = activeProblemTags.every((tag) => paperProblemFields(paper).includes(tag));
-  const matchesMethodTags = activeMethodTags.every((tag) => paperMethodFields(paper).includes(tag));
-  const matchesJcr = paperMatchesJcrFilter(paper, activeJcr);
-  const matchesCas = paperMatchesCasFilter(paper, activeCas);
-  const matchesCasTop = paperMatchesCasTopFilter(paper, activeCasTop);
-  const matchesImpact = paperMatchesImpactFilter(paper, activeImpact);
-  const matchesTeam = activeTeam === "all" || authors.includes(activeTeam);
+  const matchesYear = !activeYear.length || activeYear.includes(paperYearValue(paper));
+  const matchesType = !activeType.length || activeType.includes(paperTypeValue(paper));
+  const matchesProblemTags = !activeProblemTags.length || activeProblemTags.some((tag) => paperProblemFields(paper).includes(tag));
+  const matchesMethodTags = !activeMethodTags.length || activeMethodTags.some((tag) => paperMethodFields(paper).includes(tag));
+  const matchesJcr = !activeJcr.length || activeJcr.some((filterValue) => paperMatchesJcrFilter(paper, filterValue));
+  const matchesCas = !activeCas.length || activeCas.some((filterValue) => paperMatchesCasFilter(paper, filterValue));
+  const matchesCasTop = !activeCasTop.length || activeCasTop.some((filterValue) => paperMatchesCasTopFilter(paper, filterValue));
+  const matchesImpact = !activeImpact.length || activeImpact.some((filterValue) => paperMatchesImpactFilter(paper, filterValue));
+  const matchesTeam = !activeTeam.length || activeTeam.some((team) => authors.includes(team));
   const matchesQuery = paperMatchesSearchQuery(paper, activeQuery);
 
   return matchesYear
@@ -4037,15 +4075,15 @@ function formatPaperFilterOptionLabel(label, count) {
 
 function selectedTagEntries() {
   return [
-    ...(state.paperExplicitAll.year ? [{ category: "year", value: "all" }] : state.yearFilter !== "all" ? [{ category: "year", value: state.yearFilter }] : []),
-    ...(state.paperExplicitAll.type ? [{ category: "type", value: "all" }] : state.typeFilter !== "all" ? [{ category: "type", value: state.typeFilter }] : []),
-    ...(state.paperExplicitAll.problem ? [{ category: "problem", value: "all" }] : state.problemFieldFilters.map((value) => ({ category: "problem", value }))),
-    ...(state.paperExplicitAll.method ? [{ category: "method", value: "all" }] : state.methodFieldFilters.map((value) => ({ category: "method", value }))),
-    ...(state.paperExplicitAll.jcr ? [{ category: "jcr", value: "all" }] : state.jcrFilter !== "all" ? [{ category: "jcr", value: state.jcrFilter }] : []),
-    ...(state.paperExplicitAll.cas ? [{ category: "cas", value: "all" }] : state.casFilter !== "all" ? [{ category: "cas", value: state.casFilter }] : []),
-    ...(state.paperExplicitAll.casTop ? [{ category: "casTop", value: "all" }] : state.casTopFilter !== "all" ? [{ category: "casTop", value: state.casTopFilter }] : []),
-    ...(state.paperExplicitAll.impact ? [{ category: "impact", value: "all" }] : state.impactFilter !== "all" ? [{ category: "impact", value: state.impactFilter }] : []),
-    ...(state.paperExplicitAll.team ? [{ category: "team", value: "all" }] : state.teamFilter !== "all" ? [{ category: "team", value: state.teamFilter }] : []),
+    ...tagEntriesForSelection("year", state.yearFilter, state.paperExplicitAll.year),
+    ...tagEntriesForSelection("type", state.typeFilter, state.paperExplicitAll.type),
+    ...tagEntriesForSelection("problem", state.problemFieldFilters, state.paperExplicitAll.problem),
+    ...tagEntriesForSelection("method", state.methodFieldFilters, state.paperExplicitAll.method),
+    ...tagEntriesForSelection("jcr", state.jcrFilter, state.paperExplicitAll.jcr),
+    ...tagEntriesForSelection("cas", state.casFilter, state.paperExplicitAll.cas),
+    ...tagEntriesForSelection("casTop", state.casTopFilter, state.paperExplicitAll.casTop),
+    ...tagEntriesForSelection("impact", state.impactFilter, state.paperExplicitAll.impact),
+    ...tagEntriesForSelection("team", state.teamFilter, state.paperExplicitAll.team),
   ];
 }
 
@@ -4236,16 +4274,32 @@ function renderPaperControls() {
     .sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale()));
   const jcrBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesJcrFilter(paper, value)));
   const casBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesCasFilter(paper, value)));
+  const casTopBands = papers.some((paper) => paperCasTopValue(paper)) ? ["top"] : [];
   const impactBands = ["10+", "5-10", "0-5", "not-listed"].filter((value) => papers.some((paper) => paperMatchesImpactFilter(paper, value)));
   const authors = [...new Set(papers.flatMap((paper) => paperAuthorNames(paper)).filter(Boolean))]
     .sort((left, right) => left.localeCompare(right, currentLocale()));
   const facetCount = (overrides = {}) =>
     papers.filter((paper) => paperMatchesActiveFilters(paper, overrides)).length;
 
-  if (state.paperExplicitAll.year) state.yearFilter = "all";
-  if (state.paperExplicitAll.type) state.typeFilter = "all";
+  state.yearFilter = selectionList(state.yearFilter).filter((year) => years.includes(year));
+  state.typeFilter = selectionList(state.typeFilter).filter((type) => ["journal", "conference"].includes(type));
   state.problemFieldFilters = state.problemFieldFilters.filter((field) => problemFields.includes(field));
   state.methodFieldFilters = state.methodFieldFilters.filter((field) => methodFields.includes(field));
+  state.jcrFilter = selectionList(state.jcrFilter).filter((band) => jcrBands.includes(band));
+  state.casFilter = selectionList(state.casFilter).filter((band) => casBands.includes(band));
+  state.casTopFilter = selectionList(state.casTopFilter).filter((band) => casTopBands.includes(band));
+  state.impactFilter = selectionList(state.impactFilter).filter((band) => impactBands.includes(band));
+  state.teamFilter = selectionList(state.teamFilter).filter((team) => authors.includes(team));
+  if (state.paperExplicitAll.year) {
+    state.yearFilter = [];
+  } else if (state.yearFilter.length) {
+    setExplicitAllSelection(state.paperExplicitAll, "year", false);
+  }
+  if (state.paperExplicitAll.type) {
+    state.typeFilter = [];
+  } else if (state.typeFilter.length) {
+    setExplicitAllSelection(state.paperExplicitAll, "type", false);
+  }
   if (state.paperExplicitAll.problem) {
     state.problemFieldFilters = [];
   } else if (state.problemFieldFilters.length) {
@@ -4256,11 +4310,31 @@ function renderPaperControls() {
   } else if (state.methodFieldFilters.length) {
     setExplicitAllSelection(state.paperExplicitAll, "method", false);
   }
-  if (state.paperExplicitAll.jcr) state.jcrFilter = "all";
-  if (state.paperExplicitAll.cas) state.casFilter = "all";
-  if (state.paperExplicitAll.casTop) state.casTopFilter = "all";
-  if (state.paperExplicitAll.impact) state.impactFilter = "all";
-  if (state.paperExplicitAll.team) state.teamFilter = "all";
+  if (state.paperExplicitAll.jcr) {
+    state.jcrFilter = [];
+  } else if (state.jcrFilter.length) {
+    setExplicitAllSelection(state.paperExplicitAll, "jcr", false);
+  }
+  if (state.paperExplicitAll.cas) {
+    state.casFilter = [];
+  } else if (state.casFilter.length) {
+    setExplicitAllSelection(state.paperExplicitAll, "cas", false);
+  }
+  if (state.paperExplicitAll.casTop) {
+    state.casTopFilter = [];
+  } else if (state.casTopFilter.length) {
+    setExplicitAllSelection(state.paperExplicitAll, "casTop", false);
+  }
+  if (state.paperExplicitAll.impact) {
+    state.impactFilter = [];
+  } else if (state.impactFilter.length) {
+    setExplicitAllSelection(state.paperExplicitAll, "impact", false);
+  }
+  if (state.paperExplicitAll.team) {
+    state.teamFilter = [];
+  } else if (state.teamFilter.length) {
+    setExplicitAllSelection(state.paperExplicitAll, "team", false);
+  }
 
   const allYearCount = facetCount({ year: "all" });
   const allTypeCount = facetCount({ type: "all" });
@@ -4272,16 +4346,14 @@ function renderPaperControls() {
 
   syncSelectOptions(yearFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), allYearCount) },
-    ...years.map((year) => ({ value: year, label: formatPaperFilterOptionLabel(year, facetCount({ year })) })),
-  ], state.yearFilter);
-  state.yearFilter = yearFilter.value;
+    ...years.map((year) => ({ value: year, label: formatPaperFilterOptionLabel(year, facetCount({ year: appendSelectionValue(state.yearFilter, year) })) })),
+  ], "all");
 
   syncSelectOptions(typeFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), allTypeCount) },
-    { value: "journal", label: formatPaperFilterOptionLabel(ui("typeOptionJournal"), facetCount({ type: "journal" })) },
-    { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: "conference" })) },
-  ], state.typeFilter);
-  state.typeFilter = typeFilter.value;
+    { value: "journal", label: formatPaperFilterOptionLabel(ui("typeOptionJournal"), facetCount({ type: appendSelectionValue(state.typeFilter, "journal") })) },
+    { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: appendSelectionValue(state.typeFilter, "conference") })) },
+  ], "all");
 
   syncSelectOptions(problemFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), problemFields.length) },
@@ -4290,7 +4362,7 @@ function renderPaperControls() {
         value: field,
         label: formatPaperFilterOptionLabel(
           localizeText(field),
-          facetCount({ problemTags: [...state.problemFieldFilters, field] })
+          facetCount({ problemTags: appendSelectionValue(state.problemFieldFilters, field) })
         ),
       })),
   ], "all");
@@ -4302,7 +4374,7 @@ function renderPaperControls() {
         value: field,
         label: formatPaperFilterOptionLabel(
           localizeText(field),
-          facetCount({ methodTags: [...state.methodFieldFilters, field] })
+          facetCount({ methodTags: appendSelectionValue(state.methodFieldFilters, field) })
         ),
       })),
   ], "all");
@@ -4311,40 +4383,38 @@ function renderPaperControls() {
     { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), allJcrCount) },
     ...jcrBands.map((band) => ({
       value: band,
-      label: formatPaperFilterOptionLabel(jcrFilterTagLabel(band), facetCount({ jcr: band })),
+      label: formatPaperFilterOptionLabel(jcrFilterTagLabel(band), facetCount({ jcr: appendSelectionValue(state.jcrFilter, band) })),
     })),
-  ], state.jcrFilter);
-  state.jcrFilter = jcrFilter.value;
+  ], "all");
 
   syncSelectOptions(casFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), allCasCount) },
     ...casBands.map((band) => ({
       value: band,
-      label: formatPaperFilterOptionLabel(casFilterTagLabel(band), facetCount({ cas: band })),
+      label: formatPaperFilterOptionLabel(casFilterTagLabel(band), facetCount({ cas: appendSelectionValue(state.casFilter, band) })),
     })),
-  ], state.casFilter);
-  state.casFilter = casFilter.value;
+  ], "all");
 
   syncSelectOptions(casTopFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), allCasTopCount) },
-    { value: "top", label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: "top" })) },
-  ], state.casTopFilter);
-  state.casTopFilter = casTopFilter.value;
+    ...casTopBands.map((band) => ({
+      value: band,
+      label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: appendSelectionValue(state.casTopFilter, band) })),
+    })),
+  ], "all");
 
   syncSelectOptions(impactFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), allImpactCount) },
     ...impactBands.map((band) => ({
       value: band,
-      label: formatPaperFilterOptionLabel(impactFilterTagLabel(band), facetCount({ impact: band })),
+      label: formatPaperFilterOptionLabel(impactFilterTagLabel(band), facetCount({ impact: appendSelectionValue(state.impactFilter, band) })),
     })),
-  ], state.impactFilter);
-  state.impactFilter = impactFilter.value;
+  ], "all");
 
   syncSelectOptions(teamFilter, [
     { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), allTeamCount) },
-    ...authors.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team })) })),
-  ], state.teamFilter);
-  state.teamFilter = teamFilter.value;
+    ...authors.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team: appendSelectionValue(state.teamFilter, team) })) })),
+  ], "all");
 
   syncSelectOptions(sortFilter, [
     { value: "recent", label: ui("sortRecent") },
@@ -4359,15 +4429,15 @@ function renderPaperControls() {
 
   if (resetButton) {
     const isDefault =
-      state.yearFilter === "all"
-      && state.typeFilter === "all"
+      !state.yearFilter.length
+      && !state.typeFilter.length
       && !state.problemFieldFilters.length
       && !state.methodFieldFilters.length
-      && state.jcrFilter === "all"
-      && state.casFilter === "all"
-      && state.casTopFilter === "all"
-      && state.impactFilter === "all"
-      && state.teamFilter === "all"
+      && !state.jcrFilter.length
+      && !state.casFilter.length
+      && !state.casTopFilter.length
+      && !state.impactFilter.length
+      && !state.teamFilter.length
       && !hasExplicitAllSelections(state.paperExplicitAll)
       && state.sortFilter === "recent"
       && !state.paperQuery;
@@ -4746,14 +4816,28 @@ function bindControls() {
   if (!paperSearch) return;
 
   yearFilter?.addEventListener("change", (event) => {
-    state.yearFilter = event.target.value;
-    setExplicitAllSelection(state.paperExplicitAll, "year", state.yearFilter === "all");
+    const value = event.target.value;
+    if (value === "all") {
+      state.yearFilter = [];
+      setExplicitAllSelection(state.paperExplicitAll, "year", true);
+    } else {
+      state.yearFilter = appendSelectionValue(state.yearFilter, value);
+      setExplicitAllSelection(state.paperExplicitAll, "year", false);
+    }
+    event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   typeFilter?.addEventListener("change", (event) => {
-    state.typeFilter = event.target.value;
-    setExplicitAllSelection(state.paperExplicitAll, "type", state.typeFilter === "all");
+    const value = event.target.value;
+    if (value === "all") {
+      state.typeFilter = [];
+      setExplicitAllSelection(state.paperExplicitAll, "type", true);
+    } else {
+      state.typeFilter = appendSelectionValue(state.typeFilter, value);
+      setExplicitAllSelection(state.paperExplicitAll, "type", false);
+    }
+    event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
@@ -4784,32 +4868,67 @@ function bindControls() {
     renderPapers();
   });
   jcrFilter?.addEventListener("change", (event) => {
-    state.jcrFilter = event.target.value;
-    setExplicitAllSelection(state.paperExplicitAll, "jcr", state.jcrFilter === "all");
+    const value = event.target.value;
+    if (value === "all") {
+      state.jcrFilter = [];
+      setExplicitAllSelection(state.paperExplicitAll, "jcr", true);
+    } else {
+      state.jcrFilter = appendSelectionValue(state.jcrFilter, value);
+      setExplicitAllSelection(state.paperExplicitAll, "jcr", false);
+    }
+    event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   casFilter?.addEventListener("change", (event) => {
-    state.casFilter = event.target.value;
-    setExplicitAllSelection(state.paperExplicitAll, "cas", state.casFilter === "all");
+    const value = event.target.value;
+    if (value === "all") {
+      state.casFilter = [];
+      setExplicitAllSelection(state.paperExplicitAll, "cas", true);
+    } else {
+      state.casFilter = appendSelectionValue(state.casFilter, value);
+      setExplicitAllSelection(state.paperExplicitAll, "cas", false);
+    }
+    event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   casTopFilter?.addEventListener("change", (event) => {
-    state.casTopFilter = event.target.value;
-    setExplicitAllSelection(state.paperExplicitAll, "casTop", state.casTopFilter === "all");
+    const value = event.target.value;
+    if (value === "all") {
+      state.casTopFilter = [];
+      setExplicitAllSelection(state.paperExplicitAll, "casTop", true);
+    } else {
+      state.casTopFilter = appendSelectionValue(state.casTopFilter, value);
+      setExplicitAllSelection(state.paperExplicitAll, "casTop", false);
+    }
+    event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   impactFilter?.addEventListener("change", (event) => {
-    state.impactFilter = event.target.value;
-    setExplicitAllSelection(state.paperExplicitAll, "impact", state.impactFilter === "all");
+    const value = event.target.value;
+    if (value === "all") {
+      state.impactFilter = [];
+      setExplicitAllSelection(state.paperExplicitAll, "impact", true);
+    } else {
+      state.impactFilter = appendSelectionValue(state.impactFilter, value);
+      setExplicitAllSelection(state.paperExplicitAll, "impact", false);
+    }
+    event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   teamFilter?.addEventListener("change", (event) => {
-    state.teamFilter = event.target.value;
-    setExplicitAllSelection(state.paperExplicitAll, "team", state.teamFilter === "all");
+    const value = event.target.value;
+    if (value === "all") {
+      state.teamFilter = [];
+      setExplicitAllSelection(state.paperExplicitAll, "team", true);
+    } else {
+      state.teamFilter = appendSelectionValue(state.teamFilter, value);
+      setExplicitAllSelection(state.paperExplicitAll, "team", false);
+    }
+    event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
@@ -4824,15 +4943,15 @@ function bindControls() {
     renderPapers();
   });
   paperReset?.addEventListener("click", () => {
-    state.yearFilter = "all";
-    state.typeFilter = "all";
+    state.yearFilter = [];
+    state.typeFilter = [];
     state.problemFieldFilters = [];
     state.methodFieldFilters = [];
-    state.jcrFilter = "all";
-    state.casFilter = "all";
-    state.casTopFilter = "all";
-    state.impactFilter = "all";
-    state.teamFilter = "all";
+    state.jcrFilter = [];
+    state.casFilter = [];
+    state.casTopFilter = [];
+    state.impactFilter = [];
+    state.teamFilter = [];
     state.sortFilter = "recent";
     state.paperQuery = "";
     resetExplicitAllSelections(state.paperExplicitAll);
@@ -4845,38 +4964,59 @@ function bindControls() {
     const tag = button.dataset.removeFieldTag || "";
     const category = button.dataset.fieldCategory || "";
     if (category === "year") {
-      state.yearFilter = "all";
-      setExplicitAllSelection(state.paperExplicitAll, "year", false);
+      if (tag === "all") {
+        setExplicitAllSelection(state.paperExplicitAll, "year", false);
+      } else {
+        state.yearFilter = removeSelectionValue(state.yearFilter, tag);
+      }
     } else if (category === "type") {
-      state.typeFilter = "all";
-      setExplicitAllSelection(state.paperExplicitAll, "type", false);
+      if (tag === "all") {
+        setExplicitAllSelection(state.paperExplicitAll, "type", false);
+      } else {
+        state.typeFilter = removeSelectionValue(state.typeFilter, tag);
+      }
     } else if (category === "problem") {
       if (tag === "all") {
         setExplicitAllSelection(state.paperExplicitAll, "problem", false);
       } else {
-        state.problemFieldFilters = state.problemFieldFilters.filter((item) => item !== tag);
+        state.problemFieldFilters = removeSelectionValue(state.problemFieldFilters, tag);
       }
     } else if (category === "method") {
       if (tag === "all") {
         setExplicitAllSelection(state.paperExplicitAll, "method", false);
       } else {
-        state.methodFieldFilters = state.methodFieldFilters.filter((item) => item !== tag);
+        state.methodFieldFilters = removeSelectionValue(state.methodFieldFilters, tag);
       }
     } else if (category === "jcr") {
-      state.jcrFilter = "all";
-      setExplicitAllSelection(state.paperExplicitAll, "jcr", false);
+      if (tag === "all") {
+        setExplicitAllSelection(state.paperExplicitAll, "jcr", false);
+      } else {
+        state.jcrFilter = removeSelectionValue(state.jcrFilter, tag);
+      }
     } else if (category === "cas") {
-      state.casFilter = "all";
-      setExplicitAllSelection(state.paperExplicitAll, "cas", false);
+      if (tag === "all") {
+        setExplicitAllSelection(state.paperExplicitAll, "cas", false);
+      } else {
+        state.casFilter = removeSelectionValue(state.casFilter, tag);
+      }
     } else if (category === "casTop") {
-      state.casTopFilter = "all";
-      setExplicitAllSelection(state.paperExplicitAll, "casTop", false);
+      if (tag === "all") {
+        setExplicitAllSelection(state.paperExplicitAll, "casTop", false);
+      } else {
+        state.casTopFilter = removeSelectionValue(state.casTopFilter, tag);
+      }
     } else if (category === "impact") {
-      state.impactFilter = "all";
-      setExplicitAllSelection(state.paperExplicitAll, "impact", false);
+      if (tag === "all") {
+        setExplicitAllSelection(state.paperExplicitAll, "impact", false);
+      } else {
+        state.impactFilter = removeSelectionValue(state.impactFilter, tag);
+      }
     } else if (category === "team") {
-      state.teamFilter = "all";
-      setExplicitAllSelection(state.paperExplicitAll, "team", false);
+      if (tag === "all") {
+        setExplicitAllSelection(state.paperExplicitAll, "team", false);
+      } else {
+        state.teamFilter = removeSelectionValue(state.teamFilter, tag);
+      }
     }
     renderPaperControls();
     renderPapers();
@@ -4975,11 +5115,11 @@ function bindFocusDesk() {
       state.focusPrompt = "";
       state.researchProblemFieldFilters = [];
       state.researchMethodFieldFilters = [];
-      state.researchJcrFilter = "all";
-      state.researchCasFilter = "all";
-      state.researchCasTopFilter = "all";
-      state.researchImpactFilter = "all";
-      state.researchAuthorFilter = "all";
+      state.researchJcrFilter = [];
+      state.researchCasFilter = [];
+      state.researchCasTopFilter = [];
+      state.researchImpactFilter = [];
+      state.researchAuthorFilter = [];
       state.researchYearStart = "";
       state.researchYearEnd = "";
       state.researchYearOpenEnded = true;
@@ -5034,20 +5174,55 @@ function bindResearchLauncher() {
     }
 
     if (target.id === "research-jcr-filter") {
-      state.researchJcrFilter = target.value;
-      setExplicitAllSelection(state.researchExplicitAll, "jcr", state.researchJcrFilter === "all");
+      const value = target.value;
+      if (value === "all") {
+        state.researchJcrFilter = [];
+        setExplicitAllSelection(state.researchExplicitAll, "jcr", true);
+      } else {
+        state.researchJcrFilter = appendSelectionValue(state.researchJcrFilter, value);
+        setExplicitAllSelection(state.researchExplicitAll, "jcr", false);
+      }
+      target.value = "all";
     } else if (target.id === "research-cas-filter") {
-      state.researchCasFilter = target.value;
-      setExplicitAllSelection(state.researchExplicitAll, "cas", state.researchCasFilter === "all");
+      const value = target.value;
+      if (value === "all") {
+        state.researchCasFilter = [];
+        setExplicitAllSelection(state.researchExplicitAll, "cas", true);
+      } else {
+        state.researchCasFilter = appendSelectionValue(state.researchCasFilter, value);
+        setExplicitAllSelection(state.researchExplicitAll, "cas", false);
+      }
+      target.value = "all";
     } else if (target.id === "research-cas-top-filter") {
-      state.researchCasTopFilter = target.value;
-      setExplicitAllSelection(state.researchExplicitAll, "casTop", state.researchCasTopFilter === "all");
+      const value = target.value;
+      if (value === "all") {
+        state.researchCasTopFilter = [];
+        setExplicitAllSelection(state.researchExplicitAll, "casTop", true);
+      } else {
+        state.researchCasTopFilter = appendSelectionValue(state.researchCasTopFilter, value);
+        setExplicitAllSelection(state.researchExplicitAll, "casTop", false);
+      }
+      target.value = "all";
     } else if (target.id === "research-impact-filter") {
-      state.researchImpactFilter = target.value;
-      setExplicitAllSelection(state.researchExplicitAll, "impact", state.researchImpactFilter === "all");
+      const value = target.value;
+      if (value === "all") {
+        state.researchImpactFilter = [];
+        setExplicitAllSelection(state.researchExplicitAll, "impact", true);
+      } else {
+        state.researchImpactFilter = appendSelectionValue(state.researchImpactFilter, value);
+        setExplicitAllSelection(state.researchExplicitAll, "impact", false);
+      }
+      target.value = "all";
     } else if (target.id === "research-author-filter") {
-      state.researchAuthorFilter = target.value;
-      setExplicitAllSelection(state.researchExplicitAll, "author", state.researchAuthorFilter === "all");
+      const value = target.value;
+      if (value === "all") {
+        state.researchAuthorFilter = [];
+        setExplicitAllSelection(state.researchExplicitAll, "author", true);
+      } else {
+        state.researchAuthorFilter = appendSelectionValue(state.researchAuthorFilter, value);
+        setExplicitAllSelection(state.researchExplicitAll, "author", false);
+      }
+      target.value = "all";
     } else {
       return;
     }
