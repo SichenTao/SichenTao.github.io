@@ -1176,6 +1176,15 @@ function loadInitialLanguage() {
   return "en";
 }
 
+function persistLanguagePreference(language) {
+  if (!UI_TEXT[language]) {
+    return;
+  }
+  writeSessionValue(SESSION_KEY_LANGUAGE, language);
+  writeStoredValue(STORAGE_KEY_LANGUAGE, language);
+  writeStoredValue(STORAGE_KEY_LOCAL_LANGUAGE, language);
+}
+
 function translatedThemeLabel(themeName) {
   return (
     {
@@ -2971,7 +2980,7 @@ function renderLocaleSwitcher() {
     }
     link.appendChild(el("span", "locale-label", locale.label));
     link.addEventListener("click", () => {
-      writeSessionValue(SESSION_KEY_LANGUAGE, localeName);
+      persistLanguagePreference(localeName);
     });
     tray.appendChild(link);
   });
@@ -3496,7 +3505,7 @@ function initTopnavOverflowHints() {
 
 function setLanguage(language) {
   if (!UI_TEXT[language]) return;
-  writeSessionValue(SESSION_KEY_LANGUAGE, language);
+  persistLanguagePreference(language);
   window.location.assign(localePageHref(language));
 }
 
@@ -5061,7 +5070,7 @@ function renderAll() {
 function init() {
   state.language = loadInitialLanguage();
   state.theme = loadInitialTheme();
-  writeSessionValue(SESSION_KEY_LANGUAGE, state.language);
+  persistLanguagePreference(state.language);
   writeSessionValue(STORAGE_KEY_THEME, state.theme);
   state.focusPrompt = readStoredValue(STORAGE_KEY_FOCUS_PROMPT) || "";
   state.activeDomainId = chooseDefaultDomain();
