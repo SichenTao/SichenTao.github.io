@@ -1763,19 +1763,22 @@ a {
   height: 64px;
   padding: 0 14px;
   border-radius: 20px;
-  border: 1px solid rgba(var(--teal-rgb), 0.18);
-  background:
-    linear-gradient(180deg, rgba(var(--white-rgb), 0.96), rgba(var(--white-rgb), 0.88)),
-    rgba(var(--white-rgb), 0.86);
+  border: 1px solid transparent;
+  background: transparent;
   color: var(--ink-soft);
-  box-shadow:
-    0 10px 18px rgba(var(--ink-rgb), 0.05),
-    0 0 0 0.5px rgba(var(--teal-rgb), 0.08);
+  box-shadow: none;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   overflow: hidden;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(var(--white-rgb), 0.96), rgba(var(--white-rgb), 0.88));
+  --profile-mark-hover-border: rgba(var(--teal-rgb), 0.16);
+  --profile-mark-hover-shadow: rgba(var(--teal-rgb), 0.08);
 }
 
 .profile-mark-image {
@@ -1797,11 +1800,6 @@ a {
   min-width: 104px;
   height: 64px;
   padding: 8px 12px;
-  background: linear-gradient(180deg, rgba(246, 241, 255, 0.98), rgba(237, 229, 255, 0.9));
-  border-color: rgba(74, 38, 152, 0.18);
-  box-shadow:
-    0 10px 18px rgba(74, 38, 152, 0.08),
-    0 0 0 0.5px rgba(74, 38, 152, 0.08);
 }
 
 .profile-mark-image.profile-mark-tohoku img {
@@ -1809,46 +1807,52 @@ a {
   height: 52px;
   max-width: none;
   max-height: none;
-  padding: 4px 5px;
+  padding: 0;
   border-radius: 0;
-  background: linear-gradient(180deg, rgba(86, 48, 170, 0.96), rgba(62, 20, 133, 0.92));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  background: transparent;
+  box-shadow: none;
 }
 
 .profile-mark-scholar {
   color: #2b66c7;
-  border-color: rgba(43, 102, 199, 0.18);
-  background: linear-gradient(180deg, rgba(236, 244, 255, 0.98), rgba(225, 237, 255, 0.9));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(236, 244, 255, 0.72), rgba(225, 237, 255, 0.54));
+  --profile-mark-hover-border: rgba(43, 102, 199, 0.16);
+  --profile-mark-hover-shadow: rgba(43, 102, 199, 0.08);
 }
 
 .profile-mark-dblp {
   color: #1f4c9a;
-  border-color: rgba(31, 76, 154, 0.16);
-  background: linear-gradient(180deg, rgba(236, 244, 255, 0.98), rgba(228, 238, 255, 0.9));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(236, 244, 255, 0.72), rgba(228, 238, 255, 0.54));
+  --profile-mark-hover-border: rgba(31, 76, 154, 0.16);
+  --profile-mark-hover-shadow: rgba(31, 76, 154, 0.08);
 }
 
 .profile-mark-orcid {
   color: #87b530;
-  border-color: rgba(135, 181, 48, 0.18);
-  background: linear-gradient(180deg, rgba(247, 252, 236, 0.98), rgba(239, 248, 224, 0.92));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(247, 252, 236, 0.72), rgba(239, 248, 224, 0.56));
+  --profile-mark-hover-border: rgba(135, 181, 48, 0.18);
+  --profile-mark-hover-shadow: rgba(135, 181, 48, 0.08);
 }
 
 .profile-mark-researchgate {
   color: #00a08e;
-  border-color: rgba(0, 160, 142, 0.16);
-  background: linear-gradient(180deg, rgba(236, 252, 249, 0.98), rgba(225, 247, 242, 0.9));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(236, 252, 249, 0.72), rgba(225, 247, 242, 0.54));
+  --profile-mark-hover-border: rgba(0, 160, 142, 0.16);
+  --profile-mark-hover-shadow: rgba(0, 160, 142, 0.08);
 }
 
 .profile-mark-researchmap {
   color: #2b7cb8;
-  border-color: rgba(43, 124, 184, 0.16);
-  background: linear-gradient(180deg, rgba(238, 247, 255, 0.98), rgba(228, 241, 255, 0.9));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(238, 247, 255, 0.72), rgba(228, 241, 255, 0.54));
+  --profile-mark-hover-border: rgba(43, 124, 184, 0.16);
+  --profile-mark-hover-shadow: rgba(43, 124, 184, 0.08);
 }
 
 .profile-mark-jglobal {
   color: #2d63ba;
-  border-color: rgba(45, 99, 186, 0.18);
-  background: linear-gradient(180deg, rgba(239, 245, 255, 0.98), rgba(229, 239, 255, 0.9));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(239, 245, 255, 0.72), rgba(229, 239, 255, 0.54));
+  --profile-mark-hover-border: rgba(45, 99, 186, 0.18);
+  --profile-mark-hover-shadow: rgba(45, 99, 186, 0.08);
 }
 
 .profile-mark-image.profile-mark-jglobal {
@@ -1898,21 +1902,24 @@ a {
 
 .profile-mark-github {
   color: #24292f;
-  border-color: rgba(36, 41, 47, 0.16);
-  background: linear-gradient(180deg, rgba(246, 247, 249, 0.98), rgba(236, 239, 243, 0.92));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(246, 247, 249, 0.72), rgba(236, 239, 243, 0.56));
+  --profile-mark-hover-border: rgba(36, 41, 47, 0.16);
+  --profile-mark-hover-shadow: rgba(36, 41, 47, 0.08);
 }
 
 .profile-mark-tohoku,
 .profile-mark-hpc {
   color: #4a2698;
-  border-color: rgba(74, 38, 152, 0.16);
-  background: linear-gradient(180deg, rgba(246, 241, 255, 0.98), rgba(237, 229, 255, 0.9));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(246, 241, 255, 0.72), rgba(237, 229, 255, 0.56));
+  --profile-mark-hover-border: rgba(74, 38, 152, 0.16);
+  --profile-mark-hover-shadow: rgba(74, 38, 152, 0.08);
 }
 
 .profile-mark-toyama {
   color: #466d7f;
-  border-color: rgba(70, 109, 127, 0.16);
-  background: linear-gradient(180deg, rgba(239, 247, 251, 0.98), rgba(230, 241, 246, 0.9));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(239, 247, 251, 0.72), rgba(230, 241, 246, 0.56));
+  --profile-mark-hover-border: rgba(70, 109, 127, 0.16);
+  --profile-mark-hover-shadow: rgba(70, 109, 127, 0.08);
 }
 
 @media (min-width: 821px) {
@@ -1932,8 +1939,18 @@ a {
 
 .profile-mark-neutral {
   color: var(--clay);
-  border-color: rgba(var(--clay-rgb), 0.16);
-  background: linear-gradient(180deg, rgba(249, 245, 241, 0.98), rgba(242, 236, 230, 0.92));
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(249, 245, 241, 0.72), rgba(242, 236, 230, 0.56));
+  --profile-mark-hover-border: rgba(var(--clay-rgb), 0.16);
+  --profile-mark-hover-shadow: rgba(var(--clay-rgb), 0.08);
+}
+
+.link-card:hover .profile-mark,
+.link-card:focus-within .profile-mark {
+  background: var(--profile-mark-hover-bg);
+  border-color: var(--profile-mark-hover-border);
+  box-shadow:
+    0 10px 18px rgba(var(--ink-rgb), 0.04),
+    0 0 0 0.5px var(--profile-mark-hover-shadow);
 }
 
 .feature-slab {
