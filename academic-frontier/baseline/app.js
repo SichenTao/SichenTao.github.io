@@ -181,7 +181,6 @@ const UI_TEXT = {
     doiAction: "DOI",
     publisherAction: "Publisher",
     localArchiveAction: "Local PDF",
-    queueAction: "Queued locally",
     abstractUnavailable: "Abstract not yet available in the current source.",
     localArchiveReady: "Archived locally",
     downloadModeDirect: "Auto-archive ready",
@@ -331,7 +330,6 @@ const UI_TEXT = {
     doiAction: "DOI",
     publisherAction: "发表页面",
     localArchiveAction: "本地 PDF",
-    queueAction: "已加入本地队列",
     abstractUnavailable: "当前来源暂未提供摘要。",
     localArchiveReady: "已本地归档",
     downloadModeDirect: "可自动归档",
@@ -483,7 +481,6 @@ const UI_TEXT = {
     doiAction: "DOI",
     publisherAction: "出版社ページ",
     localArchiveAction: "ローカル PDF",
-    queueAction: "ローカルキュー済み",
     abstractUnavailable: "現在のソースでは要旨がまだ取得できていません。",
     localArchiveReady: "ローカル保存済み",
     downloadModeDirect: "自動保存可能",
@@ -3117,8 +3114,6 @@ function renderPapers() {
       links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl));
     } else if (paper.pdfUrl) {
       links.appendChild(actionLink(ui("sourcePdfAction"), paper.pdfUrl));
-    } else {
-      links.appendChild(el("span", "tag", ui("queueAction")));
     }
     if (doiActionUrl) links.appendChild(actionLink(ui("doiAction"), doiActionUrl));
     if (publisherUrl && publisherUrl !== doiActionUrl) {
