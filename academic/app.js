@@ -3102,7 +3102,7 @@ function resolveProfileMarkIcon(item = {}, icon = "") {
     || title === "Tohoku University Cyberscience Center"
     || url.includes("cc.tohoku.ac.jp")
   ) {
-    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg?v=20260407-151600";
+    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg?v=20260407-161500";
   }
 
   return normalizedIcon;
