@@ -1763,17 +1763,26 @@ body[data-lang="ja"] .hero-role {
   line-height: 1.2;
 }
 
-.field-hash-tag-removable {
+.field-hash-tag-trigger {
   appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
   cursor: pointer;
+}
+
+.field-hash-tag-removable {
   gap: 8px;
-  font-family: inherit;
-  text-decoration: none;
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
 }
 
-.field-hash-tag-removable:hover,
-.field-hash-tag-removable:focus-visible {
+.field-hash-tag-trigger:hover .field-hash-tag-removable,
+.field-hash-tag-trigger:focus-visible .field-hash-tag-removable {
   background: rgba(var(--teal-rgb), 0.14);
   border-color: rgba(var(--teal-rgb), 0.22);
   color: var(--teal-deep);
