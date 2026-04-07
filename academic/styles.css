@@ -1796,6 +1796,65 @@ body[data-page="profiles"] .profile-link-card .link-card-title {
   color: var(--ink);
 }
 
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .link-card-inline {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark {
+  justify-self: center;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-jglobal {
+  min-width: 152px;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-jglobal img {
+  max-width: 136px;
+  max-height: 40px;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-researchmap {
+  min-width: 160px;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-researchmap img {
+  max-width: 144px;
+  max-height: 28px;
+}
+
+body[data-page="profiles"] .link-card-title-google-scholar {
+  gap: 0.32rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+body[data-page="profiles"] .google-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: -0.035em;
+}
+
+body[data-page="profiles"] .google-blue {
+  color: #4285f4;
+}
+
+body[data-page="profiles"] .google-red {
+  color: #ea4335;
+}
+
+body[data-page="profiles"] .google-yellow {
+  color: #fbbc05;
+}
+
+body[data-page="profiles"] .google-green {
+  color: #34a853;
+}
+
+body[data-page="profiles"] .google-scholar-suffix {
+  color: #202124;
+}
+
 body[data-page="profiles"] .profile-link-card:hover,
 body[data-page="profiles"] .profile-link-card:focus-within {
   background: var(--profile-card-hover-bg);

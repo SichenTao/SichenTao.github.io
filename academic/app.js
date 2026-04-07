@@ -3020,7 +3020,7 @@ function profileMarkMarkup(item = {}) {
   const meta = profileMarkMeta(item);
   const resolvedIcon = resolveProfileMarkIcon(item, icon);
   if (icon) {
-    const badgeClass = resolvedIcon.endsWith("-badge.svg") ? " profile-mark-badge" : "";
+    const badgeClass = resolvedIcon.includes("-badge.svg") ? " profile-mark-badge" : "";
     return `
       <span class="profile-mark profile-mark-image${badgeClass} profile-mark-${escapeHtml(meta.tone)}" aria-hidden="true">
         <img src="${escapeHtml(resolvedIcon)}" alt="" loading="lazy" />
@@ -3028,6 +3028,33 @@ function profileMarkMarkup(item = {}) {
     `;
   }
   return `<span class="profile-mark profile-mark-${escapeHtml(meta.tone)}" aria-hidden="true">${escapeHtml(meta.label)}</span>`;
+}
+
+function profileUsesEmbeddedWordmark(item = {}) {
+  const title = normalizeString(item?.title);
+  return title === "J-GLOBAL" || title === "ResearchMap";
+}
+
+function profileTitleMarkup(item = {}) {
+  const title = lt(item.title);
+  const locale = resolveLocaleName();
+
+  if (profileUsesEmbeddedWordmark(item)) {
+    return "";
+  }
+
+  if (title === "Google Scholar" && locale === "zh") {
+    return `
+      <h4 class="link-card-title link-card-title-google-scholar">
+        <span class="google-wordmark" aria-label="Google">
+          <span class="google-blue">G</span><span class="google-red">o</span><span class="google-yellow">o</span><span class="google-blue">g</span><span class="google-green">l</span><span class="google-red">e</span>
+        </span>
+        <span class="google-scholar-suffix">Scholar</span>
+      </h4>
+    `;
+  }
+
+  return `<h4 class="link-card-title">${escapeHtml(title)}</h4>`;
 }
 
 function resolveProfileMarkIcon(item = {}, icon = "") {
@@ -3040,7 +3067,7 @@ function resolveProfileMarkIcon(item = {}, icon = "") {
     || title === "Tohoku University Cyberscience Center"
     || url.includes("cc.tohoku.ac.jp")
   ) {
-    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg";
+    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg?v=20260407-143322";
   }
 
   return normalizedIcon;
@@ -3994,11 +4021,12 @@ function renderLinks(data) {
           (item) => {
             const meta = profileMarkMeta(item);
             const href = localizedExternalUrl(item.url, item.title);
+            const wordmarkOnlyClass = profileUsesEmbeddedWordmark(item) ? " profile-link-card-wordmark" : "";
             return `
-            <a class="link-card profile-link-card link-card-tone-${escapeHtml(meta.tone)}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(lt(item.title))}">
+            <a class="link-card profile-link-card link-card-tone-${escapeHtml(meta.tone)}${wordmarkOnlyClass}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(lt(item.title))}">
               <div class="link-card-inline">
                 ${profileMarkMarkup(item)}
-                <h4 class="link-card-title">${escapeHtml(lt(item.title))}</h4>
+                ${profileTitleMarkup(item)}
               </div>
             </a>
           `;
