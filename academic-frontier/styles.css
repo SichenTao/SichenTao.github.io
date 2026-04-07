@@ -2826,7 +2826,7 @@ body[data-lang="ja"] .hero-role {
   }
 
   .filter-search-row {
-    justify-content: stretch;
+    justify-content: flex-end;
   }
 
   .filter-search-row .input {
