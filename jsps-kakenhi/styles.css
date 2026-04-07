@@ -2411,13 +2411,20 @@ a {
 
 .timeline-event-title {
   display: block;
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   color: rgba(var(--timeline-accent-rgb), 0.98);
-  font-size: 1.04rem;
-  font-weight: 700;
-  line-height: 1.42;
-  letter-spacing: 0.01em;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.38;
+  letter-spacing: 0.015em;
   text-wrap: balance;
+}
+
+.timeline-event-meta {
+  display: block;
+  color: rgba(var(--ink-rgb), 0.72);
+  font-size: 0.94rem;
+  line-height: 1.54;
 }
 
 .timeline-summary-lead {

@@ -2408,7 +2408,7 @@ function renderDeadlinesPage() {
             </div>
             <p class="timeline-summary">
               <span class="timeline-event-title">${escapeHtml(localeField(event, "title"))}</span>
-              ${escapeHtml(formatDateTime(event.datetime || event.date))}
+              <span class="timeline-event-meta">${escapeHtml(formatDateTime(event.datetime || event.date))}</span>
             </p>
             ${event.note_zh || event.note_en ? `<p class="timeline-summary-note">${escapeHtml(localeField(event, "note"))}</p>` : ""}
           </article>
