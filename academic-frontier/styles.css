@@ -1614,6 +1614,12 @@ body[data-lang="ja"] .hero-role {
   border: 1px solid rgba(var(--ink-rgb), 0.08);
 }
 
+.publication-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .highlight-primary {
   background:
     radial-gradient(circle at top left, rgba(var(--teal-rgb), 0.1), transparent 34%),
@@ -2046,6 +2052,12 @@ body[data-lang="ja"] .hero-role {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.publication-card .link-row {
+  margin-top: auto;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .tag {
