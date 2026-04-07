@@ -1086,6 +1086,10 @@ body[data-lang="ja"] .hero-role {
   margin-bottom: 18px;
 }
 
+.direction-workspace-summary-stacked {
+  grid-template-columns: 1fr;
+}
+
 .focus-card,
 .direction-card {
   padding: 18px;

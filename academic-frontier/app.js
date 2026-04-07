@@ -2354,7 +2354,7 @@ function renderDirectionWorkspace() {
       </div>
       <p class="section-note">${escapeHtml(ui("directionsNote"))}</p>
     </div>
-    <div class="direction-workspace-summary">
+    <div class="direction-workspace-summary direction-workspace-summary-stacked">
       <aside class="focus-card focus-card-accent">
         <div class="subhead"><h3>${escapeHtml(ui("researchLauncherTitle"))}</h3><span class="tag is-strong">${escapeHtml(`${ui("researchMatchedPapersLabel")} ${matchedPapers.length}`)}</span></div>
         <p class="section-note">${escapeHtml(ui("researchLauncherNote"))}</p>
