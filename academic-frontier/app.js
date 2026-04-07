@@ -4666,7 +4666,9 @@ function bindControls() {
   });
   problemFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value && value !== "all" && !state.problemFieldFilters.includes(value)) {
+    if (value === "all") {
+      state.problemFieldFilters = [];
+    } else if (value && !state.problemFieldFilters.includes(value)) {
       state.problemFieldFilters = [...state.problemFieldFilters, value];
     }
     event.target.value = "all";
@@ -4675,7 +4677,9 @@ function bindControls() {
   });
   methodFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value && value !== "all" && !state.methodFieldFilters.includes(value)) {
+    if (value === "all") {
+      state.methodFieldFilters = [];
+    } else if (value && !state.methodFieldFilters.includes(value)) {
       state.methodFieldFilters = [...state.methodFieldFilters, value];
     }
     event.target.value = "all";
@@ -4880,7 +4884,9 @@ function bindResearchLauncher() {
 
     if (target.id === "research-problem-filter") {
       const value = target.value;
-      if (value && value !== "all" && !state.researchProblemFieldFilters.includes(value)) {
+      if (value === "all") {
+        state.researchProblemFieldFilters = [];
+      } else if (value && !state.researchProblemFieldFilters.includes(value)) {
         state.researchProblemFieldFilters = [...state.researchProblemFieldFilters, value];
       }
       target.value = "all";
@@ -4892,7 +4898,9 @@ function bindResearchLauncher() {
 
     if (target.id === "research-method-filter") {
       const value = target.value;
-      if (value && value !== "all" && !state.researchMethodFieldFilters.includes(value)) {
+      if (value === "all") {
+        state.researchMethodFieldFilters = [];
+      } else if (value && !state.researchMethodFieldFilters.includes(value)) {
         state.researchMethodFieldFilters = [...state.researchMethodFieldFilters, value];
       }
       target.value = "all";
