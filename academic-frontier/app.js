@@ -4,6 +4,7 @@ const STORAGE_KEY_DOMAIN = "academic-frontier-domain";
 const STORAGE_KEY_LOCAL_DOMAIN = "学术前沿-domain";
 const STORAGE_KEY_THEME = "sichen-homepage-theme";
 const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
+const OPEN_RESEARCH_MIN_YEAR = 1950;
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
 
@@ -62,6 +63,7 @@ const state = {
   researchAuthorFilter: "all",
   researchYearStart: "",
   researchYearEnd: "",
+  researchYearOpenEnded: true,
   language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || "en",
   theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || "tohoku",
   localArchiveIndex: {},
@@ -102,21 +104,25 @@ const UI_TEXT = {
     focusPromptLabel: "Correction prompt",
     focusPromptPlaceholder: "Example: prioritize AI for science, classic foundational papers, and latest top-tier systems with strong code evidence.",
     researchLauncherTitle: "Deep research launcher",
-    researchLauncherNote: "Use objective filters and custom keywords to prepare the next agent-ready frontier sweep.",
+    researchLauncherNote: "Launch a fresh internet-first investigation. The local archive only serves as a seed reference and must not limit the search frontier.",
     researchSelectedFiltersLabel: "Selected constraints",
-    researchPromptPreviewTitle: "Agent-ready brief",
+    researchPromptPreviewTitle: "Deep research brief",
     researchLaunchAction: "Start deep research",
-    researchLaunchCopiedLabel: "Research brief copied",
-    researchCustomPromptLabel: "Custom keywords / correction prompt",
-    researchCustomPromptPlaceholder: "Example: prioritize AI for science, optimization problems, evolutionary algorithms, and rigorous top-tier journals with reusable code.",
-    researchYearRangeLabel: "Year range",
-    researchYearStartLabel: "From",
-    researchYearEndLabel: "To",
+    researchLaunchCopiedLabel: "Deep research brief copied",
+    researchCustomPromptLabel: "Custom keywords / prompt correction",
+    researchCustomPromptPlaceholder: "Example: optimization problems, AI, machine learning, deep learning, evolutionary algorithms, reinforcement learning, high-performance computing, classic foundations, and the newest top-tier evidence.",
+    researchYearRangeLabel: "Time interval",
+    researchYearStartLabel: "Start",
+    researchYearEndLabel: "End",
+    researchYearOpenEndedAction: "Open to present",
+    researchPresentLabel: "Present",
     researchAuthorLabel: "Author",
     researchProblemLabel: "Problem field",
     researchMethodLabel: "Method field",
     researchMatchedPapersLabel: "Matching papers",
-    researchBriefEmpty: "Select objective filters or add custom keywords to generate the next research brief.",
+    researchBriefEmpty: "Select objective constraints or add custom keywords to prepare the next internet investigation brief.",
+    researchInternetFirstTag: "Internet-first",
+    researchSeedKeywordsLabel: "First-principles keywords",
     applyFocusAction: "Apply refinement",
     resetFocusAction: "Reset to auto",
     focusPresetsLabel: "Quick presets",
@@ -315,21 +321,25 @@ const UI_TEXT = {
     focusPromptLabel: "修正 prompt",
     focusPromptPlaceholder: "例如：优先 AI for Science、经典基础论文、以及最新且有强代码证据的顶级系统论文。",
     researchLauncherTitle: "深度研究启动器",
-    researchLauncherNote: "先用客观筛选约束范围，再用自定义关键词生成可直接交给 agent 的前沿研究简报。",
+    researchLauncherNote: "从互联网发起一次新的完整调查。现有档案只作为种子参考，不应成为搜索边界。",
     researchSelectedFiltersLabel: "已选约束",
-    researchPromptPreviewTitle: "Agent 研究简报",
+    researchPromptPreviewTitle: "深度研究简报",
     researchLaunchAction: "开始深度研究",
-    researchLaunchCopiedLabel: "研究简报已复制",
+    researchLaunchCopiedLabel: "深度研究简报已复制",
     researchCustomPromptLabel: "自定义关键词 / 修正 prompt",
-    researchCustomPromptPlaceholder: "例如：优先 AI、优化问题、进化算法、经典基础论文、以及最新且有强代码证据的高质量研究。",
-    researchYearRangeLabel: "年份范围",
-    researchYearStartLabel: "起始",
+    researchCustomPromptPlaceholder: "例如：优化问题、AI、机器学习、深度学习、进化算法、强化学习、高性能计算、经典基础论文，以及最新顶级高质量研究。",
+    researchYearRangeLabel: "时间区间",
+    researchYearStartLabel: "开始",
     researchYearEndLabel: "结束",
+    researchYearOpenEndedAction: "开放到当前",
+    researchPresentLabel: "至今",
     researchAuthorLabel: "作者",
     researchProblemLabel: "问题领域",
     researchMethodLabel: "方法领域",
     researchMatchedPapersLabel: "匹配论文",
-    researchBriefEmpty: "先选择客观筛选条件，或补充自定义关键词，再生成下一步研究简报。",
+    researchBriefEmpty: "先选择客观约束或补充自定义关键词，再生成下一步互联网深度调查简报。",
+    researchInternetFirstTag: "互联网优先",
+    researchSeedKeywordsLabel: "第一性关键词",
     applyFocusAction: "应用修正",
     resetFocusAction: "恢复自动",
     focusPresetsLabel: "快捷预设",
@@ -528,21 +538,25 @@ const UI_TEXT = {
     focusPromptLabel: "修正プロンプト",
     focusPromptPlaceholder: "例: AI for Science、古典的基礎論文、そして強いコード証拠を持つ最新トップシステム論文を優先する。",
     researchLauncherTitle: "深度研究ランチャー",
-    researchLauncherNote: "客観的フィルターとカスタムキーワードを使って、agent に渡せる前沿研究ブリーフを組み立てます。",
+    researchLauncherNote: "インターネットから新規に完全調査を開始する。既存アーカイブはシード参照にとどめ、探索境界にはしない。",
     researchSelectedFiltersLabel: "選択中の条件",
-    researchPromptPreviewTitle: "Agent 向け研究ブリーフ",
+    researchPromptPreviewTitle: "深度研究ブリーフ",
     researchLaunchAction: "深度研究を開始",
-    researchLaunchCopiedLabel: "研究ブリーフをコピーしました",
+    researchLaunchCopiedLabel: "深度研究ブリーフをコピーしました",
     researchCustomPromptLabel: "カスタムキーワード / 修正プロンプト",
-    researchCustomPromptPlaceholder: "例: AI、最適化問題、進化計算、古典的基礎論文、そして強いコード証拠を持つ高品質研究を優先する。",
-    researchYearRangeLabel: "年度範囲",
+    researchCustomPromptPlaceholder: "例: 最適化問題、AI、機械学習、深層学習、進化アルゴリズム、強化学習、高性能計算、古典的基礎論文、そして最新トップ品質研究を優先する。",
+    researchYearRangeLabel: "期間",
     researchYearStartLabel: "開始",
     researchYearEndLabel: "終了",
+    researchYearOpenEndedAction: "現在まで開放",
+    researchPresentLabel: "現在",
     researchAuthorLabel: "著者",
     researchProblemLabel: "問題領域",
     researchMethodLabel: "手法領域",
     researchMatchedPapersLabel: "一致論文数",
-    researchBriefEmpty: "まず客観的フィルターを選ぶか、カスタムキーワードを追加して次の研究ブリーフを生成してください。",
+    researchBriefEmpty: "まず客観条件を選ぶか、カスタムキーワードを追加して次のインターネット深度調査ブリーフを生成してください。",
+    researchInternetFirstTag: "Internet-first",
+    researchSeedKeywordsLabel: "第一原理キーワード",
     applyFocusAction: "補正を適用",
     resetFocusAction: "自動へ戻す",
     focusPresetsLabel: "クイックプリセット",
@@ -2123,15 +2137,49 @@ function focusPresetMarkup() {
   )).join("");
 }
 
+function researchKeywordPresetCatalog() {
+  return [
+    { id: "optimization", label: { en: "Optimization problems", zh: "优化问题", ja: "最適化問題" } },
+    { id: "ai", label: { en: "AI", zh: "AI", ja: "AI" } },
+    { id: "machine-learning", label: { en: "Machine learning", zh: "机器学习", ja: "機械学習" } },
+    { id: "deep-learning", label: { en: "Deep learning", zh: "深度学习", ja: "深層学習" } },
+    { id: "evolutionary-algorithms", label: { en: "Evolutionary algorithms", zh: "进化算法", ja: "進化アルゴリズム" } },
+    { id: "reinforcement-learning", label: { en: "Reinforcement learning", zh: "强化学习", ja: "強化学習" } },
+    { id: "high-performance-computing", label: { en: "High-performance computing", zh: "高性能计算", ja: "高性能計算" } },
+  ];
+}
+
+function researchKeywordPresetMarkup() {
+  return researchKeywordPresetCatalog().map((preset) => (
+    `<button class="chip" type="button" data-research-preset="${escapeHtml(localizeText(preset.label))}">#${escapeHtml(localizeText(preset.label))}</button>`
+  )).join("");
+}
+
 function availableResearchYears(papers = papersForDomain()) {
   return [...new Set(papers.map((paper) => Number.parseInt(paperYearValue(paper), 10)).filter(Number.isFinite))]
     .sort((left, right) => right - left);
 }
 
-function syncResearchLauncherState(papers = papersForDomain()) {
+function researchYearBounds(papers = papersForDomain()) {
   const years = availableResearchYears(papers);
-  const maxYear = years[0] || new Date().getFullYear();
-  const minYear = years[years.length - 1] || maxYear;
+  const presentYear = new Date().getFullYear();
+  const maxYear = Math.max(years[0] || presentYear, presentYear);
+  const minYear = Math.min(years[years.length - 1] || OPEN_RESEARCH_MIN_YEAR, OPEN_RESEARCH_MIN_YEAR);
+  return { years, minYear, maxYear };
+}
+
+function researchYearIntervalLabel(start, end, openEnded = state.researchYearOpenEnded) {
+  if (!start) return "";
+  return `${start} - ${openEnded ? ui("researchPresentLabel") : end}`;
+}
+
+function researchYearPercent(value, minYear, maxYear) {
+  if (!Number.isFinite(value) || maxYear <= minYear) return 0;
+  return ((value - minYear) / (maxYear - minYear)) * 100;
+}
+
+function syncResearchLauncherState(papers = papersForDomain()) {
+  const { years, minYear, maxYear } = researchYearBounds(papers);
   const problemFields = [...new Set(papers.flatMap((paper) => paperProblemFields(paper)).filter(Boolean))];
   const methodFields = [...new Set(papers.flatMap((paper) => paperMethodFields(paper)).filter(Boolean))];
   const authors = [...new Set(papers.flatMap((paper) => paperAuthorNames(paper)).filter(Boolean))];
@@ -2158,9 +2206,11 @@ function syncResearchLauncherState(papers = papersForDomain()) {
   const end = Number.parseInt(state.researchYearEnd, 10);
   const safeStart = Number.isFinite(start) ? Math.min(Math.max(start, minYear), maxYear) : minYear;
   const safeEnd = Number.isFinite(end) ? Math.min(Math.max(end, minYear), maxYear) : maxYear;
+  const normalizedStart = Math.min(safeStart, safeEnd);
+  const normalizedEnd = Math.max(safeStart, safeEnd);
 
-  state.researchYearStart = String(Math.min(safeStart, safeEnd));
-  state.researchYearEnd = String(Math.max(safeStart, safeEnd));
+  state.researchYearStart = String(normalizedStart);
+  state.researchYearEnd = String(state.researchYearOpenEnded ? maxYear : normalizedEnd);
 
   return {
     years,
@@ -2176,9 +2226,7 @@ function syncResearchLauncherState(papers = papersForDomain()) {
 }
 
 function researchSelectedTagEntries(papers = papersForDomain()) {
-  const years = availableResearchYears(papers);
-  const maxYear = years[0] || "";
-  const minYear = years[years.length - 1] || "";
+  const { minYear, maxYear } = researchYearBounds(papers);
   const entries = [
     ...state.researchProblemFieldFilters.map((value) => ({ category: "problem", value })),
     ...state.researchMethodFieldFilters.map((value) => ({ category: "method", value })),
@@ -2189,10 +2237,13 @@ function researchSelectedTagEntries(papers = papersForDomain()) {
     ...(state.researchAuthorFilter !== "all" ? [{ category: "author", value: state.researchAuthorFilter }] : []),
   ];
 
-  if (String(state.researchYearStart || "") !== String(minYear || "") || String(state.researchYearEnd || "") !== String(maxYear || "")) {
+  if (
+    String(state.researchYearStart || "") !== String(minYear || "")
+    || (!state.researchYearOpenEnded && String(state.researchYearEnd || "") !== String(maxYear || ""))
+  ) {
     entries.unshift({
       category: "yearRange",
-      value: `${state.researchYearStart}-${state.researchYearEnd}`,
+      value: `${state.researchYearStart}-${state.researchYearOpenEnded ? "open" : state.researchYearEnd}`,
     });
   }
 
@@ -2208,7 +2259,7 @@ function researchSelectedTagLabel(entry) {
   if (entry.category === "author") return String(entry.value || "");
   if (entry.category === "yearRange") {
     const [start, end] = String(entry.value || "").split("-");
-    return `${start} - ${end}`;
+    return researchYearIntervalLabel(start, end, end === "open");
   }
   return String(entry.value || "");
 }
@@ -2220,9 +2271,27 @@ function combinedFocusPrompt() {
   ]).join(", ");
 }
 
+function syncResearchPromptInput() {
+  const promptInput = document.querySelector("[data-focus-prompt-input]");
+  if (!promptInput) return;
+  state.focusPrompt = String(promptInput.value || "").trim();
+  writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
+}
+
+function appendResearchKeyword(keyword) {
+  const nextPrompt = uniqueStrings([
+    ...normalizedFocusPrompt().split(/[\n,;，；、]+/g),
+    keyword,
+  ]).join(", ");
+  state.focusPrompt = nextPrompt;
+  writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
+}
+
 function paperMatchesResearchFilters(paper, overrides = {}) {
   const yearStart = Number.parseInt(overrides.yearStart ?? state.researchYearStart, 10);
-  const yearEnd = Number.parseInt(overrides.yearEnd ?? state.researchYearEnd, 10);
+  const yearEnd = (overrides.openEnded ?? state.researchYearOpenEnded)
+    ? Number.NaN
+    : Number.parseInt(overrides.yearEnd ?? state.researchYearEnd, 10);
   const paperYear = Number.parseInt(paperYearValue(paper), 10);
   const matchesYearRange = !Number.isFinite(paperYear)
     || (!Number.isFinite(yearStart) || paperYear >= yearStart)
@@ -2242,11 +2311,7 @@ function paperMatchesResearchFilters(paper, overrides = {}) {
   });
 }
 
-function matchingResearchPapers() {
-  return sortPapers(papersForDomain().filter((paper) => paperMatchesResearchFilters(paper)));
-}
-
-function buildResearchBrief(directions, matchedPapers) {
+function buildResearchBrief(directions) {
   const domainName = localizeText(activeDomain()?.name || ui("brandTitle"));
   const selectedConstraints = researchSelectedTagEntries().map((entry) => researchSelectedTagLabel(entry));
   const customPrompt = normalizedFocusPrompt();
@@ -2254,31 +2319,37 @@ function buildResearchBrief(directions, matchedPapers) {
 
   return plainTextByLanguage({
     en: [
-      `Investigate the academic frontier around ${domainName}.`,
+      `Conduct a fresh internet-first academic frontier investigation around ${domainName}.`,
+      "Treat the current local archive only as a seed reference, not as a boundary for the search.",
       selectedConstraints.length ? `Objective constraints: ${selectedConstraints.join(", ")}.` : "",
       customPrompt ? `Custom keywords: ${customPrompt}.` : "",
-      `Prioritize the highest-quality papers from top journals and conferences, but keep classic foundational work when it remains central to the field.`,
-      `For each retained paper, preserve objective metadata including authors, problem fields, method fields, venue, JCR, CAS, IF, CCF, and DOI.`,
-      alignedDirections.length ? `Most aligned directions now: ${alignedDirections.join(" · ")}.` : "",
-      `Current matched papers in this lane: ${matchedPapers.length}.`,
+      "Prioritize first-principles themes such as optimization, AI, machine learning, deep learning, evolutionary algorithms, reinforcement learning, and high-performance computing whenever they fit the scope.",
+      "Keep both classic foundational work and the newest highest-quality papers from top journals and conferences.",
+      "For each retained paper, preserve objective metadata including authors, problem fields, method fields, venue, JCR, CAS, IF, CCF, and DOI.",
+      "When access is legally available, use browser-assisted capture to obtain PDFs through campus-network rights and add them into the archive.",
+      alignedDirections.length ? `Useful seed directions from the current archive: ${alignedDirections.join(" · ")}.` : "",
     ].filter(Boolean).join("\n"),
     zh: [
-      `围绕“${domainName}”开展学术前沿深度研究。`,
+      `围绕“${domainName}”开展一次从互联网重新出发的学术前沿深度调查。`,
+      "现有本地档案只作为种子参考，不应成为搜索边界。",
       selectedConstraints.length ? `客观约束：${selectedConstraints.join("，")}。` : "",
       customPrompt ? `自定义关键词：${customPrompt}。` : "",
-      "优先收集顶级期刊与顶会中的高质量论文，同时保留仍然处于核心位置的经典基础论文。",
+      "优先围绕优化问题、AI、机器学习、深度学习、进化算法、强化学习、高性能计算等第一性主题开展搜索，只要它们与约束范围一致。",
+      "同时覆盖仍处核心位置的经典基础论文，以及最新且最高质量的顶刊顶会论文。",
       "对每篇保留论文，都应保留作者、问题领域、方法领域、发表渠道、JCR、中科院、IF、CCF 与 DOI 等客观字段。",
-      alignedDirections.length ? `当前最匹配的方向：${alignedDirections.join(" · ")}。` : "",
-      `当前该方向下匹配论文数：${matchedPapers.length}。`,
+      "当权限与法规允许时，优先借助浏览器与校园网可访问权限抓取 PDF，并补充进入网页档案。",
+      alignedDirections.length ? `当前档案可提供的种子方向：${alignedDirections.join(" · ")}。` : "",
     ].filter(Boolean).join("\n"),
     ja: [
-      `「${domainName}」を中心に学術前沿の深度研究を行う。`,
+      `「${domainName}」を中心に、インターネットから新規に学術前沿の深度調査を行う。`,
+      "現在のローカルアーカイブはシード参照として扱い、探索境界にはしない。",
       selectedConstraints.length ? `客観条件: ${selectedConstraints.join("、")}。` : "",
       customPrompt ? `カスタムキーワード: ${customPrompt}。` : "",
-      "トップジャーナルとトップ会議の高品質論文を優先しつつ、その分野で依然として重要な古典的基礎論文も保持する。",
+      "最適化問題、AI、機械学習、深層学習、進化アルゴリズム、強化学習、高性能計算などの第一原理テーマを、条件に合う限り優先的に探索する。",
+      "古典的基礎論文と、最新かつ最高品質のトップジャーナル・トップ会議論文の両方を保持する。",
       "各論文について、著者、問題領域、手法領域、掲載先、JCR、CAS、IF、CCF、DOI などの客観フィールドを保持する。",
-      alignedDirections.length ? `現在もっとも整合する方向: ${alignedDirections.join(" · ")}。` : "",
-      `このレーンで現在一致する論文数: ${matchedPapers.length}。`,
+      "法的にアクセス可能な場合は、ブラウザ支援で PDF を取得し、学内ネットワーク権限を活かしてアーカイブへ追加する。",
+      alignedDirections.length ? `現アーカイブから使えるシード方向: ${alignedDirections.join(" · ")}。` : "",
     ].filter(Boolean).join("\n"),
   });
 }
@@ -2336,9 +2407,8 @@ function renderDirectionWorkspace() {
   const directions = adjustedDirections();
   const seed = researchData().seedProfile || {};
   const tokens = focusPromptTokens();
-  const matchedPapers = matchingResearchPapers();
   const selectedConstraints = researchSelectedTagEntries();
-  const researchBrief = buildResearchBrief(directions, matchedPapers);
+  const researchBrief = buildResearchBrief(directions);
   const seedChips = [
     ...(seed?.keywords || []).slice(0, 5),
     ...(seed?.methods || []).slice(0, 3),
@@ -2346,26 +2416,32 @@ function renderDirectionWorkspace() {
   ].slice(0, 12);
   const researchFacetCount = (overrides = {}) =>
     papersForDomain().filter((paper) => paperMatchesResearchFilters(paper, overrides)).length;
+  const yearStart = Number.parseInt(state.researchYearStart, 10) || launcher.minYear;
+  const yearEnd = Number.parseInt(state.researchYearEnd, 10) || launcher.maxYear;
+  const displayedYearEnd = state.researchYearOpenEnded ? ui("researchPresentLabel") : state.researchYearEnd;
+  const rangeStartPct = researchYearPercent(yearStart, launcher.minYear, launcher.maxYear);
+  const rangeEndPct = researchYearPercent(yearEnd, launcher.minYear, launcher.maxYear);
+  const yearIntervalLabel = researchYearIntervalLabel(state.researchYearStart, state.researchYearEnd, state.researchYearOpenEnded);
 
   mount.innerHTML = `<div class="section-head">
       <div>
         <p class="eyebrow">${escapeHtml(ui("directionsKicker"))}</p>
-        <h2>${escapeHtml(ui("directionsTitle"))}</h2>
+        <h2>${escapeHtml(ui("navSignals"))}</h2>
       </div>
-      <p class="section-note">${escapeHtml(ui("directionsNote"))}</p>
+      <p class="section-note">${escapeHtml(ui("researchLauncherNote"))}</p>
     </div>
     <div class="direction-workspace-summary direction-workspace-summary-stacked">
       <aside class="focus-card focus-card-accent investigation-launcher-card">
         <div class="investigation-launcher-hero">
-          <div class="subhead investigation-launcher-subhead"><h3>${escapeHtml(ui("researchLauncherTitle"))}</h3><span class="tag is-strong">${escapeHtml(`${ui("researchMatchedPapersLabel")} ${matchedPapers.length}`)}</span></div>
+          <div class="subhead investigation-launcher-subhead"><h3>${escapeHtml(ui("researchLauncherTitle"))}</h3><span class="tag is-strong">${escapeHtml(ui("researchInternetFirstTag"))}</span></div>
           <p class="section-note investigation-launcher-note">${escapeHtml(ui("researchLauncherNote"))}</p>
         </div>
         <div class="investigation-launcher-main">
-          <div class="investigation-launcher-primary">
-            <div class="publication-domain-rack investigation-domain-rack">
-              <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
-              <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
-            </div>
+          <div class="investigation-launcher-section publication-domain-rack investigation-domain-rack">
+            <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
+            <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
+          </div>
+          <div class="investigation-launcher-section">
             <div class="filter-control-row investigation-filter-row">
               <select id="research-problem-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length))}</option>
@@ -2410,37 +2486,45 @@ function renderDirectionWorkspace() {
                   .join("")}
               </select>
             </div>
-            <div class="investigation-prompt-stack">
-              <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("researchCustomPromptLabel"))}</label>
-              <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="5" placeholder="${escapeHtml(ui("researchCustomPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
-            </div>
           </div>
-          <div class="investigation-launcher-sidebar">
-            <div class="investigation-selected-stack">
-              <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
-              <div class="chip-row compact investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="chip is-static">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
-            </div>
-            <div class="research-range-grid investigation-range-grid">
-              <label class="research-range-control">
+          <div class="investigation-launcher-section investigation-selected-stack">
+            <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
+            <div class="chip-row compact investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="chip is-static">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
+          </div>
+          <div class="investigation-launcher-section">
+            <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag">${escapeHtml(yearIntervalLabel)}</span></div>
+            <div class="research-range-control research-range-control-merged" role="group" aria-label="${escapeHtml(ui("researchYearRangeLabel"))}">
+              <div class="research-range-summary">
                 <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
                 <span class="research-range-value">${escapeHtml(state.researchYearStart)}</span>
-                <input id="research-year-start" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
-              </label>
-              <label class="research-range-control">
+                <span class="research-range-separator">-</span>
                 <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
-                <span class="research-range-value">${escapeHtml(state.researchYearEnd)}</span>
-                <input id="research-year-end" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
-              </label>
-            </div>
-            <div class="investigation-action-stack">
-              <div class="focus-action-row investigation-action-row">
-                <button class="button button-primary" type="button" data-research-launch="true">${escapeHtml(ui("researchLaunchAction"))}</button>
-                <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
+                <span class="research-range-value">${escapeHtml(displayedYearEnd)}</span>
+              </div>
+              <div class="research-range-track">
+                <span class="research-range-track-fill" style="left:${escapeHtml(String(rangeStartPct))}%;right:${escapeHtml(String(100 - rangeEndPct))}%"></span>
+                <input id="research-year-start" class="research-range-input research-range-input-start" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
+                <input id="research-year-end" class="research-range-input research-range-input-end" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
+              </div>
+              <div class="research-range-footer">
+                <span class="direction-empty-note">${escapeHtml(String(launcher.minYear))}</span>
+                <button class="chip${state.researchYearOpenEnded ? " is-active" : ""}" type="button" data-research-open-end="true">${escapeHtml(ui("researchYearOpenEndedAction"))}</button>
+                <span class="direction-empty-note">${escapeHtml(String(launcher.maxYear))}</span>
               </div>
             </div>
-            <div class="investigation-preset-stack">
-              <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
-              <div class="chip-row compact investigation-preset-row">${focusPresetMarkup()}</div>
+          </div>
+          <div class="investigation-launcher-section investigation-preset-stack">
+            <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSeedKeywordsLabel"))}</h4></div>
+            <div class="chip-row compact investigation-preset-row">${researchKeywordPresetMarkup()}</div>
+          </div>
+          <div class="investigation-launcher-section investigation-prompt-stack">
+            <label class="stack-label" for="researchPromptInput">${escapeHtml(ui("researchCustomPromptLabel"))}</label>
+            <textarea id="researchPromptInput" data-focus-prompt-input class="focus-textarea" rows="5" placeholder="${escapeHtml(ui("researchCustomPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
+          </div>
+          <div class="investigation-launcher-section investigation-action-stack">
+            <div class="focus-action-row investigation-action-row">
+              <button class="button button-primary" type="button" data-research-launch="true">${escapeHtml(ui("researchLaunchAction"))}</button>
+              <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
             </div>
           </div>
         </div>
@@ -2628,10 +2712,6 @@ function paperTypeValue(paper) {
 
 function paperReadingStatus(paper) {
   return String(paper?.curation?.readingStatus || paper?.status || "monitor");
-}
-
-function paperSummaryNote(paper) {
-  return paper?.curation?.summaryNote || paper?.whyItMatters || "";
 }
 
 function paperObjectiveTags(paper) {
@@ -4263,12 +4343,6 @@ function renderPapers() {
     )}</span>`;
     article.appendChild(abstract);
 
-    const strategic = el("p", "publication-note publication-note-highlight");
-    strategic.innerHTML = `<strong class="warm-strong">${escapeHtml(ui("strategicLabel"))}:</strong> <span class="rich-text">${richTextHtml(
-      paperSummaryNote(paper) || ui("pendingMetric")
-    )}</span>`;
-    article.appendChild(strategic);
-
     const links = el("div", "link-row");
     const detailLink = el("a", "button button-primary", ui("detailAction"));
     detailLink.href = paperDetailHref(paper);
@@ -4661,6 +4735,7 @@ function bindFocusDesk() {
       state.researchAuthorFilter = "all";
       state.researchYearStart = "";
       state.researchYearEnd = "";
+      state.researchYearOpenEnded = true;
       writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, "");
       renderDirectionCockpit();
       renderDirectionWorkspace();
@@ -4676,6 +4751,7 @@ function bindResearchLauncher() {
   document.addEventListener("change", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement)) return;
+    syncResearchPromptInput();
 
     if (target.id === "research-problem-filter") {
       const value = target.value;
@@ -4725,6 +4801,7 @@ function bindResearchLauncher() {
     if (!(target instanceof HTMLElement)) return;
 
     if (target.id === "research-year-start") {
+      syncResearchPromptInput();
       state.researchYearStart = String(target.value || "");
       if (Number.parseInt(state.researchYearStart, 10) > Number.parseInt(state.researchYearEnd, 10)) {
         state.researchYearEnd = state.researchYearStart;
@@ -4736,6 +4813,8 @@ function bindResearchLauncher() {
     }
 
     if (target.id === "research-year-end") {
+      syncResearchPromptInput();
+      state.researchYearOpenEnded = false;
       state.researchYearEnd = String(target.value || "");
       if (Number.parseInt(state.researchYearEnd, 10) < Number.parseInt(state.researchYearStart, 10)) {
         state.researchYearStart = state.researchYearEnd;
@@ -4747,13 +4826,34 @@ function bindResearchLauncher() {
   });
 
   document.addEventListener("click", async (event) => {
+    const keywordButton = event.target.closest("[data-research-preset]");
+    if (keywordButton) {
+      syncResearchPromptInput();
+      appendResearchKeyword(keywordButton.dataset.researchPreset || "");
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
+    const openEndButton = event.target.closest("[data-research-open-end]");
+    if (openEndButton) {
+      syncResearchPromptInput();
+      state.researchYearOpenEnded = !state.researchYearOpenEnded;
+      if (state.researchYearOpenEnded) {
+        state.researchYearEnd = String(researchYearBounds().maxYear);
+      }
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
     const launchButton = event.target.closest("[data-research-launch]");
     if (!launchButton) return;
 
-    const promptInput = document.querySelector("[data-focus-prompt-input]");
-    state.focusPrompt = String(promptInput?.value || "").trim();
-    writeStoredValue(STORAGE_KEY_FOCUS_PROMPT, state.focusPrompt);
-    const copied = await copyTextToClipboard(buildResearchBrief(adjustedDirections(), matchingResearchPapers()));
+    syncResearchPromptInput();
+    const copied = await copyTextToClipboard(buildResearchBrief(adjustedDirections()));
     if (copied) {
       const defaultLabel = ui("researchLaunchAction");
       launchButton.textContent = ui("researchLaunchCopiedLabel");
