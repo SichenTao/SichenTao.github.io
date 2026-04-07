@@ -122,7 +122,7 @@ const UI_TEXT = {
     focusPromptPlaceholder: "Example: prioritize AI for science, classic foundational papers, and latest top-tier systems with strong code evidence.",
     researchLauncherTitle: "Deep research launcher",
     researchLauncherNote: "Launch a fresh internet-first investigation. The local archive only serves as a seed reference and must not limit the search frontier.",
-    researchSelectedFiltersLabel: "Selected constraints",
+    researchSelectedFiltersLabel: "Selected tags",
     researchPromptPreviewTitle: "Deep research brief",
     researchLaunchAction: "Start deep research",
     researchLaunchCopiedLabel: "Deep research brief copied",
@@ -137,7 +137,7 @@ const UI_TEXT = {
     researchProblemLabel: "Problem field",
     researchMethodLabel: "Method field",
     researchMatchedPapersLabel: "Matching papers",
-    researchBriefEmpty: "Select objective constraints or add custom keywords to prepare the next internet investigation brief.",
+    researchBriefEmpty: "Select tags or add custom keywords to prepare the next internet investigation brief.",
     researchInternetFirstTag: "Internet-first",
     researchSeedKeywordsLabel: "First-principles keywords",
     applyFocusAction: "Apply refinement",
@@ -339,7 +339,7 @@ const UI_TEXT = {
     focusPromptPlaceholder: "例如：优先 AI for Science、经典基础论文、以及最新且有强代码证据的顶级系统论文。",
     researchLauncherTitle: "深度研究启动器",
     researchLauncherNote: "从互联网发起一次新的完整调查。现有档案只作为种子参考，不应成为搜索边界。",
-    researchSelectedFiltersLabel: "已选约束",
+    researchSelectedFiltersLabel: "已选标签",
     researchPromptPreviewTitle: "深度研究简报",
     researchLaunchAction: "开始深度研究",
     researchLaunchCopiedLabel: "深度研究简报已复制",
@@ -354,7 +354,7 @@ const UI_TEXT = {
     researchProblemLabel: "问题领域",
     researchMethodLabel: "方法领域",
     researchMatchedPapersLabel: "匹配论文",
-    researchBriefEmpty: "先选择客观约束或补充自定义关键词，再生成下一步互联网深度调查简报。",
+    researchBriefEmpty: "先选择标签或补充自定义关键词，再生成下一步互联网深度调查简报。",
     researchInternetFirstTag: "互联网优先",
     researchSeedKeywordsLabel: "第一性关键词",
     applyFocusAction: "应用修正",
@@ -556,7 +556,7 @@ const UI_TEXT = {
     focusPromptPlaceholder: "例: AI for Science、古典的基礎論文、そして強いコード証拠を持つ最新トップシステム論文を優先する。",
     researchLauncherTitle: "深度研究ランチャー",
     researchLauncherNote: "インターネットから新規に完全調査を開始する。既存アーカイブはシード参照にとどめ、探索境界にはしない。",
-    researchSelectedFiltersLabel: "選択中の条件",
+    researchSelectedFiltersLabel: "選択中のタグ",
     researchPromptPreviewTitle: "深度研究ブリーフ",
     researchLaunchAction: "深度研究を開始",
     researchLaunchCopiedLabel: "深度研究ブリーフをコピーしました",
@@ -571,7 +571,7 @@ const UI_TEXT = {
     researchProblemLabel: "問題領域",
     researchMethodLabel: "手法領域",
     researchMatchedPapersLabel: "一致論文数",
-    researchBriefEmpty: "まず客観条件を選ぶか、カスタムキーワードを追加して次のインターネット深度調査ブリーフを生成してください。",
+    researchBriefEmpty: "まずタグを選ぶか、カスタムキーワードを追加して次のインターネット深度調査ブリーフを生成してください。",
     researchInternetFirstTag: "Internet-first",
     researchSeedKeywordsLabel: "第一原理キーワード",
     applyFocusAction: "補正を適用",
@@ -2176,7 +2176,7 @@ function directionCardMarkup(direction, { detailed = false } = {}) {
     <p class="direction-thesis rich-text">${richTextHtml(direction?.thesis)}</p>
     <p class="publication-note publication-note-highlight"><strong class="warm-strong">${escapeHtml(ui("strategicLabel"))}:</strong> <span class="rich-text">${richTextHtml(direction?.whyNow)}</span></p>
     <div class="direction-meta-grid">
-      <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("activeKeywordsLabel"))}</strong><div class="chip-row compact">${keywords.map((keyword) => `<span class="chip is-static">${escapeHtml(keyword)}</span>`).join("") || `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div></div>
+      <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("activeKeywordsLabel"))}</strong><div class="field-hash-row direction-keyword-row">${keywords.map((keyword) => `<span class="field-hash-tag">#${escapeHtml(keyword)}</span>`).join("") || `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div></div>
       <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("venueTargetsTitle"))}</strong><p class="direction-inline-list">${venues.map(escapeHtml).join(" · ") || escapeHtml(ui("pendingMetric"))}</p></div>
     </div>
     ${signals.length ? `<div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("signalsToWatch"))}</strong><div class="direction-signal-list">${signals.map((item) => `<p class="direction-signal-item">${richTextHtml(item)}</p>`).join("")}</div></div>` : ""}
@@ -2186,7 +2186,7 @@ function directionCardMarkup(direction, { detailed = false } = {}) {
 
 function focusPresetMarkup() {
   return (researchData().focusDesk?.presets || []).map((preset) => (
-    `<button class="chip" type="button" data-focus-preset="${escapeHtml(preset.id)}" title="${escapeHtml(localizeText(preset.hint || ""))}">${escapeHtml(localizeText(preset.label || ""))}</button>`
+    `<button class="field-hash-tag field-hash-tag-button" type="button" data-focus-preset="${escapeHtml(preset.id)}" title="${escapeHtml(localizeText(preset.hint || ""))}">#${escapeHtml(localizeText(preset.label || ""))}</button>`
   )).join("");
 }
 
@@ -2204,7 +2204,7 @@ function researchKeywordPresetCatalog() {
 
 function researchKeywordPresetMarkup() {
   return researchKeywordPresetCatalog().map((preset) => (
-    `<button class="chip" type="button" data-research-preset="${escapeHtml(localizeText(preset.label))}">#${escapeHtml(localizeText(preset.label))}</button>`
+    `<button class="field-hash-tag field-hash-tag-button" type="button" data-research-preset="${escapeHtml(localizeText(preset.label))}">#${escapeHtml(localizeText(preset.label))}</button>`
   )).join("");
 }
 
@@ -2374,7 +2374,7 @@ function buildResearchBrief(directions) {
     en: [
       `Conduct a fresh internet-first academic frontier investigation around ${domainName}.`,
       "Treat the current local archive only as a seed reference, not as a boundary for the search.",
-      selectedConstraints.length ? `Objective constraints: ${selectedConstraints.join(", ")}.` : "",
+      selectedConstraints.length ? `Selected tags: ${selectedConstraints.join(", ")}.` : "",
       customPrompt ? `Custom keywords: ${customPrompt}.` : "",
       "Prioritize first-principles themes such as optimization, AI, machine learning, deep learning, evolutionary algorithms, reinforcement learning, and high-performance computing whenever they fit the scope.",
       "Keep both classic foundational work and the newest highest-quality papers from top journals and conferences.",
@@ -2385,7 +2385,7 @@ function buildResearchBrief(directions) {
     zh: [
       `围绕“${domainName}”开展一次从互联网重新出发的学术前沿深度调查。`,
       "现有本地档案只作为种子参考，不应成为搜索边界。",
-      selectedConstraints.length ? `客观约束：${selectedConstraints.join("，")}。` : "",
+      selectedConstraints.length ? `已选标签：${selectedConstraints.join("，")}。` : "",
       customPrompt ? `自定义关键词：${customPrompt}。` : "",
       "优先围绕优化问题、AI、机器学习、深度学习、进化算法、强化学习、高性能计算等第一性主题开展搜索，只要它们与约束范围一致。",
       "同时覆盖仍处核心位置的经典基础论文，以及最新且最高质量的顶刊顶会论文。",
@@ -2396,7 +2396,7 @@ function buildResearchBrief(directions) {
     ja: [
       `「${domainName}」を中心に、インターネットから新規に学術前沿の深度調査を行う。`,
       "現在のローカルアーカイブはシード参照として扱い、探索境界にはしない。",
-      selectedConstraints.length ? `客観条件: ${selectedConstraints.join("、")}。` : "",
+      selectedConstraints.length ? `選択中のタグ: ${selectedConstraints.join("、")}。` : "",
       customPrompt ? `カスタムキーワード: ${customPrompt}。` : "",
       "最適化問題、AI、機械学習、深層学習、進化アルゴリズム、強化学習、高性能計算などの第一原理テーマを、条件に合う限り優先的に探索する。",
       "古典的基礎論文と、最新かつ最高品質のトップジャーナル・トップ会議論文の両方を保持する。",
@@ -2490,10 +2490,6 @@ function renderDirectionWorkspace() {
           <p class="section-note investigation-launcher-note">${escapeHtml(ui("researchLauncherNote"))}</p>
         </div>
         <div class="investigation-launcher-main">
-          <div class="investigation-launcher-section publication-domain-rack investigation-domain-rack">
-            <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
-            <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
-          </div>
           <div class="investigation-launcher-section">
             <div class="filter-control-row investigation-filter-row">
               <select id="research-problem-filter" class="input">
@@ -2542,7 +2538,7 @@ function renderDirectionWorkspace() {
           </div>
           <div class="investigation-launcher-section investigation-selected-stack">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
-            <div class="chip-row compact investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="chip is-static">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
+            <div class="field-hash-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="field-hash-tag">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
           </div>
           <div class="investigation-launcher-section">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag">${escapeHtml(yearIntervalLabel)}</span></div>
@@ -2568,7 +2564,7 @@ function renderDirectionWorkspace() {
           </div>
           <div class="investigation-launcher-section investigation-preset-stack">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSeedKeywordsLabel"))}</h4></div>
-            <div class="chip-row compact investigation-preset-row">${researchKeywordPresetMarkup()}</div>
+            <div class="field-hash-row investigation-preset-row">${researchKeywordPresetMarkup()}</div>
           </div>
           <div class="investigation-launcher-section investigation-prompt-stack">
             <label class="stack-label" for="researchPromptInput">${escapeHtml(ui("researchCustomPromptLabel"))}</label>
@@ -2584,13 +2580,13 @@ function renderDirectionWorkspace() {
       </aside>
       <article class="focus-card investigation-brief-card">
         <div class="subhead"><h3>${escapeHtml(ui("researchPromptPreviewTitle"))}</h3><span class="tag">${escapeHtml(String(directions.length))}</span></div>
-        <div class="chip-row compact">${seedChips.length ? seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div>
+        <div class="field-hash-row investigation-brief-row">${seedChips.length ? seedChips.map((item) => `<span class="field-hash-tag">#${escapeHtml(item)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div>
         <div class="direction-summary-list">
           <p class="direction-summary-item"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 4).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ") || escapeHtml(ui("pendingMetric"))}</span></p>
           <p class="direction-summary-item"><strong class="accent-strong">${escapeHtml(ui("signalsToWatch"))}:</strong> <span class="rich-text">${directions[0]?.signals?.slice(0, 1).map((item) => richTextHtml(item)).join("") || escapeHtml(ui("pendingMetric"))}</span></p>
         </div>
         <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
-        <div class="chip-row compact">${tokens.length ? tokens.map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
+        <div class="field-hash-row investigation-token-row">${tokens.length ? tokens.map((token) => `<span class="field-hash-tag">#${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
         <p class="research-brief">${escapeHtml(researchBrief)}</p>
       </article>
     </div>
