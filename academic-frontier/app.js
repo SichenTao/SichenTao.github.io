@@ -4260,34 +4260,6 @@ function renderPapers() {
     const article = el("article", `publication-card${featured ? " is-featured" : ""}`);
     const head = el("div", "publication-head");
     const titleBlock = el("div", "");
-    const tags = el("div", "tag-row");
-    tags.appendChild(el("span", "tag", `${localizeText(paper.venue)} ${paperYearValue(paper)}`.trim()));
-    tags.appendChild(el("span", tagVariant(readingStatus), localizeText(readingStatus)));
-    tags.appendChild(
-      el(
-        "span",
-        tagVariant(
-          localArchive
-            ? ui("localArchiveReady")
-            : paper.downloadMode === "direct-http"
-              ? ui("downloadModeDirect")
-              : paper.downloadMode === "openclaw-browser"
-                ? ui("downloadModeBrowser")
-                : ui("downloadModeManual")
-        ),
-        localArchive
-          ? ui("localArchiveReady")
-          : paper.downloadMode === "direct-http"
-            ? ui("downloadModeDirect")
-            : paper.downloadMode === "openclaw-browser"
-              ? ui("downloadModeBrowser")
-              : ui("downloadModeManual")
-      )
-    );
-    if (featured) {
-      tags.appendChild(el("span", "tag tag-attention", ui("featuredTag")));
-    }
-    titleBlock.appendChild(tags);
     const title = el("h4", `publication-title${featured ? " is-featured" : ""}`);
     title.innerHTML = `<a class="publication-title-link" href="${escapeHtml(paperDetailHref(paper))}">${richTextHtml(paper.title)}</a>`;
     titleBlock.appendChild(title);
