@@ -845,11 +845,19 @@ async function init() {
 }
 
 function getStoredLocale() {
+  const queryLocale = new URLSearchParams(window.location.search).get("lang");
+  if (LOCALE_CATALOG[queryLocale]) {
+    return queryLocale;
+  }
   const saved = readSessionValue(LOCALE_KEY);
   return LOCALE_CATALOG[saved] ? saved : "en";
 }
 
 function getStoredTheme() {
+  const queryTheme = new URLSearchParams(window.location.search).get("theme");
+  if (THEME_CATALOG[queryTheme]) {
+    return queryTheme;
+  }
   const saved = readSessionValue(THEME_KEY);
   if (!saved || saved === "default" || saved === "base") {
     return "tohoku";
@@ -975,11 +983,25 @@ function translatedThemeTooltip(theme) {
 }
 
 function portalHomeIconMarkup() {
-  return '<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg>';
+  return '<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg>';
 }
 
-function frontierHomeHref(locale = state.locale) {
-  return locale === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(locale)}/`;
+function frontierHomeHref(locale = state.locale, theme = state.theme) {
+  const href = locale === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(locale)}/`;
+  const url = new URL(href, window.location.origin);
+  url.searchParams.set("theme", theme);
+  return `${url.pathname}${url.search}`;
+}
+
+function siteStateHref(href, locale = state.locale, theme = state.theme) {
+  const url = new URL(href, window.location.origin);
+  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+    url.searchParams.set("lang", locale);
+  }
+  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+    url.searchParams.set("theme", theme);
+  }
+  return `${url.pathname}${url.search}`;
 }
 
 function renderLocaleSwitcher() {
@@ -1076,10 +1098,7 @@ function applyLocale(localeName, persist = true) {
   state.locale = nextLocale;
   document.documentElement.lang = LOCALE_CATALOG[nextLocale].lang;
   document.body.dataset.lang = nextLocale;
-
-  if (persist) {
-    writeSessionValue(LOCALE_KEY, nextLocale);
-  }
+  writeSessionValue(LOCALE_KEY, nextLocale);
 
   document.querySelectorAll("[data-locale-choice]").forEach((button) => {
     const active = button.dataset.localeChoice === nextLocale;
@@ -1099,6 +1118,7 @@ function applyTheme(themeName, persist = true) {
   const nextTheme = THEME_CATALOG[themeName] ? themeName : "tohoku";
   state.theme = nextTheme;
   document.documentElement.dataset.theme = nextTheme;
+  writeSessionValue(THEME_KEY, nextTheme);
 
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   if (metaThemeColor) {
@@ -1119,10 +1139,8 @@ function applyTheme(themeName, persist = true) {
   });
 
   if (persist) {
-    writeSessionValue(THEME_KEY, nextTheme);
+    window.HomepageSharedShell?.closeAllSwitchers?.();
   }
-
-  window.HomepageSharedShell?.closeAllSwitchers?.();
 }
 
 function applyI18n() {
@@ -1242,7 +1260,7 @@ function renderPortalReturnControl() {
       active: currentPath === "/",
     },
     {
-      href: "/academic/",
+      href: siteStateHref("/academic/"),
       label: labels.academic.full,
       triggerLabel: labels.academic.short,
       icon: '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
@@ -1250,14 +1268,14 @@ function renderPortalReturnControl() {
       extraClass: "portal-chip--portrait",
     },
     {
-      href: frontierHomeHref(state.locale),
+      href: frontierHomeHref(state.locale, state.theme),
       label: labels.radar.full,
       triggerLabel: labels.radar.short,
       icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
       active: currentPath.startsWith("/academic-frontier/"),
     },
     {
-      href: "/jsps-kakenhi/",
+      href: siteStateHref("/jsps-kakenhi/"),
       label: labels.jsps.full,
       triggerLabel: labels.jsps.short,
       icon: '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />',
@@ -1277,7 +1295,7 @@ function renderPortalReturnControl() {
 
   switcher.innerHTML = `
     <button
-      class="portal-trigger"
+      class="portal-trigger ${activeItem.extraClass || ""}"
       type="button"
       data-portal-trigger
       aria-haspopup="true"
@@ -1285,7 +1303,7 @@ function renderPortalReturnControl() {
       aria-label="${escapeHtml(activeItem.label)}"
       title="${escapeHtml(activeItem.label)}"
     >
-      ${portalHomeIconMarkup()}
+      ${activeItem.icon}
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
       ${items.map((item) => `

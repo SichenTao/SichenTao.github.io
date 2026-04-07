@@ -1196,11 +1196,25 @@ function translatedThemeTooltip(themeName) {
 }
 
 function portalHomeIconMarkup() {
-  return '<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg>';
+  return '<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg>';
 }
 
-function frontierHomeHref(locale = currentLocale()) {
-  return locale === "en" ? `${PUBLIC_SITE_BASE_PATH}/` : `${PUBLIC_SITE_BASE_PATH}/${encodeURIComponent(locale)}/`;
+function frontierHomeHref(locale = currentLocale(), theme = state.theme || loadInitialTheme()) {
+  const href = locale === "en" ? `${PUBLIC_SITE_BASE_PATH}/` : `${PUBLIC_SITE_BASE_PATH}/${encodeURIComponent(locale)}/`;
+  const url = new URL(href, window.location.origin);
+  url.searchParams.set("theme", theme);
+  return `${url.pathname}${url.search}`;
+}
+
+function siteStateHref(href, locale = currentLocale(), theme = state.theme || loadInitialTheme()) {
+  const url = new URL(href, window.location.origin);
+  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+    url.searchParams.set("lang", locale);
+  }
+  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+    url.searchParams.set("theme", theme);
+  }
+  return `${url.pathname}${url.search}`;
 }
 
 function loadInitialTheme() {
@@ -3059,6 +3073,8 @@ function renderPortalReturnControl() {
   try {
     currentPath = decodeURIComponent(currentPath);
   } catch {}
+  const localeName = currentLocale();
+  const themeName = state.theme || loadInitialTheme();
   const items = [
     {
       href: "/",
@@ -3068,7 +3084,7 @@ function renderPortalReturnControl() {
       active: currentPath === "/",
     },
     {
-      href: "/academic/",
+      href: siteStateHref("/academic/", localeName, themeName),
       label: labels.academic.full,
       triggerLabel: labels.academic.short,
       icon: '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
@@ -3076,14 +3092,14 @@ function renderPortalReturnControl() {
       extraClass: "portal-chip--portrait",
     },
     {
-      href: frontierHomeHref(locale),
+      href: frontierHomeHref(localeName, themeName),
       label: labels.radar.full,
       triggerLabel: labels.radar.short,
       icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
       active: currentPath.startsWith(`${PUBLIC_SITE_BASE_PATH}/`),
     },
     {
-      href: "/jsps-kakenhi/",
+      href: siteStateHref("/jsps-kakenhi/", localeName, themeName),
       label: labels.jsps.full,
       triggerLabel: labels.jsps.short,
       icon: '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />',
@@ -3102,7 +3118,7 @@ function renderPortalReturnControl() {
 
   switcher.innerHTML = `
     <button
-      class="portal-trigger"
+      class="portal-trigger ${activeItem.extraClass || ""}"
       type="button"
       data-portal-trigger
       aria-haspopup="true"
@@ -3110,7 +3126,7 @@ function renderPortalReturnControl() {
       aria-label="${escapeHtml(activeItem.label)}"
       title="${escapeHtml(activeItem.label)}"
     >
-      ${portalHomeIconMarkup()}
+      ${activeItem.icon}
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
       ${items.map((item) => `
@@ -3488,6 +3504,7 @@ function applyTheme(themeName, persist = true) {
   const nextTheme = THEME_CATALOG[themeName] ? themeName : "tohoku";
   state.theme = nextTheme;
   document.documentElement.dataset.theme = nextTheme;
+  writeSessionValue(STORAGE_KEY_THEME, nextTheme);
 
   const themeColor = document.querySelector('meta[name="theme-color"]');
   if (themeColor) {
@@ -3511,8 +3528,8 @@ function applyTheme(themeName, persist = true) {
 
   window.HomepageSharedShell?.closeAllSwitchers?.();
 
-  if (persist) {
-    writeSessionValue(STORAGE_KEY_THEME, nextTheme);
+  if (!persist) {
+    return;
   }
 }
 
@@ -5044,6 +5061,8 @@ function renderAll() {
 function init() {
   state.language = loadInitialLanguage();
   state.theme = loadInitialTheme();
+  writeSessionValue(SESSION_KEY_LANGUAGE, state.language);
+  writeSessionValue(STORAGE_KEY_THEME, state.theme);
   state.focusPrompt = readStoredValue(STORAGE_KEY_FOCUS_PROMPT) || "";
   state.activeDomainId = chooseDefaultDomain();
   document.body.classList.add("is-ready");
