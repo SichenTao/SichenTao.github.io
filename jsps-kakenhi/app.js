@@ -5,6 +5,7 @@ const LEGACY_THEME_KEY = "kakenhi-portal-theme";
 const LOCALE_KEY = "sichen-homepage-locale";
 const LEGACY_LOCALE_KEY = "kakenhi-portal-locale";
 const FILTER_KEY = "kakenhi-portal-filters";
+const FILTER_SCHEMA_VERSION = 2;
 let topnavOverflowBound = false;
 let topnavMenuBound = false;
 let headerControlsPositionBound = false;
@@ -37,6 +38,8 @@ const I18N = {
       viewOfficial: "打开官方页面",
       viewSnapshot: "打开本地快照",
       nextDeadline: "下一截止",
+      opening: "开启",
+      deadlineLabel: "截止",
       updated: "官方页更新",
       status: "状态",
       group: "分组",
@@ -126,6 +129,7 @@ const I18N = {
       statusClosed: "已结束 / 参考 / 停止募集",
       groupAll: "全部分组",
       sortPriority: "按优先级",
+      sortDeadline: "按截止时间",
       sortTitle: "按标题",
       sortStatus: "按状态",
       quickAll: "全部",
@@ -260,6 +264,8 @@ const I18N = {
       viewOfficial: "Open official page",
       viewSnapshot: "Open local snapshot",
       nextDeadline: "Next deadline",
+      opening: "Opens",
+      deadlineLabel: "Deadline",
       updated: "Official page updated",
       status: "Status",
       group: "Group",
@@ -349,6 +355,7 @@ const I18N = {
       statusClosed: "Closed / reference / suspended",
       groupAll: "All groups",
       sortPriority: "Priority first",
+      sortDeadline: "By deadline",
       sortTitle: "By title",
       sortStatus: "By status",
       quickAll: "All",
@@ -485,6 +492,8 @@ I18N.ja = {
     viewOfficial: "公式ページを開く",
     viewSnapshot: "ローカルスナップショットを開く",
     nextDeadline: "次の締切",
+    opening: "受付開始",
+    deadlineLabel: "締切",
     updated: "公式ページ更新",
     status: "状態",
     group: "区分",
@@ -542,6 +551,7 @@ I18N.ja = {
     statusClosed: "終了 / 参考 / 募集停止",
     groupAll: "すべての区分",
     sortPriority: "優先順",
+    sortDeadline: "締切順",
     sortTitle: "タイトル順",
     sortStatus: "状態順",
     quickAll: "すべて",
@@ -714,14 +724,22 @@ function getStoredTheme() {
 
 function getStoredFilters() {
   const fallback = {
-    calls: { search: "", status: "all", group: "all", sort: "priority", quick: "all", selectedId: "" },
+    calls: { search: "", status: "all", group: "all", sort: "deadline", quick: "all", selectedId: "" },
     forms: { search: "", program: "all", sort: "code" },
   };
   try {
     const parsed = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
+    const calls = { ...fallback.calls, ...(parsed.calls || {}) };
+    const forms = { ...fallback.forms, ...(parsed.forms || {}) };
+    if (!["deadline", "priority", "title", "status"].includes(calls.sort)) {
+      calls.sort = "deadline";
+    }
+    if (parsed.version !== FILTER_SCHEMA_VERSION && calls.sort === "priority") {
+      calls.sort = "deadline";
+    }
     return {
-      calls: { ...fallback.calls, ...(parsed.calls || {}) },
-      forms: { ...fallback.forms, ...(parsed.forms || {}) },
+      calls,
+      forms,
     };
   } catch {
     return fallback;
@@ -730,7 +748,7 @@ function getStoredFilters() {
 
 function persistFilters() {
   try {
-    localStorage.setItem(FILTER_KEY, JSON.stringify(state.filters));
+    localStorage.setItem(FILTER_KEY, JSON.stringify({ version: FILTER_SCHEMA_VERSION, ...state.filters }));
   } catch {}
 }
 
@@ -1482,7 +1500,8 @@ function renderHomePage() {
     },
   ];
 
-  priorityGrid.innerHTML = programs
+  const previewPrograms = sortProgramsByDeadline(programs.slice());
+  priorityGrid.innerHTML = previewPrograms
     .map(
       (program) => `
         <article class="feature-card program-spotlight">
@@ -1491,7 +1510,7 @@ function renderHomePage() {
               <p class="eyebrow">${escapeHtml(localeField(program, "family_title"))}</p>
               <h3>${escapeHtml(localeField(program, "title"))}</h3>
             </div>
-            ${statusPill(program.status)}
+            ${timingPillCluster(program)}
           </div>
           <p>${escapeHtml(localeValue(program, "summary"))}</p>
           <p class="portal-subtle">${escapeHtml(localeValue(program, "eligibility"))}</p>
@@ -1595,7 +1614,7 @@ function renderCallsPage() {
     state.filters.calls.selectedId = hashId;
   }
   if (!state.filters.calls.selectedId && allEntries.length) {
-    const preferred = allEntries.find((entry) => entry.priority && entry.status === "open") || allEntries[0];
+    const preferred = sortCallEntries(allEntries.slice(), "deadline")[0] || allEntries[0];
     state.filters.calls.selectedId = preferred.id;
   }
 
@@ -1609,6 +1628,7 @@ function renderCallsPage() {
     .concat(groups.map((group) => optionHtml(group, displayGroupLabel(group), state.filters.calls.group)))
     .join("");
   sortFilter.innerHTML = [
+    optionHtml("deadline", t("calls.sortDeadline"), state.filters.calls.sort),
     optionHtml("priority", t("calls.sortPriority"), state.filters.calls.sort),
     optionHtml("title", t("calls.sortTitle"), state.filters.calls.sort),
     optionHtml("status", t("calls.sortStatus"), state.filters.calls.sort),
@@ -1640,7 +1660,7 @@ function renderCallsPage() {
         search: "",
         status: "all",
         group: "all",
-        sort: "priority",
+        sort: "deadline",
         quick: "all",
         selectedId: state.filters.calls.selectedId,
       };
@@ -1705,19 +1725,7 @@ function renderCallsPage() {
     return matchesSearch && matchesStatus && matchesGroup;
   });
 
-  filtered = filtered.sort((left, right) => {
-    if (state.filters.calls.sort === "title") {
-      return localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
-    }
-    if (state.filters.calls.sort === "status") {
-      return left.status.localeCompare(right.status, "en") || localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
-    }
-    return (
-      Number(right.priority) - Number(left.priority) ||
-      statusWeight(left.status) - statusWeight(right.status) ||
-      localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en")
-    );
-  });
+  filtered = sortCallEntries(filtered, state.filters.calls.sort);
 
   if (!filtered.some((entry) => entry.id === state.filters.calls.selectedId)) {
     state.filters.calls.selectedId = filtered[0]?.id || "";
@@ -1741,7 +1749,7 @@ function renderCallsPage() {
                   <span class="eyebrow">${escapeHtml(localeField(entry, "subtitle") || displayGroupLabel(entry.group))}</span>
                   <strong>${escapeHtml(localeField(entry, "title"))}</strong>
                 </span>
-                ${statusPill(entry.status)}
+                ${timingPillCluster(entry)}
               </span>
               <span class="portal-select-body">${escapeHtml(localeValue(entry, "summary"))}</span>
               <span class="portal-select-meta">
@@ -1778,7 +1786,7 @@ function renderCallDetail(entry) {
           <p class="eyebrow">${escapeHtml(displayGroupLabel(entry.group))}</p>
           <h3>${escapeHtml(localeField(entry, "title"))}</h3>
         </div>
-        ${statusPill(entry.status)}
+        ${timingPillCluster(entry)}
       </div>
       <p>${escapeHtml(localeValue(entry, "summary"))}</p>
       <div class="meta-strip">
@@ -1847,7 +1855,7 @@ function renderCallDetail(entry) {
           <p class="eyebrow">${escapeHtml(displayGroupLabel(entry.group))}</p>
           <h3>${escapeHtml(localeField(entry, "title"))}</h3>
         </div>
-        ${statusPill(entry.status)}
+        ${timingPillCluster(entry)}
       </div>
       <p>${escapeHtml(localeValue(entry, "summary"))}</p>
       <div class="meta-strip">
@@ -1876,13 +1884,14 @@ function renderCallDetail(entry) {
         <p class="eyebrow">${escapeHtml(localeField(program, "family_title"))}</p>
         <h3>${escapeHtml(localeField(program, "title"))}</h3>
       </div>
-      ${statusPill(program.status)}
+      ${timingPillCluster(program)}
     </div>
     <p>${escapeHtml(localeValue(program, "summary"))}</p>
     <p class="portal-subtle">${escapeHtml(localeValue(program, "eligibility"))}</p>
     <div class="meta-strip">
       ${metaPill(`${t("common.updated")} ${program.page_last_updated || "--"}`)}
-      ${program.submission_deadline ? metaPill(`${t("common.nextDeadline")} ${formatDate(program.submission_deadline)}`) : ""}
+      ${deadlineDisplay(program) ? metaPill(`${t("common.nextDeadline")} ${deadlineDisplay(program)}`) : ""}
+      ${callOpenDisplay(program) ? metaPill(`${t("common.opening")} ${callOpenDisplay(program)}`) : ""}
     </div>
     <div class="portal-detail-block">
       <h4>${t("calls.officialLinks")}</h4>
@@ -2437,6 +2446,122 @@ function statusWeight(status) {
 
 function statusPill(status) {
   return `<span class="meta-pill portal-status-pill portal-status-${status}">${escapeHtml(t(`status.${status}`))}</span>`;
+}
+
+function dateSortNumber(value, fallback = Number.POSITIVE_INFINITY) {
+  if (!value) {
+    return fallback;
+  }
+  return new Date(`${value}T00:00:00+09:00`).getTime();
+}
+
+function deadlineDate(record) {
+  if (!record) {
+    return "";
+  }
+  if (record.submission_deadline) {
+    return record.submission_deadline;
+  }
+  if (record.deadline_at) {
+    return String(record.deadline_at).slice(0, 10);
+  }
+  return "";
+}
+
+function deadlineDisplay(record) {
+  const value = deadlineDate(record);
+  return value ? formatDate(value) : "";
+}
+
+function compareTitle(left, right) {
+  return localeField(left, "title").localeCompare(
+    localeField(right, "title"),
+    state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en",
+  );
+}
+
+function compareByDeadline(left, right) {
+  const leftOpen = left.status === "open";
+  const rightOpen = right.status === "open";
+  if (leftOpen !== rightOpen) {
+    return leftOpen ? -1 : 1;
+  }
+
+  const leftDeadlineDate = deadlineDate(left);
+  const rightDeadlineDate = deadlineDate(right);
+  const leftHasDeadline = Boolean(leftDeadlineDate);
+  const rightHasDeadline = Boolean(rightDeadlineDate);
+  if (leftHasDeadline !== rightHasDeadline) {
+    return leftHasDeadline ? -1 : 1;
+  }
+
+  if (leftHasDeadline && rightHasDeadline) {
+    const leftDeadline = dateSortNumber(leftDeadlineDate);
+    const rightDeadline = dateSortNumber(rightDeadlineDate);
+    const diff = leftOpen ? leftDeadline - rightDeadline : rightDeadline - leftDeadline;
+    if (diff) {
+      return diff;
+    }
+  }
+
+  return Number(right.priority) - Number(left.priority) || statusWeight(left.status) - statusWeight(right.status) || compareTitle(left, right);
+}
+
+function compareByPriority(left, right) {
+  return Number(right.priority) - Number(left.priority) || compareByDeadline(left, right) || compareTitle(left, right);
+}
+
+function compareByStatus(left, right) {
+  return statusWeight(left.status) - statusWeight(right.status) || compareByDeadline(left, right) || compareTitle(left, right);
+}
+
+function sortCallEntries(entries, sortMode = "deadline") {
+  return entries.sort((left, right) => {
+    if (sortMode === "title") {
+      return compareTitle(left, right);
+    }
+    if (sortMode === "status") {
+      return compareByStatus(left, right);
+    }
+    if (sortMode === "priority") {
+      return compareByPriority(left, right);
+    }
+    return compareByDeadline(left, right);
+  });
+}
+
+function sortProgramsByDeadline(programs) {
+  return programs.sort((left, right) => compareByDeadline(left, right));
+}
+
+function timingInfoPill(label, value, tone = "default") {
+  return `<span class="meta-pill portal-date-pill portal-date-pill-${tone}">${escapeHtml(label)} ${escapeHtml(value)}</span>`;
+}
+
+function callOpenDisplay(record) {
+  if (!record) {
+    return "";
+  }
+  if (record.call_open_date) {
+    return formatDate(record.call_open_date);
+  }
+  return localeValue(record, "call_open_label");
+}
+
+function timingPillCluster(record) {
+  if (!record) {
+    return "";
+  }
+  const items = [statusPill(record.status)];
+  const deadline = deadlineDisplay(record);
+  if (deadline) {
+    items.push(timingInfoPill(t("common.deadlineLabel"), deadline, "deadline"));
+  }
+  const openDisplay = callOpenDisplay(record);
+  if (openDisplay) {
+    items.push(timingInfoPill(t("common.opening"), openDisplay, "opening"));
+  }
+  return `<span class="portal-head-meta">${items.join("")}</span>`;
 }
 
 function metricCard(label, value) {
