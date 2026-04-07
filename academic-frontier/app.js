@@ -1161,14 +1161,19 @@ const PATTERN_TRANSLATORS = [
 ];
 
 function loadInitialLanguage() {
-  const explicitLocale = pageLocale();
-  if (explicitLocale && UI_TEXT[explicitLocale]) {
-    return explicitLocale;
-  }
-
   const sessionLocale = readSessionValue(SESSION_KEY_LANGUAGE);
   if (sessionLocale && UI_TEXT[sessionLocale]) {
     return sessionLocale;
+  }
+
+  const storedLocale = readStoredValue(STORAGE_KEY_LANGUAGE) || readStoredValue(STORAGE_KEY_LOCAL_LANGUAGE);
+  if (storedLocale && UI_TEXT[storedLocale]) {
+    return storedLocale;
+  }
+
+  const explicitLocale = pageLocale();
+  if (explicitLocale && UI_TEXT[explicitLocale]) {
+    return explicitLocale;
   }
   return "en";
 }
@@ -1311,10 +1316,13 @@ function pageHref(page = currentPage(), locale = pageLocale()) {
 }
 
 function localePageHref(targetLocale, page = currentPage()) {
-  if (window.ACADEMIC_FRONTIER_LOCALE_HREFS?.[targetLocale]) {
-    return window.ACADEMIC_FRONTIER_LOCALE_HREFS[targetLocale];
+  const href = window.ACADEMIC_FRONTIER_LOCALE_HREFS?.[targetLocale] || pageHref(page, targetLocale);
+  const url = new URL(href, window.location.origin);
+  const themeName = state.theme || loadInitialTheme();
+  if (themeName && THEME_CATALOG[themeName]) {
+    url.searchParams.set("theme", themeName);
   }
-  return pageHref(page, targetLocale);
+  return `${url.pathname}${url.search}`;
 }
 
 function assetBasePath() {
