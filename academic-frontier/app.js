@@ -95,6 +95,42 @@ function removeSelectionValue(currentValues, value) {
   return selectionList(currentValues).filter((item) => item !== value);
 }
 
+function toggleSelectionValue(currentValues, value) {
+  if (!value || value === "all" || value === MULTI_SELECT_ACTIVE_VALUE) {
+    return selectionList(currentValues);
+  }
+  return selectionList(currentValues).includes(value)
+    ? removeSelectionValue(currentValues, value)
+    : appendSelectionValue(currentValues, value);
+}
+
+function previewSelectionValues(currentValues, value) {
+  return toggleSelectionValue(currentValues, value);
+}
+
+function toggleMenuSelection(currentValues, value, selectionState, category) {
+  if (!value || value === MULTI_SELECT_ACTIVE_VALUE) {
+    return selectionList(currentValues);
+  }
+  if (value === "all") {
+    setExplicitAllSelection(selectionState, category, true);
+    return [];
+  }
+  const nextValues = toggleSelectionValue(currentValues, value);
+  setExplicitAllSelection(selectionState, category, nextValues.length === 0);
+  return nextValues;
+}
+
+function removeTagSelection(currentValues, value, selectionState, category) {
+  if (value === "all") {
+    setExplicitAllSelection(selectionState, category, false);
+    return selectionList(currentValues);
+  }
+  const nextValues = removeSelectionValue(currentValues, value);
+  setExplicitAllSelection(selectionState, category, nextValues.length === 0);
+  return nextValues;
+}
+
 function tagEntriesForSelection(category, currentValues, explicitAll = false) {
   if (explicitAll) return [{ category, value: "all" }];
   return selectionList(currentValues).map((value) => ({ category, value }));
@@ -247,8 +283,8 @@ const UI_TEXT = {
     resetLabel: "Reset",
     selectedYearsLabel: "Selected Years",
     selectedTypesLabel: "Selected Types",
-    selectedProblemsLabel: "Selected Problem Fields",
-    selectedMethodsLabel: "Selected Method Fields",
+    selectedProblemsLabel: "Selected Problems",
+    selectedMethodsLabel: "Selected Methods",
     selectedJcrLabel: "Selected JCR",
     selectedCasLabel: "Selected CAS",
     selectedCasTopLabel: "Selected Top",
@@ -256,8 +292,8 @@ const UI_TEXT = {
     selectedAuthorsLabel: "Selected Authors",
     yearOptionAll: "All years",
     typeOptionAll: "All types",
-    problemFieldPlaceholder: "All problem fields",
-    methodFieldPlaceholder: "All method fields",
+    problemFieldPlaceholder: "All Problem",
+    methodFieldPlaceholder: "All Method",
     jcrOptionAll: "All JCR",
     casOptionAll: "All CAS",
     casTopOptionAll: "All Top",
@@ -472,8 +508,8 @@ const UI_TEXT = {
     resetLabel: "重置",
     selectedYearsLabel: "已选年份",
     selectedTypesLabel: "已选类型",
-    selectedProblemsLabel: "已选问题领域",
-    selectedMethodsLabel: "已选方法领域",
+    selectedProblemsLabel: "已选问题",
+    selectedMethodsLabel: "已选方法",
     selectedJcrLabel: "已选 JCR",
     selectedCasLabel: "已选中科院",
     selectedCasTopLabel: "已选 Top",
@@ -697,8 +733,8 @@ const UI_TEXT = {
     resetLabel: "リセット",
     selectedYearsLabel: "選択中の年度",
     selectedTypesLabel: "選択中の種別",
-    selectedProblemsLabel: "選択中の問題領域",
-    selectedMethodsLabel: "選択中の手法領域",
+    selectedProblemsLabel: "選択中の問題",
+    selectedMethodsLabel: "選択中の手法",
     selectedJcrLabel: "選択中の JCR",
     selectedCasLabel: "選択中の CAS",
     selectedCasTopLabel: "選択中の Top",
@@ -2390,6 +2426,83 @@ function researchYearBounds(papers = papersForDomain()) {
   return { years, minYear, maxYear };
 }
 
+function normalizedResearchYearRange(bounds = researchYearBounds()) {
+  const { minYear, maxYear } = bounds;
+  const start = Number.parseInt(state.researchYearStart, 10);
+  const end = Number.parseInt(state.researchYearEnd, 10);
+  const safeStart = Number.isFinite(start) ? Math.min(Math.max(start, minYear), maxYear) : minYear;
+  const safeEnd = Number.isFinite(end) ? Math.min(Math.max(end, minYear), maxYear) : maxYear;
+  const normalizedStart = Math.min(safeStart, safeEnd);
+  const normalizedEnd = Math.max(safeStart, safeEnd);
+  return {
+    minYear,
+    maxYear,
+    start: normalizedStart,
+    end: state.researchYearOpenEnded ? maxYear : normalizedEnd,
+  };
+}
+
+function syncResearchYearState(bounds = researchYearBounds()) {
+  const normalized = normalizedResearchYearRange(bounds);
+  state.researchYearStart = String(normalized.start);
+  state.researchYearEnd = String(normalized.end);
+  return normalized;
+}
+
+function setResearchYearControlValue(controlId, rawValue) {
+  const { minYear, maxYear } = researchYearBounds();
+  const parsedValue = Number.parseInt(String(rawValue || ""), 10);
+  if (!Number.isFinite(parsedValue)) return false;
+  const safeValue = Math.min(Math.max(parsedValue, minYear), maxYear);
+
+  if (controlId === "research-year-start" || controlId === "research-year-start-input") {
+    state.researchYearStart = String(safeValue);
+    if (Number.parseInt(state.researchYearStart, 10) > Number.parseInt(state.researchYearEnd, 10)) {
+      state.researchYearEnd = state.researchYearStart;
+    }
+  } else if (controlId === "research-year-end" || controlId === "research-year-end-input") {
+    state.researchYearOpenEnded = false;
+    state.researchYearEnd = String(safeValue);
+    if (Number.parseInt(state.researchYearEnd, 10) < Number.parseInt(state.researchYearStart, 10)) {
+      state.researchYearStart = state.researchYearEnd;
+    }
+  } else {
+    return false;
+  }
+
+  syncResearchYearState({ minYear, maxYear });
+  return true;
+}
+
+function updateResearchYearRangePreview(bounds = researchYearBounds()) {
+  const normalized = syncResearchYearState(bounds);
+  const intervalDisplay = document.querySelector("[data-research-year-interval]");
+  const startSlider = byId("research-year-start");
+  const endSlider = byId("research-year-end");
+  const startInput = byId("research-year-start-input");
+  const endInput = byId("research-year-end-input");
+  const fill = document.querySelector(".research-range-track-fill");
+  const openEndedNote = document.querySelector("[data-research-year-open-note]");
+
+  if (intervalDisplay) {
+    intervalDisplay.textContent = researchYearIntervalLabel(state.researchYearStart, state.researchYearEnd, state.researchYearOpenEnded);
+  }
+  if (startSlider) startSlider.value = state.researchYearStart;
+  if (endSlider) endSlider.value = state.researchYearEnd;
+  if (startInput) startInput.value = state.researchYearStart;
+  if (endInput) {
+    endInput.value = state.researchYearEnd;
+    endInput.disabled = state.researchYearOpenEnded;
+  }
+  if (fill) {
+    fill.style.left = `${researchYearPercent(normalized.start, normalized.minYear, normalized.maxYear)}%`;
+    fill.style.right = `${100 - researchYearPercent(normalized.end, normalized.minYear, normalized.maxYear)}%`;
+  }
+  if (openEndedNote) {
+    openEndedNote.textContent = state.researchYearOpenEnded ? ui("researchPresentLabel") : "";
+  }
+}
+
 function researchYearIntervalLabel(start, end, openEnded = state.researchYearOpenEnded) {
   if (!start) return "";
   return `${start} - ${openEnded ? ui("researchPresentLabel") : end}`;
@@ -2452,15 +2565,7 @@ function syncResearchLauncherState(papers = papersForDomain()) {
     setExplicitAllSelection(state.researchExplicitAll, "impact", false);
   }
 
-  const start = Number.parseInt(state.researchYearStart, 10);
-  const end = Number.parseInt(state.researchYearEnd, 10);
-  const safeStart = Number.isFinite(start) ? Math.min(Math.max(start, minYear), maxYear) : minYear;
-  const safeEnd = Number.isFinite(end) ? Math.min(Math.max(end, minYear), maxYear) : maxYear;
-  const normalizedStart = Math.min(safeStart, safeEnd);
-  const normalizedEnd = Math.max(safeStart, safeEnd);
-
-  state.researchYearStart = String(normalizedStart);
-  state.researchYearEnd = String(state.researchYearOpenEnded ? maxYear : normalizedEnd);
+  syncResearchYearState({ minYear, maxYear });
 
   return {
     years,
@@ -2519,59 +2624,31 @@ function removeResearchSelectedTag(entry) {
   if (!entry?.category) return;
 
   if (entry.category === "problem") {
-    if (entry.value === "all") {
-      setExplicitAllSelection(state.researchExplicitAll, "problem", false);
-    } else {
-      state.researchProblemFieldFilters = removeSelectionValue(state.researchProblemFieldFilters, entry.value);
-    }
+    state.researchProblemFieldFilters = removeTagSelection(state.researchProblemFieldFilters, entry.value, state.researchExplicitAll, "problem");
     return;
   }
   if (entry.category === "method") {
-    if (entry.value === "all") {
-      setExplicitAllSelection(state.researchExplicitAll, "method", false);
-    } else {
-      state.researchMethodFieldFilters = removeSelectionValue(state.researchMethodFieldFilters, entry.value);
-    }
+    state.researchMethodFieldFilters = removeTagSelection(state.researchMethodFieldFilters, entry.value, state.researchExplicitAll, "method");
     return;
   }
   if (entry.category === "jcr") {
-    if (entry.value === "all") {
-      setExplicitAllSelection(state.researchExplicitAll, "jcr", false);
-    } else {
-      state.researchJcrFilter = removeSelectionValue(state.researchJcrFilter, entry.value);
-    }
+    state.researchJcrFilter = removeTagSelection(state.researchJcrFilter, entry.value, state.researchExplicitAll, "jcr");
     return;
   }
   if (entry.category === "cas") {
-    if (entry.value === "all") {
-      setExplicitAllSelection(state.researchExplicitAll, "cas", false);
-    } else {
-      state.researchCasFilter = removeSelectionValue(state.researchCasFilter, entry.value);
-    }
+    state.researchCasFilter = removeTagSelection(state.researchCasFilter, entry.value, state.researchExplicitAll, "cas");
     return;
   }
   if (entry.category === "casTop") {
-    if (entry.value === "all") {
-      setExplicitAllSelection(state.researchExplicitAll, "casTop", false);
-    } else {
-      state.researchCasTopFilter = removeSelectionValue(state.researchCasTopFilter, entry.value);
-    }
+    state.researchCasTopFilter = removeTagSelection(state.researchCasTopFilter, entry.value, state.researchExplicitAll, "casTop");
     return;
   }
   if (entry.category === "impact") {
-    if (entry.value === "all") {
-      setExplicitAllSelection(state.researchExplicitAll, "impact", false);
-    } else {
-      state.researchImpactFilter = removeSelectionValue(state.researchImpactFilter, entry.value);
-    }
+    state.researchImpactFilter = removeTagSelection(state.researchImpactFilter, entry.value, state.researchExplicitAll, "impact");
     return;
   }
   if (entry.category === "author") {
-    if (entry.value === "all") {
-      setExplicitAllSelection(state.researchExplicitAll, "author", false);
-    } else {
-      state.researchAuthorFilter = removeSelectionValue(state.researchAuthorFilter, entry.value);
-    }
+    state.researchAuthorFilter = removeTagSelection(state.researchAuthorFilter, entry.value, state.researchExplicitAll, "author");
     return;
   }
   if (entry.category === "yearRange") {
@@ -2748,7 +2825,6 @@ function renderDirectionWorkspace() {
     papersForDomain().filter((paper) => paperMatchesResearchFilters(paper, overrides)).length;
   const yearStart = Number.parseInt(state.researchYearStart, 10) || launcher.minYear;
   const yearEnd = Number.parseInt(state.researchYearEnd, 10) || launcher.maxYear;
-  const displayedYearEnd = state.researchYearOpenEnded ? ui("researchPresentLabel") : state.researchYearEnd;
   const rangeStartPct = researchYearPercent(yearStart, launcher.minYear, launcher.maxYear);
   const rangeEndPct = researchYearPercent(yearEnd, launcher.minYear, launcher.maxYear);
   const yearIntervalLabel = researchYearIntervalLabel(state.researchYearStart, state.researchYearEnd, state.researchYearOpenEnded);
@@ -2772,41 +2848,41 @@ function renderDirectionWorkspace() {
               <select id="research-problem-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length))}</option>
                 ${launcher.problemFields
-                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: appendSelectionValue(state.researchProblemFieldFilters, field) })))}</option>`)
+                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: previewSelectionValues(state.researchProblemFieldFilters, field) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-method-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), launcher.methodFields.length))}</option>
                 ${launcher.methodFields
-                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: appendSelectionValue(state.researchMethodFieldFilters, field) })))}</option>`)
+                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: previewSelectionValues(state.researchMethodFieldFilters, field) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-jcr-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchFacetCount({ jcr: "all" })))}</option>
                 ${launcher.jcrBands
-                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: appendSelectionValue(state.researchJcrFilter, band) })))}</option>`)
+                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: previewSelectionValues(state.researchJcrFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-cas-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casOptionAll"), researchFacetCount({ cas: "all" })))}</option>
                 ${launcher.casBands
-                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: appendSelectionValue(state.researchCasFilter, band) })))}</option>`)
+                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: previewSelectionValues(state.researchCasFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-cas-top-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchFacetCount({ casTop: "all" })))}</option>
-                <option value="top">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: appendSelectionValue(state.researchCasTopFilter, "top") })))}</option>
+                <option value="top">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: previewSelectionValues(state.researchCasTopFilter, "top") })))}</option>
               </select>
               <select id="research-impact-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("impactOptionAll"), researchFacetCount({ impact: "all" })))}</option>
                 ${launcher.impactBands
-                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: appendSelectionValue(state.researchImpactFilter, band) })))}</option>`)
+                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: previewSelectionValues(state.researchImpactFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-author-filter" class="input">
                 <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("teamOptionAll"), researchFacetCount({ team: "all" })))}</option>
                 ${launcher.authors
-                  .map((author) => `<option value="${escapeHtml(author)}">${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: appendSelectionValue(state.researchAuthorFilter, author) })))}</option>`)
+                  .map((author) => `<option value="${escapeHtml(author)}">${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: previewSelectionValues(state.researchAuthorFilter, author) })))}</option>`)
                   .join("")}
               </select>
             </div>
@@ -2816,14 +2892,19 @@ function renderDirectionWorkspace() {
             <div class="field-hash-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="field-hash-selection"><span class="field-hash-tag">#${escapeHtml(researchSelectedTagLabel(entry))}</span><button class="field-hash-remove-button" type="button" data-remove-research-tag="${escapeHtml(String(entry.value || ""))}" data-research-tag-category="${escapeHtml(entry.category)}" aria-label="Remove #${escapeHtml(researchSelectedTagLabel(entry))}">×</button></span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
           </div>
           <div class="investigation-launcher-section">
-            <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag">${escapeHtml(yearIntervalLabel)}</span></div>
+            <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag" data-research-year-interval>${escapeHtml(yearIntervalLabel)}</span></div>
             <div class="research-range-control research-range-control-merged" role="group" aria-label="${escapeHtml(ui("researchYearRangeLabel"))}">
               <div class="research-range-summary">
-                <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
-                <span class="research-range-value">${escapeHtml(state.researchYearStart)}</span>
+                <label class="research-range-number-group" for="research-year-start-input">
+                  <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
+                  <input id="research-year-start-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
+                </label>
                 <span class="research-range-separator">-</span>
-                <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
-                <span class="research-range-value">${escapeHtml(displayedYearEnd)}</span>
+                <label class="research-range-number-group" for="research-year-end-input">
+                  <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
+                  <input id="research-year-end-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"${state.researchYearOpenEnded ? " disabled" : ""}/>
+                </label>
+                <span class="research-range-open-note" data-research-year-open-note>${state.researchYearOpenEnded ? escapeHtml(ui("researchPresentLabel")) : ""}</span>
               </div>
               <div class="research-range-track">
                 <span class="research-range-track-fill" style="left:${escapeHtml(String(rangeStartPct))}%;right:${escapeHtml(String(100 - rangeEndPct))}%"></span>
@@ -2875,7 +2956,7 @@ function renderDirectionWorkspace() {
         value: field,
         label: formatPaperFilterOptionLabel(
           localizeText(field),
-          researchFacetCount({ problemTags: appendSelectionValue(state.researchProblemFieldFilters, field) })
+          researchFacetCount({ problemTags: previewSelectionValues(state.researchProblemFieldFilters, field) })
         ),
       })),
     ], state.researchProblemFieldFilters, state.researchExplicitAll.problem, "selectedProblemsLabel"),
@@ -2889,7 +2970,7 @@ function renderDirectionWorkspace() {
         value: field,
         label: formatPaperFilterOptionLabel(
           localizeText(field),
-          researchFacetCount({ methodTags: appendSelectionValue(state.researchMethodFieldFilters, field) })
+          researchFacetCount({ methodTags: previewSelectionValues(state.researchMethodFieldFilters, field) })
         ),
       })),
     ], state.researchMethodFieldFilters, state.researchExplicitAll.method, "selectedMethodsLabel"),
@@ -2903,7 +2984,7 @@ function renderDirectionWorkspace() {
         value: band,
         label: formatPaperFilterOptionLabel(
           jcrFilterTagLabel(band),
-          researchFacetCount({ jcr: appendSelectionValue(state.researchJcrFilter, band) })
+          researchFacetCount({ jcr: previewSelectionValues(state.researchJcrFilter, band) })
         ),
       })),
     ], state.researchJcrFilter, state.researchExplicitAll.jcr, "selectedJcrLabel"),
@@ -2917,7 +2998,7 @@ function renderDirectionWorkspace() {
         value: band,
         label: formatPaperFilterOptionLabel(
           casFilterTagLabel(band),
-          researchFacetCount({ cas: appendSelectionValue(state.researchCasFilter, band) })
+          researchFacetCount({ cas: previewSelectionValues(state.researchCasFilter, band) })
         ),
       })),
     ], state.researchCasFilter, state.researchExplicitAll.cas, "selectedCasLabel"),
@@ -2931,7 +3012,7 @@ function renderDirectionWorkspace() {
         value: "top",
         label: formatPaperFilterOptionLabel(
           ui("casTopOption"),
-          researchFacetCount({ casTop: appendSelectionValue(state.researchCasTopFilter, "top") })
+          researchFacetCount({ casTop: previewSelectionValues(state.researchCasTopFilter, "top") })
         ),
       },
     ], state.researchCasTopFilter, state.researchExplicitAll.casTop, "selectedCasTopLabel"),
@@ -2945,7 +3026,7 @@ function renderDirectionWorkspace() {
         value: band,
         label: formatPaperFilterOptionLabel(
           impactFilterTagLabel(band),
-          researchFacetCount({ impact: appendSelectionValue(state.researchImpactFilter, band) })
+          researchFacetCount({ impact: previewSelectionValues(state.researchImpactFilter, band) })
         ),
       })),
     ], state.researchImpactFilter, state.researchExplicitAll.impact, "selectedImpactLabel"),
@@ -2959,7 +3040,7 @@ function renderDirectionWorkspace() {
         value: author,
         label: formatPaperFilterOptionLabel(
           author,
-          researchFacetCount({ team: appendSelectionValue(state.researchAuthorFilter, author) })
+          researchFacetCount({ team: previewSelectionValues(state.researchAuthorFilter, author) })
         ),
       })),
     ], state.researchAuthorFilter, state.researchExplicitAll.author, "selectedAuthorsLabel"),
@@ -4504,13 +4585,13 @@ function renderPaperControls() {
 
   syncSelectOptions(yearFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), allYearCount) },
-    ...years.map((year) => ({ value: year, label: formatPaperFilterOptionLabel(year, facetCount({ year: appendSelectionValue(state.yearFilter, year) })) })),
+    ...years.map((year) => ({ value: year, label: formatPaperFilterOptionLabel(year, facetCount({ year: previewSelectionValues(state.yearFilter, year) })) })),
   ], state.yearFilter, state.paperExplicitAll.year, "selectedYearsLabel"), multiSelectDisplayValue(state.yearFilter, state.paperExplicitAll.year));
 
   syncSelectOptions(typeFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), allTypeCount) },
-    { value: "journal", label: formatPaperFilterOptionLabel(ui("typeOptionJournal"), facetCount({ type: appendSelectionValue(state.typeFilter, "journal") })) },
-    { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: appendSelectionValue(state.typeFilter, "conference") })) },
+    { value: "journal", label: formatPaperFilterOptionLabel(ui("typeOptionJournal"), facetCount({ type: previewSelectionValues(state.typeFilter, "journal") })) },
+    { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: previewSelectionValues(state.typeFilter, "conference") })) },
   ], state.typeFilter, state.paperExplicitAll.type, "selectedTypesLabel"), multiSelectDisplayValue(state.typeFilter, state.paperExplicitAll.type));
 
   syncSelectOptions(problemFilter, multiSelectDisplayOptions([
@@ -4520,7 +4601,7 @@ function renderPaperControls() {
         value: field,
         label: formatPaperFilterOptionLabel(
           localizeText(field),
-          facetCount({ problemTags: appendSelectionValue(state.problemFieldFilters, field) })
+          facetCount({ problemTags: previewSelectionValues(state.problemFieldFilters, field) })
         ),
       })),
   ], state.problemFieldFilters, state.paperExplicitAll.problem, "selectedProblemsLabel"), multiSelectDisplayValue(state.problemFieldFilters, state.paperExplicitAll.problem));
@@ -4532,7 +4613,7 @@ function renderPaperControls() {
         value: field,
         label: formatPaperFilterOptionLabel(
           localizeText(field),
-          facetCount({ methodTags: appendSelectionValue(state.methodFieldFilters, field) })
+          facetCount({ methodTags: previewSelectionValues(state.methodFieldFilters, field) })
         ),
       })),
   ], state.methodFieldFilters, state.paperExplicitAll.method, "selectedMethodsLabel"), multiSelectDisplayValue(state.methodFieldFilters, state.paperExplicitAll.method));
@@ -4541,7 +4622,7 @@ function renderPaperControls() {
     { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), allJcrCount) },
     ...jcrBands.map((band) => ({
       value: band,
-      label: formatPaperFilterOptionLabel(jcrFilterTagLabel(band), facetCount({ jcr: appendSelectionValue(state.jcrFilter, band) })),
+      label: formatPaperFilterOptionLabel(jcrFilterTagLabel(band), facetCount({ jcr: previewSelectionValues(state.jcrFilter, band) })),
     })),
   ], state.jcrFilter, state.paperExplicitAll.jcr, "selectedJcrLabel"), multiSelectDisplayValue(state.jcrFilter, state.paperExplicitAll.jcr));
 
@@ -4549,7 +4630,7 @@ function renderPaperControls() {
     { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), allCasCount) },
     ...casBands.map((band) => ({
       value: band,
-      label: formatPaperFilterOptionLabel(casFilterTagLabel(band), facetCount({ cas: appendSelectionValue(state.casFilter, band) })),
+      label: formatPaperFilterOptionLabel(casFilterTagLabel(band), facetCount({ cas: previewSelectionValues(state.casFilter, band) })),
     })),
   ], state.casFilter, state.paperExplicitAll.cas, "selectedCasLabel"), multiSelectDisplayValue(state.casFilter, state.paperExplicitAll.cas));
 
@@ -4557,7 +4638,7 @@ function renderPaperControls() {
     { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), allCasTopCount) },
     ...casTopBands.map((band) => ({
       value: band,
-      label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: appendSelectionValue(state.casTopFilter, band) })),
+      label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: previewSelectionValues(state.casTopFilter, band) })),
     })),
   ], state.casTopFilter, state.paperExplicitAll.casTop, "selectedCasTopLabel"), multiSelectDisplayValue(state.casTopFilter, state.paperExplicitAll.casTop));
 
@@ -4565,13 +4646,13 @@ function renderPaperControls() {
     { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), allImpactCount) },
     ...impactBands.map((band) => ({
       value: band,
-      label: formatPaperFilterOptionLabel(impactFilterTagLabel(band), facetCount({ impact: appendSelectionValue(state.impactFilter, band) })),
+      label: formatPaperFilterOptionLabel(impactFilterTagLabel(band), facetCount({ impact: previewSelectionValues(state.impactFilter, band) })),
     })),
   ], state.impactFilter, state.paperExplicitAll.impact, "selectedImpactLabel"), multiSelectDisplayValue(state.impactFilter, state.paperExplicitAll.impact));
 
   syncSelectOptions(teamFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), allTeamCount) },
-    ...authors.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team: appendSelectionValue(state.teamFilter, team) })) })),
+    ...authors.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team: previewSelectionValues(state.teamFilter, team) })) })),
   ], state.teamFilter, state.paperExplicitAll.team, "selectedAuthorsLabel"), multiSelectDisplayValue(state.teamFilter, state.paperExplicitAll.team));
 
   syncSelectOptions(sortFilter, [
@@ -4975,117 +5056,63 @@ function bindControls() {
 
   yearFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.yearFilter = [];
-      setExplicitAllSelection(state.paperExplicitAll, "year", true);
-    } else {
-      state.yearFilter = appendSelectionValue(state.yearFilter, value);
-      setExplicitAllSelection(state.paperExplicitAll, "year", false);
-    }
+    state.yearFilter = toggleMenuSelection(state.yearFilter, value, state.paperExplicitAll, "year");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   typeFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.typeFilter = [];
-      setExplicitAllSelection(state.paperExplicitAll, "type", true);
-    } else {
-      state.typeFilter = appendSelectionValue(state.typeFilter, value);
-      setExplicitAllSelection(state.paperExplicitAll, "type", false);
-    }
+    state.typeFilter = toggleMenuSelection(state.typeFilter, value, state.paperExplicitAll, "type");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   problemFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.problemFieldFilters = [];
-      setExplicitAllSelection(state.paperExplicitAll, "problem", true);
-    } else if (value && !state.problemFieldFilters.includes(value)) {
-      state.problemFieldFilters = [...state.problemFieldFilters, value];
-      setExplicitAllSelection(state.paperExplicitAll, "problem", false);
-    }
+    state.problemFieldFilters = toggleMenuSelection(state.problemFieldFilters, value, state.paperExplicitAll, "problem");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   methodFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.methodFieldFilters = [];
-      setExplicitAllSelection(state.paperExplicitAll, "method", true);
-    } else if (value && !state.methodFieldFilters.includes(value)) {
-      state.methodFieldFilters = [...state.methodFieldFilters, value];
-      setExplicitAllSelection(state.paperExplicitAll, "method", false);
-    }
+    state.methodFieldFilters = toggleMenuSelection(state.methodFieldFilters, value, state.paperExplicitAll, "method");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   jcrFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.jcrFilter = [];
-      setExplicitAllSelection(state.paperExplicitAll, "jcr", true);
-    } else {
-      state.jcrFilter = appendSelectionValue(state.jcrFilter, value);
-      setExplicitAllSelection(state.paperExplicitAll, "jcr", false);
-    }
+    state.jcrFilter = toggleMenuSelection(state.jcrFilter, value, state.paperExplicitAll, "jcr");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   casFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.casFilter = [];
-      setExplicitAllSelection(state.paperExplicitAll, "cas", true);
-    } else {
-      state.casFilter = appendSelectionValue(state.casFilter, value);
-      setExplicitAllSelection(state.paperExplicitAll, "cas", false);
-    }
+    state.casFilter = toggleMenuSelection(state.casFilter, value, state.paperExplicitAll, "cas");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   casTopFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.casTopFilter = [];
-      setExplicitAllSelection(state.paperExplicitAll, "casTop", true);
-    } else {
-      state.casTopFilter = appendSelectionValue(state.casTopFilter, value);
-      setExplicitAllSelection(state.paperExplicitAll, "casTop", false);
-    }
+    state.casTopFilter = toggleMenuSelection(state.casTopFilter, value, state.paperExplicitAll, "casTop");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   impactFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.impactFilter = [];
-      setExplicitAllSelection(state.paperExplicitAll, "impact", true);
-    } else {
-      state.impactFilter = appendSelectionValue(state.impactFilter, value);
-      setExplicitAllSelection(state.paperExplicitAll, "impact", false);
-    }
+    state.impactFilter = toggleMenuSelection(state.impactFilter, value, state.paperExplicitAll, "impact");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
   });
   teamFilter?.addEventListener("change", (event) => {
     const value = event.target.value;
-    if (value === "all") {
-      state.teamFilter = [];
-      setExplicitAllSelection(state.paperExplicitAll, "team", true);
-    } else {
-      state.teamFilter = appendSelectionValue(state.teamFilter, value);
-      setExplicitAllSelection(state.paperExplicitAll, "team", false);
-    }
+    state.teamFilter = toggleMenuSelection(state.teamFilter, value, state.paperExplicitAll, "team");
     event.target.value = "all";
     renderPaperControls();
     renderPapers();
@@ -5122,59 +5149,23 @@ function bindControls() {
     const tag = button.dataset.removeFieldTag || "";
     const category = button.dataset.fieldCategory || "";
     if (category === "year") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "year", false);
-      } else {
-        state.yearFilter = removeSelectionValue(state.yearFilter, tag);
-      }
+      state.yearFilter = removeTagSelection(state.yearFilter, tag, state.paperExplicitAll, "year");
     } else if (category === "type") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "type", false);
-      } else {
-        state.typeFilter = removeSelectionValue(state.typeFilter, tag);
-      }
+      state.typeFilter = removeTagSelection(state.typeFilter, tag, state.paperExplicitAll, "type");
     } else if (category === "problem") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "problem", false);
-      } else {
-        state.problemFieldFilters = removeSelectionValue(state.problemFieldFilters, tag);
-      }
+      state.problemFieldFilters = removeTagSelection(state.problemFieldFilters, tag, state.paperExplicitAll, "problem");
     } else if (category === "method") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "method", false);
-      } else {
-        state.methodFieldFilters = removeSelectionValue(state.methodFieldFilters, tag);
-      }
+      state.methodFieldFilters = removeTagSelection(state.methodFieldFilters, tag, state.paperExplicitAll, "method");
     } else if (category === "jcr") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "jcr", false);
-      } else {
-        state.jcrFilter = removeSelectionValue(state.jcrFilter, tag);
-      }
+      state.jcrFilter = removeTagSelection(state.jcrFilter, tag, state.paperExplicitAll, "jcr");
     } else if (category === "cas") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "cas", false);
-      } else {
-        state.casFilter = removeSelectionValue(state.casFilter, tag);
-      }
+      state.casFilter = removeTagSelection(state.casFilter, tag, state.paperExplicitAll, "cas");
     } else if (category === "casTop") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "casTop", false);
-      } else {
-        state.casTopFilter = removeSelectionValue(state.casTopFilter, tag);
-      }
+      state.casTopFilter = removeTagSelection(state.casTopFilter, tag, state.paperExplicitAll, "casTop");
     } else if (category === "impact") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "impact", false);
-      } else {
-        state.impactFilter = removeSelectionValue(state.impactFilter, tag);
-      }
+      state.impactFilter = removeTagSelection(state.impactFilter, tag, state.paperExplicitAll, "impact");
     } else if (category === "team") {
-      if (tag === "all") {
-        setExplicitAllSelection(state.paperExplicitAll, "team", false);
-      } else {
-        state.teamFilter = removeSelectionValue(state.teamFilter, tag);
-      }
+      state.teamFilter = removeTagSelection(state.teamFilter, tag, state.paperExplicitAll, "team");
     }
     renderPaperControls();
     renderPapers();
@@ -5299,15 +5290,25 @@ function bindResearchLauncher() {
     if (!(target instanceof HTMLElement)) return;
     syncResearchPromptInput();
 
+    if (
+      target.id === "research-year-start"
+      || target.id === "research-year-end"
+      || target.id === "research-year-start-input"
+      || target.id === "research-year-end-input"
+    ) {
+      if (!setResearchYearControlValue(target.id, target.value)) {
+        updateResearchYearRangePreview();
+        return;
+      }
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
     if (target.id === "research-problem-filter") {
       const value = target.value;
-      if (value === "all") {
-        state.researchProblemFieldFilters = [];
-        setExplicitAllSelection(state.researchExplicitAll, "problem", true);
-      } else if (value && !state.researchProblemFieldFilters.includes(value)) {
-        state.researchProblemFieldFilters = [...state.researchProblemFieldFilters, value];
-        setExplicitAllSelection(state.researchExplicitAll, "problem", false);
-      }
+      state.researchProblemFieldFilters = toggleMenuSelection(state.researchProblemFieldFilters, value, state.researchExplicitAll, "problem");
       target.value = "all";
       renderDirectionCockpit();
       renderDirectionWorkspace();
@@ -5317,13 +5318,7 @@ function bindResearchLauncher() {
 
     if (target.id === "research-method-filter") {
       const value = target.value;
-      if (value === "all") {
-        state.researchMethodFieldFilters = [];
-        setExplicitAllSelection(state.researchExplicitAll, "method", true);
-      } else if (value && !state.researchMethodFieldFilters.includes(value)) {
-        state.researchMethodFieldFilters = [...state.researchMethodFieldFilters, value];
-        setExplicitAllSelection(state.researchExplicitAll, "method", false);
-      }
+      state.researchMethodFieldFilters = toggleMenuSelection(state.researchMethodFieldFilters, value, state.researchExplicitAll, "method");
       target.value = "all";
       renderDirectionCockpit();
       renderDirectionWorkspace();
@@ -5333,53 +5328,23 @@ function bindResearchLauncher() {
 
     if (target.id === "research-jcr-filter") {
       const value = target.value;
-      if (value === "all") {
-        state.researchJcrFilter = [];
-        setExplicitAllSelection(state.researchExplicitAll, "jcr", true);
-      } else {
-        state.researchJcrFilter = appendSelectionValue(state.researchJcrFilter, value);
-        setExplicitAllSelection(state.researchExplicitAll, "jcr", false);
-      }
+      state.researchJcrFilter = toggleMenuSelection(state.researchJcrFilter, value, state.researchExplicitAll, "jcr");
       target.value = "all";
     } else if (target.id === "research-cas-filter") {
       const value = target.value;
-      if (value === "all") {
-        state.researchCasFilter = [];
-        setExplicitAllSelection(state.researchExplicitAll, "cas", true);
-      } else {
-        state.researchCasFilter = appendSelectionValue(state.researchCasFilter, value);
-        setExplicitAllSelection(state.researchExplicitAll, "cas", false);
-      }
+      state.researchCasFilter = toggleMenuSelection(state.researchCasFilter, value, state.researchExplicitAll, "cas");
       target.value = "all";
     } else if (target.id === "research-cas-top-filter") {
       const value = target.value;
-      if (value === "all") {
-        state.researchCasTopFilter = [];
-        setExplicitAllSelection(state.researchExplicitAll, "casTop", true);
-      } else {
-        state.researchCasTopFilter = appendSelectionValue(state.researchCasTopFilter, value);
-        setExplicitAllSelection(state.researchExplicitAll, "casTop", false);
-      }
+      state.researchCasTopFilter = toggleMenuSelection(state.researchCasTopFilter, value, state.researchExplicitAll, "casTop");
       target.value = "all";
     } else if (target.id === "research-impact-filter") {
       const value = target.value;
-      if (value === "all") {
-        state.researchImpactFilter = [];
-        setExplicitAllSelection(state.researchExplicitAll, "impact", true);
-      } else {
-        state.researchImpactFilter = appendSelectionValue(state.researchImpactFilter, value);
-        setExplicitAllSelection(state.researchExplicitAll, "impact", false);
-      }
+      state.researchImpactFilter = toggleMenuSelection(state.researchImpactFilter, value, state.researchExplicitAll, "impact");
       target.value = "all";
     } else if (target.id === "research-author-filter") {
       const value = target.value;
-      if (value === "all") {
-        state.researchAuthorFilter = [];
-        setExplicitAllSelection(state.researchExplicitAll, "author", true);
-      } else {
-        state.researchAuthorFilter = appendSelectionValue(state.researchAuthorFilter, value);
-        setExplicitAllSelection(state.researchExplicitAll, "author", false);
-      }
+      state.researchAuthorFilter = toggleMenuSelection(state.researchAuthorFilter, value, state.researchExplicitAll, "author");
       target.value = "all";
     } else {
       return;
@@ -5396,26 +5361,15 @@ function bindResearchLauncher() {
 
     if (target.id === "research-year-start") {
       syncResearchPromptInput();
-      state.researchYearStart = String(target.value || "");
-      if (Number.parseInt(state.researchYearStart, 10) > Number.parseInt(state.researchYearEnd, 10)) {
-        state.researchYearEnd = state.researchYearStart;
-      }
-      renderDirectionCockpit();
-      renderDirectionWorkspace();
-      renderDomainSwitcher();
+      if (!setResearchYearControlValue(target.id, target.value)) return;
+      updateResearchYearRangePreview();
       return;
     }
 
     if (target.id === "research-year-end") {
       syncResearchPromptInput();
-      state.researchYearOpenEnded = false;
-      state.researchYearEnd = String(target.value || "");
-      if (Number.parseInt(state.researchYearEnd, 10) < Number.parseInt(state.researchYearStart, 10)) {
-        state.researchYearStart = state.researchYearEnd;
-      }
-      renderDirectionCockpit();
-      renderDirectionWorkspace();
-      renderDomainSwitcher();
+      if (!setResearchYearControlValue(target.id, target.value)) return;
+      updateResearchYearRangePreview();
     }
   });
 
