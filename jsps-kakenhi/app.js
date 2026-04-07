@@ -2000,6 +2000,22 @@ function displayFormCodeLabel(code) {
   if (!normalized) {
     return "";
   }
+  const specificLabel = {
+    "S-21": {
+      zh: "若手研究计划书",
+      ja: "若手研究計画調書",
+      en: "Early-Career proposal",
+    },
+    "S-22": {
+      zh: "启动支援计划书",
+      ja: "スタート支援計画調書",
+      en: "Start-up proposal",
+    },
+  }[normalized];
+  if (specificLabel) {
+    const label = specificLabel[state.locale] || specificLabel.ja || specificLabel.en;
+    return `${label} ${normalized}`;
+  }
   const proposalLabel = {
     zh: "计划书",
     ja: "計画調書",
@@ -2380,7 +2396,7 @@ function renderDeadlinesPage() {
   timelineEl.innerHTML = events
     .map(
       (event) => `
-        <div class="timeline-item timeline-theme-${event.theme}">
+        <a class="timeline-item" href="${programHref(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
           <time datetime="${event.datetime || event.date}">
             <span>${formatTimelineMonth(event.date)}</span>
             <strong>${formatTimelineDay(event.date)}</strong>
@@ -2388,7 +2404,7 @@ function renderDeadlinesPage() {
           <article class="timeline-card">
             <div class="timeline-heading">
               <h4 class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(eventTypeLabel(event.type))}</h4>
-              <span class="timeline-tag">${escapeHtml(t(`eventType.${event.status}`))}</span>
+              ${event.status === "past" ? "" : `<span class="timeline-tag">${escapeHtml(t(`eventType.${event.status}`))}</span>`}
             </div>
             <p class="timeline-summary">
               <strong>${escapeHtml(localeField(event, "title"))}</strong><br />
@@ -2396,7 +2412,7 @@ function renderDeadlinesPage() {
             </p>
             ${event.note_zh || event.note_en ? `<p class="timeline-summary-note">${escapeHtml(localeField(event, "note"))}</p>` : ""}
           </article>
-        </div>
+        </a>
       `
     )
     .join("");
