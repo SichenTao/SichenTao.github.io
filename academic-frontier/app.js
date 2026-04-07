@@ -2490,10 +2490,7 @@ function updateResearchYearRangePreview(bounds = researchYearBounds()) {
   if (startSlider) startSlider.value = state.researchYearStart;
   if (endSlider) endSlider.value = state.researchYearEnd;
   if (startInput) startInput.value = state.researchYearStart;
-  if (endInput) {
-    endInput.value = state.researchYearEnd;
-    endInput.disabled = state.researchYearOpenEnded;
-  }
+  if (endInput) endInput.value = state.researchYearEnd;
   if (fill) {
     fill.style.left = `${researchYearPercent(normalized.start, normalized.minYear, normalized.maxYear)}%`;
     fill.style.right = `${100 - researchYearPercent(normalized.end, normalized.minYear, normalized.maxYear)}%`;
@@ -2658,6 +2655,20 @@ function removeResearchSelectedTag(entry) {
   }
 }
 
+function resetResearchFilterState() {
+  state.researchProblemFieldFilters = [];
+  state.researchMethodFieldFilters = [];
+  state.researchJcrFilter = [];
+  state.researchCasFilter = [];
+  state.researchCasTopFilter = [];
+  state.researchImpactFilter = [];
+  state.researchAuthorFilter = [];
+  state.researchYearStart = "";
+  state.researchYearEnd = "";
+  state.researchYearOpenEnded = true;
+  resetExplicitAllSelections(state.researchExplicitAll);
+}
+
 function combinedFocusPrompt() {
   return uniqueStrings([
     ...researchSelectedTagEntries().map((entry) => researchSelectedTagLabel(entry)),
@@ -2815,6 +2826,7 @@ function renderDirectionWorkspace() {
   const seed = researchData().seedProfile || {};
   const tokens = focusPromptTokens();
   const selectedConstraints = researchSelectedTagEntries();
+  const researchFiltersDirty = selectedConstraints.length > 0;
   const researchBrief = buildResearchBrief(directions);
   const seedChips = [
     ...(seed?.keywords || []).slice(0, 5),
@@ -2885,6 +2897,7 @@ function renderDirectionWorkspace() {
                   .map((author) => `<option value="${escapeHtml(author)}">${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: previewSelectionValues(state.researchAuthorFilter, author) })))}</option>`)
                   .join("")}
               </select>
+              <button class="button button-secondary filter-reset icon-only" type="button" data-research-filter-reset="true" aria-label="${escapeHtml(ui("resetLabel"))}" title="${escapeHtml(ui("resetLabel"))}"${researchFiltersDirty ? "" : " disabled"}>${resetButtonIconMarkup()}</button>
             </div>
           </div>
           <div class="investigation-launcher-section investigation-selected-stack">
@@ -2902,7 +2915,7 @@ function renderDirectionWorkspace() {
                 <span class="research-range-separator">-</span>
                 <label class="research-range-number-group" for="research-year-end-input">
                   <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
-                  <input id="research-year-end-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"${state.researchYearOpenEnded ? " disabled" : ""}/>
+                  <input id="research-year-end-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
                 </label>
                 <span class="research-range-open-note" data-research-year-open-note>${state.researchYearOpenEnded ? escapeHtml(ui("researchPresentLabel")) : ""}</span>
               </div>
@@ -4471,6 +4484,10 @@ function actionLink(label, href, className = "button") {
   return link;
 }
 
+function resetButtonIconMarkup() {
+  return `<svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 12a8 8 0 1 1-2.1-5.4"/><path d="M20 4.8v4.8h-4.8"/></svg>`;
+}
+
 function syncSelectOptions(select, options, currentValue = "all") {
   if (!select) return;
   select.innerHTML = "";
@@ -5374,6 +5391,16 @@ function bindResearchLauncher() {
   });
 
   document.addEventListener("click", async (event) => {
+    const researchFilterResetButton = event.target.closest("[data-research-filter-reset]");
+    if (researchFilterResetButton) {
+      syncResearchPromptInput();
+      resetResearchFilterState();
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
     const removeResearchTagButton = event.target.closest("[data-remove-research-tag]");
     if (removeResearchTagButton) {
       syncResearchPromptInput();
@@ -5400,10 +5427,8 @@ function bindResearchLauncher() {
     const openEndButton = event.target.closest("[data-research-open-end]");
     if (openEndButton) {
       syncResearchPromptInput();
-      state.researchYearOpenEnded = !state.researchYearOpenEnded;
-      if (state.researchYearOpenEnded) {
-        state.researchYearEnd = String(researchYearBounds().maxYear);
-      }
+      state.researchYearOpenEnded = true;
+      state.researchYearEnd = String(researchYearBounds().maxYear);
       renderDirectionCockpit();
       renderDirectionWorkspace();
       renderDomainSwitcher();
