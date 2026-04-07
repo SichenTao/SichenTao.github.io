@@ -4404,8 +4404,6 @@ function renderPapers() {
       links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl));
     } else if (paper.pdfUrl) {
       links.appendChild(actionLink(ui("sourcePdfAction"), paper.pdfUrl));
-    } else {
-      links.appendChild(el("span", "tag", ui("queueAction")));
     }
     if (doiActionUrl) links.appendChild(actionLink(ui("doiAction"), doiActionUrl));
     if (publisherUrl && publisherUrl !== doiActionUrl) {

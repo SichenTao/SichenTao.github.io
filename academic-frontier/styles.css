@@ -1212,7 +1212,7 @@ body[data-lang="ja"] .hero-role {
 
 .investigation-filter-row {
   grid-column: auto;
-  grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   gap: 8px;
 }
 
@@ -1657,8 +1657,8 @@ body[data-lang="ja"] .hero-role {
 }
 
 .section-head-main {
-  display: grid;
-  grid-template-columns: max-content minmax(0, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 16px;
   flex: 1 1 auto;
@@ -1688,11 +1688,14 @@ body[data-lang="ja"] .hero-role {
 .filter-search-row {
   display: flex;
   justify-content: flex-end;
+  flex: 1 1 360px;
   min-width: 0;
 }
 
 .filter-search-row .input {
+  flex: 1 1 auto;
   width: 100%;
+  min-width: 0;
 }
 
 .filter-toolbar {
@@ -1705,7 +1708,7 @@ body[data-lang="ja"] .hero-role {
 
 .filter-control-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(156px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
   gap: 8px;
   width: 100%;
   grid-column: 3;
@@ -2810,7 +2813,6 @@ body[data-lang="ja"] .hero-role {
   }
 
   .section-head-main {
-    grid-template-columns: 1fr;
     align-items: start;
     gap: 10px;
   }
@@ -2841,11 +2843,11 @@ body[data-lang="ja"] .hero-role {
   }
 
   .filter-control-row {
-    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
   }
 
   .investigation-filter-row {
-    grid-template-columns: repeat(auto-fit, minmax(148px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(126px, 1fr));
   }
 
   .input {
