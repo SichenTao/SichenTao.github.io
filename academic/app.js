@@ -3018,14 +3018,32 @@ function profileMarkMeta(item = {}) {
 function profileMarkMarkup(item = {}) {
   const icon = normalizeString(item?.icon || "");
   const meta = profileMarkMeta(item);
+  const resolvedIcon = resolveProfileMarkIcon(item, icon);
   if (icon) {
+    const badgeClass = resolvedIcon.endsWith("-badge.svg") ? " profile-mark-badge" : "";
     return `
-      <span class="profile-mark profile-mark-image profile-mark-${escapeHtml(meta.tone)}" aria-hidden="true">
-        <img src="${escapeHtml(icon)}" alt="" loading="lazy" />
+      <span class="profile-mark profile-mark-image${badgeClass} profile-mark-${escapeHtml(meta.tone)}" aria-hidden="true">
+        <img src="${escapeHtml(resolvedIcon)}" alt="" loading="lazy" />
       </span>
     `;
   }
   return `<span class="profile-mark profile-mark-${escapeHtml(meta.tone)}" aria-hidden="true">${escapeHtml(meta.label)}</span>`;
+}
+
+function resolveProfileMarkIcon(item = {}, icon = "") {
+  const normalizedIcon = normalizeString(icon);
+  const title = normalizeString(item?.title);
+  const url = normalizeString(item?.url).toLowerCase();
+
+  if (
+    normalizedIcon.endsWith("tohoku-cyberscience-center.svg")
+    || title === "Tohoku University Cyberscience Center"
+    || url.includes("cc.tohoku.ac.jp")
+  ) {
+    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg";
+  }
+
+  return normalizedIcon;
 }
 
 function iconForDocumentTag(tag) {
@@ -3973,14 +3991,17 @@ function renderLinks(data) {
   els.linkGrid.innerHTML = visible.length
     ? visible
         .map(
-          (item) => `
-            <article class="link-card">
+          (item) => {
+            const meta = profileMarkMeta(item);
+            return `
+            <article class="link-card profile-link-card link-card-tone-${escapeHtml(meta.tone)}">
               <div class="link-card-inline">
                 ${profileMarkMarkup(item)}
                 <h4 class="link-card-title">${buildLink(localizedExternalUrl(item.url, item.title), lt(item.title))}</h4>
               </div>
             </article>
-          `,
+          `;
+          },
         )
         .join("")
     : `<div class="empty">${escapeHtml(t("empty.no_profile_links"))}</div>`;
