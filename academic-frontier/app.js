@@ -2573,7 +2573,7 @@ function renderDirectionWorkspace() {
           </div>
           <div class="investigation-launcher-section investigation-selected-stack">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
-            <div class="field-hash-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<button class="field-hash-tag-trigger" type="button" data-remove-research-tag="${escapeHtml(String(entry.value || ""))}" data-research-tag-category="${escapeHtml(entry.category)}"><span class="field-hash-tag field-hash-tag-removable"><span>#${escapeHtml(researchSelectedTagLabel(entry))}</span><span class="field-hash-tag-remove" aria-hidden="true">×</span></span></button>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
+            <div class="field-hash-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="field-hash-selection"><span class="field-hash-tag">#${escapeHtml(researchSelectedTagLabel(entry))}</span><button class="field-hash-remove-button" type="button" data-remove-research-tag="${escapeHtml(String(entry.value || ""))}" data-research-tag-category="${escapeHtml(entry.category)}" aria-label="Remove #${escapeHtml(researchSelectedTagLabel(entry))}">×</button></span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
           </div>
           <div class="investigation-launcher-section">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag">${escapeHtml(yearIntervalLabel)}</span></div>

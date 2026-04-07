@@ -1761,30 +1761,27 @@ body[data-lang="ja"] .hero-role {
   line-height: 1.2;
 }
 
-.field-hash-tag-trigger {
-  all: unset;
+.field-hash-selection {
   display: inline-flex;
-  cursor: pointer;
+  align-items: center;
+  gap: 6px;
 }
 
-.field-hash-tag-removable {
-  gap: 8px;
-}
-
-.field-hash-tag-trigger:hover .field-hash-tag-removable,
-.field-hash-tag-trigger:focus-visible .field-hash-tag-removable {
-  background: rgba(var(--teal-rgb), 0.08);
-  border-color: rgba(var(--teal-rgb), 0.14);
-  color: var(--teal);
-  outline: none;
-}
-
-.field-hash-tag-remove {
+.field-hash-remove-button {
+  all: unset;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1em;
+  color: var(--teal);
+  font-size: 0.92rem;
   line-height: 1;
+  cursor: pointer;
+}
+
+.field-hash-remove-button:hover,
+.field-hash-remove-button:focus-visible {
+  color: var(--teal-deep);
+  outline: none;
 }
 
 .field-hash-tag-button {
