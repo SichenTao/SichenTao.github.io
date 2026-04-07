@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="JSPS 申请指南页，汇总 FAQ、电子系统、e-Rad 以及科研费与研究员项目的关键官方文档。"
+      content="JSPS 项目详情页，集中查看单个项目的官方入口、资料、表格、历年参考与本地快照。"
     />
-    <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/guides.html" />
+    <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/program.html" />
     <meta name="theme-color" content="#f3eef9" />
-    <title>申请指南 | JSPS 研究资助与研究员工作台</title>
+    <meta property="og:title" content="Program Detail | JSPS KAKENHI Workspace" />
+    <meta
+      property="og:description"
+      content="Detailed JSPS program page with official links, documents, forms, prior-cycle references, and local snapshots."
+    />
+    <meta property="og:url" content="https://sichentao.github.io/jsps-kakenhi/program.html" />
+    <meta property="og:type" content="website" />
+    <title>项目详情 | JSPS 研究资助与研究员工作台</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -54,7 +61,7 @@
     <script defer src="/assets/shared/homepage-shell.js?v=20260407-131309"></script>
     <script defer src="./app.js?v=20260407-131309"></script>
   </head>
-  <body data-page="guides">
+  <body data-page="program">
     <div class="page-wash"></div>
     <div class="page-grid"></div>
     <div class="orb orb-a"></div>
@@ -71,7 +78,7 @@
           <a href="./index.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span data-i18n="nav.home">首页</span></a>
           <a href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
           <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">表格材料</span></a>
-          <a href="./guides.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指南</span></a>
+          <a href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指南</span></a>
           <a href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="nav.sources">官方来源</span></a>
           <a href="./archive.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-archive"></use></svg><span data-i18n="nav.archive">快照归档</span></a>
         </nav>
@@ -79,22 +86,18 @@
     </header>
 
     <main class="shell layout">
-      <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="guides.gridTitle">关键申请入口</h2>
+      <section class="panel section-card reveal portal-program-shell">
+        <div class="section-head publication-head portal-program-head">
+          <div class="section-head-main">
+            <div class="publication-title-lockup">
+              <p class="eyebrow" data-i18n="program.kicker">项目详情</p>
+              <h2 data-i18n="program.title">项目详情</h2>
+            </div>
+            <p class="section-note" data-i18n="program.lede">这一页承接首页卡片，集中查看单个项目的官方入口、资料、表格、历年参考与本地快照。</p>
           </div>
+          <div id="program-page-actions" class="footer-actions portal-program-actions"></div>
         </div>
-        <div id="guide-grid" class="card-grid portal-card-grid"></div>
-      </section>
-
-      <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="guides.watchTitle">重点项目提醒</h2>
-          </div>
-        </div>
-        <div id="guide-watch-grid" class="card-grid portal-card-grid"></div>
+        <div id="program-detail" class="summary-card portal-summary-card portal-program-detail"></div>
       </section>
     </main>
 
@@ -102,11 +105,12 @@
       <div class="footer-panel">
         <div>
           <p class="eyebrow" data-i18n="footer.resources">Resources</p>
-          <h2 data-i18n="guides.footerTitle">官方指引核对完，再看来源和归档</h2>
+          <h2 data-i18n="calls.footerTitle">项目定位后，下一步就去看时间线和表格</h2>
         </div>
         <div class="footer-actions">
-          <a class="button button-primary" href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="footer.sources">查看官方来源</span></a>
-          <a class="button button-secondary" href="./archive.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-archive"></use></svg><span data-i18n="footer.archive">查看归档快照</span></a>
+          <a class="button button-primary" href="./index.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span data-i18n="footer.home">返回首页</span></a>
+          <a class="button button-secondary" href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="footer.deadlines">查看时间线</span></a>
+          <a class="button button-secondary" href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="footer.forms">查看表格材料</span></a>
         </div>
       </div>
     </footer>

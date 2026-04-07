@@ -121,6 +121,7 @@ const I18N = {
       title: "项目目录",
       lede: "这一页把重点科研费项目、已抓取的官方公募页、特别研究员与海外特别研究员、外国人特别研究员与外国研究者招访项目等 JSPS 相关项目放在同一目录中统一筛选；共享官方页面的项目会互相关联，资料同时尽量保留今年与上一年度的参考入口。",
       filterTitle: "浏览与筛选",
+      openDetail: "查看详情",
       quickFilters: "快速筛选",
       footerTitle: "项目定位后，下一步就去看时间线和表格",
       searchPlaceholder: "搜索项目、表格号、官方入口或关键词",
@@ -146,6 +147,14 @@ const I18N = {
       relatedPrograms: "关联项目",
       recentCycles: "今年与往年参考",
       snapshotHistory: "本地快照历史",
+    },
+    program: {
+      kicker: "项目详情",
+      title: "项目详情",
+      lede: "这一页承接首页卡片，集中查看单个项目的官方入口、资料、表格、历年参考与本地快照。",
+      backToCatalog: "返回项目目录",
+      notFoundTitle: "未找到对应项目",
+      notFoundText: "这个项目链接可能已失效、已更名，或尚未整理完成，请返回首页重新浏览。",
     },
     deadlines: {
       kicker: "时间安排",
@@ -347,6 +356,7 @@ const I18N = {
       title: "Call Catalog",
       lede: "Browse KAKENHI priority calls, captured official JSPS call pages, JSPS fellowship schemes, and inbound-researcher programs in one place. Entries that share the same official page are cross-linked, and when the official site keeps both current and prior-year materials, those references are surfaced together.",
       filterTitle: "Browse and filter",
+      openDetail: "View detail",
       quickFilters: "Quick filters",
       footerTitle: "Once you identify the call, move straight to the timeline and forms",
       searchPlaceholder: "Search calls, form codes, official entries, or keywords",
@@ -372,6 +382,14 @@ const I18N = {
       relatedPrograms: "Related programs",
       recentCycles: "Current and prior-cycle references",
       snapshotHistory: "Local snapshot history",
+    },
+    program: {
+      kicker: "Program Detail",
+      title: "Program detail",
+      lede: "This page expands a single homepage card into the full official links, documents, forms, prior-cycle references, and local snapshots.",
+      backToCatalog: "Back to catalog",
+      notFoundTitle: "Program not found",
+      notFoundText: "This link may be outdated, renamed, or not yet curated. Return to the catalog and browse again.",
     },
     deadlines: {
       kicker: "Schedule",
@@ -543,6 +561,7 @@ I18N.ja = {
     title: "ホーム",
     lede: "重点科研費種目だけでなく、特別研究員、海外特別研究員、外国人特別研究員、外国人招へい研究者などの JSPS 関連制度を同じ画面で横断整理できます。共通ページを使う種目は相互に関連づけ、現行年度と前年度の比較参照も追いやすくしています。",
     filterTitle: "検索と絞り込み",
+    openDetail: "詳細を見る",
     quickFilters: "クイックフィルタ",
     footerTitle: "対象種目を決めたら、次はタイムラインと様式を確認します",
     searchPlaceholder: "種目、様式番号、公式入口、キーワードで検索",
@@ -568,6 +587,14 @@ I18N.ja = {
     relatedPrograms: "関連種目",
     recentCycles: "現行年度と過年度の参照",
     snapshotHistory: "ローカル快照履歴",
+  },
+  program: {
+    kicker: "種目詳細",
+    title: "種目詳細",
+    lede: "ホームのカードから入った 1 件を、公式リンク、資料、様式、過年度参照、ローカル快照までまとめて確認するページです。",
+    backToCatalog: "種目ディレクトリへ戻る",
+    notFoundTitle: "該当種目が見つかりません",
+    notFoundText: "このリンクは古いか、名称変更済みか、まだ整理前の可能性があります。ホームに戻って対象を選び直してください。",
   },
   deadlines: {
     kicker: "スケジュール",
@@ -691,6 +718,10 @@ async function init() {
     return;
   }
 
+  if (redirectLegacyProgramHash()) {
+    return;
+  }
+
   renderLocaleSwitcher();
   renderThemeSwitcher();
   applyLocale(state.locale, false);
@@ -775,6 +806,9 @@ function routePage() {
       break;
     case "calls":
       renderCallsPage();
+      break;
+    case "program":
+      renderProgramPage();
       break;
     case "deadlines":
       renderDeadlinesPage();
@@ -1431,10 +1465,8 @@ function initTopnavOverflowHints() {
 function bindSharedHashState() {
   window.addEventListener("hashchange", () => {
     if (state.page === "calls") {
-      const id = window.location.hash.replace(/^#/, "");
-      if (id) {
-        state.filters.calls.selectedId = id;
-        renderCallsPage();
+      if (redirectLegacyProgramHash()) {
+        return;
       }
     }
     if (state.page === "forms") {
@@ -1520,7 +1552,7 @@ function renderHomePage() {
             ${metaPill(`${t("common.updated")} ${program.page_last_updated || "--"}`)}
           </div>
           <div class="link-row">
-            <a class="button button-primary" href="./index.html#${program.id}">${t("footer.catalog")}</a>
+            <a class="button button-primary" href="${programHref(program.id)}">${t("calls.openDetail")}</a>
             <a class="button button-secondary" href="${resolveHref(program.snapshot_path)}">${t("common.snapshot")}</a>
           </div>
         </article>
@@ -1600,23 +1632,14 @@ function renderCallsPage() {
   const resetButton = document.getElementById("call-reset");
   const quickFilters = document.getElementById("call-quick-filters");
   const callList = document.getElementById("call-list");
-  const callDetail = document.getElementById("call-detail");
   const metrics = document.getElementById("calls-detail-metrics");
 
-  if (!searchInput || !statusFilter || !groupFilter || !sortFilter || !resetButton || !quickFilters || !callList || !callDetail) {
+  if (!searchInput || !statusFilter || !groupFilter || !sortFilter || !resetButton || !quickFilters || !callList) {
     return;
   }
 
   const allEntries = state.data.call_catalog.slice();
   const groups = Array.from(new Set(allEntries.map((entry) => entry.group))).sort();
-  const hashId = window.location.hash.replace(/^#/, "");
-  if (hashId) {
-    state.filters.calls.selectedId = hashId;
-  }
-  if (!state.filters.calls.selectedId && allEntries.length) {
-    const preferred = sortCallEntries(allEntries.slice(), "deadline")[0] || allEntries[0];
-    state.filters.calls.selectedId = preferred.id;
-  }
 
   searchInput.value = state.filters.calls.search;
   statusFilter.innerHTML = [
@@ -1727,10 +1750,6 @@ function renderCallsPage() {
 
   filtered = sortCallEntries(filtered, state.filters.calls.sort);
 
-  if (!filtered.some((entry) => entry.id === state.filters.calls.selectedId)) {
-    state.filters.calls.selectedId = filtered[0]?.id || "";
-  }
-
   if (metrics) {
     metrics.innerHTML = [
       metaPill(`${t("common.links")} ${allEntries.length}`),
@@ -1743,36 +1762,29 @@ function renderCallsPage() {
     ? filtered
         .map(
           (entry) => `
-            <button class="portal-select-card ${entry.id === state.filters.calls.selectedId ? "is-selected" : ""}" type="button" data-entry-id="${entry.id}">
-              <span class="portal-select-head">
+            <a class="portal-call-card" href="${programHref(entry.id)}">
+              <span class="portal-card-head">
                 <span>
                   <span class="eyebrow">${escapeHtml(localeField(entry, "subtitle") || displayGroupLabel(entry.group))}</span>
                   <strong>${escapeHtml(localeField(entry, "title"))}</strong>
                 </span>
                 ${timingPillCluster(entry)}
               </span>
-              <span class="portal-select-body">${escapeHtml(localeValue(entry, "summary"))}</span>
+              <span class="portal-call-summary">${escapeHtml(localeValue(entry, "summary"))}</span>
               <span class="portal-select-meta">
                 ${metaPill(displayGroupLabel(entry.group))}
-                ${entry.form_codes?.length ? metaPill(entry.form_codes.join(" / ")) : ""}
+                ${(entry.form_codes || [])
+                  .slice(0, 2)
+                  .map((code) => metaPill(code))
+                  .join("")}
+                ${(entry.form_codes || []).length > 2 ? metaPill(`+${entry.form_codes.length - 2}`) : ""}
               </span>
-            </button>
+              <span class="portal-card-cta">${t("calls.openDetail")}</span>
+            </a>
           `
         )
         .join("")
     : `<div class="empty">${t("common.noResults")}</div>`;
-
-  callList.querySelectorAll("[data-entry-id]").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.filters.calls.selectedId = button.dataset.entryId;
-      persistFilters();
-      history.replaceState(null, "", `#${state.filters.calls.selectedId}`);
-      renderCallsPage();
-    });
-  });
-
-  const selected = allEntries.find((entry) => entry.id === state.filters.calls.selectedId);
-  callDetail.innerHTML = selected ? renderCallDetail(selected) : `<div class="empty">${t("common.detailHint")}</div>`;
 }
 
 function renderCallDetail(entry) {
@@ -1908,7 +1920,7 @@ function renderCallDetail(entry) {
         ${relatedPrograms
           .map(
             (related) =>
-              `<li><a href="./index.html#${related.id}">${escapeHtml(localeField(related, "title"))}</a><span class="portal-inline-muted"> · ${escapeHtml(t(`status.${related.status}`))}</span></li>`
+              `<li><a href="${programHref(related.id)}">${escapeHtml(localeField(related, "title"))}</a><span class="portal-inline-muted"> · ${escapeHtml(t(`status.${related.status}`))}</span></li>`
           )
           .join("")}
       </ul>
@@ -2011,6 +2023,41 @@ function renderCallDetail(entry) {
         : ""
     }
   `;
+}
+
+function renderProgramPage() {
+  const detail = document.getElementById("program-detail");
+  const actions = document.getElementById("program-page-actions");
+  if (!detail || !actions) {
+    return;
+  }
+
+  const entry = findCallEntryById(currentProgramId());
+  const program = entry ? state.data.programs.find((item) => item.id === entry.id) : null;
+
+  actions.innerHTML = [
+    `<a class="button button-secondary" href="./index.html">${escapeHtml(t("program.backToCatalog"))}</a>`,
+    program ? `<a class="button button-secondary" href="./forms.html#${encodeURIComponent(program.id)}">${escapeHtml(t("footer.forms"))}</a>` : "",
+    `<a class="button button-secondary" href="./deadlines.html">${escapeHtml(t("footer.deadlines"))}</a>`,
+    entry?.official_url ? `<a class="button button-primary" href="${escapeHtml(entry.official_url)}" target="_blank" rel="noreferrer">${escapeHtml(t("common.viewOfficial"))}</a>` : "",
+    entry?.snapshot_path ? `<a class="button button-secondary" href="${resolveHref(entry.snapshot_path)}">${escapeHtml(t("common.viewSnapshot"))}</a>` : "",
+  ]
+    .filter(Boolean)
+    .join("");
+
+  if (!entry) {
+    detail.innerHTML = `
+      <div class="empty">
+        <strong>${escapeHtml(t("program.notFoundTitle"))}</strong>
+        <p>${escapeHtml(t("program.notFoundText"))}</p>
+      </div>
+    `;
+    updateProgramPageMetadata();
+    return;
+  }
+
+  detail.innerHTML = renderCallDetail(entry);
+  updateProgramPageMetadata(entry, program);
 }
 
 function renderDeadlinesPage() {
@@ -2448,6 +2495,34 @@ function statusPill(status) {
   return `<span class="meta-pill portal-status-pill portal-status-${status}">${escapeHtml(t(`status.${status}`))}</span>`;
 }
 
+function currentProgramId() {
+  const params = new URLSearchParams(window.location.search);
+  return params.get("id") || window.location.hash.replace(/^#/, "");
+}
+
+function findCallEntryById(id) {
+  if (!id || !state.data?.call_catalog) {
+    return null;
+  }
+  return state.data.call_catalog.find((entry) => entry.id === id) || null;
+}
+
+function programHref(id) {
+  return `./program.html?id=${encodeURIComponent(id)}`;
+}
+
+function redirectLegacyProgramHash() {
+  if (state.page !== "calls") {
+    return false;
+  }
+  const id = window.location.hash.replace(/^#/, "");
+  if (!findCallEntryById(id)) {
+    return false;
+  }
+  window.location.replace(programHref(id));
+  return true;
+}
+
 function dateSortNumber(value, fallback = Number.POSITIVE_INFINITY) {
   if (!value) {
     return fallback;
@@ -2562,6 +2637,41 @@ function timingPillCluster(record) {
     items.push(timingInfoPill(t("common.opening"), openDisplay, "opening"));
   }
   return `<span class="portal-head-meta">${items.join("")}</span>`;
+}
+
+function setMetaContent(selector, value) {
+  if (!value) {
+    return;
+  }
+  const node = document.querySelector(selector);
+  if (node) {
+    node.setAttribute("content", value);
+  }
+}
+
+function updateProgramPageMetadata(entry = null) {
+  if (state.page !== "program") {
+    return;
+  }
+
+  const title = entry
+    ? `${localeField(entry, "title")} | JSPS KAKENHI Workspace`
+    : `${t("program.title")} | JSPS KAKENHI Workspace`;
+  const description = entry ? localeValue(entry, "summary") : t("program.notFoundText");
+  const canonicalHref = entry
+    ? `https://sichentao.github.io/jsps-kakenhi/program.html?id=${encodeURIComponent(entry.id)}`
+    : "https://sichentao.github.io/jsps-kakenhi/program.html";
+
+  document.title = title;
+  setMetaContent('meta[name="description"]', description);
+  setMetaContent('meta[property="og:title"]', title);
+  setMetaContent('meta[property="og:description"]', description);
+  setMetaContent('meta[property="og:url"]', canonicalHref);
+
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) {
+    canonical.setAttribute("href", canonicalHref);
+  }
 }
 
 function metricCard(label, value) {
