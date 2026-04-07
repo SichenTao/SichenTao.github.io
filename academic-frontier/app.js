@@ -2357,29 +2357,14 @@ function directionCardMarkup(direction, { detailed = false } = {}) {
   const venues = (direction?.venues || []).slice(0, detailed ? 8 : 5);
   const teams = (direction?.teams || []).slice(0, detailed ? 4 : 3);
   const signals = (direction?.signals || []).slice(0, detailed ? 3 : 2);
-  const badgeClass = direction?.isManualHit ? "tag is-strong" : "tag";
-  const manualBadge = direction?.isManualHit ? `<span class="${badgeClass}">${escapeHtml(ui("focusModeManual"))}</span>` : "";
-  const counts = direction?.counts || {};
-  const countSummary = [
-    `${ui("foundationLaneLabel")} ${counts.foundation || 0}`,
-    `${ui("frontierLaneLabel")} ${counts.frontier || 0}`,
-    `${ui("bridgeLaneLabel")} ${counts.bridge || 0}`,
-    `${ui("papersInLaneLabel")} ${counts.total || 0}`,
-  ].join(" · ");
 
   return `<article class="direction-card${detailed ? " is-detailed" : ""}">
     <div class="direction-card-head">
       <div>
-        <div class="tag-row">
-          <span class="tag is-strong">${escapeHtml(ui("priorityLabel"))} ${escapeHtml(direction?.adjustedPriority || 0)}</span>
-          ${manualBadge}
-        </div>
         <h3>${richTextHtml(direction?.title)}</h3>
       </div>
-      <p class="direction-count-summary">${escapeHtml(countSummary)}</p>
     </div>
     <p class="direction-thesis rich-text">${richTextHtml(direction?.thesis)}</p>
-    <p class="publication-note publication-note-highlight"><strong class="warm-strong">${escapeHtml(ui("strategicLabel"))}:</strong> <span class="rich-text">${richTextHtml(direction?.whyNow)}</span></p>
     <div class="direction-meta-grid">
       <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("activeKeywordsLabel"))}</strong><div class="field-hash-row direction-keyword-row">${keywords.map((keyword) => `<span class="field-hash-tag">#${escapeHtml(keyword)}</span>`).join("") || `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div></div>
       <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("venueTargetsTitle"))}</strong><p class="direction-inline-list">${venues.map(escapeHtml).join(" · ") || escapeHtml(ui("pendingMetric"))}</p></div>
@@ -2799,7 +2784,7 @@ function renderDirectionCockpit() {
         <div class="direction-priority-stack">${directions.slice(0, 4).map((direction) => directionScoreBar(localizeText(direction.title), direction.adjustedPriority, direction.isManualHit ? "is-strong" : "")).join("")}</div>
       </article>
       <article class="focus-card focus-card-accent">
-        <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3><span class="tag is-strong">${escapeHtml(tokens.length ? ui("focusModeManual") : ui("focusModeAuto"))}</span></div>
+        <div class="subhead"><h3>${escapeHtml(ui("focusDeskTitle"))}</h3></div>
         <p class="section-note">${escapeHtml(ui("focusDeskNote"))}</p>
         <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("focusPromptLabel"))}</label>
         <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="4" placeholder="${escapeHtml(ui("focusPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
