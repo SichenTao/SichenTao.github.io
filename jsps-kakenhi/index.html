@@ -54,12 +54,12 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260407-042744" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260407-042744" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260407-042744" />
-    <script src="./data/kakenhi-data.js?v=20260407-042744"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260407-042744"></script>
-    <script defer src="./app.js?v=20260407-042744"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260407-050024" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260407-050024" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260407-050024" />
+    <script src="./data/kakenhi-data.js?v=20260407-050024"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260407-050024"></script>
+    <script defer src="./app.js?v=20260407-050024"></script>
   </head>
   <body data-page="calls">
     <div class="page-wash"></div>
@@ -100,6 +100,7 @@
             <div class="filter-control-row">
               <select id="call-status-filter" class="input"></select>
               <select id="call-group-filter" class="input"></select>
+              <select id="call-audience-filter" class="input"></select>
               <select id="call-sort-filter" class="input"></select>
               <button id="call-reset" class="button button-secondary filter-reset icon-only" type="button" aria-label="重置筛选" title="重置筛选">
                 <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-reset"></use></svg>
@@ -114,7 +115,7 @@
           </div>
           <div class="chip-row" id="call-quick-filters" aria-label="快速筛选"></div>
         </div>
-        <div id="call-list" class="portal-call-grid"></div>
+        <div id="call-list" class="portal-rail-stack"></div>
       </section>
     </main>
 

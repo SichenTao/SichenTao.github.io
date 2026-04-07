@@ -5,7 +5,7 @@ const LEGACY_THEME_KEY = "kakenhi-portal-theme";
 const LOCALE_KEY = "sichen-homepage-locale";
 const LEGACY_LOCALE_KEY = "kakenhi-portal-locale";
 const FILTER_KEY = "kakenhi-portal-filters";
-const FILTER_SCHEMA_VERSION = 2;
+const FILTER_SCHEMA_VERSION = 3;
 let topnavOverflowBound = false;
 let topnavMenuBound = false;
 let headerControlsPositionBound = false;
@@ -41,6 +41,7 @@ const I18N = {
       opening: "开启",
       deadlineLabel: "截止",
       updated: "官方页更新",
+      updatedShort: "更新",
       status: "状态",
       group: "分组",
       openPrograms: "公募中项目",
@@ -129,10 +130,14 @@ const I18N = {
       statusOpen: "仅看公募中",
       statusClosed: "已结束 / 参考 / 停止募集",
       groupAll: "全部分组",
+      audienceAll: "全部对象",
       sortPriority: "按优先级",
       sortDeadline: "按截止时间",
       sortTitle: "按标题",
       sortStatus: "按状态",
+      targetLabel: "对象",
+      scrollPrev: "向左滚动",
+      scrollNext: "向右滚动",
       quickAll: "全部",
       quickPriority: "重点",
       quickOpen: "公募中",
@@ -276,6 +281,7 @@ const I18N = {
       opening: "Opens",
       deadlineLabel: "Deadline",
       updated: "Official page updated",
+      updatedShort: "Updated",
       status: "Status",
       group: "Group",
       openPrograms: "Open programs",
@@ -364,10 +370,14 @@ const I18N = {
       statusOpen: "Open only",
       statusClosed: "Closed / reference / suspended",
       groupAll: "All groups",
+      audienceAll: "All audiences",
       sortPriority: "Priority first",
       sortDeadline: "By deadline",
       sortTitle: "By title",
       sortStatus: "By status",
+      targetLabel: "Audience",
+      scrollPrev: "Scroll left",
+      scrollNext: "Scroll right",
       quickAll: "All",
       quickPriority: "Priority",
       quickOpen: "Open",
@@ -513,6 +523,7 @@ I18N.ja = {
     opening: "受付開始",
     deadlineLabel: "締切",
     updated: "公式ページ更新",
+    updatedShort: "更新",
     status: "状態",
     group: "区分",
     openPrograms: "公募中の種目",
@@ -569,10 +580,14 @@ I18N.ja = {
     statusOpen: "公募中のみ",
     statusClosed: "終了 / 参考 / 募集停止",
     groupAll: "すべての区分",
+    audienceAll: "すべての対象者",
     sortPriority: "優先順",
     sortDeadline: "締切順",
     sortTitle: "タイトル順",
     sortStatus: "状態順",
+    targetLabel: "対象",
+    scrollPrev: "左へスクロール",
+    scrollNext: "右へスクロール",
     quickAll: "すべて",
     quickPriority: "重点",
     quickOpen: "公募中",
@@ -702,6 +717,82 @@ const THEME_OPTIONS = [
 
 const THEME_CATALOG = Object.fromEntries(THEME_OPTIONS.map((option) => [option.value, option]));
 
+const AUDIENCE_CATALOG = {
+  faculty_researchers: {
+    zh: "教员・研究人员",
+    ja: "教員・研究者",
+    en: "Faculty & researchers",
+  },
+  early_career: {
+    zh: "青年教员・起步期研究者",
+    ja: "若手・立ち上げ期",
+    en: "Early-career researchers",
+  },
+  masters_doctoral: {
+    zh: "硕二至博士阶段",
+    ja: "修士2年・博士課程",
+    en: "M2 / doctoral students",
+  },
+  postdoctoral: {
+    zh: "博士后・PD",
+    ja: "ポスドク・PD",
+    en: "Postdocs & PD fellows",
+  },
+  returnees: {
+    zh: "复归研究者",
+    ja: "復帰研究者",
+    en: "Returnee researchers",
+  },
+  japan_side: {
+    zh: "日本侧申请者",
+    ja: "日本側応募者",
+    en: "Japan-side applicants",
+  },
+  inbound_researchers: {
+    zh: "海外研究者来日",
+    ja: "海外研究者・来日",
+    en: "Inbound researchers to Japan",
+  },
+  europe_us: {
+    zh: "欧美研究者",
+    ja: "欧米研究者",
+    en: "Europe / North America",
+  },
+  outbound_japan: {
+    zh: "海外派遣志向",
+    ja: "海外派遣志向",
+    en: "Outbound from Japan",
+  },
+};
+
+const CALL_AUDIENCE_MAP = {
+  startup_support: ["early_career", "faculty_researchers", "japan_side"],
+  young_research: ["early_career", "faculty_researchers", "japan_side"],
+  invitational_fellowships_for_research_in_japan: ["inbound_researchers"],
+  foreign_jsps_fellowship_open: ["inbound_researchers", "europe_us"],
+  overseas_research_fellowship: ["postdoctoral", "outbound_japan", "japan_side"],
+  overseas_research_fellowship_rra: ["postdoctoral", "returnees", "outbound_japan", "japan_side"],
+  jsps_fellow_pd_dc: ["masters_doctoral", "postdoctoral", "japan_side"],
+  jsps_fellow_rpd: ["postdoctoral", "returnees", "japan_side"],
+  independent_base_building_support: ["early_career", "faculty_researchers", "japan_side"],
+  international_leading_research: ["faculty_researchers", "japan_side"],
+  international_research_strengthening: ["faculty_researchers", "outbound_japan", "japan_side"],
+  returning_researchers_development: ["faculty_researchers", "returnees", "japan_side"],
+  overseas_partnership_research: ["faculty_researchers", "outbound_japan", "japan_side"],
+  scientific_research_abc: ["faculty_researchers", "japan_side"],
+  scientific_research_s: ["faculty_researchers", "japan_side"],
+  incentive_research: ["faculty_researchers", "japan_side"],
+  challenging_research: ["faculty_researchers", "japan_side"],
+  special_promotion_research: ["faculty_researchers", "japan_side"],
+  jsps_fellows_incentive: ["masters_doctoral", "postdoctoral", "japan_side"],
+  jsps_fellow_cpd: ["postdoctoral", "japan_side"],
+  research_results_publication: ["faculty_researchers", "japan_side"],
+  "overview-34_new_scientific__index": ["faculty_researchers", "japan_side"],
+  "overview-39_transformative__index": ["faculty_researchers", "japan_side"],
+};
+
+const CALL_GROUP_ORDER = ["重点项目", "Programs", "JSPS Fellowships", "Inbound Fellowships", "各種目のページ"];
+
 const state = {
   locale: getStoredLocale(),
   theme: getStoredTheme(),
@@ -755,7 +846,7 @@ function getStoredTheme() {
 
 function getStoredFilters() {
   const fallback = {
-    calls: { search: "", status: "all", group: "all", sort: "deadline", quick: "all", selectedId: "" },
+    calls: { search: "", status: "all", group: "all", audience: "all", sort: "deadline", quick: "all", selectedId: "" },
     forms: { search: "", program: "all", sort: "code" },
   };
   try {
@@ -765,8 +856,11 @@ function getStoredFilters() {
     if (!["deadline", "priority", "title", "status"].includes(calls.sort)) {
       calls.sort = "deadline";
     }
-    if (parsed.version !== FILTER_SCHEMA_VERSION && calls.sort === "priority") {
-      calls.sort = "deadline";
+    if (parsed.version !== FILTER_SCHEMA_VERSION) {
+      calls.audience = "all";
+      if (calls.sort === "priority") {
+        calls.sort = "deadline";
+      }
     }
     return {
       calls,
@@ -1628,18 +1722,20 @@ function renderCallsPage() {
   const searchInput = document.getElementById("call-search");
   const statusFilter = document.getElementById("call-status-filter");
   const groupFilter = document.getElementById("call-group-filter");
+  const audienceFilter = document.getElementById("call-audience-filter");
   const sortFilter = document.getElementById("call-sort-filter");
   const resetButton = document.getElementById("call-reset");
   const quickFilters = document.getElementById("call-quick-filters");
   const callList = document.getElementById("call-list");
   const metrics = document.getElementById("calls-detail-metrics");
 
-  if (!searchInput || !statusFilter || !groupFilter || !sortFilter || !resetButton || !quickFilters || !callList) {
+  if (!searchInput || !statusFilter || !groupFilter || !audienceFilter || !sortFilter || !resetButton || !quickFilters || !callList) {
     return;
   }
 
   const allEntries = state.data.call_catalog.slice();
   const groups = Array.from(new Set(allEntries.map((entry) => entry.group))).sort();
+  const audiences = Object.keys(AUDIENCE_CATALOG).filter((key) => allEntries.some((entry) => getCallAudienceKeys(entry).includes(key)));
 
   searchInput.value = state.filters.calls.search;
   statusFilter.innerHTML = [
@@ -1649,6 +1745,9 @@ function renderCallsPage() {
   ].join("");
   groupFilter.innerHTML = [optionHtml("all", t("calls.groupAll"), state.filters.calls.group)]
     .concat(groups.map((group) => optionHtml(group, displayGroupLabel(group), state.filters.calls.group)))
+    .join("");
+  audienceFilter.innerHTML = [optionHtml("all", t("calls.audienceAll"), state.filters.calls.audience)]
+    .concat(audiences.map((key) => optionHtml(key, displayAudienceLabel(key), state.filters.calls.audience)))
     .join("");
   sortFilter.innerHTML = [
     optionHtml("deadline", t("calls.sortDeadline"), state.filters.calls.sort),
@@ -1673,6 +1772,11 @@ function renderCallsPage() {
       persistFilters();
       renderCallsPage();
     });
+    audienceFilter.addEventListener("change", (event) => {
+      state.filters.calls.audience = event.target.value;
+      persistFilters();
+      renderCallsPage();
+    });
     sortFilter.addEventListener("change", (event) => {
       state.filters.calls.sort = event.target.value;
       persistFilters();
@@ -1683,6 +1787,7 @@ function renderCallsPage() {
         search: "",
         status: "all",
         group: "all",
+        audience: "all",
         sort: "deadline",
         quick: "all",
         selectedId: state.filters.calls.selectedId,
@@ -1694,7 +1799,7 @@ function renderCallsPage() {
   }
 
   const quickButtons = [
-    { id: "all", label: t("calls.quickAll"), apply: () => ({ search: "", status: "all", group: "all" }) },
+    { id: "all", label: t("calls.quickAll"), apply: () => ({ search: "", status: "all", group: "all", audience: "all" }) },
     { id: "priority", label: t("calls.quickPriority"), apply: () => ({ group: "重点项目" }) },
     { id: "open", label: t("calls.quickOpen"), apply: () => ({ status: "open" }) },
     { id: "startup", label: t("calls.quickStartup"), apply: () => ({ search: "研究活動スタート支援" }) },
@@ -1734,6 +1839,7 @@ function renderCallsPage() {
         entry.group_zh,
         entry.group_en,
         entry.search_blob,
+        callAudienceSearchText(entry),
       ]
         .filter(Boolean)
         .join(" ")
@@ -1745,7 +1851,9 @@ function renderCallsPage() {
         ? entry.status === "closed" || entry.status === "reference" || entry.status === "suspended"
         : entry.status === state.filters.calls.status);
     const matchesGroup = state.filters.calls.group === "all" || entry.group === state.filters.calls.group;
-    return matchesSearch && matchesStatus && matchesGroup;
+    const matchesAudience =
+      state.filters.calls.audience === "all" || getCallAudienceKeys(entry).includes(state.filters.calls.audience);
+    return matchesSearch && matchesStatus && matchesGroup && matchesAudience;
   });
 
   filtered = sortCallEntries(filtered, state.filters.calls.sort);
@@ -1759,32 +1867,140 @@ function renderCallsPage() {
   }
 
   callList.innerHTML = filtered.length
-    ? filtered
-        .map(
-          (entry) => `
-            <a class="portal-call-card" href="${programHref(entry.id)}">
-              <span class="portal-card-head">
-                <span>
-                  <span class="eyebrow">${escapeHtml(localeField(entry, "subtitle") || displayGroupLabel(entry.group))}</span>
-                  <strong>${escapeHtml(localeField(entry, "title"))}</strong>
-                </span>
-                ${timingPillCluster(entry)}
-              </span>
-              <span class="portal-call-summary">${escapeHtml(localeValue(entry, "summary"))}</span>
-              <span class="portal-select-meta">
-                ${metaPill(displayGroupLabel(entry.group))}
-                ${(entry.form_codes || [])
-                  .slice(0, 2)
-                  .map((code) => metaPill(code))
-                  .join("")}
-                ${(entry.form_codes || []).length > 2 ? metaPill(`+${entry.form_codes.length - 2}`) : ""}
-              </span>
-              <span class="portal-card-cta">${t("calls.openDetail")}</span>
-            </a>
-          `
-        )
-        .join("")
+    ? renderCallRailSections(filtered)
     : `<div class="empty">${t("common.noResults")}</div>`;
+
+  bindCallRailControls(callList);
+}
+
+function renderCallRailSections(entries) {
+  const grouped = entries.reduce((map, entry) => {
+    const key = entry.group || "Programs";
+    if (!map.has(key)) {
+      map.set(key, []);
+    }
+    map.get(key).push(entry);
+    return map;
+  }, new Map());
+
+  return Array.from(grouped.entries())
+    .sort(([leftGroup], [rightGroup]) => compareCallGroups(leftGroup, rightGroup))
+    .map(([group, items], index) => {
+      const railId = `call-rail-${index}`;
+      const title = displayGroupLabel(group);
+      const isStaticRail = items.length <= 2;
+      return `
+        <section class="portal-rail-section">
+          <div class="portal-rail-head">
+            <div class="portal-rail-copy">
+              <p class="eyebrow">${escapeHtml(callRailSummary(items.length))}</p>
+              <h3>${escapeHtml(title)}</h3>
+            </div>
+            ${
+              isStaticRail
+                ? ""
+                : `
+            <div class="portal-rail-controls" aria-label="${escapeHtml(title)}">
+              <button class="portal-rail-button" type="button" data-rail-control="prev" data-rail-target="${railId}" aria-label="${escapeHtml(t("calls.scrollPrev"))}" title="${escapeHtml(t("calls.scrollPrev"))}">
+                <svg class="ui-icon rail-arrow rail-arrow-prev" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-up"></use></svg>
+              </button>
+              <button class="portal-rail-button" type="button" data-rail-control="next" data-rail-target="${railId}" aria-label="${escapeHtml(t("calls.scrollNext"))}" title="${escapeHtml(t("calls.scrollNext"))}">
+                <svg class="ui-icon rail-arrow rail-arrow-next" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-up"></use></svg>
+              </button>
+            </div>
+            `
+            }
+          </div>
+          <div class="portal-rail-track${isStaticRail ? " is-static" : ""}" id="${railId}" data-rail-track>
+            ${items.map((entry) => renderCallRailCard(entry)).join("")}
+          </div>
+        </section>
+      `;
+    })
+    .join("");
+}
+
+function renderCallRailCard(entry) {
+  return `
+    <a class="portal-call-card" href="${programHref(entry.id)}">
+      <span class="portal-card-head">
+        <span>
+          <span class="eyebrow">${escapeHtml(compactTimingText(entry))}</span>
+          <strong>${escapeHtml(localeField(entry, "title"))}</strong>
+        </span>
+      </span>
+      <span class="portal-call-summary">${escapeHtml(localeValue(entry, "summary"))}</span>
+      <span class="portal-select-meta">
+        ${callCardMeta(entry)}
+      </span>
+      <span class="portal-card-cta">${t("calls.openDetail")}</span>
+    </a>
+  `;
+}
+
+function callCardMeta(entry) {
+  const pills = [];
+  if (entry.priority) {
+    pills.push(metaPill(t("common.priority")));
+  }
+  const preferredAudienceKeys = getCallAudienceKeys(entry)
+    .filter((key) => key !== "japan_side")
+    .slice(0, 2)
+    .map((key) => metaPill(displayAudienceLabel(key)));
+  preferredAudienceKeys.forEach((pill) => pills.push(pill));
+  const remainingSlots = Math.max(0, 3 - pills.length);
+  const visibleCodes = (entry.form_codes || []).slice(0, remainingSlots);
+  visibleCodes
+    .forEach((code) => pills.push(metaPill(code)));
+  const hiddenCodeCount = Math.max(0, (entry.form_codes || []).length - visibleCodes.length);
+  if (hiddenCodeCount > 1) {
+    pills.push(metaPill(`+${hiddenCodeCount}`));
+  }
+  if (!pills.length) {
+    const fallbackAudience = getCallAudienceKeys(entry)[0];
+    pills.push(metaPill(fallbackAudience ? displayAudienceLabel(fallbackAudience) : displayGroupLabel(entry.group)));
+  }
+  return pills.join("");
+}
+
+function callRailSummary(count) {
+  const parts = [countText(count, "entries"), callSortLabel(state.filters.calls.sort)];
+  if (state.filters.calls.audience !== "all") {
+    parts.push(`${t("calls.targetLabel")} ${displayAudienceLabel(state.filters.calls.audience)}`);
+  }
+  return parts.join(" · ");
+}
+
+function bindCallRailControls(root) {
+  root.querySelectorAll("[data-rail-track]").forEach((track) => {
+    const railId = track.id;
+    const prevButton = root.querySelector(`[data-rail-control="prev"][data-rail-target="${railId}"]`);
+    const nextButton = root.querySelector(`[data-rail-control="next"][data-rail-target="${railId}"]`);
+    if (!prevButton || !nextButton) {
+      return;
+    }
+
+    const syncButtons = () => {
+      const maxScroll = Math.max(track.scrollWidth - track.clientWidth, 0);
+      prevButton.disabled = track.scrollLeft <= 8;
+      nextButton.disabled = track.scrollLeft >= maxScroll - 8;
+    };
+
+    const scrollAmount = () => {
+      const firstCard = track.querySelector(".portal-call-card");
+      const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 0;
+      return Math.max(track.clientWidth * 0.84, cardWidth + 18);
+    };
+
+    prevButton.addEventListener("click", () => {
+      track.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
+    });
+    nextButton.addEventListener("click", () => {
+      track.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+    });
+    track.addEventListener("scroll", syncButtons, { passive: true });
+    requestAnimationFrame(syncButtons);
+  });
 }
 
 function renderCallDetail(entry) {
@@ -2467,6 +2683,24 @@ function displayGroupLabel(group) {
   return key ? t(`groupLabel.${key}`) : group;
 }
 
+function displayAudienceLabel(key) {
+  const audience = AUDIENCE_CATALOG[key];
+  if (!audience) {
+    return key;
+  }
+  return audience[state.locale] || audience.ja || audience.en || key;
+}
+
+function getCallAudienceKeys(entry) {
+  return CALL_AUDIENCE_MAP[entry?.id] || [];
+}
+
+function callAudienceSearchText(entry) {
+  return getCallAudienceKeys(entry)
+    .map((key) => Object.values(AUDIENCE_CATALOG[key] || {}).join(" "))
+    .join(" ");
+}
+
 function displayKindLabel(kind) {
   const label = t(`kindLabel.${kind}`);
   return label === `kindLabel.${kind}` ? kind : label;
@@ -2590,6 +2824,15 @@ function compareByStatus(left, right) {
   return statusWeight(left.status) - statusWeight(right.status) || compareByDeadline(left, right) || compareTitle(left, right);
 }
 
+function compareCallGroups(leftGroup, rightGroup) {
+  const leftIndex = CALL_GROUP_ORDER.indexOf(leftGroup);
+  const rightIndex = CALL_GROUP_ORDER.indexOf(rightGroup);
+  if (leftIndex !== -1 || rightIndex !== -1) {
+    return (leftIndex === -1 ? CALL_GROUP_ORDER.length : leftIndex) - (rightIndex === -1 ? CALL_GROUP_ORDER.length : rightIndex);
+  }
+  return displayGroupLabel(leftGroup).localeCompare(displayGroupLabel(rightGroup), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
+}
+
 function sortCallEntries(entries, sortMode = "deadline") {
   return entries.sort((left, right) => {
     if (sortMode === "title") {
@@ -2613,6 +2856,16 @@ function timingInfoPill(label, value, tone = "default") {
   return `<span class="meta-pill portal-date-pill portal-date-pill-${tone}">${escapeHtml(label)} ${escapeHtml(value)}</span>`;
 }
 
+function callSortLabel(sortMode) {
+  const key = {
+    deadline: "sortDeadline",
+    priority: "sortPriority",
+    title: "sortTitle",
+    status: "sortStatus",
+  }[sortMode] || "sortDeadline";
+  return t(`calls.${key}`);
+}
+
 function callOpenDisplay(record) {
   if (!record) {
     return "";
@@ -2621,6 +2874,39 @@ function callOpenDisplay(record) {
     return formatDate(record.call_open_date);
   }
   return localeValue(record, "call_open_label");
+}
+
+function callOpenCompactDisplay(record) {
+  if (!record) {
+    return "";
+  }
+  if (record.call_open_date) {
+    return formatCompactDate(record.call_open_date);
+  }
+  return localeValue(record, "call_open_label");
+}
+
+function deadlineCompactDisplay(record) {
+  const value = deadlineDate(record);
+  return value ? formatCompactDate(value) : "";
+}
+
+function compactTimingText(record) {
+  if (!record) {
+    return "";
+  }
+  const parts = [t(`status.${record.status}`)];
+  const opening = callOpenCompactDisplay(record);
+  const deadline = deadlineCompactDisplay(record);
+  if (opening) {
+    parts.push(`${t("common.opening")} ${opening}`);
+  }
+  if (deadline) {
+    parts.push(`${t("common.deadlineLabel")} ${deadline}`);
+  } else if (record.page_last_updated) {
+    parts.push(`${t("common.updatedShort")} ${formatCompactDate(String(record.page_last_updated).slice(0, 10))}`);
+  }
+  return parts.join(" · ");
 }
 
 function timingPillCluster(record) {
@@ -2738,6 +3024,18 @@ function formatDate(isoDate) {
     day: "numeric",
     },
   ).format(date);
+}
+
+function formatCompactDate(value) {
+  if (!value) {
+    return "--";
+  }
+  const raw = String(value).slice(0, 10);
+  const date = new Date(`${raw}T00:00:00+09:00`);
+  if (Number.isNaN(date.getTime())) {
+    return raw;
+  }
+  return `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
 }
 
 function formatDateTime(value) {
