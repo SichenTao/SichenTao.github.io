@@ -2576,7 +2576,7 @@ function renderDirectionWorkspace() {
           </div>
           <div class="investigation-launcher-section investigation-selected-stack">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
-            <div class="chip-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<button class="chip chip-active-filter is-active" type="button" data-remove-research-tag="${escapeHtml(String(entry.value || ""))}" data-research-tag-category="${escapeHtml(entry.category)}"><span>#${escapeHtml(researchSelectedTagLabel(entry))}</span><span class="chip-count">×</span></button>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
+            <div class="field-hash-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<button class="field-hash-tag field-hash-tag-removable" type="button" data-remove-research-tag="${escapeHtml(String(entry.value || ""))}" data-research-tag-category="${escapeHtml(entry.category)}"><span>#${escapeHtml(researchSelectedTagLabel(entry))}</span><span class="field-hash-tag-remove" aria-hidden="true">×</span></button>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
           </div>
           <div class="investigation-launcher-section">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag">${escapeHtml(yearIntervalLabel)}</span></div>

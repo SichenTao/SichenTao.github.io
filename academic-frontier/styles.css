@@ -1363,15 +1363,12 @@ body[data-lang="ja"] .hero-role {
   justify-content: center;
 }
 
+.investigation-selected-row,
 .investigation-preset-row,
 .investigation-brief-row,
 .investigation-token-row,
 .direction-keyword-row {
   margin: 0;
-}
-
-.chip-row.investigation-selected-row {
-  margin-bottom: 0;
 }
 
 .investigation-brief-card {
@@ -1761,6 +1758,31 @@ body[data-lang="ja"] .hero-role {
   font-size: 0.76rem;
   font-weight: 600;
   line-height: 1.2;
+}
+
+.field-hash-tag-removable {
+  appearance: none;
+  cursor: pointer;
+  gap: 8px;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.field-hash-tag-removable:hover,
+.field-hash-tag-removable:focus-visible {
+  background: rgba(var(--teal-rgb), 0.14);
+  border-color: rgba(var(--teal-rgb), 0.22);
+  color: var(--teal-deep);
+  outline: none;
+}
+
+.field-hash-tag-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  line-height: 1;
 }
 
 .field-hash-tag-button {
