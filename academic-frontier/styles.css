@@ -1876,7 +1876,7 @@ body[data-lang="ja"] .hero-role {
 .filter-chip-row {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
-  align-items: start;
+  align-items: center;
   gap: 10px;
   margin-bottom: 16px;
 }
