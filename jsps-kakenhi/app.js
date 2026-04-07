@@ -138,12 +138,14 @@ const I18N = {
       targetLabel: "对象",
       scrollPrev: "向左滚动",
       scrollNext: "向右滚动",
+      formTag: "表格",
       quickAll: "全部",
-      quickPriority: "重点",
       quickOpen: "公募中",
-      quickStartup: "启动支援",
-      quickYoung: "青年研究",
-      quickForms: "S-21 / S-22",
+      quickDeadline: "近截止",
+      quickFaculty: "教员",
+      quickFellowships: "特别研究员",
+      quickInbound: "来日研究者",
+      quickOutbound: "海外派遣",
       detailTitle: "条目详情",
       officialLinks: "官方入口",
       featuredDocs: "重点资料",
@@ -378,12 +380,14 @@ const I18N = {
       targetLabel: "Audience",
       scrollPrev: "Scroll left",
       scrollNext: "Scroll right",
+      formTag: "Form",
       quickAll: "All",
-      quickPriority: "Priority",
       quickOpen: "Open",
-      quickStartup: "Start-up Support",
-      quickYoung: "Early-Career",
-      quickForms: "S-21 / S-22",
+      quickDeadline: "Due soon",
+      quickFaculty: "Faculty",
+      quickFellowships: "JSPS fellows",
+      quickInbound: "Inbound",
+      quickOutbound: "Outbound",
       detailTitle: "Entry detail",
       officialLinks: "Official links",
       featuredDocs: "Featured documents",
@@ -588,12 +592,14 @@ I18N.ja = {
     targetLabel: "対象",
     scrollPrev: "左へスクロール",
     scrollNext: "右へスクロール",
+    formTag: "様式",
     quickAll: "すべて",
-    quickPriority: "重点",
     quickOpen: "公募中",
-    quickStartup: "スタート支援",
-    quickYoung: "若手研究",
-    quickForms: "S-21 / S-22",
+    quickDeadline: "締切順",
+    quickFaculty: "教員向け",
+    quickFellowships: "特別研究員系",
+    quickInbound: "来日研究者",
+    quickOutbound: "海外派遣",
     detailTitle: "項目詳細",
     officialLinks: "公式リンク",
     featuredDocs: "重要資料",
@@ -1800,11 +1806,12 @@ function renderCallsPage() {
 
   const quickButtons = [
     { id: "all", label: t("calls.quickAll"), apply: () => ({ search: "", status: "all", group: "all", audience: "all" }) },
-    { id: "priority", label: t("calls.quickPriority"), apply: () => ({ group: "重点项目" }) },
     { id: "open", label: t("calls.quickOpen"), apply: () => ({ status: "open" }) },
-    { id: "startup", label: t("calls.quickStartup"), apply: () => ({ search: "研究活動スタート支援" }) },
-    { id: "young", label: t("calls.quickYoung"), apply: () => ({ search: "若手研究" }) },
-    { id: "forms", label: t("calls.quickForms"), apply: () => ({ search: "S-2" }) },
+    { id: "deadline", label: t("calls.quickDeadline"), apply: () => ({ status: "open", sort: "deadline" }) },
+    { id: "faculty", label: t("calls.quickFaculty"), apply: () => ({ audience: "faculty_researchers" }) },
+    { id: "fellows", label: t("calls.quickFellowships"), apply: () => ({ group: "JSPS Fellowships" }) },
+    { id: "inbound", label: t("calls.quickInbound"), apply: () => ({ group: "Inbound Fellowships" }) },
+    { id: "outbound", label: t("calls.quickOutbound"), apply: () => ({ audience: "outbound_japan" }) },
   ];
   quickFilters.innerHTML = quickButtons
     .map(
@@ -1814,8 +1821,15 @@ function renderCallsPage() {
   quickFilters.querySelectorAll("[data-quick]").forEach((button) => {
     button.addEventListener("click", () => {
       const choice = quickButtons.find((item) => item.id === button.dataset.quick);
-      state.filters.calls.quick = choice.id;
-      state.filters.calls = { ...state.filters.calls, ...choice.apply(), quick: choice.id };
+      state.filters.calls = {
+        ...state.filters.calls,
+        search: "",
+        status: "all",
+        group: "all",
+        audience: "all",
+        ...choice.apply(),
+        quick: choice.id,
+      };
       persistFilters();
       renderCallsPage();
     });
@@ -1938,29 +1952,32 @@ function renderCallRailCard(entry) {
   `;
 }
 
+function callHashTag(text, tone = "default") {
+  return `<span class="portal-hash-tag${tone !== "default" ? ` is-${escapeHtml(tone)}` : ""}">${escapeHtml(text)}</span>`;
+}
+
 function callCardMeta(entry) {
-  const pills = [];
+  const tags = [];
   if (entry.priority) {
-    pills.push(metaPill(t("common.priority")));
+    tags.push(callHashTag(t("common.priority"), "accent"));
   }
   const preferredAudienceKeys = getCallAudienceKeys(entry)
     .filter((key) => key !== "japan_side")
-    .slice(0, 2)
-    .map((key) => metaPill(displayAudienceLabel(key)));
-  preferredAudienceKeys.forEach((pill) => pills.push(pill));
-  const remainingSlots = Math.max(0, 3 - pills.length);
-  const visibleCodes = (entry.form_codes || []).slice(0, remainingSlots);
-  visibleCodes
-    .forEach((code) => pills.push(metaPill(code)));
-  const hiddenCodeCount = Math.max(0, (entry.form_codes || []).length - visibleCodes.length);
-  if (hiddenCodeCount > 1) {
-    pills.push(metaPill(`+${hiddenCodeCount}`));
+    .slice(0, 2);
+  if (preferredAudienceKeys[0]) {
+    tags.push(callHashTag(displayAudienceLabel(preferredAudienceKeys[0])));
   }
-  if (!pills.length) {
+  if ((entry.form_codes || [])[0]) {
+    tags.push(callHashTag(`${t("calls.formTag")} ${(entry.form_codes || [])[0]}`));
+  }
+  if (tags.length < 3 && preferredAudienceKeys[1]) {
+    tags.push(callHashTag(displayAudienceLabel(preferredAudienceKeys[1])));
+  }
+  if (!tags.length) {
     const fallbackAudience = getCallAudienceKeys(entry)[0];
-    pills.push(metaPill(fallbackAudience ? displayAudienceLabel(fallbackAudience) : displayGroupLabel(entry.group)));
+    tags.push(callHashTag(fallbackAudience ? displayAudienceLabel(fallbackAudience) : displayGroupLabel(entry.group)));
   }
-  return pills.join("");
+  return tags.join("");
 }
 
 function callRailSummary(count) {
@@ -2881,14 +2898,14 @@ function callOpenCompactDisplay(record) {
     return "";
   }
   if (record.call_open_date) {
-    return formatCompactDate(record.call_open_date);
+    return formatShortDate(record.call_open_date);
   }
-  return localeValue(record, "call_open_label");
+  return formatApproximateOpenLabel(record);
 }
 
 function deadlineCompactDisplay(record) {
   const value = deadlineDate(record);
-  return value ? formatCompactDate(value) : "";
+  return value ? formatShortDate(value) : "";
 }
 
 function compactTimingText(record) {
@@ -2898,13 +2915,19 @@ function compactTimingText(record) {
   const parts = [t(`status.${record.status}`)];
   const opening = callOpenCompactDisplay(record);
   const deadline = deadlineCompactDisplay(record);
-  if (opening) {
-    parts.push(`${t("common.opening")} ${opening}`);
+  if (opening && deadline) {
+    parts.push(`${opening}~${deadline}`);
+    return parts.join(" · ");
   }
   if (deadline) {
-    parts.push(`${t("common.deadlineLabel")} ${deadline}`);
+    parts.push(`~${deadline}`);
+    return parts.join(" · ");
+  }
+  if (opening) {
+    parts.push(opening);
+    return parts.join(" · ");
   } else if (record.page_last_updated) {
-    parts.push(`${t("common.updatedShort")} ${formatCompactDate(String(record.page_last_updated).slice(0, 10))}`);
+    parts.push(`${t("common.updatedShort")} ${formatShortDate(String(record.page_last_updated).slice(0, 10))}`);
   }
   return parts.join(" · ");
 }
@@ -3026,7 +3049,7 @@ function formatDate(isoDate) {
   ).format(date);
 }
 
-function formatCompactDate(value) {
+function formatShortDate(value) {
   if (!value) {
     return "--";
   }
@@ -3035,7 +3058,27 @@ function formatCompactDate(value) {
   if (Number.isNaN(date.getTime())) {
     return raw;
   }
-  return `${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`;
+  return `${String(date.getFullYear()).slice(-2)}.${String(date.getMonth() + 1).padStart(2, "0")}.${String(date.getDate()).padStart(2, "0")}`;
+}
+
+function formatApproximateOpenLabel(record) {
+  const raw = record?.call_open_label_ja || record?.call_open_label || localeValue(record, "call_open_label");
+  if (!raw) {
+    return "";
+  }
+
+  const jaMatch = String(raw).match(/^(\d{4})年(\d{1,2})月(上旬|中旬|下旬)$/);
+  if (jaMatch) {
+    const [, year, month, phase] = jaMatch;
+    const prefix = `${String(year).slice(-2)}.${String(month).padStart(2, "0")}`;
+    const phaseMap =
+      state.locale === "en"
+        ? { "上旬": "early", "中旬": "mid", "下旬": "late" }
+        : { "上旬": "上旬", "中旬": "中旬", "下旬": "下旬" };
+    return `${prefix}${state.locale === "en" ? " " : ""}${phaseMap[phase] || phase}`;
+  }
+
+  return String(raw);
 }
 
 function formatDateTime(value) {

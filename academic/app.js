@@ -3020,7 +3020,7 @@ function profileMarkMarkup(item = {}) {
   const meta = profileMarkMeta(item);
   const resolvedIcon = resolveProfileMarkIcon(item, icon);
   if (icon) {
-    const badgeClass = resolvedIcon.includes("-badge.svg") ? " profile-mark-badge" : "";
+    const badgeClass = resolvedIcon.endsWith("-badge.svg") ? " profile-mark-badge" : "";
     return `
       <span class="profile-mark profile-mark-image${badgeClass} profile-mark-${escapeHtml(meta.tone)}" aria-hidden="true">
         <img src="${escapeHtml(resolvedIcon)}" alt="" loading="lazy" />
@@ -3040,7 +3040,7 @@ function resolveProfileMarkIcon(item = {}, icon = "") {
     || title === "Tohoku University Cyberscience Center"
     || url.includes("cc.tohoku.ac.jp")
   ) {
-    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg?v=20260407-143322";
+    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg";
   }
 
   return normalizedIcon;
