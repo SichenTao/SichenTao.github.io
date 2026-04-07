@@ -3604,7 +3604,7 @@ a {
 .portal-call-card {
   display: grid;
   align-content: start;
-  gap: 12px;
+  gap: 14px;
   min-height: 100%;
   padding: 18px 18px 16px;
   border-radius: var(--radius-lg);
@@ -3631,18 +3631,46 @@ a {
   outline: none;
 }
 
+.portal-call-card .portal-card-head {
+  display: grid;
+  gap: 10px;
+  align-items: start;
+  margin-bottom: 0;
+}
+
+.portal-call-card .portal-head-meta {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  max-width: none;
+}
+
+.portal-call-card .portal-status-pill,
+.portal-call-card .portal-date-pill {
+  max-width: none;
+}
+
 .portal-call-card .eyebrow {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  display: block;
+  overflow: visible;
+  line-height: 1.45;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: loose;
+  text-wrap: pretty;
 }
 
 .portal-call-card strong {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
+  display: block;
+  overflow: visible;
+  line-height: 1.36;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: loose;
+  text-wrap: pretty;
 }
 
 .portal-call-summary {
@@ -3650,8 +3678,12 @@ a {
   line-height: 1.62;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 6;
   overflow: hidden;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-break: loose;
+  text-wrap: pretty;
 }
 
 .portal-card-cta {
@@ -3935,6 +3967,11 @@ a {
 
   .portal-call-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portal-call-card .portal-head-meta {
+    flex-direction: column;
+    gap: 6px;
   }
 
   .portal-detail-panel {

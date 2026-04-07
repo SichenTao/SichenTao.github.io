@@ -1,5 +1,5 @@
 window.ACADEMIC_FRONTIER_RESEARCH = {
-  "generatedAt": "2026-04-07 10:48 JST",
+  "generatedAt": "2026-04-07 13:28 JST",
   "seedProfile": {
     "profileName": "Sichen Tao",
     "summary": {
