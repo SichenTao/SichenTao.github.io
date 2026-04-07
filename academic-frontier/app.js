@@ -2317,6 +2317,44 @@ function researchSelectedTagLabel(entry) {
   return String(entry.value || "");
 }
 
+function removeResearchSelectedTag(entry) {
+  if (!entry?.category) return;
+
+  if (entry.category === "problem") {
+    state.researchProblemFieldFilters = state.researchProblemFieldFilters.filter((value) => value !== entry.value);
+    return;
+  }
+  if (entry.category === "method") {
+    state.researchMethodFieldFilters = state.researchMethodFieldFilters.filter((value) => value !== entry.value);
+    return;
+  }
+  if (entry.category === "jcr") {
+    state.researchJcrFilter = "all";
+    return;
+  }
+  if (entry.category === "cas") {
+    state.researchCasFilter = "all";
+    return;
+  }
+  if (entry.category === "casTop") {
+    state.researchCasTopFilter = "all";
+    return;
+  }
+  if (entry.category === "impact") {
+    state.researchImpactFilter = "all";
+    return;
+  }
+  if (entry.category === "author") {
+    state.researchAuthorFilter = "all";
+    return;
+  }
+  if (entry.category === "yearRange") {
+    state.researchYearStart = "";
+    state.researchYearEnd = "";
+    state.researchYearOpenEnded = true;
+  }
+}
+
 function combinedFocusPrompt() {
   return uniqueStrings([
     ...researchSelectedTagEntries().map((entry) => researchSelectedTagLabel(entry)),
@@ -2538,7 +2576,7 @@ function renderDirectionWorkspace() {
           </div>
           <div class="investigation-launcher-section investigation-selected-stack">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
-            <div class="field-hash-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="field-hash-tag">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
+            <div class="chip-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<button class="chip chip-active-filter is-active" type="button" data-remove-research-tag="${escapeHtml(String(entry.value || ""))}" data-research-tag-category="${escapeHtml(entry.category)}"><span>#${escapeHtml(researchSelectedTagLabel(entry))}</span><span class="chip-count">×</span></button>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
           </div>
           <div class="investigation-launcher-section">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag">${escapeHtml(yearIntervalLabel)}</span></div>
@@ -4841,6 +4879,19 @@ function bindResearchLauncher() {
   });
 
   document.addEventListener("click", async (event) => {
+    const removeResearchTagButton = event.target.closest("[data-remove-research-tag]");
+    if (removeResearchTagButton) {
+      syncResearchPromptInput();
+      removeResearchSelectedTag({
+        category: removeResearchTagButton.dataset.researchTagCategory || "",
+        value: removeResearchTagButton.dataset.removeResearchTag || "",
+      });
+      renderDirectionCockpit();
+      renderDirectionWorkspace();
+      renderDomainSwitcher();
+      return;
+    }
+
     const keywordButton = event.target.closest("[data-research-preset]");
     if (keywordButton) {
       syncResearchPromptInput();

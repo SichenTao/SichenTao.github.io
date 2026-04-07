@@ -1363,12 +1363,15 @@ body[data-lang="ja"] .hero-role {
   justify-content: center;
 }
 
-.investigation-selected-row,
 .investigation-preset-row,
 .investigation-brief-row,
 .investigation-token-row,
 .direction-keyword-row {
   margin: 0;
+}
+
+.chip-row.investigation-selected-row {
+  margin-bottom: 0;
 }
 
 .investigation-brief-card {
