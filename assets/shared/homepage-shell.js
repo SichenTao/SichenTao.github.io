@@ -98,18 +98,34 @@
     });
   }
 
-  function bindCycleTrigger(trigger, handler) {
-    if (!trigger || typeof handler !== "function") {
+  function bindSwitcherTrigger(trigger) {
+    if (!trigger) {
       return;
     }
-    if (trigger.dataset.sharedCycleBound === "true") {
+    if (trigger.dataset.sharedToggleBound === "true") {
       return;
     }
-    trigger.dataset.sharedCycleBound = "true";
+    trigger.dataset.sharedToggleBound = "true";
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
-      closeAllSwitchers(runtime.root);
-      handler();
+      event.stopPropagation();
+      const switcher = trigger.closest(".control-switcher");
+      if (!switcher) {
+        return;
+      }
+
+      const shouldExpand = !switcher.classList.contains("is-open");
+      qsa(".control-switcher", runtime.root).forEach((other) => {
+        clearSwitcherCloseTimer(other);
+        setSwitcherExpandedState(other, false);
+      });
+      if (shouldExpand) {
+        clearSwitcherCloseTimer(switcher);
+        setSwitcherExpandedState(switcher, true);
+        trigger.focus({ preventScroll: true });
+      } else {
+        trigger.blur();
+      }
     });
   }
 
@@ -118,21 +134,7 @@
     runtime.switchers = config;
     bindSwitcherHoverBehavior(runtime.root);
 
-    qsa("[data-locale-trigger]", runtime.root).forEach((trigger) => {
-      if (config.localeCycleLabel) {
-        trigger.setAttribute("aria-label", config.localeCycleLabel);
-        trigger.setAttribute("title", config.localeCycleLabel);
-      }
-      bindCycleTrigger(trigger, config.onCycleLocale);
-    });
-
-    qsa("[data-theme-trigger]", runtime.root).forEach((trigger) => {
-      if (config.themeCycleLabel) {
-        trigger.setAttribute("aria-label", config.themeCycleLabel);
-        trigger.setAttribute("title", config.themeCycleLabel);
-      }
-      bindCycleTrigger(trigger, config.onCycleTheme);
-    });
+    qsa("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]", runtime.root).forEach(bindSwitcherTrigger);
 
     if (switcherDocumentBound) {
       return;

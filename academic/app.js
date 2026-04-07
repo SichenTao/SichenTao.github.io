@@ -2376,7 +2376,6 @@ function renderThemeSwitchers() {
         title="${escapeHtml(translatedThemeTooltip(activeThemeName))}"
       >
         <span class="theme-swatch ${escapeHtml(activeTheme.swatchClass)}" data-theme-current-swatch aria-hidden="true"></span>
-        <span class="control-current-label" data-theme-current-label>${escapeHtml(translatedThemeTriggerLabel(activeThemeName))}</span>
       </button>
       <div class="theme-tray" role="group" aria-label="${escapeHtml(t("controls.theme_choices"))}">
         ${themeButtons}
@@ -2477,7 +2476,6 @@ function renderPortalReturnControl() {
       title="${escapeHtml(activeItem.label)}"
     >
       ${iconSprite("home")}
-      <span class="control-current-label">${escapeHtml(activeItem.triggerLabel || activeItem.label)}</span>
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
       ${items.map((item) => `
@@ -2595,6 +2593,9 @@ function bindSwitcherTriggerButtons() {
       if (shouldExpand) {
         clearSwitcherCloseTimer(switcher);
         setSwitcherExpandedState(switcher, true);
+        trigger.focus({ preventScroll: true });
+      } else {
+        trigger.blur();
       }
     });
   });
@@ -2682,9 +2683,6 @@ function applyTheme(themeName, persist = true) {
 
   document.querySelectorAll("[data-theme-current-swatch]").forEach((swatch) => {
     swatch.className = `theme-swatch ${themeCatalog[nextTheme].swatchClass}`;
-  });
-  document.querySelectorAll("[data-theme-current-label]").forEach((node) => {
-    node.textContent = translatedThemeTriggerLabel(nextTheme);
   });
   els.themeTriggers.forEach((trigger) => {
     trigger.setAttribute("aria-label", translatedThemeTooltip(nextTheme));
@@ -3166,27 +3164,6 @@ function translatedThemeLabel(themeName) {
     usst: "University of Shanghai for Science and Technology",
   };
   return lt(labels[themeName] || "") || themeCatalog[themeName]?.label || themeName;
-}
-
-function translatedThemeTriggerLabel(themeName) {
-  const labels = {
-    tohoku: {
-      en: "Tohoku",
-      ja: "東北大学",
-      zh: "东北大学",
-    },
-    toyama: {
-      en: "Toyama",
-      ja: "富山大学",
-      zh: "富山大学",
-    },
-    usst: {
-      en: "USST",
-      ja: "上海理工大",
-      zh: "上海理工大学",
-    },
-  };
-  return labels[themeName]?.[resolveLocaleName()] || translatedThemeLabel(themeName);
 }
 
 function translatedThemeTooltip(themeName) {

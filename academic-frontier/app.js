@@ -3,10 +3,13 @@ const STORAGE_KEY_LOCAL_LANGUAGE = "学术前沿-language";
 const STORAGE_KEY_DOMAIN = "academic-frontier-domain";
 const STORAGE_KEY_LOCAL_DOMAIN = "学术前沿-domain";
 const STORAGE_KEY_THEME = "sichen-homepage-theme";
+const SESSION_KEY_LANGUAGE = "sichen-homepage-locale";
 const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
 const OPEN_RESEARCH_MIN_YEAR = 1950;
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
+const LOCALE_SWITCH_SEQUENCE = ["en", "ja", "zh"];
+const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst"];
 
 const THEME_CATALOG = {
   tohoku: {
@@ -37,6 +40,20 @@ function readStoredValue(key) {
 function writeStoredValue(key, value) {
   try {
     window.localStorage.setItem(key, value);
+  } catch {}
+}
+
+function readSessionValue(key) {
+  try {
+    return window.sessionStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeSessionValue(key, value) {
+  try {
+    window.sessionStorage.setItem(key, value);
   } catch {}
 }
 
@@ -1147,12 +1164,14 @@ const PATTERN_TRANSLATORS = [
 ];
 
 function loadInitialLanguage() {
-  const saved =
-    readStoredValue(STORAGE_KEY_LANGUAGE) ||
-    readStoredValue(STORAGE_KEY_LOCAL_LANGUAGE) ||
-    null;
-  if (saved && UI_TEXT[saved]) {
-    return saved;
+  const explicitLocale = pageLocale();
+  if (explicitLocale && UI_TEXT[explicitLocale]) {
+    return explicitLocale;
+  }
+
+  const sessionLocale = readSessionValue(SESSION_KEY_LANGUAGE);
+  if (sessionLocale && UI_TEXT[sessionLocale]) {
+    return sessionLocale;
   }
   return "en";
 }
@@ -1176,8 +1195,19 @@ function translatedThemeTooltip(themeName) {
   return `${translatedThemeLabel(themeName)}${suffix}`;
 }
 
+function portalHomeIconMarkup() {
+  return '<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg>';
+}
+
+function frontierHomeHref(locale = currentLocale()) {
+  return locale === "en" ? `${PUBLIC_SITE_BASE_PATH}/` : `${PUBLIC_SITE_BASE_PATH}/${encodeURIComponent(locale)}/`;
+}
+
 function loadInitialTheme() {
   const queryTheme = new URLSearchParams(window.location.search).get("theme");
+  if (queryTheme === "base") {
+    return "tohoku";
+  }
   if (queryTheme && THEME_CATALOG[queryTheme]) {
     return queryTheme;
   }
@@ -1187,18 +1217,18 @@ function loadInitialTheme() {
     document.documentElement?.dataset?.theme ||
     "tohoku";
 
-  const savedTheme = readStoredValue(STORAGE_KEY_THEME);
-  if (savedTheme && THEME_CATALOG[savedTheme]) {
+  const savedTheme = readSessionValue(STORAGE_KEY_THEME);
+  if (savedTheme && THEME_CATALOG[savedTheme] && savedTheme !== "base") {
     return savedTheme;
   }
 
-  return THEME_CATALOG[defaultTheme] ? defaultTheme : "tohoku";
+  return THEME_CATALOG[defaultTheme] && defaultTheme !== "base" ? defaultTheme : "tohoku";
 }
 
 const LOCALE_CATALOG = {
-  en: { label: "En", name: "English", lang: "en" },
-  zh: { label: "中", name: "中文", lang: "zh-CN" },
+  en: { label: "EN", name: "English", lang: "en" },
   ja: { label: "日", name: "日本語", lang: "ja" },
+  zh: { label: "中", name: "中文", lang: "zh-CN" },
 };
 
 let localeUiBound = false;
@@ -1231,7 +1261,7 @@ function pageLocale() {
 }
 
 function nextLocaleName(currentLanguage = state.language || currentLocale()) {
-  const sequence = Object.keys(LOCALE_CATALOG);
+  const sequence = LOCALE_SWITCH_SEQUENCE.filter((localeName) => LOCALE_CATALOG[localeName]);
   const pointer = sequence.indexOf(currentLanguage);
   if (pointer === -1) {
     return sequence[0] || "en";
@@ -1240,7 +1270,7 @@ function nextLocaleName(currentLanguage = state.language || currentLocale()) {
 }
 
 function nextThemeName(currentTheme = state.theme || loadInitialTheme()) {
-  const sequence = Object.keys(THEME_CATALOG);
+  const sequence = THEME_SWITCH_SEQUENCE.filter((themeName) => THEME_CATALOG[themeName]);
   const pointer = sequence.indexOf(currentTheme);
   if (pointer === -1) {
     return sequence[0] || "tohoku";
@@ -2915,7 +2945,8 @@ function renderLocaleSwitcher() {
   tray.setAttribute("role", "group");
   tray.setAttribute("aria-label", ui("languageChoicesLabel"));
 
-  Object.entries(LOCALE_CATALOG).forEach(([localeName, locale]) => {
+  LOCALE_SWITCH_SEQUENCE.filter((localeName) => LOCALE_CATALOG[localeName]).forEach((localeName) => {
+    const locale = LOCALE_CATALOG[localeName];
     const link = el("a", `locale-chip${localeName === state.language ? " is-active" : ""}`);
     link.href = localePageHref(localeName);
     link.dataset.localeChoice = localeName;
@@ -2926,8 +2957,7 @@ function renderLocaleSwitcher() {
     }
     link.appendChild(el("span", "locale-label", locale.label));
     link.addEventListener("click", () => {
-      writeStoredValue(STORAGE_KEY_LANGUAGE, localeName);
-      writeStoredValue(STORAGE_KEY_LOCAL_LANGUAGE, localeName);
+      writeSessionValue(SESSION_KEY_LANGUAGE, localeName);
     });
     tray.appendChild(link);
   });
@@ -2938,8 +2968,8 @@ function renderLocaleSwitcher() {
   trigger.dataset.localeTrigger = "true";
   trigger.setAttribute("aria-haspopup", "true");
   trigger.setAttribute("aria-expanded", switcher.classList.contains("is-open") ? "true" : "false");
-  trigger.setAttribute("aria-label", ui("cycleLanguagesLabel") || ui("showLanguagesLabel"));
-  trigger.title = ui("cycleLanguagesLabel") || ui("showLanguagesLabel");
+  trigger.setAttribute("aria-label", activeLocale.name);
+  trigger.title = activeLocale.name;
   trigger.appendChild(el("span", "locale-label", activeLocale.label));
 
   switcher.appendChild(trigger);
@@ -2957,7 +2987,8 @@ function renderThemeSwitcher() {
   tray.setAttribute("role", "group");
   tray.setAttribute("aria-label", ui("themeChoicesLabel"));
 
-  Object.entries(THEME_CATALOG).forEach(([themeName, theme]) => {
+  THEME_SWITCH_SEQUENCE.filter((themeName) => THEME_CATALOG[themeName]).forEach((themeName) => {
+    const theme = THEME_CATALOG[themeName];
     const button = el("button", `theme-chip${themeName === activeThemeName ? " is-active" : ""}`);
     button.type = "button";
     button.dataset.themeChoice = themeName;
@@ -2977,7 +3008,7 @@ function renderThemeSwitcher() {
   trigger.dataset.themeTrigger = "true";
   trigger.setAttribute("aria-haspopup", "true");
   trigger.setAttribute("aria-expanded", switcher.classList.contains("is-open") ? "true" : "false");
-  trigger.setAttribute("aria-label", ui("cycleThemesLabel") || ui("showThemesLabel"));
+  trigger.setAttribute("aria-label", translatedThemeTooltip(activeThemeName));
   trigger.title = translatedThemeTooltip(activeThemeName);
   const currentSwatch = el("span", `theme-swatch ${activeTheme.swatchClass}`);
   currentSwatch.dataset.themeCurrentSwatch = "true";
@@ -2996,36 +3027,32 @@ function renderPortalReturnControl() {
   const locale = currentLocale();
   const labels = {
     en: {
-      trigger: "Open portal menu",
       tray: "Site sections",
-      portal: "Homepage portal",
-      academic: "Personal homepage",
-      radar: "学术前沿",
-      jsps: "JSPS KAKENHI",
+      portal: { short: "Portal", full: "Navigation portal" },
+      academic: { short: "Homepage", full: "Personal homepage" },
+      radar: { short: "Frontier", full: "Academic Frontier" },
+      jsps: { short: "JSPS", full: "JSPS KAKENHI" },
     },
     zh: {
-      trigger: "打开功能主页菜单",
       tray: "功能主页",
-      portal: "主页导航",
-      academic: "个人主页",
-      radar: "学术前沿",
-      jsps: "JSPS 科研费",
+      portal: { short: "导航页", full: "导航页" },
+      academic: { short: "个人主页", full: "个人主页" },
+      radar: { short: "学术前沿", full: "学术前沿" },
+      jsps: { short: "JSPS", full: "JSPS 科研费" },
     },
     ja: {
-      trigger: "機能ページメニューを開く",
       tray: "機能ページ",
-      portal: "ホームポータル",
-      academic: "個人ホームページ",
-      radar: "学术前沿",
-      jsps: "JSPS 科研費",
+      portal: { short: "ポータル", full: "ナビゲーション" },
+      academic: { short: "個人HP", full: "個人ホームページ" },
+      radar: { short: "学術前沿", full: "学術前沿" },
+      jsps: { short: "JSPS", full: "JSPS 科研費" },
     },
   }[locale] || {
-    trigger: "Open portal menu",
     tray: "Site sections",
-    portal: "Homepage portal",
-    academic: "Personal homepage",
-    radar: "学术前沿",
-    jsps: "JSPS KAKENHI",
+    portal: { short: "Portal", full: "Navigation portal" },
+    academic: { short: "Homepage", full: "Personal homepage" },
+    radar: { short: "Frontier", full: "Academic Frontier" },
+    jsps: { short: "JSPS", full: "JSPS KAKENHI" },
   };
 
   let currentPath = window.location.pathname;
@@ -3035,32 +3062,35 @@ function renderPortalReturnControl() {
   const items = [
     {
       href: "/",
-      label: labels.portal,
-      icon: iconSvg("home"),
+      label: labels.portal.full,
+      triggerLabel: labels.portal.short,
+      icon: portalHomeIconMarkup(),
       active: currentPath === "/",
     },
     {
       href: "/academic/",
-      label: labels.academic,
+      label: labels.academic.full,
+      triggerLabel: labels.academic.short,
       icon: '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
       active: currentPath.startsWith("/academic/"),
       extraClass: "portal-chip--portrait",
     },
     {
-      href: `${PUBLIC_SITE_BASE_PATH}/`,
-      label: labels.radar,
+      href: frontierHomeHref(locale),
+      label: labels.radar.full,
+      triggerLabel: labels.radar.short,
       icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
       active: currentPath.startsWith(`${PUBLIC_SITE_BASE_PATH}/`),
     },
     {
       href: "/jsps-kakenhi/",
-      label: labels.jsps,
+      label: labels.jsps.full,
+      triggerLabel: labels.jsps.short,
       icon: '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />',
       active: currentPath.startsWith("/jsps-kakenhi/"),
     },
   ];
   const activeItem = items.find((item) => item.active) || items[0];
-  const trayItems = items.filter((item) => item.href !== activeItem.href);
 
   controls.querySelectorAll(".portal-return-link").forEach((node) => node.remove());
 
@@ -3072,7 +3102,7 @@ function renderPortalReturnControl() {
 
   switcher.innerHTML = `
     <button
-      class="portal-trigger ${activeItem.extraClass || ""}"
+      class="portal-trigger"
       type="button"
       data-portal-trigger
       aria-haspopup="true"
@@ -3080,15 +3110,16 @@ function renderPortalReturnControl() {
       aria-label="${escapeHtml(activeItem.label)}"
       title="${escapeHtml(activeItem.label)}"
     >
-      ${activeItem.icon}
+      ${portalHomeIconMarkup()}
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
-      ${trayItems.map((item) => `
+      ${items.map((item) => `
         <a
-          class="portal-chip ${item.extraClass || ""}"
+          class="portal-chip ${item.extraClass || ""}${item.active ? " is-active" : ""}"
           href="${item.href}"
           aria-label="${escapeHtml(item.label)}"
           title="${escapeHtml(item.label)}"
+          ${item.active ? 'aria-current="page"' : ""}
         >
           ${item.icon}
         </a>
@@ -3449,8 +3480,7 @@ function initTopnavOverflowHints() {
 
 function setLanguage(language) {
   if (!UI_TEXT[language]) return;
-  writeStoredValue(STORAGE_KEY_LANGUAGE, language);
-  writeStoredValue(STORAGE_KEY_LOCAL_LANGUAGE, language);
+  writeSessionValue(SESSION_KEY_LANGUAGE, language);
   window.location.assign(localePageHref(language));
 }
 
@@ -3475,14 +3505,14 @@ function applyTheme(themeName, persist = true) {
   });
 
   document.querySelectorAll("[data-theme-trigger]").forEach((trigger) => {
-    trigger.setAttribute("aria-label", ui("cycleThemesLabel") || ui("showThemesLabel"));
-    trigger.title = ui("cycleThemesLabel") || ui("showThemesLabel");
+    trigger.setAttribute("aria-label", translatedThemeTooltip(nextTheme));
+    trigger.title = translatedThemeTooltip(nextTheme);
   });
 
   window.HomepageSharedShell?.closeAllSwitchers?.();
 
   if (persist) {
-    writeStoredValue(STORAGE_KEY_THEME, nextTheme);
+    writeSessionValue(STORAGE_KEY_THEME, nextTheme);
   }
 }
 
