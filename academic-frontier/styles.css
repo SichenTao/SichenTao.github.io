@@ -1212,7 +1212,9 @@ body[data-lang="ja"] .hero-role {
 
 .investigation-filter-row {
   grid-column: auto;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 8px;
 }
 
@@ -1705,25 +1707,26 @@ body[data-lang="ja"] .hero-role {
 }
 
 .filter-control-row {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 8px;
   width: 100%;
   grid-column: 3;
 }
 
 .filter-control-row .input {
-  min-width: 75%;
-  width: fit-content;
+  flex: 0 0 auto;
+  min-width: 0;
+  width: var(--filter-control-width, auto);
   max-width: 100%;
-  justify-self: start;
 }
 
 .investigation-filter-row .input {
-  min-width: 75%;
-  width: fit-content;
+  flex: 0 0 auto;
+  min-width: 0;
+  width: var(--filter-control-width, auto);
   max-width: 100%;
-  justify-self: start;
 }
 
 #problem-filter,

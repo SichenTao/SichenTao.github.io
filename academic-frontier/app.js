@@ -1392,6 +1392,68 @@ function escapeHtml(value) {
   return container.innerHTML;
 }
 
+const FILTER_CONTROL_WIDTH_MIN_PX = 132;
+const FILTER_CONTROL_WIDTH_MAX_PX = 360;
+const FILTER_CONTROL_WIDTH_EXTRA_PX = 46;
+let filterControlWidthContext = null;
+let filterControlWidthFrame = 0;
+
+function filterControlMeasureContext() {
+  if (filterControlWidthContext) {
+    return filterControlWidthContext;
+  }
+  filterControlWidthContext = document.createElement("canvas").getContext("2d");
+  return filterControlWidthContext;
+}
+
+function filterControlLabel(select) {
+  const option = select.selectedOptions?.[0] || select.options?.[select.selectedIndex];
+  return String(option?.textContent || option?.label || select.value || "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function syncAdaptiveFilterControlWidth(select) {
+  if (!(select instanceof HTMLSelectElement)) {
+    return;
+  }
+
+  const label = filterControlLabel(select);
+  if (!label) {
+    select.style.removeProperty("--filter-control-width");
+    return;
+  }
+
+  const context = filterControlMeasureContext();
+  if (!context) {
+    return;
+  }
+
+  const styles = window.getComputedStyle(select);
+  context.font = styles.font || `${styles.fontStyle} ${styles.fontVariant} ${styles.fontWeight} ${styles.fontSize} ${styles.fontFamily}`;
+  const horizontalPadding = Number.parseFloat(styles.paddingLeft || "0") + Number.parseFloat(styles.paddingRight || "0");
+  const horizontalBorder = Number.parseFloat(styles.borderLeftWidth || "0") + Number.parseFloat(styles.borderRightWidth || "0");
+  const measuredWidth = context.measureText(label).width + horizontalPadding + horizontalBorder + FILTER_CONTROL_WIDTH_EXTRA_PX;
+  const width = Math.ceil(Math.min(FILTER_CONTROL_WIDTH_MAX_PX, Math.max(FILTER_CONTROL_WIDTH_MIN_PX, measuredWidth)));
+  select.style.setProperty("--filter-control-width", `${width}px`);
+}
+
+function syncAdaptiveFilterControlWidths(root = document) {
+  root.querySelectorAll(".filter-control-row select.input, .investigation-filter-row select.input").forEach((select) => {
+    syncAdaptiveFilterControlWidth(select);
+  });
+}
+
+function scheduleAdaptiveFilterControlWidths(root = document) {
+  if (filterControlWidthFrame) {
+    window.cancelAnimationFrame(filterControlWidthFrame);
+  }
+  filterControlWidthFrame = window.requestAnimationFrame(() => {
+    filterControlWidthFrame = 0;
+    syncAdaptiveFilterControlWidths(root);
+  });
+}
+
 const ICON_PATHS = {
   copy: "M16 1H6a2 2 0 0 0-2 2v12h2V3h10V1zm3 4H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H10V7h9v14z",
   code: "M8.7 16.6 3.1 12l5.6-4.6 1.3 1.5L6.2 12l3.8 3.1-1.3 1.5zm6.6 0-1.3-1.5 3.8-3.1-3.8-3.1 1.3-1.5 5.6 4.6-5.6 4.6z",
@@ -2634,6 +2696,7 @@ function renderDirectionWorkspace() {
       </article>
     </div>
     <div class="direction-card-grid direction-card-grid-workspace">${directions.map((direction) => directionCardMarkup(direction, { detailed: true })).join("")}</div>`;
+  scheduleAdaptiveFilterControlWidths(mount);
 }
 
 function papersForDomain(domainId = state.activeDomainId) {
@@ -4219,6 +4282,8 @@ function renderPaperControls() {
       && !state.paperQuery;
     resetButton.disabled = isDefault;
   }
+
+  scheduleAdaptiveFilterControlWidths();
 }
 
 function renderPapers() {
@@ -5098,6 +5163,14 @@ function init() {
   bindResearchLauncher();
   bindMetricCopyHandlers();
   renderAll();
+  window.addEventListener("resize", () => {
+    scheduleAdaptiveFilterControlWidths();
+  });
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(() => {
+      scheduleAdaptiveFilterControlWidths();
+    }).catch(() => {});
+  }
   bindRevealObserver();
   loadLocalArchiveManifest();
 }
