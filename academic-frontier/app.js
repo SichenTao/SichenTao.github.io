@@ -2473,7 +2473,7 @@ function renderDirectionCockpit() {
     <div class="direction-cockpit-grid">
       <article class="focus-card">
         <div class="subhead"><h3>${escapeHtml(ui("seedProfileTitle"))}</h3></div>
-        <div class="chip-row compact">${seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("")}</div>
+        <div class="field-hash-row">${seedChips.map((item) => `<span class="field-hash-tag">#${escapeHtml(item)}</span>`).join("")}</div>
         <div class="direction-priority-stack">${directions.slice(0, 4).map((direction) => directionScoreBar(localizeText(direction.title), direction.adjustedPriority, direction.isManualHit ? "is-strong" : "")).join("")}</div>
       </article>
       <article class="focus-card focus-card-accent">
@@ -2488,7 +2488,7 @@ function renderDirectionCockpit() {
         <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
         <div class="chip-row compact">${focusPresetMarkup()}</div>
         <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusTokensLabel"))}</h4></div>
-        <div class="chip-row compact">${tokens.length ? tokens.map((token) => `<span class="chip is-static">${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
+        <div class="field-hash-row">${tokens.length ? tokens.map((token) => `<span class="field-hash-tag">#${escapeHtml(token)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("noFocusTokens"))}</span>`}</div>
         <p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 3).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ")}</span></p>
       </article>
     </div>
@@ -3931,6 +3931,7 @@ function renderActiveFieldTags(container) {
 
   const row = container.closest(".filter-chip-row");
   const entries = selectedTagEntries();
+  container.className = "field-hash-row active-field-tag-row";
   container.innerHTML = "";
 
   if (!entries.length) {
@@ -3942,13 +3943,16 @@ function renderActiveFieldTags(container) {
 
   entries.forEach((entry) => {
     const label = selectedTagLabel(entry);
-    const button = el("button", "chip chip-active-filter is-active");
+    const selection = el("span", "field-hash-selection");
+    const tag = el("span", "field-hash-tag", `#${label}`);
+    const button = el("button", "field-hash-remove-button", "×");
     button.type = "button";
     button.dataset.removeFieldTag = entry.value;
     button.dataset.fieldCategory = entry.category;
     button.setAttribute("aria-label", `Remove #${label}`);
-    button.innerHTML = `<span>#${escapeHtml(label)}</span><span class="chip-count">×</span>`;
-    container.appendChild(button);
+    selection.appendChild(tag);
+    selection.appendChild(button);
+    container.appendChild(selection);
   });
 }
 

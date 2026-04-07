@@ -1748,9 +1748,14 @@ body[data-lang="ja"] .hero-role {
   margin: 10px 0 0;
 }
 
+.active-field-tag-row {
+  margin: 0;
+}
+
 .field-hash-tag {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   padding: 4px 10px;
   border-radius: 999px;
   background: rgba(var(--teal-rgb), 0.08);
@@ -1833,7 +1838,7 @@ body[data-lang="ja"] .hero-role {
 .chip-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 14px;
 }
 
@@ -1842,27 +1847,30 @@ body[data-lang="ja"] .hero-role {
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  color: var(--muted);
+  color: var(--teal);
   font: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.2;
   border-radius: 999px;
-  border: 1px solid var(--line);
-  padding: 11px 14px;
-  background: rgba(var(--white-rgb), 0.62);
+  border: 1px solid rgba(var(--teal-rgb), 0.14);
+  padding: 4px 10px;
+  background: rgba(var(--teal-rgb), 0.08);
 }
 
 .chip-count {
-  color: var(--clay);
+  color: currentColor;
   font-size: 0.88em;
 }
 
 .chip.is-active {
-  color: var(--ink);
+  color: var(--teal-deep);
   border-color: rgba(var(--teal-rgb), 0.22);
-  background: var(--teal-soft);
+  background: rgba(var(--teal-rgb), 0.14);
 }
 
 .chip.is-active .chip-count {
-  color: var(--teal);
+  color: currentColor;
 }
 
 .filter-chip-row {
@@ -2106,26 +2114,27 @@ body[data-lang="ja"] .hero-role {
 .tag {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 10px;
+  gap: 6px;
+  padding: 4px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(var(--ink-rgb), 0.08);
-  background: rgba(var(--white-rgb), 0.65);
-  color: var(--ink-soft);
-  font-size: 0.78rem;
+  border: 1px solid rgba(var(--teal-rgb), 0.14);
+  background: rgba(var(--teal-rgb), 0.08);
+  color: var(--teal);
+  font-size: 0.76rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 .tag.is-strong {
-  color: var(--teal);
-  background: rgba(var(--teal-rgb), 0.08);
-  border-color: rgba(var(--teal-rgb), 0.16);
+  color: var(--teal-deep);
+  background: rgba(var(--teal-rgb), 0.14);
+  border-color: rgba(var(--teal-rgb), 0.22);
 }
 
 .tag.is-warm {
-  color: var(--gold);
-  background: rgba(var(--gold-rgb), 0.12);
-  border-color: rgba(var(--gold-rgb), 0.16);
+  color: var(--teal);
+  background: rgba(var(--teal-rgb), 0.1);
+  border-color: rgba(var(--teal-rgb), 0.18);
 }
 
 .tag-attention {
