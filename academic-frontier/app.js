@@ -4256,12 +4256,11 @@ function renderPapers() {
     const doiActionUrl = primaryUrl || normalizeUrl(paper.doiUrl || paper.doi_url);
     const readingStatus = paperStatusValue(paper);
     const featured = readingStatus === "must-read";
-    const relatedTeams = paperTeamNames(paper);
     const article = el("article", `publication-card${featured ? " is-featured" : ""}`);
     const head = el("div", "publication-head");
     const titleBlock = el("div", "");
     const title = el("h4", `publication-title${featured ? " is-featured" : ""}`);
-    title.innerHTML = `<a class="publication-title-link" href="${escapeHtml(paperDetailHref(paper))}">${richTextHtml(paper.title)}</a>`;
+    title.innerHTML = richTextHtml(paper.title);
     titleBlock.appendChild(title);
     head.appendChild(titleBlock);
 
@@ -4315,14 +4314,8 @@ function renderPapers() {
     )}`;
     article.appendChild(authors);
 
-    if (relatedTeams.length) {
-      const teamNote = el("p", "publication-note publication-note-accent");
-      teamNote.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("detailTeamLabel"))}:</strong> ${escapeHtml(relatedTeams.join(" · "))}`;
-      article.appendChild(teamNote);
-    }
-
     const venueLine = el("p", "venue-line");
-    venueLine.innerHTML = `<span class="doi-label">${ui("venueLabel")}</span> ${
+    venueLine.innerHTML = `${
       normalizeUrl(paper?.venue_url || paper?.venueUrl)
         ? `<a href="${escapeHtml(normalizeUrl(paper?.venue_url || paper?.venueUrl))}" target="_blank" rel="noreferrer">${escapeHtml(localizeText(paper.venue))}</a>`
         : escapeHtml(localizeText(paper.venue))
@@ -4364,7 +4357,7 @@ function renderPapers() {
     addMetric(metrics, "citation", ui("citationsMetricLabel"), paper.citationCount || 0, null, metricOptionsForPaper(paper, "citation"));
     article.appendChild(metrics);
 
-    const abstract = el("p", `abstract-block${featured ? " abstract-highlight" : ""}`);
+    const abstract = el("p", "abstract-block");
     abstract.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("abstractLabel"))}:</strong> <span class="rich-text">${richTextHtml(
       paper.abstract || ui("abstractUnavailable"),
       { truncate: 420 }
