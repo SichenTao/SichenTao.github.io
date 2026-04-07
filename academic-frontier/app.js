@@ -2355,81 +2355,97 @@ function renderDirectionWorkspace() {
       <p class="section-note">${escapeHtml(ui("directionsNote"))}</p>
     </div>
     <div class="direction-workspace-summary direction-workspace-summary-stacked">
-      <aside class="focus-card focus-card-accent">
-        <div class="subhead"><h3>${escapeHtml(ui("researchLauncherTitle"))}</h3><span class="tag is-strong">${escapeHtml(`${ui("researchMatchedPapersLabel")} ${matchedPapers.length}`)}</span></div>
-        <p class="section-note">${escapeHtml(ui("researchLauncherNote"))}</p>
-        <div class="publication-domain-rack investigation-domain-rack">
-          <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
-          <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
+      <aside class="focus-card focus-card-accent investigation-launcher-card">
+        <div class="investigation-launcher-hero">
+          <div class="subhead investigation-launcher-subhead"><h3>${escapeHtml(ui("researchLauncherTitle"))}</h3><span class="tag is-strong">${escapeHtml(`${ui("researchMatchedPapersLabel")} ${matchedPapers.length}`)}</span></div>
+          <p class="section-note investigation-launcher-note">${escapeHtml(ui("researchLauncherNote"))}</p>
         </div>
-        <div class="filter-control-row investigation-filter-row">
-          <select id="research-problem-filter" class="input">
-            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length))}</option>
-            ${launcher.problemFields
-              .filter((field) => !state.researchProblemFieldFilters.includes(field))
-              .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: [...state.researchProblemFieldFilters, field] })))}</option>`)
-              .join("")}
-          </select>
-          <select id="research-method-filter" class="input">
-            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), launcher.methodFields.length))}</option>
-            ${launcher.methodFields
-              .filter((field) => !state.researchMethodFieldFilters.includes(field))
-              .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: [...state.researchMethodFieldFilters, field] })))}</option>`)
-              .join("")}
-          </select>
-          <select id="research-jcr-filter" class="input">
-            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchFacetCount({ jcr: "all" })))}</option>
-            ${launcher.jcrBands
-              .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchJcrFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: band })))}</option>`)
-              .join("")}
-          </select>
-          <select id="research-cas-filter" class="input">
-            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casOptionAll"), researchFacetCount({ cas: "all" })))}</option>
-            ${launcher.casBands
-              .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchCasFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: band })))}</option>`)
-              .join("")}
-          </select>
-          <select id="research-cas-top-filter" class="input">
-            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchFacetCount({ casTop: "all" })))}</option>
-            <option value="top"${state.researchCasTopFilter === "top" ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: "top" })))}</option>
-          </select>
-          <select id="research-impact-filter" class="input">
-            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("impactOptionAll"), researchFacetCount({ impact: "all" })))}</option>
-            ${launcher.impactBands
-              .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchImpactFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: band })))}</option>`)
-              .join("")}
-          </select>
-          <select id="research-author-filter" class="input">
-            <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("teamOptionAll"), researchFacetCount({ team: "all" })))}</option>
-            ${launcher.authors
-              .map((author) => `<option value="${escapeHtml(author)}"${author === state.researchAuthorFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: author })))}</option>`)
-              .join("")}
-          </select>
+        <div class="investigation-launcher-main">
+          <div class="investigation-launcher-primary">
+            <div class="publication-domain-rack investigation-domain-rack">
+              <p class="stack-label">${escapeHtml(ui("domainSwitcherLabel"))}</p>
+              <div class="chip-row domain-switcher domain-switcher-inline" data-domain-switcher="true" role="tablist" aria-label="${escapeHtml(ui("domainSwitcherLabel"))}"></div>
+            </div>
+            <div class="filter-control-row investigation-filter-row">
+              <select id="research-problem-filter" class="input">
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length))}</option>
+                ${launcher.problemFields
+                  .filter((field) => !state.researchProblemFieldFilters.includes(field))
+                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: [...state.researchProblemFieldFilters, field] })))}</option>`)
+                  .join("")}
+              </select>
+              <select id="research-method-filter" class="input">
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), launcher.methodFields.length))}</option>
+                ${launcher.methodFields
+                  .filter((field) => !state.researchMethodFieldFilters.includes(field))
+                  .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: [...state.researchMethodFieldFilters, field] })))}</option>`)
+                  .join("")}
+              </select>
+              <select id="research-jcr-filter" class="input">
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchFacetCount({ jcr: "all" })))}</option>
+                ${launcher.jcrBands
+                  .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchJcrFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: band })))}</option>`)
+                  .join("")}
+              </select>
+              <select id="research-cas-filter" class="input">
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casOptionAll"), researchFacetCount({ cas: "all" })))}</option>
+                ${launcher.casBands
+                  .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchCasFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: band })))}</option>`)
+                  .join("")}
+              </select>
+              <select id="research-cas-top-filter" class="input">
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchFacetCount({ casTop: "all" })))}</option>
+                <option value="top"${state.researchCasTopFilter === "top" ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: "top" })))}</option>
+              </select>
+              <select id="research-impact-filter" class="input">
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("impactOptionAll"), researchFacetCount({ impact: "all" })))}</option>
+                ${launcher.impactBands
+                  .map((band) => `<option value="${escapeHtml(band)}"${band === state.researchImpactFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: band })))}</option>`)
+                  .join("")}
+              </select>
+              <select id="research-author-filter" class="input">
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("teamOptionAll"), researchFacetCount({ team: "all" })))}</option>
+                ${launcher.authors
+                  .map((author) => `<option value="${escapeHtml(author)}"${author === state.researchAuthorFilter ? " selected" : ""}>${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: author })))}</option>`)
+                  .join("")}
+              </select>
+            </div>
+            <div class="investigation-prompt-stack">
+              <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("researchCustomPromptLabel"))}</label>
+              <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="5" placeholder="${escapeHtml(ui("researchCustomPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
+            </div>
+          </div>
+          <div class="investigation-launcher-sidebar">
+            <div class="investigation-selected-stack">
+              <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
+              <div class="chip-row compact investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="chip is-static">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
+            </div>
+            <div class="research-range-grid investigation-range-grid">
+              <label class="research-range-control">
+                <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
+                <span class="research-range-value">${escapeHtml(state.researchYearStart)}</span>
+                <input id="research-year-start" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
+              </label>
+              <label class="research-range-control">
+                <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
+                <span class="research-range-value">${escapeHtml(state.researchYearEnd)}</span>
+                <input id="research-year-end" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
+              </label>
+            </div>
+            <div class="investigation-action-stack">
+              <div class="focus-action-row investigation-action-row">
+                <button class="button button-primary" type="button" data-research-launch="true">${escapeHtml(ui("researchLaunchAction"))}</button>
+                <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
+              </div>
+            </div>
+            <div class="investigation-preset-stack">
+              <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
+              <div class="chip-row compact investigation-preset-row">${focusPresetMarkup()}</div>
+            </div>
+          </div>
         </div>
-        <div class="research-range-grid">
-          <label class="research-range-control">
-            <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
-            <span class="research-range-value">${escapeHtml(state.researchYearStart)}</span>
-            <input id="research-year-start" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
-          </label>
-          <label class="research-range-control">
-            <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
-            <span class="research-range-value">${escapeHtml(state.researchYearEnd)}</span>
-            <input id="research-year-end" class="research-range-input" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
-          </label>
-        </div>
-        <label class="stack-label" for="focusPromptInput">${escapeHtml(ui("researchCustomPromptLabel"))}</label>
-        <textarea id="focusPromptInput" data-focus-prompt-input class="focus-textarea" rows="6" placeholder="${escapeHtml(ui("researchCustomPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
-        <div class="focus-action-row">
-          <button class="button button-primary" type="button" data-research-launch="true">${escapeHtml(ui("researchLaunchAction"))}</button>
-          <button class="button button-secondary" type="button" data-focus-reset="true">${escapeHtml(ui("resetFocusAction"))}</button>
-        </div>
-        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("focusPresetsLabel"))}</h4></div>
-        <div class="chip-row compact">${focusPresetMarkup()}</div>
-        <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
-        <div class="chip-row compact">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="chip is-static">#${escapeHtml(researchSelectedTagLabel(entry))}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
       </aside>
-      <article class="focus-card">
+      <article class="focus-card investigation-brief-card">
         <div class="subhead"><h3>${escapeHtml(ui("researchPromptPreviewTitle"))}</h3><span class="tag">${escapeHtml(String(directions.length))}</span></div>
         <div class="chip-row compact">${seedChips.length ? seedChips.map((item) => `<span class="chip is-static">${escapeHtml(item)}</span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div>
         <div class="direction-summary-list">
