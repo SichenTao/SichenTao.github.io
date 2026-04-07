@@ -3993,13 +3993,14 @@ function renderLinks(data) {
         .map(
           (item) => {
             const meta = profileMarkMeta(item);
+            const href = localizedExternalUrl(item.url, item.title);
             return `
-            <article class="link-card profile-link-card link-card-tone-${escapeHtml(meta.tone)}">
+            <a class="link-card profile-link-card link-card-tone-${escapeHtml(meta.tone)}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(lt(item.title))}">
               <div class="link-card-inline">
                 ${profileMarkMarkup(item)}
-                <h4 class="link-card-title">${buildLink(localizedExternalUrl(item.url, item.title), lt(item.title))}</h4>
+                <h4 class="link-card-title">${escapeHtml(lt(item.title))}</h4>
               </div>
-            </article>
+            </a>
           `;
           },
         )

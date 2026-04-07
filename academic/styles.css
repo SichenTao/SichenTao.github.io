@@ -1761,32 +1761,39 @@ a {
     var(--surface-strong);
   --profile-card-hover-border: rgba(var(--ink-rgb), 0.12);
   --profile-card-hover-shadow: rgba(var(--ink-rgb), 0.08);
+  color: inherit;
+  text-decoration: none;
   transition:
     background 180ms ease,
     border-color 180ms ease,
     box-shadow 180ms ease;
 }
 
+.profile-link-card:visited {
+  color: inherit;
+}
+
 body[data-page="profiles"] #link-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+  gap: 12px;
 }
 
 body[data-page="profiles"] .profile-link-card {
-  padding: 16px 17px;
+  padding: 14px 15px;
   gap: 0;
 }
 
 body[data-page="profiles"] .profile-link-card .link-card-inline {
-  grid-template-columns: minmax(84px, 96px) minmax(0, 1fr);
-  gap: 12px;
+  grid-template-columns: 80px minmax(0, 1fr);
+  gap: 10px;
   align-items: center;
 }
 
 body[data-page="profiles"] .profile-link-card .link-card-title {
   min-height: 0;
-  font-size: 0.96rem;
-  line-height: 1.36;
+  font-size: 0.94rem;
+  line-height: 1.32;
+  color: var(--ink);
 }
 
 body[data-page="profiles"] .profile-link-card:hover,
@@ -1988,6 +1995,7 @@ body[data-page="profiles"] .profile-link-card:focus-within {
 }
 
 body[data-page="profiles"] .profile-mark {
+  justify-self: center;
   min-width: 72px;
   height: 56px;
   padding: 0 8px;
@@ -2016,14 +2024,14 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-tohoku img {
 }
 
 body[data-page="profiles"] .profile-mark-image.profile-mark-badge {
-  min-width: 56px;
-  width: 56px;
+  min-width: 60px;
+  width: 60px;
   height: 56px;
   padding: 0;
 }
 
 body[data-page="profiles"] .profile-mark-image.profile-mark-badge img {
-  width: 56px;
+  width: 60px;
   height: 56px;
   max-width: none;
   max-height: none;
