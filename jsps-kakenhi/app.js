@@ -2407,7 +2407,7 @@ function renderDeadlinesPage() {
               ${event.status === "past" ? "" : `<span class="timeline-tag">${escapeHtml(t(`eventType.${event.status}`))}</span>`}
             </div>
             <p class="timeline-summary">
-              <strong>${escapeHtml(localeField(event, "title"))}</strong><br />
+              <span class="timeline-event-title">${escapeHtml(localeField(event, "title"))}</span>
               ${escapeHtml(formatDateTime(event.datetime || event.date))}
             </p>
             ${event.note_zh || event.note_en ? `<p class="timeline-summary-note">${escapeHtml(localeField(event, "note"))}</p>` : ""}
