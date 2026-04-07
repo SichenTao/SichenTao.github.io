@@ -1982,10 +1982,6 @@ body[data-lang="ja"] .hero-role {
     background 160ms ease;
 }
 
-.publication-copy-button-bibtex {
-  color: var(--ink-soft);
-}
-
 .publication-copy-trigger {
   z-index: 2;
 }
@@ -2039,6 +2035,7 @@ body[data-lang="ja"] .hero-role {
   gap: 8px;
   padding: 10px 14px;
   white-space: nowrap;
+  color: var(--ink-soft);
 }
 
 .publication-copy-option span {
