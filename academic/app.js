@@ -881,7 +881,7 @@ const translations = {
 
 const THEME_STORAGE_KEY = "sichen-homepage-theme";
 const LOCALE_STORAGE_KEY = "sichen-homepage-locale";
-const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst", "base"];
+const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst"];
 const LOCALE_SWITCH_SEQUENCE = ["en", "ja", "zh"];
 let themeUiBound = false;
 let localeUiBound = false;
@@ -922,6 +922,20 @@ function truncateText(value, limit = 110) {
 
 function currentPage() {
   return document.body.dataset.page || "home";
+}
+
+function readSessionValue(key) {
+  try {
+    return window.sessionStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeSessionValue(key, value) {
+  try {
+    window.sessionStorage.setItem(key, value);
+  } catch {}
 }
 
 const staticTextCatalog = {
@@ -1230,12 +1244,10 @@ function resolveLocaleName() {
     return queryLocale;
   }
 
-  try {
-    const savedLocale = localStorage.getItem(LOCALE_STORAGE_KEY);
-    if (savedLocale && localeCatalog[savedLocale]) {
-      return savedLocale;
-    }
-  } catch {}
+  const savedLocale = readSessionValue(LOCALE_STORAGE_KEY);
+  if (savedLocale && localeCatalog[savedLocale]) {
+    return savedLocale;
+  }
 
   return "en";
 }
@@ -2232,22 +2244,26 @@ function serviceMetricsMarkup(item) {
 
 function resolveThemeName() {
   const queryTheme = new URLSearchParams(window.location.search).get("theme");
-  if (queryTheme && themeCatalog[queryTheme]) {
+  if (queryTheme === "base") {
+    return "tohoku";
+  }
+  if (queryTheme && themeCatalog[queryTheme] && queryTheme !== "base") {
     return queryTheme;
   }
 
-  try {
-    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-    if (savedTheme === "base") {
-      return "tohoku";
-    }
-    if (savedTheme && themeCatalog[savedTheme]) {
-      return savedTheme;
-    }
-  } catch {}
+  const savedTheme = readSessionValue(THEME_STORAGE_KEY);
+  if (savedTheme === "base") {
+    return "tohoku";
+  }
+  if (savedTheme && themeCatalog[savedTheme] && savedTheme !== "base") {
+    return savedTheme;
+  }
 
   const documentTheme = document.documentElement.dataset.theme;
-  if (documentTheme && themeCatalog[documentTheme]) {
+  if (documentTheme === "base") {
+    return "tohoku";
+  }
+  if (documentTheme && themeCatalog[documentTheme] && documentTheme !== "base") {
     return documentTheme;
   }
 
@@ -2258,7 +2274,7 @@ function nextThemeName(currentTheme = resolveThemeName()) {
   const sequence = THEME_SWITCH_SEQUENCE.filter((themeName) => themeCatalog[themeName]);
   const pointer = sequence.indexOf(currentTheme);
   if (pointer === -1) {
-    return sequence[0] || "base";
+    return sequence[0] || "tohoku";
   }
   return sequence[(pointer + 1) % sequence.length];
 }
@@ -2272,20 +2288,24 @@ function renderLocaleSwitchers() {
 
   const activeLocaleName = resolveLocaleName();
   const activeLocale = localeCatalog[activeLocaleName] || localeCatalog.en;
-  const localeButtons = Object.entries(localeCatalog)
+  const localeButtons = LOCALE_SWITCH_SEQUENCE
+    .filter((localeName) => localeCatalog[localeName])
     .map(
-      ([localeName, locale]) => `
+      (localeName) => {
+        const locale = localeCatalog[localeName];
+        return `
         <button
-          class="locale-chip"
+          class="locale-chip${localeName === activeLocaleName ? " is-active" : ""}"
           type="button"
           data-locale-choice="${escapeHtml(localeName)}"
-          aria-pressed="false"
+          aria-pressed="${localeName === activeLocaleName ? "true" : "false"}"
           aria-label="${escapeHtml(locale.name)}"
           title="${escapeHtml(locale.name)}"
         >
           <span class="locale-label" aria-hidden="true">${escapeHtml(locale.label)}</span>
         </button>
-      `,
+      `;
+      },
     )
     .join("");
 
@@ -2297,8 +2317,8 @@ function renderLocaleSwitchers() {
         data-locale-trigger
         aria-haspopup="true"
         aria-expanded="false"
-        aria-label="${escapeHtml(t("controls.cycle_languages"))}"
-        title="${escapeHtml(t("controls.cycle_languages"))}"
+        aria-label="${escapeHtml(activeLocale.name)}"
+        title="${escapeHtml(activeLocale.name)}"
       >
         <span class="locale-label" data-locale-current-label>${escapeHtml(activeLocale.label)}</span>
       </button>
@@ -2311,6 +2331,7 @@ function renderLocaleSwitchers() {
   els.localeChoices = Array.from(document.querySelectorAll("[data-locale-choice]"));
   els.localeTriggers = Array.from(document.querySelectorAll("[data-locale-trigger]"));
   renderPortalReturnControl();
+  bindSwitcherTriggerButtons();
 }
 
 function renderThemeSwitchers() {
@@ -2321,21 +2342,25 @@ function renderThemeSwitchers() {
   }
 
   const activeThemeName = resolveThemeName();
-  const activeTheme = themeCatalog[activeThemeName] || themeCatalog.base;
-  const themeButtons = Object.entries(themeCatalog)
+  const activeTheme = themeCatalog[activeThemeName] || themeCatalog.tohoku;
+  const themeButtons = THEME_SWITCH_SEQUENCE
+    .filter((themeName) => themeCatalog[themeName])
     .map(
-      ([themeName, theme]) => `
+      (themeName) => {
+        const theme = themeCatalog[themeName];
+        return `
         <button
-          class="theme-chip"
+          class="theme-chip${themeName === activeThemeName ? " is-active" : ""}"
           type="button"
           data-theme-choice="${escapeHtml(themeName)}"
-          aria-pressed="false"
+          aria-pressed="${themeName === activeThemeName ? "true" : "false"}"
           aria-label="${escapeHtml(translatedThemeTooltip(themeName))}"
           title="${escapeHtml(translatedThemeTooltip(themeName))}"
         >
           <span class="theme-swatch ${escapeHtml(theme.swatchClass)}" aria-hidden="true"></span>
         </button>
-      `,
+      `;
+      },
     )
     .join("");
 
@@ -2347,10 +2372,11 @@ function renderThemeSwitchers() {
         data-theme-trigger
         aria-haspopup="true"
         aria-expanded="false"
-        aria-label="${escapeHtml(t("controls.cycle_themes"))}"
+        aria-label="${escapeHtml(translatedThemeTooltip(activeThemeName))}"
         title="${escapeHtml(translatedThemeTooltip(activeThemeName))}"
       >
         <span class="theme-swatch ${escapeHtml(activeTheme.swatchClass)}" data-theme-current-swatch aria-hidden="true"></span>
+        <span class="control-current-label" data-theme-current-label>${escapeHtml(translatedThemeTriggerLabel(activeThemeName))}</span>
       </button>
       <div class="theme-tray" role="group" aria-label="${escapeHtml(t("controls.theme_choices"))}">
         ${themeButtons}
@@ -2361,6 +2387,11 @@ function renderThemeSwitchers() {
   els.themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
   els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
   renderPortalReturnControl();
+  bindSwitcherTriggerButtons();
+}
+
+function academicFrontierHomeHref(localeName = resolveLocaleName()) {
+  return localeName === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(localeName)}/`;
 }
 
 function renderPortalReturnControl() {
@@ -2370,28 +2401,25 @@ function renderPortalReturnControl() {
 
   const labels = {
     en: {
-      trigger: "Open portal menu",
       tray: "Site sections",
-      portal: "Homepage portal",
-      academic: "Personal homepage",
-      radar: "学术前沿",
-      jsps: "JSPS KAKENHI",
+      portal: { short: "Portal", full: "Navigation portal" },
+      academic: { short: "Homepage", full: "Personal homepage" },
+      radar: { short: "Frontier", full: "Academic Frontier" },
+      jsps: { short: "JSPS", full: "JSPS KAKENHI" },
     },
     zh: {
-      trigger: "打开功能主页菜单",
       tray: "功能主页",
-      portal: "主页导航",
-      academic: "个人主页",
-      radar: "学术前沿",
-      jsps: "JSPS 科研费",
+      portal: { short: "导航页", full: "导航页" },
+      academic: { short: "个人主页", full: "个人主页" },
+      radar: { short: "学术前沿", full: "学术前沿" },
+      jsps: { short: "JSPS", full: "JSPS 科研费" },
     },
     ja: {
-      trigger: "機能ページメニューを開く",
       tray: "機能ページ",
-      portal: "ホームポータル",
-      academic: "個人ホームページ",
-      radar: "学术前沿",
-      jsps: "JSPS 科研費",
+      portal: { short: "ポータル", full: "ナビゲーション" },
+      academic: { short: "個人HP", full: "個人ホームページ" },
+      radar: { short: "学術前沿", full: "学術前沿" },
+      jsps: { short: "JSPS", full: "JSPS 科研費" },
     },
   }[resolveLocaleName() || "en"];
 
@@ -2399,32 +2427,35 @@ function renderPortalReturnControl() {
   const items = [
     {
       href: "/",
-      label: labels.portal,
+      label: labels.portal.full,
+      triggerLabel: labels.portal.short,
       icon: iconSprite("home"),
       active: currentPath === "/",
     },
     {
       href: "/academic/",
-      label: labels.academic,
+      label: labels.academic.full,
+      triggerLabel: labels.academic.short,
       icon: '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
       active: currentPath.startsWith("/academic/"),
       extraClass: "portal-chip--portrait",
     },
     {
-      href: "/academic-frontier/",
-      label: labels.radar,
+      href: academicFrontierHomeHref(resolveLocaleName()),
+      label: labels.radar.full,
+      triggerLabel: labels.radar.short,
       icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
       active: currentPath.startsWith("/academic-frontier/"),
     },
     {
       href: "/jsps-kakenhi/",
-      label: labels.jsps,
+      label: labels.jsps.full,
+      triggerLabel: labels.jsps.short,
       icon: '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />',
       active: currentPath.startsWith("/jsps-kakenhi/"),
     },
   ];
   const activeItem = items.find((item) => item.active) || items[0];
-  const trayItems = items.filter((item) => item.href !== activeItem.href);
 
   els.headerControls.querySelectorAll(".portal-return-link").forEach((node) => node.remove());
 
@@ -2437,7 +2468,7 @@ function renderPortalReturnControl() {
 
   switcher.innerHTML = `
     <button
-      class="portal-trigger ${activeItem.extraClass || ""}"
+      class="portal-trigger"
       type="button"
       data-portal-trigger
       aria-haspopup="true"
@@ -2445,21 +2476,24 @@ function renderPortalReturnControl() {
       aria-label="${escapeHtml(activeItem.label)}"
       title="${escapeHtml(activeItem.label)}"
     >
-      ${activeItem.icon}
+      ${iconSprite("home")}
+      <span class="control-current-label">${escapeHtml(activeItem.triggerLabel || activeItem.label)}</span>
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(labels.tray)}">
-      ${trayItems.map((item) => `
+      ${items.map((item) => `
         <a
-          class="portal-chip ${item.extraClass || ""}"
+          class="portal-chip ${item.extraClass || ""}${item.active ? " is-active" : ""}"
           href="${item.href}"
           aria-label="${escapeHtml(item.label)}"
           title="${escapeHtml(item.label)}"
+          ${item.active ? 'aria-current="page"' : ""}
         >
           ${item.icon}
         </a>
       `).join("")}
     </div>
   `;
+  bindSwitcherTriggerButtons();
 }
 
 function closeLocaleSwitchers() {
@@ -2538,6 +2572,34 @@ function bindSwitcherHoverBehavior() {
   });
 }
 
+function bindSwitcherTriggerButtons() {
+  document.querySelectorAll("[data-theme-trigger], [data-locale-trigger], [data-portal-trigger]").forEach((trigger) => {
+    if (trigger.dataset.switcherToggleBound === "true") {
+      return;
+    }
+    trigger.dataset.switcherToggleBound = "true";
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const switcher = trigger.closest(".control-switcher");
+      if (!switcher) {
+        return;
+      }
+
+      const shouldExpand = !switcher.classList.contains("is-open");
+      document.querySelectorAll(".control-switcher").forEach((other) => {
+        clearSwitcherCloseTimer(other);
+        setSwitcherExpandedState(other, false);
+      });
+      if (shouldExpand) {
+        clearSwitcherCloseTimer(switcher);
+        setSwitcherExpandedState(switcher, true);
+      }
+    });
+  });
+}
+
 function ensureHeaderControlsAnchor(controls) {
   const container = controls?.closest(".header-tools");
   if (!container) {
@@ -2604,7 +2666,7 @@ function initHeaderControlsPosition() {
 }
 
 function applyTheme(themeName, persist = true) {
-  const nextTheme = themeCatalog[themeName] ? themeName : "base";
+  const nextTheme = themeCatalog[themeName] && themeName !== "base" ? themeName : "tohoku";
   document.documentElement.dataset.theme = nextTheme;
 
   const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -2621,10 +2683,12 @@ function applyTheme(themeName, persist = true) {
   document.querySelectorAll("[data-theme-current-swatch]").forEach((swatch) => {
     swatch.className = `theme-swatch ${themeCatalog[nextTheme].swatchClass}`;
   });
-
+  document.querySelectorAll("[data-theme-current-label]").forEach((node) => {
+    node.textContent = translatedThemeTriggerLabel(nextTheme);
+  });
   els.themeTriggers.forEach((trigger) => {
-    trigger.setAttribute("aria-label", t("controls.cycle_themes"));
-    trigger.setAttribute("title", t("controls.cycle_themes"));
+    trigger.setAttribute("aria-label", translatedThemeTooltip(nextTheme));
+    trigger.setAttribute("title", translatedThemeTooltip(nextTheme));
   });
 
   closeThemeSwitchers();
@@ -2633,9 +2697,7 @@ function applyTheme(themeName, persist = true) {
     return;
   }
 
-  try {
-    localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
-  } catch {}
+  writeSessionValue(THEME_STORAGE_KEY, nextTheme);
 }
 
 function applyLocale(localeName, persist = true) {
@@ -2653,8 +2715,8 @@ function applyLocale(localeName, persist = true) {
   });
 
   els.localeTriggers.forEach((trigger) => {
-    trigger.setAttribute("aria-label", t("controls.cycle_languages"));
-    trigger.setAttribute("title", t("controls.cycle_languages"));
+    trigger.setAttribute("aria-label", localeCatalog[nextLocale].name);
+    trigger.setAttribute("title", localeCatalog[nextLocale].name);
   });
   if (scrollTopButton) {
     scrollTopButton.setAttribute("aria-label", t("actions.scroll_top"));
@@ -2668,9 +2730,7 @@ function applyLocale(localeName, persist = true) {
   closeLocaleSwitchers();
 
   if (persist) {
-    try {
-      localStorage.setItem(LOCALE_STORAGE_KEY, nextLocale);
-    } catch {}
+    writeSessionValue(LOCALE_STORAGE_KEY, nextLocale);
   }
 
   if (dataReady) {
@@ -2685,19 +2745,7 @@ function bindThemeButtons() {
     }
     button.dataset.themeBound = "true";
     button.addEventListener("click", () => {
-      applyTheme(button.dataset.themeChoice || "base");
-    });
-  });
-
-  els.themeTriggers.forEach((trigger) => {
-    if (trigger.dataset.themeBound === "true") {
-      return;
-    }
-    trigger.dataset.themeBound = "true";
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      closeAllSwitchers();
-      applyTheme(nextThemeName());
+      applyTheme(button.dataset.themeChoice || "tohoku");
     });
   });
 }
@@ -2707,6 +2755,7 @@ function initThemeControls() {
   applyTheme(resolveThemeName(), false);
   bindThemeButtons();
   bindSwitcherHoverBehavior();
+  bindSwitcherTriggerButtons();
 
   if (themeUiBound) {
     return;
@@ -2741,24 +2790,13 @@ function initLocaleControls() {
     });
   });
 
-  els.localeTriggers.forEach((trigger) => {
-    if (trigger.dataset.localeBound === "true") {
-      return;
-    }
-    trigger.dataset.localeBound = "true";
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      closeAllSwitchers();
-      applyLocale(nextLocaleName());
-    });
-  });
-
   if (localeUiBound) {
     return;
   }
 
   localeUiBound = true;
   bindSwitcherHoverBehavior();
+  bindSwitcherTriggerButtons();
 }
 
 function ensureScrollTopButton() {
@@ -3037,13 +3075,12 @@ function profileUsesEmbeddedWordmark(item = {}) {
 
 function profileTitleMarkup(item = {}) {
   const title = lt(item.title);
-  const locale = resolveLocaleName();
 
   if (profileUsesEmbeddedWordmark(item)) {
     return "";
   }
 
-  if (title === "Google Scholar" && locale === "zh") {
+  if (title === "Google Scholar") {
     return `
       <h4 class="link-card-title link-card-title-google-scholar">
         <span class="google-wordmark" aria-label="Google">
@@ -3067,7 +3104,7 @@ function resolveProfileMarkIcon(item = {}, icon = "") {
     || title === "Tohoku University Cyberscience Center"
     || url.includes("cc.tohoku.ac.jp")
   ) {
-    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg?v=20260407-143322";
+    return "./assets/profile-icons/tohoku-cyberscience-center-badge.svg?v=20260407-151600";
   }
 
   return normalizedIcon;
@@ -3129,6 +3166,27 @@ function translatedThemeLabel(themeName) {
     usst: "University of Shanghai for Science and Technology",
   };
   return lt(labels[themeName] || "") || themeCatalog[themeName]?.label || themeName;
+}
+
+function translatedThemeTriggerLabel(themeName) {
+  const labels = {
+    tohoku: {
+      en: "Tohoku",
+      ja: "東北大学",
+      zh: "东北大学",
+    },
+    toyama: {
+      en: "Toyama",
+      ja: "富山大学",
+      zh: "富山大学",
+    },
+    usst: {
+      en: "USST",
+      ja: "上海理工大",
+      zh: "上海理工大学",
+    },
+  };
+  return labels[themeName]?.[resolveLocaleName()] || translatedThemeLabel(themeName);
 }
 
 function translatedThemeTooltip(themeName) {
