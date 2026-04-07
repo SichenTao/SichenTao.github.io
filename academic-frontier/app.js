@@ -105,11 +105,29 @@ function multiSelectDisplayValue(currentValues, explicitAll = false) {
   return selectionList(currentValues).length ? MULTI_SELECT_ACTIVE_VALUE : "all";
 }
 
-function multiSelectDisplayOptions(options, currentValues, explicitAll = false) {
-  if (multiSelectDisplayValue(currentValues, explicitAll) !== MULTI_SELECT_ACTIVE_VALUE) {
-    return options;
+function multiSelectDisplayOptions(options, currentValues, explicitAll = false, selectedLabelKey = null) {
+  const selectedValues = new Set(selectionList(currentValues));
+  const activeDisplayValue = multiSelectDisplayValue(currentValues, explicitAll);
+  const decoratedOptions = options.map((option) => {
+    if (!selectedValues.has(option.value) || option.value === "all") {
+      return option;
+    }
+    return {
+      ...option,
+      label: `✓ ${option.label}`,
+    };
+  });
+  if (activeDisplayValue !== MULTI_SELECT_ACTIVE_VALUE || !selectedLabelKey) {
+    return decoratedOptions;
   }
-  return [{ value: MULTI_SELECT_ACTIVE_VALUE, label: ui("selectedOptionLabel") }, ...options];
+  return [
+    {
+      value: MULTI_SELECT_ACTIVE_VALUE,
+      label: ui(selectedLabelKey),
+      hidden: true,
+    },
+    ...decoratedOptions,
+  ];
 }
 
 const state = {
@@ -227,7 +245,15 @@ const UI_TEXT = {
     filtersLabel: "Filters",
     quickTagsLabel: "Tags",
     resetLabel: "Reset",
-    selectedOptionLabel: "Selected",
+    selectedYearsLabel: "Selected Years",
+    selectedTypesLabel: "Selected Types",
+    selectedProblemsLabel: "Selected Problem Fields",
+    selectedMethodsLabel: "Selected Method Fields",
+    selectedJcrLabel: "Selected JCR",
+    selectedCasLabel: "Selected CAS",
+    selectedCasTopLabel: "Selected Top",
+    selectedImpactLabel: "Selected IF",
+    selectedAuthorsLabel: "Selected Authors",
     yearOptionAll: "All years",
     typeOptionAll: "All types",
     problemFieldPlaceholder: "All problem fields",
@@ -444,7 +470,15 @@ const UI_TEXT = {
     filtersLabel: "筛选",
     quickTagsLabel: "标签",
     resetLabel: "重置",
-    selectedOptionLabel: "已选",
+    selectedYearsLabel: "已选年份",
+    selectedTypesLabel: "已选类型",
+    selectedProblemsLabel: "已选问题领域",
+    selectedMethodsLabel: "已选方法领域",
+    selectedJcrLabel: "已选 JCR",
+    selectedCasLabel: "已选中科院",
+    selectedCasTopLabel: "已选 Top",
+    selectedImpactLabel: "已选 IF",
+    selectedAuthorsLabel: "已选作者",
     yearOptionAll: "全部年份",
     typeOptionAll: "全部类型",
     problemFieldPlaceholder: "全部问题",
@@ -661,7 +695,15 @@ const UI_TEXT = {
     filtersLabel: "フィルター",
     quickTagsLabel: "タグ",
     resetLabel: "リセット",
-    selectedOptionLabel: "選択中",
+    selectedYearsLabel: "選択中の年度",
+    selectedTypesLabel: "選択中の種別",
+    selectedProblemsLabel: "選択中の問題領域",
+    selectedMethodsLabel: "選択中の手法領域",
+    selectedJcrLabel: "選択中の JCR",
+    selectedCasLabel: "選択中の CAS",
+    selectedCasTopLabel: "選択中の Top",
+    selectedImpactLabel: "選択中の IF",
+    selectedAuthorsLabel: "選択中の著者",
     yearOptionAll: "全年度",
     typeOptionAll: "全種別",
     problemFieldPlaceholder: "全問題",
@@ -2836,7 +2878,7 @@ function renderDirectionWorkspace() {
           researchFacetCount({ problemTags: appendSelectionValue(state.researchProblemFieldFilters, field) })
         ),
       })),
-    ], state.researchProblemFieldFilters, state.researchExplicitAll.problem),
+    ], state.researchProblemFieldFilters, state.researchExplicitAll.problem, "selectedProblemsLabel"),
     multiSelectDisplayValue(state.researchProblemFieldFilters, state.researchExplicitAll.problem)
   );
   syncSelectOptions(
@@ -2850,7 +2892,7 @@ function renderDirectionWorkspace() {
           researchFacetCount({ methodTags: appendSelectionValue(state.researchMethodFieldFilters, field) })
         ),
       })),
-    ], state.researchMethodFieldFilters, state.researchExplicitAll.method),
+    ], state.researchMethodFieldFilters, state.researchExplicitAll.method, "selectedMethodsLabel"),
     multiSelectDisplayValue(state.researchMethodFieldFilters, state.researchExplicitAll.method)
   );
   syncSelectOptions(
@@ -2864,7 +2906,7 @@ function renderDirectionWorkspace() {
           researchFacetCount({ jcr: appendSelectionValue(state.researchJcrFilter, band) })
         ),
       })),
-    ], state.researchJcrFilter, state.researchExplicitAll.jcr),
+    ], state.researchJcrFilter, state.researchExplicitAll.jcr, "selectedJcrLabel"),
     multiSelectDisplayValue(state.researchJcrFilter, state.researchExplicitAll.jcr)
   );
   syncSelectOptions(
@@ -2878,7 +2920,7 @@ function renderDirectionWorkspace() {
           researchFacetCount({ cas: appendSelectionValue(state.researchCasFilter, band) })
         ),
       })),
-    ], state.researchCasFilter, state.researchExplicitAll.cas),
+    ], state.researchCasFilter, state.researchExplicitAll.cas, "selectedCasLabel"),
     multiSelectDisplayValue(state.researchCasFilter, state.researchExplicitAll.cas)
   );
   syncSelectOptions(
@@ -2892,7 +2934,7 @@ function renderDirectionWorkspace() {
           researchFacetCount({ casTop: appendSelectionValue(state.researchCasTopFilter, "top") })
         ),
       },
-    ], state.researchCasTopFilter, state.researchExplicitAll.casTop),
+    ], state.researchCasTopFilter, state.researchExplicitAll.casTop, "selectedCasTopLabel"),
     multiSelectDisplayValue(state.researchCasTopFilter, state.researchExplicitAll.casTop)
   );
   syncSelectOptions(
@@ -2906,7 +2948,7 @@ function renderDirectionWorkspace() {
           researchFacetCount({ impact: appendSelectionValue(state.researchImpactFilter, band) })
         ),
       })),
-    ], state.researchImpactFilter, state.researchExplicitAll.impact),
+    ], state.researchImpactFilter, state.researchExplicitAll.impact, "selectedImpactLabel"),
     multiSelectDisplayValue(state.researchImpactFilter, state.researchExplicitAll.impact)
   );
   syncSelectOptions(
@@ -2920,7 +2962,7 @@ function renderDirectionWorkspace() {
           researchFacetCount({ team: appendSelectionValue(state.researchAuthorFilter, author) })
         ),
       })),
-    ], state.researchAuthorFilter, state.researchExplicitAll.author),
+    ], state.researchAuthorFilter, state.researchExplicitAll.author, "selectedAuthorsLabel"),
     multiSelectDisplayValue(state.researchAuthorFilter, state.researchExplicitAll.author)
   );
   scheduleAdaptiveFilterControlWidths(mount);
@@ -4355,6 +4397,7 @@ function syncSelectOptions(select, options, currentValue = "all") {
     const node = document.createElement("option");
     node.value = option.value;
     node.textContent = option.label;
+    node.hidden = Boolean(option.hidden);
     select.appendChild(node);
   });
   const hasCurrent = options.some((option) => option.value === currentValue);
@@ -4462,13 +4505,13 @@ function renderPaperControls() {
   syncSelectOptions(yearFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), allYearCount) },
     ...years.map((year) => ({ value: year, label: formatPaperFilterOptionLabel(year, facetCount({ year: appendSelectionValue(state.yearFilter, year) })) })),
-  ], state.yearFilter, state.paperExplicitAll.year), multiSelectDisplayValue(state.yearFilter, state.paperExplicitAll.year));
+  ], state.yearFilter, state.paperExplicitAll.year, "selectedYearsLabel"), multiSelectDisplayValue(state.yearFilter, state.paperExplicitAll.year));
 
   syncSelectOptions(typeFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), allTypeCount) },
     { value: "journal", label: formatPaperFilterOptionLabel(ui("typeOptionJournal"), facetCount({ type: appendSelectionValue(state.typeFilter, "journal") })) },
     { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: appendSelectionValue(state.typeFilter, "conference") })) },
-  ], state.typeFilter, state.paperExplicitAll.type), multiSelectDisplayValue(state.typeFilter, state.paperExplicitAll.type));
+  ], state.typeFilter, state.paperExplicitAll.type, "selectedTypesLabel"), multiSelectDisplayValue(state.typeFilter, state.paperExplicitAll.type));
 
   syncSelectOptions(problemFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), problemFields.length) },
@@ -4480,7 +4523,7 @@ function renderPaperControls() {
           facetCount({ problemTags: appendSelectionValue(state.problemFieldFilters, field) })
         ),
       })),
-  ], state.problemFieldFilters, state.paperExplicitAll.problem), multiSelectDisplayValue(state.problemFieldFilters, state.paperExplicitAll.problem));
+  ], state.problemFieldFilters, state.paperExplicitAll.problem, "selectedProblemsLabel"), multiSelectDisplayValue(state.problemFieldFilters, state.paperExplicitAll.problem));
 
   syncSelectOptions(methodFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), methodFields.length) },
@@ -4492,7 +4535,7 @@ function renderPaperControls() {
           facetCount({ methodTags: appendSelectionValue(state.methodFieldFilters, field) })
         ),
       })),
-  ], state.methodFieldFilters, state.paperExplicitAll.method), multiSelectDisplayValue(state.methodFieldFilters, state.paperExplicitAll.method));
+  ], state.methodFieldFilters, state.paperExplicitAll.method, "selectedMethodsLabel"), multiSelectDisplayValue(state.methodFieldFilters, state.paperExplicitAll.method));
 
   syncSelectOptions(jcrFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), allJcrCount) },
@@ -4500,7 +4543,7 @@ function renderPaperControls() {
       value: band,
       label: formatPaperFilterOptionLabel(jcrFilterTagLabel(band), facetCount({ jcr: appendSelectionValue(state.jcrFilter, band) })),
     })),
-  ], state.jcrFilter, state.paperExplicitAll.jcr), multiSelectDisplayValue(state.jcrFilter, state.paperExplicitAll.jcr));
+  ], state.jcrFilter, state.paperExplicitAll.jcr, "selectedJcrLabel"), multiSelectDisplayValue(state.jcrFilter, state.paperExplicitAll.jcr));
 
   syncSelectOptions(casFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), allCasCount) },
@@ -4508,7 +4551,7 @@ function renderPaperControls() {
       value: band,
       label: formatPaperFilterOptionLabel(casFilterTagLabel(band), facetCount({ cas: appendSelectionValue(state.casFilter, band) })),
     })),
-  ], state.casFilter, state.paperExplicitAll.cas), multiSelectDisplayValue(state.casFilter, state.paperExplicitAll.cas));
+  ], state.casFilter, state.paperExplicitAll.cas, "selectedCasLabel"), multiSelectDisplayValue(state.casFilter, state.paperExplicitAll.cas));
 
   syncSelectOptions(casTopFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), allCasTopCount) },
@@ -4516,7 +4559,7 @@ function renderPaperControls() {
       value: band,
       label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: appendSelectionValue(state.casTopFilter, band) })),
     })),
-  ], state.casTopFilter, state.paperExplicitAll.casTop), multiSelectDisplayValue(state.casTopFilter, state.paperExplicitAll.casTop));
+  ], state.casTopFilter, state.paperExplicitAll.casTop, "selectedCasTopLabel"), multiSelectDisplayValue(state.casTopFilter, state.paperExplicitAll.casTop));
 
   syncSelectOptions(impactFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), allImpactCount) },
@@ -4524,12 +4567,12 @@ function renderPaperControls() {
       value: band,
       label: formatPaperFilterOptionLabel(impactFilterTagLabel(band), facetCount({ impact: appendSelectionValue(state.impactFilter, band) })),
     })),
-  ], state.impactFilter, state.paperExplicitAll.impact), multiSelectDisplayValue(state.impactFilter, state.paperExplicitAll.impact));
+  ], state.impactFilter, state.paperExplicitAll.impact, "selectedImpactLabel"), multiSelectDisplayValue(state.impactFilter, state.paperExplicitAll.impact));
 
   syncSelectOptions(teamFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), allTeamCount) },
     ...authors.map((team) => ({ value: team, label: formatPaperFilterOptionLabel(team, facetCount({ team: appendSelectionValue(state.teamFilter, team) })) })),
-  ], state.teamFilter, state.paperExplicitAll.team), multiSelectDisplayValue(state.teamFilter, state.paperExplicitAll.team));
+  ], state.teamFilter, state.paperExplicitAll.team, "selectedAuthorsLabel"), multiSelectDisplayValue(state.teamFilter, state.paperExplicitAll.team));
 
   syncSelectOptions(sortFilter, [
     { value: "recent", label: ui("sortRecent") },
