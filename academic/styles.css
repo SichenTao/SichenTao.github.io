@@ -1810,7 +1810,7 @@ body[data-page="profiles"] .profile-link-card {
 
 body[data-page="profiles"] .profile-link-card .link-card-inline {
   grid-template-columns: 74px minmax(0, 1fr);
-  gap: 8px;
+  gap: 6px;
   align-items: center;
   min-height: 56px;
 }
