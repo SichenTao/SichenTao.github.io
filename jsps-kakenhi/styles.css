@@ -3790,7 +3790,7 @@ body[data-lang="en"] .timeline-title-text {
   align-items: baseline;
   gap: 0.32rem;
   font-weight: 800;
-  color: var(--ink);
+  color: var(--teal);
 }
 
 .portal-call-card-status,

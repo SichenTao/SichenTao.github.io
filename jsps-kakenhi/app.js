@@ -2994,11 +2994,11 @@ function compactTimingText(record) {
   const opening = callOpenCompactDisplay(record);
   const deadline = deadlineCompactDisplay(record);
   if (opening && deadline) {
-    parts.push(`${opening}~${deadline}`);
+    parts.push(`${opening}-${deadline}`);
     return parts.join(" · ");
   }
   if (deadline) {
-    parts.push(`~${deadline}`);
+    parts.push(`-${deadline}`);
     return parts.join(" · ");
   }
   if (opening) {
@@ -3017,7 +3017,7 @@ function compactTimingMarkup(record) {
   const status = t(`status.${record.status}`);
   const opening = callOpenCompactDisplay(record);
   const deadline = deadlineCompactDisplay(record);
-  const timing = opening && deadline ? `${opening}~${deadline}` : deadline ? `~${deadline}` : opening || "";
+  const timing = opening && deadline ? `${opening}-${deadline}` : deadline ? `-${deadline}` : opening || "";
   const parts = [`<span class="portal-call-card-status">${escapeHtml(status)}</span>`];
   if (timing) {
     parts.push(`<span class="portal-call-card-separator" aria-hidden="true">·</span>`);
