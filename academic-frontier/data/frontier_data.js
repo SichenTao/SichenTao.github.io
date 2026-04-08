@@ -1,6 +1,6 @@
 window.FRONTIER_DATA = {
   "snapshot": {
-    "generatedAt": "2026-04-08 16:36 JST",
+    "generatedAt": "2026-04-08 16:49 JST",
     "owner": "Sichen Tao",
     "headline": {
       "en": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
@@ -5368,7 +5368,7 @@ window.FRONTIER_DATA = {
     }
   ],
   "venueReference": {
-    "generatedAt": "2026-04-08 16:36 JST",
+    "generatedAt": "2026-04-08 16:49 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",

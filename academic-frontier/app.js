@@ -5409,39 +5409,6 @@ function metricVenueFacts(venue) {
   return facts;
 }
 
-function metricVenueInlineActionsHtml(venue, metricsRecord) {
-  const impactUrl = metricVenueOfficialUrl(venue, metricsRecord, "impact");
-  const jcrUrl = metricVenueOfficialUrl(venue, metricsRecord, "jcr");
-  const casUrl = metricVenueOfficialUrl(venue, metricsRecord, "cas");
-  const ccfUrl = metricVenueOfficialUrl(venue, metricsRecord, "ccf");
-  const options = [];
-
-  if (shouldRenderMetricValue(metricsRecord?.impactFactor) && shouldRenderMetricValue(metricsRecord?.jcrQuartile) && impactUrl && impactUrl === jcrUrl) {
-    options.push({ label: `${ui("impactFactorLabel")}/${ui("jcrLabel")}`, href: impactUrl });
-  } else {
-    if (shouldRenderMetricValue(metricsRecord?.impactFactor) && impactUrl) {
-      options.push({ label: ui("impactFactorLabel"), href: impactUrl });
-    }
-    if (shouldRenderMetricValue(metricsRecord?.jcrQuartile) && jcrUrl) {
-      options.push({ label: ui("jcrLabel"), href: jcrUrl });
-    }
-  }
-
-  if (shouldRenderMetricValue(metricsRecord?.casQuartile) && casUrl) {
-    options.push({ label: ui("casLabel"), href: casUrl });
-  }
-
-  if (shouldRenderMetricValue(metricsRecord?.ccfRank) && ccfUrl) {
-    options.push({ label: ui("ccfLabel"), href: ccfUrl });
-  }
-
-  return buildMetricOptions(options)
-    .map(
-      (option) => `<a class="frontier-reference-inline-action" href="${escapeHtml(option.href)}" target="_blank" rel="noreferrer">${escapeHtml(option.label)}</a>`
-    )
-    .join(" · ");
-}
-
 function shouldRenderMetricValue(value) {
   return value !== undefined && value !== null && value !== "";
 }
@@ -5583,34 +5550,56 @@ function renderMetrics() {
     const head = el("div", "frontier-reference-head");
     const citation = el("p", "frontier-reference-citation");
     const facts = metricVenueFacts(venue);
-    const inlineActions = metricVenueInlineActionsHtml(venue, metricsRecord);
-    citation.innerHTML = [
-      metricVenueTitleHtml(venue, metricsRecord),
-      ...facts.map((item) => escapeHtml(item)),
-    ].join(" · ")
-      + (inlineActions ? `<span class="frontier-reference-inline-actions"> · ${inlineActions}</span>` : "");
+    citation.innerHTML = metricVenueTitleHtml(venue, metricsRecord);
     head.appendChild(citation);
     article.appendChild(head);
 
-    const tags = el("div", "field-hash-row field-hash-row-ledger");
-    [
-      metricVenueTypeValue(venue) ? `#${typeFilterTagLabel(metricVenueTypeValue(venue))}` : "",
-      ...metricVenueYears(venue).slice(0, 3).map((value) => `#${value}`),
-    ].filter(Boolean).forEach((label) => tags.appendChild(el("span", "field-hash-tag", label)));
-    if (tags.childNodes.length) article.appendChild(tags);
+    if (facts.length) {
+      const factsLine = el("p", "venue-line");
+      factsLine.textContent = facts.join(" · ");
+      article.appendChild(factsLine);
+    }
 
     const metrics = el("div", "publication-metrics");
     if (shouldRenderMetricValue(metricsRecord?.impactFactor)) {
-      addMetric(metrics, "impact", ui("impactFactorLabel"), metricsRecord?.impactFactor, metricsRecord?.impactYear || metricsRecord?.metricYear);
+      addMetric(
+        metrics,
+        "impact",
+        ui("impactFactorLabel"),
+        metricsRecord?.impactFactor,
+        metricsRecord?.impactYear || metricsRecord?.metricYear,
+        metricOptionsForVenueRecord(venue, "impact")
+      );
     }
     if (shouldRenderMetricValue(metricsRecord?.jcrQuartile)) {
-      addMetric(metrics, "jcr", ui("jcrLabel"), metricsRecord?.jcrQuartile, metricsRecord?.jcrYear || metricsRecord?.metricYear);
+      addMetric(
+        metrics,
+        "jcr",
+        ui("jcrLabel"),
+        metricsRecord?.jcrQuartile,
+        metricsRecord?.jcrYear || metricsRecord?.metricYear,
+        metricOptionsForVenueRecord(venue, "jcr")
+      );
     }
     if (shouldRenderMetricValue(metricsRecord?.casQuartile)) {
-      addMetric(metrics, "cas", ui("casLabel"), metricsRecord?.casQuartile, [metricsRecord?.casTop ? ui("topLabel") : "", metricsRecord?.casYear || metricsRecord?.metricYear].filter(Boolean).join(" · "));
+      addMetric(
+        metrics,
+        "cas",
+        ui("casLabel"),
+        metricsRecord?.casQuartile,
+        [metricsRecord?.casTop ? ui("topLabel") : "", metricsRecord?.casYear || metricsRecord?.metricYear].filter(Boolean).join(" · "),
+        metricOptionsForVenueRecord(venue, "cas")
+      );
     }
     if (shouldRenderMetricValue(metricsRecord?.ccfRank)) {
-      addMetric(metrics, "ccf", ui("ccfLabel"), metricsRecord?.ccfRank, metricsRecord?.ccfYear || metricsRecord?.metricYear);
+      addMetric(
+        metrics,
+        "ccf",
+        ui("ccfLabel"),
+        metricsRecord?.ccfRank,
+        metricsRecord?.ccfYear || metricsRecord?.metricYear,
+        metricOptionsForVenueRecord(venue, "ccf")
+      );
     }
     if (metrics.childNodes.length) article.appendChild(metrics);
 
