@@ -5393,10 +5393,6 @@ function metricVenueTitleHtml(venue, metricsRecord) {
 
 function metricVenueFacts(venue) {
   const facts = [];
-  const venueType = metricVenueTypeValue(venue);
-  if (venueType && venueType !== "unknown") {
-    facts.push(localizeVenueTypeLabel(venueType));
-  }
   if (venue?.publisher) {
     facts.push(String(venue.publisher));
   }
