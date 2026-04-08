@@ -133,7 +133,7 @@ function removeTagSelection(currentValues, value, selectionState, category) {
 }
 
 function tagEntriesForSelection(category, currentValues, explicitAll = false) {
-  if (explicitAll) return [{ category, value: "all" }];
+  if (explicitAll) return [];
   return selectionList(currentValues).map((value) => ({ category, value }));
 }
 
@@ -2924,13 +2924,13 @@ function renderDirectionWorkspace() {
           <div class="investigation-launcher-section">
             <div class="filter-control-row investigation-filter-row">
               <select id="research-problem-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), researchFacetCount({ problemTags: "all" })))}</option>
                 ${launcher.problemFields
                   .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: previewSelectionValues(state.researchProblemFieldFilters, field) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-method-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), launcher.methodFields.length))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), researchFacetCount({ methodTags: "all" })))}</option>
                 ${launcher.methodFields
                   .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: previewSelectionValues(state.researchMethodFieldFilters, field) })))}</option>`)
                   .join("")}
@@ -3030,7 +3030,7 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-problem-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), launcher.problemFields.length) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), researchFacetCount({ problemTags: "all" })) },
       ...launcher.problemFields.map((field) => ({
         value: field,
         label: formatPaperFilterOptionLabel(
@@ -3044,7 +3044,7 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-method-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), launcher.methodFields.length) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), researchFacetCount({ methodTags: "all" })) },
       ...launcher.methodFields.map((field) => ({
         value: field,
         label: formatPaperFilterOptionLabel(
@@ -4818,7 +4818,7 @@ function renderPaperControls() {
   ], state.typeFilter, state.paperExplicitAll.type, "selectedTypesLabel"), multiSelectDisplayValue(state.typeFilter, state.paperExplicitAll.type));
 
   syncSelectOptions(problemFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), problemFields.length) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), facetCount({ problemTags: "all" })) },
     ...problemFields
       .map((field) => ({
         value: field,
@@ -4830,7 +4830,7 @@ function renderPaperControls() {
   ], state.problemFieldFilters, state.paperExplicitAll.problem, "selectedProblemsLabel"), multiSelectDisplayValue(state.problemFieldFilters, state.paperExplicitAll.problem));
 
   syncSelectOptions(methodFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), methodFields.length) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), facetCount({ methodTags: "all" })) },
     ...methodFields
       .map((field) => ({
         value: field,
