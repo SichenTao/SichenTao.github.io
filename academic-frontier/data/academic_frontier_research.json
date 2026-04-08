@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-08 12:46 JST",
+  "generatedAt": "2026-04-08 14:43 JST",
   "seedProfile": {
     "profileName": "Sichen Tao",
     "summary": {
@@ -193,8 +193,8 @@
         "optimization",
         "evolutionary",
         "gpu",
-        "multi objective",
         "hpc",
+        "multi objective",
         "reinforcement learning",
         "evorl",
         "neuroevolution"
@@ -212,17 +212,29 @@
       "teams": [
         {
           "name": "Ran Cheng",
-          "strength": "GPU-native EC systems",
+          "strength": {
+            "en": "GPU-native EC systems",
+            "ja": "GPUネイティブ進化計算システム",
+            "zh": "GPU 原生 EC 系统"
+          },
           "url": "https://chengran.tech/"
         },
         {
           "name": "Julian Blank",
-          "strength": "multiobjective toolchains",
+          "strength": {
+            "en": "multiobjective toolchains",
+            "ja": "多目的最適化ツールチェーン",
+            "zh": "多目标优化工具链"
+          },
           "url": "https://openalex.org/A5047107500"
         },
         {
           "name": "Kalyanmoy Deb",
-          "strength": "multiobjective foundations",
+          "strength": {
+            "en": "multiobjective foundations",
+            "ja": "多目的最適化の基盤",
+            "zh": "多目标优化基础"
+          },
           "url": "https://openalex.org/A5088394271"
         }
       ],
@@ -1001,13 +1013,13 @@
             }
           },
           {
-            "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414581553",
             "source": "frontier-paper",
-            "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
-            "venue": "Expert Systems with Applications",
+            "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+            "venue": "International Journal of Parallel Emergent and Distributed Systems",
             "year": 2025,
             "citationCount": 0,
-            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+            "url": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
             "tags": [
               "monitor",
               "journal"
@@ -1019,13 +1031,13 @@
             }
           },
           {
-            "id": "evolutionary-computation-kalyanmoy-deb-W4414581553",
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
             "source": "frontier-paper",
-            "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
-            "venue": "International Journal of Parallel Emergent and Distributed Systems",
+            "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+            "venue": "Expert Systems with Applications",
             "year": 2025,
             "citationCount": 0,
-            "url": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
             "tags": [
               "monitor",
               "journal"
@@ -1653,17 +1665,29 @@
       "teams": [
         {
           "name": "Ran Cheng",
-          "strength": "GPU-native EC systems",
+          "strength": {
+            "en": "GPU-native EC systems",
+            "ja": "GPUネイティブ進化計算システム",
+            "zh": "GPU 原生 EC 系统"
+          },
           "url": "https://chengran.tech/"
         },
         {
           "name": "Julian Blank",
-          "strength": "multiobjective toolchains",
+          "strength": {
+            "en": "multiobjective toolchains",
+            "ja": "多目的最適化ツールチェーン",
+            "zh": "多目标优化工具链"
+          },
           "url": "https://openalex.org/A5047107500"
         },
         {
           "name": "Kalyanmoy Deb",
-          "strength": "multiobjective foundations",
+          "strength": {
+            "en": "multiobjective foundations",
+            "ja": "多目的最適化の基盤",
+            "zh": "多目标优化基础"
+          },
           "url": "https://openalex.org/A5088394271"
         }
       ],
@@ -3024,7 +3048,11 @@
       "teams": [
         {
           "name": "Ran Cheng",
-          "strength": "GPU-native EC systems",
+          "strength": {
+            "en": "GPU-native EC systems",
+            "ja": "GPUネイティブ進化計算システム",
+            "zh": "GPU 原生 EC 系统"
+          },
           "url": "https://chengran.tech/"
         }
       ],
@@ -3807,17 +3835,17 @@
         "zh": "从当前发表基础扩展到那些具备数据、仿真或科研流程支撑的 AI for Science 系统研究。",
         "ja": "現在の発表基盤から、データ・シミュレーション・科学ワークフローに根ざした AI for Science システムへ広げる。"
       },
-      "priority": 69,
+      "priority": 73,
       "scores": {
         "alignment": 100,
-        "momentum": 34,
-        "quality": 62
+        "momentum": 45,
+        "quality": 66
       },
       "counts": {
         "foundation": 3,
-        "frontier": 0,
+        "frontier": 1,
         "bridge": 3,
-        "total": 3
+        "total": 4
       },
       "keywords": [
         "hpc",
@@ -3833,6 +3861,7 @@
         "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops",
         "Scientific Reports",
         "Parallel Computing",
+        "International Journal of Parallel Emergent and Distributed Systems",
         "SC Asia",
         "Nature Machine Intelligence",
         "NeurIPS",
@@ -3840,6 +3869,11 @@
       ],
       "teams": [],
       "signals": [
+        {
+          "en": "1 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 1 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 1 件の関連最前線論文が見えている。"
+        },
         {
           "en": "3 retained publications provide immediate historical grounding.",
           "zh": "3 篇已保留发表可提供即时历史基础。",
@@ -3901,7 +3935,26 @@
             }
           }
         ],
-        "frontier": [],
+        "frontier": [
+          {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414581553",
+            "source": "frontier-paper",
+            "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+            "venue": "International Journal of Parallel Emergent and Distributed Systems",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          }
+        ],
         "bridge": [
           {
             "id": "cityscalecast-spatiotemporal-gnn-for-city-scale-weather-prediction-with-graphcast-guided-parallel-modeling-and-multi-step-forecasting-in-sendai",

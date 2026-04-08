@@ -2,8 +2,16 @@
   "snapshot": {
     "generatedAt": "2026-04-02 18:10 JST",
     "owner": "Sichen Tao",
-    "headline": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
-    "nextRun": "Tomorrow 08:00 JST via OpenClaw cron",
+    "headline": {
+      "en": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
+      "zh": "眼下最值得优先跟踪的机会，是把计算密集型研究系统当作产品来观察：不只看论文，还要看团队、代码、可复现性，以及哪些东西真正沉淀成下一步可用能力。",
+      "ja": "いま最優先で追うべき機会は、計算集約型の研究システムを一つのプロダクトとして捉えることです。論文だけでなく、チーム、コード、再現性、そして次に本当に使える能力へ何が結晶化するかまでを見る必要があります。"
+    },
+    "nextRun": {
+      "en": "Daily 08:00 JST via OpenClaw cron",
+      "zh": "每日 08:00 JST，通过 OpenClaw cron 运行",
+      "ja": "毎日 08:00 JST、OpenClaw cron 経由"
+    },
     "sourcesCovered": 0
   },
   "domains": [],
@@ -12,44 +20,140 @@
   "papers": [],
   "workflow": [
     {
-      "stage": "Acquire",
-      "goal": "Search GitHub, paper feeds, lab sites, and watchlists; collect high-signal candidates instead of scraping the whole universe.",
+      "stage": {
+        "en": "Acquire",
+        "zh": "采集",
+        "ja": "取得"
+      },
+      "goal": {
+        "en": "Search GitHub, paper feeds, lab sites, and watchlists; collect high-signal candidates instead of scraping the whole universe.",
+        "zh": "检索 GitHub、论文源、实验室页面和观察名单；优先收集高信号候选，而不是机械抓取整个世界。",
+        "ja": "GitHub、論文フィード、研究室サイト、ウォッチリストを調べ、全体を無差別にかき集めるのではなく高信号の候補を集めます。"
+      },
       "artifacts": [
-        "raw source hits",
-        "normalized metadata",
-        "candidate PDF links"
+        {
+          "en": "raw source hits",
+          "zh": "原始来源命中",
+          "ja": "生のソースヒット"
+        },
+        {
+          "en": "normalized metadata",
+          "zh": "标准化元数据",
+          "ja": "正規化済みメタデータ"
+        },
+        {
+          "en": "candidate PDF links",
+          "zh": "候选 PDF 链接",
+          "ja": "候補 PDF リンク"
+        }
       ],
-      "automation": "cron + browser"
+      "automation": {
+        "en": "cron + browser",
+        "zh": "cron + 浏览器",
+        "ja": "cron + ブラウザ"
+      }
     },
     {
-      "stage": "Digest",
-      "goal": "Score items, identify duplicates, extract why-this-matters notes, and move weak items out of the active lane early.",
+      "stage": {
+        "en": "Digest",
+        "zh": "整理",
+        "ja": "整理"
+      },
+      "goal": {
+        "en": "Score items, identify duplicates, extract why-this-matters notes, and move weak items out of the active lane early.",
+        "zh": "为条目打分、识别重复项、提取“为什么重要”的说明，并尽早把弱信号移出活跃通道。",
+        "ja": "項目をスコア化し、重複を見つけ、「なぜ重要か」のメモを抽出し、弱い項目は早めにアクティブレーンから外します。"
+      },
       "artifacts": [
-        "scored cards",
-        "trend evidence",
-        "team watch updates"
+        {
+          "en": "scored cards",
+          "zh": "已评分卡片",
+          "ja": "スコア付きカード"
+        },
+        {
+          "en": "trend evidence",
+          "zh": "趋势证据",
+          "ja": "トレンド証拠"
+        },
+        {
+          "en": "team watch updates",
+          "zh": "团队监测更新",
+          "ja": "チーム監視の更新"
+        }
       ],
-      "automation": "Codex summaries"
+      "automation": {
+        "en": "Codex summaries",
+        "zh": "Codex 总结",
+        "ja": "Codex 要約"
+      }
     },
     {
-      "stage": "Synthesize",
-      "goal": "Turn the daily evidence stream into trends, opportunity gaps, and concrete next-step research questions.",
+      "stage": {
+        "en": "Synthesize",
+        "zh": "综合",
+        "ja": "統合"
+      },
+      "goal": {
+        "en": "Turn the daily evidence stream into trends, opportunity gaps, and concrete next-step research questions.",
+        "zh": "把每日证据流转化为趋势判断、机会缺口和明确的下一步研究问题。",
+        "ja": "日々の証拠ストリームを、トレンド判断、機会ギャップ、具体的な次の研究課題へ変換します。"
+      },
       "artifacts": [
-        "trend map",
-        "insight memo",
-        "contribution candidates"
+        {
+          "en": "trend map",
+          "zh": "趋势图谱",
+          "ja": "トレンドマップ"
+        },
+        {
+          "en": "insight memo",
+          "zh": "洞察备忘录",
+          "ja": "インサイトメモ"
+        },
+        {
+          "en": "contribution candidates",
+          "zh": "潜在贡献点",
+          "ja": "貢献候補"
+        }
       ],
-      "automation": "human reviewed"
+      "automation": {
+        "en": "human reviewed",
+        "zh": "人工复核",
+        "ja": "人手レビュー"
+      }
     },
     {
-      "stage": "Act",
-      "goal": "Convert strong signals into reading queues, replication targets, idea notes, and realistic project directions.",
+      "stage": {
+        "en": "Act",
+        "zh": "执行",
+        "ja": "実行"
+      },
+      "goal": {
+        "en": "Convert strong signals into reading queues, replication targets, idea notes, and realistic project directions.",
+        "zh": "把强信号转化为阅读队列、复现实验目标、想法笔记和现实可行的项目方向。",
+        "ja": "強いシグナルを、読書キュー、再現対象、アイデアノート、現実的なプロジェクト方向へ変換します。"
+      },
       "artifacts": [
-        "download queue",
-        "agenda list",
-        "project seeds"
+        {
+          "en": "download queue",
+          "zh": "下载队列",
+          "ja": "ダウンロードキュー"
+        },
+        {
+          "en": "agenda list",
+          "zh": "议程清单",
+          "ja": "アジェンダ一覧"
+        },
+        {
+          "en": "project seeds",
+          "zh": "项目种子",
+          "ja": "プロジェクトの種"
+        }
       ],
-      "automation": "mixed mode"
+      "automation": {
+        "en": "mixed mode",
+        "zh": "混合模式",
+        "ja": "混合モード"
+      }
     }
   ],
   "downloadQueue": []

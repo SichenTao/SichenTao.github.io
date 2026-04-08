@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-03 19:47 JST",
+  "generatedAt": "2026-04-08 14:40 JST",
   "items": [
     {
       "paperId": "evolutionary-computation-ran-cheng-W4416548789",
@@ -14,6 +14,69 @@
       "archivePath": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
       "browserUrl": "../archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
       "sizeBytes": 5446206
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W4413243632",
+      "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+      "archivePath": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
+      "sizeBytes": 1550596
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W4411600078",
+      "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+      "archivePath": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
+      "sizeBytes": 954204
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W4409486142",
+      "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+      "archivePath": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
+      "sizeBytes": 1896716
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W7128493809",
+      "title": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+      "archivePath": "archive/evolutionary-computation/2026/enabling-population-level-parallelism-in-tree-based-genetic-programming-for-gpu-acceleration.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2026/enabling-population-level-parallelism-in-tree-based-genetic-programming-for-gpu-acceleration.pdf",
+      "sizeBytes": 2766137
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W4408935111",
+      "title": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+      "archivePath": "archive/evolutionary-computation/2025/bridging-evolutionary-multiobjective-optimization-and-gpu-acceleration-via-tensorization.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2025/bridging-evolutionary-multiobjective-optimization-and-gpu-acceleration-via-tensorization.pdf",
+      "sizeBytes": 3552275
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W4407451023",
+      "title": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+      "archivePath": "archive/evolutionary-computation/2025/metade-evolving-differential-evolution-by-differential-evolution.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2025/metade-evolving-differential-evolution-by-differential-evolution.pdf",
+      "sizeBytes": 2099056
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W4394805110",
+      "title": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
+      "archivePath": "archive/evolutionary-computation/2024/evox-a-distributed-gpu-accelerated-framework-for-scalable-evolutionary-computation.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2024/evox-a-distributed-gpu-accelerated-framework-for-scalable-evolutionary-computation.pdf",
+      "sizeBytes": 1238469
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-arxiv-2601-18446",
+      "title": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+      "archivePath": "archive/evolutionary-computation/2026/scaling-behaviors-of-evolutionary-algorithms-on-gpus-when-does-parallelism-pay-off.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2026/scaling-behaviors-of-evolutionary-algorithms-on-gpus-when-does-parallelism-pay-off.pdf",
+      "sizeBytes": 12413335
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-arxiv-2509-08269",
+      "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+      "archivePath": "archive/evolutionary-computation/2025/a-systematic-survey-on-large-language-models-for-evolutionary-optimization-from-modeling-to-solving.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2025/a-systematic-survey-on-large-language-models-for-evolutionary-optimization-from-modeling-to-solving.pdf",
+      "sizeBytes": 3462484
     }
   ]
 }
