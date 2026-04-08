@@ -3536,6 +3536,18 @@ body[data-lang="en"] .timeline-title-text {
   border-color: rgba(var(--gold-rgb), 0.18);
 }
 
+.portal-status-forecast {
+  background: rgba(var(--gold-rgb), 0.12);
+  color: var(--gold);
+  border-color: rgba(var(--gold-rgb), 0.18);
+}
+
+.portal-head-meta .portal-status-forecast ~ .portal-date-pill {
+  background: rgba(var(--gold-rgb), 0.08);
+  color: var(--gold);
+  border-color: rgba(var(--gold-rgb), 0.16);
+}
+
 .portal-stack-item {
   display: grid;
   gap: 4px;
@@ -3812,6 +3824,13 @@ body[data-lang="en"] .timeline-title-text {
 .portal-call-card-statusline-closed .portal-call-card-timing,
 .portal-call-card-statusline-closed .portal-call-card-separator {
   color: #b91c1c;
+}
+
+.portal-call-card-statusline-forecast,
+.portal-call-card-statusline-forecast .portal-call-card-status,
+.portal-call-card-statusline-forecast .portal-call-card-timing,
+.portal-call-card-statusline-forecast .portal-call-card-separator {
+  color: var(--gold);
 }
 
 .portal-call-card strong {

@@ -53,6 +53,8 @@ const I18N = {
       viewOfficial: "打开官方页面",
       viewSnapshot: "打开本地快照",
       nextDeadline: "下一截止",
+      expectedOpening: "预计开启",
+      expectedDeadline: "预计截止",
       opening: "开启",
       deadlineLabel: "截止",
       updated: "官方页更新",
@@ -89,6 +91,7 @@ const I18N = {
       closed: "已结束",
       suspended: "停止募集",
       reference: "参考",
+      forecast: "预计",
       unknown: "待确认",
     },
     eventType: {
@@ -295,6 +298,8 @@ const I18N = {
       viewOfficial: "Open official page",
       viewSnapshot: "Open local snapshot",
       nextDeadline: "Next deadline",
+      expectedOpening: "Expected opening",
+      expectedDeadline: "Expected deadline",
       opening: "Opens",
       deadlineLabel: "Deadline",
       updated: "Official page updated",
@@ -331,6 +336,7 @@ const I18N = {
       closed: "Closed",
       suspended: "Suspended",
       reference: "Reference",
+      forecast: "Expected",
       unknown: "Unknown",
     },
     eventType: {
@@ -539,6 +545,8 @@ I18N.ja = {
     viewOfficial: "公式ページを開く",
     viewSnapshot: "ローカルスナップショットを開く",
     nextDeadline: "次の締切",
+    expectedOpening: "予定公募開始",
+    expectedDeadline: "予定締切",
     opening: "受付開始",
     deadlineLabel: "締切",
     updated: "公式ページ更新",
@@ -575,6 +583,7 @@ I18N.ja = {
     closed: "終了",
     suspended: "募集停止",
     reference: "参考",
+    forecast: "予定",
     unknown: "要確認",
   },
   eventType: {
@@ -1974,7 +1983,7 @@ function renderCallRailCard(entry) {
     <a class="portal-call-card" href="${programHref(entry.id)}">
       <span class="portal-card-head">
         <span>
-          <span class="eyebrow portal-call-card-statusline portal-call-card-statusline-${escapeHtml(entry.status || "unknown")}">${compactTimingMarkup(entry)}</span>
+          <span class="eyebrow portal-call-card-statusline portal-call-card-statusline-${escapeHtml(timingStatusTone(entry))}">${compactTimingMarkup(entry)}</span>
           <strong>${escapeHtml(localeField(entry, "title"))}</strong>
         </span>
       </span>
@@ -2218,8 +2227,8 @@ function renderCallDetail(entry) {
     <p class="portal-subtle">${escapeHtml(localeValue(program, "eligibility"))}</p>
     <div class="meta-strip">
       ${metaPill(`${t("common.updated")} ${program.page_last_updated || "--"}`)}
-      ${deadlineDisplay(program) ? metaPill(`${t("common.nextDeadline")} ${deadlineDisplay(program)}`) : ""}
-      ${callOpenDisplay(program) ? metaPill(`${t("common.opening")} ${callOpenDisplay(program)}`) : ""}
+      ${deadlineDisplay(program) ? metaPill(`${timingDeadlineLabel(program)} ${deadlineDisplay(program)}`) : ""}
+      ${callOpenDisplay(program) ? metaPill(`${timingOpenLabel(program)} ${callOpenDisplay(program)}`) : ""}
     </div>
     <div class="portal-detail-block">
       <h4>${t("calls.officialLinks")}</h4>
@@ -2820,8 +2829,36 @@ function statusWeight(status) {
   return { open: 0, closed: 1, suspended: 2, reference: 3, unknown: 4 }[status] ?? 5;
 }
 
-function statusPill(status) {
-  return `<span class="meta-pill portal-status-pill portal-status-${status}">${escapeHtml(t(`status.${status}`))}</span>`;
+function statusPill(status, label = "") {
+  const text = label || t(`status.${status}`);
+  return `<span class="meta-pill portal-status-pill portal-status-${status}">${escapeHtml(text)}</span>`;
+}
+
+function activeForecastCycle(record) {
+  const cycle = record?.forecast_cycle;
+  if (!cycle || record?.status === "open") {
+    return null;
+  }
+  if (cycle.call_open_date || cycle.call_open_label_ja || cycle.call_open_label_zh || cycle.call_open_label_en || cycle.submission_deadline || cycle.deadline_at) {
+    return cycle;
+  }
+  return null;
+}
+
+function timingStatusTone(record) {
+  return activeForecastCycle(record) ? "forecast" : record?.status || "unknown";
+}
+
+function timingStatusLabel(record) {
+  return activeForecastCycle(record) ? t("status.forecast") : t(`status.${record?.status || "unknown"}`);
+}
+
+function timingOpenLabel(record) {
+  return activeForecastCycle(record) ? t("common.expectedOpening") : t("common.opening");
+}
+
+function timingDeadlineLabel(record) {
+  return activeForecastCycle(record) ? t("common.expectedDeadline") : t("common.deadlineLabel");
 }
 
 function currentProgramId() {
@@ -2863,11 +2900,12 @@ function deadlineDate(record) {
   if (!record) {
     return "";
   }
-  if (record.submission_deadline) {
-    return record.submission_deadline;
+  const source = activeForecastCycle(record) || record;
+  if (source.submission_deadline) {
+    return source.submission_deadline;
   }
-  if (record.deadline_at) {
-    return String(record.deadline_at).slice(0, 10);
+  if (source.deadline_at) {
+    return String(source.deadline_at).slice(0, 10);
   }
   return "";
 }
@@ -2962,23 +3000,25 @@ function callSortLabel(sortMode) {
 }
 
 function callOpenDisplay(record) {
-  if (!record) {
+  const source = activeForecastCycle(record) || record;
+  if (!source) {
     return "";
   }
-  if (record.call_open_date) {
-    return formatDate(record.call_open_date);
+  if (source.call_open_date) {
+    return formatDate(source.call_open_date);
   }
-  return localeValue(record, "call_open_label");
+  return localeValue(source, "call_open_label");
 }
 
 function callOpenCompactDisplay(record) {
-  if (!record) {
+  const source = activeForecastCycle(record) || record;
+  if (!source) {
     return "";
   }
-  if (record.call_open_date) {
-    return formatShortDate(record.call_open_date);
+  if (source.call_open_date) {
+    return formatShortDate(source.call_open_date);
   }
-  return formatApproximateOpenLabel(record);
+  return formatApproximateOpenLabel(source);
 }
 
 function deadlineCompactDisplay(record) {
@@ -2990,7 +3030,7 @@ function compactTimingText(record) {
   if (!record) {
     return "";
   }
-  const parts = [t(`status.${record.status}`)];
+  const parts = [timingStatusLabel(record)];
   const opening = callOpenCompactDisplay(record);
   const deadline = deadlineCompactDisplay(record);
   if (opening && deadline) {
@@ -3014,7 +3054,7 @@ function compactTimingMarkup(record) {
   if (!record) {
     return "";
   }
-  const status = t(`status.${record.status}`);
+  const status = timingStatusLabel(record);
   const opening = callOpenCompactDisplay(record);
   const deadline = deadlineCompactDisplay(record);
   const timing = opening && deadline ? `${opening}-${deadline}` : deadline ? `-${deadline}` : opening || "";
@@ -3033,14 +3073,14 @@ function timingPillCluster(record) {
   if (!record) {
     return "";
   }
-  const items = [statusPill(record.status)];
+  const items = [statusPill(timingStatusTone(record), timingStatusLabel(record))];
   const deadline = deadlineDisplay(record);
   if (deadline) {
-    items.push(timingInfoPill(t("common.deadlineLabel"), deadline, "deadline"));
+    items.push(timingInfoPill(timingDeadlineLabel(record), deadline, "deadline"));
   }
   const openDisplay = callOpenDisplay(record);
   if (openDisplay) {
-    items.push(timingInfoPill(t("common.opening"), openDisplay, "opening"));
+    items.push(timingInfoPill(timingOpenLabel(record), openDisplay, "opening"));
   }
   return `<span class="portal-head-meta">${items.join("")}</span>`;
 }
