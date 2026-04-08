@@ -3784,6 +3784,36 @@ body[data-lang="en"] .timeline-title-text {
   text-wrap: pretty;
 }
 
+.portal-call-card-statusline {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.32rem;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.portal-call-card-status,
+.portal-call-card-timing {
+  font-weight: 800;
+}
+
+.portal-call-card-timing {
+  letter-spacing: 0.01em;
+}
+
+.portal-call-card-separator {
+  font-weight: 700;
+  opacity: 0.82;
+}
+
+.portal-call-card-statusline-closed,
+.portal-call-card-statusline-closed .portal-call-card-status,
+.portal-call-card-statusline-closed .portal-call-card-timing,
+.portal-call-card-statusline-closed .portal-call-card-separator {
+  color: #b91c1c;
+}
+
 .portal-call-card strong {
   display: block;
   overflow: visible;

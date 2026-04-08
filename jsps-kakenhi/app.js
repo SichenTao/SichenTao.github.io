@@ -1974,7 +1974,7 @@ function renderCallRailCard(entry) {
     <a class="portal-call-card" href="${programHref(entry.id)}">
       <span class="portal-card-head">
         <span>
-          <span class="eyebrow">${escapeHtml(compactTimingText(entry))}</span>
+          <span class="eyebrow portal-call-card-statusline portal-call-card-statusline-${escapeHtml(entry.status || "unknown")}">${compactTimingMarkup(entry)}</span>
           <strong>${escapeHtml(localeField(entry, "title"))}</strong>
         </span>
       </span>
@@ -3008,6 +3008,25 @@ function compactTimingText(record) {
     parts.push(`${t("common.updatedShort")} ${formatShortDate(String(record.page_last_updated).slice(0, 10))}`);
   }
   return parts.join(" · ");
+}
+
+function compactTimingMarkup(record) {
+  if (!record) {
+    return "";
+  }
+  const status = t(`status.${record.status}`);
+  const opening = callOpenCompactDisplay(record);
+  const deadline = deadlineCompactDisplay(record);
+  const timing = opening && deadline ? `${opening}~${deadline}` : deadline ? `~${deadline}` : opening || "";
+  const parts = [`<span class="portal-call-card-status">${escapeHtml(status)}</span>`];
+  if (timing) {
+    parts.push(`<span class="portal-call-card-separator" aria-hidden="true">·</span>`);
+    parts.push(`<span class="portal-call-card-timing">${escapeHtml(timing)}</span>`);
+  } else if (record.page_last_updated) {
+    parts.push(`<span class="portal-call-card-separator" aria-hidden="true">·</span>`);
+    parts.push(`<span class="portal-call-card-timing">${escapeHtml(`${t("common.updatedShort")} ${formatShortDate(String(record.page_last_updated).slice(0, 10))}`)}</span>`);
+  }
+  return parts.join(" ");
 }
 
 function timingPillCluster(record) {
