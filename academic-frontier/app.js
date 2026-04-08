@@ -2182,6 +2182,40 @@ function localizeText(value) {
   return EXACT_TRANSLATIONS[text]?.[state.language] || text;
 }
 
+function paperDisplayTitleValue(paper) {
+  return paper?.displayTitle || paper?.title || "";
+}
+
+function localizedReferenceKey(value) {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    for (const key of ["canonical", "en", "zh", "ja", "title", "name", "label"]) {
+      const candidate = normalizeUrl(value?.[key]);
+      if (candidate) {
+        return candidate.toLowerCase();
+      }
+    }
+    return "";
+  }
+
+  const normalized = normalizeUrl(value);
+  return normalized ? normalized.toLowerCase() : "";
+}
+
+function paperByCanonicalTitle(title) {
+  const key = localizedReferenceKey(title);
+  if (!key) return null;
+  return (domainData().papers || []).find((paper) => localizedReferenceKey(paper?.title) === key) || null;
+}
+
+function trackedPaperDisplayTitles(venue) {
+  return uniqueStrings(
+    (venue?.trackedPaperTitles || []).map((title) => {
+      const match = paperByCanonicalTitle(title);
+      return localizeText(match ? paperDisplayTitleValue(match) : title);
+    })
+  );
+}
+
 function buildExternalLinkHtml(label, href) {
   const normalizedHref = String(href || "").trim();
   if (!normalizedHref) {
@@ -3211,7 +3245,10 @@ function teamsForDomain(domainId = state.activeDomainId) {
 }
 
 function paperTeamNames(paper) {
-  const matches = teamsForDomain().filter((team) => (team.papers || []).includes(paper?.title));
+  const titleKey = localizedReferenceKey(paper?.title);
+  const matches = teamsForDomain().filter((team) =>
+    (team.papers || []).some((item) => localizedReferenceKey(item) === titleKey)
+  );
   return [...new Set(matches.map((team) => localizeText(team.name)).filter(Boolean))];
 }
 
@@ -4333,7 +4370,7 @@ function sortPapers(papers) {
   const statusWeight = { "must-read": 3, monitor: 2, archive: 1 };
   return [...papers].sort((left, right) => {
     if (state.sortFilter === "title") {
-      return localizeText(left.title).localeCompare(localizeText(right.title), currentLocale());
+      return localizeText(paperDisplayTitleValue(left)).localeCompare(localizeText(paperDisplayTitleValue(right)), currentLocale());
     }
 
     if (state.sortFilter === "citations") {
@@ -4427,7 +4464,7 @@ function paperMatchesSearchQuery(paper, query) {
 
   const searchableFields = uniqueStrings([
     paper.title,
-    localizeText(paper.title),
+    localizeText(paperDisplayTitleValue(paper)),
     paper.venue,
     localizeText(paper.venue),
     paper.citationText,
@@ -4952,7 +4989,7 @@ function renderPapers() {
     const head = el("div", "publication-head");
     const titleBlock = el("div", "");
     const title = el("h4", "publication-title");
-    title.innerHTML = richTextHtml(paper.title);
+    title.innerHTML = richTextHtml(paperDisplayTitleValue(paper));
     titleBlock.appendChild(title);
     head.appendChild(titleBlock);
 
@@ -5177,6 +5214,7 @@ function metricVenueMatchesQuery(venue, query = state.metricQuery) {
     venue?.venueType,
     ...(venue?.domains || []),
     ...(venue?.trackedPaperTitles || []),
+    ...trackedPaperDisplayTitles(venue),
     metricRecord?.impactFactor,
     metricRecord?.jcrQuartile,
     metricRecord?.casQuartile,
@@ -5439,7 +5477,8 @@ function renderMetrics() {
     article.appendChild(metrics);
 
     const note = el("p", "publication-note publication-note-accent");
-    note.innerHTML = `<strong class="warm-strong">${escapeHtml(ui("papersLabel"))}</strong> <span class="rich-text">${escapeHtml(String(venue?.trackedPaperCount || 0))}${venue?.trackedPaperTitles?.length ? ` · ${escapeHtml(venue.trackedPaperTitles.join(" · "))}` : ""}</span>`;
+    const trackedTitles = trackedPaperDisplayTitles(venue);
+    note.innerHTML = `<strong class="warm-strong">${escapeHtml(ui("papersLabel"))}</strong> <span class="rich-text">${escapeHtml(String(venue?.trackedPaperCount || 0))}${trackedTitles.length ? ` · ${escapeHtml(trackedTitles.join(" · "))}` : ""}</span>`;
     article.appendChild(note);
 
     const links = el("div", "link-row");

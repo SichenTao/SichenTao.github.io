@@ -1,6 +1,6 @@
 window.FRONTIER_DATA = {
   "snapshot": {
-    "generatedAt": "2026-04-08 14:47 JST",
+    "generatedAt": "2026-04-08 15:21 JST",
     "owner": "Sichen Tao",
     "headline": {
       "en": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
@@ -226,26 +226,109 @@ window.FRONTIER_DATA = {
         }
       ],
       "repositories": [
-        "EMI-Group/evox (distributed GPU-native EC framework)",
-        "EMI-Group/metade (differential evolution meta-optimization line)",
-        "EMI-Group/evorl (GPU-native evolutionary reinforcement learning framework)",
-        "EMI-Group/evogp (GPU-native evolutionary programming stack)",
-        "EMI-Group/tensorneat (GPU-native neuroevolution stack)",
-        "EMI-Group/evomo (tensorized multiobjective optimization stack)",
-        "EMI-Group/evogo (evolutionary generative optimization code line)"
+        {
+          "en": "EMI-Group/evox (distributed GPU-native EC framework)",
+          "ja": "EMI-Group/evox（分散型 GPU ネイティブ進化計算フレームワーク）",
+          "zh": "EMI-Group/evox（分布式 GPU 原生进化计算框架）"
+        },
+        {
+          "en": "EMI-Group/metade (differential evolution meta-optimization line)",
+          "ja": "EMI-Group/metade（差分進化メタ最適化研究ライン）",
+          "zh": "EMI-Group/metade（差分进化元优化研究线）"
+        },
+        {
+          "en": "EMI-Group/evorl (GPU-native evolutionary reinforcement learning framework)",
+          "ja": "EMI-Group/evorl（GPU ネイティブ進化的強化学習フレームワーク）",
+          "zh": "EMI-Group/evorl（GPU 原生进化强化学习框架）"
+        },
+        {
+          "en": "EMI-Group/evogp (GPU-native evolutionary programming stack)",
+          "ja": "EMI-Group/evogp（GPU ネイティブ進化的プログラミング基盤）",
+          "zh": "EMI-Group/evogp（GPU 原生进化程序工具栈）"
+        },
+        {
+          "en": "EMI-Group/tensorneat (GPU-native neuroevolution stack)",
+          "ja": "EMI-Group/tensorneat（GPU ネイティブ神経進化基盤）",
+          "zh": "EMI-Group/tensorneat（GPU 原生神经进化工具栈）"
+        },
+        {
+          "en": "EMI-Group/evomo (tensorized multiobjective optimization stack)",
+          "ja": "EMI-Group/evomo（テンソル化多目的最適化基盤）",
+          "zh": "EMI-Group/evomo（张量化多目标优化工具栈）"
+        },
+        {
+          "en": "EMI-Group/evogo (evolutionary generative optimization code line)",
+          "ja": "EMI-Group/evogo（進化的生成最適化コードライン）",
+          "zh": "EMI-Group/evogo（进化生成优化代码线）"
+        }
       ],
       "papers": [
-        "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
-        "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
-        "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
-        "MetaDE: Evolving Differential Evolution by Differential Evolution",
-        "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
-        "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
-        "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
-        "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
-        "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
-        "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
-        "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving"
+        {
+          "canonical": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+          "en": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+          "ja": "進化的生成最適化: 生成学習による完全データ駆動型進化最適化に向けて",
+          "zh": "进化生成优化：迈向由生成学习驱动的全数据驱动进化优化"
+        },
+        {
+          "canonical": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+          "en": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+          "ja": "GPU 加速に向けた木ベース遺伝的プログラミングにおける個体群レベル並列性の実現",
+          "zh": "面向 GPU 加速的树式遗传程序中的种群级并行性实现"
+        },
+        {
+          "canonical": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+          "en": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+          "ja": "テンソル化によって進化的多目的最適化と GPU 加速を橋渡しする",
+          "zh": "通过张量化连接进化多目标优化与 GPU 加速"
+        },
+        {
+          "canonical": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+          "en": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+          "ja": "MetaDE: 差分進化によって差分進化を進化させる",
+          "zh": "MetaDE：用差分进化进化差分进化"
+        },
+        {
+          "canonical": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+          "en": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+          "ja": "EvoRL: 進化的強化学習のための GPU 加速フレームワーク",
+          "zh": "EvoRL：面向进化强化学习的 GPU 加速框架"
+        },
+        {
+          "canonical": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+          "en": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+          "ja": "TensorNEAT: Augmenting Topologies を用いた神経進化のための GPU 加速ライブラリ",
+          "zh": "TensorNEAT：用于拓扑增广神经进化的 GPU 加速库"
+        },
+        {
+          "canonical": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+          "en": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+          "ja": "テンソル化 NSGA-III を用いた GPU 加速進化的多数目的最適化",
+          "zh": "基于张量化 NSGA-III 的 GPU 加速进化多数目标优化"
+        },
+        {
+          "canonical": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+          "en": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+          "ja": "単眼深度推定のための階層的パラメータ写像を用いた高効率な進化的ニューラルアーキテクチャ探索",
+          "zh": "面向单目深度估计的基于层级参数映射的高效进化神经架构搜索"
+        },
+        {
+          "canonical": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
+          "en": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
+          "ja": "EvoX: スケーラブルな進化計算のための分散 GPU 加速フレームワーク",
+          "zh": "EvoX：面向可扩展进化计算的分布式 GPU 加速框架"
+        },
+        {
+          "canonical": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+          "en": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+          "ja": "GPU 上の進化アルゴリズムのスケーリング挙動: 並列化はいつ真価を発揮するのか",
+          "zh": "GPU 上进化算法的扩展行为：并行化何时真正带来收益？"
+        },
+        {
+          "canonical": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+          "en": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+          "ja": "進化最適化のための大規模言語モデルに関する体系的サーベイ: モデリングから問題解決まで",
+          "zh": "面向进化优化的大语言模型系统综述：从建模到求解"
+        }
       ],
       "links": {
         "homepage": "https://chengran.tech/",
@@ -292,11 +375,25 @@ window.FRONTIER_DATA = {
         }
       ],
       "repositories": [
-        "anyoptimization/pymoo (2833★, pushed 2026-02-22)"
+        {
+          "en": "anyoptimization/pymoo (2833★, pushed 2026-02-22)",
+          "ja": "anyoptimization/pymoo（2833★、最終更新 2026-02-22）",
+          "zh": "anyoptimization/pymoo（2833★，最近更新于 2026-02-22）"
+        }
       ],
       "papers": [
-        "Hot off the Press: Parallel Multi-Objective Optimization for Expensive and Inexpensive Objectives and Constraints",
-        "Parallel multi-objective optimization for expensive and inexpensive objectives and constraints"
+        {
+          "canonical": "Hot off the Press: Parallel Multi-Objective Optimization for Expensive and Inexpensive Objectives and Constraints",
+          "en": "Hot off the Press: Parallel Multi-Objective Optimization for Expensive and Inexpensive Objectives and Constraints",
+          "ja": "速報: 高コスト・低コストの目的と制約に対する並列多目的最適化",
+          "zh": "最新论文：面向高代价与低代价目标及约束的并行多目标优化"
+        },
+        {
+          "canonical": "Parallel multi-objective optimization for expensive and inexpensive objectives and constraints",
+          "en": "Parallel multi-objective optimization for expensive and inexpensive objectives and constraints",
+          "ja": "高コスト・低コストの目的と制約に対する並列多目的最適化",
+          "zh": "面向高代价与低代价目标及约束的并行多目标优化"
+        }
       ],
       "links": {
         "homepage": null,
@@ -335,11 +432,25 @@ window.FRONTIER_DATA = {
         }
       ],
       "repositories": [
-        "No tracked GitHub repository configured yet"
+        {
+          "en": "No tracked GitHub repository configured yet",
+          "ja": "追跡対象の GitHub リポジトリはまだ設定されていません",
+          "zh": "目前尚未配置要跟踪的 GitHub 仓库"
+        }
       ],
       "papers": [
-        "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
-        "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems"
+        {
+          "canonical": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+          "en": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+          "ja": "EvoSort: 大規模高性能計算のための遺伝的アルゴリズムベース適応型並列ソートフレームワーク",
+          "zh": "EvoSort：面向大规模高性能计算的基于遗传算法的自适应并行排序框架"
+        },
+        {
+          "canonical": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+          "en": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+          "ja": "大規模多目的最適化問題のための、意思決定変数グルーピングに基づく適応的重み最適化アルゴリズム",
+          "zh": "面向大规模多目标优化问题的基于决策变量分组的自适应权重优化算法"
+        }
       ],
       "links": {
         "homepage": null,
@@ -383,6 +494,11 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/pdf/2508.00380",
       "pdfUrl": "https://arxiv.org/pdf/2508.00380",
       "archivePath": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf",
+      "displayTitle": {
+        "en": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+        "ja": "進化的生成最適化: 生成学習による完全データ駆動型進化最適化に向けて",
+        "zh": "进化生成优化：迈向由生成学习驱动的全数据驱动进化优化"
+      },
       "topics": [
         "Advanced Multi-Objective Optimization Algorithms",
         "Metaheuristic Optimization Algorithms Research",
@@ -618,6 +734,11 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/pdf/2505.18681",
       "pdfUrl": "https://arxiv.org/pdf/2505.18681",
       "archivePath": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
+      "displayTitle": {
+        "en": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+        "ja": "EvoSort: 大規模高性能計算のための遺伝的アルゴリズムベース適応型並列ソートフレームワーク",
+        "zh": "EvoSort：面向大规模高性能计算的基于遗传算法的自适应并行排序框架"
+      },
       "topics": [],
       "citationText": "S. N. Raj and K. Deb, \"EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing\", International Journal of Parallel Emergent and Distributed Systems, 2025, doi: 10.1080/17445760.2025.2609138.",
       "metrics": {
@@ -820,6 +941,11 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1016/j.swevo.2025.102149",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf",
+      "displayTitle": {
+        "en": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+        "ja": "大規模多目的最適化問題のための、意思決定変数グルーピングに基づく適応的重み最適化アルゴリズム",
+        "zh": "面向大规模多目标优化问题的基于决策变量分组的自适应权重优化算法"
+      },
       "topics": [],
       "citationText": "H. Wang, S. Zhu, W. Fang, and K. Deb, \"An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems\", Swarm and Evolutionary Computation, 2025, doi: 10.1016/j.swevo.2025.102149.",
       "metrics": {
@@ -1023,6 +1149,11 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1016/j.swevo.2025.102144",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf",
+      "displayTitle": {
+        "en": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+        "ja": "25 自由度 NAO ヒューマノイドロボットの歩行周期最適化に対する進化的多目的最適化アルゴリズムの動的性能評価",
+        "zh": "面向 25 自由度 NAO 人形机器人步态周期优化的进化多目标优化算法动态性能评估"
+      },
       "topics": [],
       "citationText": "P. Gupta, D. K. Pratihar, and K. Deb, \"Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot\", Swarm and Evolutionary Computation, 2025, doi: 10.1016/j.swevo.2025.102144.",
       "metrics": {
@@ -1226,6 +1357,11 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1016/j.eswa.2025.129364",
       "pdfUrl": null,
       "archivePath": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf",
+      "displayTitle": {
+        "en": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+        "ja": "大規模 0-1 ナップサック問題のための、コアベースグルーピング戦略を備えた協調型協進化アルゴリズム",
+        "zh": "面向大规模 0-1 背包问题的基于核心分组策略的协同协进化算法"
+      },
       "topics": [],
       "citationText": "X. Li, S. Zhu, W. Fang, and K. Deb, \"A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems\", Expert Systems with Applications, 2025, doi: 10.1016/j.eswa.2025.129364.",
       "metrics": {
@@ -1428,6 +1564,11 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/pdf/2501.15129",
       "pdfUrl": "https://arxiv.org/pdf/2501.15129",
       "archivePath": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
+      "displayTitle": {
+        "en": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+        "ja": "EvoRL: 進化的強化学習のための GPU 加速フレームワーク",
+        "zh": "EvoRL：面向进化强化学习的 GPU 加速框架"
+      },
       "topics": [
         "Evolutionary Algorithms and Applications",
         "Reinforcement Learning Systems",
@@ -1656,6 +1797,11 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/pdf/2504.06067",
       "pdfUrl": "https://arxiv.org/pdf/2504.06067",
       "archivePath": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
+      "displayTitle": {
+        "en": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+        "ja": "テンソル化 NSGA-III を用いた GPU 加速進化的多数目的最適化",
+        "zh": "基于张量化 NSGA-III 的 GPU 加速进化多数目标优化"
+      },
       "topics": [
         "Advanced Multi-Objective Optimization Algorithms",
         "Evolutionary Algorithms and Applications",
@@ -1878,6 +2024,11 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/pdf/2504.08339",
       "pdfUrl": "https://arxiv.org/pdf/2504.08339",
       "archivePath": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
+      "displayTitle": {
+        "en": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+        "ja": "TensorNEAT: Augmenting Topologies を用いた神経進化のための GPU 加速ライブラリ",
+        "zh": "TensorNEAT：用于拓扑增广神经进化的 GPU 加速库"
+      },
       "topics": [
         "Evolutionary Algorithms and Applications",
         "Neuroevolution",
@@ -2085,6 +2236,11 @@ window.FRONTIER_DATA = {
       "id": "evolutionary-computation-ran-cheng-W7128493809",
       "domainId": "evolutionary-computation",
       "title": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+      "displayTitle": {
+        "en": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+        "ja": "GPU 加速に向けた木ベース遺伝的プログラミングにおける個体群レベル並列性の実現",
+        "zh": "面向 GPU 加速的树式遗传程序中的种群级并行性实现"
+      },
       "venue": "IEEE Transactions on Evolutionary Computation",
       "year": "2026",
       "status": "must-read",
@@ -2321,6 +2477,11 @@ window.FRONTIER_DATA = {
       "id": "evolutionary-computation-ran-cheng-W4408935111",
       "domainId": "evolutionary-computation",
       "title": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+      "displayTitle": {
+        "en": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+        "ja": "テンソル化によって進化的多目的最適化と GPU 加速を橋渡しする",
+        "zh": "通过张量化连接进化多目标优化与 GPU 加速"
+      },
       "venue": "IEEE Transactions on Evolutionary Computation",
       "year": "2025",
       "status": "must-read",
@@ -2560,6 +2721,11 @@ window.FRONTIER_DATA = {
       "id": "evolutionary-computation-ran-cheng-W4407451023",
       "domainId": "evolutionary-computation",
       "title": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+      "displayTitle": {
+        "en": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+        "ja": "MetaDE: 差分進化によって差分進化を進化させる",
+        "zh": "MetaDE：用差分进化进化差分进化"
+      },
       "venue": "IEEE Transactions on Evolutionary Computation",
       "year": "2025",
       "status": "must-read",
@@ -2779,6 +2945,11 @@ window.FRONTIER_DATA = {
       "id": "evolutionary-computation-ran-cheng-W4414459062",
       "domainId": "evolutionary-computation",
       "title": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+      "displayTitle": {
+        "en": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+        "ja": "単眼深度推定のための階層的パラメータ写像を用いた高効率な進化的ニューラルアーキテクチャ探索",
+        "zh": "面向单目深度估计的基于层级参数映射的高效进化神经架构搜索"
+      },
       "venue": "IEEE Transactions on Evolutionary Computation",
       "year": "2025",
       "status": "monitor",
@@ -3005,6 +3176,11 @@ window.FRONTIER_DATA = {
       "id": "evolutionary-computation-ran-cheng-W4394805110",
       "domainId": "evolutionary-computation",
       "title": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
+      "displayTitle": {
+        "en": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
+        "ja": "EvoX: スケーラブルな進化計算のための分散 GPU 加速フレームワーク",
+        "zh": "EvoX：面向可扩展进化计算的分布式 GPU 加速框架"
+      },
       "venue": "IEEE Transactions on Evolutionary Computation",
       "year": "2024",
       "status": "must-read",
@@ -3242,6 +3418,11 @@ window.FRONTIER_DATA = {
       "id": "evolutionary-computation-ran-cheng-arxiv-2601-18446",
       "domainId": "evolutionary-computation",
       "title": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+      "displayTitle": {
+        "en": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+        "ja": "GPU 上の進化アルゴリズムのスケーリング挙動: 並列化はいつ真価を発揮するのか",
+        "zh": "GPU 上进化算法的扩展行为：并行化何时真正带来收益？"
+      },
       "venue": "ArXiv.org",
       "year": "2026",
       "status": "monitor",
@@ -3454,6 +3635,11 @@ window.FRONTIER_DATA = {
       "id": "evolutionary-computation-ran-cheng-arxiv-2509-08269",
       "domainId": "evolutionary-computation",
       "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+      "displayTitle": {
+        "en": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+        "ja": "進化最適化のための大規模言語モデルに関する体系的サーベイ: モデリングから問題解決まで",
+        "zh": "面向进化优化的大语言模型系统综述：从建模到求解"
+      },
       "venue": "ArXiv.org",
       "year": "2025",
       "status": "monitor",
@@ -5182,7 +5368,7 @@ window.FRONTIER_DATA = {
     }
   ],
   "venueReference": {
-    "generatedAt": "2026-04-08 14:47 JST",
+    "generatedAt": "2026-04-08 15:21 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
