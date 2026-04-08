@@ -287,7 +287,7 @@ const UI_TEXT = {
     papersTitle: "Browse & Filter",
     papersNote: "Search, filter, and decide what to read next.",
     metricsTitle: "Venue Metrics",
-    metricsNote: "Search year-aware JCR, CAS, IF, and evidence links across tracked venues.",
+    metricsNote: "Venue facts only: official site, ISSN, and year-aware IF/JCR/CAS links.",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
     searchPlaceholder: "Search title, author, venue, DOI, or exact tag",
@@ -521,7 +521,7 @@ const UI_TEXT = {
     papersTitle: "检索与筛选",
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
     metricsTitle: "分区与指标参考",
-    metricsNote: "按年份查看 JCR、中科院分区、IF 与证据来源。",
+    metricsNote: "仅保留期刊核心事实：官网、ISSN，以及按年份对应的 IF/JCR/CAS 官方入口。",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
     searchPlaceholder: "搜索标题、作者、刊物、DOI 或精确标签",
@@ -755,7 +755,7 @@ const UI_TEXT = {
     papersTitle: "検索と絞り込み",
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
     metricsTitle: "分区・指標参照",
-    metricsNote: "JCR、CAS、IF と出典を年次ベースで参照する。",
+    metricsNote: "ジャーナルの基本事実だけを表示し、公式サイト・ISSN・年次対応の IF/JCR/CAS 入口を並べる。",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
     searchPlaceholder: "タイトル・著者・掲載先・DOI・厳密タグで検索",
@@ -5112,8 +5112,42 @@ function renderPapers() {
   });
 }
 
+function metricVenueReferenceRecord(venue) {
+  const currentVenueId = normalizeSearchText(venue?.id || "");
+  const currentVenueName = normalizeSearchText(venue?.venueName || venue?.name || "");
+
+  return (venueReferenceData().venues || []).find((entry) => {
+    const entryId = normalizeSearchText(entry?.id || "");
+    const entryName = normalizeSearchText(entry?.name || "");
+    return (currentVenueId && entryId === currentVenueId) || (currentVenueName && entryName === currentVenueName);
+  }) || null;
+}
+
 function metricVenues() {
-  return domainData().venues || [];
+  return (domainData().venues || []).map((venue) => {
+    const reference = metricVenueReferenceRecord(venue) || {};
+    return {
+      ...reference,
+      ...venue,
+      venueName: venue?.venueName || reference?.name || "",
+      sourceUrl: venue?.sourceUrl || reference?.sourceUrl || "",
+      publisher: venue?.publisher || reference?.publisher || "",
+      issn: venue?.issn || reference?.issn || "",
+      eissn: venue?.eissn || reference?.eissn || "",
+      officialSources: {
+        ...(reference?.officialSources || {}),
+        ...(venue?.officialSources || {}),
+      },
+      publicSources: {
+        ...(reference?.publicSources || {}),
+        ...(venue?.publicSources || {}),
+      },
+      searchCopyText: {
+        ...(reference?.searchCopyText || {}),
+        ...(venue?.searchCopyText || {}),
+      },
+    };
+  });
 }
 
 function metricVenueHistory(venue) {
@@ -5138,6 +5172,7 @@ function metricVenueRecord(venue, yearSelections = state.metricYearFilter) {
   return {
     ...latestMetrics,
     ...yearMetrics,
+    sourceUrl: yearMetrics?.sourceUrl || latestMetrics?.sourceUrl || venue?.sourceUrl || "",
     metricYear: chosenYear || latestMetrics?.impactYear || latestMetrics?.jcrYear || latestMetrics?.casYear || "",
   };
 }
@@ -5212,9 +5247,9 @@ function metricVenueMatchesQuery(venue, query = state.metricQuery) {
   const haystack = [
     venue?.venueName,
     venue?.venueType,
-    ...(venue?.domains || []),
-    ...(venue?.trackedPaperTitles || []),
-    ...trackedPaperDisplayTitles(venue),
+    venue?.publisher,
+    venue?.issn,
+    venue?.eissn,
     metricRecord?.impactFactor,
     metricRecord?.jcrQuartile,
     metricRecord?.casQuartile,
@@ -5319,6 +5354,96 @@ function metricOptionsForVenueRecord(venue, metricKind, yearSelections = state.m
     },
     metricKind
   );
+}
+
+function metricVenueOfficialUrl(venue, metricsRecord, metricKind) {
+  if (metricKind === "source") {
+    return normalizeUrl(venue?.sourceUrl || metricsRecord?.sourceUrl);
+  }
+
+  if (metricKind === "impact") {
+    return directMetricUrl(metricsRecord?.ifSourceUrl || venue?.officialSources?.impact, "impact")
+      || metricSearchFallbackUrl(metricsRecord?.ifSourceUrl || venue?.officialSources?.impact, "impact");
+  }
+
+  if (metricKind === "jcr") {
+    return directMetricUrl(metricsRecord?.jcrSourceUrl || venue?.officialSources?.jcr, "jcr")
+      || metricSearchFallbackUrl(metricsRecord?.jcrSourceUrl || venue?.officialSources?.jcr, "jcr");
+  }
+
+  if (metricKind === "cas") {
+    return directMetricUrl(metricsRecord?.casOfficialSourceUrl || venue?.officialSources?.cas, "cas")
+      || buildFenqubiaoJournalDetailUrl(venue?.venueName, metricsRecord?.casYear || metricsRecord?.metricYear)
+      || normalizeUrl(metricsRecord?.casOfficialPlatformUrl || venue?.officialSources?.cas);
+  }
+
+  if (metricKind === "ccf") {
+    return directMetricUrl(metricsRecord?.ccfSourceUrl || venue?.officialSources?.ccf, "ccf") || CCF_OFFICIAL_ARCHIVE_URL;
+  }
+
+  return "";
+}
+
+function metricVenueTitleHtml(venue, metricsRecord) {
+  const label = escapeHtml(venue?.venueName || "");
+  const href = metricVenueOfficialUrl(venue, metricsRecord, "source");
+  if (!href) return label;
+  return `<a class="frontier-reference-inline-link" href="${escapeHtml(href)}" target="_blank" rel="noreferrer">${label}</a>`;
+}
+
+function metricVenueFacts(venue) {
+  const facts = [];
+  const venueType = metricVenueTypeValue(venue);
+  if (venueType && venueType !== "unknown") {
+    facts.push(localizeVenueTypeLabel(venueType));
+  }
+  if (venue?.publisher) {
+    facts.push(String(venue.publisher));
+  }
+  if (venue?.issn) {
+    facts.push(`ISSN ${venue.issn}`);
+  }
+  if (venue?.eissn) {
+    facts.push(`eISSN ${venue.eissn}`);
+  }
+  return facts;
+}
+
+function metricVenueInlineActionsHtml(venue, metricsRecord) {
+  const impactUrl = metricVenueOfficialUrl(venue, metricsRecord, "impact");
+  const jcrUrl = metricVenueOfficialUrl(venue, metricsRecord, "jcr");
+  const casUrl = metricVenueOfficialUrl(venue, metricsRecord, "cas");
+  const ccfUrl = metricVenueOfficialUrl(venue, metricsRecord, "ccf");
+  const options = [];
+
+  if (shouldRenderMetricValue(metricsRecord?.impactFactor) && shouldRenderMetricValue(metricsRecord?.jcrQuartile) && impactUrl && impactUrl === jcrUrl) {
+    options.push({ label: `${ui("impactFactorLabel")}/${ui("jcrLabel")}`, href: impactUrl });
+  } else {
+    if (shouldRenderMetricValue(metricsRecord?.impactFactor) && impactUrl) {
+      options.push({ label: ui("impactFactorLabel"), href: impactUrl });
+    }
+    if (shouldRenderMetricValue(metricsRecord?.jcrQuartile) && jcrUrl) {
+      options.push({ label: ui("jcrLabel"), href: jcrUrl });
+    }
+  }
+
+  if (shouldRenderMetricValue(metricsRecord?.casQuartile) && casUrl) {
+    options.push({ label: ui("casLabel"), href: casUrl });
+  }
+
+  if (shouldRenderMetricValue(metricsRecord?.ccfRank) && ccfUrl) {
+    options.push({ label: ui("ccfLabel"), href: ccfUrl });
+  }
+
+  return buildMetricOptions(options)
+    .map(
+      (option) => `<a class="frontier-reference-inline-action" href="${escapeHtml(option.href)}" target="_blank" rel="noreferrer">${escapeHtml(option.label)}</a>`
+    )
+    .join(" · ");
+}
+
+function shouldRenderMetricValue(value) {
+  return value !== undefined && value !== null && value !== "";
 }
 
 function renderMetrics() {
@@ -5439,6 +5564,7 @@ function renderMetrics() {
     resetButton.disabled = isDefault;
   }
 
+  list.className = "frontier-reference-list";
   list.innerHTML = "";
   const filtered = filteredMetricVenues();
   if (!filtered.length) {
@@ -5453,39 +5579,40 @@ function renderMetrics() {
 
   filtered.forEach((venue) => {
     const metricsRecord = metricVenueRecord(venue);
-    const article = el("article", "publication-card");
-    const head = el("div", "publication-head");
-    const titleBlock = el("div", "");
-    const title = el("h4", "publication-title");
-    title.textContent = venue.venueName || "";
-    titleBlock.appendChild(title);
-    head.appendChild(titleBlock);
+    const article = el("article", "frontier-reference-item");
+    const head = el("div", "frontier-reference-head");
+    const citation = el("p", "frontier-reference-citation");
+    const facts = metricVenueFacts(venue);
+    const inlineActions = metricVenueInlineActionsHtml(venue, metricsRecord);
+    citation.innerHTML = [
+      metricVenueTitleHtml(venue, metricsRecord),
+      ...facts.map((item) => escapeHtml(item)),
+    ].join(" · ")
+      + (inlineActions ? `<span class="frontier-reference-inline-actions"> · ${inlineActions}</span>` : "");
+    head.appendChild(citation);
     article.appendChild(head);
 
-    const tags = el("div", "field-hash-row");
+    const tags = el("div", "field-hash-row field-hash-row-ledger");
     [
       metricVenueTypeValue(venue) ? `#${typeFilterTagLabel(metricVenueTypeValue(venue))}` : "",
-      ...((venue.domains || []).slice(0, 3).map((value) => `#${localizeText(value)}`)),
       ...metricVenueYears(venue).slice(0, 3).map((value) => `#${value}`),
     ].filter(Boolean).forEach((label) => tags.appendChild(el("span", "field-hash-tag", label)));
     if (tags.childNodes.length) article.appendChild(tags);
 
     const metrics = el("div", "publication-metrics");
-    addMetric(metrics, "impact", ui("impactFactorLabel"), metricsRecord?.impactFactor, metricsRecord?.impactYear || metricsRecord?.metricYear, metricOptionsForVenueRecord(venue, "impact"));
-    addMetric(metrics, "jcr", ui("jcrLabel"), metricsRecord?.jcrQuartile, metricsRecord?.jcrYear || metricsRecord?.metricYear, metricOptionsForVenueRecord(venue, "jcr"));
-    addMetric(metrics, "cas", ui("casLabel"), metricsRecord?.casQuartile, [metricsRecord?.casTop ? ui("topLabel") : "", metricsRecord?.casYear || metricsRecord?.metricYear].filter(Boolean).join(" · "), metricOptionsForVenueRecord(venue, "cas"));
-    article.appendChild(metrics);
-
-    const note = el("p", "publication-note publication-note-accent");
-    const trackedTitles = trackedPaperDisplayTitles(venue);
-    note.innerHTML = `<strong class="warm-strong">${escapeHtml(ui("papersLabel"))}</strong> <span class="rich-text">${escapeHtml(String(venue?.trackedPaperCount || 0))}${trackedTitles.length ? ` · ${escapeHtml(trackedTitles.join(" · "))}` : ""}</span>`;
-    article.appendChild(note);
-
-    const links = el("div", "link-row");
-    if (venue?.sourceUrl) {
-      links.appendChild(actionLink(ui("publisherAction"), venue.sourceUrl));
+    if (shouldRenderMetricValue(metricsRecord?.impactFactor)) {
+      addMetric(metrics, "impact", ui("impactFactorLabel"), metricsRecord?.impactFactor, metricsRecord?.impactYear || metricsRecord?.metricYear);
     }
-    article.appendChild(links);
+    if (shouldRenderMetricValue(metricsRecord?.jcrQuartile)) {
+      addMetric(metrics, "jcr", ui("jcrLabel"), metricsRecord?.jcrQuartile, metricsRecord?.jcrYear || metricsRecord?.metricYear);
+    }
+    if (shouldRenderMetricValue(metricsRecord?.casQuartile)) {
+      addMetric(metrics, "cas", ui("casLabel"), metricsRecord?.casQuartile, [metricsRecord?.casTop ? ui("topLabel") : "", metricsRecord?.casYear || metricsRecord?.metricYear].filter(Boolean).join(" · "));
+    }
+    if (shouldRenderMetricValue(metricsRecord?.ccfRank)) {
+      addMetric(metrics, "ccf", ui("ccfLabel"), metricsRecord?.ccfRank, metricsRecord?.ccfYear || metricsRecord?.metricYear);
+    }
+    if (metrics.childNodes.length) article.appendChild(metrics);
 
     list.appendChild(article);
   });
