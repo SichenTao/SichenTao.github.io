@@ -2042,7 +2042,7 @@ function displayFormCodeLabel(code) {
 }
 
 function callCardDescription(entry) {
-  return localeValue(entry, "eligibility") || localeValue(entry, "summary") || "";
+  return localeValue(entry, "card_summary") || localeValue(entry, "eligibility") || localeValue(entry, "summary") || "";
 }
 
 function callCardMeta(entry) {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-08 16:07 JST",
+  "generatedAt": "2026-04-08 17:47 JST",
   "items": [
     {
       "paperId": "evolutionary-computation-ran-cheng-W4416548789",
@@ -72,6 +72,15 @@
       "sizeBytes": 2099056,
       "downloadMode": "direct-http",
       "sourceUrl": "https://arxiv.org/pdf/2502.10470"
+    },
+    {
+      "paperId": "evolutionary-computation-ran-cheng-W4414459062",
+      "title": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+      "archivePath": "archive/evolutionary-computation/2025/efficient-evolutionary-neural-architecture-search-with-hierarchical-parameter-mapping-for-monocular-depth-estimation.pdf",
+      "browserUrl": "../archive/evolutionary-computation/2025/efficient-evolutionary-neural-architecture-search-with-hierarchical-parameter-mapping-for-monocular-depth-estimation.pdf",
+      "sizeBytes": 536,
+      "downloadMode": "openclaw-browser",
+      "sourceUrl": "https://ieeexplore.ieee.org/document/11178251/"
     },
     {
       "paperId": "evolutionary-computation-ran-cheng-W4394805110",
