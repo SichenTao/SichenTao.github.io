@@ -1,5 +1,5 @@
 window.ACADEMIC_FRONTIER_RESEARCH = {
-  "generatedAt": "2026-04-08 00:46 JST",
+  "generatedAt": "2026-04-08 12:46 JST",
   "seedProfile": {
     "profileName": "Sichen Tao",
     "summary": {
@@ -52,6 +52,7 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
     ],
     "venueTargets": [
       "Mathematics",
+      "IEEE Transactions on Evolutionary Computation",
       "Knowledge-Based Systems",
       "Applied Soft Computing",
       "ICNSC 2022",
@@ -59,12 +60,11 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
       "IEEE Access",
       "Symmetry",
       "SPML 2024",
-      "International Journal of Computational Intelligence Systems",
-      "ISCID 2020"
+      "International Journal of Computational Intelligence Systems"
     ],
     "sourceCounts": {
       "publications": 52,
-      "frontierPapers": 8,
+      "frontierPapers": 15,
       "trackedTeams": 3
     }
   },
@@ -185,29 +185,29 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
       },
       "counts": {
         "foundation": 31,
-        "frontier": 8,
+        "frontier": 15,
         "bridge": 31,
-        "total": 39
+        "total": 46
       },
       "keywords": [
         "optimization",
         "evolutionary",
-        "multi objective",
         "gpu",
-        "reinforcement learning",
+        "multi objective",
         "hpc",
+        "reinforcement learning",
         "evorl",
         "neuroevolution"
       ],
       "venues": [
         "Mathematics",
+        "IEEE Transactions on Evolutionary Computation",
         "ICNSC 2022",
         "Swarm and Evolutionary Computation",
         "IEEE Access",
         "Applied Soft Computing",
         "International Journal of Computational Intelligence Systems",
-        "ACM Transactions on Evolutionary Learning and Optimization",
-        "Proceedings of the Supercomputing Asia and International Conference on High Performance Computing in Asia Pacific Region Workshops"
+        "ACM Transactions on Evolutionary Learning and Optimization"
       ],
       "teams": [
         {
@@ -228,9 +228,9 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
       ],
       "signals": [
         {
-          "en": "8 frontier papers already visible in the current radar.",
-          "zh": "当前雷达中已可见 8 篇相关前沿论文。",
-          "ja": "現在のレーダーですでに 8 件の関連最前線論文が見えている。"
+          "en": "15 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 15 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 15 件の関連最前線論文が見えている。"
         },
         {
           "en": "31 retained publications provide immediate historical grounding.",
@@ -803,6 +803,60 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             }
           },
           {
+            "id": "evolutionary-computation-ran-cheng-W7128493809",
+            "source": "frontier-paper",
+            "title": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11390710/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-arxiv-2601-18446",
+            "source": "frontier-paper",
+            "title": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+            "venue": "ArXiv.org",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://arxiv.org/abs/2601.18446",
+            "tags": [
+              "monitor",
+              "unknown"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4407451023",
+            "source": "frontier-paper",
+            "title": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 9,
+            "url": "https://ieeexplore.ieee.org/document/10884874/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
             "id": "evolutionary-computation-kalyanmoy-deb-W4414444197",
             "source": "frontier-paper",
             "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
@@ -810,6 +864,42 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             "year": 2025,
             "citationCount": 2,
             "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4408935111",
+            "source": "frontier-paper",
+            "title": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://ieeexplore.ieee.org/document/10944658/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4413243632",
+            "source": "frontier-paper",
+            "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+            "year": 2025,
+            "citationCount": 1,
+            "url": "https://dl.acm.org/doi/10.1145/3750053",
             "tags": [
               "monitor",
               "journal"
@@ -839,13 +929,13 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             }
           },
           {
-            "id": "evolutionary-computation-ran-cheng-W4413243632",
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
             "source": "frontier-paper",
-            "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
-            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
+            "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+            "venue": "Swarm and Evolutionary Computation",
             "year": 2025,
-            "citationCount": 1,
-            "url": "https://dl.acm.org/doi/10.1145/3750053",
+            "citationCount": 0,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
             "tags": [
               "monitor",
               "journal"
@@ -875,16 +965,34 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             }
           },
           {
-            "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
+            "id": "evolutionary-computation-ran-cheng-W4414459062",
             "source": "frontier-paper",
-            "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
-            "venue": "Swarm and Evolutionary Computation",
+            "title": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+            "venue": "IEEE Transactions on Evolutionary Computation",
             "year": 2025,
             "citationCount": 0,
-            "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+            "url": "https://ieeexplore.ieee.org/document/11178251/",
             "tags": [
               "monitor",
               "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-arxiv-2509-08269",
+            "source": "frontier-paper",
+            "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+            "venue": "ArXiv.org",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://arxiv.org/abs/2509.08269",
+            "tags": [
+              "monitor",
+              "unknown"
             ],
             "note": {
               "en": "Frontier-facing paper from the current tracked radar capture.",
@@ -920,6 +1028,24 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             "url": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
             "tags": [
               "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4394805110",
+            "source": "frontier-paper",
+            "title": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2024,
+            "citationCount": 26,
+            "url": "https://ieeexplore.ieee.org/document/10499977/",
+            "tags": [
+              "must-read",
               "journal"
             ],
             "note": {
@@ -1500,31 +1626,36 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
       },
       "counts": {
         "foundation": 30,
-        "frontier": 7,
+        "frontier": 13,
         "bridge": 30,
-        "total": 37
+        "total": 43
       },
       "keywords": [
         "optimization",
         "differential evolution",
         "wind farm",
         "layout",
-        "multi objective",
         "constrained",
         "engineering",
+        "multi objective",
         "metaheuristic"
       ],
       "venues": [
         "Mathematics",
+        "IEEE Transactions on Evolutionary Computation",
         "Applied Soft Computing",
         "ICNSC 2022",
         "Information Sciences",
         "IEEE Access",
         "Engineering Applications of Artificial Intelligence",
-        "International Journal of Computational Intelligence Systems",
-        "Swarm and Evolutionary Computation"
+        "International Journal of Computational Intelligence Systems"
       ],
       "teams": [
+        {
+          "name": "Ran Cheng",
+          "strength": "GPU-native EC systems",
+          "url": "https://chengran.tech/"
+        },
         {
           "name": "Julian Blank",
           "strength": "multiobjective toolchains",
@@ -1534,18 +1665,13 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
           "name": "Kalyanmoy Deb",
           "strength": "multiobjective foundations",
           "url": "https://openalex.org/A5088394271"
-        },
-        {
-          "name": "Ran Cheng",
-          "strength": "GPU-native EC systems",
-          "url": "https://chengran.tech/"
         }
       ],
       "signals": [
         {
-          "en": "7 frontier papers already visible in the current radar.",
-          "zh": "当前雷达中已可见 7 篇相关前沿论文。",
-          "ja": "現在のレーダーですでに 7 件の関連最前線論文が見えている。"
+          "en": "13 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 13 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 13 件の関連最前線論文が見えている。"
         },
         {
           "en": "30 retained publications provide immediate historical grounding.",
@@ -2101,6 +2227,60 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             }
           },
           {
+            "id": "evolutionary-computation-ran-cheng-W7128493809",
+            "source": "frontier-paper",
+            "title": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11390710/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-arxiv-2601-18446",
+            "source": "frontier-paper",
+            "title": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+            "venue": "ArXiv.org",
+            "year": 2026,
+            "citationCount": 0,
+            "url": "https://arxiv.org/abs/2601.18446",
+            "tags": [
+              "monitor",
+              "unknown"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4407451023",
+            "source": "frontier-paper",
+            "title": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 9,
+            "url": "https://ieeexplore.ieee.org/document/10884874/",
+            "tags": [
+              "must-read",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
             "id": "evolutionary-computation-kalyanmoy-deb-W4414444197",
             "source": "frontier-paper",
             "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
@@ -2110,6 +2290,24 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             "url": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
             "tags": [
               "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-W4408935111",
+            "source": "frontier-paper",
+            "title": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 2,
+            "url": "https://ieeexplore.ieee.org/document/10944658/",
+            "tags": [
+              "must-read",
               "journal"
             ],
             "note": {
@@ -2173,6 +2371,24 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             }
           },
           {
+            "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+            "source": "frontier-paper",
+            "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+            "venue": "Expert Systems with Applications",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
             "id": "evolutionary-computation-ran-cheng-W4411600078",
             "source": "frontier-paper",
             "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
@@ -2191,16 +2407,34 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             }
           },
           {
-            "id": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+            "id": "evolutionary-computation-ran-cheng-W4414459062",
             "source": "frontier-paper",
-            "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
-            "venue": "Expert Systems with Applications",
+            "title": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+            "venue": "IEEE Transactions on Evolutionary Computation",
             "year": 2025,
             "citationCount": 0,
-            "url": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+            "url": "https://ieeexplore.ieee.org/document/11178251/",
             "tags": [
               "monitor",
               "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          },
+          {
+            "id": "evolutionary-computation-ran-cheng-arxiv-2509-08269",
+            "source": "frontier-paper",
+            "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+            "venue": "ArXiv.org",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://arxiv.org/abs/2509.08269",
+            "tags": [
+              "monitor",
+              "unknown"
             ],
             "note": {
               "en": "Frontier-facing paper from the current tracked radar capture.",
@@ -2734,6 +2968,593 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
       }
     },
     {
+      "id": "vision-and-robust-learning",
+      "title": {
+        "en": "Vision and robust learning",
+        "zh": "视觉与鲁棒学习",
+        "ja": "ビジョンと頑健学習"
+      },
+      "thesis": {
+        "en": "Keep an eye on brain-inspired visual models and robustness work that may become transferable learning primitives.",
+        "zh": "持续关注脑启发视觉模型与鲁棒性研究，它们可能成为可迁移的学习基本模块。",
+        "ja": "脳に着想を得た視覚モデルと頑健性研究に注目し、転用可能な学習プリミティブになり得るかを見る。"
+      },
+      "whyNow": {
+        "en": "The publication base is smaller than optimization, but it offers differentiated ideas that may transfer into broader intelligent systems.",
+        "zh": "这条线的论文基数不如优化大，但其中有不少可迁移到更广泛智能系统中的差异化想法。",
+        "ja": "最適化ほど論文数は多くないが、より広い知能システムへ転用できる差別化アイデアを含んでいる。"
+      },
+      "promptSeed": {
+        "en": "Search for strong vision papers that are mechanistically insightful and robust, not only high on leaderboard metrics.",
+        "zh": "寻找那些机理上有启发且具备鲁棒性的视觉论文，而不只是榜单分数高的工作。",
+        "ja": "単なるリーダーボード性能ではなく、機構的洞察と頑健性を備えた強いビジョン論文を探す。"
+      },
+      "priority": 79,
+      "scores": {
+        "alignment": 100,
+        "momentum": 49,
+        "quality": 82
+      },
+      "counts": {
+        "foundation": 14,
+        "frontier": 1,
+        "bridge": 14,
+        "total": 15
+      },
+      "keywords": [
+        "visual",
+        "motion",
+        "neural",
+        "vision",
+        "convolutional",
+        "robustness",
+        "explainable",
+        "brain inspired"
+      ],
+      "venues": [
+        "Mathematics",
+        "Knowledge-Based Systems",
+        "Symmetry",
+        "Information Sciences",
+        "SPML 2024",
+        "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
+        "SPML 2021",
+        "IEEE Transactions on Evolutionary Computation"
+      ],
+      "teams": [
+        {
+          "name": "Ran Cheng",
+          "strength": "GPU-native EC systems",
+          "url": "https://chengran.tech/"
+        }
+      ],
+      "signals": [
+        {
+          "en": "1 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 1 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 1 件の関連最前線論文が見えている。"
+        },
+        {
+          "en": "14 retained publications provide immediate historical grounding.",
+          "zh": "14 篇已保留发表可提供即时历史基础。",
+          "ja": "14 件の保持済み発表が即時の歴史的土台を与える。"
+        },
+        {
+          "en": "1 tracked teams or researchers strengthen this direction.",
+          "zh": "1 个跟踪团队或研究者强化了这个方向。",
+          "ja": "1 件の追跡チームまたは研究者がこの方向を強めている。"
+        }
+      ],
+      "readingLanes": {
+        "foundation": [
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 14,
+            "url": "https://www.mdpi.com/2227-7390/10/16/2975",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-color-images",
+            "source": "profile-publication",
+            "title": "A novel artificial visual system for motion direction detection in color images",
+            "venue": "Knowledge-Based Systems",
+            "year": 2024,
+            "citationCount": 8,
+            "url": "https://www.sciencedirect.com/science/article/pii/S0950705124004507",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "enhancing-convolutional-neural-network-robustness-against-image-noise-via-an-artificial-visual-system",
+            "source": "profile-publication",
+            "title": "Enhancing Convolutional Neural Network Robustness Against Image Noise via an Artificial Visual System",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/13/1/142",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-with-completely-modeled-retinal-direction-selective-pathway",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection with Completely Modeled Retinal Direction-Selective Pathway",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3732",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-bio-inspired-motion-direction-detection-mechanism-in-binary-and-grayscale-background",
+            "source": "profile-publication",
+            "title": "A Novel Bio-Inspired Motion Direction Detection Mechanism in Binary and Grayscale Background",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/10/20/3767",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "relu-neural-networks-and-their-training",
+            "source": "profile-publication",
+            "title": "ReLU Neural Networks and Their Training",
+            "venue": "Mathematics",
+            "year": 2026,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/14/1/39",
+            "tags": [
+              "Deep Learning",
+              "AI Theory"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "artificial-visual-network-with-fully-modeled-retinal-direction-selective-neural-pathway-for-motion-direction-detection-in-grayscale-scenes",
+            "source": "profile-publication",
+            "title": "Artificial Visual Network with Fully Modeled Retinal Direction-Selective Neural Pathway for Motion Direction Detection in Grayscale Scenes",
+            "venue": "Symmetry",
+            "year": 2024,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2073-8994/16/12/1592",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "the-mechanism-of-orientation-detection-based-on-artificial-visual-system-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "The Mechanism of Orientation Detection Based on Artificial Visual System for Greyscale Images",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/12/2715",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "neurophysiological-knowledge-driven-artificial-visual-system-neural-network-for-explainable-motion-direction-detection",
+            "source": "profile-publication",
+            "title": "Neurophysiological Knowledge Driven Artificial Visual System Neural Network for Explainable Motion Direction Detection",
+            "venue": "Knowledge-Based Systems",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-biologically-inspired-model-for-detecting-object-motion-direction-in-stereoscopic-vision",
+            "source": "profile-publication",
+            "title": "A Biologically Inspired Model for Detecting Object Motion Direction in Stereoscopic Vision",
+            "venue": "Symmetry",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2073-8994/17/2/162",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "an-artificial-visual-system-constructed-by-fully-modeled-retinal-direction-selective-networks-on-detecting-motion-direction-in-color-images",
+            "source": "profile-publication",
+            "title": "An Artificial Visual System Constructed by Fully Modeled Retinal Direction-selective Networks on Detecting Motion Direction in Color Images",
+            "venue": "Information Sciences",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/information-sciences",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-bio-inspired-model-for-object-motion-direction-and-speed-detection-against-colored-backgrounds",
+            "source": "profile-publication",
+            "title": "A bio-inspired model for object motion direction and speed detection against colored backgrounds",
+            "venue": "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1117/12.3056633",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-with-fully-modeled-retinal-direction-selectivity-ganglion-cell-pathway-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System with Fully Modeled Retinal Direction-selectivity Ganglion Cell Pathway for Motion Direction Detection in Grayscale Images",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686521",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          },
+          {
+            "id": "a-motion-direction-detective-mechanism-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "A Motion Direction Detective Mechanism for Greyscale Images",
+            "venue": "SPML 2021",
+            "year": 2021,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3483207.3483211",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Strong foundation from existing publication history and citation signal.",
+              "zh": "来自既有发表积累与引用信号的基础支撑。",
+              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
+            }
+          }
+        ],
+        "frontier": [
+          {
+            "id": "evolutionary-computation-ran-cheng-W4414459062",
+            "source": "frontier-paper",
+            "title": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+            "venue": "IEEE Transactions on Evolutionary Computation",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://ieeexplore.ieee.org/document/11178251/",
+            "tags": [
+              "monitor",
+              "journal"
+            ],
+            "note": {
+              "en": "Frontier-facing paper from the current tracked radar capture.",
+              "zh": "来自当前前沿快照捕获的前沿论文。",
+              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
+            }
+          }
+        ],
+        "bridge": [
+          {
+            "id": "relu-neural-networks-and-their-training",
+            "source": "profile-publication",
+            "title": "ReLU Neural Networks and Their Training",
+            "venue": "Mathematics",
+            "year": 2026,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/14/1/39",
+            "tags": [
+              "Deep Learning",
+              "AI Theory"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "enhancing-convolutional-neural-network-robustness-against-image-noise-via-an-artificial-visual-system",
+            "source": "profile-publication",
+            "title": "Enhancing Convolutional Neural Network Robustness Against Image Noise via an Artificial Visual System",
+            "venue": "Mathematics",
+            "year": 2025,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/13/1/142",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "neurophysiological-knowledge-driven-artificial-visual-system-neural-network-for-explainable-motion-direction-detection",
+            "source": "profile-publication",
+            "title": "Neurophysiological Knowledge Driven Artificial Visual System Neural Network for Explainable Motion Direction Detection",
+            "venue": "Knowledge-Based Systems",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
+            "tags": [
+              "Visual Systems",
+              "Deep Learning"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-biologically-inspired-model-for-detecting-object-motion-direction-in-stereoscopic-vision",
+            "source": "profile-publication",
+            "title": "A Biologically Inspired Model for Detecting Object Motion Direction in Stereoscopic Vision",
+            "venue": "Symmetry",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.mdpi.com/2073-8994/17/2/162",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "an-artificial-visual-system-constructed-by-fully-modeled-retinal-direction-selective-networks-on-detecting-motion-direction-in-color-images",
+            "source": "profile-publication",
+            "title": "An Artificial Visual System Constructed by Fully Modeled Retinal Direction-selective Networks on Detecting Motion Direction in Color Images",
+            "venue": "Information Sciences",
+            "year": 2025,
+            "citationCount": 0,
+            "url": "https://www.sciencedirect.com/journal/information-sciences",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "artificial-visual-network-with-fully-modeled-retinal-direction-selective-neural-pathway-for-motion-direction-detection-in-grayscale-scenes",
+            "source": "profile-publication",
+            "title": "Artificial Visual Network with Fully Modeled Retinal Direction-Selective Neural Pathway for Motion Direction Detection in Grayscale Scenes",
+            "venue": "Symmetry",
+            "year": 2024,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2073-8994/16/12/1592",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-bio-inspired-model-for-object-motion-direction-and-speed-detection-against-colored-backgrounds",
+            "source": "profile-publication",
+            "title": "A bio-inspired model for object motion direction and speed detection against colored backgrounds",
+            "venue": "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1117/12.3056633",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-color-images",
+            "source": "profile-publication",
+            "title": "A novel artificial visual system for motion direction detection in color images",
+            "venue": "Knowledge-Based Systems",
+            "year": 2024,
+            "citationCount": 8,
+            "url": "https://www.sciencedirect.com/science/article/pii/S0950705124004507",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-with-fully-modeled-retinal-direction-selectivity-ganglion-cell-pathway-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System with Fully Modeled Retinal Direction-selectivity Ganglion Cell Pathway for Motion Direction Detection in Grayscale Images",
+            "venue": "SPML 2024",
+            "year": 2024,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3686490.3686521",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-with-completely-modeled-retinal-direction-selective-pathway",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection with Completely Modeled Retinal Direction-Selective Pathway",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 7,
+            "url": "https://www.mdpi.com/2227-7390/11/17/3732",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "the-mechanism-of-orientation-detection-based-on-artificial-visual-system-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "The Mechanism of Orientation Detection Based on Artificial Visual System for Greyscale Images",
+            "venue": "Mathematics",
+            "year": 2023,
+            "citationCount": 1,
+            "url": "https://www.mdpi.com/2227-7390/11/12/2715",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-grayscale-images",
+            "source": "profile-publication",
+            "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 14,
+            "url": "https://www.mdpi.com/2227-7390/10/16/2975",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-novel-bio-inspired-motion-direction-detection-mechanism-in-binary-and-grayscale-background",
+            "source": "profile-publication",
+            "title": "A Novel Bio-Inspired Motion Direction Detection Mechanism in Binary and Grayscale Background",
+            "venue": "Mathematics",
+            "year": 2022,
+            "citationCount": 2,
+            "url": "https://www.mdpi.com/2227-7390/10/20/3767",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          },
+          {
+            "id": "a-motion-direction-detective-mechanism-for-greyscale-images",
+            "source": "profile-publication",
+            "title": "A Motion Direction Detective Mechanism for Greyscale Images",
+            "venue": "SPML 2021",
+            "year": 2021,
+            "citationCount": 0,
+            "url": "https://doi.org/10.1145/3483207.3483211",
+            "tags": [
+              "Visual Systems"
+            ],
+            "note": {
+              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
+              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
+              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "human-robot-collaboration",
       "title": {
         "en": "Human-robot collaboration systems",
@@ -2755,17 +3576,17 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
         "zh": "寻找兼顾系统真实性、安全性与基于优化决策的人机协作高质量论文。",
         "ja": "システムの現実性、安全性、最適化ベースの意思決定を組み合わせた高品質な人間ロボット協調論文を探す。"
       },
-      "priority": 90,
+      "priority": 76,
       "scores": {
         "alignment": 100,
-        "momentum": 78,
-        "quality": 90
+        "momentum": 45,
+        "quality": 78
       },
       "counts": {
         "foundation": 4,
-        "frontier": 4,
+        "frontier": 1,
         "bridge": 4,
-        "total": 8
+        "total": 5
       },
       "keywords": [
         "robot",
@@ -2782,17 +3603,14 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
         "Advanced Engineering Informatics",
         "IEEE International Conference on Real-time Computing and Robotics (RCAR 2025)",
         "Applied Soft Computing",
-        "IEEE Transactions on Evolutionary Computation",
-        "Swarm and Evolutionary Computation",
-        "2025 IEEE Congress on Evolutionary Computation (CEC)",
-        "ACM Transactions on Evolutionary Learning and Optimization"
+        "Swarm and Evolutionary Computation"
       ],
       "teams": [],
       "signals": [
         {
-          "en": "4 frontier papers already visible in the current radar.",
-          "zh": "当前雷达中已可见 4 篇相关前沿论文。",
-          "ja": "現在のレーダーですでに 4 件の関連最前線論文が見えている。"
+          "en": "1 frontier papers already visible in the current radar.",
+          "zh": "当前雷达中已可见 1 篇相关前沿论文。",
+          "ja": "現在のレーダーですでに 1 件の関連最前線論文が見えている。"
         },
         {
           "en": "4 retained publications provide immediate historical grounding.",
@@ -2875,42 +3693,6 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
         ],
         "frontier": [
           {
-            "id": "evolutionary-computation-ran-cheng-W4416548789",
-            "source": "frontier-paper",
-            "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
-            "venue": "IEEE Transactions on Evolutionary Computation",
-            "year": 2026,
-            "citationCount": 0,
-            "url": "https://ieeexplore.ieee.org/document/11396036/",
-            "tags": [
-              "must-read",
-              "journal"
-            ],
-            "note": {
-              "en": "Frontier-facing paper from the current tracked radar capture.",
-              "zh": "来自当前前沿快照捕获的前沿论文。",
-              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
-            }
-          },
-          {
-            "id": "evolutionary-computation-ran-cheng-W4409486142",
-            "source": "frontier-paper",
-            "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
-            "venue": "ACM Transactions on Evolutionary Learning and Optimization",
-            "year": 2025,
-            "citationCount": 1,
-            "url": "https://dl.acm.org/doi/10.1145/3730406",
-            "tags": [
-              "monitor",
-              "journal"
-            ],
-            "note": {
-              "en": "Frontier-facing paper from the current tracked radar capture.",
-              "zh": "来自当前前沿快照捕获的前沿论文。",
-              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
-            }
-          },
-          {
             "id": "evolutionary-computation-kalyanmoy-deb-W4414151930",
             "source": "frontier-paper",
             "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
@@ -2921,24 +3703,6 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             "tags": [
               "monitor",
               "journal"
-            ],
-            "note": {
-              "en": "Frontier-facing paper from the current tracked radar capture.",
-              "zh": "来自当前前沿快照捕获的前沿论文。",
-              "ja": "現在のフロンティア捕捉から得られた最前線論文。"
-            }
-          },
-          {
-            "id": "evolutionary-computation-ran-cheng-W4411600078",
-            "source": "frontier-paper",
-            "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
-            "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
-            "year": 2025,
-            "citationCount": 0,
-            "url": "https://ieeexplore.ieee.org/document/11043108/",
-            "tags": [
-              "monitor",
-              "conference"
             ],
             "note": {
               "en": "Frontier-facing paper from the current tracked radar capture.",
@@ -3011,558 +3775,6 @@ window.ACADEMIC_FRONTIER_RESEARCH = {
             "url": "https://www.sciencedirect.com/journal/applied-soft-computing",
             "tags": [
               "Human-Robot"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "vision-and-robust-learning",
-      "title": {
-        "en": "Vision and robust learning",
-        "zh": "视觉与鲁棒学习",
-        "ja": "ビジョンと頑健学習"
-      },
-      "thesis": {
-        "en": "Keep an eye on brain-inspired visual models and robustness work that may become transferable learning primitives.",
-        "zh": "持续关注脑启发视觉模型与鲁棒性研究，它们可能成为可迁移的学习基本模块。",
-        "ja": "脳に着想を得た視覚モデルと頑健性研究に注目し、転用可能な学習プリミティブになり得るかを見る。"
-      },
-      "whyNow": {
-        "en": "The publication base is smaller than optimization, but it offers differentiated ideas that may transfer into broader intelligent systems.",
-        "zh": "这条线的论文基数不如优化大，但其中有不少可迁移到更广泛智能系统中的差异化想法。",
-        "ja": "最適化ほど論文数は多くないが、より広い知能システムへ転用できる差別化アイデアを含んでいる。"
-      },
-      "promptSeed": {
-        "en": "Search for strong vision papers that are mechanistically insightful and robust, not only high on leaderboard metrics.",
-        "zh": "寻找那些机理上有启发且具备鲁棒性的视觉论文，而不只是榜单分数高的工作。",
-        "ja": "単なるリーダーボード性能ではなく、機構的洞察と頑健性を備えた強いビジョン論文を探す。"
-      },
-      "priority": 73,
-      "scores": {
-        "alignment": 100,
-        "momentum": 34,
-        "quality": 78
-      },
-      "counts": {
-        "foundation": 14,
-        "frontier": 0,
-        "bridge": 14,
-        "total": 14
-      },
-      "keywords": [
-        "visual",
-        "motion",
-        "neural",
-        "vision",
-        "convolutional",
-        "robustness",
-        "explainable",
-        "brain inspired"
-      ],
-      "venues": [
-        "Mathematics",
-        "Knowledge-Based Systems",
-        "Symmetry",
-        "Information Sciences",
-        "SPML 2024",
-        "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
-        "SPML 2021",
-        "Applied Intelligence"
-      ],
-      "teams": [],
-      "signals": [
-        {
-          "en": "14 retained publications provide immediate historical grounding.",
-          "zh": "14 篇已保留发表可提供即时历史基础。",
-          "ja": "14 件の保持済み発表が即時の歴史的土台を与える。"
-        }
-      ],
-      "readingLanes": {
-        "foundation": [
-          {
-            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-grayscale-images",
-            "source": "profile-publication",
-            "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
-            "venue": "Mathematics",
-            "year": 2022,
-            "citationCount": 14,
-            "url": "https://www.mdpi.com/2227-7390/10/16/2975",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-color-images",
-            "source": "profile-publication",
-            "title": "A novel artificial visual system for motion direction detection in color images",
-            "venue": "Knowledge-Based Systems",
-            "year": 2024,
-            "citationCount": 8,
-            "url": "https://www.sciencedirect.com/science/article/pii/S0950705124004507",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "enhancing-convolutional-neural-network-robustness-against-image-noise-via-an-artificial-visual-system",
-            "source": "profile-publication",
-            "title": "Enhancing Convolutional Neural Network Robustness Against Image Noise via an Artificial Visual System",
-            "venue": "Mathematics",
-            "year": 2025,
-            "citationCount": 7,
-            "url": "https://www.mdpi.com/2227-7390/13/1/142",
-            "tags": [
-              "Visual Systems",
-              "Deep Learning"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-with-completely-modeled-retinal-direction-selective-pathway",
-            "source": "profile-publication",
-            "title": "A Novel Artificial Visual System for Motion Direction Detection with Completely Modeled Retinal Direction-Selective Pathway",
-            "venue": "Mathematics",
-            "year": 2023,
-            "citationCount": 7,
-            "url": "https://www.mdpi.com/2227-7390/11/17/3732",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "a-novel-bio-inspired-motion-direction-detection-mechanism-in-binary-and-grayscale-background",
-            "source": "profile-publication",
-            "title": "A Novel Bio-Inspired Motion Direction Detection Mechanism in Binary and Grayscale Background",
-            "venue": "Mathematics",
-            "year": 2022,
-            "citationCount": 2,
-            "url": "https://www.mdpi.com/2227-7390/10/20/3767",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "relu-neural-networks-and-their-training",
-            "source": "profile-publication",
-            "title": "ReLU Neural Networks and Their Training",
-            "venue": "Mathematics",
-            "year": 2026,
-            "citationCount": 1,
-            "url": "https://www.mdpi.com/2227-7390/14/1/39",
-            "tags": [
-              "Deep Learning",
-              "AI Theory"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "artificial-visual-network-with-fully-modeled-retinal-direction-selective-neural-pathway-for-motion-direction-detection-in-grayscale-scenes",
-            "source": "profile-publication",
-            "title": "Artificial Visual Network with Fully Modeled Retinal Direction-Selective Neural Pathway for Motion Direction Detection in Grayscale Scenes",
-            "venue": "Symmetry",
-            "year": 2024,
-            "citationCount": 1,
-            "url": "https://www.mdpi.com/2073-8994/16/12/1592",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "the-mechanism-of-orientation-detection-based-on-artificial-visual-system-for-greyscale-images",
-            "source": "profile-publication",
-            "title": "The Mechanism of Orientation Detection Based on Artificial Visual System for Greyscale Images",
-            "venue": "Mathematics",
-            "year": 2023,
-            "citationCount": 1,
-            "url": "https://www.mdpi.com/2227-7390/11/12/2715",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "neurophysiological-knowledge-driven-artificial-visual-system-neural-network-for-explainable-motion-direction-detection",
-            "source": "profile-publication",
-            "title": "Neurophysiological Knowledge Driven Artificial Visual System Neural Network for Explainable Motion Direction Detection",
-            "venue": "Knowledge-Based Systems",
-            "year": 2025,
-            "citationCount": 0,
-            "url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
-            "tags": [
-              "Visual Systems",
-              "Deep Learning"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "a-biologically-inspired-model-for-detecting-object-motion-direction-in-stereoscopic-vision",
-            "source": "profile-publication",
-            "title": "A Biologically Inspired Model for Detecting Object Motion Direction in Stereoscopic Vision",
-            "venue": "Symmetry",
-            "year": 2025,
-            "citationCount": 0,
-            "url": "https://www.mdpi.com/2073-8994/17/2/162",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "an-artificial-visual-system-constructed-by-fully-modeled-retinal-direction-selective-networks-on-detecting-motion-direction-in-color-images",
-            "source": "profile-publication",
-            "title": "An Artificial Visual System Constructed by Fully Modeled Retinal Direction-selective Networks on Detecting Motion Direction in Color Images",
-            "venue": "Information Sciences",
-            "year": 2025,
-            "citationCount": 0,
-            "url": "https://www.sciencedirect.com/journal/information-sciences",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "a-bio-inspired-model-for-object-motion-direction-and-speed-detection-against-colored-backgrounds",
-            "source": "profile-publication",
-            "title": "A bio-inspired model for object motion direction and speed detection against colored backgrounds",
-            "venue": "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
-            "year": 2024,
-            "citationCount": 0,
-            "url": "https://doi.org/10.1117/12.3056633",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "a-novel-artificial-visual-system-with-fully-modeled-retinal-direction-selectivity-ganglion-cell-pathway-for-motion-direction-detection-in-grayscale-images",
-            "source": "profile-publication",
-            "title": "A Novel Artificial Visual System with Fully Modeled Retinal Direction-selectivity Ganglion Cell Pathway for Motion Direction Detection in Grayscale Images",
-            "venue": "SPML 2024",
-            "year": 2024,
-            "citationCount": 0,
-            "url": "https://doi.org/10.1145/3686490.3686521",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          },
-          {
-            "id": "a-motion-direction-detective-mechanism-for-greyscale-images",
-            "source": "profile-publication",
-            "title": "A Motion Direction Detective Mechanism for Greyscale Images",
-            "venue": "SPML 2021",
-            "year": 2021,
-            "citationCount": 0,
-            "url": "https://doi.org/10.1145/3483207.3483211",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Strong foundation from existing publication history and citation signal.",
-              "zh": "来自既有发表积累与引用信号的基础支撑。",
-              "ja": "既存の発表履歴と引用シグナルから見た基礎支え。"
-            }
-          }
-        ],
-        "frontier": [],
-        "bridge": [
-          {
-            "id": "relu-neural-networks-and-their-training",
-            "source": "profile-publication",
-            "title": "ReLU Neural Networks and Their Training",
-            "venue": "Mathematics",
-            "year": 2026,
-            "citationCount": 1,
-            "url": "https://www.mdpi.com/2227-7390/14/1/39",
-            "tags": [
-              "Deep Learning",
-              "AI Theory"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "enhancing-convolutional-neural-network-robustness-against-image-noise-via-an-artificial-visual-system",
-            "source": "profile-publication",
-            "title": "Enhancing Convolutional Neural Network Robustness Against Image Noise via an Artificial Visual System",
-            "venue": "Mathematics",
-            "year": 2025,
-            "citationCount": 7,
-            "url": "https://www.mdpi.com/2227-7390/13/1/142",
-            "tags": [
-              "Visual Systems",
-              "Deep Learning"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "neurophysiological-knowledge-driven-artificial-visual-system-neural-network-for-explainable-motion-direction-detection",
-            "source": "profile-publication",
-            "title": "Neurophysiological Knowledge Driven Artificial Visual System Neural Network for Explainable Motion Direction Detection",
-            "venue": "Knowledge-Based Systems",
-            "year": 2025,
-            "citationCount": 0,
-            "url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
-            "tags": [
-              "Visual Systems",
-              "Deep Learning"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-biologically-inspired-model-for-detecting-object-motion-direction-in-stereoscopic-vision",
-            "source": "profile-publication",
-            "title": "A Biologically Inspired Model for Detecting Object Motion Direction in Stereoscopic Vision",
-            "venue": "Symmetry",
-            "year": 2025,
-            "citationCount": 0,
-            "url": "https://www.mdpi.com/2073-8994/17/2/162",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "an-artificial-visual-system-constructed-by-fully-modeled-retinal-direction-selective-networks-on-detecting-motion-direction-in-color-images",
-            "source": "profile-publication",
-            "title": "An Artificial Visual System Constructed by Fully Modeled Retinal Direction-selective Networks on Detecting Motion Direction in Color Images",
-            "venue": "Information Sciences",
-            "year": 2025,
-            "citationCount": 0,
-            "url": "https://www.sciencedirect.com/journal/information-sciences",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "artificial-visual-network-with-fully-modeled-retinal-direction-selective-neural-pathway-for-motion-direction-detection-in-grayscale-scenes",
-            "source": "profile-publication",
-            "title": "Artificial Visual Network with Fully Modeled Retinal Direction-Selective Neural Pathway for Motion Direction Detection in Grayscale Scenes",
-            "venue": "Symmetry",
-            "year": 2024,
-            "citationCount": 1,
-            "url": "https://www.mdpi.com/2073-8994/16/12/1592",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-bio-inspired-model-for-object-motion-direction-and-speed-detection-against-colored-backgrounds",
-            "source": "profile-publication",
-            "title": "A bio-inspired model for object motion direction and speed detection against colored backgrounds",
-            "venue": "Proceedings of the 5th International Conference on Computer Vision and Information Technology (CVIT 2024)",
-            "year": 2024,
-            "citationCount": 0,
-            "url": "https://doi.org/10.1117/12.3056633",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-color-images",
-            "source": "profile-publication",
-            "title": "A novel artificial visual system for motion direction detection in color images",
-            "venue": "Knowledge-Based Systems",
-            "year": 2024,
-            "citationCount": 8,
-            "url": "https://www.sciencedirect.com/science/article/pii/S0950705124004507",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-novel-artificial-visual-system-with-fully-modeled-retinal-direction-selectivity-ganglion-cell-pathway-for-motion-direction-detection-in-grayscale-images",
-            "source": "profile-publication",
-            "title": "A Novel Artificial Visual System with Fully Modeled Retinal Direction-selectivity Ganglion Cell Pathway for Motion Direction Detection in Grayscale Images",
-            "venue": "SPML 2024",
-            "year": 2024,
-            "citationCount": 0,
-            "url": "https://doi.org/10.1145/3686490.3686521",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-with-completely-modeled-retinal-direction-selective-pathway",
-            "source": "profile-publication",
-            "title": "A Novel Artificial Visual System for Motion Direction Detection with Completely Modeled Retinal Direction-Selective Pathway",
-            "venue": "Mathematics",
-            "year": 2023,
-            "citationCount": 7,
-            "url": "https://www.mdpi.com/2227-7390/11/17/3732",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "the-mechanism-of-orientation-detection-based-on-artificial-visual-system-for-greyscale-images",
-            "source": "profile-publication",
-            "title": "The Mechanism of Orientation Detection Based on Artificial Visual System for Greyscale Images",
-            "venue": "Mathematics",
-            "year": 2023,
-            "citationCount": 1,
-            "url": "https://www.mdpi.com/2227-7390/11/12/2715",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-novel-artificial-visual-system-for-motion-direction-detection-in-grayscale-images",
-            "source": "profile-publication",
-            "title": "A Novel Artificial Visual System for Motion Direction Detection in Grayscale Images",
-            "venue": "Mathematics",
-            "year": 2022,
-            "citationCount": 14,
-            "url": "https://www.mdpi.com/2227-7390/10/16/2975",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-novel-bio-inspired-motion-direction-detection-mechanism-in-binary-and-grayscale-background",
-            "source": "profile-publication",
-            "title": "A Novel Bio-Inspired Motion Direction Detection Mechanism in Binary and Grayscale Background",
-            "venue": "Mathematics",
-            "year": 2022,
-            "citationCount": 2,
-            "url": "https://www.mdpi.com/2227-7390/10/20/3767",
-            "tags": [
-              "Visual Systems"
-            ],
-            "note": {
-              "en": "Bridge paper that can connect current strengths to the next adjacent step.",
-              "zh": "可把当前能力连接到下一步邻近机会的桥梁论文。",
-              "ja": "現在の強みを次の隣接機会につなぐ橋渡し論文。"
-            }
-          },
-          {
-            "id": "a-motion-direction-detective-mechanism-for-greyscale-images",
-            "source": "profile-publication",
-            "title": "A Motion Direction Detective Mechanism for Greyscale Images",
-            "venue": "SPML 2021",
-            "year": 2021,
-            "citationCount": 0,
-            "url": "https://doi.org/10.1145/3483207.3483211",
-            "tags": [
-              "Visual Systems"
             ],
             "note": {
               "en": "Bridge paper that can connect current strengths to the next adjacent step.",

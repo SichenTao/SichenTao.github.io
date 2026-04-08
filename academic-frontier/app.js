@@ -11,6 +11,7 @@ const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
 const LOCALE_SWITCH_SEQUENCE = ["en", "ja", "zh"];
 const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst"];
 const PAPER_EXPLICIT_ALL_CATEGORIES = ["year", "type", "problem", "method", "jcr", "cas", "casTop", "impact", "team"];
+const METRIC_EXPLICIT_ALL_CATEGORIES = ["year", "type", "jcr", "cas", "casTop", "impact", "venue"];
 const RESEARCH_EXPLICIT_ALL_CATEGORIES = ["problem", "method", "jcr", "cas", "casTop", "impact", "author"];
 const MULTI_SELECT_ACTIVE_VALUE = "__selected__";
 
@@ -180,6 +181,16 @@ const state = {
   sortFilter: "recent",
   paperQuery: "",
   paperExplicitAll: createExplicitAllState(PAPER_EXPLICIT_ALL_CATEGORIES),
+  metricYearFilter: [],
+  metricTypeFilter: [],
+  metricJcrFilter: [],
+  metricCasFilter: [],
+  metricCasTopFilter: [],
+  metricImpactFilter: [],
+  metricVenueFilter: [],
+  metricSortFilter: "year",
+  metricQuery: "",
+  metricExplicitAll: createExplicitAllState(METRIC_EXPLICIT_ALL_CATEGORIES),
   focusPrompt: "",
   researchProblemFieldFilters: [],
   researchMethodFieldFilters: [],
@@ -275,9 +286,12 @@ const UI_TEXT = {
     paperLaneKicker: "Paper list",
     papersTitle: "Browse & Filter",
     papersNote: "Search, filter, and decide what to read next.",
+    metricsTitle: "Venue Metrics",
+    metricsNote: "Search year-aware JCR, CAS, IF, and evidence links across tracked venues.",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
     searchPlaceholder: "Search title, author, venue, DOI, or exact tag",
+    metricsSearchPlaceholder: "Search venue, source, quartile, or exact tag",
     filtersLabel: "Filters",
     quickTagsLabel: "Tags",
     resetLabel: "Reset",
@@ -290,6 +304,7 @@ const UI_TEXT = {
     selectedCasTopLabel: "Selected Top",
     selectedImpactLabel: "Selected IF",
     selectedAuthorsLabel: "Selected Authors",
+    selectedVenuesLabel: "Selected Venues",
     yearOptionAll: "All years",
     typeOptionAll: "All types",
     problemFieldPlaceholder: "All Problem",
@@ -308,12 +323,16 @@ const UI_TEXT = {
     impactNotListedOption: "IF not listed",
     typeOptionJournal: "Journal",
     typeOptionConference: "Conference",
+    typeOptionPreprint: "Preprint",
     statusOptionAll: "All statuses",
     statusOptionMustRead: "Must-read",
     statusOptionMonitor: "Monitor",
     statusOptionArchive: "Archive",
     teamOptionAll: "All authors",
+    venueOptionAll: "All venues",
     sortRecent: "Sort by recent",
+    sortVenue: "Sort by venue",
+    sortYear: "Sort by metric year",
     sortCitations: "Sort by citations",
     sortImpact: "Sort by IF",
     sortTitle: "Sort by title",
@@ -355,6 +374,7 @@ const UI_TEXT = {
     themeUsstLabel: "University of Shanghai for Science and Technology",
     navOverview: "Overview",
     navPapers: "Papers",
+    navMetrics: "Metrics",
     navSignals: "Investigation",
     navTeams: "Teams",
     navDownloads: "Downloads",
@@ -500,9 +520,12 @@ const UI_TEXT = {
     paperLaneKicker: "论文列表",
     papersTitle: "检索与筛选",
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
+    metricsTitle: "分区与指标参考",
+    metricsNote: "按年份查看 JCR、中科院分区、IF 与证据来源。",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
     searchPlaceholder: "搜索标题、作者、刊物、DOI 或精确标签",
+    metricsSearchPlaceholder: "搜索期刊名、来源、分区或精确标签",
     filtersLabel: "筛选",
     quickTagsLabel: "标签",
     resetLabel: "重置",
@@ -515,6 +538,7 @@ const UI_TEXT = {
     selectedCasTopLabel: "已选 Top",
     selectedImpactLabel: "已选 IF",
     selectedAuthorsLabel: "已选作者",
+    selectedVenuesLabel: "已选刊物",
     yearOptionAll: "全部年份",
     typeOptionAll: "全部类型",
     problemFieldPlaceholder: "全部问题",
@@ -533,12 +557,16 @@ const UI_TEXT = {
     impactNotListedOption: "IF 未公开",
     typeOptionJournal: "期刊",
     typeOptionConference: "会议",
+    typeOptionPreprint: "预印本",
     statusOptionAll: "全部状态",
     statusOptionMustRead: "必读",
     statusOptionMonitor: "持续观察",
     statusOptionArchive: "归档",
     teamOptionAll: "全部作者",
+    venueOptionAll: "全部刊物",
     sortRecent: "按时间排序",
+    sortVenue: "按期刊名排序",
+    sortYear: "按指标年份排序",
     sortCitations: "按引用排序",
     sortImpact: "按 IF 排序",
     sortTitle: "按标题排序",
@@ -579,6 +607,7 @@ const UI_TEXT = {
     themeUsstLabel: "上海理工大学",
     navOverview: "概览",
     navPapers: "论文",
+    navMetrics: "分区",
     navSignals: "调查",
     navTeams: "团队",
     navDownloads: "下载",
@@ -725,9 +754,12 @@ const UI_TEXT = {
     paperLaneKicker: "論文リスト",
     papersTitle: "検索と絞り込み",
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
+    metricsTitle: "分区・指標参照",
+    metricsNote: "JCR、CAS、IF と出典を年次ベースで参照する。",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
     searchPlaceholder: "タイトル・著者・掲載先・DOI・厳密タグで検索",
+    metricsSearchPlaceholder: "誌名・出典・分区・タグで検索",
     filtersLabel: "フィルター",
     quickTagsLabel: "タグ",
     resetLabel: "リセット",
@@ -740,6 +772,7 @@ const UI_TEXT = {
     selectedCasTopLabel: "選択中の Top",
     selectedImpactLabel: "選択中の IF",
     selectedAuthorsLabel: "選択中の著者",
+    selectedVenuesLabel: "選択中の掲載先",
     yearOptionAll: "全年度",
     typeOptionAll: "全種別",
     problemFieldPlaceholder: "全問題",
@@ -758,12 +791,16 @@ const UI_TEXT = {
     impactNotListedOption: "IF 未公開",
     typeOptionJournal: "ジャーナル",
     typeOptionConference: "会議",
+    typeOptionPreprint: "プレプリント",
     statusOptionAll: "全ステータス",
     statusOptionMustRead: "必読",
     statusOptionMonitor: "監視",
     statusOptionArchive: "アーカイブ",
     teamOptionAll: "全著者",
+    venueOptionAll: "全掲載先",
     sortRecent: "新しい順",
+    sortVenue: "誌名順",
+    sortYear: "指標年順",
     sortCitations: "被引用順",
     sortImpact: "IF 順",
     sortTitle: "タイトル順",
@@ -805,6 +842,7 @@ const UI_TEXT = {
     themeUsstLabel: "上海理工大学",
     navOverview: "概観",
     navPapers: "論文",
+    navMetrics: "分区",
     navSignals: "調査",
     navTeams: "チーム",
     navDownloads: "取得",
@@ -2225,6 +2263,7 @@ function domainData() {
     trendMap: [],
     teams: [],
     papers: [],
+    venues: [],
     workflow: [],
     downloadQueue: [],
   };
@@ -2236,6 +2275,14 @@ function researchData() {
     seedProfile: {},
     focusDesk: { presets: [] },
     directions: [],
+  };
+}
+
+function venueReferenceData() {
+  return window.ACADEMIC_FRONTIER_VENUE_REFERENCE || {
+    updatedAt: "",
+    venueCount: 0,
+    venues: [],
   };
 }
 
@@ -3073,6 +3120,7 @@ function currentPageTitle() {
   const pageKey = {
     overview: null,
     papers: "navPapers",
+    metrics: "navMetrics",
     signals: "navSignals",
     teams: "navTeams",
     downloads: "navDownloads",
@@ -3088,7 +3136,7 @@ function currentPageTitle() {
 
 function markCurrentPage() {
   const page = currentPage();
-  ["overview", "papers", "signals", "teams", "downloads", "guide"].forEach((key) => {
+  ["overview", "papers", "metrics", "signals", "teams", "downloads", "guide"].forEach((key) => {
     const navId = `nav${key.charAt(0).toUpperCase()}${key.slice(1)}`;
     const link = byId(navId);
     if (!link) return;
@@ -3334,7 +3382,136 @@ function impactFilterTagLabel(value) {
 function typeFilterTagLabel(value) {
   if (value === "journal") return ui("typeOptionJournal");
   if (value === "conference") return ui("typeOptionConference");
+  if (value === "preprint") return ui("typeOptionPreprint");
+  if (value === "repository") return ui("typeOptionRepository");
+  if (value === "other") return ui("typeOptionOther");
   return String(value || "");
+}
+
+function localizeVenueTypeLabel(value) {
+  return typeFilterTagLabel(String(value || "unknown").toLowerCase());
+}
+
+function normalizedMetricQuery() {
+  return normalizeSearchText(state.metricQuery || "");
+}
+
+function venueMetricEntries() {
+  return (venueReferenceData().venues || []).flatMap((venue) =>
+    (venue.history || []).map((history) => ({
+      venueId: venue.id,
+      venueName: venue.name,
+      aliases: venue.aliases || [],
+      venueType: venue.venueType || "unknown",
+      publisher: venue.publisher || "",
+      issn: venue.issn || "",
+      eissn: venue.eissn || "",
+      sourceUrl: venue.sourceUrl || "",
+      latestPublicationYear: venue.latestPublicationYear || "",
+      officialSources: {
+        ...(venue.officialSources || {}),
+        ...(history.officialSources || {}),
+      },
+      publicSources: {
+        ...(venue.publicSources || {}),
+        ...(history.publicSources || {}),
+      },
+      sourceModes: history.sourceModes || {},
+      searchCopyText: {
+        ...(venue.searchCopyText || {}),
+        ...(history.searchCopyText || {}),
+      },
+      publicationYear: history.publicationYear || "",
+      impactFactor: history.impactFactor,
+      impactYear: history.impactYear,
+      jcrQuartile: history.jcrQuartile,
+      jcrYear: history.jcrYear,
+      casQuartile: history.casQuartile,
+      casYear: history.casYear,
+      casTop: Boolean(history.casTop),
+      ccfRank: history.ccfRank,
+      ccfYear: history.ccfYear,
+      qualityTags: history.qualityTags || [],
+    }))
+  );
+}
+
+function venueMetricImpactFactorValue(entry) {
+  const value = Number.parseFloat(String(entry?.impactFactor || ""));
+  return Number.isFinite(value) ? value : -1;
+}
+
+function venueMetricImpactBucketValue(entry) {
+  const value = venueMetricImpactFactorValue(entry);
+  if (value < 0) return "not-listed";
+  if (value >= 10) return "10+";
+  if (value >= 5) return "5-10";
+  return "0-5";
+}
+
+function venueMetricJcrQuartileValue(entry) {
+  return normalizeQuartileValue(entry?.jcrQuartile);
+}
+
+function venueMetricCasQuartileValue(entry) {
+  return normalizeQuartileValue(entry?.casQuartile);
+}
+
+function venueMetricSearchText(entry) {
+  return normalizeSearchText([
+    entry?.venueName,
+    ...(entry?.aliases || []),
+    entry?.publisher,
+    entry?.issn,
+    entry?.eissn,
+    entry?.publicationYear,
+    entry?.impactFactor,
+    entry?.jcrQuartile,
+    entry?.casQuartile,
+    entry?.ccfRank,
+    ...(entry?.qualityTags || []),
+  ].join(" "));
+}
+
+function filteredVenueMetricEntries() {
+  const entries = venueMetricEntries();
+  const query = normalizedMetricQuery();
+  return entries
+    .filter((entry) => {
+      if (query && !venueMetricSearchText(entry).includes(query)) return false;
+      if (state.metricYearFilter !== "all" && String(entry.publicationYear || "") !== state.metricYearFilter) return false;
+      if (state.metricTypeFilter !== "all" && String(entry.venueType || "") !== state.metricTypeFilter) return false;
+      if (state.metricVenueFilter !== "all" && String(entry.venueName || "") !== state.metricVenueFilter) return false;
+      if (state.metricJcrFilter !== "all") {
+        if (state.metricJcrFilter === "not-listed") {
+          if (venueMetricJcrQuartileValue(entry) !== "__not_listed__") return false;
+        } else if (venueMetricJcrQuartileValue(entry) !== String(state.metricJcrFilter || "").toUpperCase()) {
+          return false;
+        }
+      }
+      if (state.metricCasFilter !== "all") {
+        if (state.metricCasFilter === "not-listed") {
+          if (venueMetricCasQuartileValue(entry) !== "__not_listed__") return false;
+        } else if (venueMetricCasQuartileValue(entry) !== String(state.metricCasFilter || "").toUpperCase()) {
+          return false;
+        }
+      }
+      if (state.metricCasTopFilter === "top" && !entry.casTop) return false;
+      if (state.metricImpactFilter !== "all" && venueMetricImpactBucketValue(entry) !== state.metricImpactFilter) return false;
+      return true;
+    })
+    .sort((left, right) => {
+      if (state.metricSortFilter === "impact_factor") {
+        const impactDelta = venueMetricImpactFactorValue(right) - venueMetricImpactFactorValue(left);
+        if (impactDelta !== 0) return impactDelta;
+      } else if (state.metricSortFilter === "venue") {
+        const byVenue = String(left.venueName || "").localeCompare(String(right.venueName || ""), currentLocale());
+        if (byVenue !== 0) return byVenue;
+      }
+      const yearDelta = Number(right.publicationYear || 0) - Number(left.publicationYear || 0);
+      if (yearDelta !== 0) return yearDelta;
+      return String(left.venueName || "").localeCompare(String(right.venueName || ""), currentLocale());
+    });
 }
 
 function normalizedPaperQuery() {
@@ -3357,6 +3534,7 @@ function renderStaticText() {
   [
     ["navOverview", ui("navOverview")],
     ["navPapers", ui("navPapers")],
+    ["navMetrics", ui("navMetrics")],
     ["navSignals", ui("navSignals")],
     ["navTeams", ui("navTeams")],
     ["navDownloads", ui("navDownloads")],
@@ -3372,7 +3550,10 @@ function renderStaticText() {
     ["watchSignalsTitle", ui("whatShouldTriggerActionNext")],
     ["paperLaneKicker", ui("paperLaneKicker")],
     ["papers-title", ui("papersTitle")],
+    ["metrics-title", ui("metricsTitle")],
+    ["metricsNote", ui("metricsNote")],
     ["filter-toolbar-label", filterToolbarLabel()],
+    ["metric-filter-toolbar-label", filterToolbarLabel()],
     ["active-field-tags-label", ui("activeFieldTagsLabel")],
     ["trendKicker", ui("trendKicker")],
     ["trend-title", ui("trendTitle")],
@@ -3406,6 +3587,9 @@ function renderStaticText() {
   setProp("pub-search", "placeholder", ui("searchPlaceholder"));
   setAttr("pub-reset", "aria-label", ui("resetLabel"));
   setAttr("pub-reset", "title", ui("resetLabel"));
+  setProp("metric-search", "placeholder", ui("metricsSearchPlaceholder"));
+  setAttr("metric-reset", "aria-label", ui("resetLabel"));
+  setAttr("metric-reset", "title", ui("resetLabel"));
   setAttr("scrollTopButton", "aria-label", ui("backToTop"));
 }
 
@@ -4891,6 +5075,385 @@ function renderPapers() {
   });
 }
 
+function metricVenues() {
+  return domainData().venues || [];
+}
+
+function metricVenueHistory(venue) {
+  return venue?.metricHistory || {};
+}
+
+function metricVenueYears(venue) {
+  const years = new Set([
+    ...(venue?.availableMetricYears || []),
+    ...Object.keys(metricVenueHistory(venue)),
+    venue?.latestMetricYear || "",
+  ]);
+  return [...years].filter((value) => /^\d{4}$/.test(String(value || ""))).sort((left, right) => Number.parseInt(right, 10) - Number.parseInt(left, 10));
+}
+
+function metricVenueRecord(venue, yearSelections = state.metricYearFilter) {
+  const history = metricVenueHistory(venue);
+  const selectedYears = selectionList(yearSelections).filter((year) => history[year]);
+  const chosenYear = selectedYears[0] || venue?.latestMetricYear || metricVenueYears(venue)[0] || "";
+  const latestMetrics = venue?.latestMetrics || {};
+  const yearMetrics = history[chosenYear] || {};
+  return {
+    ...latestMetrics,
+    ...yearMetrics,
+    metricYear: chosenYear || latestMetrics?.impactYear || latestMetrics?.jcrYear || latestMetrics?.casYear || "",
+  };
+}
+
+function metricVenueTypeValue(venue) {
+  return String(venue?.venueType || metricVenueRecord(venue)?.venueType || "").toLowerCase();
+}
+
+function metricVenueJcrValue(venue, yearSelections = state.metricYearFilter) {
+  return normalizeQuartileValue(metricVenueRecord(venue, yearSelections)?.jcrQuartile);
+}
+
+function metricVenueCasValue(venue, yearSelections = state.metricYearFilter) {
+  return normalizeQuartileValue(metricVenueRecord(venue, yearSelections)?.casQuartile);
+}
+
+function metricVenueCasTopValue(venue, yearSelections = state.metricYearFilter) {
+  return Boolean(metricVenueRecord(venue, yearSelections)?.casTop);
+}
+
+function metricVenueImpactBucket(venue, yearSelections = state.metricYearFilter) {
+  return paperImpactBucketValue({ metrics: metricVenueRecord(venue, yearSelections) });
+}
+
+function metricVenueMatchesYear(venue, values) {
+  const selectedYears = selectionList(values);
+  if (!selectedYears.length) return true;
+  const years = new Set(metricVenueYears(venue));
+  return selectedYears.some((year) => years.has(year));
+}
+
+function metricVenueMatchesType(venue, values) {
+  const selectedValues = selectionList(values);
+  if (!selectedValues.length) return true;
+  return selectedValues.includes(metricVenueTypeValue(venue));
+}
+
+function metricVenueMatchesJcr(venue, values, yearSelections = state.metricYearFilter) {
+  const selectedValues = selectionList(values);
+  if (!selectedValues.length) return true;
+  return selectedValues.some((value) => paperMatchesJcrFilter({ metrics: metricVenueRecord(venue, yearSelections) }, value));
+}
+
+function metricVenueMatchesCas(venue, values, yearSelections = state.metricYearFilter) {
+  const selectedValues = selectionList(values);
+  if (!selectedValues.length) return true;
+  return selectedValues.some((value) => paperMatchesCasFilter({ metrics: metricVenueRecord(venue, yearSelections) }, value));
+}
+
+function metricVenueMatchesCasTop(venue, values, yearSelections = state.metricYearFilter) {
+  const selectedValues = selectionList(values);
+  if (!selectedValues.length) return true;
+  return selectedValues.some((value) => paperMatchesCasTopFilter({ metrics: metricVenueRecord(venue, yearSelections) }, value));
+}
+
+function metricVenueMatchesImpact(venue, values, yearSelections = state.metricYearFilter) {
+  const selectedValues = selectionList(values);
+  if (!selectedValues.length) return true;
+  return selectedValues.some((value) => paperMatchesImpactFilter({ metrics: metricVenueRecord(venue, yearSelections) }, value));
+}
+
+function metricVenueMatchesVenue(venue, values) {
+  const selectedValues = selectionList(values);
+  if (!selectedValues.length) return true;
+  return selectedValues.includes(String(venue?.venueName || ""));
+}
+
+function metricVenueMatchesQuery(venue, query = state.metricQuery) {
+  const normalized = normalizeSearchText(query);
+  if (!normalized) return true;
+  const metricRecord = metricVenueRecord(venue);
+  const haystack = [
+    venue?.venueName,
+    venue?.venueType,
+    ...(venue?.domains || []),
+    ...(venue?.trackedPaperTitles || []),
+    metricRecord?.impactFactor,
+    metricRecord?.jcrQuartile,
+    metricRecord?.casQuartile,
+    metricRecord?.metricYear,
+    metricRecord?.sourceUrl,
+    metricRecord?.ifPublicSourceUrl,
+    metricRecord?.jcrPublicSourceUrl,
+    metricRecord?.casPublicSourceUrl,
+  ]
+    .map((value) => normalizeSearchText(value))
+    .filter(Boolean)
+    .join(" ");
+  return haystack.includes(normalized);
+}
+
+function filteredMetricVenues(overrides = {}) {
+  const year = overrides.year ?? state.metricYearFilter;
+  const type = overrides.type ?? state.metricTypeFilter;
+  const jcr = overrides.jcr ?? state.metricJcrFilter;
+  const cas = overrides.cas ?? state.metricCasFilter;
+  const casTop = overrides.casTop ?? state.metricCasTopFilter;
+  const impact = overrides.impact ?? state.metricImpactFilter;
+  const venue = overrides.venue ?? state.metricVenueFilter;
+  const query = overrides.query ?? state.metricQuery;
+  const sort = overrides.sort ?? state.metricSortFilter;
+
+  const items = metricVenues().filter((item) =>
+    metricVenueMatchesYear(item, year)
+    && metricVenueMatchesType(item, type)
+    && metricVenueMatchesJcr(item, jcr, year)
+    && metricVenueMatchesCas(item, cas, year)
+    && metricVenueMatchesCasTop(item, casTop, year)
+    && metricVenueMatchesImpact(item, impact, year)
+    && metricVenueMatchesVenue(item, venue)
+    && metricVenueMatchesQuery(item, query)
+  );
+
+  items.sort((left, right) => {
+    if (sort === "impact_factor") {
+      return paperImpactFactorValue({ metrics: metricVenueRecord(right, year) }) - paperImpactFactorValue({ metrics: metricVenueRecord(left, year) });
+    }
+    if (sort === "venue") {
+      return String(left?.venueName || "").localeCompare(String(right?.venueName || ""), currentLocale());
+    }
+    const yearDelta = Number.parseInt(metricVenueRecord(right, year)?.metricYear || "0", 10) - Number.parseInt(metricVenueRecord(left, year)?.metricYear || "0", 10);
+    if (yearDelta !== 0) return yearDelta;
+    return String(left?.venueName || "").localeCompare(String(right?.venueName || ""), currentLocale());
+  });
+
+  return items;
+}
+
+function activeMetricTagEntries() {
+  return [
+    ...tagEntriesForSelection("year", state.metricYearFilter, state.metricExplicitAll.year),
+    ...tagEntriesForSelection("type", state.metricTypeFilter, state.metricExplicitAll.type),
+    ...tagEntriesForSelection("jcr", state.metricJcrFilter, state.metricExplicitAll.jcr),
+    ...tagEntriesForSelection("cas", state.metricCasFilter, state.metricExplicitAll.cas),
+    ...tagEntriesForSelection("casTop", state.metricCasTopFilter, state.metricExplicitAll.casTop),
+    ...tagEntriesForSelection("impact", state.metricImpactFilter, state.metricExplicitAll.impact),
+    ...tagEntriesForSelection("venue", state.metricVenueFilter, state.metricExplicitAll.venue),
+  ];
+}
+
+function metricTagLabel(entry) {
+  if (entry.value === "all") return allFilterTagLabel(entry.category);
+  if (entry.category === "year") return String(entry.value || "");
+  if (entry.category === "type") return typeFilterTagLabel(entry.value);
+  if (entry.category === "jcr") return jcrFilterTagLabel(entry.value);
+  if (entry.category === "cas") return casFilterTagLabel(entry.value);
+  if (entry.category === "casTop") return ui("casTopOption");
+  if (entry.category === "impact") return impactFilterTagLabel(entry.value);
+  if (entry.category === "venue") return String(entry.value || "");
+  return String(entry.value || "");
+}
+
+function renderActiveMetricTags(container) {
+  const row = container?.closest(".filter-chip-row");
+  if (!container || !row) return;
+  const entries = activeMetricTagEntries();
+  container.innerHTML = "";
+  row.hidden = entries.length === 0;
+  entries.forEach((entry) => {
+    const chip = el("span", "field-hash-selection");
+    chip.innerHTML = `<span class="field-hash-tag">#${escapeHtml(metricTagLabel(entry))}</span>`;
+    const button = el("button", "field-hash-remove-button");
+    button.type = "button";
+    button.dataset.removeMetricTag = String(entry.value || "");
+    button.dataset.metricCategory = String(entry.category || "");
+    button.setAttribute("aria-label", `${ui("resetLabel")} ${metricTagLabel(entry)}`);
+    button.innerHTML = "&times;";
+    chip.appendChild(button);
+    container.appendChild(chip);
+  });
+}
+
+function metricOptionsForVenueRecord(venue, metricKind, yearSelections = state.metricYearFilter) {
+  return metricOptionsForDirectLinks(
+    {
+      venue: venue?.venueName,
+      metrics: metricVenueRecord(venue, yearSelections),
+    },
+    metricKind
+  );
+}
+
+function renderMetrics() {
+  const list = byId("venueMetricsList");
+  const search = byId("metric-search");
+  const yearFilter = byId("metric-year-filter");
+  const typeFilter = byId("metric-type-filter");
+  const jcrFilter = byId("metric-jcr-filter");
+  const casFilter = byId("metric-cas-filter");
+  const casTopFilter = byId("metric-cas-top-filter");
+  const impactFilter = byId("metric-impact-filter");
+  const venueFilter = byId("metric-venue-filter");
+  const sortFilter = byId("metric-sort-filter");
+  const resetButton = byId("metric-reset");
+  const activeTags = byId("active-metric-tags");
+  if (!list) return;
+
+  const venues = metricVenues();
+  const years = [...new Set(venues.flatMap((venue) => metricVenueYears(venue)))];
+  const venueTypes = [...new Set(venues.map((venue) => metricVenueTypeValue(venue)).filter(Boolean))];
+  const jcrBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => venues.some((venue) => metricVenueMatchesJcr(venue, [value], state.metricYearFilter)));
+  const casBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => venues.some((venue) => metricVenueMatchesCas(venue, [value], state.metricYearFilter)));
+  const impactBands = ["10+", "5-10", "0-5", "not-listed"].filter((value) => venues.some((venue) => metricVenueMatchesImpact(venue, [value], state.metricYearFilter)));
+  const venueNames = [...new Set(venues.map((venue) => String(venue?.venueName || "")).filter(Boolean))].sort((left, right) => left.localeCompare(right, currentLocale()));
+  const facetCount = (overrides = {}) => filteredMetricVenues(overrides).length;
+
+  state.metricYearFilter = selectionList(state.metricYearFilter).filter((year) => years.includes(year));
+  state.metricTypeFilter = selectionList(state.metricTypeFilter).filter((value) => venueTypes.includes(value));
+  state.metricJcrFilter = selectionList(state.metricJcrFilter).filter((value) => jcrBands.includes(value));
+  state.metricCasFilter = selectionList(state.metricCasFilter).filter((value) => casBands.includes(value));
+  state.metricCasTopFilter = selectionList(state.metricCasTopFilter).filter((value) => value === "top");
+  state.metricImpactFilter = selectionList(state.metricImpactFilter).filter((value) => impactBands.includes(value));
+  state.metricVenueFilter = selectionList(state.metricVenueFilter).filter((value) => venueNames.includes(value));
+
+  if (state.metricExplicitAll.year) state.metricYearFilter = [];
+  if (state.metricExplicitAll.type) state.metricTypeFilter = [];
+  if (state.metricExplicitAll.jcr) state.metricJcrFilter = [];
+  if (state.metricExplicitAll.cas) state.metricCasFilter = [];
+  if (state.metricExplicitAll.casTop) state.metricCasTopFilter = [];
+  if (state.metricExplicitAll.impact) state.metricImpactFilter = [];
+  if (state.metricExplicitAll.venue) state.metricVenueFilter = [];
+
+  syncSelectOptions(yearFilter, multiSelectDisplayOptions([
+    { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), facetCount({ year: "all" })) },
+    ...years.map((year) => ({
+      value: year,
+      label: formatPaperFilterOptionLabel(year, facetCount({ year: previewSelectionValues(state.metricYearFilter, year) })),
+    })),
+  ], state.metricYearFilter, state.metricExplicitAll.year, "selectedYearsLabel"), multiSelectDisplayValue(state.metricYearFilter, state.metricExplicitAll.year));
+
+  syncSelectOptions(typeFilter, multiSelectDisplayOptions([
+    { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), facetCount({ type: "all" })) },
+    ...venueTypes.map((value) => ({
+      value,
+      label: formatPaperFilterOptionLabel(typeFilterTagLabel(value), facetCount({ type: previewSelectionValues(state.metricTypeFilter, value) })),
+    })),
+  ], state.metricTypeFilter, state.metricExplicitAll.type, "selectedTypesLabel"), multiSelectDisplayValue(state.metricTypeFilter, state.metricExplicitAll.type));
+
+  syncSelectOptions(jcrFilter, multiSelectDisplayOptions([
+    { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), facetCount({ jcr: "all" })) },
+    ...jcrBands.map((value) => ({
+      value,
+      label: formatPaperFilterOptionLabel(jcrFilterTagLabel(value), facetCount({ jcr: previewSelectionValues(state.metricJcrFilter, value) })),
+    })),
+  ], state.metricJcrFilter, state.metricExplicitAll.jcr, "selectedJcrLabel"), multiSelectDisplayValue(state.metricJcrFilter, state.metricExplicitAll.jcr));
+
+  syncSelectOptions(casFilter, multiSelectDisplayOptions([
+    { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), facetCount({ cas: "all" })) },
+    ...casBands.map((value) => ({
+      value,
+      label: formatPaperFilterOptionLabel(casFilterTagLabel(value), facetCount({ cas: previewSelectionValues(state.metricCasFilter, value) })),
+    })),
+  ], state.metricCasFilter, state.metricExplicitAll.cas, "selectedCasLabel"), multiSelectDisplayValue(state.metricCasFilter, state.metricExplicitAll.cas));
+
+  syncSelectOptions(casTopFilter, multiSelectDisplayOptions([
+    { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), facetCount({ casTop: "all" })) },
+    { value: "top", label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: previewSelectionValues(state.metricCasTopFilter, "top") })) },
+  ], state.metricCasTopFilter, state.metricExplicitAll.casTop, "selectedCasTopLabel"), multiSelectDisplayValue(state.metricCasTopFilter, state.metricExplicitAll.casTop));
+
+  syncSelectOptions(impactFilter, multiSelectDisplayOptions([
+    { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), facetCount({ impact: "all" })) },
+    ...impactBands.map((value) => ({
+      value,
+      label: formatPaperFilterOptionLabel(impactFilterTagLabel(value), facetCount({ impact: previewSelectionValues(state.metricImpactFilter, value) })),
+    })),
+  ], state.metricImpactFilter, state.metricExplicitAll.impact, "selectedImpactLabel"), multiSelectDisplayValue(state.metricImpactFilter, state.metricExplicitAll.impact));
+
+  syncSelectOptions(venueFilter, multiSelectDisplayOptions([
+    { value: "all", label: formatPaperFilterOptionLabel(ui("venueOptionAll"), facetCount({ venue: "all" })) },
+    ...venueNames.map((value) => ({
+      value,
+      label: formatPaperFilterOptionLabel(value, facetCount({ venue: previewSelectionValues(state.metricVenueFilter, value) })),
+    })),
+  ], state.metricVenueFilter, state.metricExplicitAll.venue, "selectedVenuesLabel"), multiSelectDisplayValue(state.metricVenueFilter, state.metricExplicitAll.venue));
+
+  syncSelectOptions(sortFilter, [
+    { value: "year", label: ui("sortYear") },
+    { value: "impact_factor", label: ui("sortImpact") },
+    { value: "venue", label: ui("sortVenue") },
+  ], state.metricSortFilter);
+
+  state.metricSortFilter = sortFilter?.value || state.metricSortFilter;
+  if (search) search.value = state.metricQuery || "";
+  renderActiveMetricTags(activeTags);
+
+  if (resetButton) {
+    const isDefault =
+      !state.metricYearFilter.length
+      && !state.metricTypeFilter.length
+      && !state.metricJcrFilter.length
+      && !state.metricCasFilter.length
+      && !state.metricCasTopFilter.length
+      && !state.metricImpactFilter.length
+      && !state.metricVenueFilter.length
+      && !hasExplicitAllSelections(state.metricExplicitAll)
+      && state.metricSortFilter === "year"
+      && !state.metricQuery;
+    resetButton.disabled = isDefault;
+  }
+
+  list.innerHTML = "";
+  const filtered = filteredMetricVenues();
+  if (!filtered.length) {
+    list.appendChild(el("div", "empty", plainTextByLanguage({
+      en: "No venues match the current filter.",
+      zh: "当前筛选条件下没有匹配刊物。",
+      ja: "現在のフィルター条件に一致する掲載先はありません。",
+    })));
+    scheduleAdaptiveFilterControlWidths();
+    return;
+  }
+
+  filtered.forEach((venue) => {
+    const metricsRecord = metricVenueRecord(venue);
+    const article = el("article", "publication-card");
+    const head = el("div", "publication-head");
+    const titleBlock = el("div", "");
+    const title = el("h4", "publication-title");
+    title.textContent = venue.venueName || "";
+    titleBlock.appendChild(title);
+    head.appendChild(titleBlock);
+    article.appendChild(head);
+
+    const tags = el("div", "field-hash-row");
+    [
+      metricVenueTypeValue(venue) ? `#${typeFilterTagLabel(metricVenueTypeValue(venue))}` : "",
+      ...((venue.domains || []).slice(0, 3).map((value) => `#${localizeText(value)}`)),
+      ...metricVenueYears(venue).slice(0, 3).map((value) => `#${value}`),
+    ].filter(Boolean).forEach((label) => tags.appendChild(el("span", "field-hash-tag", label)));
+    if (tags.childNodes.length) article.appendChild(tags);
+
+    const metrics = el("div", "publication-metrics");
+    addMetric(metrics, "impact", ui("impactFactorLabel"), metricsRecord?.impactFactor, metricsRecord?.impactYear || metricsRecord?.metricYear, metricOptionsForVenueRecord(venue, "impact"));
+    addMetric(metrics, "jcr", ui("jcrLabel"), metricsRecord?.jcrQuartile, metricsRecord?.jcrYear || metricsRecord?.metricYear, metricOptionsForVenueRecord(venue, "jcr"));
+    addMetric(metrics, "cas", ui("casLabel"), metricsRecord?.casQuartile, [metricsRecord?.casTop ? ui("topLabel") : "", metricsRecord?.casYear || metricsRecord?.metricYear].filter(Boolean).join(" · "), metricOptionsForVenueRecord(venue, "cas"));
+    article.appendChild(metrics);
+
+    const note = el("p", "publication-note publication-note-accent");
+    note.innerHTML = `<strong class="warm-strong">${escapeHtml(ui("papersLabel"))}</strong> <span class="rich-text">${escapeHtml(String(venue?.trackedPaperCount || 0))}${venue?.trackedPaperTitles?.length ? ` · ${escapeHtml(venue.trackedPaperTitles.join(" · "))}` : ""}</span>`;
+    article.appendChild(note);
+
+    const links = el("div", "link-row");
+    if (venue?.sourceUrl) {
+      links.appendChild(actionLink(ui("publisherAction"), venue.sourceUrl));
+    }
+    article.appendChild(links);
+
+    list.appendChild(article);
+  });
+
+  scheduleAdaptiveFilterControlWidths();
+}
+
 function renderCardGrid(containerId, items, renderItem) {
   const container = byId(containerId);
   if (!container) return;
@@ -5171,6 +5734,107 @@ function bindControls() {
     }
     renderPaperControls();
     renderPapers();
+  });
+}
+
+function bindMetricControls() {
+  const yearFilter = byId("metric-year-filter");
+  const typeFilter = byId("metric-type-filter");
+  const jcrFilter = byId("metric-jcr-filter");
+  const casFilter = byId("metric-cas-filter");
+  const casTopFilter = byId("metric-cas-top-filter");
+  const impactFilter = byId("metric-impact-filter");
+  const venueFilter = byId("metric-venue-filter");
+  const sortFilter = byId("metric-sort-filter");
+  const metricSearch = byId("metric-search");
+  const metricReset = byId("metric-reset");
+  const activeMetricTags = byId("active-metric-tags");
+  if (!metricSearch) return;
+
+  yearFilter?.addEventListener("change", (event) => {
+    const value = event.target.value;
+    state.metricYearFilter = toggleMenuSelection(state.metricYearFilter, value, state.metricExplicitAll, "year");
+    event.target.value = "all";
+    renderMetrics();
+  });
+  typeFilter?.addEventListener("change", (event) => {
+    const value = event.target.value;
+    state.metricTypeFilter = toggleMenuSelection(state.metricTypeFilter, value, state.metricExplicitAll, "type");
+    event.target.value = "all";
+    renderMetrics();
+  });
+  jcrFilter?.addEventListener("change", (event) => {
+    const value = event.target.value;
+    state.metricJcrFilter = toggleMenuSelection(state.metricJcrFilter, value, state.metricExplicitAll, "jcr");
+    event.target.value = "all";
+    renderMetrics();
+  });
+  casFilter?.addEventListener("change", (event) => {
+    const value = event.target.value;
+    state.metricCasFilter = toggleMenuSelection(state.metricCasFilter, value, state.metricExplicitAll, "cas");
+    event.target.value = "all";
+    renderMetrics();
+  });
+  casTopFilter?.addEventListener("change", (event) => {
+    const value = event.target.value;
+    state.metricCasTopFilter = toggleMenuSelection(state.metricCasTopFilter, value, state.metricExplicitAll, "casTop");
+    event.target.value = "all";
+    renderMetrics();
+  });
+  impactFilter?.addEventListener("change", (event) => {
+    const value = event.target.value;
+    state.metricImpactFilter = toggleMenuSelection(state.metricImpactFilter, value, state.metricExplicitAll, "impact");
+    event.target.value = "all";
+    renderMetrics();
+  });
+  venueFilter?.addEventListener("change", (event) => {
+    const value = event.target.value;
+    state.metricVenueFilter = toggleMenuSelection(state.metricVenueFilter, value, state.metricExplicitAll, "venue");
+    event.target.value = "all";
+    renderMetrics();
+  });
+  sortFilter?.addEventListener("change", (event) => {
+    state.metricSortFilter = event.target.value;
+    renderMetrics();
+  });
+  metricSearch.addEventListener("input", (event) => {
+    state.metricQuery = event.target.value;
+    renderMetrics();
+  });
+  metricReset?.addEventListener("click", () => {
+    state.metricYearFilter = [];
+    state.metricTypeFilter = [];
+    state.metricJcrFilter = [];
+    state.metricCasFilter = [];
+    state.metricCasTopFilter = [];
+    state.metricImpactFilter = [];
+    state.metricVenueFilter = [];
+    state.metricSortFilter = "year";
+    state.metricQuery = "";
+    resetExplicitAllSelections(state.metricExplicitAll);
+    renderMetrics();
+  });
+  activeMetricTags?.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-remove-metric-tag]");
+    if (!button) return;
+    const tag = button.dataset.removeMetricTag || "";
+    const category = button.dataset.metricCategory || "";
+    if (category === "year") {
+      state.metricYearFilter = removeTagSelection(state.metricYearFilter, tag, state.metricExplicitAll, "year");
+    } else if (category === "type") {
+      state.metricTypeFilter = removeTagSelection(state.metricTypeFilter, tag, state.metricExplicitAll, "type");
+    } else if (category === "jcr") {
+      state.metricJcrFilter = removeTagSelection(state.metricJcrFilter, tag, state.metricExplicitAll, "jcr");
+    } else if (category === "cas") {
+      state.metricCasFilter = removeTagSelection(state.metricCasFilter, tag, state.metricExplicitAll, "cas");
+    } else if (category === "casTop") {
+      state.metricCasTopFilter = removeTagSelection(state.metricCasTopFilter, tag, state.metricExplicitAll, "casTop");
+    } else if (category === "impact") {
+      state.metricImpactFilter = removeTagSelection(state.metricImpactFilter, tag, state.metricExplicitAll, "impact");
+    } else if (category === "venue") {
+      state.metricVenueFilter = removeTagSelection(state.metricVenueFilter, tag, state.metricExplicitAll, "venue");
+    }
+    renderMetrics();
   });
 }
 
@@ -5570,6 +6234,7 @@ function renderAll() {
     renderDomainFocus();
     renderPaperControls();
     renderPapers();
+    renderMetrics();
     renderTrends();
     renderTeams();
     renderDownloads();
@@ -5591,6 +6256,7 @@ function init() {
   state.activeDomainId = chooseDefaultDomain();
   document.body.classList.add("is-ready");
   bindControls();
+  bindMetricControls();
   bindScrollTopButton();
   bindFocusDesk();
   bindResearchLauncher();

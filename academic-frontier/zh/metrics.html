@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="tohoku">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="一个面向多研究方向的本地优先学术前沿总览，用于发现活跃团队、强信号与高价值论文，并决定下一步值得深挖什么。"/>
+<meta name="theme-color" content="#f3eef9"/>
+<title>学术前沿 · 分区</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&amp;family=Sora:wght@300;400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE = "zh";
+window.ACADEMIC_FRONTIER_DEFAULT_THEME = "tohoku";
+window.ACADEMIC_FRONTIER_LOCALE_HREFS = {"en": "/academic-frontier/metrics.html", "zh": "/academic-frontier/zh/metrics.html", "ja": "/academic-frontier/ja/metrics.html"};
+(function() {
+  var themeCatalog = {"tohoku": "#f3eef9", "toyama": "#edf4f7", "usst": "#f7eded"};
+  var theme = "tohoku";
+  try {
+    var queryTheme = new URLSearchParams(window.location.search).get("theme");
+    if (queryTheme && themeCatalog[queryTheme]) {
+      theme = queryTheme;
+    } else {
+      var savedTheme = window.localStorage.getItem("sichen-homepage-theme");
+      if (savedTheme && themeCatalog[savedTheme]) {
+        theme = savedTheme;
+      }
+    }
+  } catch (error) {}
+  document.documentElement.dataset.theme = theme;
+  var themeColor = document.querySelector('meta[name="theme-color"]');
+  if (themeColor) themeColor.setAttribute("content", themeCatalog[theme] || themeCatalog.tohoku);
+  window.ACADEMIC_FRONTIER_DEFAULT_THEME = theme;
+})();
+</script>
+<link rel="stylesheet" href="../styles.css?v=20260408-124537"/>
+<link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260408-124537"/>
+<link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260408-124537"/>
+<script defer src="../data/frontier_data.js?v=20260408-124537"></script>
+<script defer src="../data/academic_frontier_research.js?v=20260408-124537"></script>
+<script defer src="../data/venue_reference_index.js?v=20260408-124537"></script>
+<script defer src="/assets/shared/homepage-shell.js?v=20260408-124537"></script>
+<script defer src="../app.js?v=20260408-124537"></script>
+</head>
+<body class="is-ready" data-page="metrics" data-default-language="zh">
+<div class="page-wash"></div>
+<div class="page-grid"></div>
+<div class="orb orb-a"></div>
+<div class="orb orb-b"></div>
+<header class="shell site-header"><div class="header-tools"><div class="header-controls-anchor" aria-hidden="true"></div><div class="header-controls" aria-label="显示控制"><div class="locale-switcher control-switcher" id="localeSwitcher" role="group" aria-label="语言"><button class="locale-trigger" type="button" data-locale-trigger aria-haspopup="true" aria-expanded="false" aria-label="显示语言选项" title="显示语言选项"><span class="locale-label">中</span></button><div class="locale-tray" role="group" aria-label="语言选项"><a class="locale-chip" href="/academic-frontier/metrics.html" data-locale-choice="en" aria-label="English" title="English"><span class="locale-label">En</span></a><a class="locale-chip is-active" href="/academic-frontier/zh/metrics.html" data-locale-choice="zh" aria-label="中文" title="中文" aria-current="page"><span class="locale-label">中</span></a><a class="locale-chip" href="/academic-frontier/ja/metrics.html" data-locale-choice="ja" aria-label="日本語" title="日本語"><span class="locale-label">日</span></a></div></div><div class="theme-switcher control-switcher" id="themeSwitcher" role="group" aria-label="配色主题"><button class="theme-trigger" type="button" data-theme-trigger aria-haspopup="true" aria-expanded="false" aria-label="切换配色" title="切换配色"><span class="theme-swatch theme-tohoku" data-theme-current-swatch aria-hidden="true"></span></button><div class="theme-tray" role="group" aria-label="配色选项"><button class="theme-chip is-active" type="button" data-theme-choice="tohoku" aria-pressed="true" aria-label="东北大学" title="东北大学"><span class="theme-swatch theme-tohoku" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="toyama" aria-pressed="false" aria-label="富山大学" title="富山大学"><span class="theme-swatch theme-toyama" aria-hidden="true"></span></button><button class="theme-chip" type="button" data-theme-choice="usst" aria-pressed="false" aria-label="上海理工大学" title="上海理工大学"><span class="theme-swatch theme-usst" aria-hidden="true"></span></button></div></div></div><nav class="topnav" aria-label="主导航"><a href="/academic-frontier/zh/index.html" id="navOverview"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg><span>概览</span></a><a href="/academic-frontier/zh/papers.html" id="navPapers"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-publications"></use></svg><span>论文</span></a><a href="/academic-frontier/zh/metrics.html" id="navMetrics" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-registry"></use></svg><span>分区</span></a><a href="/academic-frontier/zh/signals.html" id="navSignals"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-research"></use></svg><span>调查</span></a><a href="/academic-frontier/zh/teams.html" id="navTeams"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-profiles"></use></svg><span>团队</span></a><a href="/academic-frontier/zh/downloads.html" id="navDownloads"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-projects"></use></svg><span>下载</span></a><a href="/academic-frontier/zh/guide.html" id="navGuide"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg><span>说明</span></a></nav></div></header>
+<main class="shell layout"><section class="panel section-card reveal" id="metrics" aria-labelledby="metrics-title"><div class="section-head publication-head"><div class="section-head-main"><div class="publication-title-lockup"><h2 id="metrics-title">分区与指标参考</h2></div><div class="filter-search-row"><input id="metric-search" class="input" type="search" placeholder="搜索期刊名、来源、分区或精确标签"/></div></div><p class="section-note" id="metricsNote">按年份查看 JCR、中科院分区、IF 与证据来源。</p></div><div class="filters publication-filters"><div class="filter-toolbar"><div class="filter-toolbar-label"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4.5 6.5h15"/><path d="M7.5 12h9"/><path d="M10.5 17.5h3"/></svg><span id="metric-filter-toolbar-label">筛选</span></div><button id="metric-reset" class="button button-secondary filter-reset icon-only" type="button" aria-label="重置" title="重置"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 12a8 8 0 1 1-2.1-5.4"/><path d="M20 4.8v4.8h-4.8"/></svg></button><div class="filter-control-row"><select id="metric-year-filter" class="input"><option value="all">全部年份</option></select><select id="metric-type-filter" class="input"><option value="all">全部类型</option></select><select id="metric-jcr-filter" class="input"><option value="all">全部 JCR</option></select><select id="metric-cas-filter" class="input"><option value="all">全部中科院</option></select><select id="metric-cas-top-filter" class="input"><option value="all">全部 Top</option></select><select id="metric-impact-filter" class="input"><option value="all">全部 IF</option></select><select id="metric-venue-filter" class="input"><option value="all">全部刊物</option></select><select id="metric-sort-filter" class="input"><option value="year">按指标年份排序</option><option value="impact_factor">按 IF 排序</option><option value="venue">按期刊名排序</option></select></div></div></div></div><div class="filter-chip-row active-field-chip-row" hidden><div class="filter-chip-label"><svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M11 4.5H6.5A2.5 2.5 0 0 0 4 7v4.5l7.2 7.2a2 2 0 0 0 2.8 0l4.8-4.8a2 2 0 0 0 0-2.8L11 4.5Z"/><circle cx="8.2" cy="8.2" r="1.2"/></svg><span>已选标签</span></div><div class="chip-row" id="active-metric-tags" aria-label="已选标签"></div></div><div class="publication-list" id="venueMetricsList"></div></section></main>
+<footer class="shell footer-shell reveal"><div class="footer-panel footer-panel-compact"><div class="footer-actions"><a class="button button-primary" href="/academic-frontier/zh/index.html" id="footerBackHome">学术前沿</a></div></div></footer><button class="scroll-top-button" id="scrollTopButton" type="button" aria-label="回到顶部"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5.5l-6 6 1.4 1.4 3.6-3.6V19h2V9.3l3.6 3.6 1.4-1.4-6-6z" fill="currentColor"/></svg></button>
+</body>
+</html>
