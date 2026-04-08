@@ -405,7 +405,8 @@ const UI_TEXT = {
     pendingMetric: "Pending",
     notListedMetric: "Not publicly listed",
     openPdfAction: "Open PDF",
-    sourcePdfAction: "Source PDF",
+    sourcePdfAction: "PDF",
+    arxivPdfAction: "arXiv PDF",
     doiAction: "DOI",
     publisherAction: "Publisher",
     localArchiveAction: "Local PDF",
@@ -638,7 +639,8 @@ const UI_TEXT = {
     pendingMetric: "待补充",
     notListedMetric: "公开未列出",
     openPdfAction: "打开 PDF",
-    sourcePdfAction: "源 PDF",
+    sourcePdfAction: "PDF",
+    arxivPdfAction: "arXiv PDF",
     doiAction: "DOI",
     publisherAction: "发表页面",
     localArchiveAction: "本地 PDF",
@@ -873,7 +875,8 @@ const UI_TEXT = {
     pendingMetric: "保留",
     notListedMetric: "公開未収載",
     openPdfAction: "PDF を開く",
-    sourcePdfAction: "元 PDF",
+    sourcePdfAction: "PDF",
+    arxivPdfAction: "arXiv PDF",
     doiAction: "DOI",
     publisherAction: "出版社ページ",
     localArchiveAction: "ローカル PDF",
@@ -1725,6 +1728,69 @@ function publicationPrimaryUrl(item) {
     || (normalizeUrl(item?.doi) ? `https://doi.org/${normalizeUrl(item.doi)}` : "");
 }
 
+function isArxivPdfUrl(url) {
+  const normalized = normalizeUrl(url);
+  return Boolean(normalized && /^https?:\/\/(?:[^/]+\.)?arxiv\.org\/pdf\//i.test(normalized));
+}
+
+function isArxivAbsUrl(url) {
+  const normalized = normalizeUrl(url);
+  return Boolean(normalized && /^https?:\/\/(?:[^/]+\.)?arxiv\.org\/abs\//i.test(normalized));
+}
+
+function inferArxivAbsUrl(pdfUrl) {
+  const normalized = normalizeUrl(pdfUrl);
+  if (!isArxivPdfUrl(normalized)) {
+    return "";
+  }
+  return normalized.replace(/\/pdf\/([^?#]+?)(?:\.pdf)?(?=[?#]|$)/i, "/abs/$1");
+}
+
+function paperArxivVersion(item) {
+  const versions = Array.isArray(item?.alternateVersions) ? item.alternateVersions : [];
+  return versions.find((version) => {
+    const joined = [
+      version?.venue,
+      version?.url,
+      version?.pdfUrl,
+      version?.publisherUrl,
+      version?.doi,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+    return joined.includes("arxiv");
+  }) || null;
+}
+
+function paperSourcePdfUrl(item) {
+  const pdfUrl = normalizeUrl(item?.pdfUrl);
+  return pdfUrl && !isArxivPdfUrl(pdfUrl) ? pdfUrl : "";
+}
+
+function paperArxivPdfUrl(item) {
+  const arxivVersion = paperArxivVersion(item);
+  const alternatePdfUrl = normalizeUrl(arxivVersion?.pdfUrl);
+  if (alternatePdfUrl) {
+    return alternatePdfUrl;
+  }
+  const pdfUrl = normalizeUrl(item?.pdfUrl);
+  return isArxivPdfUrl(pdfUrl) ? pdfUrl : "";
+}
+
+function paperArxivUrl(item) {
+  const arxivVersion = paperArxivVersion(item);
+  const alternateUrl = normalizeUrl(arxivVersion?.url || arxivVersion?.publisherUrl);
+  if (alternateUrl) {
+    return alternateUrl;
+  }
+  const itemUrl = normalizeUrl(item?.url || item?.publisherUrl);
+  if (isArxivAbsUrl(itemUrl)) {
+    return itemUrl;
+  }
+  return inferArxivAbsUrl(item?.pdfUrl);
+}
+
 function publicationDoiText(item) {
   const explicit = normalizeUrl(item?.doi);
   if (explicit) {
@@ -2088,9 +2154,18 @@ function paperReferenceInlineActionsMarkup(paper, detailHref) {
     `<a class="frontier-reference-inline-action" href="${escapeHtml(detailHref)}">${escapeHtml(ui("detailAction"))}</a>`,
   ];
 
-  if (paper.pdfUrl) {
+  const sourcePdfUrl = paperSourcePdfUrl(paper);
+  const arxivPdfUrl = paperArxivPdfUrl(paper);
+
+  if (sourcePdfUrl) {
     links.push(
-      `<a class="frontier-reference-inline-action" href="${escapeHtml(paper.pdfUrl)}" target="_blank" rel="noreferrer">${escapeHtml(ui("sourcePdfAction"))}</a>`
+      `<a class="frontier-reference-inline-action" href="${escapeHtml(sourcePdfUrl)}" target="_blank" rel="noreferrer">${escapeHtml(ui("sourcePdfAction"))}</a>`
+    );
+  }
+
+  if (arxivPdfUrl && arxivPdfUrl !== sourcePdfUrl) {
+    links.push(
+      `<a class="frontier-reference-inline-action" href="${escapeHtml(arxivPdfUrl)}" target="_blank" rel="noreferrer">${escapeHtml(ui("arxivPdfAction"))}</a>`
     );
   }
 
@@ -5097,10 +5172,19 @@ function renderPapers() {
     const detailLink = el("a", "button button-primary", ui("detailAction"));
     detailLink.href = paperDetailHref(paper);
     links.appendChild(detailLink);
+    const sourcePdfUrl = paperSourcePdfUrl(paper);
+    const arxivPdfUrl = paperArxivPdfUrl(paper);
     if (localArchive?.browserUrl) {
       links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl));
-    } else if (paper.pdfUrl) {
-      links.appendChild(actionLink(ui("sourcePdfAction"), paper.pdfUrl));
+    }
+    if (sourcePdfUrl) {
+      links.appendChild(actionLink(ui("sourcePdfAction"), sourcePdfUrl));
+    }
+    if (arxivPdfUrl && arxivPdfUrl !== sourcePdfUrl) {
+      links.appendChild(actionLink(ui("arxivPdfAction"), arxivPdfUrl));
+    }
+    if (!localArchive?.browserUrl && !sourcePdfUrl && !arxivPdfUrl) {
+      links.appendChild(el("span", "tag", ui("queueAction")));
     }
     if (doiActionUrl) links.appendChild(actionLink(ui("doiAction"), doiActionUrl));
     if (publisherUrl && publisherUrl !== doiActionUrl) {
@@ -5711,8 +5795,11 @@ function renderDownloads() {
     path.innerHTML = `<strong class="warm-strong">${escapeHtml(ui("pathLabel"))}</strong> ${escapeHtml(item.path)}`;
     card.appendChild(path);
     const links = el("div", "link-row");
+    const sourcePdfUrl = paperSourcePdfUrl(item);
+    const arxivPdfUrl = paperArxivPdfUrl(item);
     if (localArchive?.browserUrl) links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl, "button button-primary"));
-    if (item.pdfUrl) links.appendChild(actionLink(ui("sourcePdfAction"), item.pdfUrl));
+    if (sourcePdfUrl) links.appendChild(actionLink(ui("sourcePdfAction"), sourcePdfUrl));
+    if (arxivPdfUrl && arxivPdfUrl !== sourcePdfUrl) links.appendChild(actionLink(ui("arxivPdfAction"), arxivPdfUrl));
     if (doiActionUrl) links.appendChild(actionLink(ui("doiAction"), doiActionUrl));
     if (publisherUrl && publisherUrl !== doiActionUrl) links.appendChild(actionLink(ui("publisherAction"), publisherUrl));
     if (links.children.length) card.appendChild(links);

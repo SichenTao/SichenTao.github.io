@@ -3849,7 +3849,7 @@ body[data-lang="en"] .timeline-title-text {
   line-height: 1.64;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
+  -webkit-line-clamp: 4;
   overflow: hidden;
   word-break: keep-all;
   overflow-wrap: normal;

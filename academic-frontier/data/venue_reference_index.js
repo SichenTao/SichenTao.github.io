@@ -1,5 +1,5 @@
 window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
-  "updatedAt": "2026-04-08 17:55 JST",
+  "updatedAt": "2026-04-08 18:07 JST",
   "venueCount": 32,
   "historySemantics": {
     "byPublicationYear": "Each history row is aligned to the publication year used by Academic Frontier paper cards. The embedded impactYear/jcrYear/casYear record the actual release year of the metric snapshot."
