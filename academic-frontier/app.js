@@ -167,6 +167,17 @@ function multiSelectDisplayOptions(options, currentValues, explicitAll = false, 
   ];
 }
 
+function selectableOptionCount(options) {
+  if (!Array.isArray(options)) return 0;
+  return options.reduce((count, option) => {
+    if (option === undefined || option === null) return count;
+    if (typeof option === "string") {
+      return option.trim() ? count + 1 : count;
+    }
+    return count + 1;
+  }, 0);
+}
+
 const state = {
   activeDomainId: null,
   yearFilter: [],
@@ -2658,6 +2669,7 @@ function syncResearchLauncherState(papers = papersForDomain()) {
   const authors = [...new Set(papers.flatMap((paper) => paperAuthorNames(paper)).filter(Boolean))];
   const jcrBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesJcrFilter(paper, value)));
   const casBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => papers.some((paper) => paperMatchesCasFilter(paper, value)));
+  const casTopBands = papers.some((paper) => paperCasTopValue(paper)) ? ["top"] : [];
   const impactBands = ["10+", "5-10", "0-5", "not-listed"].filter((value) => papers.some((paper) => paperMatchesImpactFilter(paper, value)));
 
   state.researchProblemFieldFilters = state.researchProblemFieldFilters.filter((field) => problemFields.includes(field));
@@ -2665,7 +2677,7 @@ function syncResearchLauncherState(papers = papersForDomain()) {
   state.researchAuthorFilter = selectionList(state.researchAuthorFilter).filter((author) => authors.includes(author));
   state.researchJcrFilter = selectionList(state.researchJcrFilter).filter((band) => jcrBands.includes(band));
   state.researchCasFilter = selectionList(state.researchCasFilter).filter((band) => casBands.includes(band));
-  state.researchCasTopFilter = selectionList(state.researchCasTopFilter).filter((band) => band === "top");
+  state.researchCasTopFilter = selectionList(state.researchCasTopFilter).filter((band) => casTopBands.includes(band));
   state.researchImpactFilter = selectionList(state.researchImpactFilter).filter((band) => impactBands.includes(band));
   if (state.researchExplicitAll.problem) {
     state.researchProblemFieldFilters = [];
@@ -2714,6 +2726,7 @@ function syncResearchLauncherState(papers = papersForDomain()) {
     authors: authors.sort((left, right) => left.localeCompare(right, currentLocale())),
     jcrBands,
     casBands,
+    casTopBands,
     impactBands,
   };
 }
@@ -2981,6 +2994,13 @@ function renderDirectionWorkspace() {
   const rangeStartPct = researchYearPercent(yearStart, launcher.minYear, launcher.maxYear);
   const rangeEndPct = researchYearPercent(yearEnd, launcher.minYear, launcher.maxYear);
   const yearIntervalLabel = researchYearIntervalLabel(state.researchYearStart, state.researchYearEnd, state.researchYearOpenEnded);
+  const researchProblemOptionCount = selectableOptionCount(launcher.problemFields);
+  const researchMethodOptionCount = selectableOptionCount(launcher.methodFields);
+  const researchJcrOptionCount = selectableOptionCount(launcher.jcrBands);
+  const researchCasOptionCount = selectableOptionCount(launcher.casBands);
+  const researchCasTopOptionCount = selectableOptionCount(launcher.casTopBands);
+  const researchImpactOptionCount = selectableOptionCount(launcher.impactBands);
+  const researchAuthorOptionCount = selectableOptionCount(launcher.authors);
 
   mount.innerHTML = `<div class="section-head">
       <div>
@@ -2999,41 +3019,43 @@ function renderDirectionWorkspace() {
           <div class="investigation-launcher-section">
             <div class="filter-control-row investigation-filter-row">
               <select id="research-problem-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), researchFacetCount({ problemTags: "all" })))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), researchProblemOptionCount))}</option>
                 ${launcher.problemFields
                   .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ problemTags: previewSelectionValues(state.researchProblemFieldFilters, field) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-method-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), researchFacetCount({ methodTags: "all" })))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), researchMethodOptionCount))}</option>
                 ${launcher.methodFields
                   .map((field) => `<option value="${escapeHtml(field)}">${escapeHtml(formatPaperFilterOptionLabel(localizeText(field), researchFacetCount({ methodTags: previewSelectionValues(state.researchMethodFieldFilters, field) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-jcr-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchFacetCount({ jcr: "all" })))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchJcrOptionCount))}</option>
                 ${launcher.jcrBands
                   .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(jcrFilterTagLabel(band), researchFacetCount({ jcr: previewSelectionValues(state.researchJcrFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-cas-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casOptionAll"), researchFacetCount({ cas: "all" })))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casOptionAll"), researchCasOptionCount))}</option>
                 ${launcher.casBands
                   .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(casFilterTagLabel(band), researchFacetCount({ cas: previewSelectionValues(state.researchCasFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-cas-top-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchFacetCount({ casTop: "all" })))}</option>
-                <option value="top">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: previewSelectionValues(state.researchCasTopFilter, "top") })))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchCasTopOptionCount))}</option>
+                ${launcher.casTopBands
+                  .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(ui("casTopOption"), researchFacetCount({ casTop: previewSelectionValues(state.researchCasTopFilter, band) })))}</option>`)
+                  .join("")}
               </select>
               <select id="research-impact-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("impactOptionAll"), researchFacetCount({ impact: "all" })))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("impactOptionAll"), researchImpactOptionCount))}</option>
                 ${launcher.impactBands
                   .map((band) => `<option value="${escapeHtml(band)}">${escapeHtml(formatPaperFilterOptionLabel(impactFilterTagLabel(band), researchFacetCount({ impact: previewSelectionValues(state.researchImpactFilter, band) })))}</option>`)
                   .join("")}
               </select>
               <select id="research-author-filter" class="input">
-                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("teamOptionAll"), researchFacetCount({ team: "all" })))}</option>
+                <option value="all">${escapeHtml(formatPaperFilterOptionLabel(ui("teamOptionAll"), researchAuthorOptionCount))}</option>
                 ${launcher.authors
                   .map((author) => `<option value="${escapeHtml(author)}">${escapeHtml(formatPaperFilterOptionLabel(author, researchFacetCount({ team: previewSelectionValues(state.researchAuthorFilter, author) })))}</option>`)
                   .join("")}
@@ -3105,7 +3127,7 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-problem-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), researchFacetCount({ problemTags: "all" })) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), researchProblemOptionCount) },
       ...launcher.problemFields.map((field) => ({
         value: field,
         label: formatPaperFilterOptionLabel(
@@ -3119,7 +3141,7 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-method-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), researchFacetCount({ methodTags: "all" })) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), researchMethodOptionCount) },
       ...launcher.methodFields.map((field) => ({
         value: field,
         label: formatPaperFilterOptionLabel(
@@ -3133,7 +3155,7 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-jcr-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchFacetCount({ jcr: "all" })) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), researchJcrOptionCount) },
       ...launcher.jcrBands.map((band) => ({
         value: band,
         label: formatPaperFilterOptionLabel(
@@ -3147,7 +3169,7 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-cas-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), researchFacetCount({ cas: "all" })) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), researchCasOptionCount) },
       ...launcher.casBands.map((band) => ({
         value: band,
         label: formatPaperFilterOptionLabel(
@@ -3161,21 +3183,21 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-cas-top-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchFacetCount({ casTop: "all" })) },
-      {
-        value: "top",
+      { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), researchCasTopOptionCount) },
+      ...launcher.casTopBands.map((band) => ({
+        value: band,
         label: formatPaperFilterOptionLabel(
           ui("casTopOption"),
-          researchFacetCount({ casTop: previewSelectionValues(state.researchCasTopFilter, "top") })
+          researchFacetCount({ casTop: previewSelectionValues(state.researchCasTopFilter, band) })
         ),
-      },
+      })),
     ], state.researchCasTopFilter, state.researchExplicitAll.casTop, "selectedCasTopLabel"),
     multiSelectDisplayValue(state.researchCasTopFilter, state.researchExplicitAll.casTop)
   );
   syncSelectOptions(
     byId("research-impact-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), researchFacetCount({ impact: "all" })) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), researchImpactOptionCount) },
       ...launcher.impactBands.map((band) => ({
         value: band,
         label: formatPaperFilterOptionLabel(
@@ -3189,7 +3211,7 @@ function renderDirectionWorkspace() {
   syncSelectOptions(
     byId("research-author-filter"),
     multiSelectDisplayOptions([
-      { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), researchFacetCount({ team: "all" })) },
+      { value: "all", label: formatPaperFilterOptionLabel(ui("teamOptionAll"), researchAuthorOptionCount) },
       ...launcher.authors.map((author) => ({
         value: author,
         label: formatPaperFilterOptionLabel(
@@ -4805,6 +4827,7 @@ function renderPaperControls() {
   const papers = papersForDomain();
   const years = [...new Set(papers.map((paper) => paperYearValue(paper)).filter(Boolean))]
     .sort((left, right) => Number(right) - Number(left));
+  const paperTypes = ["journal", "conference"].filter((value) => papers.some((paper) => paperTypeValue(paper) === value));
   const problemFields = [...new Set(papers.flatMap((paper) => paperProblemFields(paper)).filter(Boolean))]
     .sort((left, right) => localizeText(left).localeCompare(localizeText(right), currentLocale()));
   const methodFields = [...new Set(papers.flatMap((paper) => paperMethodFields(paper)).filter(Boolean))]
@@ -4819,7 +4842,7 @@ function renderPaperControls() {
     papers.filter((paper) => paperMatchesActiveFilters(paper, overrides)).length;
 
   state.yearFilter = selectionList(state.yearFilter).filter((year) => years.includes(year));
-  state.typeFilter = selectionList(state.typeFilter).filter((type) => ["journal", "conference"].includes(type));
+  state.typeFilter = selectionList(state.typeFilter).filter((type) => paperTypes.includes(type));
   state.problemFieldFilters = state.problemFieldFilters.filter((field) => problemFields.includes(field));
   state.methodFieldFilters = state.methodFieldFilters.filter((field) => methodFields.includes(field));
   state.jcrFilter = selectionList(state.jcrFilter).filter((band) => jcrBands.includes(band));
@@ -4873,13 +4896,15 @@ function renderPaperControls() {
     setExplicitAllSelection(state.paperExplicitAll, "team", false);
   }
 
-  const allYearCount = facetCount({ year: "all" });
-  const allTypeCount = facetCount({ type: "all" });
-  const allJcrCount = facetCount({ jcr: "all" });
-  const allCasCount = facetCount({ cas: "all" });
-  const allCasTopCount = facetCount({ casTop: "all" });
-  const allImpactCount = facetCount({ impact: "all" });
-  const allTeamCount = facetCount({ team: "all" });
+  const allYearCount = selectableOptionCount(years);
+  const allTypeCount = selectableOptionCount(paperTypes);
+  const allProblemCount = selectableOptionCount(problemFields);
+  const allMethodCount = selectableOptionCount(methodFields);
+  const allJcrCount = selectableOptionCount(jcrBands);
+  const allCasCount = selectableOptionCount(casBands);
+  const allCasTopCount = selectableOptionCount(casTopBands);
+  const allImpactCount = selectableOptionCount(impactBands);
+  const allTeamCount = selectableOptionCount(authors);
 
   syncSelectOptions(yearFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), allYearCount) },
@@ -4888,12 +4913,14 @@ function renderPaperControls() {
 
   syncSelectOptions(typeFilter, multiSelectDisplayOptions([
     { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), allTypeCount) },
-    { value: "journal", label: formatPaperFilterOptionLabel(ui("typeOptionJournal"), facetCount({ type: previewSelectionValues(state.typeFilter, "journal") })) },
-    { value: "conference", label: formatPaperFilterOptionLabel(ui("typeOptionConference"), facetCount({ type: previewSelectionValues(state.typeFilter, "conference") })) },
+    ...paperTypes.map((type) => ({
+      value: type,
+      label: formatPaperFilterOptionLabel(typeFilterTagLabel(type), facetCount({ type: previewSelectionValues(state.typeFilter, type) })),
+    })),
   ], state.typeFilter, state.paperExplicitAll.type, "selectedTypesLabel"), multiSelectDisplayValue(state.typeFilter, state.paperExplicitAll.type));
 
   syncSelectOptions(problemFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), facetCount({ problemTags: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("problemFieldPlaceholder"), allProblemCount) },
     ...problemFields
       .map((field) => ({
         value: field,
@@ -4905,7 +4932,7 @@ function renderPaperControls() {
   ], state.problemFieldFilters, state.paperExplicitAll.problem, "selectedProblemsLabel"), multiSelectDisplayValue(state.problemFieldFilters, state.paperExplicitAll.problem));
 
   syncSelectOptions(methodFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), facetCount({ methodTags: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("methodFieldPlaceholder"), allMethodCount) },
     ...methodFields
       .map((field) => ({
         value: field,
@@ -5513,6 +5540,7 @@ function renderMetrics() {
   const venueTypes = [...new Set(venues.map((venue) => metricVenueTypeValue(venue)).filter(Boolean))];
   const jcrBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => venues.some((venue) => metricVenueMatchesJcr(venue, [value], state.metricYearFilter)));
   const casBands = ["Q1", "Q2", "Q3", "Q4", "not-listed"].filter((value) => venues.some((venue) => metricVenueMatchesCas(venue, [value], state.metricYearFilter)));
+  const casTopBands = venues.some((venue) => metricVenueMatchesCasTop(venue, ["top"], state.metricYearFilter)) ? ["top"] : [];
   const impactBands = ["10+", "5-10", "0-5", "not-listed"].filter((value) => venues.some((venue) => metricVenueMatchesImpact(venue, [value], state.metricYearFilter)));
   const venueNames = [...new Set(venues.map((venue) => String(venue?.venueName || "")).filter(Boolean))].sort((left, right) => left.localeCompare(right, currentLocale()));
   const facetCount = (overrides = {}) => filteredMetricVenues(overrides).length;
@@ -5521,7 +5549,7 @@ function renderMetrics() {
   state.metricTypeFilter = selectionList(state.metricTypeFilter).filter((value) => venueTypes.includes(value));
   state.metricJcrFilter = selectionList(state.metricJcrFilter).filter((value) => jcrBands.includes(value));
   state.metricCasFilter = selectionList(state.metricCasFilter).filter((value) => casBands.includes(value));
-  state.metricCasTopFilter = selectionList(state.metricCasTopFilter).filter((value) => value === "top");
+  state.metricCasTopFilter = selectionList(state.metricCasTopFilter).filter((value) => casTopBands.includes(value));
   state.metricImpactFilter = selectionList(state.metricImpactFilter).filter((value) => impactBands.includes(value));
   state.metricVenueFilter = selectionList(state.metricVenueFilter).filter((value) => venueNames.includes(value));
 
@@ -5533,8 +5561,16 @@ function renderMetrics() {
   if (state.metricExplicitAll.impact) state.metricImpactFilter = [];
   if (state.metricExplicitAll.venue) state.metricVenueFilter = [];
 
+  const allYearCount = selectableOptionCount(years);
+  const allTypeCount = selectableOptionCount(venueTypes);
+  const allJcrCount = selectableOptionCount(jcrBands);
+  const allCasCount = selectableOptionCount(casBands);
+  const allCasTopCount = selectableOptionCount(casTopBands);
+  const allImpactCount = selectableOptionCount(impactBands);
+  const allVenueCount = selectableOptionCount(venueNames);
+
   syncSelectOptions(yearFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), facetCount({ year: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("yearOptionAll"), allYearCount) },
     ...years.map((year) => ({
       value: year,
       label: formatPaperFilterOptionLabel(year, facetCount({ year: previewSelectionValues(state.metricYearFilter, year) })),
@@ -5542,7 +5578,7 @@ function renderMetrics() {
   ], state.metricYearFilter, state.metricExplicitAll.year, "selectedYearsLabel"), multiSelectDisplayValue(state.metricYearFilter, state.metricExplicitAll.year));
 
   syncSelectOptions(typeFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), facetCount({ type: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("typeOptionAll"), allTypeCount) },
     ...venueTypes.map((value) => ({
       value,
       label: formatPaperFilterOptionLabel(typeFilterTagLabel(value), facetCount({ type: previewSelectionValues(state.metricTypeFilter, value) })),
@@ -5550,7 +5586,7 @@ function renderMetrics() {
   ], state.metricTypeFilter, state.metricExplicitAll.type, "selectedTypesLabel"), multiSelectDisplayValue(state.metricTypeFilter, state.metricExplicitAll.type));
 
   syncSelectOptions(jcrFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), facetCount({ jcr: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("jcrOptionAll"), allJcrCount) },
     ...jcrBands.map((value) => ({
       value,
       label: formatPaperFilterOptionLabel(jcrFilterTagLabel(value), facetCount({ jcr: previewSelectionValues(state.metricJcrFilter, value) })),
@@ -5558,7 +5594,7 @@ function renderMetrics() {
   ], state.metricJcrFilter, state.metricExplicitAll.jcr, "selectedJcrLabel"), multiSelectDisplayValue(state.metricJcrFilter, state.metricExplicitAll.jcr));
 
   syncSelectOptions(casFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), facetCount({ cas: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("casOptionAll"), allCasCount) },
     ...casBands.map((value) => ({
       value,
       label: formatPaperFilterOptionLabel(casFilterTagLabel(value), facetCount({ cas: previewSelectionValues(state.metricCasFilter, value) })),
@@ -5566,12 +5602,15 @@ function renderMetrics() {
   ], state.metricCasFilter, state.metricExplicitAll.cas, "selectedCasLabel"), multiSelectDisplayValue(state.metricCasFilter, state.metricExplicitAll.cas));
 
   syncSelectOptions(casTopFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), facetCount({ casTop: "all" })) },
-    { value: "top", label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: previewSelectionValues(state.metricCasTopFilter, "top") })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("casTopOptionAll"), allCasTopCount) },
+    ...casTopBands.map((value) => ({
+      value,
+      label: formatPaperFilterOptionLabel(ui("casTopOption"), facetCount({ casTop: previewSelectionValues(state.metricCasTopFilter, value) })),
+    })),
   ], state.metricCasTopFilter, state.metricExplicitAll.casTop, "selectedCasTopLabel"), multiSelectDisplayValue(state.metricCasTopFilter, state.metricExplicitAll.casTop));
 
   syncSelectOptions(impactFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), facetCount({ impact: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("impactOptionAll"), allImpactCount) },
     ...impactBands.map((value) => ({
       value,
       label: formatPaperFilterOptionLabel(impactFilterTagLabel(value), facetCount({ impact: previewSelectionValues(state.metricImpactFilter, value) })),
@@ -5579,7 +5618,7 @@ function renderMetrics() {
   ], state.metricImpactFilter, state.metricExplicitAll.impact, "selectedImpactLabel"), multiSelectDisplayValue(state.metricImpactFilter, state.metricExplicitAll.impact));
 
   syncSelectOptions(venueFilter, multiSelectDisplayOptions([
-    { value: "all", label: formatPaperFilterOptionLabel(ui("venueOptionAll"), facetCount({ venue: "all" })) },
+    { value: "all", label: formatPaperFilterOptionLabel(ui("venueOptionAll"), allVenueCount) },
     ...venueNames.map((value) => ({
       value,
       label: formatPaperFilterOptionLabel(value, facetCount({ venue: previewSelectionValues(state.metricVenueFilter, value) })),
