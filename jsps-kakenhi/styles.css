@@ -3741,6 +3741,7 @@ body[data-lang="en"] .timeline-title-text {
 .portal-call-card > * {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .portal-call-card:hover,
@@ -3790,9 +3791,9 @@ body[data-lang="en"] .timeline-title-text {
   line-height: 1.48;
   text-transform: none;
   letter-spacing: 0.03em;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  line-break: loose;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: auto;
   text-wrap: pretty;
 }
 
@@ -3838,9 +3839,9 @@ body[data-lang="en"] .timeline-title-text {
   overflow: visible;
   font-size: 1.12rem;
   line-height: 1.42;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  line-break: loose;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: auto;
   text-wrap: balance;
 }
 
@@ -3851,9 +3852,9 @@ body[data-lang="en"] .timeline-title-text {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
-  word-break: keep-all;
-  overflow-wrap: normal;
-  line-break: loose;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  line-break: auto;
   text-wrap: pretty;
 }
 
@@ -3885,8 +3886,10 @@ body[data-lang="en"] .timeline-title-text {
   color: var(--teal);
   font-size: 0.78rem;
   font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
+  line-height: 1.22;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
 }
 
 .portal-hash-tag::before {
