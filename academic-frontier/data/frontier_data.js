@@ -1,6 +1,6 @@
 window.FRONTIER_DATA = {
   "snapshot": {
-    "generatedAt": "2026-04-10 16:52 JST",
+    "generatedAt": "2026-04-10 17:11 JST",
     "owner": "Sichen Tao",
     "headline": {
       "en": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
@@ -4613,6 +4613,35 @@ window.FRONTIER_DATA = {
       ]
     },
     {
+      "id": "chi",
+      "venueName": "ACM CHI Conference on Human Factors in Computing Systems",
+      "venueType": "conference",
+      "sourceUrl": "https://chi2026.acm.org/",
+      "availableMetricYears": [],
+      "latestMetricYear": "",
+      "latestMetrics": {
+        "venueName": "ACM CHI Conference on Human Factors in Computing Systems",
+        "canonicalName": "ACM CHI Conference on Human Factors in Computing Systems",
+        "aliases": [
+          "CHI",
+          "Conference on Human Factors in Computing Systems"
+        ],
+        "impactFactor": null,
+        "impactYear": null,
+        "jcrQuartile": null,
+        "casQuartile": null,
+        "venueType": "conference",
+        "sourceUrl": "https://chi2026.acm.org/"
+      },
+      "metricHistory": {},
+      "domainIds": [],
+      "domains": [],
+      "trackedPublicationYears": [],
+      "trackedPaperCount": 0,
+      "trackedPaperIds": [],
+      "trackedPaperTitles": []
+    },
+    {
       "id": "applied sciences",
       "venueName": "Applied Sciences",
       "venueType": "journal",
@@ -4742,30 +4771,6 @@ window.FRONTIER_DATA = {
       "trackedPaperTitles": []
     },
     {
-      "id": "chi",
-      "venueName": "CHI",
-      "venueType": "conference",
-      "sourceUrl": "https://chi2026.acm.org/",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
-      "latestMetrics": {
-        "venueName": "CHI",
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "casQuartile": null,
-        "venueType": "conference",
-        "sourceUrl": "https://chi2026.acm.org/"
-      },
-      "metricHistory": {},
-      "domainIds": [],
-      "domains": [],
-      "trackedPublicationYears": [],
-      "trackedPaperCount": 0,
-      "trackedPaperIds": [],
-      "trackedPaperTitles": []
-    },
-    {
       "id": "cmc computers materials continua",
       "venueName": "CMC-Computers Materials & Continua",
       "venueType": "journal",
@@ -4799,6 +4804,35 @@ window.FRONTIER_DATA = {
         "casSourceMode": "official_archive",
         "casSearchCopyText": "CMC-Computers Materials & Continua",
         "ccfSearchCopyText": "CMC-Computers Materials & Continua"
+      },
+      "metricHistory": {},
+      "domainIds": [],
+      "domains": [],
+      "trackedPublicationYears": [],
+      "trackedPaperCount": 0,
+      "trackedPaperIds": [],
+      "trackedPaperTitles": []
+    },
+    {
+      "id": "neurips",
+      "venueName": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "venueType": "conference",
+      "sourceUrl": "https://neurips.cc/",
+      "availableMetricYears": [],
+      "latestMetricYear": "",
+      "latestMetrics": {
+        "venueName": "Conference on Neural Information Processing Systems (NeurIPS)",
+        "canonicalName": "Conference on Neural Information Processing Systems (NeurIPS)",
+        "aliases": [
+          "Neural Information Processing Systems",
+          "Conference on Neural Information Processing Systems"
+        ],
+        "impactFactor": null,
+        "impactYear": null,
+        "jcrQuartile": null,
+        "casQuartile": null,
+        "venueType": "conference",
+        "sourceUrl": "https://neurips.cc/"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4991,6 +5025,64 @@ window.FRONTIER_DATA = {
       "trackedPaperTitles": []
     },
     {
+      "id": "tpds",
+      "venueName": "IEEE Transactions on Parallel and Distributed Systems",
+      "venueType": "journal",
+      "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71",
+      "availableMetricYears": [
+        "2024"
+      ],
+      "latestMetricYear": "2024",
+      "latestMetrics": {
+        "venueName": "IEEE Transactions on Parallel and Distributed Systems",
+        "canonicalName": "IEEE Transactions on Parallel and Distributed Systems",
+        "aliases": [
+          "TPDS"
+        ],
+        "venueType": "journal",
+        "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71",
+        "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=1045-9219",
+        "ifPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html",
+        "ifSourceMode": "official_search",
+        "ifSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
+        "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=1045-9219",
+        "jcrPublicSourceUrl": "https://www.fabiao.com.cn/sci/10459219/",
+        "jcrSourceMode": "official_search",
+        "jcrSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
+        "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
+        "casSourceMode": "official_search",
+        "casSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
+        "impactFactor": "5.3",
+        "impactYear": "2024",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2024",
+        "casQuartile": "Q2",
+        "casYear": "2023",
+        "casTop": true,
+        "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Parallel%20and%20Distributed%20Systems&y=2023",
+        "casPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html"
+      },
+      "metricHistory": {
+        "2024": {
+          "impactFactor": "5.3",
+          "impactYear": "2024",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2024",
+          "casQuartile": "Q2",
+          "casYear": "2023",
+          "casTop": true,
+          "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Parallel%20and%20Distributed%20Systems&y=2023",
+          "casPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html"
+        }
+      },
+      "domainIds": [],
+      "domains": [],
+      "trackedPublicationYears": [],
+      "trackedPaperCount": 0,
+      "trackedPaperIds": [],
+      "trackedPaperTitles": []
+    },
+    {
       "id": "ieee transactions on systems man and cybernetics systems",
       "venueName": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
       "venueType": "journal",
@@ -5072,6 +5164,35 @@ window.FRONTIER_DATA = {
         "jcrSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
         "casSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
         "ccfSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026"
+      },
+      "metricHistory": {},
+      "domainIds": [],
+      "domains": [],
+      "trackedPublicationYears": [],
+      "trackedPaperCount": 0,
+      "trackedPaperIds": [],
+      "trackedPaperTitles": []
+    },
+    {
+      "id": "sc",
+      "venueName": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
+      "venueType": "conference",
+      "sourceUrl": "https://sc24.supercomputing.org/",
+      "availableMetricYears": [],
+      "latestMetricYear": "",
+      "latestMetrics": {
+        "venueName": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
+        "canonicalName": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
+        "aliases": [
+          "Supercomputing Conference",
+          "International Conference for High Performance Computing, Networking, Storage, and Analysis"
+        ],
+        "impactFactor": null,
+        "impactYear": null,
+        "jcrQuartile": null,
+        "casQuartile": null,
+        "venueType": "conference",
+        "sourceUrl": "https://sc24.supercomputing.org/"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5321,54 +5442,6 @@ window.FRONTIER_DATA = {
       "trackedPaperTitles": []
     },
     {
-      "id": "neurips",
-      "venueName": "NeurIPS",
-      "venueType": "conference",
-      "sourceUrl": "https://neurips.cc/",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
-      "latestMetrics": {
-        "venueName": "NeurIPS",
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "casQuartile": null,
-        "venueType": "conference",
-        "sourceUrl": "https://neurips.cc/"
-      },
-      "metricHistory": {},
-      "domainIds": [],
-      "domains": [],
-      "trackedPublicationYears": [],
-      "trackedPaperCount": 0,
-      "trackedPaperIds": [],
-      "trackedPaperTitles": []
-    },
-    {
-      "id": "sc",
-      "venueName": "SC",
-      "venueType": "conference",
-      "sourceUrl": "https://sc24.supercomputing.org/",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
-      "latestMetrics": {
-        "venueName": "SC",
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "casQuartile": null,
-        "venueType": "conference",
-        "sourceUrl": "https://sc24.supercomputing.org/"
-      },
-      "metricHistory": {},
-      "domainIds": [],
-      "domains": [],
-      "trackedPublicationYears": [],
-      "trackedPaperCount": 0,
-      "trackedPaperIds": [],
-      "trackedPaperTitles": []
-    },
-    {
       "id": "symmetry",
       "venueName": "Symmetry",
       "venueType": "journal",
@@ -5404,60 +5477,6 @@ window.FRONTIER_DATA = {
         "ccfSearchCopyText": "Symmetry"
       },
       "metricHistory": {},
-      "domainIds": [],
-      "domains": [],
-      "trackedPublicationYears": [],
-      "trackedPaperCount": 0,
-      "trackedPaperIds": [],
-      "trackedPaperTitles": []
-    },
-    {
-      "id": "tpds",
-      "venueName": "TPDS",
-      "venueType": "journal",
-      "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71",
-      "availableMetricYears": [
-        "2024"
-      ],
-      "latestMetricYear": "2024",
-      "latestMetrics": {
-        "venueName": "TPDS",
-        "venueType": "journal",
-        "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=71",
-        "ifSourceUrl": "https://mjl.clarivate.com/search-results?issn=1045-9219",
-        "ifPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html",
-        "ifSourceMode": "official_search",
-        "ifSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
-        "jcrSourceUrl": "https://mjl.clarivate.com/search-results?issn=1045-9219",
-        "jcrPublicSourceUrl": "https://www.fabiao.com.cn/sci/10459219/",
-        "jcrSourceMode": "official_search",
-        "jcrSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
-        "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
-        "casSourceMode": "official_search",
-        "casSearchCopyText": "IEEE Transactions on Parallel and Distributed Systems",
-        "impactFactor": "5.3",
-        "impactYear": "2024",
-        "jcrQuartile": "Q1",
-        "jcrYear": "2024",
-        "casQuartile": "Q2",
-        "casYear": "2023",
-        "casTop": true,
-        "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Parallel%20and%20Distributed%20Systems&y=2023",
-        "casPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html"
-      },
-      "metricHistory": {
-        "2024": {
-          "impactFactor": "5.3",
-          "impactYear": "2024",
-          "jcrQuartile": "Q1",
-          "jcrYear": "2024",
-          "casQuartile": "Q2",
-          "casYear": "2023",
-          "casTop": true,
-          "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Parallel%20and%20Distributed%20Systems&y=2023",
-          "casPublicSourceUrl": "https://www.iikx.com/sci/technology/13044.html"
-        }
-      },
       "domainIds": [],
       "domains": [],
       "trackedPublicationYears": [],
@@ -5510,7 +5529,7 @@ window.FRONTIER_DATA = {
     }
   ],
   "venueReference": {
-    "generatedAt": "2026-04-10 16:52 JST",
+    "generatedAt": "2026-04-10 17:11 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
@@ -5744,7 +5763,7 @@ window.FRONTIER_DATA = {
         ]
       },
       {
-        "venue": "CHI",
+        "venue": "ACM CHI Conference on Human Factors in Computing Systems",
         "venueKey": "chi",
         "venueType": "conference",
         "metricYear": null,
@@ -6598,7 +6617,7 @@ window.FRONTIER_DATA = {
         ]
       },
       {
-        "venue": "NeurIPS",
+        "venue": "Conference on Neural Information Processing Systems (NeurIPS)",
         "venueKey": "neurips",
         "venueType": "conference",
         "metricYear": null,
@@ -6634,7 +6653,7 @@ window.FRONTIER_DATA = {
         "qualityTags": []
       },
       {
-        "venue": "SC",
+        "venue": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
         "venueKey": "sc",
         "venueType": "conference",
         "metricYear": null,
@@ -6750,7 +6769,7 @@ window.FRONTIER_DATA = {
         ]
       },
       {
-        "venue": "TPDS",
+        "venue": "IEEE Transactions on Parallel and Distributed Systems",
         "venueKey": "tpds",
         "venueType": "journal",
         "metricYear": "2024",

@@ -1,5 +1,5 @@
 window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
-  "updatedAt": "2026-04-10 16:52 JST",
+  "updatedAt": "2026-04-10 17:11 JST",
   "venueCount": 32,
   "historySemantics": {
     "byPublicationYear": "Tracked paper venues align rows to publication year. Reference-only journal entries may use a synthetic catalog year derived from the available IF/JCR/CAS snapshot when no publication-year mapping is curated yet."
@@ -407,9 +407,12 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       ]
     },
     {
-      "id": "chi",
-      "name": "CHI",
-      "aliases": [],
+      "id": "acm-chi-conference-on-human-factors-in-computing-systems",
+      "name": "ACM CHI Conference on Human Factors in Computing Systems",
+      "aliases": [
+        "CHI",
+        "Conference on Human Factors in Computing Systems"
+      ],
       "venueType": "conference",
       "publisher": null,
       "issn": null,
@@ -428,10 +431,10 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
         "ccf": null
       },
       "searchCopyText": {
-        "impact": "CHI",
-        "jcr": "CHI",
-        "cas": "CHI",
-        "ccf": "CHI"
+        "impact": "ACM CHI Conference on Human Factors in Computing Systems",
+        "jcr": "ACM CHI Conference on Human Factors in Computing Systems",
+        "cas": "ACM CHI Conference on Human Factors in Computing Systems",
+        "ccf": "ACM CHI Conference on Human Factors in Computing Systems"
       },
       "availablePublicationYears": [],
       "latestPublicationYear": null,
@@ -1846,9 +1849,12 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       ]
     },
     {
-      "id": "neurips",
-      "name": "NeurIPS",
-      "aliases": [],
+      "id": "conference-on-neural-information-processing-systems-neurips",
+      "name": "Conference on Neural Information Processing Systems (NeurIPS)",
+      "aliases": [
+        "Neural Information Processing Systems",
+        "Conference on Neural Information Processing Systems"
+      ],
       "venueType": "conference",
       "publisher": null,
       "issn": null,
@@ -1867,10 +1873,10 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
         "ccf": null
       },
       "searchCopyText": {
-        "impact": "NeurIPS",
-        "jcr": "NeurIPS",
-        "cas": "NeurIPS",
-        "ccf": "NeurIPS"
+        "impact": "Conference on Neural Information Processing Systems (NeurIPS)",
+        "jcr": "Conference on Neural Information Processing Systems (NeurIPS)",
+        "cas": "Conference on Neural Information Processing Systems (NeurIPS)",
+        "ccf": "Conference on Neural Information Processing Systems (NeurIPS)"
       },
       "availablePublicationYears": [],
       "latestPublicationYear": null,
@@ -1980,9 +1986,12 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       ]
     },
     {
-      "id": "sc",
-      "name": "SC",
-      "aliases": [],
+      "id": "international-conference-for-high-performance-computing-networking-storage-and-analysis-sc",
+      "name": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
+      "aliases": [
+        "Supercomputing Conference",
+        "International Conference for High Performance Computing, Networking, Storage, and Analysis"
+      ],
       "venueType": "conference",
       "publisher": null,
       "issn": null,
@@ -2001,10 +2010,10 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
         "ccf": null
       },
       "searchCopyText": {
-        "impact": "SC",
-        "jcr": "SC",
-        "cas": "SC",
-        "ccf": "SC"
+        "impact": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
+        "jcr": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
+        "cas": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)",
+        "ccf": "International Conference for High Performance Computing, Networking, Storage, and Analysis (SC)"
       },
       "availablePublicationYears": [],
       "latestPublicationYear": null,
@@ -2205,9 +2214,11 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       ]
     },
     {
-      "id": "tpds",
-      "name": "TPDS",
-      "aliases": [],
+      "id": "ieee-transactions-on-parallel-and-distributed-systems",
+      "name": "IEEE Transactions on Parallel and Distributed Systems",
+      "aliases": [
+        "TPDS"
+      ],
       "venueType": "journal",
       "publisher": null,
       "issn": null,
@@ -2229,7 +2240,7 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
         "impact": "IEEE Transactions on Parallel and Distributed Systems",
         "jcr": "IEEE Transactions on Parallel and Distributed Systems",
         "cas": "IEEE Transactions on Parallel and Distributed Systems",
-        "ccf": "TPDS"
+        "ccf": "IEEE Transactions on Parallel and Distributed Systems"
       },
       "availablePublicationYears": [
         "2024"
