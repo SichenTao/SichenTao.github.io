@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-04-10 15:23 JST",
+    "generatedAt": "2026-04-10 16:03 JST",
     "owner": "Sichen Tao",
     "headline": {
       "en": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
@@ -3471,8 +3471,8 @@
         "casQuartile": null,
         "casYear": null,
         "casTop": false,
-        "venueType": "unknown",
-        "sourceUrl": null,
+        "venueType": "preprint",
+        "sourceUrl": "https://arxiv.org/",
         "ifSourceUrl": null,
         "ifPublicSourceUrl": null,
         "ifSourceMode": null,
@@ -3495,13 +3495,13 @@
         "ccfSourceMode": null,
         "ccfSearchCopyText": null
       },
-      "bibtexText": "@article{yu2026scaling-behaviors-of-evo,\n  title = {Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?},\n  author = {Xinmeng Yu and Tao Jiang and Ran Cheng and Yaochu Jin and Kay Chen Tan},\n  journal = {ArXiv.org},\n  year = {2026},\n  doi = {10.48550/arxiv.2601.18446},\n  url = {https://doi.org/10.48550/arxiv.2601.18446}\n}",
+      "bibtexText": "@misc{yu2026scaling-behaviors-of-evo,\n  title = {Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?},\n  author = {Xinmeng Yu and Tao Jiang and Ran Cheng and Yaochu Jin and Kay Chen Tan},\n  journal = {ArXiv.org},\n  year = {2026},\n  doi = {10.48550/arxiv.2601.18446},\n  url = {https://doi.org/10.48550/arxiv.2601.18446}\n}",
       "primaryUrl": "https://arxiv.org/abs/2601.18446",
-      "venueUrl": null,
-      "type": "unknown",
+      "venueUrl": "https://arxiv.org/",
+      "type": "preprint",
       "paperUrl": "https://arxiv.org/abs/2601.18446",
       "publisher_url": "https://arxiv.org/abs/2601.18446",
-      "venue_url": null,
+      "venue_url": "https://arxiv.org/",
       "paper_url": "https://arxiv.org/abs/2601.18446",
       "citation_source_url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.48550/arxiv.2601.18446",
       "citations": 0,
@@ -3600,14 +3600,15 @@
         ],
         "venue": {
           "name": "ArXiv.org",
-          "type": null
+          "type": "preprint"
         },
-        "venueType": null,
+        "venueType": "preprint",
         "publicationYear": "2026",
         "qualityTags": [],
         "tags": [
           "Evolutionary Computation",
           "ArXiv.org",
+          "Preprint",
           "2026",
           "Optimization",
           "AI",
@@ -3621,6 +3622,7 @@
       "tags": [
         "Evolutionary Computation",
         "ArXiv.org",
+        "Preprint",
         "2026",
         "Optimization",
         "AI",
@@ -3687,8 +3689,8 @@
         "casQuartile": null,
         "casYear": null,
         "casTop": false,
-        "venueType": "unknown",
-        "sourceUrl": null,
+        "venueType": "preprint",
+        "sourceUrl": "https://arxiv.org/",
         "ifSourceUrl": null,
         "ifPublicSourceUrl": null,
         "ifSourceMode": null,
@@ -3711,13 +3713,13 @@
         "ccfSourceMode": null,
         "ccfSearchCopyText": null
       },
-      "bibtexText": "@article{zhang2025a-systematic-survey-on-l,\n  title = {A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving},\n  author = {Yisong Zhang and Ran Cheng and Guoxing Yi and Kay Chen Tan},\n  journal = {ArXiv.org},\n  year = {2025},\n  doi = {10.48550/arxiv.2509.08269},\n  url = {https://doi.org/10.48550/arxiv.2509.08269}\n}",
+      "bibtexText": "@misc{zhang2025a-systematic-survey-on-l,\n  title = {A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving},\n  author = {Yisong Zhang and Ran Cheng and Guoxing Yi and Kay Chen Tan},\n  journal = {ArXiv.org},\n  year = {2025},\n  doi = {10.48550/arxiv.2509.08269},\n  url = {https://doi.org/10.48550/arxiv.2509.08269}\n}",
       "primaryUrl": "https://arxiv.org/abs/2509.08269",
-      "venueUrl": null,
-      "type": "unknown",
+      "venueUrl": "https://arxiv.org/",
+      "type": "preprint",
       "paperUrl": "https://arxiv.org/abs/2509.08269",
       "publisher_url": "https://arxiv.org/abs/2509.08269",
-      "venue_url": null,
+      "venue_url": "https://arxiv.org/",
       "paper_url": "https://arxiv.org/abs/2509.08269",
       "citation_source_url": "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=10.48550/arxiv.2509.08269",
       "citations": 0,
@@ -3811,14 +3813,15 @@
         ],
         "venue": {
           "name": "ArXiv.org",
-          "type": null
+          "type": "preprint"
         },
-        "venueType": null,
+        "venueType": "preprint",
         "publicationYear": "2025",
         "qualityTags": [],
         "tags": [
           "Evolutionary Computation",
           "ArXiv.org",
+          "Preprint",
           "2025",
           "Optimization",
           "AI",
@@ -3830,6 +3833,7 @@
       "tags": [
         "Evolutionary Computation",
         "ArXiv.org",
+        "Preprint",
         "2025",
         "Optimization",
         "AI",
@@ -4339,13 +4343,26 @@
       ]
     },
     {
-      "id": "arxiv org",
-      "venueName": "ArXiv.org",
-      "venueType": "unknown",
-      "sourceUrl": null,
+      "id": "arxiv",
+      "venueName": "arXiv",
+      "venueType": "preprint",
+      "sourceUrl": "https://arxiv.org/",
       "availableMetricYears": [],
       "latestMetricYear": "",
-      "latestMetrics": {},
+      "latestMetrics": {
+        "venueName": "arXiv",
+        "aliases": [
+          "ArXiv.org",
+          "arXiv.org",
+          "ArXiv"
+        ],
+        "impactFactor": null,
+        "impactYear": null,
+        "jcrQuartile": null,
+        "casQuartile": null,
+        "venueType": "preprint",
+        "sourceUrl": "https://arxiv.org/"
+      },
       "metricHistory": {},
       "domainIds": [
         "evolutionary-computation"
@@ -4660,30 +4677,6 @@
       "trackedPaperTitles": []
     },
     {
-      "id": "arxiv",
-      "venueName": "arXiv",
-      "venueType": "preprint",
-      "sourceUrl": "https://arxiv.org/",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
-      "latestMetrics": {
-        "venueName": "arXiv",
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "casQuartile": null,
-        "venueType": "preprint",
-        "sourceUrl": "https://arxiv.org/"
-      },
-      "metricHistory": {},
-      "domainIds": [],
-      "domains": [],
-      "trackedPublicationYears": [],
-      "trackedPaperCount": 0,
-      "trackedPaperIds": [],
-      "trackedPaperTitles": []
-    },
-    {
       "id": "biomimetics",
       "venueName": "Biomimetics",
       "venueType": "journal",
@@ -4842,13 +4835,13 @@
     {
       "id": "ieee congress on evolutionary computation cec 2024",
       "venueName": "IEEE Congress on Evolutionary Computation (CEC) 2024",
-      "venueType": "journal",
+      "venueType": "conference",
       "sourceUrl": "https://2024.ieeewcci.org/",
       "availableMetricYears": [],
       "latestMetricYear": "",
       "latestMetrics": {
         "venueName": "IEEE Congress on Evolutionary Computation (CEC) 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "sourceUrl": "https://2024.ieeewcci.org/",
         "ifSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024",
         "jcrSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024",
@@ -4865,13 +4858,13 @@
     {
       "id": "ieee congress on evolutionary computation cec 2025",
       "venueName": "IEEE Congress on Evolutionary Computation (CEC) 2025",
-      "venueType": "journal",
+      "venueType": "conference",
       "sourceUrl": "https://cis.ieee.org/conferences/conference-calendar",
       "availableMetricYears": [],
       "latestMetricYear": "",
       "latestMetrics": {
         "venueName": "IEEE Congress on Evolutionary Computation (CEC) 2025",
-        "venueType": "journal",
+        "venueType": "conference",
         "sourceUrl": "https://cis.ieee.org/conferences/conference-calendar",
         "ifSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025",
         "jcrSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025",
@@ -4888,13 +4881,13 @@
     {
       "id": "ieee congress on evolutionary computation cec 2026",
       "venueName": "IEEE Congress on Evolutionary Computation (CEC) 2026",
-      "venueType": "journal",
+      "venueType": "conference",
       "sourceUrl": "https://attend.ieee.org/wcci-2026/ieee-cec-2025/",
       "availableMetricYears": [],
       "latestMetricYear": "",
       "latestMetrics": {
         "venueName": "IEEE Congress on Evolutionary Computation (CEC) 2026",
-        "venueType": "journal",
+        "venueType": "conference",
         "sourceUrl": "https://attend.ieee.org/wcci-2026/ieee-cec-2025/",
         "ifSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026",
         "jcrSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026",
@@ -4911,13 +4904,13 @@
     {
       "id": "ieee international conference on systems man and cybernetics smc 2024",
       "venueName": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
-      "venueType": "journal",
+      "venueType": "conference",
       "sourceUrl": "https://www.ieeesmc2024.org/home",
       "availableMetricYears": [],
       "latestMetricYear": "",
       "latestMetrics": {
         "venueName": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "sourceUrl": "https://www.ieeesmc2024.org/home",
         "ifSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
         "jcrSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
@@ -4967,13 +4960,13 @@
     {
       "id": "ieee world congress on computational intelligence wcci 2024",
       "venueName": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
-      "venueType": "journal",
+      "venueType": "conference",
       "sourceUrl": "https://2024.ieeewcci.org/",
       "availableMetricYears": [],
       "latestMetricYear": "",
       "latestMetrics": {
         "venueName": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "sourceUrl": "https://2024.ieeewcci.org/",
         "ifSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
         "jcrSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
@@ -4990,13 +4983,13 @@
     {
       "id": "ieee world congress on computational intelligence wcci 2026",
       "venueName": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
-      "venueType": "journal",
+      "venueType": "conference",
       "sourceUrl": "https://attend.ieee.org/wcci-2026/",
       "availableMetricYears": [],
       "latestMetricYear": "",
       "latestMetrics": {
         "venueName": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
-        "venueType": "journal",
+        "venueType": "conference",
         "sourceUrl": "https://attend.ieee.org/wcci-2026/",
         "ifSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
         "jcrSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
@@ -5013,13 +5006,13 @@
     {
       "id": "international conference on swarm intelligence icsi 2024",
       "venueName": "International Conference on Swarm Intelligence (ICSI) 2024",
-      "venueType": "journal",
+      "venueType": "conference",
       "sourceUrl": "https://icsi2024.ustc.edu.cn/main.htm",
       "availableMetricYears": [],
       "latestMetricYear": "",
       "latestMetrics": {
         "venueName": "International Conference on Swarm Intelligence (ICSI) 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "sourceUrl": "https://icsi2024.ustc.edu.cn/main.htm",
         "ifSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024",
         "jcrSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024",
@@ -5368,7 +5361,7 @@
     }
   ],
   "venueReference": {
-    "generatedAt": "2026-04-10 15:23 JST",
+    "generatedAt": "2026-04-10 16:03 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
@@ -5776,7 +5769,7 @@
       {
         "venue": "IEEE Congress on Evolutionary Computation (CEC) 2024",
         "venueKey": "ieee congress on evolutionary computation cec 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "metricYear": null,
         "sourceUrl": "https://2024.ieeewcci.org/",
         "ifSourceUrl": null,
@@ -5812,7 +5805,7 @@
       {
         "venue": "IEEE Congress on Evolutionary Computation (CEC) 2025",
         "venueKey": "ieee congress on evolutionary computation cec 2025",
-        "venueType": "journal",
+        "venueType": "conference",
         "metricYear": null,
         "sourceUrl": "https://cis.ieee.org/conferences/conference-calendar",
         "ifSourceUrl": null,
@@ -5848,7 +5841,7 @@
       {
         "venue": "IEEE Congress on Evolutionary Computation (CEC) 2026",
         "venueKey": "ieee congress on evolutionary computation cec 2026",
-        "venueType": "journal",
+        "venueType": "conference",
         "metricYear": null,
         "sourceUrl": "https://attend.ieee.org/wcci-2026/ieee-cec-2025/",
         "ifSourceUrl": null,
@@ -5884,7 +5877,7 @@
       {
         "venue": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
         "venueKey": "ieee international conference on systems man and cybernetics smc 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "metricYear": null,
         "sourceUrl": "https://www.ieeesmc2024.org/home",
         "ifSourceUrl": null,
@@ -6079,7 +6072,7 @@
       {
         "venue": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
         "venueKey": "ieee world congress on computational intelligence wcci 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "metricYear": null,
         "sourceUrl": "https://2024.ieeewcci.org/",
         "ifSourceUrl": null,
@@ -6115,7 +6108,7 @@
       {
         "venue": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
         "venueKey": "ieee world congress on computational intelligence wcci 2026",
-        "venueType": "journal",
+        "venueType": "conference",
         "metricYear": null,
         "sourceUrl": "https://attend.ieee.org/wcci-2026/",
         "ifSourceUrl": null,
@@ -6151,7 +6144,7 @@
       {
         "venue": "International Conference on Swarm Intelligence (ICSI) 2024",
         "venueKey": "international conference on swarm intelligence icsi 2024",
-        "venueType": "journal",
+        "venueType": "conference",
         "metricYear": null,
         "sourceUrl": "https://icsi2024.ustc.edu.cn/main.htm",
         "ifSourceUrl": null,

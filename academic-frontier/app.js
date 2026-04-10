@@ -5741,9 +5741,21 @@ function renderMetrics() {
     const head = el("div", "frontier-reference-head");
     const citation = el("p", "frontier-reference-citation");
     const facts = metricVenueFacts(venue);
+    const tags = el("div", "tag-row");
     citation.innerHTML = metricVenueTitleHtml(venue, metricsRecord);
     head.appendChild(citation);
     article.appendChild(head);
+
+    const venueTypeLabel = typeFilterTagLabel(metricVenueTypeValue(venue));
+    if (venueTypeLabel) {
+      tags.appendChild(el("span", "tag", venueTypeLabel));
+    }
+    (venue?.qualityTags || []).forEach((qualityTag) => {
+      tags.appendChild(el("span", "tag is-warm", qualityTag));
+    });
+    if (tags.childNodes.length) {
+      article.appendChild(tags);
+    }
 
     if (facts.length) {
       const factsLine = el("p", "venue-line");

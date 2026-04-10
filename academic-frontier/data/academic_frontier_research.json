@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-10 15:23 JST",
+  "generatedAt": "2026-04-10 16:03 JST",
   "seedProfile": {
     "profileName": "Sichen Tao",
     "summary": {
@@ -1128,7 +1128,7 @@
             "url": "https://arxiv.org/abs/2601.18446",
             "tags": [
               "monitor",
-              "unknown"
+              "preprint"
             ],
             "note": {
               "en": "Frontier-facing paper from the current tracked radar capture.",
@@ -1290,7 +1290,7 @@
             "url": "https://arxiv.org/abs/2509.08269",
             "tags": [
               "monitor",
-              "unknown"
+              "preprint"
             ],
             "note": {
               "en": "Frontier-facing paper from the current tracked radar capture.",
@@ -2564,7 +2564,7 @@
             "url": "https://arxiv.org/abs/2601.18446",
             "tags": [
               "monitor",
-              "unknown"
+              "preprint"
             ],
             "note": {
               "en": "Frontier-facing paper from the current tracked radar capture.",
@@ -2744,7 +2744,7 @@
             "url": "https://arxiv.org/abs/2509.08269",
             "tags": [
               "monitor",
-              "unknown"
+              "preprint"
             ],
             "note": {
               "en": "Frontier-facing paper from the current tracked radar capture.",
