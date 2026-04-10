@@ -249,13 +249,13 @@ const UI_TEXT = {
     htmlLang: "en",
     pageTitle: "学术前沿",
     pageDescription:
-      "学术前沿 is a local-first research workspace for tracking active teams, strong signals, and high-value papers across multiple research domains.",
+      "学术前沿 is an evidence-based research dashboard for tracking papers, signals, topics, and researchers across active research directions.",
     brandTitle: "学术前沿",
     heroEyebrow: "学术前沿",
-    heroPrimaryAction: "Open paper board",
+    heroPrimaryAction: "Open archive",
     heroSecondaryAction: "Review the guide",
     heroHeadline:
-      "Use this overview to identify strong signals, active teams, and where the paper board deserves closer attention next.",
+      "Scan the current feed, then move into the archive, research directions, or researcher pages for deeper work.",
     statusCardTitle: "Current focus",
     snapshotLabel: "Latest snapshot",
     nextRunLabel: "Next planned run",
@@ -274,17 +274,18 @@ const UI_TEXT = {
     directionsKicker: "Directions",
     directionsTitle: "Direction cockpit",
     directionsNote: "Auto-derived from homepage, publications, and current radar evidence. Manual prompt edits only refine the ranking in this browser.",
-    focusDeskTitle: "Current interest correction",
-    focusDeskNote: "Keep the default auto-led behavior, then use a prompt to raise or lower specific directions, methods, authors, or venues.",
-    focusPromptLabel: "Correction prompt",
+    focusDeskTitle: "Focus refinement",
+    focusDeskNote: "Keep the default ranking, then use a short prompt only when you need to raise or lower specific directions, methods, authors, or venues.",
+    focusPromptLabel: "Focus prompt",
     focusPromptPlaceholder: "Example: prioritize AI for science, classic foundational papers, and latest top-tier systems with strong code evidence.",
-    researchLauncherTitle: "Deep research launcher",
-    researchLauncherNote: "Launch a fresh internet-first investigation. The local archive only serves as a seed reference and must not limit the search frontier.",
+    researchLauncherTitle: "Research starter",
+    researchLauncherNote: "Start from the current signals, then copy a structured brief for the next deep-research run. The archive is seed evidence, not the search boundary.",
     researchSelectedFiltersLabel: "Selected tags",
-    researchPromptPreviewTitle: "Deep research brief",
-    researchLaunchAction: "Start deep research",
-    researchLaunchCopiedLabel: "Deep research brief copied",
-    researchCustomPromptLabel: "Custom keywords / prompt correction",
+    researchPromptPreviewTitle: "Research brief",
+    researchLaunchAction: "Copy research brief",
+    researchLaunchCopiedLabel: "Research brief copied",
+    researchCustomPromptLabel: "Extra keywords",
+    researchAdvancedFiltersLabel: "Advanced filters",
     researchCustomPromptPlaceholder: "Example: optimization problems, AI, machine learning, deep learning, evolutionary algorithms, reinforcement learning, high-performance computing, classic foundations, and the newest top-tier evidence.",
     researchYearRangeLabel: "Time interval",
     researchYearStartLabel: "Start",
@@ -315,6 +316,11 @@ const UI_TEXT = {
     qualityScoreLabel: "Quality",
     activeKeywordsLabel: "Keywords",
     venueTargetsTitle: "Venue targets",
+    whyNowLabel: "Why now",
+    readingLanesTitle: "Reading lanes",
+    workspacePathLabel: "Workspace path",
+    workspaceArtifactsLabel: "Workspace artifacts",
+    workspaceRefreshCommandsLabel: "Refresh commands",
     noFocusTokens: "No manual tokens yet. The system is still running in auto-led mode.",
     teamsKicker: "Tracked teams",
     teamsTitle: "Teams and researchers worth following",
@@ -408,13 +414,13 @@ const UI_TEXT = {
     themeTohokuLabel: "Tohoku University",
     themeToyamaLabel: "University of Toyama",
     themeUsstLabel: "University of Shanghai for Science and Technology",
-    navOverview: "Overview",
-    navPapers: "Papers",
+    navOverview: "Feed",
+    navPapers: "Archive",
     navMetrics: "Metrics",
-    navSignals: "Investigation",
-    navTeams: "Teams",
-    navDownloads: "Downloads",
-    navGuide: "Guide",
+    navSignals: "Research",
+    navTeams: "Researchers",
+    navDownloads: "PDF Queue",
+    navGuide: "Workflow",
     whyThisDomainMatters: "Why this lane matters",
     signalsToWatch: "Watch next",
     whatShouldTriggerActionNext: "Signals that should trigger action",
@@ -485,12 +491,12 @@ const UI_TEXT = {
   zh: {
     htmlLang: "zh-CN",
     pageTitle: "学术前沿",
-    pageDescription: "一个面向多研究方向的本地优先学术前沿总览，用于发现活跃团队、强信号与高价值论文，并决定下一步值得深挖什么。",
+    pageDescription: "一个面向前沿追踪的证据型研究驾驶台，用于持续跟踪论文、信号、方向与研究者。",
     brandTitle: "学术前沿",
     heroEyebrow: "学术前沿",
-    heroPrimaryAction: "打开论文面板",
+    heroPrimaryAction: "打开归档",
     heroSecondaryAction: "查看说明",
-    heroHeadline: "先用这张总览快速判断当前方向的强信号与活跃团队，再进入论文列表决定下一步读什么。",
+    heroHeadline: "先快速扫描当前动态，再进入归档、深研方向或研究者页面继续深挖。",
     statusCardTitle: "当前聚焦",
     snapshotLabel: "最新快照",
     nextRunLabel: "下次计划运行",
@@ -509,17 +515,18 @@ const UI_TEXT = {
     directionsKicker: "方向驾驶台",
     directionsTitle: "调查方向与修正面板",
     directionsNote: "基于主页、发表与当前雷达证据自动推断。手动 prompt 只修正当前浏览器中的优先级，不会破坏自动主导逻辑。",
-    focusDeskTitle: "当前关心方向修正",
-    focusDeskNote: "默认保持自动主导；如果你想提高或压低某些方向、方法、作者或期刊，再用 prompt 进行局部修正。",
-    focusPromptLabel: "修正 prompt",
+    focusDeskTitle: "聚焦微调",
+    focusDeskNote: "默认保持自动排序；只有当你需要抬高或压低某些方向、方法、作者或期刊时，再用简短提示做微调。",
+    focusPromptLabel: "聚焦提示",
     focusPromptPlaceholder: "例如：优先 AI for Science、经典基础论文、以及最新且有强代码证据的顶级系统论文。",
-    researchLauncherTitle: "深度研究启动器",
-    researchLauncherNote: "从互联网发起一次新的完整调查。现有档案只作为种子参考，不应成为搜索边界。",
+    researchLauncherTitle: "深研起点",
+    researchLauncherNote: "先从当前信号出发，再复制一份结构化深研简报用于下一轮调查。现有归档只是种子证据，不应成为搜索边界。",
     researchSelectedFiltersLabel: "已选标签",
-    researchPromptPreviewTitle: "深度研究简报",
-    researchLaunchAction: "开始深度研究",
-    researchLaunchCopiedLabel: "深度研究简报已复制",
-    researchCustomPromptLabel: "自定义关键词 / 修正 prompt",
+    researchPromptPreviewTitle: "深研简报",
+    researchLaunchAction: "复制深研简报",
+    researchLaunchCopiedLabel: "深研简报已复制",
+    researchCustomPromptLabel: "补充关键词",
+    researchAdvancedFiltersLabel: "高级筛选",
     researchCustomPromptPlaceholder: "例如：优化问题、AI、机器学习、深度学习、进化算法、强化学习、高性能计算、经典基础论文，以及最新顶级高质量研究。",
     researchYearRangeLabel: "时间区间",
     researchYearStartLabel: "开始",
@@ -550,6 +557,11 @@ const UI_TEXT = {
     qualityScoreLabel: "质量",
     activeKeywordsLabel: "关键词",
     venueTargetsTitle: "重点期刊/会议",
+    whyNowLabel: "为什么是现在",
+    readingLanesTitle: "阅读路线",
+    workspacePathLabel: "工作区路径",
+    workspaceArtifactsLabel: "工作区产物",
+    workspaceRefreshCommandsLabel: "刷新命令",
     noFocusTokens: "还没有手动关注词，当前仍处于自动主导模式。",
     teamsKicker: "跟踪团队",
     teamsTitle: "值得持续关注的团队与研究者",
@@ -642,13 +654,13 @@ const UI_TEXT = {
     themeTohokuLabel: "东北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "概览",
-    navPapers: "论文",
+    navOverview: "动态",
+    navPapers: "论文库",
     navMetrics: "分区",
-    navSignals: "调查",
-    navTeams: "团队",
-    navDownloads: "下载",
-    navGuide: "说明",
+    navSignals: "深研",
+    navTeams: "研究者",
+    navDownloads: "PDF 队列",
+    navGuide: "流程",
     whyThisDomainMatters: "为什么这个方向值得继续投入",
     signalsToWatch: "下一步观察重点",
     whatShouldTriggerActionNext: "哪些信号值得立刻采取行动",
@@ -720,12 +732,12 @@ const UI_TEXT = {
     htmlLang: "ja",
     pageTitle: "学术前沿",
     pageDescription:
-      "学术前沿 は、複数領域の活発なチーム、強いシグナル、高価値な論文を見つけ、次に何を深掘りすべきかを判断するためのローカルファーストな総覧です。",
+      "論文・シグナル・方向・研究者を継続追跡するための、証拠ベースの研究ダッシュボード。",
     brandTitle: "学术前沿",
     heroEyebrow: "学术前沿",
-    heroPrimaryAction: "論文ボードを開く",
+    heroPrimaryAction: "アーカイブを開く",
     heroSecondaryAction: "ガイドを見る",
-    heroHeadline: "まずこの総覧で強いシグナルと活発なチームを見極め、次に論文リストで何を読むべきかを判断します。",
+    heroHeadline: "まず現在の動きを素早く把握し、その後アーカイブ、深掘り方向、研究者ページへ進んで調査を続けます。",
     statusCardTitle: "現在の焦点",
     snapshotLabel: "最新スナップショット",
     nextRunLabel: "次回予定実行",
@@ -744,17 +756,18 @@ const UI_TEXT = {
     directionsKicker: "方向コックピット",
     directionsTitle: "探索方向と修正パネル",
     directionsNote: "ホームページ、発表、現在のレーダー証拠から自動推定する。手動プロンプトはこのブラウザ内の優先度だけを調整する。",
-    focusDeskTitle: "現在の関心方向の修正",
-    focusDeskNote: "既定では自動主導のままにし、特定の方向、手法、著者、会場の優先度だけをプロンプトで補正する。",
-    focusPromptLabel: "修正プロンプト",
+    focusDeskTitle: "重点の微調整",
+    focusDeskNote: "既定の順位付けを保ちつつ、特定の方向、手法、著者、会場だけを短いプロンプトで微調整します。",
+    focusPromptLabel: "重点プロンプト",
     focusPromptPlaceholder: "例: AI for Science、古典的基礎論文、そして強いコード証拠を持つ最新トップシステム論文を優先する。",
-    researchLauncherTitle: "深度研究ランチャー",
-    researchLauncherNote: "インターネットから新規に完全調査を開始する。既存アーカイブはシード参照にとどめ、探索境界にはしない。",
-    researchSelectedFiltersLabel: "選択中のタグ",
-    researchPromptPreviewTitle: "深度研究ブリーフ",
-    researchLaunchAction: "深度研究を開始",
-    researchLaunchCopiedLabel: "深度研究ブリーフをコピーしました",
-    researchCustomPromptLabel: "カスタムキーワード / 修正プロンプト",
+    researchLauncherTitle: "深掘りの起点",
+    researchLauncherNote: "現在のシグナルから出発し、次の深掘り調査に使う構造化ブリーフをコピーします。既存アーカイブはシード証拠であり、探索境界ではありません。",
+    researchSelectedFiltersLabel: "選択タグ",
+    researchPromptPreviewTitle: "深掘りブリーフ",
+    researchLaunchAction: "深掘りブリーフをコピー",
+    researchLaunchCopiedLabel: "深掘りブリーフをコピーしました",
+    researchCustomPromptLabel: "追加キーワード",
+    researchAdvancedFiltersLabel: "詳細フィルター",
     researchCustomPromptPlaceholder: "例: 最適化問題、AI、機械学習、深層学習、進化アルゴリズム、強化学習、高性能計算、古典的基礎論文、そして最新トップ品質研究を優先する。",
     researchYearRangeLabel: "期間",
     researchYearStartLabel: "開始",
@@ -785,6 +798,11 @@ const UI_TEXT = {
     qualityScoreLabel: "品質",
     activeKeywordsLabel: "キーワード",
     venueTargetsTitle: "重点ジャーナル・会議",
+    whyNowLabel: "なぜ今か",
+    readingLanesTitle: "読書レーン",
+    workspacePathLabel: "ワークスペースのパス",
+    workspaceArtifactsLabel: "ワークスペース成果物",
+    workspaceRefreshCommandsLabel: "更新コマンド",
     noFocusTokens: "まだ手動トークンはなく、現在は自動主導モードのままです。",
     teamsKicker: "追跡チーム",
     teamsTitle: "継続監視したいチームと研究者",
@@ -878,13 +896,13 @@ const UI_TEXT = {
     themeTohokuLabel: "東北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "概観",
-    navPapers: "論文",
+    navOverview: "更新",
+    navPapers: "論文庫",
     navMetrics: "分区",
-    navSignals: "調査",
-    navTeams: "チーム",
-    navDownloads: "取得",
-    navGuide: "ガイド",
+    navSignals: "深掘り",
+    navTeams: "研究者",
+    navDownloads: "PDF キュー",
+    navGuide: "フロー",
     whyThisDomainMatters: "なぜこのレーンが重要か",
     signalsToWatch: "次に見るべきもの",
     whatShouldTriggerActionNext: "行動を起こすべきシグナル",
@@ -2418,6 +2436,7 @@ function researchData() {
   return window.ACADEMIC_FRONTIER_RESEARCH || {
     generatedAt: "",
     seedProfile: {},
+    workspaceBridge: null,
     focusDesk: { presets: [] },
     directions: [],
   };
@@ -2525,6 +2544,14 @@ function directionLaneBar(direction) {
   return `<div class="direction-lane-bar"><span class="direction-lane-foundation" style="width:${(foundation / total) * 100}%"></span><span class="direction-lane-frontier" style="width:${(frontier / total) * 100}%"></span><span class="direction-lane-bridge" style="width:${(bridge / total) * 100}%"></span></div>`;
 }
 
+function sanitizeReadingNote(value) {
+  const text = String(localizeText(value || "") || "").trim();
+  if (!text) return "";
+  return text
+    .replace(/\s+(Path|路径|パス)\s*[:：]\s*.+$/i, "")
+    .trim();
+}
+
 function readingListMarkup(items, laneKey) {
   const entries = items || [];
   const laneLabel = ui(`${laneKey}LaneLabel`);
@@ -2537,11 +2564,32 @@ function readingListMarkup(items, laneKey) {
         : escapeHtml(localizeText(item?.title || ""));
       const metaParts = [localizeText(item?.venue || ""), item?.year || "", (item?.citationCount || item?.citationCount === 0) ? `${ui("citationsMetricLabel")} ${item.citationCount}` : ""]
         .filter(Boolean);
-      return `<li class="direction-reading-item"><div class="direction-reading-title">${title}</div><div class="direction-reading-meta">${metaParts.map(escapeHtml).join(" · ")}</div><p class="direction-reading-note">${richTextHtml(item?.note || "")}</p></li>`;
+      return `<li class="direction-reading-item"><div class="direction-reading-title">${title}</div><div class="direction-reading-meta">${metaParts.map(escapeHtml).join(" · ")}</div><p class="direction-reading-note">${richTextHtml(sanitizeReadingNote(item?.note || ""))}</p></li>`;
     }).join("")
     : `<li class="direction-reading-item is-empty">${escapeHtml(ui("emptyItems"))}</li>`;
 
   return `<details class="direction-reading-lane" ${openByDefault ? "open" : ""}><summary>${escapeHtml(laneLabel)} <span class="tag">${escapeHtml(entries.length)}</span></summary><ul class="direction-reading-list">${listMarkup}</ul></details>`;
+}
+
+function workspaceBridgeMarkup(workspace, { compact = false } = {}) {
+  if (!workspace) return "";
+
+  const stats = (workspace?.stats || []).slice(0, compact ? 4 : 8);
+  const signals = (workspace?.signals || []).slice(0, compact ? 2 : 3);
+  const badgeLabel = localizeText(workspace?.badge || "");
+
+  return `<article class="focus-card maestro-workspace-card${compact ? " is-compact" : ""}">
+    <div class="direction-card-head">
+      <div class="direction-origin-row">
+        ${badgeLabel ? `<span class="field-hash-tag">${escapeHtml(badgeLabel)}</span>` : ""}
+        <h3>${escapeHtml(localizeText(workspace?.title || ""))}</h3>
+      </div>
+    </div>
+    ${workspace?.summary ? `<p class="direction-thesis rich-text">${richTextHtml(workspace.summary)}</p>` : ""}
+    ${workspace?.latestSync?.detail ? `<p class="publication-note publication-note-highlight"><strong class="accent-strong">${escapeHtml(localizeText(workspace.latestSync.label || ""))}:</strong> <span class="rich-text">${richTextHtml(workspace.latestSync.detail)}</span></p>` : ""}
+    ${stats.length ? `<div class="maestro-stat-grid">${stats.map((stat) => `<div class="maestro-stat-item"><span class="stack-label">${escapeHtml(localizeText(stat?.label || ""))}</span><strong class="record-value">${escapeHtml(String(stat?.value ?? ""))}</strong></div>`).join("")}</div>` : ""}
+    ${signals.length ? `<div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("signalsToWatch"))}</strong><div class="direction-signal-list">${signals.map((item) => `<p class="direction-signal-item">${richTextHtml(item)}</p>`).join("")}</div></div>` : ""}
+  </article>`;
 }
 
 function directionCardMarkup(direction, { detailed = false } = {}) {
@@ -2549,20 +2597,28 @@ function directionCardMarkup(direction, { detailed = false } = {}) {
   const venues = (direction?.venues || []).slice(0, detailed ? 8 : 5);
   const teams = (direction?.teams || []).slice(0, detailed ? 4 : 3);
   const signals = (direction?.signals || []).slice(0, detailed ? 3 : 2);
+  const counts = direction?.counts || {};
+  const sourceLabel = localizeText(direction?.source?.label || "");
+  const hasReadingLanes = detailed && ["foundation", "frontier", "bridge"].some((laneKey) => (direction?.readingLanes?.[laneKey] || []).length > 0);
+  const countSummary = `${ui("foundationLaneLabel")} ${Number(counts.foundation || 0)} · ${ui("frontierLaneLabel")} ${Number(counts.frontier || 0)} · ${ui("bridgeLaneLabel")} ${Number(counts.bridge || 0)}`;
 
   return `<article class="direction-card${detailed ? " is-detailed" : ""}">
     <div class="direction-card-head">
-      <div>
+      <div class="direction-origin-row">
+        ${sourceLabel ? `<span class="field-hash-tag">${escapeHtml(sourceLabel)}</span>` : ""}
         <h3>${richTextHtml(direction?.title)}</h3>
       </div>
+      ${detailed ? `<p class="direction-count-summary">${escapeHtml(countSummary)}</p>` : ""}
     </div>
     <p class="direction-thesis rich-text">${richTextHtml(direction?.thesis)}</p>
+    ${detailed && direction?.whyNow ? `<div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("whyNowLabel"))}</strong><p class="direction-summary-item rich-text">${richTextHtml(direction.whyNow)}</p></div>` : ""}
     <div class="direction-meta-grid">
       <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("activeKeywordsLabel"))}</strong><div class="field-hash-row direction-keyword-row">${keywords.map((keyword) => `<span class="field-hash-tag">#${escapeHtml(keyword)}</span>`).join("") || `<span class="direction-empty-note">${escapeHtml(ui("pendingMetric"))}</span>`}</div></div>
       <div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("venueTargetsTitle"))}</strong><p class="direction-inline-list">${venues.map(escapeHtml).join(" · ") || escapeHtml(ui("pendingMetric"))}</p></div>
     </div>
     ${signals.length ? `<div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("signalsToWatch"))}</strong><div class="direction-signal-list">${signals.map((item) => `<p class="direction-signal-item">${richTextHtml(item)}</p>`).join("")}</div></div>` : ""}
     ${teams.length ? `<p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("teamsTitle"))}:</strong> <span class="rich-text">${teams.map((team) => escapeHtml(localizeText(team?.name || ""))).join(" · ")}</span></p>` : ""}
+    ${hasReadingLanes ? `<div class="direction-section-block"><strong class="accent-strong">${escapeHtml(ui("readingLanesTitle"))}</strong>${directionLaneBar(direction)}<div class="direction-reading-grid">${["foundation", "frontier", "bridge"].map((laneKey) => readingListMarkup(direction?.readingLanes?.[laneKey] || [], laneKey)).join("")}</div></div>` : ""}
   </article>`;
 }
 
@@ -2957,6 +3013,7 @@ function renderDirectionCockpit() {
 
   const directions = adjustedDirections();
   const seed = researchData().seedProfile || {};
+  const workspace = researchData().workspaceBridge;
   const tokens = focusPromptTokens();
   const seedChips = [
     ...(seed?.keywords || []).slice(0, 5),
@@ -2993,6 +3050,7 @@ function renderDirectionCockpit() {
         <p class="publication-note publication-note-accent"><strong class="accent-strong">${escapeHtml(ui("focusTopDirectionsLabel"))}:</strong> <span class="rich-text">${directions.slice(0, 3).map((direction) => escapeHtml(localizeText(direction.title || ""))).join(" · ")}</span></p>
       </article>
     </div>
+    ${workspace ? `<div class="direction-card-grid direction-card-grid-workspace">${workspaceBridgeMarkup(workspace, { compact: true })}</div>` : ""}
     <div class="direction-card-grid">${directions.slice(0, 3).map((direction) => directionCardMarkup(direction)).join("")}</div>`;
 }
 
@@ -3003,9 +3061,9 @@ function renderDirectionWorkspace() {
   const launcher = syncResearchLauncherState();
   const directions = adjustedDirections();
   const seed = researchData().seedProfile || {};
+  const workspace = researchData().workspaceBridge;
   const tokens = focusPromptTokens();
   const selectedConstraints = researchSelectedTagEntries();
-  const researchFiltersDirty = selectedConstraints.length > 0;
   const researchBrief = buildResearchBrief(directions);
   const seedChips = [
     ...(seed?.keywords || []).slice(0, 5),
@@ -3016,6 +3074,10 @@ function renderDirectionWorkspace() {
     papersForDomain().filter((paper) => paperMatchesResearchFilters(paper, overrides)).length;
   const yearStart = Number.parseInt(state.researchYearStart, 10) || launcher.minYear;
   const yearEnd = Number.parseInt(state.researchYearEnd, 10) || launcher.maxYear;
+  const hasYearConstraint = yearStart > launcher.minYear || !state.researchYearOpenEnded;
+  const researchFiltersDirty = selectedConstraints.length > 0 || hasYearConstraint;
+  const advancedFilterCount = selectedConstraints.length + (hasYearConstraint ? 1 : 0);
+  const advancedFiltersOpen = advancedFilterCount > 0;
   const rangeStartPct = researchYearPercent(yearStart, launcher.minYear, launcher.maxYear);
   const rangeEndPct = researchYearPercent(yearEnd, launcher.minYear, launcher.maxYear);
   const yearIntervalLabel = researchYearIntervalLabel(state.researchYearStart, state.researchYearEnd, state.researchYearOpenEnded);
@@ -3033,62 +3095,9 @@ function renderDirectionWorkspace() {
           <p class="section-note investigation-launcher-note">${escapeHtml(ui("researchLauncherNote"))}</p>
         </div>
         <div class="investigation-launcher-main">
-          <div class="investigation-launcher-section">
-            <div class="filter-control-row investigation-filter-row">
-              <select id="research-problem-filter" class="input">
-                <option value="all">${escapeHtml(ui("problemFieldPlaceholder"))}</option>
-              </select>
-              <select id="research-method-filter" class="input">
-                <option value="all">${escapeHtml(ui("methodFieldPlaceholder"))}</option>
-              </select>
-              <select id="research-jcr-filter" class="input">
-                <option value="all">${escapeHtml(ui("jcrOptionAll"))}</option>
-              </select>
-              <select id="research-cas-filter" class="input">
-                <option value="all">${escapeHtml(ui("casOptionAll"))}</option>
-              </select>
-              <select id="research-cas-top-filter" class="input">
-                <option value="all">${escapeHtml(ui("casTopOptionAll"))}</option>
-              </select>
-              <select id="research-impact-filter" class="input">
-                <option value="all">${escapeHtml(ui("impactOptionAll"))}</option>
-              </select>
-              <select id="research-author-filter" class="input">
-                <option value="all">${escapeHtml(ui("teamOptionAll"))}</option>
-              </select>
-              <button class="button button-secondary filter-reset icon-only" type="button" data-research-filter-reset="true" aria-label="${escapeHtml(ui("resetLabel"))}" title="${escapeHtml(ui("resetLabel"))}"${researchFiltersDirty ? "" : " disabled"}>${resetButtonIconMarkup()}</button>
-            </div>
-          </div>
           <div class="investigation-launcher-section investigation-selected-stack">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSelectedFiltersLabel"))}</h4></div>
             <div class="field-hash-row investigation-selected-row">${selectedConstraints.length ? selectedConstraints.map((entry) => `<span class="field-hash-selection"><span class="field-hash-tag">#${escapeHtml(researchSelectedTagLabel(entry))}</span><button class="field-hash-remove-button" type="button" data-remove-research-tag="${escapeHtml(String(entry.value || ""))}" data-research-tag-category="${escapeHtml(entry.category)}" aria-label="Remove #${escapeHtml(researchSelectedTagLabel(entry))}">×</button></span>`).join("") : `<span class="direction-empty-note">${escapeHtml(ui("researchBriefEmpty"))}</span>`}</div>
-          </div>
-          <div class="investigation-launcher-section">
-            <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag" data-research-year-interval>${escapeHtml(yearIntervalLabel)}</span></div>
-            <div class="research-range-control research-range-control-merged" role="group" aria-label="${escapeHtml(ui("researchYearRangeLabel"))}">
-              <div class="research-range-summary">
-                <label class="research-range-number-group" for="research-year-start-input">
-                  <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
-                  <input id="research-year-start-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
-                </label>
-                <span class="research-range-separator">-</span>
-                <label class="research-range-number-group" for="research-year-end-input">
-                  <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
-                  <input id="research-year-end-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
-                </label>
-                <span class="research-range-open-note" data-research-year-open-note>${state.researchYearOpenEnded ? escapeHtml(ui("researchPresentLabel")) : ""}</span>
-              </div>
-              <div class="research-range-track">
-                <span class="research-range-track-fill" style="left:${escapeHtml(String(rangeStartPct))}%;right:${escapeHtml(String(100 - rangeEndPct))}%"></span>
-                <input id="research-year-start" class="research-range-input research-range-input-start" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
-                <input id="research-year-end" class="research-range-input research-range-input-end" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
-              </div>
-              <div class="research-range-footer">
-                <span class="direction-empty-note">${escapeHtml(String(launcher.minYear))}</span>
-                <button class="chip${state.researchYearOpenEnded ? " is-active" : ""}" type="button" data-research-open-end="true">${escapeHtml(ui("researchYearOpenEndedAction"))}</button>
-                <span class="direction-empty-note">${escapeHtml(String(launcher.maxYear))}</span>
-              </div>
-            </div>
           </div>
           <div class="investigation-launcher-section investigation-preset-stack">
             <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchSeedKeywordsLabel"))}</h4></div>
@@ -3098,6 +3107,67 @@ function renderDirectionWorkspace() {
             <label class="stack-label" for="researchPromptInput">${escapeHtml(ui("researchCustomPromptLabel"))}</label>
             <textarea id="researchPromptInput" data-focus-prompt-input class="focus-textarea" rows="5" placeholder="${escapeHtml(ui("researchCustomPromptPlaceholder"))}">${escapeHtml(state.focusPrompt || "")}</textarea>
           </div>
+          <details class="investigation-launcher-section research-advanced-panel"${advancedFiltersOpen ? " open" : ""}>
+            <summary class="research-advanced-summary">
+              <span class="stack-label">${escapeHtml(ui("researchAdvancedFiltersLabel"))}</span>
+              ${advancedFilterCount ? `<span class="tag is-strong">${escapeHtml(String(advancedFilterCount))}</span>` : ""}
+            </summary>
+            <div class="research-advanced-body">
+              <div class="research-advanced-inner">
+                <div class="filter-control-row investigation-filter-row">
+                  <select id="research-problem-filter" class="input">
+                    <option value="all">${escapeHtml(ui("problemFieldPlaceholder"))}</option>
+                  </select>
+                  <select id="research-method-filter" class="input">
+                    <option value="all">${escapeHtml(ui("methodFieldPlaceholder"))}</option>
+                  </select>
+                  <select id="research-jcr-filter" class="input">
+                    <option value="all">${escapeHtml(ui("jcrOptionAll"))}</option>
+                  </select>
+                  <select id="research-cas-filter" class="input">
+                    <option value="all">${escapeHtml(ui("casOptionAll"))}</option>
+                  </select>
+                  <select id="research-cas-top-filter" class="input">
+                    <option value="all">${escapeHtml(ui("casTopOptionAll"))}</option>
+                  </select>
+                  <select id="research-impact-filter" class="input">
+                    <option value="all">${escapeHtml(ui("impactOptionAll"))}</option>
+                  </select>
+                  <select id="research-author-filter" class="input">
+                    <option value="all">${escapeHtml(ui("teamOptionAll"))}</option>
+                  </select>
+                  <button class="button button-secondary filter-reset icon-only" type="button" data-research-filter-reset="true" aria-label="${escapeHtml(ui("resetLabel"))}" title="${escapeHtml(ui("resetLabel"))}"${researchFiltersDirty ? "" : " disabled"}>${resetButtonIconMarkup()}</button>
+                </div>
+              </div>
+              <div class="research-advanced-inner">
+                <div class="subhead compact-subhead"><h4>${escapeHtml(ui("researchYearRangeLabel"))}</h4><span class="tag" data-research-year-interval>${escapeHtml(yearIntervalLabel)}</span></div>
+                <div class="research-range-control research-range-control-merged" role="group" aria-label="${escapeHtml(ui("researchYearRangeLabel"))}">
+                  <div class="research-range-summary">
+                    <label class="research-range-number-group" for="research-year-start-input">
+                      <span class="stack-label">${escapeHtml(ui("researchYearStartLabel"))}</span>
+                      <input id="research-year-start-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
+                    </label>
+                    <span class="research-range-separator">-</span>
+                    <label class="research-range-number-group" for="research-year-end-input">
+                      <span class="stack-label">${escapeHtml(ui("researchYearEndLabel"))}</span>
+                      <input id="research-year-end-input" class="input research-range-number-input" type="number" inputmode="numeric" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
+                    </label>
+                    <span class="research-range-open-note" data-research-year-open-note>${state.researchYearOpenEnded ? escapeHtml(ui("researchPresentLabel")) : ""}</span>
+                  </div>
+                  <div class="research-range-track">
+                    <span class="research-range-track-fill" style="left:${escapeHtml(String(rangeStartPct))}%;right:${escapeHtml(String(100 - rangeEndPct))}%"></span>
+                    <input id="research-year-start" class="research-range-input research-range-input-start" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearStart)}"/>
+                    <input id="research-year-end" class="research-range-input research-range-input-end" type="range" min="${escapeHtml(launcher.minYear)}" max="${escapeHtml(launcher.maxYear)}" step="1" value="${escapeHtml(state.researchYearEnd)}"/>
+                  </div>
+                  <div class="research-range-footer">
+                    <span class="direction-empty-note">${escapeHtml(String(launcher.minYear))}</span>
+                    <button class="chip${state.researchYearOpenEnded ? " is-active" : ""}" type="button" data-research-open-end="true">${escapeHtml(ui("researchYearOpenEndedAction"))}</button>
+                    <span class="direction-empty-note">${escapeHtml(String(launcher.maxYear))}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
           <div class="investigation-launcher-section investigation-action-stack">
             <div class="focus-action-row investigation-action-row">
               <button class="button button-primary" type="button" data-research-launch="true">${escapeHtml(ui("researchLaunchAction"))}</button>
@@ -3118,6 +3188,7 @@ function renderDirectionWorkspace() {
         <p class="research-brief">${escapeHtml(researchBrief)}</p>
       </article>
     </div>
+    ${workspace ? `<div class="direction-card-grid direction-card-grid-workspace">${workspaceBridgeMarkup(workspace)}</div>` : ""}
     <div class="direction-card-grid direction-card-grid-workspace">${directions.map((direction) => directionCardMarkup(direction, { detailed: true })).join("")}</div>`;
 
   syncSelectOptions(
@@ -3243,8 +3314,6 @@ function currentPageTitle() {
     metrics: "navMetrics",
     signals: "navSignals",
     teams: "navTeams",
-    downloads: "navDownloads",
-    guide: "navGuide",
   }[page];
 
   if (!pageKey) {
@@ -3256,7 +3325,7 @@ function currentPageTitle() {
 
 function markCurrentPage() {
   const page = currentPage();
-  ["overview", "papers", "metrics", "signals", "teams", "downloads", "guide"].forEach((key) => {
+  ["overview", "papers", "metrics", "signals", "teams"].forEach((key) => {
     const navId = `nav${key.charAt(0).toUpperCase()}${key.slice(1)}`;
     const link = byId(navId);
     if (!link) return;
@@ -3690,6 +3759,7 @@ function renderStaticText() {
     ["guideNote", ui("guideNote")],
     ["workflow-title", ui("workflowTitle")],
     ["footerBackHome", ui("brandTitle")],
+    ["footerOpsMetrics", ui("navMetrics")],
   ].forEach(([id, value]) => setText(id, value));
   markCurrentPage();
   document.querySelectorAll(".header-controls").forEach((node) => node.setAttribute("aria-label", ui("displayControlsLabel")));
@@ -3707,6 +3777,7 @@ function renderStaticText() {
   });
   document.querySelectorAll("#heroShortcuts").forEach((node) => node.setAttribute("aria-label", ui("quickLinksLabel")));
   setAttr("footerBackHome", "href", pageHref("overview"));
+  setAttr("footerOpsMetrics", "href", pageHref("metrics"));
   setProp("pub-search", "placeholder", ui("searchPlaceholder"));
   setAttr("pub-reset", "aria-label", ui("resetLabel"));
   setAttr("pub-reset", "title", ui("resetLabel"));
