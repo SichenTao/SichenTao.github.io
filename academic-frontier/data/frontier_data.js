@@ -1,18 +1,12 @@
 window.FRONTIER_DATA = {
   "snapshot": {
-    "generatedAt": "2026-04-10 17:38 JST",
-    "owner": "Sichen Tao",
-    "headline": {
-      "en": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
-      "zh": "眼下最值得优先跟踪的机会，是把计算密集型研究系统当作产品来观察：不只看论文，还要看团队、代码、可复现性，以及哪些东西真正沉淀成下一步可用能力。",
-      "ja": "いま最優先で追うべき機会は、計算集約型の研究システムを一つのプロダクトとして捉えることです。論文だけでなく、チーム、コード、再現性、そして次に本当に使える能力へ何が結晶化するかまでを見る必要があります。"
-    },
+    "generatedAt": "2026-04-10 19:21 JST",
+    "sourcesCovered": 15,
     "nextRun": {
       "en": "Daily 08:00 JST via OpenClaw cron",
       "zh": "每日 08:00 JST，通过 OpenClaw cron 运行",
       "ja": "毎日 08:00 JST、OpenClaw cron 経由"
-    },
-    "sourcesCovered": 15
+    }
   },
   "domains": [
     {
@@ -21,168 +15,10 @@ window.FRONTIER_DATA = {
         "en": "Evolutionary Computation",
         "ja": "進化計算",
         "zh": "进化计算"
-      },
-      "priority": "high",
-      "momentum": 96,
-      "thesis": {
-        "en": "This first live slice tracks researcher-centered EC signals around open-source algorithm stacks, multiobjective optimization, and GPU-native evolutionary systems. The goal is to follow people who are not only publishing, but also shaping reusable infrastructure and realistic next-step directions.",
-        "ja": "この最初の公開スライスでは、オープンソースのアルゴリズム基盤、多目的最適化、GPUネイティブな進化システムを軸に、研究者中心のECシグナルを追跡します。狙いは、論文を出しているだけでなく、再利用可能なインフラと現実的な次の一歩を形にしている人を見極めることです。",
-        "zh": "这一首个公开切片围绕开源算法栈、多目标优化与 GPU 原生进化系统，追踪以研究者为中心的 EC 信号。目标是不只跟踪发表论文的人，而是识别那些正在塑造可复用基础设施与现实下一步方向的研究者。"
-      },
-      "questions": [
-        {
-          "en": "Which EC researchers are still pairing strong methods with durable code and infrastructure?",
-          "ja": "どのEC研究者が、強い手法と長く使えるコード・基盤をなお結び付けているか。",
-          "zh": "哪些 EC 研究者仍在把强方法与可持续的代码和基础设施结合起来？"
-        },
-        {
-          "en": "Where is the frontier moving from benchmark wins toward scalable, reusable systems?",
-          "ja": "フロンティアは、ベンチマークでの勝利から、どのようにスケーラブルで再利用可能なシステムへ移りつつあるか。",
-          "zh": "前沿正在如何从基准成绩转向可扩展、可复用的系统？"
-        },
-        {
-          "en": "Which recent papers look like genuine starting points for new contributions rather than isolated demonstrations?",
-          "ja": "最近のどの論文が、単発の実演ではなく、新しい貢献の本当の出発点に見えるか。",
-          "zh": "最近哪些论文更像是新贡献的真实起点，而不是孤立的演示？"
-        }
-      ],
-      "watchSignals": [
-        {
-          "en": "recent TEVC, GECCO, and Swarm and Evolutionary Computation papers from tracked people",
-          "ja": "追跡対象者による最近の TEVC、GECCO、Swarm and Evolutionary Computation 論文",
-          "zh": "来自追踪对象的近期 TEVC、GECCO 与 Swarm and Evolutionary Computation 论文"
-        },
-        {
-          "en": "public repositories that still receive meaningful updates after publication",
-          "ja": "公開後も意味のある更新が続いている公開リポジトリ",
-          "zh": "发表后仍持续获得实质更新的公开仓库"
-        },
-        {
-          "en": "open-access PDFs that can be pulled automatically into the local archive",
-          "ja": "ローカルアーカイブへ自動取得できるオープンアクセス PDF",
-          "zh": "可自动拉取进本地归档的开放获取 PDF"
-        }
-      ]
-    }
-  ],
-  "trendMap": [
-    {
-      "id": "evolutionary-computation-open-source-stacks",
-      "domainId": "evolutionary-computation",
-      "name": {
-        "en": "Open-source EC stacks are still where leverage compounds",
-        "ja": "オープンソースのECスタックはいまもレバレッジが最も蓄積する地点",
-        "zh": "开源 EC 工具栈仍是杠杆持续累积的关键位置"
-      },
-      "momentumLabel": {
-        "en": "live code signal",
-        "ja": "稼働中コードシグナル",
-        "zh": "活跃代码信号"
-      },
-      "signal": {
-        "en": "5 tracked repos pushed in the last 120 days",
-        "ja": "追跡中の5リポジトリが過去120日以内に更新",
-        "zh": "追踪中的 5 个仓库在过去 120 天内有更新"
-      },
-      "whyNow": {
-        "en": "The strongest EC signals are not just papers. They are papers backed by reusable codebases like EvoX and pymoo that keep moving after publication.",
-        "ja": "ECで最も強いシグナルは論文だけではありません。EvoX や pymoo のように、発表後も動き続ける再利用可能なコードベースに支えられた論文です。",
-        "zh": "EC 中最强的信号不只是论文本身，而是那些背后有 EvoX、pymoo 这类可复用代码库、并且在发表后仍持续演进的论文。"
-      },
-      "tension": {
-        "en": "Tooling quality is improving, but many promising papers still do not translate into durable public systems.",
-        "ja": "ツールの質は上がっている一方で、有望な論文の多くが、長く使われる公開システムにはまだ変わっていません。",
-        "zh": "工具质量正在提升，但许多有潜力的论文仍未真正转化为可持续使用的公开系统。"
-      }
-    },
-    {
-      "id": "evolutionary-computation-multiobjective-core",
-      "domainId": "evolutionary-computation",
-      "name": {
-        "en": "Multi-objective optimization remains a live frontier core",
-        "ja": "多目的最適化は依然としてフロンティアの中核",
-        "zh": "多目标优化仍然是前沿核心"
-      },
-      "momentumLabel": {
-        "en": "method pressure",
-        "ja": "手法競争圧",
-        "zh": "方法竞争压力"
-      },
-      "signal": {
-        "en": "2 recent multi-objective papers in the current capture",
-        "ja": "今回の捕捉範囲に最近の多目的最適化論文が2件",
-        "zh": "当前捕捉范围内有 2 篇近期多目标优化论文"
-      },
-      "whyNow": {
-        "en": "Recent activity still clusters around multi-objective optimization, especially where methods become parallel, practical, and easier to connect to real engineering workflows.",
-        "ja": "最近の動きは依然として多目的最適化に集中しており、とくに手法が並列化され、実務的になり、現実の工学ワークフローへ接続しやすくなる方向が目立ちます。",
-        "zh": "近期活动仍然集中在多目标优化，尤其是在方法走向并行化、实用化并更容易接入真实工程工作流的方向上。"
-      },
-      "tension": {
-        "en": "A lot of multi-objective work is method-heavy; the harder question is which ideas survive realistic evaluation and deployment.",
-        "ja": "多目的最適化の研究は手法偏重になりがちで、本当に難しいのは、どのアイデアが現実的な評価と導入を生き残るかです。",
-        "zh": "多目标优化研究里有不少工作偏重方法设计，真正更难的问题是哪些想法能经受住现实评测与部署。"
-      }
-    },
-    {
-      "id": "evolutionary-computation-acquisition-friction",
-      "domainId": "evolutionary-computation",
-      "name": {
-        "en": "Paper acquisition is uneven enough to justify browser automation",
-        "ja": "論文取得のばらつきはブラウザ自動化を正当化する水準にある",
-        "zh": "论文获取的不均衡已经足以证明浏览器自动化是必要的"
-      },
-      "momentumLabel": {
-        "en": "workflow gap",
-        "ja": "ワークフローギャップ",
-        "zh": "工作流缺口"
-      },
-      "signal": {
-        "en": "2 ready PDFs out of 8 captured papers",
-        "ja": "捕捉した8本の論文のうち即時取得できるPDFは2本",
-        "zh": "已捕捉的 8 篇论文中，仅有 2 篇具备可直接获取的 PDF"
-      },
-      "whyNow": {
-        "en": "Even in a well-defined field like EC, some important items are open immediately while others still require publisher access or manual browser work.",
-        "ja": "ECのように対象が比較的明確な分野でも、重要論文の中にはすぐ開けるものと、出版社経由のアクセスや手動ブラウザ操作が必要なものが混在しています。",
-        "zh": "即使是在 EC 这样边界较清晰的领域中，重要论文也同时存在可立即获取与仍需出版社权限或手动浏览器操作两类情况。"
-      },
-      "tension": {
-        "en": "This is exactly where OpenClaw-driven download workflows can turn a reading backlog into a real archive.",
-        "ja": "こここそ、OpenClaw 主導のダウンロードワークフローが、読むだけの未処理リストを実際のアーカイブへ変えられる場所です。",
-        "zh": "这正是 OpenClaw 驱动的下载工作流可以把待读积压转化为真实归档的地方。"
-      }
-    },
-    {
-      "id": "ran-cheng-tevc-2024-2026-gpu-stack",
-      "domainId": "evolutionary-computation",
-      "name": {
-        "en": "Ran Cheng's recent EC line is turning GPU-native evolution into a reusable system stack",
-        "ja": "Ran Cheng の最近の EC ラインは、GPU ネイティブ進化を再利用可能なシステムスタックへ変えつつある",
-        "zh": "Ran Cheng 最近的 EC 主线正在把 GPU 原生进化转变为可复用的系统栈"
-      },
-      "momentumLabel": {
-        "en": "high-confidence journal line",
-        "ja": "高信頼ジャーナル主線",
-        "zh": "高可信期刊主线"
-      },
-      "signal": {
-        "en": "The top-journal TEVC core now links reusable infrastructure, tensorized EMO, GPU genetic programming, meta-evolved DE, efficient evolutionary NAS, and fully data-driven optimization, while TELO and CEC extend the same stack into adjacent EC system layers.",
-        "ja": "最上位ジャーナルである TEVC の中核は、再利用可能な基盤、テンソル化 EMO、GPU 遺伝的プログラミング、自己進化型 DE、効率的な進化的 NAS、そして完全データ駆動最適化を結び付けており、TELO と CEC が同じスタックを隣接する EC システム層へ拡張しています。",
-        "zh": "顶级期刊 TEVC 的核心论文如今已经把可复用基础设施、张量化 EMO、GPU 遗传程序、元进化 DE、高效进化 NAS 与全数据驱动优化串联起来，而 TELO 与 CEC 则把同一系统栈扩展到相邻的 EC 系统层面。"
-      },
-      "whyNow": {
-        "en": "This is no longer a single-paper signal. Across 2024 to 2026, the work forms a connected program that links reusable systems, accelerated execution, broader open-source tooling, and higher-level search automation.",
-        "ja": "これはもはや単発論文のシグナルではありません。2024-2026 年を通して、この仕事は再利用可能なシステム、高速実行、より広いオープンソースツール群、そして高次の探索自動化をつなぐ一つの連続したプログラムを形作っています。",
-        "zh": "这已经不再是单篇论文级别的信号。跨越 2024 到 2026 年，这一系列工作已经形成了一个相互连通的计划，把可复用系统、加速执行、更广泛的开源工具以及更高层的搜索自动化连接在了一起。"
-      },
-      "tension": {
-        "en": "The next question is not whether GPU-native EC is viable, but which abstractions and software layers become durable enough to support broader real-world optimization, neuroevolution, and reinforcement-learning workloads.",
-        "ja": "次の問いは、GPU ネイティブ EC が成立するかどうかではなく、どの抽象化とソフトウェア層が、より広い実世界最適化、神経進化、強化学習の負荷を支えられるほど持続的になるのかです。",
-        "zh": "下一步真正的问题已不再是 GPU 原生 EC 是否可行，而是哪些抽象与软件层能够足够稳固，以支撑更广泛的真实世界优化、神经进化和强化学习负载。"
       }
     }
   ],
+  "trendMap": [],
   "teams": [
     {
       "id": "ran-cheng",
@@ -193,38 +29,13 @@ window.FRONTIER_DATA = {
         "ja": "香港",
         "zh": "香港"
       },
-      "strength": {
-        "en": "GPU-native EC systems",
-        "ja": "GPUネイティブ進化計算システム",
-        "zh": "GPU 原生 EC 系统"
+      "links": {
+        "homepage": "https://chengran.tech/",
+        "openalex": "https://openalex.org/A5004036087",
+        "googleScholar": "https://scholar.google.com/citations?hl=en&user=bjeIdlcAAAAJ",
+        "dblp": "https://dblp.org/pid/18/4198-4.xml",
+        "staffPage": "https://www.polyu.edu.hk/comp/People/Academic-Staff/Prof-CHENG-Ran"
       },
-      "thesis": {
-        "en": "Ran Cheng has built a coherent 2024-2026 line around GPU-native evolutionary computation systems, tensorized multiobjective optimization, genetic programming acceleration, neuroevolution infrastructure, evolutionary reinforcement learning, and fully data-driven search. This dossier now stores the broader verified EC workset and keeps formal publications canonical while attaching arXiv evidence for traceability.",
-        "ja": "Ran Cheng は 2024-2026 年にかけて、GPU ネイティブな進化計算システム、テンソル化された多目的最適化、遺伝的プログラミング高速化、神経進化基盤、進化的強化学習、そして完全データ駆動探索を一つの整合的な研究線として築いています。このドシエは、そのより広い検証済み EC ワークセットを保存しつつ、正式論文を正本として扱い、追跡性のために arXiv 証拠も付加します。",
-        "zh": "Ran Cheng 在 2024-2026 年间围绕 GPU 原生进化计算系统、张量化多目标优化、遗传程序加速、神经进化基础设施、进化强化学习以及全数据驱动搜索，构建出了一条连贯的研究主线。本 dossier 现在保存的是更完整、经核实的 EC 工作集合：以正式发表论文为规范主记录，同时附上 arXiv 证据以保证可追踪性。"
-      },
-      "signals": [
-        {
-          "en": "Five IEEE Transactions on Evolutionary Computation papers from 2024 to 2026 remain the top-journal core, while TELO and CEC extend the same systems stack into neuroevolution, evolutionary reinforcement learning, and large-scale many-objective optimization.",
-          "ja": "2024-2026 年の IEEE Transactions on Evolutionary Computation 論文5本が最上位ジャーナルの中核を成し、TELO と CEC が同じシステムスタックを神経進化、進化的強化学習、大規模多目的最適化へ拡張しています。",
-          "zh": "2024-2026 年的 5 篇 IEEE Transactions on Evolutionary Computation 论文构成了顶级期刊主干，而 TELO 与 CEC 则把同一套系统栈延伸到了神经进化、进化强化学习和大规模多目标优化。"
-        },
-        {
-          "en": "The line progresses from infrastructure (EvoX, EvoRL, TensorNEAT, EvoGP) to accelerated EMO tensorization, differential-evolution self-adaptation, and fully data-driven evolutionary generative optimization.",
-          "ja": "この研究線は、基盤インフラ（EvoX、EvoRL、TensorNEAT、EvoGP）から、EMO の高速テンソル化、差分進化の自己適応、さらに完全データ駆動の進化生成最適化へと進んでいます。",
-          "zh": "这条主线已经从基础设施层（EvoX、EvoRL、TensorNEAT、EvoGP）推进到了 EMO 的加速张量化、差分进化的自适应化，以及全数据驱动的进化生成优化。"
-        },
-        {
-          "en": "A current arXiv watch layer is also worth tracking: the 2026 GPU scaling study asks when accelerator parallelism truly changes EA behavior, and the 2025 LLM-for-optimization survey shows the group's frontier attention expanding toward agentic optimization workflows.",
-          "ja": "現在の arXiv 監視層も追う価値があります。2026 年の GPU スケーリング研究は、アクセラレータ並列性がいつ EA の挙動そのものを変えるのかを問い、2025 年の LLM-for-optimization サーベイは、このグループの関心がエージェント型最適化ワークフローへ広がっていることを示しています。",
-          "zh": "当前的 arXiv 监测层同样值得跟踪：2026 年的 GPU scaling 研究追问的是，加速器并行性究竟在何时会真正改变 EA 的行为；而 2025 年的 LLM-for-optimization 综述则表明，这一团队的前沿关注正在扩展到 agentic optimization workflow。"
-        },
-        {
-          "en": "The broader storage strategy is intentional: CAS / JCR filters should be applied downstream, not by shrinking the only stored Ran Cheng evidence layer.",
-          "ja": "より広い保存戦略は意図的なものです。CAS / JCR の絞り込みは下流で適用すべきであり、唯一保存している Ran Cheng の証拠層そのものを最初から縮めるべきではありません。",
-          "zh": "这种更宽口径的存储策略是有意为之：CAS / JCR 的筛选应在下游完成，而不应通过压缩目前唯一保存的 Ran Cheng 证据层来实现。"
-        }
-      ],
       "repositories": [
         {
           "en": "EMI-Group/evox (distributed GPU-native EC framework)",
@@ -329,14 +140,7 @@ window.FRONTIER_DATA = {
           "ja": "進化最適化のための大規模言語モデルに関する体系的サーベイ: モデリングから問題解決まで",
           "zh": "面向进化优化的大语言模型系统综述：从建模到求解"
         }
-      ],
-      "links": {
-        "homepage": "https://chengran.tech/",
-        "openalex": "https://openalex.org/A5004036087",
-        "googleScholar": "https://scholar.google.com/citations?hl=en&user=bjeIdlcAAAAJ",
-        "dblp": "https://dblp.org/pid/18/4198-4.xml",
-        "staffPage": "https://www.polyu.edu.hk/comp/People/Academic-Staff/Prof-CHENG-Ran"
-      }
+      ]
     },
     {
       "id": "julian-blank",
@@ -347,33 +151,10 @@ window.FRONTIER_DATA = {
         "ja": "米国",
         "zh": "美国"
       },
-      "strength": {
-        "en": "multiobjective toolchains",
-        "ja": "多目的最適化ツールチェーン",
-        "zh": "多目标优化工具链"
+      "links": {
+        "homepage": null,
+        "openalex": "https://openalex.org/A5047107500"
       },
-      "thesis": {
-        "en": "Julian Blank at Michigan State University is worth following for parallel multiobjective optimization and practical optimization tooling. The current feed captures 2 recent EC papers since 2024-01-01, and the strongest code signal remains anyoptimization/pymoo (2833★, pushed 2026-02-22).",
-        "ja": "ミシガン州立大学の Julian Blank は、並列多目的最適化と実務志向の最適化ツール群という観点で追跡する価値があります。現在のフィードでは 2024-01-01 以降の最近の EC 論文を2件捕捉しており、最も強いコードシグナルは依然として anyoptimization/pymoo（2833★、最終更新 2026-02-22）です。",
-        "zh": "密歇根州立大学的 Julian Blank 值得从并行多目标优化与实用型优化工具链的角度持续跟踪。当前数据流已捕捉到 2024-01-01 以来的 2 篇近期 EC 论文，其中最强的代码信号仍是 anyoptimization/pymoo（2833★，最近更新于 2026-02-22）。"
-      },
-      "signals": [
-        {
-          "en": "2 EC-relevant works captured since 2024-01-01",
-          "ja": "2024-01-01 以降のEC関連論文を2件捕捉",
-          "zh": "已捕捉到 2024-01-01 以来的 2 篇 EC 相关成果"
-        },
-        {
-          "en": "OpenAlex h-index 11, 2yr mean citedness 7.67",
-          "ja": "OpenAlex h-index 11、直近2年平均被引用度 7.67",
-          "zh": "OpenAlex h-index 为 11，近两年平均被引度为 7.67"
-        },
-        {
-          "en": "anyoptimization/pymoo (2833★, pushed 2026-02-22)",
-          "ja": "anyoptimization/pymoo（2833★、最終更新 2026-02-22）",
-          "zh": "anyoptimization/pymoo（2833★，最近更新于 2026-02-22）"
-        }
-      ],
       "repositories": [
         {
           "en": "anyoptimization/pymoo (2833★, pushed 2026-02-22)",
@@ -394,11 +175,7 @@ window.FRONTIER_DATA = {
           "ja": "高コスト・低コストの目的と制約に対する並列多目的最適化",
           "zh": "面向高代价与低代价目标及约束的并行多目标优化"
         }
-      ],
-      "links": {
-        "homepage": null,
-        "openalex": "https://openalex.org/A5047107500"
-      }
+      ]
     },
     {
       "id": "kalyanmoy-deb",
@@ -409,28 +186,10 @@ window.FRONTIER_DATA = {
         "ja": "インド",
         "zh": "印度"
       },
-      "strength": {
-        "en": "multiobjective foundations",
-        "ja": "多目的最適化の基盤",
-        "zh": "多目标优化基础"
+      "links": {
+        "homepage": null,
+        "openalex": "https://openalex.org/A5088394271"
       },
-      "thesis": {
-        "en": "Kalyanmoy Deb at the Indian Institute of Technology Madras remains a foundational figure worth tracking for multiobjective optimization, problem structure, and benchmark-shaping ideas. The current feed captures 4 recent EC papers since 2024-01-01.",
-        "ja": "インド工科大学マドラス校の Kalyanmoy Deb は、多目的最適化、問題構造、そしてベンチマーク形成に関わる発想という観点で、いまなお基盤的人物として追跡する価値があります。現在のフィードでは 2024-01-01 以降の最近の EC 論文を4件捕捉しています。",
-        "zh": "印度理工学院马德拉斯分校的 Kalyanmoy Deb 仍然是值得持续跟踪的基础性人物，尤其体现在多目标优化、问题结构理解以及基准塑形思路上。当前数据流已捕捉到 2024-01-01 以来的 4 篇近期 EC 论文。"
-      },
-      "signals": [
-        {
-          "en": "4 EC-relevant works captured since 2024-01-01",
-          "ja": "2024-01-01 以降のEC関連論文を4件捕捉",
-          "zh": "已捕捉到 2024-01-01 以来的 4 篇 EC 相关成果"
-        },
-        {
-          "en": "OpenAlex h-index 118, 2yr mean citedness 1.53",
-          "ja": "OpenAlex h-index 118、直近2年平均被引用度 1.53",
-          "zh": "OpenAlex h-index 为 118，近两年平均被引度为 1.53"
-        }
-      ],
       "repositories": [
         {
           "en": "No tracked GitHub repository configured yet",
@@ -451,11 +210,7 @@ window.FRONTIER_DATA = {
           "ja": "大規模多目的最適化問題のための、意思決定変数グルーピングに基づく適応的重み最適化アルゴリズム",
           "zh": "面向大规模多目标优化问题的基于决策变量分组的自适应权重优化算法"
         }
-      ],
-      "links": {
-        "homepage": null,
-        "openalex": "https://openalex.org/A5088394271"
-      }
+      ]
     }
   ],
   "papers": [
@@ -465,11 +220,6 @@ window.FRONTIER_DATA = {
       "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
       "venue": "IEEE Transactions on Evolutionary Computation",
       "year": "2026",
-      "whyItMatters": {
-        "en": "This paper pushes Ran Cheng's line beyond GPU acceleration into a more ambitious goal: replacing handcrafted evolutionary operators with a fully data-driven search pipeline. It is the clearest signal that the group is trying to turn evolutionary optimization into a learnable generative system rather than only a faster solver.",
-        "ja": "この論文は、Ran Cheng の系譜を GPU 加速の先へ押し広げ、手設計の進化演算子を完全にデータ駆動の探索パイプラインへ置き換えるという、より野心的な目標に踏み込んでいます。このグループが進化最適化を単なる高速ソルバではなく、学習可能な生成システムへ変えようとしていることを最も明確に示すシグナルです。",
-        "zh": "这篇论文把 Ran Cheng 的研究主线从 GPU 加速进一步推向了一个更具野心的目标：用全数据驱动的搜索流水线取代手工设计的进化算子。这是该团队试图把进化优化从“更快的求解器”转变为“可学习的生成系统”的最明确信号。"
-      },
       "status": "must-read",
       "pdfState": "ready",
       "authors": [
@@ -483,9 +233,9 @@ window.FRONTIER_DATA = {
       "publicationDate": "2026-01-01",
       "citationCount": 0,
       "abstract": {
-        "en": "Recent advances in data-driven evolutionary algorithms have demonstrated the potential of leveraging historical data to improve optimization accuracy and adaptability. EvoGO reframes the evolutionary optimization process as a fully data-driven pipeline with data preparation, model training, and population generation, aiming to learn the entire search process rather than only hand-designed operators.",
-        "ja": "近年のデータ駆動型進化アルゴリズムは、履歴データを利用して最適化の精度と適応性を高められる可能性を示してきました。EvoGO は、進化最適化をデータ準備・モデル学習・集団生成からなる完全なデータ駆動パイプラインとして再定式化し、手設計の演算子だけでなく探索過程全体を学習しようとします。",
-        "zh": "近年的数据驱动进化算法已经展示出利用历史数据来提升优化精度与适应性的潜力。EvoGO 将进化优化过程重构为一个由数据准备、模型训练和种群生成组成的全数据驱动流水线，目标是不只学习手工设计的算子，而是学习整个搜索过程。"
+        "en": "EvoGO is a fully data-driven evolutionary optimization framework with three stages: data preparation, model training, and population generation. It uses pairwise training data and a generative model to replace traditional reproduction operators with a scalable population-generation mechanism.",
+        "ja": "EvoGO は、データ準備、モデル学習、個体群生成の 3 段階で構成される完全データ駆動型の進化最適化フレームワークです。ペアワイズな学習データと生成モデルを用い、従来の再生産演算子をスケーラブルな個体群生成機構へ置き換えます。",
+        "zh": "EvoGO 是一个完全数据驱动的进化优化框架，由数据准备、模型训练和种群生成三个阶段组成。它使用成对训练数据与生成模型，用可扩展的种群生成机制替代传统繁殖算子。"
       },
       "openAlexUrl": "https://openalex.org/W4416548789",
       "doi": "10.1109/tevc.2026.3664432",
@@ -611,12 +361,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "must-read",
-        "summaryNote": {
-          "en": "This paper pushes Ran Cheng's line beyond GPU acceleration into a more ambitious goal: replacing handcrafted evolutionary operators with a fully data-driven search pipeline. It is the clearest signal that the group is trying to turn evolutionary optimization into a learnable generative system rather than only a faster solver.",
-          "ja": "この論文は、Ran Cheng の系譜を GPU 加速の先へ押し広げ、手設計の進化演算子を完全にデータ駆動の探索パイプラインへ置き換えるという、より野心的な目標に踏み込んでいます。このグループが進化最適化を単なる高速ソルバではなく、学習可能な生成システムへ変えようとしていることを最も明確に示すシグナルです。",
-          "zh": "这篇论文把 Ran Cheng 的研究主线从 GPU 加速进一步推向了一个更具野心的目标：用全数据驱动的搜索流水线取代手工设计的进化算子。这是该团队试图把进化优化从“更快的求解器”转变为“可学习的生成系统”的最明确信号。"
-        }
+        "readingStatus": "must-read"
       },
       "classification": {
         "authors": [
@@ -709,11 +454,6 @@ window.FRONTIER_DATA = {
       "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
       "venue": "International Journal of Parallel Emergent and Distributed Systems",
       "year": "2025",
-      "whyItMatters": {
-        "en": "This paper is useful because it applies Deb's evolutionary-search viewpoint to adaptive systems tuning rather than only classical objective-space design. The contribution is not just faster sorting, but a concrete example of genetic algorithms working as an auto-tuning layer for HPC-scale data processing.",
-        "ja": "この論文が有用なのは、Deb の進化探索の視点を、従来の目的空間設計だけでなく適応的なシステムチューニングへ広げている点です。貢献は単なる高速ソートではなく、遺伝的アルゴリズムが HPC 規模のデータ処理で自動チューニング層として機能する具体例を示していることにあります。",
-        "zh": "这篇论文的价值在于，它把 Deb 的进化搜索视角应用到了自适应系统调优，而不只是传统的目标空间设计。其贡献不只是更快的排序，更是展示了遗传算法如何在 HPC 规模数据处理中充当自动调优层。"
-      },
       "status": "monitor",
       "pdfState": "ready",
       "authors": [
@@ -837,12 +577,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This paper is useful because it applies Deb's evolutionary-search viewpoint to adaptive systems tuning rather than only classical objective-space design. The contribution is not just faster sorting, but a concrete example of genetic algorithms working as an auto-tuning layer for HPC-scale data processing.",
-          "ja": "この論文が有用なのは、Deb の進化探索の視点を、従来の目的空間設計だけでなく適応的なシステムチューニングへ広げている点です。貢献は単なる高速ソートではなく、遺伝的アルゴリズムが HPC 規模のデータ処理で自動チューニング層として機能する具体例を示していることにあります。",
-          "zh": "这篇论文的价值在于，它把 Deb 的进化搜索视角应用到了自适应系统调优，而不只是传统的目标空间设计。其贡献不只是更快的排序，更是展示了遗传算法如何在 HPC 规模数据处理中充当自动调优层。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -914,11 +649,6 @@ window.FRONTIER_DATA = {
       "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
       "venue": "Swarm and Evolutionary Computation",
       "year": "2025",
-      "whyItMatters": {
-        "en": "This paper matters because it revisits a core large-scale multiobjective optimization bottleneck: how to exploit variable structure instead of treating all dimensions uniformly. It is a strong signal of Deb's continued influence on scalable multiobjective algorithm design rather than only on classical EMO foundations.",
-        "ja": "この論文が重要なのは、大規模多目的最適化における中核的なボトルネック、すなわち全次元を一様に扱うのではなく変数構造をどう活用するかを改めて掘り下げている点です。古典的な EMO 基盤だけでなく、スケーラブルな多目的アルゴリズム設計に対する Deb の継続的な影響を示す強いシグナルでもあります。",
-        "zh": "这篇论文的重要性在于，它重新切入了大规模多目标优化中的核心瓶颈：如何利用变量结构，而不是把所有维度一视同仁地处理。这也是 Deb 仍持续影响可扩展多目标算法设计、而不只停留在经典 EMO 基础层面的一个强信号。"
-      },
       "status": "monitor",
       "pdfState": "queued",
       "authors": [
@@ -1044,12 +774,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "openclaw-browser"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This paper matters because it revisits a core large-scale multiobjective optimization bottleneck: how to exploit variable structure instead of treating all dimensions uniformly. It is a strong signal of Deb's continued influence on scalable multiobjective algorithm design rather than only on classical EMO foundations.",
-          "ja": "この論文が重要なのは、大規模多目的最適化における中核的なボトルネック、すなわち全次元を一様に扱うのではなく変数構造をどう活用するかを改めて掘り下げている点です。古典的な EMO 基盤だけでなく、スケーラブルな多目的アルゴリズム設計に対する Deb の継続的な影響を示す強いシグナルでもあります。",
-          "zh": "这篇论文的重要性在于，它重新切入了大规模多目标优化中的核心瓶颈：如何利用变量结构，而不是把所有维度一视同仁地处理。这也是 Deb 仍持续影响可扩展多目标算法设计、而不只停留在经典 EMO 基础层面的一个强信号。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -1123,11 +848,6 @@ window.FRONTIER_DATA = {
       "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
       "venue": "Swarm and Evolutionary Computation",
       "year": "2025",
-      "whyItMatters": {
-        "en": "This paper is worth tracking because it pushes EC evaluation closer to realistic robotics use rather than staying inside purely synthetic benchmarks. It also reflects Deb's continued role in shaping how multiobjective algorithms should be assessed, not just how they are proposed.",
-        "ja": "この論文が追跡に値するのは、EC の評価を純粋に人工的なベンチマークの中に留めず、より現実的なロボティクス利用へ近づけている点です。また、多目的アルゴリズムをどう提案するかだけでなく、どう評価すべきかという枠組みに対しても Deb が継続的に影響していることを示しています。",
-        "zh": "这篇论文值得跟踪，因为它把 EC 的评估从纯粹的人造基准进一步推向了更真实的机器人应用场景。同时，它也体现出 Deb 仍在持续影响多目标算法“应如何评估”，而不只是“应如何提出”。"
-      },
       "status": "monitor",
       "pdfState": "queued",
       "authors": [
@@ -1252,12 +972,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "openclaw-browser"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This paper is worth tracking because it pushes EC evaluation closer to realistic robotics use rather than staying inside purely synthetic benchmarks. It also reflects Deb's continued role in shaping how multiobjective algorithms should be assessed, not just how they are proposed.",
-          "ja": "この論文が追跡に値するのは、EC の評価を純粋に人工的なベンチマークの中に留めず、より現実的なロボティクス利用へ近づけている点です。また、多目的アルゴリズムをどう提案するかだけでなく、どう評価すべきかという枠組みに対しても Deb が継続的に影響していることを示しています。",
-          "zh": "这篇论文值得跟踪，因为它把 EC 的评估从纯粹的人造基准进一步推向了更真实的机器人应用场景。同时，它也体现出 Deb 仍在持续影响多目标算法“应如何评估”，而不只是“应如何提出”。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -1330,11 +1045,6 @@ window.FRONTIER_DATA = {
       "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
       "venue": "Expert Systems with Applications",
       "year": "2025",
-      "whyItMatters": {
-        "en": "This is a useful signal because it extends the large-scale decomposition viewpoint from continuous optimization into difficult combinatorial packing problems. It shows Deb's line still influencing how variable grouping and problem structure are exploited in scalable evolutionary search.",
-        "ja": "この論文が有用なシグナルであるのは、大規模分解の視点を連続最適化から難しい組合せ的なパッキング問題へ拡張している点です。変数グルーピングと問題構造をスケーラブルな進化探索でどう活用するかという論点に、Deb の系譜がなお影響していることを示しています。",
-        "zh": "这是一条有价值的信号，因为它把大规模分解的视角从连续优化扩展到了困难的组合打包问题上。它说明 Deb 这一脉络仍在持续影响：如何在可扩展的进化搜索中利用变量分组与问题结构。"
-      },
       "status": "monitor",
       "pdfState": "queued",
       "authors": [
@@ -1346,9 +1056,9 @@ window.FRONTIER_DATA = {
       "publicationDate": "2025-09-10",
       "citationCount": 0,
       "abstract": {
-        "en": "The paper tackles large-scale 0-1 knapsack problems with a cooperative co-evolutionary algorithm that uses a core-based grouping strategy to decompose variables more effectively. The method aims to preserve important interactions while reducing search complexity, illustrating how decomposition design can improve large-scale combinatorial optimization performance.",
-        "ja": "本論文は、コアベースのグルーピング戦略を用いて変数をより効果的に分解する協調共進化アルゴリズムにより、大規模 0-1 ナップサック問題へ取り組みます。重要な相互作用を保ちながら探索複雑性を下げることを狙っており、分解設計が大規模組合せ最適化の性能向上にどう効くかを示しています。",
-        "zh": "本文利用带有核心分组策略的协同协同进化算法来处理大规模 0-1 背包问题，以更有效地分解变量。该方法旨在在保留关键变量相互作用的同时降低搜索复杂度，展示了分解设计如何提升大规模组合优化性能。"
+        "en": "The paper presents a cooperative co-evolutionary algorithm for large-scale 0-1 knapsack problems using a core-based grouping strategy. The method decomposes variables while preserving key interactions so search complexity can be reduced in large-scale combinatorial optimization.",
+        "ja": "本論文は、コアベースのグルーピング戦略を用いた、大規模 0-1 ナップサック問題向けの協調共進化アルゴリズムを提示します。この手法は、主要な相互作用を保ちながら変数を分解し、大規模組合せ最適化における探索複雑性の低減を図ります。",
+        "zh": "本文提出了一种面向大规模 0-1 背包问题的协同协进化算法，采用核心分组策略。该方法在保留关键相互作用的同时对变量进行分解，从而降低大规模组合优化中的搜索复杂度。"
       },
       "openAlexUrl": "https://openalex.org/W4414140555",
       "doi": "10.1016/j.eswa.2025.129364",
@@ -1460,12 +1170,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "openclaw-browser"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This is a useful signal because it extends the large-scale decomposition viewpoint from continuous optimization into difficult combinatorial packing problems. It shows Deb's line still influencing how variable grouping and problem structure are exploited in scalable evolutionary search.",
-          "ja": "この論文が有用なシグナルであるのは、大規模分解の視点を連続最適化から難しい組合せ的なパッキング問題へ拡張している点です。変数グルーピングと問題構造をスケーラブルな進化探索でどう活用するかという論点に、Deb の系譜がなお影響していることを示しています。",
-          "zh": "这是一条有价值的信号，因为它把大规模分解的视角从连续优化扩展到了困难的组合打包问题上。它说明 Deb 这一脉络仍在持续影响：如何在可扩展的进化搜索中利用变量分组与问题结构。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -1538,11 +1243,6 @@ window.FRONTIER_DATA = {
       "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
       "venue": "ACM Transactions on Evolutionary Learning and Optimization",
       "year": "2025",
-      "whyItMatters": {
-        "en": "EvoRL shows Ran Cheng's systems agenda moving into population-based reinforcement learning. It is important because it makes evolutionary reinforcement learning a practical large-scale experimentation surface rather than a small-scale methodological niche.",
-        "ja": "EvoRL は、Ran Cheng のシステム指向が集団ベース強化学習へ進んでいることを示します。重要なのは、進化的強化学習を小規模な方法論的ニッチではなく、大規模実験が可能な現実的な研究面にしている点です。",
-        "zh": "EvoRL 表明 Ran Cheng 的系统化议程正在推进到基于种群的强化学习。它的重要性在于，它把进化强化学习从一个小众的方法论角落，推进成了一个可进行大规模实验的现实研究面。"
-      },
       "status": "monitor",
       "pdfState": "ready",
       "authors": [
@@ -1553,9 +1253,9 @@ window.FRONTIER_DATA = {
       "publicationDate": "2025-01-01",
       "citationCount": 1,
       "abstract": {
-        "en": "Evolutionary reinforcement learning is often bottlenecked by the cost of maintaining large populations and repeated environment interaction. EvoRL addresses this by executing the full training pipeline on accelerators, including environment simulation and EC operators, so researchers can explore larger populations and broader algorithmic design choices.",
-        "ja": "進化的強化学習は、大きな集団を維持するコストと繰り返しの環境相互作用によってしばしば制約されます。EvoRL は、環境シミュレーションと EC 演算子を含む学習パイプライン全体を加速器上で実行することでこの問題に対処し、研究者がより大きな集団と幅広いアルゴリズム設計を探れるようにします。",
-        "zh": "进化强化学习往往受限于维持大规模种群以及反复环境交互的高昂成本。EvoRL 通过把包括环境模拟与 EC 算子在内的完整训练流水线搬到加速器上执行，以解决这一问题，从而让研究者能够探索更大的种群与更广的算法设计空间。"
+        "en": "EvoRL is an end-to-end GPU-accelerated framework for evolutionary reinforcement learning. It executes environment simulation and evolutionary computation operators on accelerators to support large-population training and scalable experimentation.",
+        "ja": "EvoRL は、進化的強化学習のためのエンドツーエンド GPU 加速フレームワークです。環境シミュレーションと進化計算演算子を加速器上で実行し、大規模個体群の学習とスケーラブルな実験を支援します。",
+        "zh": "EvoRL 是一个面向进化强化学习的端到端 GPU 加速框架。它在加速器上执行环境模拟与进化计算算子，以支持大规模种群训练和可扩展实验。"
       },
       "openAlexUrl": "https://openalex.org/W4413243632",
       "doi": "10.1145/3750053",
@@ -1681,12 +1381,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "EvoRL shows Ran Cheng's systems agenda moving into population-based reinforcement learning. It is important because it makes evolutionary reinforcement learning a practical large-scale experimentation surface rather than a small-scale methodological niche.",
-          "ja": "EvoRL は、Ran Cheng のシステム指向が集団ベース強化学習へ進んでいることを示します。重要なのは、進化的強化学習を小規模な方法論的ニッチではなく、大規模実験が可能な現実的な研究面にしている点です。",
-          "zh": "EvoRL 表明 Ran Cheng 的系统化议程正在推进到基于种群的强化学习。它的重要性在于，它把进化强化学习从一个小众的方法论角落，推进成了一个可进行大规模实验的现实研究面。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -1771,11 +1466,6 @@ window.FRONTIER_DATA = {
       "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
       "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
       "year": "2025",
-      "whyItMatters": {
-        "en": "This CEC paper is a useful bridge between the more mature TEVC tensorization line and the wider community-facing conference layer. It shows that the tensorized many-objective optimization agenda is already being operationalized beyond a single flagship journal paper.",
-        "ja": "この CEC 論文は、より成熟した TEVC のテンソル化研究線と、より広いコミュニティ向け会議層をつなぐ有用な橋です。テンソル化された多目的最適化の構想が、単一のフラッグシップ論文を超えてすでに実装段階へ入っていることを示しています。",
-        "zh": "这篇 CEC 论文是连接更成熟的 TEVC 张量化主线与更面向社区的会议层的一座有用桥梁。它表明，张量化多目标优化这一议程已经不再局限于单篇旗舰期刊论文，而是开始进入实际操作化阶段。"
-      },
       "status": "monitor",
       "pdfState": "ready",
       "authors": [
@@ -1786,9 +1476,9 @@ window.FRONTIER_DATA = {
       "publicationDate": "2025-06-01",
       "citationCount": 0,
       "abstract": {
-        "en": "TensorNSGA-III keeps the exact selection and variation logic of NSGA-III while reformulating the algorithm into tensorized GPU-friendly operators. The result is large acceleration without giving up the core many-objective optimization behavior that practitioners expect from NSGA-III.",
-        "ja": "TensorNSGA-III は、NSGA-III の選択と変異の論理をそのまま保ちながら、アルゴリズムを GPU に適したテンソル演算子へ再構成します。その結果、実務者が NSGA-III に期待する多目的最適化の中核的挙動を損なうことなく、大幅な高速化を実現します。",
-        "zh": "TensorNSGA-III 在保留 NSGA-III 原有选择与变异逻辑的同时，将算法重构为适合 GPU 的张量化算子。其结果是在不牺牲实践者对 NSGA-III 所期待的核心多目标优化行为的前提下，实现了大幅加速。"
+        "en": "TensorNSGA-III preserves the selection and variation logic of NSGA-III while reformulating the algorithm with tensorized GPU-oriented operators. This reformulation accelerates many-objective optimization on accelerators while retaining the core behavior of NSGA-III.",
+        "ja": "TensorNSGA-III は、NSGA-III の選択と変異の論理を保ったまま、アルゴリズムを GPU 向けのテンソル演算子へ再構成します。この再構成により、NSGA-III の中核的な挙動を維持しつつ、加速器上での多目的最適化を高速化します。",
+        "zh": "TensorNSGA-III 在保留 NSGA-III 选择与变异逻辑的同时，将算法重构为面向 GPU 的张量化算子。该重构在保持 NSGA-III 核心行为的前提下，加速了加速器上的多目标优化计算。"
       },
       "openAlexUrl": "https://openalex.org/W4411600078",
       "doi": "10.1109/cec65147.2025.11043108",
@@ -1914,12 +1604,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This CEC paper is a useful bridge between the more mature TEVC tensorization line and the wider community-facing conference layer. It shows that the tensorized many-objective optimization agenda is already being operationalized beyond a single flagship journal paper.",
-          "ja": "この CEC 論文は、より成熟した TEVC のテンソル化研究線と、より広いコミュニティ向け会議層をつなぐ有用な橋です。テンソル化された多目的最適化の構想が、単一のフラッグシップ論文を超えてすでに実装段階へ入っていることを示しています。",
-          "zh": "这篇 CEC 论文是连接更成熟的 TEVC 张量化主线与更面向社区的会议层的一座有用桥梁。它表明，张量化多目标优化这一议程已经不再局限于单篇旗舰期刊论文，而是开始进入实际操作化阶段。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -1996,11 +1681,6 @@ window.FRONTIER_DATA = {
       "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
       "venue": "ACM Transactions on Evolutionary Learning and Optimization",
       "year": "2025",
-      "whyItMatters": {
-        "en": "TensorNEAT matters because it extends the tensorization strategy beyond classic optimization into topology-evolving neuroevolution. That broadens Ran Cheng's stack from solver acceleration to reusable GPU-native evolutionary tooling across different representation types.",
-        "ja": "TensorNEAT が重要なのは、テンソル化戦略を古典的最適化の外へ押し広げ、トポロジーが進化する神経進化へ適用している点です。これにより、Ran Cheng のスタックはソルバ高速化から、異なる表現型をまたぐ再利用可能な GPU ネイティブ進化ツール群へ広がります。",
-        "zh": "TensorNEAT 的重要性在于，它把张量化策略从经典优化扩展到了拓扑也会演化的神经进化场景。这使 Ran Cheng 的技术栈从“求解器加速”进一步拓展到跨不同表示类型的可复用 GPU 原生进化工具。"
-      },
       "status": "monitor",
       "pdfState": "ready",
       "authors": [
@@ -2013,9 +1693,9 @@ window.FRONTIER_DATA = {
       "publicationDate": "2025-01-01",
       "citationCount": 1,
       "abstract": {
-        "en": "TensorNEAT reformulates NEAT's heterogeneous evolving topologies into uniformly shaped tensors so the whole population can be executed efficiently on accelerators. The result is not just a speedup but a reusable neuroevolution library that fits the broader GPU-native EC tooling agenda.",
-        "ja": "TensorNEAT は、NEAT の異質な進化トポロジーを均一形状のテンソルへ再定式化することで、集団全体を加速器上で効率的に実行できるようにします。結果は単なる高速化ではなく、より広い GPU ネイティブ EC ツール群の方針に合致した再利用可能な神経進化ライブラリです。",
-        "zh": "TensorNEAT 将 NEAT 中异质演化的拓扑重构为统一形状的张量，从而使整个种群能够在加速器上高效执行。其结果不只是速度提升，更是形成了一个符合更广泛 GPU 原生 EC 工具化方向的可复用神经进化库。"
+        "en": "TensorNEAT is a GPU-accelerated library that tensorizes NEAT by reformulating heterogeneous evolving topologies and operations into uniformly shaped tensors. The library supports efficient population-level parallel execution on accelerators and integrates with JAX-based neuroevolution workflows.",
+        "ja": "TensorNEAT は、異質な進化トポロジーと演算を均一形状のテンソルへ再定式化することで NEAT をテンソル化する GPU 加速ライブラリです。このライブラリは、加速器上での個体群レベル並列実行を支援し、JAX ベースの神経進化ワークフローと統合されます。",
+        "zh": "TensorNEAT 是一个通过将异质演化拓扑与操作重构为统一形状张量来实现 NEAT 张量化的 GPU 加速库。该库支持在加速器上进行种群级高效并行执行，并可与基于 JAX 的神经进化工作流集成。"
       },
       "openAlexUrl": "https://openalex.org/W4409486142",
       "doi": "10.1145/3730406",
@@ -2152,12 +1832,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "TensorNEAT matters because it extends the tensorization strategy beyond classic optimization into topology-evolving neuroevolution. That broadens Ran Cheng's stack from solver acceleration to reusable GPU-native evolutionary tooling across different representation types.",
-          "ja": "TensorNEAT が重要なのは、テンソル化戦略を古典的最適化の外へ押し広げ、トポロジーが進化する神経進化へ適用している点です。これにより、Ran Cheng のスタックはソルバ高速化から、異なる表現型をまたぐ再利用可能な GPU ネイティブ進化ツール群へ広がります。",
-          "zh": "TensorNEAT 的重要性在于，它把张量化策略从经典优化扩展到了拓扑也会演化的神经进化场景。这使 Ran Cheng 的技术栈从“求解器加速”进一步拓展到跨不同表示类型的可复用 GPU 原生进化工具。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -2257,11 +1932,6 @@ window.FRONTIER_DATA = {
         "Genetic Programming",
         "GPU-native EC Systems"
       ],
-      "whyItMatters": {
-        "en": "This paper extends Ran Cheng's acceleration line from evolutionary optimization into tree-based genetic programming. It matters because it shows the same systems agenda scaling to structurally irregular representations, not only vectorized continuous populations.",
-        "ja": "この論文は、Ran Cheng の加速研究線を進化最適化から木構造ベースの遺伝的プログラミングへ拡張しています。重要なのは、同じシステム指向が、ベクトル化された連続集団だけでなく、構造的に不規則な表現にも拡張できることを示している点です。",
-        "zh": "这篇论文把 Ran Cheng 的加速主线从进化优化扩展到了树结构遗传程序。它之所以重要，是因为它表明同一套系统化议程能够扩展到结构不规则的表示，而不只是向量化的连续种群。"
-      },
       "publicationDate": "2026-01-01",
       "citationCount": 0,
       "doi": "10.1109/tevc.2026.3663396",
@@ -2274,9 +1944,9 @@ window.FRONTIER_DATA = {
         "EvoGP: A GPU-accelerated Framework for Tree-based Genetic Programming"
       ],
       "abstract": {
-        "en": "Tree-based Genetic Programming faces a GPU systems bottleneck because individual programs are structurally heterogeneous and difficult to batch efficiently. EvoGP addresses that bottleneck with tensorized tree representations, adaptive multi-level parallelism, and custom CUDA integration inside Python-facing runtimes.",
-        "ja": "木構造ベースの遺伝的プログラミングは、個々のプログラムの構造が不均一で効率的なバッチ化が難しいため、GPU システム上のボトルネックに直面します。EvoGP は、テンソル化された木表現、適応的な多段並列性、そして Python ランタイムに統合された独自 CUDA 実装によってこの問題に対処します。",
-        "zh": "树结构遗传程序由于个体程序在结构上高度异质，难以高效批处理，因此面临 GPU 系统层面的瓶颈。EvoGP 通过张量化树表示、自适应多层并行以及嵌入 Python 运行时的定制 CUDA 集成来解决这一问题。"
+        "en": "The paper presents a GPU-accelerated tree-based genetic programming framework using tensorized tree representations, adaptive multi-level parallelism, and custom CUDA integration. The framework targets efficient population-level parallel execution despite structural heterogeneity among programs.",
+        "ja": "本論文は、テンソル化された木表現、適応的な多段並列性、独自の CUDA 統合を用いた GPU 加速型の木ベース遺伝的プログラミングフレームワークを提示します。構造的に不均一なプログラム群に対して、個体群レベルの効率的な並列実行を目標としています。",
+        "zh": "本文提出了一个面向 GPU 加速的树式遗传程序框架，采用张量化树表示、自适应多层并行以及定制 CUDA 集成。该框架旨在在程序结构高度异质的情况下实现种群级高效并行执行。"
       },
       "alternateVersions": [
         {
@@ -2386,12 +2056,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "must-read",
-        "summaryNote": {
-          "en": "This paper extends Ran Cheng's acceleration line from evolutionary optimization into tree-based genetic programming. It matters because it shows the same systems agenda scaling to structurally irregular representations, not only vectorized continuous populations.",
-          "ja": "この論文は、Ran Cheng の加速研究線を進化最適化から木構造ベースの遺伝的プログラミングへ拡張しています。重要なのは、同じシステム指向が、ベクトル化された連続集団だけでなく、構造的に不規則な表現にも拡張できることを示している点です。",
-          "zh": "这篇论文把 Ran Cheng 的加速主线从进化优化扩展到了树结构遗传程序。它之所以重要，是因为它表明同一套系统化议程能够扩展到结构不规则的表示，而不只是向量化的连续种群。"
-        }
+        "readingStatus": "must-read"
       },
       "classification": {
         "authors": [
@@ -2497,11 +2162,6 @@ window.FRONTIER_DATA = {
         "Evolutionary Algorithms and Applications",
         "Advanced Multi-Objective Optimization Algorithms"
       ],
-      "whyItMatters": {
-        "en": "This paper is one of the cleanest bridges between classic EMO algorithm design and modern GPU systems thinking. Instead of proposing only another EMO variant, it asks how the algorithmic structure itself should be tensorized so that many-objective optimization can fully exploit accelerator hardware.",
-        "ja": "この論文は、古典的な EMO アルゴリズム設計と現代的な GPU システム思考を最も明快につなぐ橋の一つです。単に新しい EMO 変種を提案するのではなく、多目的最適化が加速器ハードウェアを十分に活かすために、アルゴリズム構造そのものをどうテンソル化すべきかを問います。",
-        "zh": "这篇论文是连接经典 EMO 算法设计与现代 GPU 系统思维的最清晰桥梁之一。它并不只是再提出一个 EMO 变体，而是追问：为了让多目标优化真正吃满加速器硬件，算法结构本身应当如何张量化。"
-      },
       "publicationDate": "2025-03-28",
       "citationCount": 2,
       "doi": "10.1109/tevc.2025.3555605",
@@ -2517,9 +2177,9 @@ window.FRONTIER_DATA = {
         "policy": "Use the official homepage's online-first chronology in the researcher dossier while preserving issue-year metadata for auditability."
       },
       "abstract": {
-        "en": "The paper argues that evolutionary multiobjective optimization has hit a systems bottleneck: sophisticated EMO methods exist, but their data structures and operators still fail to map cleanly onto GPUs. It proposes tensorization as the key abstraction for restructuring EMO workflows so that advanced many-objective optimization can scale with modern accelerator hardware.",
-        "ja": "本論文は、進化的多目的最適化がシステム上のボトルネックに突き当たっていると論じます。高度な EMO 手法は存在していても、そのデータ構造と演算子は依然として GPU にきれいに対応していません。そこで、先進的な多目的最適化を現代の加速器ハードウェア上でスケールさせるために、EMO ワークフローを再構成する鍵となる抽象としてテンソル化を提案します。",
-        "zh": "本文认为，进化多目标优化已经遇到了系统层面的瓶颈：虽然复杂的 EMO 方法已经很多，但它们的数据结构与操作算子仍然无法自然映射到 GPU 上。为此，论文提出把“张量化”作为重构 EMO 工作流的关键抽象，以便让先进的多目标优化在现代加速器硬件上实现可扩展。"
+        "en": "The paper studies how tensorization can restructure evolutionary multiobjective optimization for GPU execution. It focuses on mapping EMO data structures and operators onto accelerator-friendly representations so many-objective optimization can scale on modern hardware.",
+        "ja": "本論文は、テンソル化によって進化的多目的最適化を GPU 実行向けに再構成する方法を検討します。EMO のデータ構造と演算子を加速器向け表現へ写像し、多目的最適化を現代ハードウェア上でスケールさせることに焦点を当てています。",
+        "zh": "本文研究如何通过张量化将进化多目标优化重构为适合 GPU 执行的形式。其重点是把 EMO 的数据结构与操作算子映射到对加速器友好的表示上，从而使多目标优化能够在现代硬件上实现扩展。"
       },
       "alternateVersions": [
         {
@@ -2629,12 +2289,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "must-read",
-        "summaryNote": {
-          "en": "This paper is one of the cleanest bridges between classic EMO algorithm design and modern GPU systems thinking. Instead of proposing only another EMO variant, it asks how the algorithmic structure itself should be tensorized so that many-objective optimization can fully exploit accelerator hardware.",
-          "ja": "この論文は、古典的な EMO アルゴリズム設計と現代的な GPU システム思考を最も明快につなぐ橋の一つです。単に新しい EMO 変種を提案するのではなく、多目的最適化が加速器ハードウェアを十分に活かすために、アルゴリズム構造そのものをどうテンソル化すべきかを問います。",
-          "zh": "这篇论文是连接经典 EMO 算法设计与现代 GPU 系统思维的最清晰桥梁之一。它并不只是再提出一个 EMO 变体，而是追问：为了让多目标优化真正吃满加速器硬件，算法结构本身应当如何张量化。"
-        }
+        "readingStatus": "must-read"
       },
       "classification": {
         "authors": [
@@ -2738,11 +2393,6 @@ window.FRONTIER_DATA = {
       "topics": [
         "Evolutionary Algorithms and Applications"
       ],
-      "whyItMatters": {
-        "en": "MetaDE is strategically important because it turns a long-standing practical headache in differential evolution, namely brittle hyperparameter and strategy selection, into an evolutionary problem itself. That makes it a strong example of Ran Cheng's broader move toward self-configuring evolutionary systems.",
-        "ja": "MetaDE が戦略的に重要なのは、差分進化における長年の実務的な悩み、すなわち脆弱なハイパーパラメータと戦略選択を、それ自体を進化の対象へと変えている点です。これは、Ran Cheng のより大きな流れが自己構成型の進化システムへ向かっていることを示す好例です。",
-        "zh": "MetaDE 的战略意义在于，它把差分进化中长期存在的实践痛点，也就是脆弱的超参数与策略选择问题，本身转化成了一个进化问题。这是 Ran Cheng 更广泛地转向“自配置进化系统”的一个很强例证。"
-      },
       "publicationDate": "2025-02-13",
       "citationCount": 9,
       "doi": "10.1109/tevc.2025.3541587",
@@ -2758,9 +2408,9 @@ window.FRONTIER_DATA = {
         "policy": "Use the official homepage's online-first chronology in the researcher dossier while preserving issue-year metadata for auditability."
       },
       "abstract": {
-        "en": "MetaDE treats the internal hyperparameter dilemma of differential evolution as an optimization target in its own right. Instead of relying on manual tuning or lightweight adaptive heuristics, it evolves DE's own configuration choices, pushing toward a more autonomous and self-improving optimization stack.",
-        "ja": "MetaDE は、差分進化の内部にあるハイパーパラメータ問題そのものを最適化対象として扱います。手動チューニングや軽量な適応ヒューリスティクスに頼るのではなく、DE 自身の設定選択を進化させることで、より自律的で自己改善的な最適化スタックへ進もうとします。",
-        "zh": "MetaDE 把差分进化内部的超参数困境本身视为一个优化目标。它不再依赖人工调参或轻量级自适应启发式，而是让 DE 自己的配置选择通过进化产生，从而推动优化栈走向更自主、可自我改进的形态。"
+        "en": "MetaDE uses differential evolution to optimize the configuration of differential evolution itself, including strategy and hyperparameter choices. The method treats algorithm configuration as an optimization target rather than relying only on manual tuning or lightweight adaptive heuristics.",
+        "ja": "MetaDE は、戦略やハイパーパラメータ選択を含む差分進化の設定そのものを、差分進化によって最適化します。手動調整や軽量な適応ヒューリスティクスだけに依存せず、アルゴリズム設定自体を最適化対象として扱う手法です。",
+        "zh": "MetaDE 使用差分进化来优化差分进化自身的配置，包括策略与超参数选择。该方法把算法配置本身视为优化目标，而不是只依赖人工调参或轻量级自适应启发式。"
       },
       "alternateVersions": [
         {
@@ -2870,12 +2520,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "must-read",
-        "summaryNote": {
-          "en": "MetaDE is strategically important because it turns a long-standing practical headache in differential evolution, namely brittle hyperparameter and strategy selection, into an evolutionary problem itself. That makes it a strong example of Ran Cheng's broader move toward self-configuring evolutionary systems.",
-          "ja": "MetaDE が戦略的に重要なのは、差分進化における長年の実務的な悩み、すなわち脆弱なハイパーパラメータと戦略選択を、それ自体を進化の対象へと変えている点です。これは、Ran Cheng のより大きな流れが自己構成型の進化システムへ向かっていることを示す好例です。",
-          "zh": "MetaDE 的战略意义在于，它把差分进化中长期存在的实践痛点，也就是脆弱的超参数与策略选择问题，本身转化成了一个进化问题。这是 Ran Cheng 更广泛地转向“自配置进化系统”的一个很强例证。"
-        }
+        "readingStatus": "must-read"
       },
       "classification": {
         "authors": [
@@ -2970,11 +2615,6 @@ window.FRONTIER_DATA = {
         "Optical measurement and interference techniques",
         "Advanced Measurement and Metrology Techniques"
       ],
-      "whyItMatters": {
-        "en": "This paper is less central to the GPU-native EC infrastructure thread, but it still matters because it shows the same evolutionary search mindset being pushed into a high-cost vision design problem. It is a good boundary marker for how far Ran Cheng's evolutionary systems line can transfer into application-heavy model design tasks.",
-        "ja": "この論文は GPU ネイティブ EC 基盤線の中核からはやや外れますが、それでも重要なのは、同じ進化探索の発想が高コストな視覚モデル設計問題へ押し広げられている点です。Ran Cheng の進化システム研究線が、どこまで応用負荷の高いモデル設計タスクへ移植できるかを測る良い境界指標でもあります。",
-        "zh": "这篇论文虽然不是 GPU 原生 EC 基础设施主线的最核心部分，但仍然重要，因为它展示了同样的进化搜索思路正在被推进到高成本的视觉设计问题中。它也是一个很好的边界标记，用来判断 Ran Cheng 的进化系统主线可以在多大程度上迁移到应用负担更重的模型设计任务。"
-      },
       "publicationDate": "2025-01-01",
       "citationCount": 0,
       "doi": "10.1109/tevc.2025.3614261",
@@ -2983,9 +2623,9 @@ window.FRONTIER_DATA = {
       "url": "https://doi.org/10.1109/tevc.2025.3614261",
       "openAlexUrl": "https://openalex.org/W4414459062",
       "abstract": {
-        "en": "The paper introduces an evolutionary NAS framework for monocular depth estimation that avoids costly per-candidate pretraining through hierarchical parameter mapping. In the context of Ran Cheng's recent work, it shows evolutionary search being applied to efficiency-critical architecture design rather than only classic black-box optimization.",
-        "ja": "本論文は、単眼深度推定のための進化的 NAS 枠組みを提案し、階層的パラメータマッピングによって候補ごとの高価な事前学習を回避します。Ran Cheng の最近の研究文脈では、進化探索が古典的なブラックボックス最適化だけでなく、効率が重要なアーキテクチャ設計へも適用されていることを示しています。",
-        "zh": "本文提出了一个面向单目深度估计的进化 NAS 框架，通过层次化参数映射避免了每个候选都进行高成本预训练。在 Ran Cheng 近期工作的语境下，它表明进化搜索正在被应用到效率敏感的架构设计问题中，而不只是传统的黑箱优化。"
+        "en": "The paper introduces an evolutionary NAS framework for monocular depth estimation that uses hierarchical parameter mapping to avoid costly per-candidate pretraining. The framework applies evolutionary search to architecture design for monocular depth estimation while reducing the computational cost of candidate evaluation.",
+        "ja": "本論文は、単眼深度推定のための進化的 NAS 枠組みを提案し、階層的パラメータマッピングによって候補ごとの高価な事前学習を回避します。この枠組みは、単眼深度推定のアーキテクチャ設計へ進化探索を適用しつつ、候補評価の計算コストを低減します。",
+        "zh": "本文提出了一种面向单目深度估计的进化 NAS 框架，利用层级参数映射避免对每个候选架构进行高成本预训练。该框架将进化搜索用于单目深度估计的架构设计，并降低了候选评估的计算开销。"
       },
       "archivePath": "archive/evolutionary-computation/2025/efficient-evolutionary-neural-architecture-search-with-hierarchical-parameter-mapping-for-monocular-depth-estimation.pdf",
       "citationText": "H. Zhang, Z. Yu, Y. Jin, et al., \"Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation\", IEEE Transactions on Evolutionary Computation, 2025, doi: 10.1109/tevc.2025.3614261.",
@@ -3085,12 +2725,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "openclaw-browser"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This paper is less central to the GPU-native EC infrastructure thread, but it still matters because it shows the same evolutionary search mindset being pushed into a high-cost vision design problem. It is a good boundary marker for how far Ran Cheng's evolutionary systems line can transfer into application-heavy model design tasks.",
-          "ja": "この論文は GPU ネイティブ EC 基盤線の中核からはやや外れますが、それでも重要なのは、同じ進化探索の発想が高コストな視覚モデル設計問題へ押し広げられている点です。Ran Cheng の進化システム研究線が、どこまで応用負荷の高いモデル設計タスクへ移植できるかを測る良い境界指標でもあります。",
-          "zh": "这篇论文虽然不是 GPU 原生 EC 基础设施主线的最核心部分，但仍然重要，因为它展示了同样的进化搜索思路正在被推进到高成本的视觉设计问题中。它也是一个很好的边界标记，用来判断 Ran Cheng 的进化系统主线可以在多大程度上迁移到应用负担更重的模型设计任务。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -3197,11 +2832,6 @@ window.FRONTIER_DATA = {
         "Metaheuristic Optimization Algorithms Research",
         "Advanced Multi-Objective Optimization Algorithms"
       ],
-      "whyItMatters": {
-        "en": "EvoX is the infrastructure anchor for this whole dossier. It frames scalable evolutionary computation as a systems problem, not just an algorithm benchmark problem, and gives the rest of the 2025 to 2026 TEVC line a concrete software and execution foundation.",
-        "ja": "EvoX はこのドシエ全体のインフラ上の錨です。スケーラブルな進化計算を単なるアルゴリズムベンチマーク問題ではなく、システム問題として捉え直し、2025-2026 年の TEVC 系列全体に具体的なソフトウェア基盤と実行基盤を与えています。",
-        "zh": "EvoX 是整个 dossier 的基础设施锚点。它把可扩展进化计算重新表述为一个系统问题，而不只是算法基准问题，并为 2025-2026 年后续 TEVC 主线提供了具体的软件与执行基础。"
-      },
       "publicationDate": "2024-04-15",
       "citationCount": 26,
       "doi": "10.1109/tevc.2024.3388550",
@@ -3211,9 +2841,9 @@ window.FRONTIER_DATA = {
       "pdfUrl": "https://arxiv.org/pdf/2301.12457",
       "openAlexUrl": "https://openalex.org/W4394805110",
       "abstract": {
-        "en": "EvoX presents a distributed GPU-accelerated framework designed to make evolutionary computation viable for data-intensive and large-scale settings. Its importance is not only the raw speedup but the attempt to provide a durable, reusable architecture for modern EC workloads.",
-        "ja": "EvoX は、データ集約的で大規模な設定でも進化計算を実用化できるように設計された、分散 GPU 加速フレームワークを提示します。その重要性は生の高速化だけでなく、現代の EC ワークロードに対して持続的かつ再利用可能なアーキテクチャを与えようとしている点にあります。",
-        "zh": "EvoX 提出了一套分布式 GPU 加速框架，目标是在数据密集和大规模场景下让进化计算真正可用。它的重要性不只在于原始速度提升，更在于试图为现代 EC 工作负载提供一种持久、可复用的架构。"
+        "en": "EvoX presents a distributed GPU-accelerated framework for scalable evolutionary computation in data-intensive and large-scale settings. The framework provides reusable system support for modern EC workloads, including distributed execution and accelerator-oriented computation.",
+        "ja": "EvoX は、データ集約的かつ大規模な設定におけるスケーラブルな進化計算のための分散 GPU 加速フレームワークを提示します。このフレームワークは、分散実行と加速器指向計算を含む、現代的な EC ワークロード向けの再利用可能なシステム基盤を提供します。",
+        "zh": "EvoX 提出了一种面向数据密集和大规模场景的分布式 GPU 加速进化计算框架。该框架为现代 EC 工作负载提供可复用的系统支持，包括分布式执行与面向加速器的计算机制。"
       },
       "alternateVersions": [
         {
@@ -3323,12 +2953,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "must-read",
-        "summaryNote": {
-          "en": "EvoX is the infrastructure anchor for this whole dossier. It frames scalable evolutionary computation as a systems problem, not just an algorithm benchmark problem, and gives the rest of the 2025 to 2026 TEVC line a concrete software and execution foundation.",
-          "ja": "EvoX はこのドシエ全体のインフラ上の錨です。スケーラブルな進化計算を単なるアルゴリズムベンチマーク問題ではなく、システム問題として捉え直し、2025-2026 年の TEVC 系列全体に具体的なソフトウェア基盤と実行基盤を与えています。",
-          "zh": "EvoX 是整个 dossier 的基础设施锚点。它把可扩展进化计算重新表述为一个系统问题，而不只是算法基准问题，并为 2025-2026 年后续 TEVC 主线提供了具体的软件与执行基础。"
-        }
+        "readingStatus": "must-read"
       },
       "classification": {
         "authors": [
@@ -3439,11 +3064,6 @@ window.FRONTIER_DATA = {
         "GPU-native EC Systems",
         "Evaluation Methodology"
       ],
-      "whyItMatters": {
-        "en": "This preprint is strategically useful because it shifts the conversation from raw accelerator speedups to when GPU parallelism actually changes EA behavior, evaluation methodology, and algorithm design. That makes it a strong forward signal for how the group's systems agenda may mature next.",
-        "ja": "このプレプリントが戦略的に有用なのは、議論を単なる加速器速度向上から、GPU 並列性がいつ EA の挙動、評価方法、アルゴリズム設計そのものを変えるのかへ移している点です。これは、このグループのシステム議題が次にどう成熟するかを示す強い先行シグナルです。",
-        "zh": "这篇预印本在战略上很有价值，因为它把讨论从“加速器到底快了多少”转向了“GPU 并行性究竟在何时改变 EA 的行为、评测方法与算法设计本身”。这使它成为该团队系统化议程下一步可能如何成熟的一个强前向信号。"
-      },
       "publicationDate": "2026-01-26",
       "citationCount": 0,
       "doi": "10.48550/arxiv.2601.18446",
@@ -3559,12 +3179,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This preprint is strategically useful because it shifts the conversation from raw accelerator speedups to when GPU parallelism actually changes EA behavior, evaluation methodology, and algorithm design. That makes it a strong forward signal for how the group's systems agenda may mature next.",
-          "ja": "このプレプリントが戦略的に有用なのは、議論を単なる加速器速度向上から、GPU 並列性がいつ EA の挙動、評価方法、アルゴリズム設計そのものを変えるのかへ移している点です。これは、このグループのシステム議題が次にどう成熟するかを示す強い先行シグナルです。",
-          "zh": "这篇预印本在战略上很有价值，因为它把讨论从“加速器到底快了多少”转向了“GPU 并行性究竟在何时改变 EA 的行为、评测方法与算法设计本身”。这使它成为该团队系统化议程下一步可能如何成熟的一个强前向信号。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -3657,11 +3272,6 @@ window.FRONTIER_DATA = {
         "LLMs for Optimization",
         "Survey"
       ],
-      "whyItMatters": {
-        "en": "This survey is worth storing because it maps an emerging bridge between LLM reasoning and evolutionary optimization workflows. Even if it is not the central GPU-systems line, it is a useful frontier marker for where the group may influence agentic optimization research next.",
-        "ja": "このサーベイを保存しておく価値があるのは、LLM の推論と進化最適化ワークフローの間に立ち上がりつつある橋を整理しているからです。GPU システム主線の中心ではないとしても、このグループが次にどこでエージェント型最適化研究へ影響を及ぼしうるかを示す有用なフロンティア指標です。",
-        "zh": "这篇综述值得保存，因为它梳理了 LLM 推理与进化优化工作流之间正在形成的一座桥梁。即便它不是 GPU 系统主线的核心部分，它依然是一个有用的前沿标记，用来判断该团队下一步可能在哪些方向影响 agentic optimization research。"
-      },
       "publicationDate": "2025-09-10",
       "citationCount": 0,
       "doi": "10.48550/arxiv.2509.08269",
@@ -3670,9 +3280,9 @@ window.FRONTIER_DATA = {
       "url": "https://arxiv.org/abs/2509.08269",
       "pdfUrl": "https://arxiv.org/pdf/2509.08269",
       "abstract": {
-        "en": "The survey organizes the use of large language models in evolutionary optimization into modeling and solving stages, then further separates solving into stand-alone optimizers, low-level algorithmic components, and high-level managerial roles. It is a useful evidence node for tracking how evolutionary optimization may connect with self-evolving agentic systems.",
-        "ja": "このサーベイは、進化最適化における大規模言語モデルの利用を、モデリング段階と解法段階に整理し、さらに解法段階を単独オプティマイザ、低レベルアルゴリズム部品、高レベル管理役割へと分けています。進化最適化が自己進化するエージェントシステムとどう接続しうるかを追ううえで、有用な証拠ノードです。",
-        "zh": "这篇综述把大语言模型在进化优化中的使用划分为建模阶段与求解阶段，并进一步把求解阶段细分为独立优化器、底层算法组件和高层管理角色。它是一个很有用的证据节点，用来跟踪进化优化可能如何与可自我演化的智能体系统连接起来。"
+        "en": "The survey organizes the use of large language models in evolutionary optimization into modeling and solving stages, and further divides solving into stand-alone optimizers, low-level algorithmic components, and high-level managerial roles. It provides a structured taxonomy of how large language models are being integrated into evolutionary optimization workflows.",
+        "ja": "このサーベイは、進化最適化における大規模言語モデルの利用を、モデリング段階と解法段階に整理し、さらに解法段階を単独オプティマイザ、低レベルアルゴリズム部品、高レベル管理役割へと分けています。大規模言語モデルが進化最適化ワークフローへどのように組み込まれているかについて、構造化された分類を提示します。",
+        "zh": "该综述将大语言模型在进化优化中的应用划分为建模阶段与求解阶段，并进一步将求解分为独立优化器、底层算法组件和高层管理角色。综述给出了大语言模型融入进化优化工作流的结构化分类。"
       },
       "sourceLineage": {
         "homepage": "Not listed on the selected-publications page as of 2026-04-08.",
@@ -3777,12 +3387,7 @@ window.FRONTIER_DATA = {
         "downloadMode": "direct-http"
       },
       "curation": {
-        "readingStatus": "monitor",
-        "summaryNote": {
-          "en": "This survey is worth storing because it maps an emerging bridge between LLM reasoning and evolutionary optimization workflows. Even if it is not the central GPU-systems line, it is a useful frontier marker for where the group may influence agentic optimization research next.",
-          "ja": "このサーベイを保存しておく価値があるのは、LLM の推論と進化最適化ワークフローの間に立ち上がりつつある橋を整理しているからです。GPU システム主線の中心ではないとしても、このグループが次にどこでエージェント型最適化研究へ影響を及ぼしうるかを示す有用なフロンティア指標です。",
-          "zh": "这篇综述值得保存，因为它梳理了 LLM 推理与进化优化工作流之间正在形成的一座桥梁。即便它不是 GPU 系统主线的核心部分，它依然是一个有用的前沿标记，用来判断该团队下一步可能在哪些方向影响 agentic optimization research。"
-        }
+        "readingStatus": "monitor"
       },
       "classification": {
         "authors": [
@@ -3841,341 +3446,6 @@ window.FRONTIER_DATA = {
         "LLMs for Optimization",
         "Survey"
       ]
-    }
-  ],
-  "workflow": [
-    {
-      "stage": {
-        "en": "Acquire",
-        "zh": "采集",
-        "ja": "取得"
-      },
-      "goal": {
-        "en": "Search GitHub, paper feeds, lab sites, and watchlists; collect high-signal candidates instead of scraping the whole universe.",
-        "zh": "检索 GitHub、论文源、实验室页面和观察名单；优先收集高信号候选，而不是机械抓取整个世界。",
-        "ja": "GitHub、論文フィード、研究室サイト、ウォッチリストを調べ、全体を無差別にかき集めるのではなく高信号の候補を集めます。"
-      },
-      "artifacts": [
-        {
-          "en": "raw source hits",
-          "zh": "原始来源命中",
-          "ja": "生のソースヒット"
-        },
-        {
-          "en": "normalized metadata",
-          "zh": "标准化元数据",
-          "ja": "正規化済みメタデータ"
-        },
-        {
-          "en": "candidate PDF links",
-          "zh": "候选 PDF 链接",
-          "ja": "候補 PDF リンク"
-        }
-      ],
-      "automation": {
-        "en": "cron + browser",
-        "zh": "cron + 浏览器",
-        "ja": "cron + ブラウザ"
-      }
-    },
-    {
-      "stage": {
-        "en": "Digest",
-        "zh": "整理",
-        "ja": "整理"
-      },
-      "goal": {
-        "en": "Score items, identify duplicates, extract why-this-matters notes, and move weak items out of the active lane early.",
-        "zh": "为条目打分、识别重复项、提取“为什么重要”的说明，并尽早把弱信号移出活跃通道。",
-        "ja": "項目をスコア化し、重複を見つけ、「なぜ重要か」のメモを抽出し、弱い項目は早めにアクティブレーンから外します。"
-      },
-      "artifacts": [
-        {
-          "en": "scored cards",
-          "zh": "已评分卡片",
-          "ja": "スコア付きカード"
-        },
-        {
-          "en": "trend evidence",
-          "zh": "趋势证据",
-          "ja": "トレンド証拠"
-        },
-        {
-          "en": "team watch updates",
-          "zh": "团队监测更新",
-          "ja": "チーム監視の更新"
-        }
-      ],
-      "automation": {
-        "en": "Codex summaries",
-        "zh": "Codex 总结",
-        "ja": "Codex 要約"
-      }
-    },
-    {
-      "stage": {
-        "en": "Synthesize",
-        "zh": "综合",
-        "ja": "統合"
-      },
-      "goal": {
-        "en": "Turn the daily evidence stream into trends, opportunity gaps, and concrete next-step research questions.",
-        "zh": "把每日证据流转化为趋势判断、机会缺口和明确的下一步研究问题。",
-        "ja": "日々の証拠ストリームを、トレンド判断、機会ギャップ、具体的な次の研究課題へ変換します。"
-      },
-      "artifacts": [
-        {
-          "en": "trend map",
-          "zh": "趋势图谱",
-          "ja": "トレンドマップ"
-        },
-        {
-          "en": "insight memo",
-          "zh": "洞察备忘录",
-          "ja": "インサイトメモ"
-        },
-        {
-          "en": "contribution candidates",
-          "zh": "潜在贡献点",
-          "ja": "貢献候補"
-        }
-      ],
-      "automation": {
-        "en": "human reviewed",
-        "zh": "人工复核",
-        "ja": "人手レビュー"
-      }
-    },
-    {
-      "stage": {
-        "en": "Act",
-        "zh": "执行",
-        "ja": "実行"
-      },
-      "goal": {
-        "en": "Convert strong signals into reading queues, replication targets, idea notes, and realistic project directions.",
-        "zh": "把强信号转化为阅读队列、复现实验目标、想法笔记和现实可行的项目方向。",
-        "ja": "強いシグナルを、読書キュー、再現対象、アイデアノート、現実的なプロジェクト方向へ変換します。"
-      },
-      "artifacts": [
-        {
-          "en": "download queue",
-          "zh": "下载队列",
-          "ja": "ダウンロードキュー"
-        },
-        {
-          "en": "agenda list",
-          "zh": "议程清单",
-          "ja": "アジェンダ一覧"
-        },
-        {
-          "en": "project seeds",
-          "zh": "项目种子",
-          "ja": "プロジェクトの種"
-        }
-      ],
-      "automation": {
-        "en": "mixed mode",
-        "zh": "混合模式",
-        "ja": "混合モード"
-      }
-    }
-  ],
-  "downloadQueue": [
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4416548789",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4416548789",
-      "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
-      "source": "https://arxiv.org/pdf/2508.00380",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1109/tevc.2026.3664432",
-      "publisherUrl": "https://ieeexplore.ieee.org/document/11396036/",
-      "pdfUrl": "https://arxiv.org/pdf/2508.00380"
-    },
-    {
-      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414581553",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414581553",
-      "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
-      "source": "https://arxiv.org/pdf/2505.18681",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1080/17445760.2025.2609138",
-      "publisherUrl": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
-      "pdfUrl": "https://arxiv.org/pdf/2505.18681"
-    },
-    {
-      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414444197",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414444197",
-      "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
-      "source": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
-      "status": "queued for browser pull",
-      "path": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf",
-      "downloadMode": "openclaw-browser",
-      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102149",
-      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
-      "pdfUrl": null
-    },
-    {
-      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414151930",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414151930",
-      "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
-      "source": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
-      "status": "queued for browser pull",
-      "path": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf",
-      "downloadMode": "openclaw-browser",
-      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102144",
-      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
-      "pdfUrl": null
-    },
-    {
-      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414140555",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414140555",
-      "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
-      "source": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
-      "status": "queued for browser pull",
-      "path": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf",
-      "downloadMode": "openclaw-browser",
-      "doiUrl": "https://doi.org/10.1016/j.eswa.2025.129364",
-      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
-      "pdfUrl": null
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4413243632",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4413243632",
-      "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
-      "source": "https://arxiv.org/pdf/2501.15129",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1145/3750053",
-      "publisherUrl": "https://dl.acm.org/doi/10.1145/3750053",
-      "pdfUrl": "https://arxiv.org/pdf/2501.15129"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4411600078",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4411600078",
-      "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
-      "source": "https://arxiv.org/pdf/2504.06067",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1109/cec65147.2025.11043108",
-      "publisherUrl": "https://ieeexplore.ieee.org/document/11043108/",
-      "pdfUrl": "https://arxiv.org/pdf/2504.06067"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4409486142",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4409486142",
-      "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
-      "source": "https://arxiv.org/pdf/2504.08339",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1145/3730406",
-      "publisherUrl": "https://dl.acm.org/doi/10.1145/3730406",
-      "pdfUrl": "https://arxiv.org/pdf/2504.08339"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W7128493809",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W7128493809",
-      "title": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
-      "source": "https://arxiv.org/pdf/2501.17168",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2026/enabling-population-level-parallelism-in-tree-based-genetic-programming-for-gpu-acceleration.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1109/tevc.2026.3663396",
-      "publisherUrl": "https://ieeexplore.ieee.org/document/11390710/",
-      "pdfUrl": "https://arxiv.org/pdf/2501.17168"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4408935111",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4408935111",
-      "title": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
-      "source": "https://arxiv.org/pdf/2503.20286",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2025/bridging-evolutionary-multiobjective-optimization-and-gpu-acceleration-via-tensorization.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1109/tevc.2025.3555605",
-      "publisherUrl": "https://ieeexplore.ieee.org/document/10944658/",
-      "pdfUrl": "https://arxiv.org/pdf/2503.20286"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4407451023",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4407451023",
-      "title": "MetaDE: Evolving Differential Evolution by Differential Evolution",
-      "source": "https://arxiv.org/pdf/2502.10470",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2025/metade-evolving-differential-evolution-by-differential-evolution.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1109/tevc.2025.3541587",
-      "publisherUrl": "https://ieeexplore.ieee.org/document/10884874/",
-      "pdfUrl": "https://arxiv.org/pdf/2502.10470"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4414459062",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4414459062",
-      "title": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
-      "source": "https://ieeexplore.ieee.org/document/11178251/",
-      "status": "queued for browser pull",
-      "path": "archive/evolutionary-computation/2025/efficient-evolutionary-neural-architecture-search-with-hierarchical-parameter-mapping-for-monocular-depth-estimation.pdf",
-      "downloadMode": "openclaw-browser",
-      "doiUrl": "https://doi.org/10.1109/tevc.2025.3614261",
-      "publisherUrl": "https://ieeexplore.ieee.org/document/11178251/",
-      "pdfUrl": null
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-W4394805110",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-W4394805110",
-      "title": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
-      "source": "https://arxiv.org/pdf/2301.12457",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2024/evox-a-distributed-gpu-accelerated-framework-for-scalable-evolutionary-computation.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.1109/tevc.2024.3388550",
-      "publisherUrl": "https://ieeexplore.ieee.org/document/10499977/",
-      "pdfUrl": "https://arxiv.org/pdf/2301.12457"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-arxiv-2601-18446",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-arxiv-2601-18446",
-      "title": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
-      "source": "https://arxiv.org/pdf/2601.18446",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2026/scaling-behaviors-of-evolutionary-algorithms-on-gpus-when-does-parallelism-pay-off.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.48550/arxiv.2601.18446",
-      "publisherUrl": "https://arxiv.org/abs/2601.18446",
-      "pdfUrl": "https://arxiv.org/pdf/2601.18446"
-    },
-    {
-      "id": "download-evolutionary-computation-ran-cheng-arxiv-2509-08269",
-      "domainId": "evolutionary-computation",
-      "paperId": "evolutionary-computation-ran-cheng-arxiv-2509-08269",
-      "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
-      "source": "https://arxiv.org/pdf/2509.08269",
-      "status": "ready for auto-archive",
-      "path": "archive/evolutionary-computation/2025/a-systematic-survey-on-large-language-models-for-evolutionary-optimization-from-modeling-to-solving.pdf",
-      "downloadMode": "direct-http",
-      "doiUrl": "https://doi.org/10.48550/arxiv.2509.08269",
-      "publisherUrl": "https://arxiv.org/abs/2509.08269",
-      "pdfUrl": "https://arxiv.org/pdf/2509.08269"
     }
   ],
   "venues": [
@@ -5528,8 +4798,206 @@ window.FRONTIER_DATA = {
       "trackedPaperTitles": []
     }
   ],
+  "workflow": [],
+  "downloadQueue": [
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4416548789",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4416548789",
+      "title": "Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning",
+      "source": "https://arxiv.org/pdf/2508.00380",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2026/evolutionary-generative-optimization-towards-fully-data-driven-evolutionary-optimization-via-generative-learning.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1109/tevc.2026.3664432",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/11396036/",
+      "pdfUrl": "https://arxiv.org/pdf/2508.00380"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414581553",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414581553",
+      "title": "EvoSort: a genetic-algorithm-based adaptive parallel sorting framework for large-scale high performance computing",
+      "source": "https://arxiv.org/pdf/2505.18681",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/evosort-a-genetic-algorithm-based-adaptive-parallel-sorting-framework-for-large-scale-high-performance-computing.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1080/17445760.2025.2609138",
+      "publisherUrl": "https://www.tandfonline.com/doi/full/10.1080/17445760.2025.2609138",
+      "pdfUrl": "https://arxiv.org/pdf/2505.18681"
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414444197",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414444197",
+      "title": "An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems",
+      "source": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/an-adaptive-weight-optimization-algorithm-based-on-decision-variable-grouping-for-large-scale-multi-objective-optimization-problems.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102149",
+      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414151930",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414151930",
+      "title": "Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot",
+      "source": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/dynamic-performance-evaluation-of-evolutionary-multi-objective-optimization-algorithms-for-gait-cycle-optimization-of-a-25-dofs-nao-humanoid-robot.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1016/j.swevo.2025.102144",
+      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-kalyanmoy-deb-W4414140555",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-kalyanmoy-deb-W4414140555",
+      "title": "A cooperative co-evolutionary algorithm with core-based grouping strategy for large-scale 0–1 knapsack problems",
+      "source": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/a-cooperative-co-evolutionary-algorithm-with-core-based-grouping-strategy-for-large-scale-01-knapsack-problems.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1016/j.eswa.2025.129364",
+      "publisherUrl": "https://linkinghub.elsevier.com/retrieve/pii/S0957417425029793",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4413243632",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4413243632",
+      "title": "EvoRL: A GPU-accelerated Framework for Evolutionary Reinforcement Learning",
+      "source": "https://arxiv.org/pdf/2501.15129",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/evorl-a-gpu-accelerated-framework-for-evolutionary-reinforcement-learning.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1145/3750053",
+      "publisherUrl": "https://dl.acm.org/doi/10.1145/3750053",
+      "pdfUrl": "https://arxiv.org/pdf/2501.15129"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4411600078",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4411600078",
+      "title": "GPU-accelerated Evolutionary Many-objective Optimization Using Tensorized NSGA-III",
+      "source": "https://arxiv.org/pdf/2504.06067",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/gpu-accelerated-evolutionary-many-objective-optimization-using-tensorized-nsga-iii.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1109/cec65147.2025.11043108",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/11043108/",
+      "pdfUrl": "https://arxiv.org/pdf/2504.06067"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4409486142",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4409486142",
+      "title": "TensorNEAT: A GPU-accelerated Library for NeuroEvolution of Augmenting Topologies",
+      "source": "https://arxiv.org/pdf/2504.08339",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/tensorneat-a-gpu-accelerated-library-for-neuroevolution-of-augmenting-topologies.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1145/3730406",
+      "publisherUrl": "https://dl.acm.org/doi/10.1145/3730406",
+      "pdfUrl": "https://arxiv.org/pdf/2504.08339"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W7128493809",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W7128493809",
+      "title": "Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration",
+      "source": "https://arxiv.org/pdf/2501.17168",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2026/enabling-population-level-parallelism-in-tree-based-genetic-programming-for-gpu-acceleration.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1109/tevc.2026.3663396",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/11390710/",
+      "pdfUrl": "https://arxiv.org/pdf/2501.17168"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4408935111",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4408935111",
+      "title": "Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization",
+      "source": "https://arxiv.org/pdf/2503.20286",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/bridging-evolutionary-multiobjective-optimization-and-gpu-acceleration-via-tensorization.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1109/tevc.2025.3555605",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/10944658/",
+      "pdfUrl": "https://arxiv.org/pdf/2503.20286"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4407451023",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4407451023",
+      "title": "MetaDE: Evolving Differential Evolution by Differential Evolution",
+      "source": "https://arxiv.org/pdf/2502.10470",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/metade-evolving-differential-evolution-by-differential-evolution.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1109/tevc.2025.3541587",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/10884874/",
+      "pdfUrl": "https://arxiv.org/pdf/2502.10470"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4414459062",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4414459062",
+      "title": "Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation",
+      "source": "https://ieeexplore.ieee.org/document/11178251/",
+      "status": "queued for browser pull",
+      "path": "archive/evolutionary-computation/2025/efficient-evolutionary-neural-architecture-search-with-hierarchical-parameter-mapping-for-monocular-depth-estimation.pdf",
+      "downloadMode": "openclaw-browser",
+      "doiUrl": "https://doi.org/10.1109/tevc.2025.3614261",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/11178251/",
+      "pdfUrl": null
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-W4394805110",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-W4394805110",
+      "title": "EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation",
+      "source": "https://arxiv.org/pdf/2301.12457",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2024/evox-a-distributed-gpu-accelerated-framework-for-scalable-evolutionary-computation.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.1109/tevc.2024.3388550",
+      "publisherUrl": "https://ieeexplore.ieee.org/document/10499977/",
+      "pdfUrl": "https://arxiv.org/pdf/2301.12457"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-arxiv-2601-18446",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-arxiv-2601-18446",
+      "title": "Scaling Behaviors of Evolutionary Algorithms on GPUs: When Does Parallelism Pay Off?",
+      "source": "https://arxiv.org/pdf/2601.18446",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2026/scaling-behaviors-of-evolutionary-algorithms-on-gpus-when-does-parallelism-pay-off.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2601.18446",
+      "publisherUrl": "https://arxiv.org/abs/2601.18446",
+      "pdfUrl": "https://arxiv.org/pdf/2601.18446"
+    },
+    {
+      "id": "download-evolutionary-computation-ran-cheng-arxiv-2509-08269",
+      "domainId": "evolutionary-computation",
+      "paperId": "evolutionary-computation-ran-cheng-arxiv-2509-08269",
+      "title": "A Systematic Survey on Large Language Models for Evolutionary Optimization: From Modeling to Solving",
+      "source": "https://arxiv.org/pdf/2509.08269",
+      "status": "ready for auto-archive",
+      "path": "archive/evolutionary-computation/2025/a-systematic-survey-on-large-language-models-for-evolutionary-optimization-from-modeling-to-solving.pdf",
+      "downloadMode": "direct-http",
+      "doiUrl": "https://doi.org/10.48550/arxiv.2509.08269",
+      "publisherUrl": "https://arxiv.org/abs/2509.08269",
+      "pdfUrl": "https://arxiv.org/pdf/2509.08269"
+    }
+  ],
   "venueReference": {
-    "generatedAt": "2026-04-10 17:38 JST",
+    "generatedAt": "2026-04-10 19:21 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
