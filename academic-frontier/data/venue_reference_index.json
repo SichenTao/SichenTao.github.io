@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-04-10 16:03 JST",
+  "updatedAt": "2026-04-10 16:52 JST",
   "venueCount": 32,
   "historySemantics": {
-    "byPublicationYear": "Each history row is aligned to the publication year used by Academic Frontier paper cards. The embedded impactYear/jcrYear/casYear record the actual release year of the metric snapshot."
+    "byPublicationYear": "Tracked paper venues align rows to publication year. Reference-only journal entries may use a synthetic catalog year derived from the available IF/JCR/CAS snapshot when no publication-year mapping is curated yet."
   },
   "venues": [
     {
@@ -158,21 +158,69 @@
         "cas": "Applied Sciences",
         "ccf": "Applied Sciences"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "2.5",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 2.5",
+        "JCR Q2",
+        "CAS Q4"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "2.5",
+          "impactYear": "2025",
+          "jcrQuartile": "Q2",
+          "jcrYear": "2025",
+          "casQuartile": "Q4",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=DYYORD",
+            "jcr": "https://www.fabiao.com.cn/sci/20763417/",
+            "cas": "https://www.ablesci.com/journal/detail?id=DYYORD",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Applied Sciences",
+            "jcr": "Applied Sciences",
+            "cas": "Applied Sciences",
+            "ccf": "Applied Sciences"
+          },
+          "qualityTags": [
+            "IF 2.5",
+            "JCR Q2",
+            "CAS Q4"
+          ]
+        }
+      ]
     },
     {
       "id": "applied-soft-computing",
@@ -201,21 +249,71 @@
         "cas": "Applied Soft Computing",
         "ccf": "Applied Soft Computing"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "6.6",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": true,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 6.6",
+        "JCR Q1",
+        "CAS Q2",
+        "CAS Top"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "6.6",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q2",
+          "casYear": "2025",
+          "casTop": true,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=yp1WdD",
+            "jcr": "https://jrank.net/journals/appl-soft-comput/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=yp1WdD",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Applied Soft Computing",
+            "jcr": "Applied Soft Computing",
+            "cas": "Applied Soft Computing",
+            "ccf": "Applied Soft Computing"
+          },
+          "qualityTags": [
+            "IF 6.6",
+            "JCR Q1",
+            "CAS Q2",
+            "CAS Top"
+          ]
+        }
+      ]
     },
     {
       "id": "biomimetics",
@@ -244,21 +342,69 @@
         "cas": "Biomimetics",
         "ccf": "Biomimetics"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "3.9",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q3",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 3.9",
+        "JCR Q1",
+        "CAS Q3"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "3.9",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q3",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=5NgPMD",
+            "jcr": "https://www.fabiao.com.cn/sci/23137673/",
+            "cas": "https://www.ablesci.com/journal/detail?id=5NgPMD",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Biomimetics",
+            "jcr": "Biomimetics",
+            "cas": "Biomimetics",
+            "ccf": "Biomimetics"
+          },
+          "qualityTags": [
+            "IF 3.9",
+            "JCR Q1",
+            "CAS Q3"
+          ]
+        }
+      ]
     },
     {
       "id": "chi",
@@ -330,21 +476,69 @@
         "cas": "CMC-Computers Materials & Continua",
         "ccf": "CMC-Computers Materials & Continua"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "1.7",
+        "impactYear": "2025",
+        "jcrQuartile": "Q3",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 1.7",
+        "JCR Q3",
+        "CAS Q4"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "1.7",
+          "impactYear": "2025",
+          "jcrQuartile": "Q3",
+          "jcrYear": "2025",
+          "casQuartile": "Q4",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
+            "jcr": "https://www.fabiao.com.cn/sci/15462218/",
+            "cas": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "CMC-Computers Materials & Continua",
+            "jcr": "CMC-Computers Materials & Continua",
+            "cas": "CMC-Computers Materials & Continua",
+            "ccf": "CMC-Computers Materials & Continua"
+          },
+          "qualityTags": [
+            "IF 1.7",
+            "JCR Q3",
+            "CAS Q4"
+          ]
+        }
+      ]
     },
     {
       "id": "engineering-applications-of-artificial-intelligence",
@@ -373,21 +567,71 @@
         "cas": "Engineering Applications of Artificial Intelligence",
         "ccf": "Engineering Applications of Artificial Intelligence"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "8.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 8.0",
+        "JCR Q1",
+        "CAS Q1",
+        "CAS Top"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "8.0",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q1",
+          "casYear": "2025",
+          "casTop": true,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=pP3GOr",
+            "jcr": "https://www.fabiao.com.cn/sci/09521976/",
+            "cas": "https://www.ablesci.com/journal/detail?id=pP3GOr",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Engineering Applications of Artificial Intelligence",
+            "jcr": "Engineering Applications of Artificial Intelligence",
+            "cas": "Engineering Applications of Artificial Intelligence",
+            "ccf": "Engineering Applications of Artificial Intelligence"
+          },
+          "qualityTags": [
+            "IF 8.0",
+            "JCR Q1",
+            "CAS Q1",
+            "CAS Top"
+          ]
+        }
+      ]
     },
     {
       "id": "expert-systems-with-applications",
@@ -509,21 +753,69 @@
         "cas": "Heliyon",
         "ccf": "Heliyon"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "3.6",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 3.6",
+        "JCR Q1",
+        "CAS Q4"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "3.6",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q4",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=5KwYd5",
+            "jcr": "https://www.fabiao.com.cn/sci/24058440/",
+            "cas": "https://www.ablesci.com/journal/detail?id=5KwYd5",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Heliyon",
+            "jcr": "Heliyon",
+            "cas": "Heliyon",
+            "ccf": "Heliyon"
+          },
+          "qualityTags": [
+            "IF 3.6",
+            "JCR Q1",
+            "CAS Q4"
+          ]
+        }
+      ]
     },
     {
       "id": "ieee-congress-on-evolutionary-computation-cec-2024",
@@ -781,7 +1073,7 @@
             "impact": "IEEE Transactions on Evolutionary Computation",
             "jcr": "IEEE Transactions on Evolutionary Computation",
             "cas": "IEEE Transactions on Evolutionary Computation",
-            "ccf": null
+            "ccf": "IEEE Transactions on Evolutionary Computation"
           },
           "qualityTags": [
             "IF 11.7",
@@ -823,7 +1115,7 @@
             "impact": "IEEE Transactions on Evolutionary Computation",
             "jcr": "IEEE Transactions on Evolutionary Computation",
             "cas": "IEEE Transactions on Evolutionary Computation",
-            "ccf": null
+            "ccf": "IEEE Transactions on Evolutionary Computation"
           },
           "qualityTags": [
             "IF 12.0",
@@ -865,7 +1157,7 @@
             "impact": "IEEE Transactions on Evolutionary Computation",
             "jcr": "IEEE Transactions on Evolutionary Computation",
             "cas": "IEEE Transactions on Evolutionary Computation",
-            "ccf": null
+            "ccf": "IEEE Transactions on Evolutionary Computation"
           },
           "qualityTags": [
             "IF 12.0",
@@ -903,21 +1195,71 @@
         "cas": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
         "ccf": "IEEE Transactions on Systems, Man and Cybernetics: Systems"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "8.7",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 8.7",
+        "JCR Q1",
+        "CAS Q1",
+        "CAS Top"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "8.7",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q1",
+          "casYear": "2025",
+          "casTop": true,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=5ObXEp",
+            "jcr": "https://www.fabiao.com.cn/sci/21682216/",
+            "cas": "https://www.ablesci.com/journal/detail?id=5ObXEp",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
+            "jcr": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
+            "cas": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
+            "ccf": "IEEE Transactions on Systems, Man and Cybernetics: Systems"
+          },
+          "qualityTags": [
+            "IF 8.7",
+            "JCR Q1",
+            "CAS Q1",
+            "CAS Top"
+          ]
+        }
+      ]
     },
     {
       "id": "ieee-world-congress-on-computational-intelligence-wcci-2024",
@@ -1075,21 +1417,69 @@
         "cas": "International Journal of Bio-Inspired Computation",
         "ccf": "International Journal of Bio-Inspired Computation"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "2.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 2.0",
+        "JCR Q2",
+        "CAS Q4"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "2.0",
+          "impactYear": "2025",
+          "jcrQuartile": "Q2",
+          "jcrYear": "2025",
+          "casQuartile": "Q4",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
+            "jcr": "https://jrank.net/journals/int-j-bio_inspir-com/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "International Journal of Bio-Inspired Computation",
+            "jcr": "International Journal of Bio-Inspired Computation",
+            "cas": "International Journal of Bio-Inspired Computation",
+            "ccf": "International Journal of Bio-Inspired Computation"
+          },
+          "qualityTags": [
+            "IF 2.0",
+            "JCR Q2",
+            "CAS Q4"
+          ]
+        }
+      ]
     },
     {
       "id": "international-journal-of-computational-intelligence-systems",
@@ -1118,21 +1508,69 @@
         "cas": "International Journal of Computational Intelligence Systems",
         "ccf": "International Journal of Computational Intelligence Systems"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "3.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 3.0",
+        "JCR Q2",
+        "CAS Q4"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "3.0",
+          "impactYear": "2025",
+          "jcrQuartile": "Q2",
+          "jcrYear": "2025",
+          "casQuartile": "Q4",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=5x6mzr",
+            "jcr": "https://jrank.net/journals/int-j-comput-int-sys/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=5x6mzr",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "International Journal of Computational Intelligence Systems",
+            "jcr": "International Journal of Computational Intelligence Systems",
+            "cas": "International Journal of Computational Intelligence Systems",
+            "ccf": "International Journal of Computational Intelligence Systems"
+          },
+          "qualityTags": [
+            "IF 3.0",
+            "JCR Q2",
+            "CAS Q4"
+          ]
+        }
+      ]
     },
     {
       "id": "international-journal-of-parallel-emergent-and-distributed-systems",
@@ -1252,21 +1690,69 @@
         "cas": "Journal of Computational Design and Engineering",
         "ccf": "Journal of Computational Design and Engineering"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "6.1",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 6.1",
+        "JCR Q1",
+        "CAS Q2"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "6.1",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q2",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=pWGm3p",
+            "jcr": "https://www.fabiao.com.cn/sci/22885048/",
+            "cas": "https://www.ablesci.com/journal/detail?id=pWGm3p",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Journal of Computational Design and Engineering",
+            "jcr": "Journal of Computational Design and Engineering",
+            "cas": "Journal of Computational Design and Engineering",
+            "ccf": "Journal of Computational Design and Engineering"
+          },
+          "qualityTags": [
+            "IF 6.1",
+            "JCR Q1",
+            "CAS Q2"
+          ]
+        }
+      ]
     },
     {
       "id": "mathematics",
@@ -1295,21 +1781,69 @@
         "cas": "Mathematics",
         "ccf": "Mathematics"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "2.2",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 2.2",
+        "JCR Q1",
+        "CAS Q4"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "2.2",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q4",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=5kPKjD",
+            "jcr": "https://www.iit.comillas.edu/publicacion/info_revista/en/486/Mathematics",
+            "cas": "https://www.ablesci.com/journal/detail?id=5kPKjD",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Mathematics",
+            "jcr": "Mathematics",
+            "cas": "Mathematics",
+            "ccf": "Mathematics"
+          },
+          "qualityTags": [
+            "IF 2.2",
+            "JCR Q1",
+            "CAS Q4"
+          ]
+        }
+      ]
     },
     {
       "id": "neurips",
@@ -1381,21 +1915,69 @@
         "cas": "Neural Networks",
         "ccf": "Neural Networks"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "6.3",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 6.3",
+        "JCR Q1",
+        "CAS Q2"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "6.3",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q2",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.iit.comillas.edu/publicacion/info_revista/en/565/Neural_Networks",
+            "jcr": "https://jrank.net/journals/neural-networks/metrics",
+            "cas": "https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=11534",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Neural Networks",
+            "jcr": "Neural Networks",
+            "cas": "Neural Networks",
+            "ccf": "Neural Networks"
+          },
+          "qualityTags": [
+            "IF 6.3",
+            "JCR Q1",
+            "CAS Q2"
+          ]
+        }
+      ]
     },
     {
       "id": "sc",
@@ -1521,7 +2103,7 @@
             "impact": "Swarm and Evolutionary Computation",
             "jcr": "Swarm and Evolutionary Computation",
             "cas": "Swarm and Evolutionary Computation",
-            "ccf": null
+            "ccf": "Swarm and Evolutionary Computation"
           },
           "qualityTags": [
             "IF 8.5",
@@ -1558,21 +2140,69 @@
         "cas": "Symmetry",
         "ccf": "Symmetry"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "2.2",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q3",
+        "casYear": "2025",
+        "casTop": false,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 2.2",
+        "JCR Q2",
+        "CAS Q3"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "2.2",
+          "impactYear": "2025",
+          "jcrQuartile": "Q2",
+          "jcrYear": "2025",
+          "casQuartile": "Q3",
+          "casYear": "2025",
+          "casTop": false,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=DXd2YD",
+            "jcr": "https://jrank.net/journals/symmetry_basel/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=DXd2YD",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Symmetry",
+            "jcr": "Symmetry",
+            "cas": "Symmetry",
+            "ccf": "Symmetry"
+          },
+          "qualityTags": [
+            "IF 2.2",
+            "JCR Q2",
+            "CAS Q3"
+          ]
+        }
+      ]
     },
     {
       "id": "tpds",
@@ -1694,21 +2324,71 @@
         "cas": "Transportation Research Part E: Logistics and Transportation Review",
         "ccf": "Transportation Research Part E: Logistics and Transportation Review"
       },
-      "availablePublicationYears": [],
-      "latestPublicationYear": null,
+      "availablePublicationYears": [
+        "2025"
+      ],
+      "latestPublicationYear": "2025",
       "latestMetrics": {
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
+        "impactFactor": "8.8",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
         "ccfRank": null,
         "ccfYear": null
       },
-      "qualityTags": [],
-      "history": []
+      "qualityTags": [
+        "IF 8.8",
+        "JCR Q1",
+        "CAS Q1",
+        "CAS Top"
+      ],
+      "history": [
+        {
+          "publicationYear": "2025",
+          "impactFactor": "8.8",
+          "impactYear": "2025",
+          "jcrQuartile": "Q1",
+          "jcrYear": "2025",
+          "casQuartile": "Q1",
+          "casYear": "2025",
+          "casTop": true,
+          "ccfRank": null,
+          "ccfYear": null,
+          "officialSources": {
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
+            "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
+            "ccf": null
+          },
+          "publicSources": {
+            "impact": "https://www.ablesci.com/journal/detail?id=rw4R1p",
+            "jcr": "https://www.fabiao.com.cn/sci/13665545/",
+            "cas": "https://www.ablesci.com/journal/detail?id=rw4R1p",
+            "ccf": null
+          },
+          "sourceModes": {
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
+            "cas": "official_archive",
+            "ccf": null
+          },
+          "searchCopyText": {
+            "impact": "Transportation Research Part E: Logistics and Transportation Review",
+            "jcr": "Transportation Research Part E: Logistics and Transportation Review",
+            "cas": "Transportation Research Part E: Logistics and Transportation Review",
+            "ccf": "Transportation Research Part E: Logistics and Transportation Review"
+          },
+          "qualityTags": [
+            "IF 8.8",
+            "JCR Q1",
+            "CAS Q1",
+            "CAS Top"
+          ]
+        }
+      ]
     },
     {
       "id": "arxiv",

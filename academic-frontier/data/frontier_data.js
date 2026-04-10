@@ -1,6 +1,6 @@
 window.FRONTIER_DATA = {
   "snapshot": {
-    "generatedAt": "2026-04-10 16:03 JST",
+    "generatedAt": "2026-04-10 16:52 JST",
     "owner": "Sichen Tao",
     "headline": {
       "en": "The strongest immediate opportunity is to track computation-rich research systems as products: not just papers, but the loop between teams, code, reproducibility, and what becomes a usable capability next.",
@@ -545,7 +545,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation"
       },
       "bibtexText": "@article{jiang2026evolutionary-generative-,\n  title = {Evolutionary Generative Optimization: Towards Fully Data-Driven Evolutionary Optimization via Generative Learning},\n  author = {Tao Jiang and Kebin Sun and Zhenyu Liang and Ran Cheng and Yan Jin and Kay Chen Tan},\n  journal = {IEEE Transactions on Evolutionary Computation},\n  year = {2026},\n  doi = {10.1109/tevc.2026.3664432},\n  url = {https://doi.org/10.1109/tevc.2026.3664432}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/11396036/",
@@ -978,7 +978,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "Swarm and Evolutionary Computation"
       },
       "bibtexText": "@article{wang2025an-adaptive-weight-optim,\n  title = {An adaptive weight optimization algorithm based on decision variable grouping for large-scale multi-objective optimization problems},\n  author = {Hao Wang and Shuwei Zhu and Wei Fang and Kalyanmoy Deb},\n  journal = {Swarm and Evolutionary Computation},\n  year = {2025},\n  doi = {10.1016/j.swevo.2025.102149},\n  url = {https://doi.org/10.1016/j.swevo.2025.102149}\n}",
       "primaryUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003062",
@@ -1186,7 +1186,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "Swarm and Evolutionary Computation"
       },
       "bibtexText": "@article{gupta2025dynamic-performance-eval,\n  title = {Dynamic performance evaluation of evolutionary multi-objective optimization algorithms for gait cycle optimization of a 25-DOFs NAO humanoid robot},\n  author = {Pushpendra Gupta and Dilip Kumar Pratihar and Kalyanmoy Deb},\n  journal = {Swarm and Evolutionary Computation},\n  year = {2025},\n  doi = {10.1016/j.swevo.2025.102144},\n  url = {https://doi.org/10.1016/j.swevo.2025.102144}\n}",
       "primaryUrl": "https://linkinghub.elsevier.com/retrieve/pii/S2210650225003013",
@@ -2320,7 +2320,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation"
       },
       "bibtexText": "@article{wu2026enabling-population-leve,\n  title = {Enabling Population-Level Parallelism in Tree-Based Genetic Programming for GPU Acceleration},\n  author = {Zhihong Wu and Lishuang Wang and Kebin Sun and Zhuozhao Li and Ran Cheng},\n  journal = {IEEE Transactions on Evolutionary Computation},\n  year = {2026},\n  doi = {10.1109/tevc.2026.3663396},\n  url = {https://doi.org/10.1109/tevc.2026.3663396}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/11390710/",
@@ -2563,7 +2563,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation"
       },
       "bibtexText": "@article{liang2025bridging-evolutionary-mu,\n  title = {Bridging Evolutionary Multiobjective Optimization and GPU Acceleration via Tensorization},\n  author = {Zhenyu Liang and Hao Li and N. YU and Kebin Sun and Ran Cheng},\n  journal = {IEEE Transactions on Evolutionary Computation},\n  year = {2025},\n  doi = {10.1109/tevc.2025.3555605},\n  url = {https://doi.org/10.1109/tevc.2025.3555605}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/10944658/",
@@ -2804,7 +2804,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation"
       },
       "bibtexText": "@article{chen2025metade-evolving-differen,\n  title = {MetaDE: Evolving Differential Evolution by Differential Evolution},\n  author = {Minyang Chen and C. Feng and Ran Cheng},\n  journal = {IEEE Transactions on Evolutionary Computation},\n  year = {2025},\n  doi = {10.1109/tevc.2025.3541587},\n  url = {https://doi.org/10.1109/tevc.2025.3541587}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/10884874/",
@@ -3019,7 +3019,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation"
       },
       "bibtexText": "@article{zhang2025efficient-evolutionary-n,\n  title = {Efficient Evolutionary Neural Architecture Search With Hierarchical Parameter Mapping for Monocular Depth Estimation},\n  author = {Haoyu Zhang and Zhihao Yu and Yaochu Jin and Xiufeng Liu and Weiguo Sheng and Ruyu Liu and Xiumei Li and Qiqi Liu and Ran Cheng},\n  journal = {IEEE Transactions on Evolutionary Computation},\n  year = {2025},\n  doi = {10.1109/tevc.2025.3614261},\n  url = {https://doi.org/10.1109/tevc.2025.3614261}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/11178251/",
@@ -3257,7 +3257,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation"
       },
       "bibtexText": "@article{huang2024evox-a-distributed-gpu-a,\n  title = {EvoX: A Distributed GPU-Accelerated Framework for Scalable Evolutionary Computation},\n  author = {Beichen Huang and Ran Cheng and Zhuozhao Li and Yaochu Jin and Kay Chen Tan},\n  journal = {IEEE Transactions on Evolutionary Computation},\n  year = {2024},\n  doi = {10.1109/tevc.2024.3388550},\n  url = {https://doi.org/10.1109/tevc.2024.3388550}\n}",
       "primaryUrl": "https://ieeexplore.ieee.org/document/10499977/",
@@ -4207,6 +4207,7 @@ window.FRONTIER_DATA = {
         "casSearchCopyText": "IEEE Transactions on Evolutionary Computation",
         "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Evolutionary%20Computation&y=2025",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5kwBz5",
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation",
         "impactFactor": "12.0",
         "impactYear": "2025",
         "jcrQuartile": "Q1",
@@ -4410,6 +4411,7 @@ window.FRONTIER_DATA = {
         "casSearchCopyText": "Swarm and Evolutionary Computation",
         "casOfficialSourceUrl": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=Swarm%20and%20Evolutionary%20Computation&y=2025",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=pB4NJD",
+        "ccfSearchCopyText": "Swarm and Evolutionary Computation",
         "impactFactor": "8.5",
         "impactYear": "2025",
         "jcrQuartile": "Q1",
@@ -4615,12 +4617,21 @@ window.FRONTIER_DATA = {
       "venueName": "Applied Sciences",
       "venueType": "journal",
       "sourceUrl": "https://www.mdpi.com/journal/applsci",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Applied Sciences",
         "venueType": "journal",
         "sourceUrl": "https://www.mdpi.com/journal/applsci",
+        "impactFactor": "2.5",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=DYYORD",
         "ifSourceMode": "official_profile_fallback",
@@ -4633,7 +4644,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=DYYORD",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Applied Sciences"
+        "casSearchCopyText": "Applied Sciences",
+        "ccfSearchCopyText": "Applied Sciences"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4648,12 +4660,21 @@ window.FRONTIER_DATA = {
       "venueName": "Applied Soft Computing",
       "venueType": "journal",
       "sourceUrl": "https://www.sciencedirect.com/journal/applied-soft-computing",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Applied Soft Computing",
         "venueType": "journal",
         "sourceUrl": "https://www.sciencedirect.com/journal/applied-soft-computing",
+        "impactFactor": "6.6",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": true,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=yp1WdD",
         "ifSourceMode": "official_profile_fallback",
@@ -4666,7 +4687,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=yp1WdD",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Applied Soft Computing"
+        "casSearchCopyText": "Applied Soft Computing",
+        "ccfSearchCopyText": "Applied Soft Computing"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4681,12 +4703,21 @@ window.FRONTIER_DATA = {
       "venueName": "Biomimetics",
       "venueType": "journal",
       "sourceUrl": "https://www.mdpi.com/journal/biomimetics",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Biomimetics",
         "venueType": "journal",
         "sourceUrl": "https://www.mdpi.com/journal/biomimetics",
+        "impactFactor": "3.9",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q3",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5NgPMD",
         "ifSourceMode": "official_profile_fallback",
@@ -4699,7 +4730,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5NgPMD",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Biomimetics"
+        "casSearchCopyText": "Biomimetics",
+        "ccfSearchCopyText": "Biomimetics"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4738,12 +4770,21 @@ window.FRONTIER_DATA = {
       "venueName": "CMC-Computers Materials & Continua",
       "venueType": "journal",
       "sourceUrl": "https://www.techscience.com/journal/cmc",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "CMC-Computers Materials & Continua",
         "venueType": "journal",
         "sourceUrl": "https://www.techscience.com/journal/cmc",
+        "impactFactor": "1.7",
+        "impactYear": "2025",
+        "jcrQuartile": "Q3",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
         "ifSourceMode": "official_profile_fallback",
@@ -4756,7 +4797,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "CMC-Computers Materials & Continua"
+        "casSearchCopyText": "CMC-Computers Materials & Continua",
+        "ccfSearchCopyText": "CMC-Computers Materials & Continua"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4771,12 +4813,21 @@ window.FRONTIER_DATA = {
       "venueName": "Engineering Applications of Artificial Intelligence",
       "venueType": "journal",
       "sourceUrl": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Engineering Applications of Artificial Intelligence",
         "venueType": "journal",
         "sourceUrl": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
+        "impactFactor": "8.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=pP3GOr",
         "ifSourceMode": "official_profile_fallback",
@@ -4789,7 +4840,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=pP3GOr",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Engineering Applications of Artificial Intelligence"
+        "casSearchCopyText": "Engineering Applications of Artificial Intelligence",
+        "ccfSearchCopyText": "Engineering Applications of Artificial Intelligence"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4804,12 +4856,21 @@ window.FRONTIER_DATA = {
       "venueName": "Heliyon",
       "venueType": "journal",
       "sourceUrl": "https://www.sciencedirect.com/journal/heliyon",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Heliyon",
         "venueType": "journal",
         "sourceUrl": "https://www.sciencedirect.com/journal/heliyon",
+        "impactFactor": "3.6",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5KwYd5",
         "ifSourceMode": "official_profile_fallback",
@@ -4822,7 +4883,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5KwYd5",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Heliyon"
+        "casSearchCopyText": "Heliyon",
+        "ccfSearchCopyText": "Heliyon"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4845,7 +4907,8 @@ window.FRONTIER_DATA = {
         "sourceUrl": "https://2024.ieeewcci.org/",
         "ifSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024",
         "jcrSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024",
-        "casSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024"
+        "casSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024",
+        "ccfSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4868,7 +4931,8 @@ window.FRONTIER_DATA = {
         "sourceUrl": "https://cis.ieee.org/conferences/conference-calendar",
         "ifSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025",
         "jcrSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025",
-        "casSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025"
+        "casSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025",
+        "ccfSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4891,7 +4955,8 @@ window.FRONTIER_DATA = {
         "sourceUrl": "https://attend.ieee.org/wcci-2026/ieee-cec-2025/",
         "ifSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026",
         "jcrSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026",
-        "casSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026"
+        "casSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026",
+        "ccfSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4914,7 +4979,8 @@ window.FRONTIER_DATA = {
         "sourceUrl": "https://www.ieeesmc2024.org/home",
         "ifSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
         "jcrSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
-        "casSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024"
+        "casSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
+        "ccfSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4929,12 +4995,21 @@ window.FRONTIER_DATA = {
       "venueName": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
       "venueType": "journal",
       "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
         "venueType": "journal",
         "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021",
+        "impactFactor": "8.7",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5ObXEp",
         "ifSourceMode": "official_profile_fallback",
@@ -4947,7 +5022,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5ObXEp",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "IEEE Transactions on Systems, Man and Cybernetics: Systems"
+        "casSearchCopyText": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
+        "ccfSearchCopyText": "IEEE Transactions on Systems, Man and Cybernetics: Systems"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4970,7 +5046,8 @@ window.FRONTIER_DATA = {
         "sourceUrl": "https://2024.ieeewcci.org/",
         "ifSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
         "jcrSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
-        "casSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024"
+        "casSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
+        "ccfSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -4993,7 +5070,8 @@ window.FRONTIER_DATA = {
         "sourceUrl": "https://attend.ieee.org/wcci-2026/",
         "ifSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
         "jcrSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
-        "casSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026"
+        "casSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
+        "ccfSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5016,7 +5094,8 @@ window.FRONTIER_DATA = {
         "sourceUrl": "https://icsi2024.ustc.edu.cn/main.htm",
         "ifSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024",
         "jcrSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024",
-        "casSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024"
+        "casSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024",
+        "ccfSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5031,12 +5110,21 @@ window.FRONTIER_DATA = {
       "venueName": "International Journal of Bio-Inspired Computation",
       "venueType": "journal",
       "sourceUrl": "https://www.inderscience.com/jhome.php?jcode=ijbic",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "International Journal of Bio-Inspired Computation",
         "venueType": "journal",
         "sourceUrl": "https://www.inderscience.com/jhome.php?jcode=ijbic",
+        "impactFactor": "2.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
         "ifSourceMode": "official_profile_fallback",
@@ -5049,7 +5137,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "International Journal of Bio-Inspired Computation"
+        "casSearchCopyText": "International Journal of Bio-Inspired Computation",
+        "ccfSearchCopyText": "International Journal of Bio-Inspired Computation"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5064,12 +5153,21 @@ window.FRONTIER_DATA = {
       "venueName": "International Journal of Computational Intelligence Systems",
       "venueType": "journal",
       "sourceUrl": "https://link.springer.com/journal/44196",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "International Journal of Computational Intelligence Systems",
         "venueType": "journal",
         "sourceUrl": "https://link.springer.com/journal/44196",
+        "impactFactor": "3.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5x6mzr",
         "ifSourceMode": "official_profile_fallback",
@@ -5082,7 +5180,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5x6mzr",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "International Journal of Computational Intelligence Systems"
+        "casSearchCopyText": "International Journal of Computational Intelligence Systems",
+        "ccfSearchCopyText": "International Journal of Computational Intelligence Systems"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5097,12 +5196,21 @@ window.FRONTIER_DATA = {
       "venueName": "Journal of Computational Design and Engineering",
       "venueType": "journal",
       "sourceUrl": "https://academic.oup.com/jcde",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Journal of Computational Design and Engineering",
         "venueType": "journal",
         "sourceUrl": "https://academic.oup.com/jcde",
+        "impactFactor": "6.1",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=pWGm3p",
         "ifSourceMode": "official_profile_fallback",
@@ -5115,7 +5223,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=pWGm3p",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Journal of Computational Design and Engineering"
+        "casSearchCopyText": "Journal of Computational Design and Engineering",
+        "ccfSearchCopyText": "Journal of Computational Design and Engineering"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5130,12 +5239,21 @@ window.FRONTIER_DATA = {
       "venueName": "Mathematics",
       "venueType": "journal",
       "sourceUrl": "https://www.mdpi.com/journal/mathematics",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Mathematics",
         "venueType": "journal",
         "sourceUrl": "https://www.mdpi.com/journal/mathematics",
+        "impactFactor": "2.2",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5kPKjD",
         "ifSourceMode": "official_profile_fallback",
@@ -5148,7 +5266,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=5kPKjD",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Mathematics"
+        "casSearchCopyText": "Mathematics",
+        "ccfSearchCopyText": "Mathematics"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5163,12 +5282,21 @@ window.FRONTIER_DATA = {
       "venueName": "Neural Networks",
       "venueType": "journal",
       "sourceUrl": "https://www.sciencedirect.com/journal/neural-networks",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Neural Networks",
         "venueType": "journal",
         "sourceUrl": "https://www.sciencedirect.com/journal/neural-networks",
+        "impactFactor": "6.3",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.iit.comillas.edu/publicacion/info_revista/en/565/Neural_Networks",
         "ifSourceMode": "official_profile_fallback",
@@ -5181,7 +5309,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=11534",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Neural Networks"
+        "casSearchCopyText": "Neural Networks",
+        "ccfSearchCopyText": "Neural Networks"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5244,12 +5373,21 @@ window.FRONTIER_DATA = {
       "venueName": "Symmetry",
       "venueType": "journal",
       "sourceUrl": "https://www.mdpi.com/journal/symmetry",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Symmetry",
         "venueType": "journal",
         "sourceUrl": "https://www.mdpi.com/journal/symmetry",
+        "impactFactor": "2.2",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q3",
+        "casYear": "2025",
+        "casTop": false,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=DXd2YD",
         "ifSourceMode": "official_profile_fallback",
@@ -5262,7 +5400,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=DXd2YD",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Symmetry"
+        "casSearchCopyText": "Symmetry",
+        "ccfSearchCopyText": "Symmetry"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5331,12 +5470,21 @@ window.FRONTIER_DATA = {
       "venueName": "Transportation Research Part E: Logistics and Transportation Review",
       "venueType": "journal",
       "sourceUrl": "https://www.sciencedirect.com/journal/transportation-research-part-e-logistics-and-transportation-review",
-      "availableMetricYears": [],
-      "latestMetricYear": "",
+      "availableMetricYears": [
+        "2025"
+      ],
+      "latestMetricYear": "2025",
       "latestMetrics": {
         "venueName": "Transportation Research Part E: Logistics and Transportation Review",
         "venueType": "journal",
         "sourceUrl": "https://www.sciencedirect.com/journal/transportation-research-part-e-logistics-and-transportation-review",
+        "impactFactor": "8.8",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
         "ifSourceUrl": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
         "ifPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=rw4R1p",
         "ifSourceMode": "official_profile_fallback",
@@ -5349,7 +5497,8 @@ window.FRONTIER_DATA = {
         "casOfficialPlatformUrl": "https://www.fenqubiao.com/",
         "casPublicSourceUrl": "https://www.ablesci.com/journal/detail?id=rw4R1p",
         "casSourceMode": "official_archive",
-        "casSearchCopyText": "Transportation Research Part E: Logistics and Transportation Review"
+        "casSearchCopyText": "Transportation Research Part E: Logistics and Transportation Review",
+        "ccfSearchCopyText": "Transportation Research Part E: Logistics and Transportation Review"
       },
       "metricHistory": {},
       "domainIds": [],
@@ -5361,7 +5510,7 @@ window.FRONTIER_DATA = {
     }
   ],
   "venueReference": {
-    "generatedAt": "2026-04-10 16:03 JST",
+    "generatedAt": "2026-04-10 16:52 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",
@@ -5463,15 +5612,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Applied Sciences",
+        "impactFactor": "2.5",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 2.5",
+          "JCR Q2",
+          "CAS Q4"
+        ]
       },
       {
         "venue": "Applied Soft Computing",
@@ -5499,15 +5652,20 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Applied Soft Computing",
+        "impactFactor": "6.6",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": true,
+        "qualityTags": [
+          "IF 6.6",
+          "JCR Q1",
+          "CAS Q2",
+          "CAS Top"
+        ]
       },
       {
         "venue": "arXiv",
@@ -5571,15 +5729,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Biomimetics",
+        "impactFactor": "3.9",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q3",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 3.9",
+          "JCR Q1",
+          "CAS Q3"
+        ]
       },
       {
         "venue": "CHI",
@@ -5643,15 +5805,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "CMC-Computers Materials & Continua",
+        "impactFactor": "1.7",
+        "impactYear": "2025",
+        "jcrQuartile": "Q3",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 1.7",
+          "JCR Q3",
+          "CAS Q4"
+        ]
       },
       {
         "venue": "Engineering Applications of Artificial Intelligence",
@@ -5679,15 +5845,20 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Engineering Applications of Artificial Intelligence",
+        "impactFactor": "8.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
+        "qualityTags": [
+          "IF 8.0",
+          "JCR Q1",
+          "CAS Q1",
+          "CAS Top"
+        ]
       },
       {
         "venue": "Expert Systems with Applications",
@@ -5756,15 +5927,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Heliyon",
+        "impactFactor": "3.6",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 3.6",
+          "JCR Q1",
+          "CAS Q4"
+        ]
       },
       {
         "venue": "IEEE Congress on Evolutionary Computation (CEC) 2024",
@@ -5792,7 +5967,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2024",
         "impactFactor": null,
         "impactYear": null,
         "jcrQuartile": null,
@@ -5828,7 +6003,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2025",
         "impactFactor": null,
         "impactYear": null,
         "jcrQuartile": null,
@@ -5864,7 +6039,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE Congress on Evolutionary Computation (CEC) 2026",
         "impactFactor": null,
         "impactYear": null,
         "jcrQuartile": null,
@@ -5900,7 +6075,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE International Conference on Systems, Man, and Cybernetics (SMC) 2024",
         "impactFactor": null,
         "impactYear": null,
         "jcrQuartile": null,
@@ -5936,7 +6111,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation",
         "impactFactor": "12.0",
         "impactYear": "2025",
         "jcrQuartile": "Q1",
@@ -5977,7 +6152,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation",
         "impactFactor": "12.0",
         "impactYear": "2025",
         "jcrQuartile": "Q1",
@@ -6018,7 +6193,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE Transactions on Evolutionary Computation",
         "impactFactor": "11.7",
         "impactYear": "2024",
         "jcrQuartile": "Q1",
@@ -6059,15 +6234,20 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
+        "impactFactor": "8.7",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
+        "qualityTags": [
+          "IF 8.7",
+          "JCR Q1",
+          "CAS Q1",
+          "CAS Top"
+        ]
       },
       {
         "venue": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
@@ -6095,7 +6275,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2024",
         "impactFactor": null,
         "impactYear": null,
         "jcrQuartile": null,
@@ -6131,7 +6311,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "IEEE World Congress on Computational Intelligence (WCCI) 2026",
         "impactFactor": null,
         "impactYear": null,
         "jcrQuartile": null,
@@ -6167,7 +6347,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "International Conference on Swarm Intelligence (ICSI) 2024",
         "impactFactor": null,
         "impactYear": null,
         "jcrQuartile": null,
@@ -6203,15 +6383,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "International Journal of Bio-Inspired Computation",
+        "impactFactor": "2.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 2.0",
+          "JCR Q2",
+          "CAS Q4"
+        ]
       },
       {
         "venue": "International Journal of Computational Intelligence Systems",
@@ -6239,15 +6423,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "International Journal of Computational Intelligence Systems",
+        "impactFactor": "3.0",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 3.0",
+          "JCR Q2",
+          "CAS Q4"
+        ]
       },
       {
         "venue": "International Journal of Parallel Emergent and Distributed Systems",
@@ -6315,15 +6503,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Journal of Computational Design and Engineering",
+        "impactFactor": "6.1",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 6.1",
+          "JCR Q1",
+          "CAS Q2"
+        ]
       },
       {
         "venue": "Mathematics",
@@ -6351,15 +6543,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Mathematics",
+        "impactFactor": "2.2",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q4",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 2.2",
+          "JCR Q1",
+          "CAS Q4"
+        ]
       },
       {
         "venue": "Neural Networks",
@@ -6387,15 +6583,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Neural Networks",
+        "impactFactor": "6.3",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q2",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 6.3",
+          "JCR Q1",
+          "CAS Q2"
+        ]
       },
       {
         "venue": "NeurIPS",
@@ -6495,7 +6695,7 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
+        "ccfSearchCopyText": "Swarm and Evolutionary Computation",
         "impactFactor": "8.5",
         "impactYear": "2025",
         "jcrQuartile": "Q1",
@@ -6535,15 +6735,19 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Symmetry",
+        "impactFactor": "2.2",
+        "impactYear": "2025",
+        "jcrQuartile": "Q2",
+        "jcrYear": "2025",
+        "casQuartile": "Q3",
+        "casYear": "2025",
+        "casTop": false,
+        "qualityTags": [
+          "IF 2.2",
+          "JCR Q2",
+          "CAS Q3"
+        ]
       },
       {
         "venue": "TPDS",
@@ -6612,15 +6816,20 @@ window.FRONTIER_DATA = {
         "ccfSourceUrl": null,
         "ccfPublicSourceUrl": null,
         "ccfSourceMode": null,
-        "ccfSearchCopyText": null,
-        "impactFactor": null,
-        "impactYear": null,
-        "jcrQuartile": null,
-        "jcrYear": null,
-        "casQuartile": null,
-        "casYear": null,
-        "casTop": null,
-        "qualityTags": []
+        "ccfSearchCopyText": "Transportation Research Part E: Logistics and Transportation Review",
+        "impactFactor": "8.8",
+        "impactYear": "2025",
+        "jcrQuartile": "Q1",
+        "jcrYear": "2025",
+        "casQuartile": "Q1",
+        "casYear": "2025",
+        "casTop": true,
+        "qualityTags": [
+          "IF 8.8",
+          "JCR Q1",
+          "CAS Q1",
+          "CAS Top"
+        ]
       }
     ]
   }
