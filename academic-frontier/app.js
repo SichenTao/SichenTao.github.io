@@ -1170,6 +1170,19 @@ const PATTERN_TRANSLATORS = [
 ];
 
 function loadInitialLanguage() {
+  const explicitLocale = pageLocale();
+  if (explicitLocale && UI_TEXT[explicitLocale]) {
+    return explicitLocale;
+  }
+
+  const preferredLocale = loadStoredLanguagePreference();
+  if (preferredLocale && UI_TEXT[preferredLocale]) {
+    return preferredLocale;
+  }
+  return "en";
+}
+
+function loadStoredLanguagePreference() {
   const sessionLocale = readSessionValue(SESSION_KEY_LANGUAGE);
   if (sessionLocale && UI_TEXT[sessionLocale]) {
     return sessionLocale;
@@ -1179,12 +1192,7 @@ function loadInitialLanguage() {
   if (storedLocale && UI_TEXT[storedLocale]) {
     return storedLocale;
   }
-
-  const explicitLocale = pageLocale();
-  if (explicitLocale && UI_TEXT[explicitLocale]) {
-    return explicitLocale;
-  }
-  return "en";
+  return null;
 }
 
 function persistLanguagePreference(language) {
@@ -1332,6 +1340,24 @@ function localePageHref(targetLocale, page = currentPage()) {
     url.searchParams.set("theme", themeName);
   }
   return `${url.pathname}${url.search}`;
+}
+
+function preferredLocaleRedirectHref() {
+  const explicitLocale = pageLocale();
+  const preferredLocale = loadStoredLanguagePreference();
+  if (!explicitLocale || !preferredLocale || explicitLocale === preferredLocale) {
+    return null;
+  }
+  if (!UI_TEXT[explicitLocale] || !UI_TEXT[preferredLocale]) {
+    return null;
+  }
+
+  const currentUrl = new URL(window.location.href);
+  const targetUrl = new URL(localePageHref(preferredLocale), window.location.origin);
+  if (`${currentUrl.pathname}${currentUrl.search}` === `${targetUrl.pathname}${targetUrl.search}`) {
+    return null;
+  }
+  return `${targetUrl.pathname}${targetUrl.search}`;
 }
 
 function assetBasePath() {
@@ -6395,8 +6421,13 @@ function renderAll() {
 }
 
 function init() {
-  state.language = loadInitialLanguage();
   state.theme = loadInitialTheme();
+  const redirectHref = preferredLocaleRedirectHref();
+  if (redirectHref) {
+    window.location.replace(redirectHref);
+    return;
+  }
+  state.language = loadInitialLanguage();
   persistLanguagePreference(state.language);
   writeSessionValue(STORAGE_KEY_THEME, state.theme);
   state.focusPrompt = readStoredValue(STORAGE_KEY_FOCUS_PROMPT) || "";
