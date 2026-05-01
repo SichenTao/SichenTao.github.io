@@ -1,5 +1,5 @@
 window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
-  "updatedAt": "2026-04-10 20:08 JST",
+  "updatedAt": "2026-05-01 15:10 JST",
   "venueCount": 32,
   "historySemantics": {
     "byPublicationYear": "Tracked paper venues align rows to publication year. Reference-only journal entries may use a synthetic catalog year derived from the available IF/JCR/CAS snapshot when no publication-year mapping is curated yet."
@@ -144,15 +144,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "2076-3417",
       "sourceUrl": "https://www.mdpi.com/journal/applsci",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/20763417/",
+        "impact": "https://www.ablesci.com/journal/detail?id=DYYORD",
         "jcr": "https://www.fabiao.com.cn/sci/20763417/",
-        "cas": "https://www.fabiao.com.cn/sci/20763417/",
+        "cas": "https://www.ablesci.com/journal/detail?id=DYYORD",
         "ccf": null
       },
       "searchCopyText": {
@@ -194,20 +194,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/20763417/",
+            "impact": "https://www.ablesci.com/journal/detail?id=DYYORD",
             "jcr": "https://www.fabiao.com.cn/sci/20763417/",
-            "cas": "https://www.fabiao.com.cn/sci/20763417/",
+            "cas": "https://www.ablesci.com/journal/detail?id=DYYORD",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -235,15 +235,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "1872-9681",
       "sourceUrl": "https://www.sciencedirect.com/journal/applied-soft-computing",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/15684946/",
-        "jcr": "https://www.fabiao.com.cn/sci/15684946/",
-        "cas": "https://www.fabiao.com.cn/sci/15684946/",
+        "impact": "https://www.ablesci.com/journal/detail?id=yp1WdD",
+        "jcr": "https://jrank.net/journals/appl-soft-comput/metrics",
+        "cas": "https://www.ablesci.com/journal/detail?id=yp1WdD",
         "ccf": null
       },
       "searchCopyText": {
@@ -286,20 +286,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/15684946/",
-            "jcr": "https://www.fabiao.com.cn/sci/15684946/",
-            "cas": "https://www.fabiao.com.cn/sci/15684946/",
+            "impact": "https://www.ablesci.com/journal/detail?id=yp1WdD",
+            "jcr": "https://jrank.net/journals/appl-soft-comput/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=yp1WdD",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -328,15 +328,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "2313-7673",
       "sourceUrl": "https://www.mdpi.com/journal/biomimetics",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/23137673/",
+        "impact": "https://www.ablesci.com/journal/detail?id=5NgPMD",
         "jcr": "https://www.fabiao.com.cn/sci/23137673/",
-        "cas": "https://www.fabiao.com.cn/sci/23137673/",
+        "cas": "https://www.ablesci.com/journal/detail?id=5NgPMD",
         "ccf": null
       },
       "searchCopyText": {
@@ -378,20 +378,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/23137673/",
+            "impact": "https://www.ablesci.com/journal/detail?id=5NgPMD",
             "jcr": "https://www.fabiao.com.cn/sci/23137673/",
-            "cas": "https://www.fabiao.com.cn/sci/23137673/",
+            "cas": "https://www.ablesci.com/journal/detail?id=5NgPMD",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -467,15 +467,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "1546-2226",
       "sourceUrl": "https://www.techscience.com/journal/cmc",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/15462218/",
+        "impact": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
         "jcr": "https://www.fabiao.com.cn/sci/15462218/",
-        "cas": "https://www.fabiao.com.cn/sci/15462218/",
+        "cas": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
         "ccf": null
       },
       "searchCopyText": {
@@ -517,20 +517,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/15462218/",
+            "impact": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
             "jcr": "https://www.fabiao.com.cn/sci/15462218/",
-            "cas": "https://www.fabiao.com.cn/sci/15462218/",
+            "cas": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -558,15 +558,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "1873-6769",
       "sourceUrl": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/09521976/",
+        "impact": "https://www.ablesci.com/journal/detail?id=pP3GOr",
         "jcr": "https://www.fabiao.com.cn/sci/09521976/",
-        "cas": "https://www.fabiao.com.cn/sci/09521976/",
+        "cas": "https://www.ablesci.com/journal/detail?id=pP3GOr",
         "ccf": null
       },
       "searchCopyText": {
@@ -609,20 +609,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/09521976/",
+            "impact": "https://www.ablesci.com/journal/detail?id=pP3GOr",
             "jcr": "https://www.fabiao.com.cn/sci/09521976/",
-            "cas": "https://www.fabiao.com.cn/sci/09521976/",
+            "cas": "https://www.ablesci.com/journal/detail?id=pP3GOr",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -744,15 +744,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "2405-8440",
       "sourceUrl": "https://www.sciencedirect.com/journal/heliyon",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/24058440/",
+        "impact": "https://www.ablesci.com/journal/detail?id=5KwYd5",
         "jcr": "https://www.fabiao.com.cn/sci/24058440/",
-        "cas": "https://www.fabiao.com.cn/sci/24058440/",
+        "cas": "https://www.ablesci.com/journal/detail?id=5KwYd5",
         "ccf": null
       },
       "searchCopyText": {
@@ -794,20 +794,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/24058440/",
+            "impact": "https://www.ablesci.com/journal/detail?id=5KwYd5",
             "jcr": "https://www.fabiao.com.cn/sci/24058440/",
-            "cas": "https://www.fabiao.com.cn/sci/24058440/",
+            "cas": "https://www.ablesci.com/journal/detail?id=5KwYd5",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1007,15 +1007,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": null,
       "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
         "impact": "https://www.ablesci.com/journal/detail?id=5kwBz5",
         "jcr": "https://www.fabiao.com.cn/sci/1089778X/",
-        "cas": null,
+        "cas": "https://www.ablesci.com/journal/detail?id=5kwBz5",
         "ccf": null
       },
       "searchCopyText": {
@@ -1060,8 +1060,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Evolutionary%20Computation&y=2024",
             "ccf": null
           },
@@ -1072,8 +1072,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1102,8 +1102,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Evolutionary%20Computation&y=2025",
             "ccf": null
           },
@@ -1114,8 +1114,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1144,8 +1144,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=IEEE%20Transactions%20on%20Evolutionary%20Computation&y=2025",
             "ccf": null
           },
@@ -1156,8 +1156,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1188,15 +1188,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "2168-2232",
       "sourceUrl": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/21682216/",
+        "impact": "https://www.ablesci.com/journal/detail?id=5ObXEp",
         "jcr": "https://www.fabiao.com.cn/sci/21682216/",
-        "cas": "https://www.fabiao.com.cn/sci/21682216/",
+        "cas": "https://www.ablesci.com/journal/detail?id=5ObXEp",
         "ccf": null
       },
       "searchCopyText": {
@@ -1239,20 +1239,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/21682216/",
+            "impact": "https://www.ablesci.com/journal/detail?id=5ObXEp",
             "jcr": "https://www.fabiao.com.cn/sci/21682216/",
-            "cas": "https://www.fabiao.com.cn/sci/21682216/",
+            "cas": "https://www.ablesci.com/journal/detail?id=5ObXEp",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1412,15 +1412,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "1758-0374",
       "sourceUrl": "https://www.inderscience.com/jhome.php?jcode=ijbic",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/17580366/",
-        "jcr": "https://www.fabiao.com.cn/sci/17580366/",
-        "cas": "https://www.fabiao.com.cn/sci/17580366/",
+        "impact": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
+        "jcr": "https://jrank.net/journals/int-j-bio_inspir-com/metrics",
+        "cas": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
         "ccf": null
       },
       "searchCopyText": {
@@ -1462,20 +1462,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/17580366/",
-            "jcr": "https://www.fabiao.com.cn/sci/17580366/",
-            "cas": "https://www.fabiao.com.cn/sci/17580366/",
+            "impact": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
+            "jcr": "https://jrank.net/journals/int-j-bio_inspir-com/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1505,15 +1505,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "1875-6883",
       "sourceUrl": "https://link.springer.com/journal/44196",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/18756891/",
-        "jcr": "https://www.fabiao.com.cn/sci/18756891/",
-        "cas": "https://www.fabiao.com.cn/sci/18756891/",
+        "impact": "https://www.ablesci.com/journal/detail?id=5x6mzr",
+        "jcr": "https://jrank.net/journals/int-j-comput-int-sys/metrics",
+        "cas": "https://www.ablesci.com/journal/detail?id=5x6mzr",
         "ccf": null
       },
       "searchCopyText": {
@@ -1555,20 +1555,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/18756891/",
-            "jcr": "https://www.fabiao.com.cn/sci/18756891/",
-            "cas": "https://www.fabiao.com.cn/sci/18756891/",
+            "impact": "https://www.ablesci.com/journal/detail?id=5x6mzr",
+            "jcr": "https://jrank.net/journals/int-j-comput-int-sys/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=5x6mzr",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1689,15 +1689,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "2288-5048",
       "sourceUrl": "https://academic.oup.com/jcde",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/22885048/",
+        "impact": "https://www.ablesci.com/journal/detail?id=pWGm3p",
         "jcr": "https://www.fabiao.com.cn/sci/22885048/",
-        "cas": "https://www.fabiao.com.cn/sci/22885048/",
+        "cas": "https://www.ablesci.com/journal/detail?id=pWGm3p",
         "ccf": null
       },
       "searchCopyText": {
@@ -1739,20 +1739,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/22885048/",
+            "impact": "https://www.ablesci.com/journal/detail?id=pWGm3p",
             "jcr": "https://www.fabiao.com.cn/sci/22885048/",
-            "cas": "https://www.fabiao.com.cn/sci/22885048/",
+            "cas": "https://www.ablesci.com/journal/detail?id=pWGm3p",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1780,15 +1780,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "2227-7390",
       "sourceUrl": "https://www.mdpi.com/journal/mathematics",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/22277390/",
-        "jcr": "https://www.fabiao.com.cn/sci/22277390/",
-        "cas": "https://www.fabiao.com.cn/sci/22277390/",
+        "impact": "https://www.ablesci.com/journal/detail?id=5kPKjD",
+        "jcr": "https://www.iit.comillas.edu/publicacion/info_revista/en/486/Mathematics",
+        "cas": "https://www.ablesci.com/journal/detail?id=5kPKjD",
         "ccf": null
       },
       "searchCopyText": {
@@ -1830,20 +1830,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/22277390/",
-            "jcr": "https://www.fabiao.com.cn/sci/22277390/",
-            "cas": "https://www.fabiao.com.cn/sci/22277390/",
+            "impact": "https://www.ablesci.com/journal/detail?id=5kPKjD",
+            "jcr": "https://www.iit.comillas.edu/publicacion/info_revista/en/486/Mathematics",
+            "cas": "https://www.ablesci.com/journal/detail?id=5kPKjD",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -1917,15 +1917,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "1879-2782",
       "sourceUrl": "https://www.sciencedirect.com/journal/neural-networks",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/08936080/",
-        "jcr": "https://www.fabiao.com.cn/sci/08936080/",
-        "cas": "https://www.fabiao.com.cn/sci/08936080/",
+        "impact": "https://www.iit.comillas.edu/publicacion/info_revista/en/565/Neural_Networks",
+        "jcr": "https://jrank.net/journals/neural-networks/metrics",
+        "cas": "https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=11534",
         "ccf": null
       },
       "searchCopyText": {
@@ -1968,20 +1968,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/08936080/",
-            "jcr": "https://www.fabiao.com.cn/sci/08936080/",
-            "cas": "https://www.fabiao.com.cn/sci/08936080/",
+            "impact": "https://www.iit.comillas.edu/publicacion/info_revista/en/565/Neural_Networks",
+            "jcr": "https://jrank.net/journals/neural-networks/metrics",
+            "cas": "https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=11534",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -2056,15 +2056,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": null,
       "sourceUrl": "https://www.sciencedirect.com/journal/swarm-and-evolutionary-computation",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
         "impact": "https://www.ablesci.com/journal/detail?id=pB4NJD",
         "jcr": "https://www.fabiao.com.cn/sci/22106502/",
-        "cas": null,
+        "cas": "https://www.ablesci.com/journal/detail?id=pB4NJD",
         "ccf": null
       },
       "searchCopyText": {
@@ -2106,8 +2106,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "https://www.fenqubiao.com/Core/JournalDetail.aspx?t=Swarm%20and%20Evolutionary%20Computation&y=2025",
             "ccf": null
           },
@@ -2118,8 +2118,8 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -2150,15 +2150,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "2073-8994",
       "sourceUrl": "https://www.mdpi.com/journal/symmetry",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/20738994/",
-        "jcr": "https://www.fabiao.com.cn/sci/20738994/",
-        "cas": "https://www.fabiao.com.cn/sci/20738994/",
+        "impact": "https://www.ablesci.com/journal/detail?id=DXd2YD",
+        "jcr": "https://jrank.net/journals/symmetry_basel/metrics",
+        "cas": "https://www.ablesci.com/journal/detail?id=DXd2YD",
         "ccf": null
       },
       "searchCopyText": {
@@ -2200,20 +2200,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/20738994/",
-            "jcr": "https://www.fabiao.com.cn/sci/20738994/",
-            "cas": "https://www.fabiao.com.cn/sci/20738994/",
+            "impact": "https://www.ablesci.com/journal/detail?id=DXd2YD",
+            "jcr": "https://jrank.net/journals/symmetry_basel/metrics",
+            "cas": "https://www.ablesci.com/journal/detail?id=DXd2YD",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
@@ -2338,15 +2338,15 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
       "eissn": "1878-5794",
       "sourceUrl": "https://www.sciencedirect.com/journal/transportation-research-part-e-logistics-and-transportation-review",
       "officialSources": {
-        "impact": "https://jcr.clarivate.com/jcr/home",
-        "jcr": "https://jcr.clarivate.com/jcr/home",
+        "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
+        "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
         "cas": "https://www.fenqubiao.com/",
         "ccf": null
       },
       "publicSources": {
-        "impact": "https://www.fabiao.com.cn/sci/13665545/",
+        "impact": "https://www.ablesci.com/journal/detail?id=rw4R1p",
         "jcr": "https://www.fabiao.com.cn/sci/13665545/",
-        "cas": "https://www.fabiao.com.cn/sci/13665545/",
+        "cas": "https://www.ablesci.com/journal/detail?id=rw4R1p",
         "ccf": null
       },
       "searchCopyText": {
@@ -2389,20 +2389,20 @@ window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
           "ccfRank": null,
           "ccfYear": null,
           "officialSources": {
-            "impact": "https://jcr.clarivate.com/jcr/home",
-            "jcr": "https://jcr.clarivate.com/jcr/home",
+            "impact": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
+            "jcr": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
             "cas": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
             "ccf": null
           },
           "publicSources": {
-            "impact": "https://www.fabiao.com.cn/sci/13665545/",
+            "impact": "https://www.ablesci.com/journal/detail?id=rw4R1p",
             "jcr": "https://www.fabiao.com.cn/sci/13665545/",
-            "cas": "https://www.fabiao.com.cn/sci/13665545/",
+            "cas": "https://www.ablesci.com/journal/detail?id=rw4R1p",
             "ccf": null
           },
           "sourceModes": {
-            "impact": "official_search",
-            "jcr": "official_search",
+            "impact": "official_profile_fallback",
+            "jcr": "official_profile_fallback",
             "cas": "official_archive",
             "ccf": null
           },
