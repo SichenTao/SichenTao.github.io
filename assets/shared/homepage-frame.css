@@ -423,6 +423,11 @@
   }
 
   .header-controls {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    flex: 0 0 auto;
     gap: 8px;
   }
 

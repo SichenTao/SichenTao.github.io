@@ -428,6 +428,7 @@ body.transient-overlay-reset .award-link-menu {
   display: none;
   position: absolute;
   top: calc(100% + 10px);
+  left: auto;
   right: 0;
   width: min(220px, calc(100vw - 40px));
   flex-direction: column;
