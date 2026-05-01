@@ -4643,26 +4643,30 @@ function syncSelectOptions(select, options, currentValue = "all") {
   select.value = hasCurrent ? currentValue : "all";
 }
 
-function renderPaperControls() {
-  const paperSearch = byId("pub-search");
-  const yearFilter = byId("year-filter");
-  const typeFilter = byId("type-filter");
-  const problemFilter = byId("problem-filter");
-  const methodFilter = byId("method-filter");
-  const jcrFilter = byId("jcr-filter");
-  const casFilter = byId("cas-filter");
-  const casTopFilter = byId("cas-top-filter");
-  const impactFilter = byId("impact-filter");
-  const teamFilter = byId("venue-filter");
-  const sortFilter = byId("sort-filter");
-  const resetButton = byId("pub-reset");
-  const activeFieldTags = byId("active-field-tags");
+function paperControlElements() {
+  const controls = {
+    paperSearch: byId("pub-search"),
+    yearFilter: byId("year-filter"),
+    typeFilter: byId("type-filter"),
+    problemFilter: byId("problem-filter"),
+    methodFilter: byId("method-filter"),
+    jcrFilter: byId("jcr-filter"),
+    casFilter: byId("cas-filter"),
+    casTopFilter: byId("cas-top-filter"),
+    impactFilter: byId("impact-filter"),
+    teamFilter: byId("venue-filter"),
+    sortFilter: byId("sort-filter"),
+    resetButton: byId("pub-reset"),
+    activeFieldTags: byId("active-field-tags"),
+  };
 
-  if (!paperSearch || !yearFilter || !typeFilter || !problemFilter || !methodFilter || !jcrFilter || !casFilter || !casTopFilter || !impactFilter || !teamFilter || !sortFilter || !activeFieldTags) {
-    return;
+  if (!controls.paperSearch || !controls.yearFilter || !controls.typeFilter || !controls.problemFilter || !controls.methodFilter || !controls.jcrFilter || !controls.casFilter || !controls.casTopFilter || !controls.impactFilter || !controls.teamFilter || !controls.sortFilter || !controls.activeFieldTags) {
+    return null;
   }
+  return controls;
+}
 
-  const papers = papersForDomain();
+function paperFilterFacets(papers) {
   const years = [...new Set(papers.map((paper) => paperYearValue(paper)).filter(Boolean))]
     .sort((left, right) => Number(right) - Number(left));
   const paperTypes = ["journal", "conference"].filter((value) => papers.some((paper) => paperTypeValue(paper) === value));
@@ -4679,6 +4683,22 @@ function renderPaperControls() {
   const facetCount = (overrides = {}) =>
     papers.filter((paper) => paperMatchesActiveFilters(paper, overrides)).length;
 
+  return {
+    years,
+    paperTypes,
+    problemFields,
+    methodFields,
+    jcrBands,
+    casBands,
+    casTopBands,
+    impactBands,
+    authors,
+    facetCount,
+  };
+}
+
+function normalizePaperFilterState(facets) {
+  const { years, paperTypes, problemFields, methodFields, jcrBands, casBands, casTopBands, impactBands, authors } = facets;
   state.yearFilter = selectionList(state.yearFilter).filter((year) => years.includes(year));
   state.typeFilter = selectionList(state.typeFilter).filter((type) => paperTypes.includes(type));
   state.problemFieldFilters = state.problemFieldFilters.filter((field) => problemFields.includes(field));
@@ -4733,8 +4753,11 @@ function renderPaperControls() {
   } else if (state.teamFilter.length) {
     setExplicitAllSelection(state.paperExplicitAll, "team", false);
   }
+}
 
-  syncSelectOptions(yearFilter, buildCountedMultiSelectOptions({
+function syncPaperFilterControls(controls, facets) {
+  const { years, paperTypes, problemFields, methodFields, jcrBands, casBands, casTopBands, impactBands, authors, facetCount } = facets;
+  syncSelectOptions(controls.yearFilter, buildCountedMultiSelectOptions({
     items: years,
     allLabel: ui("yearOptionAll"),
     currentValues: state.yearFilter,
@@ -4744,7 +4767,7 @@ function renderPaperControls() {
     getCount: (year) => facetCount({ year: previewSelectionValues(state.yearFilter, year) }),
   }), multiSelectDisplayValue(state.yearFilter, state.paperExplicitAll.year));
 
-  syncSelectOptions(typeFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.typeFilter, buildCountedMultiSelectOptions({
     items: paperTypes,
     allLabel: ui("typeOptionAll"),
     currentValues: state.typeFilter,
@@ -4754,7 +4777,7 @@ function renderPaperControls() {
     getCount: (type) => facetCount({ type: previewSelectionValues(state.typeFilter, type) }),
   }), multiSelectDisplayValue(state.typeFilter, state.paperExplicitAll.type));
 
-  syncSelectOptions(problemFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.problemFilter, buildCountedMultiSelectOptions({
     items: problemFields,
     allLabel: ui("problemFieldPlaceholder"),
     currentValues: state.problemFieldFilters,
@@ -4764,7 +4787,7 @@ function renderPaperControls() {
     getCount: (field) => facetCount({ problemTags: previewSelectionValues(state.problemFieldFilters, field) }),
   }), multiSelectDisplayValue(state.problemFieldFilters, state.paperExplicitAll.problem));
 
-  syncSelectOptions(methodFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.methodFilter, buildCountedMultiSelectOptions({
     items: methodFields,
     allLabel: ui("methodFieldPlaceholder"),
     currentValues: state.methodFieldFilters,
@@ -4774,7 +4797,7 @@ function renderPaperControls() {
     getCount: (field) => facetCount({ methodTags: previewSelectionValues(state.methodFieldFilters, field) }),
   }), multiSelectDisplayValue(state.methodFieldFilters, state.paperExplicitAll.method));
 
-  syncSelectOptions(jcrFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.jcrFilter, buildCountedMultiSelectOptions({
     items: jcrBands,
     allLabel: ui("jcrOptionAll"),
     currentValues: state.jcrFilter,
@@ -4784,7 +4807,7 @@ function renderPaperControls() {
     getCount: (band) => facetCount({ jcr: previewSelectionValues(state.jcrFilter, band) }),
   }), multiSelectDisplayValue(state.jcrFilter, state.paperExplicitAll.jcr));
 
-  syncSelectOptions(casFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.casFilter, buildCountedMultiSelectOptions({
     items: casBands,
     allLabel: ui("casOptionAll"),
     currentValues: state.casFilter,
@@ -4794,7 +4817,7 @@ function renderPaperControls() {
     getCount: (band) => facetCount({ cas: previewSelectionValues(state.casFilter, band) }),
   }), multiSelectDisplayValue(state.casFilter, state.paperExplicitAll.cas));
 
-  syncSelectOptions(casTopFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.casTopFilter, buildCountedMultiSelectOptions({
     items: casTopBands,
     allLabel: ui("casTopOptionAll"),
     currentValues: state.casTopFilter,
@@ -4804,7 +4827,7 @@ function renderPaperControls() {
     getCount: (band) => facetCount({ casTop: previewSelectionValues(state.casTopFilter, band) }),
   }), multiSelectDisplayValue(state.casTopFilter, state.paperExplicitAll.casTop));
 
-  syncSelectOptions(impactFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.impactFilter, buildCountedMultiSelectOptions({
     items: impactBands,
     allLabel: ui("impactOptionAll"),
     currentValues: state.impactFilter,
@@ -4814,7 +4837,7 @@ function renderPaperControls() {
     getCount: (band) => facetCount({ impact: previewSelectionValues(state.impactFilter, band) }),
   }), multiSelectDisplayValue(state.impactFilter, state.paperExplicitAll.impact));
 
-  syncSelectOptions(teamFilter, buildCountedMultiSelectOptions({
+  syncSelectOptions(controls.teamFilter, buildCountedMultiSelectOptions({
     items: authors,
     allLabel: ui("teamOptionAll"),
     currentValues: state.teamFilter,
@@ -4824,35 +4847,219 @@ function renderPaperControls() {
     getCount: (team) => facetCount({ team: previewSelectionValues(state.teamFilter, team) }),
   }), multiSelectDisplayValue(state.teamFilter, state.paperExplicitAll.team));
 
-  syncSelectOptions(sortFilter, [
+  syncSelectOptions(controls.sortFilter, [
     { value: "recent", label: ui("sortRecent") },
     { value: "impact_factor", label: ui("sortImpact") },
     { value: "citations", label: ui("sortCitations") },
     { value: "title", label: ui("sortTitle") },
   ], state.sortFilter);
-  state.sortFilter = sortFilter.value;
+  state.sortFilter = controls.sortFilter.value;
+}
 
-  paperSearch.value = state.paperQuery;
-  renderActiveFieldTags(activeFieldTags);
+function isPaperFilterDefaultState() {
+  return !state.yearFilter.length
+    && !state.typeFilter.length
+    && !state.problemFieldFilters.length
+    && !state.methodFieldFilters.length
+    && !state.jcrFilter.length
+    && !state.casFilter.length
+    && !state.casTopFilter.length
+    && !state.impactFilter.length
+    && !state.teamFilter.length
+    && !hasExplicitAllSelections(state.paperExplicitAll)
+    && state.sortFilter === "recent"
+    && !state.paperQuery;
+}
 
+function syncPaperResetButton(resetButton) {
   if (resetButton) {
-    const isDefault =
-      !state.yearFilter.length
-      && !state.typeFilter.length
-      && !state.problemFieldFilters.length
-      && !state.methodFieldFilters.length
-      && !state.jcrFilter.length
-      && !state.casFilter.length
-      && !state.casTopFilter.length
-      && !state.impactFilter.length
-      && !state.teamFilter.length
-      && !hasExplicitAllSelections(state.paperExplicitAll)
-      && state.sortFilter === "recent"
-      && !state.paperQuery;
-    resetButton.disabled = isDefault;
+    resetButton.disabled = isPaperFilterDefaultState();
   }
+}
+
+function renderPaperControls() {
+  const controls = paperControlElements();
+  if (!controls) return;
+  const facets = paperFilterFacets(papersForDomain());
+  normalizePaperFilterState(facets);
+  syncPaperFilterControls(controls, facets);
+  controls.paperSearch.value = state.paperQuery;
+  renderActiveFieldTags(controls.activeFieldTags);
+  syncPaperResetButton(controls.resetButton);
 
   scheduleAdaptiveFilterControlWidths();
+}
+function buildPublicationCopyActions(paper) {
+  const headActions = el("div", "publication-head-actions");
+  const copyTrigger = el("button", "publication-copy-button publication-copy-trigger");
+  copyTrigger.type = "button";
+  copyTrigger.setAttribute("aria-label", publicationCopyMenuLabel());
+  copyTrigger.innerHTML = iconSvg("copy");
+  headActions.appendChild(copyTrigger);
+  headActions.appendChild(buildPublicationCopyMenu(paper));
+  return headActions;
+}
+
+function buildPublicationCopyMenu(paper) {
+  const copyMenu = el("div", "publication-copy-menu");
+  copyMenu.setAttribute("role", "menu");
+  copyMenu.setAttribute("aria-label", publicationCopyMenuLabel());
+  copyMenu.appendChild(buildPublicationCopyOption(paper, "ieee", "copy", ui("copyCitationAction"), "publication-copy-button publication-copy-option"));
+
+  if (publicationDoiText(paper)) {
+    copyMenu.appendChild(buildPublicationCopyOption(paper, "doi", "link", ui("copyDoiAction"), "publication-copy-button publication-copy-option"));
+  }
+
+  if (paper.bibtexText) {
+    copyMenu.appendChild(buildPublicationCopyOption(paper, "bibtex", "code", ui("copyBibtexAction"), "publication-copy-button publication-copy-button-bibtex publication-copy-option"));
+  }
+
+  return copyMenu;
+}
+
+function buildPublicationCopyOption(paper, format, iconName, label, className) {
+  const copyOption = el("button", className);
+  copyOption.type = "button";
+  copyOption.dataset.copyPublicationId = paper.id;
+  copyOption.dataset.copyFormat = format;
+  copyOption.setAttribute("aria-label", publicationCopyActionLabel(format));
+  copyOption.innerHTML = `${iconSvg(iconName)}<span>${escapeHtml(label)}</span>`;
+  return copyOption;
+}
+function buildPaperCardHead(paper) {
+  const head = el("div", "publication-head");
+  const titleBlock = el("div", "");
+  const title = el("h4", "publication-title");
+  title.innerHTML = richTextHtml(paperDisplayTitleValue(paper));
+  titleBlock.appendChild(title);
+  head.appendChild(titleBlock);
+  head.appendChild(buildPublicationCopyActions(paper));
+  return head;
+}
+
+function buildPaperCardAuthors(paper) {
+  const authors = el("p", "authors");
+  authors.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("authorsLabel"))}:</strong> ${escapeHtml(
+    paperAuthorNames(paper).join(", ")
+  )}`;
+  return authors;
+}
+
+function buildPaperCardVenueLine(paper) {
+  const venueLine = el("p", "venue-line");
+  venueLine.innerHTML = `${
+    normalizeUrl(paper?.venue_url || paper?.venueUrl)
+      ? `<a href="${escapeHtml(normalizeUrl(paper?.venue_url || paper?.venueUrl))}" target="_blank" rel="noreferrer">${escapeHtml(localizeText(paper.venue))}</a>`
+      : escapeHtml(localizeText(paper.venue))
+  }`;
+  return venueLine;
+}
+
+function buildPaperCardDoiLine(paper, primaryUrl) {
+  const doiLine = el("p", "doi-line");
+  doiLine.innerHTML = `<span class="doi-label">${ui("doiLabel")}</span> <span class="doi-value">${
+    primaryUrl
+      ? `<a href="${escapeHtml(primaryUrl)}" target="_blank" rel="noreferrer">${escapeHtml(paper.doi || paper.doiUrl || primaryUrl)}</a>`
+      : ui("pendingMetric")
+  }</span>`;
+  return doiLine;
+}
+
+function buildPaperCardMetrics(paper) {
+  const metrics = el("div", "publication-metrics");
+  const showVenueMetrics = (paper.metrics?.venueType || "") === "journal";
+  if (showVenueMetrics) {
+    addMetric(
+      metrics,
+      "impact",
+      ui("impactFactorLabel"),
+      paper.metrics?.impactFactor,
+      paper.metrics?.impactYear,
+      metricOptionsForPaper(paper, "impact")
+    );
+    addMetric(metrics, "jcr", ui("jcrLabel"), paper.metrics?.jcrQuartile, paper.metrics?.jcrYear, metricOptionsForPaper(paper, "jcr"));
+    addMetric(
+      metrics,
+      "cas",
+      ui("casLabel"),
+      paper.metrics?.casQuartile,
+      [paper.metrics?.casTop ? ui("topLabel") : "", paper.metrics?.casYear].filter(Boolean).join(" · "),
+      metricOptionsForPaper(paper, "cas")
+    );
+  }
+  if (paper.metrics?.ccfRank) {
+    addMetric(metrics, "ccf", ui("ccfLabel"), paper.metrics?.ccfRank, paper.metrics?.ccfYear, metricOptionsForPaper(paper, "ccf"));
+  }
+  addMetric(metrics, "citation", ui("citationsMetricLabel"), paper.citationCount || 0, null, metricOptionsForPaper(paper, "citation"));
+  return metrics;
+}
+
+function buildPaperCardAbstract(paper) {
+  const abstract = el("p", "abstract-block");
+  abstract.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("abstractLabel"))}:</strong> <span class="rich-text">${richTextHtml(
+    paper.abstract || ui("abstractUnavailable"),
+    { truncate: 420 }
+  )}</span>`;
+  return abstract;
+}
+
+function buildPaperCardLinks(paper, localArchive, doiActionUrl, publisherUrl) {
+  const links = el("div", "link-row");
+  const detailLink = el("a", "button button-primary", ui("detailAction"));
+  detailLink.href = paperDetailHref(paper);
+  links.appendChild(detailLink);
+  const sourcePdfUrl = paperSourcePdfUrl(paper);
+  const arxivPdfUrl = paperArxivPdfUrl(paper);
+  if (localArchive?.browserUrl) {
+    links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl));
+  }
+  if (sourcePdfUrl) {
+    links.appendChild(actionLink(ui("sourcePdfAction"), sourcePdfUrl));
+  }
+  if (arxivPdfUrl && arxivPdfUrl !== sourcePdfUrl) {
+    links.appendChild(actionLink(ui("arxivPdfAction"), arxivPdfUrl));
+  }
+  if (!localArchive?.browserUrl && !sourcePdfUrl && !arxivPdfUrl) {
+    links.appendChild(el("span", "tag", ui("queueAction")));
+  }
+  if (doiActionUrl) links.appendChild(actionLink(ui("doiAction"), doiActionUrl));
+  if (publisherUrl && publisherUrl !== doiActionUrl) {
+    links.appendChild(actionLink(ui("publisherAction"), publisherUrl));
+  }
+  return links;
+}
+
+function renderPaperCardItem(paper) {
+  const localArchive = localArchiveEntry(paper.id);
+  const primaryUrl = publicationPrimaryUrl(paper);
+  const publisherUrl = normalizeUrl(paper.publisherUrl || paper.publisher_url);
+  const doiActionUrl = primaryUrl || normalizeUrl(paper.doiUrl || paper.doi_url);
+  const article = el("article", "publication-card");
+  article.appendChild(buildPaperCardHead(paper));
+  const fieldTags = buildPaperFieldTagRow(paper);
+  if (fieldTags) article.appendChild(fieldTags);
+  article.appendChild(buildPaperCardAuthors(paper));
+  article.appendChild(buildPaperCardVenueLine(paper));
+  article.appendChild(buildPaperCardDoiLine(paper, primaryUrl));
+  article.appendChild(buildPaperCardMetrics(paper));
+  article.appendChild(buildPaperCardAbstract(paper));
+  const links = buildPaperCardLinks(paper, localArchive, doiActionUrl, publisherUrl);
+  article.appendChild(links);
+
+  return article;
+}
+function renderPaperLedgerItem(paper) {
+  const detailHref = paperDetailHref(paper);
+  const article = el("article", "frontier-reference-item");
+  const head = el("div", "frontier-reference-head");
+  const citation = el("p", "frontier-reference-citation");
+  citation.innerHTML = `${paperReferenceCitationMarkup(paper)}${paperReferenceInlineActionsMarkup(paper, detailHref)}`;
+  head.appendChild(citation);
+  head.appendChild(buildPublicationCopyActions(paper));
+  article.appendChild(head);
+  const fieldTags = buildPaperFieldTagRow(paper, "field-hash-row-ledger");
+  if (fieldTags) article.appendChild(fieldTags);
+  return article;
 }
 
 function renderPapers() {
@@ -4872,201 +5079,9 @@ function renderPapers() {
   }
 
   papers.forEach((paper) => {
-    if (layout === "ledger") {
-      const detailHref = paperDetailHref(paper);
-      const article = el("article", "frontier-reference-item");
-      const head = el("div", "frontier-reference-head");
-      const citation = el("p", "frontier-reference-citation");
-      const headActions = el("div", "publication-head-actions");
-      const copyTrigger = el("button", "publication-copy-button publication-copy-trigger");
-      copyTrigger.type = "button";
-      copyTrigger.setAttribute("aria-label", publicationCopyMenuLabel());
-      copyTrigger.innerHTML = iconSvg("copy");
-      const copyMenu = el("div", "publication-copy-menu");
-      copyMenu.setAttribute("role", "menu");
-      copyMenu.setAttribute("aria-label", publicationCopyMenuLabel());
-
-      const citationCopy = el("button", "publication-copy-button publication-copy-option");
-      citationCopy.type = "button";
-      citationCopy.dataset.copyPublicationId = paper.id;
-      citationCopy.dataset.copyFormat = "ieee";
-      citationCopy.setAttribute("aria-label", publicationCopyActionLabel("ieee"));
-      citationCopy.innerHTML = `${iconSvg("copy")}<span>${escapeHtml(ui("copyCitationAction"))}</span>`;
-      copyMenu.appendChild(citationCopy);
-
-      if (publicationDoiText(paper)) {
-        const doiCopy = el("button", "publication-copy-button publication-copy-option");
-        doiCopy.type = "button";
-        doiCopy.dataset.copyPublicationId = paper.id;
-        doiCopy.dataset.copyFormat = "doi";
-        doiCopy.setAttribute("aria-label", publicationCopyActionLabel("doi"));
-        doiCopy.innerHTML = `${iconSvg("link")}<span>${escapeHtml(ui("copyDoiAction"))}</span>`;
-        copyMenu.appendChild(doiCopy);
-      }
-
-      if (paper.bibtexText) {
-        const bibtexCopy = el("button", "publication-copy-button publication-copy-button-bibtex publication-copy-option");
-        bibtexCopy.type = "button";
-        bibtexCopy.dataset.copyPublicationId = paper.id;
-        bibtexCopy.dataset.copyFormat = "bibtex";
-        bibtexCopy.setAttribute("aria-label", publicationCopyActionLabel("bibtex"));
-        bibtexCopy.innerHTML = `${iconSvg("code")}<span>${escapeHtml(ui("copyBibtexAction"))}</span>`;
-        copyMenu.appendChild(bibtexCopy);
-      }
-
-      headActions.appendChild(copyTrigger);
-      headActions.appendChild(copyMenu);
-      citation.innerHTML = `${paperReferenceCitationMarkup(paper)}${paperReferenceInlineActionsMarkup(paper, detailHref)}`;
-      head.appendChild(citation);
-      head.appendChild(headActions);
-      article.appendChild(head);
-      const fieldTags = buildPaperFieldTagRow(paper, "field-hash-row-ledger");
-      if (fieldTags) article.appendChild(fieldTags);
-
-      list.appendChild(article);
-      return;
-    }
-
-    const localArchive = localArchiveEntry(paper.id);
-    const primaryUrl = publicationPrimaryUrl(paper);
-    const publisherUrl = normalizeUrl(paper.publisherUrl || paper.publisher_url);
-    const doiActionUrl = primaryUrl || normalizeUrl(paper.doiUrl || paper.doi_url);
-    const article = el("article", "publication-card");
-    const head = el("div", "publication-head");
-    const titleBlock = el("div", "");
-    const title = el("h4", "publication-title");
-    title.innerHTML = richTextHtml(paperDisplayTitleValue(paper));
-    titleBlock.appendChild(title);
-    head.appendChild(titleBlock);
-
-    const headActions = el("div", "publication-head-actions");
-    const copyTrigger = el("button", "publication-copy-button publication-copy-trigger");
-    copyTrigger.type = "button";
-    copyTrigger.setAttribute("aria-label", publicationCopyMenuLabel());
-    copyTrigger.innerHTML = iconSvg("copy");
-    const copyMenu = el("div", "publication-copy-menu");
-    copyMenu.setAttribute("role", "menu");
-    copyMenu.setAttribute("aria-label", publicationCopyMenuLabel());
-
-    const citationCopy = el("button", "publication-copy-button publication-copy-option");
-    citationCopy.type = "button";
-    citationCopy.dataset.copyPublicationId = paper.id;
-    citationCopy.dataset.copyFormat = "ieee";
-    citationCopy.setAttribute("aria-label", publicationCopyActionLabel("ieee"));
-    citationCopy.innerHTML = `${iconSvg("copy")}<span>${escapeHtml(ui("copyCitationAction"))}</span>`;
-    copyMenu.appendChild(citationCopy);
-
-    if (publicationDoiText(paper)) {
-      const doiCopy = el("button", "publication-copy-button publication-copy-option");
-      doiCopy.type = "button";
-      doiCopy.dataset.copyPublicationId = paper.id;
-      doiCopy.dataset.copyFormat = "doi";
-      doiCopy.setAttribute("aria-label", publicationCopyActionLabel("doi"));
-      doiCopy.innerHTML = `${iconSvg("link")}<span>${escapeHtml(ui("copyDoiAction"))}</span>`;
-      copyMenu.appendChild(doiCopy);
-    }
-
-    if (paper.bibtexText) {
-      const bibtexCopy = el("button", "publication-copy-button publication-copy-button-bibtex publication-copy-option");
-      bibtexCopy.type = "button";
-      bibtexCopy.dataset.copyPublicationId = paper.id;
-      bibtexCopy.dataset.copyFormat = "bibtex";
-      bibtexCopy.setAttribute("aria-label", publicationCopyActionLabel("bibtex"));
-      bibtexCopy.innerHTML = `${iconSvg("code")}<span>${escapeHtml(ui("copyBibtexAction"))}</span>`;
-      copyMenu.appendChild(bibtexCopy);
-    }
-
-    headActions.appendChild(copyTrigger);
-    headActions.appendChild(copyMenu);
-    head.appendChild(headActions);
-    article.appendChild(head);
-    const fieldTags = buildPaperFieldTagRow(paper);
-    if (fieldTags) article.appendChild(fieldTags);
-
-    const authors = el("p", "authors");
-    authors.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("authorsLabel"))}:</strong> ${escapeHtml(
-      paperAuthorNames(paper).join(", ")
-    )}`;
-    article.appendChild(authors);
-
-    const venueLine = el("p", "venue-line");
-    venueLine.innerHTML = `${
-      normalizeUrl(paper?.venue_url || paper?.venueUrl)
-        ? `<a href="${escapeHtml(normalizeUrl(paper?.venue_url || paper?.venueUrl))}" target="_blank" rel="noreferrer">${escapeHtml(localizeText(paper.venue))}</a>`
-        : escapeHtml(localizeText(paper.venue))
-    }`;
-    article.appendChild(venueLine);
-
-    const doiLine = el("p", "doi-line");
-    doiLine.innerHTML = `<span class="doi-label">${ui("doiLabel")}</span> <span class="doi-value">${
-      primaryUrl
-        ? `<a href="${escapeHtml(primaryUrl)}" target="_blank" rel="noreferrer">${escapeHtml(paper.doi || paper.doiUrl || primaryUrl)}</a>`
-        : ui("pendingMetric")
-    }</span>`;
-    article.appendChild(doiLine);
-
-    const metrics = el("div", "publication-metrics");
-    const showVenueMetrics = (paper.metrics?.venueType || "") === "journal";
-    if (showVenueMetrics) {
-      addMetric(
-        metrics,
-        "impact",
-        ui("impactFactorLabel"),
-        paper.metrics?.impactFactor,
-        paper.metrics?.impactYear,
-        metricOptionsForPaper(paper, "impact")
-      );
-      addMetric(metrics, "jcr", ui("jcrLabel"), paper.metrics?.jcrQuartile, paper.metrics?.jcrYear, metricOptionsForPaper(paper, "jcr"));
-      addMetric(
-        metrics,
-        "cas",
-        ui("casLabel"),
-        paper.metrics?.casQuartile,
-        [paper.metrics?.casTop ? ui("topLabel") : "", paper.metrics?.casYear].filter(Boolean).join(" · "),
-        metricOptionsForPaper(paper, "cas")
-      );
-    }
-    if (paper.metrics?.ccfRank) {
-      addMetric(metrics, "ccf", ui("ccfLabel"), paper.metrics?.ccfRank, paper.metrics?.ccfYear, metricOptionsForPaper(paper, "ccf"));
-    }
-    addMetric(metrics, "citation", ui("citationsMetricLabel"), paper.citationCount || 0, null, metricOptionsForPaper(paper, "citation"));
-    article.appendChild(metrics);
-
-    const abstract = el("p", "abstract-block");
-    abstract.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("abstractLabel"))}:</strong> <span class="rich-text">${richTextHtml(
-      paper.abstract || ui("abstractUnavailable"),
-      { truncate: 420 }
-    )}</span>`;
-    article.appendChild(abstract);
-
-    const links = el("div", "link-row");
-    const detailLink = el("a", "button button-primary", ui("detailAction"));
-    detailLink.href = paperDetailHref(paper);
-    links.appendChild(detailLink);
-    const sourcePdfUrl = paperSourcePdfUrl(paper);
-    const arxivPdfUrl = paperArxivPdfUrl(paper);
-    if (localArchive?.browserUrl) {
-      links.appendChild(actionLink(ui("localArchiveAction"), localArchive.browserUrl));
-    }
-    if (sourcePdfUrl) {
-      links.appendChild(actionLink(ui("sourcePdfAction"), sourcePdfUrl));
-    }
-    if (arxivPdfUrl && arxivPdfUrl !== sourcePdfUrl) {
-      links.appendChild(actionLink(ui("arxivPdfAction"), arxivPdfUrl));
-    }
-    if (!localArchive?.browserUrl && !sourcePdfUrl && !arxivPdfUrl) {
-      links.appendChild(el("span", "tag", ui("queueAction")));
-    }
-    if (doiActionUrl) links.appendChild(actionLink(ui("doiAction"), doiActionUrl));
-    if (publisherUrl && publisherUrl !== doiActionUrl) {
-      links.appendChild(actionLink(ui("publisherAction"), publisherUrl));
-    }
-    article.appendChild(links);
-
-    list.appendChild(article);
+    list.appendChild(layout === "ledger" ? renderPaperLedgerItem(paper) : renderPaperCardItem(paper));
   });
 }
-
 function metricVenueReferenceRecord(venue) {
   const currentVenueId = normalizeSearchText(venue?.id || "");
   const currentVenueName = normalizeSearchText(venue?.venueName || venue?.name || "");
