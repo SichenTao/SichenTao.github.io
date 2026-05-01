@@ -5608,7 +5608,7 @@ function renderCardGrid(containerId, items, renderItem) {
 function signalRecentPaperLines() {
   return sortPapers(papersForDomain())
     .slice(0, 3)
-    .map((paper) => [paper?.year, localizeText(paperDisplayTitle(paper) || paper?.title || ""), localizeText(paper?.venue || "")]
+    .map((paper) => [paper?.year, localizeText(paperDisplayTitleValue(paper)), localizeText(paper?.venue || "")]
       .filter((item) => String(item || "").trim())
       .join(" · "));
 }
