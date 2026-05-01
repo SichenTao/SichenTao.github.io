@@ -6399,7 +6399,7 @@ async function loadLocalArchiveManifest() {
   try {
     await mergeArchiveManifest(`${basePath}/data/public_archive_manifest.json`);
 
-    if (["127.0.0.1", "localhost", ""].includes(window.location.hostname)) {
+    if (window.ACADEMIC_FRONTIER_ENABLE_LOCAL_ARCHIVE === true) {
       await mergeArchiveManifest(`${basePath}/data/local_archive_manifest.json`);
     }
   } catch {
@@ -6408,7 +6408,6 @@ async function loadLocalArchiveManifest() {
 
   renderAll();
 }
-
 function renderAll() {
   try {
     renderStaticText();

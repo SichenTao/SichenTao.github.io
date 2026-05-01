@@ -1,6 +1,6 @@
 window.FRONTIER_DATA = {
   "snapshot": {
-    "generatedAt": "2026-05-01 18:59 JST",
+    "generatedAt": "2026-05-01 19:14 JST",
     "sourcesCovered": 15,
     "nextRun": {
       "en": "Daily 08:00 JST via OpenClaw cron",
@@ -5191,7 +5191,7 @@ window.FRONTIER_DATA = {
     }
   ],
   "venueReference": {
-    "generatedAt": "2026-05-01 18:59 JST",
+    "generatedAt": "2026-05-01 19:14 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",

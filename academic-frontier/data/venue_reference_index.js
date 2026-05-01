@@ -1,5 +1,5 @@
 window.ACADEMIC_FRONTIER_VENUE_REFERENCE = {
-  "updatedAt": "2026-05-01 18:59 JST",
+  "updatedAt": "2026-05-01 19:14 JST",
   "venueCount": 32,
   "historySemantics": {
     "byPublicationYear": "Tracked paper venues align rows to publication year. Reference-only journal entries may use a synthetic catalog year derived from the available IF/JCR/CAS snapshot when no publication-year mapping is curated yet."
