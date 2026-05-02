@@ -1032,6 +1032,17 @@ function translatedThemeTooltip(theme) {
   return THEME_CATALOG[themeValue]?.title || "";
 }
 
+function languageIconMarkup() {
+  return `
+    <svg class="ui-icon locale-trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="8"></circle>
+      <path d="M12 4a12.5 12.5 0 0 1 0 16"></path>
+      <path d="M12 4a12.5 12.5 0 0 0 0 16"></path>
+      <path d="M4 12h16"></path>
+    </svg>
+  `;
+}
+
 function portalSpriteIconMarkup(name) {
   return `<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
 }
@@ -1075,6 +1086,7 @@ function renderLocaleSwitcher() {
       locales: LOCALE_CATALOG,
       sequence: LOCALE_SWITCH_SEQUENCE,
       ariaLabel: t("common.language"),
+      triggerLabel: t("common.languageChoices"),
       trayLabel: t("common.languageChoices"),
       onChoice: (localeName) => {
         applyLocale(localeName);
@@ -1095,10 +1107,11 @@ function renderLocaleSwitcher() {
       data-locale-trigger
       aria-haspopup="true"
       aria-expanded="false"
-      aria-label="${escapeHtml(activeLocale.name)}"
-      title="${escapeHtml(activeLocale.name)}"
+      aria-label="${escapeHtml(t("common.languageChoices"))}"
+      title="${escapeHtml(t("common.languageChoices"))}"
     >
-      <span class="locale-label" data-locale-current-label>${escapeHtml(activeLocale.label)}</span>
+      ${languageIconMarkup()}
+      <span class="locale-current-label" data-locale-current-label>${escapeHtml(activeLocale.label)}</span>
     </button>
     <div class="locale-tray" role="group" aria-label="${escapeHtml(t("common.languageChoices"))}">
       ${LOCALE_SWITCH_SEQUENCE

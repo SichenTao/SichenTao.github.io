@@ -188,8 +188,8 @@
   }
 
   body[data-page]:not([data-page="home"]) .section-head h2 {
-    font-size: clamp(2.25rem, 11vw, 2.86rem);
-    line-height: 0.94;
+    font-size: clamp(1.65rem, 7.2vw, 2.05rem);
+    line-height: 1.08;
   }
 
   body[data-page]:not([data-page="home"]) .feature-card,

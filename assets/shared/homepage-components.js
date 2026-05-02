@@ -62,6 +62,17 @@
     return `<svg class="${escapeHtml(className)}" aria-hidden="true" focusable="false"><use href="${escapeHtml(spriteHref)}#icon-${escapeHtml(name)}"></use></svg>`;
   }
 
+  function languageIconMarkup() {
+    return `
+      <svg class="ui-icon locale-trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="8"></circle>
+        <path d="M12 4a12.5 12.5 0 0 1 0 16"></path>
+        <path d="M12 4a12.5 12.5 0 0 0 0 16"></path>
+        <path d="M4 12h16"></path>
+      </svg>
+    `;
+  }
+
   function portalIconMarkup(icon, options = {}) {
     if (icon === "home") {
       return iconSprite("home", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
@@ -98,7 +109,7 @@
     const activeLabel = activeLocale.label || activeLocaleName.toUpperCase();
     const activeName = activeLocale.name || activeLocaleName;
     const trayLabel = config.trayLabel || config.choiceLabel || "Language choices";
-    const triggerLabel = config.triggerLabel || activeName;
+    const triggerLabel = config.triggerLabel || switcherLabel || activeName;
     const switcherLabel = config.ariaLabel || config.label || "Language";
     const activeClass = config.activeClass || "is-active";
 
@@ -151,7 +162,8 @@
           aria-label="${escapeHtml(triggerLabel)}"
           title="${escapeHtml(triggerLabel)}"
         >
-          <span class="locale-label" data-locale-current-label>${escapeHtml(activeLabel)}</span>
+          ${languageIconMarkup()}
+          <span class="locale-current-label" data-locale-current-label>${escapeHtml(activeLabel)}</span>
         </button>
         <div class="locale-tray" role="group" aria-label="${escapeHtml(trayLabel)}">
           ${choices}

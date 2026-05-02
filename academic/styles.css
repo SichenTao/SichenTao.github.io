@@ -404,6 +404,29 @@ a {
   white-space: nowrap;
 }
 
+.locale-trigger .locale-trigger-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: var(--ink-soft);
+}
+
+.locale-current-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .portal-tray,
 .locale-tray,
 .theme-tray {
@@ -1583,17 +1606,20 @@ body[data-page]:not([data-page="home"]) .section-head {
 }
 
 .section-head h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  line-height: 0.98;
+  font-family: var(--font-ui);
+  font-size: clamp(1.85rem, 2.4vw, 2.45rem);
+  font-weight: 650;
+  line-height: 1.08;
+  text-wrap: balance;
 }
 
 body[data-page]:not([data-page="home"]) .section-head h2 {
-  font-size: clamp(3rem, 5vw, 4.8rem);
-  line-height: 0.92;
+  font-size: clamp(2rem, 2.4vw, 2.65rem);
+  line-height: 1.05;
 }
 
 body[data-page]:not([data-page="home"]) .section-card:not(:first-child) .section-head h2 {
-  font-size: clamp(2.8rem, 4.2vw, 4.25rem);
+  font-size: clamp(1.8rem, 2.1vw, 2.35rem);
 }
 
 .badge,
@@ -1815,11 +1841,11 @@ body[data-page]:not([data-page="home"]) .timeline-card {
 
 @media (min-width: 1760px) {
   body[data-page]:not([data-page="home"]) .section-head h2 {
-    font-size: clamp(4.4rem, 4.6vw, 5.6rem);
+    font-size: clamp(2.2rem, 2vw, 2.65rem);
   }
 
   body[data-page]:not([data-page="home"]) .section-card:not(:first-child) .section-head h2 {
-    font-size: clamp(3.4rem, 3.6vw, 4.4rem);
+    font-size: clamp(1.95rem, 1.8vw, 2.35rem);
   }
 
   body[data-page="profiles"] #link-grid,
@@ -4121,8 +4147,8 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
   }
 
   body[data-page]:not([data-page="home"]) .section-head h2 {
-    font-size: clamp(2.25rem, 11vw, 2.86rem);
-    line-height: 0.94;
+    font-size: clamp(1.65rem, 7.2vw, 2.05rem);
+    line-height: 1.08;
   }
 
   body[data-page]:not([data-page="home"]) .feature-card,

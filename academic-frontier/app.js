@@ -3612,6 +3612,7 @@ function renderLocaleSwitcher() {
       locales: LOCALE_CATALOG,
       sequence: LOCALE_SWITCH_SEQUENCE,
       ariaLabel: ui("languageLabel"),
+      triggerLabel: ui("languageChoicesLabel"),
       trayLabel: ui("languageChoicesLabel"),
       choiceHref: (localeName) => localePageHref(localeName),
       onChoice: (localeName) => persistLanguagePreference(localeName),
@@ -3648,9 +3649,20 @@ function renderLocaleSwitcher() {
   trigger.dataset.localeTrigger = "true";
   trigger.setAttribute("aria-haspopup", "true");
   trigger.setAttribute("aria-expanded", switcher.classList.contains("is-open") ? "true" : "false");
-  trigger.setAttribute("aria-label", activeLocale.name);
-  trigger.title = activeLocale.name;
-  trigger.appendChild(el("span", "locale-label", activeLocale.label));
+  trigger.setAttribute("aria-label", ui("languageChoicesLabel"));
+  trigger.title = ui("languageChoicesLabel");
+  trigger.insertAdjacentHTML(
+    "beforeend",
+    `<svg class="ui-icon locale-trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="8"></circle>
+      <path d="M12 4a12.5 12.5 0 0 1 0 16"></path>
+      <path d="M12 4a12.5 12.5 0 0 0 0 16"></path>
+      <path d="M4 12h16"></path>
+    </svg>`,
+  );
+  const currentLabel = el("span", "locale-current-label", activeLocale.label);
+  currentLabel.dataset.localeCurrentLabel = "true";
+  trigger.appendChild(currentLabel);
 
   switcher.appendChild(trigger);
   switcher.appendChild(tray);

@@ -2316,6 +2316,17 @@ function nextThemeName(currentTheme = resolveThemeName()) {
   return sequence[(pointer + 1) % sequence.length];
 }
 
+function languageIconMarkup() {
+  return `
+    <svg class="ui-icon locale-trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="8"></circle>
+      <path d="M12 4a12.5 12.5 0 0 1 0 16"></path>
+      <path d="M12 4a12.5 12.5 0 0 0 0 16"></path>
+      <path d="M4 12h16"></path>
+    </svg>
+  `;
+}
+
 function renderLocaleSwitchers() {
   if (!els.localeSwitchers.length) {
     els.localeChoices = Array.from(document.querySelectorAll("[data-locale-choice]"));
@@ -2329,6 +2340,7 @@ function renderLocaleSwitchers() {
       locales: localeCatalog,
       sequence: LOCALE_SWITCH_SEQUENCE,
       ariaLabel: t("controls.language"),
+      triggerLabel: t("controls.show_languages"),
       trayLabel: t("controls.language_choices"),
     });
     els.localeChoices = Array.from(document.querySelectorAll("[data-locale-choice]"));
@@ -2369,10 +2381,11 @@ function renderLocaleSwitchers() {
         data-locale-trigger
         aria-haspopup="true"
         aria-expanded="false"
-        aria-label="${escapeHtml(activeLocale.name)}"
-        title="${escapeHtml(activeLocale.name)}"
+        aria-label="${escapeHtml(t("controls.show_languages"))}"
+        title="${escapeHtml(t("controls.show_languages"))}"
       >
-        <span class="locale-label" data-locale-current-label>${escapeHtml(activeLocale.label)}</span>
+        ${languageIconMarkup()}
+        <span class="locale-current-label" data-locale-current-label>${escapeHtml(activeLocale.label)}</span>
       </button>
       <div class="locale-tray" role="group" aria-label="${escapeHtml(t("controls.language_choices"))}">
         ${localeButtons}
@@ -2482,7 +2495,6 @@ function siteStateHref(href, localeName = resolveLocaleName(), themeName = resol
   }
   return `${url.pathname}${url.search}`;
 }
-
 function renderPortalReturnControl() {
   if (!els.headerControls) {
     return;
@@ -2829,8 +2841,8 @@ function applyLocale(localeName, persist = true) {
   });
 
   els.localeTriggers.forEach((trigger) => {
-    trigger.setAttribute("aria-label", localeCatalog[nextLocale].name);
-    trigger.setAttribute("title", localeCatalog[nextLocale].name);
+    trigger.setAttribute("aria-label", t("controls.show_languages"));
+    trigger.setAttribute("title", t("controls.show_languages"));
   });
   if (scrollTopButton) {
     scrollTopButton.setAttribute("aria-label", t("actions.scroll_top"));

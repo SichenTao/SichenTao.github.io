@@ -455,7 +455,7 @@ function renderLocaleSwitcher() {
       locales: LOCALE_CATALOG,
       sequence: LOCALE_SWITCH_SEQUENCE,
       ariaLabel: text.controls.language,
-      triggerLabel: text.controls.cycleLanguages,
+      triggerLabel: text.controls.languageChoices,
       trayLabel: text.controls.languageChoices,
       onChoice: (localeName) => setLocale(localeName),
     });
@@ -472,10 +472,16 @@ function renderLocaleSwitcher() {
         data-locale-trigger
         aria-haspopup="true"
         aria-expanded="false"
-        aria-label="${escapeHtml(text.controls.cycleLanguages)}"
-        title="${escapeHtml(text.controls.cycleLanguages)}"
+        aria-label="${escapeHtml(text.controls.languageChoices)}"
+        title="${escapeHtml(text.controls.languageChoices)}"
       >
-        <span class="locale-label">${escapeHtml(activeLocale.label)}</span>
+        <svg class="ui-icon locale-trigger-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="8"></circle>
+          <path d="M12 4a12.5 12.5 0 0 1 0 16"></path>
+          <path d="M12 4a12.5 12.5 0 0 0 0 16"></path>
+          <path d="M4 12h16"></path>
+        </svg>
+        <span class="locale-current-label">${escapeHtml(activeLocale.label)}</span>
       </button>
       <div class="locale-tray" role="group" aria-label="${escapeHtml(text.controls.languageChoices)}">
         ${Object.entries(LOCALE_CATALOG)

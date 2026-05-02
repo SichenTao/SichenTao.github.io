@@ -149,6 +149,29 @@
   white-space: nowrap;
 }
 
+.locale-trigger .locale-trigger-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: var(--ink-soft);
+}
+
+.locale-current-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .portal-tray,
 .locale-tray,
 .theme-tray {

@@ -344,8 +344,8 @@ function applyLocale(localeName, persist = true) {
   });
 
   els.localeTriggers.forEach((trigger) => {
-    trigger.setAttribute("aria-label", localeCatalog[nextLocale].name);
-    trigger.setAttribute("title", localeCatalog[nextLocale].name);
+    trigger.setAttribute("aria-label", t("controls.show_languages"));
+    trigger.setAttribute("title", t("controls.show_languages"));
   });
   if (scrollTopButton) {
     scrollTopButton.setAttribute("aria-label", t("actions.scroll_top"));
