@@ -303,6 +303,30 @@
     padding: 40px 20px 28px;
   }
 
+  body[data-page="home"] .hero-primary {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  body[data-page="home"] .hero-photo-inline {
+    justify-items: center;
+    order: -1;
+  }
+
+  body[data-page="home"] .hero-heading {
+    justify-items: center;
+    order: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body[data-page="home"] .hero-title-row {
+    justify-content: center;
+    width: 100%;
+  }
+
   body[data-page="home"] .hero h1 {
     font-size: 2.72rem;
   }
@@ -311,11 +335,8 @@
     width: min(100%, 128px);
   }
 
-  body[data-page="home"] .profile-links-section .shortcut-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    width: min(100%, 360px);
-    margin: 0 auto;
+  body[data-page="home"] .shortcut-grid {
+    display: none;
   }
 
   body[data-page="home"] .hero-keylines {
@@ -329,6 +350,7 @@
   }
 
   body[data-page="home"] .hero-profile-card {
+    width: 100%;
     padding: 14px;
   }
 
