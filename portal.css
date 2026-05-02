@@ -255,6 +255,23 @@ a {
   opacity: 0.72;
 }
 
+body[data-page="portal"] .header-controls {
+  position: relative;
+  top: auto;
+  left: auto;
+  z-index: 3;
+  flex: 0 0 auto;
+  gap: 10px;
+  margin: 0 12px 0 0;
+  transform: none;
+}
+
+body[data-page="portal"] .topnav-shell,
+body[data-page="portal"] .topnav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .ui-icon {
   width: 1rem;
   height: 1rem;
@@ -273,6 +290,12 @@ a {
   text-transform: uppercase;
   letter-spacing: 0;
   font-weight: 700;
+}
+
+.eyebrow:empty,
+.hero-description:empty,
+.section-note:empty {
+  display: none;
 }
 
 body[data-lang="zh"] .eyebrow,
@@ -373,14 +396,6 @@ body[data-lang="ja"] .portal-card-name {
   gap: 15px;
   align-content: start;
   max-width: 860px;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 4px;
 }
 
 .button {
@@ -707,10 +722,6 @@ body[data-lang="ja"] .portal-card-name {
   .hero-description {
     font-size: 0.92rem;
     line-height: 1.5;
-  }
-
-  .hero-actions .button:not(.button-primary) {
-    display: none;
   }
 
   .portal-portrait-card img {

@@ -219,7 +219,7 @@ const translations = {
       contact_identity: "Contact & Identity",
       contact: "Contact",
       identity: "Identity",
-      pages: "Pages",
+      pages: "Explore the academic record",
       resources: "Resources",
       portrait_alt: "Portrait of Sichen Tao",
       bio:
@@ -471,7 +471,7 @@ const translations = {
       contact_identity: "連絡先・基本情報",
       contact: "連絡先",
       identity: "基本情報",
-      pages: "ページ",
+      pages: "研究記録を開く",
       resources: "資料",
       portrait_alt: "陶思晨のポートレート",
       bio:
@@ -723,7 +723,7 @@ const translations = {
       contact_identity: "联系与基本信息",
       contact: "联系",
       identity: "基本信息",
-      pages: "页面",
+      pages: "浏览学术档案",
       resources: "资料",
       portrait_alt: "陶思晨肖像",
       bio:

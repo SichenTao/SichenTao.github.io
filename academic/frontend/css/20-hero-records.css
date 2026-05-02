@@ -503,3 +503,103 @@
   max-width: 58ch;
   margin: 0 0 16px;
 }
+
+body[data-page="home"] .hero {
+  padding: 36px;
+  border-radius: 34px;
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.9), rgba(var(--white-rgb), 0.52)),
+    var(--surface);
+}
+
+body[data-page="home"] .hero-top {
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+  align-items: center;
+  justify-items: stretch;
+}
+
+body[data-page="home"] .hero-primary {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  max-width: 760px;
+  text-align: center;
+  justify-self: center;
+}
+
+body[data-page="home"] .hero-photo-inline {
+  justify-items: center;
+  order: -1;
+}
+
+body[data-page="home"] .portrait-frame {
+  width: 156px;
+  border-radius: 999px;
+  box-shadow: 0 20px 42px rgba(var(--ink-rgb), 0.12);
+}
+
+body[data-page="home"] .institution-switcher {
+  display: none;
+}
+
+body[data-page="home"] .shortcut-grid {
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  width: auto;
+  max-width: 100%;
+}
+
+body[data-page="home"] .shortcut-link {
+  border-radius: 999px;
+  padding-inline: 12px;
+}
+
+body[data-page="home"] .hero-heading {
+  justify-items: center;
+  max-width: 860px;
+}
+
+body[data-page="home"] .hero-title-row {
+  justify-content: center;
+}
+
+body[data-page="home"] .hero h1 {
+  font-size: 5rem;
+  line-height: 0.94;
+}
+
+body[data-page="home"] .hero-identity {
+  justify-items: center;
+}
+
+body[data-page="home"] .hero-affiliation {
+  max-width: 58ch;
+}
+
+body[data-page="home"] .hero .lede {
+  max-width: 70ch;
+  font-size: 1.02rem;
+}
+
+body[data-page="home"] .hero-profile-card {
+  width: 100%;
+  min-height: 0;
+  padding: 20px;
+  background: rgba(var(--white-rgb), 0.72);
+}
+
+body[data-page="home"] .hero-profile-card .subhead {
+  display: none;
+}
+
+body[data-page="home"] .hero-profile-stack .stack-list {
+  grid-template-columns: 1fr;
+}
+
+body[data-page="home"] .hero-profile-card .stack-item {
+  padding: 0;
+  border-bottom: 0;
+}
+
+body[data-page="home"] .record-nav {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}

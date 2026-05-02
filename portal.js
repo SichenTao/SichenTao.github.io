@@ -74,14 +74,13 @@ const I18N = {
       roleLabel: "Current appointment",
       role: "Assistant Professor",
       affiliation: "High Performance Computing Laboratory, Cyberscience Center, Tohoku University",
-      description:
-        "A single entry point for profile, frontier research tracking, and grant-work resources.",
+      description: "",
       portraitAlt: "Portrait of Sichen Tao",
     },
     section: {
-      kicker: "Research Sites",
-      title: "Choose the right workspace",
-      lede: "The portal sets the common language, theme, and navigation logic for every related homepage.",
+      kicker: "",
+      title: "Choose a workspace",
+      lede: "",
       gridLabel: "Research portal menu",
     },
     cards: {
@@ -134,13 +133,13 @@ const I18N = {
       roleLabel: "当前任职",
       role: "助理教授",
       affiliation: "东北大学网络科学中心高性能计算实验室",
-      description: "从这里统一进入个人身份展示、前沿研究追踪与科研费工作资源。",
+      description: "",
       portraitAlt: "陶思晨照片",
     },
     section: {
-      kicker: "研究站点",
-      title: "选择合适的工作空间",
-      lede: "导航页负责统一语言、主题与入口逻辑，让相关主页形成一个整体。",
+      kicker: "",
+      title: "选择工作区",
+      lede: "",
       gridLabel: "研究站点入口",
     },
     cards: {
@@ -193,13 +192,13 @@ const I18N = {
       roleLabel: "現在の職位",
       role: "助教",
       affiliation: "東北大学サイバーサイエンスセンター 高性能計算研究部",
-      description: "プロフィール、研究フロンティア追跡、科研費実務リソースへの共通入口です。",
+      description: "",
       portraitAlt: "陶思晨のポートレート",
     },
     section: {
-      kicker: "研究サイト",
-      title: "適切なワークスペースを選ぶ",
-      lede: "ポータルは、関連ホームページ全体の言語、テーマ、入口構造を統一します。",
+      kicker: "",
+      title: "ワークスペースを選択",
+      lede: "",
       gridLabel: "研究サイト入口",
     },
     cards: {
@@ -363,14 +362,6 @@ function renderHero() {
     portrait.alt = text.hero.portraitAlt;
   }
 
-  const heroActions = document.getElementById("portalHeroActions");
-  if (heroActions) {
-    heroActions.innerHTML = `
-      <a class="button button-primary" href="${portalHref("/academic/")}">${escapeHtml(text.cards.academic.name)}</a>
-      <a class="button" href="${portalHref("/academic-frontier/")}">${escapeHtml(text.cards.frontier.name)}</a>
-      <a class="button" href="${portalHref("/jsps-kakenhi/")}">${escapeHtml(text.cards.jsps.name)}</a>
-    `;
-  }
 }
 
 function cardIconMarkup(siteKey) {
@@ -630,15 +621,6 @@ function syncHomepageShell() {
       onCycleLocale: () => setLocale(nextLocaleName()),
       onCycleTheme: () => applyTheme(nextThemeName()),
     },
-    controls: {
-      root: document,
-      controlsSelector: ".header-controls",
-      navSelector: ".topnav-shell, .topnav",
-      headerSelector: ".site-header",
-      breakpoint: 760,
-      desktopGap: 12,
-      mobileGap: 8,
-    },
     topnav: {
       root: document,
       navSelector: ".topnav",
@@ -660,8 +642,6 @@ function render() {
   renderCards();
   renderLocaleSwitcher();
   renderThemeSwitcher();
-  renderPortalReturnControl();
-
   const controls = document.querySelector(".header-controls");
   if (controls) {
     controls.setAttribute("aria-label", localeText().controls.display);
