@@ -297,11 +297,19 @@ a {
 .control-switcher::after {
   content: "";
   position: absolute;
-  top: 100%;
+  top: calc(100% - 2px);
   left: 50%;
-  width: 72px;
-  height: 14px;
+  width: max(112px, calc(100% + 72px));
+  height: 24px;
   transform: translateX(-50%);
+  background: rgba(var(--white-rgb), 0.001);
+  pointer-events: none;
+}
+
+.control-switcher:hover::after,
+.control-switcher:focus-within::after,
+.control-switcher.is-open::after {
+  pointer-events: auto;
 }
 
 .locale-trigger,
@@ -384,10 +392,12 @@ a {
   backdrop-filter: blur(16px) saturate(132%);
   -webkit-backdrop-filter: blur(16px) saturate(132%);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transform: translate(-50%, -6px);
   transition:
     opacity 180ms ease,
+    visibility 180ms ease,
     transform 180ms ease,
     box-shadow 180ms ease;
 }
@@ -399,6 +409,7 @@ a {
 .theme-switcher:focus-within .theme-tray,
 .theme-switcher.is-open .theme-tray {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   transform: translate(-50%, 0);
 }

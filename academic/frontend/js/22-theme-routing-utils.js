@@ -78,6 +78,7 @@ function renderLocaleSwitchers() {
     els.localeTriggers = Array.from(document.querySelectorAll("[data-locale-trigger]"));
     renderPortalReturnControl();
     bindSwitcherTriggerButtons();
+    bindSwitcherHoverBehavior();
     return;
   }
 
@@ -128,6 +129,7 @@ function renderLocaleSwitchers() {
   els.localeTriggers = Array.from(document.querySelectorAll("[data-locale-trigger]"));
   renderPortalReturnControl();
   bindSwitcherTriggerButtons();
+  bindSwitcherHoverBehavior();
 }
 
 function renderThemeSwitchers() {
@@ -151,6 +153,7 @@ function renderThemeSwitchers() {
     els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
     renderPortalReturnControl();
     bindSwitcherTriggerButtons();
+    bindSwitcherHoverBehavior();
     return;
   }
 
@@ -200,6 +203,7 @@ function renderThemeSwitchers() {
   els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
   renderPortalReturnControl();
   bindSwitcherTriggerButtons();
+  bindSwitcherHoverBehavior();
 }
 
 function academicFrontierHomeHref(localeName = resolveLocaleName()) {

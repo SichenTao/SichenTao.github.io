@@ -3905,7 +3905,7 @@ function scheduleSwitcherClose(switcher) {
   const timerId = window.setTimeout(() => {
     setSwitcherExpandedState(switcher, false);
     switcherCloseTimers.delete(switcher);
-  }, 140);
+  }, 760);
   switcherCloseTimers.set(switcher, timerId);
 }
 
@@ -3931,12 +3931,17 @@ function closeAllSwitchers() {
 }
 
 function bindSwitcherHoverBehavior() {
-  if (switcherHoverBound || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     return;
   }
 
-  switcherHoverBound = true;
   document.querySelectorAll(".control-switcher").forEach((switcher) => {
+    if (switcher.dataset.switcherHoverBound === "true") {
+      return;
+    }
+    switcher.dataset.switcherHoverBound = "true";
+    switcherHoverBound = true;
+
     switcher.addEventListener("pointerenter", () => {
       clearSwitcherCloseTimer(switcher);
       document.querySelectorAll(".control-switcher").forEach((other) => {

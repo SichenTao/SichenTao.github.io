@@ -2345,6 +2345,7 @@ function renderLocaleSwitchers() {
     els.localeTriggers = Array.from(document.querySelectorAll("[data-locale-trigger]"));
     renderPortalReturnControl();
     bindSwitcherTriggerButtons();
+    bindSwitcherHoverBehavior();
     return;
   }
 
@@ -2395,6 +2396,7 @@ function renderLocaleSwitchers() {
   els.localeTriggers = Array.from(document.querySelectorAll("[data-locale-trigger]"));
   renderPortalReturnControl();
   bindSwitcherTriggerButtons();
+  bindSwitcherHoverBehavior();
 }
 
 function renderThemeSwitchers() {
@@ -2418,6 +2420,7 @@ function renderThemeSwitchers() {
     els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
     renderPortalReturnControl();
     bindSwitcherTriggerButtons();
+    bindSwitcherHoverBehavior();
     return;
   }
 
@@ -2467,6 +2470,7 @@ function renderThemeSwitchers() {
   els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
   renderPortalReturnControl();
   bindSwitcherTriggerButtons();
+  bindSwitcherHoverBehavior();
 }
 
 function academicFrontierHomeHref(localeName = resolveLocaleName()) {
@@ -2638,17 +2642,22 @@ function scheduleSwitcherClose(switcher) {
   const timerId = window.setTimeout(() => {
     setSwitcherExpandedState(switcher, false);
     switcherCloseTimers.delete(switcher);
-  }, 140);
+  }, 760);
   switcherCloseTimers.set(switcher, timerId);
 }
 
 function bindSwitcherHoverBehavior() {
-  if (switcherHoverBound || !window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     return;
   }
 
-  switcherHoverBound = true;
   document.querySelectorAll(".control-switcher").forEach((switcher) => {
+    if (switcher.dataset.switcherHoverBound === "true") {
+      return;
+    }
+    switcher.dataset.switcherHoverBound = "true";
+    switcherHoverBound = true;
+
     switcher.addEventListener("pointerenter", () => {
       clearSwitcherCloseTimer(switcher);
       document.querySelectorAll(".control-switcher").forEach((other) => {
@@ -2851,6 +2860,7 @@ function applyLocale(localeName, persist = true) {
   els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
   applyTheme(resolveThemeName(), false);
   bindThemeButtons();
+  bindSwitcherHoverBehavior();
   closeLocaleSwitchers();
 
   if (dataReady) {

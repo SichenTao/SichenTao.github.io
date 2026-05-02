@@ -3,6 +3,7 @@
     return;
   }
 
+  const SWITCHER_CLOSE_DELAY_MS = 760;
   const switcherCloseTimers = new WeakMap();
   let switcherDocumentBound = false;
   let topnavDocumentBound = false;
@@ -59,7 +60,7 @@
     const timerId = global.setTimeout(() => {
       setSwitcherExpandedState(switcher, false);
       switcherCloseTimers.delete(switcher);
-    }, 140);
+    }, SWITCHER_CLOSE_DELAY_MS);
     switcherCloseTimers.set(switcher, timerId);
   }
 
