@@ -6,7 +6,7 @@ const LOCALE_KEY = "sichen-homepage-locale";
 const LEGACY_LOCALE_KEY = "kakenhi-portal-locale";
 const FILTER_KEY = "kakenhi-portal-filters";
 const FILTER_SCHEMA_VERSION = 3;
-const LOCALE_SWITCH_SEQUENCE = ["en", "ja", "zh"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 let topnavOverflowBound = false;
 let topnavMenuBound = false;
 let headerControlsPositionBound = false;
@@ -25,7 +25,6 @@ function writeSessionValue(key, value) {
     window.sessionStorage.setItem(key, value);
   } catch {}
 }
-
 const I18N = {
   zh: {
     nav: {
@@ -769,9 +768,9 @@ I18N.ja = {
   },
 };
 const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
-  en: { label: "EN", name: "English", lang: "en" },
-  ja: { label: "日", name: "日本語", lang: "ja" },
-  zh: { label: "中", name: "中文", lang: "zh-CN" },
+  en: { label: "English", name: "English", lang: "en" },
+  ja: { label: "日本語", name: "日本語", lang: "ja" },
+  zh: { label: "简体中文", name: "简体中文", lang: "zh-CN" },
 };
 
 const THEME_OPTIONS = [
@@ -865,7 +864,6 @@ const state = {
   page: document.body?.dataset.page || "home",
   filters: getStoredFilters(),
 };
-
 document.addEventListener("DOMContentLoaded", init);
 
 async function init() {

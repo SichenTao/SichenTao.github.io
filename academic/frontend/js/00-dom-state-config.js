@@ -134,19 +134,18 @@ const heroContactEmojiMap = {
 
 const localeCatalog = window.HomepageI18n?.LOCALES || {
   en: {
-    label: "EN",
+    label: "English",
     name: "English",
     lang: "en",
   },
   ja: {
-    label: "日",
+    label: "日本語",
     name: "日本語",
     lang: "ja",
   },
   zh: {
-    label: "中",
-    name: "中文",
+    label: "简体中文",
+    name: "简体中文",
     lang: "zh-CN",
   },
 };
-

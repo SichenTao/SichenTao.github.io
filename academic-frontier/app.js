@@ -8,7 +8,7 @@ const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
 const OPEN_RESEARCH_MIN_YEAR = 1950;
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
-const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["en", "zh", "ja"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
 const PAPER_EXPLICIT_ALL_CATEGORIES = ["year", "type", "problem", "method", "jcr", "cas", "casTop", "impact", "team"];
 const METRIC_EXPLICIT_ALL_CATEGORIES = ["year", "type", "jcr", "cas", "casTop", "impact", "venue"];
@@ -1299,9 +1299,9 @@ function loadInitialTheme() {
 }
 
 const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
-  en: { label: "EN", name: "English", lang: "en" },
-  ja: { label: "日", name: "日本語", lang: "ja" },
-  zh: { label: "中", name: "中文", lang: "zh-CN" },
+  en: { label: "English", name: "English", lang: "en" },
+  ja: { label: "日本語", name: "日本語", lang: "ja" },
+  zh: { label: "简体中文", name: "简体中文", lang: "zh-CN" },
 };
 
 let localeUiBound = false;

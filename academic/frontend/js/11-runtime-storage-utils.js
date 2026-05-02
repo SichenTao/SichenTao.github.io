@@ -1,7 +1,7 @@
 const THEME_STORAGE_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const LOCALE_STORAGE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
-const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["en", "zh", "ja"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 let themeUiBound = false;
 let localeUiBound = false;
 let switcherHoverBound = false;
@@ -64,4 +64,3 @@ function writeSessionValue(key, value) {
     window.sessionStorage.setItem(key, value);
   } catch {}
 }
-

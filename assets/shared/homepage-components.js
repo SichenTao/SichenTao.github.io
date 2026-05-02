@@ -108,9 +108,9 @@
     const activeLocale = locales[activeLocaleName] || locales.en || {};
     const activeLabel = activeLocale.label || activeLocaleName.toUpperCase();
     const activeName = activeLocale.name || activeLocaleName;
+    const switcherLabel = config.ariaLabel || config.label || "Language";
     const trayLabel = config.trayLabel || config.choiceLabel || "Language choices";
     const triggerLabel = config.triggerLabel || switcherLabel || activeName;
-    const switcherLabel = config.ariaLabel || config.label || "Language";
     const activeClass = config.activeClass || "is-active";
 
     toNodes(target).forEach((switcher) => {

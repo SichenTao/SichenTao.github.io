@@ -7,11 +7,11 @@
   const LEGACY_STORAGE_KEYS = ["academic-frontier-language", "kakenhi-portal-locale"];
   const DEFAULT_LOCALE = "en";
   const LOCALES = {
-    en: { label: "EN", name: "English", lang: "en" },
-    zh: { label: "中", name: "中文", lang: "zh-CN" },
-    ja: { label: "日", name: "日本語", lang: "ja" },
+    en: { label: "English", name: "English", lang: "en" },
+    zh: { label: "简体中文", name: "简体中文", lang: "zh-CN" },
+    ja: { label: "日本語", name: "日本語", lang: "ja" },
   };
-  const LOCALE_SEQUENCE = ["en", "zh", "ja"];
+  const LOCALE_SEQUENCE = ["zh", "en", "ja"];
 
   function storageGet(storage, key) {
     try {

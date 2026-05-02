@@ -2,9 +2,9 @@ const THEME_STORAGE_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-
 const LOCALE_STORAGE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 
 const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
-  en: { label: "En", name: "English" },
-  zh: { label: "中", name: "中文" },
-  ja: { label: "日", name: "日本語" },
+  en: { label: "English", name: "English", lang: "en" },
+  zh: { label: "简体中文", name: "简体中文", lang: "zh-CN" },
+  ja: { label: "日本語", name: "日本語", lang: "ja" },
 };
 
 const THEME_CATALOG = {
@@ -38,7 +38,7 @@ const THEME_CATALOG = {
 };
 
 const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
-const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["en", "zh", "ja"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 
 const I18N = {
   en: {
@@ -68,19 +68,20 @@ const I18N = {
       jsps: "JSPS KAKENHI",
     },
     hero: {
-      eyebrow: "Research Web Portal",
+      eyebrow: "",
       nativeName: "陶思晨",
       title: "Sichen Tao",
-      roleLabel: "Current appointment",
-      role: "Assistant Professor",
-      affiliation: "High Performance Computing Laboratory, Cyberscience Center, Tohoku University",
+      roleLabel: "",
+      role: "Artificial Intelligence · High-Performance Computing · Optimization",
+      affiliation: "",
       description: "",
       portraitAlt: "Portrait of Sichen Tao",
+      scrollCue: "Enter workspaces",
     },
     section: {
-      kicker: "",
+      kicker: "Workspaces",
       title: "Choose a workspace",
-      lede: "",
+      lede: "Three maintained spaces for identity, research intelligence, and JSPS grant work.",
       gridLabel: "Research portal menu",
     },
     cards: {
@@ -127,19 +128,20 @@ const I18N = {
       jsps: "JSPS 科研费",
     },
     hero: {
-      eyebrow: "统一科研网页入口",
+      eyebrow: "",
       nativeName: "陶思晨",
       title: "Sichen Tao",
-      roleLabel: "当前任职",
-      role: "助理教授",
-      affiliation: "东北大学网络科学中心高性能计算实验室",
+      roleLabel: "",
+      role: "人工智能 · 高性能计算 · 优化",
+      affiliation: "",
       description: "",
       portraitAlt: "陶思晨照片",
+      scrollCue: "进入工作区",
     },
     section: {
-      kicker: "",
+      kicker: "工作区",
       title: "选择工作区",
-      lede: "",
+      lede: "三个长期维护的入口：个人身份、学术前沿与科研费工作。",
       gridLabel: "研究站点入口",
     },
     cards: {
@@ -186,19 +188,20 @@ const I18N = {
       jsps: "JSPS科研費",
     },
     hero: {
-      eyebrow: "統合研究ウェブポータル",
+      eyebrow: "",
       nativeName: "陶思晨",
       title: "Sichen Tao",
-      roleLabel: "現在の職位",
-      role: "助教",
-      affiliation: "東北大学サイバーサイエンスセンター 高性能計算研究部",
+      roleLabel: "",
+      role: "人工知能 · 高性能計算 · 最適化",
+      affiliation: "",
       description: "",
       portraitAlt: "陶思晨のポートレート",
+      scrollCue: "ワークスペースへ",
     },
     section: {
-      kicker: "",
+      kicker: "Workspaces",
       title: "ワークスペースを選択",
-      lede: "",
+      lede: "研究者情報、学術フロンティア、JSPS科研費をそれぞれ管理する入口です。",
       gridLabel: "研究サイト入口",
     },
     cards: {
@@ -356,12 +359,18 @@ function renderHero() {
   setText("portalRole", text.hero.role);
   setText("portalAffiliation", text.hero.affiliation);
   setText("portalDescription", text.hero.description);
+  setText("portalScrollCueLabel", text.hero.scrollCue);
 
   const portrait = document.getElementById("portalPortrait");
   if (portrait) {
     portrait.alt = text.hero.portraitAlt;
   }
 
+  const scrollCue = document.getElementById("portalScrollCue");
+  if (scrollCue) {
+    scrollCue.setAttribute("aria-label", text.hero.scrollCue);
+    scrollCue.title = text.hero.scrollCue;
+  }
 }
 
 function cardIconMarkup(siteKey) {
@@ -640,6 +649,21 @@ function syncHomepageShell() {
   });
 }
 
+function bindWorkspaceScrollCue() {
+  const cue = document.getElementById("portalScrollCue");
+  const target = document.getElementById("portalWorkspaces");
+  if (!cue || !target || cue.dataset.bound === "true") {
+    return;
+  }
+  cue.dataset.bound = "true";
+  cue.addEventListener("click", (event) => {
+    event.preventDefault();
+    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top: targetTop, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+}
+
 function render() {
   applyDocumentState();
   renderMetadata();
@@ -688,4 +712,5 @@ function applyTheme(themeName) {
 
 document.addEventListener("DOMContentLoaded", () => {
   render();
+  bindWorkspaceScrollCue();
 });

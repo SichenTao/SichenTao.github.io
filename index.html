@@ -56,14 +56,14 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260502-223807" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260502-223807" />
-    <link rel="stylesheet" href="./portal.css?v=20260502-223807" />
-    <script src="/assets/shared/homepage-i18n.js?v=20260502-223807"></script>
-    <script src="/assets/shared/homepage-platform.js?v=20260502-223807"></script>
-    <script src="/assets/shared/homepage-components.js?v=20260502-223807"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260502-223807"></script>
-    <script defer src="./portal.js?v=20260502-223807"></script>
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260502-232620" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260502-232620" />
+    <link rel="stylesheet" href="./portal.css?v=20260502-232620" />
+    <script src="/assets/shared/homepage-i18n.js?v=20260502-232620"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260502-232620"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260502-232620"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260502-232620"></script>
+    <script defer src="./portal.js?v=20260502-232620"></script>
   </head>
   <body data-page="portal">
     <div class="page-wash"></div>
@@ -79,35 +79,45 @@
       </div>
     </header>
 
-    <main class="shell layout">
-      <section class="portal-hero reveal">
-        <div class="portal-hero-copy">
-          <p class="eyebrow" id="portalEyebrow"></p>
-          <p class="native-name" id="portalNativeName"></p>
-          <h1 id="portalTitle"></h1>
-          <div class="hero-identity">
-            <p class="eyebrow" id="portalRoleLabel"></p>
-            <p class="hero-role" id="portalRole"></p>
-            <p class="hero-affiliation" id="portalAffiliation"></p>
+    <main class="portal-layout">
+      <section class="portal-hero reveal" aria-labelledby="portalTitle">
+        <div class="shell portal-hero-inner">
+          <div class="portal-portrait-card">
+            <img id="portalPortrait" src="/academic/assets/images/avatar-openai.jpg" alt="" />
           </div>
-          <p class="lede hero-description" id="portalDescription"></p>
+          <div class="portal-hero-copy">
+            <p class="eyebrow" id="portalEyebrow"></p>
+            <p class="native-name" id="portalNativeName"></p>
+            <h1 id="portalTitle"></h1>
+            <div class="hero-identity">
+              <p class="eyebrow" id="portalRoleLabel"></p>
+              <p class="hero-role" id="portalRole"></p>
+              <p class="hero-affiliation" id="portalAffiliation"></p>
+            </div>
+            <p class="lede hero-description" id="portalDescription"></p>
+          </div>
         </div>
-        <div class="portal-portrait-card">
-          <img id="portalPortrait" src="/academic/assets/images/avatar-openai.jpg" alt="" />
-        </div>
+        <a class="portal-scroll-cue" href="#portalWorkspaces" id="portalScrollCue">
+          <span id="portalScrollCueLabel"></span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M6 9l6 6 6-6"></path>
+          </svg>
+        </a>
       </section>
 
-      <section class="portal-directory reveal">
-        <div class="section-head">
-          <div class="section-head-main">
-            <div>
-              <p class="eyebrow" id="portalCardsKicker"></p>
-              <h2 id="portalCardsTitle"></h2>
+      <section class="portal-directory reveal" id="portalWorkspaces" tabindex="-1" aria-labelledby="portalCardsTitle">
+        <div class="shell portal-directory-inner">
+          <div class="section-head">
+            <div class="section-head-main">
+              <div>
+                <p class="eyebrow" id="portalCardsKicker"></p>
+                <h2 id="portalCardsTitle"></h2>
+              </div>
+              <p class="section-note" id="portalCardsLede"></p>
             </div>
-            <p class="section-note" id="portalCardsLede"></p>
           </div>
+          <div class="portal-grid" id="portalGrid" aria-label=""></div>
         </div>
-        <div class="portal-grid" id="portalGrid" aria-label=""></div>
       </section>
     </main>
   </body>

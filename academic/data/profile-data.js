@@ -4380,9 +4380,9 @@ window.SICHEN_PORTAL_DATA = {
           "copy_text": ""
         },
         "semantic_scholar": {
-          "url": "https://www.semanticscholar.org/search?q=10.1007%2Fs44196-022-00099-0",
-          "mode": "search",
-          "copy_text": "10.1007/s44196-022-00099-0"
+          "url": "https://www.semanticscholar.org/paper/59198dbae6dd4127b100e47c06382637f496eb53",
+          "mode": "direct",
+          "copy_text": ""
         }
       }
     },
@@ -4783,9 +4783,9 @@ window.SICHEN_PORTAL_DATA = {
           "copy_text": ""
         },
         "semantic_scholar": {
-          "url": "https://www.semanticscholar.org/search?q=10.3390%2Fmath10203767",
-          "mode": "search",
-          "copy_text": "10.3390/math10203767"
+          "url": "https://www.semanticscholar.org/paper/439448f74b4e69c60933b1c7f4719e1e43aa26e8",
+          "mode": "direct",
+          "copy_text": ""
         }
       }
     },

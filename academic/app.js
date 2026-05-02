@@ -134,22 +134,21 @@ const heroContactEmojiMap = {
 
 const localeCatalog = window.HomepageI18n?.LOCALES || {
   en: {
-    label: "EN",
+    label: "English",
     name: "English",
     lang: "en",
   },
   ja: {
-    label: "日",
+    label: "日本語",
     name: "日本語",
     lang: "ja",
   },
   zh: {
-    label: "中",
-    name: "中文",
+    label: "简体中文",
+    name: "简体中文",
     lang: "zh-CN",
   },
 };
-
 const translations = {
   en: {
     site: {
@@ -917,7 +916,7 @@ const translations = {
 const THEME_STORAGE_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const LOCALE_STORAGE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
-const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["en", "zh", "ja"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 let themeUiBound = false;
 let localeUiBound = false;
 let switcherHoverBound = false;
@@ -980,7 +979,6 @@ function writeSessionValue(key, value) {
     window.sessionStorage.setItem(key, value);
   } catch {}
 }
-
 const staticTextCatalog = {
   ja: {
     "Base": "標準テーマ",
