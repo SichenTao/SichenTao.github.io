@@ -220,6 +220,8 @@ const translations = {
       contact: "Contact",
       identity: "Identity",
       pages: "Explore the academic record",
+      profile_links: "Profile links",
+      profile_links_kicker: "External profiles",
       resources: "Resources",
       portrait_alt: "Portrait of Sichen Tao",
       bio:
@@ -472,6 +474,8 @@ const translations = {
       contact: "連絡先",
       identity: "基本情報",
       pages: "研究記録を開く",
+      profile_links: "プロフィールリンク",
+      profile_links_kicker: "外部プロフィール",
       resources: "資料",
       portrait_alt: "陶思晨のポートレート",
       bio:
@@ -724,6 +728,8 @@ const translations = {
       contact: "联系",
       identity: "基本信息",
       pages: "浏览学术档案",
+      profile_links: "外部主页链接",
+      profile_links_kicker: "外部资料",
       resources: "资料",
       portrait_alt: "陶思晨肖像",
       bio:
@@ -3739,7 +3745,9 @@ function applyStaticLocale() {
     setHeroKeylines(t("home.eyebrow"));
     setTextForSelectors([".hero-identity .eyebrow"], t("home.current_appointment"));
     setTextForSelectors([".hero-profile-card h3"], t("home.contact_identity"));
-    setTextForSelectors([".section-card .section-head h2"], t("home.pages"));
+    setTextForSelectors([".homepage-directory .section-head h2"], t("home.pages"));
+    setTextForSelectors([".profile-links-section .section-head h2"], t("home.profile_links"));
+    setTextForSelectors([".profile-links-section .section-head .eyebrow"], t("home.profile_links_kicker"));
     setAttributeForSelectors(["#hero-keylines"], "aria-label", t("controls.research_focus"));
     setAttributeForSelectors([".institution-switcher"], "aria-label", t("controls.institution_themes"));
     if (els.heroPortrait) {

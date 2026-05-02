@@ -221,6 +221,13 @@ body[data-page="home"] .homepage-directory {
     var(--surface);
 }
 
+body[data-page="home"] .record-summary-section {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
 body[data-page="home"] .homepage-directory .section-head {
   justify-content: center;
   text-align: center;
@@ -229,4 +236,35 @@ body[data-page="home"] .homepage-directory .section-head {
 body[data-page="home"] .homepage-directory .section-head-main {
   grid-template-columns: 1fr;
   justify-items: center;
+}
+
+body[data-page="home"] .profile-links-section {
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.68), rgba(var(--white-rgb), 0.42)),
+    var(--surface);
+}
+
+body[data-page="home"] .profile-links-section .section-head {
+  justify-content: center;
+  text-align: center;
+}
+
+body[data-page="home"] .profile-links-section .section-head-main {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+body[data-page="home"] .profile-links-section .shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(5, max-content);
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 10px;
+}
+
+body[data-page="home"] .profile-links-section .shortcut-link {
+  border-radius: 999px;
+  padding: 9px 13px;
+  color: var(--ink-soft);
 }

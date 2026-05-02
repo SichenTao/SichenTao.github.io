@@ -299,7 +299,8 @@
   }
 
   body[data-page="home"] .hero {
-    padding: 24px 20px;
+    min-height: auto;
+    padding: 40px 20px 28px;
   }
 
   body[data-page="home"] .hero h1 {
@@ -310,8 +311,11 @@
     width: min(100%, 128px);
   }
 
-  body[data-page="home"] .shortcut-grid {
-    display: none;
+  body[data-page="home"] .profile-links-section .shortcut-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: min(100%, 360px);
+    margin: 0 auto;
   }
 
   body[data-page="home"] .hero-keylines {
