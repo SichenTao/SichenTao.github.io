@@ -192,10 +192,43 @@
     const referenceLeft = Math.min(headerRect.left, navRect.left);
     const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
     const nextLeft = Math.round(Math.max(8, referenceLeft - (useMobileLayout ? 0 : controlsRect.width + gutterGap)));
+    const reserveNavSpace =
+      !useMobileLayout && nextLeft <= 8
+        ? Math.ceil(Math.max(0, controlsRect.width + gutterGap + 8 - referenceLeft))
+        : 0;
 
     controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
     controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
     controls.style.setProperty("--header-controls-shift", "0px");
+    if (!useMobileLayout) {
+      nav.style.marginLeft = reserveNavSpace ? `${reserveNavSpace}px` : "";
+    }
+  }
+
+  function reserveMobileControlsSpace(shell) {
+    if (!shell) {
+      return;
+    }
+    const config = runtime.topnav || {};
+    const breakpoint = config.breakpoint || 760;
+    const useMobileLayout = global.matchMedia(`(max-width: ${breakpoint}px)`).matches;
+    if (!useMobileLayout) {
+      shell.style.marginLeft = "";
+      return;
+    }
+
+    const controls = (config.root || document).querySelector(config.controlsSelector || ".header-controls");
+    if (!controls) {
+      shell.style.marginLeft = "";
+      return;
+    }
+
+    shell.style.marginLeft = "";
+    const controlsRect = controls.getBoundingClientRect();
+    const shellRect = shell.getBoundingClientRect();
+    const gap = config.mobileGap ?? 8;
+    const overlap = controlsRect.right + gap - shellRect.left;
+    shell.style.marginLeft = overlap > 0 ? `${Math.ceil(overlap)}px` : "";
   }
 
   function scheduleHeaderControlsPositionUpdate() {
@@ -306,6 +339,7 @@
     shell.classList.toggle("is-scrolled", overflowing && !atStart);
     shell.classList.toggle("is-at-end", !overflowing || atEnd);
     shell.classList.toggle("use-menu", useMenu);
+    reserveMobileControlsSpace(shell);
 
     if (!useMenu) {
       setTopnavMenuExpanded(shell, false);

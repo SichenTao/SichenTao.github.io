@@ -1,0 +1,47 @@
+:root {
+  --shell-gutter: clamp(20px, 5vw, 72px);
+  --shell-readable: 1180px;
+  --shell-wide: 1440px;
+  --shell-workbench: 1600px;
+  --shell-portal: 1480px;
+  --shell-max: var(--shell-readable);
+}
+
+body[data-page="portal"] {
+  --shell-max: var(--shell-portal);
+}
+
+body[data-page="publications"],
+body[data-page="papers"],
+body[data-page="metrics"],
+body[data-page="signals"],
+body[data-page="teams"],
+body[data-page="calls"],
+body[data-page="program"],
+body[data-page="forms"],
+body[data-page="deadlines"],
+body[data-page="guides"],
+body[data-page="sources"],
+body[data-page="archive"] {
+  --shell-max: var(--shell-wide);
+}
+
+@media (min-width: 1760px) {
+  body[data-page="publications"],
+  body[data-page="papers"],
+  body[data-page="metrics"],
+  body[data-page="signals"],
+  body[data-page="teams"],
+  body[data-page="calls"],
+  body[data-page="program"],
+  body[data-page="forms"],
+  body[data-page="deadlines"] {
+    --shell-max: var(--shell-workbench);
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --shell-gutter: 20px;
+  }
+}

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;500;600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Sora:wght@300..700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="./favicon.ico" sizes="any" />
@@ -42,9 +42,13 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260501-191345" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260501-191345" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260501-191345" />
+    <link rel="stylesheet" href="./styles.css?v=20260502-154752" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260502-154752" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260502-154752" />
+    <script src="/assets/shared/homepage-i18n.js?v=20260502-154752"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260502-154752"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260502-154752"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260502-154752"></script>
   </head>
   <body>
     <div class="page-wash"></div>
@@ -52,20 +56,84 @@
     <div class="orb orb-a"></div>
     <div class="orb orb-b"></div>
 
+    <header class="shell site-header">
+      <div class="header-tools">
+        <div class="header-controls-anchor" aria-hidden="true"></div>
+        <div class="header-controls" aria-label="Display controls">
+          <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
+          <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
+        </div>
+        <nav class="topnav" aria-label="Page navigation">
+          <a href="./index.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span>Home</span></a>
+          <a href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span>Deadlines</span></a>
+          <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span>Forms</span></a>
+        </nav>
+      </div>
+    </header>
+
     <main class="shell layout">
       <section class="panel section-card reveal is-visible">
         <div class="section-head">
           <div>
             <p class="eyebrow">Missing page</p>
-            <h2>这个页面不存在</h2>
+            <h2 id="not-found-title">这个页面不存在</h2>
           </div>
         </div>
-        <p class="lede">请回到首页，或者从时间线、表格材料和申请指南重新进入。</p>
+        <p id="not-found-body" class="lede">请回到首页，或者从时间线、表格材料和申请指南重新进入。</p>
         <div class="link-row">
-          <a class="button button-primary" href="./index.html">返回首页</a>
-          <a class="button button-secondary" href="./deadlines.html">查看时间线</a>
+          <a id="not-found-home" class="button button-primary" href="./index.html">返回首页</a>
+          <a id="not-found-deadlines" class="button button-secondary" href="./deadlines.html">查看时间线</a>
         </div>
       </section>
     </main>
+    <script>
+      (() => {
+        const copy = {
+          en: {
+            title: "Page Not Found | JSPS KAKENHI Workspace",
+            heading: "This page does not exist",
+            body: "Return to the home page, or re-enter through deadlines, forms, and application guides.",
+            home: "Back to home",
+            deadlines: "View deadlines",
+          },
+          ja: {
+            title: "ページが見つかりません | JSPS 科研費ワークスペース",
+            heading: "このページは存在しません",
+            body: "ホームへ戻るか、締切、様式、申請ガイドから入り直してください。",
+            home: "ホームへ戻る",
+            deadlines: "締切を見る",
+          },
+          zh: {
+            title: "页面未找到 | JSPS 研究资助与研究员工作台",
+            heading: "这个页面不存在",
+            body: "请回到首页，或者从时间线、表格材料和申请指南重新进入。",
+            home: "返回首页",
+            deadlines: "查看时间线",
+          },
+        };
+
+        function applyCopy(locale = "zh") {
+          const language = window.HomepageI18n?.normalizeLocale?.(locale) || "zh";
+          const text = copy[language] || copy.zh;
+          document.title = text.title;
+          document.getElementById("not-found-title").textContent = text.heading;
+          document.getElementById("not-found-body").textContent = text.body;
+          document.getElementById("not-found-home").textContent = text.home;
+          document.getElementById("not-found-deadlines").textContent = text.deadlines;
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+          const locale = window.HomepageI18n?.readStoredLocale?.() || "zh";
+          const theme = window.HomepagePlatform?.readStoredTheme?.() || "tohoku";
+          window.HomepageI18n?.applyDocumentLocale?.(locale);
+          window.HomepagePlatform?.applyTheme?.(theme, { persist: false });
+          applyCopy(locale);
+          window.HomepageComponents?.renderStaticControlCluster?.({
+            localeSequence: ["en", "ja", "zh"],
+            onLocaleChange: applyCopy,
+          });
+        });
+      })();
+    </script>
   </body>
 </html>

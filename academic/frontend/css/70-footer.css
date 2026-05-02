@@ -1,0 +1,51 @@
+.footer-shell {
+  padding: 0 0 36px;
+}
+
+.footer-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding: 28px 30px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at left center, rgba(var(--teal-rgb), 0.08), transparent 28%),
+    linear-gradient(90deg, rgba(var(--white-rgb), 0.84), rgba(var(--white-rgb), 0.62)),
+    var(--surface-strong);
+  box-shadow: var(--shadow);
+}
+
+.footer-panel-compact {
+  width: fit-content;
+  margin-left: auto;
+  justify-content: flex-end;
+  padding: 16px 18px;
+}
+
+.footer-panel h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  max-width: 20ch;
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(1.2%, -1.8%, 0) scale(1.04);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

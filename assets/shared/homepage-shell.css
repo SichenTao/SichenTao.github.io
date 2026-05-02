@@ -90,13 +90,6 @@
   object-fit: contain;
 }
 
-.portal-trigger .portal-chip-emoji,
-.portal-chip .portal-chip-emoji {
-  display: block;
-  font-size: 18px;
-  line-height: 1;
-}
-
 .portal-trigger.portal-chip--portrait .portal-chip-logo {
   width: 22px;
   height: 22px;

@@ -2,14 +2,14 @@ const STORAGE_KEY_LANGUAGE = "academic-frontier-language";
 const STORAGE_KEY_LOCAL_LANGUAGE = "学术前沿-language";
 const STORAGE_KEY_DOMAIN = "academic-frontier-domain";
 const STORAGE_KEY_LOCAL_DOMAIN = "学术前沿-domain";
-const STORAGE_KEY_THEME = "sichen-homepage-theme";
-const SESSION_KEY_LANGUAGE = "sichen-homepage-locale";
+const STORAGE_KEY_THEME = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
+const SESSION_KEY_LANGUAGE = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
 const OPEN_RESEARCH_MIN_YEAR = 1950;
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
-const LOCALE_SWITCH_SEQUENCE = ["en", "ja", "zh"];
-const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["en", "zh", "ja"];
+const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
 const PAPER_EXPLICIT_ALL_CATEGORIES = ["year", "type", "problem", "method", "jcr", "cas", "casTop", "impact", "team"];
 const METRIC_EXPLICIT_ALL_CATEGORIES = ["year", "type", "jcr", "cas", "casTop", "impact", "venue"];
 const RESEARCH_EXPLICIT_ALL_CATEGORIES = ["problem", "method", "jcr", "cas", "casTop", "impact", "author"];
@@ -243,7 +243,6 @@ const state = {
   theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || "tohoku",
   localArchiveIndex: {},
 };
-
 const UI_TEXT = {
   en: {
     htmlLang: "en",
@@ -1183,6 +1182,16 @@ function loadInitialLanguage() {
 }
 
 function loadStoredLanguagePreference() {
+  const sharedLocale = window.HomepageI18n?.readStoredLocale?.({
+    locales: UI_TEXT,
+    storageKey: SESSION_KEY_LANGUAGE,
+    legacyKeys: [STORAGE_KEY_LANGUAGE, STORAGE_KEY_LOCAL_LANGUAGE],
+    fallback: "",
+  });
+  if (sharedLocale && UI_TEXT[sharedLocale]) {
+    return sharedLocale;
+  }
+
   const sessionLocale = readSessionValue(SESSION_KEY_LANGUAGE);
   if (sessionLocale && UI_TEXT[sessionLocale]) {
     return sessionLocale;
@@ -1199,6 +1208,11 @@ function persistLanguagePreference(language) {
   if (!UI_TEXT[language]) {
     return;
   }
+  window.HomepageI18n?.writeStoredLocale?.(language, {
+    locales: UI_TEXT,
+    storageKey: SESSION_KEY_LANGUAGE,
+    legacyKeys: [STORAGE_KEY_LANGUAGE, STORAGE_KEY_LOCAL_LANGUAGE],
+  });
   writeSessionValue(SESSION_KEY_LANGUAGE, language);
   writeStoredValue(STORAGE_KEY_LANGUAGE, language);
   writeStoredValue(STORAGE_KEY_LOCAL_LANGUAGE, language);
@@ -1223,11 +1237,18 @@ function translatedThemeTooltip(themeName) {
   return `${translatedThemeLabel(themeName)}${suffix}`;
 }
 
+function portalSpriteIconMarkup(name) {
+  return `<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
+}
+
 function portalHomeIconMarkup() {
-  return '<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg>';
+  return portalSpriteIconMarkup("home");
 }
 
 function frontierHomeHref(locale = currentLocale(), theme = state.theme || loadInitialTheme()) {
+  if (window.HomepagePlatform?.academicFrontierHref) {
+    return window.HomepagePlatform.academicFrontierHref(locale, theme);
+  }
   const href = locale === "en" ? `${PUBLIC_SITE_BASE_PATH}/` : `${PUBLIC_SITE_BASE_PATH}/${encodeURIComponent(locale)}/`;
   const url = new URL(href, window.location.origin);
   url.searchParams.set("theme", theme);
@@ -1235,6 +1256,9 @@ function frontierHomeHref(locale = currentLocale(), theme = state.theme || loadI
 }
 
 function siteStateHref(href, locale = currentLocale(), theme = state.theme || loadInitialTheme()) {
+  if (window.HomepagePlatform?.siteStateHref) {
+    return window.HomepagePlatform.siteStateHref(href, { locale, theme });
+  }
   const url = new URL(href, window.location.origin);
   if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/")) {
     url.searchParams.set("lang", locale);
@@ -1246,6 +1270,18 @@ function siteStateHref(href, locale = currentLocale(), theme = state.theme || lo
 }
 
 function loadInitialTheme() {
+  const defaultTheme =
+    window.ACADEMIC_FRONTIER_DEFAULT_THEME ||
+    document.documentElement?.dataset?.theme ||
+    "tohoku";
+
+  const sharedTheme = window.HomepagePlatform?.readStoredTheme?.({
+    storageKey: STORAGE_KEY_THEME,
+  });
+  if (sharedTheme && THEME_CATALOG[sharedTheme] && sharedTheme !== "base") {
+    return sharedTheme;
+  }
+
   const queryTheme = new URLSearchParams(window.location.search).get("theme");
   if (queryTheme === "base") {
     return "tohoku";
@@ -1253,11 +1289,6 @@ function loadInitialTheme() {
   if (queryTheme && THEME_CATALOG[queryTheme]) {
     return queryTheme;
   }
-
-  const defaultTheme =
-    window.ACADEMIC_FRONTIER_DEFAULT_THEME ||
-    document.documentElement?.dataset?.theme ||
-    "tohoku";
 
   const savedTheme = readSessionValue(STORAGE_KEY_THEME);
   if (savedTheme && THEME_CATALOG[savedTheme] && savedTheme !== "base") {
@@ -1267,7 +1298,7 @@ function loadInitialTheme() {
   return THEME_CATALOG[defaultTheme] && defaultTheme !== "base" ? defaultTheme : "tohoku";
 }
 
-const LOCALE_CATALOG = {
+const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
   en: { label: "EN", name: "English", lang: "en" },
   ja: { label: "日", name: "日本語", lang: "ja" },
   zh: { label: "中", name: "中文", lang: "zh-CN" },
@@ -1284,7 +1315,6 @@ let topnavMenuBound = false;
 let topnavOverflowBound = false;
 let headerControlsPositionBound = false;
 const switcherCloseTimers = new WeakMap();
-
 function currentLocale() {
   return (
     state.language ||
@@ -1513,6 +1543,9 @@ function iconSvg(name, className = "ui-icon") {
 }
 
 function ui(key) {
+  if (window.HomepageI18n?.text) {
+    return window.HomepageI18n.text(UI_TEXT, key, { locale: state.language });
+  }
   return UI_TEXT[state.language][key] || UI_TEXT.en[key] || "";
 }
 
@@ -1523,6 +1556,11 @@ function plainTextByLanguage(values) {
 function localizedFieldValue(value) {
   if (!value || Array.isArray(value) || typeof value !== "object") {
     return null;
+  }
+
+  if (window.HomepageI18n?.isLocaleObject?.(value, LOCALE_CATALOG)) {
+    const localized = window.HomepageI18n.localizeValue(value, { locale: state.language, locales: LOCALE_CATALOG });
+    return localized === undefined || localized === null ? null : String(localized);
   }
 
   const localized = value[state.language] ?? value.en ?? value.zh ?? value.ja;
@@ -2220,7 +2258,6 @@ function publicationCopySuccessLabel(format) {
 function publicationCopyMenuLabel() {
   return ui("copyMenuLabel");
 }
-
 function domainData() {
   return window.ACADEMIC_FRONTIER_DATA || window.FRONTIER_DATA || {
     snapshot: {},
@@ -3118,8 +3155,12 @@ function chooseDefaultDomain() {
 }
 
 function setMetaLanguage() {
-  document.documentElement.lang = ui("htmlLang");
-  document.body.dataset.lang = state.language;
+  if (window.HomepageI18n?.applyDocumentLocale) {
+    window.HomepageI18n.applyDocumentLocale(state.language, { locales: LOCALE_CATALOG });
+  } else {
+    document.documentElement.lang = ui("htmlLang");
+    document.body.dataset.lang = state.language;
+  }
   document.title = currentPageTitle();
   const metaDescription = document.querySelector('meta[name="description"]');
   if (metaDescription) {
@@ -3359,7 +3400,6 @@ function typeFilterTagLabel(value) {
 function localizeVenueTypeLabel(value) {
   return typeFilterTagLabel(String(value || "unknown").toLowerCase());
 }
-
 function normalizedMetricQuery() {
   return normalizeSearchText(state.metricQuery || "");
 }
@@ -3566,6 +3606,20 @@ function renderLocaleSwitcher() {
   const switcher = byId("localeSwitcher");
   if (!switcher) return;
 
+  if (window.HomepageComponents?.renderLocaleSwitcher) {
+    window.HomepageComponents.renderLocaleSwitcher(switcher, {
+      locale: state.language,
+      locales: LOCALE_CATALOG,
+      sequence: LOCALE_SWITCH_SEQUENCE,
+      ariaLabel: ui("languageLabel"),
+      trayLabel: ui("languageChoicesLabel"),
+      choiceHref: (localeName) => localePageHref(localeName),
+      onChoice: (localeName) => persistLanguagePreference(localeName),
+    });
+    renderPortalReturnControl();
+    return;
+  }
+
   const activeLocale = LOCALE_CATALOG[state.language] || LOCALE_CATALOG.en;
   const tray = el("div", "locale-tray");
   tray.setAttribute("role", "group");
@@ -3606,6 +3660,21 @@ function renderLocaleSwitcher() {
 function renderThemeSwitcher() {
   const switcher = byId("themeSwitcher");
   if (!switcher) return;
+
+  if (window.HomepageComponents?.renderThemeSwitcher) {
+    window.HomepageComponents.renderThemeSwitcher(switcher, {
+      locale: currentLocale(),
+      theme: state.theme,
+      themes: THEME_CATALOG,
+      sequence: THEME_SWITCH_SEQUENCE,
+      ariaLabel: ui("themeLabel"),
+      trayLabel: ui("themeChoicesLabel"),
+      tooltip: translatedThemeTooltip,
+      onChoice: (themeName) => applyTheme(themeName),
+    });
+    renderPortalReturnControl();
+    return;
+  }
 
   const activeThemeName = state.theme && THEME_CATALOG[state.theme] ? state.theme : "tohoku";
   const activeTheme = THEME_CATALOG[activeThemeName];
@@ -3649,6 +3718,15 @@ function renderThemeSwitcher() {
 function renderPortalReturnControl() {
   const controls = document.querySelector(".header-controls");
   if (!controls) return;
+
+  if (window.HomepageComponents?.renderPortalSwitcher) {
+    window.HomepageComponents.renderPortalSwitcher(controls, {
+      locale: currentLocale(),
+      theme: state.theme || loadInitialTheme(),
+      currentPath: window.location.pathname,
+    });
+    return;
+  }
 
   const locale = currentLocale();
   const labels = {
@@ -3707,7 +3785,7 @@ function renderPortalReturnControl() {
       href: frontierHomeHref(localeName, themeName),
       label: labels.radar.full,
       triggerLabel: labels.radar.short,
-      icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
+      icon: portalSpriteIconMarkup("research"),
       active: currentPath.startsWith(`${PUBLIC_SITE_BASE_PATH}/`),
     },
     {
@@ -3897,7 +3975,6 @@ function updateHeaderControlsPosition() {
   controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
   controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
 }
-
 function initHeaderControlsPosition() {
   updateHeaderControlsPosition();
 
@@ -4115,7 +4192,11 @@ function setLanguage(language) {
 function applyTheme(themeName, persist = true) {
   const nextTheme = THEME_CATALOG[themeName] ? themeName : "tohoku";
   state.theme = nextTheme;
-  document.documentElement.dataset.theme = nextTheme;
+  if (window.HomepagePlatform?.applyTheme) {
+    window.HomepagePlatform.applyTheme(nextTheme, { persist, storageKey: STORAGE_KEY_THEME });
+  } else {
+    document.documentElement.dataset.theme = nextTheme;
+  }
   writeSessionValue(STORAGE_KEY_THEME, nextTheme);
 
   const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -4159,7 +4240,6 @@ function makeStackItem(label, value) {
   item.appendChild(content);
   return item;
 }
-
 function renderHero() {
   if (!byId("heroTitle")) return;
 

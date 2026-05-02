@@ -1,7 +1,7 @@
-const THEME_STORAGE_KEY = "sichen-homepage-theme";
-const LOCALE_STORAGE_KEY = "sichen-homepage-locale";
+const THEME_STORAGE_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
+const LOCALE_STORAGE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 
-const LOCALE_CATALOG = {
+const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
   en: { label: "En", name: "English" },
   zh: { label: "中", name: "中文" },
   ja: { label: "日", name: "日本語" },
@@ -37,8 +37,8 @@ const THEME_CATALOG = {
   },
 };
 
-const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst"];
-const LOCALE_SWITCH_SEQUENCE = ["en", "zh", "ja"];
+const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["en", "zh", "ja"];
 
 const I18N = {
   en: {
@@ -68,34 +68,37 @@ const I18N = {
       jsps: "JSPS KAKENHI",
     },
     hero: {
-      eyebrow: "Unified Research Web Portal",
+      eyebrow: "Research Web Portal",
       nativeName: "陶思晨",
       title: "Sichen Tao",
       roleLabel: "Current appointment",
       role: "Assistant Professor",
       affiliation: "High Performance Computing Laboratory, Cyberscience Center, Tohoku University",
       description:
-        "One portal for the personal homepage, Academic Frontier, and the JSPS KAKENHI workspace.",
+        "A single entry point for profile, frontier research tracking, and grant-work resources.",
       portraitAlt: "Portrait of Sichen Tao",
     },
     section: {
       kicker: "Research Sites",
-      title: "Choose a workspace",
-      lede: "Each entry opens directly and shares the same theme and language controls.",
+      title: "Choose the right workspace",
+      lede: "The portal sets the common language, theme, and navigation logic for every related homepage.",
       gridLabel: "Research portal menu",
     },
     cards: {
       academic: {
         name: "Personal Homepage",
-        intro: "Profile, publications, awards, and academic service in one public-facing site.",
+        intro: "The public academic identity: profile, publications, awards, projects, and service.",
+        action: "Open homepage",
       },
       frontier: {
         name: "Academic Frontier",
-        intro: "Signals, papers, and tracked authors for continuous literature monitoring and curation.",
+        intro: "A research intelligence workspace for papers, signals, metrics, and tracked teams.",
+        action: "Open frontier",
       },
       jsps: {
         name: "JSPS KAKENHI",
-        intro: "Calls, forms, deadlines, guides, and official sources for day-to-day grant work.",
+        intro: "A grant-work workspace for calls, forms, deadlines, guides, and official sources.",
+        action: "Open workspace",
       },
     },
   },
@@ -131,27 +134,30 @@ const I18N = {
       roleLabel: "当前任职",
       role: "助理教授",
       affiliation: "东北大学网络科学中心高性能计算实验室",
-      description: "从这里统一进入个人主页、学术前沿与 JSPS 科研费工作台。",
+      description: "从这里统一进入个人身份展示、前沿研究追踪与科研费工作资源。",
       portraitAlt: "陶思晨照片",
     },
     section: {
       kicker: "研究站点",
-      title: "选择工作页面",
-      lede: "三个入口均可直接打开，并共享统一的主题与语言控制。",
+      title: "选择合适的工作空间",
+      lede: "导航页负责统一语言、主题与入口逻辑，让相关主页形成一个整体。",
       gridLabel: "研究站点入口",
     },
     cards: {
       academic: {
         name: "个人主页",
-        intro: "集中呈现个人简介、论文、荣誉与学术服务的公开主页。",
+        intro: "公开呈现学术身份：个人简介、论文、荣誉、项目与学术服务。",
+        action: "打开主页",
       },
       frontier: {
         name: "学术前沿",
-        intro: "持续追踪前沿论文、信号与作者的学术监测与整理工作台。",
+        intro: "用于论文、信号、指标与团队追踪的研究情报工作空间。",
+        action: "打开前沿页",
       },
       jsps: {
         name: "JSPS 科研费",
-        intro: "集中处理公募、表格、截止时间、指南与官方来源的科研费工作台。",
+        intro: "集中处理公募、表格、截止时间、指南与官方来源的科研费工作空间。",
+        action: "打开工作台",
       },
     },
   },
@@ -187,27 +193,30 @@ const I18N = {
       roleLabel: "現在の職位",
       role: "助教",
       affiliation: "東北大学サイバーサイエンスセンター 高性能計算研究部",
-      description: "個人ホームページ、学術フロンティア、JSPS科研費ワークスペースへの共通入口です。",
+      description: "プロフィール、研究フロンティア追跡、科研費実務リソースへの共通入口です。",
       portraitAlt: "陶思晨のポートレート",
     },
     section: {
       kicker: "研究サイト",
-      title: "ワークスペースを選ぶ",
-      lede: "3つの入口は直接開け、言語とテーマの操作も共通です。",
+      title: "適切なワークスペースを選ぶ",
+      lede: "ポータルは、関連ホームページ全体の言語、テーマ、入口構造を統一します。",
       gridLabel: "研究サイト入口",
     },
     cards: {
       academic: {
         name: "個人ホームページ",
-        intro: "プロフィール、論文、受賞、学術サービスをまとめた公開サイトです。",
+        intro: "研究者としての公開プロフィール、論文、受賞、プロジェクト、学術サービスをまとめます。",
+        action: "ホームページを開く",
       },
       frontier: {
         name: "学術フロンティア",
-        intro: "先端論文、シグナル、著者追跡を継続的に整理する調査ワークスペースです。",
+        intro: "論文、シグナル、指標、研究チームを継続的に追跡する研究情報ワークスペースです。",
+        action: "フロンティアを開く",
       },
       jsps: {
         name: "JSPS科研費",
-        intro: "公募、様式、締切、ガイド、公式ソースをまとめた実務ワークスペースです。",
+        intro: "公募、様式、締切、ガイド、公式ソースをまとめた科研費実務ワークスペースです。",
+        action: "ワークスペースを開く",
       },
     },
   },
@@ -236,31 +245,14 @@ function iconSprite(name, className = "ui-icon") {
 }
 
 function resolveLocaleName() {
-  try {
-    const savedLocale = localStorage.getItem(LOCALE_STORAGE_KEY);
-    if (savedLocale && LOCALE_CATALOG[savedLocale]) {
-      return savedLocale;
-    }
-  } catch {}
-
-  const documentLang = document.documentElement.lang || "en";
-  if (documentLang.startsWith("zh")) {
-    return "zh";
-  }
-  if (documentLang.startsWith("ja")) {
-    return "ja";
-  }
-  return "en";
+  return window.HomepageI18n?.readStoredLocale?.({ locales: LOCALE_CATALOG, fallback: "en" }) || "en";
 }
 
 function resolveThemeName() {
-  try {
-    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
-    if (savedTheme && THEME_CATALOG[savedTheme]) {
-      return savedTheme;
-    }
-  } catch {}
-
+  const sharedTheme = window.HomepagePlatform?.readStoredTheme?.();
+  if (sharedTheme && THEME_CATALOG[sharedTheme]) {
+    return sharedTheme;
+  }
   const documentTheme = document.documentElement.dataset.theme;
   if (documentTheme && THEME_CATALOG[documentTheme]) {
     return documentTheme;
@@ -291,10 +283,18 @@ function setMetaContent(selector, value) {
 }
 
 function applyDocumentState() {
-  document.documentElement.lang =
-    state.locale === "zh" ? "zh-CN" : state.locale === "ja" ? "ja" : "en";
-  document.documentElement.dataset.theme = state.theme;
-  document.body.dataset.lang = state.locale;
+  if (window.HomepageI18n?.applyDocumentLocale) {
+    window.HomepageI18n.applyDocumentLocale(state.locale, { locales: LOCALE_CATALOG });
+  } else {
+    document.documentElement.lang =
+      state.locale === "zh" ? "zh-CN" : state.locale === "ja" ? "ja" : "en";
+    document.body.dataset.lang = state.locale;
+  }
+  if (window.HomepagePlatform?.applyTheme) {
+    window.HomepagePlatform.applyTheme(state.theme, { persist: false });
+  } else {
+    document.documentElement.dataset.theme = state.theme;
+  }
 
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   if (metaThemeColor) {
@@ -312,6 +312,19 @@ function renderMetadata() {
   setMetaContent('meta[name="twitter:description"]', text.page.description);
 }
 
+function portalHref(href) {
+  if (href === "/") {
+    return "/";
+  }
+  if (href.startsWith("/academic-frontier/") && window.HomepagePlatform?.academicFrontierHref) {
+    return window.HomepagePlatform.academicFrontierHref(state.locale, state.theme);
+  }
+  if (window.HomepagePlatform?.siteStateHref) {
+    return window.HomepagePlatform.siteStateHref(href, { locale: state.locale, theme: state.theme });
+  }
+  return href;
+}
+
 function renderTopnav() {
   const nav = document.getElementById("portalTopnav");
   const text = localeText();
@@ -322,9 +335,9 @@ function renderTopnav() {
   nav.setAttribute("aria-label", text.controls.pageNavigation);
   nav.innerHTML = `
     <a href="/" aria-current="page">${iconSprite("home")}<span>${escapeHtml(text.nav.portal)}</span></a>
-    <a href="/academic/">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
-    <a href="/academic-frontier/">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
-    <a href="/jsps-kakenhi/">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
+    <a href="${portalHref("/academic/")}">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
+    <a href="${portalHref("/academic-frontier/")}">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
+    <a href="${portalHref("/jsps-kakenhi/")}">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
   `;
 }
 
@@ -353,9 +366,9 @@ function renderHero() {
   const heroActions = document.getElementById("portalHeroActions");
   if (heroActions) {
     heroActions.innerHTML = `
-      <a class="button button-primary" href="/academic/">${escapeHtml(text.cards.academic.name)}</a>
-      <a class="button" href="/academic-frontier/">${escapeHtml(text.cards.frontier.name)}</a>
-      <a class="button" href="/jsps-kakenhi/">${escapeHtml(text.cards.jsps.name)}</a>
+      <a class="button button-primary" href="${portalHref("/academic/")}">${escapeHtml(text.cards.academic.name)}</a>
+      <a class="button" href="${portalHref("/academic-frontier/")}">${escapeHtml(text.cards.frontier.name)}</a>
+      <a class="button" href="${portalHref("/jsps-kakenhi/")}">${escapeHtml(text.cards.jsps.name)}</a>
     `;
   }
 }
@@ -371,8 +384,8 @@ function cardIconMarkup(siteKey) {
 
   if (siteKey === "frontier") {
     return `
-      <span class="portal-card-icon portal-card-icon--emoji" aria-hidden="true">
-        <span class="portal-card-emoji">🔭</span>
+      <span class="portal-card-icon portal-card-icon--svg" aria-hidden="true">
+        ${iconSprite("research")}
       </span>
     `;
   }
@@ -399,27 +412,30 @@ function renderCards() {
   const cards = [
     {
       key: "academic",
-      href: "/academic/",
+      href: portalHref("/academic/"),
       className: "portal-card-academic",
       icon: cardIconMarkup("academic"),
       title: text.cards.academic.name,
       intro: text.cards.academic.intro,
+      action: text.cards.academic.action,
     },
     {
       key: "frontier",
-      href: "/academic-frontier/",
+      href: portalHref("/academic-frontier/"),
       className: "portal-card-frontier",
       icon: cardIconMarkup("frontier"),
       title: text.cards.frontier.name,
       intro: text.cards.frontier.intro,
+      action: text.cards.frontier.action,
     },
     {
       key: "jsps",
-      href: "/jsps-kakenhi/",
+      href: portalHref("/jsps-kakenhi/"),
       className: "portal-card-jsps",
       icon: cardIconMarkup("jsps"),
       title: text.cards.jsps.name,
       intro: text.cards.jsps.intro,
+      action: text.cards.jsps.action,
     },
   ];
 
@@ -431,6 +447,7 @@ function renderCards() {
           <div class="portal-card-content">
             <h3 class="portal-card-name">${escapeHtml(card.title)}</h3>
             <p class="portal-card-copy">${escapeHtml(card.intro)}</p>
+            <span class="portal-card-action">${escapeHtml(card.action)}</span>
           </div>
         </a>
       `,
@@ -441,6 +458,18 @@ function renderCards() {
 function renderLocaleSwitcher() {
   const text = localeText();
   const switchers = Array.from(document.querySelectorAll(".locale-switcher"));
+  if (window.HomepageComponents?.renderLocaleSwitcher) {
+    window.HomepageComponents.renderLocaleSwitcher(switchers, {
+      locale: state.locale,
+      locales: LOCALE_CATALOG,
+      sequence: LOCALE_SWITCH_SEQUENCE,
+      ariaLabel: text.controls.language,
+      triggerLabel: text.controls.cycleLanguages,
+      trayLabel: text.controls.languageChoices,
+      onChoice: (localeName) => setLocale(localeName),
+    });
+    return;
+  }
   const activeLocale = LOCALE_CATALOG[state.locale] || LOCALE_CATALOG.en;
 
   switchers.forEach((switcher) => {
@@ -485,6 +514,19 @@ function renderLocaleSwitcher() {
 function renderThemeSwitcher() {
   const text = localeText();
   const switchers = Array.from(document.querySelectorAll(".theme-switcher"));
+  if (window.HomepageComponents?.renderThemeSwitcher) {
+    window.HomepageComponents.renderThemeSwitcher(switchers, {
+      locale: state.locale,
+      theme: state.theme,
+      themes: THEME_CATALOG,
+      sequence: THEME_SWITCH_SEQUENCE,
+      ariaLabel: text.controls.theme,
+      trayLabel: text.controls.themeChoices,
+      tooltip: translatedThemeTooltip,
+      onChoice: (themeName) => applyTheme(themeName),
+    });
+    return;
+  }
   const activeTheme = THEME_CATALOG[state.theme] || THEME_CATALOG.tohoku;
 
   switchers.forEach((switcher) => {
@@ -533,6 +575,15 @@ function renderPortalReturnControl() {
     return;
   }
 
+  if (window.HomepageComponents?.renderPortalSwitcher) {
+    window.HomepageComponents.renderPortalSwitcher(controls, {
+      locale: state.locale,
+      theme: state.theme,
+      currentPath: window.location.pathname,
+    });
+    return;
+  }
+
   let switcher = controls.querySelector(".portal-switcher");
   if (!switcher) {
     switcher = document.createElement("div");
@@ -557,7 +608,7 @@ function renderPortalReturnControl() {
         <img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />
       </a>
       <a class="portal-chip" href="/academic-frontier/" aria-label="${escapeHtml(text.nav.frontier)}" title="${escapeHtml(text.nav.frontier)}">
-        <span class="portal-chip-emoji" aria-hidden="true">🔭</span>
+        ${iconSprite("research")}
       </a>
       <a class="portal-chip" href="/jsps-kakenhi/" aria-label="${escapeHtml(text.nav.jsps)}" title="${escapeHtml(text.nav.jsps)}">
         <img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />
@@ -624,9 +675,13 @@ function setLocale(localeName) {
     return;
   }
   state.locale = localeName;
-  try {
-    localStorage.setItem(LOCALE_STORAGE_KEY, localeName);
-  } catch {}
+  if (window.HomepageI18n?.writeStoredLocale) {
+    window.HomepageI18n.writeStoredLocale(localeName, { locales: LOCALE_CATALOG });
+  } else {
+    try {
+      localStorage.setItem(LOCALE_STORAGE_KEY, localeName);
+    } catch {}
+  }
   render();
 }
 
@@ -635,9 +690,13 @@ function applyTheme(themeName) {
     return;
   }
   state.theme = themeName;
-  try {
-    localStorage.setItem(THEME_STORAGE_KEY, themeName);
-  } catch {}
+  if (window.HomepagePlatform?.writeStoredTheme) {
+    window.HomepagePlatform.writeStoredTheme(themeName);
+  } else {
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, themeName);
+    } catch {}
+  }
   render();
 }
 

@@ -444,9 +444,11 @@
         {
           "kind": "official",
           "url": "https://cis.ieee.org/conferences/conference-calendar",
-          "label_en": "Official Page",
-          "label_ja": "Official Page",
-          "label_zh": "Official Page"
+          "label": {
+            "en": "Official Page",
+            "zh": "Official Page",
+            "ja": "Official Page"
+          }
         },
         {
           "kind": "github",
@@ -468,9 +470,11 @@
         {
           "kind": "official",
           "url": "https://cis.ieee.org/conferences/conference-calendar",
-          "label_en": "Official Page",
-          "label_ja": "Official Page",
-          "label_zh": "Official Page"
+          "label": {
+            "en": "Official Page",
+            "zh": "Official Page",
+            "ja": "Official Page"
+          }
         },
         {
           "kind": "github",
@@ -492,9 +496,11 @@
         {
           "kind": "official",
           "url": "https://cis.ieee.org/conferences/conference-calendar",
-          "label_en": "Official Page",
-          "label_ja": "Official Page",
-          "label_zh": "Official Page"
+          "label": {
+            "en": "Official Page",
+            "zh": "Official Page",
+            "ja": "Official Page"
+          }
         },
         {
           "kind": "github",
@@ -516,9 +522,11 @@
         {
           "kind": "official",
           "url": "https://cis.ieee.org/conferences/conference-calendar",
-          "label_en": "Official Page",
-          "label_ja": "Official Page",
-          "label_zh": "Official Page"
+          "label": {
+            "en": "Official Page",
+            "zh": "Official Page",
+            "ja": "Official Page"
+          }
         },
         {
           "kind": "github",
@@ -608,9 +616,11 @@
         {
           "kind": "official_esi",
           "url": "https://webofscience.help.clarivate.com/en-us/Content/esi-highly-cited-papers.html",
-          "label_en": "Official ESI Criteria",
-          "label_ja": "ESI公式基準",
-          "label_zh": "ESI官方说明"
+          "label": {
+            "en": "Official ESI Criteria",
+            "zh": "ESI官方说明",
+            "ja": "ESI公式基準"
+          }
         },
         {
           "kind": "paper",
@@ -629,26 +639,26 @@
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=4235",
       "tag": "Journal review",
       "verification": {
-        "if_value": "12.0",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q1",
-        "cas_year": 2025,
-        "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
+        "cas_top": false,
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "IEEE Transactions on Evolutionary Computation",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5kwBz5",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "IEEE Transactions on Evolutionary Computation",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/1089778X/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "IEEE Transactions on Evolutionary Computation",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5kwBz5"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -656,26 +666,26 @@
       "url": "https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221021",
       "tag": "Journal review",
       "verification": {
-        "if_value": "8.7",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q1",
-        "cas_year": 2025,
-        "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
+        "cas_top": false,
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5ObXEp",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=IEEE%20T%20SYST%20MAN%20CY&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/21682216/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "IEEE Transactions on Systems, Man and Cybernetics: Systems",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5ObXEp"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -683,26 +693,26 @@
       "url": "https://www.sciencedirect.com/journal/swarm-and-evolutionary-computation",
       "tag": "Journal review",
       "verification": {
-        "if_value": "8.5",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q2",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Swarm and Evolutionary Computation",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pB4NJD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SWARM%20EVOL%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Swarm and Evolutionary Computation",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/22106502/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Swarm and Evolutionary Computation",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=pB4NJD"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -710,26 +720,26 @@
       "url": "https://www.sciencedirect.com/journal/transportation-research-part-e-logistics-and-transportation-review",
       "tag": "Journal review",
       "verification": {
-        "if_value": "8.8",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q1",
-        "cas_year": 2025,
-        "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
+        "cas_top": false,
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Transportation Research Part E: Logistics and Transportation Review",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=rw4R1p",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=TRANSPORT%20RES%20E-LOG&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Transportation Research Part E: Logistics and Transportation Review",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/13665545/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Transportation Research Part E: Logistics and Transportation Review",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=rw4R1p"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -737,26 +747,26 @@
       "url": "https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence",
       "tag": "Journal review",
       "verification": {
-        "if_value": "8.0",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q1",
-        "cas_year": 2025,
-        "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
+        "cas_top": false,
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Engineering Applications of Artificial Intelligence",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pP3GOr",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=ENG%20APPL%20ARTIF%20INTEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Engineering Applications of Artificial Intelligence",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/09521976/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Engineering Applications of Artificial Intelligence",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=pP3GOr"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -764,26 +774,26 @@
       "url": "https://www.sciencedirect.com/journal/applied-soft-computing",
       "tag": "Journal review",
       "verification": {
-        "if_value": "6.6",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q2",
-        "cas_year": 2025,
-        "cas_top": true,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
+        "cas_top": false,
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Applied Soft Computing",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=yp1WdD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SOFT%20COMPUT&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Applied Soft Computing",
-        "jcr_public_source_url": "https://jrank.net/journals/appl-soft-comput/metrics",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Applied Soft Computing",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=yp1WdD"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -791,26 +801,26 @@
       "url": "https://www.sciencedirect.com/journal/neural-networks",
       "tag": "Journal review",
       "verification": {
-        "if_value": "6.3",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q2",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Neural Networks",
-        "if_public_source_url": "https://www.iit.comillas.edu/publicacion/info_revista/en/565/Neural_Networks",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=NEURAL%20NETWORKS&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Neural Networks",
-        "jcr_public_source_url": "https://jrank.net/journals/neural-networks/metrics",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Neural Networks",
-        "cas_public_source_url": "https://topj.lib.whu.edu.cn/show.asp?cat=sci&id=11534"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -818,26 +828,26 @@
       "url": "https://www.sciencedirect.com/journal/heliyon",
       "tag": "Journal review",
       "verification": {
-        "if_value": "3.6",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q4",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Heliyon",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5KwYd5",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=HELIYON&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Heliyon",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/24058440/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Heliyon",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5KwYd5"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -845,26 +855,26 @@
       "url": "https://www.inderscience.com/jhome.php?jcode=ijbic",
       "tag": "Journal review",
       "verification": {
-        "if_value": "2.0",
-        "if_year": 2025,
-        "jcr_quartile": "Q2",
-        "jcr_year": 2025,
-        "cas_quartile": "Q4",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "International Journal of Bio-Inspired Computation",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5dZ1kr",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20BIO-INSPIR%20COM&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "International Journal of Bio-Inspired Computation",
-        "jcr_public_source_url": "https://jrank.net/journals/int-j-bio_inspir-com/metrics",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "International Journal of Bio-Inspired Computation",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5dZ1kr"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -872,26 +882,26 @@
       "url": "https://www.techscience.com/journal/cmc",
       "tag": "Journal review",
       "verification": {
-        "if_value": "1.7",
-        "if_year": 2025,
-        "jcr_quartile": "Q3",
-        "jcr_year": 2025,
-        "cas_quartile": "Q4",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "CMC-Computers Materials & Continua",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=Q5yWPr",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=CMC-COMPUT%20MATER%20CON&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "CMC-Computers Materials & Continua",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/15462218/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "CMC-Computers Materials & Continua",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=Q5yWPr"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -899,26 +909,26 @@
       "url": "https://link.springer.com/journal/44196",
       "tag": "Journal review",
       "verification": {
-        "if_value": "3.0",
-        "if_year": 2025,
-        "jcr_quartile": "Q2",
-        "jcr_year": 2025,
-        "cas_quartile": "Q4",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "International Journal of Computational Intelligence Systems",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5x6mzr",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=INT%20J%20COMPUT%20INT%20SYS&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "International Journal of Computational Intelligence Systems",
-        "jcr_public_source_url": "https://jrank.net/journals/int-j-comput-int-sys/metrics",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "International Journal of Computational Intelligence Systems",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5x6mzr"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -926,26 +936,26 @@
       "url": "https://academic.oup.com/jcde",
       "tag": "Journal review",
       "verification": {
-        "if_value": "6.1",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q2",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Journal of Computational Design and Engineering",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=pWGm3p",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=J%20COMPUT%20DES%20ENG&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Journal of Computational Design and Engineering",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/22885048/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Journal of Computational Design and Engineering",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=pWGm3p"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -953,26 +963,26 @@
       "url": "https://www.mdpi.com/journal/mathematics",
       "tag": "Journal review",
       "verification": {
-        "if_value": "2.2",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q4",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Mathematics",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5kPKjD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=MATHEMATICS-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Mathematics",
-        "jcr_public_source_url": "https://www.iit.comillas.edu/publicacion/info_revista/en/486/Mathematics",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Mathematics",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5kPKjD"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -980,26 +990,26 @@
       "url": "https://www.mdpi.com/journal/applsci",
       "tag": "Journal review",
       "verification": {
-        "if_value": "2.5",
-        "if_year": 2025,
-        "jcr_quartile": "Q2",
-        "jcr_year": 2025,
-        "cas_quartile": "Q4",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Applied Sciences",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=DYYORD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=APPL%20SCI-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Applied Sciences",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/20763417/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Applied Sciences",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=DYYORD"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -1007,26 +1017,26 @@
       "url": "https://www.mdpi.com/journal/biomimetics",
       "tag": "Journal review",
       "verification": {
-        "if_value": "3.9",
-        "if_year": 2025,
-        "jcr_quartile": "Q1",
-        "jcr_year": 2025,
-        "cas_quartile": "Q3",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Biomimetics",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=5NgPMD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=BIOMIMETICS&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Biomimetics",
-        "jcr_public_source_url": "https://www.fabiao.com.cn/sci/23137673/",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Biomimetics",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=5NgPMD"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -1034,26 +1044,26 @@
       "url": "https://www.mdpi.com/journal/symmetry",
       "tag": "Journal review",
       "verification": {
-        "if_value": "2.2",
-        "if_year": 2025,
-        "jcr_quartile": "Q2",
-        "jcr_year": 2025,
-        "cas_quartile": "Q3",
-        "cas_year": 2025,
+        "if_value": "",
+        "if_year": null,
+        "jcr_quartile": "",
+        "jcr_year": null,
+        "cas_quartile": "",
+        "cas_year": null,
         "cas_top": false,
-        "if_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "if_source_mode": "official_profile_fallback",
+        "if_source_url": "https://jcr.clarivate.com/jcr/home",
+        "if_source_mode": "official_search",
         "if_search_copy_text": "Symmetry",
-        "if_public_source_url": "https://www.ablesci.com/journal/detail?id=DXd2YD",
-        "jcr_source_url": "https://jcr.clarivate.com/jcr-jp/journal-profile?journal=SYMMETRY-BASEL&year=2024&fromPage=%2Fjcr%2Fhome",
-        "jcr_source_mode": "official_profile_fallback",
+        "if_public_source_url": "",
+        "jcr_source_url": "https://jcr.clarivate.com/jcr/home",
+        "jcr_source_mode": "official_search",
         "jcr_search_copy_text": "Symmetry",
-        "jcr_public_source_url": "https://jrank.net/journals/symmetry_basel/metrics",
+        "jcr_public_source_url": "",
         "cas_official_source_url": "/assets/docs/official/cas_journal_ranking_explanation_official.pdf",
-        "cas_official_platform_url": "https://www.fenqubiao.com/",
+        "cas_official_platform_url": "",
         "cas_source_mode": "official_archive",
         "cas_search_copy_text": "Symmetry",
-        "cas_public_source_url": "https://www.ablesci.com/journal/detail?id=DXd2YD"
+        "cas_public_source_url": ""
       }
     },
     {
@@ -1178,9 +1188,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-12-22): IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-12-22）回溯的最近公开指标：IF 2.2（2025），JCR 2025 Q1，中科院 2025 Q4。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-12-22): IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-12-22): IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-12-22）回溯的最近公开指标：IF 2.2（2025），JCR 2025 Q1，中科院 2025 Q4。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2025-12-22）に最も近い公開指標：IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -1328,9 +1340,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-12-20): IF 6.8 (2025) · JCR 2025 Q1 · CAS 2025 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-12-20）回溯的最近公开指标：IF 6.8（2025），JCR 2025 Q1，中科院 2025 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-12-20): IF 6.8 (2025) · JCR 2025 Q1 · CAS 2025 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-12-20): IF 6.8 (2025) · JCR 2025 Q1 · CAS 2025 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-12-20）回溯的最近公开指标：IF 6.8（2025），JCR 2025 Q1，中科院 2025 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2025-12-20）に最も近い公開指標：IF 6.8 (2025) · JCR 2025 Q1 · CAS 2025 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/information-sciences",
       "citation_sources": {
@@ -1429,9 +1443,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-01-07): IF 9.1 (2024) · JCR 2023 Q1 · CAS 2022 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-01-07）回溯的最近公开指标：IF 9.1（2024），JCR 2023 Q1，中科院 2022 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-01-07): IF 9.1 (2024) · JCR 2023 Q1 · CAS 2022 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-01-07): IF 9.1 (2024) · JCR 2023 Q1 · CAS 2022 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-01-07）回溯的最近公开指标：IF 9.1（2024），JCR 2023 Q1，中科院 2022 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2025-01-07）に最も近い公開指標：IF 9.1 (2024) · JCR 2023 Q1 · CAS 2022 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/robotics-and-computer-integrated-manufacturing",
       "citation_sources": {
@@ -1528,9 +1544,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2025-01-14. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2025-01-14。按接收时点回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2025-01-14. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2025-01-14. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3.",
+          "zh": "接收日期：2025-01-14。按接收时点回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2022 Q3。",
+          "ja": "採択日：2025-01-14。採択時点に最も近い公開指標：IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -1626,9 +1644,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2024-12-30. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2024-12-30。按接收时点回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2024-12-30. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2024-12-30. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3.",
+          "zh": "接收日期：2024-12-30。按接收时点回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2022 Q3。",
+          "ja": "採択日：2024-12-30。採択時点に最も近い公開指標：IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -1728,9 +1748,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2025-03-17. Closest public metrics at acceptance: IF 3.8 (2024) · JCR 2023 Q1 · CAS 2022 Q2.",
-        "verification_note_zh": "接收日期：2025-03-17。按接收时点回溯的最近公开指标：IF 3.8（2024），JCR 2023 Q1，中科院 2022 Q2。",
-        "verification_note_ja": "Accepted 2025-03-17. Closest public metrics at acceptance: IF 3.8 (2024) · JCR 2023 Q1 · CAS 2022 Q2."
+        "verification_note": {
+          "en": "Accepted 2025-03-17. Closest public metrics at acceptance: IF 3.8 (2024) · JCR 2023 Q1 · CAS 2022 Q2.",
+          "zh": "接收日期：2025-03-17。按接收时点回溯的最近公开指标：IF 3.8（2024），JCR 2023 Q1，中科院 2022 Q2。",
+          "ja": "採択日：2025-03-17。採択時点に最も近い公開指標：IF 3.8 (2024) · JCR 2023 Q1 · CAS 2022 Q2。"
+        }
       },
       "venue_url": "https://www.nature.com/srep/",
       "citation_sources": {
@@ -1824,9 +1846,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-06-17): IF 8 (2024) · JCR 2023 Q1 · CAS 2025 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-06-17）回溯的最近公开指标：IF 8（2024），JCR 2023 Q1，中科院 2025 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-06-17): IF 8 (2024) · JCR 2023 Q1 · CAS 2025 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-06-17): IF 8 (2024) · JCR 2023 Q1 · CAS 2025 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-06-17）回溯的最近公开指标：IF 8（2024），JCR 2023 Q1，中科院 2025 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2025-06-17）に最も近い公開指標：IF 8 (2024) · JCR 2023 Q1 · CAS 2025 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/advanced-engineering-informatics",
       "citation_sources": {
@@ -1928,9 +1952,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-04-24): IF 2.3 (2024) · JCR 2024 Q1 · CAS 2025 Q4.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-04-24）回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2025 Q4。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-04-24): IF 2.3 (2024) · JCR 2024 Q1 · CAS 2025 Q4."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-04-24): IF 2.3 (2024) · JCR 2024 Q1 · CAS 2025 Q4.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-04-24）回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2025 Q4。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2025-04-24）に最も近い公開指標：IF 2.3 (2024) · JCR 2024 Q1 · CAS 2025 Q4。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -2196,9 +2222,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2025-02-18. Closest public metrics at acceptance: IF 2.5 (2024) · JCR 2023 Q2 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2025-02-18。按接收时点回溯的最近公开指标：IF 2.5（2024），JCR 2023 Q2，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2025-02-18. Closest public metrics at acceptance: IF 2.5 (2024) · JCR 2023 Q2 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2025-02-18. Closest public metrics at acceptance: IF 2.5 (2024) · JCR 2023 Q2 · CAS 2022 Q3.",
+          "zh": "接收日期：2025-02-18。按接收时点回溯的最近公开指标：IF 2.5（2024），JCR 2023 Q2，中科院 2022 Q3。",
+          "ja": "採択日：2025-02-18。採択時点に最も近い公開指標：IF 2.5 (2024) · JCR 2023 Q2 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://link.springer.com/journal/11227",
       "citation_sources": {
@@ -2352,9 +2380,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-10-10): IF 2.1 (2025) · JCR 2025 Q2 · CAS 2025 Q3.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-10-10）回溯的最近公开指标：IF 2.1（2025），JCR 2025 Q2，中科院 2025 Q3。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-10-10): IF 2.1 (2025) · JCR 2025 Q2 · CAS 2025 Q3."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2025-10-10): IF 2.1 (2025) · JCR 2025 Q2 · CAS 2025 Q3.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2025-10-10）回溯的最近公开指标：IF 2.1（2025），JCR 2025 Q2，中科院 2025 Q3。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2025-10-10）に最も近い公開指標：IF 2.1 (2025) · JCR 2025 Q2 · CAS 2025 Q3。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/parallel-computing",
       "citation_sources": {
@@ -2564,9 +2594,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2025-09-04. Closest public metrics at acceptance: IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4.",
-        "verification_note_zh": "接收日期：2025-09-04。按接收时点回溯的最近公开指标：IF 2.2（2025），JCR 2025 Q1，中科院 2025 Q4。",
-        "verification_note_ja": "Accepted 2025-09-04. Closest public metrics at acceptance: IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4."
+        "verification_note": {
+          "en": "Accepted 2025-09-04. Closest public metrics at acceptance: IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4.",
+          "zh": "接收日期：2025-09-04。按接收时点回溯的最近公开指标：IF 2.2（2025），JCR 2025 Q1，中科院 2025 Q4。",
+          "ja": "採択日：2025-09-04。採択時点に最も近い公開指標：IF 2.2 (2025) · JCR 2025 Q1 · CAS 2025 Q4。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -2662,9 +2694,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2025-01-18. Closest public metrics at acceptance: IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2025-01-18。按接收时点回溯的最近公开指标：IF 2.2（2024），JCR 2023 Q2，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2025-01-18. Closest public metrics at acceptance: IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2025-01-18. Closest public metrics at acceptance: IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3.",
+          "zh": "接收日期：2025-01-18。按接收时点回溯的最近公开指标：IF 2.2（2024），JCR 2023 Q2，中科院 2022 Q3。",
+          "ja": "採択日：2025-01-18。採択時点に最も近い公開指標：IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/symmetry",
       "citation_sources": {
@@ -2760,9 +2794,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-05-15): IF 8.7 (2023) · JCR 2023 Q1 · CAS 2022 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2024-05-15）回溯的最近公开指标：IF 8.7（2023），JCR 2023 Q1，中科院 2022 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-05-15): IF 8.7 (2023) · JCR 2023 Q1 · CAS 2022 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-05-15): IF 8.7 (2023) · JCR 2023 Q1 · CAS 2022 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2024-05-15）回溯的最近公开指标：IF 8.7（2023），JCR 2023 Q1，中科院 2022 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2024-05-15）に最も近い公開指標：IF 8.7 (2023) · JCR 2023 Q1 · CAS 2022 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/applied-soft-computing",
       "citation_sources": {
@@ -2908,9 +2944,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-04-18): IF 8.8 (2023) · JCR 2023 Q1 · CAS 2022 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2024-04-18）回溯的最近公开指标：IF 8.8（2023），JCR 2023 Q1，中科院 2022 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-04-18): IF 8.8 (2023) · JCR 2023 Q1 · CAS 2022 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-04-18): IF 8.8 (2023) · JCR 2023 Q1 · CAS 2022 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2024-04-18）回溯的最近公开指标：IF 8.8（2023），JCR 2023 Q1，中科院 2022 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2024-04-18）に最も近い公開指標：IF 8.8 (2023) · JCR 2023 Q1 · CAS 2022 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
       "citation_sources": {
@@ -3012,9 +3050,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-07-04): IF 7.2 (2024) · JCR 2023 Q1 · CAS 2022 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2024-07-04）回溯的最近公开指标：IF 7.2（2024），JCR 2023 Q1，中科院 2022 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-07-04): IF 7.2 (2024) · JCR 2023 Q1 · CAS 2022 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2024-07-04): IF 7.2 (2024) · JCR 2023 Q1 · CAS 2022 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2024-07-04）回溯的最近公开指标：IF 7.2（2024），JCR 2023 Q1，中科院 2022 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2024-07-04）に最も近い公開指標：IF 7.2 (2024) · JCR 2023 Q1 · CAS 2022 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/knowledge-based-systems",
       "citation_sources": {
@@ -3116,9 +3156,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2024-11-25. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2024-11-25。按接收时点回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2024-11-25. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2024-11-25. Closest public metrics at acceptance: IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3.",
+          "zh": "接收日期：2024-11-25。按接收时点回溯的最近公开指标：IF 2.3（2024），JCR 2024 Q1，中科院 2022 Q3。",
+          "ja": "採択日：2024-11-25。採択時点に最も近い公開指標：IF 2.3 (2024) · JCR 2024 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -3214,9 +3256,11 @@
         "clarivate_official_year": 2024,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2024-08-09. Closest public metrics at acceptance: IF 2.6 (2024) · JCR 2024 Q2 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2024-08-09。按接收时点回溯的最近公开指标：IF 2.6（2024），JCR 2024 Q2，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2024-08-09. Closest public metrics at acceptance: IF 2.6 (2024) · JCR 2024 Q2 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2024-08-09. Closest public metrics at acceptance: IF 2.6 (2024) · JCR 2024 Q2 · CAS 2022 Q3.",
+          "zh": "接收日期：2024-08-09。按接收时点回溯的最近公开指标：IF 2.6（2024），JCR 2024 Q2，中科院 2022 Q3。",
+          "ja": "採択日：2024-08-09。採択時点に最も近い公開指標：IF 2.6 (2024) · JCR 2024 Q2 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/electronics",
       "citation_sources": {
@@ -3312,9 +3356,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2024-11-26. Closest public metrics at acceptance: IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2024-11-26。按接收时点回溯的最近公开指标：IF 2.2（2024），JCR 2023 Q2，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2024-11-26. Closest public metrics at acceptance: IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2024-11-26. Closest public metrics at acceptance: IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3.",
+          "zh": "接收日期：2024-11-26。按接收时点回溯的最近公开指标：IF 2.2（2024），JCR 2023 Q2，中科院 2022 Q3。",
+          "ja": "採択日：2024-11-26。採択時点に最も近い公開指標：IF 2.2 (2024) · JCR 2023 Q2 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/symmetry",
       "citation_sources": {
@@ -3620,9 +3666,11 @@
         "clarivate_official_year": 2022,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-11-21): IF 8.263 (2022) · JCR 2022 Q1 · CAS 2022 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-11-21）回溯的最近公开指标：IF 8.263（2022），JCR 2022 Q1，中科院 2022 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-11-21): IF 8.263 (2022) · JCR 2022 Q1 · CAS 2022 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-11-21): IF 8.263 (2022) · JCR 2022 Q1 · CAS 2022 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-11-21）回溯的最近公开指标：IF 8.263（2022），JCR 2022 Q1，中科院 2022 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2022-11-21）に最も近い公開指標：IF 8.263 (2022) · JCR 2022 Q1 · CAS 2022 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/applied-soft-computing",
       "citation_sources": {
@@ -3718,9 +3766,11 @@
         "clarivate_official_year": 2022,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2023-06-17. Closest public metrics at acceptance: IF 1.736 (2022) · JCR 2022 Q3 · CAS 2022 Q4.",
-        "verification_note_zh": "接收日期：2023-06-17。按接收时点回溯的最近公开指标：IF 1.736（2022），JCR 2022 Q3，中科院 2022 Q4。",
-        "verification_note_ja": "Accepted 2023-06-17. Closest public metrics at acceptance: IF 1.736 (2022) · JCR 2022 Q3 · CAS 2022 Q4."
+        "verification_note": {
+          "en": "Accepted 2023-06-17. Closest public metrics at acceptance: IF 1.736 (2022) · JCR 2022 Q3 · CAS 2022 Q4.",
+          "zh": "接收日期：2023-06-17。按接收时点回溯的最近公开指标：IF 1.736（2022），JCR 2022 Q3，中科院 2022 Q4。",
+          "ja": "採択日：2023-06-17。採択時点に最も近い公開指標：IF 1.736 (2022) · JCR 2022 Q3 · CAS 2022 Q4。"
+        }
       },
       "venue_url": "https://www.tandfonline.com/journals/tcis20",
       "citation_sources": {
@@ -3815,9 +3865,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2023-08-28. Closest public metrics at acceptance: IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2023-08-28。按接收时点回溯的最近公开指标：IF 2.4（2023），JCR 2023 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2023-08-28. Closest public metrics at acceptance: IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2023-08-28. Closest public metrics at acceptance: IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3.",
+          "zh": "接收日期：2023-08-28。按接收时点回溯的最近公开指标：IF 2.4（2023），JCR 2023 Q1，中科院 2022 Q3。",
+          "ja": "採択日：2023-08-28。採択時点に最も近い公開指標：IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -3912,9 +3964,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2023-06-30. Closest public metrics at acceptance: IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2023-06-30。按接收时点回溯的最近公开指标：IF 2.4（2023），JCR 2023 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2023-06-30. Closest public metrics at acceptance: IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2023-06-30. Closest public metrics at acceptance: IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3.",
+          "zh": "接收日期：2023-06-30。按接收时点回溯的最近公开指标：IF 2.4（2023），JCR 2023 Q1，中科院 2022 Q3。",
+          "ja": "採択日：2023-06-30。採択時点に最も近い公開指標：IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -4009,9 +4063,11 @@
         "clarivate_official_year": 2022,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2023-06-14. Closest public metrics at acceptance: IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "接收日期：2023-06-14。按接收时点回溯的最近公开指标：IF 2.592（2022），JCR 2022 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Accepted 2023-06-14. Closest public metrics at acceptance: IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Accepted 2023-06-14. Closest public metrics at acceptance: IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3.",
+          "zh": "接收日期：2023-06-14。按接收时点回溯的最近公开指标：IF 2.592（2022），JCR 2022 Q1，中科院 2022 Q3。",
+          "ja": "採択日：2023-06-14。採択時点に最も近い公開指標：IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -4106,9 +4162,11 @@
         "clarivate_official_year": 2023,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2023-08-30): IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2023-08-30）回溯的最近公开指标：IF 2.4（2023），JCR 2023 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2023-08-30): IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2023-08-30): IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2023-08-30）回溯的最近公开指标：IF 2.4（2023），JCR 2023 Q1，中科院 2022 Q3。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2023-08-30）に最も近い公開指標：IF 2.4 (2023) · JCR 2023 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -4203,9 +4261,11 @@
         "clarivate_official_year": 2021,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-02-08): IF 3.977 (2021) · JCR 2021 Q2 · CAS 2022 Q3.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-02-08）回溯的最近公开指标：IF 3.977（2021），JCR 2021 Q2，中科院 2022 Q3。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-02-08): IF 3.977 (2021) · JCR 2021 Q2 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-02-08): IF 3.977 (2021) · JCR 2021 Q2 · CAS 2022 Q3.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-02-08）回溯的最近公开指标：IF 3.977（2021），JCR 2021 Q2，中科院 2022 Q3。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2022-02-08）に最も近い公開指標：IF 3.977 (2021) · JCR 2021 Q2 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.inderscience.com/ijbic",
       "citation_sources": {
@@ -4301,9 +4361,11 @@
         "clarivate_official_year": 2021,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Accepted 2022-06-20. Closest public metrics at acceptance: IF 2.153 (2021) · JCR 2021 Q3 · CAS 2022 Q4.",
-        "verification_note_zh": "接收日期：2022-06-20。按接收时点回溯的最近公开指标：IF 2.153（2021），JCR 2021 Q3，中科院 2022 Q4。",
-        "verification_note_ja": "Accepted 2022-06-20. Closest public metrics at acceptance: IF 2.153 (2021) · JCR 2021 Q3 · CAS 2022 Q4."
+        "verification_note": {
+          "en": "Accepted 2022-06-20. Closest public metrics at acceptance: IF 2.153 (2021) · JCR 2021 Q3 · CAS 2022 Q4.",
+          "zh": "接收日期：2022-06-20。按接收时点回溯的最近公开指标：IF 2.153（2021），JCR 2021 Q3，中科院 2022 Q4。",
+          "ja": "採択日：2022-06-20。採択時点に最も近い公開指標：IF 2.153 (2021) · JCR 2021 Q3 · CAS 2022 Q4。"
+        }
       },
       "venue_url": "https://www.tandfonline.com/journals/tcis20",
       "citation_sources": {
@@ -4399,9 +4461,11 @@
         "clarivate_official_year": 2021,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-05-09): IF 3.367 (2021) · JCR 2021 Q2 · CAS 2022 Q3.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-05-09）回溯的最近公开指标：IF 3.367（2021），JCR 2021 Q2，中科院 2022 Q3。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-05-09): IF 3.367 (2021) · JCR 2021 Q2 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-05-09): IF 3.367 (2021) · JCR 2021 Q2 · CAS 2022 Q3.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-05-09）回溯的最近公开指标：IF 3.367（2021），JCR 2021 Q2，中科院 2022 Q3。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2022-05-09）に最も近い公開指標：IF 3.367 (2021) · JCR 2021 Q2 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://ieeeaccess.ieee.org/",
       "citation_sources": {
@@ -4497,9 +4561,11 @@
         "clarivate_official_year": 2022,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-08-17): IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-08-17）回溯的最近公开指标：IF 2.592（2022），JCR 2022 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-08-17): IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-08-17): IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-08-17）回溯的最近公开指标：IF 2.592（2022），JCR 2022 Q1，中科院 2022 Q3。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2022-08-17）に最も近い公開指標：IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -4698,9 +4764,11 @@
         "clarivate_official_year": 2022,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-10-13): IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-10-13）回溯的最近公开指标：IF 2.592（2022），JCR 2022 Q1，中科院 2022 Q3。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-10-13): IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2022-10-13): IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2022-10-13）回溯的最近公开指标：IF 2.592（2022），JCR 2022 Q1，中科院 2022 Q3。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2022-10-13）に最も近い公開指標：IF 2.592 (2022) · JCR 2022 Q1 · CAS 2022 Q3。"
+        }
       },
       "venue_url": "https://www.mdpi.com/journal/mathematics",
       "citation_sources": {
@@ -4902,9 +4970,11 @@
         "clarivate_official_year": 2020,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2021-01-07): IF 8.208 (2020) · JCR 2020 Q1 · CAS 2021 Q1.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2021-01-07）回溯的最近公开指标：IF 8.208（2020），JCR 2020 Q1，中科院 2021 Q1。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2021-01-07): IF 8.208 (2020) · JCR 2020 Q1 · CAS 2021 Q1."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2021-01-07): IF 8.208 (2020) · JCR 2020 Q1 · CAS 2021 Q1.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2021-01-07）回溯的最近公开指标：IF 8.208（2020），JCR 2020 Q1，中科院 2021 Q1。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2021-01-07）に最も近い公開指標：IF 8.208 (2020) · JCR 2020 Q1 · CAS 2021 Q1。"
+        }
       },
       "venue_url": "https://www.sciencedirect.com/journal/energy-conversion-and-management",
       "citation_sources": {
@@ -4999,9 +5069,11 @@
         "clarivate_official_year": 2021,
         "cas_official_platform_url": "https://www.fenqubiao.com/",
         "cas_official_help_url": "https://www.fenqubiao.com/User/Help.aspx",
-        "verification_note_en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2021-09-30): IF 0.5 (2021) · JCR 2021 Q4 · CAS 2021 Q4.",
-        "verification_note_zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2021-09-30）回溯的最近公开指标：IF 0.5（2021），JCR 2021 Q4，中科院 2021 Q4。",
-        "verification_note_ja": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2021-09-30): IF 0.5 (2021) · JCR 2021 Q4 · CAS 2021 Q4."
+        "verification_note": {
+          "en": "Official publisher page verified, but the exact accepted date is not publicly exposed. Closest public metrics at the earliest Crossref registration date (2021-09-30): IF 0.5 (2021) · JCR 2021 Q4 · CAS 2021 Q4.",
+          "zh": "已核对出版社页面，但未公开精确接收日期。按 Crossref 最早登记时间（2021-09-30）回溯的最近公开指标：IF 0.5（2021），JCR 2021 Q4，中科院 2021 Q4。",
+          "ja": "出版社ページを確認済みですが、正確な採択日は公開されていません。Crossref の最初の登録日（2021-09-30）に最も近い公開指標：IF 0.5 (2021) · JCR 2021 Q4 · CAS 2021 Q4。"
+        }
       },
       "venue_url": "https://www.jstage.jst.go.jp/browse/transinf",
       "citation_sources": {

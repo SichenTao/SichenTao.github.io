@@ -6,26 +6,100 @@
     <title>Page Not Found | Sichen Tao Research Portals</title>
     <link rel="canonical" href="https://sichentao.github.io/404.html" />
     <link rel="icon" href="./academic/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="./portal.css?v=20260501-191345" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260502-154752" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260502-154752" />
+    <link rel="stylesheet" href="./portal.css?v=20260502-154752" />
+    <script src="/assets/shared/homepage-i18n.js?v=20260502-154752"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260502-154752"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260502-154752"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260502-154752"></script>
   </head>
   <body>
+    <header class="shell site-header">
+      <div class="header-tools">
+        <div class="header-controls-anchor" aria-hidden="true"></div>
+        <div class="header-controls" aria-label="Display controls">
+          <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
+          <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
+        </div>
+        <nav class="topnav" aria-label="Page navigation">
+          <a href="./"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg><span>Portal</span></a>
+          <a href="./academic/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-profiles"></use></svg><span>Homepage</span></a>
+          <a href="./jsps-kakenhi/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg><span>JSPS</span></a>
+        </nav>
+      </div>
+    </header>
     <div class="portal-shell not-found-shell">
       <section class="hero-card not-found-card">
         <div class="hero-copy">
           <p class="eyebrow">404</p>
-          <h1>Page not found</h1>
-          <p class="hero-description">
+          <h1 id="not-found-title">Page not found</h1>
+          <p id="not-found-body" class="hero-description">
             The page you requested is not available here. Use the unified portal below to return to one of the three
             active research sites.
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="./">Back to portal</a>
-            <a class="button" href="./academic/">Personal Homepage</a>
-            <a class="button" href="./academic-frontier/">学术前沿</a>
-            <a class="button" href="./jsps-kakenhi/">JSPS workspace</a>
+            <a id="not-found-portal" class="button button-primary" href="./">Back to portal</a>
+            <a id="not-found-academic" class="button" href="./academic/">Personal Homepage</a>
+            <a id="not-found-frontier" class="button" href="./academic-frontier/">学术前沿</a>
+            <a id="not-found-jsps" class="button" href="./jsps-kakenhi/">JSPS workspace</a>
           </div>
         </div>
       </section>
     </div>
+    <script>
+      (() => {
+        const copy = {
+          en: {
+            title: "Page Not Found | Sichen Tao Research Portals",
+            heading: "Page not found",
+            body: "The page you requested is not available here. Use the unified portal below to return to one of the active research sites.",
+            portal: "Back to portal",
+            academic: "Personal Homepage",
+            frontier: "Academic Frontier",
+            jsps: "JSPS workspace",
+          },
+          zh: {
+            title: "未找到页面 | Sichen Tao 研究门户",
+            heading: "未找到该页面",
+            body: "你请求的页面当前不可用。可以从统一导航页重新进入个人主页、学术前沿或 JSPS 工作台。",
+            portal: "返回导航页",
+            academic: "个人主页",
+            frontier: "学术前沿",
+            jsps: "JSPS 工作台",
+          },
+          ja: {
+            title: "ページが見つかりません | Sichen Tao 研究ポータル",
+            heading: "ページが見つかりません",
+            body: "リクエストされたページは利用できません。統一ポータルから個人ホームページ、学術前沿、JSPS ワークスペースへ戻れます。",
+            portal: "ポータルへ戻る",
+            academic: "個人ホームページ",
+            frontier: "学術前沿",
+            jsps: "JSPS ワークスペース",
+          },
+        };
+
+        function applyCopy(locale = "en") {
+          const language = window.HomepageI18n?.normalizeLocale?.(locale) || "en";
+          const text = copy[language] || copy.en;
+          document.title = text.title;
+          document.getElementById("not-found-title").textContent = text.heading;
+          document.getElementById("not-found-body").textContent = text.body;
+          document.getElementById("not-found-portal").textContent = text.portal;
+          document.getElementById("not-found-academic").textContent = text.academic;
+          document.getElementById("not-found-frontier").textContent = text.frontier;
+          document.getElementById("not-found-jsps").textContent = text.jsps;
+        }
+
+        window.addEventListener("DOMContentLoaded", () => {
+          const locale = window.HomepageI18n?.readStoredLocale?.() || "en";
+          const theme = window.HomepagePlatform?.readStoredTheme?.() || "tohoku";
+          window.HomepageI18n?.applyDocumentLocale?.(locale);
+          window.HomepagePlatform?.applyTheme?.(theme, { persist: false });
+          applyCopy(locale);
+          window.HomepageComponents?.renderStaticControlCluster?.({ onLocaleChange: applyCopy });
+        });
+      })();
+    </script>
   </body>
 </html>

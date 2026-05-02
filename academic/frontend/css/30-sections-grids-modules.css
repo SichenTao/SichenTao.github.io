@@ -1,0 +1,217 @@
+.section-card {
+  padding: 30px;
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.section-head h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 0.98;
+}
+
+.badge,
+.input,
+.chip {
+  padding: 11px 14px;
+  background: rgba(var(--white-rgb), 0.62);
+  color: var(--ink);
+}
+
+.badge {
+  color: var(--teal);
+  white-space: nowrap;
+}
+
+.input {
+  min-width: 0;
+  font: inherit;
+}
+
+.input::placeholder {
+  color: rgba(66, 80, 98, 0.68);
+}
+
+.overview-grid,
+.signal-layout,
+.card-grid,
+.dual-grid,
+.tri-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.overview-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.signal-layout {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dual-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.tri-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.28fr) minmax(280px, 0.72fr);
+  gap: 16px;
+}
+
+.summary-panel {
+  background:
+    radial-gradient(circle at top left, rgba(var(--teal-rgb), 0.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(var(--gold-rgb), 0.14), transparent 28%),
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.76), rgba(var(--white-rgb), 0.42)),
+    var(--surface);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.summary-card {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.8), rgba(var(--white-rgb), 0.52)),
+    var(--surface-strong);
+}
+
+.summary-head {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.summary-head h3 {
+  margin: 8px 0 0;
+  font-size: 1.08rem;
+  line-height: 1.4;
+}
+
+.summary-count {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: rgba(var(--teal-rgb), 0.08);
+  border: 1px solid rgba(var(--teal-rgb), 0.16);
+  color: var(--teal);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.summary-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.summary-metric {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: rgba(var(--white-rgb), 0.68);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+}
+
+.summary-list {
+  display: grid;
+  gap: 12px;
+}
+
+.summary-item {
+  display: grid;
+  gap: 6px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.08);
+}
+
+.detail-grid,
+.service-group-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-group-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.module-card {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.76), rgba(var(--white-rgb), 0.5)),
+    var(--surface-strong);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+  text-decoration: none;
+}
+
+.module-card:hover,
+.module-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(var(--teal-rgb), 0.26);
+  box-shadow: 0 16px 28px rgba(var(--ink-rgb), 0.08);
+  outline: none;
+}
+
+.module-title {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.module-meta {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.module-cta {
+  color: var(--teal);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+

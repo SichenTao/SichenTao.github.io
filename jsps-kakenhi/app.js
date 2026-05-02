@@ -38,6 +38,7 @@ const I18N = {
       archive: "快照归档",
     },
     common: {
+      siteTitle: "JSPS 科研费工作台",
       open: "公募中",
       closed: "已结束",
       suspended: "停止募集",
@@ -85,6 +86,17 @@ const I18N = {
       cycleThemes: "切换到下一种配色",
       pageNavigation: "页面导航",
       openPortal: "返回主页导航页",
+    },
+    portal: {
+      tray: "功能主页",
+      portalShort: "导航页",
+      portalFull: "导航页",
+      academicShort: "个人主页",
+      academicFull: "个人主页",
+      radarShort: "学术前沿",
+      radarFull: "学术前沿",
+      jspsShort: "JSPS",
+      jspsFull: "JSPS 科研费",
     },
     status: {
       open: "公募中",
@@ -283,6 +295,7 @@ const I18N = {
       archive: "Archive",
     },
     common: {
+      siteTitle: "JSPS KAKENHI Workspace",
       open: "Open",
       closed: "Closed",
       suspended: "Suspended",
@@ -330,6 +343,17 @@ const I18N = {
       cycleThemes: "Switch to the next color theme",
       pageNavigation: "Page navigation",
       openPortal: "Return to homepage portal",
+    },
+    portal: {
+      tray: "Site sections",
+      portalShort: "Portal",
+      portalFull: "Navigation portal",
+      academicShort: "Homepage",
+      academicFull: "Personal homepage",
+      radarShort: "Frontier",
+      radarFull: "Academic Frontier",
+      jspsShort: "JSPS",
+      jspsFull: "JSPS KAKENHI",
     },
     status: {
       open: "Open",
@@ -530,6 +554,7 @@ I18N.ja = {
     archive: "アーカイブ",
   },
   common: {
+    siteTitle: "JSPS 科研費ワークスペース",
     open: "公募中",
     closed: "終了",
     suspended: "募集停止",
@@ -577,6 +602,17 @@ I18N.ja = {
     cycleThemes: "次の配色に切り替える",
     pageNavigation: "ページナビゲーション",
     openPortal: "ホームポータルに戻る",
+  },
+  portal: {
+    tray: "機能ページ",
+    portalShort: "ポータル",
+    portalFull: "ナビゲーション",
+    academicShort: "個人HP",
+    academicFull: "個人ホームページ",
+    radarShort: "学術前沿",
+    radarFull: "学術フロンティア",
+    jspsShort: "JSPS",
+    jspsFull: "JSPS 科研費",
   },
   status: {
     open: "公募中",
@@ -732,8 +768,7 @@ I18N.ja = {
     files: "件のファイル",
   },
 };
-
-const LOCALE_CATALOG = {
+const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
   en: { label: "EN", name: "English", lang: "en" },
   ja: { label: "日", name: "日本語", lang: "ja" },
   zh: { label: "中", name: "中文", lang: "zh-CN" },
@@ -843,6 +878,9 @@ async function init() {
     return;
   }
 
+  state.locale = getStoredLocale();
+  state.theme = getStoredTheme();
+  applyTheme(state.theme, false);
   renderLocaleSwitcher();
   renderThemeSwitcher();
   applyLocale(state.locale, false);
@@ -854,18 +892,21 @@ async function init() {
 }
 
 function getStoredLocale() {
-  const queryLocale = new URLSearchParams(window.location.search).get("lang");
-  if (LOCALE_CATALOG[queryLocale]) {
-    return queryLocale;
-  }
-  const saved = readSessionValue(LOCALE_KEY);
-  return LOCALE_CATALOG[saved] ? saved : "en";
+  return window.HomepageI18n?.readStoredLocale?.({
+    locales: LOCALE_CATALOG,
+    storageKey: LOCALE_KEY,
+    legacyKeys: [LEGACY_LOCALE_KEY],
+    fallback: "en",
+  }) || "en";
 }
 
 function getStoredTheme() {
-  const queryTheme = new URLSearchParams(window.location.search).get("theme");
-  if (THEME_CATALOG[queryTheme]) {
-    return queryTheme;
+  const sharedTheme = window.HomepagePlatform?.readStoredTheme?.({
+    storageKey: THEME_KEY,
+    legacyKeys: [LEGACY_THEME_KEY],
+  });
+  if (sharedTheme && THEME_CATALOG[sharedTheme]) {
+    return sharedTheme;
   }
   const saved = readSessionValue(THEME_KEY);
   if (!saved || saved === "default" || saved === "base") {
@@ -991,11 +1032,18 @@ function translatedThemeTooltip(theme) {
   return THEME_CATALOG[themeValue]?.title || "";
 }
 
+function portalSpriteIconMarkup(name) {
+  return `<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
+}
+
 function portalHomeIconMarkup() {
-  return '<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg>';
+  return portalSpriteIconMarkup("home");
 }
 
 function frontierHomeHref(locale = state.locale, theme = state.theme) {
+  if (window.HomepagePlatform?.academicFrontierHref) {
+    return window.HomepagePlatform.academicFrontierHref(locale, theme);
+  }
   const href = locale === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(locale)}/`;
   const url = new URL(href, window.location.origin);
   url.searchParams.set("theme", theme);
@@ -1003,6 +1051,9 @@ function frontierHomeHref(locale = state.locale, theme = state.theme) {
 }
 
 function siteStateHref(href, locale = state.locale, theme = state.theme) {
+  if (window.HomepagePlatform?.siteStateHref) {
+    return window.HomepagePlatform.siteStateHref(href, { locale, theme });
+  }
   const url = new URL(href, window.location.origin);
   if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/")) {
     url.searchParams.set("lang", locale);
@@ -1016,6 +1067,24 @@ function siteStateHref(href, locale = state.locale, theme = state.theme) {
 function renderLocaleSwitcher() {
   const container = document.querySelector(".locale-switcher");
   if (!container) {
+    return;
+  }
+  if (window.HomepageComponents?.renderLocaleSwitcher) {
+    window.HomepageComponents.renderLocaleSwitcher(container, {
+      locale: state.locale,
+      locales: LOCALE_CATALOG,
+      sequence: LOCALE_SWITCH_SEQUENCE,
+      ariaLabel: t("common.language"),
+      trayLabel: t("common.languageChoices"),
+      onChoice: (localeName) => {
+        applyLocale(localeName);
+        renderLocaleSwitcher();
+        renderThemeSwitcher();
+        applyTheme(state.theme, false);
+      },
+    });
+    renderPortalReturnControl();
+    syncHomepageShell();
     return;
   }
   const activeLocale = LOCALE_CATALOG[state.locale] || LOCALE_CATALOG.en;
@@ -1071,6 +1140,23 @@ function renderThemeSwitcher() {
   if (!container) {
     return;
   }
+  if (window.HomepageComponents?.renderThemeSwitcher) {
+    window.HomepageComponents.renderThemeSwitcher(container, {
+      locale: state.locale,
+      theme: state.theme,
+      themes: THEME_CATALOG,
+      sequence: THEME_OPTIONS.map((option) => option.value),
+      ariaLabel: t("common.theme"),
+      trayLabel: t("common.themeChoices"),
+      tooltip: translatedThemeTooltip,
+      onChoice: (themeName) => {
+        applyTheme(themeName);
+        renderThemeSwitcher();
+      },
+    });
+    syncHomepageShell();
+    return;
+  }
   const active = THEME_CATALOG[state.theme] || THEME_OPTIONS[0];
   container.innerHTML = `
     <button
@@ -1105,8 +1191,19 @@ function renderThemeSwitcher() {
 function applyLocale(localeName, persist = true) {
   const nextLocale = LOCALE_CATALOG[localeName] ? localeName : "en";
   state.locale = nextLocale;
-  document.documentElement.lang = LOCALE_CATALOG[nextLocale].lang;
-  document.body.dataset.lang = nextLocale;
+  if (window.HomepageI18n?.applyDocumentLocale) {
+    window.HomepageI18n.applyDocumentLocale(nextLocale, { locales: LOCALE_CATALOG });
+  } else {
+    document.documentElement.lang = LOCALE_CATALOG[nextLocale].lang;
+    document.body.dataset.lang = nextLocale;
+  }
+  if (persist && window.HomepageI18n?.writeStoredLocale) {
+    window.HomepageI18n.writeStoredLocale(nextLocale, {
+      locales: LOCALE_CATALOG,
+      storageKey: LOCALE_KEY,
+      legacyKeys: [LEGACY_LOCALE_KEY],
+    });
+  }
   writeSessionValue(LOCALE_KEY, nextLocale);
 
   document.querySelectorAll("[data-locale-choice]").forEach((button) => {
@@ -1126,7 +1223,15 @@ function applyLocale(localeName, persist = true) {
 function applyTheme(themeName, persist = true) {
   const nextTheme = THEME_CATALOG[themeName] ? themeName : "tohoku";
   state.theme = nextTheme;
-  document.documentElement.dataset.theme = nextTheme;
+  if (window.HomepagePlatform?.applyTheme) {
+    window.HomepagePlatform.applyTheme(nextTheme, {
+      persist,
+      storageKey: THEME_KEY,
+      legacyKeys: [LEGACY_THEME_KEY],
+    });
+  } else {
+    document.documentElement.dataset.theme = nextTheme;
+  }
   writeSessionValue(THEME_KEY, nextTheme);
 
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
@@ -1191,6 +1296,7 @@ function applyI18n() {
 }
 
 function syncHomepageShell() {
+  renderPortalReturnControl();
   if (!window.HomepageSharedShell) {
     return;
   }
@@ -1226,7 +1332,6 @@ function syncHomepageShell() {
       breakpoint: 760,
     },
   });
-  renderPortalReturnControl();
 }
 
 function renderPortalReturnControl() {
@@ -1235,29 +1340,22 @@ function renderPortalReturnControl() {
     return;
   }
 
-  const labels = state.locale === "zh"
-    ? {
-        tray: "功能主页",
-        portal: { short: "导航页", full: "导航页" },
-        academic: { short: "个人主页", full: "个人主页" },
-        radar: { short: "学术前沿", full: "学术前沿" },
-        jsps: { short: "JSPS", full: "JSPS 科研费" },
-      }
-    : state.locale === "ja"
-      ? {
-          tray: "機能ページ",
-          portal: { short: "ポータル", full: "ナビゲーション" },
-          academic: { short: "個人HP", full: "個人ホームページ" },
-          radar: { short: "学術前沿", full: "学術フロンティア" },
-          jsps: { short: "JSPS", full: "JSPS 科研費" },
-        }
-      : {
-          tray: "Site sections",
-          portal: { short: "Portal", full: "Navigation portal" },
-          academic: { short: "Homepage", full: "Personal homepage" },
-          radar: { short: "Frontier", full: "Academic Frontier" },
-          jsps: { short: "JSPS", full: "JSPS KAKENHI" },
-        };
+  if (window.HomepageComponents?.renderPortalSwitcher) {
+    window.HomepageComponents.renderPortalSwitcher(controls, {
+      locale: state.locale,
+      theme: state.theme,
+      currentPath: window.location.pathname,
+    });
+    return;
+  }
+
+  const labels = {
+    tray: t("portal.tray"),
+    portal: { short: t("portal.portalShort"), full: t("portal.portalFull") },
+    academic: { short: t("portal.academicShort"), full: t("portal.academicFull") },
+    radar: { short: t("portal.radarShort"), full: t("portal.radarFull") },
+    jsps: { short: t("portal.jspsShort"), full: t("portal.jspsFull") },
+  };
 
   const currentPath = decodeURIComponent(window.location.pathname);
   const items = [
@@ -1280,7 +1378,7 @@ function renderPortalReturnControl() {
       href: frontierHomeHref(state.locale, state.theme),
       label: labels.radar.full,
       triggerLabel: labels.radar.short,
-      icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
+      icon: portalSpriteIconMarkup("research"),
       active: currentPath.startsWith("/academic-frontier/"),
     },
     {
@@ -1329,57 +1427,10 @@ function renderPortalReturnControl() {
     </div>
   `;
 }
-
 function updateDocumentTitle() {
-  const localeTitles = {
-    home: {
-      zh: "首页 | JSPS 科研费工作台",
-      en: "Home | JSPS KAKENHI Workspace",
-      ja: "ホーム | JSPS 科研費ワークスペース",
-    },
-    calls: {
-      zh: "首页 | JSPS 科研费工作台",
-      en: "Home | JSPS KAKENHI Workspace",
-      ja: "ホーム | JSPS 科研費ワークスペース",
-    },
-    deadlines: {
-      zh: "时间线 | JSPS 科研费工作台",
-      en: "Timeline | JSPS KAKENHI Workspace",
-      ja: "タイムライン | JSPS 科研費ワークスペース",
-    },
-    forms: {
-      zh: "表格材料 | JSPS 科研费工作台",
-      en: "Forms | JSPS KAKENHI Workspace",
-      ja: "申請書類 | JSPS 科研費ワークスペース",
-    },
-    guides: {
-      zh: "申请指南 | JSPS 科研费工作台",
-      en: "Guidance | JSPS KAKENHI Workspace",
-      ja: "申請ガイド | JSPS 科研費ワークスペース",
-    },
-    sources: {
-      zh: "官方来源 | JSPS 科研费工作台",
-      en: "Sources | JSPS KAKENHI Workspace",
-      ja: "公式ソース | JSPS 科研費ワークスペース",
-    },
-    archive: {
-      zh: "快照归档 | JSPS 科研费工作台",
-      en: "Archive | JSPS KAKENHI Workspace",
-      ja: "アーカイブ | JSPS 科研費ワークスペース",
-    },
-  };
-  const titleMap = {
-    home: localeTitles.home[state.locale] || localeTitles.home.en,
-    calls: localeTitles.calls[state.locale] || localeTitles.calls.en,
-    deadlines: localeTitles.deadlines[state.locale] || localeTitles.deadlines.en,
-    forms: localeTitles.forms[state.locale] || localeTitles.forms.en,
-    guides: localeTitles.guides[state.locale] || localeTitles.guides.en,
-    sources: localeTitles.sources[state.locale] || localeTitles.sources.en,
-    archive: localeTitles.archive[state.locale] || localeTitles.archive.en,
-  };
-  if (titleMap[state.page]) {
-    document.title = titleMap[state.page];
-  }
+  const titleNavKey = state.page === "calls" ? "home" : state.page;
+  const pageTitle = t(`nav.${titleNavKey}`);
+  document.title = `${pageTitle} | ${t("common.siteTitle")}`;
 }
 
 function ensureHeaderControlsAnchor(controls) {
@@ -1631,7 +1682,6 @@ function revealPage() {
   });
   document.body.classList.add("is-ready");
 }
-
 function renderHomePage() {
   const priorityGrid = document.getElementById("home-priority-grid");
   const workflowGrid = document.getElementById("home-workflow-grid");
@@ -1784,7 +1834,7 @@ function renderCallsPage() {
   }
 
   const allEntries = state.data.call_catalog.slice();
-  const groups = Array.from(new Set(allEntries.map((entry) => entry.group))).sort();
+  const groups = Array.from(new Set(allEntries.map((entry) => groupKey(entry.group)))).sort(compareCallGroups);
   const audiences = Object.keys(AUDIENCE_CATALOG).filter((key) => allEntries.some((entry) => getCallAudienceKeys(entry).includes(key)));
 
   searchInput.value = state.filters.calls.search;
@@ -1885,17 +1935,9 @@ function renderCallsPage() {
       !query ||
       [
         entry.title,
-        entry.title_ja,
-        entry.title_zh,
-        entry.title_en,
         entry.subtitle,
-        entry.subtitle_ja,
-        entry.subtitle_zh,
-        entry.subtitle_en,
         entry.group,
-        entry.group_ja,
-        entry.group_zh,
-        entry.group_en,
+        localizedSearchText(entry, ["title", "subtitle", "group"]),
         entry.search_blob,
         callAudienceSearchText(entry),
       ]
@@ -1908,7 +1950,7 @@ function renderCallsPage() {
       (state.filters.calls.status === "closed"
         ? entry.status === "closed" || entry.status === "reference" || entry.status === "suspended"
         : entry.status === state.filters.calls.status);
-    const matchesGroup = state.filters.calls.group === "all" || entry.group === state.filters.calls.group;
+    const matchesGroup = state.filters.calls.group === "all" || groupKey(entry.group) === state.filters.calls.group;
     const matchesAudience =
       state.filters.calls.audience === "all" || getCallAudienceKeys(entry).includes(state.filters.calls.audience);
     return matchesSearch && matchesStatus && matchesGroup && matchesAudience;
@@ -1933,7 +1975,7 @@ function renderCallsPage() {
 
 function renderCallRailSections(entries) {
   const grouped = entries.reduce((map, entry) => {
-    const key = entry.group || "Programs";
+    const key = groupKey(entry.group) || "Programs";
     if (!map.has(key)) {
       map.set(key, []);
     }
@@ -2501,9 +2543,7 @@ function renderFormsPage() {
     const haystack = [
       form.form_number,
       form.program_title,
-      form.program_title_ja,
-      form.program_title_zh,
-      form.program_title_en,
+      localizedSearchText(form, ["program_title", "family_name"]),
       form.family_name,
       ...(form.page_sections || []),
       ...(form.row_texts || []),
@@ -2729,13 +2769,20 @@ function renderArchivePage() {
 }
 
 function localeValue(record, base) {
+  return localeValueFor(record, base, state.locale);
+}
+
+function localeValueFor(record, base, localeName = state.locale) {
   if (!record) {
     return "";
   }
+  if (window.HomepageI18n?.isLocaleObject?.(record[base], LOCALE_CATALOG)) {
+    return window.HomepageI18n.localizeValue(record[base], { locale: localeName, locales: LOCALE_CATALOG });
+  }
   const candidates =
-    state.locale === "ja"
+    localeName === "ja"
       ? [record[`${base}_ja`], record[base], record[`${base}_zh`], record[`${base}_en`]]
-      : state.locale === "zh"
+      : localeName === "zh"
         ? [record[`${base}_zh`], record[base], record[`${base}_ja`], record[`${base}_en`]]
         : [record[`${base}_en`], record[`${base}_ja`], record[base], record[`${base}_zh`]];
   for (const candidate of candidates) {
@@ -2757,6 +2804,10 @@ function localeList(record, base) {
   if (!record) {
     return [];
   }
+  if (window.HomepageI18n?.isLocaleObject?.(record[base], LOCALE_CATALOG)) {
+    const localized = window.HomepageI18n.localizeValue(record[base], { locale: state.locale, locales: LOCALE_CATALOG, emptyValue: [] });
+    return Array.isArray(localized) ? localized : localized ? [localized] : [];
+  }
   const candidates =
     state.locale === "ja"
       ? [record[`${base}_ja`], record[base], record[`${base}_zh`], record[`${base}_en`]]
@@ -2771,7 +2822,24 @@ function localeList(record, base) {
   return [];
 }
 
+function localizedSearchText(record, bases = []) {
+  const values = [];
+  bases.forEach((base) => {
+    const direct = record?.[base];
+    if (window.HomepageI18n?.isLocaleObject?.(direct, LOCALE_CATALOG)) {
+      ["en", "zh", "ja"].forEach((localeName) => {
+        values.push(window.HomepageI18n.localizeValue(direct, { locale: localeName, locales: LOCALE_CATALOG }));
+      });
+      values.push(direct.canonical);
+      return;
+    }
+    values.push(direct, record?.[`${base}_en`], record?.[`${base}_zh`], record?.[`${base}_ja`]);
+  });
+  return values.flat().filter(Boolean).join(" ");
+}
+
 function displayGroupLabel(group) {
+  const canonicalGroup = groupKey(group);
   const key = {
     "重点项目": "priority",
     Programs: "programs",
@@ -2783,8 +2851,21 @@ function displayGroupLabel(group) {
     FAQ: "faq",
     "公募要領・計画調書等": "publicCallProcedures",
     "各種目のページ": "programPages",
-  }[group];
-  return key ? t(`groupLabel.${key}`) : group;
+  }[canonicalGroup];
+  if (key) {
+    return t(`groupLabel.${key}`);
+  }
+  if (window.HomepageI18n?.isLocaleObject?.(group, LOCALE_CATALOG)) {
+    return window.HomepageI18n.localizeValue(group, { locale: state.locale, locales: LOCALE_CATALOG });
+  }
+  return canonicalGroup;
+}
+
+function groupKey(group) {
+  if (window.HomepageI18n?.isLocaleObject?.(group, LOCALE_CATALOG)) {
+    return group.canonical || group.en || group.zh || group.ja || "";
+  }
+  return String(group || "");
 }
 
 function displayAudienceLabel(key) {
@@ -2815,6 +2896,9 @@ function countText(value, unitKey) {
 }
 
 function t(key) {
+  if (window.HomepageI18n?.text) {
+    return window.HomepageI18n.text(I18N, key, { locale: state.locale, fallbacks: ["en", "zh"] });
+  }
   const sources = [I18N[state.locale], I18N.en, I18N.zh].filter(Boolean);
   for (const source of sources) {
     const value = key.split(".").reduce((current, segment) => (current && current[segment] !== undefined ? current[segment] : null), source);
@@ -2839,7 +2923,7 @@ function activeForecastCycle(record) {
   if (!cycle || record?.status === "open") {
     return null;
   }
-  if (cycle.call_open_date || cycle.call_open_label_ja || cycle.call_open_label_zh || cycle.call_open_label_en || cycle.submission_deadline || cycle.deadline_at) {
+  if (cycle.call_open_date || localeValue(cycle, "call_open_label") || cycle.submission_deadline || cycle.deadline_at) {
     return cycle;
   }
   return null;
@@ -2958,12 +3042,14 @@ function compareByStatus(left, right) {
 }
 
 function compareCallGroups(leftGroup, rightGroup) {
-  const leftIndex = CALL_GROUP_ORDER.indexOf(leftGroup);
-  const rightIndex = CALL_GROUP_ORDER.indexOf(rightGroup);
+  const leftKey = groupKey(leftGroup);
+  const rightKey = groupKey(rightGroup);
+  const leftIndex = CALL_GROUP_ORDER.indexOf(leftKey);
+  const rightIndex = CALL_GROUP_ORDER.indexOf(rightKey);
   if (leftIndex !== -1 || rightIndex !== -1) {
     return (leftIndex === -1 ? CALL_GROUP_ORDER.length : leftIndex) - (rightIndex === -1 ? CALL_GROUP_ORDER.length : rightIndex);
   }
-  return displayGroupLabel(leftGroup).localeCompare(displayGroupLabel(rightGroup), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
+  return displayGroupLabel(leftKey).localeCompare(displayGroupLabel(rightKey), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
 }
 
 function sortCallEntries(entries, sortMode = "deadline") {
@@ -3199,7 +3285,7 @@ function formatShortDate(value) {
 }
 
 function formatApproximateOpenLabel(record) {
-  const raw = record?.call_open_label_ja || record?.call_open_label || localeValue(record, "call_open_label");
+  const raw = localeValueFor(record, "call_open_label", "ja") || localeValue(record, "call_open_label");
   if (!raw) {
     return "";
   }

@@ -1,3 +1,6 @@
+@import url("/assets/shared/homepage-fonts.css");
+@import url("/assets/shared/homepage-layout.css");
+
 :root {
   --bg: #f5eee4;
   --bg-soft: #fbf8f3;
@@ -113,17 +116,27 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 10% 12%, rgba(var(--teal-rgb), 0.12), transparent 20%),
     radial-gradient(circle at 85% 15%, rgba(var(--clay-rgb), 0.12), transparent 24%),
     linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 32%, var(--bg-band) 100%);
   color: var(--ink);
-  font-family: "Sora", "Avenir Next", "Segoe UI", sans-serif;
+  font-family: var(--font-ui);
+}
+
+body[data-lang="zh"] {
+  font-family: var(--font-cjk);
+}
+
+body[data-lang="ja"] {
+  font-family: var(--font-ja);
 }
 
 :root[data-theme="tohoku"] body {
@@ -223,7 +236,7 @@ a {
 }
 
 .shell {
-  width: min(1180px, calc(100% - 40px));
+  width: min(var(--shell-max), calc(100% - var(--shell-gutter)));
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -238,7 +251,6 @@ a {
   z-index: 4;
   overflow: visible;
 }
-
 .header-tools {
   display: flex;
   align-items: center;
@@ -369,13 +381,6 @@ a {
   height: 20px;
   display: block;
   object-fit: contain;
-}
-
-.portal-trigger .portal-chip-emoji,
-.portal-chip .portal-chip-emoji {
-  display: block;
-  font-size: 18px;
-  line-height: 1;
 }
 
 .portal-trigger.portal-chip--portrait .portal-chip-logo {
@@ -796,7 +801,6 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
-
 .hero {
   display: grid;
   gap: 22px;
@@ -943,9 +947,9 @@ a {
 .section-head h2,
 .footer-panel h2 {
   margin: 0;
-  font-family: "Newsreader", "Iowan Old Style", serif;
+  font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .hero h1 {
@@ -996,7 +1000,7 @@ a {
 
 .hero-role {
   margin: 0;
-  font-family: "Newsreader", "Iowan Old Style", serif;
+  font-family: var(--font-display);
   font-size: clamp(1.4rem, 2vw, 1.82rem);
   line-height: 1;
   color: var(--ink);
@@ -1057,7 +1061,7 @@ a {
 }
 
 .record-value {
-  font-family: "Newsreader", "Iowan Old Style", serif;
+  font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 2.8rem);
   line-height: 0.95;
   color: var(--ink);
@@ -1292,17 +1296,16 @@ a {
 
 .detail-hero h1 {
   margin: 8px 0 12px;
-  font-family: "Newsreader", "Iowan Old Style", serif;
+  font-family: var(--font-display);
   font-size: clamp(2.6rem, 6vw, 4.4rem);
   line-height: 0.95;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 
 .detail-hero .lede {
   max-width: 58ch;
   margin: 0 0 16px;
 }
-
 .section-card {
   padding: 30px;
 }
@@ -1858,14 +1861,14 @@ body[data-page="profiles"] .link-card-title-google-scholar {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.02rem;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 
 body[data-page="profiles"] .google-wordmark {
   display: inline-flex;
   align-items: baseline;
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 body[data-page="profiles"] .google-blue {
@@ -2473,7 +2476,7 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
 
 .paper-body h4 {
   margin: 0;
-  font-family: "Newsreader", "Iowan Old Style", serif;
+  font-family: var(--font-display);
   font-size: 1.45rem;
   line-height: 1.08;
 }
@@ -3318,7 +3321,7 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
 
 .publication-metric-value {
   color: var(--ink);
-  font-family: "Newsreader", "Iowan Old Style", serif;
+  font-family: var(--font-display);
   font-size: 1.1rem;
   line-height: 1;
 }
@@ -3382,6 +3385,15 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
     opacity 160ms ease,
     transform 160ms ease;
   z-index: 8;
+}
+
+@media (max-width: 700px) {
+  .publication-metric-options {
+    left: auto;
+    right: 0;
+    min-width: min(220px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+  }
 }
 
 .publication-metric-options::before {
@@ -3653,7 +3665,7 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
 
 @media (max-width: 760px) {
   .shell {
-    width: min(100% - 20px, 1000px);
+    width: min(var(--shell-max), calc(100% - var(--shell-gutter)));
   }
 
   .section-card,
@@ -3680,12 +3692,54 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
     grid-template-columns: 1fr;
   }
 
+  .hero-primary {
+    gap: 18px;
+  }
+
+  .hero-heading {
+    order: -1;
+  }
+
+  .hero-photo-inline {
+    width: 100%;
+    justify-items: center;
+  }
+
   .summary-head {
     flex-direction: column;
   }
 
   .portrait-frame {
+    width: min(100%, 220px);
     max-width: 220px;
+  }
+
+  .institution-switcher {
+    width: min(100%, 220px);
+  }
+
+  .shortcut-grid {
+    width: min(100%, 260px);
+  }
+
+  .hero-title-row {
+    width: 100%;
+  }
+
+  .eyebrow,
+  .hero-keylines,
+  .native-name,
+  .filter-chip-label,
+  .filter-toolbar-label,
+  .stack-label {
+    letter-spacing: 0;
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+    line-height: 0.96;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
   }
 
   .timeline::before {
@@ -3757,8 +3811,10 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
     width: 50px;
     height: 50px;
   }
+}
 
+@media (max-width: 390px) {
   .hero h1 {
-    max-width: none;
+    font-size: 2.45rem;
   }
 }

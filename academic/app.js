@@ -132,7 +132,7 @@ const heroContactEmojiMap = {
   languages: "🗣️",
 };
 
-const localeCatalog = {
+const localeCatalog = window.HomepageI18n?.LOCALES || {
   en: {
     label: "EN",
     name: "English",
@@ -201,6 +201,17 @@ const translations = {
       research: "Research",
       sources: "Sources",
       archive: "Archive",
+    },
+    portal: {
+      tray: "Site sections",
+      portal_short: "Portal",
+      portal_full: "Navigation portal",
+      academic_short: "Homepage",
+      academic_full: "Personal homepage",
+      radar_short: "Frontier",
+      radar_full: "Academic Frontier",
+      jsps_short: "JSPS",
+      jsps_full: "JSPS KAKENHI",
     },
     home: {
       eyebrow: "High Performance Computing · Artificial Intelligence · Optimization",
@@ -443,6 +454,17 @@ const translations = {
       sources: "出典",
       archive: "アーカイブ",
     },
+    portal: {
+      tray: "機能ページ",
+      portal_short: "ポータル",
+      portal_full: "ナビゲーション",
+      academic_short: "個人HP",
+      academic_full: "個人ホームページ",
+      radar_short: "学術前沿",
+      radar_full: "学術前沿",
+      jsps_short: "JSPS",
+      jsps_full: "JSPS 科研費",
+    },
     home: {
       eyebrow: "高性能計算・人工知能・最適化",
       current_appointment: "現職",
@@ -684,6 +706,17 @@ const translations = {
       sources: "来源",
       archive: "档案",
     },
+    portal: {
+      tray: "功能主页",
+      portal_short: "导航页",
+      portal_full: "导航页",
+      academic_short: "个人主页",
+      academic_full: "个人主页",
+      radar_short: "学术前沿",
+      radar_full: "学术前沿",
+      jsps_short: "JSPS",
+      jsps_full: "JSPS 科研费",
+    },
     home: {
       eyebrow: "高性能计算 · 人工智能 · 优化",
       current_appointment: "现职",
@@ -878,11 +911,10 @@ const translations = {
     },
   },
 };
-
-const THEME_STORAGE_KEY = "sichen-homepage-theme";
-const LOCALE_STORAGE_KEY = "sichen-homepage-locale";
-const THEME_SWITCH_SEQUENCE = ["tohoku", "toyama", "usst"];
-const LOCALE_SWITCH_SEQUENCE = ["en", "ja", "zh"];
+const THEME_STORAGE_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
+const LOCALE_STORAGE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
+const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["en", "zh", "ja"];
 let themeUiBound = false;
 let localeUiBound = false;
 let switcherHoverBound = false;
@@ -896,7 +928,15 @@ let dataReady = false;
 const switcherCloseTimers = new WeakMap();
 
 function normalizeString(value) {
-  return String(value ?? "").replace(/\s+/g, " ").trim();
+  const localized = localizeDataValue(value);
+  return String(localized ?? "").replace(/\s+/g, " ").trim();
+}
+
+function localizeDataValue(value, localeName = resolveLocaleName()) {
+  if (window.HomepageI18n?.isLocaleObject?.(value, localeCatalog)) {
+    return window.HomepageI18n.localizeValue(value, { locale: localeName, locales: localeCatalog });
+  }
+  return value;
 }
 
 function escapeHtml(value) {
@@ -1239,17 +1279,7 @@ function formatMessage(template, values = {}) {
 }
 
 function resolveLocaleName() {
-  const queryLocale = new URLSearchParams(window.location.search).get("lang");
-  if (queryLocale && localeCatalog[queryLocale]) {
-    return queryLocale;
-  }
-
-  const savedLocale = readSessionValue(LOCALE_STORAGE_KEY);
-  if (savedLocale && localeCatalog[savedLocale]) {
-    return savedLocale;
-  }
-
-  return "en";
+  return window.HomepageI18n?.readStoredLocale?.({ locales: localeCatalog, fallback: "en" }) || "en";
 }
 
 function nextLocaleName(currentLocale = resolveLocaleName()) {
@@ -1263,6 +1293,9 @@ function nextLocaleName(currentLocale = resolveLocaleName()) {
 
 function t(key, values = {}) {
   const localeName = resolveLocaleName();
+  if (window.HomepageI18n?.text) {
+    return window.HomepageI18n.text(translations, key, { locale: localeName, values });
+  }
   const message = getTranslationValue(localeName, key) ?? getTranslationValue("en", key) ?? key;
   return formatMessage(message, values);
 }
@@ -1703,7 +1736,8 @@ function publicationVerificationNote(item) {
   const verification = item?.verification || {};
   const localeName = resolveLocaleName();
   return (
-    verification[`verification_note_${localeName}`]
+    normalizeString(verification.verification_note)
+    || verification[`verification_note_${localeName}`]
     || verification.verification_note_en
     || ""
   );
@@ -2286,6 +2320,21 @@ function renderLocaleSwitchers() {
     return;
   }
 
+  if (window.HomepageComponents?.renderLocaleSwitcher) {
+    window.HomepageComponents.renderLocaleSwitcher(els.localeSwitchers, {
+      locale: resolveLocaleName(),
+      locales: localeCatalog,
+      sequence: LOCALE_SWITCH_SEQUENCE,
+      ariaLabel: t("controls.language"),
+      trayLabel: t("controls.language_choices"),
+    });
+    els.localeChoices = Array.from(document.querySelectorAll("[data-locale-choice]"));
+    els.localeTriggers = Array.from(document.querySelectorAll("[data-locale-trigger]"));
+    renderPortalReturnControl();
+    bindSwitcherTriggerButtons();
+    return;
+  }
+
   const activeLocaleName = resolveLocaleName();
   const activeLocale = localeCatalog[activeLocaleName] || localeCatalog.en;
   const localeButtons = LOCALE_SWITCH_SEQUENCE
@@ -2341,6 +2390,23 @@ function renderThemeSwitchers() {
     return;
   }
 
+  if (window.HomepageComponents?.renderThemeSwitcher) {
+    window.HomepageComponents.renderThemeSwitcher(els.themeSwitchers, {
+      locale: resolveLocaleName(),
+      theme: resolveThemeName(),
+      themes: themeCatalog,
+      sequence: THEME_SWITCH_SEQUENCE,
+      ariaLabel: t("controls.theme"),
+      trayLabel: t("controls.theme_choices"),
+      tooltip: translatedThemeTooltip,
+    });
+    els.themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
+    els.themeTriggers = Array.from(document.querySelectorAll("[data-theme-trigger]"));
+    renderPortalReturnControl();
+    bindSwitcherTriggerButtons();
+    return;
+  }
+
   const activeThemeName = resolveThemeName();
   const activeTheme = themeCatalog[activeThemeName] || themeCatalog.tohoku;
   const themeButtons = THEME_SWITCH_SEQUENCE
@@ -2391,6 +2457,9 @@ function renderThemeSwitchers() {
 
 function academicFrontierHomeHref(localeName = resolveLocaleName()) {
   const themeName = resolveThemeName();
+  if (window.HomepagePlatform?.academicFrontierHref) {
+    return window.HomepagePlatform.academicFrontierHref(localeName, themeName);
+  }
   const href = localeName === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(localeName)}/`;
   const url = new URL(href, window.location.origin);
   url.searchParams.set("theme", themeName);
@@ -2398,6 +2467,9 @@ function academicFrontierHomeHref(localeName = resolveLocaleName()) {
 }
 
 function siteStateHref(href, localeName = resolveLocaleName(), themeName = resolveThemeName()) {
+  if (window.HomepagePlatform?.siteStateHref) {
+    return window.HomepagePlatform.siteStateHref(href, { locale: localeName, theme: themeName });
+  }
   const url = new URL(href, window.location.origin);
   if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/")) {
     url.searchParams.set("lang", localeName);
@@ -2413,29 +2485,23 @@ function renderPortalReturnControl() {
     return;
   }
 
+  if (window.HomepageComponents?.renderPortalSwitcher) {
+    window.HomepageComponents.renderPortalSwitcher(els.headerControls, {
+      locale: resolveLocaleName(),
+      theme: resolveThemeName(),
+      currentPath: window.location.pathname,
+    });
+    bindSwitcherTriggerButtons();
+    return;
+  }
+
   const labels = {
-    en: {
-      tray: "Site sections",
-      portal: { short: "Portal", full: "Navigation portal" },
-      academic: { short: "Homepage", full: "Personal homepage" },
-      radar: { short: "Frontier", full: "Academic Frontier" },
-      jsps: { short: "JSPS", full: "JSPS KAKENHI" },
-    },
-    zh: {
-      tray: "功能主页",
-      portal: { short: "导航页", full: "导航页" },
-      academic: { short: "个人主页", full: "个人主页" },
-      radar: { short: "学术前沿", full: "学术前沿" },
-      jsps: { short: "JSPS", full: "JSPS 科研费" },
-    },
-    ja: {
-      tray: "機能ページ",
-      portal: { short: "ポータル", full: "ナビゲーション" },
-      academic: { short: "個人HP", full: "個人ホームページ" },
-      radar: { short: "学術前沿", full: "学術前沿" },
-      jsps: { short: "JSPS", full: "JSPS 科研費" },
-    },
-  }[resolveLocaleName() || "en"];
+    tray: t("portal.tray"),
+    portal: { short: t("portal.portal_short"), full: t("portal.portal_full") },
+    academic: { short: t("portal.academic_short"), full: t("portal.academic_full") },
+    radar: { short: t("portal.radar_short"), full: t("portal.radar_full") },
+    jsps: { short: t("portal.jsps_short"), full: t("portal.jsps_full") },
+  };
 
   const currentPath = decodeURIComponent(window.location.pathname);
   const localeName = resolveLocaleName();
@@ -2460,7 +2526,7 @@ function renderPortalReturnControl() {
       href: academicFrontierHomeHref(localeName),
       label: labels.radar.full,
       triggerLabel: labels.radar.short,
-      icon: '<span class="portal-chip-emoji" aria-hidden="true">🔭</span>',
+      icon: iconSprite("research"),
       active: currentPath.startsWith("/academic-frontier/"),
     },
     {
@@ -2685,7 +2751,11 @@ function initHeaderControlsPosition() {
 
 function applyTheme(themeName, persist = true) {
   const nextTheme = themeCatalog[themeName] && themeName !== "base" ? themeName : "tohoku";
-  document.documentElement.dataset.theme = nextTheme;
+  if (window.HomepagePlatform?.applyTheme) {
+    window.HomepagePlatform.applyTheme(nextTheme, { persist });
+  } else {
+    document.documentElement.dataset.theme = nextTheme;
+  }
   writeSessionValue(THEME_STORAGE_KEY, nextTheme);
 
   const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -2716,7 +2786,14 @@ function applyTheme(themeName, persist = true) {
 
 function applyLocale(localeName, persist = true) {
   const nextLocale = localeCatalog[localeName] ? localeName : "en";
-  document.documentElement.lang = localeCatalog[nextLocale].lang;
+  if (window.HomepageI18n?.applyDocumentLocale) {
+    window.HomepageI18n.applyDocumentLocale(nextLocale, { locales: localeCatalog });
+  } else {
+    document.documentElement.lang = localeCatalog[nextLocale].lang;
+  }
+  if (persist && window.HomepageI18n?.writeStoredLocale) {
+    window.HomepageI18n.writeStoredLocale(nextLocale, { locales: localeCatalog });
+  }
   writeSessionValue(LOCALE_STORAGE_KEY, nextLocale);
 
   els.localeChoices.forEach((button) => {
@@ -2874,7 +2951,6 @@ async function loadData() {
 
   return fallbackData;
 }
-
 function buildLink(url, label = "Open") {
   return `<a href="${escapeHtml(url)}" target="_blank" rel="noreferrer">${escapeHtml(label)}</a>`;
 }
@@ -3385,7 +3461,46 @@ function localizeNavigation() {
     button.setAttribute("title", t("controls.menu"));
   });
 
-  refreshTopnavOverflowHints();
+  syncHomepageShell();
+}
+
+function syncHomepageShell() {
+  renderPortalReturnControl();
+  if (!window.HomepageSharedShell) {
+    initTopnavMenus();
+    initTopnavOverflowHints();
+    initHeaderControlsPosition();
+    return;
+  }
+
+  window.HomepageSharedShell.sync({
+    controls: {
+      root: document,
+      controlsSelector: ".header-controls",
+      navSelector: ".topnav-shell, .topnav",
+      headerSelector: ".site-header",
+      breakpoint: 760,
+      desktopGap: 12,
+      mobileGap: 8,
+    },
+    topnav: {
+      root: document,
+      navSelector: ".topnav",
+      controlsSelector: ".header-controls",
+      navAriaLabel: t(currentPage() === "home" ? "controls.section_navigation" : "controls.page_navigation"),
+      menuLabel: t("controls.menu"),
+      showMenuLabel: t("controls.show_menu"),
+      hideMenuLabel: t("controls.hide_menu"),
+      toggleInnerHTML: `
+        <svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-menu"></use></svg>
+        <span class="topnav-toggle-label"></span>
+      `,
+      hintInnerHTML: `<svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-up"></use></svg>`,
+      transientBlurSelector: ".publication-metric-menu, .publication-head-actions, .award-link-actions",
+      breakpoint: 760,
+      mobileGap: 8,
+    },
+  });
 }
 
 function ensureTopnavOverflowShell(nav) {
@@ -3442,10 +3557,32 @@ function updateTopnavOverflowState(nav) {
   shell.classList.toggle("is-scrolled", overflowing && !atStart);
   shell.classList.toggle("is-at-end", !overflowing || atEnd);
   shell.classList.toggle("use-menu", useMenu);
+  reserveMobileControlsSpace(shell, useMenu);
 
   if (!useMenu) {
     setTopnavMenuExpanded(shell, false);
   }
+}
+
+function reserveMobileControlsSpace(shell, useMenu) {
+  if (!shell || !useMenu) {
+    if (shell) {
+      shell.style.marginLeft = "";
+    }
+    return;
+  }
+
+  const controls = els.headerControls || document.querySelector(".header-controls");
+  if (!controls) {
+    shell.style.marginLeft = "";
+    return;
+  }
+
+  shell.style.marginLeft = "";
+  const controlsRect = controls.getBoundingClientRect();
+  const shellRect = shell.getBoundingClientRect();
+  const overlap = controlsRect.right + 8 - shellRect.left;
+  shell.style.marginLeft = overlap > 0 ? `${Math.ceil(overlap)}px` : "";
 }
 
 function refreshTopnavOverflowHints() {
@@ -3719,7 +3856,6 @@ function applyStaticLocale() {
     setTextForSelectors([".section-head h2"], t("sections.documents_exports"));
   }
 }
-
 function renderHero(data) {
   const { person } = data;
   applyStaticLocale();
@@ -4549,7 +4685,7 @@ function awardLinkLabel(link = {}) {
     return t("actions.award_my_repo");
   }
   const localeName = resolveLocaleName();
-  const localizedLabel = normalizeString(link?.[`label_${localeName}`]) || normalizeString(link?.label_en);
+  const localizedLabel = normalizeString(link?.label) || normalizeString(link?.[`label_${localeName}`]) || normalizeString(link?.label_en);
   if (localizedLabel) {
     return localizedLabel;
   }
@@ -5644,9 +5780,7 @@ function renderCurrentPage() {
 async function init() {
   initLocaleControls();
   initThemeControls();
-  initTopnavMenus();
-  initTopnavOverflowHints();
-  initHeaderControlsPosition();
+  syncHomepageShell();
   initScrollTopButton();
   state.data = await loadData();
   dataReady = true;

@@ -1,0 +1,558 @@
+.project-direction-card {
+  padding: 22px;
+}
+
+.feature-card,
+.publication-card,
+.link-card,
+.document-card,
+.project-entry {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.72), rgba(var(--white-rgb), 0.44)),
+    var(--surface-strong);
+  border: 1px solid rgba(var(--ink-rgb), 0.08);
+}
+
+.link-card,
+.document-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+  gap: 10px;
+}
+
+.link-card .link-row,
+.document-card .link-row {
+  margin-top: auto;
+}
+
+.link-card-inline {
+  display: grid;
+  grid-template-columns: 126px minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.link-card-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.45;
+  min-width: 0;
+  min-height: 64px;
+}
+
+.link-card-title a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--teal-rgb), 0.34);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.link-card-title a:hover,
+.link-card-title a:focus-visible {
+  color: var(--teal);
+}
+
+.profile-link-card {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.8), rgba(var(--white-rgb), 0.62)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(var(--ink-rgb), 0.12);
+  --profile-card-hover-shadow: rgba(var(--ink-rgb), 0.08);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.profile-link-card:visited {
+  color: inherit;
+}
+
+body[data-page="profiles"] #link-grid {
+  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+  gap: 12px;
+}
+
+body[data-page="profiles"] .profile-link-card {
+  padding: 14px 15px;
+  gap: 0;
+  justify-content: center;
+}
+
+body[data-page="profiles"] .profile-link-card .link-card-inline {
+  grid-template-columns: 74px minmax(0, 1fr);
+  gap: 6px;
+  align-items: center;
+  min-height: 56px;
+}
+
+body[data-page="profiles"] .profile-link-card .link-card-title {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  font-size: 0.94rem;
+  line-height: 1.32;
+  color: var(--ink);
+  margin-left: -2px;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .link-card-inline {
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark {
+  justify-self: center;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-jglobal {
+  min-width: 164px;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-jglobal img {
+  max-width: 150px;
+  max-height: 44px;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-researchmap {
+  min-width: 148px;
+}
+
+body[data-page="profiles"] .profile-link-card.profile-link-card-wordmark .profile-mark-image.profile-mark-researchmap img {
+  max-width: 128px;
+  max-height: 24px;
+}
+
+body[data-page="profiles"] .link-card-title-google-scholar {
+  gap: 0.18rem;
+  margin-left: -4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+body[data-page="profiles"] .google-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  letter-spacing: 0;
+}
+
+body[data-page="profiles"] .google-blue {
+  color: #4285f4;
+}
+
+body[data-page="profiles"] .google-red {
+  color: #ea4335;
+}
+
+body[data-page="profiles"] .google-yellow {
+  color: #fbbc05;
+}
+
+body[data-page="profiles"] .google-green {
+  color: #34a853;
+}
+
+body[data-page="profiles"] .google-scholar-suffix {
+  color: #5f6368;
+  font-weight: 500;
+}
+
+body[data-page="profiles"] .profile-link-card:hover,
+body[data-page="profiles"] .profile-link-card:focus-within {
+  background: var(--profile-card-hover-bg);
+  border-color: var(--profile-card-hover-border);
+  box-shadow:
+    0 14px 24px var(--profile-card-hover-shadow),
+    0 0 0 0.5px rgba(var(--white-rgb), 0.28);
+}
+
+.profile-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  height: 64px;
+  padding: 0 14px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--ink-soft);
+  box-shadow: none;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(var(--white-rgb), 0.96), rgba(var(--white-rgb), 0.88));
+  --profile-mark-hover-border: rgba(var(--teal-rgb), 0.16);
+  --profile-mark-hover-shadow: rgba(var(--teal-rgb), 0.08);
+}
+
+.profile-mark-image {
+  min-width: 104px;
+  height: 64px;
+  padding: 8px 14px;
+  text-transform: none;
+}
+
+.profile-mark-image img {
+  display: block;
+  width: auto;
+  max-width: 88px;
+  max-height: 40px;
+  object-fit: contain;
+}
+
+.profile-mark-image.profile-mark-tohoku {
+  min-width: 104px;
+  height: 64px;
+  padding: 8px 12px;
+}
+
+.profile-mark-image.profile-mark-tohoku img {
+  width: auto;
+  height: 52px;
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.profile-mark-scholar {
+  color: #2b66c7;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(236, 244, 255, 0.72), rgba(225, 237, 255, 0.54));
+  --profile-mark-hover-border: rgba(43, 102, 199, 0.16);
+  --profile-mark-hover-shadow: rgba(43, 102, 199, 0.08);
+}
+
+.profile-mark-dblp {
+  color: #1f4c9a;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(236, 244, 255, 0.72), rgba(228, 238, 255, 0.54));
+  --profile-mark-hover-border: rgba(31, 76, 154, 0.16);
+  --profile-mark-hover-shadow: rgba(31, 76, 154, 0.08);
+}
+
+.profile-mark-orcid {
+  color: #87b530;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(247, 252, 236, 0.72), rgba(239, 248, 224, 0.56));
+  --profile-mark-hover-border: rgba(135, 181, 48, 0.18);
+  --profile-mark-hover-shadow: rgba(135, 181, 48, 0.08);
+}
+
+.profile-mark-researchgate {
+  color: #00a08e;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(236, 252, 249, 0.72), rgba(225, 247, 242, 0.54));
+  --profile-mark-hover-border: rgba(0, 160, 142, 0.16);
+  --profile-mark-hover-shadow: rgba(0, 160, 142, 0.08);
+}
+
+.profile-mark-researchmap {
+  color: #2b7cb8;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(238, 247, 255, 0.72), rgba(228, 241, 255, 0.54));
+  --profile-mark-hover-border: rgba(43, 124, 184, 0.16);
+  --profile-mark-hover-shadow: rgba(43, 124, 184, 0.08);
+}
+
+.profile-mark-jglobal {
+  color: #2d63ba;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(239, 245, 255, 0.72), rgba(229, 239, 255, 0.54));
+  --profile-mark-hover-border: rgba(45, 99, 186, 0.18);
+  --profile-mark-hover-shadow: rgba(45, 99, 186, 0.08);
+}
+
+.profile-mark-image.profile-mark-jglobal {
+  min-width: 104px;
+  height: 64px;
+  padding: 8px 12px;
+}
+
+.profile-mark-image.profile-mark-jglobal img {
+  max-width: 92px;
+  max-height: 36px;
+}
+
+.profile-mark-image.profile-mark-hpc img {
+  max-width: 52px;
+  max-height: 46px;
+}
+
+.profile-mark-image.profile-mark-scholar img {
+  max-width: 48px;
+  max-height: 48px;
+}
+
+.profile-mark-image.profile-mark-dblp img,
+.profile-mark-image.profile-mark-orcid img,
+.profile-mark-image.profile-mark-researchgate img,
+.profile-mark-image.profile-mark-github img {
+  max-width: 46px;
+  max-height: 46px;
+}
+
+.profile-mark-image.profile-mark-toyama img {
+  max-width: 72px;
+  max-height: 42px;
+}
+
+.profile-mark-image.profile-mark-researchmap {
+  min-width: 126px;
+  height: 64px;
+  padding: 8px 12px;
+}
+
+.profile-mark-image.profile-mark-researchmap img {
+  max-width: 108px;
+  max-height: 26px;
+}
+
+.profile-mark-github {
+  color: #24292f;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(246, 247, 249, 0.72), rgba(236, 239, 243, 0.56));
+  --profile-mark-hover-border: rgba(36, 41, 47, 0.16);
+  --profile-mark-hover-shadow: rgba(36, 41, 47, 0.08);
+}
+
+.profile-mark-tohoku,
+.profile-mark-hpc {
+  color: #4a2698;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(246, 241, 255, 0.72), rgba(237, 229, 255, 0.56));
+  --profile-mark-hover-border: rgba(74, 38, 152, 0.16);
+  --profile-mark-hover-shadow: rgba(74, 38, 152, 0.08);
+}
+
+.profile-mark-toyama {
+  color: #466d7f;
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(239, 247, 251, 0.72), rgba(230, 241, 246, 0.56));
+  --profile-mark-hover-border: rgba(70, 109, 127, 0.16);
+  --profile-mark-hover-shadow: rgba(70, 109, 127, 0.08);
+}
+
+@media (min-width: 821px) {
+  body[data-page="profiles"] .section-head {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+  }
+
+  body[data-page="profiles"] #link-search {
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
+  }
+}
+
+.profile-mark-neutral {
+  color: var(--clay);
+  --profile-mark-hover-bg: linear-gradient(180deg, rgba(249, 245, 241, 0.72), rgba(242, 236, 230, 0.56));
+  --profile-mark-hover-border: rgba(var(--clay-rgb), 0.16);
+  --profile-mark-hover-shadow: rgba(var(--clay-rgb), 0.08);
+}
+
+body[data-page="profiles"] .profile-mark {
+  justify-self: center;
+  min-width: 72px;
+  height: 56px;
+  padding: 0 8px;
+  border-radius: 18px;
+}
+
+body[data-page="profiles"] .profile-mark-image {
+  min-width: 92px;
+  height: 56px;
+  padding: 6px 10px;
+}
+
+body[data-page="profiles"] .profile-mark-image img {
+  max-width: 76px;
+  max-height: 34px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-tohoku {
+  min-width: 92px;
+  height: 56px;
+  padding: 5px 8px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-tohoku img {
+  height: 42px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-badge {
+  min-width: 64px;
+  width: 64px;
+  height: 56px;
+  padding: 0;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-badge img {
+  width: 64px;
+  height: 56px;
+  max-width: none;
+  max-height: none;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-jglobal {
+  min-width: 92px;
+  height: 56px;
+  padding: 6px 10px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-jglobal img {
+  max-width: 84px;
+  max-height: 30px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-hpc img {
+  max-width: 46px;
+  max-height: 40px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-scholar img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-dblp img,
+body[data-page="profiles"] .profile-mark-image.profile-mark-orcid img,
+body[data-page="profiles"] .profile-mark-image.profile-mark-researchgate img,
+body[data-page="profiles"] .profile-mark-image.profile-mark-github img {
+  max-width: 40px;
+  max-height: 40px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-toyama img {
+  max-width: 64px;
+  max-height: 36px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap {
+  min-width: 104px;
+  height: 56px;
+  padding: 6px 10px;
+}
+
+body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
+  max-width: 92px;
+  max-height: 22px;
+}
+
+.profile-link-card.link-card-tone-scholar {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(236, 244, 255, 0.72), rgba(225, 237, 255, 0.56)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(43, 102, 199, 0.18);
+  --profile-card-hover-shadow: rgba(43, 102, 199, 0.09);
+}
+
+.profile-link-card.link-card-tone-dblp {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(236, 244, 255, 0.72), rgba(228, 238, 255, 0.56)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(31, 76, 154, 0.18);
+  --profile-card-hover-shadow: rgba(31, 76, 154, 0.09);
+}
+
+.profile-link-card.link-card-tone-orcid {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(247, 252, 236, 0.72), rgba(239, 248, 224, 0.58)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(135, 181, 48, 0.18);
+  --profile-card-hover-shadow: rgba(135, 181, 48, 0.09);
+}
+
+.profile-link-card.link-card-tone-researchgate {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(236, 252, 249, 0.72), rgba(225, 247, 242, 0.56)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(0, 160, 142, 0.18);
+  --profile-card-hover-shadow: rgba(0, 160, 142, 0.09);
+}
+
+.profile-link-card.link-card-tone-researchmap {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(238, 247, 255, 0.72), rgba(228, 241, 255, 0.56)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(43, 124, 184, 0.18);
+  --profile-card-hover-shadow: rgba(43, 124, 184, 0.09);
+}
+
+.profile-link-card.link-card-tone-jglobal {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(239, 245, 255, 0.72), rgba(229, 239, 255, 0.56)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(45, 99, 186, 0.18);
+  --profile-card-hover-shadow: rgba(45, 99, 186, 0.09);
+}
+
+.profile-link-card.link-card-tone-github {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(246, 247, 249, 0.76), rgba(236, 239, 243, 0.6)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(36, 41, 47, 0.18);
+  --profile-card-hover-shadow: rgba(36, 41, 47, 0.09);
+}
+
+.profile-link-card.link-card-tone-tohoku,
+.profile-link-card.link-card-tone-hpc {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(246, 241, 255, 0.78), rgba(237, 229, 255, 0.6)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(74, 38, 152, 0.18);
+  --profile-card-hover-shadow: rgba(74, 38, 152, 0.1);
+}
+
+.profile-link-card.link-card-tone-toyama {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(239, 247, 251, 0.76), rgba(230, 241, 246, 0.58)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(70, 109, 127, 0.18);
+  --profile-card-hover-shadow: rgba(70, 109, 127, 0.09);
+}
+
+.profile-link-card.link-card-tone-neutral {
+  --profile-card-hover-bg:
+    linear-gradient(180deg, rgba(249, 245, 241, 0.76), rgba(242, 236, 230, 0.58)),
+    var(--surface-strong);
+  --profile-card-hover-border: rgba(var(--clay-rgb), 0.18);
+  --profile-card-hover-shadow: rgba(var(--clay-rgb), 0.09);
+}
+
+.feature-slab {
+  padding: 22px;
+}
+
+.highlight-primary {
+  background:
+    radial-gradient(circle at top left, rgba(var(--teal-rgb), 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.82), rgba(var(--white-rgb), 0.52)),
+    var(--surface-strong);
+}
+
+.highlight-secondary {
+  background:
+    radial-gradient(circle at bottom right, rgba(var(--gold-rgb), 0.1), transparent 36%),
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.78), rgba(var(--white-rgb), 0.5)),
+    var(--surface-strong);
+}
+
+.feature-card h3,
