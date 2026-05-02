@@ -219,6 +219,19 @@ function ensureHeaderControlsAnchor(controls) {
   return anchor;
 }
 
+function controlsUseViewportPositioning(controls) {
+  return controls && window.getComputedStyle(controls).position === "fixed";
+}
+
+function clearHeaderControlsOffset(controls, nav) {
+  controls?.style.removeProperty("--header-controls-top");
+  controls?.style.removeProperty("--header-controls-left");
+  controls?.style.removeProperty("--header-controls-shift");
+  if (nav) {
+    nav.style.marginLeft = "";
+  }
+}
+
 function updateHeaderControlsPosition() {
   const controls = els.headerControls || document.querySelector(".header-controls");
   const nav = document.querySelector(".topnav-shell") || document.querySelector(".topnav");
@@ -226,7 +239,13 @@ function updateHeaderControlsPosition() {
   if (!controls || !nav || !header) {
     return;
   }
- 
+
+  ensureHeaderControlsAnchor(controls);
+  if (!controlsUseViewportPositioning(controls)) {
+    clearHeaderControlsOffset(controls, nav);
+    return;
+  }
+
   const navRect = nav.getBoundingClientRect();
   const headerRect = header.getBoundingClientRect();
   const controlsRect = controls.getBoundingClientRect();

@@ -257,15 +257,16 @@ a {
 }
 
 .header-controls {
-  position: fixed;
-  top: var(--header-controls-top, calc(env(safe-area-inset-top, 0px) + 18px));
-  left: var(--header-controls-left, calc(env(safe-area-inset-left, 0px) + 18px));
-  transform: translateX(calc(-1 * var(--header-controls-shift, 0px)));
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
   z-index: 24;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin: 0;
+  flex: 0 0 auto;
+  margin: 0 12px 0 0;
   justify-self: start;
 }
 
@@ -283,7 +284,9 @@ a {
 
 .topnav,
 .topnav-shell {
+  flex: 1 1 auto;
   grid-column: auto;
+  min-width: 0;
 }
 
 .control-switcher {

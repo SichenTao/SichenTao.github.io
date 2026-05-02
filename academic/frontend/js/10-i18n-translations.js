@@ -40,7 +40,7 @@ const translations = {
     },
     nav: {
       home: "Home",
-      profiles: "Profiles",
+      profiles: "External Profiles",
       publications: "Publications",
       awards: "Awards",
       projects: "Projects",
@@ -293,7 +293,7 @@ const translations = {
     },
     nav: {
       home: "ホーム",
-      profiles: "プロフィール",
+      profiles: "外部プロフィール",
       publications: "論文",
       awards: "受賞",
       projects: "プロジェクト",
@@ -546,7 +546,7 @@ const translations = {
     },
     nav: {
       home: "主页",
-      profiles: "研究者档案",
+      profiles: "外部主页",
       publications: "论文",
       awards: "获奖",
       projects: "项目",

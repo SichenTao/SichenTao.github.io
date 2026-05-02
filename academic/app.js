@@ -192,7 +192,7 @@ const translations = {
     },
     nav: {
       home: "Home",
-      profiles: "Profiles",
+      profiles: "External Profiles",
       publications: "Publications",
       awards: "Awards",
       projects: "Projects",
@@ -445,7 +445,7 @@ const translations = {
     },
     nav: {
       home: "ホーム",
-      profiles: "プロフィール",
+      profiles: "外部プロフィール",
       publications: "論文",
       awards: "受賞",
       projects: "プロジェクト",
@@ -698,7 +698,7 @@ const translations = {
     },
     nav: {
       home: "主页",
-      profiles: "研究者档案",
+      profiles: "外部主页",
       publications: "论文",
       awards: "获奖",
       projects: "项目",
@@ -2704,6 +2704,19 @@ function ensureHeaderControlsAnchor(controls) {
   return anchor;
 }
 
+function controlsUseViewportPositioning(controls) {
+  return controls && window.getComputedStyle(controls).position === "fixed";
+}
+
+function clearHeaderControlsOffset(controls, nav) {
+  controls?.style.removeProperty("--header-controls-top");
+  controls?.style.removeProperty("--header-controls-left");
+  controls?.style.removeProperty("--header-controls-shift");
+  if (nav) {
+    nav.style.marginLeft = "";
+  }
+}
+
 function updateHeaderControlsPosition() {
   const controls = els.headerControls || document.querySelector(".header-controls");
   const nav = document.querySelector(".topnav-shell") || document.querySelector(".topnav");
@@ -2711,7 +2724,13 @@ function updateHeaderControlsPosition() {
   if (!controls || !nav || !header) {
     return;
   }
- 
+
+  ensureHeaderControlsAnchor(controls);
+  if (!controlsUseViewportPositioning(controls)) {
+    clearHeaderControlsOffset(controls, nav);
+    return;
+  }
+
   const navRect = nav.getBoundingClientRect();
   const headerRect = header.getBoundingClientRect();
   const controlsRect = controls.getBoundingClientRect();
@@ -3438,8 +3457,19 @@ function localizeNavigation() {
     "./timeline.html": "timeline",
     "./research.html": "research",
   };
+  const navOrder = [
+    "./index.html",
+    "./timeline.html",
+    "./publications.html",
+    "./awards.html",
+    "./projects.html",
+    "./service.html",
+    "./profiles.html",
+    "./research.html",
+  ];
 
   document.querySelectorAll(".topnav").forEach((nav) => {
+    reorderTopnavLinks(nav, navOrder);
     nav.setAttribute("aria-label", t(currentPage() === "home" ? "controls.section_navigation" : "controls.page_navigation"));
     nav.querySelectorAll("a").forEach((link) => {
       const href = link.getAttribute("href");
@@ -3463,6 +3493,20 @@ function localizeNavigation() {
   });
 
   syncHomepageShell();
+}
+
+function reorderTopnavLinks(nav, order) {
+  const links = new Map();
+  nav.querySelectorAll("a").forEach((link) => {
+    links.set(link.getAttribute("href"), link);
+  });
+
+  order.forEach((href) => {
+    const link = links.get(href);
+    if (link) {
+      nav.appendChild(link);
+    }
+  });
 }
 
 function syncHomepageShell() {
@@ -3574,7 +3618,7 @@ function reserveMobileControlsSpace(shell, useMenu) {
   }
 
   const controls = els.headerControls || document.querySelector(".header-controls");
-  if (!controls) {
+  if (!controls || !controlsUseViewportPositioning(controls)) {
     shell.style.marginLeft = "";
     return;
   }

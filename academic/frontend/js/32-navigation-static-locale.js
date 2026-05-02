@@ -9,8 +9,19 @@ function localizeNavigation() {
     "./timeline.html": "timeline",
     "./research.html": "research",
   };
+  const navOrder = [
+    "./index.html",
+    "./timeline.html",
+    "./publications.html",
+    "./awards.html",
+    "./projects.html",
+    "./service.html",
+    "./profiles.html",
+    "./research.html",
+  ];
 
   document.querySelectorAll(".topnav").forEach((nav) => {
+    reorderTopnavLinks(nav, navOrder);
     nav.setAttribute("aria-label", t(currentPage() === "home" ? "controls.section_navigation" : "controls.page_navigation"));
     nav.querySelectorAll("a").forEach((link) => {
       const href = link.getAttribute("href");
@@ -34,6 +45,20 @@ function localizeNavigation() {
   });
 
   syncHomepageShell();
+}
+
+function reorderTopnavLinks(nav, order) {
+  const links = new Map();
+  nav.querySelectorAll("a").forEach((link) => {
+    links.set(link.getAttribute("href"), link);
+  });
+
+  order.forEach((href) => {
+    const link = links.get(href);
+    if (link) {
+      nav.appendChild(link);
+    }
+  });
 }
 
 function syncHomepageShell() {
@@ -145,7 +170,7 @@ function reserveMobileControlsSpace(shell, useMenu) {
   }
 
   const controls = els.headerControls || document.querySelector(".header-controls");
-  if (!controls) {
+  if (!controls || !controlsUseViewportPositioning(controls)) {
     shell.style.marginLeft = "";
     return;
   }
