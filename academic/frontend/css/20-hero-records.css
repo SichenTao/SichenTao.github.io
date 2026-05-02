@@ -621,7 +621,7 @@ body[data-page="home"] .hero-title-row {
 }
 
 body[data-page="home"] .hero h1 {
-  font-size: clamp(4.25rem, 5.2vw, 5.8rem);
+  font-size: clamp(3.3rem, 4.25vw, 4.75rem);
   line-height: 0.94;
 }
 
@@ -710,7 +710,7 @@ body[data-page="home"] .footer-shell {
   }
 
   body[data-page="home"] .hero h1 {
-    font-size: 6.2rem;
+    font-size: 5.05rem;
   }
 
   body[data-page="home"] .institution-switcher,

@@ -8,3 +8,4 @@
 60-publication-filters-metrics.css
 70-footer.css
 90-responsive.css
+95-portal-thin-header.css

@@ -213,7 +213,7 @@ const translations = {
       jsps_full: "JSPS KAKENHI",
     },
     home: {
-      eyebrow: "High Performance Computing · Artificial Intelligence · Optimization",
+      eyebrow: "Artificial Intelligence · High-Performance Computing",
       current_appointment: "Current appointment",
       contact_identity: "Contact & Identity",
       contact: "Contact",
@@ -466,7 +466,7 @@ const translations = {
       jsps_full: "JSPS 科研費",
     },
     home: {
-      eyebrow: "高性能計算・人工知能・最適化",
+      eyebrow: "人工知能・高性能計算",
       current_appointment: "現職",
       contact_identity: "連絡先・基本情報",
       contact: "連絡先",
@@ -719,7 +719,7 @@ const translations = {
       jsps_full: "JSPS 科研费",
     },
     home: {
-      eyebrow: "高性能计算 · 人工智能 · 优化",
+      eyebrow: "人工智能 · 高性能计算",
       current_appointment: "现职",
       contact_identity: "联系与基本信息",
       contact: "联系",

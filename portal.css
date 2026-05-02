@@ -383,8 +383,8 @@ body[data-lang="ja"] .portal-card-name {
   margin: 0;
   font-weight: 720;
   letter-spacing: 0;
-  font-size: clamp(4.2rem, 8.4vw, 9rem);
-  line-height: 0.9;
+  font-size: clamp(3.1rem, 5.15vw, 5.85rem);
+  line-height: 0.94;
 }
 
 .section-head h2 {
@@ -704,7 +704,7 @@ body[data-lang="ja"] .portal-card-name {
   }
 
   .portal-hero h1 {
-    font-size: 4.3rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -725,7 +725,7 @@ body[data-lang="ja"] .portal-card-name {
   }
 
   .portal-hero h1 {
-    font-size: 3.2rem;
+    font-size: 2.58rem;
   }
 
   .section-head h2 {
@@ -792,7 +792,7 @@ body[data-lang="ja"] .portal-card-name {
   }
 
   .portal-hero h1 {
-    font-size: 2.55rem;
+    font-size: 2.18rem;
   }
 
   .eyebrow {
