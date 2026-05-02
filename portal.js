@@ -105,7 +105,6 @@ const I18N = {
     mega: {
       portal: {
         eyebrow: "Portal",
-        title: "Move through the research site",
         primary: [
           { label: "Research portal", href: "/" },
           { label: "Enter workspaces", href: "#portalWorkspaces" },
@@ -130,7 +129,6 @@ const I18N = {
       },
       academic: {
         eyebrow: "Personal homepage",
-        title: "Profile, publications, and records",
         primary: [
           { label: "Overview", href: "/academic/" },
           { label: "Publications", href: "/academic/publications.html" },
@@ -157,7 +155,6 @@ const I18N = {
       },
       frontier: {
         eyebrow: "Academic Frontier",
-        title: "Research intelligence workspace",
         primary: [
           { label: "Overview", href: "/academic-frontier/" },
           { label: "Paper archive", href: "/academic-frontier/papers.html" },
@@ -182,7 +179,6 @@ const I18N = {
       },
       jsps: {
         eyebrow: "JSPS KAKENHI",
-        title: "Grant work and official evidence",
         primary: [
           { label: "Workspace home", href: "/jsps-kakenhi/" },
           { label: "Calls", href: "/jsps-kakenhi/calls.html" },
@@ -270,7 +266,6 @@ const I18N = {
     mega: {
       portal: {
         eyebrow: "导航页",
-        title: "进入整套研究主页",
         primary: [
           { label: "研究导航页", href: "/" },
           { label: "进入工作区", href: "#portalWorkspaces" },
@@ -295,7 +290,6 @@ const I18N = {
       },
       academic: {
         eyebrow: "个人主页",
-        title: "个人资料、论文与学术记录",
         primary: [
           { label: "概览", href: "/academic/" },
           { label: "论文", href: "/academic/publications.html" },
@@ -322,7 +316,6 @@ const I18N = {
       },
       frontier: {
         eyebrow: "学术前沿",
-        title: "论文、信号与团队追踪",
         primary: [
           { label: "动态概览", href: "/academic-frontier/" },
           { label: "论文库", href: "/academic-frontier/papers.html" },
@@ -347,7 +340,6 @@ const I18N = {
       },
       jsps: {
         eyebrow: "JSPS 科研费",
-        title: "科研费工作与官方证据",
         primary: [
           { label: "工作台首页", href: "/jsps-kakenhi/" },
           { label: "公募信息", href: "/jsps-kakenhi/calls.html" },
@@ -435,7 +427,6 @@ const I18N = {
     mega: {
       portal: {
         eyebrow: "ポータル",
-        title: "研究サイト全体を移動",
         primary: [
           { label: "研究ポータル", href: "/" },
           { label: "ワークスペースへ", href: "#portalWorkspaces" },
@@ -460,7 +451,6 @@ const I18N = {
       },
       academic: {
         eyebrow: "個人ホームページ",
-        title: "プロフィール、論文、研究記録",
         primary: [
           { label: "概要", href: "/academic/" },
           { label: "論文", href: "/academic/publications.html" },
@@ -487,7 +477,6 @@ const I18N = {
       },
       frontier: {
         eyebrow: "学術フロンティア",
-        title: "論文、シグナル、研究チーム",
         primary: [
           { label: "概要", href: "/academic-frontier/" },
           { label: "論文庫", href: "/academic-frontier/papers.html" },
@@ -512,7 +501,6 @@ const I18N = {
       },
       jsps: {
         eyebrow: "JSPS 科研費",
-        title: "科研費実務と公式エビデンス",
         primary: [
           { label: "ワークスペース", href: "/jsps-kakenhi/" },
           { label: "公募", href: "/jsps-kakenhi/calls.html" },
@@ -739,7 +727,6 @@ function renderMegaMenu(key = "portal") {
     <div class="portal-mega-inner">
       <div class="portal-mega-primary">
         <p class="portal-mega-kicker">${escapeHtml(menu.eyebrow)}</p>
-        <h2 class="portal-mega-title">${escapeHtml(menu.title)}</h2>
         <div class="portal-mega-primary-list">
           ${(menu.primary || [])
             .map((item) => `<a class="portal-mega-primary-link" href="${portalHref(item.href)}">${escapeHtml(item.label)}</a>`)

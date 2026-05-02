@@ -457,7 +457,7 @@ body[data-lang="ja"] .eyebrow {
   position: fixed;
   inset: 44px 0 auto;
   z-index: 32;
-  min-height: clamp(290px, 34vh, 380px);
+  min-height: clamp(260px, 30vh, 340px);
   padding: clamp(28px, 4.2vw, 52px) 0 clamp(34px, 4.8vw, 58px);
   color: var(--ink);
   background: rgba(251, 251, 253, 0.94);
@@ -489,14 +489,6 @@ body[data-lang="ja"] .eyebrow {
   font-size: 0.72rem;
   font-weight: 600;
   line-height: 1.2;
-}
-
-.portal-mega-title {
-  margin: 0 0 15px;
-  font-family: var(--font-ui);
-  font-size: clamp(1.18rem, 1.55vw, 1.46rem);
-  font-weight: 720;
-  line-height: 1.18;
 }
 
 .portal-mega-primary-list,
