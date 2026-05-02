@@ -184,10 +184,8 @@ function renderRecordNav(data) {
     .map(
       (card) => `
         <a class="record-card" href="${escapeHtml(card.href)}">
-          <span class="record-head">
-            ${iconBadge(card.icon, card.tone)}
-            <span class="stack-label">${escapeHtml(card.label)}</span>
-          </span>
+          <span class="record-icon">${iconBadge(card.icon, card.tone)}</span>
+          <span class="stack-label">${escapeHtml(card.label)}</span>
           <span class="record-value">${escapeHtml(card.value)}</span>
           <span class="record-unit">${escapeHtml(card.unit)}</span>
           <span class="record-meta">${escapeHtml(card.meta)}</span>
@@ -202,9 +200,7 @@ function renderModuleNav(data) {
     return;
   }
 
-  const documentTags = [...new Set(data.documents.map((item) => item.tag).filter(Boolean))];
   const timelineCategories = [...new Set(data.timeline.map((item) => item.category).filter(Boolean))];
-  const dossierLabel = resolveLocaleName() === "ja" ? "ドシエ" : resolveLocaleName() === "zh" ? "档案" : "Dossier";
 
   const cards = [
     {
@@ -235,22 +231,6 @@ function renderModuleNav(data) {
             : "Methods · Domains · Collaborators",
       meta: `${countLabel(data.person.research_methods.length, { enOne: "method", enOther: "methods", ja: "手法", zh: "种方法" })} · ${countLabel(data.person.application_domains.length, { enOne: "domain", enOther: "domains", ja: "応用分野", zh: "个领域" })} · ${countLabel(data.top_collaborators.length, { enOne: "mapped collaborator", enOther: "mapped collaborators", ja: "名の主要共同研究者", zh: "位主要合作者" })}`,
       href: "./research.html",
-    },
-    {
-      icon: "sources",
-      tone: "gold",
-      label: t("nav.sources"),
-      title: t("sections.notes_links"),
-      meta: `${countLabel(data.source_notes.length, { enOne: "source note", enOther: "source notes", ja: "件の注記", zh: "条来源说明" })} · ${countLabel(data.source_links.length, { enOne: "reference link", enOther: "reference links", ja: "件の参照リンク", zh: "条参考链接" })}`,
-      href: "./sources.html",
-    },
-    {
-      icon: "archive",
-      tone: "clay",
-      label: t("nav.archive"),
-      title: `CV · ${dossierLabel} · ${t("sections.files")}`,
-      meta: `${countLabel(data.documents.length, { enOne: "archived file", enOther: "archived files", ja: "件の保存ファイル", zh: "个归档文件" })} · ${documentTags.map((item) => translateTag(item)).join(" · ")}`,
-      href: "./archive.html",
     },
   ];
 
@@ -737,4 +717,3 @@ function timelineOverallPeriod(items = []) {
   }
   return `${start} ${t("labels.timeline_to")} ${end}`;
 }
-

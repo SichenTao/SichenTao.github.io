@@ -214,19 +214,3 @@
   font-size: 0.88rem;
   font-weight: 600;
 }
-
-body[data-page="home"] .homepage-directory {
-  background:
-    linear-gradient(180deg, rgba(var(--white-rgb), 0.76), rgba(var(--white-rgb), 0.46)),
-    var(--surface);
-}
-
-body[data-page="home"] .homepage-directory .section-head {
-  justify-content: center;
-  text-align: center;
-}
-
-body[data-page="home"] .homepage-directory .section-head-main {
-  grid-template-columns: 1fr;
-  justify-items: center;
-}

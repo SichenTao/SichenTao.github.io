@@ -8,8 +8,6 @@ function localizeNavigation() {
     "./service.html": "service",
     "./timeline.html": "timeline",
     "./research.html": "research",
-    "./sources.html": "sources",
-    "./archive.html": "archive",
   };
 
   document.querySelectorAll(".topnav").forEach((nav) => {
@@ -313,7 +311,6 @@ function applyStaticLocale() {
     setHeroKeylines(t("home.eyebrow"));
     setTextForSelectors([".hero-identity .eyebrow"], t("home.current_appointment"));
     setTextForSelectors([".hero-profile-card h3"], t("home.contact_identity"));
-    setTextForSelectors([".homepage-directory .section-head h2"], t("home.pages"));
     setTextForSelectors([".profile-links-section .section-head h2"], t("home.profile_links"));
     setTextForSelectors([".profile-links-section .section-head .eyebrow"], t("home.profile_links_kicker"));
     setAttributeForSelectors(["#hero-keylines"], "aria-label", t("controls.research_focus"));

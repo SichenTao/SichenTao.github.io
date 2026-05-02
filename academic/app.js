@@ -219,7 +219,6 @@ const translations = {
       contact_identity: "Contact & Identity",
       contact: "Contact",
       identity: "Identity",
-      pages: "Explore the academic record",
       profile_links: "Profile links",
       profile_links_kicker: "External profiles",
       resources: "Resources",
@@ -473,7 +472,6 @@ const translations = {
       contact_identity: "連絡先・基本情報",
       contact: "連絡先",
       identity: "基本情報",
-      pages: "研究記録を開く",
       profile_links: "プロフィールリンク",
       profile_links_kicker: "外部プロフィール",
       resources: "資料",
@@ -727,7 +725,6 @@ const translations = {
       contact_identity: "联系与基本信息",
       contact: "联系",
       identity: "基本信息",
-      pages: "浏览学术档案",
       profile_links: "外部主页链接",
       profile_links_kicker: "外部资料",
       resources: "资料",
@@ -3440,8 +3437,6 @@ function localizeNavigation() {
     "./service.html": "service",
     "./timeline.html": "timeline",
     "./research.html": "research",
-    "./sources.html": "sources",
-    "./archive.html": "archive",
   };
 
   document.querySelectorAll(".topnav").forEach((nav) => {
@@ -3745,7 +3740,6 @@ function applyStaticLocale() {
     setHeroKeylines(t("home.eyebrow"));
     setTextForSelectors([".hero-identity .eyebrow"], t("home.current_appointment"));
     setTextForSelectors([".hero-profile-card h3"], t("home.contact_identity"));
-    setTextForSelectors([".homepage-directory .section-head h2"], t("home.pages"));
     setTextForSelectors([".profile-links-section .section-head h2"], t("home.profile_links"));
     setTextForSelectors([".profile-links-section .section-head .eyebrow"], t("home.profile_links_kicker"));
     setAttributeForSelectors(["#hero-keylines"], "aria-label", t("controls.research_focus"));
@@ -4050,10 +4044,8 @@ function renderRecordNav(data) {
     .map(
       (card) => `
         <a class="record-card" href="${escapeHtml(card.href)}">
-          <span class="record-head">
-            ${iconBadge(card.icon, card.tone)}
-            <span class="stack-label">${escapeHtml(card.label)}</span>
-          </span>
+          <span class="record-icon">${iconBadge(card.icon, card.tone)}</span>
+          <span class="stack-label">${escapeHtml(card.label)}</span>
           <span class="record-value">${escapeHtml(card.value)}</span>
           <span class="record-unit">${escapeHtml(card.unit)}</span>
           <span class="record-meta">${escapeHtml(card.meta)}</span>
@@ -4068,9 +4060,7 @@ function renderModuleNav(data) {
     return;
   }
 
-  const documentTags = [...new Set(data.documents.map((item) => item.tag).filter(Boolean))];
   const timelineCategories = [...new Set(data.timeline.map((item) => item.category).filter(Boolean))];
-  const dossierLabel = resolveLocaleName() === "ja" ? "ドシエ" : resolveLocaleName() === "zh" ? "档案" : "Dossier";
 
   const cards = [
     {
@@ -4101,22 +4091,6 @@ function renderModuleNav(data) {
             : "Methods · Domains · Collaborators",
       meta: `${countLabel(data.person.research_methods.length, { enOne: "method", enOther: "methods", ja: "手法", zh: "种方法" })} · ${countLabel(data.person.application_domains.length, { enOne: "domain", enOther: "domains", ja: "応用分野", zh: "个领域" })} · ${countLabel(data.top_collaborators.length, { enOne: "mapped collaborator", enOther: "mapped collaborators", ja: "名の主要共同研究者", zh: "位主要合作者" })}`,
       href: "./research.html",
-    },
-    {
-      icon: "sources",
-      tone: "gold",
-      label: t("nav.sources"),
-      title: t("sections.notes_links"),
-      meta: `${countLabel(data.source_notes.length, { enOne: "source note", enOther: "source notes", ja: "件の注記", zh: "条来源说明" })} · ${countLabel(data.source_links.length, { enOne: "reference link", enOther: "reference links", ja: "件の参照リンク", zh: "条参考链接" })}`,
-      href: "./sources.html",
-    },
-    {
-      icon: "archive",
-      tone: "clay",
-      label: t("nav.archive"),
-      title: `CV · ${dossierLabel} · ${t("sections.files")}`,
-      meta: `${countLabel(data.documents.length, { enOne: "archived file", enOther: "archived files", ja: "件の保存ファイル", zh: "个归档文件" })} · ${documentTags.map((item) => translateTag(item)).join(" · ")}`,
-      href: "./archive.html",
     },
   ];
 
@@ -4603,7 +4577,6 @@ function timelineOverallPeriod(items = []) {
   }
   return `${start} ${t("labels.timeline_to")} ${end}`;
 }
-
 function renderDetailMetrics(items) {
   if (!els.detailMetrics) {
     return;
