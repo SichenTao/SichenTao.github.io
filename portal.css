@@ -474,11 +474,11 @@ body[data-lang="ja"] .eyebrow {
 }
 
 .portal-mega-inner {
-  width: min(760px, calc(100% - 32px));
+  width: min(920px, calc(100% - 32px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(220px, 1.06fr) repeat(2, minmax(160px, 0.7fr));
-  gap: clamp(34px, 5vw, 74px);
+  grid-template-columns: minmax(280px, 1.12fr) repeat(2, minmax(170px, 0.7fr));
+  gap: clamp(34px, 5vw, 82px);
   align-items: start;
 }
 
@@ -494,7 +494,7 @@ body[data-lang="ja"] .eyebrow {
 .portal-mega-title {
   margin: 0 0 15px;
   font-family: var(--font-ui);
-  font-size: clamp(1.34rem, 2vw, 1.7rem);
+  font-size: clamp(1.18rem, 1.55vw, 1.46rem);
   font-weight: 720;
   line-height: 1.18;
 }
@@ -519,9 +519,9 @@ body[data-lang="ja"] .eyebrow {
 
 .portal-mega-primary-link {
   font-family: var(--font-ui);
-  font-size: clamp(1.52rem, 2.35vw, 2.1rem);
+  font-size: clamp(1.28rem, 1.78vw, 1.68rem);
   font-weight: 720;
-  line-height: 1.12;
+  line-height: 1.15;
 }
 
 .portal-mega-link {
