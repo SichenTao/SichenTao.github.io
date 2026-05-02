@@ -101,6 +101,111 @@ const I18N = {
         action: "Open workspace",
       },
     },
+    mega: {
+      portal: {
+        eyebrow: "Portal",
+        title: "Move through the research site",
+        primary: [
+          { label: "Research portal", href: "/" },
+          { label: "Enter workspaces", href: "#portalWorkspaces" },
+        ],
+        columns: [
+          {
+            title: "Workspaces",
+            items: [
+              { label: "Personal Homepage", href: "/academic/" },
+              { label: "Academic Frontier", href: "/academic-frontier/" },
+              { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
+            ],
+          },
+          {
+            title: "Controls",
+            items: [
+              { label: "简体中文 / English / 日本語", href: "/" },
+              { label: "Theme follows the university color", href: "/" },
+            ],
+          },
+        ],
+      },
+      academic: {
+        eyebrow: "Personal homepage",
+        title: "Profile, publications, and records",
+        primary: [
+          { label: "Overview", href: "/academic/" },
+          { label: "Publications", href: "/academic/publications.html" },
+          { label: "Awards", href: "/academic/awards.html" },
+          { label: "Projects", href: "/academic/projects.html" },
+        ],
+        columns: [
+          {
+            title: "Records",
+            items: [
+              { label: "Timeline", href: "/academic/timeline.html" },
+              { label: "Service", href: "/academic/service.html" },
+              { label: "Research", href: "/academic/research.html" },
+            ],
+          },
+          {
+            title: "Identity",
+            items: [
+              { label: "External profiles", href: "/academic/profiles.html" },
+              { label: "Curriculum vitae", href: "/academic/assets/docs/CV_SichenTao.pdf" },
+            ],
+          },
+        ],
+      },
+      frontier: {
+        eyebrow: "Academic Frontier",
+        title: "Research intelligence workspace",
+        primary: [
+          { label: "Overview", href: "/academic-frontier/" },
+          { label: "Paper archive", href: "/academic-frontier/papers.html" },
+          { label: "Signals", href: "/academic-frontier/signals.html" },
+        ],
+        columns: [
+          {
+            title: "Observe",
+            items: [
+              { label: "Venue metrics", href: "/academic-frontier/metrics.html" },
+              { label: "Tracked researchers", href: "/academic-frontier/teams.html" },
+            ],
+          },
+          {
+            title: "Use",
+            items: [
+              { label: "Open current field", href: "/academic-frontier/" },
+              { label: "Return to portal", href: "/" },
+            ],
+          },
+        ],
+      },
+      jsps: {
+        eyebrow: "JSPS KAKENHI",
+        title: "Grant work and official evidence",
+        primary: [
+          { label: "Workspace home", href: "/jsps-kakenhi/" },
+          { label: "Calls", href: "/jsps-kakenhi/calls.html" },
+          { label: "Deadlines", href: "/jsps-kakenhi/deadlines.html" },
+        ],
+        columns: [
+          {
+            title: "Prepare",
+            items: [
+              { label: "Forms", href: "/jsps-kakenhi/forms.html" },
+              { label: "Guides", href: "/jsps-kakenhi/guides.html" },
+              { label: "Program details", href: "/jsps-kakenhi/program.html" },
+            ],
+          },
+          {
+            title: "Evidence",
+            items: [
+              { label: "Official sources", href: "/jsps-kakenhi/sources.html" },
+              { label: "Snapshot archive", href: "/jsps-kakenhi/archive.html" },
+            ],
+          },
+        ],
+      },
+    },
   },
   zh: {
     page: {
@@ -161,6 +266,111 @@ const I18N = {
         action: "打开工作台",
       },
     },
+    mega: {
+      portal: {
+        eyebrow: "导航页",
+        title: "进入整套研究主页",
+        primary: [
+          { label: "研究导航页", href: "/" },
+          { label: "进入工作区", href: "#portalWorkspaces" },
+        ],
+        columns: [
+          {
+            title: "工作区",
+            items: [
+              { label: "个人主页", href: "/academic/" },
+              { label: "学术前沿", href: "/academic-frontier/" },
+              { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
+            ],
+          },
+          {
+            title: "全站控制",
+            items: [
+              { label: "简体中文 / English / 日本語", href: "/" },
+              { label: "主题跟随学校配色", href: "/" },
+            ],
+          },
+        ],
+      },
+      academic: {
+        eyebrow: "个人主页",
+        title: "个人资料、论文与学术记录",
+        primary: [
+          { label: "概览", href: "/academic/" },
+          { label: "论文", href: "/academic/publications.html" },
+          { label: "获奖", href: "/academic/awards.html" },
+          { label: "项目", href: "/academic/projects.html" },
+        ],
+        columns: [
+          {
+            title: "记录",
+            items: [
+              { label: "时间线", href: "/academic/timeline.html" },
+              { label: "审稿与编辑", href: "/academic/service.html" },
+              { label: "研究", href: "/academic/research.html" },
+            ],
+          },
+          {
+            title: "身份",
+            items: [
+              { label: "外部主页", href: "/academic/profiles.html" },
+              { label: "简历 PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
+            ],
+          },
+        ],
+      },
+      frontier: {
+        eyebrow: "学术前沿",
+        title: "论文、信号与团队追踪",
+        primary: [
+          { label: "动态概览", href: "/academic-frontier/" },
+          { label: "论文库", href: "/academic-frontier/papers.html" },
+          { label: "前沿信号", href: "/academic-frontier/signals.html" },
+        ],
+        columns: [
+          {
+            title: "观察",
+            items: [
+              { label: "分区与指标", href: "/academic-frontier/metrics.html" },
+              { label: "研究者", href: "/academic-frontier/teams.html" },
+            ],
+          },
+          {
+            title: "使用",
+            items: [
+              { label: "打开当前领域", href: "/academic-frontier/" },
+              { label: "返回导航页", href: "/" },
+            ],
+          },
+        ],
+      },
+      jsps: {
+        eyebrow: "JSPS 科研费",
+        title: "科研费工作与官方证据",
+        primary: [
+          { label: "工作台首页", href: "/jsps-kakenhi/" },
+          { label: "公募信息", href: "/jsps-kakenhi/calls.html" },
+          { label: "截止时间", href: "/jsps-kakenhi/deadlines.html" },
+        ],
+        columns: [
+          {
+            title: "准备",
+            items: [
+              { label: "表格材料", href: "/jsps-kakenhi/forms.html" },
+              { label: "申请指南", href: "/jsps-kakenhi/guides.html" },
+              { label: "制度细节", href: "/jsps-kakenhi/program.html" },
+            ],
+          },
+          {
+            title: "证据",
+            items: [
+              { label: "官方来源", href: "/jsps-kakenhi/sources.html" },
+              { label: "快照归档", href: "/jsps-kakenhi/archive.html" },
+            ],
+          },
+        ],
+      },
+    },
   },
   ja: {
     page: {
@@ -219,6 +429,111 @@ const I18N = {
         name: "JSPS科研費",
         intro: "公募、様式、締切、ガイド、公式ソースをまとめた科研費実務ワークスペースです。",
         action: "ワークスペースを開く",
+      },
+    },
+    mega: {
+      portal: {
+        eyebrow: "ポータル",
+        title: "研究サイト全体を移動",
+        primary: [
+          { label: "研究ポータル", href: "/" },
+          { label: "ワークスペースへ", href: "#portalWorkspaces" },
+        ],
+        columns: [
+          {
+            title: "ワークスペース",
+            items: [
+              { label: "個人ホームページ", href: "/academic/" },
+              { label: "学術フロンティア", href: "/academic-frontier/" },
+              { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
+            ],
+          },
+          {
+            title: "サイト設定",
+            items: [
+              { label: "简体中文 / English / 日本語", href: "/" },
+              { label: "大学テーマカラー", href: "/" },
+            ],
+          },
+        ],
+      },
+      academic: {
+        eyebrow: "個人ホームページ",
+        title: "プロフィール、論文、研究記録",
+        primary: [
+          { label: "概要", href: "/academic/" },
+          { label: "論文", href: "/academic/publications.html" },
+          { label: "受賞", href: "/academic/awards.html" },
+          { label: "プロジェクト", href: "/academic/projects.html" },
+        ],
+        columns: [
+          {
+            title: "記録",
+            items: [
+              { label: "年表", href: "/academic/timeline.html" },
+              { label: "査読・編集", href: "/academic/service.html" },
+              { label: "研究", href: "/academic/research.html" },
+            ],
+          },
+          {
+            title: "基本情報",
+            items: [
+              { label: "外部ホームページ", href: "/academic/profiles.html" },
+              { label: "CV PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
+            ],
+          },
+        ],
+      },
+      frontier: {
+        eyebrow: "学術フロンティア",
+        title: "論文、シグナル、研究チーム",
+        primary: [
+          { label: "概要", href: "/academic-frontier/" },
+          { label: "論文庫", href: "/academic-frontier/papers.html" },
+          { label: "シグナル", href: "/academic-frontier/signals.html" },
+        ],
+        columns: [
+          {
+            title: "観察",
+            items: [
+              { label: "指標", href: "/academic-frontier/metrics.html" },
+              { label: "研究者", href: "/academic-frontier/teams.html" },
+            ],
+          },
+          {
+            title: "利用",
+            items: [
+              { label: "現在の分野を開く", href: "/academic-frontier/" },
+              { label: "ポータルへ戻る", href: "/" },
+            ],
+          },
+        ],
+      },
+      jsps: {
+        eyebrow: "JSPS 科研費",
+        title: "科研費実務と公式エビデンス",
+        primary: [
+          { label: "ワークスペース", href: "/jsps-kakenhi/" },
+          { label: "公募", href: "/jsps-kakenhi/calls.html" },
+          { label: "締切", href: "/jsps-kakenhi/deadlines.html" },
+        ],
+        columns: [
+          {
+            title: "準備",
+            items: [
+              { label: "様式", href: "/jsps-kakenhi/forms.html" },
+              { label: "ガイド", href: "/jsps-kakenhi/guides.html" },
+              { label: "制度詳細", href: "/jsps-kakenhi/program.html" },
+            ],
+          },
+          {
+            title: "根拠",
+            items: [
+              { label: "公式ソース", href: "/jsps-kakenhi/sources.html" },
+              { label: "アーカイブ", href: "/jsps-kakenhi/archive.html" },
+            ],
+          },
+        ],
       },
     },
   },
@@ -318,8 +633,17 @@ function portalHref(href) {
   if (href === "/") {
     return "/";
   }
-  if (href.startsWith("/academic-frontier/") && window.HomepagePlatform?.academicFrontierHref) {
-    return window.HomepagePlatform.academicFrontierHref(state.locale, state.theme);
+  if (href.startsWith("#")) {
+    return href;
+  }
+  if (href.startsWith("/academic-frontier/")) {
+    const suffix = href.replace(/^\/academic-frontier\/?/, "");
+    const localePrefix = state.locale === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(state.locale)}/`;
+    const frontierHref = `${localePrefix}${suffix}`;
+    if (window.HomepagePlatform?.siteStateHref) {
+      return window.HomepagePlatform.siteStateHref(frontierHref, { locale: state.locale, theme: state.theme });
+    }
+    return frontierHref;
   }
   if (window.HomepagePlatform?.siteStateHref) {
     return window.HomepagePlatform.siteStateHref(href, { locale: state.locale, theme: state.theme });
@@ -336,11 +660,21 @@ function renderTopnav() {
 
   nav.setAttribute("aria-label", text.controls.pageNavigation);
   nav.innerHTML = `
-    <a href="/" aria-current="page">${iconSprite("home")}<span>${escapeHtml(text.nav.portal)}</span></a>
-    <a href="${portalHref("/academic/")}">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
-    <a href="${portalHref("/academic-frontier/")}">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
-    <a href="${portalHref("/jsps-kakenhi/")}">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
+    <a href="/" aria-current="page" data-portal-menu-key="portal" aria-haspopup="true" aria-expanded="false">${iconSprite("home")}<span>${escapeHtml(text.nav.portal)}</span></a>
+    <a href="${portalHref("/academic/")}" data-portal-menu-key="academic" aria-haspopup="true" aria-expanded="false">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
+    <a href="${portalHref("/academic-frontier/")}" data-portal-menu-key="frontier" aria-haspopup="true" aria-expanded="false">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
+    <a href="${portalHref("/jsps-kakenhi/")}" data-portal-menu-key="jsps" aria-haspopup="true" aria-expanded="false">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
   `;
+}
+
+function keylineMarkup(value) {
+  const lines = String(value || "")
+    .split(/\s*[·•・]\s*/)
+    .map((item) => item.trim())
+    .filter(Boolean);
+  return lines
+    .map((item) => `<span class="portal-keyline-emphasis">${escapeHtml(item)}</span>`)
+    .join(' <span class="portal-keyline-separator" aria-hidden="true">·</span> ');
 }
 
 function renderHero() {
@@ -355,7 +689,10 @@ function renderHero() {
   setText("portalEyebrow", text.hero.eyebrow);
   setText("portalNativeName", text.hero.nativeName);
   setText("portalTitle", text.hero.title);
-  setText("portalRoleLabel", text.hero.roleLabel);
+  const roleLabel = document.getElementById("portalRoleLabel");
+  if (roleLabel) {
+    roleLabel.innerHTML = keylineMarkup(text.hero.roleLabel);
+  }
   setText("portalRole", text.hero.role);
   setText("portalAffiliation", text.hero.affiliation);
   setText("portalDescription", text.hero.description);
@@ -370,6 +707,145 @@ function renderHero() {
   if (scrollCue) {
     scrollCue.setAttribute("aria-label", text.hero.scrollCue);
     scrollCue.title = text.hero.scrollCue;
+  }
+}
+
+function renderMegaMenu(key = "portal") {
+  const panel = document.getElementById("portalMegaMenu");
+  const text = localeText();
+  const menu = text.mega?.[key] || text.mega?.portal;
+  if (!panel || !menu) {
+    return;
+  }
+
+  const columnMarkup = (menu.columns || [])
+    .map(
+      (column) => `
+        <div class="portal-mega-column">
+          <p class="portal-mega-column-title">${escapeHtml(column.title)}</p>
+          <div class="portal-mega-link-list">
+            ${(column.items || [])
+              .map((item) => `<a class="portal-mega-link" href="${portalHref(item.href)}">${escapeHtml(item.label)}</a>`)
+              .join("")}
+          </div>
+        </div>
+      `,
+    )
+    .join("");
+
+  panel.dataset.activeKey = key;
+  panel.innerHTML = `
+    <div class="portal-mega-inner">
+      <div class="portal-mega-primary">
+        <p class="portal-mega-kicker">${escapeHtml(menu.eyebrow)}</p>
+        <h2 class="portal-mega-title">${escapeHtml(menu.title)}</h2>
+        <div class="portal-mega-primary-list">
+          ${(menu.primary || [])
+            .map((item) => `<a class="portal-mega-primary-link" href="${portalHref(item.href)}">${escapeHtml(item.label)}</a>`)
+            .join("")}
+        </div>
+      </div>
+      ${columnMarkup}
+    </div>
+  `;
+}
+
+function isMegaMenuEnabled() {
+  return window.matchMedia?.("(min-width: 761px) and (hover: hover) and (pointer: fine)")?.matches !== false;
+}
+
+function closeMegaMenu() {
+  document.body.classList.remove("portal-mega-open");
+  const panel = document.getElementById("portalMegaMenu");
+  if (panel) {
+    panel.setAttribute("aria-hidden", "true");
+  }
+  document.querySelectorAll("[data-portal-menu-key]").forEach((link) => {
+    link.setAttribute("aria-expanded", "false");
+    link.removeAttribute("data-mega-active");
+  });
+}
+
+function openMegaMenu(key, trigger) {
+  if (!isMegaMenuEnabled()) {
+    closeMegaMenu();
+    return;
+  }
+  renderMegaMenu(key);
+  const panel = document.getElementById("portalMegaMenu");
+  if (panel) {
+    panel.setAttribute("aria-hidden", "false");
+  }
+  document.body.classList.add("portal-mega-open");
+  document.querySelectorAll("[data-portal-menu-key]").forEach((link) => {
+    const isActive = link === trigger;
+    link.setAttribute("aria-expanded", isActive ? "true" : "false");
+    if (isActive) {
+      link.setAttribute("data-mega-active", "true");
+    } else {
+      link.removeAttribute("data-mega-active");
+    }
+  });
+}
+
+function bindMegaMenuInteractions() {
+  const header = document.querySelector(".site-header");
+  const panel = document.getElementById("portalMegaMenu");
+  const backdrop = document.getElementById("portalMegaBackdrop");
+  if (!header || !panel) {
+    return;
+  }
+
+  let closeTimer = 0;
+  const cancelClose = () => {
+    window.clearTimeout(closeTimer);
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer = window.setTimeout(closeMegaMenu, 130);
+  };
+
+  document.querySelectorAll("[data-portal-menu-key]").forEach((link) => {
+    link.addEventListener("mouseenter", () => openMegaMenu(link.dataset.portalMenuKey || "portal", link));
+    link.addEventListener("focus", () => openMegaMenu(link.dataset.portalMenuKey || "portal", link));
+  });
+
+  if (header.dataset.megaBound !== "true") {
+    header.dataset.megaBound = "true";
+    header.addEventListener("mouseenter", cancelClose);
+    header.addEventListener("mouseleave", scheduleClose);
+  }
+
+  if (panel.dataset.megaBound !== "true") {
+    panel.dataset.megaBound = "true";
+    panel.addEventListener("mouseenter", cancelClose);
+    panel.addEventListener("mouseleave", scheduleClose);
+    panel.addEventListener("focusin", cancelClose);
+    panel.addEventListener("focusout", (event) => {
+      if (!panel.contains(event.relatedTarget)) {
+        scheduleClose();
+      }
+    });
+  }
+
+  if (backdrop && backdrop.dataset.megaBound !== "true") {
+    backdrop.dataset.megaBound = "true";
+    backdrop.addEventListener("mouseenter", scheduleClose);
+    backdrop.addEventListener("click", closeMegaMenu);
+  }
+
+  if (document.body.dataset.portalMegaEscapeBound !== "true") {
+    document.body.dataset.portalMegaEscapeBound = "true";
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMegaMenu();
+      }
+    });
+    window.addEventListener("resize", () => {
+      if (!isMegaMenuEnabled()) {
+        closeMegaMenu();
+      }
+    });
   }
 }
 
@@ -678,6 +1154,8 @@ function render() {
   }
 
   syncHomepageShell();
+  renderMegaMenu("portal");
+  bindMegaMenuInteractions();
 }
 
 function setLocale(localeName) {
