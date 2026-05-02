@@ -1318,6 +1318,7 @@ body[data-page="home"] .hero {
   box-shadow: none;
 }
 
+body[data-page="home"] .site-header.shell,
 body[data-page="home"] main.shell,
 body[data-page="home"] .footer-shell {
   width: min(1560px, calc(100% - var(--shell-gutter)));
