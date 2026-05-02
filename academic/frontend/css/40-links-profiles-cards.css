@@ -79,12 +79,13 @@
 }
 
 body[data-page="profiles"] #link-grid {
-  grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
 }
 
 body[data-page="profiles"] .profile-link-card {
-  padding: 14px 15px;
+  min-height: 92px;
+  padding: 15px 16px;
   gap: 0;
   justify-content: center;
 }
@@ -556,3 +557,12 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
 }
 
 .feature-card h3,
+.feature-card h4,
+.link-card h4,
+.document-card h4,
+.project-entry h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.38;
+}

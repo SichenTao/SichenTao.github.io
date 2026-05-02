@@ -172,6 +172,36 @@
     padding: 20px;
   }
 
+  body[data-page]:not([data-page="home"]) .site-header.shell,
+  body[data-page]:not([data-page="home"]) main.shell,
+  body[data-page]:not([data-page="home"]) .footer-shell {
+    width: min(var(--shell-max), calc(100% - var(--shell-gutter)));
+  }
+
+  body[data-page]:not([data-page="home"]) .panel.section-card {
+    padding: 30px 0 18px;
+  }
+
+  body[data-page]:not([data-page="home"]) .section-head {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  body[data-page]:not([data-page="home"]) .section-head h2 {
+    font-size: clamp(2.25rem, 11vw, 2.86rem);
+    line-height: 0.94;
+  }
+
+  body[data-page]:not([data-page="home"]) .feature-card,
+  body[data-page]:not([data-page="home"]) .publication-card,
+  body[data-page]:not([data-page="home"]) .link-card,
+  body[data-page]:not([data-page="home"]) .document-card,
+  body[data-page]:not([data-page="home"]) .project-entry,
+  body[data-page]:not([data-page="home"]) .timeline-card {
+    border-radius: 22px;
+    padding: 16px;
+  }
+
   .overview-grid,
   .signal-layout,
   .card-grid,
@@ -241,30 +271,84 @@
   }
 
   .timeline::before {
-    left: 14px;
+    left: 15px;
   }
 
   .timeline-item {
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 8px;
+    padding-left: 30px;
   }
 
   .timeline-era {
     grid-template-columns: 1fr;
     gap: 8px;
+    padding-left: 30px;
   }
 
   .timeline-era-spacer {
     display: none;
   }
 
+  .timeline-era-label {
+    justify-content: flex-start;
+  }
+
+  .timeline-era-name {
+    white-space: normal;
+    text-align: left;
+    letter-spacing: 0.06em;
+  }
+
   .timeline-item time {
-    min-width: 102px;
-    margin-left: 28px;
+    min-width: 0;
+    margin-left: 0;
+    padding: 6px 10px;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
   }
 
   .timeline-card::before {
-    left: -12px;
+    left: -25px;
+    top: 22px;
+  }
+
+  .timeline-heading {
+    gap: 8px;
+  }
+
+  .timeline-tag {
+    padding: 5px 9px;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+  }
+
+  .timeline-title-text,
+  .timeline-summary {
+    font-size: 0.95rem;
+  }
+
+  .input,
+  .chip,
+  .button {
+    font-size: 0.92rem;
+  }
+
+  .chip {
+    padding: 9px 11px;
+  }
+
+  .filter-toolbar {
+    gap: 10px;
+  }
+
+  .filter-control-row {
+    gap: 9px;
+  }
+
+  .filter-control-row .input {
+    min-height: 44px;
+    padding: 10px 12px;
   }
 
   .topnav-toggle {

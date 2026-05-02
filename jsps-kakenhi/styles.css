@@ -117,6 +117,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -1637,7 +1639,7 @@ a {
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  display: grid;
+  display: none;
   gap: 8px;
   min-width: max-content;
   padding: 10px;
@@ -1651,10 +1653,12 @@ a {
     0 0 0 0.5px rgba(var(--teal-rgb), 0.08),
     0 10px 22px rgba(var(--teal-rgb), 0.05);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transform: translateY(6px);
   transition:
     opacity 160ms ease,
+    visibility 160ms ease,
     transform 160ms ease;
   z-index: 5;
 }
@@ -1670,7 +1674,9 @@ a {
 
 .award-link-actions:hover .award-link-menu,
 .award-link-actions:focus-within .award-link-menu {
+  display: grid;
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
@@ -2309,6 +2315,7 @@ a {
 
 .timeline-card {
   position: relative;
+  min-width: 0;
   --timeline-info-lead: clamp(150px, 17vw, 188px);
   padding: 16px 18px 16px 22px;
   border-radius: var(--radius-lg);
@@ -2375,12 +2382,15 @@ a {
 
 .timeline-title-text {
   margin: 0 0 8px;
+  min-width: 0;
   color: rgba(var(--timeline-accent-rgb), 0.98);
   font-size: 1.18rem;
   font-weight: 800;
   line-height: 1.34;
   letter-spacing: 0.01em;
   text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 body[data-lang="en"] .timeline-title-text {
@@ -2629,6 +2639,9 @@ body[data-lang="en"] .timeline-title-text {
 
 .publication-card .publication-head h4 {
   flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 .publication-head-actions {
@@ -2695,7 +2708,7 @@ body[data-lang="en"] .timeline-title-text {
   position: absolute;
   top: calc(100% + 4px);
   right: 0;
-  display: grid;
+  display: none;
   gap: 8px;
   min-width: max-content;
   padding: 10px;
@@ -2709,10 +2722,12 @@ body[data-lang="en"] .timeline-title-text {
     0 0 0 0.5px rgba(var(--teal-rgb), 0.08),
     0 10px 22px rgba(var(--teal-rgb), 0.05);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transform: translateY(6px);
   transition:
     opacity 160ms ease,
+    visibility 160ms ease,
     transform 160ms ease;
   z-index: 5;
 }
@@ -2728,7 +2743,9 @@ body[data-lang="en"] .timeline-title-text {
 
 .publication-head-actions:hover .publication-copy-menu,
 .publication-head-actions:focus-within .publication-copy-menu {
+  display: grid;
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
@@ -3007,7 +3024,7 @@ body[data-lang="en"] .timeline-title-text {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  display: grid;
+  display: none;
   gap: 8px;
   min-width: max-content;
   padding: 10px;
@@ -3021,10 +3038,12 @@ body[data-lang="en"] .timeline-title-text {
     0 0 0 0.5px rgba(var(--teal-rgb), 0.08),
     0 10px 22px rgba(var(--teal-rgb), 0.05);
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
   transform: translateY(6px);
   transition:
     opacity 160ms ease,
+    visibility 160ms ease,
     transform 160ms ease;
   z-index: 8;
 }
@@ -3049,7 +3068,9 @@ body[data-lang="en"] .timeline-title-text {
 
 .publication-metric-menu:hover .publication-metric-options,
 .publication-metric-menu:focus-within .publication-metric-options {
+  display: grid;
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
@@ -3123,7 +3144,6 @@ body[data-lang="en"] .timeline-title-text {
   border: 1px dashed var(--line-strong);
   color: var(--muted);
 }
-
 .footer-shell {
   padding: 0 0 36px;
 }
@@ -3463,6 +3483,166 @@ body[data-lang="en"] .timeline-title-text {
 }
 .portal-card-grid {
   margin-top: 18px;
+}
+
+body[data-page] .site-header.shell,
+body[data-page] main.shell,
+body[data-page] .footer-shell,
+body:not([data-page]) .site-header.shell,
+body:not([data-page]) main.shell,
+body:not([data-page]) .footer-shell {
+  width: min(1560px, calc(100% - var(--shell-gutter)));
+}
+
+body[data-page] .page-grid,
+body[data-page] .orb,
+body:not([data-page]) .page-grid,
+body:not([data-page]) .orb {
+  display: none;
+}
+
+body[data-page] .page-wash,
+body:not([data-page]) .page-wash {
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.86), rgba(var(--white-rgb), 0.14)),
+    linear-gradient(90deg, rgba(var(--white-rgb), 0.3), transparent 20%, transparent 80%, rgba(var(--white-rgb), 0.24));
+  opacity: 0.94;
+}
+
+body[data-page] .layout,
+body:not([data-page]) .layout {
+  gap: clamp(28px, 4vw, 54px);
+  padding-top: clamp(10px, 1.6vw, 22px);
+  padding-bottom: clamp(44px, 6vw, 82px);
+}
+
+body[data-page] .panel.section-card,
+body:not([data-page]) .panel.section-card {
+  min-width: 0;
+  max-width: 100%;
+  padding: clamp(28px, 4vw, 54px) min(2vw, 28px);
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+body[data-page] .section-head,
+body:not([data-page]) .section-head {
+  align-items: center;
+  gap: clamp(16px, 2.6vw, 36px);
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+}
+
+body[data-page] .section-head h2,
+body:not([data-page]) .section-head h2 {
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+body[data-page] .section-card:not(:first-child) .section-head h2,
+body:not([data-page]) .section-card:not(:first-child) .section-head h2 {
+  font-size: clamp(2.8rem, 4.2vw, 4.25rem);
+}
+
+body[data-page] .publication-title-lockup,
+body:not([data-page]) .publication-title-lockup {
+  width: auto;
+  max-width: 100%;
+}
+
+body[data-page] .section-note,
+body:not([data-page]) .section-note {
+  min-width: 0;
+  max-width: 66ch;
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.66;
+}
+
+body[data-page] .timeline,
+body[data-page] .timeline-item,
+body[data-page] .timeline-card,
+body[data-page] .timeline-title-text,
+body[data-page] .timeline-summary,
+body[data-page] .timeline-event-title,
+body[data-page] .timeline-summary-text {
+  min-width: 0;
+  max-width: 100%;
+}
+
+body[data-page] .timeline-summary,
+body[data-page] .timeline-event-title,
+body[data-page] .timeline-summary-text {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+body[data-page] .summary-card,
+body[data-page] .module-card,
+body[data-page] .feature-card,
+body[data-page] .publication-card,
+body[data-page] .link-card,
+body[data-page] .document-card,
+body[data-page] .project-entry,
+body[data-page] .timeline-card,
+body[data-page] .portal-stack-item,
+body[data-page] .portal-select-card,
+body[data-page] .portal-history-group,
+body[data-page] .portal-table-wrap,
+body:not([data-page]) .summary-card,
+body:not([data-page]) .module-card,
+body:not([data-page]) .feature-card,
+body:not([data-page]) .publication-card,
+body:not([data-page]) .link-card,
+body:not([data-page]) .document-card,
+body:not([data-page]) .project-entry,
+body:not([data-page]) .timeline-card,
+body:not([data-page]) .portal-stack-item,
+body:not([data-page]) .portal-select-card,
+body:not([data-page]) .portal-history-group,
+body:not([data-page]) .portal-table-wrap {
+  border-color: rgba(var(--ink-rgb), 0.075);
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.88), rgba(var(--white-rgb), 0.6)),
+    rgba(var(--white-rgb), 0.54);
+  box-shadow:
+    0 18px 44px rgba(var(--ink-rgb), 0.055),
+    inset 0 1px 0 rgba(var(--white-rgb), 0.78);
+}
+
+body[data-page] .portal-call-card {
+  min-height: 292px;
+  border-color: rgba(var(--ink-rgb), 0.07);
+  background:
+    linear-gradient(180deg, rgba(var(--white-rgb), 0.95), rgba(var(--white-rgb), 0.68)),
+    rgba(var(--white-rgb), 0.58);
+  box-shadow:
+    0 20px 48px rgba(var(--ink-rgb), 0.07),
+    inset 0 1px 0 rgba(var(--white-rgb), 0.78);
+}
+
+body[data-page] .portal-call-card:hover,
+body[data-page] .portal-call-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow:
+    0 24px 52px rgba(var(--ink-rgb), 0.1),
+    0 0 0 0.5px rgba(var(--teal-rgb), 0.14),
+    inset 0 1px 0 rgba(var(--white-rgb), 0.82);
+}
+
+body[data-page] .footer-panel,
+body:not([data-page]) .footer-panel {
+  border-color: rgba(var(--ink-rgb), 0.075);
+  background:
+    linear-gradient(90deg, rgba(var(--white-rgb), 0.82), rgba(var(--white-rgb), 0.58)),
+    rgba(var(--white-rgb), 0.48);
+  box-shadow:
+    0 18px 44px rgba(var(--ink-rgb), 0.055),
+    inset 0 1px 0 rgba(var(--white-rgb), 0.78);
 }
 
 .portal-hero-card {
@@ -4197,6 +4377,25 @@ body[data-lang="en"] .timeline-title-text {
   }
 }
 
+@media (min-width: 1760px) {
+  body[data-page] .section-head h2 {
+    font-size: clamp(4.2rem, 4.4vw, 5.35rem);
+  }
+
+  body[data-page] .section-card:not(:first-child) .section-head h2 {
+    font-size: clamp(3.35rem, 3.5vw, 4.3rem);
+  }
+
+  body[data-page] .portal-card-grid,
+  body[data-page] .card-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body[data-page] .portal-rail-track {
+    grid-auto-columns: minmax(300px, calc((100% - 56px) / 5));
+  }
+}
+
 @media (max-width: 880px) {
   .portal-showcase,
   .overview-grid,
@@ -4212,6 +4411,116 @@ body[data-lang="en"] .timeline-title-text {
 
   .portal-table {
     min-width: 640px;
+  }
+}
+
+@media (max-width: 760px) {
+  body[data-page] .site-header.shell,
+  body[data-page] main.shell,
+  body[data-page] .footer-shell,
+  body:not([data-page]) .site-header.shell,
+  body:not([data-page]) main.shell,
+  body:not([data-page]) .footer-shell {
+    width: min(var(--shell-max), calc(100% - var(--shell-gutter)));
+  }
+
+  body[data-page] .panel.section-card,
+  body:not([data-page]) .panel.section-card {
+    padding: 30px 0 18px;
+  }
+
+  body[data-page] .section-head,
+  body:not([data-page]) .section-head {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  body[data-page] .section-head h2,
+  body:not([data-page]) .section-head h2,
+  body[data-page] .section-card:not(:first-child) .section-head h2,
+  body:not([data-page]) .section-card:not(:first-child) .section-head h2 {
+    font-size: clamp(2.2rem, 10.5vw, 2.86rem);
+    line-height: 0.95;
+  }
+
+  body[data-page] .summary-card,
+  body[data-page] .module-card,
+  body[data-page] .feature-card,
+  body[data-page] .publication-card,
+  body[data-page] .link-card,
+  body[data-page] .document-card,
+  body[data-page] .project-entry,
+  body[data-page] .timeline-card,
+  body[data-page] .portal-stack-item,
+  body[data-page] .portal-call-card,
+  body[data-page] .portal-select-card,
+  body[data-page] .portal-history-group,
+  body:not([data-page]) .summary-card,
+  body:not([data-page]) .module-card,
+  body:not([data-page]) .feature-card,
+  body:not([data-page]) .publication-card,
+  body:not([data-page]) .link-card,
+  body:not([data-page]) .document-card,
+  body:not([data-page]) .project-entry,
+  body:not([data-page]) .timeline-card,
+  body:not([data-page]) .portal-stack-item,
+  body:not([data-page]) .portal-call-card,
+  body:not([data-page]) .portal-select-card,
+  body:not([data-page]) .portal-history-group {
+    border-radius: 22px;
+    padding: 16px;
+  }
+
+  body[data-page] .portal-table-wrap,
+  body:not([data-page]) .portal-table-wrap {
+    border-radius: 22px;
+  }
+
+  body[data-page] .footer-panel,
+  body:not([data-page]) .footer-panel {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  body[data-page] .filter-control-row,
+  body:not([data-page]) .filter-control-row {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page] .filter-reset.icon-only,
+  body:not([data-page]) .filter-reset.icon-only {
+    width: 100%;
+  }
+
+  body[data-page="deadlines"] .timeline {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body[data-page="deadlines"] .timeline-item,
+  body[data-page="deadlines"] .timeline-era {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  body[data-page="deadlines"] .timeline::before {
+    left: 18px;
+  }
+
+  body[data-page="deadlines"] .timeline-item {
+    padding-left: 28px;
+  }
+
+  body[data-page="deadlines"] .timeline-item time {
+    width: fit-content;
+    max-width: calc(100vw - 56px);
+  }
+
+  body[data-page="deadlines"] .timeline-card::before {
+    left: -17px;
+  }
+
+  body[data-page] .portal-call-card {
+    min-height: 280px;
   }
 }
 
