@@ -279,6 +279,7 @@ const translations = {
       ccf: "CCF",
       top: "Top",
       citations: "Citations",
+      cited_short: "cited",
       publication_metrics: "Publication metrics",
       memberships: "Memberships",
       languages: "Languages",
@@ -532,6 +533,7 @@ const translations = {
       ccf: "CCF",
       top: "Top",
       citations: "被引用数",
+      cited_short: "被引用",
       publication_metrics: "論文指標",
       memberships: "所属学会",
       languages: "言語",
@@ -785,6 +787,7 @@ const translations = {
       ccf: "CCF",
       top: "Top",
       citations: "引用",
+      cited_short: "被引用",
       publication_metrics: "论文指标",
       memberships: "学会成员",
       languages: "语言",
@@ -4057,10 +4060,6 @@ function renderHomeShortcuts(data) {
 }
 
 function renderRecordNav(data) {
-  const latestPublicationYear = data.publication_year_counts[0]?.year || t("filters.no_date");
-  const latestAwardDate = data.awards[0]?.date || t("labels.latest_record_fallback");
-  const serviceTags = [...new Set(data.service.map((item) => lt(item.tag)))];
-
   if (!els.recordNav) {
     return;
   }
@@ -4072,7 +4071,7 @@ function renderRecordNav(data) {
       label: t("nav.publications"),
       value: `${data.stats.cv_total_publications}`,
       unit: unitWord("items"),
-      meta: `${countLabel(data.stats.citations, { enOne: "citation", enOther: "citations", ja: "被引用", zh: "次引用" })} · h-index ${data.stats.h_index} · ${latestPublicationYear}`,
+      meta: `${data.stats.citations} ${t("labels.cited_short")} · h-index ${data.stats.h_index}`,
       href: "./publications.html",
     },
     {
@@ -4081,7 +4080,7 @@ function renderRecordNav(data) {
       label: t("nav.awards"),
       value: `${data.awards.length}`,
       unit: unitWord("items"),
-      meta: `${latestAwardDate}`,
+      meta: "",
       href: "./awards.html",
     },
     {
@@ -4090,7 +4089,7 @@ function renderRecordNav(data) {
       label: t("nav.projects"),
       value: `${(data.featured_projects || []).length}`,
       unit: unitWord("repos"),
-      meta: countLabel(data.open_source_projects.length, { enOne: "direction", enOther: "directions", ja: "件の方向", zh: "个方向" }),
+      meta: "",
       href: "./projects.html",
     },
     {
@@ -4099,7 +4098,7 @@ function renderRecordNav(data) {
       label: t("nav.service"),
       value: `${data.service.length}`,
       unit: unitWord("venues"),
-      meta: `${serviceTags.join(" · ")}`,
+      meta: "",
       href: "./service.html",
     },
   ];
@@ -4110,9 +4109,8 @@ function renderRecordNav(data) {
         <a class="record-card" href="${escapeHtml(card.href)}">
           <span class="record-icon">${iconBadge(card.icon, card.tone)}</span>
           <span class="stack-label">${escapeHtml(card.label)}</span>
-          <span class="record-value">${escapeHtml(card.value)}</span>
-          <span class="record-unit">${escapeHtml(card.unit)}</span>
-          <span class="record-meta">${escapeHtml(card.meta)}</span>
+          <span class="record-count"><span class="record-value">${escapeHtml(card.value)}</span><span class="record-unit">${escapeHtml(card.unit)}</span></span>
+          ${card.meta ? `<span class="record-meta">${escapeHtml(card.meta)}</span>` : ""}
         </a>
       `,
     )
@@ -4657,7 +4655,7 @@ function renderPublicationsPage(data) {
   const supplementCount = data.publications.filter((item) => item.source_group === "cv_supplement").length;
   renderDetailMetrics([
     countLabel(data.stats.cv_total_publications, { enOne: "item", enOther: "items", ja: "件", zh: "项" }),
-    countLabel(data.stats.citations, { enOne: "citation", enOther: "citations", ja: "被引用", zh: "次引用" }),
+    `${data.stats.citations} ${t("labels.cited_short")}`,
     `h-index ${data.stats.h_index}`,
     countLabel(indexedCount, { enOne: "indexed record", enOther: "indexed records", ja: "件の索引収録", zh: "项索引收录" }),
     countLabel(supplementCount, { enOne: "supplement", enOther: "supplements", ja: "件の補遺", zh: "项补充" }),
@@ -5252,7 +5250,6 @@ function renderSourcesPage(data) {
   ]);
   renderSources(data);
 }
-
 function quickPublicationFilterOptions() {
   return [
     { value: "all", label: t("filters.all") },

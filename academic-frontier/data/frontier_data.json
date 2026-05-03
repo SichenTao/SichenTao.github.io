@@ -1,6 +1,6 @@
 {
   "snapshot": {
-    "generatedAt": "2026-05-03 00:00 JST",
+    "generatedAt": "2026-05-03 15:32 JST",
     "sourcesCovered": 15,
     "nextRun": {
       "en": "Daily 08:00 JST via OpenClaw cron",
@@ -5191,7 +5191,7 @@
     }
   ],
   "venueReference": {
-    "generatedAt": "2026-05-03 00:00 JST",
+    "generatedAt": "2026-05-03 15:32 JST",
     "entries": [
       {
         "venue": "2025 IEEE Congress on Evolutionary Computation (CEC)",

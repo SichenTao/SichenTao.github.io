@@ -14,7 +14,7 @@ function renderPublicationsPage(data) {
   const supplementCount = data.publications.filter((item) => item.source_group === "cv_supplement").length;
   renderDetailMetrics([
     countLabel(data.stats.cv_total_publications, { enOne: "item", enOther: "items", ja: "件", zh: "项" }),
-    countLabel(data.stats.citations, { enOne: "citation", enOther: "citations", ja: "被引用", zh: "次引用" }),
+    `${data.stats.citations} ${t("labels.cited_short")}`,
     `h-index ${data.stats.h_index}`,
     countLabel(indexedCount, { enOne: "indexed record", enOther: "indexed records", ja: "件の索引収録", zh: "项索引收录" }),
     countLabel(supplementCount, { enOne: "supplement", enOther: "supplements", ja: "件の補遺", zh: "项补充" }),
@@ -609,4 +609,3 @@ function renderSourcesPage(data) {
   ]);
   renderSources(data);
 }
-

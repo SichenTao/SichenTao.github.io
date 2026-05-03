@@ -3581,6 +3581,10 @@ body:not([data-page]) .layout {
   padding-top: var(--thin-header-clearance);
 }
 
+body[data-page="overview"] #overview.hero {
+  display: none;
+}
+
 .panel,
 .section-card,
 .hero {
