@@ -291,6 +291,21 @@ function initHeaderControlsPosition() {
   }
 }
 
+function replaceUrlStateParam(key, value) {
+  if (!key || !window.history?.replaceState) {
+    return;
+  }
+  try {
+    const url = new URL(window.location.href);
+    if (value === undefined || value === null || value === "") {
+      url.searchParams.delete(key);
+    } else {
+      url.searchParams.set(key, value);
+    }
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+  } catch {}
+}
+
 function applyTheme(themeName, persist = true) {
   const nextTheme = themeCatalog[themeName] && themeName !== "base" ? themeName : "tohoku";
   if (window.HomepagePlatform?.applyTheme) {
@@ -299,6 +314,9 @@ function applyTheme(themeName, persist = true) {
     document.documentElement.dataset.theme = nextTheme;
   }
   writeSessionValue(THEME_STORAGE_KEY, nextTheme);
+  if (persist) {
+    replaceUrlStateParam("theme", nextTheme);
+  }
 
   const themeColor = document.querySelector('meta[name="theme-color"]');
   if (themeColor) {
@@ -337,6 +355,9 @@ function applyLocale(localeName, persist = true) {
     window.HomepageI18n.writeStoredLocale(nextLocale, { locales: localeCatalog });
   }
   writeSessionValue(LOCALE_STORAGE_KEY, nextLocale);
+  if (persist) {
+    replaceUrlStateParam("lang", nextLocale);
+  }
 
   els.localeChoices.forEach((button) => {
     const active = button.dataset.localeChoice === nextLocale;

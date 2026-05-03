@@ -297,7 +297,7 @@ const translations = {
     nav: {
       home: "ホーム",
       profiles: "外部プロフィール",
-      publications: "論文",
+      publications: "発表論文",
       awards: "受賞",
       projects: "プロジェクト",
       service: "査読・編集",
@@ -553,7 +553,7 @@ const translations = {
     nav: {
       home: "主页",
       profiles: "外部主页",
-      publications: "论文",
+      publications: "发表论文",
       awards: "获奖",
       projects: "项目",
       service: "审稿与编辑",

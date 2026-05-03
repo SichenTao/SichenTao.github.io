@@ -335,7 +335,7 @@ const UI_TEXT = {
     metricsTitle: "Venue Metrics",
     statusFieldLabel: "Status",
     searchFieldLabel: "Search",
-    searchPlaceholder: "Search papers, authors, venues, DOI",
+    searchPlaceholder: "Search papers or DOI",
     metricsSearchPlaceholder: "Search venues, sources, quartiles",
     filtersLabel: "Filters",
     quickTagsLabel: "Tags",
@@ -432,6 +432,8 @@ const UI_TEXT = {
     papersLabel: "Papers:",
     authorsLabel: "Authors",
     abstractLabel: "Abstract",
+    abstractExpandAction: "View full abstract",
+    abstractCollapseAction: "Show less",
     strategicLabel: "Source note",
     citationLabel: "IEEE-style citation",
     doiLabel: "DOI",
@@ -581,7 +583,7 @@ const UI_TEXT = {
     metricsTitle: "分区与指标参考",
     statusFieldLabel: "状态",
     searchFieldLabel: "搜索",
-    searchPlaceholder: "搜索论文、作者、出版来源或 DOI",
+    searchPlaceholder: "搜索论文或 DOI",
     metricsSearchPlaceholder: "搜索出版来源、指标或分区",
     filtersLabel: "筛选",
     quickTagsLabel: "标签",
@@ -677,6 +679,8 @@ const UI_TEXT = {
     papersLabel: "论文：",
     authorsLabel: "作者",
     abstractLabel: "摘要",
+    abstractExpandAction: "查看全部",
+    abstractCollapseAction: "收起",
     strategicLabel: "来源说明",
     citationLabel: "IEEE 风格引文",
     doiLabel: "DOI",
@@ -827,7 +831,7 @@ const UI_TEXT = {
     metricsTitle: "掲載先指標",
     statusFieldLabel: "状態",
     searchFieldLabel: "検索",
-    searchPlaceholder: "論文・著者・出版先・DOIで検索",
+    searchPlaceholder: "論文・DOIで検索",
     metricsSearchPlaceholder: "出版先・指標・区分で検索",
     filtersLabel: "フィルター",
     quickTagsLabel: "タグ",
@@ -924,6 +928,8 @@ const UI_TEXT = {
     papersLabel: "論文：",
     authorsLabel: "著者",
     abstractLabel: "要旨",
+    abstractExpandAction: "全文を見る",
+    abstractCollapseAction: "閉じる",
     strategicLabel: "出典メモ",
     citationLabel: "IEEE 形式の引用",
     doiLabel: "DOI",
@@ -1313,6 +1319,7 @@ let scrollTopUiBound = false;
 let metricCopyUiBound = false;
 let focusDeskUiBound = false;
 let researchLauncherUiBound = false;
+let abstractToggleUiBound = false;
 let topnavMenuBound = false;
 let topnavOverflowBound = false;
 let headerControlsPositionBound = false;
@@ -5098,11 +5105,26 @@ function buildPaperCardMetrics(paper) {
 }
 
 function buildPaperCardAbstract(paper) {
-  const abstract = el("p", "abstract-block");
-  abstract.innerHTML = `<strong class="accent-strong">${escapeHtml(ui("abstractLabel"))}:</strong> <span class="rich-text">${richTextHtml(
-    paper.abstract || ui("abstractUnavailable"),
-    { truncate: 420 }
-  )}</span>`;
+  const rawAbstract = localizeText(paper.abstract || ui("abstractUnavailable")) || "";
+  const abstract = el("div", "abstract-block");
+  const isExpandable = rawAbstract.length > 420;
+  const shortAbstract = truncateText(rawAbstract, 420);
+  abstract.innerHTML = `
+    <p class="abstract-line">
+      <strong class="accent-strong">${escapeHtml(ui("abstractLabel"))}:</strong>
+      <span class="rich-text abstract-text abstract-text-short">${formatRichText(shortAbstract)}</span>
+      ${
+        isExpandable
+          ? `<span class="rich-text abstract-text abstract-text-full" hidden>${formatRichText(rawAbstract)}</span>`
+          : ""
+      }
+    </p>
+    ${
+      isExpandable
+        ? `<button class="abstract-toggle" type="button" data-abstract-toggle aria-expanded="false">${escapeHtml(ui("abstractExpandAction"))}</button>`
+        : ""
+    }
+  `;
   return abstract;
 }
 
@@ -6129,6 +6151,27 @@ function bindMetricControls() {
   });
 }
 
+function bindAbstractToggleControls() {
+  if (abstractToggleUiBound) return;
+  abstractToggleUiBound = true;
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-abstract-toggle]");
+    if (!button) return;
+
+    const block = button.closest(".abstract-block");
+    const shortText = block?.querySelector(".abstract-text-short");
+    const fullText = block?.querySelector(".abstract-text-full");
+    if (!shortText || !fullText) return;
+
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", expanded ? "false" : "true");
+    shortText.hidden = !expanded;
+    fullText.hidden = expanded;
+    button.textContent = expanded ? ui("abstractExpandAction") : ui("abstractCollapseAction");
+  });
+}
+
 function bindRevealObserver() {
   const nodes = document.querySelectorAll(".reveal");
   if (!nodes.length) return;
@@ -6556,6 +6599,7 @@ function init() {
   bindFocusDesk();
   bindResearchLauncher();
   bindMetricCopyHandlers();
+  bindAbstractToggleControls();
   renderAll();
   window.addEventListener("resize", () => {
     scheduleAdaptiveFilterControlWidths();

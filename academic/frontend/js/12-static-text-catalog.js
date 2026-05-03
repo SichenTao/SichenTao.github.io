@@ -157,7 +157,7 @@ const staticTextCatalog = {
     "Bachelor of Engineering conferred": "获得工学学士学位",
     "Entered bachelor's program": "进入本科课程",
     "High Performance Computing Laboratory, Cyberscience Center, Tohoku University": "东北大学网络科学中心高性能计算实验室",
-    "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory": "东北大学网络科学中心超级计算系统研究部・高性能计算实验室",
+    "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory": "东北大学 网络科学中心 超级计算系统研究部・高性能计算实验室",
     "19th IEEE MCSoC 2026, Shanghai Jiao Tong University": "第19届 IEEE MCSoC 2026，上海交通大学",
     "Tohoku University": "东北大学",
     "University of Toyama": "富山大学",

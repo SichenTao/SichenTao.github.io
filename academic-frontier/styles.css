@@ -2756,6 +2756,32 @@ body[data-page] .section-card:not(:first-child) .section-head h2 {
   line-height: 1.72;
 }
 
+.abstract-line {
+  margin: 0;
+}
+
+.abstract-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin-top: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--teal);
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+.abstract-toggle:hover,
+.abstract-toggle:focus-visible {
+  color: var(--ink);
+  text-decoration: underline;
+  outline: none;
+}
+
 .abstract-highlight {
   padding: 12px 14px;
   border-radius: 16px;

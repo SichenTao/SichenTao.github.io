@@ -234,7 +234,7 @@ const I18N = {
       title: "Sichen Tao",
       roleLabel: "人工智能 · 高性能计算",
       role: "助理教授",
-      affiliation: "东北大学网络科学中心超级计算系统研究部・高性能计算实验室",
+      affiliation: "东北大学 网络科学中心 超级计算系统研究部・高性能计算实验室",
       description: "",
       portraitAlt: "陶思晨照片",
       scrollCue: "进入工作区",
@@ -291,7 +291,7 @@ const I18N = {
         eyebrow: "个人主页",
         primary: [
           { label: "概览", href: "/academic/" },
-          { label: "论文", href: "/academic/publications.html" },
+              { label: "发表论文", href: "/academic/publications.html" },
           { label: "获奖", href: "/academic/awards.html" },
           { label: "项目", href: "/academic/projects.html" },
         ],
@@ -451,7 +451,7 @@ const I18N = {
         eyebrow: "個人ホームページ",
         primary: [
           { label: "概要", href: "/academic/" },
-          { label: "論文", href: "/academic/publications.html" },
+              { label: "発表論文", href: "/academic/publications.html" },
           { label: "受賞", href: "/academic/awards.html" },
           { label: "プロジェクト", href: "/academic/projects.html" },
         ],

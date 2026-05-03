@@ -448,7 +448,7 @@ const translations = {
     nav: {
       home: "ホーム",
       profiles: "外部プロフィール",
-      publications: "論文",
+      publications: "発表論文",
       awards: "受賞",
       projects: "プロジェクト",
       service: "査読・編集",
@@ -704,7 +704,7 @@ const translations = {
     nav: {
       home: "主页",
       profiles: "外部主页",
-      publications: "论文",
+      publications: "发表论文",
       awards: "获奖",
       projects: "项目",
       service: "审稿与编辑",
@@ -1147,7 +1147,7 @@ const staticTextCatalog = {
     "Bachelor of Engineering conferred": "获得工学学士学位",
     "Entered bachelor's program": "进入本科课程",
     "High Performance Computing Laboratory, Cyberscience Center, Tohoku University": "东北大学网络科学中心高性能计算实验室",
-    "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory": "东北大学网络科学中心超级计算系统研究部・高性能计算实验室",
+    "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory": "东北大学 网络科学中心 超级计算系统研究部・高性能计算实验室",
     "19th IEEE MCSoC 2026, Shanghai Jiao Tong University": "第19届 IEEE MCSoC 2026，上海交通大学",
     "Tohoku University": "东北大学",
     "University of Toyama": "富山大学",
@@ -2800,6 +2800,21 @@ function initHeaderControlsPosition() {
   }
 }
 
+function replaceUrlStateParam(key, value) {
+  if (!key || !window.history?.replaceState) {
+    return;
+  }
+  try {
+    const url = new URL(window.location.href);
+    if (value === undefined || value === null || value === "") {
+      url.searchParams.delete(key);
+    } else {
+      url.searchParams.set(key, value);
+    }
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+  } catch {}
+}
+
 function applyTheme(themeName, persist = true) {
   const nextTheme = themeCatalog[themeName] && themeName !== "base" ? themeName : "tohoku";
   if (window.HomepagePlatform?.applyTheme) {
@@ -2808,6 +2823,9 @@ function applyTheme(themeName, persist = true) {
     document.documentElement.dataset.theme = nextTheme;
   }
   writeSessionValue(THEME_STORAGE_KEY, nextTheme);
+  if (persist) {
+    replaceUrlStateParam("theme", nextTheme);
+  }
 
   const themeColor = document.querySelector('meta[name="theme-color"]');
   if (themeColor) {
@@ -2846,6 +2864,9 @@ function applyLocale(localeName, persist = true) {
     window.HomepageI18n.writeStoredLocale(nextLocale, { locales: localeCatalog });
   }
   writeSessionValue(LOCALE_STORAGE_KEY, nextLocale);
+  if (persist) {
+    replaceUrlStateParam("lang", nextLocale);
+  }
 
   els.localeChoices.forEach((button) => {
     const active = button.dataset.localeChoice === nextLocale;
