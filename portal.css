@@ -361,10 +361,12 @@ body[data-lang="ja"] .eyebrow {
   width: min(1040px, calc(100% - 64px));
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(270px, 1fr) repeat(2, minmax(160px, 0.62fr));
-  gap: clamp(52px, 5.6vw, 92px);
+  grid-template-columns: repeat(3, max-content);
+  column-gap: clamp(86px, 8vw, 144px);
+  row-gap: 24px;
   align-items: start;
   justify-items: start;
+  justify-content: start;
   text-align: left;
 }
 
