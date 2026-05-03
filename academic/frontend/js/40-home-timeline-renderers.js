@@ -16,7 +16,7 @@ function renderHero(data) {
   }
 
   if (els.portraitAffiliation) {
-    els.portraitAffiliation.innerHTML = applyWarmEmphasis(lt(person.affiliation) || "", homeAffiliationEmphasisPhrases());
+    els.portraitAffiliation.innerHTML = affiliationHierarchyMarkup(person);
   }
 
   els.heroTitle.textContent = person.name;
@@ -29,6 +29,37 @@ function renderHero(data) {
     els.heroNameCopy.setAttribute("title", defaultTooltip);
   }
   els.heroBio.innerHTML = applyWarmEmphasis(t("home.bio") || person.bio, homeBioEmphasisPhrases());
+}
+
+function affiliationHierarchyMarkup(person = {}) {
+  const hierarchy = person.affiliation_hierarchy || {};
+  const root = Array.isArray(hierarchy.root) ? hierarchy.root.map((item) => normalizeString(item)).filter(Boolean) : [];
+  const unit = Array.isArray(hierarchy.unit) ? hierarchy.unit.map((item) => normalizeString(item)).filter(Boolean) : [];
+
+  if (!root.length && !unit.length) {
+    return applyWarmEmphasis(lt(person.affiliation) || "", homeAffiliationEmphasisPhrases());
+  }
+
+  const separator = resolveLocaleName() === "en" ? "·" : "・";
+  const renderRow = (items, rowClass) => items.length
+    ? `
+      <span class="affiliation-row ${rowClass}">
+        ${items
+          .map(
+            (item, index) => `
+              ${index > 0 ? `<span class="affiliation-separator" aria-hidden="true">${escapeHtml(separator)}</span>` : ""}
+              <span class="affiliation-node">${escapeHtml(item)}</span>
+            `,
+          )
+          .join("")}
+      </span>
+    `
+    : "";
+
+  return `
+    ${renderRow(root, "affiliation-row-root")}
+    ${renderRow(unit, "affiliation-row-unit")}
+  `;
 }
 
 function renderOverview(data) {

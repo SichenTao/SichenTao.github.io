@@ -1049,9 +1049,39 @@ a {
 
 .hero-affiliation {
   margin: 0;
-  max-width: 48ch;
+  display: grid;
+  gap: 3px;
+  max-width: 58ch;
   color: var(--ink-soft);
-  line-height: 1.48;
+  line-height: 1.42;
+}
+
+.affiliation-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 7px;
+  min-width: 0;
+}
+
+.affiliation-row-root {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.affiliation-row-unit {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  font-weight: 540;
+}
+
+.affiliation-node {
+  word-break: keep-all;
+}
+
+.affiliation-separator {
+  color: rgba(var(--teal-rgb), 0.52);
+  font-weight: 600;
 }
 
 .meta-pill {
@@ -1489,7 +1519,7 @@ body[data-page="home"] .hero-identity {
 }
 
 body[data-page="home"] .hero-affiliation {
-  max-width: 56ch;
+  max-width: 62ch;
 }
 
 body[data-page="home"] .hero .lede {
@@ -4447,6 +4477,34 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
   body[data-page="home"] .hero-keylines {
     font-size: 0.66rem;
     line-height: 1.45;
+  }
+
+  body[data-page="home"] .hero-affiliation {
+    width: 100%;
+    max-width: 100%;
+    gap: 5px;
+  }
+
+  body[data-page="home"] .affiliation-row {
+    justify-content: center;
+    row-gap: 2px;
+  }
+
+  body[data-page="home"] .affiliation-row-root {
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  body[data-page="home"] .affiliation-row-unit {
+    display: grid;
+    justify-items: center;
+    gap: 1px;
+    font-size: 0.78rem;
+    line-height: 1.32;
+  }
+
+  body[data-page="home"] .affiliation-row-unit .affiliation-separator {
+    display: none;
   }
 
   body[data-page="home"] .hero .lede {

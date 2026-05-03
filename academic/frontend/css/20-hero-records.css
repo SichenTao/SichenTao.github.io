@@ -205,9 +205,39 @@
 
 .hero-affiliation {
   margin: 0;
-  max-width: 48ch;
+  display: grid;
+  gap: 3px;
+  max-width: 58ch;
   color: var(--ink-soft);
-  line-height: 1.48;
+  line-height: 1.42;
+}
+
+.affiliation-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 7px;
+  min-width: 0;
+}
+
+.affiliation-row-root {
+  color: var(--ink);
+  font-weight: 650;
+}
+
+.affiliation-row-unit {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  font-weight: 540;
+}
+
+.affiliation-node {
+  word-break: keep-all;
+}
+
+.affiliation-separator {
+  color: rgba(var(--teal-rgb), 0.52);
+  font-weight: 600;
 }
 
 .meta-pill {
@@ -645,7 +675,7 @@ body[data-page="home"] .hero-identity {
 }
 
 body[data-page="home"] .hero-affiliation {
-  max-width: 56ch;
+  max-width: 62ch;
 }
 
 body[data-page="home"] .hero .lede {

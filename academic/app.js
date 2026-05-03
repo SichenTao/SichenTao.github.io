@@ -55,6 +55,16 @@ const fallbackData = {
     portrait: "./assets/images/avatar-openai.jpg",
     current_title: "Assistant Professor",
     affiliation: "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory",
+    affiliation_hierarchy: {
+      root: [
+        { en: "Tohoku University", zh: "东北大学", ja: "東北大学" },
+        { en: "Cyberscience Center", zh: "网络科学中心", ja: "サイバーサイエンスセンター" },
+      ],
+      unit: [
+        { en: "Research Division on Supercomputing Systems", zh: "超级计算系统研究部", ja: "スーパーコンピューティング研究部" },
+        { en: "High Performance Computing Laboratory", zh: "高性能计算实验室", ja: "高性能計算研究室" },
+      ],
+    },
     location: "Sendai, Japan",
     emails: ["sichen.tao@tohoku.ac.jp"],
     bio: "My research focuses on artificial intelligence (AI) and high-performance computing (HPC).",
@@ -4003,7 +4013,7 @@ function renderHero(data) {
   }
 
   if (els.portraitAffiliation) {
-    els.portraitAffiliation.innerHTML = applyWarmEmphasis(lt(person.affiliation) || "", homeAffiliationEmphasisPhrases());
+    els.portraitAffiliation.innerHTML = affiliationHierarchyMarkup(person);
   }
 
   els.heroTitle.textContent = person.name;
@@ -4016,6 +4026,37 @@ function renderHero(data) {
     els.heroNameCopy.setAttribute("title", defaultTooltip);
   }
   els.heroBio.innerHTML = applyWarmEmphasis(t("home.bio") || person.bio, homeBioEmphasisPhrases());
+}
+
+function affiliationHierarchyMarkup(person = {}) {
+  const hierarchy = person.affiliation_hierarchy || {};
+  const root = Array.isArray(hierarchy.root) ? hierarchy.root.map((item) => normalizeString(item)).filter(Boolean) : [];
+  const unit = Array.isArray(hierarchy.unit) ? hierarchy.unit.map((item) => normalizeString(item)).filter(Boolean) : [];
+
+  if (!root.length && !unit.length) {
+    return applyWarmEmphasis(lt(person.affiliation) || "", homeAffiliationEmphasisPhrases());
+  }
+
+  const separator = resolveLocaleName() === "en" ? "·" : "・";
+  const renderRow = (items, rowClass) => items.length
+    ? `
+      <span class="affiliation-row ${rowClass}">
+        ${items
+          .map(
+            (item, index) => `
+              ${index > 0 ? `<span class="affiliation-separator" aria-hidden="true">${escapeHtml(separator)}</span>` : ""}
+              <span class="affiliation-node">${escapeHtml(item)}</span>
+            `,
+          )
+          .join("")}
+      </span>
+    `
+    : "";
+
+  return `
+    ${renderRow(root, "affiliation-row-root")}
+    ${renderRow(unit, "affiliation-row-unit")}
+  `;
 }
 
 function renderOverview(data) {

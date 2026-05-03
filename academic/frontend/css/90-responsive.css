@@ -444,6 +444,34 @@
     line-height: 1.45;
   }
 
+  body[data-page="home"] .hero-affiliation {
+    width: 100%;
+    max-width: 100%;
+    gap: 5px;
+  }
+
+  body[data-page="home"] .affiliation-row {
+    justify-content: center;
+    row-gap: 2px;
+  }
+
+  body[data-page="home"] .affiliation-row-root {
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  body[data-page="home"] .affiliation-row-unit {
+    display: grid;
+    justify-items: center;
+    gap: 1px;
+    font-size: 0.78rem;
+    line-height: 1.32;
+  }
+
+  body[data-page="home"] .affiliation-row-unit .affiliation-separator {
+    display: none;
+  }
+
   body[data-page="home"] .hero .lede {
     font-size: 0.95rem;
     line-height: 1.55;
