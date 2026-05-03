@@ -192,7 +192,7 @@
         awards: [["Awards", "IEEE CIS", "JST"], ["Evidence", "Dates", "Awarding bodies"]],
         projects: [["Repositories", "Research directions", "Code"], ["AI", "Optimization", "HPC tools"]],
         service: [["Reviewing", "Editorial service", "Venues"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [["Scholar", "ResearchMap", "ResearchGate", "GitHub"], ["External identity", "Author pages", "Research links"]],
+        profiles: [["Google Scholar", "ResearchMap", "ResearchGate", "GitHub", "DBLP", "ORCID", "J-GLOBAL"], ["Official profiles", "Author IDs", "Code profile", "Lab page"]],
         research: [["AI", "HPC", "Optimization", "Collaborators"], ["Methods", "Domains", "Research highlights"]],
       },
       frontier: {
@@ -231,7 +231,7 @@
         awards: [["获奖", "IEEE CIS", "JST"], ["证据", "日期", "授奖机构"]],
         projects: [["代码仓库", "研究方向", "项目代码"], ["AI", "优化", "HPC 工具"]],
         service: [["审稿", "编辑服务", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [["Scholar", "ResearchMap", "ResearchGate", "GitHub"], ["外部身份", "作者主页", "研究链接"]],
+        profiles: [["Google Scholar", "ResearchMap", "ResearchGate", "GitHub", "DBLP", "ORCID", "J-GLOBAL"], ["官方主页", "作者标识", "代码主页", "实验室页面"]],
         research: [["人工智能", "高性能计算", "优化", "合作者"], ["方法", "应用领域", "研究亮点"]],
       },
       frontier: {
@@ -270,7 +270,7 @@
         awards: [["受賞", "IEEE CIS", "JST"], ["根拠", "日付", "授与機関"]],
         projects: [["リポジトリ", "研究方向", "コード"], ["AI", "最適化", "HPC ツール"]],
         service: [["査読", "編集", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [["Scholar", "ResearchMap", "ResearchGate", "GitHub"], ["外部プロフィール", "著者ページ", "研究リンク"]],
+        profiles: [["Google Scholar", "ResearchMap", "ResearchGate", "GitHub", "DBLP", "ORCID", "J-GLOBAL"], ["公式プロフィール", "著者ID", "コードページ", "研究室ページ"]],
         research: [["人工知能", "高性能計算", "最適化", "共同研究者"], ["方法", "応用領域", "研究ハイライト"]],
       },
       frontier: {
@@ -346,7 +346,7 @@
       awards: ["#award-page-list", "#award-page-list", "#award-page-list"],
       projects: ["#project-repo-grid", "#project-direction-list", "#project-repo-grid"],
       service: ["#service-page-groups", "#service-page-groups", "#service-page-groups"],
-      profiles: ["#link-search", "#link-grid", "#link-grid", "#link-grid"],
+      profiles: ["#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid"],
       research: ["#method-tags", "#domain-tags", "#year-bars", "#collaborator-list"],
     },
     frontier: {
