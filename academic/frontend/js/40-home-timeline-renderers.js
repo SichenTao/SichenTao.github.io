@@ -181,8 +181,10 @@ function renderRecordNav(data) {
       (card) => `
         <a class="record-card" href="${escapeHtml(card.href)}">
           <span class="record-icon">${iconBadge(card.icon, card.tone)}</span>
-          <span class="stack-label">${escapeHtml(card.label)}</span>
-          <span class="record-count"><span class="record-value">${escapeHtml(card.value)}</span><span class="record-unit">${escapeHtml(card.unit)}</span></span>
+          <span class="record-primary-line">
+            <span class="stack-label">${escapeHtml(card.label)}</span>
+            <span class="record-count"><span class="record-value">${escapeHtml(card.value)}</span><span class="record-unit">${escapeHtml(card.unit)}</span></span>
+          </span>
           ${card.meta ? `<span class="record-meta">${escapeHtml(card.meta)}</span>` : ""}
         </a>
       `,

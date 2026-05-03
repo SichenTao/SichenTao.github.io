@@ -263,7 +263,8 @@ const UI_TEXT = {
     domainsKicker: "Field focus",
     domainsTitle: "Tracked domain record",
     overviewKicker: "Overview",
-    overviewTitle: "Radar posture",
+    overviewTitle: "Academic Frontier",
+    overviewPapersTitle: "Academic Frontier",
     trackedTeamsLabel: "Active teams",
     papersInLaneLabel: "Visible papers",
     localPdfsLabel: "Ready PDFs",
@@ -416,7 +417,7 @@ const UI_TEXT = {
     themeTohokuLabel: "Tohoku University",
     themeToyamaLabel: "University of Toyama",
     themeUsstLabel: "University of Shanghai for Science and Technology",
-    navOverview: "Paper Library",
+    navOverview: "Home",
     navPapers: "Paper Library",
     navMetrics: "Metrics",
     navSignals: "Signals",
@@ -508,7 +509,8 @@ const UI_TEXT = {
     domainsKicker: "方向焦点",
     domainsTitle: "领域记录",
     overviewKicker: "概览",
-    overviewTitle: "雷达态势",
+    overviewTitle: "学术前沿",
+    overviewPapersTitle: "学术前沿",
     trackedTeamsLabel: "活跃团队",
     papersInLaneLabel: "可见论文",
     localPdfsLabel: "就绪 PDF",
@@ -660,7 +662,7 @@ const UI_TEXT = {
     themeTohokuLabel: "东北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "论文库",
+    navOverview: "首页",
     navPapers: "论文库",
     navMetrics: "分区",
     navSignals: "信号",
@@ -753,7 +755,8 @@ const UI_TEXT = {
     domainsKicker: "分野フォーカス",
     domainsTitle: "分野記録",
     overviewKicker: "概要",
-    overviewTitle: "レーダーの現在地",
+    overviewTitle: "学術フロンティア",
+    overviewPapersTitle: "学術フロンティア",
     trackedTeamsLabel: "アクティブチーム",
     papersInLaneLabel: "可視論文",
     localPdfsLabel: "準備済み PDF",
@@ -906,7 +909,7 @@ const UI_TEXT = {
     themeTohokuLabel: "東北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "論文庫",
+    navOverview: "ホーム",
     navPapers: "論文庫",
     navMetrics: "指標",
     navSignals: "シグナル",
@@ -3109,7 +3112,7 @@ function currentPage() {
 function currentPageTitle() {
   const page = currentPage();
   const pageKey = {
-    overview: "navPapers",
+    overview: "navOverview",
     papers: "navPapers",
     metrics: "navMetrics",
   }[page];
@@ -3123,12 +3126,12 @@ function currentPageTitle() {
 
 function markCurrentPage() {
   const page = currentPage();
-  ["papers", "metrics"].forEach((key) => {
+  ["overview", "papers", "metrics"].forEach((key) => {
     const navId = `nav${key.charAt(0).toUpperCase()}${key.slice(1)}`;
     const link = byId(navId);
     if (!link) return;
-    link.setAttribute("href", pageHref(key === "papers" ? "overview" : key));
-    if (key === page || (key === "papers" && page === "overview")) {
+    link.setAttribute("href", pageHref(key));
+    if (key === page) {
       link.setAttribute("aria-current", "page");
     } else {
       link.removeAttribute("aria-current");
@@ -3554,7 +3557,7 @@ function renderStaticText() {
     ["signalsToWatchLabel", ui("signalsToWatch")],
     ["watchSignalsTitle", ui("whatShouldTriggerActionNext")],
     ["paperLaneKicker", ui("paperLaneKicker")],
-    ["papers-title", ui("papersTitle")],
+    ["papers-title", currentPage() === "overview" ? (ui("overviewPapersTitle") || ui("overviewTitle")) : ui("papersTitle")],
     ["metrics-title", ui("metricsTitle")],
     ["filter-toolbar-label", filterToolbarLabel()],
     ["metric-filter-toolbar-label", filterToolbarLabel()],
@@ -4279,7 +4282,7 @@ function renderHero() {
   if (!shortcuts) return;
   shortcuts.innerHTML = "";
   [
-    { href: pageHref("overview"), label: ui("navPapers"), className: "button button-primary" },
+    { href: pageHref("papers"), label: ui("navPapers"), className: "button button-primary" },
     { href: pageHref("metrics"), label: ui("navMetrics"), className: "button" },
   ].forEach((item) => {
     const link = el("a", item.className, item.label);

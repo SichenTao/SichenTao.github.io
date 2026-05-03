@@ -93,7 +93,7 @@ const I18N = {
       },
       frontier: {
         name: "Academic Frontier",
-        intro: "A research intelligence workspace for papers, signals, metrics, and tracked teams.",
+        intro: "A research workspace for paper records, source links, and venue metrics.",
         action: "Open frontier",
       },
       jsps: {
@@ -158,20 +158,19 @@ const I18N = {
         primary: [
           { label: "Overview", href: "/academic-frontier/" },
           { label: "Paper archive", href: "/academic-frontier/papers.html" },
-          { label: "Signals", href: "/academic-frontier/signals.html" },
+          { label: "Venue metrics", href: "/academic-frontier/metrics.html" },
         ],
         columns: [
           {
-            title: "Observe",
+            title: "Related Workspaces",
             items: [
-              { label: "Venue metrics", href: "/academic-frontier/metrics.html" },
-              { label: "Tracked researchers", href: "/academic-frontier/teams.html" },
+              { label: "Personal Homepage", href: "/academic/" },
+              { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
           {
-            title: "Use",
+            title: "Site",
             items: [
-              { label: "Open current field", href: "/academic-frontier/" },
               { label: "Return to portal", href: "/" },
             ],
           },
@@ -254,7 +253,7 @@ const I18N = {
       },
       frontier: {
         name: "学术前沿",
-        intro: "用于论文、信号、指标与团队追踪的研究情报工作空间。",
+        intro: "用于论文记录、来源入口与分区指标整理的研究工作空间。",
         action: "打开前沿页",
       },
       jsps: {
@@ -317,22 +316,21 @@ const I18N = {
       frontier: {
         eyebrow: "学术前沿",
         primary: [
-          { label: "动态概览", href: "/academic-frontier/" },
+          { label: "首页", href: "/academic-frontier/" },
           { label: "论文库", href: "/academic-frontier/papers.html" },
-          { label: "前沿信号", href: "/academic-frontier/signals.html" },
+          { label: "分区与指标", href: "/academic-frontier/metrics.html" },
         ],
         columns: [
           {
-            title: "观察",
+            title: "相关工作区",
             items: [
-              { label: "分区与指标", href: "/academic-frontier/metrics.html" },
-              { label: "研究者", href: "/academic-frontier/teams.html" },
+              { label: "个人主页", href: "/academic/" },
+              { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
           {
-            title: "使用",
+            title: "站点",
             items: [
-              { label: "打开当前领域", href: "/academic-frontier/" },
               { label: "返回导航页", href: "/" },
             ],
           },
@@ -415,7 +413,7 @@ const I18N = {
       },
       frontier: {
         name: "学術フロンティア",
-        intro: "論文、シグナル、指標、研究チームを継続的に追跡する研究情報ワークスペースです。",
+        intro: "論文記録、ソース導線、分区指標を整理する研究ワークスペースです。",
         action: "フロンティアを開く",
       },
       jsps: {
@@ -480,20 +478,19 @@ const I18N = {
         primary: [
           { label: "概要", href: "/academic-frontier/" },
           { label: "論文庫", href: "/academic-frontier/papers.html" },
-          { label: "シグナル", href: "/academic-frontier/signals.html" },
+          { label: "指標", href: "/academic-frontier/metrics.html" },
         ],
         columns: [
           {
-            title: "観察",
+            title: "関連ワークスペース",
             items: [
-              { label: "指標", href: "/academic-frontier/metrics.html" },
-              { label: "研究者", href: "/academic-frontier/teams.html" },
+              { label: "個人ホームページ", href: "/academic/" },
+              { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
           {
-            title: "利用",
+            title: "サイト",
             items: [
-              { label: "現在の分野を開く", href: "/academic-frontier/" },
               { label: "ポータルへ戻る", href: "/" },
             ],
           },

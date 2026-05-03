@@ -1083,12 +1083,11 @@ a {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-areas:
-    "icon label"
-    "icon count"
+    "icon primary"
     "icon meta";
   align-items: center;
   column-gap: 14px;
-  row-gap: 2px;
+  row-gap: 4px;
   min-height: 116px;
   padding: 18px 20px;
   border-radius: 0;
@@ -1123,16 +1122,23 @@ a {
 
 .record-icon {
   grid-area: icon;
-  align-self: start;
+  align-self: center;
 }
 
-body[data-page="home"] .record-card .stack-label {
-  grid-area: label;
-  align-self: end;
+.record-primary-line {
+  grid-area: primary;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.34rem;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.record-primary-line .stack-label {
+  flex: 0 0 auto;
 }
 
 .record-count {
-  grid-area: count;
   display: inline-flex;
   align-items: baseline;
   gap: 0.28em;
