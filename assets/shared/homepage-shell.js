@@ -69,6 +69,7 @@
       clearSwitcherCloseTimer(switcher);
       setSwitcherExpandedState(switcher, false);
     });
+    document.body?.classList.remove("shared-mega-open");
   }
 
   function bindSwitcherHoverBehavior(root = document) {
@@ -425,6 +426,11 @@
         nav.dataset.sharedTopnavScrollBound = "true";
         nav.addEventListener("scroll", () => updateTopnavOverflowState(nav), { passive: true });
       }
+    });
+
+    global.HomepageComponents?.enhanceTopnavMegaMenus?.({
+      root: runtime.root,
+      navSelector: config.navSelector || ".topnav",
     });
 
     qsa(".topnav a", runtime.root).forEach((link) => {

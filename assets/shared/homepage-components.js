@@ -89,6 +89,349 @@
     return typeof icon === "string" ? icon : "";
   }
 
+  function workspaceIconMarkup(options = {}) {
+    return iconSprite("menu", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
+  }
+
+  function statefulHref(href, locale, theme) {
+    if (!href) {
+      return "#";
+    }
+    if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) {
+      return href;
+    }
+    let normalizedHref = href;
+    if (!href.startsWith("/")) {
+      try {
+        normalizedHref = new URL(href, global.location?.href || "https://sichentao.github.io/").pathname;
+      } catch {
+        normalizedHref = href;
+      }
+    }
+    if (normalizedHref.startsWith("/academic-frontier/")) {
+      const normalizedLocale = global.HomepageI18n?.normalizeLocale?.(locale) || "en";
+      const fileName = normalizedHref.replace(/^\/academic-frontier\/(?:zh\/|ja\/)?/, "");
+      const localizedPath = normalizedLocale === "en"
+        ? `/academic-frontier/${fileName || ""}`
+        : `/academic-frontier/${encodeURIComponent(normalizedLocale)}/${fileName || ""}`;
+      return global.HomepagePlatform?.siteStateHref?.(localizedPath, { locale: normalizedLocale, theme }) || localizedPath;
+    }
+    return global.HomepagePlatform?.siteStateHref?.(normalizedHref, { locale, theme }) || normalizedHref;
+  }
+
+  function workspaceMeta(locale = "en", theme = "tohoku") {
+    const labels = global.HomepagePlatform?.portalLabels?.(locale) || {};
+    const text = {
+      en: {
+        kicker: "Workspaces",
+        hint: "Switch workspaces.",
+        tags: {
+          portal: ["Start", "Overview"],
+          academic: ["Profile", "Records"],
+          frontier: ["Papers", "Metrics"],
+          jsps: ["Grants", "Deadlines"],
+        },
+      },
+      zh: {
+        kicker: "工作区",
+        hint: "切换主工作区。",
+        tags: {
+          portal: ["起点", "总览"],
+          academic: ["身份", "记录"],
+          frontier: ["论文", "分区"],
+          jsps: ["科研费", "时间线"],
+        },
+      },
+      ja: {
+        kicker: "ワークスペース",
+        hint: "ワークスペースを切り替えます。",
+        tags: {
+          portal: ["起点", "概要"],
+          academic: ["プロフィール", "記録"],
+          frontier: ["論文", "指標"],
+          jsps: ["科研費", "締切"],
+        },
+      },
+    }[locale] || {};
+    const portalData = global.HomepagePlatform?.portalItems?.({
+      locale,
+      theme,
+      currentPath: global.location?.pathname || "/",
+    }) || { items: [] };
+    return {
+      kicker: text.kicker || "Workspaces",
+      hint: text.hint || "Switch the whole site context.",
+      items: (portalData.items || []).map((item) => ({
+        ...item,
+        label: item.label || labels[item.id]?.full || item.id,
+        iconMarkup: item.iconMarkup || item.iconHtml || portalIconMarkup(item.icon),
+        tags: text.tags?.[item.id] || [],
+      })),
+    };
+  }
+
+  const SHARED_MEGA_TEXT = {
+    en: {
+      workspace: {
+        kicker: "Workspaces",
+        primary: [
+          { label: "Navigation portal", href: "/" },
+          { label: "Personal homepage", href: "/academic/" },
+          { label: "Academic Frontier", href: "/academic-frontier/" },
+          { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
+        ],
+        columns: [
+          { title: "Homepage", items: ["Profile", "Publications", "Awards", "Projects"] },
+          { title: "Research Ops", items: ["Paper library", "Venue metrics", "Grant deadlines"] },
+        ],
+      },
+      academic: {
+        home: [["Profile", "Contact", "Statistics", "CV"], ["Appointment", "Affiliation", "AI", "HPC"]],
+        timeline: [["Education", "Appointments", "Research visits"], ["Career history", "Institutions", "Milestones"]],
+        publications: [["Search", "Filters", "Metrics", "DOI"], ["Journal papers", "Conference papers", "Citation data"]],
+        awards: [["Awards", "IEEE CIS", "JST"], ["Evidence", "Dates", "Awarding bodies"]],
+        projects: [["Repositories", "Research directions", "Code"], ["AI", "Optimization", "HPC tools"]],
+        service: [["Reviewing", "Editorial service", "Venues"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
+        profiles: [["Scholar", "ResearchMap", "ResearchGate", "GitHub"], ["External identity", "Author pages", "Research links"]],
+        research: [["AI", "HPC", "Optimization", "Collaborators"], ["Methods", "Domains", "Research highlights"]],
+      },
+      frontier: {
+        overview: [["Paper library", "Search", "Filters"], ["Recent papers", "DOI", "Abstracts"]],
+        papers: [["Ledger view", "Cards", "Full abstracts"], ["JCR", "CAS", "Impact factor"]],
+        metrics: [["Venue metrics", "JCR", "CAS", "IF"], ["Official sources", "Public evidence", "Year aware"]],
+      },
+      jsps: {
+        calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
+        deadlines: [["Timeline", "Submission dates", "System windows"], ["Upcoming", "Official dates", "Reminders"]],
+        forms: [["Forms", "S-21", "S-22"], ["Templates", "Instructions", "Upload guidance"]],
+        guides: [["Application guides", "FAQ", "e-Rad"], ["Writing support", "Official manuals", "Checklist"]],
+        sources: [["Official sources", "Snapshots", "Evidence"], ["JSPS pages", "Local archive", "Verification"]],
+        archive: [["Snapshot archive", "Past calls", "Reference"], ["Yearly pages", "Change tracking", "Evidence trail"]],
+        program: [["Program detail", "Documents", "Actions"], ["Eligibility", "Forms", "Official links"]],
+      },
+    },
+    zh: {
+      workspace: {
+        kicker: "工作区",
+        primary: [
+          { label: "导航页", href: "/" },
+          { label: "个人主页", href: "/academic/" },
+          { label: "学术前沿", href: "/academic-frontier/" },
+          { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
+        ],
+        columns: [
+          { title: "个人主页", items: ["个人身份", "发表论文", "获奖", "项目"] },
+          { title: "研究工作流", items: ["论文库", "分区指标", "科研费时间线"] },
+        ],
+      },
+      academic: {
+        home: [["个人资料", "联系方式", "统计概览", "简历"], ["任职", "所属", "人工智能", "高性能计算"]],
+        timeline: [["教育经历", "任职经历", "访问经历"], ["时间线", "机构", "关键节点"]],
+        publications: [["搜索", "筛选", "指标", "DOI"], ["期刊论文", "会议论文", "被引用"]],
+        awards: [["获奖", "IEEE CIS", "JST"], ["证据", "日期", "授奖机构"]],
+        projects: [["代码仓库", "研究方向", "项目代码"], ["AI", "优化", "HPC 工具"]],
+        service: [["审稿", "编辑服务", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
+        profiles: [["Scholar", "ResearchMap", "ResearchGate", "GitHub"], ["外部身份", "作者主页", "研究链接"]],
+        research: [["人工智能", "高性能计算", "优化", "合作者"], ["方法", "应用领域", "研究亮点"]],
+      },
+      frontier: {
+        overview: [["论文库", "搜索", "筛选"], ["近期论文", "DOI", "摘要"]],
+        papers: [["论文清单", "卡片视图", "完整摘要"], ["JCR", "中科院", "影响因子"]],
+        metrics: [["期刊指标", "JCR", "中科院", "IF"], ["官方来源", "公开证据", "按年份追踪"]],
+      },
+      jsps: {
+        calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
+        deadlines: [["时间线", "提交日期", "系统开放"], ["近期截止", "官方日期", "提醒"]],
+        forms: [["表格材料", "S-21", "S-22"], ["模板", "填写说明", "上传说明"]],
+        guides: [["申请指南", "FAQ", "e-Rad"], ["写作辅助", "官方手册", "检查清单"]],
+        sources: [["官方来源", "快照", "证据"], ["JSPS 页面", "本地归档", "核验"]],
+        archive: [["快照归档", "往年公募", "参考"], ["年度页面", "变化追踪", "证据链"]],
+        program: [["项目详情", "资料", "操作"], ["申请条件", "表格", "官方链接"]],
+      },
+    },
+    ja: {
+      workspace: {
+        kicker: "ワークスペース",
+        primary: [
+          { label: "ナビゲーション", href: "/" },
+          { label: "個人ホームページ", href: "/academic/" },
+          { label: "学術前沿", href: "/academic-frontier/" },
+          { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
+        ],
+        columns: [
+          { title: "個人ホームページ", items: ["プロフィール", "発表論文", "受賞", "プロジェクト"] },
+          { title: "研究ワークフロー", items: ["論文庫", "区分指標", "科研費締切"] },
+        ],
+      },
+      academic: {
+        home: [["プロフィール", "連絡先", "統計", "CV"], ["現職", "所属", "人工知能", "高性能計算"]],
+        timeline: [["学歴", "職歴", "訪問歴"], ["年表", "機関", "節目"]],
+        publications: [["検索", "フィルタ", "指標", "DOI"], ["論文", "会議論文", "被引用"]],
+        awards: [["受賞", "IEEE CIS", "JST"], ["根拠", "日付", "授与機関"]],
+        projects: [["リポジトリ", "研究方向", "コード"], ["AI", "最適化", "HPC ツール"]],
+        service: [["査読", "編集", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
+        profiles: [["Scholar", "ResearchMap", "ResearchGate", "GitHub"], ["外部プロフィール", "著者ページ", "研究リンク"]],
+        research: [["人工知能", "高性能計算", "最適化", "共同研究者"], ["方法", "応用領域", "研究ハイライト"]],
+      },
+      frontier: {
+        overview: [["論文庫", "検索", "フィルタ"], ["最新論文", "DOI", "要旨"]],
+        papers: [["論文一覧", "カード", "全文要旨"], ["JCR", "CAS", "インパクトファクター"]],
+        metrics: [["会場指標", "JCR", "CAS", "IF"], ["公式情報", "公開根拠", "年次追跡"]],
+      },
+      jsps: {
+        calls: [["プログラム", "対象者", "優先度"], ["募集中", "区分", "申請者"]],
+        deadlines: [["年表", "提出日", "システム期間"], ["今後の締切", "公式日程", "リマインド"]],
+        forms: [["様式", "S-21", "S-22"], ["テンプレート", "記入要領", "アップロード説明"]],
+        guides: [["申請ガイド", "FAQ", "e-Rad"], ["執筆支援", "公式手引き", "チェックリスト"]],
+        sources: [["公式情報", "スナップショット", "根拠"], ["JSPS ページ", "ローカル保存", "確認"]],
+        archive: [["保存履歴", "過年度公募", "参考"], ["年度ページ", "変更追跡", "根拠記録"]],
+        program: [["プログラム詳細", "資料", "操作"], ["応募条件", "様式", "公式リンク"]],
+      },
+    },
+  };
+
+  function siteFromPath(pathname = global.location?.pathname || "/") {
+    const path = decodeURIComponent(pathname);
+    if (path.startsWith("/academic-frontier/")) return "frontier";
+    if (path.startsWith("/jsps-kakenhi/")) return "jsps";
+    if (path.startsWith("/academic/")) return "academic";
+    return "portal";
+  }
+
+  function megaKeyForHref(href, site = siteFromPath()) {
+    if (!href) return "";
+    let path = href;
+    try {
+      path = new URL(href, global.location?.href || "https://sichentao.github.io/").pathname;
+    } catch {}
+    const clean = decodeURIComponent(path).replace(/\/(?:zh|ja)\//, "/");
+    const file = clean.split("/").pop() || "index.html";
+    if (site === "academic") {
+      if (file === "index.html" || clean.endsWith("/academic/")) return "home";
+      return file.replace(/\.html$/, "");
+    }
+    if (site === "frontier") {
+      if (file === "index.html" || clean.endsWith("/academic-frontier/")) return "overview";
+      return file.replace(/\.html$/, "");
+    }
+    if (site === "jsps") {
+      if (file === "index.html" || clean.endsWith("/jsps-kakenhi/")) return "calls";
+      return file.replace(/\.html$/, "");
+    }
+    if (clean === "/") return "workspace";
+    if (clean.startsWith("/academic-frontier/")) return "frontier";
+    if (clean.startsWith("/jsps-kakenhi/")) return "jsps";
+    if (clean.startsWith("/academic/")) return "academic";
+    return "workspace";
+  }
+
+  function normalizeMegaGroups(rawGroups = []) {
+    return rawGroups.map((items, index) => ({
+      title: index === 0 ? "" : "",
+      items: Array.isArray(items) ? items : [],
+    }));
+  }
+
+  const PRIMARY_TARGETS = {
+    academic: {
+      home: ["#home", "#hero-contact-list", "#record-nav", "/academic/assets/docs/CV_SichenTao.pdf"],
+      timeline: ["#timeline-list", "#timeline-list", "#timeline-list"],
+      publications: ["#pub-search", "#filter-toolbar-label", "#publication-list", "#publication-list"],
+      awards: ["#award-page-list", "#award-page-list", "#award-page-list"],
+      projects: ["#project-repo-grid", "#project-direction-list", "#project-repo-grid"],
+      service: ["#service-page-groups", "#service-page-groups", "#service-page-groups"],
+      profiles: ["#link-search", "#link-grid", "#link-grid", "#link-grid"],
+      research: ["#method-tags", "#domain-tags", "#year-bars", "#collaborator-list"],
+    },
+    frontier: {
+      overview: ["#papers", "#pub-search", "#filter-toolbar-label"],
+      papers: ["#paperList", "#paperList", "#paperList"],
+      metrics: ["#venueMetricsList", "#metric-search", "#metric-filter-toolbar-label", "#venueMetricsList"],
+    },
+    jsps: {
+      calls: ["#call-list", "#call-search", "#call-list"],
+      deadlines: ["#deadline-timeline", "#deadline-table-body", "#deadline-timeline"],
+      forms: ["#form-grid", "#form-search", "#form-grid"],
+      guides: ["#guide-grid", "#guide-watch-grid", "#guide-grid"],
+      sources: ["#source-list", "#source-list", "#source-list"],
+      archive: ["#archive-list", "#archive-list", "#archive-list"],
+      program: ["#program-detail", "#program-page-actions", "#program-detail"],
+    },
+  };
+
+  function primaryHref(site, key, index, baseHref, locale, theme) {
+    const target = PRIMARY_TARGETS[site]?.[key]?.[index] || "";
+    if (target.startsWith("/")) {
+      return statefulHref(target, locale, theme);
+    }
+    const base = statefulHref(baseHref || global.location?.pathname || "/", locale, theme);
+    if (!target || target === "#") {
+      return base;
+    }
+    return `${base.split("#")[0]}${target}`;
+  }
+
+  function sharedMegaPanelForKey(key, options = {}) {
+    const locale = localeName(options.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {});
+    const theme = themeName(options.theme || global.HomepagePlatform?.readStoredTheme?.(), global.HomepagePlatform?.THEMES || {});
+    const site = options.site || siteFromPath();
+    const text = SHARED_MEGA_TEXT[locale] || SHARED_MEGA_TEXT.en;
+    if (key === "workspace") {
+      return {
+        kicker: text.workspace.kicker,
+        primary: text.workspace.primary.map((item) => ({ ...item, href: statefulHref(item.href, locale, theme) })),
+        columns: text.workspace.columns,
+      };
+    }
+    const rawGroups = text[site]?.[key];
+    if (!rawGroups) {
+      return null;
+    }
+    const groups = normalizeMegaGroups(rawGroups);
+    return {
+      kicker: "",
+      primary: groups[0]?.items?.map((label, index) => ({
+        label,
+        href: primaryHref(site, key, index, options.baseHref, locale, theme),
+      })) || [],
+      columns: groups.slice(1).map((group) => ({ title: group.title, items: group.items })),
+    };
+  }
+
+  function renderSharedMegaPanel(panel, key) {
+    const columns = (panel.columns || [])
+      .map(
+        (column) => `
+          <div class="shared-mega-column">
+            ${column.title ? `<p class="shared-mega-column-title">${escapeHtml(column.title)}</p>` : ""}
+            <div class="shared-mega-link-list">
+              ${(column.items || [])
+                .map((item) => `<span class="shared-mega-keyword">${escapeHtml(typeof item === "string" ? item : item.label)}</span>`)
+                .join("")}
+            </div>
+          </div>
+        `,
+      )
+      .join("");
+    const primary = (panel.primary || [])
+      .map((item) => {
+        const href = item.href && item.href !== "#" ? ` href="${escapeHtml(item.href)}"` : "";
+        return `<a class="shared-mega-primary-link"${href}>${escapeHtml(item.label)}</a>`;
+      })
+      .join("");
+    return `
+      <div class="topnav-mega-panel" data-topnav-mega-panel="${escapeHtml(key)}" role="group" aria-label="${escapeHtml(panel.kicker || "Navigation")}" hidden>
+        <div class="shared-mega-inner">
+          <div class="shared-mega-primary">
+            ${panel.kicker ? `<p class="shared-mega-kicker">${escapeHtml(panel.kicker)}</p>` : ""}
+            <div class="shared-mega-primary-list">${primary}</div>
+          </div>
+          ${columns ? `<div class="shared-mega-columns">${columns}</div>` : ""}
+        </div>
+      </div>
+    `;
+  }
+
   function addChoiceListener(node, choiceName, callback, hasHref) {
     if (typeof callback !== "function") {
       return;
@@ -258,46 +601,214 @@
         return;
       }
 
-      controls.querySelectorAll(".portal-return-link").forEach((node) => node.remove());
-      let switcher = controls.querySelector(".portal-switcher");
+      controls.querySelectorAll(".portal-return-link, .portal-switcher").forEach((node) => node.remove());
+      const headerTools = controls.closest(".header-tools");
+      if (!headerTools) {
+        return;
+      }
+      const navTarget = headerTools.querySelector(".topnav-shell, .topnav");
+      if (!navTarget) {
+        return;
+      }
+      let switcher = headerTools.querySelector(".workspace-switcher");
       if (!switcher) {
         switcher = document.createElement("div");
-        switcher.className = "portal-switcher control-switcher";
-        controls.insertBefore(switcher, controls.firstElementChild);
+        switcher.className = "workspace-switcher control-switcher";
+      }
+      if (switcher.nextElementSibling !== navTarget) {
+        headerTools.insertBefore(switcher, navTarget);
       }
       const wasOpen = switcher.classList.contains("is-open");
-      const trayLabel = config.trayLabel || labels.tray || "Site sections";
+      const workspace = workspaceMeta(locale, theme);
+      const trayLabel = config.trayLabel || labels.tray || workspace.kicker || "Site sections";
 
       switcher.innerHTML = `
         <button
-          class="portal-trigger ${escapeHtml(activeItem.extraClass || "")}"
+          class="portal-trigger workspace-trigger"
           type="button"
           data-portal-trigger
           aria-haspopup="true"
           aria-expanded="${wasOpen ? "true" : "false"}"
-          aria-label="${escapeHtml(activeItem.label)}"
-          title="${escapeHtml(activeItem.label)}"
+          aria-label="${escapeHtml(trayLabel)}"
+          title="${escapeHtml(trayLabel)}"
         >
-          ${activeItem.iconMarkup}
+          ${workspaceIconMarkup(config)}
         </button>
-        <div class="portal-tray" role="group" aria-label="${escapeHtml(trayLabel)}">
-          ${items
+        <div class="portal-tray workspace-tray" role="group" aria-label="${escapeHtml(trayLabel)}">
+          <div class="workspace-tray-inner">
+            <div class="workspace-tray-heading">
+              <p class="workspace-tray-kicker">${escapeHtml(workspace.kicker)}</p>
+              <p class="workspace-tray-hint">${escapeHtml(workspace.hint)}</p>
+            </div>
+            <div class="workspace-link-list">
+              ${workspace.items
+                .map(
+                  (item) => `
+                    <a
+                      class="workspace-link ${escapeHtml(item.extraClass || "")}${item.active ? " is-active" : ""}"
+                      href="${escapeHtml(item.href)}"
+                      ${item.active ? 'aria-current="page"' : ""}
+                    >
+                      <span class="workspace-link-icon">${item.iconMarkup}</span>
+                      <span class="workspace-link-copy">
+                        <span class="workspace-link-label">${escapeHtml(item.label)}</span>
+                        <span class="workspace-link-tags">${(item.tags || [])
+                          .map((tag) => `<span>${escapeHtml(tag)}</span>`)
+                          .join("")}</span>
+                      </span>
+                    </a>
+                  `,
+                )
+                .join("")}
+            </div>
+          </div>
+          <div class="portal-tray-icons" aria-hidden="true">
+            ${items
             .map(
               (item) => `
-                <a
-                  class="portal-chip ${escapeHtml(item.extraClass || "")}${item.active ? " is-active" : ""}"
-                  href="${escapeHtml(item.href)}"
-                  aria-label="${escapeHtml(item.label)}"
-                  title="${escapeHtml(item.label)}"
-                  ${item.active ? 'aria-current="page"' : ""}
-                >
+                <span class="portal-chip ${escapeHtml(item.extraClass || "")}${item.active ? " is-active" : ""}">
                   ${item.iconMarkup}
-                </a>
+                </span>
               `,
             )
             .join("")}
+          </div>
         </div>
       `;
+
+      if (switcher.dataset.workspaceMegaBound !== "true") {
+        switcher.dataset.workspaceMegaBound = "true";
+        switcher.addEventListener("pointerenter", () => document.body?.classList.add("shared-mega-open"));
+        switcher.addEventListener("pointerleave", () => {
+          global.setTimeout(() => {
+            if (!switcher.matches(":hover") && !switcher.classList.contains("is-open")) {
+              document.body?.classList.remove("shared-mega-open");
+            }
+          }, 180);
+        });
+        switcher.addEventListener("focusin", () => document.body?.classList.add("shared-mega-open"));
+        switcher.addEventListener("focusout", () => {
+          global.setTimeout(() => {
+            if (!switcher.contains(document.activeElement) && !switcher.classList.contains("is-open")) {
+              document.body?.classList.remove("shared-mega-open");
+            }
+          }, 180);
+        });
+      }
+    });
+  }
+
+  function enhanceTopnavMegaMenus(config = {}) {
+    const root = config.root || document;
+    const site = config.site || siteFromPath();
+    if (site === "portal") {
+      return;
+    }
+    const locale = localeName(config.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {});
+    const theme = themeName(config.theme || global.HomepagePlatform?.readStoredTheme?.(), global.HomepagePlatform?.THEMES || {});
+    toNodes(config.navSelector || ".topnav").forEach((nav) => {
+      nav.querySelectorAll(".topnav-mega-panel").forEach((panel) => panel.remove());
+      Array.from(nav.children)
+        .filter((node) => node.matches?.("a"))
+        .forEach((link) => {
+          const key = megaKeyForHref(link.getAttribute("href"), site);
+          const panel = sharedMegaPanelForKey(key, { locale, theme, site, baseHref: link.getAttribute("href") });
+          if (!panel) {
+            link.removeAttribute("data-shared-mega-key");
+            return;
+          }
+          link.dataset.sharedMegaKey = key;
+          link.setAttribute("aria-haspopup", "true");
+          link.setAttribute("aria-expanded", "false");
+          link.insertAdjacentHTML("afterend", renderSharedMegaPanel(panel, key));
+        });
+
+      if (nav.dataset.sharedMegaBound === "true") {
+        return;
+      }
+      nav.dataset.sharedMegaBound = "true";
+      let closeTimer = null;
+      const clearTimer = () => {
+        if (closeTimer) {
+          global.clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+      };
+      const close = () => {
+        clearTimer();
+        nav.querySelectorAll("[data-shared-mega-active]").forEach((node) => {
+          node.removeAttribute("data-shared-mega-active");
+          if (node.matches("a")) {
+            node.setAttribute("aria-expanded", "false");
+          }
+          if (node.matches(".topnav-mega-panel")) {
+            node.hidden = true;
+          }
+        });
+        document.body?.classList.remove("shared-mega-open");
+      };
+      const activate = (link) => {
+        if (!link?.dataset?.sharedMegaKey) {
+          return;
+        }
+        clearTimer();
+        document.querySelectorAll(".control-switcher.is-open").forEach((switcher) => {
+          switcher.classList.remove("is-open");
+          switcher
+            .querySelector("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]")
+            ?.setAttribute("aria-expanded", "false");
+        });
+        nav.querySelectorAll("[data-shared-mega-active]").forEach((node) => {
+          node.removeAttribute("data-shared-mega-active");
+          if (node.matches("a")) {
+            node.setAttribute("aria-expanded", "false");
+          }
+          if (node.matches(".topnav-mega-panel")) {
+            node.hidden = true;
+          }
+        });
+        const panel = link.nextElementSibling?.matches(".topnav-mega-panel") ? link.nextElementSibling : null;
+        if (!panel) {
+          return;
+        }
+        link.dataset.sharedMegaActive = "true";
+        link.setAttribute("aria-expanded", "true");
+        panel.dataset.sharedMegaActive = "true";
+        panel.hidden = false;
+        document.body?.classList.add("shared-mega-open");
+      };
+      const scheduleClose = () => {
+        clearTimer();
+        closeTimer = global.setTimeout(() => {
+          if (!nav.matches(":hover") && !nav.contains(document.activeElement)) {
+            close();
+          }
+        }, 160);
+      };
+      nav.addEventListener("pointerover", (event) => {
+        const link = event.target.closest?.("a[data-shared-mega-key]");
+        if (link && nav.contains(link)) {
+          activate(link);
+        }
+      });
+      nav.addEventListener("pointerleave", scheduleClose);
+      nav.addEventListener("focusin", (event) => {
+        const link = event.target.closest?.("a[data-shared-mega-key]");
+        if (link && nav.contains(link)) {
+          activate(link);
+        }
+      });
+      nav.addEventListener("focusout", scheduleClose);
+      nav.addEventListener("click", (event) => {
+        if (!event.target.closest(".topnav-mega-panel")) {
+          close();
+        }
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          close();
+        }
+      });
     });
   }
 
@@ -462,6 +973,7 @@
     renderLocaleSwitcher,
     renderThemeSwitcher,
     renderPortalSwitcher,
+    enhanceTopnavMegaMenus,
     renderStaticControlCluster,
   });
 })(window);
