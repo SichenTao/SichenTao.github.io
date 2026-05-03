@@ -433,6 +433,24 @@
   }
 
   function renderPortalStyleMegaMenu(panel, key) {
+    const workspaceColumn = panel.workspaceColumn
+      ? `
+        <div class="portal-mega-column portal-mega-workspace-column">
+          <p class="portal-mega-column-title">${escapeHtml(panel.workspaceColumn.title)}</p>
+          <div class="portal-mega-link-list">
+            ${(panel.workspaceColumn.items || [])
+              .map(
+                (item) => `
+                  <a class="portal-mega-link portal-mega-workspace-link${item.active ? " is-active" : ""}" href="${escapeHtml(item.href || "#")}" ${item.active ? 'aria-current="page"' : ""}>
+                    ${escapeHtml(item.label)}
+                  </a>
+                `,
+              )
+              .join("")}
+          </div>
+        </div>
+      `
+      : "";
     const columns = (panel.columns || [])
       .map(
         (column) => `
@@ -455,12 +473,33 @@
       .map((item) => `<a class="portal-mega-primary-link" href="${escapeHtml(item.href || "#")}">${escapeHtml(item.label)}</a>`)
       .join("");
     return `
-      <div class="portal-mega-inner" data-shared-portal-mega-key="${escapeHtml(key)}">
+      <div class="portal-mega-inner${workspaceColumn ? " portal-mega-inner--with-workspace" : ""}" data-shared-portal-mega-key="${escapeHtml(key)}">
+        ${workspaceColumn}
         <div class="portal-mega-primary">
           ${panel.kicker ? `<p class="portal-mega-kicker">${escapeHtml(panel.kicker)}</p>` : ""}
           <div class="portal-mega-primary-list">${primary}</div>
         </div>
         ${columns}
+      </div>
+    `;
+  }
+
+  function renderMobileWorkspaceLinks(locale, theme) {
+    const workspace = workspaceMeta(locale, theme);
+    return `
+      <div class="topnav-mobile-workspaces" aria-label="${escapeHtml(workspace.kicker)}">
+        <p class="topnav-mobile-workspaces-title">${escapeHtml(workspace.kicker)}</p>
+        <div class="topnav-mobile-workspace-list">
+          ${(workspace.items || [])
+            .map(
+              (item) => `
+                <a class="topnav-mobile-workspace-link${item.active ? " is-active" : ""}" href="${escapeHtml(item.href)}" ${item.active ? 'aria-current="page"' : ""}>
+                  ${escapeHtml(item.label)}
+                </a>
+              `,
+            )
+            .join("")}
+        </div>
       </div>
     `;
   }
@@ -650,118 +689,9 @@
         return;
       }
 
-      const locale = config.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
-      const theme = config.theme || global.HomepagePlatform?.readStoredTheme?.() || "tohoku";
-      const portalData = global.HomepagePlatform?.portalItems?.({
-        locale,
-        theme,
-        currentPath: config.currentPath || global.location?.pathname || "/",
-      }) || { labels: {}, items: [] };
-      const labels = config.labels || portalData.labels || {};
-      const items = (config.items || portalData.items || []).map((item) => ({
-        ...item,
-        iconMarkup: item.iconMarkup || item.iconHtml || portalIconMarkup(item.icon, config),
-        extraClass: item.extraClass || (item.icon === "portrait" ? "portal-chip--portrait" : ""),
-      }));
-      const activeItem = items.find((item) => item.active) || items[0];
-      if (!activeItem) {
-        return;
-      }
-
       controls.querySelectorAll(".portal-return-link, .portal-switcher").forEach((node) => node.remove());
       const headerTools = controls.closest(".header-tools");
-      if (!headerTools) {
-        return;
-      }
-      const navTarget = headerTools.querySelector(".topnav-shell, .topnav");
-      if (!navTarget) {
-        return;
-      }
-      let switcher = headerTools.querySelector(".workspace-switcher");
-      if (!switcher) {
-        switcher = document.createElement("div");
-        switcher.className = "workspace-switcher control-switcher";
-      }
-      if (switcher.nextElementSibling !== navTarget) {
-        headerTools.insertBefore(switcher, navTarget);
-      }
-      const wasOpen = switcher.classList.contains("is-open");
-      const workspace = workspaceMeta(locale, theme);
-      const trayLabel = config.trayLabel || labels.tray || workspace.kicker || "Site sections";
-
-      switcher.innerHTML = `
-        <button
-          class="portal-trigger workspace-trigger"
-          type="button"
-          data-portal-trigger
-          aria-haspopup="true"
-          aria-expanded="${wasOpen ? "true" : "false"}"
-          aria-label="${escapeHtml(trayLabel)}"
-          title="${escapeHtml(trayLabel)}"
-        >
-          ${workspaceIconMarkup(config)}
-        </button>
-        <div class="portal-tray workspace-tray" role="group" aria-label="${escapeHtml(trayLabel)}">
-          <div class="workspace-tray-inner">
-            <div class="workspace-tray-heading">
-              <p class="workspace-tray-kicker">${escapeHtml(workspace.kicker)}</p>
-              <p class="workspace-tray-hint">${escapeHtml(workspace.hint)}</p>
-            </div>
-            <div class="workspace-link-list">
-              ${workspace.items
-                .map(
-                  (item) => `
-                    <a
-                      class="workspace-link ${escapeHtml(item.extraClass || "")}${item.active ? " is-active" : ""}"
-                      href="${escapeHtml(item.href)}"
-                      ${item.active ? 'aria-current="page"' : ""}
-                    >
-                      <span class="workspace-link-icon">${item.iconMarkup}</span>
-                      <span class="workspace-link-copy">
-                        <span class="workspace-link-label">${escapeHtml(item.label)}</span>
-                        <span class="workspace-link-tags">${(item.tags || [])
-                          .map((tag) => `<span>${escapeHtml(tag)}</span>`)
-                          .join("")}</span>
-                      </span>
-                    </a>
-                  `,
-                )
-                .join("")}
-            </div>
-          </div>
-          <div class="portal-tray-icons" aria-hidden="true">
-            ${items
-            .map(
-              (item) => `
-                <span class="portal-chip ${escapeHtml(item.extraClass || "")}${item.active ? " is-active" : ""}">
-                  ${item.iconMarkup}
-                </span>
-              `,
-            )
-            .join("")}
-          </div>
-        </div>
-      `;
-
-      if (switcher.dataset.workspaceMegaBound !== "true") {
-        switcher.dataset.workspaceMegaBound = "true";
-        switcher.addEventListener("pointerenter", () => document.body?.classList.add("shared-mega-open"));
-        switcher.addEventListener("pointerleave", () => {
-          global.setTimeout(() => {
-            if (!switcher.matches(":hover") && !switcher.classList.contains("is-open")) {
-              document.body?.classList.remove("shared-mega-open");
-            }
-          }, 180);
-        });
-        switcher.addEventListener("focusin", () => document.body?.classList.add("shared-mega-open"));
-        switcher.addEventListener("focusout", () => {
-          global.setTimeout(() => {
-            if (!switcher.contains(document.activeElement) && !switcher.classList.contains("is-open")) {
-              document.body?.classList.remove("shared-mega-open");
-            }
-          }, 180);
-        });
-      }
+      headerTools?.querySelectorAll(".workspace-switcher").forEach((node) => node.remove());
     });
   }
 
@@ -776,6 +706,8 @@
     const { backdrop, panel } = ensureSharedPortalMegaScaffold(root);
     toNodes(config.navSelector || ".topnav").forEach((nav) => {
       nav.querySelectorAll(".topnav-mega-panel").forEach((panel) => panel.remove());
+      nav.querySelectorAll(".topnav-mobile-workspaces").forEach((node) => node.remove());
+      nav.insertAdjacentHTML("afterbegin", renderMobileWorkspaceLinks(locale, theme));
       Array.from(nav.children)
         .filter((node) => node.matches?.("a"))
         .forEach((link) => {
@@ -834,7 +766,16 @@
           return;
         }
         const fallbackHref = primaryHref(site, key, 0, link.getAttribute("href"), locale, theme);
-        panel.innerHTML = renderPortalStyleMegaMenu({ ...menu, fallbackHref }, key);
+        const workspace = workspaceMeta(locale, theme);
+        const workspaceColumn = {
+          title: workspace.kicker,
+          items: (workspace.items || []).map((item) => ({
+            label: item.label,
+            href: item.href,
+            active: item.active,
+          })),
+        };
+        panel.innerHTML = renderPortalStyleMegaMenu({ ...menu, fallbackHref, workspaceColumn }, key);
         panel.dataset.activeKey = key;
         panel.setAttribute("aria-hidden", "false");
         document.body?.classList.remove("shared-mega-open");
