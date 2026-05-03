@@ -262,10 +262,9 @@
       jsps: {
         calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
         deadlines: [["Timeline", "Submission dates", "System windows"], ["Upcoming", "Official dates", "Reminders"]],
-        forms: [["Forms", "S-21", "S-22"], ["Templates", "Instructions", "Upload guidance"]],
+        forms: [["Get Materials", "Notices", "Forms"], ["Application procedures", "Instructions", "Downloads"]],
         guides: [["Application guides", "FAQ", "e-Rad"], ["Writing support", "Official manuals", "Checklist"]],
-        sources: [["Official sources", "Snapshots", "Evidence"], ["JSPS pages", "Local archive", "Verification"]],
-        archive: [["Snapshot archive", "Past calls", "Reference"], ["Yearly pages", "Change tracking", "Evidence trail"]],
+        sources: [["Official sources", "JSPS pages", "Evidence"], ["Official pages", "Program pages", "Verification"]],
         program: [["Program detail", "Documents", "Actions"], ["Eligibility", "Forms", "Official links"]],
       },
     },
@@ -317,10 +316,9 @@
       jsps: {
         calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
         deadlines: [["时间线", "提交日期", "系统开放"], ["近期截止", "官方日期", "提醒"]],
-        forms: [["表格材料", "S-21", "S-22"], ["模板", "填写说明", "上传说明"]],
+        forms: [["获取材料", "通知", "样式"], ["公募要领", "填写说明", "下载链接"]],
         guides: [["申请指南", "FAQ", "e-Rad"], ["写作辅助", "官方手册", "检查清单"]],
-        sources: [["官方来源", "快照", "证据"], ["JSPS 页面", "本地归档", "核验"]],
-        archive: [["快照归档", "往年公募", "参考"], ["年度页面", "变化追踪", "证据链"]],
+        sources: [["官方来源", "JSPS 页面", "证据"], ["官方页面", "项目页面", "核验"]],
         program: [["项目详情", "资料", "操作"], ["申请条件", "表格", "官方链接"]],
       },
     },
@@ -372,10 +370,9 @@
       jsps: {
         calls: [["プログラム", "対象者", "優先度"], ["募集中", "区分", "申請者"]],
         deadlines: [["年表", "提出日", "システム期間"], ["今後の締切", "公式日程", "リマインド"]],
-        forms: [["様式", "S-21", "S-22"], ["テンプレート", "記入要領", "アップロード説明"]],
+        forms: [["資料取得", "通知", "様式"], ["公募要領", "記入要領", "ダウンロード"]],
         guides: [["申請ガイド", "FAQ", "e-Rad"], ["執筆支援", "公式手引き", "チェックリスト"]],
-        sources: [["公式情報", "スナップショット", "根拠"], ["JSPS ページ", "ローカル保存", "確認"]],
-        archive: [["保存履歴", "過年度公募", "参考"], ["年度ページ", "変更追跡", "根拠記録"]],
+        sources: [["公式情報", "JSPS ページ", "根拠"], ["公式ページ", "種目ページ", "確認"]],
         program: [["プログラム詳細", "資料", "操作"], ["応募条件", "様式", "公式リンク"]],
       },
     },
@@ -663,6 +660,80 @@
     return { backdrop, panel };
   }
 
+  function currentMegaContext(config = {}) {
+    return {
+      locale: localeName(config.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {}),
+      theme: themeName(config.theme || global.HomepagePlatform?.readStoredTheme?.(), global.HomepagePlatform?.THEMES || {}),
+    };
+  }
+
+  function renderPortalMegaForLink(link, options = {}) {
+    const root = options.root || document;
+    const panel = options.panel || document.getElementById("portalMegaMenu");
+    const nav = options.nav || link?.closest?.(".topnav");
+    const site = options.site || siteFromPath();
+    if (!link?.dataset?.sharedMegaKey || !panel || !nav) {
+      return false;
+    }
+    const { locale, theme } = currentMegaContext(options);
+    const key = link.dataset.sharedMegaKey;
+    const baseHref = link.getAttribute("href");
+    const menu = sharedMegaPanelForKey(key, { locale, theme, site, baseHref });
+    if (!menu) {
+      return false;
+    }
+    if (!menu.kicker) {
+      menu.kicker = (link.textContent || "").trim();
+    }
+    const fallbackHref = primaryHref(site, key, 0, baseHref, locale, theme);
+    const workspace = workspaceMeta(locale, theme);
+    const workspaceColumn = {
+      title: workspace.kicker,
+      items: (workspace.items || []).map((item) => ({
+        label: item.label,
+        href: item.href,
+        active: item.active,
+      })),
+    };
+    panel.innerHTML = renderPortalStyleMegaMenu({ ...menu, fallbackHref, workspaceColumn }, key);
+    panel.dataset.activeKey = key;
+    panel.dataset.activeLocale = locale;
+    panel.dataset.activeTheme = theme;
+    panel.setAttribute("aria-hidden", "false");
+    document.body?.classList.remove("shared-mega-open");
+    document.body?.classList.add("portal-mega-open");
+    global.HomepageSharedShell?.syncPortalMegaAlignment?.(panel, nav);
+    root.querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")?.forEach((node) => {
+      const isActive = node === link;
+      node.setAttribute("aria-expanded", isActive ? "true" : "false");
+      if (isActive) {
+        node.setAttribute("data-mega-active", "true");
+        node.setAttribute("data-shared-mega-active", "true");
+      } else {
+        node.removeAttribute("data-mega-active");
+        node.removeAttribute("data-shared-mega-active");
+      }
+    });
+    return true;
+  }
+
+  function refreshOpenTopnavMegaMenu(config = {}) {
+    const root = config.root || document;
+    const panel = config.panel || document.getElementById("portalMegaMenu");
+    if (!panel || panel.getAttribute("aria-hidden") === "true") {
+      return false;
+    }
+    const activeKey = panel.dataset.activeKey || "";
+    const site = config.site || siteFromPath();
+    return toNodes(config.navSelector || ".topnav").some((nav) => {
+      const selector = activeKey
+        ? `a[data-shared-mega-active='true'], a[data-mega-active='true'], a[data-shared-mega-key='${activeKey}']`
+        : "a[data-shared-mega-active='true'], a[data-mega-active='true']";
+      const activeLink = nav.querySelector(selector);
+      return activeLink ? renderPortalMegaForLink(activeLink, { ...config, root, panel, nav, site }) : false;
+    });
+  }
+
   function addChoiceListener(node, choiceName, callback, hasHref) {
     if (typeof callback !== "function") {
       return;
@@ -826,8 +897,7 @@
     if (site === "portal") {
       return;
     }
-    const locale = localeName(config.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {});
-    const theme = themeName(config.theme || global.HomepagePlatform?.readStoredTheme?.(), global.HomepagePlatform?.THEMES || {});
+    const { locale, theme } = currentMegaContext(config);
     const { backdrop, panel } = ensureSharedPortalMegaScaffold(root);
     toNodes(config.navSelector || ".topnav").forEach((nav) => {
       nav.querySelectorAll(".topnav-mega-panel").forEach((panel) => panel.remove());
@@ -848,6 +918,10 @@
           link.setAttribute("aria-haspopup", "true");
           link.setAttribute("aria-expanded", "false");
         });
+
+      if (panel?.getAttribute("aria-hidden") === "false") {
+        refreshOpenTopnavMegaMenu({ ...config, root, panel, navSelector: nav, site });
+      }
 
       if (nav.dataset.sharedMegaBound === "true") {
         return;
@@ -885,41 +959,9 @@
           close();
           return;
         }
-        const key = link.dataset.sharedMegaKey;
-        const menu = sharedMegaPanelForKey(key, { locale, theme, site, baseHref: link.getAttribute("href") });
-        if (!menu || !panel) {
+        if (!renderPortalMegaForLink(link, { ...config, root, panel, nav, site })) {
           return;
         }
-        if (!menu.kicker) {
-          menu.kicker = (link.textContent || "").trim();
-        }
-        const fallbackHref = primaryHref(site, key, 0, link.getAttribute("href"), locale, theme);
-        const workspace = workspaceMeta(locale, theme);
-        const workspaceColumn = {
-          title: workspace.kicker,
-          items: (workspace.items || []).map((item) => ({
-            label: item.label,
-            href: item.href,
-            active: item.active,
-          })),
-        };
-        panel.innerHTML = renderPortalStyleMegaMenu({ ...menu, fallbackHref, workspaceColumn }, key);
-        panel.dataset.activeKey = key;
-        panel.setAttribute("aria-hidden", "false");
-        document.body?.classList.remove("shared-mega-open");
-        document.body?.classList.add("portal-mega-open");
-        global.HomepageSharedShell?.syncPortalMegaAlignment?.(panel, nav);
-        root.querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")?.forEach((node) => {
-          const isActive = node === link;
-          node.setAttribute("aria-expanded", isActive ? "true" : "false");
-          if (isActive) {
-            node.setAttribute("data-mega-active", "true");
-            node.setAttribute("data-shared-mega-active", "true");
-          } else {
-            node.removeAttribute("data-mega-active");
-            node.removeAttribute("data-shared-mega-active");
-          }
-        });
       };
       const scheduleClose = () => {
         clearTimer();
@@ -1142,6 +1184,7 @@
     renderThemeSwitcher,
     renderPortalSwitcher,
     enhanceTopnavMegaMenus,
+    refreshOpenTopnavMegaMenu,
     renderStaticControlCluster,
   });
 })(window);

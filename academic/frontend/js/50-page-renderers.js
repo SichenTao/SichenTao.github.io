@@ -535,12 +535,12 @@ function renderProjectsPage(data) {
       ? data.featured_projects
           .map(
             (item) => `
-              <article class="link-card">
+              <a class="link-card project-repo-card" href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(lt(item.title))}">
                 <span class="tag">${escapeHtml(lt(item.tag))}</span>
                 <h4>${escapeHtml(lt(item.title))}</h4>
                 <p>${escapeHtml(lt(item.description))}</p>
-                <div class="link-row">${buildLink(item.url, t("actions.open_repository"))}</div>
-              </article>
+                <span class="project-card-cta">${escapeHtml(t("actions.open_repository"))}</span>
+              </a>
             `,
           )
           .join("")

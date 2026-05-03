@@ -392,6 +392,12 @@ function applyLocale(localeName, persist = true) {
   if (dataReady) {
     renderCurrentPage();
   }
+  window.HomepageComponents?.refreshOpenTopnavMegaMenu?.({
+    root: document,
+    navSelector: ".topnav",
+    locale: nextLocale,
+    theme: resolveThemeName(),
+  });
 }
 
 function bindThemeButtons() {

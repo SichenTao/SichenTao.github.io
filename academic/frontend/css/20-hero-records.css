@@ -616,7 +616,7 @@ body[data-page="home"] .hero-top {
   grid-template-columns: minmax(0, 1.36fr) minmax(320px, 0.72fr);
   align-items: center;
   justify-items: stretch;
-  gap: min(4vw, 52px);
+  gap: clamp(28px, 4vw, 52px);
 }
 
 body[data-page="home"] .hero-primary {
@@ -625,7 +625,7 @@ body[data-page="home"] .hero-primary {
   max-width: none;
   text-align: left;
   justify-self: stretch;
-  gap: min(3vw, 34px);
+  gap: clamp(28px, 4vw, 52px);
 }
 
 body[data-page="home"] .hero-photo-inline {

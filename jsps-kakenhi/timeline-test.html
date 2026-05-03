@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="JSPS 申请指南页，汇总 FAQ、电子系统、e-Rad 以及科研费与研究员项目的关键官方文档。"
+      content="JSPS timeline-linked test homepage for comparing a left timeline with right-side program entries."
     />
-    <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/guides.html" />
+    <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/timeline-test.html" />
     <meta name="theme-color" content="#f3eef9" />
-    <title>申请指南 | JSPS 研究资助与研究员工作台</title>
+    <title>时间线联动测试首页 | JSPS 研究资助与研究员工作台</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -57,7 +57,7 @@
     <script defer src="/assets/shared/homepage-shell.js?v=20260504-040616"></script>
     <script defer src="./app.js?v=20260504-040616"></script>
   </head>
-  <body data-page="guides">
+  <body data-page="timeline-test">
     <div class="page-wash"></div>
     <div class="page-grid"></div>
     <div class="orb orb-a"></div>
@@ -74,7 +74,7 @@
           <a href="./index.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-home"></use></svg><span data-i18n="nav.home">首页</span></a>
           <a href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
           <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">获取材料</span></a>
-          <a href="./guides.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指南</span></a>
+          <a href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指南</span></a>
           <a href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="nav.sources">官方来源</span></a>
         </nav>
       </div>
@@ -84,32 +84,27 @@
       <section class="panel section-card reveal">
         <div class="section-head">
           <div>
-            <h2 data-i18n="guides.gridTitle">关键申请入口</h2>
+            <p class="eyebrow" data-i18n="timelineTest.nav">联动测试首页</p>
+            <h2 data-i18n="timelineTest.title">时间线联动测试首页</h2>
+            <p class="section-note" data-i18n="timelineTest.lede">左侧保留时间线扫读，右侧保留项目入口；点击任一侧会定位另一侧，同时项目入口仍直接打开官方页面。</p>
           </div>
+          <div id="timeline-test-metrics" class="meta-strip"></div>
         </div>
-        <div id="guide-grid" class="card-grid portal-card-grid"></div>
-      </section>
-
-      <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="guides.watchTitle">重点项目提醒</h2>
-          </div>
+        <div id="timeline-test-workbench" class="portal-timeline-test-grid">
+          <aside class="portal-test-pane portal-test-timeline-pane">
+            <div class="portal-test-pane-head">
+              <h3 data-i18n="timelineTest.timelinePane">时间线</h3>
+            </div>
+            <div id="timeline-test-timeline" class="timeline"></div>
+          </aside>
+          <section class="portal-test-pane">
+            <div class="portal-test-pane-head">
+              <h3 data-i18n="timelineTest.programPane">项目入口</h3>
+            </div>
+            <div id="timeline-test-programs" class="portal-test-program-stack"></div>
+          </section>
         </div>
-        <div id="guide-watch-grid" class="card-grid portal-card-grid"></div>
       </section>
     </main>
-
-    <footer class="shell footer-shell reveal">
-      <div class="footer-panel">
-        <div>
-          <p class="eyebrow" data-i18n="footer.resources">Resources</p>
-          <h2 data-i18n="guides.footerTitle">官方指引核对完，再看来源和归档</h2>
-        </div>
-        <div class="footer-actions">
-          <a class="button button-primary" href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="footer.sources">查看官方来源</span></a>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

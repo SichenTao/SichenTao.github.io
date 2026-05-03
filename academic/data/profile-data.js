@@ -281,12 +281,6 @@ window.SICHEN_PORTAL_DATA = {
   ],
   "featured_projects": [
     {
-      "title": "学术前沿",
-      "tag": "Research Radar",
-      "description": "Local-first research radar for tracking frontier teams, papers, repositories, and emerging directions across multiple domains.",
-      "url": "https://sichentao.github.io/academic-frontier/"
-    },
-    {
       "title": "CEC 2025 RDEx Competition System",
       "tag": "Optimization",
       "description": "Competition-oriented implementation around reconstructed differential evolution and benchmark-driven optimization.",

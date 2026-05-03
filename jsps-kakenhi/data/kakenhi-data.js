@@ -11478,14 +11478,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -11503,14 +11503,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -11903,14 +11903,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -11928,14 +11928,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -11953,14 +11953,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2026 planned call schedule.",
-        "zh": "基于“2026年度预计公募日程”整理的预计日期。",
-        "ja": "令和8(2026)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2026 planned call schedule.",
+        "zh": "基于“2026年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和8(2026)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -11978,14 +11978,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2026 planned call schedule.",
-        "zh": "基于“2026年度预计公募日程”整理的预计日期。",
-        "ja": "令和8(2026)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2026 planned call schedule.",
+        "zh": "基于“2026年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和8(2026)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -12003,14 +12003,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -12028,14 +12028,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -12053,14 +12053,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -12078,14 +12078,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -12103,14 +12103,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle call opens (planned)",
-        "zh": "下一轮公募开始（预计）",
-        "ja": "次年度公募開始（予定）"
+        "en": "Next-cycle call opens (prior-cycle estimate)",
+        "zh": "下一轮公募开始（经验预计）",
+        "ja": "次年度公募開始（経験的予定）"
       },
       "note": {
-        "en": "Planned date based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定日です。"
+        "en": "Prior-cycle estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定日です。"
       }
     },
     {
@@ -12128,14 +12128,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2026 planned call schedule.",
-        "zh": "基于“2026年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和8(2026)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2026 planned call schedule.",
+        "zh": "基于“2026年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和8(2026)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -12153,14 +12153,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2026 planned call schedule.",
-        "zh": "基于“2026年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和8(2026)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2026 planned call schedule.",
+        "zh": "基于“2026年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和8(2026)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -12178,14 +12178,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -12203,14 +12203,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -12228,14 +12228,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -12253,14 +12253,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定締切です。"
       }
     },
     {
@@ -12278,14 +12278,14 @@ window.KAKENHI_PORTAL_DATA = {
       "datetime": null,
       "status": "upcoming",
       "title": {
-        "en": "Next-cycle JSPS deadline (planned)",
-        "zh": "下一轮 JSPS 截止（预计）",
-        "ja": "次年度 JSPS 締切（予定）"
+        "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
+        "zh": "下一轮 JSPS 截止（经验预计）",
+        "ja": "次年度 JSPS 締切（経験的予定）"
       },
       "note": {
-        "en": "Planned deadline based on the FY2027 planned call schedule.",
-        "zh": "基于“2027年度预计公募日程”整理的预计截止日期。",
-        "ja": "令和9(2027)年度公募予定に基づく予定締切です。"
+        "en": "Prior-cycle deadline estimate based on the FY2027 planned call schedule.",
+        "zh": "基于“2027年度预计公募日程”整理的经验预计截止日期。",
+        "ja": "令和9(2027)年度公募予定に基づく経験的予定締切です。"
       }
     }
   ],
