@@ -290,6 +290,12 @@
     },
   };
 
+  const QUICK_COLUMN_TITLE = {
+    en: "Quick Links",
+    zh: "快速链接",
+    ja: "クイックリンク",
+  };
+
   function siteFromPath(pathname = global.location?.pathname || "/") {
     const path = decodeURIComponent(pathname);
     if (path.startsWith("/academic-frontier/")) return "frontier";
@@ -325,9 +331,9 @@
     return "workspace";
   }
 
-  function normalizeMegaGroups(rawGroups = []) {
+  function normalizeMegaGroups(rawGroups = [], locale = "en") {
     return rawGroups.map((items, index) => ({
-      title: index === 0 ? "" : "",
+      title: index === 0 ? "" : QUICK_COLUMN_TITLE[locale] || QUICK_COLUMN_TITLE.en,
       items: Array.isArray(items) ? items : [],
     }));
   }
@@ -387,7 +393,7 @@
     if (!rawGroups) {
       return null;
     }
-    const groups = normalizeMegaGroups(rawGroups);
+    const groups = normalizeMegaGroups(rawGroups, locale);
     return {
       kicker: "",
       primary: groups[0]?.items?.map((label, index) => ({
@@ -764,6 +770,9 @@
         const menu = sharedMegaPanelForKey(key, { locale, theme, site, baseHref: link.getAttribute("href") });
         if (!menu || !panel) {
           return;
+        }
+        if (!menu.kicker) {
+          menu.kicker = (link.textContent || "").trim();
         }
         const fallbackHref = primaryHref(site, key, 0, link.getAttribute("href"), locale, theme);
         const workspace = workspaceMeta(locale, theme);
