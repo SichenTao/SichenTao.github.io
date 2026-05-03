@@ -1085,7 +1085,7 @@ a {
   grid-template-areas:
     "icon primary"
     "icon meta";
-  align-items: center;
+  align-items: start;
   column-gap: 14px;
   row-gap: 4px;
   min-height: 116px;
@@ -1122,7 +1122,7 @@ a {
 
 .record-icon {
   grid-area: icon;
-  align-self: center;
+  align-self: start;
 }
 
 .record-primary-line {
@@ -1168,6 +1168,8 @@ a {
   grid-area: meta;
   font-size: 0.85rem;
   line-height: 1.36;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 .record-cta {

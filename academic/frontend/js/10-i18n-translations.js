@@ -72,7 +72,7 @@ const translations = {
       resources: "Resources",
       portrait_alt: "Portrait of Sichen Tao",
       bio:
-        "Researcher working at the intersection of artificial intelligence, deep learning, brain-inspired neural networks, optimization, and high-performance computing, with applications in wind farm layout optimization, healthcare AI, human-robot collaboration, and AI for science.",
+        "Research focuses on artificial intelligence (AI) and high-performance computing (HPC), including deep learning, brain-inspired neural networks, black-box optimization algorithms, and intersections with HPC, with application scenarios in energy conversion and management, AI-agent social simulation, emergency healthcare, human-machine collaboration, and AI for Science.",
     },
     sections: {
       files: "Files",
@@ -143,6 +143,8 @@ const translations = {
       items: "items",
       repos: "repos",
       venues: "venues",
+      award_summary: "IEEE Computational Intelligence Society (CIS), Japan Science and Technology Agency (JST), etc.",
+      service_summary: "IEEE Transactions, IEEE, Elsevier, Springer, etc.",
     },
     roles: {
       co_first_author: "co-first author",
@@ -326,7 +328,7 @@ const translations = {
       resources: "資料",
       portrait_alt: "陶思晨のポートレート",
       bio:
-        "人工知能、深層学習、脳着想ニューラルネットワーク、最適化、高性能計算の交差領域で研究を行い、風力発電所レイアウト最適化、医療AI、人間・ロボット協調、AI for Science への応用を進めています。",
+        "研究は人工知能（AI）と高性能計算（HPC）に焦点を置き、深層学習、脳着想ニューラルネットワーク、ブラックボックス最適化アルゴリズムと HPC の交差領域を含みます。応用先には、エネルギー変換・管理、AI エージェントによる社会シミュレーション、救急医療、人間・機械協調、AI for Science などがあります。",
     },
     sections: {
       files: "ファイル",
@@ -397,6 +399,8 @@ const translations = {
       items: "件",
       repos: "リポジトリ",
       venues: "件",
+      award_summary: "IEEE Computational Intelligence Society（CIS）、科学技術振興機構（JST）など",
+      service_summary: "IEEE Trans.、IEEE、Elsevier、Springer など",
     },
     roles: {
       co_first_author: "共同筆頭著者",
@@ -580,7 +584,7 @@ const translations = {
       resources: "资料",
       portrait_alt: "陶思晨肖像",
       bio:
-        "研究聚焦于人工智能、深度学习、脑启发神经网络、优化与高性能计算的交叉领域，应用场景包括风电场布局优化、医疗 AI、人机协作以及 AI for Science。",
+        "研究聚焦于人工智能（AI）和高性能计算（HPC），包括深度学习、脑启发神经网络、黑盒优化算法与 HPC 的交叉领域，应用场景包括能源转换与管理、AI 智能体社会模拟、医疗急救、人机协作以及 AI for Science 等。",
     },
     sections: {
       files: "文件",
@@ -651,6 +655,8 @@ const translations = {
       items: "项",
       repos: "仓库",
       venues: "项",
+      award_summary: "IEEE 计算智能协会（CIS）、日本科学技术振兴机构（JST）等",
+      service_summary: "IEEE Trans、IEEE、Elsevier、Springer 等",
     },
     roles: {
       co_first_author: "共同第一作者",

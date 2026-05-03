@@ -9,14 +9,14 @@ window.SICHEN_PORTAL_DATA = {
     "display_name_native": "陶思晨",
     "current_title": "Assistant Professor",
     "current_title_note": "Official public sources also note a specially appointed appointment wording in SENAC materials effective 2025-10-01.",
-    "affiliation": "High Performance Computing Laboratory, Cyberscience Center, Tohoku University",
+    "affiliation": "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory",
     "location": "Sendai, Japan",
     "portrait": "./assets/images/avatar-openai.jpg",
     "emails": [
       "sichen.tao@tohoku.ac.jp",
       "taosc73@hotmail.com"
     ],
-    "bio": "Researcher working at the intersection of artificial intelligence, deep learning, brain-inspired neural networks, optimization, and high-performance computing, with applications in wind farm layout optimization, healthcare AI, human-robot collaboration, and AI for science.",
+    "bio": "Research focuses on artificial intelligence (AI) and high-performance computing (HPC), including deep learning, brain-inspired neural networks, black-box optimization algorithms, and intersections with HPC, with application scenarios in energy conversion and management, AI-agent social simulation, emergency healthcare, human-machine collaboration, and AI for Science.",
     "research_methods": [
       "Artificial intelligence",
       "Deep learning",

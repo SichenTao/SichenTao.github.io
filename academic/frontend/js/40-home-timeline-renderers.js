@@ -153,7 +153,7 @@ function renderRecordNav(data) {
       label: t("nav.awards"),
       value: `${data.awards.length}`,
       unit: unitWord("items"),
-      meta: "",
+      meta: t("labels.award_summary"),
       href: "./awards.html",
     },
     {
@@ -171,7 +171,7 @@ function renderRecordNav(data) {
       label: t("nav.service"),
       value: `${data.service.length}`,
       unit: unitWord("venues"),
-      meta: "",
+      meta: t("labels.service_summary"),
       href: "./service.html",
     },
   ];

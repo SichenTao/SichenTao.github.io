@@ -394,25 +394,18 @@ function applyWarmEmphasis(value, phrases = []) {
 }
 
 function homeAffiliationEmphasisPhrases() {
-  const localeName = resolveLocaleName();
-  if (localeName === "ja") {
-    return ["高性能計算研究部", "サイバーサイエンスセンター", "東北大学"];
-  }
-  if (localeName === "zh") {
-    return ["高性能计算实验室", "网络科学中心", "东北大学"];
-  }
-  return ["High Performance Computing Laboratory", "Cyberscience Center", "Tohoku University"];
+  return [];
 }
 
 function homeBioEmphasisPhrases() {
   const localeName = resolveLocaleName();
   if (localeName === "ja") {
-    return ["人工知能", "最適化", "高性能計算", "AI for Science"];
+    return ["人工知能", "高性能計算"];
   }
   if (localeName === "zh") {
-    return ["人工智能", "优化", "高性能计算", "AI for Science"];
+    return ["人工智能", "高性能计算"];
   }
-  return ["artificial intelligence", "optimization", "high-performance computing", "AI for science"];
+  return ["artificial intelligence", "high-performance computing"];
 }
 
 function sourceNoteEmphasisPhrases() {
@@ -470,4 +463,3 @@ function renderHeroContactLabel(key, label) {
   }
   return `<span class="stack-label-with-emoji"><span class="stack-emoji" aria-hidden="true">${emoji}</span><span>${escapeHtml(label)}</span></span>`;
 }
-
