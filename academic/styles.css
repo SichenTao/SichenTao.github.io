@@ -1523,10 +1523,6 @@ body[data-page="home"] .record-nav {
   margin: 0 auto;
 }
 
-body[data-page="home"] .footer-shell {
-  margin-top: 58px;
-}
-
 .hero-scroll-cue {
   justify-self: center;
   display: inline-grid;
@@ -1555,6 +1551,28 @@ body[data-page="home"] .footer-shell {
   width: 1.1rem;
   height: 1.1rem;
   transform: rotate(180deg);
+}
+
+.hero-lower-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.hero-lower-tools .hero-scroll-cue {
+  grid-column: 2;
+}
+
+.hero-cv-link {
+  grid-column: 3;
+  justify-self: end;
+  min-height: 38px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  white-space: nowrap;
 }
 
 @media (min-width: 1600px) {
@@ -4452,6 +4470,22 @@ body[data-page="profiles"] .profile-mark-image.profile-mark-researchmap img {
   body[data-page="home"] .record-card + .record-card,
   body[data-page="home"] .record-card:nth-child(n + 3) {
     border-top: 1px solid rgba(var(--teal-rgb), 0.13);
+  }
+
+  body[data-page="home"] .hero-lower-tools {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+  }
+
+  body[data-page="home"] .hero-lower-tools > span {
+    display: none;
+  }
+
+  body[data-page="home"] .hero-lower-tools .hero-scroll-cue,
+  body[data-page="home"] .hero-cv-link {
+    grid-column: 1;
+    justify-self: center;
   }
 }
 

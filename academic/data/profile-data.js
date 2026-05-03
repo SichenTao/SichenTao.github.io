@@ -63,7 +63,7 @@ window.SICHEN_PORTAL_DATA = {
       },
       {
         "label": "English",
-        "level": "Professional working proficiency"
+        "level": "Business"
       }
     ],
     "interests_outside_work": [

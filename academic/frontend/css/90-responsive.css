@@ -468,6 +468,22 @@
   body[data-page="home"] .record-card:nth-child(n + 3) {
     border-top: 1px solid rgba(var(--teal-rgb), 0.13);
   }
+
+  body[data-page="home"] .hero-lower-tools {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 8px;
+  }
+
+  body[data-page="home"] .hero-lower-tools > span {
+    display: none;
+  }
+
+  body[data-page="home"] .hero-lower-tools .hero-scroll-cue,
+  body[data-page="home"] .hero-cv-link {
+    grid-column: 1;
+    justify-self: center;
+  }
 }
 
 @media (max-width: 390px) {

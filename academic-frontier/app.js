@@ -5118,12 +5118,12 @@ function buildPaperCardAbstract(paper) {
           ? `<span class="rich-text abstract-text abstract-text-full" hidden>${formatRichText(rawAbstract)}</span>`
           : ""
       }
+      ${
+        isExpandable
+          ? `<button class="abstract-toggle" type="button" data-abstract-toggle aria-expanded="false">${escapeHtml(ui("abstractExpandAction"))}</button>`
+          : ""
+      }
     </p>
-    ${
-      isExpandable
-        ? `<button class="abstract-toggle" type="button" data-abstract-toggle aria-expanded="false">${escapeHtml(ui("abstractExpandAction"))}</button>`
-        : ""
-    }
   `;
   return abstract;
 }

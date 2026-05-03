@@ -2763,8 +2763,8 @@ body[data-page] .section-card:not(:first-child) .section-head h2 {
 .abstract-toggle {
   display: inline-flex;
   align-items: center;
-  min-height: 28px;
-  margin-top: 6px;
+  min-height: 0;
+  margin: 0 0 0 0.42em;
   padding: 0;
   border: 0;
   background: transparent;
@@ -2773,6 +2773,7 @@ body[data-page] .section-card:not(:first-child) .section-head h2 {
   font-weight: 700;
   line-height: 1.2;
   cursor: pointer;
+  vertical-align: baseline;
 }
 
 .abstract-toggle:hover,
