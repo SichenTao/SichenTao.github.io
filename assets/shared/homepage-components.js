@@ -432,6 +432,73 @@
     `;
   }
 
+  function renderPortalStyleMegaMenu(panel, key) {
+    const columns = (panel.columns || [])
+      .map(
+        (column) => `
+          <div class="portal-mega-column">
+            ${column.title ? `<p class="portal-mega-column-title">${escapeHtml(column.title)}</p>` : ""}
+            <div class="portal-mega-link-list">
+              ${(column.items || [])
+                .map((item) => {
+                  const label = typeof item === "string" ? item : item.label;
+                  const href = typeof item === "string" ? panel.fallbackHref || "#" : item.href || panel.fallbackHref || "#";
+                  return `<a class="portal-mega-link" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
+                })
+                .join("")}
+            </div>
+          </div>
+        `,
+      )
+      .join("");
+    const primary = (panel.primary || [])
+      .map((item) => `<a class="portal-mega-primary-link" href="${escapeHtml(item.href || "#")}">${escapeHtml(item.label)}</a>`)
+      .join("");
+    return `
+      <div class="portal-mega-inner" data-shared-portal-mega-key="${escapeHtml(key)}">
+        <div class="portal-mega-primary">
+          ${panel.kicker ? `<p class="portal-mega-kicker">${escapeHtml(panel.kicker)}</p>` : ""}
+          <div class="portal-mega-primary-list">${primary}</div>
+        </div>
+        ${columns}
+      </div>
+    `;
+  }
+
+  function ensureSharedPortalMegaScaffold(root = document) {
+    let backdrop = document.getElementById("portalMegaBackdrop");
+    let panel = document.getElementById("portalMegaMenu");
+    const header = root.querySelector?.(".site-header") || document.querySelector(".site-header");
+    if (!backdrop) {
+      backdrop = document.createElement("div");
+      backdrop.className = "portal-mega-backdrop";
+      backdrop.id = "portalMegaBackdrop";
+      backdrop.setAttribute("aria-hidden", "true");
+    }
+    if (!panel) {
+      panel = document.createElement("div");
+      panel.className = "portal-mega-menu";
+      panel.id = "portalMegaMenu";
+      panel.setAttribute("aria-hidden", "true");
+    }
+    if (header) {
+      if (!backdrop.parentElement) {
+        header.insertAdjacentElement("afterend", backdrop);
+      }
+      if (!panel.parentElement) {
+        backdrop.insertAdjacentElement("afterend", panel);
+      }
+    } else {
+      if (!backdrop.parentElement) {
+        document.body?.prepend(backdrop);
+      }
+      if (!panel.parentElement) {
+        backdrop.insertAdjacentElement("afterend", panel);
+      }
+    }
+    return { backdrop, panel };
+  }
+
   function addChoiceListener(node, choiceName, callback, hasHref) {
     if (typeof callback !== "function") {
       return;
@@ -706,21 +773,23 @@
     }
     const locale = localeName(config.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {});
     const theme = themeName(config.theme || global.HomepagePlatform?.readStoredTheme?.(), global.HomepagePlatform?.THEMES || {});
+    const { backdrop, panel } = ensureSharedPortalMegaScaffold(root);
     toNodes(config.navSelector || ".topnav").forEach((nav) => {
       nav.querySelectorAll(".topnav-mega-panel").forEach((panel) => panel.remove());
       Array.from(nav.children)
         .filter((node) => node.matches?.("a"))
         .forEach((link) => {
           const key = megaKeyForHref(link.getAttribute("href"), site);
-          const panel = sharedMegaPanelForKey(key, { locale, theme, site, baseHref: link.getAttribute("href") });
-          if (!panel) {
+          const menu = sharedMegaPanelForKey(key, { locale, theme, site, baseHref: link.getAttribute("href") });
+          if (!menu) {
             link.removeAttribute("data-shared-mega-key");
+            link.removeAttribute("data-portal-menu-key");
             return;
           }
           link.dataset.sharedMegaKey = key;
+          link.dataset.portalMenuKey = key;
           link.setAttribute("aria-haspopup", "true");
           link.setAttribute("aria-expanded", "false");
-          link.insertAdjacentHTML("afterend", renderSharedMegaPanel(panel, key));
         });
 
       if (nav.dataset.sharedMegaBound === "true") {
@@ -736,16 +805,13 @@
       };
       const close = () => {
         clearTimer();
-        nav.querySelectorAll("[data-shared-mega-active]").forEach((node) => {
-          node.removeAttribute("data-shared-mega-active");
-          if (node.matches("a")) {
-            node.setAttribute("aria-expanded", "false");
-          }
-          if (node.matches(".topnav-mega-panel")) {
-            node.hidden = true;
-          }
+        document.body?.classList.remove("portal-mega-open", "shared-mega-open");
+        panel?.setAttribute("aria-hidden", "true");
+        root.querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")?.forEach((link) => {
+          link.setAttribute("aria-expanded", "false");
+          link.removeAttribute("data-mega-active");
+          link.removeAttribute("data-shared-mega-active");
         });
-        document.body?.classList.remove("shared-mega-open");
       };
       const activate = (link) => {
         if (!link?.dataset?.sharedMegaKey) {
@@ -758,32 +824,44 @@
             .querySelector("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]")
             ?.setAttribute("aria-expanded", "false");
         });
-        nav.querySelectorAll("[data-shared-mega-active]").forEach((node) => {
-          node.removeAttribute("data-shared-mega-active");
-          if (node.matches("a")) {
-            node.setAttribute("aria-expanded", "false");
-          }
-          if (node.matches(".topnav-mega-panel")) {
-            node.hidden = true;
-          }
-        });
-        const panel = link.nextElementSibling?.matches(".topnav-mega-panel") ? link.nextElementSibling : null;
-        if (!panel) {
+        if (!global.matchMedia?.("(min-width: 761px) and (hover: hover) and (pointer: fine)")?.matches) {
+          close();
           return;
         }
-        link.dataset.sharedMegaActive = "true";
-        link.setAttribute("aria-expanded", "true");
-        panel.dataset.sharedMegaActive = "true";
-        panel.hidden = false;
-        document.body?.classList.add("shared-mega-open");
+        const key = link.dataset.sharedMegaKey;
+        const menu = sharedMegaPanelForKey(key, { locale, theme, site, baseHref: link.getAttribute("href") });
+        if (!menu || !panel) {
+          return;
+        }
+        const fallbackHref = primaryHref(site, key, 0, link.getAttribute("href"), locale, theme);
+        panel.innerHTML = renderPortalStyleMegaMenu({ ...menu, fallbackHref }, key);
+        panel.dataset.activeKey = key;
+        panel.setAttribute("aria-hidden", "false");
+        document.body?.classList.remove("shared-mega-open");
+        document.body?.classList.add("portal-mega-open");
+        root.querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")?.forEach((node) => {
+          const isActive = node === link;
+          node.setAttribute("aria-expanded", isActive ? "true" : "false");
+          if (isActive) {
+            node.setAttribute("data-mega-active", "true");
+            node.setAttribute("data-shared-mega-active", "true");
+          } else {
+            node.removeAttribute("data-mega-active");
+            node.removeAttribute("data-shared-mega-active");
+          }
+        });
       };
       const scheduleClose = () => {
         clearTimer();
         closeTimer = global.setTimeout(() => {
-          if (!nav.matches(":hover") && !nav.contains(document.activeElement)) {
+          if (
+            !nav.closest(".site-header")?.matches(":hover") &&
+            !panel?.matches(":hover") &&
+            !panel?.contains(document.activeElement)
+          ) {
             close();
           }
-        }, 160);
+        }, 130);
       };
       nav.addEventListener("pointerover", (event) => {
         const link = event.target.closest?.("a[data-shared-mega-key]");
@@ -791,7 +869,16 @@
           activate(link);
         }
       });
-      nav.addEventListener("pointerleave", scheduleClose);
+      nav.querySelectorAll("a[data-shared-mega-key]").forEach((link) => {
+        if (link.dataset.sharedPortalMegaLinkBound === "true") {
+          return;
+        }
+        link.dataset.sharedPortalMegaLinkBound = "true";
+        link.addEventListener("mouseenter", () => activate(link));
+        link.addEventListener("focus", () => activate(link));
+      });
+      nav.closest(".site-header")?.addEventListener("mouseenter", clearTimer);
+      nav.closest(".site-header")?.addEventListener("mouseleave", scheduleClose);
       nav.addEventListener("focusin", (event) => {
         const link = event.target.closest?.("a[data-shared-mega-key]");
         if (link && nav.contains(link)) {
@@ -800,12 +887,23 @@
       });
       nav.addEventListener("focusout", scheduleClose);
       nav.addEventListener("click", (event) => {
-        if (!event.target.closest(".topnav-mega-panel")) {
+        if (!event.target.closest("#portalMegaMenu")) close();
+      });
+      panel?.addEventListener("mouseenter", clearTimer);
+      panel?.addEventListener("mouseleave", scheduleClose);
+      panel?.addEventListener("focusin", clearTimer);
+      panel?.addEventListener("focusout", (event) => {
+        if (!panel.contains(event.relatedTarget)) scheduleClose();
+      });
+      backdrop?.addEventListener("mouseenter", scheduleClose);
+      backdrop?.addEventListener("click", close);
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
           close();
         }
       });
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") {
+      global.addEventListener("resize", () => {
+        if (!global.matchMedia?.("(min-width: 761px) and (hover: hover) and (pointer: fine)")?.matches) {
           close();
         }
       });
