@@ -153,9 +153,10 @@ function bindSwitcherHoverBehavior() {
   }
 
   document.querySelectorAll(".control-switcher").forEach((switcher) => {
-    if (switcher.dataset.switcherHoverBound === "true") {
+    if (switcher.dataset.sharedHoverBound === "true" || switcher.dataset.switcherHoverBound === "true") {
       return;
     }
+    switcher.dataset.sharedHoverBound = "true";
     switcher.dataset.switcherHoverBound = "true";
     switcherHoverBound = true;
 
@@ -178,9 +179,10 @@ function bindSwitcherHoverBehavior() {
 
 function bindSwitcherTriggerButtons() {
   document.querySelectorAll("[data-theme-trigger], [data-locale-trigger], [data-portal-trigger]").forEach((trigger) => {
-    if (trigger.dataset.switcherToggleBound === "true") {
+    if (trigger.dataset.sharedToggleBound === "true" || trigger.dataset.switcherToggleBound === "true") {
       return;
     }
+    trigger.dataset.sharedToggleBound = "true";
     trigger.dataset.switcherToggleBound = "true";
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
@@ -191,7 +193,9 @@ function bindSwitcherTriggerButtons() {
         return;
       }
 
-      const shouldExpand = !switcher.classList.contains("is-open");
+      const isPointerHoverOpen =
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches && switcher.matches(":hover");
+      const shouldExpand = isPointerHoverOpen || !switcher.classList.contains("is-open");
       document.querySelectorAll(".control-switcher").forEach((other) => {
         clearSwitcherCloseTimer(other);
         setSwitcherExpandedState(other, false);

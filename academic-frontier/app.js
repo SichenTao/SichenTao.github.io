@@ -3951,9 +3951,10 @@ function bindSwitcherHoverBehavior() {
   }
 
   document.querySelectorAll(".control-switcher").forEach((switcher) => {
-    if (switcher.dataset.switcherHoverBound === "true") {
+    if (switcher.dataset.sharedHoverBound === "true" || switcher.dataset.switcherHoverBound === "true") {
       return;
     }
+    switcher.dataset.sharedHoverBound = "true";
     switcher.dataset.switcherHoverBound = "true";
     switcherHoverBound = true;
 

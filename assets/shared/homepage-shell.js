@@ -78,10 +78,11 @@
     }
 
     qsa(".control-switcher", root).forEach((switcher) => {
-      if (switcher.dataset.sharedHoverBound === "true") {
+      if (switcher.dataset.sharedHoverBound === "true" || switcher.dataset.switcherHoverBound === "true") {
         return;
       }
       switcher.dataset.sharedHoverBound = "true";
+      switcher.dataset.switcherHoverBound = "true";
 
       switcher.addEventListener("pointerenter", () => {
         clearSwitcherCloseTimer(switcher);
@@ -104,10 +105,11 @@
     if (!trigger) {
       return;
     }
-    if (trigger.dataset.sharedToggleBound === "true") {
+    if (trigger.dataset.sharedToggleBound === "true" || trigger.dataset.switcherToggleBound === "true") {
       return;
     }
     trigger.dataset.sharedToggleBound = "true";
+    trigger.dataset.switcherToggleBound = "true";
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
       event.stopPropagation();
@@ -116,7 +118,9 @@
         return;
       }
 
-      const shouldExpand = !switcher.classList.contains("is-open");
+      const isPointerHoverOpen =
+        global.matchMedia("(hover: hover) and (pointer: fine)").matches && switcher.matches(":hover");
+      const shouldExpand = isPointerHoverOpen || !switcher.classList.contains("is-open");
       qsa(".control-switcher", runtime.root).forEach((other) => {
         clearSwitcherCloseTimer(other);
         setSwitcherExpandedState(other, false);
