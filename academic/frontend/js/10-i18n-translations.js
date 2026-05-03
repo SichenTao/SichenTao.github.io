@@ -72,7 +72,7 @@ const translations = {
       resources: "Resources",
       portrait_alt: "Portrait of Sichen Tao",
       bio:
-        "Research focuses on artificial intelligence (AI) and high-performance computing (HPC), including deep learning, brain-inspired neural networks, black-box optimization algorithms, and intersections with HPC, with application scenarios in energy conversion and management, AI-agent social simulation, emergency healthcare, human-machine collaboration, and AI for Science.",
+        "My research focuses on artificial intelligence (AI) and high-performance computing (HPC), including deep learning, brain-inspired neural networks, black-box optimization algorithms, and their intersections with HPC. Application areas include energy conversion and management, AI-agent-based social simulation, emergency medicine, human-machine collaboration, and AI for Science.",
     },
     sections: {
       files: "Files",
@@ -328,7 +328,7 @@ const translations = {
       resources: "資料",
       portrait_alt: "陶思晨のポートレート",
       bio:
-        "研究は人工知能（AI）と高性能計算（HPC）に焦点を置き、深層学習、脳着想ニューラルネットワーク、ブラックボックス最適化アルゴリズムと HPC の交差領域を含みます。応用先には、エネルギー変換・管理、AI エージェントによる社会シミュレーション、救急医療、人間・機械協調、AI for Science などがあります。",
+        "研究では、人工知能（AI）と高性能計算（HPC）を中心に、深層学習、脳着想ニューラルネットワーク、ブラックボックス最適化アルゴリズム、および HPC との融合領域に取り組んでいます。応用先として、エネルギー変換・管理、AI エージェントによる社会シミュレーション、救急医療、人間・機械協調、AI for Science などを扱っています。",
     },
     sections: {
       files: "ファイル",

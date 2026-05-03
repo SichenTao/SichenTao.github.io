@@ -53,6 +53,32 @@ const PROFILE_LINK_HREFS = {
   jglobal: "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202601018035308144",
 };
 
+const PROFILE_LINK_LOCALE_HREFS = {
+  tohokuCenter: {
+    en: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+    zh: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+    ja: "https://www.cc.tohoku.ac.jp/member/rd/",
+  },
+  hpcLab: {
+    en: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    zh: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    ja: "https://www.hpc.is.tohoku.ac.jp/home/member/",
+  },
+  takizawaAnnouncement: {
+    en: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+    zh: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+    ja: "https://www.hpc.is.tohoku.ac.jp/event/2025/5226/",
+  },
+};
+
+function profileLinkHref(key, locale = "en") {
+  const localeHrefs = PROFILE_LINK_LOCALE_HREFS[key];
+  if (!localeHrefs) {
+    return PROFILE_LINK_HREFS[key] || "#";
+  }
+  return localeHrefs[locale] || localeHrefs.en || PROFILE_LINK_HREFS[key] || "#";
+}
+
 const I18N = {
   en: {
     page: {
@@ -161,9 +187,9 @@ const I18N = {
             title: "Identity",
             items: [
               { label: "External profiles", href: "/academic/profiles.html" },
-              { label: "Tohoku Cyberscience Center", href: PROFILE_LINK_HREFS.tohokuCenter },
-              { label: "High Performance Computing Laboratory", href: PROFILE_LINK_HREFS.hpcLab },
-              { label: "Takizawa Lab announcement", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+              { label: "Tohoku Cyberscience Center", href: profileLinkHref("tohokuCenter", "en") },
+              { label: "High Performance Computing Laboratory", href: profileLinkHref("hpcLab", "en") },
+              { label: "Takizawa Lab announcement", href: profileLinkHref("takizawaAnnouncement", "en") },
               { label: "Curriculum vitae", href: "/academic/assets/docs/CV_SichenTao.pdf" },
             ],
           },
@@ -324,9 +350,9 @@ const I18N = {
             title: "身份",
             items: [
               { label: "外部主页", href: "/academic/profiles.html" },
-              { label: "东北大学网络科学中心", href: PROFILE_LINK_HREFS.tohokuCenter },
-              { label: "高性能计算研究室", href: PROFILE_LINK_HREFS.hpcLab },
-              { label: "泷泽研究室加入公告", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+              { label: "东北大学网络科学中心", href: profileLinkHref("tohokuCenter", "zh") },
+              { label: "高性能计算研究室", href: profileLinkHref("hpcLab", "zh") },
+              { label: "泷泽研究室加入公告", href: profileLinkHref("takizawaAnnouncement", "zh") },
               { label: "简历 PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
             ],
           },
@@ -487,9 +513,9 @@ const I18N = {
             title: "基本情報",
             items: [
               { label: "外部ホームページ", href: "/academic/profiles.html" },
-              { label: "東北大学サイバーサイエンスセンター", href: PROFILE_LINK_HREFS.tohokuCenter },
-              { label: "高性能計算研究室", href: PROFILE_LINK_HREFS.hpcLab },
-              { label: "滝沢研究室着任告知", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+              { label: "東北大学サイバーサイエンスセンター", href: profileLinkHref("tohokuCenter", "ja") },
+              { label: "高性能計算研究室", href: profileLinkHref("hpcLab", "ja") },
+              { label: "滝沢研究室着任告知", href: profileLinkHref("takizawaAnnouncement", "ja") },
               { label: "CV PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
             ],
           },

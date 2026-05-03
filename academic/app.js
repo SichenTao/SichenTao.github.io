@@ -57,7 +57,7 @@ const fallbackData = {
     affiliation: "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory",
     location: "Sendai, Japan",
     emails: ["sichen.tao@tohoku.ac.jp"],
-    bio: "Research focuses on artificial intelligence (AI) and high-performance computing (HPC).",
+    bio: "My research focuses on artificial intelligence (AI) and high-performance computing (HPC).",
     research_methods: [],
     application_domains: [],
     memberships: [],
@@ -223,7 +223,7 @@ const translations = {
       resources: "Resources",
       portrait_alt: "Portrait of Sichen Tao",
       bio:
-        "Research focuses on artificial intelligence (AI) and high-performance computing (HPC), including deep learning, brain-inspired neural networks, black-box optimization algorithms, and intersections with HPC, with application scenarios in energy conversion and management, AI-agent social simulation, emergency healthcare, human-machine collaboration, and AI for Science.",
+        "My research focuses on artificial intelligence (AI) and high-performance computing (HPC), including deep learning, brain-inspired neural networks, black-box optimization algorithms, and their intersections with HPC. Application areas include energy conversion and management, AI-agent-based social simulation, emergency medicine, human-machine collaboration, and AI for Science.",
     },
     sections: {
       files: "Files",
@@ -479,7 +479,7 @@ const translations = {
       resources: "資料",
       portrait_alt: "陶思晨のポートレート",
       bio:
-        "研究は人工知能（AI）と高性能計算（HPC）に焦点を置き、深層学習、脳着想ニューラルネットワーク、ブラックボックス最適化アルゴリズムと HPC の交差領域を含みます。応用先には、エネルギー変換・管理、AI エージェントによる社会シミュレーション、救急医療、人間・機械協調、AI for Science などがあります。",
+        "研究では、人工知能（AI）と高性能計算（HPC）を中心に、深層学習、脳着想ニューラルネットワーク、ブラックボックス最適化アルゴリズム、および HPC との融合領域に取り組んでいます。応用先として、エネルギー変換・管理、AI エージェントによる社会シミュレーション、救急医療、人間・機械協調、AI for Science などを扱っています。",
     },
     sections: {
       files: "ファイル",
@@ -1042,7 +1042,7 @@ const staticTextCatalog = {
     "Weather and spatiotemporal modeling": "気象・時空間モデリング",
     "Tohoku University Cyberscience Center": "東北大学サイバーサイエンスセンター",
     "Takizawa Lab Member Page": "滝沢研究室メンバーページ",
-    "Takizawa Lab Joining Announcement": "滝沢研究室着任案内",
+    "Takizawa Lab Joining Announcement": "滝沢研究室着任告知",
     "University of Toyama Dissertation Record": "富山大学学位論文リポジトリ",
     "Current CV PDF": "最新CV（PDF）",
     "Current CV Source": "最新CVソース",
@@ -1113,7 +1113,7 @@ const staticTextCatalog = {
     "Google Scholar profile": "Google Scholar プロフィール",
     "J-GLOBAL researcher profile": "J-GLOBAL 研究者プロフィール",
     "Takizawa Lab member page": "滝沢研究室メンバーページ",
-    "Takizawa Lab joining announcement": "滝沢研究室着任案内",
+    "Takizawa Lab joining announcement": "滝沢研究室着任告知",
     "SENAC staff note": "SENAC 職員告知",
     "Tohoku University Cyberscience Center research division page": "東北大学サイバーサイエンスセンター研究部門ページ",
     "ResearchMap profile": "ResearchMap プロフィール",
@@ -1183,8 +1183,8 @@ const staticTextCatalog = {
     "Autonomous driving": "自动驾驶",
     "Weather and spatiotemporal modeling": "气象与时空建模",
     "Tohoku University Cyberscience Center": "东北大学网络科学中心",
-    "Takizawa Lab Member Page": "泷泽实验室成员页面",
-    "Takizawa Lab Joining Announcement": "泷泽实验室入职公告",
+    "Takizawa Lab Member Page": "泷泽研究室成员页面",
+    "Takizawa Lab Joining Announcement": "泷泽研究室入职公告",
     "University of Toyama Dissertation Record": "富山大学学位论文记录",
     "Current CV PDF": "当前 CV（PDF）",
     "Current CV Source": "当前 CV 源文件",
@@ -1254,8 +1254,8 @@ const staticTextCatalog = {
     "Update cadence": "更新时间",
     "Google Scholar profile": "Google Scholar 主页",
     "J-GLOBAL researcher profile": "J-GLOBAL 研究者主页",
-    "Takizawa Lab member page": "泷泽实验室成员页面",
-    "Takizawa Lab joining announcement": "泷泽实验室入职公告",
+    "Takizawa Lab member page": "泷泽研究室成员页面",
+    "Takizawa Lab joining announcement": "泷泽研究室入职公告",
     "SENAC staff note": "SENAC 人员公告",
     "Tohoku University Cyberscience Center research division page": "东北大学网络科学中心研究部门页面",
     "ResearchMap profile": "ResearchMap 主页",
@@ -1365,7 +1365,7 @@ function localizedQuickProfileLabel(title = "") {
       return "滝沢研究室";
     }
     if (localeName === "zh") {
-      return "泷泽实验室";
+      return "泷泽研究室";
     }
     return "Takizawa Lab";
   }
@@ -1759,7 +1759,6 @@ function publicationVerificationNote(item) {
 function publicationPrimaryUrl(item) {
   return item.publisher_url || item.url || (item.doi ? `https://doi.org/${item.doi}` : "");
 }
-
 const OFFICIAL_DOCS_BASE = "/assets/docs/official";
 const METRIC_OFFICIAL_PAGE_LABEL = "Official Page";
 const METRIC_PUBLIC_EVIDENCE_LABEL = "Public Evidence";
@@ -3069,6 +3068,29 @@ function buildContactValue(item) {
   `;
 }
 
+const OFFICIAL_PROFILE_LOCALE_URLS = {
+  takizawaMember: {
+    en: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    zh: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    ja: "https://www.hpc.is.tohoku.ac.jp/home/member/",
+  },
+  takizawaAnnouncement: {
+    en: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+    zh: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+    ja: "https://www.hpc.is.tohoku.ac.jp/event/2025/5226/",
+  },
+  tohokuCenter: {
+    en: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+    zh: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+    ja: "https://www.cc.tohoku.ac.jp/member/rd/",
+  },
+};
+
+function officialProfileLocaleUrl(key, locale) {
+  const urls = OFFICIAL_PROFILE_LOCALE_URLS[key];
+  return urls?.[locale] || urls?.en || "";
+}
+
 function localizedExternalUrl(url = "", key = "") {
   const locale = resolveLocaleName();
   const normalizedKey = String(key || "");
@@ -3106,20 +3128,29 @@ function localizedExternalUrl(url = "", key = "") {
   }
 
   if (normalizedKey === "Takizawa Lab Member Page" || normalizedKey === "Takizawa Lab member page") {
-    if (locale === "ja") {
-      return "https://www.hpc.is.tohoku.ac.jp/home/member/";
-    }
-    return "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/";
+    return officialProfileLocaleUrl("takizawaMember", locale);
+  }
+
+  if (
+    normalizedKey === "High Performance Computing Laboratory" ||
+    normalizedKey === "High Performance Computing Laboratory profile"
+  ) {
+    return officialProfileLocaleUrl("takizawaMember", locale);
+  }
+
+  if (
+    normalizedKey === "Takizawa Lab Joining Announcement" ||
+    normalizedKey === "Takizawa Lab joining announcement" ||
+    normalizedKey === "Takizawa Lab announcement"
+  ) {
+    return officialProfileLocaleUrl("takizawaAnnouncement", locale);
   }
 
   if (
     normalizedKey === "Tohoku University Cyberscience Center" ||
     normalizedKey === "Tohoku University Cyberscience Center research division page"
   ) {
-    if (locale === "ja") {
-      return "https://www.cc.tohoku.ac.jp/member/rd/";
-    }
-    return "https://www.cc.tohoku.ac.jp/english/member/rd/";
+    return officialProfileLocaleUrl("tohokuCenter", locale);
   }
 
   return normalizedUrl;
@@ -4069,7 +4100,7 @@ function renderHomeShortcuts(data) {
       }
       return {
         ...target,
-        url: localizedExternalUrl(profile.url, target.title),
+        url: localizedExternalUrl(profile.localized_urls?.[resolveLocaleName()] || profile.url, target.title),
         label: localizedQuickProfileLabel(target.title),
       };
     })
@@ -4279,7 +4310,7 @@ function renderLinks(data) {
         .map(
           (item) => {
             const meta = profileMarkMeta(item);
-            const href = localizedExternalUrl(item.url, item.title);
+            const href = localizedExternalUrl(item.localized_urls?.[resolveLocaleName()] || item.url, item.title);
             const wordmarkOnlyClass = profileUsesEmbeddedWordmark(item) ? " profile-link-card-wordmark" : "";
             return `
             <a class="link-card profile-link-card link-card-tone-${escapeHtml(meta.tone)}${wordmarkOnlyClass}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(lt(item.title))}">
@@ -4385,7 +4416,7 @@ function emphasizeTimelineSummary(text = "") {
         choose(
           `Affiliated with <strong>${escapeHtml(match[1])}</strong>.`,
           `<strong>スーパーコンピューティングシステム研究部門と滝沢研究室</strong>に所属。`,
-          `隶属于<strong>超级计算系统研究部门与泷泽实验室</strong>。`,
+          `隶属于<strong>超级计算系统研究部门与泷泽研究室</strong>。`,
         ),
     },
     {

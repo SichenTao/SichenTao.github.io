@@ -113,7 +113,7 @@ function renderHomeShortcuts(data) {
       }
       return {
         ...target,
-        url: localizedExternalUrl(profile.url, target.title),
+        url: localizedExternalUrl(profile.localized_urls?.[resolveLocaleName()] || profile.url, target.title),
         label: localizedQuickProfileLabel(target.title),
       };
     })
@@ -323,7 +323,7 @@ function renderLinks(data) {
         .map(
           (item) => {
             const meta = profileMarkMeta(item);
-            const href = localizedExternalUrl(item.url, item.title);
+            const href = localizedExternalUrl(item.localized_urls?.[resolveLocaleName()] || item.url, item.title);
             const wordmarkOnlyClass = profileUsesEmbeddedWordmark(item) ? " profile-link-card-wordmark" : "";
             return `
             <a class="link-card profile-link-card link-card-tone-${escapeHtml(meta.tone)}${wordmarkOnlyClass}" href="${escapeHtml(href)}" target="_blank" rel="noreferrer" aria-label="${escapeHtml(lt(item.title))}">
@@ -429,7 +429,7 @@ function emphasizeTimelineSummary(text = "") {
         choose(
           `Affiliated with <strong>${escapeHtml(match[1])}</strong>.`,
           `<strong>スーパーコンピューティングシステム研究部門と滝沢研究室</strong>に所属。`,
-          `隶属于<strong>超级计算系统研究部门与泷泽实验室</strong>。`,
+          `隶属于<strong>超级计算系统研究部门与泷泽研究室</strong>。`,
         ),
     },
     {

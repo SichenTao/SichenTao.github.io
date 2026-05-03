@@ -89,7 +89,7 @@ function localizedQuickProfileLabel(title = "") {
       return "滝沢研究室";
     }
     if (localeName === "zh") {
-      return "泷泽实验室";
+      return "泷泽研究室";
     }
     return "Takizawa Lab";
   }
@@ -483,4 +483,3 @@ function publicationVerificationNote(item) {
 function publicationPrimaryUrl(item) {
   return item.publisher_url || item.url || (item.doi ? `https://doi.org/${item.doi}` : "");
 }
-

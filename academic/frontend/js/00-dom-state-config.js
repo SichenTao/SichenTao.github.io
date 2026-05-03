@@ -57,7 +57,7 @@ const fallbackData = {
     affiliation: "Research Division on Supercomputing Systems, Cyberscience Center, Tohoku University ・ High Performance Computing Laboratory",
     location: "Sendai, Japan",
     emails: ["sichen.tao@tohoku.ac.jp"],
-    bio: "Research focuses on artificial intelligence (AI) and high-performance computing (HPC).",
+    bio: "My research focuses on artificial intelligence (AI) and high-performance computing (HPC).",
     research_methods: [],
     application_domains: [],
     memberships: [],

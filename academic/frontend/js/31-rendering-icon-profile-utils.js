@@ -37,6 +37,29 @@ function buildContactValue(item) {
   `;
 }
 
+const OFFICIAL_PROFILE_LOCALE_URLS = {
+  takizawaMember: {
+    en: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    zh: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    ja: "https://www.hpc.is.tohoku.ac.jp/home/member/",
+  },
+  takizawaAnnouncement: {
+    en: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+    zh: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+    ja: "https://www.hpc.is.tohoku.ac.jp/event/2025/5226/",
+  },
+  tohokuCenter: {
+    en: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+    zh: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+    ja: "https://www.cc.tohoku.ac.jp/member/rd/",
+  },
+};
+
+function officialProfileLocaleUrl(key, locale) {
+  const urls = OFFICIAL_PROFILE_LOCALE_URLS[key];
+  return urls?.[locale] || urls?.en || "";
+}
+
 function localizedExternalUrl(url = "", key = "") {
   const locale = resolveLocaleName();
   const normalizedKey = String(key || "");
@@ -74,20 +97,29 @@ function localizedExternalUrl(url = "", key = "") {
   }
 
   if (normalizedKey === "Takizawa Lab Member Page" || normalizedKey === "Takizawa Lab member page") {
-    if (locale === "ja") {
-      return "https://www.hpc.is.tohoku.ac.jp/home/member/";
-    }
-    return "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/";
+    return officialProfileLocaleUrl("takizawaMember", locale);
+  }
+
+  if (
+    normalizedKey === "High Performance Computing Laboratory" ||
+    normalizedKey === "High Performance Computing Laboratory profile"
+  ) {
+    return officialProfileLocaleUrl("takizawaMember", locale);
+  }
+
+  if (
+    normalizedKey === "Takizawa Lab Joining Announcement" ||
+    normalizedKey === "Takizawa Lab joining announcement" ||
+    normalizedKey === "Takizawa Lab announcement"
+  ) {
+    return officialProfileLocaleUrl("takizawaAnnouncement", locale);
   }
 
   if (
     normalizedKey === "Tohoku University Cyberscience Center" ||
     normalizedKey === "Tohoku University Cyberscience Center research division page"
   ) {
-    if (locale === "ja") {
-      return "https://www.cc.tohoku.ac.jp/member/rd/";
-    }
-    return "https://www.cc.tohoku.ac.jp/english/member/rd/";
+    return officialProfileLocaleUrl("tohokuCenter", locale);
   }
 
   return normalizedUrl;

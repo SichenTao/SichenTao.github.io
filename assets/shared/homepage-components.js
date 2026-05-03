@@ -75,6 +75,32 @@
     toyamaDissertation: "https://toyama.repo.nii.ac.jp/records/2001776",
   };
 
+  const PROFILE_LINK_LOCALE_HREFS = {
+    tohokuCenter: {
+      en: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+      zh: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+      ja: "https://www.cc.tohoku.ac.jp/member/rd/",
+    },
+    hpcLab: {
+      en: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+      zh: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+      ja: "https://www.hpc.is.tohoku.ac.jp/home/member/",
+    },
+    takizawaAnnouncement: {
+      en: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+      zh: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+      ja: "https://www.hpc.is.tohoku.ac.jp/event/2025/5226/",
+    },
+  };
+
+  function profileLinkHref(key, locale = "en") {
+    const localeHrefs = PROFILE_LINK_LOCALE_HREFS[key];
+    if (!localeHrefs) {
+      return PROFILE_LINK_HREFS[key] || "#";
+    }
+    return localeHrefs[locale] || localeHrefs.en || PROFILE_LINK_HREFS[key] || "#";
+  }
+
   function iconSprite(name, className = "ui-icon", spriteHref = DEFAULT_ICON_SPRITE) {
     return `<svg class="${escapeHtml(className)}" aria-hidden="true" focusable="false"><use href="${escapeHtml(spriteHref)}#icon-${escapeHtml(name)}"></use></svg>`;
   }
@@ -210,9 +236,9 @@
         projects: [["Repositories", "Research directions", "Code"], ["AI", "Optimization", "HPC tools"]],
         service: [["Reviewing", "Editorial service", "Venues"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
         profiles: [[
-          { label: "Tohoku Cyberscience Center", href: PROFILE_LINK_HREFS.tohokuCenter },
-          { label: "High Performance Computing Laboratory", href: PROFILE_LINK_HREFS.hpcLab },
-          { label: "Takizawa Lab announcement", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+          { label: "Tohoku Cyberscience Center", href: profileLinkHref("tohokuCenter", "en") },
+          { label: "High Performance Computing Laboratory", href: profileLinkHref("hpcLab", "en") },
+          { label: "Takizawa Lab announcement", href: profileLinkHref("takizawaAnnouncement", "en") },
           { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
           { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
           { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
@@ -265,9 +291,9 @@
         projects: [["代码仓库", "研究方向", "项目代码"], ["AI", "优化", "HPC 工具"]],
         service: [["审稿", "编辑服务", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
         profiles: [[
-          { label: "东北大学网络科学中心", href: PROFILE_LINK_HREFS.tohokuCenter },
-          { label: "高性能计算研究室", href: PROFILE_LINK_HREFS.hpcLab },
-          { label: "泷泽研究室加入公告", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+          { label: "东北大学网络科学中心", href: profileLinkHref("tohokuCenter", "zh") },
+          { label: "高性能计算研究室", href: profileLinkHref("hpcLab", "zh") },
+          { label: "泷泽研究室加入公告", href: profileLinkHref("takizawaAnnouncement", "zh") },
           { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
           { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
           { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
@@ -320,9 +346,9 @@
         projects: [["リポジトリ", "研究方向", "コード"], ["AI", "最適化", "HPC ツール"]],
         service: [["査読", "編集", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
         profiles: [[
-          { label: "東北大学サイバーサイエンスセンター", href: PROFILE_LINK_HREFS.tohokuCenter },
-          { label: "高性能計算研究室", href: PROFILE_LINK_HREFS.hpcLab },
-          { label: "滝沢研究室着任告知", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+          { label: "東北大学サイバーサイエンスセンター", href: profileLinkHref("tohokuCenter", "ja") },
+          { label: "高性能計算研究室", href: profileLinkHref("hpcLab", "ja") },
+          { label: "滝沢研究室着任告知", href: profileLinkHref("takizawaAnnouncement", "ja") },
           { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
           { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
           { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
