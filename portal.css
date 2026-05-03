@@ -385,6 +385,17 @@ body[data-lang="ja"] .eyebrow {
   text-align: left;
 }
 
+.portal-mega-inner--with-workspace {
+  width: min(1040px, calc(100% - 128px));
+  grid-template-columns: repeat(4, max-content);
+  column-gap: clamp(52px, 5.6vw, 82px);
+  row-gap: 24px;
+}
+
+.portal-mega-inner--with-workspace .portal-mega-workspace-column {
+  transform: translateX(calc(-1 * clamp(24px, 4.4vw, 68px)));
+}
+
 .portal-mega-kicker,
 .portal-mega-column-title {
   margin: 0 0 16px;
@@ -399,6 +410,11 @@ body[data-lang="ja"] .eyebrow {
   display: grid;
   gap: 10px;
   justify-items: start;
+}
+
+.portal-mega-primary,
+.portal-mega-column {
+  text-align: left;
 }
 
 .portal-mega-primary-link,

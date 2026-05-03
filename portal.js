@@ -704,10 +704,14 @@ function renderMegaMenu(key = "portal") {
     return;
   }
 
-  const columnMarkup = (menu.columns || [])
+  const isWorkspaceColumn = (column) => /workspace|工作区|ワークスペース/i.test(column?.title || "");
+  const workspaceColumns = (menu.columns || []).filter(isWorkspaceColumn);
+  const detailColumns = (menu.columns || []).filter((column) => !isWorkspaceColumn(column));
+  const columnMarkup = (columns, extraClass = "") =>
+    columns
     .map(
       (column) => `
-        <div class="portal-mega-column">
+        <div class="portal-mega-column${extraClass ? ` ${extraClass}` : ""}">
           <p class="portal-mega-column-title">${escapeHtml(column.title)}</p>
           <div class="portal-mega-link-list">
             ${(column.items || [])
@@ -721,7 +725,8 @@ function renderMegaMenu(key = "portal") {
 
   panel.dataset.activeKey = key;
   panel.innerHTML = `
-    <div class="portal-mega-inner">
+    <div class="portal-mega-inner${workspaceColumns.length ? " portal-mega-inner--with-workspace" : ""}">
+      ${columnMarkup(workspaceColumns, "portal-mega-workspace-column")}
       <div class="portal-mega-primary">
         <p class="portal-mega-kicker">${escapeHtml(menu.eyebrow)}</p>
         <div class="portal-mega-primary-list">
@@ -730,7 +735,7 @@ function renderMegaMenu(key = "portal") {
             .join("")}
         </div>
       </div>
-      ${columnMarkup}
+      ${columnMarkup(detailColumns)}
     </div>
   `;
 }
