@@ -1377,6 +1377,15 @@ function localePageHref(targetLocale, page = currentPage()) {
 function preferredLocaleRedirectHref() {
   const explicitLocale = pageLocale();
   const preferredLocale = loadStoredLanguagePreference();
+  const currentPath = window.location.pathname.replace(/\/+$/, "/");
+  const hasExplicitLocalePath = LOCALE_SWITCH_SEQUENCE
+    .filter((localeName) => localeName !== "en")
+    .some((localeName) => currentPath.startsWith(`${PUBLIC_SITE_BASE_PATH}/${localeName}/`));
+
+  if (hasExplicitLocalePath) {
+    return null;
+  }
+
   if (!explicitLocale || !preferredLocale || explicitLocale === preferredLocale) {
     return null;
   }
@@ -1537,7 +1546,6 @@ const JCR_OFFICIAL_SEARCH_URL = "https://jcr.clarivate.com/jcr/home";
 const CAS_OFFICIAL_ARCHIVE_URL = `${OFFICIAL_DOCS_BASE}/cas_journal_ranking_explanation_official.pdf`;
 const CCF_OFFICIAL_ARCHIVE_URL = `${OFFICIAL_DOCS_BASE}/ccf_recommended_venues_2022_official.pdf`;
 const CCF_PUBLIC_EVIDENCE_URL = `${OFFICIAL_DOCS_BASE}/ccf_recommended_venues_portal_official.html`;
-
 function iconSvg(name, className = "ui-icon") {
   const path = ICON_PATHS[name];
   if (!path) return "";
@@ -5162,7 +5170,7 @@ function renderPapers() {
   if (!list) return;
   list.innerHTML = "";
   const papers = filteredPapers();
-  const layout = list.dataset.paperLayout || (currentPage() === "overview" ? "ledger" : "cards");
+  const layout = list.dataset.paperLayout || (currentPage() === "overview" ? "cards" : "ledger");
 
   if (!papers.length) {
     list.appendChild(el("div", "empty", plainTextByLanguage({
