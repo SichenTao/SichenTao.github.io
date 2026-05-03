@@ -18,17 +18,17 @@ const MULTI_SELECT_ACTIVE_VALUE = "__selected__";
 const THEME_CATALOG = {
   tohoku: {
     label: "Tohoku",
-    themeColor: "#f3eef9",
+    themeColor: "#f5f5f7",
     swatchClass: "theme-tohoku",
   },
   toyama: {
     label: "Toyama",
-    themeColor: "#edf4f7",
+    themeColor: "#f5f5f7",
     swatchClass: "theme-toyama",
   },
   usst: {
     label: "USST",
-    themeColor: "#f7eded",
+    themeColor: "#f5f5f7",
     swatchClass: "theme-usst",
   },
 };

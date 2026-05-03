@@ -10,7 +10,7 @@
   const THEMES = {
     tohoku: {
       label: "Tohoku University",
-      metaColor: "#f3eef9",
+      metaColor: "#f5f5f7",
       swatchClass: "theme-tohoku",
       labels: {
         en: "Tohoku University",
@@ -20,7 +20,7 @@
     },
     toyama: {
       label: "University of Toyama",
-      metaColor: "#edf4f7",
+      metaColor: "#f5f5f7",
       swatchClass: "theme-toyama",
       labels: {
         en: "University of Toyama",
@@ -30,7 +30,7 @@
     },
     usst: {
       label: "University of Shanghai for Science and Technology",
-      metaColor: "#f7eded",
+      metaColor: "#f5f5f7",
       swatchClass: "theme-usst",
       labels: {
         en: "University of Shanghai for Science and Technology",

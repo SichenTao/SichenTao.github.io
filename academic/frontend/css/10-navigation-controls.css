@@ -341,15 +341,15 @@
 }
 
 .theme-tohoku {
-  background: linear-gradient(135deg, #3e1485 0%, #766d6c 58%, #000000 100%);
+  background: #3e1485;
 }
 
 .theme-toyama {
-  background: linear-gradient(135deg, #466d7f 0%, #8caab6 100%);
+  background: #466d7f;
 }
 
 .theme-usst {
-  background: linear-gradient(135deg, #b51c2f 0%, #0f429b 100%);
+  background: #b51c2f;
 }
 
 .eyebrow {

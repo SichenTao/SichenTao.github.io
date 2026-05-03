@@ -774,9 +774,9 @@ const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
 };
 
 const THEME_OPTIONS = [
-  { value: "tohoku", label: "Tohoku", title: "Tohoku University theme", swatchClass: "theme-tohoku", themeColor: "#f3eef9" },
-  { value: "toyama", label: "Toyama", title: "University of Toyama theme", swatchClass: "theme-toyama", themeColor: "#edf4f7" },
-  { value: "usst", label: "USST", title: "USST theme", swatchClass: "theme-usst", themeColor: "#f7eded" },
+  { value: "tohoku", label: "Tohoku", title: "Tohoku University theme", swatchClass: "theme-tohoku", themeColor: "#f5f5f7" },
+  { value: "toyama", label: "Toyama", title: "University of Toyama theme", swatchClass: "theme-toyama", themeColor: "#f5f5f7" },
+  { value: "usst", label: "USST", title: "USST theme", swatchClass: "theme-usst", themeColor: "#f5f5f7" },
 ];
 
 const THEME_CATALOG = Object.fromEntries(THEME_OPTIONS.map((option) => [option.value, option]));

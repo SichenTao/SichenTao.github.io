@@ -476,7 +476,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, max-content);
-  column-gap: clamp(86px, 8vw, 144px);
+  column-gap: clamp(54px, 5.4vw, 78px);
   row-gap: 24px;
   align-items: start;
   justify-items: start;
@@ -486,7 +486,7 @@
 
 .portal-mega-inner--with-workspace {
   grid-template-columns: repeat(4, max-content);
-  column-gap: clamp(72px, 10vw, 144px);
+  column-gap: clamp(52px, 5.6vw, 82px);
   row-gap: 24px;
 }
 
@@ -708,15 +708,15 @@ body.shared-mega-open footer {
 }
 
 .theme-tohoku {
-  background: linear-gradient(135deg, #3e1485 0%, #766d6c 58%, #000000 100%);
+  background: #3e1485;
 }
 
 .theme-toyama {
-  background: linear-gradient(135deg, #466d7f 0%, #8caab6 100%);
+  background: #466d7f;
 }
 
 .theme-usst {
-  background: linear-gradient(135deg, #b51c2f 0%, #0f429b 100%);
+  background: #b51c2f;
 }
 
 @media (max-width: 760px) {
