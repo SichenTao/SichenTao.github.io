@@ -3,7 +3,7 @@
     return;
   }
 
-  const SWITCHER_CLOSE_DELAY_MS = 760;
+  const SWITCHER_CLOSE_DELAY_MS = 500;
   const switcherCloseTimers = new WeakMap();
   let switcherDocumentBound = false;
   let topnavDocumentBound = false;

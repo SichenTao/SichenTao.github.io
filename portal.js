@@ -80,9 +80,9 @@ const I18N = {
       scrollCue: "Enter workspaces",
     },
     section: {
-      kicker: "Workspaces",
+      kicker: "",
       title: "Choose a workspace",
-      lede: "Three maintained spaces for identity, research intelligence, and JSPS grant work.",
+      lede: "",
       gridLabel: "Research portal menu",
     },
     cards: {
@@ -241,9 +241,9 @@ const I18N = {
       scrollCue: "进入工作区",
     },
     section: {
-      kicker: "工作区",
+      kicker: "",
       title: "选择工作区",
-      lede: "三个长期维护的入口：个人身份、学术前沿与科研费工作。",
+      lede: "",
       gridLabel: "研究站点入口",
     },
     cards: {
@@ -402,9 +402,9 @@ const I18N = {
       scrollCue: "ワークスペースへ",
     },
     section: {
-      kicker: "Workspaces",
+      kicker: "",
       title: "ワークスペースを選択",
-      lede: "研究者情報、学術フロンティア、JSPS科研費をそれぞれ管理する入口です。",
+      lede: "",
       gridLabel: "研究サイト入口",
     },
     cards: {

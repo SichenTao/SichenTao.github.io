@@ -2642,7 +2642,7 @@ function scheduleSwitcherClose(switcher) {
   const timerId = window.setTimeout(() => {
     setSwitcherExpandedState(switcher, false);
     switcherCloseTimers.delete(switcher);
-  }, 760);
+  }, 500);
   switcherCloseTimers.set(switcher, timerId);
 }
 
