@@ -1237,6 +1237,9 @@ function translatedThemeLabel(themeName) {
 }
 
 function translatedThemeTooltip(themeName) {
+  if (window.HomepagePlatform?.themeTooltip) {
+    return window.HomepagePlatform.themeTooltip(themeName, currentLocale());
+  }
   const suffix = {
     en: " theme",
     zh: "主题色",

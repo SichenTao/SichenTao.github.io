@@ -40,6 +40,19 @@ const THEME_CATALOG = {
 const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
 const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 
+const PROFILE_LINK_HREFS = {
+  tohokuCenter: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+  hpcLab: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+  takizawaAnnouncement: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+  googleScholar: "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en",
+  researchMap: "https://researchmap.jp/sichentao?lang=en",
+  researchGate: "https://www.researchgate.net/profile/Sichen-Tao",
+  github: "https://github.com/SichenTao",
+  dblp: "https://dblp.org/pid/283/6924.html",
+  orcid: "https://orcid.org/0000-0001-9858-4208",
+  jglobal: "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202601018035308144",
+};
+
 const I18N = {
   en: {
     page: {
@@ -148,6 +161,9 @@ const I18N = {
             title: "Identity",
             items: [
               { label: "External profiles", href: "/academic/profiles.html" },
+              { label: "Tohoku Cyberscience Center", href: PROFILE_LINK_HREFS.tohokuCenter },
+              { label: "High Performance Computing Laboratory", href: PROFILE_LINK_HREFS.hpcLab },
+              { label: "Takizawa Lab announcement", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
               { label: "Curriculum vitae", href: "/academic/assets/docs/CV_SichenTao.pdf" },
             ],
           },
@@ -308,6 +324,9 @@ const I18N = {
             title: "身份",
             items: [
               { label: "外部主页", href: "/academic/profiles.html" },
+              { label: "东北大学网络科学中心", href: PROFILE_LINK_HREFS.tohokuCenter },
+              { label: "高性能计算研究室", href: PROFILE_LINK_HREFS.hpcLab },
+              { label: "泷泽研究室加入公告", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
               { label: "简历 PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
             ],
           },
@@ -468,6 +487,9 @@ const I18N = {
             title: "基本情報",
             items: [
               { label: "外部ホームページ", href: "/academic/profiles.html" },
+              { label: "東北大学サイバーサイエンスセンター", href: PROFILE_LINK_HREFS.tohokuCenter },
+              { label: "高性能計算研究室", href: PROFILE_LINK_HREFS.hpcLab },
+              { label: "滝沢研究室着任告知", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
               { label: "CV PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
             ],
           },
@@ -539,6 +561,13 @@ function escapeHtml(value) {
     .replaceAll("'", "&#39;");
 }
 
+function externalLinkAttrs(href = "") {
+  if (/^https?:\/\//i.test(String(href))) {
+    return ' target="_blank" rel="noreferrer"';
+  }
+  return "";
+}
+
 function localeText() {
   return I18N[state.locale] || I18N.en;
 }
@@ -573,7 +602,22 @@ function nextThemeName() {
   return THEME_SWITCH_SEQUENCE[(currentIndex + 1) % THEME_SWITCH_SEQUENCE.length];
 }
 
+function replaceUrlStateParam(key, value) {
+  try {
+    const url = new URL(window.location.href);
+    if (value === undefined || value === null || value === "") {
+      url.searchParams.delete(key);
+    } else {
+      url.searchParams.set(key, value);
+    }
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+  } catch {}
+}
+
 function translatedThemeTooltip(themeName) {
+  if (window.HomepagePlatform?.themeTooltip) {
+    return window.HomepagePlatform.themeTooltip(themeName, state.locale);
+  }
   const theme = THEME_CATALOG[themeName] || THEME_CATALOG.tohoku;
   return theme.label[state.locale] || theme.label.en;
 }
@@ -618,6 +662,9 @@ function renderMetadata() {
 function portalHref(href) {
   if (href === "/") {
     return "/";
+  }
+  if (/^https?:\/\//i.test(String(href))) {
+    return href;
   }
   if (href.startsWith("#")) {
     return href;
@@ -719,7 +766,10 @@ function renderMegaMenu(key = "portal") {
           <p class="portal-mega-column-title">${escapeHtml(column.title)}</p>
           <div class="portal-mega-link-list">
             ${(column.items || [])
-              .map((item) => `<a class="portal-mega-link" href="${portalHref(item.href)}">${escapeHtml(item.label)}</a>`)
+              .map((item) => {
+                const href = portalHref(item.href);
+                return `<a class="portal-mega-link" href="${href}"${externalLinkAttrs(href)}>${escapeHtml(item.label)}</a>`;
+              })
               .join("")}
           </div>
         </div>
@@ -735,7 +785,10 @@ function renderMegaMenu(key = "portal") {
         <p class="portal-mega-kicker">${escapeHtml(menu.eyebrow)}</p>
         <div class="portal-mega-primary-list">
           ${(menu.primary || [])
-            .map((item) => `<a class="portal-mega-primary-link" href="${portalHref(item.href)}">${escapeHtml(item.label)}</a>`)
+            .map((item) => {
+              const href = portalHref(item.href);
+              return `<a class="portal-mega-primary-link" href="${href}"${externalLinkAttrs(href)}>${escapeHtml(item.label)}</a>`;
+            })
             .join("")}
         </div>
       </div>
@@ -1158,6 +1211,7 @@ function setLocale(localeName) {
     return;
   }
   state.locale = localeName;
+  replaceUrlStateParam("lang", localeName);
   if (window.HomepageI18n?.writeStoredLocale) {
     window.HomepageI18n.writeStoredLocale(localeName, { locales: LOCALE_CATALOG });
   } else {
@@ -1173,6 +1227,7 @@ function applyTheme(themeName) {
     return;
   }
   state.theme = themeName;
+  replaceUrlStateParam("theme", themeName);
   if (window.HomepagePlatform?.writeStoredTheme) {
     window.HomepagePlatform.writeStoredTheme(themeName);
   } else {

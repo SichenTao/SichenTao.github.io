@@ -1013,6 +1013,9 @@ function nextThemeName(currentTheme = state.theme) {
 
 function translatedThemeTooltip(theme) {
   const themeValue = typeof theme === "string" ? theme : theme?.value;
+  if (window.HomepagePlatform?.themeTooltip) {
+    return window.HomepagePlatform.themeTooltip(themeValue, state.locale);
+  }
   if (state.locale === "zh") {
     return {
       tohoku: "东北大学主题色",
@@ -1071,6 +1074,18 @@ function siteStateHref(href, locale = state.locale, theme = state.theme) {
     url.searchParams.set("theme", theme);
   }
   return `${url.pathname}${url.search}`;
+}
+
+function replaceUrlStateParam(key, value) {
+  try {
+    const url = new URL(window.location.href);
+    if (value === undefined || value === null || value === "") {
+      url.searchParams.delete(key);
+    } else {
+      url.searchParams.set(key, value);
+    }
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+  } catch {}
 }
 
 function renderLocaleSwitcher() {
@@ -1216,6 +1231,9 @@ function applyLocale(localeName, persist = true) {
     });
   }
   writeSessionValue(LOCALE_KEY, nextLocale);
+  if (persist) {
+    replaceUrlStateParam("lang", nextLocale);
+  }
 
   document.querySelectorAll("[data-locale-choice]").forEach((button) => {
     const active = button.dataset.localeChoice === nextLocale;
@@ -1244,6 +1262,9 @@ function applyTheme(themeName, persist = true) {
     document.documentElement.dataset.theme = nextTheme;
   }
   writeSessionValue(THEME_KEY, nextTheme);
+  if (persist) {
+    replaceUrlStateParam("theme", nextTheme);
+  }
 
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   if (metaThemeColor) {

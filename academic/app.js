@@ -3335,6 +3335,9 @@ function translatedThemeLabel(themeName) {
 }
 
 function translatedThemeTooltip(themeName) {
+  if (window.HomepagePlatform?.themeTooltip) {
+    return window.HomepagePlatform.themeTooltip(themeName, resolveLocaleName());
+  }
   const labels = {
     base: {
       en: "Base theme",

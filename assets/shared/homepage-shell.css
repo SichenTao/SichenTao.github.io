@@ -715,6 +715,7 @@ body.portal-mega-open .scroll-top-button {
   border-radius: 999px;
   background: rgba(var(--ink-rgb), 0.055);
   color: rgba(var(--ink-rgb), 0.76);
+  text-decoration: none;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1.333;

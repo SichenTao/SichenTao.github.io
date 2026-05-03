@@ -50,6 +50,9 @@
   }
 
   function themeTooltip(theme, locale = "en") {
+    if (global.HomepagePlatform?.themeTooltip) {
+      return global.HomepagePlatform.themeTooltip(theme, locale);
+    }
     const suffix = {
       en: " theme",
       zh: "主题色",
@@ -57,6 +60,20 @@
     }[locale] || " theme";
     return `${themeLabel(theme, locale)}${suffix}`;
   }
+
+  const PROFILE_LINK_HREFS = {
+    tohokuCenter: "https://www.cc.tohoku.ac.jp/english/member/rd/",
+    hpcLab: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
+    takizawaAnnouncement: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
+    googleScholar: "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en",
+    researchMap: "https://researchmap.jp/sichentao?lang=en",
+    researchGate: "https://www.researchgate.net/profile/Sichen-Tao",
+    github: "https://github.com/SichenTao",
+    dblp: "https://dblp.org/pid/283/6924.html",
+    orcid: "https://orcid.org/0000-0001-9858-4208",
+    jglobal: "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202601018035308144",
+    toyamaDissertation: "https://toyama.repo.nii.ac.jp/records/2001776",
+  };
 
   function iconSprite(name, className = "ui-icon", spriteHref = DEFAULT_ICON_SPRITE) {
     return `<svg class="${escapeHtml(className)}" aria-hidden="true" focusable="false"><use href="${escapeHtml(spriteHref)}#icon-${escapeHtml(name)}"></use></svg>`;
@@ -192,7 +209,23 @@
         awards: [["Awards", "IEEE CIS", "JST"], ["Evidence", "Dates", "Awarding bodies"]],
         projects: [["Repositories", "Research directions", "Code"], ["AI", "Optimization", "HPC tools"]],
         service: [["Reviewing", "Editorial service", "Venues"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [["Google Scholar", "ResearchMap", "ResearchGate", "GitHub", "DBLP", "ORCID", "J-GLOBAL"], ["Official profiles", "Author IDs", "Code profile", "Lab page"]],
+        profiles: [[
+          { label: "Tohoku Cyberscience Center", href: PROFILE_LINK_HREFS.tohokuCenter },
+          { label: "High Performance Computing Laboratory", href: PROFILE_LINK_HREFS.hpcLab },
+          { label: "Takizawa Lab announcement", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+          { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
+          { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
+          { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
+          { label: "GitHub", href: PROFILE_LINK_HREFS.github },
+          { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
+          { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
+          { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
+        ], [
+          { label: "Official profiles", href: "/academic/profiles.html" },
+          { label: "Author IDs", href: "/academic/profiles.html" },
+          { label: "Code profile", href: PROFILE_LINK_HREFS.github },
+          { label: "Doctoral record", href: PROFILE_LINK_HREFS.toyamaDissertation },
+        ]],
         research: [["AI", "HPC", "Optimization", "Collaborators"], ["Methods", "Domains", "Research highlights"]],
       },
       frontier: {
@@ -231,7 +264,23 @@
         awards: [["获奖", "IEEE CIS", "JST"], ["证据", "日期", "授奖机构"]],
         projects: [["代码仓库", "研究方向", "项目代码"], ["AI", "优化", "HPC 工具"]],
         service: [["审稿", "编辑服务", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [["Google Scholar", "ResearchMap", "ResearchGate", "GitHub", "DBLP", "ORCID", "J-GLOBAL"], ["官方主页", "作者标识", "代码主页", "实验室页面"]],
+        profiles: [[
+          { label: "东北大学网络科学中心", href: PROFILE_LINK_HREFS.tohokuCenter },
+          { label: "高性能计算研究室", href: PROFILE_LINK_HREFS.hpcLab },
+          { label: "泷泽研究室加入公告", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+          { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
+          { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
+          { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
+          { label: "GitHub", href: PROFILE_LINK_HREFS.github },
+          { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
+          { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
+          { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
+        ], [
+          { label: "官方主页", href: "/academic/profiles.html" },
+          { label: "作者标识", href: "/academic/profiles.html" },
+          { label: "代码主页", href: PROFILE_LINK_HREFS.github },
+          { label: "博士论文记录", href: PROFILE_LINK_HREFS.toyamaDissertation },
+        ]],
         research: [["人工智能", "高性能计算", "优化", "合作者"], ["方法", "应用领域", "研究亮点"]],
       },
       frontier: {
@@ -270,7 +319,23 @@
         awards: [["受賞", "IEEE CIS", "JST"], ["根拠", "日付", "授与機関"]],
         projects: [["リポジトリ", "研究方向", "コード"], ["AI", "最適化", "HPC ツール"]],
         service: [["査読", "編集", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [["Google Scholar", "ResearchMap", "ResearchGate", "GitHub", "DBLP", "ORCID", "J-GLOBAL"], ["公式プロフィール", "著者ID", "コードページ", "研究室ページ"]],
+        profiles: [[
+          { label: "東北大学サイバーサイエンスセンター", href: PROFILE_LINK_HREFS.tohokuCenter },
+          { label: "高性能計算研究室", href: PROFILE_LINK_HREFS.hpcLab },
+          { label: "滝沢研究室着任告知", href: PROFILE_LINK_HREFS.takizawaAnnouncement },
+          { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
+          { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
+          { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
+          { label: "GitHub", href: PROFILE_LINK_HREFS.github },
+          { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
+          { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
+          { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
+        ], [
+          { label: "公式プロフィール", href: "/academic/profiles.html" },
+          { label: "著者ID", href: "/academic/profiles.html" },
+          { label: "コードページ", href: PROFILE_LINK_HREFS.github },
+          { label: "博士論文記録", href: PROFILE_LINK_HREFS.toyamaDissertation },
+        ]],
         research: [["人工知能", "高性能計算", "最適化", "共同研究者"], ["方法", "応用領域", "研究ハイライト"]],
       },
       frontier: {
@@ -338,6 +403,17 @@
     }));
   }
 
+  function menuItemLabel(item) {
+    return typeof item === "string" ? item : item?.label || "";
+  }
+
+  function externalLinkAttrs(href = "") {
+    if (/^https?:\/\//i.test(String(href))) {
+      return ' target="_blank" rel="noreferrer"';
+    }
+    return "";
+  }
+
   const PRIMARY_TARGETS = {
     academic: {
       home: ["#home", "#hero-contact-list", "#record-nav", "/academic/assets/docs/CV_SichenTao.pdf"],
@@ -346,7 +422,7 @@
       awards: ["#award-page-list", "#award-page-list", "#award-page-list"],
       projects: ["#project-repo-grid", "#project-direction-list", "#project-repo-grid"],
       service: ["#service-page-groups", "#service-page-groups", "#service-page-groups"],
-      profiles: ["#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid"],
+      profiles: ["#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid"],
       research: ["#method-tags", "#domain-tags", "#year-bars", "#collaborator-list"],
     },
     frontier: {
@@ -367,6 +443,9 @@
 
   function primaryHref(site, key, index, baseHref, locale, theme) {
     const target = PRIMARY_TARGETS[site]?.[key]?.[index] || "";
+    if (/^https?:\/\//i.test(target)) {
+      return target;
+    }
     if (target.startsWith("/")) {
       return statefulHref(target, locale, theme);
     }
@@ -375,6 +454,14 @@
       return base;
     }
     return `${base.split("#")[0]}${target}`;
+  }
+
+  function megaItemHref(item, site, key, index, baseHref, locale, theme) {
+    const explicit = typeof item === "string" ? "" : item?.href || "";
+    if (explicit) {
+      return /^https?:\/\//i.test(explicit) ? explicit : statefulHref(explicit, locale, theme);
+    }
+    return primaryHref(site, key, index, baseHref, locale, theme);
   }
 
   function sharedMegaPanelForKey(key, options = {}) {
@@ -396,9 +483,9 @@
     const groups = normalizeMegaGroups(rawGroups, locale);
     return {
       kicker: "",
-      primary: groups[0]?.items?.map((label, index) => ({
-        label,
-        href: primaryHref(site, key, index, options.baseHref, locale, theme),
+      primary: groups[0]?.items?.map((item, index) => ({
+        label: menuItemLabel(item),
+        href: megaItemHref(item, site, key, index, options.baseHref, locale, theme),
       })) || [],
       columns: groups.slice(1).map((group) => ({ title: group.title, items: group.items })),
     };
@@ -412,7 +499,13 @@
             ${column.title ? `<p class="shared-mega-column-title">${escapeHtml(column.title)}</p>` : ""}
             <div class="shared-mega-link-list">
               ${(column.items || [])
-                .map((item) => `<span class="shared-mega-keyword">${escapeHtml(typeof item === "string" ? item : item.label)}</span>`)
+                .map((item) => {
+                  const label = menuItemLabel(item);
+                  const href = typeof item === "string" ? "" : item.href || "";
+                  return href
+                    ? `<a class="shared-mega-keyword" href="${escapeHtml(href)}"${externalLinkAttrs(href)}>${escapeHtml(label)}</a>`
+                    : `<span class="shared-mega-keyword">${escapeHtml(label)}</span>`;
+                })
                 .join("")}
             </div>
           </div>
@@ -422,7 +515,7 @@
     const primary = (panel.primary || [])
       .map((item) => {
         const href = item.href && item.href !== "#" ? ` href="${escapeHtml(item.href)}"` : "";
-        return `<a class="shared-mega-primary-link"${href}>${escapeHtml(item.label)}</a>`;
+        return `<a class="shared-mega-primary-link"${href}${externalLinkAttrs(item.href)}>${escapeHtml(item.label)}</a>`;
       })
       .join("");
     return `
@@ -467,7 +560,7 @@
                 .map((item) => {
                   const label = typeof item === "string" ? item : item.label;
                   const href = typeof item === "string" ? panel.fallbackHref || "#" : item.href || panel.fallbackHref || "#";
-                  return `<a class="portal-mega-link" href="${escapeHtml(href)}">${escapeHtml(label)}</a>`;
+                  return `<a class="portal-mega-link" href="${escapeHtml(href)}"${externalLinkAttrs(href)}>${escapeHtml(label)}</a>`;
                 })
                 .join("")}
             </div>
@@ -476,7 +569,7 @@
       )
       .join("");
     const primary = (panel.primary || [])
-      .map((item) => `<a class="portal-mega-primary-link" href="${escapeHtml(item.href || "#")}">${escapeHtml(item.label)}</a>`)
+      .map((item) => `<a class="portal-mega-primary-link" href="${escapeHtml(item.href || "#")}"${externalLinkAttrs(item.href)}>${escapeHtml(item.label)}</a>`)
       .join("");
     return `
       <div class="portal-mega-inner${workspaceColumn ? " portal-mega-inner--with-workspace" : ""}" data-shared-portal-mega-key="${escapeHtml(key)}">

@@ -149,6 +149,16 @@
     return labels[localeName] || labels.en || THEMES[normalized]?.label || normalized;
   }
 
+  function themeTooltip(themeName, locale = "en") {
+    const localeName = global.HomepageI18n?.normalizeLocale(locale) || "en";
+    const suffix = {
+      en: " theme",
+      zh: "主题色",
+      ja: "テーマ色",
+    }[localeName] || " theme";
+    return `${themeLabel(themeName, localeName)}${suffix}`;
+  }
+
   function siteStateHref(href, options = {}) {
     const locale = options.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
     const theme = options.theme || readStoredTheme();
@@ -228,6 +238,7 @@
     writeStoredTheme,
     applyTheme,
     themeLabel,
+    themeTooltip,
     siteStateHref,
     academicFrontierHref,
     portalLabels,
