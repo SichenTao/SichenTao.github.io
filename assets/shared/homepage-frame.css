@@ -373,16 +373,10 @@
     grid-template-columns: 1fr;
   }
 
-  .site-header,
   .section-head,
   .footer-panel {
     flex-direction: column;
     align-items: start;
-  }
-
-  .header-tools {
-    gap: 10px;
-    padding: 10px 12px 12px;
   }
 
   .footer-panel-compact {
@@ -412,39 +406,6 @@
 
   .portrait-frame {
     max-width: 220px;
-  }
-
-  .topnav-toggle {
-    min-height: 38px;
-    padding: 9px 13px;
-    font-size: 0.9rem;
-  }
-
-  .header-tools {
-    padding: 8px 10px 10px;
-    gap: 8px;
-  }
-
-  .header-controls {
-    position: static;
-    top: auto;
-    left: auto;
-    transform: none;
-    flex: 0 0 auto;
-    gap: 8px;
-  }
-
-  .header-controls-anchor {
-    width: 0 !important;
-    height: 0 !important;
-    min-width: 0 !important;
-    min-height: 0 !important;
-  }
-
-  .locale-trigger,
-  .theme-trigger {
-    width: 30px;
-    height: 30px;
   }
 
   .hero-profile-card {
