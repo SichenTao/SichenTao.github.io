@@ -789,6 +789,7 @@
         panel.setAttribute("aria-hidden", "false");
         document.body?.classList.remove("shared-mega-open");
         document.body?.classList.add("portal-mega-open");
+        global.HomepageSharedShell?.syncPortalMegaAlignment?.(panel, nav);
         root.querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")?.forEach((node) => {
           const isActive = node === link;
           node.setAttribute("aria-expanded", isActive ? "true" : "false");

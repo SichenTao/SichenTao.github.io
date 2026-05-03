@@ -377,6 +377,8 @@ body[data-lang="ja"] .eyebrow {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, max-content);
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   column-gap: clamp(54px, 5.4vw, 78px);
   row-gap: 24px;
   align-items: start;
@@ -386,14 +388,38 @@ body[data-lang="ja"] .eyebrow {
 }
 
 .portal-mega-inner--with-workspace {
-  width: min(1040px, calc(100% - 128px));
-  grid-template-columns: repeat(4, max-content);
-  column-gap: clamp(52px, 5.6vw, 82px);
+  position: relative;
+  width: auto;
+  margin-right: 0;
+  margin-left: var(--portal-mega-main-left, max(32px, calc((100vw - min(1040px, calc(100vw - 64px))) / 2)));
+  grid-template-columns: repeat(3, max-content);
+  column-gap: clamp(54px, 5.4vw, 78px);
   row-gap: 24px;
 }
 
 .portal-mega-inner--with-workspace .portal-mega-workspace-column {
-  transform: translateX(calc(-1 * clamp(24px, 4.4vw, 68px)));
+  position: absolute;
+  top: 0;
+  left: calc(-1 * var(--portal-mega-workspace-offset, clamp(260px, 18vw, 380px)));
+  min-width: max-content;
+  transform: none;
+}
+
+.portal-mega-inner--with-workspace::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: -8px;
+  left: calc(-1 * var(--portal-mega-separator-offset, clamp(110px, 8vw, 160px)));
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--ink-rgb), 0),
+    rgba(var(--ink-rgb), 0.1) 20%,
+    rgba(var(--ink-rgb), 0.1) 78%,
+    rgba(var(--ink-rgb), 0)
+  );
+  pointer-events: none;
 }
 
 .portal-mega-kicker,

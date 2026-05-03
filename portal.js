@@ -705,7 +705,11 @@ function renderMegaMenu(key = "portal") {
   }
 
   const isWorkspaceColumn = (column) => /workspace|工作区|ワークスペース/i.test(column?.title || "");
+  const fallbackWorkspaceColumn = (text.mega?.portal?.columns || []).find(isWorkspaceColumn);
   const workspaceColumns = (menu.columns || []).filter(isWorkspaceColumn);
+  if (!workspaceColumns.length && fallbackWorkspaceColumn) {
+    workspaceColumns.push(fallbackWorkspaceColumn);
+  }
   const detailColumns = (menu.columns || []).filter((column) => !isWorkspaceColumn(column));
   const columnMarkup = (columns, extraClass = "") =>
     columns
@@ -767,6 +771,7 @@ function openMegaMenu(key, trigger) {
     panel.setAttribute("aria-hidden", "false");
   }
   document.body.classList.add("portal-mega-open");
+  window.HomepageSharedShell?.syncPortalMegaAlignment?.(panel, document.getElementById("portalTopnav"));
   document.querySelectorAll("[data-portal-menu-key]").forEach((link) => {
     const isActive = link === trigger;
     link.setAttribute("aria-expanded", isActive ? "true" : "false");

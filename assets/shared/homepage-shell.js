@@ -390,6 +390,47 @@
     scheduleHeaderControlsPositionUpdate();
   }
 
+  function firstVisibleTopnavLink(nav) {
+    return Array.from(nav?.children || []).find((node) => {
+      if (!node.matches?.("a")) {
+        return false;
+      }
+      const rect = node.getBoundingClientRect();
+      const style = global.getComputedStyle(node);
+      return rect.width > 0 && rect.height > 0 && style.display !== "none" && style.visibility !== "hidden";
+    });
+  }
+
+  function syncPortalMegaAlignment(panel = document.getElementById("portalMegaMenu"), nav = document.querySelector(".topnav")) {
+    if (!panel || !nav) {
+      return;
+    }
+    const firstLink = firstVisibleTopnavLink(nav);
+    if (!firstLink) {
+      return;
+    }
+    const workspace = panel.querySelector(".portal-mega-workspace-column");
+    const workspaceWidth = workspace?.getBoundingClientRect().width || 76;
+    const firstRect = firstLink.getBoundingClientRect();
+    const topnavAlignedLeft = Math.max(24, Math.round(firstRect.left));
+    const minWorkspaceLeft = 24;
+    const minMainLeft = workspace ? minWorkspaceLeft + workspaceWidth + 120 : 24;
+    const mainLeft = Math.max(topnavAlignedLeft, Math.round(minMainLeft));
+    panel.style.setProperty("--portal-mega-main-left", `${mainLeft}px`);
+
+    if (!workspace) {
+      panel.style.removeProperty("--portal-mega-workspace-offset");
+      panel.style.removeProperty("--portal-mega-separator-offset");
+      return;
+    }
+
+    const workspaceOffset = Math.max(0, Math.min(380, mainLeft - minWorkspaceLeft));
+    panel.style.setProperty("--portal-mega-workspace-offset", `${Math.round(workspaceOffset)}px`);
+
+    const separatorOffset = Math.max(44, Math.min(180, Math.round((workspaceOffset - workspaceWidth) / 2)));
+    panel.style.setProperty("--portal-mega-separator-offset", `${separatorOffset}px`);
+  }
+
   function syncTopnavMenus(config = {}) {
     runtime.root = config.root || document;
     runtime.topnav = config;
@@ -519,5 +560,6 @@
     closeAllSwitchers,
     refreshTopnavOverflowHints,
     scheduleHeaderControlsPositionUpdate,
+    syncPortalMegaAlignment,
   };
 })(window);
