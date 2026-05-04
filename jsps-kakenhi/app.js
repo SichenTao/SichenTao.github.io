@@ -33,8 +33,6 @@ const I18N = {
       deadlines: "时间线",
       forms: "获取材料",
       guides: "申请指南",
-      sources: "官方来源",
-      archive: "官方来源",
     },
     common: {
       siteTitle: "JSPS 科研费工作台",
@@ -45,13 +43,11 @@ const I18N = {
       unknown: "待确认",
       priority: "优先确认",
       official: "官方页面",
-      snapshot: "官方来源",
       documents: "文档",
       forms: "材料",
       links: "链接",
       noResults: "没有匹配结果",
       viewOfficial: "打开官方页面",
-      viewSource: "打开官方来源",
       nextDeadline: "下一截止",
       expectedOpening: "预计开启",
       expectedDeadline: "预计截止",
@@ -63,7 +59,6 @@ const I18N = {
       group: "分组",
       openPrograms: "公募中项目",
       trackedForms: "追踪材料",
-      archiveSnapshots: "官方来源",
       officialDocs: "重点资料",
       watchpoints: "提醒",
       detailHint: "点击左侧条目查看详细内容。",
@@ -128,11 +123,8 @@ const I18N = {
       prioritySection: "重点项目",
       workflowKicker: "工作流程",
       workflowSection: "工作流程",
-      sourceKicker: "官方来源",
-      sourceSection: "官方来源",
       watchTitle: "行动提醒",
       jumpTitle: "官方快速跳转",
-      archiveTitle: "官方来源",
       sourceGuideTitle: "如何使用此工作台",
       callsLead: "先在全部项目中锁定感兴趣的申请项目与赛道。",
       deadlinesLead: "把开放时间、系统开放与官方截止时间放在同一条时间线上确认。",
@@ -144,8 +136,6 @@ const I18N = {
       sourceGuideDatesText: "用时间线确认通知、公募开始、系统开放与最终提交节点。",
       sourceGuideFormsTitle: "然后获取材料",
       sourceGuideFormsText: "确定项目后立即查看对应材料、填写要领与上传说明。",
-      sourceGuideSourcesTitle: "最后回到官方来源",
-      sourceGuideSourcesText: "站内页面负责组织入口，真正提交前仍应回到官方页面核对。",
     },
     calls: {
       kicker: "项目浏览",
@@ -183,7 +173,6 @@ const I18N = {
       pageHighlights: "页面重点链接",
       relatedPrograms: "关联项目",
       recentCycles: "今年与往年参考",
-      snapshotHistory: "官方来源历史",
     },
     program: {
       kicker: "项目详情",
@@ -254,30 +243,13 @@ const I18N = {
       useStep3Title: "最后查项目差异",
       useStep3Text: "不同项目的轮次、截止和材料状态不同，需要用提醒清单做最后扫读。",
     },
-    sources: {
-      kicker: "来源追踪",
-      title: "官方来源",
-      lede: "这一页将“真正的官方页面”与“公募总索引中的分类入口”分开展示，避免把站内整理页误当作唯一依据。",
-      registryTitle: "核心来源索引",
-      categoryTitle: "公募总索引入口",
-      footerTitle: "来源确认后，可以回到首页继续申请准备",
-    },
-    archive: {
-      kicker: "官方来源",
-      title: "官方来源",
-      lede: "每次抓取官方网页都会形成一个日期目录，这样即使 JSPS 页面更新或关闭，也能回看当时的官方表述与链接结构。",
-      gridTitle: "官方来源目录",
-      footerTitle: "来源确认后，回到当前申请准备",
-    },
     footer: {
       resources: "资源",
       homeTitle: "继续进入更细的申请页面",
       catalog: "查看项目目录",
-      archive: "查看官方来源",
       deadlines: "查看时间线",
       forms: "获取材料",
       guides: "查看申请指南",
-      sources: "查看官方来源",
       home: "返回首页",
     },
     groupLabel: {
@@ -319,8 +291,6 @@ const I18N = {
       deadlines: "Timeline",
       forms: "Get Materials",
       guides: "Guidance",
-      sources: "Sources",
-      archive: "Official sources",
     },
     common: {
       siteTitle: "JSPS KAKENHI Workspace",
@@ -331,13 +301,11 @@ const I18N = {
       unknown: "Unknown",
       priority: "Priority review",
       official: "Official page",
-      snapshot: "Official sources",
       documents: "Documents",
       forms: "Materials",
       links: "Links",
       noResults: "No matching results",
       viewOfficial: "Open official page",
-      viewSource: "Open official page",
       nextDeadline: "Next deadline",
       expectedOpening: "Expected opening",
       expectedDeadline: "Expected deadline",
@@ -349,7 +317,6 @@ const I18N = {
       group: "Group",
       openPrograms: "Open programs",
       trackedForms: "Tracked materials",
-      archiveSnapshots: "Official sources",
       officialDocs: "Key documents",
       watchpoints: "Watchpoints",
       detailHint: "Select an item on the left to inspect more detail.",
@@ -414,11 +381,8 @@ const I18N = {
       prioritySection: "Priority programs",
       workflowKicker: "Workflow",
       workflowSection: "Workflow shortcuts",
-      sourceKicker: "Official sources",
-      sourceSection: "Official sources",
       watchTitle: "Action reminders",
       jumpTitle: "Official quick links",
-      archiveTitle: "Official sources",
       sourceGuideTitle: "How to use this workspace",
       callsLead: "Start by identifying the calls that deserve attention from the full catalog.",
       deadlinesLead: "Confirm notice dates, system opening, and the final official deadline in one place.",
@@ -430,8 +394,6 @@ const I18N = {
       sourceGuideDatesText: "Use the timeline to align notice dates, system opening, and the final submission deadline before preparing materials.",
       sourceGuideFormsTitle: "Then get materials",
       sourceGuideFormsText: "Once the call is fixed, move immediately into the matching official materials, entry guidance, and upload instructions.",
-      sourceGuideSourcesTitle: "Finish with official evidence",
-      sourceGuideSourcesText: "The workspace organizes the entry points, but every final check should still go back to the official page.",
     },
     calls: {
       kicker: "Program Explorer",
@@ -469,7 +431,6 @@ const I18N = {
       pageHighlights: "Page highlights",
       relatedPrograms: "Related programs",
       recentCycles: "Current and prior-cycle references",
-      snapshotHistory: "Official sources history",
     },
     program: {
       kicker: "Program Detail",
@@ -540,30 +501,13 @@ const I18N = {
       useStep3Title: "Finally check program differences",
       useStep3Text: "Rounds, deadlines, and material status vary by program, so the reminders provide a last scan before drafting.",
     },
-    sources: {
-      kicker: "Provenance",
-      title: "Official Sources",
-      lede: "This page separates the official source pages from the categorized entries inside the JSPS public-call index, so the workspace does not replace the original evidence trail.",
-      registryTitle: "Core source registry",
-      categoryTitle: "Public-call index entries",
-      footerTitle: "Once the sources are verified, return to the homepage to continue preparation",
-    },
-    archive: {
-      kicker: "Official Sources",
-      title: "Official Sources",
-      lede: "Each fetch creates a dated directory so that even if JSPS updates or closes a page, the official wording and link structure from that date remain traceable.",
-      gridTitle: "Official source directories",
-      footerTitle: "After checking sources, return to preparation",
-    },
     footer: {
       resources: "Resources",
       homeTitle: "Continue into the more detailed preparation pages",
       catalog: "Open call catalog",
-      archive: "Open official sources",
       deadlines: "Open timeline",
       forms: "Get materials",
       guides: "Open guidance",
-      sources: "Open sources",
       home: "Back home",
     },
     groupLabel: {
@@ -607,8 +551,6 @@ I18N.ja = {
     deadlines: "タイムライン",
     forms: "資料取得",
     guides: "申請ガイド",
-    sources: "公式ソース",
-    archive: "公式ソース",
   },
   common: {
     siteTitle: "JSPS 科研費ワークスペース",
@@ -619,13 +561,11 @@ I18N.ja = {
     unknown: "要確認",
     priority: "優先確認",
     official: "公式ページ",
-    snapshot: "公式ソース",
     documents: "資料",
     forms: "資料",
     links: "リンク",
     noResults: "一致する結果はありません",
     viewOfficial: "公式ページを開く",
-    viewSource: "公式ソースを開く",
     nextDeadline: "次の締切",
     expectedOpening: "予定公募開始",
     expectedDeadline: "予定締切",
@@ -637,7 +577,6 @@ I18N.ja = {
     group: "区分",
     openPrograms: "公募中の種目",
     trackedForms: "追跡中の資料",
-    archiveSnapshots: "公式ソース",
     officialDocs: "重要資料",
     watchpoints: "確認ポイント",
     detailHint: "左側の項目を選ぶと詳細を確認できます。",
@@ -725,7 +664,6 @@ I18N.ja = {
     pageHighlights: "ページ内の注目リンク",
     relatedPrograms: "関連種目",
     recentCycles: "現行年度と過年度の参照",
-    snapshotHistory: "公式ソース履歴",
   },
   program: {
     kicker: "種目詳細",
@@ -796,30 +734,13 @@ I18N.ja = {
     useStep3Title: "最後に種目差を確認",
     useStep3Text: "募集回、締切、資料公開状況は種目ごとに異なるため、注意点で最後に横断確認します。",
   },
-  sources: {
-    kicker: "出典",
-    title: "公式ソース",
-    lede: "整理済みの情報だけでなく、元の公式ページと公募索引の入口を分けて確認できるようにします。",
-    registryTitle: "主要ソース一覧",
-    categoryTitle: "公募索引の分類入口",
-    footerTitle: "ソースを確認したら、ホームに戻って準備を進めます",
-  },
-  archive: {
-    kicker: "公式ソース",
-    title: "公式ソース",
-    lede: "取得日ごとのディレクトリを残し、JSPS 側の更新後でも当時の文面とリンク構造を追跡できます。",
-    gridTitle: "公式ソース一覧",
-    footerTitle: "履歴を確認したら、現行のホームへ戻ります",
-  },
   footer: {
     resources: "リソース",
     homeTitle: "次の確認ページへ進む",
     catalog: "ホームを開く",
-    archive: "公式ソースを開く",
     deadlines: "タイムラインを開く",
     forms: "資料を取得",
     guides: "申請ガイドを開く",
-    sources: "公式ソースを開く",
     home: "ホームへ戻る",
   },
   groupLabel: {
@@ -839,7 +760,7 @@ I18N.ja = {
     file: "ファイル",
     system: "システム",
     external: "外部リンク",
-    snapshot: "公式ソース",
+    snapshot: "記録",
     faq: "FAQ",
     registry: "索引",
     overview: "ハブ",
@@ -1055,8 +976,6 @@ async function loadData() {
 function routePage() {
   switch (state.page) {
     case "home":
-      renderHomePage();
-      break;
     case "calls":
       renderCallsPage();
       break;
@@ -1803,140 +1722,6 @@ function revealPage() {
   });
   document.body.classList.add("is-ready");
 }
-function renderHomePage() {
-  const priorityGrid = document.getElementById("home-priority-grid");
-  const workflowGrid = document.getElementById("home-workflow-grid");
-  const watchList = document.getElementById("home-watch-list");
-  const jumpList = document.getElementById("home-jump-list");
-  const sourceGrid = document.getElementById("home-source-grid");
-  const archiveList = document.getElementById("home-archive-list");
-  const sourceGuideList = document.getElementById("home-source-guide-list");
-
-  if (!priorityGrid || !workflowGrid || !watchList || !jumpList || !sourceGrid || !archiveList || !sourceGuideList) {
-    return;
-  }
-
-  const { overview, programs, guides, source_registry: sourceRegistry, archive } = state.data;
-  const workflowCards = [
-    {
-      kicker: t("nav.calls"),
-      title: t("nav.calls"),
-      text: t("home.callsLead"),
-      meta: countText(state.data.call_catalog.length, "entries"),
-      href: "./index.html",
-    },
-    {
-      kicker: t("nav.deadlines"),
-      title: t("nav.deadlines"),
-      text: t("home.deadlinesLead"),
-      meta: countText(state.data.timeline.length, "milestones"),
-      href: "./deadlines.html",
-    },
-    {
-      kicker: t("nav.forms"),
-      title: t("nav.forms"),
-      text: t("home.formsLead"),
-      meta: countText(overview.form_count, "forms"),
-      href: "./forms.html",
-    },
-    {
-      kicker: t("nav.guides"),
-      title: t("nav.guides"),
-      text: t("home.guidesLead"),
-      meta: countText(guides.length, "guides"),
-      href: "./guides.html",
-    },
-  ];
-
-  const previewPrograms = sortProgramsByDeadline(programs.slice());
-  priorityGrid.innerHTML = previewPrograms
-    .map(
-      (program) => `
-        <article class="feature-card program-spotlight">
-          <div class="portal-card-head">
-            <div>
-              <p class="eyebrow">${escapeHtml(localeField(program, "family_title"))}</p>
-              <h3>${escapeHtml(localeField(program, "title"))}</h3>
-            </div>
-            ${timingPillCluster(program)}
-          </div>
-          <p>${escapeHtml(callCardDescription(program))}</p>
-          <div class="meta-strip">
-            ${metaPill(`${t("common.documents")} ${program.document_count}`)}
-            ${metaPill(`${t("common.forms")} ${program.form_count}`)}
-            ${metaPill(`${t("common.updated")} ${program.page_last_updated || "--"}`)}
-          </div>
-          <div class="link-row">
-            <a class="button button-primary" href="${officialProgramHref(program.id)}"${linkTargetAttrs(officialProgramHref(program.id))}>${t("common.viewOfficial")}</a>
-          </div>
-        </article>
-      `
-    )
-    .join("");
-
-  workflowGrid.innerHTML = workflowCards
-    .map(
-      (card) => `
-        <article class="feature-card">
-          <div class="portal-card-head">
-            <div>
-              <p class="eyebrow">${escapeHtml(card.kicker)}</p>
-              <h3>${escapeHtml(card.title)}</h3>
-            </div>
-          </div>
-          <p>${escapeHtml(card.text)}</p>
-          <div class="meta-strip">
-            ${metaPill(card.meta)}
-          </div>
-          <div class="link-row">
-            <a class="button button-secondary" href="${card.href}">${escapeHtml(card.title)}</a>
-          </div>
-        </article>
-      `
-    )
-    .join("");
-
-  watchList.innerHTML = programs
-    .flatMap((program) => programWatchItems(program).slice(0, 2))
-    .map((item) => stackItem(item.title, item.text))
-    .join("");
-
-  jumpList.innerHTML = sourceRegistry
-    .slice(0, 4)
-    .map((source) => stackItem(localeField(source, "title"), localeField(source, "summary"), source.official_url))
-    .join("");
-
-  sourceGrid.innerHTML = sourceRegistry
-    .slice(0, 4)
-    .map(
-      (source) => `
-        <article class="link-card">
-          <h3 class="link-card-title">${escapeHtml(localeField(source, "title"))}</h3>
-          <p>${escapeHtml(localeField(source, "summary"))}</p>
-          <div class="meta-strip">
-            ${metaPill(`${t("common.links")} ${source.resource_count}`)}
-          </div>
-          <div class="link-row">
-            <a href="${source.official_url}" target="_blank" rel="noreferrer">${t("common.viewOfficial")}</a>
-          </div>
-        </article>
-      `
-    )
-    .join("");
-
-  archiveList.innerHTML = archive
-    .slice(0, 3)
-    .map((snapshotEntry) => stackItem(snapshotEntry.snapshot_date, `${countText(snapshotEntry.files.length, "files")} · ${snapshotEntry.fetched_at || "--"}`, snapshotEntry.files[0]?.local_path || ""))
-    .join("");
-
-  sourceGuideList.innerHTML = [
-    stackItem(t("home.sourceGuideProgramsTitle"), t("home.sourceGuideProgramsText")),
-    stackItem(t("home.sourceGuideDatesTitle"), t("home.sourceGuideDatesText")),
-    stackItem(t("home.sourceGuideFormsTitle"), t("home.sourceGuideFormsText")),
-    stackItem(t("home.sourceGuideSourcesTitle"), t("home.sourceGuideSourcesText")),
-  ].join("");
-}
-
 function renderCallsPage() {
   const searchInput = document.getElementById("call-search");
   const statusFilter = document.getElementById("call-status-filter");
@@ -2915,116 +2700,41 @@ function renderGuidesPage() {
     </div>
   `;
 }
-
-function renderSourcesPage() {
-  const sourceGrid = document.getElementById("source-grid");
-  const categoryGrid = document.getElementById("category-grid");
-  const metrics = document.getElementById("sources-detail-metrics");
-  if (!sourceGrid || !categoryGrid) {
-    return;
-  }
-
-  if (metrics) {
-    metrics.innerHTML = [
-      metaPill(`${t("common.links")} ${state.data.source_registry.length}`),
-      metaPill(`${t("common.group")} ${state.data.public_call_categories.length}`),
-    ].join("");
-  }
-
-  sourceGrid.innerHTML = state.data.source_registry
-    .map(
-      (source) => `
-        <article class="link-card">
-          <div class="portal-card-head">
-            <div>
-              <p class="eyebrow">${escapeHtml(displayKindLabel(source.kind))}</p>
-              <h3 class="link-card-title">${escapeHtml(localeField(source, "title"))}</h3>
-            </div>
-            ${metaPill(`${source.resource_count}`)}
-          </div>
-          <p>${escapeHtml(localeField(source, "summary"))}</p>
-          <div class="link-row">
-            <a href="${source.official_url}" target="_blank" rel="noreferrer">${t("common.viewOfficial")}</a>
-          </div>
-        </article>
-      `
-    )
-    .join("");
-
-  categoryGrid.innerHTML = state.data.public_call_categories
-    .map(
-      (category) => `
-        <article class="feature-card">
-          <div class="portal-card-head">
-            <div>
-              <p class="eyebrow">${escapeHtml(localeField(category, "group") || displayGroupLabel(category.group))}</p>
-              <h3>${escapeHtml(localeField(category, "title"))}</h3>
-            </div>
-          </div>
-          <div class="link-row">
-            <a href="${category.url}" target="_blank" rel="noreferrer">${t("common.viewOfficial")}</a>
-          </div>
-        </article>
-      `
-    )
-    .join("");
-}
-
-function renderArchivePage() {
-  const archiveGrid = document.getElementById("archive-grid");
-  const metrics = document.getElementById("archive-detail-metrics");
-  if (!archiveGrid) {
-    return;
-  }
-  const archive = state.data.archive;
-  const totalFiles = archive.reduce((sum, snapshot) => sum + snapshot.files.length, 0);
-  if (metrics) {
-    metrics.innerHTML = [
-      metaPill(`${t("common.archiveSnapshots")} ${archive.length}`),
-      metaPill(`${t("common.links")} ${totalFiles}`),
-      metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
-    ].join("");
-  }
-
-  archiveGrid.innerHTML = archive
-    .map(
-      (snapshot) => `
-        <article class="document-card">
-          <div class="portal-card-head">
-            <div>
-              <p class="eyebrow">${escapeHtml(snapshot.local_dir)}</p>
-              <h3>${escapeHtml(snapshot.snapshot_date)}</h3>
-            </div>
-            ${metaPill(`${snapshot.files.length}`)}
-          </div>
-          <p>${escapeHtml(snapshot.fetched_at || "--")}</p>
-          <ul class="portal-list">
-            ${snapshot.files
-              .map(
-                (file) => `
-                  <li>
-                    <a href="${resolveHref(file.local_path)}">${escapeHtml(file.name)}</a>
-                    ${file.official_url ? ` <span class="portal-inline-muted">· <a href="${file.official_url}" target="_blank" rel="noreferrer">${t("common.official")}</a></span>` : ""}
-                  </li>
-                `
-              )
-              .join("")}
-          </ul>
-        </article>
-      `
-    )
-    .join("");
-}
 function localeValue(record, base) {
   return localeValueFor(record, base, state.locale);
+}
+
+function isLocaleRecord(value) {
+  return (
+    value &&
+    typeof value === "object" &&
+    !Array.isArray(value) &&
+    ["canonical", "en", "zh", "ja"].some((key) => Object.prototype.hasOwnProperty.call(value, key))
+  );
+}
+
+function localizeLocaleRecord(value, localeName = state.locale, emptyValue = "") {
+  if (!isLocaleRecord(value)) {
+    return emptyValue;
+  }
+  if (window.HomepageI18n?.localizeValue) {
+    return window.HomepageI18n.localizeValue(value, { locale: localeName, locales: LOCALE_CATALOG, emptyValue });
+  }
+  const candidates =
+    localeName === "ja"
+      ? [value.ja, value.canonical, value.zh, value.en]
+      : localeName === "zh"
+        ? [value.zh, value.canonical, value.ja, value.en]
+        : [value.en, value.ja, value.canonical, value.zh];
+  return candidates.find((candidate) => candidate !== undefined && candidate !== null && candidate !== "") ?? emptyValue;
 }
 
 function localeValueFor(record, base, localeName = state.locale) {
   if (!record) {
     return "";
   }
-  if (window.HomepageI18n?.isLocaleObject?.(record[base], LOCALE_CATALOG)) {
-    return window.HomepageI18n.localizeValue(record[base], { locale: localeName, locales: LOCALE_CATALOG });
+  if (isLocaleRecord(record[base])) {
+    return localizeLocaleRecord(record[base], localeName, "");
   }
   const candidates =
     localeName === "ja"
@@ -3051,8 +2761,8 @@ function localeList(record, base) {
   if (!record) {
     return [];
   }
-  if (window.HomepageI18n?.isLocaleObject?.(record[base], LOCALE_CATALOG)) {
-    const localized = window.HomepageI18n.localizeValue(record[base], { locale: state.locale, locales: LOCALE_CATALOG, emptyValue: [] });
+  if (isLocaleRecord(record[base])) {
+    const localized = localizeLocaleRecord(record[base], state.locale, []);
     return Array.isArray(localized) ? localized : localized ? [localized] : [];
   }
   const candidates =
@@ -3073,9 +2783,9 @@ function localizedSearchText(record, bases = []) {
   const values = [];
   bases.forEach((base) => {
     const direct = record?.[base];
-    if (window.HomepageI18n?.isLocaleObject?.(direct, LOCALE_CATALOG)) {
+    if (isLocaleRecord(direct)) {
       ["en", "zh", "ja"].forEach((localeName) => {
-        values.push(window.HomepageI18n.localizeValue(direct, { locale: localeName, locales: LOCALE_CATALOG }));
+        values.push(localizeLocaleRecord(direct, localeName, ""));
       });
       values.push(direct.canonical);
       return;
@@ -3102,14 +2812,14 @@ function displayGroupLabel(group) {
   if (key) {
     return t(`groupLabel.${key}`);
   }
-  if (window.HomepageI18n?.isLocaleObject?.(group, LOCALE_CATALOG)) {
-    return window.HomepageI18n.localizeValue(group, { locale: state.locale, locales: LOCALE_CATALOG });
+  if (isLocaleRecord(group)) {
+    return localizeLocaleRecord(group, state.locale, "");
   }
   return canonicalGroup;
 }
 
 function groupKey(group) {
-  if (window.HomepageI18n?.isLocaleObject?.(group, LOCALE_CATALOG)) {
+  if (isLocaleRecord(group)) {
     return group.canonical || group.en || group.zh || group.ja || "";
   }
   return String(group || "");
@@ -3141,7 +2851,6 @@ function displayKindLabel(kind) {
 function countText(value, unitKey) {
   return `${value} ${t(`unit.${unitKey}`)}`;
 }
-
 function t(key) {
   if (window.HomepageI18n?.text) {
     return window.HomepageI18n.text(I18N, key, { locale: state.locale, fallbacks: ["en", "zh"] });

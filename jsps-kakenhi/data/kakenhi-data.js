@@ -60,7 +60,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": true,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/22_startup_support__download.html",
       "page_headline": "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について",
       "page_last_updated": "2026-04-03 17:00:07",
       "status": "open",
@@ -82,7 +81,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2026-05-08",
       "deadline_at": "2026-05-08T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/22_startup_support__index.html",
       "key_links": [
         {
           "label": {
@@ -93,16 +91,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/22_startup_support__download.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -133,16 +121,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/22_startup_support__index.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -341,90 +319,7 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "22_startup_support__download.html",
-              "href": "external/jsps/2026-04-08/22_startup_support__download.html"
-            },
-            {
-              "title": "22_startup_support__index.html",
-              "href": "external/jsps/2026-04-08/22_startup_support__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "22_startup_support__download.html",
-              "href": "external/jsps/2026-04-07/22_startup_support__download.html"
-            },
-            {
-              "title": "22_startup_support__index.html",
-              "href": "external/jsps/2026-04-07/22_startup_support__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "startup_support.html",
-              "href": "external/jsps/2026-04-03/startup_support.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-03 snapshot",
-            "zh": "2026-04-03 快照",
-            "ja": "2026-04-03 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "startup_support.html",
-              "href": "external/jsps/2026-03-24/startup_support.html"
-            }
-          ],
-          "title": {
-            "en": "2026-03-24 snapshot",
-            "zh": "2026-03-24 快照",
-            "ja": "2026-03-24 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "This is the priority call that is currently open for action. The dedicated page consolidates the call period, the electronic application system opening date, the S-22 form family, the preparation guidance, and the main FAQ links.",
         "zh": "这是当前最需要立即推进的重点公募项目。该专页把公募期间、电子申报系统开放时间、S-22、作成与输入要领以及 FAQ 入口集中到了一处。",
@@ -482,7 +377,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": true,
       "theme": "tohoku",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "page_headline": "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
       "page_last_updated": "2025-09-18 11:35:30",
       "status": "closed",
@@ -504,7 +398,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-09-17",
       "deadline_at": "2025-09-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/03_keikaku__index.html",
       "key_links": [
         {
           "label": {
@@ -515,16 +408,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/02_koubo__kiban.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -555,16 +438,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/03_keikaku__index.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -605,16 +478,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -1133,96 +996,6 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "02_koubo__kiban.html",
-              "href": "external/jsps/2026-04-08/02_koubo__kiban.html"
-            },
-            {
-              "title": "12_kiban__index.html",
-              "href": "external/jsps/2026-04-08/12_kiban__index.html"
-            },
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "3 related pages saved in this snapshot.",
-            "zh": "保存了 3 个相关页面。",
-            "ja": "関連ページ 3 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "02_koubo__kiban.html",
-              "href": "external/jsps/2026-04-07/02_koubo__kiban.html"
-            },
-            {
-              "title": "12_kiban__index.html",
-              "href": "external/jsps/2026-04-07/12_kiban__index.html"
-            },
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "3 related pages saved in this snapshot.",
-            "zh": "保存了 3 个相关页面。",
-            "ja": "関連ページ 3 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "kiban.html",
-              "href": "external/jsps/2026-04-03/kiban.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-03 snapshot",
-            "zh": "2026-04-03 快照",
-            "ja": "2026-04-03 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "kiban.html",
-              "href": "external/jsps/2026-03-24/kiban.html"
-            }
-          ],
-          "title": {
-            "en": "2026-03-24 snapshot",
-            "zh": "2026-03-24 快照",
-            "ja": "2026-03-24 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [
         {
           "id": "scientific_research_abc",
@@ -1251,7 +1024,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -1315,18 +1087,12 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "usst",
       "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-inv__boshuyoko.html",
       "page_headline": "募集要項・申請書",
       "page_last_updated": "2026-02-25 10:10:07",
       "status": "open",
-      "notice_date": null,
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
       "submission_deadline": "2026-04-28",
       "deadline_at": "2026-04-28T17:00:00+09:00",
       "overview_url": "",
-      "overview_snapshot_path": "",
       "key_links": [
         {
           "label": {
@@ -1337,16 +1103,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/j-inv__boshuyoko.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -1511,26 +1267,22 @@ window.KAKENHI_PORTAL_DATA = {
         {
           "title": "",
           "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
-          "kind": "file",
-          "section": null
+          "kind": "file"
         },
         {
           "title": "【日本語】 外国人研究者招へい事業 令和8（2026）年度 リーフレット（PDF/3.3MB)",
           "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
-          "kind": "file",
-          "section": null
+          "kind": "file"
         },
         {
           "title": "",
           "url": "https://www.jsps.go.jp/file/storage/e-inv/pamphlet/fellowship_2026_EN.pdf",
-          "kind": "file",
-          "section": null
+          "kind": "file"
         },
         {
           "title": "【英語】 外国人研究者招へい事業 令和8（2028）年度 リーフレット (PDF/1.9MB)",
           "url": "https://www.jsps.go.jp/file/storage/e-inv/pamphlet/fellowship_2026_EN.pdf",
-          "kind": "file",
-          "section": null
+          "kind": "file"
         }
       ],
       "forms": [],
@@ -1592,8 +1344,7 @@ window.KAKENHI_PORTAL_DATA = {
             {
               "title": "【日本語】 外国人研究者招へい事業 令和8（2026）年度 リーフレット（PDF/3.3MB)",
               "url": "https://www.jsps.go.jp/file/storage/j-invi/pamphlet/fellowship_2026_JP.pdf",
-              "kind": "file",
-              "section": null
+              "kind": "file"
             }
           ],
           "title": {
@@ -1655,70 +1406,7 @@ window.KAKENHI_PORTAL_DATA = {
           }
         }
       ],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "j-inv__boshu_index.html",
-              "href": "external/jsps/2026-04-08/j-inv__boshu_index.html"
-            },
-            {
-              "title": "j-inv__boshuyoko.html",
-              "href": "external/jsps/2026-04-08/j-inv__boshuyoko.html"
-            },
-            {
-              "title": "j-inv__index.html",
-              "href": "external/jsps/2026-04-08/j-inv__index.html"
-            },
-            {
-              "title": "j-inv_researchers__index.html",
-              "href": "external/jsps/2026-04-08/j-inv_researchers__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "4 related pages saved in this snapshot.",
-            "zh": "保存了 4 个相关页面。",
-            "ja": "関連ページ 4 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "j-inv__boshu_index.html",
-              "href": "external/jsps/2026-04-07/j-inv__boshu_index.html"
-            },
-            {
-              "title": "j-inv__boshuyoko.html",
-              "href": "external/jsps/2026-04-07/j-inv__boshuyoko.html"
-            },
-            {
-              "title": "j-inv__index.html",
-              "href": "external/jsps/2026-04-07/j-inv__index.html"
-            },
-            {
-              "title": "j-inv_researchers__index.html",
-              "href": "external/jsps/2026-04-07/j-inv_researchers__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "4 related pages saved in this snapshot.",
-            "zh": "保存了 4 个相关页面。",
-            "ja": "関連ページ 4 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "This card follows the long-term and short-term Invitational Fellowships for Research in Japan together. Reading the guideline page alongside the schedule page makes it possible to keep the current rounds and prior-year reference materials in view at the same time.",
         "zh": "这是把外国人招聘研究者的长期与短期项目合并追踪的项目卡。把募集要项／申请书页与申请日程页放在一起后，可以同时查看本年度募集回与上一年度资料。",
@@ -1776,18 +1464,12 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "usst",
       "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html",
       "page_headline": "募集要項・申請書（公募）",
       "page_last_updated": "2026-03-30 10:00:06",
       "status": "open",
-      "notice_date": null,
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
       "submission_deadline": "2026-04-28",
       "deadline_at": "2026-04-28T17:00:00+09:00",
       "overview_url": "",
-      "overview_snapshot_path": "",
       "key_links": [
         {
           "label": {
@@ -1798,16 +1480,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -2242,70 +1914,7 @@ window.KAKENHI_PORTAL_DATA = {
           }
         }
       ],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "j-fellow_14__31_boshuyoko.html",
-              "href": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html"
-            },
-            {
-              "title": "j-fellow__index.html",
-              "href": "external/jsps/2026-04-08/j-fellow__index.html"
-            },
-            {
-              "title": "j-ippan__boshu.html",
-              "href": "external/jsps/2026-04-08/j-ippan__boshu.html"
-            },
-            {
-              "title": "j-oubei-s__boshu.html",
-              "href": "external/jsps/2026-04-08/j-oubei-s__boshu.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "4 related pages saved in this snapshot.",
-            "zh": "保存了 4 个相关页面。",
-            "ja": "関連ページ 4 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "j-fellow_14__31_boshuyoko.html",
-              "href": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html"
-            },
-            {
-              "title": "j-fellow__index.html",
-              "href": "external/jsps/2026-04-07/j-fellow__index.html"
-            },
-            {
-              "title": "j-ippan__boshu.html",
-              "href": "external/jsps/2026-04-07/j-ippan__boshu.html"
-            },
-            {
-              "title": "j-oubei-s__boshu.html",
-              "href": "external/jsps/2026-04-07/j-oubei-s__boshu.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "4 related pages saved in this snapshot.",
-            "zh": "保存了 4 个相关页面。",
-            "ja": "関連ページ 4 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "This card consolidates the guideline and schedule pages for the General and Open Short-Term tracks of the JSPS Postdoctoral Fellowships for Research in Japan. The official guideline page itself retains both FY2026 and FY2025 materials, making current preparation and prior-cycle comparison possible in one place.",
         "zh": "这是把外国人特别研究员中“一般／欧美短期／公募”的募集要项与日程合并整理的项目卡。官方募集要项页本身就并列保留了令和8（2026）年度与令和7（2025）年度材料，因此可以在一个入口里同时做今年准备与去年的对照。",
@@ -2363,18 +1972,11 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-ab__ab_sin.html",
       "page_headline": "募集要項",
       "page_last_updated": "2026-02-17 14:01:12",
       "status": "open",
-      "notice_date": null,
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
       "submission_deadline": "2026-05-11",
-      "deadline_at": null,
       "overview_url": "",
-      "overview_snapshot_path": "",
       "key_links": [
         {
           "label": {
@@ -2385,16 +1987,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-ab/ab_sin.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/j-ab__ab_sin.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -2565,54 +2157,7 @@ window.KAKENHI_PORTAL_DATA = {
         }
       ],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "j-ab__ab_nittei.html",
-              "href": "external/jsps/2026-04-08/j-ab__ab_nittei.html"
-            },
-            {
-              "title": "j-ab__ab_sin.html",
-              "href": "external/jsps/2026-04-08/j-ab__ab_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "j-ab__ab_nittei.html",
-              "href": "external/jsps/2026-04-07/j-ab__ab_nittei.html"
-            },
-            {
-              "title": "j-ab__ab_sin.html",
-              "href": "external/jsps/2026-04-07/j-ab__ab_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "call_open_label": {
         "en": "Mid-Mar 2026",
         "zh": "2026年3月中旬",
@@ -2675,18 +2220,11 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-ab__rra_sin.html",
       "page_headline": "募集要項（RRA）",
       "page_last_updated": "2026-02-17 14:01:28",
       "status": "open",
-      "notice_date": null,
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
       "submission_deadline": "2026-05-11",
-      "deadline_at": null,
       "overview_url": "",
-      "overview_snapshot_path": "",
       "key_links": [
         {
           "label": {
@@ -2697,16 +2235,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-ab/rra_sin.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/j-ab__rra_sin.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -2868,54 +2396,7 @@ window.KAKENHI_PORTAL_DATA = {
         }
       ],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "j-ab__ab_nittei.html",
-              "href": "external/jsps/2026-04-08/j-ab__ab_nittei.html"
-            },
-            {
-              "title": "j-ab__rra_sin.html",
-              "href": "external/jsps/2026-04-08/j-ab__rra_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "j-ab__ab_nittei.html",
-              "href": "external/jsps/2026-04-07/j-ab__ab_nittei.html"
-            },
-            {
-              "title": "j-ab__rra_sin.html",
-              "href": "external/jsps/2026-04-07/j-ab__rra_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "call_open_label": {
         "en": "Mid-Mar 2026",
         "zh": "2026年3月中旬",
@@ -2978,18 +2459,12 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "tohoku",
       "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__pd_sin.html",
       "page_headline": "募集要項（PD・DC2・DC1）",
       "page_last_updated": "2026-04-01 15:30:06",
       "status": "open",
-      "notice_date": null,
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
       "submission_deadline": "2026-06-03",
       "deadline_at": "2026-06-03T17:00:00+09:00",
       "overview_url": "",
-      "overview_snapshot_path": "",
       "key_links": [
         {
           "label": {
@@ -3000,16 +2475,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-pd/pd_sin.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/j-pd__pd_sin.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -3300,54 +2765,7 @@ window.KAKENHI_PORTAL_DATA = {
         }
       ],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "j-pd__pd_nittei.html",
-              "href": "external/jsps/2026-04-08/j-pd__pd_nittei.html"
-            },
-            {
-              "title": "j-pd__pd_sin.html",
-              "href": "external/jsps/2026-04-08/j-pd__pd_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "j-pd__pd_nittei.html",
-              "href": "external/jsps/2026-04-07/j-pd__pd_nittei.html"
-            },
-            {
-              "title": "j-pd__pd_sin.html",
-              "href": "external/jsps/2026-04-07/j-pd__pd_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "call_open_label": {
         "en": "Early Apr 2026",
         "zh": "2026年4月上旬",
@@ -3410,18 +2828,12 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "tohoku",
       "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__rpd_sin.html",
       "page_headline": "募集要項（RPD）",
       "page_last_updated": "2026-03-16 15:00:18",
       "status": "open",
-      "notice_date": null,
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
       "submission_deadline": "2026-05-11",
       "deadline_at": "2026-05-11T17:00:00+09:00",
       "overview_url": "",
-      "overview_snapshot_path": "",
       "key_links": [
         {
           "label": {
@@ -3432,16 +2844,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/j-pd__rpd_sin.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -3650,54 +3052,7 @@ window.KAKENHI_PORTAL_DATA = {
         }
       ],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "j-pd__pd_nittei.html",
-              "href": "external/jsps/2026-04-08/j-pd__pd_nittei.html"
-            },
-            {
-              "title": "j-pd__rpd_sin.html",
-              "href": "external/jsps/2026-04-08/j-pd__rpd_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "j-pd__pd_nittei.html",
-              "href": "external/jsps/2026-04-07/j-pd__pd_nittei.html"
-            },
-            {
-              "title": "j-pd__rpd_sin.html",
-              "href": "external/jsps/2026-04-07/j-pd__rpd_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "call_open_label": {
         "en": "Mid-Mar 2026",
         "zh": "2026年3月中旬",
@@ -3760,23 +3115,19 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html",
       "page_headline": "令和８(2026)年度「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）の公募について",
       "page_last_updated": "2026-04-07 18:25:13",
       "status": "open",
-      "notice_date": null,
       "call_period": {
         "raw": "令和8(2026)年3月23日(月)~5月15日(金)午後4時30分",
         "start_date": "2026-03-23",
         "deadline_date": "2026-05-15",
         "deadline": "2026-05-15T16:30:00+09:00"
       },
-      "system_available_from": null,
       "call_open_date": "2026-03-23",
       "submission_deadline": "2026-05-15",
       "deadline_at": "2026-05-15T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/03_keikaku__index.html",
       "key_links": [
         {
           "label": {
@@ -3787,16 +3138,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -3827,16 +3168,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/03_keikaku__index.html",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -3915,46 +3246,7 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "This is the official call page for Independent Research Base Building Support (Pilot), bringing together the current application procedures, core forms, and FAQ routes.",
         "zh": "这是 独立基盘形成支援（试行） 的官方公募页，可在这里集中核对当前公募要领、主要样式与 FAQ 入口。",
@@ -4012,7 +3304,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/05_sendou__koubo.html",
       "page_headline": "令和８(2026)年度国際共同研究加速基金（国際先導研究）の公募について",
       "page_last_updated": "2026-03-26 17:40:05",
       "status": "closed",
@@ -4034,7 +3325,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2026-03-13",
       "deadline_at": "2026-03-13T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/35_kokusai__index.html",
       "key_links": [
         {
           "label": {
@@ -4045,16 +3335,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/05_sendou__koubo.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -4085,16 +3365,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/35_kokusai__index.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -4330,46 +3600,7 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "05_sendou__koubo.html",
-              "href": "external/jsps/2026-04-08/05_sendou__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "05_sendou__koubo.html",
-              "href": "external/jsps/2026-04-07/05_sendou__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "The current cycle for Fund for the Promotion of Joint International Research (International Leading Research) is closed, but the page remains the main official reference point for the next round.",
         "zh": "国际共同研究加速基金（国际先导研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
@@ -4430,11 +3661,9 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/01_kyoka__koubo.html",
       "page_headline": "令和７(2025)年度国際共同研究加速基金（国際共同研究強化）の公募について",
       "page_last_updated": "2025-09-24 16:35:18",
       "status": "closed",
-      "notice_date": null,
       "call_period": {
         "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
         "start_date": "2025-07-14",
@@ -4449,7 +3678,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-09-17",
       "deadline_at": "2025-09-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/35_kokusai__index.html",
       "key_links": [
         {
           "label": {
@@ -4460,16 +3688,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/01_kyoka__koubo.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -4503,16 +3721,6 @@ window.KAKENHI_PORTAL_DATA = {
         },
         {
           "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/35_kokusai__index.html",
-          "kind": "snapshot"
-        },
-        {
-          "label": {
             "canonical": "e-Rad",
             "en": "e-Rad",
             "ja": "e-Rad",
@@ -4530,16 +3738,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -4738,50 +3936,11 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "01_kyoka__koubo.html",
-              "href": "external/jsps/2026-04-08/01_kyoka__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "01_kyoka__koubo.html",
-              "href": "external/jsps/2026-04-07/01_kyoka__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
       "forecast_cycle": {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2026 planned call schedule",
           "zh": "2026年度预计公募日程",
@@ -4848,11 +4007,9 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/03_kikoku__koubo.html",
       "page_headline": "令和７(2025)年度国際共同研究加速基金（帰国発展研究）の公募について",
       "page_last_updated": "2025-09-24 16:35:08",
       "status": "closed",
-      "notice_date": null,
       "call_period": {
         "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
         "start_date": "2025-07-14",
@@ -4867,7 +4024,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-09-17",
       "deadline_at": "2025-09-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/35_kokusai__index.html",
       "key_links": [
         {
           "label": {
@@ -4878,16 +4034,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/03_kikoku__koubo.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -4921,16 +4067,6 @@ window.KAKENHI_PORTAL_DATA = {
         },
         {
           "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/35_kokusai__index.html",
-          "kind": "snapshot"
-        },
-        {
-          "label": {
             "canonical": "e-Rad",
             "en": "e-Rad",
             "ja": "e-Rad",
@@ -4948,16 +4084,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -5126,50 +4252,11 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "03_kikoku__koubo.html",
-              "href": "external/jsps/2026-04-08/03_kikoku__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "03_kikoku__koubo.html",
-              "href": "external/jsps/2026-04-07/03_kikoku__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
       "forecast_cycle": {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2026 planned call schedule",
           "zh": "2026年度预计公募日程",
@@ -5236,11 +4323,9 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "toyama",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/04_renkei__koubo.html",
       "page_headline": "国際共同研究加速基金（海外連携研究）の公募について",
       "page_last_updated": "2025-07-14 10:00:39",
       "status": "closed",
-      "notice_date": null,
       "call_period": {
         "raw": "令和6(2024)年3月1日(金)~5月9日(木)午後4時30分",
         "start_date": "2024-03-01",
@@ -5255,7 +4340,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2024-05-09",
       "deadline_at": "2024-05-09T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/35_kokusai__index.html",
       "key_links": [
         {
           "label": {
@@ -5266,16 +4350,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/04_renkei__koubo.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -5306,16 +4380,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/35_kokusai__index.html",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -5588,46 +4652,7 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "04_renkei__koubo.html",
-              "href": "external/jsps/2026-04-08/04_renkei__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "04_renkei__koubo.html",
-              "href": "external/jsps/2026-04-07/04_renkei__koubo.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "The current cycle for Fund for the Promotion of Joint International Research (Overseas Partnership Research) is closed, but the page remains the main official reference point for the next round.",
         "zh": "国际共同研究加速基金（海外联携研究） 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
@@ -5688,7 +4713,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "tohoku",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "page_headline": "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
       "page_last_updated": "2025-09-18 11:35:30",
       "status": "closed",
@@ -5710,7 +4734,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-09-17",
       "deadline_at": "2025-09-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/03_keikaku__index.html",
       "key_links": [
         {
           "label": {
@@ -5721,16 +4744,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/02_koubo__kiban.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -5761,16 +4774,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/03_keikaku__index.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -5811,16 +4814,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -6447,96 +5440,6 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "02_koubo__kiban.html",
-              "href": "external/jsps/2026-04-08/02_koubo__kiban.html"
-            },
-            {
-              "title": "12_kiban__index.html",
-              "href": "external/jsps/2026-04-08/12_kiban__index.html"
-            },
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "3 related pages saved in this snapshot.",
-            "zh": "保存了 3 个相关页面。",
-            "ja": "関連ページ 3 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "02_koubo__kiban.html",
-              "href": "external/jsps/2026-04-07/02_koubo__kiban.html"
-            },
-            {
-              "title": "12_kiban__index.html",
-              "href": "external/jsps/2026-04-07/12_kiban__index.html"
-            },
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "3 related pages saved in this snapshot.",
-            "zh": "保存了 3 个相关页面。",
-            "ja": "関連ページ 3 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "kiban.html",
-              "href": "external/jsps/2026-04-03/kiban.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-03 snapshot",
-            "zh": "2026-04-03 快照",
-            "ja": "2026-04-03 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "kiban.html",
-              "href": "external/jsps/2026-03-24/kiban.html"
-            }
-          ],
-          "title": {
-            "en": "2026-03-24 snapshot",
-            "zh": "2026-03-24 快照",
-            "ja": "2026-03-24 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [
         {
           "id": "young_research",
@@ -6565,7 +5468,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -6632,7 +5534,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "usst",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
       "page_headline": "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
       "page_last_updated": "2025-06-17 16:30:29",
       "status": "closed",
@@ -6654,7 +5555,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-06-17",
       "deadline_at": "2025-06-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/12_kiban__index.html",
       "key_links": [
         {
           "label": {
@@ -6665,16 +5565,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/02_koubo__toku_s.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -6708,16 +5598,6 @@ window.KAKENHI_PORTAL_DATA = {
         },
         {
           "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/12_kiban__index.html",
-          "kind": "snapshot"
-        },
-        {
-          "label": {
             "canonical": "英文页面",
             "en": "English page",
             "ja": "英語ページ",
@@ -6735,16 +5615,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -7012,44 +5882,6 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "02_koubo__toku_s.html",
-              "href": "external/jsps/2026-04-08/02_koubo__toku_s.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "02_koubo__toku_s.html",
-              "href": "external/jsps/2026-04-07/02_koubo__toku_s.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [
         {
           "id": "special_promotion_research",
@@ -7067,7 +5899,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-04-10",
         "submission_deadline": "2026-06-16",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -7134,11 +5965,9 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "usst",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/11_shourei__koubo.html",
       "page_headline": "令和８(2026)年度奨励研究の公募について",
       "page_last_updated": "2025-09-24 13:40:09",
       "status": "closed",
-      "notice_date": null,
       "call_period": {
         "raw": "令和7(2025)年7月14日(月)~9月17日(水)午後4時30分",
         "start_date": "2025-07-14",
@@ -7153,7 +5982,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-09-17",
       "deadline_at": "2025-09-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/11_shourei__index.html",
       "key_links": [
         {
           "label": {
@@ -7164,16 +5992,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/11_shourei__koubo.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -7207,16 +6025,6 @@ window.KAKENHI_PORTAL_DATA = {
         },
         {
           "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/11_shourei__index.html",
-          "kind": "snapshot"
-        },
-        {
-          "label": {
             "canonical": "预计日程通知",
             "en": "Schedule notice",
             "ja": "公募予定通知",
@@ -7224,16 +6032,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -7414,74 +6212,11 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "11_shourei__index.html",
-              "href": "external/jsps/2026-04-08/11_shourei__index.html"
-            },
-            {
-              "title": "11_shourei__koubo.html",
-              "href": "external/jsps/2026-04-08/11_shourei__koubo.html"
-            },
-            {
-              "title": "20_tokushourei__download.html",
-              "href": "external/jsps/2026-04-08/20_tokushourei__download.html"
-            },
-            {
-              "title": "20_tokushourei__index.html",
-              "href": "external/jsps/2026-04-08/20_tokushourei__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "4 related pages saved in this snapshot.",
-            "zh": "保存了 4 个相关页面。",
-            "ja": "関連ページ 4 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "11_shourei__index.html",
-              "href": "external/jsps/2026-04-07/11_shourei__index.html"
-            },
-            {
-              "title": "11_shourei__koubo.html",
-              "href": "external/jsps/2026-04-07/11_shourei__koubo.html"
-            },
-            {
-              "title": "20_tokushourei__download.html",
-              "href": "external/jsps/2026-04-07/20_tokushourei__download.html"
-            },
-            {
-              "title": "20_tokushourei__index.html",
-              "href": "external/jsps/2026-04-07/20_tokushourei__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "4 related pages saved in this snapshot.",
-            "zh": "保存了 4 个相关页面。",
-            "ja": "関連ページ 4 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
       "forecast_cycle": {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -7548,7 +6283,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "tohoku",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "page_headline": "令和８(2026)年度基盤研究(Ａ・Ｂ・Ｃ)、挑戦的研究、若手研究の公募について",
       "page_last_updated": "2025-09-18 11:35:30",
       "status": "closed",
@@ -7570,7 +6304,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-09-17",
       "deadline_at": "2025-09-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/03_keikaku__index.html",
       "key_links": [
         {
           "label": {
@@ -7581,16 +6314,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/02_koubo__kiban.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -7621,16 +6344,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/03_keikaku__index.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -7671,16 +6384,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -8351,96 +7054,6 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "02_koubo__kiban.html",
-              "href": "external/jsps/2026-04-08/02_koubo__kiban.html"
-            },
-            {
-              "title": "12_kiban__index.html",
-              "href": "external/jsps/2026-04-08/12_kiban__index.html"
-            },
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "3 related pages saved in this snapshot.",
-            "zh": "保存了 3 个相关页面。",
-            "ja": "関連ページ 3 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "02_koubo__kiban.html",
-              "href": "external/jsps/2026-04-07/02_koubo__kiban.html"
-            },
-            {
-              "title": "12_kiban__index.html",
-              "href": "external/jsps/2026-04-07/12_kiban__index.html"
-            },
-            {
-              "title": "36_dokuritsu_kiban__download.html",
-              "href": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "3 related pages saved in this snapshot.",
-            "zh": "保存了 3 个相关页面。",
-            "ja": "関連ページ 3 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "kiban.html",
-              "href": "external/jsps/2026-04-03/kiban.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-03 snapshot",
-            "zh": "2026-04-03 快照",
-            "ja": "2026-04-03 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "kiban.html",
-              "href": "external/jsps/2026-03-24/kiban.html"
-            }
-          ],
-          "title": {
-            "en": "2026-03-24 snapshot",
-            "zh": "2026-03-24 快照",
-            "ja": "2026-03-24 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [
         {
           "id": "young_research",
@@ -8469,7 +7082,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -8536,7 +7148,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "usst",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
       "page_headline": "令和８(2026)年度特別推進研究、基盤研究(Ｓ)の公募について",
       "page_last_updated": "2025-06-17 16:30:29",
       "status": "closed",
@@ -8558,7 +7169,6 @@ window.KAKENHI_PORTAL_DATA = {
       "submission_deadline": "2025-06-17",
       "deadline_at": "2025-06-17T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/25_tokusui__index.html",
       "key_links": [
         {
           "label": {
@@ -8569,16 +7179,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/02_koubo__toku_s.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -8612,16 +7212,6 @@ window.KAKENHI_PORTAL_DATA = {
         },
         {
           "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/25_tokusui__index.html",
-          "kind": "snapshot"
-        },
-        {
-          "label": {
             "canonical": "英文页面",
             "en": "English page",
             "ja": "英語ページ",
@@ -8639,16 +7229,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -8928,44 +7508,6 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "02_koubo__toku_s.html",
-              "href": "external/jsps/2026-04-08/02_koubo__toku_s.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "02_koubo__toku_s.html",
-              "href": "external/jsps/2026-04-07/02_koubo__toku_s.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [
         {
           "id": "scientific_research_s",
@@ -8983,7 +7525,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-04-10",
         "submission_deadline": "2026-06-16",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -9050,7 +7591,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "usst",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/20_tokushourei__download.html",
       "page_headline": "令和８(2026)年度特別研究員奨励費（外国人特別研究員）の募集について",
       "page_last_updated": "2026-02-10 14:00:08",
       "status": "closed",
@@ -9064,12 +7604,10 @@ window.KAKENHI_PORTAL_DATA = {
         "deadline_date": "2026-02-19",
         "deadline": "2026-02-19T16:30:00+09:00"
       },
-      "system_available_from": null,
       "call_open_date": "2026-01-22",
       "submission_deadline": "2026-02-19",
       "deadline_at": "2026-02-19T16:30:00+09:00",
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/20_tokushourei__index.html",
       "key_links": [
         {
           "label": {
@@ -9080,16 +7618,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/20_tokushourei__download.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -9120,16 +7648,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/20_tokushourei__index.html",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -9244,54 +7762,7 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "20_tokushourei__download.html",
-              "href": "external/jsps/2026-04-08/20_tokushourei__download.html"
-            },
-            {
-              "title": "20_tokushourei__index.html",
-              "href": "external/jsps/2026-04-08/20_tokushourei__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "20_tokushourei__download.html",
-              "href": "external/jsps/2026-04-07/20_tokushourei__download.html"
-            },
-            {
-              "title": "20_tokushourei__index.html",
-              "href": "external/jsps/2026-04-07/20_tokushourei__index.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "The current cycle for Grant-in-Aid for JSPS Fellows is closed, but the page remains the main official reference point for the next round.",
         "zh": "特别研究员奖励费 当前这一轮已结束，但该页仍是下一轮准备时核对公募要领、主要样式与 FAQ 的官方基准页。",
@@ -9349,18 +7820,10 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "tohoku",
       "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__cpd_sin.html",
       "page_headline": "募集要項（CPD）",
       "page_last_updated": "2024-11-18 17:00:08",
       "status": "suspended",
-      "notice_date": null,
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
-      "submission_deadline": null,
-      "deadline_at": null,
       "overview_url": "",
-      "overview_snapshot_path": "",
       "key_links": [
         {
           "label": {
@@ -9371,16 +7834,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/j-pd__cpd_sin.html",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -9497,46 +7950,7 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "j-pd__cpd_sin.html",
-              "href": "external/jsps/2026-04-08/j-pd__cpd_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "j-pd__cpd_sin.html",
-              "href": "external/jsps/2026-04-07/j-pd__cpd_sin.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "1 related pages saved in this snapshot.",
-            "zh": "保存了 1 个相关页面。",
-            "ja": "関連ページ 1 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
-      "forecast_cycle": null,
       "summary": {
         "en": "CPD is explicitly marked as suspended on the current official page, so this card is retained as a reference point for scheme comparison and historical checking rather than active application work.",
         "zh": "CPD 在当前官方页面上已明确标注为“募集停止”，因此这里只把它保留为制度比较与既往运用核对用的参考卡片。",
@@ -9591,7 +8005,6 @@ window.KAKENHI_PORTAL_DATA = {
       "priority": false,
       "theme": "usst",
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
-      "snapshot_path": "external/jsps/2026-04-08/13_seika__keikaku_dl.html",
       "page_headline": "令和８(2026)年度研究成果公開促進費の公募について",
       "page_last_updated": "2025-09-17 16:30:08",
       "status": "closed",
@@ -9599,13 +8012,7 @@ window.KAKENHI_PORTAL_DATA = {
         "raw": "2025年7月14日",
         "iso": "2025-07-14"
       },
-      "call_period": null,
-      "system_available_from": null,
-      "call_open_date": null,
-      "submission_deadline": null,
-      "deadline_at": null,
       "overview_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
-      "overview_snapshot_path": "external/jsps/2026-04-08/13_seika__index.html",
       "key_links": [
         {
           "label": {
@@ -9616,16 +8023,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/13_seika__keikaku_dl.html",
-          "kind": "snapshot"
         },
         {
           "label": {
@@ -9659,16 +8056,6 @@ window.KAKENHI_PORTAL_DATA = {
         },
         {
           "label": {
-            "canonical": "种目快照",
-            "en": "Program snapshot",
-            "ja": "種目ページの快照",
-            "zh": "项目页面快照"
-          },
-          "href": "external/jsps/2026-04-08/13_seika__index.html",
-          "kind": "snapshot"
-        },
-        {
-          "label": {
             "canonical": "预计日程通知",
             "en": "Schedule notice",
             "ja": "公募予定通知",
@@ -9676,16 +8063,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
           "kind": "file"
-        },
-        {
-          "label": {
-            "canonical": "预计日程快照",
-            "en": "Schedule snapshot",
-            "ja": "予定日程スナップショット",
-            "zh": "日程快照"
-          },
-          "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-          "kind": "snapshot"
         }
       ],
       "featured_documents": [
@@ -10270,58 +8647,11 @@ window.KAKENHI_PORTAL_DATA = {
       ],
       "timeline_events": [],
       "recent_cycles": [],
-      "snapshot_history": [
-        {
-          "links": [
-            {
-              "title": "13_seika__index.html",
-              "href": "external/jsps/2026-04-08/13_seika__index.html"
-            },
-            {
-              "title": "13_seika__keikaku_dl.html",
-              "href": "external/jsps/2026-04-08/13_seika__keikaku_dl.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-08 snapshot",
-            "zh": "2026-04-08 快照",
-            "ja": "2026-04-08 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        },
-        {
-          "links": [
-            {
-              "title": "13_seika__index.html",
-              "href": "external/jsps/2026-04-07/13_seika__index.html"
-            },
-            {
-              "title": "13_seika__keikaku_dl.html",
-              "href": "external/jsps/2026-04-07/13_seika__keikaku_dl.html"
-            }
-          ],
-          "title": {
-            "en": "2026-04-07 snapshot",
-            "zh": "2026-04-07 快照",
-            "ja": "2026-04-07 スナップショット"
-          },
-          "summary": {
-            "en": "2 related pages saved in this snapshot.",
-            "zh": "保存了 2 个相关页面。",
-            "ja": "関連ページ 2 件を保存。"
-          }
-        }
-      ],
       "related_programs": [],
       "forecast_cycle": {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -10375,7 +8705,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2024-03-01",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10400,7 +8729,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "system",
       "date": "2024-03-08",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -10450,7 +8778,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "notice",
       "date": "2025-04-11",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -10475,7 +8802,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2025-04-11",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10500,7 +8826,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "notice",
       "date": "2025-04-11",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -10525,7 +8850,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2025-04-11",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10550,7 +8874,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "system",
       "date": "2025-04-18",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -10575,7 +8898,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "system",
       "date": "2025-04-18",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -10650,7 +8972,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10675,7 +8996,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10700,7 +9020,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "notice",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -10725,7 +9044,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "open",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10750,7 +9068,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10775,7 +9092,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "notice",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -10800,7 +9116,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "open",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10825,7 +9140,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "notice",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -10850,7 +9164,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "notice",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -10875,7 +9188,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "open",
       "date": "2025-07-14",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -10900,7 +9212,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "system",
       "date": "2025-07-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -10925,7 +9236,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "system",
       "date": "2025-07-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -10950,7 +9260,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "system",
       "date": "2025-07-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -10975,7 +9284,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "system",
       "date": "2025-07-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -11000,7 +9308,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "system",
       "date": "2025-07-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -11025,7 +9332,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "system",
       "date": "2025-07-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -11200,7 +9506,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "notice",
       "date": "2026-01-09",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -11225,7 +9530,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2026-01-09",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -11250,7 +9554,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "system",
       "date": "2026-01-19",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -11275,7 +9578,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "notice",
       "date": "2026-01-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -11300,7 +9602,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2026-01-22",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -11350,7 +9651,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "notice",
       "date": "2026-03-01",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Official notice posted",
@@ -11375,7 +9675,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2026-03-01",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -11425,7 +9724,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "system",
       "date": "2026-03-19",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Electronic system opens",
@@ -11450,7 +9748,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2026-03-23",
-      "datetime": null,
       "status": "past",
       "title": {
         "en": "Call opens",
@@ -11475,7 +9772,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2026-04-10",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -11500,7 +9796,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2026-04-10",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -11650,7 +9945,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "deadline",
       "date": "2026-05-11",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "JSPS deadline",
@@ -11675,7 +9969,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "deadline",
       "date": "2026-05-11",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Overseas Research Fellowships deadline",
@@ -11700,7 +9993,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "deadline",
       "date": "2026-05-11",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "JSPS deadline",
@@ -11725,7 +10017,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "deadline",
       "date": "2026-05-11",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Overseas Research Fellowships (RRA) deadline",
@@ -11900,7 +10191,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "deadline",
       "date": "2026-06-16",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -11925,7 +10215,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "deadline",
       "date": "2026-06-16",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -11950,7 +10239,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2026-07-14",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -11975,7 +10263,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "open",
       "date": "2026-07-14",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -12000,7 +10287,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "open",
       "date": "2026-07-14",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -12025,7 +10311,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2026-07-14",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -12050,7 +10335,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "open",
       "date": "2026-07-14",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -12075,7 +10359,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "open",
       "date": "2026-07-14",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -12100,7 +10383,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "open",
       "date": "2026-07-14",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle call opens (prior-cycle estimate)",
@@ -12125,7 +10407,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "deadline",
       "date": "2026-09-17",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -12150,7 +10431,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "toyama",
       "type": "deadline",
       "date": "2026-09-17",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -12175,7 +10455,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "deadline",
       "date": "2026-09-17",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -12200,7 +10479,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "deadline",
       "date": "2026-09-17",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -12225,7 +10503,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "deadline",
       "date": "2026-09-17",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -12250,7 +10527,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "usst",
       "type": "deadline",
       "date": "2026-09-17",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -12275,7 +10551,6 @@ window.KAKENHI_PORTAL_DATA = {
       "theme": "tohoku",
       "type": "deadline",
       "date": "2026-09-17",
-      "datetime": null,
       "status": "upcoming",
       "title": {
         "en": "Next-cycle JSPS deadline (prior-cycle estimate)",
@@ -13569,27 +11844,6 @@ window.KAKENHI_PORTAL_DATA = {
     },
     {
       "id": "startup_support-5",
-      "href": "external/jsps/2026-04-08/22_startup_support__download.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Research Activity Start-up Support: Local snapshot",
-        "zh": "研究活动启动支援：本地快照",
-        "ja": "研究活動スタート支援：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Research Activity Start-up Support page.",
-        "zh": "从 研究活动启动支援 官方入口整理出的关键跳转。",
-        "ja": "研究活動スタート支援 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "startup_support-6",
       "href": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
       "kind": "page",
       "group": {
@@ -13610,28 +11864,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "startup_support-7",
-      "href": "external/jsps/2026-04-08/22_startup_support__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Research Activity Start-up Support: Program snapshot",
-        "zh": "研究活动启动支援：种目快照",
-        "ja": "研究活動スタート支援：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Research Activity Start-up Support page.",
-        "zh": "从 研究活动启动支援 官方入口整理出的关键跳转。",
-        "ja": "研究活動スタート支援 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "startup_support-8",
+      "id": "startup_support-6",
       "href": "https://www.jsps.go.jp/english/e-grants/grants09_startup.html",
       "kind": "page",
       "group": {
@@ -13652,7 +11885,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "startup_support-doc-9",
+      "id": "startup_support-doc-7",
       "official_title": "令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について（通知）(PDF/2,158KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_koubotsuchi.pdf",
       "kind": "file",
@@ -13674,7 +11907,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "startup_support-doc-10",
+      "id": "startup_support-doc-8",
       "official_title": "公募要領 Application Procedures（日本語 Japanese）(PDF/1,671KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_koubo.pdf",
       "kind": "file",
@@ -13696,7 +11929,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "startup_support-doc-11",
+      "id": "startup_support-doc-9",
       "official_title": "公募要領 別冊（応募書類の様式・記入要領）（日本語 Japanese）(PDF/5,657KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_bessatsu.pdf",
       "kind": "file",
@@ -13718,7 +11951,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "startup_support-doc-12",
+      "id": "startup_support-doc-10",
       "official_title": "Web入力開始スケジュール(PDF/375KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_22_koubo_2026_kensuta/r8_kensta_schedule.pdf",
       "kind": "file",
@@ -13740,7 +11973,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-13",
+      "id": "young_research-11",
       "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
       "kind": "page",
       "group": {
@@ -13761,28 +11994,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-14",
-      "href": "external/jsps/2026-04-08/02_koubo__kiban.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Early-Career Scientists: Local snapshot",
-        "zh": "青年研究（若手研究）：本地快照",
-        "ja": "若手研究：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Early-Career Scientists page.",
-        "zh": "从 青年研究（若手研究） 官方入口整理出的关键跳转。",
-        "ja": "若手研究 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "young_research-15",
+      "id": "young_research-12",
       "href": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
       "kind": "page",
       "group": {
@@ -13803,28 +12015,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-16",
-      "href": "external/jsps/2026-04-08/03_keikaku__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Early-Career Scientists: Program snapshot",
-        "zh": "青年研究（若手研究）：种目快照",
-        "ja": "若手研究：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Early-Career Scientists page.",
-        "zh": "从 青年研究（若手研究） 官方入口整理出的关键跳转。",
-        "ja": "若手研究 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "young_research-17",
+      "id": "young_research-13",
       "href": "https://www.jsps.go.jp/j-grantsinaid/06_jsps_info/2025/g_3278.html",
       "kind": "page",
       "group": {
@@ -13845,7 +12036,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-18",
+      "id": "young_research-14",
       "href": "https://www.jsps.go.jp/english/e-grants/grants09_kiban.html",
       "kind": "page",
       "group": {
@@ -13866,7 +12057,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-19",
+      "id": "young_research-15",
       "href": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
       "kind": "file",
       "group": {
@@ -13887,28 +12078,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-20",
-      "href": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Early-Career Scientists: Schedule snapshot",
-        "zh": "青年研究（若手研究）：预计日程快照",
-        "ja": "若手研究：予定日程スナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Early-Career Scientists page.",
-        "zh": "从 青年研究（若手研究） 官方入口整理出的关键跳转。",
-        "ja": "若手研究 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "young_research-doc-21",
+      "id": "young_research-doc-16",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
       "kind": "file",
@@ -13930,7 +12100,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-doc-22",
+      "id": "young_research-doc-17",
       "official_title": "公募要領（日本語版）（PDF/2,219KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
       "kind": "file",
@@ -13952,7 +12122,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-doc-23",
+      "id": "young_research-doc-18",
       "official_title": "公募要領（英語版）（PDF/3,595KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
       "kind": "file",
@@ -13974,7 +12144,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "young_research-doc-24",
+      "id": "young_research-doc-19",
       "official_title": "別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
       "kind": "file",
@@ -13996,7 +12166,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-25",
+      "id": "invitational_fellowships_for_research_in_japan-20",
       "href": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
       "kind": "page",
       "group": {
@@ -14017,28 +12187,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-26",
-      "href": "external/jsps/2026-04-08/j-inv__boshuyoko.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Invitational Fellowships for Research in Japan (Long-Term and Short-Term): Local snapshot",
-        "zh": "外国人招聘研究者（长期／短期）：本地快照",
-        "ja": "外国人招へい研究者（長期・短期）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Invitational Fellowships for Research in Japan (Long-Term and Short-Term) page.",
-        "zh": "从 外国人招聘研究者（长期／短期） 官方入口整理出的关键跳转。",
-        "ja": "外国人招へい研究者（長期・短期） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "invitational_fellowships_for_research_in_japan-27",
+      "id": "invitational_fellowships_for_research_in_japan-21",
       "href": "https://www.jsps.go.jp/j-inv/boshu/index.html",
       "kind": "page",
       "group": {
@@ -14059,7 +12208,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-28",
+      "id": "invitational_fellowships_for_research_in_japan-22",
       "href": "https://www.jsps.go.jp/j-inv/index.html",
       "kind": "page",
       "group": {
@@ -14080,7 +12229,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-29",
+      "id": "invitational_fellowships_for_research_in_japan-23",
       "href": "https://www.jsps.go.jp/j-inv_researchers/index.html",
       "kind": "page",
       "group": {
@@ -14101,7 +12250,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-doc-30",
+      "id": "invitational_fellowships_for_research_in_japan-doc-24",
       "official_title": "令和8（2026）年度 募集要項（PDF/652KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
       "kind": "file",
@@ -14123,7 +12272,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-doc-31",
+      "id": "invitational_fellowships_for_research_in_japan-doc-25",
       "official_title": "令和8（2026）年度 審査区分表（PDF/596KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
       "kind": "file",
@@ -14145,7 +12294,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-doc-32",
+      "id": "invitational_fellowships_for_research_in_japan-doc-26",
       "official_title": "令和8（2026）年度 審査セット（PDF/659KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_reviewsectionset_invi_j.pdf",
       "kind": "file",
@@ -14167,7 +12316,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "invitational_fellowships_for_research_in_japan-doc-33",
+      "id": "invitational_fellowships_for_research_in_japan-doc-27",
       "official_title": "申請書作成・記入要領（PDF/230KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-invi/application_requirements/2026/2026_instruction_j.pdf",
       "kind": "file",
@@ -14189,7 +12338,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-34",
+      "id": "foreign_jsps_fellowship_open-28",
       "href": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
       "kind": "page",
       "group": {
@@ -14210,28 +12359,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-35",
-      "href": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term): Local snapshot",
-        "zh": "外国人特别研究员（一般／欧美短期／公募）：本地快照",
-        "ja": "外国人特別研究員（一般・欧米短期・公募）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) page.",
-        "zh": "从 外国人特别研究员（一般／欧美短期／公募） 官方入口整理出的关键跳转。",
-        "ja": "外国人特別研究員（一般・欧米短期・公募） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "foreign_jsps_fellowship_open-36",
+      "id": "foreign_jsps_fellowship_open-29",
       "href": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html",
       "kind": "page",
       "group": {
@@ -14252,7 +12380,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-37",
+      "id": "foreign_jsps_fellowship_open-30",
       "href": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html",
       "kind": "page",
       "group": {
@@ -14273,7 +12401,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-38",
+      "id": "foreign_jsps_fellowship_open-31",
       "href": "https://www.jsps.go.jp/j-fellow/index.html",
       "kind": "page",
       "group": {
@@ -14294,7 +12422,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-doc-39",
+      "id": "foreign_jsps_fellowship_open-doc-32",
       "official_title": "令和8（2026）年度 募集要項（PDF/652KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_applicationguideline_j.pdf",
       "kind": "file",
@@ -14316,7 +12444,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-doc-40",
+      "id": "foreign_jsps_fellowship_open-doc-33",
       "official_title": "令和8（2026）年度 審査区分表（PDF/596KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectiontable_j.pdf",
       "kind": "file",
@@ -14338,7 +12466,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-doc-41",
+      "id": "foreign_jsps_fellowship_open-doc-34",
       "official_title": "令和8（2026）年度 審査セット（一般）（PDF/444KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_sta_j.pdf",
       "kind": "file",
@@ -14360,7 +12488,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "foreign_jsps_fellowship_open-doc-42",
+      "id": "foreign_jsps_fellowship_open-doc-35",
       "official_title": "令和8（2026）年度 審査セット（欧米短期）（PDF/442KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-fellow/j-fellow_14/application_requirements/2026/2026_reviewsectionset_short_j.pdf",
       "kind": "file",
@@ -14382,7 +12510,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship-43",
+      "id": "overseas_research_fellowship-36",
       "href": "https://www.jsps.go.jp/j-ab/ab_sin.html",
       "kind": "page",
       "group": {
@@ -14403,28 +12531,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship-44",
-      "href": "external/jsps/2026-04-08/j-ab__ab_sin.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Overseas Research Fellowships: Local snapshot",
-        "zh": "海外特别研究员：本地快照",
-        "ja": "海外特別研究員：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Overseas Research Fellowships page.",
-        "zh": "从 海外特别研究员 官方入口整理出的关键跳转。",
-        "ja": "海外特別研究員 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "overseas_research_fellowship-45",
+      "id": "overseas_research_fellowship-37",
       "href": "https://www.jsps.go.jp/j-ab/ab_nittei.html",
       "kind": "page",
       "group": {
@@ -14445,7 +12552,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship-46",
+      "id": "overseas_research_fellowship-38",
       "href": "https://www.jsps.go.jp/j-ab/index.html",
       "kind": "page",
       "group": {
@@ -14466,7 +12573,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship-doc-47",
+      "id": "overseas_research_fellowship-doc-39",
       "official_title": "海外特別研究員 令和9（2027）年度採用分募集要項（PDF/333KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_bosyuyoko.pdf",
       "kind": "file",
@@ -14488,7 +12595,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship-doc-48",
+      "id": "overseas_research_fellowship-doc-40",
       "official_title": "今回募集からの主な変更点（PDF/98KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-0_henko.pdf",
       "kind": "file",
@@ -14510,7 +12617,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship-doc-49",
+      "id": "overseas_research_fellowship-doc-41",
       "official_title": "海外特別研究員 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
       "kind": "file",
@@ -14532,7 +12639,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship-doc-50",
+      "id": "overseas_research_fellowship-doc-42",
       "official_title": "令和9（2027）年度採用分海外特別研究員の募集について（通知）（PDF/131KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
       "kind": "file",
@@ -14554,7 +12661,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship_rra-51",
+      "id": "overseas_research_fellowship_rra-43",
       "href": "https://www.jsps.go.jp/j-ab/rra_sin.html",
       "kind": "page",
       "group": {
@@ -14575,28 +12682,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship_rra-52",
-      "href": "external/jsps/2026-04-08/j-ab__rra_sin.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Overseas Research Fellowships (RRA): Local snapshot",
-        "zh": "海外特别研究员（RRA）：本地快照",
-        "ja": "海外特別研究員（RRA）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Overseas Research Fellowships (RRA) page.",
-        "zh": "从 海外特别研究员（RRA） 官方入口整理出的关键跳转。",
-        "ja": "海外特別研究員（RRA） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "overseas_research_fellowship_rra-doc-53",
+      "id": "overseas_research_fellowship_rra-doc-44",
       "official_title": "海外特別研究員 - RRA 令和9（2027）年度採用分募集要項（PDF/325KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-1_RRA_bosyuyoko.pdf",
       "kind": "file",
@@ -14618,7 +12704,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship_rra-doc-54",
+      "id": "overseas_research_fellowship_rra-doc-45",
       "official_title": "海外特別研究員 - RRA 令和9（2027）年度採用分申請書作成要領（PDF/438KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/00-2_sakuseiyoryo.pdf",
       "kind": "file",
@@ -14640,7 +12726,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship_rra-doc-55",
+      "id": "overseas_research_fellowship_rra-doc-46",
       "official_title": "海外特別研究員 - RRA 学歴、博士課程、研究・職歴等別紙（Word/27KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/05_shinsei5RRA_bessi.docx",
       "kind": "file",
@@ -14662,7 +12748,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_research_fellowship_rra-doc-56",
+      "id": "overseas_research_fellowship_rra-doc-47",
       "official_title": "令和9（2027）年度採用分海外特別研究員 - RRAの募集について（通知）（PDF/131KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-ab/data/shinsei/06_tsuuchi.pdf",
       "kind": "file",
@@ -14684,7 +12770,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-57",
+      "id": "jsps_fellow_pd_dc-48",
       "href": "https://www.jsps.go.jp/j-pd/pd_sin.html",
       "kind": "page",
       "group": {
@@ -14705,28 +12791,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-58",
-      "href": "external/jsps/2026-04-08/j-pd__pd_sin.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Research Fellowships for Young Scientists (PD/DC1/DC2): Local snapshot",
-        "zh": "特别研究员（PD／DC1／DC2）：本地快照",
-        "ja": "特別研究員（PD・DC1・DC2）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (PD/DC1/DC2) page.",
-        "zh": "从 特别研究员（PD／DC1／DC2） 官方入口整理出的关键跳转。",
-        "ja": "特別研究員（PD・DC1・DC2） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "jsps_fellow_pd_dc-59",
+      "id": "jsps_fellow_pd_dc-49",
       "href": "https://www.jsps.go.jp/j-pd/pd_nittei.html",
       "kind": "page",
       "group": {
@@ -14747,7 +12812,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-60",
+      "id": "jsps_fellow_pd_dc-50",
       "href": "https://www.jsps.go.jp/j-pd/pd_qa.html",
       "kind": "page",
       "group": {
@@ -14768,7 +12833,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-61",
+      "id": "jsps_fellow_pd_dc-51",
       "href": "https://www.jsps.go.jp/j-pd/pd_tebiki/yoshiki/index.html",
       "kind": "page",
       "group": {
@@ -14789,7 +12854,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-doc-62",
+      "id": "jsps_fellow_pd_dc-doc-52",
       "official_title": "令和9（2027）年度採用分特別研究員-PD募集要項（PDF/619KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_pd_yoko.pdf",
       "kind": "file",
@@ -14811,7 +12876,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-doc-63",
+      "id": "jsps_fellow_pd_dc-doc-53",
       "official_title": "令和9（2027）年度採用分特別研究員-PD申請書作成要領等（PDF/1,626KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_pd.pdf",
       "kind": "file",
@@ -14833,7 +12898,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-doc-64",
+      "id": "jsps_fellow_pd_dc-doc-54",
       "official_title": "令和9（2027）年度採用分特別研究員-DC募集要項（PDF/610KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko.pdf",
       "kind": "file",
@@ -14855,7 +12920,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_pd_dc-doc-65",
+      "id": "jsps_fellow_pd_dc-doc-55",
       "official_title": "FY2027 JSPS Doctral Course (DC) Research Fellowships Application Guidelines（PDF/560KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_dc_yoko_en.pdf",
       "kind": "file",
@@ -14877,7 +12942,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_rpd-66",
+      "id": "jsps_fellow_rpd-56",
       "href": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
       "kind": "page",
       "group": {
@@ -14898,28 +12963,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_rpd-67",
-      "href": "external/jsps/2026-04-08/j-pd__rpd_sin.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Research Fellowships for Young Scientists (RPD): Local snapshot",
-        "zh": "特别研究员（RPD）：本地快照",
-        "ja": "特別研究員（RPD）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (RPD) page.",
-        "zh": "从 特别研究员（RPD） 官方入口整理出的关键跳转。",
-        "ja": "特別研究員（RPD） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "jsps_fellow_rpd-68",
+      "id": "jsps_fellow_rpd-57",
       "href": "https://www.jsps.go.jp/j-pd/rpd_qa.html",
       "kind": "page",
       "group": {
@@ -14940,7 +12984,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_rpd-doc-69",
+      "id": "jsps_fellow_rpd-doc-58",
       "official_title": "令和9（2027）年度採用分特別研究員-RPD募集要項（PDF/625KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_yoko.pdf",
       "kind": "file",
@@ -14962,7 +13006,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_rpd-doc-70",
+      "id": "jsps_fellow_rpd-doc-59",
       "official_title": "令和9（2027）年度採用分特別研究員-RPD申請書作成要領等（PDF/1,834KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_sakusei_rpd.pdf",
       "kind": "file",
@@ -14984,7 +13028,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_rpd-doc-71",
+      "id": "jsps_fellow_rpd-doc-60",
       "official_title": "令和9（2027）年度採用分特別研究員の募集について（通知）（PDF/132KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_tuti_rpd.pdf",
       "kind": "file",
@@ -15006,7 +13050,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_rpd-doc-72",
+      "id": "jsps_fellow_rpd-doc-61",
       "official_title": "申請書提出にあたっての事務担当者チェック要領（PDF/695KB）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/data/recruiting/2_rpd_checkyoryo.pdf",
       "kind": "file",
@@ -15028,7 +13072,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "independent_base_building_support-73",
+      "id": "independent_base_building_support-62",
       "href": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
       "kind": "page",
       "group": {
@@ -15049,28 +13093,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "independent_base_building_support-74",
-      "href": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Independent Research Base Building Support (Pilot): Local snapshot",
-        "zh": "独立基盘形成支援（试行）：本地快照",
-        "ja": "独立基盤形成支援（試行）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Independent Research Base Building Support (Pilot) page.",
-        "zh": "从 独立基盘形成支援（试行） 官方入口整理出的关键跳转。",
-        "ja": "独立基盤形成支援（試行） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "independent_base_building_support-doc-75",
+      "id": "independent_base_building_support-doc-63",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－（「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行））の公募について（通知）（PDF/225KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8tsuchi_dokuritsukiban.pdf",
       "kind": "file",
@@ -15092,7 +13115,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "independent_base_building_support-doc-76",
+      "id": "independent_base_building_support-doc-64",
       "official_title": "公募要領（PDF/479KB）（4月7日更新）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8koubo_dokuritsukiban_shusei.pdf",
       "kind": "file",
@@ -15114,7 +13137,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "independent_base_building_support-doc-77",
+      "id": "independent_base_building_support-doc-65",
       "official_title": "別冊（応募書類の様式・記入要領）（PDF/1,741KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8bessatsu_dokuritsukiban.pdf",
       "kind": "file",
@@ -15136,7 +13159,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "independent_base_building_support-doc-78",
+      "id": "independent_base_building_support-doc-66",
       "official_title": "正誤表（PDF/117KB）（4月7日掲載）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_36_dokuritsu_2026/r8seigohyo_dokuritsukiban.pdf",
       "kind": "file",
@@ -15158,7 +13181,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_leading_research-79",
+      "id": "international_leading_research-67",
       "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
       "kind": "page",
       "group": {
@@ -15179,28 +13202,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_leading_research-80",
-      "href": "external/jsps/2026-04-08/05_sendou__koubo.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Fund for the Promotion of Joint International Research (International Leading Research): Local snapshot",
-        "zh": "国际共同研究加速基金（国际先导研究）：本地快照",
-        "ja": "国際共同研究加速基金（国際先導研究）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (International Leading Research) page.",
-        "zh": "从 国际共同研究加速基金（国际先导研究） 官方入口整理出的关键跳转。",
-        "ja": "国際共同研究加速基金（国際先導研究） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "international_leading_research-81",
+      "id": "international_leading_research-68",
       "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
       "kind": "page",
       "group": {
@@ -15221,28 +13223,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_leading_research-82",
-      "href": "external/jsps/2026-04-08/35_kokusai__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Fund for the Promotion of Joint International Research (International Leading Research): Program snapshot",
-        "zh": "国际共同研究加速基金（国际先导研究）：种目快照",
-        "ja": "国際共同研究加速基金（国際先導研究）：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (International Leading Research) page.",
-        "zh": "从 国际共同研究加速基金（国际先导研究） 官方入口整理出的关键跳转。",
-        "ja": "国際共同研究加速基金（国際先導研究） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "international_leading_research-83",
+      "id": "international_leading_research-69",
       "href": "https://www.jsps.go.jp/j-grantsinaid/06_jsps_info/2025/g_4341.html",
       "kind": "page",
       "group": {
@@ -15263,7 +13244,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_leading_research-doc-84",
+      "id": "international_leading_research-doc-70",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－（国際共同研究加速基金（国際先導研究））の公募について（通知）（PDF/233KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_koubotsuchi.pdf",
       "kind": "file",
@@ -15285,7 +13266,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_leading_research-doc-85",
+      "id": "international_leading_research-doc-71",
       "official_title": "公募要領 Application Procedures（日本語 Japanese）（PDF/1,070KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_applicationprocedures_j.pdf",
       "kind": "file",
@@ -15307,7 +13288,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_leading_research-doc-86",
+      "id": "international_leading_research-doc-72",
       "official_title": "公募説明会資料",
       "href": "https://www.jsps.go.jp/file/storage/kaken_g_4341/fy2026ks_koubosetsumei.pdf",
       "kind": "file",
@@ -15329,7 +13310,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_leading_research-doc-87",
+      "id": "international_leading_research-doc-73",
       "official_title": "国際先導研究応募について（PDF/441KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_4272/fy2026ks_oubokotohajime.pdf",
       "kind": "file",
@@ -15351,7 +13332,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_research_strengthening-88",
+      "id": "international_research_strengthening-74",
       "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
       "kind": "page",
       "group": {
@@ -15372,28 +13353,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_research_strengthening-89",
-      "href": "external/jsps/2026-04-08/01_kyoka__koubo.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Fund for the Promotion of Joint International Research (Fostering Joint International Research): Local snapshot",
-        "zh": "国际共同研究加速基金（国际共同研究强化）：本地快照",
-        "ja": "国際共同研究加速基金（国際共同研究強化）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Fostering Joint International Research) page.",
-        "zh": "从 国际共同研究加速基金（国际共同研究强化） 官方入口整理出的关键跳转。",
-        "ja": "国際共同研究加速基金（国際共同研究強化） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "international_research_strengthening-doc-90",
+      "id": "international_research_strengthening-doc-75",
       "official_title": "令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（国際共同研究強化））の公募について（通知）（PDF/260KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_koubotsuchi.pdf",
       "kind": "file",
@@ -15415,7 +13375,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_research_strengthening-doc-91",
+      "id": "international_research_strengthening-doc-76",
       "official_title": "Application Procedures（PDF/1,703KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_en_kyoka_kouboyoryo.pdf",
       "kind": "file",
@@ -15437,7 +13397,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_research_strengthening-doc-92",
+      "id": "international_research_strengthening-doc-77",
       "official_title": "国際共同研究強化の公募に係るFAQ（PDF/562KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3748/r7_jp_kyoka_faq.pdf",
       "kind": "file",
@@ -15459,7 +13419,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "international_research_strengthening-doc-93",
+      "id": "international_research_strengthening-doc-78",
       "official_title": "公募要領（日本語版）（PDF/1,394KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_kouboyoryo.pdf",
       "kind": "file",
@@ -15481,7 +13441,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "returning_researchers_development-94",
+      "id": "returning_researchers_development-79",
       "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
       "kind": "page",
       "group": {
@@ -15502,28 +13462,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "returning_researchers_development-95",
-      "href": "external/jsps/2026-04-08/03_kikoku__koubo.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Fund for the Promotion of Joint International Research (Returning Researcher Development): Local snapshot",
-        "zh": "国际共同研究加速基金（归国发展研究）：本地快照",
-        "ja": "国際共同研究加速基金（帰国発展研究）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Returning Researcher Development) page.",
-        "zh": "从 国际共同研究加速基金（归国发展研究） 官方入口整理出的关键跳转。",
-        "ja": "国際共同研究加速基金（帰国発展研究） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "returning_researchers_development-96",
+      "id": "returning_researchers_development-80",
       "href": "https://www.e-rad.go.jp/researcher/index.html",
       "kind": "external",
       "group": {
@@ -15544,7 +13483,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "returning_researchers_development-doc-97",
+      "id": "returning_researchers_development-doc-81",
       "official_title": "令和７(2025)年度科学研究費助成事業（学術研究助成基金助成金）（国際共同研究加速基金（帰国発展研究）の公募について（通知）（PDF/130KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubotsuchi.pdf",
       "kind": "file",
@@ -15566,7 +13505,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "returning_researchers_development-doc-98",
+      "id": "returning_researchers_development-doc-82",
       "official_title": "帰国発展研究の公募に係るFAQ (日本語のみ）（PDF/337KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_koubo_faq.pdf",
       "kind": "file",
@@ -15588,7 +13527,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "returning_researchers_development-doc-99",
+      "id": "returning_researchers_development-doc-83",
       "official_title": "令和７(2025)年度帰国発展研究公募ポスター（PDF/284KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_poster.pdf",
       "kind": "file",
@@ -15610,7 +13549,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "returning_researchers_development-doc-100",
+      "id": "returning_researchers_development-doc-84",
       "official_title": "公募要領 （PDF/1,026KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3503_g_3666/r7_jp_kikoku_kouboyoryo.pdf",
       "kind": "file",
@@ -15632,7 +13571,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_partnership_research-101",
+      "id": "overseas_partnership_research-85",
       "href": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
       "kind": "page",
       "group": {
@@ -15653,28 +13592,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_partnership_research-102",
-      "href": "external/jsps/2026-04-08/04_renkei__koubo.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Fund for the Promotion of Joint International Research (Overseas Partnership Research): Local snapshot",
-        "zh": "国际共同研究加速基金（海外联携研究）：本地快照",
-        "ja": "国際共同研究加速基金（海外連携研究）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Fund for the Promotion of Joint International Research (Overseas Partnership Research) page.",
-        "zh": "从 国际共同研究加速基金（海外联携研究） 官方入口整理出的关键跳转。",
-        "ja": "国際共同研究加速基金（海外連携研究） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "overseas_partnership_research-doc-103",
+      "id": "overseas_partnership_research-doc-86",
       "official_title": "科学研究費助成事業－科研費－（国際共同研究加速基金（海外連携研究））の公募について（通知）（PDF/223KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_koubotsuchi.pdf",
       "kind": "file",
@@ -15696,7 +13614,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_partnership_research-doc-104",
+      "id": "overseas_partnership_research-doc-87",
       "official_title": "公募要領 Application Procedures（日本語）（PDF/2,147KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_jp_renkei_kouboyoryo.pdf",
       "kind": "file",
@@ -15718,7 +13636,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_partnership_research-doc-105",
+      "id": "overseas_partnership_research-doc-88",
       "official_title": "FAQ (日本語のみ）（PDF/327KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_01_05_faq_2023_renkei/r6_jp_renkei_koubo_faq.pdf",
       "kind": "file",
@@ -15740,7 +13658,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "overseas_partnership_research-doc-106",
+      "id": "overseas_partnership_research-doc-89",
       "official_title": "公募要領 Application Procedures（English)（PDF/2,167KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_35_04_renkei_2023/r6_en_renkei_kouboyoryo.pdf",
       "kind": "file",
@@ -15762,7 +13680,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_abc-doc-107",
+      "id": "scientific_research_abc-doc-90",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
       "kind": "file",
@@ -15784,7 +13702,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_abc-doc-108",
+      "id": "scientific_research_abc-doc-91",
       "official_title": "公募要領（日本語版）（PDF/2,219KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
       "kind": "file",
@@ -15806,7 +13724,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_abc-doc-109",
+      "id": "scientific_research_abc-doc-92",
       "official_title": "公募要領（英語版）（PDF/3,595KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
       "kind": "file",
@@ -15828,7 +13746,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_abc-doc-110",
+      "id": "scientific_research_abc-doc-93",
       "official_title": "別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
       "kind": "file",
@@ -15850,7 +13768,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_s-111",
+      "id": "scientific_research_s-94",
       "href": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
       "kind": "page",
       "group": {
@@ -15871,28 +13789,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_s-112",
-      "href": "external/jsps/2026-04-08/02_koubo__toku_s.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Scientific Research (S): Local snapshot",
-        "zh": "基盘研究（S）：本地快照",
-        "ja": "基盤研究（Ｓ）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Scientific Research (S) page.",
-        "zh": "从 基盘研究（S） 官方入口整理出的关键跳转。",
-        "ja": "基盤研究（Ｓ） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "scientific_research_s-113",
+      "id": "scientific_research_s-95",
       "href": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
       "kind": "page",
       "group": {
@@ -15913,28 +13810,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_s-114",
-      "href": "external/jsps/2026-04-08/12_kiban__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Scientific Research (S): Program snapshot",
-        "zh": "基盘研究（S）：种目快照",
-        "ja": "基盤研究（Ｓ）：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Scientific Research (S) page.",
-        "zh": "从 基盘研究（S） 官方入口整理出的关键跳转。",
-        "ja": "基盤研究（Ｓ） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "scientific_research_s-115",
+      "id": "scientific_research_s-96",
       "href": "https://www.jsps.go.jp/english/e-grants/grants09_toku_s.html",
       "kind": "page",
       "group": {
@@ -15955,7 +13831,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_s-doc-116",
+      "id": "scientific_research_s-doc-97",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
       "kind": "file",
@@ -15977,7 +13853,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_s-doc-117",
+      "id": "scientific_research_s-doc-98",
       "official_title": "公募要領（日本語版）(PDF/1,759KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
       "kind": "file",
@@ -15999,7 +13875,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_s-doc-118",
+      "id": "scientific_research_s-doc-99",
       "official_title": "公募要領（英語版）(PDF/3,664KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
       "kind": "file",
@@ -16021,7 +13897,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "scientific_research_s-doc-119",
+      "id": "scientific_research_s-doc-100",
       "official_title": "研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
       "kind": "file",
@@ -16043,7 +13919,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "incentive_research-120",
+      "id": "incentive_research-101",
       "href": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
       "kind": "page",
       "group": {
@@ -16064,28 +13940,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "incentive_research-121",
-      "href": "external/jsps/2026-04-08/11_shourei__koubo.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Encouragement of Scientists: Local snapshot",
-        "zh": "奖励研究：本地快照",
-        "ja": "奨励研究：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Encouragement of Scientists page.",
-        "zh": "从 奖励研究 官方入口整理出的关键跳转。",
-        "ja": "奨励研究 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "incentive_research-122",
+      "id": "incentive_research-102",
       "href": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
       "kind": "page",
       "group": {
@@ -16106,28 +13961,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "incentive_research-123",
-      "href": "external/jsps/2026-04-08/11_shourei__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Encouragement of Scientists: Program snapshot",
-        "zh": "奖励研究：种目快照",
-        "ja": "奨励研究：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Encouragement of Scientists page.",
-        "zh": "从 奖励研究 官方入口整理出的关键跳转。",
-        "ja": "奨励研究 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "incentive_research-doc-124",
+      "id": "incentive_research-doc-103",
       "official_title": "令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/200KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_kikan.pdf",
       "kind": "file",
@@ -16149,7 +13983,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "incentive_research-doc-125",
+      "id": "incentive_research-doc-104",
       "official_title": "公募要領（PDF/1,785KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_koubo_shourei.pdf",
       "kind": "file",
@@ -16171,7 +14005,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "incentive_research-doc-126",
+      "id": "incentive_research-doc-105",
       "official_title": "令和８(2026)年度科学研究費助成事業（科学研究費補助金）（奨励研究）の公募について（通知）（PDF/101KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_tsuchi_chizi.pdf",
       "kind": "file",
@@ -16193,7 +14027,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "incentive_research-doc-127",
+      "id": "incentive_research-doc-106",
       "official_title": "科研費電子申請システムを利用した応募フロー（PDF/726KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_11_g_3698/r8_flow_shourei.pdf",
       "kind": "file",
@@ -16215,7 +14049,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "challenging_research-doc-128",
+      "id": "challenging_research-doc-107",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－（基盤研究（A・B・C）、挑戦的研究、若手研究）の公募について（通知）（PDF/574KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_koubotsuchi.pdf",
       "kind": "file",
@@ -16237,7 +14071,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "challenging_research-doc-129",
+      "id": "challenging_research-doc-108",
       "official_title": "公募要領（日本語版）（PDF/2,219KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo.pdf",
       "kind": "file",
@@ -16259,7 +14093,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "challenging_research-doc-130",
+      "id": "challenging_research-doc-109",
       "official_title": "公募要領（英語版）（PDF/3,595KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_e.pdf",
       "kind": "file",
@@ -16281,7 +14115,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "challenging_research-doc-131",
+      "id": "challenging_research-doc-110",
       "official_title": "別冊（応募書類の様式・記入要領）（日本語版）（PDF/22,824KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_kiban_2025_g_3687/r8_7_kobo_suppl.pdf",
       "kind": "file",
@@ -16303,7 +14137,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "special_promotion_research-132",
+      "id": "special_promotion_research-111",
       "href": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
       "kind": "page",
       "group": {
@@ -16324,28 +14158,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "special_promotion_research-133",
-      "href": "external/jsps/2026-04-08/25_tokusui__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Specially Promoted Research: Program snapshot",
-        "zh": "特别推进研究：种目快照",
-        "ja": "特別推進研究：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Specially Promoted Research page.",
-        "zh": "从 特别推进研究 官方入口整理出的关键跳转。",
-        "ja": "特別推進研究 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "special_promotion_research-doc-134",
+      "id": "special_promotion_research-doc-112",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－（特別推進研究、基盤研究（S））の公募について（通知）(PDF/549KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_koubotsuchi.pdf",
       "kind": "file",
@@ -16367,7 +14180,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "special_promotion_research-doc-135",
+      "id": "special_promotion_research-doc-113",
       "official_title": "公募要領（日本語版）(PDF/1,759KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo.pdf",
       "kind": "file",
@@ -16389,7 +14202,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "special_promotion_research-doc-136",
+      "id": "special_promotion_research-doc-114",
       "official_title": "公募要領（英語版）(PDF/3,664KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/r8_4_kobo_e.pdf",
       "kind": "file",
@@ -16411,7 +14224,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "special_promotion_research-doc-137",
+      "id": "special_promotion_research-doc-115",
       "official_title": "研究計画調書（Web入力項目）の作成・入力要領（特別推進研究）(PDF/6,739KB)",
       "href": "https://www.jsps.go.jp/file/storage/kaken_tokus2025/web_yoryo_tokusui.pdf",
       "kind": "file",
@@ -16433,7 +14246,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellows_incentive-138",
+      "id": "jsps_fellows_incentive-116",
       "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
       "kind": "page",
       "group": {
@@ -16454,28 +14267,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellows_incentive-139",
-      "href": "external/jsps/2026-04-08/20_tokushourei__download.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Grant-in-Aid for JSPS Fellows: Local snapshot",
-        "zh": "特别研究员奖励费：本地快照",
-        "ja": "特別研究員奨励費：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Grant-in-Aid for JSPS Fellows page.",
-        "zh": "从 特别研究员奖励费 官方入口整理出的关键跳转。",
-        "ja": "特別研究員奨励費 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "jsps_fellows_incentive-140",
+      "id": "jsps_fellows_incentive-117",
       "href": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
       "kind": "page",
       "group": {
@@ -16496,28 +14288,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellows_incentive-141",
-      "href": "external/jsps/2026-04-08/20_tokushourei__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Grant-in-Aid for JSPS Fellows: Program snapshot",
-        "zh": "特别研究员奖励费：种目快照",
-        "ja": "特別研究員奨励費：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Grant-in-Aid for JSPS Fellows page.",
-        "zh": "从 特别研究员奖励费 官方入口整理出的关键跳转。",
-        "ja": "特別研究員奨励費 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "jsps_fellows_incentive-doc-142",
+      "id": "jsps_fellows_incentive-doc-118",
       "official_title": "令和８(2026)年度科学研究費助成事業（学術研究助成基金助成金）（特別研究員奨励費）（外国人特別研究員）の募集について（通知）（PDF/230KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_tsuchi.pdf",
       "kind": "file",
@@ -16539,7 +14310,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellows_incentive-doc-143",
+      "id": "jsps_fellows_incentive-doc-119",
       "official_title": "日本語 Japanese（PDF/1,191KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku.pdf",
       "kind": "file",
@@ -16561,7 +14332,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellows_incentive-doc-144",
+      "id": "jsps_fellows_incentive-doc-120",
       "official_title": "英語 English（PDF/605KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_boshu_gaitoku_e.pdf",
       "kind": "file",
@@ -16583,7 +14354,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellows_incentive-doc-145",
+      "id": "jsps_fellows_incentive-doc-121",
       "official_title": "別冊 日本語 Japanese（PDF/1,223KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_20_r8_g_4367/r8_yoryo_gaitoku.pdf",
       "kind": "file",
@@ -16605,7 +14376,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_cpd-146",
+      "id": "jsps_fellow_cpd-122",
       "href": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
       "kind": "page",
       "group": {
@@ -16626,28 +14397,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_cpd-147",
-      "href": "external/jsps/2026-04-08/j-pd__cpd_sin.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Research Fellowships for Young Scientists (CPD): Local snapshot",
-        "zh": "特别研究员（CPD）：本地快照",
-        "ja": "特別研究員（CPD）：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Research Fellowships for Young Scientists (CPD) page.",
-        "zh": "从 特别研究员（CPD） 官方入口整理出的关键跳转。",
-        "ja": "特別研究員（CPD） の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "jsps_fellow_cpd-doc-148",
+      "id": "jsps_fellow_cpd-doc-123",
       "official_title": "令和５（2023）年度採用分 募集要項",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_yoko.pdf",
       "kind": "file",
@@ -16669,7 +14419,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_cpd-doc-149",
+      "id": "jsps_fellow_cpd-doc-124",
       "official_title": "申請手続の流れ",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/cpd_tetsuzuki.pdf",
       "kind": "file",
@@ -16691,7 +14441,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_cpd-doc-150",
+      "id": "jsps_fellow_cpd-doc-125",
       "official_title": "特別研究員-CPD申請システムの使い方（申請者向け）",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/manual_shinseisya_cpd.pdf",
       "kind": "file",
@@ -16713,7 +14463,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "jsps_fellow_cpd-doc-151",
+      "id": "jsps_fellow_cpd-doc-126",
       "official_title": "令和５（2023）年度採用分 申請書作成要領",
       "href": "https://www.jsps.go.jp/file/storage/j-pd/cpd_sin/sakusei_cpd.pdf",
       "kind": "file",
@@ -16735,7 +14485,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "research_results_publication-152",
+      "id": "research_results_publication-127",
       "href": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
       "kind": "page",
       "group": {
@@ -16756,28 +14506,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "research_results_publication-153",
-      "href": "external/jsps/2026-04-08/13_seika__keikaku_dl.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Publication of Scientific Research Results: Local snapshot",
-        "zh": "研究成果公开促进费：本地快照",
-        "ja": "研究成果公開促進費：ローカルスナップショット"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Publication of Scientific Research Results page.",
-        "zh": "从 研究成果公开促进费 官方入口整理出的关键跳转。",
-        "ja": "研究成果公開促進費 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "research_results_publication-154",
+      "id": "research_results_publication-128",
       "href": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
       "kind": "page",
       "group": {
@@ -16798,28 +14527,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "research_results_publication-155",
-      "href": "external/jsps/2026-04-08/13_seika__index.html",
-      "kind": "snapshot",
-      "group": {
-        "canonical": "Program",
-        "en": "Program entry points",
-        "zh": "项目入口",
-        "ja": "種目別入口"
-      },
-      "title": {
-        "en": "Publication of Scientific Research Results: Program snapshot",
-        "zh": "研究成果公开促进费：种目快照",
-        "ja": "研究成果公開促進費：種目ページの快照"
-      },
-      "summary": {
-        "en": "Key jump-out link surfaced from the official Publication of Scientific Research Results page.",
-        "zh": "从 研究成果公开促进费 官方入口整理出的关键跳转。",
-        "ja": "研究成果公開促進費 の公式ページからたどる主要導線です。"
-      }
-    },
-    {
-      "id": "research_results_publication-doc-156",
+      "id": "research_results_publication-doc-129",
       "official_title": "令和８(2026)年度科学研究費助成事業－科研費－研究成果公開促進費の公募について（通知）（PDF/138KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08tsuuchibun.pdf",
       "kind": "file",
@@ -16841,7 +14549,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "research_results_publication-doc-157",
+      "id": "research_results_publication-doc-130",
       "official_title": "公募要領（PDF/1,152KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/i_r08_koubo00_all.pdf",
       "kind": "file",
@@ -16863,7 +14571,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "research_results_publication-doc-158",
+      "id": "research_results_publication-doc-131",
       "official_title": "令和８(2026)年度 研究成果公開促進費 応募用ID・パスワード取得要領（PDF/5,409KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_idpw_yoryo.pdf",
       "kind": "file",
@@ -16885,7 +14593,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "research_results_publication-doc-159",
+      "id": "research_results_publication-doc-132",
       "official_title": "令和８(2026)年度 研究成果公開促進費 応募に係る電子手続の概要（PDF/90KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_13_g_3700/r08_seika_denshikagaiyo.pdf",
       "kind": "file",
@@ -16907,7 +14615,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-160",
+      "id": "faq-resource-133",
       "official_title": "（参考）過去の更新履歴のページへリンク",
       "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/log.html",
       "kind": "page",
@@ -16929,7 +14637,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-161",
+      "id": "faq-resource-134",
       "official_title": "オープンアクセスに関するFAQ",
       "href": "https://www.jsps.go.jp/j-grantsinaid/01_seido/08_openaccess/index.html#u20230908103249",
       "kind": "page",
@@ -16951,7 +14659,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-162",
+      "id": "faq-resource-135",
       "official_title": "令和７(2025)年度科学研究費助成事業等説明会に関するFAQ（Excel/34KB）（令和７年８月更新）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_g_3685/202508_koubo_faq.xlsx",
       "kind": "file",
@@ -16973,7 +14681,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-163",
+      "id": "faq-resource-136",
       "official_title": "令和６(2024)年度科学研究費助成事業等説明会に関するFAQ（Excel/30KB）（令和６年９月更新）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_g_2537/202409_koubo_faq.xlsx",
       "kind": "file",
@@ -16995,7 +14703,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-164",
+      "id": "faq-resource-137",
       "official_title": "令和５(2023)年度科学研究費助成事業等説明会に関するFAQ（Excel/28KB）（令和６年８月更新）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_g_2428/202308_koubo_faq_v2.xlsx",
       "kind": "file",
@@ -17017,7 +14725,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-165",
+      "id": "faq-resource-138",
       "official_title": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（日本語 Japanese）（PDF/477KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_3060/202502_ks_faq_j.pdf",
       "kind": "file",
@@ -17039,7 +14747,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-166",
+      "id": "faq-resource-139",
       "official_title": "国際先導研究の公募・交付に係るFAQ（令和7年2月版）International Leading Research FAQs（As of February 2025）（英語 English）（PDF/293KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3505_g_3060/202502_ks_faq_e.pdf",
       "kind": "file",
@@ -17061,7 +14769,7 @@ window.KAKENHI_PORTAL_DATA = {
       }
     },
     {
-      "id": "faq-resource-167",
+      "id": "faq-resource-140",
       "official_title": "国際共同研究強化の公募に係るFAQ（令和7月7月版）（PDF/562KB）",
       "href": "https://www.jsps.go.jp/file/storage/kaken_3501_g_3665/r7_jp_kyoka_koubo_faq.pdf",
       "kind": "file",
@@ -17093,7 +14801,6 @@ window.KAKENHI_PORTAL_DATA = {
         "zh": "公募信息总索引"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/public_call_index.html",
       "resource_count": 21,
       "kind": "registry",
       "summary": {
@@ -17111,7 +14818,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "研究活動スタート支援"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/22_startup_support__download.html",
       "resource_count": 18,
       "kind": "program",
       "summary": {
@@ -17129,7 +14835,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "若手研究"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "resource_count": 74,
       "kind": "program",
       "summary": {
@@ -17147,7 +14852,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "外国人招へい研究者（長期・短期）"
       },
       "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-inv__boshuyoko.html",
       "resource_count": 35,
       "kind": "program",
       "summary": {
@@ -17165,7 +14869,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "外国人特別研究員（一般・欧米短期・公募）"
       },
       "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html",
       "resource_count": 47,
       "kind": "program",
       "summary": {
@@ -17183,7 +14886,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "海外特別研究員"
       },
       "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-ab__ab_sin.html",
       "resource_count": 18,
       "kind": "program",
       "summary": {
@@ -17201,7 +14903,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "海外特別研究員（RRA）"
       },
       "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-ab__rra_sin.html",
       "resource_count": 18,
       "kind": "program",
       "summary": {
@@ -17219,7 +14920,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "特別研究員（PD・DC1・DC2）"
       },
       "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__pd_sin.html",
       "resource_count": 47,
       "kind": "program",
       "summary": {
@@ -17237,7 +14937,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "特別研究員（RPD）"
       },
       "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__rpd_sin.html",
       "resource_count": 31,
       "kind": "program",
       "summary": {
@@ -17255,7 +14954,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "独立基盤形成支援（試行）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html",
       "resource_count": 6,
       "kind": "program",
       "summary": {
@@ -17273,7 +14971,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "国際共同研究加速基金（国際先導研究）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/05_sendou__koubo.html",
       "resource_count": 23,
       "kind": "program",
       "summary": {
@@ -17291,7 +14988,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "国際共同研究加速基金（国際共同研究強化）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/01_kyoka__koubo.html",
       "resource_count": 21,
       "kind": "program",
       "summary": {
@@ -17309,7 +15005,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "国際共同研究加速基金（帰国発展研究）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/03_kikoku__koubo.html",
       "resource_count": 19,
       "kind": "program",
       "summary": {
@@ -17327,7 +15022,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "国際共同研究加速基金（海外連携研究）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/04_renkei__koubo.html",
       "resource_count": 27,
       "kind": "program",
       "summary": {
@@ -17345,7 +15039,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "基盤研究（Ａ・Ｂ・Ｃ）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "resource_count": 74,
       "kind": "program",
       "summary": {
@@ -17363,7 +15056,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "基盤研究（Ｓ）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
       "resource_count": 31,
       "kind": "program",
       "summary": {
@@ -17381,7 +15073,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "奨励研究"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/11_shourei__koubo.html",
       "resource_count": 22,
       "kind": "program",
       "summary": {
@@ -17399,7 +15090,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "挑戦的研究"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "resource_count": 74,
       "kind": "program",
       "summary": {
@@ -17417,7 +15107,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "特別推進研究"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
       "resource_count": 31,
       "kind": "program",
       "summary": {
@@ -17435,7 +15124,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "特別研究員奨励費"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/20_tokushourei__download.html",
       "resource_count": 12,
       "kind": "program",
       "summary": {
@@ -17453,7 +15141,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "特別研究員（CPD）"
       },
       "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__cpd_sin.html",
       "resource_count": 16,
       "kind": "program",
       "summary": {
@@ -17471,7 +15158,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "研究成果公開促進費"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
-      "snapshot_path": "external/jsps/2026-04-08/13_seika__keikaku_dl.html",
       "resource_count": 54,
       "kind": "program",
       "summary": {
@@ -17489,7 +15175,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "新学術領域研究（研究領域提案型）"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/34_new_scientific__index.html",
       "resource_count": 7,
       "kind": "overview",
       "summary": {
@@ -17507,7 +15192,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "学術変革領域研究"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/39_transformative__index.html",
       "resource_count": 147,
       "kind": "overview",
       "summary": {
@@ -17525,7 +15209,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "基盤研究（A・B・C）・挑戦的研究・若手研究"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/03_keikaku__index.html",
       "resource_count": 8,
       "kind": "overview",
       "summary": {
@@ -17543,7 +15226,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "国際共同研究加速基金"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/35_kokusai__index.html",
       "resource_count": 4,
       "kind": "overview",
       "summary": {
@@ -17561,7 +15243,6 @@ window.KAKENHI_PORTAL_DATA = {
         "zh": "科研费 FAQ"
       },
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/faq.html",
       "resource_count": 12,
       "kind": "guide",
       "summary": {
@@ -17579,7 +15260,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "外国人特別研究員ハブ"
       },
       "official_url": "https://www.jsps.go.jp/j-fellow/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-fellow__index.html",
       "resource_count": 13,
       "kind": "guide",
       "summary": {
@@ -17597,7 +15277,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "外国人招へい研究者ハブ"
       },
       "official_url": "https://www.jsps.go.jp/j-inv/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-inv__index.html",
       "resource_count": 6,
       "kind": "guide",
       "summary": {
@@ -17615,7 +15294,6 @@ window.KAKENHI_PORTAL_DATA = {
         "ja": "諸外国の優秀な研究者の招へい"
       },
       "official_url": "https://www.jsps.go.jp/j-inv_researchers/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-inv_researchers__index.html",
       "resource_count": 10,
       "kind": "guide",
       "summary": {
@@ -17650,7 +15328,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": true,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/22_startup_support__download.html",
       "form_codes": [
         "S-22"
       ],
@@ -17658,7 +15335,6 @@ window.KAKENHI_PORTAL_DATA = {
       "call_open_date": "2026-03-01",
       "submission_deadline": "2026-05-08",
       "deadline_at": "2026-05-08T16:30:00+09:00",
-      "forecast_cycle": null,
       "document_count": 15,
       "resource_count": 18,
       "search_blob": "研究活動スタート支援 研究活動スタート支援 令和８(2026)年度科学研究費助成事業（研究活動スタート支援）の公募について S-22 S-22",
@@ -17702,7 +15378,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": true,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "form_codes": [
         "S-21"
       ],
@@ -17714,7 +15389,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -17764,13 +15438,10 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-inv__boshuyoko.html",
       "form_codes": [],
       "theme": "usst",
-      "call_open_date": null,
       "submission_deadline": "2026-04-28",
       "deadline_at": "2026-04-28T17:00:00+09:00",
-      "forecast_cycle": null,
       "document_count": 19,
       "resource_count": 35,
       "search_blob": "外国人招へい研究者（長期・短期） 外国人招聘研究者（长期／短期） Invitational Fellowships for Research in Japan (Long-Term and Short-Term) 外国人招へい研究者 募集要項・申請書 申請スケジュール 新着情報 JSPSのフェローシップ 令和8（2026）年度 令和7（2025）年度",
@@ -17814,13 +15485,10 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html",
       "form_codes": [],
       "theme": "usst",
-      "call_open_date": null,
       "submission_deadline": "2026-04-28",
       "deadline_at": "2026-04-28T17:00:00+09:00",
-      "forecast_cycle": null,
       "document_count": 32,
       "resource_count": 47,
       "search_blob": "外国人特別研究員（一般・欧米短期・公募） 外国人特别研究员（一般／欧美短期／公募） JSPS Postdoctoral Fellowships for Research in Japan (General and Open Short-Term) 外国人特別研究員 募集要項・申請書（公募） 申請スケジュール（公募） 新着情報 令和8（2026）年度 令和7（2025）年度",
@@ -17864,13 +15532,9 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-ab__ab_sin.html",
       "form_codes": [],
       "theme": "toyama",
-      "call_open_date": null,
       "submission_deadline": "2026-05-11",
-      "deadline_at": null,
-      "forecast_cycle": null,
       "document_count": 13,
       "resource_count": 18,
       "search_blob": "海外特別研究員 海外特别研究员 Overseas Research Fellowships 募集要項 選考日程",
@@ -17919,13 +15583,9 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-ab__rra_sin.html",
       "form_codes": [],
       "theme": "toyama",
-      "call_open_date": null,
       "submission_deadline": "2026-05-11",
-      "deadline_at": null,
-      "forecast_cycle": null,
       "document_count": 13,
       "resource_count": 18,
       "search_blob": "海外特別研究員（RRA） 海外特别研究员（RRA） Overseas Research Fellowships (RRA) 海外特別研究員 募集要項（RRA） 選考日程",
@@ -17974,13 +15634,10 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__pd_sin.html",
       "form_codes": [],
       "theme": "tohoku",
-      "call_open_date": null,
       "submission_deadline": "2026-06-03",
       "deadline_at": "2026-06-03T17:00:00+09:00",
-      "forecast_cycle": null,
       "document_count": 31,
       "resource_count": 47,
       "search_blob": "特別研究員（PD・DC1・DC2） 特别研究员（PD／DC1／DC2） Research Fellowships for Young Scientists (PD/DC1/DC2) 特別研究員 募集要項（PD・DC2・DC1） 選考日程",
@@ -18029,13 +15686,10 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__rpd_sin.html",
       "form_codes": [],
       "theme": "tohoku",
-      "call_open_date": null,
       "submission_deadline": "2026-05-11",
       "deadline_at": "2026-05-11T17:00:00+09:00",
-      "forecast_cycle": null,
       "document_count": 19,
       "resource_count": 31,
       "search_blob": "特別研究員（RPD） 特别研究员（RPD） Research Fellowships for Young Scientists (RPD) 特別研究員 募集要項（RPD） 選考日程",
@@ -18084,13 +15738,11 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "open",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html",
       "form_codes": [],
       "theme": "toyama",
       "call_open_date": "2026-03-23",
       "submission_deadline": "2026-05-15",
       "deadline_at": "2026-05-15T16:30:00+09:00",
-      "forecast_cycle": null,
       "document_count": 5,
       "resource_count": 6,
       "search_blob": "独立基盤形成支援（試行） 「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行） 令和８(2026)年度「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）の公募について",
@@ -18134,7 +15786,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/05_sendou__koubo.html",
       "form_codes": [
         "S-64"
       ],
@@ -18142,7 +15793,6 @@ window.KAKENHI_PORTAL_DATA = {
       "call_open_date": "2026-01-09",
       "submission_deadline": "2026-03-13",
       "deadline_at": "2026-03-13T16:30:00+09:00",
-      "forecast_cycle": null,
       "document_count": 18,
       "resource_count": 23,
       "search_blob": "国際共同研究加速基金（国際先導研究） 国際共同研究加速基金（国際先導研究） 令和８(2026)年度国際共同研究加速基金（国際先導研究）の公募について S-64 S-64",
@@ -18186,7 +15836,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/01_kyoka__koubo.html",
       "form_codes": [
         "S-61"
       ],
@@ -18198,7 +15847,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2026 planned call schedule",
           "zh": "2026年度预计公募日程",
@@ -18248,7 +15896,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/03_kikoku__koubo.html",
       "form_codes": [
         "S-62"
       ],
@@ -18260,7 +15907,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2026 planned call schedule",
           "zh": "2026年度预计公募日程",
@@ -18310,7 +15956,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/04_renkei__koubo.html",
       "form_codes": [
         "S-63-1",
         "S-63-2"
@@ -18319,7 +15964,6 @@ window.KAKENHI_PORTAL_DATA = {
       "call_open_date": "2024-03-01",
       "submission_deadline": "2024-05-09",
       "deadline_at": "2024-05-09T16:30:00+09:00",
-      "forecast_cycle": null,
       "document_count": 23,
       "resource_count": 27,
       "search_blob": "国際共同研究加速基金（海外連携研究） 国際共同研究加速基金（海外連携研究） 国際共同研究加速基金（海外連携研究）の公募について S-63-1 S-63-2 S-63-1 S-63-2",
@@ -18363,7 +16007,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "form_codes": [
         "S-12",
         "S-13",
@@ -18377,7 +16020,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -18427,7 +16069,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
       "form_codes": [
         "S-11"
       ],
@@ -18439,7 +16080,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-04-10",
         "submission_deadline": "2026-06-16",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -18489,7 +16129,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
-      "snapshot_path": "external/jsps/2026-04-08/11_shourei__koubo.html",
       "form_codes": [
         "S-31"
       ],
@@ -18501,7 +16140,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -18551,7 +16189,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
       "form_codes": [
         "S-41-1",
         "S-41-2",
@@ -18566,7 +16203,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -18616,7 +16252,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
       "form_codes": [
         "S-1"
       ],
@@ -18628,7 +16263,6 @@ window.KAKENHI_PORTAL_DATA = {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-04-10",
         "submission_deadline": "2026-06-16",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -18678,13 +16312,11 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
-      "snapshot_path": "external/jsps/2026-04-08/20_tokushourei__download.html",
       "form_codes": [],
       "theme": "usst",
       "call_open_date": "2026-01-22",
       "submission_deadline": "2026-02-19",
       "deadline_at": "2026-02-19T16:30:00+09:00",
-      "forecast_cycle": null,
       "document_count": 10,
       "resource_count": 12,
       "search_blob": "特別研究員奨励費 特別研究員奨励費 令和８(2026)年度特別研究員奨励費（外国人特別研究員）の募集について",
@@ -18728,13 +16360,8 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "suspended",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html",
-      "snapshot_path": "external/jsps/2026-04-08/j-pd__cpd_sin.html",
       "form_codes": [],
       "theme": "tohoku",
-      "call_open_date": null,
-      "submission_deadline": null,
-      "deadline_at": null,
-      "forecast_cycle": null,
       "document_count": 10,
       "resource_count": 16,
       "search_blob": "特別研究員（CPD） 特别研究员（CPD） Research Fellowships for Young Scientists (CPD) 特別研究員 募集要項（CPD）",
@@ -18778,7 +16405,6 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "closed",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
-      "snapshot_path": "external/jsps/2026-04-08/13_seika__keikaku_dl.html",
       "form_codes": [
         "S-51-1",
         "S-51-2",
@@ -18788,14 +16414,10 @@ window.KAKENHI_PORTAL_DATA = {
         "S-52"
       ],
       "theme": "usst",
-      "call_open_date": null,
-      "submission_deadline": null,
-      "deadline_at": null,
       "forecast_cycle": {
         "source_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf",
         "call_open_date": "2026-07-14",
         "submission_deadline": "2026-09-17",
-        "source_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
         "label": {
           "en": "FY2027 planned call schedule",
           "zh": "2027年度预计公募日程",
@@ -18845,12 +16467,8 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "reference",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/34_new_scientific__index.html",
       "form_codes": [],
       "theme": "usst",
-      "call_open_date": null,
-      "submission_deadline": null,
-      "deadline_at": null,
       "document_count": 0,
       "resource_count": 7,
       "page_last_updated": "2025-05-09 10:50:27",
@@ -18865,16 +16483,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/34_new_scientific__index.html",
-          "kind": "snapshot"
         }
       ],
       "page_highlights": [
@@ -18964,12 +16572,8 @@ window.KAKENHI_PORTAL_DATA = {
       "status": "reference",
       "priority": false,
       "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
-      "snapshot_path": "external/jsps/2026-04-08/39_transformative__index.html",
       "form_codes": [],
       "theme": "usst",
-      "call_open_date": null,
-      "submission_deadline": null,
-      "deadline_at": null,
       "document_count": 0,
       "resource_count": 147,
       "page_last_updated": "2026-04-01 14:00:09",
@@ -18984,16 +16588,6 @@ window.KAKENHI_PORTAL_DATA = {
           },
           "href": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
           "kind": "page"
-        },
-        {
-          "label": {
-            "canonical": "本地快照",
-            "en": "Local snapshot",
-            "ja": "ローカルスナップショット",
-            "zh": "本地快照"
-          },
-          "href": "external/jsps/2026-04-08/39_transformative__index.html",
-          "kind": "snapshot"
         }
       ],
       "page_highlights": [
@@ -19071,8 +16665,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "特別推進研究・基盤研究（Ｓ）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
       "filename": "02_koubo__toku_s.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__toku_s.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19084,8 +16677,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
       "filename": "02_koubo__kiban.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/02_koubo__kiban.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19097,8 +16689,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "研究活動スタート支援",
       "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
       "filename": "22_startup_support__download.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/22_startup_support__download.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19110,8 +16701,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "奨励研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
       "filename": "11_shourei__koubo.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/11_shourei__koubo.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19123,8 +16713,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "研究成果公開促進費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
       "filename": "13_seika__keikaku_dl.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/13_seika__keikaku_dl.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19136,8 +16725,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "特別研究員奨励費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
       "filename": "20_tokushourei__download.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/20_tokushourei__download.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19149,8 +16737,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "国際共同研究加速基金（国際先導研究）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
       "filename": "05_sendou__koubo.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/05_sendou__koubo.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19162,8 +16749,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "国際共同研究加速基金（国際共同研究強化）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
       "filename": "01_kyoka__koubo.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/01_kyoka__koubo.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19175,8 +16761,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "国際共同研究加速基金（海外連携研究）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
       "filename": "04_renkei__koubo.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/04_renkei__koubo.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19188,8 +16773,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "国際共同研究加速基金（帰国発展研究）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
       "filename": "03_kikoku__koubo.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/03_kikoku__koubo.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19201,8 +16785,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
       "filename": "36_dokuritsu_kiban__download.html",
-      "page_kind": "call",
-      "snapshot_path": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html"
+      "page_kind": "call"
     },
     {
       "group": {
@@ -19214,8 +16797,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "特別推進研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
       "filename": "25_tokusui__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/25_tokusui__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19227,8 +16809,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "新学術領域研究（研究領域提案型）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
       "filename": "34_new_scientific__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/34_new_scientific__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19240,8 +16821,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "学術変革領域研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
       "filename": "39_transformative__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/39_transformative__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19253,8 +16833,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "基盤研究（Ｓ）",
       "url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
       "filename": "12_kiban__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/12_kiban__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19266,8 +16845,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "基盤研究（A・B・C）・挑戦的研究・若手研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
       "filename": "03_keikaku__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/03_keikaku__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19279,8 +16857,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "研究活動スタート支援",
       "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
       "filename": "22_startup_support__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/22_startup_support__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19292,8 +16869,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "奨励研究",
       "url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
       "filename": "11_shourei__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/11_shourei__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19305,8 +16881,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "研究成果公開促進費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
       "filename": "13_seika__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/13_seika__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19318,8 +16893,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "特別研究員奨励費",
       "url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
       "filename": "20_tokushourei__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/20_tokushourei__index.html"
+      "page_kind": "directory"
     },
     {
       "group": {
@@ -19331,657 +16905,7 @@ window.KAKENHI_PORTAL_DATA = {
       "title": "国際共同研究加速基金",
       "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
       "filename": "35_kokusai__index.html",
-      "page_kind": "directory",
-      "snapshot_path": "external/jsps/2026-04-08/35_kokusai__index.html"
-    }
-  ],
-  "archive": [
-    {
-      "snapshot_date": "2026-04-08",
-      "fetched_at": "2026-04-08T15:57:32+09:00",
-      "local_dir": "external/jsps/2026-04-08",
-      "files": [
-        {
-          "name": "01_kyoka__koubo.html",
-          "local_path": "external/jsps/2026-04-08/01_kyoka__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html"
-        },
-        {
-          "name": "02_koubo__kiban.html",
-          "local_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
-        },
-        {
-          "name": "02_koubo__toku_s.html",
-          "local_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html"
-        },
-        {
-          "name": "03_keikaku__index.html",
-          "local_path": "external/jsps/2026-04-08/03_keikaku__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html"
-        },
-        {
-          "name": "03_kikoku__koubo.html",
-          "local_path": "external/jsps/2026-04-08/03_kikoku__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html"
-        },
-        {
-          "name": "04_renkei__koubo.html",
-          "local_path": "external/jsps/2026-04-08/04_renkei__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html"
-        },
-        {
-          "name": "05_sendou__koubo.html",
-          "local_path": "external/jsps/2026-04-08/05_sendou__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html"
-        },
-        {
-          "name": "11_shourei__index.html",
-          "local_path": "external/jsps/2026-04-08/11_shourei__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html"
-        },
-        {
-          "name": "11_shourei__koubo.html",
-          "local_path": "external/jsps/2026-04-08/11_shourei__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html"
-        },
-        {
-          "name": "12_kiban__index.html",
-          "local_path": "external/jsps/2026-04-08/12_kiban__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html"
-        },
-        {
-          "name": "13_seika__index.html",
-          "local_path": "external/jsps/2026-04-08/13_seika__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html"
-        },
-        {
-          "name": "13_seika__keikaku_dl.html",
-          "local_path": "external/jsps/2026-04-08/13_seika__keikaku_dl.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html"
-        },
-        {
-          "name": "20_tokushourei__download.html",
-          "local_path": "external/jsps/2026-04-08/20_tokushourei__download.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html"
-        },
-        {
-          "name": "20_tokushourei__index.html",
-          "local_path": "external/jsps/2026-04-08/20_tokushourei__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html"
-        },
-        {
-          "name": "22_startup_support__download.html",
-          "local_path": "external/jsps/2026-04-08/22_startup_support__download.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html"
-        },
-        {
-          "name": "22_startup_support__index.html",
-          "local_path": "external/jsps/2026-04-08/22_startup_support__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html"
-        },
-        {
-          "name": "25_tokusui__index.html",
-          "local_path": "external/jsps/2026-04-08/25_tokusui__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html"
-        },
-        {
-          "name": "34_new_scientific__index.html",
-          "local_path": "external/jsps/2026-04-08/34_new_scientific__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html"
-        },
-        {
-          "name": "35_kokusai__index.html",
-          "local_path": "external/jsps/2026-04-08/35_kokusai__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html"
-        },
-        {
-          "name": "36_dokuritsu_kiban__download.html",
-          "local_path": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html"
-        },
-        {
-          "name": "39_transformative__index.html",
-          "local_path": "external/jsps/2026-04-08/39_transformative__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html"
-        },
-        {
-          "name": "faq.html",
-          "local_path": "external/jsps/2026-04-08/faq.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
-        },
-        {
-          "name": "j-ab__ab_nittei.html",
-          "local_path": "external/jsps/2026-04-08/j-ab__ab_nittei.html",
-          "official_url": "https://www.jsps.go.jp/j-ab/ab_nittei.html"
-        },
-        {
-          "name": "j-ab__ab_sin.html",
-          "local_path": "external/jsps/2026-04-08/j-ab__ab_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html"
-        },
-        {
-          "name": "j-ab__rra_sin.html",
-          "local_path": "external/jsps/2026-04-08/j-ab__rra_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html"
-        },
-        {
-          "name": "j-fellow_14__31_boshuyoko.html",
-          "local_path": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html"
-        },
-        {
-          "name": "j-fellow__index.html",
-          "local_path": "external/jsps/2026-04-08/j-fellow__index.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/index.html"
-        },
-        {
-          "name": "j-inv__boshu_index.html",
-          "local_path": "external/jsps/2026-04-08/j-inv__boshu_index.html",
-          "official_url": "https://www.jsps.go.jp/j-inv/boshu/index.html"
-        },
-        {
-          "name": "j-inv__boshuyoko.html",
-          "local_path": "external/jsps/2026-04-08/j-inv__boshuyoko.html",
-          "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html"
-        },
-        {
-          "name": "j-inv__index.html",
-          "local_path": "external/jsps/2026-04-08/j-inv__index.html",
-          "official_url": "https://www.jsps.go.jp/j-inv/index.html"
-        },
-        {
-          "name": "j-inv_researchers__index.html",
-          "local_path": "external/jsps/2026-04-08/j-inv_researchers__index.html",
-          "official_url": "https://www.jsps.go.jp/j-inv_researchers/index.html"
-        },
-        {
-          "name": "j-ippan__boshu.html",
-          "local_path": "external/jsps/2026-04-08/j-ippan__boshu.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html"
-        },
-        {
-          "name": "j-oubei-s__boshu.html",
-          "local_path": "external/jsps/2026-04-08/j-oubei-s__boshu.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html"
-        },
-        {
-          "name": "j-pd__cpd_sin.html",
-          "local_path": "external/jsps/2026-04-08/j-pd__cpd_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html"
-        },
-        {
-          "name": "j-pd__pd_nittei.html",
-          "local_path": "external/jsps/2026-04-08/j-pd__pd_nittei.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/pd_nittei.html"
-        },
-        {
-          "name": "j-pd__pd_sin.html",
-          "local_path": "external/jsps/2026-04-08/j-pd__pd_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html"
-        },
-        {
-          "name": "j-pd__rpd_sin.html",
-          "local_path": "external/jsps/2026-04-08/j-pd__rpd_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html"
-        },
-        {
-          "name": "public_call_index.html",
-          "local_path": "external/jsps/2026-04-08/public_call_index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
-        }
-      ]
-    },
-    {
-      "snapshot_date": "2026-04-07",
-      "fetched_at": "2026-04-07T02:12:09+09:00",
-      "local_dir": "external/jsps/2026-04-07",
-      "files": [
-        {
-          "name": "01_kyoka__koubo.html",
-          "local_path": "external/jsps/2026-04-07/01_kyoka__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html"
-        },
-        {
-          "name": "02_koubo__kiban.html",
-          "local_path": "external/jsps/2026-04-07/02_koubo__kiban.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
-        },
-        {
-          "name": "02_koubo__toku_s.html",
-          "local_path": "external/jsps/2026-04-07/02_koubo__toku_s.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html"
-        },
-        {
-          "name": "03_keikaku__index.html",
-          "local_path": "external/jsps/2026-04-07/03_keikaku__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html"
-        },
-        {
-          "name": "03_kikoku__koubo.html",
-          "local_path": "external/jsps/2026-04-07/03_kikoku__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html"
-        },
-        {
-          "name": "04_renkei__koubo.html",
-          "local_path": "external/jsps/2026-04-07/04_renkei__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html"
-        },
-        {
-          "name": "05_sendou__koubo.html",
-          "local_path": "external/jsps/2026-04-07/05_sendou__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html"
-        },
-        {
-          "name": "11_shourei__index.html",
-          "local_path": "external/jsps/2026-04-07/11_shourei__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html"
-        },
-        {
-          "name": "11_shourei__koubo.html",
-          "local_path": "external/jsps/2026-04-07/11_shourei__koubo.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html"
-        },
-        {
-          "name": "12_kiban__index.html",
-          "local_path": "external/jsps/2026-04-07/12_kiban__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html"
-        },
-        {
-          "name": "13_seika__index.html",
-          "local_path": "external/jsps/2026-04-07/13_seika__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html"
-        },
-        {
-          "name": "13_seika__keikaku_dl.html",
-          "local_path": "external/jsps/2026-04-07/13_seika__keikaku_dl.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html"
-        },
-        {
-          "name": "20_tokushourei__download.html",
-          "local_path": "external/jsps/2026-04-07/20_tokushourei__download.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html"
-        },
-        {
-          "name": "20_tokushourei__index.html",
-          "local_path": "external/jsps/2026-04-07/20_tokushourei__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html"
-        },
-        {
-          "name": "22_startup_support__download.html",
-          "local_path": "external/jsps/2026-04-07/22_startup_support__download.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html"
-        },
-        {
-          "name": "22_startup_support__index.html",
-          "local_path": "external/jsps/2026-04-07/22_startup_support__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html"
-        },
-        {
-          "name": "25_tokusui__index.html",
-          "local_path": "external/jsps/2026-04-07/25_tokusui__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html"
-        },
-        {
-          "name": "34_new_scientific__index.html",
-          "local_path": "external/jsps/2026-04-07/34_new_scientific__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html"
-        },
-        {
-          "name": "35_kokusai__index.html",
-          "local_path": "external/jsps/2026-04-07/35_kokusai__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html"
-        },
-        {
-          "name": "36_dokuritsu_kiban__download.html",
-          "local_path": "external/jsps/2026-04-07/36_dokuritsu_kiban__download.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html"
-        },
-        {
-          "name": "39_transformative__index.html",
-          "local_path": "external/jsps/2026-04-07/39_transformative__index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html"
-        },
-        {
-          "name": "faq.html",
-          "local_path": "external/jsps/2026-04-07/faq.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
-        },
-        {
-          "name": "j-ab__ab_nittei.html",
-          "local_path": "external/jsps/2026-04-07/j-ab__ab_nittei.html",
-          "official_url": "https://www.jsps.go.jp/j-ab/ab_nittei.html"
-        },
-        {
-          "name": "j-ab__ab_sin.html",
-          "local_path": "external/jsps/2026-04-07/j-ab__ab_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html"
-        },
-        {
-          "name": "j-ab__rra_sin.html",
-          "local_path": "external/jsps/2026-04-07/j-ab__rra_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html"
-        },
-        {
-          "name": "j-fellow_14__31_boshuyoko.html",
-          "local_path": "external/jsps/2026-04-07/j-fellow_14__31_boshuyoko.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html"
-        },
-        {
-          "name": "j-fellow__index.html",
-          "local_path": "external/jsps/2026-04-07/j-fellow__index.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/index.html"
-        },
-        {
-          "name": "j-inv__boshu_index.html",
-          "local_path": "external/jsps/2026-04-07/j-inv__boshu_index.html",
-          "official_url": "https://www.jsps.go.jp/j-inv/boshu/index.html"
-        },
-        {
-          "name": "j-inv__boshuyoko.html",
-          "local_path": "external/jsps/2026-04-07/j-inv__boshuyoko.html",
-          "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html"
-        },
-        {
-          "name": "j-inv__index.html",
-          "local_path": "external/jsps/2026-04-07/j-inv__index.html",
-          "official_url": "https://www.jsps.go.jp/j-inv/index.html"
-        },
-        {
-          "name": "j-inv_researchers__index.html",
-          "local_path": "external/jsps/2026-04-07/j-inv_researchers__index.html",
-          "official_url": "https://www.jsps.go.jp/j-inv_researchers/index.html"
-        },
-        {
-          "name": "j-ippan__boshu.html",
-          "local_path": "external/jsps/2026-04-07/j-ippan__boshu.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html"
-        },
-        {
-          "name": "j-oubei-s__boshu.html",
-          "local_path": "external/jsps/2026-04-07/j-oubei-s__boshu.html",
-          "official_url": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html"
-        },
-        {
-          "name": "j-pd__cpd_sin.html",
-          "local_path": "external/jsps/2026-04-07/j-pd__cpd_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html"
-        },
-        {
-          "name": "j-pd__pd_nittei.html",
-          "local_path": "external/jsps/2026-04-07/j-pd__pd_nittei.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/pd_nittei.html"
-        },
-        {
-          "name": "j-pd__pd_sin.html",
-          "local_path": "external/jsps/2026-04-07/j-pd__pd_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html"
-        },
-        {
-          "name": "j-pd__rpd_sin.html",
-          "local_path": "external/jsps/2026-04-07/j-pd__rpd_sin.html",
-          "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html"
-        },
-        {
-          "name": "public_call_index.html",
-          "local_path": "external/jsps/2026-04-07/public_call_index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
-        }
-      ]
-    },
-    {
-      "snapshot_date": "2026-04-03",
-      "fetched_at": "2026-04-03T16:59:54+09:00",
-      "local_dir": "external/jsps/2026-04-03",
-      "files": [
-        {
-          "name": "faq.html",
-          "local_path": "external/jsps/2026-04-03/faq.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
-        },
-        {
-          "name": "kiban.html",
-          "local_path": "external/jsps/2026-04-03/kiban.html",
-          "official_url": null
-        },
-        {
-          "name": "public_call_index.html",
-          "local_path": "external/jsps/2026-04-03/public_call_index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
-        },
-        {
-          "name": "startup_support.html",
-          "local_path": "external/jsps/2026-04-03/startup_support.html",
-          "official_url": null
-        }
-      ]
-    },
-    {
-      "snapshot_date": "2026-03-24",
-      "fetched_at": "2026-03-24T18:12:41+09:00",
-      "local_dir": "external/jsps/2026-03-24",
-      "files": [
-        {
-          "name": "kiban.html",
-          "local_path": "external/jsps/2026-03-24/kiban.html",
-          "official_url": null
-        },
-        {
-          "name": "public_call_index.html",
-          "local_path": "external/jsps/2026-03-24/public_call_index.html",
-          "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
-        },
-        {
-          "name": "startup_support.html",
-          "local_path": "external/jsps/2026-03-24/startup_support.html",
-          "official_url": null
-        }
-      ]
-    }
-  ],
-  "source_manifest": {
-    "snapshot_date": "2026-04-08",
-    "fetched_at": "2026-04-08T15:57:32+09:00",
-    "public_call_index_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html",
-    "faq_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html",
-    "entries_json": "entries.json"
-  },
-  "source_pages": [
-    {
-      "name": "public_call_index",
-      "local_path": "external/jsps/2026-04-08/public_call_index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html"
-    },
-    {
-      "name": "faq",
-      "local_path": "external/jsps/2026-04-08/faq.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html"
-    },
-    {
-      "name": "特別推進研究・基盤研究（Ｓ）",
-      "local_path": "external/jsps/2026-04-08/02_koubo__toku_s.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html"
-    },
-    {
-      "name": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
-      "local_path": "external/jsps/2026-04-08/02_koubo__kiban.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
-    },
-    {
-      "name": "研究活動スタート支援",
-      "local_path": "external/jsps/2026-04-08/22_startup_support__download.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html"
-    },
-    {
-      "name": "奨励研究",
-      "local_path": "external/jsps/2026-04-08/11_shourei__koubo.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html"
-    },
-    {
-      "name": "研究成果公開促進費",
-      "local_path": "external/jsps/2026-04-08/13_seika__keikaku_dl.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html"
-    },
-    {
-      "name": "特別研究員奨励費",
-      "local_path": "external/jsps/2026-04-08/20_tokushourei__download.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html"
-    },
-    {
-      "name": "国際共同研究加速基金（国際先導研究）",
-      "local_path": "external/jsps/2026-04-08/05_sendou__koubo.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html"
-    },
-    {
-      "name": "国際共同研究加速基金（国際共同研究強化）",
-      "local_path": "external/jsps/2026-04-08/01_kyoka__koubo.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html"
-    },
-    {
-      "name": "国際共同研究加速基金（海外連携研究）",
-      "local_path": "external/jsps/2026-04-08/04_renkei__koubo.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html"
-    },
-    {
-      "name": "国際共同研究加速基金（帰国発展研究）",
-      "local_path": "external/jsps/2026-04-08/03_kikoku__koubo.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html"
-    },
-    {
-      "name": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
-      "local_path": "external/jsps/2026-04-08/36_dokuritsu_kiban__download.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html"
-    },
-    {
-      "name": "特別推進研究",
-      "local_path": "external/jsps/2026-04-08/25_tokusui__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html"
-    },
-    {
-      "name": "新学術領域研究（研究領域提案型）",
-      "local_path": "external/jsps/2026-04-08/34_new_scientific__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html"
-    },
-    {
-      "name": "学術変革領域研究",
-      "local_path": "external/jsps/2026-04-08/39_transformative__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html"
-    },
-    {
-      "name": "基盤研究（Ｓ）",
-      "local_path": "external/jsps/2026-04-08/12_kiban__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html"
-    },
-    {
-      "name": "基盤研究（A・B・C）・挑戦的研究・若手研究",
-      "local_path": "external/jsps/2026-04-08/03_keikaku__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html"
-    },
-    {
-      "name": "研究活動スタート支援",
-      "local_path": "external/jsps/2026-04-08/22_startup_support__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html"
-    },
-    {
-      "name": "奨励研究",
-      "local_path": "external/jsps/2026-04-08/11_shourei__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html"
-    },
-    {
-      "name": "研究成果公開促進費",
-      "local_path": "external/jsps/2026-04-08/13_seika__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html"
-    },
-    {
-      "name": "特別研究員奨励費",
-      "local_path": "external/jsps/2026-04-08/20_tokushourei__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html"
-    },
-    {
-      "name": "国際共同研究加速基金",
-      "local_path": "external/jsps/2026-04-08/35_kokusai__index.html",
-      "official_url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html"
-    },
-    {
-      "name": "募集要項（PD・DC2・DC1）",
-      "local_path": "external/jsps/2026-04-08/j-pd__pd_sin.html",
-      "official_url": "https://www.jsps.go.jp/j-pd/pd_sin.html"
-    },
-    {
-      "name": "選考日程（PD・DC2・DC1・RPD）",
-      "local_path": "external/jsps/2026-04-08/j-pd__pd_nittei.html",
-      "official_url": "https://www.jsps.go.jp/j-pd/pd_nittei.html"
-    },
-    {
-      "name": "募集要項（RPD）",
-      "local_path": "external/jsps/2026-04-08/j-pd__rpd_sin.html",
-      "official_url": "https://www.jsps.go.jp/j-pd/rpd_sin.html"
-    },
-    {
-      "name": "募集要項（CPD）（募集停止）",
-      "local_path": "external/jsps/2026-04-08/j-pd__cpd_sin.html",
-      "official_url": "https://www.jsps.go.jp/j-pd/cpd_sin.html"
-    },
-    {
-      "name": "募集要項（海外特別研究員）",
-      "local_path": "external/jsps/2026-04-08/j-ab__ab_sin.html",
-      "official_url": "https://www.jsps.go.jp/j-ab/ab_sin.html"
-    },
-    {
-      "name": "選考日程（海外特別研究員・RRA）",
-      "local_path": "external/jsps/2026-04-08/j-ab__ab_nittei.html",
-      "official_url": "https://www.jsps.go.jp/j-ab/ab_nittei.html"
-    },
-    {
-      "name": "募集要項（RRA）",
-      "local_path": "external/jsps/2026-04-08/j-ab__rra_sin.html",
-      "official_url": "https://www.jsps.go.jp/j-ab/rra_sin.html"
-    },
-    {
-      "name": "外国人特別研究員",
-      "local_path": "external/jsps/2026-04-08/j-fellow__index.html",
-      "official_url": "https://www.jsps.go.jp/j-fellow/index.html"
-    },
-    {
-      "name": "募集要項・申請書（一般、欧米短期・公募）",
-      "local_path": "external/jsps/2026-04-08/j-fellow_14__31_boshuyoko.html",
-      "official_url": "https://www.jsps.go.jp/j-fellow/j-fellow_14/31_boshuyoko.html"
-    },
-    {
-      "name": "申請スケジュール（一般・公募）",
-      "local_path": "external/jsps/2026-04-08/j-ippan__boshu.html",
-      "official_url": "https://www.jsps.go.jp/j-fellow/j-ippan/boshu.html"
-    },
-    {
-      "name": "申請スケジュール（欧米短期・公募）",
-      "local_path": "external/jsps/2026-04-08/j-oubei-s__boshu.html",
-      "official_url": "https://www.jsps.go.jp/j-fellow/j-oubei-s/boshu.html"
-    },
-    {
-      "name": "外国人招へい研究者",
-      "local_path": "external/jsps/2026-04-08/j-inv__index.html",
-      "official_url": "https://www.jsps.go.jp/j-inv/index.html"
-    },
-    {
-      "name": "申請スケジュール（外国人招へい研究者）",
-      "local_path": "external/jsps/2026-04-08/j-inv__boshu_index.html",
-      "official_url": "https://www.jsps.go.jp/j-inv/boshu/index.html"
-    },
-    {
-      "name": "募集要項・申請書（外国人招へい研究者）",
-      "local_path": "external/jsps/2026-04-08/j-inv__boshuyoko.html",
-      "official_url": "https://www.jsps.go.jp/j-inv/boshu/boshuyoko.html"
-    },
-    {
-      "name": "諸外国の優秀な研究者の招へい",
-      "local_path": "external/jsps/2026-04-08/j-inv_researchers__index.html",
-      "official_url": "https://www.jsps.go.jp/j-inv_researchers/index.html"
-    },
-    {
-      "name": "令和8(2026)年度科研費制度変更・公募予定通知",
-      "local_path": "external/jsps/2026-04-08/kaken_r8_schedule_notice.pdf",
-      "official_url": "https://www.jsps.go.jp/file/storage/kaken_g_4570/r8jimurenraku.pdf"
+      "page_kind": "directory"
     }
   ]
 };

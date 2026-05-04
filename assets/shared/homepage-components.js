@@ -257,7 +257,7 @@
       frontier: {
         overview: [["Paper library", "Search", "Filters"], ["Recent papers", "DOI", "Abstracts"]],
         papers: [["Ledger view", "Cards", "Full abstracts"], ["JCR", "CAS", "Impact factor"]],
-        metrics: [["Venue metrics", "JCR", "CAS", "IF"], ["Official sources", "Public evidence", "Year aware"]],
+        metrics: [["Venue metrics", "JCR", "CAS", "IF"], ["Public evidence", "Source trail", "Year aware"]],
       },
       jsps: {
         calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
@@ -310,7 +310,7 @@
       frontier: {
         overview: [["论文库", "搜索", "筛选"], ["近期论文", "DOI", "摘要"]],
         papers: [["论文清单", "卡片视图", "完整摘要"], ["JCR", "中科院", "影响因子"]],
-        metrics: [["期刊指标", "JCR", "中科院", "IF"], ["官方来源", "公开证据", "按年份追踪"]],
+        metrics: [["期刊指标", "JCR", "中科院", "IF"], ["公开证据", "来源线索", "按年份追踪"]],
       },
       jsps: {
         calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
