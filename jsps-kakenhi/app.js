@@ -142,6 +142,7 @@ const I18N = {
       title: "项目目录",
       lede: "这一页把重点科研费项目、已抓取的官方公募页、特别研究员与海外特别研究员、外国人特别研究员与外国研究者招访项目等 JSPS 相关项目放在同一目录中统一筛选；共享官方页面的项目会互相关联，资料同时尽量保留今年与上一年度的参考入口。",
       filterTitle: "浏览与筛选",
+      timelineTitle: "时间线",
       openDetail: "查看详情",
       quickFilters: "快速筛选",
       footerTitle: "项目定位后，下一步就去看时间线和材料",
@@ -402,6 +403,7 @@ const I18N = {
       title: "Call Catalog",
       lede: "Browse KAKENHI priority calls, captured official JSPS call pages, JSPS fellowship schemes, and inbound-researcher programs in one place. Entries that share the same official page are cross-linked, and when the official site keeps both current and prior-year materials, those references are surfaced together.",
       filterTitle: "Browse and filter",
+      timelineTitle: "Timeline",
       openDetail: "View detail",
       quickFilters: "Quick filters",
       footerTitle: "Once you identify the call, move straight to the timeline and materials",
@@ -637,6 +639,7 @@ I18N.ja = {
     title: "ホーム",
     lede: "重点科研費種目だけでなく、特別研究員、海外特別研究員、外国人特別研究員、外国人招へい研究者などの JSPS 関連制度を同じ画面で横断整理できます。共通ページを使う種目は相互に関連づけ、現行年度と前年度の比較参照も追いやすくしています。",
     filterTitle: "検索と絞り込み",
+    timelineTitle: "タイムライン",
     openDetail: "詳細を見る",
     quickFilters: "クイックフィルタ",
     footerTitle: "対象種目を決めたら、次はタイムラインと資料を確認します",
@@ -1762,6 +1765,7 @@ function renderCallsPage() {
   const sortFilter = document.getElementById("call-sort-filter");
   const resetButton = document.getElementById("call-reset");
   const quickFilters = document.getElementById("call-quick-filters");
+  const homeTimeline = document.getElementById("home-timeline");
   const callList = document.getElementById("call-list");
   const metrics = document.getElementById("calls-detail-metrics");
 
@@ -1907,6 +1911,62 @@ function renderCallsPage() {
     : `<div class="empty">${t("common.noResults")}</div>`;
 
   bindCallRailControls(callList);
+  renderHomeTimeline(homeTimeline, filtered);
+  bindHomeTimeline(homeTimeline, callList);
+}
+
+function renderHomeTimeline(root, entries) {
+  if (!root) {
+    return;
+  }
+  const visibleProgramIds = new Set(entries.map((entry) => entry.id));
+  const events = state.data.timeline.filter((event) => visibleProgramIds.has(event.program_id));
+  root.innerHTML = events.length
+    ? events
+        .map(
+          (event) => `
+            <button class="${timelineItemClass(event)} portal-home-timeline-item" type="button" data-home-timeline-target="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
+              <time datetime="${event.datetime || event.date}">
+                <span>${formatTimelineMonth(event.date)}</span>
+                <strong>${formatTimelineDay(event.date)}</strong>
+              </time>
+              <span class="timeline-card">
+                <strong class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))}</strong>
+                <span class="timeline-summary">
+                  <span class="timeline-event-type">${escapeHtml(timelineEventLabel(event))}</span>
+                </span>
+              </span>
+            </button>
+          `
+        )
+        .join("")
+    : `<div class="empty">${escapeHtml(t("common.noResults"))}</div>`;
+}
+
+function bindHomeTimeline(root, cardRoot) {
+  if (!root || !cardRoot) {
+    return;
+  }
+  root.querySelectorAll("[data-home-timeline-target]").forEach((item) => {
+    item.addEventListener("click", () => {
+      const programId = item.dataset.homeTimelineTarget;
+      const card = Array.from(cardRoot.querySelectorAll("[data-call-card]")).find((node) => node.dataset.callCard === programId);
+      if (!card) {
+        return;
+      }
+      const track = card.closest("[data-rail-track]");
+      const section = card.closest(".portal-rail-section") || card;
+      section.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      if (track) {
+        const trackRect = track.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+        const cardLeft = cardRect.left - trackRect.left + track.scrollLeft;
+        track.scrollTo({ left: Math.max(cardLeft - 18, 0), behavior: "smooth" });
+      }
+      card.classList.add("is-sync-highlight");
+      window.setTimeout(() => card.classList.remove("is-sync-highlight"), 1200);
+    });
+  });
 }
 
 function renderCallRailSections(entries) {
@@ -1959,7 +2019,7 @@ function renderCallRailSections(entries) {
 function renderCallRailCard(entry) {
   const href = officialProgramHref(entry.id);
   return `
-    <a class="portal-call-card" href="${href}"${linkTargetAttrs(href)}>
+    <a class="portal-call-card" id="call-card-${escapeHtml(entry.id)}" data-call-card="${escapeHtml(entry.id)}" href="${href}"${linkTargetAttrs(href)}>
       <span class="portal-card-head">
         <span>
           <span class="eyebrow portal-call-card-statusline portal-call-card-statusline-${escapeHtml(timingStatusTone(entry))}">${compactTimingMarkup(entry)}</span>
