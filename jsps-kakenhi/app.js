@@ -2487,6 +2487,12 @@ function materialLinksMarkup(item) {
   return `<a href="${resolveHref(item.url)}"${linkTargetAttrs(item.url)}>${escapeHtml(t("common.download"))}</a>`;
 }
 
+function timelineEventLabel(event) {
+  const baseLabel = localeField(event, "title") || eventTypeLabel(event.type);
+  const forecastLabel = String(event.id || "").includes("forecast") ? ` · ${t("status.forecast")}` : "";
+  return `${baseLabel}${forecastLabel}`;
+}
+
 function guideLinkMarkup(guide) {
   return `<a href="${resolveHref(guide.href)}"${linkTargetAttrs(guide.href)}>${escapeHtml(localeField(guide, "title"))}</a>`;
 }
@@ -2553,8 +2559,7 @@ function renderDeadlinesPage() {
           <article class="timeline-card">
             <h4 class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))}</h4>
             <p class="timeline-summary">
-              <span class="timeline-event-type">${escapeHtml(eventTypeLabel(event.type))}${String(event.id || "").includes("forecast") ? ` · ${escapeHtml(t("status.forecast"))}` : ""}</span>
-              <span class="timeline-event-title">${escapeHtml(localeField(event, "title"))}</span>
+              <span class="timeline-event-type">${escapeHtml(timelineEventLabel(event))}</span>
             </p>
           </article>
         </a>
@@ -2567,7 +2572,7 @@ function renderDeadlinesPage() {
       (event) => `
         <tr>
           <td>${escapeHtml(localeField(event, "program_title"))}</td>
-          <td>${escapeHtml(eventTypeLabel(event.type))}</td>
+          <td>${escapeHtml(timelineEventLabel(event))}</td>
           <td>${escapeHtml(formatDateTime(event.datetime || event.date))}</td>
           <td>${escapeHtml(localeField(event, "note") || "--")}</td>
         </tr>
@@ -2625,8 +2630,7 @@ function renderTimelineTestPage() {
           <article class="timeline-card">
             <h4 class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))}</h4>
             <p class="timeline-summary">
-              <span class="timeline-event-type">${escapeHtml(eventTypeLabel(event.type))}${String(event.id || "").includes("forecast") ? ` · ${escapeHtml(t("status.forecast"))}` : ""}</span>
-              <span class="timeline-event-title">${escapeHtml(localeField(event, "title"))}</span>
+              <span class="timeline-event-type">${escapeHtml(timelineEventLabel(event))}</span>
             </p>
           </article>
         </a>
@@ -2750,13 +2754,12 @@ function renderFormsPage() {
                   <p class="eyebrow">${escapeHtml(localeField(program, "family_title") || displayGroupLabel(program.group))}</p>
                   <h3>${escapeHtml(localeField(program, "title"))}</h3>
                 </div>
-                ${metaPill(`${materials.length}`)}
+                <div class="portal-material-card-aside">
+                  ${metaPill(`${materials.length}`)}
+                  <a class="portal-material-official-link" href="${officialProgramHref(program.id)}"${linkTargetAttrs(officialProgramHref(program.id))}>${escapeHtml(t("common.viewOfficial"))}</a>
+                </div>
               </div>
               <dl class="portal-material-list">
-                <div class="portal-material-row">
-                  <dt>${escapeHtml(t("common.official"))}</dt>
-                  <dd><a href="${officialProgramHref(program.id)}"${linkTargetAttrs(officialProgramHref(program.id))}>${escapeHtml(t("common.viewOfficial"))}</a></dd>
-                </div>
                 ${materials
                   .map(
                     (item) => `

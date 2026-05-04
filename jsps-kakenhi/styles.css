@@ -2470,15 +2470,18 @@ body[data-lang="en"] .timeline-title-text {
   display: inline-flex;
   align-items: center;
   width: fit-content;
-  margin: 0 0 6px;
-  padding: 4px 9px;
+  max-width: 100%;
+  margin: 0;
+  padding: 5px 10px;
   border-radius: 999px;
   border: 1px solid rgba(var(--timeline-accent-rgb), 0.18);
   background: rgba(var(--timeline-accent-rgb), 0.08);
   color: rgba(var(--timeline-accent-rgb), 0.96);
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-weight: 750;
-  line-height: 1.2;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .timeline-item-type-notice {
@@ -3783,13 +3786,59 @@ body:not([data-page]) .footer-panel {
 }
 
 .portal-material-card {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.28fr) minmax(0, 1fr);
+  gap: clamp(18px, 2.8vw, 36px);
+  align-items: start;
+  padding: clamp(20px, 2.5vw, 30px);
+}
+
+body[data-page="forms"] #form-grid.portal-card-grid,
+body[data-page="forms"] #form-grid.card-grid {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+}
+
+.portal-material-card .portal-card-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 14px;
+  align-content: start;
+  align-items: start;
+}
+
+.portal-material-card .portal-card-head h3 {
+  font-size: clamp(1.2rem, 1.6vw, 1.48rem);
+}
+
+.portal-material-card-aside {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.portal-material-official-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--teal-rgb), 0.16);
+  background: rgba(var(--teal-rgb), 0.07);
+  color: var(--teal);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .portal-material-list {
   display: grid;
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: clamp(18px, 2vw, 30px);
+  row-gap: 0;
   margin: 0;
+  min-width: 0;
 }
 
 .portal-material-row {
@@ -3797,18 +3846,15 @@ body:not([data-page]) .footer-panel {
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px;
   align-items: baseline;
-  padding: 8px 0;
+  min-width: 0;
+  padding: 9px 0;
   border-top: 1px solid rgba(var(--ink-rgb), 0.075);
-}
-
-.portal-material-row:first-child {
-  border-top: 0;
 }
 
 .portal-material-row dt {
   min-width: 0;
   color: var(--ink);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 650;
   line-height: 1.42;
   overflow-wrap: anywhere;
@@ -4672,6 +4718,14 @@ body:not([data-page]) .footer-panel {
 
   .portal-table {
     min-width: 640px;
+  }
+
+  .portal-material-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portal-material-list {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
