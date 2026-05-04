@@ -46,7 +46,7 @@
       portal: { short: "Portal", full: "Navigation portal" },
       academic: { short: "Homepage", full: "Personal homepage" },
       frontier: { short: "Frontier", full: "Academic Frontier" },
-      digest: { short: "Digest", full: "Frontier Digest" },
+      followBuilders: { short: "Follow Builders", full: "Follow Builders" },
       jsps: { short: "JSPS", full: "JSPS KAKENHI" },
     },
     zh: {
@@ -54,7 +54,7 @@
       portal: { short: "导航页", full: "导航页" },
       academic: { short: "个人主页", full: "个人主页" },
       frontier: { short: "学术前沿", full: "学术前沿" },
-      digest: { short: "前沿摘要", full: "前沿摘要" },
+      followBuilders: { short: "Follow Builders", full: "Follow Builders" },
       jsps: { short: "JSPS", full: "JSPS 科研费" },
     },
     ja: {
@@ -62,7 +62,7 @@
       portal: { short: "ポータル", full: "ナビゲーション" },
       academic: { short: "個人HP", full: "個人ホームページ" },
       frontier: { short: "学術前沿", full: "学術前沿" },
-      digest: { short: "ダイジェスト", full: "フロンティア・ダイジェスト" },
+      followBuilders: { short: "Follow Builders", full: "Follow Builders" },
       jsps: { short: "JSPS", full: "JSPS 科研費" },
     },
   };
@@ -166,10 +166,10 @@
     const locale = options.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
     const theme = options.theme || readStoredTheme();
     const url = new URL(href, options.origin || global.location?.origin || "https://sichentao.github.io");
-    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/frontier-digest/")) {
+    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/")) {
       url.searchParams.set("lang", locale);
     }
-    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/frontier-digest/")) {
+    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/")) {
       url.searchParams.set("theme", theme);
     }
     return `${url.pathname}${url.search}`;
@@ -219,12 +219,12 @@
           icon: "frontier",
         },
         {
-          id: "digest",
-          href: siteStateHref("/frontier-digest/", { locale, theme }),
-          label: labels.digest.full,
-          triggerLabel: labels.digest.short,
-          active: currentPath.startsWith("/frontier-digest/"),
-          icon: "digest",
+          id: "followBuilders",
+          href: siteStateHref("/follow-builders/", { locale, theme }),
+          label: labels.followBuilders.full,
+          triggerLabel: labels.followBuilders.short,
+          active: currentPath.startsWith("/follow-builders/"),
+          icon: "follow-builders",
         },
         {
           id: "jsps",

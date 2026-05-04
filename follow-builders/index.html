@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A portal-style reader for Zara Zhang's Follow Builders project: AI builder posts, podcasts, sources, and long-form reading flow."
+    />
+    <link rel="canonical" href="https://sichentao.github.io/follow-builders/" />
+    <meta name="theme-color" content="#f5f5f7" />
+    <meta property="og:title" content="Follow Builders" />
+    <meta
+      property="og:description"
+      content="A clean reader for Follow Builders, Not Influencers, built as a standalone homepage workspace."
+    />
+    <meta property="og:url" content="https://sichentao.github.io/follow-builders/" />
+    <meta property="og:type" content="website" />
+    <title>Follow Builders</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <script>
+      (function () {
+        const themeCatalog = {
+          tohoku: "#f5f5f7",
+          toyama: "#f5f5f7",
+          usst: "#f5f5f7",
+        };
+        try {
+          const savedLocale = localStorage.getItem("sichen-homepage-locale");
+          document.documentElement.lang =
+            savedLocale === "zh" ? "zh-CN" : savedLocale === "ja" ? "ja" : "en";
+          const savedTheme = localStorage.getItem("sichen-homepage-theme");
+          const theme = themeCatalog[savedTheme] ? savedTheme : "tohoku";
+          document.documentElement.dataset.theme = theme;
+          const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+          if (metaThemeColor) {
+            metaThemeColor.setAttribute("content", themeCatalog[theme]);
+          }
+        } catch {
+          document.documentElement.lang = "en";
+          document.documentElement.dataset.theme = "tohoku";
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="./styles.css?v=20260505-010244" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260505-010244" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260505-010244" />
+    <script src="./data/follow-builders-data.js?v=20260505-010244"></script>
+    <script src="/assets/shared/homepage-i18n.js?v=20260505-010244"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260505-010244"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260505-010244"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260505-010244"></script>
+    <script defer src="./app.js?v=20260505-010244"></script>
+  </head>
+  <body data-page="follow-builders">
+    <div class="page-wash"></div>
+
+    <header class="shell site-header">
+      <div class="header-tools">
+        <div class="header-controls-anchor" aria-hidden="true"></div>
+        <div class="header-controls" aria-label="Display controls">
+          <div class="locale-switcher control-switcher" role="group" aria-label="Language"></div>
+          <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
+        </div>
+        <nav class="topnav" aria-label="Page navigation">
+          <a href="./index.html" aria-current="page">
+            <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg>
+            <span data-i18n="nav.home">Home</span>
+          </a>
+          <a href="./index.html#feed">
+            <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-publications"></use></svg>
+            <span data-i18n="nav.feed">Feed</span>
+          </a>
+          <a href="./index.html#sources">
+            <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg>
+            <span data-i18n="nav.sources">Sources</span>
+          </a>
+          <a href="https://github.com/zarazhangrui/follow-builders">
+            <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-code"></use></svg>
+            <span data-i18n="nav.github">GitHub</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="fb-layout">
+      <section class="fb-hero reveal" aria-labelledby="fb-title">
+        <div class="fb-hero-copy">
+          <p class="eyebrow" data-i18n="hero.kicker">Zara Zhang's open project</p>
+          <h1 id="fb-title" data-i18n="hero.title">Follow Builders, Not Influencers</h1>
+          <p class="fb-lede" data-i18n="hero.lede">
+            A clean reading interface for the Follow Builders feed: people building AI products, research, and infrastructure.
+          </p>
+          <div class="fb-hero-actions">
+            <a class="fb-primary-link" href="#feed" data-i18n="hero.start">Start reading</a>
+            <a class="fb-secondary-link" href="https://github.com/zarazhangrui/follow-builders" data-i18n="hero.source">Original project</a>
+          </div>
+        </div>
+        <div class="fb-status" aria-label="Feed status">
+          <div>
+            <span data-i18n="hero.updatedLabel">Feed updated</span>
+            <strong id="fb-updated">-</strong>
+          </div>
+          <div>
+            <span data-i18n="hero.buildersLabel">Builders</span>
+            <strong id="fb-builder-count">0</strong>
+          </div>
+          <div>
+            <span data-i18n="hero.podcastLabel">Podcast episodes</span>
+            <strong id="fb-podcast-count">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="fb-toolbar reveal" aria-label="Feed controls">
+        <div class="fb-search">
+          <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-keyword"></use></svg>
+          <input id="fb-search" type="search" placeholder="Search builders, posts, podcasts, or sources" />
+        </div>
+        <select id="fb-type-filter" aria-label="Content type"></select>
+        <select id="fb-view-mode" aria-label="Reading mode"></select>
+        <button id="fb-reset" class="fb-icon-button" type="button" aria-label="Reset filters" title="Reset filters">
+          <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-reset"></use></svg>
+        </button>
+      </section>
+
+      <section id="feed" class="fb-feed-page reveal" aria-label="Follow Builders feed">
+        <div class="fb-feed-grid">
+          <section class="fb-main-column" aria-labelledby="fb-feed-title">
+            <div class="fb-section-head">
+              <p class="eyebrow" data-i18n="feed.kicker">Readable feed</p>
+              <h2 id="fb-feed-title" data-i18n="feed.title">Latest from builders</h2>
+            </div>
+            <div id="fb-story-list" class="fb-story-list"></div>
+          </section>
+
+          <aside class="fb-rail" id="sources" aria-labelledby="fb-sources-title">
+            <section class="fb-rail-section">
+              <p class="eyebrow" data-i18n="sources.kicker">Central source list</p>
+              <h2 id="fb-sources-title" data-i18n="sources.title">Who it tracks</h2>
+              <div id="fb-source-stats" class="fb-source-stats"></div>
+            </section>
+            <section class="fb-rail-section">
+              <h3 data-i18n="sources.builders">AI builders on X</h3>
+              <div id="fb-builder-list" class="fb-source-list"></div>
+            </section>
+            <section class="fb-rail-section">
+              <h3 data-i18n="sources.podcasts">Podcasts</h3>
+              <div id="fb-podcast-list" class="fb-source-list"></div>
+            </section>
+            <section class="fb-rail-section">
+              <h3 data-i18n="sources.blogs">Official blogs</h3>
+              <div id="fb-blog-list" class="fb-source-list"></div>
+            </section>
+          </aside>
+        </div>
+      </section>
+
+      <article id="article" class="fb-article-page reveal" hidden aria-live="polite"></article>
+    </main>
+  </body>
+</html>

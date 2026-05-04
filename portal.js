@@ -84,7 +84,7 @@ const I18N = {
     page: {
       title: "Sichen Tao | Research Portal",
       description:
-        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Frontier Digest, and JSPS KAKENHI workspace.",
+        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Follow Builders, and JSPS KAKENHI workspace.",
     },
     controls: {
       display: "Display controls",
@@ -104,7 +104,7 @@ const I18N = {
       portal: "Portal",
       academic: "Personal Homepage",
       frontier: "Academic Frontier",
-      digest: "Frontier Digest",
+      followBuilders: "Follow Builders",
       jsps: "JSPS KAKENHI",
     },
     hero: {
@@ -136,9 +136,9 @@ const I18N = {
         intro: "A research workspace for paper records, source links, and venue metrics.",
         action: "Open frontier",
       },
-      digest: {
-        name: "Frontier Digest",
-        intro: "A mobile-friendly reader for daily frontier notes, article history, filters, and multilingual comparison.",
+      followBuilders: {
+        name: "Follow Builders",
+        intro: "A standalone reader for Zara Zhang's Follow Builders project: AI builders, X posts, podcasts, and official blogs.",
         action: "Open reader",
       },
       jsps: {
@@ -160,7 +160,7 @@ const I18N = {
             items: [
               { label: "Personal Homepage", href: "/academic/" },
               { label: "Academic Frontier", href: "/academic-frontier/" },
-              { label: "Frontier Digest", href: "/frontier-digest/" },
+              { label: "Follow Builders", href: "/follow-builders/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -214,7 +214,7 @@ const I18N = {
             title: "Related Workspaces",
             items: [
               { label: "Personal Homepage", href: "/academic/" },
-              { label: "Frontier Digest", href: "/frontier-digest/" },
+              { label: "Follow Builders", href: "/follow-builders/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -226,12 +226,12 @@ const I18N = {
           },
         ],
       },
-      digest: {
-        eyebrow: "Frontier Digest",
+      followBuilders: {
+        eyebrow: "Follow Builders",
         primary: [
-          { label: "Reader", href: "/frontier-digest/#reader" },
-          { label: "History", href: "/frontier-digest/#archive" },
-          { label: "Topics", href: "/frontier-digest/#topics" },
+          { label: "Feed", href: "/follow-builders/#feed" },
+          { label: "Sources", href: "/follow-builders/#sources" },
+          { label: "GitHub", href: "https://github.com/zarazhangrui/follow-builders" },
         ],
         columns: [
           {
@@ -243,11 +243,11 @@ const I18N = {
             ],
           },
           {
-            title: "Reading Modes",
+            title: "Project",
             items: [
-              { label: "English canonical", href: "/frontier-digest/#reader" },
-              { label: "English + Chinese", href: "/frontier-digest/#reader" },
-              { label: "Three-language view", href: "/frontier-digest/#reader" },
+              { label: "AI builders on X", href: "/follow-builders/#sources" },
+              { label: "AI podcasts", href: "/follow-builders/#sources" },
+              { label: "Official blogs", href: "/follow-builders/#sources" },
             ],
           },
         ],
@@ -283,7 +283,7 @@ const I18N = {
   zh: {
     page: {
       title: "陶思晨 | 研究导航页",
-      description: "统一进入个人主页、学术前沿、前沿摘要与 JSPS 科研费工作台的研究导航页。",
+      description: "统一进入个人主页、学术前沿、Follow Builders 与 JSPS 科研费工作台的研究导航页。",
     },
     controls: {
       display: "显示控制",
@@ -303,7 +303,7 @@ const I18N = {
       portal: "导航页",
       academic: "个人主页",
       frontier: "学术前沿",
-      digest: "前沿摘要",
+      followBuilders: "Follow Builders",
       jsps: "JSPS 科研费",
     },
     hero: {
@@ -334,10 +334,10 @@ const I18N = {
         intro: "用于论文记录、来源入口与分区指标整理的研究工作空间。",
         action: "打开前沿页",
       },
-      digest: {
-        name: "前沿摘要",
-        intro: "面向每日前沿信息的手机友好阅读器，支持历史文章、筛选和段落级多语言对照。",
-        action: "进入阅读器",
+      followBuilders: {
+        name: "Follow Builders",
+        intro: "把 Zara Zhang 的 Follow Builders 项目做成独立阅读器：AI builders、X 动态、播客和官方博客。",
+        action: "打开阅读器",
       },
       jsps: {
         name: "JSPS 科研费",
@@ -358,7 +358,7 @@ const I18N = {
             items: [
               { label: "个人主页", href: "/academic/" },
               { label: "学术前沿", href: "/academic-frontier/" },
-              { label: "前沿摘要", href: "/frontier-digest/" },
+              { label: "Follow Builders", href: "/follow-builders/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -412,7 +412,7 @@ const I18N = {
             title: "相关工作区",
             items: [
               { label: "个人主页", href: "/academic/" },
-              { label: "前沿摘要", href: "/frontier-digest/" },
+              { label: "Follow Builders", href: "/follow-builders/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -424,12 +424,12 @@ const I18N = {
           },
         ],
       },
-      digest: {
-        eyebrow: "前沿摘要",
+      followBuilders: {
+        eyebrow: "Follow Builders",
         primary: [
-          { label: "阅读器", href: "/frontier-digest/#reader" },
-          { label: "历史文章", href: "/frontier-digest/#archive" },
-          { label: "主题筛选", href: "/frontier-digest/#topics" },
+          { label: "信息流", href: "/follow-builders/#feed" },
+          { label: "来源", href: "/follow-builders/#sources" },
+          { label: "GitHub", href: "https://github.com/zarazhangrui/follow-builders" },
         ],
         columns: [
           {
@@ -441,11 +441,11 @@ const I18N = {
             ],
           },
           {
-            title: "阅读模式",
+            title: "项目内容",
             items: [
-              { label: "英文原文", href: "/frontier-digest/#reader" },
-              { label: "英文 + 中文", href: "/frontier-digest/#reader" },
-              { label: "三语对照", href: "/frontier-digest/#reader" },
+              { label: "X 上的 AI builders", href: "/follow-builders/#sources" },
+              { label: "AI 播客", href: "/follow-builders/#sources" },
+              { label: "官方博客", href: "/follow-builders/#sources" },
             ],
           },
         ],
@@ -481,7 +481,7 @@ const I18N = {
   ja: {
     page: {
       title: "陶思晨 | 研究ポータル",
-      description: "個人ホームページ、学術フロンティア、ダイジェスト、JSPS科研費ワークスペースへ入る統合ポータル。",
+      description: "個人ホームページ、学術フロンティア、Follow Builders、JSPS科研費ワークスペースへ入る統合ポータル。",
     },
     controls: {
       display: "表示コントロール",
@@ -501,7 +501,7 @@ const I18N = {
       portal: "ポータル",
       academic: "個人ホームページ",
       frontier: "学術フロンティア",
-      digest: "ダイジェスト",
+      followBuilders: "Follow Builders",
       jsps: "JSPS科研費",
     },
     hero: {
@@ -532,9 +532,9 @@ const I18N = {
         intro: "論文記録、ソース導線、分区指標を整理する研究ワークスペースです。",
         action: "フロンティアを開く",
       },
-      digest: {
-        name: "フロンティア・ダイジェスト",
-        intro: "日次フロンティアノートを読むためのモバイル対応リーダー。履歴、フィルタ、段落単位の多言語対照に対応します。",
+      followBuilders: {
+        name: "Follow Builders",
+        intro: "Zara Zhang の Follow Builders プロジェクトを、AI builders、X 投稿、podcast、公式ブログの読書画面として表示します。",
         action: "リーダーを開く",
       },
       jsps: {
@@ -556,7 +556,7 @@ const I18N = {
             items: [
               { label: "個人ホームページ", href: "/academic/" },
               { label: "学術フロンティア", href: "/academic-frontier/" },
-              { label: "ダイジェスト", href: "/frontier-digest/" },
+              { label: "Follow Builders", href: "/follow-builders/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -610,7 +610,7 @@ const I18N = {
             title: "関連ワークスペース",
             items: [
               { label: "個人ホームページ", href: "/academic/" },
-              { label: "ダイジェスト", href: "/frontier-digest/" },
+              { label: "Follow Builders", href: "/follow-builders/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -622,12 +622,12 @@ const I18N = {
           },
         ],
       },
-      digest: {
-        eyebrow: "フロンティア・ダイジェスト",
+      followBuilders: {
+        eyebrow: "Follow Builders",
         primary: [
-          { label: "リーダー", href: "/frontier-digest/#reader" },
-          { label: "履歴", href: "/frontier-digest/#archive" },
-          { label: "トピック", href: "/frontier-digest/#topics" },
+          { label: "フィード", href: "/follow-builders/#feed" },
+          { label: "ソース", href: "/follow-builders/#sources" },
+          { label: "GitHub", href: "https://github.com/zarazhangrui/follow-builders" },
         ],
         columns: [
           {
@@ -639,11 +639,11 @@ const I18N = {
             ],
           },
           {
-            title: "読書モード",
+            title: "プロジェクト",
             items: [
-              { label: "英語原文", href: "/frontier-digest/#reader" },
-              { label: "英語 + 中国語", href: "/frontier-digest/#reader" },
-              { label: "三言語対照", href: "/frontier-digest/#reader" },
+              { label: "AI builders on X", href: "/follow-builders/#sources" },
+              { label: "AI podcasts", href: "/follow-builders/#sources" },
+              { label: "Official blogs", href: "/follow-builders/#sources" },
             ],
           },
         ],
@@ -827,7 +827,7 @@ function renderTopnav() {
     <a href="/" aria-current="page" data-portal-menu-key="portal" aria-haspopup="true" aria-expanded="false">${iconSprite("home")}<span>${escapeHtml(text.nav.portal)}</span></a>
     <a href="${portalHref("/academic/")}" data-portal-menu-key="academic" aria-haspopup="true" aria-expanded="false">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
     <a href="${portalHref("/academic-frontier/")}" data-portal-menu-key="frontier" aria-haspopup="true" aria-expanded="false">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
-    <a href="${portalHref("/frontier-digest/")}" data-portal-menu-key="digest" aria-haspopup="true" aria-expanded="false">${iconSprite("publications")}<span>${escapeHtml(text.nav.digest)}</span></a>
+    <a href="${portalHref("/follow-builders/")}" data-portal-menu-key="followBuilders" aria-haspopup="true" aria-expanded="false">${iconSprite("publications")}<span>${escapeHtml(text.nav.followBuilders)}</span></a>
     <a href="${portalHref("/jsps-kakenhi/")}" data-portal-menu-key="jsps" aria-haspopup="true" aria-expanded="false">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
   `;
 }
@@ -1046,7 +1046,7 @@ function cardIconMarkup(siteKey) {
     `;
   }
 
-  if (siteKey === "digest") {
+  if (siteKey === "followBuilders") {
     return `
       <span class="portal-card-icon portal-card-icon--svg" aria-hidden="true">
         ${iconSprite("publications")}
@@ -1093,13 +1093,13 @@ function renderCards() {
       action: text.cards.frontier.action,
     },
     {
-      key: "digest",
-      href: portalHref("/frontier-digest/"),
-      className: "portal-card-digest",
-      icon: cardIconMarkup("digest"),
-      title: text.cards.digest.name,
-      intro: text.cards.digest.intro,
-      action: text.cards.digest.action,
+      key: "followBuilders",
+      href: portalHref("/follow-builders/"),
+      className: "portal-card-follow-builders",
+      icon: cardIconMarkup("followBuilders"),
+      title: text.cards.followBuilders.name,
+      intro: text.cards.followBuilders.intro,
+      action: text.cards.followBuilders.action,
     },
     {
       key: "jsps",
