@@ -3834,48 +3834,103 @@ body[data-page="forms"] #form-grid.card-grid {
 
 .portal-material-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  column-gap: clamp(18px, 2vw, 30px);
-  row-gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: clamp(14px, 1.8vw, 24px) clamp(18px, 2.2vw, 32px);
   margin: 0;
   min-width: 0;
 }
 
-.portal-material-row {
+.portal-material-section {
+  min-width: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.095);
+}
+
+.portal-material-section-head {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.portal-material-section-head > div {
+  min-width: 0;
+}
+
+.portal-material-section-category {
+  display: inline-flex;
+  margin-bottom: 4px;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 780;
+}
+
+.portal-material-section-head h4 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.96rem;
+  font-weight: 750;
+  line-height: 1.36;
+  overflow-wrap: anywhere;
+}
+
+.portal-material-section-head span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 650;
+}
+
+.portal-material-link-list {
+  display: grid;
+  gap: 0;
+  margin: 9px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.portal-material-link-item {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px;
-  align-items: baseline;
+  align-items: start;
   min-width: 0;
-  padding: 9px 0;
-  border-top: 1px solid rgba(var(--ink-rgb), 0.075);
+  padding: 7px 0;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.055);
 }
 
-.portal-material-row dt {
+.portal-material-link-item:first-child {
+  border-top: 0;
+}
+
+.portal-material-link-title {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
   min-width: 0;
   color: var(--ink);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 650;
   line-height: 1.42;
   overflow-wrap: anywhere;
 }
 
-.portal-material-row dt span {
-  display: block;
-  margin-top: 2px;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 500;
-}
-
-.portal-material-row dd {
-  margin: 0;
-  white-space: nowrap;
-}
-
-.portal-material-row a {
+.portal-material-link-title small {
+  flex: 0 0 auto;
+  padding: 1px 6px 2px;
+  border-radius: 999px;
+  background: rgba(var(--teal-rgb), 0.08);
   color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.portal-material-link-item a {
+  color: var(--teal);
+  font-size: 0.84rem;
   font-weight: 650;
+  white-space: nowrap;
 }
 
 .portal-utility-strip {

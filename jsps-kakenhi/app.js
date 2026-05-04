@@ -5,7 +5,7 @@ const LEGACY_THEME_KEY = "kakenhi-portal-theme";
 const LOCALE_KEY = "sichen-homepage-locale";
 const LEGACY_LOCALE_KEY = "kakenhi-portal-locale";
 const FILTER_KEY = "kakenhi-portal-filters";
-const FILTER_SCHEMA_VERSION = 3;
+const FILTER_SCHEMA_VERSION = 4;
 const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 let topnavOverflowBound = false;
 let topnavMenuBound = false;
@@ -185,7 +185,7 @@ const I18N = {
     deadlines: {
       kicker: "时间安排",
       title: "时间线与项目入口",
-      lede: "左侧扫读通知、公募开始、电子系统开放和 JSPS 官方截止，右侧同步保留项目入口；鼠标移动或聚焦任一侧会定位对应项目，点击仍直接进入官方页面。",
+      lede: "左侧扫读通知、公募开始、电子系统开放和 JSPS 官方截止，右侧按研究者阶段保留项目入口；点击任一侧才会定位对应项目，避免浏览时跳动。",
       timelineTitle: "关键事件与项目入口",
       timelinePane: "时间线",
       programPane: "项目入口",
@@ -203,18 +203,20 @@ const I18N = {
       filterTitle: "获取材料",
       searchPlaceholder: "搜索项目名、材料名称、S-21、S-22 或官方说明",
       programAll: "项目",
+      sortStage: "按研究阶段",
       sortMaterials: "按材料数量",
       sortProgram: "按项目",
+      proposalForms: "研究计划书・申请书样式",
+      otherMaterials: "其他官方材料",
+      categoryNotice: "通知",
+      categorySchedule: "日程",
+      categoryGuidelines: "公募要领",
+      categoryInstructions: "填写说明",
+      categoryForms: "研究计划书",
+      categorySystem: "FAQ与系统",
+      categoryReview: "审查资料",
+      categoryOther: "官方材料",
       footerTitle: "材料确认后，再去核对流程和 FAQ",
-      useStep1Kicker: "用途",
-      useStep1Title: "先锁定项目",
-      useStep1Text: "材料页只解决“我要下载哪一组官方文件”，不承担制度解释。",
-      useStep2Kicker: "文件",
-      useStep2Title: "集中下载材料",
-      useStep2Text: "通知、公募要领、填写说明、样式文件和附件入口统一放在同一张项目卡中。",
-      useStep3Kicker: "核验",
-      useStep3Title: "最终回到官方页",
-      useStep3Text: "本页负责节省查找成本，提交前仍以对应官方页面的最新状态为准。",
     },
     guides: {
       kicker: "官方指引",
@@ -443,7 +445,7 @@ const I18N = {
     deadlines: {
       kicker: "Schedule",
       title: "Timeline and Program Entries",
-      lede: "Scan notices, call openings, electronic-system windows, and JSPS deadlines on the left while keeping official program entries on the right. Hover or focus either side to align the matching program; clicking still opens the official page.",
+      lede: "Scan notices, call openings, electronic-system windows, and JSPS deadlines on the left while keeping program entries on the right by researcher stage. The matching side moves only on click, so browsing does not cause jumpy motion.",
       timelineTitle: "Key events and program entries",
       timelinePane: "Timeline",
       programPane: "Program entries",
@@ -461,18 +463,20 @@ const I18N = {
       filterTitle: "Get materials",
       searchPlaceholder: "Search program names, material titles, S-21, S-22, or official instructions",
       programAll: "Program",
+      sortStage: "By researcher stage",
       sortMaterials: "Most materials",
       sortProgram: "By program",
+      proposalForms: "Research proposal and application forms",
+      otherMaterials: "Other official materials",
+      categoryNotice: "Notice",
+      categorySchedule: "Schedule",
+      categoryGuidelines: "Application procedures",
+      categoryInstructions: "Instructions",
+      categoryForms: "Proposal forms",
+      categorySystem: "FAQ and systems",
+      categoryReview: "Review materials",
+      categoryOther: "Official materials",
       footerTitle: "After checking the materials, review the procedural context and FAQ",
-      useStep1Kicker: "Use",
-      useStep1Title: "Start from the target program",
-      useStep1Text: "The materials page answers which official file set to download; it is not the place for interpreting the scheme.",
-      useStep2Kicker: "Files",
-      useStep2Title: "Download in one place",
-      useStep2Text: "Notices, application procedures, entry guidance, forms, and attachments are grouped on the same program card.",
-      useStep3Kicker: "Verify",
-      useStep3Title: "Return to the official page",
-      useStep3Text: "This page reduces lookup cost, but the official page remains the final authority before submission.",
     },
     guides: {
       kicker: "Official Guides",
@@ -676,7 +680,7 @@ I18N.ja = {
   deadlines: {
     kicker: "スケジュール",
     title: "タイムラインと種目入口",
-    lede: "左側で告知、公募開始、電子申請システム公開、JSPS 公式締切を確認し、右側に公式種目入口を残します。どちらかにホバーまたはフォーカスすると対応項目がそろい、クリック時は公式ページを開きます。",
+    lede: "左側で告知、公募開始、電子申請システム公開、JSPS 公式締切を確認し、右側には研究段階順に種目入口を残します。対応項目への移動はクリック時だけにし、閲覧中の不要なジャンプを避けます。",
     timelineTitle: "重要イベントと種目入口",
     timelinePane: "タイムライン",
     programPane: "種目入口",
@@ -694,18 +698,20 @@ I18N.ja = {
     filterTitle: "資料取得",
     searchPlaceholder: "種目名、資料名、S-21、S-22、公式説明を検索",
     programAll: "種目",
+    sortStage: "研究段階順",
     sortMaterials: "資料数順",
     sortProgram: "種目順",
+    proposalForms: "研究計画調書・申請書様式",
+    otherMaterials: "その他の公式資料",
+    categoryNotice: "通知",
+    categorySchedule: "日程",
+    categoryGuidelines: "公募要領",
+    categoryInstructions: "記入要領",
+    categoryForms: "研究計画調書",
+    categorySystem: "FAQ・システム",
+    categoryReview: "審査資料",
+    categoryOther: "公式資料",
     footerTitle: "資料を確認したら、次は手順と FAQ を補います",
-    useStep1Kicker: "用途",
-    useStep1Title: "対象種目を先に固定",
-    useStep1Text: "資料取得ページは、どの公式資料セットを落とすかを決めるためのページです。制度解釈はガイド側で確認します。",
-    useStep2Kicker: "資料",
-    useStep2Title: "必要ファイルをまとめて取得",
-    useStep2Text: "通知、公募要領、記入要領、様式、添付資料への入口を種目カードごとにまとめます。",
-    useStep3Kicker: "確認",
-    useStep3Title: "最後は公式ページへ戻る",
-    useStep3Text: "このページは探索コストを下げるための整理であり、提出前の最終確認は公式ページを基準にします。",
   },
   guides: {
     kicker: "公式ガイド",
@@ -865,6 +871,32 @@ const CALL_AUDIENCE_MAP = {
 
 const CALL_GROUP_ORDER = ["重点项目", "Programs", "JSPS Fellowships", "Inbound Fellowships", "各種目のページ"];
 
+const PROGRAM_CAREER_STAGE_ORDER = [
+  "jsps_fellow_pd_dc",
+  "jsps_fellows_incentive",
+  "jsps_fellow_cpd",
+  "jsps_fellow_rpd",
+  "foreign_jsps_fellowship_open",
+  "overseas_research_fellowship",
+  "overseas_research_fellowship_rra",
+  "invitational_fellowships_for_research_in_japan",
+  "startup_support",
+  "young_research",
+  "independent_base_building_support",
+  "incentive_research",
+  "scientific_research_abc",
+  "challenging_research",
+  "international_research_strengthening",
+  "returning_researchers_development",
+  "overseas_partnership_research",
+  "international_leading_research",
+  "scientific_research_s",
+  "special_promotion_research",
+  "research_results_publication",
+];
+
+const PROGRAM_CAREER_STAGE_INDEX = Object.fromEntries(PROGRAM_CAREER_STAGE_ORDER.map((id, index) => [id, index]));
+
 const state = {
   locale: getStoredLocale(),
   theme: getStoredTheme(),
@@ -924,7 +956,7 @@ function getStoredTheme() {
 function getStoredFilters() {
   const fallback = {
     calls: { search: "", status: "all", group: "all", audience: "all", sort: "deadline", quick: "all", selectedId: "" },
-    forms: { search: "", program: "all", sort: "materials" },
+    forms: { search: "", program: "all", sort: "stage" },
   };
   try {
     const parsed = JSON.parse(localStorage.getItem(FILTER_KEY) || "{}");
@@ -939,8 +971,8 @@ function getStoredFilters() {
         calls.sort = "deadline";
       }
     }
-    if (!["materials", "program"].includes(forms.sort)) {
-      forms.sort = "materials";
+    if (parsed.version !== FILTER_SCHEMA_VERSION || !["stage", "materials", "program"].includes(forms.sort)) {
+      forms.sort = "stage";
     }
     return {
       calls,
@@ -2291,10 +2323,93 @@ function splitMaterialUrls(rawUrl) {
     .filter(Boolean);
 }
 
-function programMaterialItems(program) {
+function materialSectionRank(section = "") {
+  const text = String(section).toLowerCase();
+  if (/通知|notice|告知/.test(text)) {
+    return 10;
+  }
+  if (/期間|schedule|スケジュール|日程|締切|期限|受付/.test(text)) {
+    return 20;
+  }
+  if (/公募要領|募集要項|application procedures|応募要項/.test(text)) {
+    return 30;
+  }
+  if (/別冊|記入要領|作成要領|supplement|manual|応募書類/.test(text)) {
+    return 40;
+  }
+  if (/研究計画調書|計画調書|申請書|様式|application forms|proposal document|添付ファイル/.test(text)) {
+    return 50;
+  }
+  if (/faq|フロー|flow|電子|e-rad|提出|システム|説明会/.test(text)) {
+    return 60;
+  }
+  if (/審査|区分|セット|変更点|poster|ポスター/.test(text)) {
+    return 70;
+  }
+  return 90;
+}
+
+function materialSectionCategory(section = "") {
+  const text = String(section).toLowerCase();
+  if (/通知|notice|告知/.test(text)) {
+    return t("forms.categoryNotice");
+  }
+  if (/期間|schedule|スケジュール|日程|締切|期限|受付/.test(text)) {
+    return t("forms.categorySchedule");
+  }
+  if (/公募要領|募集要項|application procedures|応募要項/.test(text)) {
+    return t("forms.categoryGuidelines");
+  }
+  if (/別冊|記入要領|作成要領|supplement|manual|応募書類/.test(text)) {
+    return t("forms.categoryInstructions");
+  }
+  if (/研究計画調書|計画調書|申請書|様式|application forms|proposal document|添付ファイル/.test(text)) {
+    return t("forms.categoryForms");
+  }
+  if (/faq|フロー|flow|電子|e-rad|提出|システム|説明会/.test(text)) {
+    return t("forms.categorySystem");
+  }
+  if (/審査|区分|セット|変更点|poster|ポスター/.test(text)) {
+    return t("forms.categoryReview");
+  }
+  return t("forms.categoryOther");
+}
+
+function cleanMaterialTitle(title, fallback = "") {
+  return String(title || fallback || t("forms.otherMaterials")).replace(/\s+/g, " ").trim();
+}
+
+function formMaterialSection(form, link) {
+  const sections = Array.isArray(form.page_sections) ? form.page_sections.filter(Boolean) : [];
+  const title = String(link?.title || "");
+  if (/イメージ|image/i.test(title) && sections[0]) {
+    return sections[0];
+  }
+  if (sections.length) {
+    return sections[sections.length - 1];
+  }
+  return t("forms.proposalForms");
+}
+
+function addMaterialGroup(groups, indexByKey, rawTitle, item, rankSeed = 90) {
+  const title = cleanMaterialTitle(rawTitle, t("forms.otherMaterials"));
+  const key = title.toLowerCase();
+  if (!indexByKey.has(key)) {
+    indexByKey.set(key, groups.length);
+    groups.push({
+      title,
+      rank: Math.min(materialSectionRank(title), rankSeed),
+      items: [],
+    });
+  }
+  groups[indexByKey.get(key)].items.push(item);
+}
+
+function programMaterialGroups(program) {
   const seen = new Set();
-  const items = [];
-  const add = (title, urls, section = "") => {
+  const groups = [];
+  const indexByKey = new Map();
+  const add = (title, urls, section = "", extra = {}) => {
     splitMaterialUrls(urls).forEach((url, index, list) => {
       const key = url;
       if (!url || seen.has(key)) {
@@ -2302,22 +2417,63 @@ function programMaterialItems(program) {
       }
       seen.add(key);
       const suffix = list.length > 1 ? ` ${index + 1}` : "";
-      items.push({
-        title: String(title || section || t("common.documents")).trim() + suffix,
-        section,
+      addMaterialGroup(groups, indexByKey, section || extra.section || t("forms.otherMaterials"), {
+        title: cleanMaterialTitle(title, section || extra.section || t("common.documents")) + suffix,
         url,
+        formNumber: extra.formNumber || "",
+        source: extra.source || "document",
       });
     });
   };
-  (program.documents || []).forEach((document) => add(document.title, document.url, document.section));
+  (program.documents || []).forEach((document) => add(document.title, document.url, document.section || t("forms.otherMaterials")));
   (program.forms || []).forEach((form) => {
-    (form.links || []).forEach((link) => add(link.title || form.form_number, link.url, form.form_number));
+    (form.links || []).forEach((link) => add(link.title || form.form_number, link.url, formMaterialSection(form, link), { formNumber: form.form_number, source: "form" }));
   });
-  return items;
+  return groups
+    .map((group, index) => ({ ...group, index }))
+    .filter((group) => group.items.length)
+    .sort((left, right) => left.rank - right.rank || left.index - right.index || left.title.localeCompare(right.title));
+}
+
+function programMaterialItems(program) {
+  return programMaterialGroups(program).flatMap((group) => group.items.map((item) => ({ ...item, section: group.title })));
 }
 
 function materialLinksMarkup(item) {
   return `<a href="${resolveHref(item.url)}"${linkTargetAttrs(item.url)}>${escapeHtml(t("common.download"))}</a>`;
+}
+
+function renderMaterialGroups(groups) {
+  return groups
+    .map(
+      (group) => `
+        <section class="portal-material-section">
+          <div class="portal-material-section-head">
+            <div>
+              <span class="portal-material-section-category">${escapeHtml(materialSectionCategory(group.title))}</span>
+              <h4>${escapeHtml(group.title)}</h4>
+            </div>
+            <span>${escapeHtml(countText(group.items.length, "files"))}</span>
+          </div>
+          <ul class="portal-material-link-list">
+            ${group.items
+              .map(
+                (item) => `
+                  <li class="portal-material-link-item">
+                    <span class="portal-material-link-title">
+                      ${item.formNumber ? `<small>${escapeHtml(item.formNumber)}</small>` : ""}
+                      ${escapeHtml(item.title)}
+                    </span>
+                    ${materialLinksMarkup(item)}
+                  </li>
+                `
+              )
+              .join("")}
+          </ul>
+        </section>
+      `
+    )
+    .join("");
 }
 
 function timelineEventLabel(event) {
@@ -2387,7 +2543,7 @@ function renderDeadlinesPage() {
     return;
   }
   const events = state.data.timeline;
-  const programs = sortProgramsByDeadline(state.data.programs.slice());
+  const programs = sortProgramsByCareerStage(state.data.programs.slice());
   const nextDeadline = events.find((event) => event.type === "deadline" && (event.status === "today" || event.status === "upcoming"));
   if (metrics) {
     metrics.innerHTML = [
@@ -2456,8 +2612,6 @@ function bindTimelineSync(root) {
       target.classList.add("is-sync-highlight");
       window.setTimeout(() => target.classList.remove("is-sync-highlight"), 1100);
     };
-    node.addEventListener("mouseenter", syncMatchingProgram);
-    node.addEventListener("focusin", syncMatchingProgram);
     node.addEventListener("click", syncMatchingProgram);
   });
 }
@@ -2468,7 +2622,6 @@ function renderFormsPage() {
   const sortFilter = document.getElementById("form-sort-filter");
   const resetButton = document.getElementById("form-reset");
   const grid = document.getElementById("form-grid");
-  const summary = document.getElementById("form-summary");
   const metrics = document.getElementById("forms-detail-metrics");
   if (!searchInput || !programFilter || !sortFilter || !resetButton || !grid) {
     return;
@@ -2486,6 +2639,7 @@ function renderFormsPage() {
     .concat(programs.map((program) => optionHtml(program.id, localeField(program, "title"), state.filters.forms.program)))
     .join("");
   sortFilter.innerHTML = [
+    optionHtml("stage", t("forms.sortStage"), state.filters.forms.sort),
     optionHtml("materials", t("forms.sortMaterials"), state.filters.forms.sort),
     optionHtml("program", t("forms.sortProgram"), state.filters.forms.sort),
   ].join("");
@@ -2507,7 +2661,7 @@ function renderFormsPage() {
       renderFormsPage();
     });
     resetButton.addEventListener("click", () => {
-      state.filters.forms = { search: "", program: "all", sort: "materials" };
+      state.filters.forms = { search: "", program: "all", sort: "stage" };
       persistFilters();
       renderFormsPage();
     });
@@ -2520,13 +2674,6 @@ function renderFormsPage() {
       metaPill(`${t("common.openPrograms")} ${programs.filter((program) => program.status === "open").length}`),
       metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
     ].join("");
-  }
-  if (summary) {
-    summary.innerHTML = renderUtilityStrip([
-      { kicker: t("forms.useStep1Kicker"), title: t("forms.useStep1Title"), text: t("forms.useStep1Text"), meta: `${programs.length}` },
-      { kicker: t("forms.useStep2Kicker"), title: t("forms.useStep2Title"), text: t("forms.useStep2Text"), meta: `${programs.reduce((sum, program) => sum + programMaterialItems(program).length, 0)}` },
-      { kicker: t("forms.useStep3Kicker"), title: t("forms.useStep3Title"), text: t("forms.useStep3Text"), meta: t("common.viewOfficial") },
-    ]);
   }
 
   const query = state.filters.forms.search.toLowerCase();
@@ -2547,6 +2694,9 @@ function renderFormsPage() {
   });
 
   filtered = filtered.sort((left, right) => {
+    if (state.filters.forms.sort === "stage") {
+      return compareByCareerStage(left, right);
+    }
     if (state.filters.forms.sort === "program") {
       return localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en");
     }
@@ -2557,7 +2707,8 @@ function renderFormsPage() {
     ? filtered
         .map(
           (program) => {
-            const materials = programMaterialItems(program);
+            const materialGroups = programMaterialGroups(program);
+            const materials = materialGroups.flatMap((group) => group.items);
             return `
             <article class="document-card portal-form-card portal-material-card" id="${escapeHtml(program.id)}">
               <div class="portal-card-head">
@@ -2570,18 +2721,9 @@ function renderFormsPage() {
                   <a class="portal-material-official-link" href="${officialProgramHref(program.id)}"${linkTargetAttrs(officialProgramHref(program.id))}>${escapeHtml(t("common.viewOfficial"))}</a>
                 </div>
               </div>
-              <dl class="portal-material-list">
-                ${materials
-                  .map(
-                    (item) => `
-                    <div class="portal-material-row">
-                      <dt title="${escapeHtml(item.section || item.title)}">${escapeHtml(item.title)}${item.section ? `<span>${escapeHtml(item.section)}</span>` : ""}</dt>
-                      <dd>${materialLinksMarkup(item)}</dd>
-                    </div>
-                  `
-                  )
-                  .join("")}
-              </dl>
+              <div class="portal-material-list">
+                ${renderMaterialGroups(materialGroups)}
+              </div>
             </article>
           `;
           }
@@ -3038,6 +3180,23 @@ function sortCallEntries(entries, sortMode = "deadline") {
 
 function sortProgramsByDeadline(programs) {
   return programs.sort((left, right) => compareByDeadline(left, right));
+}
+
+function programCareerStageIndex(program) {
+  return PROGRAM_CAREER_STAGE_INDEX[program?.id] ?? PROGRAM_CAREER_STAGE_ORDER.length + statusWeight(program?.status || "unknown");
+}
+
+function compareByCareerStage(left, right) {
+  return (
+    programCareerStageIndex(left) - programCareerStageIndex(right) ||
+    statusWeight(left.status) - statusWeight(right.status) ||
+    compareByDeadline(left, right) ||
+    compareTitle(left, right)
+  );
+}
+
+function sortProgramsByCareerStage(programs) {
+  return programs.sort((left, right) => compareByCareerStage(left, right));
 }
 
 function timingInfoPill(label, value, tone = "default") {
