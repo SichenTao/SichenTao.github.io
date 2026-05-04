@@ -6,13 +6,13 @@
     <title>Page Not Found | Sichen Tao Research Portals</title>
     <link rel="canonical" href="https://sichentao.github.io/404.html" />
     <link rel="icon" href="./academic/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260504-215611" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260504-215611" />
-    <link rel="stylesheet" href="./portal.css?v=20260504-215611" />
-    <script src="/assets/shared/homepage-i18n.js?v=20260504-215611"></script>
-    <script src="/assets/shared/homepage-platform.js?v=20260504-215611"></script>
-    <script src="/assets/shared/homepage-components.js?v=20260504-215611"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260504-215611"></script>
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260505-001454" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260505-001454" />
+    <link rel="stylesheet" href="./portal.css?v=20260505-001454" />
+    <script src="/assets/shared/homepage-i18n.js?v=20260505-001454"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260505-001454"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260505-001454"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260505-001454"></script>
   </head>
   <body>
     <header class="shell site-header">
@@ -25,6 +25,7 @@
         <nav class="topnav" aria-label="Page navigation">
           <a href="./"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg><span>Portal</span></a>
           <a href="./academic/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-profiles"></use></svg><span>Homepage</span></a>
+          <a href="./frontier-digest/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-publications"></use></svg><span>Digest</span></a>
           <a href="./jsps-kakenhi/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg><span>JSPS</span></a>
         </nav>
       </div>
@@ -35,13 +36,14 @@
           <p class="eyebrow">404</p>
           <h1 id="not-found-title">Page not found</h1>
           <p id="not-found-body" class="hero-description">
-            The page you requested is not available here. Use the unified portal below to return to one of the three
-            active research sites.
+            The page you requested is not available here. Use the unified portal below to return to one of the active
+            research sites.
           </p>
           <div class="hero-actions">
             <a id="not-found-portal" class="button button-primary" href="./">Back to portal</a>
             <a id="not-found-academic" class="button" href="./academic/">Personal Homepage</a>
             <a id="not-found-frontier" class="button" href="./academic-frontier/">学术前沿</a>
+            <a id="not-found-digest" class="button" href="./frontier-digest/">Frontier Digest</a>
             <a id="not-found-jsps" class="button" href="./jsps-kakenhi/">JSPS workspace</a>
           </div>
         </div>
@@ -57,24 +59,27 @@
             portal: "Back to portal",
             academic: "Personal Homepage",
             frontier: "Academic Frontier",
+            digest: "Frontier Digest",
             jsps: "JSPS workspace",
           },
           zh: {
             title: "未找到页面 | Sichen Tao 研究门户",
             heading: "未找到该页面",
-            body: "你请求的页面当前不可用。可以从统一导航页重新进入个人主页、学术前沿或 JSPS 工作台。",
+            body: "你请求的页面当前不可用。可以从统一导航页重新进入个人主页、学术前沿、前沿摘要或 JSPS 工作台。",
             portal: "返回导航页",
             academic: "个人主页",
             frontier: "学术前沿",
+            digest: "前沿摘要",
             jsps: "JSPS 工作台",
           },
           ja: {
             title: "ページが見つかりません | Sichen Tao 研究ポータル",
             heading: "ページが見つかりません",
-            body: "リクエストされたページは利用できません。統一ポータルから個人ホームページ、学術前沿、JSPS ワークスペースへ戻れます。",
+            body: "リクエストされたページは利用できません。統一ポータルから個人ホームページ、学術前沿、ダイジェスト、JSPS ワークスペースへ戻れます。",
             portal: "ポータルへ戻る",
             academic: "個人ホームページ",
             frontier: "学術前沿",
+            digest: "ダイジェスト",
             jsps: "JSPS ワークスペース",
           },
         };
@@ -88,6 +93,7 @@
           document.getElementById("not-found-portal").textContent = text.portal;
           document.getElementById("not-found-academic").textContent = text.academic;
           document.getElementById("not-found-frontier").textContent = text.frontier;
+          document.getElementById("not-found-digest").textContent = text.digest;
           document.getElementById("not-found-jsps").textContent = text.jsps;
         }
 

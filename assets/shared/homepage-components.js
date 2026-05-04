@@ -126,6 +126,9 @@
     if (icon === "frontier" || icon === "radar") {
       return iconSprite("research", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
     }
+    if (icon === "digest") {
+      return iconSprite("publications", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
+    }
     if (icon === "jsps") {
       return '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />';
     }
@@ -172,6 +175,7 @@
           portal: ["Start", "Overview"],
           academic: ["Profile", "Records"],
           frontier: ["Papers", "Metrics"],
+          digest: ["Digest", "Reader"],
           jsps: ["Grants", "Deadlines"],
         },
       },
@@ -182,6 +186,7 @@
           portal: ["起点", "总览"],
           academic: ["身份", "记录"],
           frontier: ["论文", "分区"],
+          digest: ["摘要", "阅读器"],
           jsps: ["科研费", "时间线"],
         },
       },
@@ -192,6 +197,7 @@
           portal: ["起点", "概要"],
           academic: ["プロフィール", "記録"],
           frontier: ["論文", "指標"],
+          digest: ["要約", "リーダー"],
           jsps: ["科研費", "締切"],
         },
       },
@@ -221,11 +227,12 @@
           { label: "Navigation portal", href: "/" },
           { label: "Personal homepage", href: "/academic/" },
           { label: "Academic Frontier", href: "/academic-frontier/" },
+          { label: "Frontier Digest", href: "/frontier-digest/" },
           { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
         ],
         columns: [
           { title: "Homepage", items: ["Profile", "Publications", "Awards", "Projects"] },
-          { title: "Research Ops", items: ["Paper library", "Venue metrics", "Grant deadlines"] },
+          { title: "Research Ops", items: ["Paper library", "Daily digests", "Venue metrics", "Grant deadlines"] },
         ],
       },
       academic: {
@@ -259,6 +266,12 @@
         papers: [["Ledger view", "Cards", "Full abstracts"], ["JCR", "CAS", "Impact factor"]],
         metrics: [["Venue metrics", "JCR", "CAS", "IF"], ["Public evidence", "Source trail", "Year aware"]],
       },
+      digest: {
+        overview: [["Reader", "History", "Topics"], ["English canonical", "Chinese follow-up", "Three-language view"]],
+        reader: [["Cards", "Long-form reader", "Paragraph comparison"], ["Search", "Filters", "Source links"]],
+        archive: [["History", "Dates", "Review queue"], ["Daily notes", "Seed records", "Future automation"]],
+        topics: [["AI for Optimization", "HPC Systems", "LLM and Optimization"], ["Tags", "Watchlists", "Research signals"]],
+      },
       jsps: {
         calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
         deadlines: [["Timeline", "Submission dates", "System windows"], ["Upcoming", "Official dates", "Reminders"]],
@@ -274,11 +287,12 @@
           { label: "导航页", href: "/" },
           { label: "个人主页", href: "/academic/" },
           { label: "学术前沿", href: "/academic-frontier/" },
+          { label: "前沿摘要", href: "/frontier-digest/" },
           { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
         ],
         columns: [
           { title: "个人主页", items: ["个人身份", "发表论文", "获奖", "项目"] },
-          { title: "研究工作流", items: ["论文库", "分区指标", "科研费时间线"] },
+          { title: "研究工作流", items: ["论文库", "每日摘要", "分区指标", "科研费时间线"] },
         ],
       },
       academic: {
@@ -312,6 +326,12 @@
         papers: [["论文清单", "卡片视图", "完整摘要"], ["JCR", "中科院", "影响因子"]],
         metrics: [["期刊指标", "JCR", "中科院", "IF"], ["公开证据", "来源线索", "按年份追踪"]],
       },
+      digest: {
+        overview: [["阅读器", "历史文章", "主题"], ["英文原文", "中文跟读", "三语对照"]],
+        reader: [["卡片", "长文阅读", "段落对照"], ["搜索", "筛选", "来源链接"]],
+        archive: [["历史", "日期", "复习队列"], ["每日摘要", "种子记录", "自动化入口"]],
+        topics: [["AI 优化", "HPC 系统", "LLM 与优化"], ["标签", "观察列表", "研究信号"]],
+      },
       jsps: {
         calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
         deadlines: [["时间线", "提交日期", "系统开放"], ["近期截止", "官方日期", "提醒"]],
@@ -327,11 +347,12 @@
           { label: "ナビゲーション", href: "/" },
           { label: "個人ホームページ", href: "/academic/" },
           { label: "学術前沿", href: "/academic-frontier/" },
+          { label: "ダイジェスト", href: "/frontier-digest/" },
           { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
         ],
         columns: [
           { title: "個人ホームページ", items: ["プロフィール", "発表論文", "受賞", "プロジェクト"] },
-          { title: "研究ワークフロー", items: ["論文庫", "区分指標", "科研費締切"] },
+          { title: "研究ワークフロー", items: ["論文庫", "日次ダイジェスト", "区分指標", "科研費締切"] },
         ],
       },
       academic: {
@@ -365,6 +386,12 @@
         papers: [["論文一覧", "カード", "全文要旨"], ["JCR", "CAS", "インパクトファクター"]],
         metrics: [["会場指標", "JCR", "CAS", "IF"], ["公式情報", "公開根拠", "年次追跡"]],
       },
+      digest: {
+        overview: [["リーダー", "履歴", "トピック"], ["英語原文", "中国語併読", "三言語対照"]],
+        reader: [["カード", "長文リーダー", "段落対照"], ["検索", "フィルタ", "出典リンク"]],
+        archive: [["履歴", "日付", "復習キュー"], ["日次ノート", "初期レコード", "自動化入口"]],
+        topics: [["AI 最適化", "HPC システム", "LLM と最適化"], ["タグ", "ウォッチリスト", "研究シグナル"]],
+      },
       jsps: {
         calls: [["プログラム", "対象者", "優先度"], ["募集中", "区分", "申請者"]],
         deadlines: [["年表", "提出日", "システム期間"], ["今後の締切", "公式日程", "リマインド"]],
@@ -384,6 +411,7 @@
   function siteFromPath(pathname = global.location?.pathname || "/") {
     const path = decodeURIComponent(pathname);
     if (path.startsWith("/academic-frontier/")) return "frontier";
+    if (path.startsWith("/frontier-digest/")) return "digest";
     if (path.startsWith("/jsps-kakenhi/")) return "jsps";
     if (path.startsWith("/academic/")) return "academic";
     return "portal";
@@ -393,7 +421,14 @@
     if (!href) return "";
     let path = href;
     try {
-      path = new URL(href, global.location?.href || "https://sichentao.github.io/").pathname;
+      const parsed = new URL(href, global.location?.href || "https://sichentao.github.io/");
+      path = parsed.pathname;
+      if (site === "digest" && parsed.hash) {
+        const hashKey = parsed.hash.replace(/^#/, "");
+        if (["reader", "archive", "topics"].includes(hashKey)) {
+          return hashKey;
+        }
+      }
     } catch {}
     const clean = decodeURIComponent(path).replace(/\/(?:zh|ja)\//, "/");
     const file = clean.split("/").pop() || "index.html";
@@ -405,12 +440,17 @@
       if (file === "index.html" || clean.endsWith("/academic-frontier/")) return "overview";
       return file.replace(/\.html$/, "");
     }
+    if (site === "digest") {
+      if (file === "index.html" || clean.endsWith("/frontier-digest/")) return "overview";
+      return file.replace(/\.html$/, "");
+    }
     if (site === "jsps") {
       if (file === "index.html" || clean.endsWith("/jsps-kakenhi/")) return "calls";
       return file.replace(/\.html$/, "");
     }
     if (clean === "/") return "workspace";
     if (clean.startsWith("/academic-frontier/")) return "frontier";
+    if (clean.startsWith("/frontier-digest/")) return "digest";
     if (clean.startsWith("/jsps-kakenhi/")) return "jsps";
     if (clean.startsWith("/academic/")) return "academic";
     return "workspace";
@@ -449,6 +489,12 @@
       overview: ["#papers", "#pub-search", "#filter-toolbar-label"],
       papers: ["#paperList", "#paperList", "#paperList"],
       metrics: ["#venueMetricsList", "#metric-search", "#metric-filter-toolbar-label", "#venueMetricsList"],
+    },
+    digest: {
+      overview: ["#reader", "#archive", "#topics"],
+      reader: ["#digest-feed-list", "#digest-article", "#digest-article"],
+      archive: ["#digest-history-list", "#digest-history-list", "#digest-history-list"],
+      topics: ["#digest-topic-chips", "#digest-topic-filter", "#digest-feed-list"],
     },
     jsps: {
       calls: ["#call-list", "#call-search", "#call-list"],

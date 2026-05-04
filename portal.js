@@ -84,7 +84,7 @@ const I18N = {
     page: {
       title: "Sichen Tao | Research Portal",
       description:
-        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, and JSPS KAKENHI workspace.",
+        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Frontier Digest, and JSPS KAKENHI workspace.",
     },
     controls: {
       display: "Display controls",
@@ -104,6 +104,7 @@ const I18N = {
       portal: "Portal",
       academic: "Personal Homepage",
       frontier: "Academic Frontier",
+      digest: "Frontier Digest",
       jsps: "JSPS KAKENHI",
     },
     hero: {
@@ -135,6 +136,11 @@ const I18N = {
         intro: "A research workspace for paper records, source links, and venue metrics.",
         action: "Open frontier",
       },
+      digest: {
+        name: "Frontier Digest",
+        intro: "A mobile-friendly reader for daily frontier notes, article history, filters, and multilingual comparison.",
+        action: "Open reader",
+      },
       jsps: {
         name: "JSPS KAKENHI",
         intro: "A grant-work workspace for calls, forms, deadlines, guides, and official sources.",
@@ -154,6 +160,7 @@ const I18N = {
             items: [
               { label: "Personal Homepage", href: "/academic/" },
               { label: "Academic Frontier", href: "/academic-frontier/" },
+              { label: "Frontier Digest", href: "/frontier-digest/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -207,6 +214,7 @@ const I18N = {
             title: "Related Workspaces",
             items: [
               { label: "Personal Homepage", href: "/academic/" },
+              { label: "Frontier Digest", href: "/frontier-digest/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -214,6 +222,32 @@ const I18N = {
             title: "Site",
             items: [
               { label: "Return to portal", href: "/" },
+            ],
+          },
+        ],
+      },
+      digest: {
+        eyebrow: "Frontier Digest",
+        primary: [
+          { label: "Reader", href: "/frontier-digest/#reader" },
+          { label: "History", href: "/frontier-digest/#archive" },
+          { label: "Topics", href: "/frontier-digest/#topics" },
+        ],
+        columns: [
+          {
+            title: "Related Workspaces",
+            items: [
+              { label: "Academic Frontier", href: "/academic-frontier/" },
+              { label: "Personal Homepage", href: "/academic/" },
+              { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
+            ],
+          },
+          {
+            title: "Reading Modes",
+            items: [
+              { label: "English canonical", href: "/frontier-digest/#reader" },
+              { label: "English + Chinese", href: "/frontier-digest/#reader" },
+              { label: "Three-language view", href: "/frontier-digest/#reader" },
             ],
           },
         ],
@@ -249,7 +283,7 @@ const I18N = {
   zh: {
     page: {
       title: "陶思晨 | 研究导航页",
-      description: "统一进入个人主页、学术前沿与 JSPS 科研费工作台的研究导航页。",
+      description: "统一进入个人主页、学术前沿、前沿摘要与 JSPS 科研费工作台的研究导航页。",
     },
     controls: {
       display: "显示控制",
@@ -269,6 +303,7 @@ const I18N = {
       portal: "导航页",
       academic: "个人主页",
       frontier: "学术前沿",
+      digest: "前沿摘要",
       jsps: "JSPS 科研费",
     },
     hero: {
@@ -299,6 +334,11 @@ const I18N = {
         intro: "用于论文记录、来源入口与分区指标整理的研究工作空间。",
         action: "打开前沿页",
       },
+      digest: {
+        name: "前沿摘要",
+        intro: "面向每日前沿信息的手机友好阅读器，支持历史文章、筛选和段落级多语言对照。",
+        action: "进入阅读器",
+      },
       jsps: {
         name: "JSPS 科研费",
         intro: "集中处理公募、材料、截止时间与申请指南的科研费工作空间。",
@@ -318,6 +358,7 @@ const I18N = {
             items: [
               { label: "个人主页", href: "/academic/" },
               { label: "学术前沿", href: "/academic-frontier/" },
+              { label: "前沿摘要", href: "/frontier-digest/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -371,6 +412,7 @@ const I18N = {
             title: "相关工作区",
             items: [
               { label: "个人主页", href: "/academic/" },
+              { label: "前沿摘要", href: "/frontier-digest/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -378,6 +420,32 @@ const I18N = {
             title: "站点",
             items: [
               { label: "返回导航页", href: "/" },
+            ],
+          },
+        ],
+      },
+      digest: {
+        eyebrow: "前沿摘要",
+        primary: [
+          { label: "阅读器", href: "/frontier-digest/#reader" },
+          { label: "历史文章", href: "/frontier-digest/#archive" },
+          { label: "主题筛选", href: "/frontier-digest/#topics" },
+        ],
+        columns: [
+          {
+            title: "相关工作区",
+            items: [
+              { label: "学术前沿", href: "/academic-frontier/" },
+              { label: "个人主页", href: "/academic/" },
+              { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
+            ],
+          },
+          {
+            title: "阅读模式",
+            items: [
+              { label: "英文原文", href: "/frontier-digest/#reader" },
+              { label: "英文 + 中文", href: "/frontier-digest/#reader" },
+              { label: "三语对照", href: "/frontier-digest/#reader" },
             ],
           },
         ],
@@ -413,7 +481,7 @@ const I18N = {
   ja: {
     page: {
       title: "陶思晨 | 研究ポータル",
-      description: "個人ホームページ、学術フロンティア、JSPS科研費ワークスペースへ入る統合ポータル。",
+      description: "個人ホームページ、学術フロンティア、ダイジェスト、JSPS科研費ワークスペースへ入る統合ポータル。",
     },
     controls: {
       display: "表示コントロール",
@@ -433,6 +501,7 @@ const I18N = {
       portal: "ポータル",
       academic: "個人ホームページ",
       frontier: "学術フロンティア",
+      digest: "ダイジェスト",
       jsps: "JSPS科研費",
     },
     hero: {
@@ -463,6 +532,11 @@ const I18N = {
         intro: "論文記録、ソース導線、分区指標を整理する研究ワークスペースです。",
         action: "フロンティアを開く",
       },
+      digest: {
+        name: "フロンティア・ダイジェスト",
+        intro: "日次フロンティアノートを読むためのモバイル対応リーダー。履歴、フィルタ、段落単位の多言語対照に対応します。",
+        action: "リーダーを開く",
+      },
       jsps: {
         name: "JSPS科研費",
         intro: "公募、様式、締切、ガイドをまとめた科研費実務ワークスペースです。",
@@ -482,6 +556,7 @@ const I18N = {
             items: [
               { label: "個人ホームページ", href: "/academic/" },
               { label: "学術フロンティア", href: "/academic-frontier/" },
+              { label: "ダイジェスト", href: "/frontier-digest/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -535,6 +610,7 @@ const I18N = {
             title: "関連ワークスペース",
             items: [
               { label: "個人ホームページ", href: "/academic/" },
+              { label: "ダイジェスト", href: "/frontier-digest/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -542,6 +618,32 @@ const I18N = {
             title: "サイト",
             items: [
               { label: "ポータルへ戻る", href: "/" },
+            ],
+          },
+        ],
+      },
+      digest: {
+        eyebrow: "フロンティア・ダイジェスト",
+        primary: [
+          { label: "リーダー", href: "/frontier-digest/#reader" },
+          { label: "履歴", href: "/frontier-digest/#archive" },
+          { label: "トピック", href: "/frontier-digest/#topics" },
+        ],
+        columns: [
+          {
+            title: "関連ワークスペース",
+            items: [
+              { label: "学術前沿", href: "/academic-frontier/" },
+              { label: "個人ホームページ", href: "/academic/" },
+              { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
+            ],
+          },
+          {
+            title: "読書モード",
+            items: [
+              { label: "英語原文", href: "/frontier-digest/#reader" },
+              { label: "英語 + 中国語", href: "/frontier-digest/#reader" },
+              { label: "三言語対照", href: "/frontier-digest/#reader" },
             ],
           },
         ],
@@ -725,6 +827,7 @@ function renderTopnav() {
     <a href="/" aria-current="page" data-portal-menu-key="portal" aria-haspopup="true" aria-expanded="false">${iconSprite("home")}<span>${escapeHtml(text.nav.portal)}</span></a>
     <a href="${portalHref("/academic/")}" data-portal-menu-key="academic" aria-haspopup="true" aria-expanded="false">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
     <a href="${portalHref("/academic-frontier/")}" data-portal-menu-key="frontier" aria-haspopup="true" aria-expanded="false">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
+    <a href="${portalHref("/frontier-digest/")}" data-portal-menu-key="digest" aria-haspopup="true" aria-expanded="false">${iconSprite("publications")}<span>${escapeHtml(text.nav.digest)}</span></a>
     <a href="${portalHref("/jsps-kakenhi/")}" data-portal-menu-key="jsps" aria-haspopup="true" aria-expanded="false">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
   `;
 }
@@ -943,6 +1046,14 @@ function cardIconMarkup(siteKey) {
     `;
   }
 
+  if (siteKey === "digest") {
+    return `
+      <span class="portal-card-icon portal-card-icon--svg" aria-hidden="true">
+        ${iconSprite("publications")}
+      </span>
+    `;
+  }
+
   return `
     <span class="portal-card-icon portal-card-icon--logo" aria-hidden="true">
       <img src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />
@@ -980,6 +1091,15 @@ function renderCards() {
       title: text.cards.frontier.name,
       intro: text.cards.frontier.intro,
       action: text.cards.frontier.action,
+    },
+    {
+      key: "digest",
+      href: portalHref("/frontier-digest/"),
+      className: "portal-card-digest",
+      icon: cardIconMarkup("digest"),
+      title: text.cards.digest.name,
+      intro: text.cards.digest.intro,
+      action: text.cards.digest.action,
     },
     {
       key: "jsps",
