@@ -9,7 +9,7 @@
     />
     <link rel="canonical" href="https://sichentao.github.io/jsps-kakenhi/deadlines.html" />
     <meta name="theme-color" content="#f3eef9" />
-    <title>时间线 | JSPS 研究资助与研究员工作台</title>
+    <title>时间线与项目入口 | JSPS 研究资助与研究员工作台</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -47,15 +47,15 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260504-164144" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260504-164144" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260504-164144" />
-    <script src="./data/kakenhi-data.js?v=20260504-164144"></script>
-    <script src="/assets/shared/homepage-i18n.js?v=20260504-164144"></script>
-    <script src="/assets/shared/homepage-platform.js?v=20260504-164144"></script>
-    <script src="/assets/shared/homepage-components.js?v=20260504-164144"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260504-164144"></script>
-    <script defer src="./app.js?v=20260504-164144"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260504-171253" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260504-171253" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260504-171253" />
+    <script src="./data/kakenhi-data.js?v=20260504-171253"></script>
+    <script src="/assets/shared/homepage-i18n.js?v=20260504-171253"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260504-171253"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260504-171253"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260504-171253"></script>
+    <script defer src="./app.js?v=20260504-171253"></script>
   </head>
   <body data-page="deadlines">
     <div class="page-wash"></div>
@@ -75,7 +75,6 @@
           <a href="./deadlines.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
           <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">获取材料</span></a>
           <a href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指南</span></a>
-          <a href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="nav.sources">官方来源</span></a>
         </nav>
       </div>
     </header>
@@ -84,45 +83,27 @@
       <section class="panel section-card reveal">
         <div class="section-head">
           <div>
-            <h2 data-i18n="deadlines.timelineTitle">关键事件时间线</h2>
+            <p class="eyebrow" data-i18n="deadlines.kicker">时间安排</p>
+            <h2 data-i18n="deadlines.timelineTitle">关键事件与项目入口</h2>
+            <p class="section-note" data-i18n="deadlines.lede">左侧扫读通知、公募开始、电子系统开放和 JSPS 官方截止，右侧同步保留项目入口；鼠标移动或聚焦任一侧会定位对应项目，点击仍直接进入官方页面。</p>
           </div>
+          <div id="deadlines-detail-metrics" class="meta-strip"></div>
         </div>
-        <div id="deadline-timeline" class="timeline"></div>
-      </section>
-
-      <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="deadlines.tableTitle">精确时间表</h2>
-          </div>
-        </div>
-        <div class="portal-table-wrap">
-          <table class="portal-table">
-            <thead>
-              <tr>
-                <th data-i18n="deadlines.colProgram">项目</th>
-                <th data-i18n="deadlines.colType">节点</th>
-                <th data-i18n="deadlines.colDate">日期</th>
-                <th data-i18n="deadlines.colNote">说明</th>
-              </tr>
-            </thead>
-            <tbody id="deadline-table-body"></tbody>
-          </table>
+        <div id="deadline-workbench" class="portal-timeline-workbench-grid">
+          <aside class="portal-timeline-pane portal-linked-timeline-pane">
+            <div class="portal-timeline-pane-head">
+              <h3 data-i18n="deadlines.timelinePane">时间线</h3>
+            </div>
+            <div id="deadline-timeline" class="timeline"></div>
+          </aside>
+          <section class="portal-timeline-pane">
+            <div class="portal-timeline-pane-head">
+              <h3 data-i18n="deadlines.programPane">项目入口</h3>
+            </div>
+            <div id="deadline-programs" class="portal-linked-program-stack"></div>
+          </section>
         </div>
       </section>
     </main>
-
-    <footer class="shell footer-shell reveal">
-      <div class="footer-panel">
-        <div>
-          <p class="eyebrow" data-i18n="footer.resources">Resources</p>
-          <h2 data-i18n="deadlines.footerTitle">时间确认后，就进入材料准备阶段</h2>
-        </div>
-        <div class="footer-actions">
-          <a class="button button-primary" href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="footer.forms">查看获取材料</span></a>
-          <a class="button button-secondary" href="./guides.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="footer.guides">查看申请指南</span></a>
-        </div>
-      </div>
-    </footer>
   </body>
 </html>

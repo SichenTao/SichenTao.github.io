@@ -235,10 +235,11 @@ const I18N = {
             ],
           },
           {
-            title: "Evidence",
+            title: "Workflow",
             items: [
-              { label: "Official sources", href: "/jsps-kakenhi/sources.html" },
-              { label: "Snapshot archive", href: "/jsps-kakenhi/archive.html" },
+              { label: "Timeline", href: "/jsps-kakenhi/deadlines.html" },
+              { label: "Get materials", href: "/jsps-kakenhi/forms.html" },
+              { label: "Guidance", href: "/jsps-kakenhi/guides.html" },
             ],
           },
         ],
@@ -300,7 +301,7 @@ const I18N = {
       },
       jsps: {
         name: "JSPS 科研费",
-        intro: "集中处理公募、表格、截止时间、指南与官方来源的科研费工作空间。",
+        intro: "集中处理公募、材料、截止时间与申请指南的科研费工作空间。",
         action: "打开工作台",
       },
     },
@@ -398,10 +399,11 @@ const I18N = {
             ],
           },
           {
-            title: "证据",
+            title: "工作流",
             items: [
-              { label: "官方来源", href: "/jsps-kakenhi/sources.html" },
-              { label: "快照归档", href: "/jsps-kakenhi/archive.html" },
+              { label: "时间线", href: "/jsps-kakenhi/deadlines.html" },
+              { label: "获取材料", href: "/jsps-kakenhi/forms.html" },
+              { label: "申请指南", href: "/jsps-kakenhi/guides.html" },
             ],
           },
         ],
@@ -561,10 +563,11 @@ const I18N = {
             ],
           },
           {
-            title: "根拠",
+            title: "ワークフロー",
             items: [
-              { label: "公式ソース", href: "/jsps-kakenhi/sources.html" },
-              { label: "アーカイブ", href: "/jsps-kakenhi/archive.html" },
+              { label: "タイムライン", href: "/jsps-kakenhi/deadlines.html" },
+              { label: "資料取得", href: "/jsps-kakenhi/forms.html" },
+              { label: "申請ガイド", href: "/jsps-kakenhi/guides.html" },
             ],
           },
         ],

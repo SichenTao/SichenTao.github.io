@@ -47,15 +47,15 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260504-164144" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260504-164144" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260504-164144" />
-    <script src="./data/kakenhi-data.js?v=20260504-164144"></script>
-    <script src="/assets/shared/homepage-i18n.js?v=20260504-164144"></script>
-    <script src="/assets/shared/homepage-platform.js?v=20260504-164144"></script>
-    <script src="/assets/shared/homepage-components.js?v=20260504-164144"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260504-164144"></script>
-    <script defer src="./app.js?v=20260504-164144"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260504-171253" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260504-171253" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260504-171253" />
+    <script src="./data/kakenhi-data.js?v=20260504-171253"></script>
+    <script src="/assets/shared/homepage-i18n.js?v=20260504-171253"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260504-171253"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260504-171253"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260504-171253"></script>
+    <script defer src="./app.js?v=20260504-171253"></script>
   </head>
   <body data-page="guides">
     <div class="page-wash"></div>
@@ -75,7 +75,6 @@
           <a href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="nav.deadlines">时间线</span></a>
           <a href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="nav.forms">获取材料</span></a>
           <a href="./guides.html" aria-current="page"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-research"></use></svg><span data-i18n="nav.guides">申请指南</span></a>
-          <a href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="nav.sources">官方来源</span></a>
         </nav>
       </div>
     </header>
@@ -84,19 +83,14 @@
       <section class="panel section-card reveal">
         <div class="section-head">
           <div>
-            <h2 data-i18n="guides.gridTitle">关键申请入口</h2>
+            <p class="eyebrow" data-i18n="guides.kicker">官方指引</p>
+            <h2 data-i18n="guides.title">申请指南</h2>
+            <p class="section-note" data-i18n="guides.lede">这一页不做第二个材料库，而是把申请前必须反复核对的系统入口、FAQ、制度文件与项目提醒组织成检查清单。</p>
           </div>
+          <div id="guides-detail-metrics" class="meta-strip"></div>
         </div>
-        <div id="guide-grid" class="card-grid portal-card-grid"></div>
-      </section>
-
-      <section class="panel section-card reveal">
-        <div class="section-head">
-          <div>
-            <h2 data-i18n="guides.watchTitle">重点项目提醒</h2>
-          </div>
-        </div>
-        <div id="guide-watch-grid" class="card-grid portal-card-grid"></div>
+        <div id="guide-summary" class="portal-utility-strip"></div>
+        <div id="guide-grid" class="portal-guide-workbench"></div>
       </section>
     </main>
 
@@ -107,7 +101,8 @@
           <h2 data-i18n="guides.footerTitle">官方指引核对完，再看来源和归档</h2>
         </div>
         <div class="footer-actions">
-          <a class="button button-primary" href="./sources.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-sources"></use></svg><span data-i18n="footer.sources">查看官方来源</span></a>
+          <a class="button button-primary" href="./forms.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-publications"></use></svg><span data-i18n="footer.forms">获取材料</span></a>
+          <a class="button button-secondary" href="./deadlines.html"><svg class="ui-icon" aria-hidden="true"><use href="./assets/icons/ui-icons.svg#icon-timeline"></use></svg><span data-i18n="footer.deadlines">查看时间线</span></a>
         </div>
       </div>
     </footer>

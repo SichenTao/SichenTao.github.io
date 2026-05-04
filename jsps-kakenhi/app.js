@@ -31,7 +31,6 @@ const I18N = {
       home: "首页",
       calls: "项目目录",
       deadlines: "时间线",
-      "timeline-test": "联动测试首页",
       forms: "获取材料",
       guides: "申请指南",
       sources: "官方来源",
@@ -123,7 +122,7 @@ const I18N = {
       focusLabel: "今年重点",
       focusRole: "研究活动启动支援 · 若手研究",
       focusNote: "当前开放项目、近期截止与关键材料的一体化工作台。",
-      lede: "先看今年最值得关注的重点项目，再沿着时间线、材料与官方来源进入细节。",
+      lede: "先看今年最值得关注的重点项目，再沿着时间线、材料与官方页面进入细节。",
       snapshotTitle: "数据日期",
       priorityKicker: "重点项目",
       prioritySection: "重点项目",
@@ -189,29 +188,24 @@ const I18N = {
     program: {
       kicker: "项目详情",
       title: "项目详情",
-      lede: "这一页承接首页卡片，集中查看单个项目的官方入口、申请资料、历年参考与官方来源。",
+      lede: "这一页承接首页卡片，集中查看单个项目的官方入口、申请资料与历年参考。",
       backToCatalog: "返回项目目录",
       notFoundTitle: "未找到对应项目",
       notFoundText: "这个项目链接可能已失效、已更名，或尚未整理完成，请返回首页重新浏览。",
     },
     deadlines: {
       kicker: "时间安排",
-      title: "时间线与截止",
-      lede: "用一页汇总已收录种目的通知发布、公募开始、电子系统开放和 JSPS 官方截止时间，避免只看网页却错过关键节点。",
-      timelineTitle: "关键事件时间线",
+      title: "时间线与项目入口",
+      lede: "左侧扫读通知、公募开始、电子系统开放和 JSPS 官方截止，右侧同步保留项目入口；鼠标移动或聚焦任一侧会定位对应项目，点击仍直接进入官方页面。",
+      timelineTitle: "关键事件与项目入口",
+      timelinePane: "时间线",
+      programPane: "项目入口",
       tableTitle: "精确时间表",
       colProgram: "项目",
       colType: "节点",
       colDate: "日期",
       colNote: "说明",
       footerTitle: "时间确认后，就进入材料准备阶段",
-    },
-    timelineTest: {
-      nav: "联动测试首页",
-      title: "时间线联动测试首页",
-      lede: "左侧保留时间线扫读，右侧保留项目入口；点击任一侧会定位另一侧，同时项目入口仍直接打开官方页面。",
-      timelinePane: "时间线",
-      programPane: "项目入口",
     },
     forms: {
       kicker: "官方材料",
@@ -223,18 +217,42 @@ const I18N = {
       sortMaterials: "按材料数量",
       sortProgram: "按项目",
       footerTitle: "材料确认后，再去核对流程和 FAQ",
+      useStep1Kicker: "用途",
+      useStep1Title: "先锁定项目",
+      useStep1Text: "材料页只解决“我要下载哪一组官方文件”，不承担制度解释。",
+      useStep2Kicker: "文件",
+      useStep2Title: "集中下载材料",
+      useStep2Text: "通知、公募要领、填写说明、样式文件和附件入口统一放在同一张项目卡中。",
+      useStep3Kicker: "核验",
+      useStep3Title: "最终回到官方页",
+      useStep3Text: "本页负责节省查找成本，提交前仍以对应官方页面的最新状态为准。",
     },
     guides: {
       kicker: "官方指引",
       title: "申请指南",
-      lede: "这一页不只是罗列链接，而是把最值得反复核对的 FAQ、e-Rad、电子申报系统和重点资料集中到一起，便于申请前系统检查。",
+      lede: "这一页不做第二个材料库，而是把申请前必须反复核对的系统入口、FAQ、制度文件与项目提醒组织成检查清单。",
       gridTitle: "关键申请入口",
       watchTitle: "重点项目与项目群提醒",
       commonTitle: "通用重要信息",
       programNotesTitle: "个别项目重要信息",
+      coreTitle: "通用流程入口",
+      coreText: "先确认制度总入口、FAQ、电子申报系统和 e-Rad；这些决定能否顺利进入正式提交。",
+      documentTitle: "重点官方文件",
+      documentText: "只保留外部官方页和官方文件，避免把归档入口误认为正式依据。",
+      watchChecklistTitle: "项目提醒清单",
+      watchChecklistText: "把容易影响申请节奏的项目差异放在一起，例如截止时间、轮次、电子系统和英文材料状态。",
       startupWatch: "研究活動スタート支援",
       youngWatch: "若手研究",
-      footerTitle: "官方指引核对完，再看官方来源",
+      footerTitle: "指南核对完，就回到材料和时间线交叉确认",
+      useStep1Kicker: "系统",
+      useStep1Title: "先确认能不能提交",
+      useStep1Text: "e-Rad、电子申报系统、资格赋予和 FAQ 是申请能否运行的前置条件。",
+      useStep2Kicker: "文件",
+      useStep2Title: "再看制度文件",
+      useStep2Text: "指南页只放会影响理解和填写策略的官方文件，具体下载仍回材料页。",
+      useStep3Kicker: "提醒",
+      useStep3Title: "最后查项目差异",
+      useStep3Text: "不同项目的轮次、截止和材料状态不同，需要用提醒清单做最后扫读。",
     },
     sources: {
       kicker: "来源追踪",
@@ -299,7 +317,6 @@ const I18N = {
       home: "Home",
       calls: "Calls",
       deadlines: "Timeline",
-      "timeline-test": "Linked Timeline Test",
       forms: "Get Materials",
       guides: "Guidance",
       sources: "Sources",
@@ -391,7 +408,7 @@ const I18N = {
       focusLabel: "Current priorities",
       focusRole: "Research Activity Start-up Support · Early-Career Scientists",
       focusNote: "A single workspace for open calls, upcoming deadlines, and the materials that matter most.",
-      lede: "Start from the calls that deserve attention this year, then move into the timeline, materials, and official evidence.",
+      lede: "Start from the calls that deserve attention this year, then move into the timeline, materials, and official pages.",
       snapshotTitle: "Data date",
       priorityKicker: "Priority calls",
       prioritySection: "Priority programs",
@@ -464,22 +481,17 @@ const I18N = {
     },
     deadlines: {
       kicker: "Schedule",
-      title: "Timeline and Deadlines",
-      lede: "See notice dates, call opening dates, electronic system availability, and the official JSPS deadlines for the programs currently captured in this workspace.",
-      timelineTitle: "Key event timeline",
+      title: "Timeline and Program Entries",
+      lede: "Scan notices, call openings, electronic-system windows, and JSPS deadlines on the left while keeping official program entries on the right. Hover or focus either side to align the matching program; clicking still opens the official page.",
+      timelineTitle: "Key events and program entries",
+      timelinePane: "Timeline",
+      programPane: "Program entries",
       tableTitle: "Exact schedule table",
       colProgram: "Program",
       colType: "Milestone",
       colDate: "Date",
       colNote: "Notes",
       footerTitle: "Once the dates are clear, move into the form-preparation phase",
-    },
-    timelineTest: {
-      nav: "Linked test home",
-      title: "Linked Timeline Test Home",
-      lede: "The timeline stays on the left and program entries stay on the right; selecting either side highlights the matching item while links still open the official page.",
-      timelinePane: "Timeline",
-      programPane: "Program entries",
     },
     forms: {
       kicker: "Official Materials",
@@ -491,18 +503,42 @@ const I18N = {
       sortMaterials: "Most materials",
       sortProgram: "By program",
       footerTitle: "After checking the materials, review the procedural context and FAQ",
+      useStep1Kicker: "Use",
+      useStep1Title: "Start from the target program",
+      useStep1Text: "The materials page answers which official file set to download; it is not the place for interpreting the scheme.",
+      useStep2Kicker: "Files",
+      useStep2Title: "Download in one place",
+      useStep2Text: "Notices, application procedures, entry guidance, forms, and attachments are grouped on the same program card.",
+      useStep3Kicker: "Verify",
+      useStep3Title: "Return to the official page",
+      useStep3Text: "This page reduces lookup cost, but the official page remains the final authority before submission.",
     },
     guides: {
       kicker: "Official Guides",
       title: "Application Guidance",
-      lede: "This page goes beyond a plain link list by consolidating the FAQ, e-Rad, the electronic application system, and the most useful reference documents for repeated checks during proposal preparation.",
+      lede: "This page is not a second materials library. It turns the system links, FAQ, scheme documents, and program-specific reminders into a pre-submission checklist.",
       gridTitle: "Core application entry points",
       watchTitle: "Priority calls and program-hub watchpoints",
       commonTitle: "General important information",
       programNotesTitle: "Program-specific important information",
+      coreTitle: "Core process links",
+      coreText: "Check the public-call index, FAQ, electronic application system, and e-Rad first; they decide whether a formal submission can actually proceed.",
+      documentTitle: "Key official documents",
+      documentText: "Only external official pages and files are shown here, so archived entries are not mistaken for the live authority.",
+      watchChecklistTitle: "Program reminder checklist",
+      watchChecklistText: "Program differences that affect timing are grouped here: deadlines, rounds, system windows, and pending English materials.",
       startupWatch: "Research Activity Start-up Support",
       youngWatch: "Early-Career Scientists",
-      footerTitle: "After checking the guides, review the official sources",
+      footerTitle: "After checking guidance, cross-check materials and timeline again",
+      useStep1Kicker: "System",
+      useStep1Title: "Confirm submission readiness first",
+      useStep1Text: "e-Rad, the electronic application system, eligibility assignment, and FAQ are prerequisites for a runnable application.",
+      useStep2Kicker: "Documents",
+      useStep2Title: "Then read the scheme documents",
+      useStep2Text: "Guidance keeps documents that affect interpretation and writing strategy; detailed downloads still live on the materials page.",
+      useStep3Kicker: "Reminders",
+      useStep3Title: "Finally check program differences",
+      useStep3Text: "Rounds, deadlines, and material status vary by program, so the reminders provide a last scan before drafting.",
     },
     sources: {
       kicker: "Provenance",
@@ -569,7 +605,6 @@ I18N.ja = {
     home: "ホーム",
     calls: "ホーム",
     deadlines: "タイムライン",
-    "timeline-test": "連動テストページ",
     forms: "資料取得",
     guides: "申請ガイド",
     sources: "公式ソース",
@@ -702,22 +737,17 @@ I18N.ja = {
   },
   deadlines: {
     kicker: "スケジュール",
-    title: "タイムラインと締切",
-    lede: "収録済みの科研費種目について、告知、公募開始、電子申請システム公開、公式締切を 1 ページで確認します。",
-    timelineTitle: "重要イベントのタイムライン",
+    title: "タイムラインと種目入口",
+    lede: "左側で告知、公募開始、電子申請システム公開、JSPS 公式締切を確認し、右側に公式種目入口を残します。どちらかにホバーまたはフォーカスすると対応項目がそろい、クリック時は公式ページを開きます。",
+    timelineTitle: "重要イベントと種目入口",
+    timelinePane: "タイムライン",
+    programPane: "種目入口",
     tableTitle: "詳細スケジュール",
     colProgram: "種目",
     colType: "区分",
     colDate: "日付",
     colNote: "メモ",
     footerTitle: "日程を確認したら、次は書類準備へ進みます",
-  },
-  timelineTest: {
-    nav: "連動テストホーム",
-    title: "タイムライン連動テストホーム",
-    lede: "左にタイムライン、右に種目入口を置き、どちらを選んでも対応項目を強調します。リンク先は公式ページのままです。",
-    timelinePane: "タイムライン",
-    programPane: "種目入口",
   },
   forms: {
     kicker: "公式資料",
@@ -729,18 +759,42 @@ I18N.ja = {
     sortMaterials: "資料数順",
     sortProgram: "種目順",
     footerTitle: "資料を確認したら、次は手順と FAQ を補います",
+    useStep1Kicker: "用途",
+    useStep1Title: "対象種目を先に固定",
+    useStep1Text: "資料取得ページは、どの公式資料セットを落とすかを決めるためのページです。制度解釈はガイド側で確認します。",
+    useStep2Kicker: "資料",
+    useStep2Title: "必要ファイルをまとめて取得",
+    useStep2Text: "通知、公募要領、記入要領、様式、添付資料への入口を種目カードごとにまとめます。",
+    useStep3Kicker: "確認",
+    useStep3Title: "最後は公式ページへ戻る",
+    useStep3Text: "このページは探索コストを下げるための整理であり、提出前の最終確認は公式ページを基準にします。",
   },
   guides: {
     kicker: "公式ガイド",
     title: "申請ガイド",
-    lede: "FAQ、e-Rad、電子申請システム、重要資料をまとめて見直せるようにした確認ページです。",
+    lede: "資料庫をもう一つ作るのではなく、申請前に繰り返し確認すべきシステム入口、FAQ、制度資料、種目別注意点をチェックリスト化します。",
     gridTitle: "主要な申請入口",
     watchTitle: "重点種目とプログラム群の確認ポイント",
     commonTitle: "共通の重要情報",
     programNotesTitle: "種目別の重要情報",
+    coreTitle: "共通手続き入口",
+    coreText: "公募情報、FAQ、電子申請システム、e-Rad を先に確認します。これらは正式提出が進められるかを左右します。",
+    documentTitle: "重要な公式資料",
+    documentText: "外部の公式ページと公式ファイルだけを表示し、アーカイブ入口を正式根拠と誤認しないようにします。",
+    watchChecklistTitle: "種目別リマインダー",
+    watchChecklistText: "締切、募集回、電子申請システム、英語資料の準備状況など、申請日程に影響する差分をまとめます。",
     startupWatch: "研究活動スタート支援",
     youngWatch: "若手研究",
-    footerTitle: "ガイド確認後は、公式ソースを見直します",
+    footerTitle: "ガイド確認後は、資料とタイムラインを再確認します",
+    useStep1Kicker: "システム",
+    useStep1Title: "提出可能性を先に確認",
+    useStep1Text: "e-Rad、電子申請システム、応募資格付与、FAQ は申請を進める前提条件です。",
+    useStep2Kicker: "資料",
+    useStep2Title: "次に制度資料を見る",
+    useStep2Text: "ガイドページには解釈や作成方針に関わる資料を置き、細かなダウンロードは資料取得ページに集約します。",
+    useStep3Kicker: "注意点",
+    useStep3Title: "最後に種目差を確認",
+    useStep3Text: "募集回、締切、資料公開状況は種目ごとに異なるため、注意点で最後に横断確認します。",
   },
   sources: {
     kicker: "出典",
@@ -1012,20 +1066,11 @@ function routePage() {
     case "deadlines":
       renderDeadlinesPage();
       break;
-    case "timeline-test":
-      renderTimelineTestPage();
-      break;
     case "forms":
       renderFormsPage();
       break;
     case "guides":
       renderGuidesPage();
-      break;
-    case "sources":
-      renderSourcesPage();
-      break;
-    case "archive":
-      renderArchivePage();
       break;
     default:
       break;
@@ -2500,6 +2545,21 @@ function guideLinkMarkup(guide) {
   return `<a href="${resolveHref(guide.href)}"${linkTargetAttrs(guide.href)}>${escapeHtml(localeField(guide, "title"))}</a>`;
 }
 
+function renderUtilityStrip(items) {
+  return items
+    .map(
+      (item) => `
+        <article class="portal-utility-card">
+          <p class="eyebrow">${escapeHtml(item.kicker || "")}</p>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.text)}</p>
+          ${item.meta ? `<span class="meta-pill">${escapeHtml(item.meta)}</span>` : ""}
+        </article>
+      `
+    )
+    .join("");
+}
+
 function renderProgramPage() {
   const detail = document.getElementById("program-detail");
   const actions = document.getElementById("program-page-actions");
@@ -2536,87 +2596,19 @@ function renderProgramPage() {
 
 function renderDeadlinesPage() {
   const timelineEl = document.getElementById("deadline-timeline");
-  const tableBody = document.getElementById("deadline-table-body");
+  const programEl = document.getElementById("deadline-programs");
   const metrics = document.getElementById("deadlines-detail-metrics");
-  if (!timelineEl || !tableBody) {
-    return;
-  }
-  const events = state.data.timeline;
-  const nextDeadline = events.find((event) => event.type === "deadline" && (event.status === "today" || event.status === "upcoming"));
-  if (metrics) {
-    metrics.innerHTML = [
-      metaPill(`${t("common.links")} ${events.length}`),
-      metaPill(nextDeadline ? `${t("common.nextDeadline")} ${nextDeadline.program_title}` : `${t("common.nextDeadline")} --`),
-      metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
-    ].join("");
-  }
-
-  timelineEl.innerHTML = events
-    .map(
-      (event) => `
-        <a class="${timelineItemClass(event)}" href="${officialProgramHref(event.program_id)}"${linkTargetAttrs(officialProgramHref(event.program_id))} aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
-          <time datetime="${event.datetime || event.date}">
-            <span>${formatTimelineMonth(event.date)}</span>
-            <strong>${formatTimelineDay(event.date)}</strong>
-          </time>
-          <article class="timeline-card">
-            <h4 class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))}</h4>
-            <p class="timeline-summary">
-              <span class="timeline-event-type">${escapeHtml(timelineEventLabel(event))}</span>
-            </p>
-          </article>
-        </a>
-      `
-    )
-    .join("");
-
-  tableBody.innerHTML = events
-    .map(
-      (event) => `
-        <tr>
-          <td>${escapeHtml(localeField(event, "program_title"))}</td>
-          <td>${escapeHtml(timelineEventLabel(event))}</td>
-          <td>${escapeHtml(formatDateTime(event.datetime || event.date))}</td>
-          <td>${escapeHtml(localeField(event, "note") || "--")}</td>
-        </tr>
-      `
-    )
-    .join("");
-}
-
-function bindTimelineTestSync(root) {
-  root.querySelectorAll("[data-sync-program]").forEach((node) => {
-    if (node.dataset.timelineSyncBound === "true") {
-      return;
-    }
-    node.dataset.timelineSyncBound = "true";
-    node.addEventListener("click", () => {
-      const programId = node.dataset.syncProgram;
-      const targetSelector = node.dataset.syncTarget || (node.closest("#timeline-test-timeline") ? `[data-test-program-card="${CSS.escape(programId)}"]` : `[data-test-timeline-card="${CSS.escape(programId)}"]`);
-      const target = root.querySelector(targetSelector);
-      if (!target) {
-        return;
-      }
-      target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      target.classList.add("is-sync-highlight");
-      window.setTimeout(() => target.classList.remove("is-sync-highlight"), 1100);
-    });
-  });
-}
-
-function renderTimelineTestPage() {
-  const timelineEl = document.getElementById("timeline-test-timeline");
-  const programEl = document.getElementById("timeline-test-programs");
-  const metrics = document.getElementById("timeline-test-metrics");
   if (!timelineEl || !programEl) {
     return;
   }
   const events = state.data.timeline;
   const programs = sortProgramsByDeadline(state.data.programs.slice());
+  const nextDeadline = events.find((event) => event.type === "deadline" && (event.status === "today" || event.status === "upcoming"));
   if (metrics) {
     metrics.innerHTML = [
       metaPill(`${t("common.links")} ${programs.length}`),
       metaPill(countText(events.length, "milestones")),
+      metaPill(nextDeadline ? `${t("common.nextDeadline")} ${localeField(nextDeadline, "program_title")}` : `${t("common.nextDeadline")} --`),
       metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
     ].join("");
   }
@@ -2625,7 +2617,7 @@ function renderTimelineTestPage() {
     .map((event) => {
       const href = officialProgramHref(event.program_id);
       return `
-        <a class="${timelineItemClass(event)} portal-test-timeline-item" href="${href}"${linkTargetAttrs(href)} data-sync-program="${escapeHtml(event.program_id)}" data-test-timeline-card="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
+        <a class="${timelineItemClass(event)} portal-linked-timeline-item" href="${href}"${linkTargetAttrs(href)} data-sync-program="${escapeHtml(event.program_id)}" data-timeline-card="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
           <time datetime="${event.datetime || event.date}">
             <span>${formatTimelineMonth(event.date)}</span>
             <strong>${formatTimelineDay(event.date)}</strong>
@@ -2645,7 +2637,7 @@ function renderTimelineTestPage() {
     .map((program) => {
       const href = officialProgramHref(program.id);
       return `
-        <a class="portal-call-card portal-test-program-card" href="${href}"${linkTargetAttrs(href)} data-sync-program="${escapeHtml(program.id)}" data-test-program-card="${escapeHtml(program.id)}">
+        <a class="portal-call-card portal-linked-program-card" href="${href}"${linkTargetAttrs(href)} data-sync-program="${escapeHtml(program.id)}" data-timeline-program-card="${escapeHtml(program.id)}">
           <span class="portal-card-head">
             <span>
               <span class="eyebrow portal-call-card-statusline portal-call-card-statusline-${escapeHtml(timingStatusTone(program))}">${compactTimingMarkup(program)}</span>
@@ -2659,7 +2651,30 @@ function renderTimelineTestPage() {
       `;
     })
     .join("");
-  bindTimelineTestSync(document.getElementById("timeline-test-workbench") || document);
+  bindTimelineSync(document.getElementById("deadline-workbench") || document);
+}
+
+function bindTimelineSync(root) {
+  root.querySelectorAll("[data-sync-program]").forEach((node) => {
+    if (node.dataset.timelineSyncBound === "true") {
+      return;
+    }
+    node.dataset.timelineSyncBound = "true";
+    const syncMatchingProgram = () => {
+      const programId = node.dataset.syncProgram;
+      const targetSelector = node.dataset.syncTarget || (node.closest("#deadline-timeline") ? `[data-timeline-program-card="${CSS.escape(programId)}"]` : `[data-timeline-card="${CSS.escape(programId)}"]`);
+      const target = root.querySelector(targetSelector);
+      if (!target) {
+        return;
+      }
+      target.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      target.classList.add("is-sync-highlight");
+      window.setTimeout(() => target.classList.remove("is-sync-highlight"), 1100);
+    };
+    node.addEventListener("mouseenter", syncMatchingProgram);
+    node.addEventListener("focusin", syncMatchingProgram);
+    node.addEventListener("click", syncMatchingProgram);
+  });
 }
 
 function renderFormsPage() {
@@ -2668,6 +2683,7 @@ function renderFormsPage() {
   const sortFilter = document.getElementById("form-sort-filter");
   const resetButton = document.getElementById("form-reset");
   const grid = document.getElementById("form-grid");
+  const summary = document.getElementById("form-summary");
   const metrics = document.getElementById("forms-detail-metrics");
   if (!searchInput || !programFilter || !sortFilter || !resetButton || !grid) {
     return;
@@ -2719,6 +2735,13 @@ function renderFormsPage() {
       metaPill(`${t("common.openPrograms")} ${programs.filter((program) => program.status === "open").length}`),
       metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
     ].join("");
+  }
+  if (summary) {
+    summary.innerHTML = renderUtilityStrip([
+      { kicker: t("forms.useStep1Kicker"), title: t("forms.useStep1Title"), text: t("forms.useStep1Text"), meta: `${programs.length}` },
+      { kicker: t("forms.useStep2Kicker"), title: t("forms.useStep2Title"), text: t("forms.useStep2Text"), meta: `${programs.reduce((sum, program) => sum + programMaterialItems(program).length, 0)}` },
+      { kicker: t("forms.useStep3Kicker"), title: t("forms.useStep3Title"), text: t("forms.useStep3Text"), meta: t("common.viewOfficial") },
+    ]);
   }
 
   const query = state.filters.forms.search.toLowerCase();
@@ -2784,13 +2807,21 @@ function renderFormsPage() {
 
 function renderGuidesPage() {
   const guideGrid = document.getElementById("guide-grid");
-  const watchGrid = document.getElementById("guide-watch-grid");
+  const summary = document.getElementById("guide-summary");
   const metrics = document.getElementById("guides-detail-metrics");
-  if (!guideGrid || !watchGrid) {
+  if (!guideGrid) {
     return;
   }
 
-  const guides = state.data.guides;
+  const guides = state.data.guides.filter((guide) => guide.kind !== "snapshot" && !String(guide.href || "").startsWith("external/"));
+  const guideIdentity = (guide) => localizedSearchText(guide, ["title", "summary"]).toLowerCase();
+  const coreGuides = guides
+    .filter((guide) => /public call|公募总入口|公募情報|faq|electronic|電子|电子|e-rad/.test(guideIdentity(guide)))
+    .slice(0, 8);
+  const coreGuideSet = new Set(coreGuides.map((guide) => guide.href));
+  const documentGuides = guides
+    .filter((guide) => !coreGuideSet.has(guide.href) && ["file", "page", "guide", "system", "external"].includes(guide.kind))
+    .slice(0, 24);
   const featuredPrograms = state.data.programs
     .filter((entry) => localeList(entry, "watchpoints").length)
     .sort(
@@ -2816,33 +2847,73 @@ function renderGuidesPage() {
       metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
     ].join("");
   }
+  if (summary) {
+    summary.innerHTML = renderUtilityStrip([
+      { kicker: t("guides.useStep1Kicker"), title: t("guides.useStep1Title"), text: t("guides.useStep1Text"), meta: `${coreGuides.length}` },
+      { kicker: t("guides.useStep2Kicker"), title: t("guides.useStep2Title"), text: t("guides.useStep2Text"), meta: `${documentGuides.length}` },
+      { kicker: t("guides.useStep3Kicker"), title: t("guides.useStep3Title"), text: t("guides.useStep3Text"), meta: `${watchEntries.length}` },
+    ]);
+  }
 
   guideGrid.innerHTML = `
-    <article class="portal-guide-document">
-      <h3>${escapeHtml(t("guides.commonTitle"))}</h3>
-      <ul class="portal-guide-list">
-        ${guides
-          .map((guide) => `<li><strong>${escapeHtml(displayKindLabel(guide.kind))}</strong>: ${guideLinkMarkup(guide)}<p>${escapeHtml(localeField(guide, "summary"))}</p></li>`)
+    <article class="portal-guide-panel portal-guide-core-panel">
+      <div class="portal-guide-panel-head">
+        <p class="eyebrow">${escapeHtml(t("guides.commonTitle"))}</p>
+        <h3>${escapeHtml(t("guides.coreTitle"))}</h3>
+        <p>${escapeHtml(t("guides.coreText"))}</p>
+      </div>
+      <ul class="portal-guide-entry-list">
+        ${coreGuides
+          .map((guide) => `<li><strong>${escapeHtml(displayKindLabel(guide.kind))}</strong>${guideLinkMarkup(guide)}<p>${escapeHtml(localeField(guide, "summary"))}</p></li>`)
           .join("")}
       </ul>
     </article>
+    <div class="portal-guide-right-stack">
+      <article class="portal-guide-panel">
+        <div class="portal-guide-panel-head">
+          <p class="eyebrow">${escapeHtml(t("guides.programNotesTitle"))}</p>
+          <h3>${escapeHtml(t("guides.documentTitle"))}</h3>
+          <p>${escapeHtml(t("guides.documentText"))}</p>
+        </div>
+        <div class="portal-guide-document-grid">
+          ${documentGuides
+            .map(
+              (guide) => `
+                <a class="portal-guide-document-link" href="${resolveHref(guide.href)}"${linkTargetAttrs(guide.href)}>
+                  <span>${escapeHtml(displayKindLabel(guide.kind))}</span>
+                  <strong>${escapeHtml(localeField(guide, "title"))}</strong>
+                  <small>${escapeHtml(localeField(guide, "summary"))}</small>
+                </a>
+              `
+            )
+            .join("")}
+        </div>
+      </article>
+      <article class="portal-guide-panel">
+        <div class="portal-guide-panel-head">
+          <p class="eyebrow">${escapeHtml(t("guides.watchTitle"))}</p>
+          <h3>${escapeHtml(t("guides.watchChecklistTitle"))}</h3>
+          <p>${escapeHtml(t("guides.watchChecklistText"))}</p>
+        </div>
+        <div class="portal-guide-watch-grid">
+          ${watchEntries
+            .map((entry) => {
+              const href = officialProgramHref(entry.id);
+              return `
+                <a class="portal-guide-watch-card" href="${href}"${linkTargetAttrs(href)}>
+                  <span>${escapeHtml(displayGroupLabel(entry.group))}</span>
+                  <strong>${escapeHtml(localeField(entry, "title"))}</strong>
+                  <ul>
+                    ${localeList(entry, "watchpoints").slice(0, 3).map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
+                  </ul>
+                </a>
+              `;
+            })
+            .join("")}
+        </div>
+      </article>
+    </div>
   `;
-
-  watchGrid.innerHTML = watchEntries
-    .map((entry) => {
-      const href = officialProgramHref(entry.id);
-      return `
-        <article class="portal-guide-document portal-guide-program-note">
-          <p class="eyebrow">${escapeHtml(displayGroupLabel(entry.group))}</p>
-          <h3>${escapeHtml(localeField(entry, "title"))}</h3>
-          <ul class="portal-guide-list">
-            ${localeList(entry, "watchpoints").map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
-          </ul>
-          <p><a href="${href}"${linkTargetAttrs(href)}>${escapeHtml(t("common.viewOfficial"))}</a></p>
-        </article>
-      `;
-    })
-    .join("");
 }
 
 function renderSourcesPage() {
