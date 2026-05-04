@@ -48,6 +48,8 @@ const I18N = {
       links: "链接",
       noResults: "没有匹配结果",
       viewOfficial: "打开官方页面",
+      current: "当前",
+      currentTime: "当前时间",
       nextDeadline: "下一截止",
       expectedOpening: "预计开启",
       expectedDeadline: "预计截止",
@@ -310,6 +312,8 @@ const I18N = {
       links: "Links",
       noResults: "No matching results",
       viewOfficial: "Open official page",
+      current: "Now",
+      currentTime: "Current time",
       nextDeadline: "Next deadline",
       expectedOpening: "Expected opening",
       expectedDeadline: "Expected deadline",
@@ -574,6 +578,8 @@ I18N.ja = {
     links: "リンク",
     noResults: "一致する結果はありません",
     viewOfficial: "公式ページを開く",
+    current: "現在",
+    currentTime: "現在時点",
     nextDeadline: "次の締切",
     expectedOpening: "予定公募開始",
     expectedDeadline: "予定締切",
@@ -1925,9 +1931,9 @@ function renderHomeTimeline(root, entries) {
   const visibleProgramIds = new Set(entries.map((entry) => entry.id));
   const events = state.data.timeline.filter((event) => visibleProgramIds.has(event.program_id));
   root.innerHTML = events.length
-    ? events
-        .map(
-          (event, index) => `
+    ? renderTimelineWithCurrentMarker(
+        events,
+        (event, index) => `
             <button class="${timelineItemClass(event)} portal-home-timeline-item" type="button" data-home-timeline-index="${index}" data-home-timeline-target="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
               <time datetime="${event.datetime || event.date}">
                 <span>${formatTimelineMonth(event.date)}</span>
@@ -1940,9 +1946,9 @@ function renderHomeTimeline(root, entries) {
                 </span>
               </span>
             </button>
-          `
-        )
-        .join("")
+          `,
+        "portal-home-timeline-current-marker"
+      )
     : `<div class="empty">${escapeHtml(t("common.noResults"))}</div>`;
   positionHomeTimelineAtCurrent(root, events);
 }
@@ -1966,14 +1972,58 @@ function positionHomeTimelineAtCurrent(root, events) {
   const today = tokyoTodayIsoDate();
   const upcomingIndex = events.findIndex((event) => String(event.date || "").slice(0, 10) >= today);
   const index = upcomingIndex >= 0 ? upcomingIndex : events.length - 1;
-  const item = root.querySelector(`[data-home-timeline-index="${index}"]`);
+  const item = root.querySelector("[data-current-timeline-marker]") || root.querySelector(`[data-home-timeline-index="${index}"]`);
   if (!item) {
     return;
   }
   window.requestAnimationFrame(() => {
-    const targetTop = Math.max(item.offsetTop + 24, 0);
+    const paneRect = pane.getBoundingClientRect();
+    const itemRect = item.getBoundingClientRect();
+    const targetTop = Math.max(pane.scrollTop + itemRect.top - paneRect.top - 8, 0);
     pane.scrollTo({ top: targetTop, behavior: "auto" });
   });
+}
+
+function timelineEventDateKey(event) {
+  return String(event?.date || event?.datetime || "").slice(0, 10);
+}
+
+function currentTimelineMarkerIndex(events) {
+  const today = tokyoTodayIsoDate();
+  const index = events.findIndex((event) => timelineEventDateKey(event) >= today);
+  return index >= 0 ? index : events.length;
+}
+
+function renderTimelineCurrentMarker(extraClass = "") {
+  const today = tokyoTodayIsoDate();
+  const dateLabel = formatTimelineCompactDate(today);
+  const label = t("common.currentTime");
+  return `
+    <div class="portal-timeline-current-marker ${escapeHtml(extraClass)}" role="note" aria-label="${escapeHtml(`${label} ${dateLabel}`)}" data-current-timeline-marker>
+      <span class="portal-timeline-current-date">
+        <span>${escapeHtml(t("common.current"))}</span>
+        <strong>${escapeHtml(dateLabel)}</strong>
+      </span>
+      <span class="portal-timeline-current-rule">
+        <span>${escapeHtml(label)}</span>
+      </span>
+    </div>
+  `;
+}
+
+function renderTimelineWithCurrentMarker(events, renderEvent, markerClass = "") {
+  const markerIndex = currentTimelineMarkerIndex(events);
+  const chunks = [];
+  events.forEach((event, index) => {
+    if (index === markerIndex) {
+      chunks.push(renderTimelineCurrentMarker(markerClass));
+    }
+    chunks.push(renderEvent(event, index));
+  });
+  if (markerIndex === events.length) {
+    chunks.push(renderTimelineCurrentMarker(markerClass));
+  }
+  return chunks.join("");
 }
 
 function bindHomeTimeline(root, cardRoot) {
@@ -2647,8 +2697,9 @@ function renderDeadlinesPage() {
     ].join("");
   }
 
-  timelineEl.innerHTML = events
-    .map((event) => {
+  timelineEl.innerHTML = renderTimelineWithCurrentMarker(
+    events,
+    (event) => {
       const href = officialProgramHref(event.program_id);
       return `
         <a class="${timelineItemClass(event)} portal-linked-timeline-item" href="${href}"${linkTargetAttrs(href)} data-sync-program="${escapeHtml(event.program_id)}" data-timeline-card="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
@@ -2664,8 +2715,10 @@ function renderDeadlinesPage() {
           </article>
         </a>
       `;
-    })
-    .join("");
+    },
+    "portal-linked-timeline-current-marker"
+  );
+  positionLinkedTimelineAtCurrent(timelineEl);
 
   programEl.innerHTML = programs
     .map((program) => {
@@ -2686,6 +2739,20 @@ function renderDeadlinesPage() {
     })
     .join("");
   bindTimelineSync(document.getElementById("deadline-workbench") || document);
+}
+
+function positionLinkedTimelineAtCurrent(root) {
+  const pane = root?.closest(".portal-linked-timeline-pane");
+  const marker = root?.querySelector("[data-current-timeline-marker]");
+  if (!pane || !marker) {
+    return;
+  }
+  window.requestAnimationFrame(() => {
+    const paneRect = pane.getBoundingClientRect();
+    const markerRect = marker.getBoundingClientRect();
+    const targetTop = Math.max(pane.scrollTop + markerRect.top - paneRect.top - 8, 0);
+    pane.scrollTo({ top: targetTop, behavior: "auto" });
+  });
 }
 
 function bindTimelineSync(root) {

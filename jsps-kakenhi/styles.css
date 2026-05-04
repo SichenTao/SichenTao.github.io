@@ -4174,6 +4174,101 @@ body[data-page="forms"] #form-grid.card-grid {
   padding: 14px 15px 14px 18px;
 }
 
+.portal-timeline-current-marker {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-width: 0;
+  min-height: 30px;
+  color: var(--teal);
+}
+
+.portal-timeline-current-marker::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-soft);
+  background: var(--teal);
+  box-shadow:
+    0 0 0 4px rgba(var(--teal-rgb), 0.12),
+    0 8px 16px rgba(var(--teal-rgb), 0.12);
+  transform: translateY(-50%);
+}
+
+.portal-timeline-current-marker::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 0;
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(var(--teal-rgb), 0.72), rgba(var(--teal-rgb), 0.18), transparent);
+  transform: translateY(-50%);
+}
+
+.portal-timeline-current-marker > * {
+  position: relative;
+  z-index: 1;
+}
+
+.portal-timeline-current-date {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  color: var(--teal);
+  line-height: 1.16;
+}
+
+.portal-timeline-current-date span {
+  color: rgba(var(--teal-rgb), 0.82);
+  font-size: 0.72rem;
+  font-weight: 740;
+}
+
+.portal-timeline-current-date strong {
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 680;
+}
+
+.portal-timeline-current-rule {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 3px 9px;
+  border: 1px solid rgba(var(--teal-rgb), 0.2);
+  border-radius: 999px;
+  background: rgba(var(--white-rgb), 0.94);
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 760;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 6px 12px rgba(var(--teal-rgb), 0.06);
+}
+
+.portal-linked-timeline-current-marker {
+  grid-template-columns: 78px 1fr;
+  gap: 24px;
+  margin: -2px 0;
+}
+
+.portal-linked-timeline-current-marker::before {
+  left: 88px;
+}
+
+.portal-linked-timeline-current-marker::after {
+  left: 92px;
+}
+
 .portal-linked-program-stack {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4301,6 +4396,20 @@ body[data-page="calls"] .portal-home-calls-pane .portal-rail-section {
 
 .portal-home-timeline-item.timeline-item::before {
   display: none;
+}
+
+.portal-home-timeline-current-marker {
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 34px;
+  margin: -4px 0;
+}
+
+.portal-home-timeline-current-marker::before {
+  left: 109px;
+}
+
+.portal-home-timeline-current-marker::after {
+  left: 114px;
 }
 
 .portal-home-timeline-item.timeline-item time {
@@ -5294,6 +5403,20 @@ body[data-page="calls"] .portal-home-calls-pane .portal-call-card:focus-visible 
 
   body[data-page="deadlines"] .timeline-card::before {
     left: -17px;
+  }
+
+  body[data-page="deadlines"] .portal-linked-timeline-current-marker {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    padding-left: 28px;
+  }
+
+  body[data-page="deadlines"] .portal-linked-timeline-current-marker::before {
+    left: 14px;
+  }
+
+  body[data-page="deadlines"] .portal-linked-timeline-current-marker::after {
+    left: 18px;
   }
 
   body[data-page] .portal-call-card {
