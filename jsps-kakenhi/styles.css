@@ -4225,6 +4225,21 @@ body[data-page="forms"] #form-grid.card-grid {
   min-width: 0;
 }
 
+body[data-page="calls"] .portal-home-calls-pane .portal-rail-stack,
+body[data-page="calls"] .portal-home-calls-pane .portal-rail-section,
+body[data-page="calls"] .portal-home-calls-pane .portal-rail-track {
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="calls"] .portal-home-calls-pane .portal-rail-stack {
+  gap: clamp(34px, 4.2vw, 58px);
+}
+
+body[data-page="calls"] .portal-home-calls-pane .portal-rail-section {
+  gap: 18px;
+}
+
 .portal-home-timeline-pane {
   position: sticky;
   top: 92px;
@@ -4368,6 +4383,33 @@ body[data-page="forms"] #form-grid.card-grid {
 
 .portal-home-timeline-item:hover .timeline-title-text,
 .portal-home-timeline-item:focus-visible .timeline-title-text {
+  color: var(--teal);
+}
+
+body[data-page="calls"] .portal-home-timeline-item .timeline-card {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="calls"] .portal-home-timeline-item:hover .timeline-card,
+body[data-page="calls"] .portal-home-timeline-item:focus-visible .timeline-card {
+  transform: none;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body[data-page="calls"] .portal-home-timeline-item .timeline-title-text {
+  color: var(--ink);
+}
+
+body[data-page="calls"] .portal-home-timeline-item:hover .timeline-title-text,
+body[data-page="calls"] .portal-home-timeline-item:focus-visible .timeline-title-text {
   color: var(--teal);
 }
 
@@ -4620,12 +4662,21 @@ body[data-page="forms"] #form-grid.card-grid {
   scrollbar-width: none;
 }
 
+body[data-page="calls"] .portal-home-calls-pane .portal-rail-track {
+  padding: 2px 0 14px;
+  scroll-padding-inline: 0;
+}
+
 .portal-rail-track::-webkit-scrollbar {
   display: none;
 }
 
 .portal-rail-track.is-static {
   overflow: visible;
+}
+
+body[data-page="calls"] .portal-home-calls-pane .portal-rail-track.is-static {
+  padding-bottom: 0;
 }
 
 .portal-call-card {
@@ -4684,6 +4735,29 @@ body[data-page="forms"] #form-grid.card-grid {
     0 0 0 0.5px rgba(var(--teal-rgb), 0.16),
     0 10px 24px rgba(var(--teal-rgb), 0.06);
   outline: none;
+}
+
+body[data-page="calls"] .portal-home-calls-pane .portal-call-card {
+  min-height: 292px;
+  border-color: rgba(var(--ink-rgb), 0.075);
+  background: rgba(var(--white-rgb), 0.96);
+  box-shadow:
+    0 18px 34px rgba(var(--ink-rgb), 0.055),
+    0 1px 0 rgba(var(--white-rgb), 0.8) inset;
+}
+
+body[data-page="calls"] .portal-home-calls-pane .portal-call-card::before {
+  display: none;
+}
+
+body[data-page="calls"] .portal-home-calls-pane .portal-call-card:hover,
+body[data-page="calls"] .portal-home-calls-pane .portal-call-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(var(--teal-rgb), 0.18);
+  background: rgba(var(--white-rgb), 0.98);
+  box-shadow:
+    0 22px 40px rgba(var(--ink-rgb), 0.08),
+    0 0 0 0.5px rgba(var(--teal-rgb), 0.12);
 }
 
 .portal-call-card .portal-card-head {
