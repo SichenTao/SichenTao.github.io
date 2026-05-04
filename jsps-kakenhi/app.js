@@ -1927,8 +1927,8 @@ function renderHomeTimeline(root, entries) {
   root.innerHTML = events.length
     ? events
         .map(
-          (event) => `
-            <button class="${timelineItemClass(event)} portal-home-timeline-item" type="button" data-home-timeline-target="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
+          (event, index) => `
+            <button class="${timelineItemClass(event)} portal-home-timeline-item" type="button" data-home-timeline-index="${index}" data-home-timeline-target="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
               <time datetime="${event.datetime || event.date}">
                 <span>${formatTimelineMonth(event.date)}</span>
                 <strong>${formatTimelineCompactDate(event.date)}</strong>
@@ -1944,6 +1944,36 @@ function renderHomeTimeline(root, entries) {
         )
         .join("")
     : `<div class="empty">${escapeHtml(t("common.noResults"))}</div>`;
+  positionHomeTimelineAtCurrent(root, events);
+}
+
+function tokyoTodayIsoDate() {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  const byType = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${byType.year}-${byType.month}-${byType.day}`;
+}
+
+function positionHomeTimelineAtCurrent(root, events) {
+  const pane = root.closest(".portal-home-timeline-pane");
+  if (!pane || !events.length) {
+    return;
+  }
+  const today = tokyoTodayIsoDate();
+  const upcomingIndex = events.findIndex((event) => String(event.date || "").slice(0, 10) >= today);
+  const index = upcomingIndex >= 0 ? upcomingIndex : events.length - 1;
+  const item = root.querySelector(`[data-home-timeline-index="${index}"]`);
+  if (!item) {
+    return;
+  }
+  window.requestAnimationFrame(() => {
+    const targetTop = Math.max(item.offsetTop + 24, 0);
+    pane.scrollTo({ top: targetTop, behavior: "auto" });
+  });
 }
 
 function bindHomeTimeline(root, cardRoot) {
