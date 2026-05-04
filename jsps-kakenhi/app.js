@@ -99,6 +99,7 @@ const I18N = {
       suspended: "停止募集",
       reference: "参考",
       forecast: "经验预计",
+      forecastParen: "（经验预计）",
       unknown: "待确认",
     },
     eventType: {
@@ -360,6 +361,7 @@ const I18N = {
       suspended: "Suspended",
       reference: "Reference",
       forecast: "Prior-cycle estimate",
+      forecastParen: "(estimated)",
       unknown: "Unknown",
     },
     eventType: {
@@ -623,6 +625,7 @@ I18N.ja = {
     suspended: "募集停止",
     reference: "参考",
     forecast: "経験的予定",
+    forecastParen: "（経験的見込み）",
     unknown: "要確認",
   },
   eventType: {
@@ -1928,7 +1931,7 @@ function renderHomeTimeline(root, entries) {
             <button class="${timelineItemClass(event)} portal-home-timeline-item" type="button" data-home-timeline-target="${escapeHtml(event.program_id)}" aria-label="${escapeHtml(localeField(event, "program_title"))} · ${escapeHtml(localeField(event, "title"))}">
               <time datetime="${event.datetime || event.date}">
                 <span>${formatTimelineMonth(event.date)}</span>
-                <strong>${formatTimelineDay(event.date)}</strong>
+                <strong>${formatTimelineCompactDate(event.date)}</strong>
               </time>
               <span class="timeline-card">
                 <strong class="timeline-title-text">${escapeHtml(localeField(event, "program_title"))}</strong>
@@ -2537,9 +2540,9 @@ function renderMaterialGroups(groups) {
 }
 
 function timelineEventLabel(event) {
-  const baseLabel = localeField(event, "title") || eventTypeLabel(event.type);
-  const forecastLabel = String(event.id || "").includes("forecast") ? ` · ${t("status.forecast")}` : "";
-  return `${baseLabel}${forecastLabel}`;
+  const isForecast = String(event.id || "").includes("forecast");
+  const baseLabel = isForecast ? eventTypeLabel(event.type) : localeField(event, "title") || eventTypeLabel(event.type);
+  return isForecast ? `${baseLabel}${t("status.forecastParen")}` : baseLabel;
 }
 
 function guideLinkMarkup(guide) {
@@ -3092,7 +3095,7 @@ function timingStatusTone(record) {
 }
 
 function timingStatusLabel(record) {
-  return activeForecastCycle(record) ? t("status.forecast") : t(`status.${record?.status || "unknown"}`);
+  return activeForecastCycle(record) ? t("status.forecastParen") : t(`status.${record?.status || "unknown"}`);
 }
 
 function timingOpenLabel(record) {
@@ -3513,6 +3516,18 @@ function formatTimelineMonth(value) {
 function formatTimelineDay(value) {
   const date = new Date(`${value}T00:00:00+09:00`);
   return new Intl.DateTimeFormat(state.locale === "zh" ? "zh-CN" : state.locale === "ja" ? "ja-JP" : "en-US", { day: "2-digit" }).format(date);
+}
+
+function formatTimelineCompactDate(value) {
+  const date = new Date(`${value}T00:00:00+09:00`);
+  if (Number.isNaN(date.getTime())) {
+    return String(value || "");
+  }
+  return [
+    date.getFullYear(),
+    String(date.getMonth() + 1).padStart(2, "0"),
+    String(date.getDate()).padStart(2, "0"),
+  ].join(".");
 }
 
 function resolveHref(href) {
