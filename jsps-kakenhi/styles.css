@@ -4308,9 +4308,13 @@ body[data-page="forms"] #form-grid.card-grid {
   z-index: 5;
   align-items: center;
   padding-bottom: 12px;
-  background:
-    linear-gradient(180deg, var(--bg-soft) 0%, rgba(var(--white-rgb), 0.82) 72%, transparent 100%);
-  backdrop-filter: blur(10px);
+  background: #fbfbfd;
+  backdrop-filter: none;
+}
+
+.portal-guide-footer-panel {
+  min-height: 0;
+  padding-block: 14px;
 }
 
 .portal-linked-timeline-pane .timeline {
