@@ -50,6 +50,7 @@ const I18N = {
       viewOfficial: "打开官方页面",
       current: "当前",
       currentTime: "当前时间",
+      returnToCurrentTime: "返回当前时间点",
       nextDeadline: "下一截止",
       expectedOpening: "预计开启",
       expectedDeadline: "预计截止",
@@ -68,6 +69,7 @@ const I18N = {
       showMore: "更多",
       openLink: "打开链接",
       download: "下载",
+      downloadAll: "全部下载",
       resetFilters: "重置筛选",
       menu: "菜单",
       showMenu: "展开菜单",
@@ -225,11 +227,31 @@ const I18N = {
     guides: {
       kicker: "官方指引",
       title: "申请指南",
-      lede: "这一页不做第二个材料库，而是把申请前必须反复核对的系统入口、FAQ、制度文件与项目提醒组织成检查清单。",
+      lede: "这一页只保留跨项目通用、会影响提交质量的检查清单；具体日期、项目入口和材料下载分别回到时间线与材料页。",
       gridTitle: "关键申请入口",
       watchTitle: "重点项目与项目群提醒",
       commonTitle: "通用重要信息",
       programNotesTitle: "个别项目重要信息",
+      checklistTitle: "申请检查清单",
+      checklistText: "只保留跨项目通用、会影响实际提交质量的检查事项；具体材料、项目入口和时间节点分别回到材料页与时间线页处理。",
+      stagePrepareTitle: "准备阶段",
+      stagePrepareItems: [
+        "确认所属机构、申请资格、e-Rad 账号、研究者番号和机构内部截止。",
+        "确认是否存在重複制限、申请件数限制、职务或雇用状态限制。",
+        "先用时间线确定官方截止，再倒推校内确认、导师/合作者确认和最终 PDF 检查。"
+      ],
+      stageDraftTitle: "撰写阶段",
+      stageDraftItems: [
+        "研究目的、方法、年度计划、经费明细和研究体制要互相一致。",
+        "摘要、题目和关键词要能让非本领域评审快速理解问题、方法和预期贡献。",
+        "图表、参考文献、预算理由和伦理/安全说明要服务于同一个研究逻辑。"
+      ],
+      stageSubmitTitle: "提交前",
+      stageSubmitItems: [
+        "逐项检查系统输入内容、上传文件、页数、格式、文件名和版本日期。",
+        "最终提交前回到官方页面确认材料是否更新，避免使用过期资料。",
+        "保留提交前 PDF、系统确认画面和关键邮件记录，便于后续追踪。"
+      ],
       coreTitle: "通用流程入口",
       coreText: "先确认制度总入口、FAQ、电子申报系统和 e-Rad；这些决定能否顺利进入正式提交。",
       documentTitle: "重点官方文件",
@@ -314,6 +336,7 @@ const I18N = {
       viewOfficial: "Open official page",
       current: "Now",
       currentTime: "Current time",
+      returnToCurrentTime: "Return to current time",
       nextDeadline: "Next deadline",
       expectedOpening: "Expected opening",
       expectedDeadline: "Expected deadline",
@@ -332,6 +355,7 @@ const I18N = {
       showMore: "More",
       openLink: "Open link",
       download: "Download",
+      downloadAll: "Download all",
       resetFilters: "Reset filters",
       menu: "Menu",
       showMenu: "Open navigation menu",
@@ -489,11 +513,31 @@ const I18N = {
     guides: {
       kicker: "Official Guides",
       title: "Application Guidance",
-      lede: "This page is not a second materials library. It turns the system links, FAQ, scheme documents, and program-specific reminders into a pre-submission checklist.",
+      lede: "This page keeps only cross-program checks that affect submission quality. Dates, program entry points, and material downloads live on the timeline and materials pages.",
       gridTitle: "Core application entry points",
       watchTitle: "Priority calls and program-hub watchpoints",
       commonTitle: "General important information",
       programNotesTitle: "Program-specific important information",
+      checklistTitle: "Application checklist",
+      checklistText: "This page keeps only cross-program checks that affect submission quality. Use the materials page for files, and the timeline page for dates and program entry points.",
+      stagePrepareTitle: "Preparation",
+      stagePrepareItems: [
+        "Confirm affiliation, eligibility, e-Rad account, researcher number, and internal institutional deadlines.",
+        "Check duplicate-application restrictions, application-count limits, job-status rules, and employment-status constraints.",
+        "Start from the official deadline on the timeline, then work backward to internal review, collaborator confirmation, and final PDF checks."
+      ],
+      stageDraftTitle: "Drafting",
+      stageDraftItems: [
+        "Keep the objective, method, yearly plan, budget details, and research organization mutually consistent.",
+        "Make the title, abstract, and keywords understandable to reviewers adjacent to the field.",
+        "Figures, references, budget justifications, and ethics or safety notes should support one coherent research logic."
+      ],
+      stageSubmitTitle: "Before submission",
+      stageSubmitItems: [
+        "Check every system entry, upload, page count, format rule, file name, and version date.",
+        "Return to the official page before final submission to confirm that no material has been updated.",
+        "Keep the final PDF, submission confirmation screen, and key email records for later tracking."
+      ],
       coreTitle: "Core process links",
       coreText: "Check the public-call index, FAQ, electronic application system, and e-Rad first; they decide whether a formal submission can actually proceed.",
       documentTitle: "Key official documents",
@@ -580,6 +624,7 @@ I18N.ja = {
     viewOfficial: "公式ページを開く",
     current: "現在",
     currentTime: "現在時点",
+    returnToCurrentTime: "現在時点へ戻る",
     nextDeadline: "次の締切",
     expectedOpening: "予定公募開始",
     expectedDeadline: "予定締切",
@@ -598,6 +643,7 @@ I18N.ja = {
     showMore: "もっと見る",
     openLink: "リンクを開く",
     download: "ダウンロード",
+    downloadAll: "すべてダウンロード",
     resetFilters: "絞り込みをリセット",
     menu: "メニュー",
     showMenu: "ナビゲーションメニューを開く",
@@ -728,11 +774,31 @@ I18N.ja = {
   guides: {
     kicker: "公式ガイド",
     title: "申請ガイド",
-    lede: "資料庫をもう一つ作るのではなく、申請前に繰り返し確認すべきシステム入口、FAQ、制度資料、種目別注意点をチェックリスト化します。",
+    lede: "種目を越えて提出品質に関わる確認事項だけを残します。日程、種目入口、資料ダウンロードはタイムラインと資料取得ページで確認します。",
     gridTitle: "主要な申請入口",
     watchTitle: "重点種目とプログラム群の確認ポイント",
     commonTitle: "共通の重要情報",
     programNotesTitle: "種目別の重要情報",
+    checklistTitle: "申請チェックリスト",
+    checklistText: "このページでは、種目を越えて提出品質に関わる確認事項だけを残します。資料は資料取得ページ、日程と種目入口はタイムラインで確認します。",
+    stagePrepareTitle: "準備段階",
+    stagePrepareItems: [
+      "所属機関、応募資格、e-Rad アカウント、研究者番号、機関内締切を確認する。",
+      "重複制限、応募件数、職務・雇用状態に関する制限を確認する。",
+      "タイムラインで公式締切を確認し、学内確認、共同研究者確認、最終 PDF 点検から逆算する。"
+    ],
+    stageDraftTitle: "作成段階",
+    stageDraftItems: [
+      "研究目的、方法、年度計画、経費内訳、研究体制の整合性を保つ。",
+      "題目、概要、キーワードは隣接分野の審査員にも伝わる表現にする。",
+      "図表、参考文献、経費理由、倫理・安全面の説明を同じ研究ロジックに接続する。"
+    ],
+    stageSubmitTitle: "提出前",
+    stageSubmitItems: [
+      "システム入力、アップロード、ページ数、様式、ファイル名、版の日付を項目ごとに確認する。",
+      "最終提出前に公式ページへ戻り、資料が更新されていないか確認する。",
+      "最終 PDF、提出確認画面、重要メールを保存し、後から追跡できるようにする。"
+    ],
     coreTitle: "共通手続き入口",
     coreText: "公募情報、FAQ、電子申請システム、e-Rad を先に確認します。これらは正式提出が進められるかを左右します。",
     documentTitle: "重要な公式資料",
@@ -1951,6 +2017,7 @@ function renderHomeTimeline(root, entries) {
       )
     : `<div class="empty">${escapeHtml(t("common.noResults"))}</div>`;
   positionHomeTimelineAtCurrent(root, events);
+  bindCurrentTimelineJump(root);
 }
 
 function tokyoTodayIsoDate() {
@@ -1977,11 +2044,40 @@ function positionHomeTimelineAtCurrent(root, events) {
     return;
   }
   window.requestAnimationFrame(() => {
-    const paneRect = pane.getBoundingClientRect();
-    const itemRect = item.getBoundingClientRect();
-    const targetTop = Math.max(pane.scrollTop + itemRect.top - paneRect.top - 8, 0);
-    pane.scrollTo({ top: targetTop, behavior: "auto" });
+    scrollTimelineElementIntoPane(item, "auto");
   });
+}
+
+function scrollTimelineElementIntoPane(element, behavior = "smooth") {
+  const pane = element?.closest(".portal-home-timeline-pane, .portal-linked-timeline-pane");
+  if (!pane || !element) {
+    return;
+  }
+  const paneRect = pane.getBoundingClientRect();
+  const elementRect = element.getBoundingClientRect();
+  const head = pane.querySelector(".portal-timeline-pane-head");
+  const offset = head && getComputedStyle(head).position === "sticky" ? head.offsetHeight + 8 : 8;
+  const targetTop = Math.max(pane.scrollTop + elementRect.top - paneRect.top - offset, 0);
+  pane.scrollTo({ top: targetTop, behavior });
+}
+
+function scrollTimelineRootToCurrent(root, behavior = "smooth") {
+  const marker = root?.querySelector("[data-current-timeline-marker]");
+  if (!marker) {
+    return;
+  }
+  scrollTimelineElementIntoPane(marker, behavior);
+}
+
+function bindCurrentTimelineJump(root) {
+  if (!root?.id) {
+    return;
+  }
+  const button = Array.from(document.querySelectorAll("[data-current-timeline-jump]")).find((node) => node.dataset.currentTimelineJump === root.id);
+  if (!button) {
+    return;
+  }
+  button.onclick = () => scrollTimelineRootToCurrent(root, "smooth");
 }
 
 function timelineEventDateKey(event) {
@@ -2493,29 +2589,34 @@ function materialSectionRank(section = "") {
 }
 
 function materialSectionCategory(section = "") {
+  const key = materialSectionCategoryKey(section);
+  return t(`forms.category${key.charAt(0).toUpperCase()}${key.slice(1)}`) || t("forms.categoryOther");
+}
+
+function materialSectionCategoryKey(section = "") {
   const text = String(section).toLowerCase();
   if (/通知|notice|告知/.test(text)) {
-    return t("forms.categoryNotice");
+    return "notice";
   }
   if (/期間|schedule|スケジュール|日程|締切|期限|受付/.test(text)) {
-    return t("forms.categorySchedule");
+    return "schedule";
   }
   if (/公募要領|募集要項|application procedures|応募要項/.test(text)) {
-    return t("forms.categoryGuidelines");
+    return "guidelines";
   }
   if (/別冊|記入要領|作成要領|supplement|manual|応募書類/.test(text)) {
-    return t("forms.categoryInstructions");
+    return "instructions";
   }
   if (/研究計画調書|計画調書|申請書|様式|application forms|proposal document|添付ファイル/.test(text)) {
-    return t("forms.categoryForms");
+    return "forms";
   }
   if (/faq|フロー|flow|電子|e-rad|提出|システム|説明会/.test(text)) {
-    return t("forms.categorySystem");
+    return "system";
   }
   if (/審査|区分|セット|変更点|poster|ポスター/.test(text)) {
-    return t("forms.categoryReview");
+    return "review";
   }
-  return t("forms.categoryOther");
+  return "other";
 }
 
 function cleanMaterialTitle(title, fallback = "") {
@@ -2583,20 +2684,25 @@ function programMaterialItems(program) {
 }
 
 function materialLinksMarkup(item) {
-  return `<a href="${resolveHref(item.url)}"${linkTargetAttrs(item.url)}>${escapeHtml(t("common.download"))}</a>`;
+  return `<a href="${resolveHref(item.url)}"${linkTargetAttrs(item.url)} data-material-download-link>${escapeHtml(t("common.download"))}</a>`;
 }
 
 function renderMaterialGroups(groups) {
   return groups
     .map(
-      (group) => `
-        <section class="portal-material-section">
+      (group) => {
+        const categoryKey = materialSectionCategoryKey(group.title);
+        return `
+        <section class="portal-material-section portal-material-section-${escapeHtml(categoryKey)}">
           <div class="portal-material-section-head">
             <div>
               <span class="portal-material-section-category">${escapeHtml(materialSectionCategory(group.title))}</span>
               <h4>${escapeHtml(group.title)}</h4>
             </div>
-            <span>${escapeHtml(countText(group.items.length, "files"))}</span>
+            <div class="portal-material-section-actions">
+              <span>${escapeHtml(countText(group.items.length, "files"))}</span>
+              <button class="portal-material-download-all" type="button">${escapeHtml(t("common.downloadAll"))}</button>
+            </div>
           </div>
           <ul class="portal-material-link-list">
             ${group.items
@@ -2614,9 +2720,21 @@ function renderMaterialGroups(groups) {
               .join("")}
           </ul>
         </section>
-      `
+      `;
+      }
     )
     .join("");
+}
+
+function bindMaterialDownloadButtons(root) {
+  root.querySelectorAll(".portal-material-download-all").forEach((button) => {
+    button.addEventListener("click", () => {
+      const links = Array.from(button.closest(".portal-material-section")?.querySelectorAll("[data-material-download-link]") || []);
+      links.forEach((link) => {
+        window.open(link.href, "_blank", "noopener");
+      });
+    });
+  });
 }
 
 function timelineEventLabel(event) {
@@ -2719,6 +2837,7 @@ function renderDeadlinesPage() {
     "portal-linked-timeline-current-marker"
   );
   positionLinkedTimelineAtCurrent(timelineEl);
+  bindCurrentTimelineJump(timelineEl);
 
   programEl.innerHTML = programs
     .map((program) => {
@@ -2748,10 +2867,7 @@ function positionLinkedTimelineAtCurrent(root) {
     return;
   }
   window.requestAnimationFrame(() => {
-    const paneRect = pane.getBoundingClientRect();
-    const markerRect = marker.getBoundingClientRect();
-    const targetTop = Math.max(pane.scrollTop + markerRect.top - paneRect.top - 8, 0);
-    pane.scrollTo({ top: targetTop, behavior: "auto" });
+    scrollTimelineElementIntoPane(marker, "auto");
   });
 }
 
@@ -2890,6 +3006,23 @@ function renderFormsPage() {
         )
         .join("")
     : `<div class="empty">${t("common.noResults")}</div>`;
+  bindMaterialDownloadButtons(grid);
+}
+
+function rawI18nValue(key) {
+  const sources = [I18N[state.locale], I18N.en, I18N.zh].filter(Boolean);
+  for (const source of sources) {
+    const value = key.split(".").reduce((current, segment) => (current && current[segment] !== undefined ? current[segment] : undefined), source);
+    if (value !== undefined && value !== null) {
+      return value;
+    }
+  }
+  return null;
+}
+
+function guideChecklistItems(key) {
+  const items = rawI18nValue(key);
+  return Array.isArray(items) ? items : [];
 }
 
 function renderGuidesPage() {
@@ -2900,106 +3033,47 @@ function renderGuidesPage() {
     return;
   }
 
-  const guides = state.data.guides.filter((guide) => guide.kind !== "snapshot" && !String(guide.href || "").startsWith("external/"));
-  const guideIdentity = (guide) => localizedSearchText(guide, ["title", "summary"]).toLowerCase();
-  const coreGuides = guides
-    .filter((guide) => /public call|公募总入口|公募情報|faq|electronic|電子|电子|e-rad/.test(guideIdentity(guide)))
-    .slice(0, 8);
-  const coreGuideSet = new Set(coreGuides.map((guide) => guide.href));
-  const documentGuides = guides
-    .filter((guide) => !coreGuideSet.has(guide.href) && ["file", "page", "guide", "system", "external"].includes(guide.kind))
-    .slice(0, 24);
-  const featuredPrograms = state.data.programs
-    .filter((entry) => localeList(entry, "watchpoints").length)
-    .sort(
-      (left, right) =>
-        Number(right.priority) - Number(left.priority) ||
-        statusWeight(left.status) - statusWeight(right.status) ||
-        localeField(left, "title").localeCompare(localeField(right, "title"), state.locale === "ja" ? "ja" : state.locale === "zh" ? "zh" : "en")
-    )
-    .slice(0, 3);
-  const overviewWatches = state.data.call_catalog
-    .filter((entry) => entry.type === "overview" && localeList(entry, "watchpoints").length)
-    .sort((left, right) => (right.resource_count || 0) - (left.resource_count || 0))
-    .slice(0, 2);
-  const watchEntries = [...featuredPrograms, ...overviewWatches];
-  const extraHighlights = state.data.call_catalog
-    .filter((entry) => entry.type === "overview")
-    .reduce((sum, entry) => sum + ((entry.page_highlights && entry.page_highlights.length) || 0), 0);
+  const checklistGroups = [
+    { title: t("guides.stagePrepareTitle"), items: guideChecklistItems("guides.stagePrepareItems") },
+    { title: t("guides.stageDraftTitle"), items: guideChecklistItems("guides.stageDraftItems") },
+    { title: t("guides.stageSubmitTitle"), items: guideChecklistItems("guides.stageSubmitItems") },
+  ];
+  const checklistCount = checklistGroups.reduce((sum, group) => sum + group.items.length, 0);
 
   if (metrics) {
     metrics.innerHTML = [
-      metaPill(`${t("common.links")} ${guides.length}`),
-      metaPill(`${t("common.officialDocs")} ${state.data.programs.reduce((sum, program) => sum + program.featured_documents.length, 0) + extraHighlights}`),
+      metaPill(`${t("guides.checklistTitle")} ${checklistCount}`),
       metaPill(`${t("common.status")} ${state.data.site.snapshot_date}`),
     ].join("");
   }
   if (summary) {
-    summary.innerHTML = renderUtilityStrip([
-      { kicker: t("guides.useStep1Kicker"), title: t("guides.useStep1Title"), text: t("guides.useStep1Text"), meta: `${coreGuides.length}` },
-      { kicker: t("guides.useStep2Kicker"), title: t("guides.useStep2Title"), text: t("guides.useStep2Text"), meta: `${documentGuides.length}` },
-      { kicker: t("guides.useStep3Kicker"), title: t("guides.useStep3Title"), text: t("guides.useStep3Text"), meta: `${watchEntries.length}` },
-    ]);
+    summary.hidden = true;
+    summary.innerHTML = "";
   }
 
+  guideGrid.classList.add("portal-guide-workbench-simple");
   guideGrid.innerHTML = `
-    <article class="portal-guide-panel portal-guide-core-panel">
+    <article class="portal-guide-panel portal-guide-check-panel">
       <div class="portal-guide-panel-head">
         <p class="eyebrow">${escapeHtml(t("guides.commonTitle"))}</p>
-        <h3>${escapeHtml(t("guides.coreTitle"))}</h3>
-        <p>${escapeHtml(t("guides.coreText"))}</p>
+        <h3>${escapeHtml(t("guides.checklistTitle"))}</h3>
+        <p>${escapeHtml(t("guides.checklistText"))}</p>
       </div>
-      <ul class="portal-guide-entry-list">
-        ${coreGuides
-          .map((guide) => `<li><strong>${escapeHtml(displayKindLabel(guide.kind))}</strong>${guideLinkMarkup(guide)}<p>${escapeHtml(localeField(guide, "summary"))}</p></li>`)
+      <div class="portal-guide-check-grid">
+        ${checklistGroups
+          .map(
+            (group) => `
+              <section class="portal-guide-check-card">
+                <h4>${escapeHtml(group.title)}</h4>
+                <ul>
+                  ${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+                </ul>
+              </section>
+            `
+          )
           .join("")}
-      </ul>
+      </div>
     </article>
-    <div class="portal-guide-right-stack">
-      <article class="portal-guide-panel">
-        <div class="portal-guide-panel-head">
-          <p class="eyebrow">${escapeHtml(t("guides.programNotesTitle"))}</p>
-          <h3>${escapeHtml(t("guides.documentTitle"))}</h3>
-          <p>${escapeHtml(t("guides.documentText"))}</p>
-        </div>
-        <div class="portal-guide-document-grid">
-          ${documentGuides
-            .map(
-              (guide) => `
-                <a class="portal-guide-document-link" href="${resolveHref(guide.href)}"${linkTargetAttrs(guide.href)}>
-                  <span>${escapeHtml(displayKindLabel(guide.kind))}</span>
-                  <strong>${escapeHtml(localeField(guide, "title"))}</strong>
-                  <small>${escapeHtml(localeField(guide, "summary"))}</small>
-                </a>
-              `
-            )
-            .join("")}
-        </div>
-      </article>
-      <article class="portal-guide-panel">
-        <div class="portal-guide-panel-head">
-          <p class="eyebrow">${escapeHtml(t("guides.watchTitle"))}</p>
-          <h3>${escapeHtml(t("guides.watchChecklistTitle"))}</h3>
-          <p>${escapeHtml(t("guides.watchChecklistText"))}</p>
-        </div>
-        <div class="portal-guide-watch-grid">
-          ${watchEntries
-            .map((entry) => {
-              const href = officialProgramHref(entry.id);
-              return `
-                <a class="portal-guide-watch-card" href="${href}"${linkTargetAttrs(href)}>
-                  <span>${escapeHtml(displayGroupLabel(entry.group))}</span>
-                  <strong>${escapeHtml(localeField(entry, "title"))}</strong>
-                  <ul>
-                    ${localeList(entry, "watchpoints").slice(0, 3).map((note) => `<li>${escapeHtml(note)}</li>`).join("")}
-                  </ul>
-                </a>
-              `;
-            })
-            .join("")}
-        </div>
-      </article>
-    </div>
   `;
 }
 function localeValue(record, base) {

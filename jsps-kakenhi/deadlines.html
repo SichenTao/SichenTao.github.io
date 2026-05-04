@@ -47,15 +47,15 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260504-210108" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260504-210108" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260504-210108" />
-    <script src="./data/kakenhi-data.js?v=20260504-210108"></script>
-    <script src="/assets/shared/homepage-i18n.js?v=20260504-210108"></script>
-    <script src="/assets/shared/homepage-platform.js?v=20260504-210108"></script>
-    <script src="/assets/shared/homepage-components.js?v=20260504-210108"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260504-210108"></script>
-    <script defer src="./app.js?v=20260504-210108"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260504-213138" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260504-213138" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260504-213138" />
+    <script src="./data/kakenhi-data.js?v=20260504-213138"></script>
+    <script src="/assets/shared/homepage-i18n.js?v=20260504-213138"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260504-213138"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260504-213138"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260504-213138"></script>
+    <script defer src="./app.js?v=20260504-213138"></script>
   </head>
   <body data-page="deadlines">
     <div class="page-wash"></div>
@@ -93,6 +93,9 @@
           <aside class="portal-timeline-pane portal-linked-timeline-pane">
             <div class="portal-timeline-pane-head">
               <h3 data-i18n="deadlines.timelinePane">时间线</h3>
+              <button class="portal-current-time-button" type="button" data-current-timeline-jump="deadline-timeline">
+                <span data-i18n="common.returnToCurrentTime">返回当前时间点</span>
+              </button>
             </div>
             <div id="deadline-timeline" class="timeline"></div>
           </aside>
