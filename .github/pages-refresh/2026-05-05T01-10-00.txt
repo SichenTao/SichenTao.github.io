@@ -1,0 +1,2 @@
+Force a fresh GitHub Pages deployment after the Follow Builders reader publish hit a transient Pages 502.
+Timestamp: 2026-05-05T01:10:00+09:00
