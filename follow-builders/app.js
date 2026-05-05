@@ -10,6 +10,8 @@ const THEME_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "to
 const LOCALE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const THEME_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const MODE_KEY = "follow-builders-reading-mode";
+const DISPLAY_LANGUAGES_KEY = "follow-builders-display-languages";
+const DISPLAY_LANGUAGE_SEQUENCE = ["en", "zh", "ja"];
 
 const REMOTE_FEEDS = {
   x: "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json",
@@ -42,6 +44,7 @@ const I18N = {
       display: "Display controls",
       language: "Language",
       languageChoices: "Language choices",
+      displayLanguages: "Displayed languages",
       theme: "Color theme",
       themeChoices: "Theme choices",
       cycleLanguages: "Switch to the next language",
@@ -64,6 +67,11 @@ const I18N = {
       current: "Current language",
       bilingual: "English + Chinese",
       trilingual: "Three-language view",
+    },
+    displayLanguages: {
+      en: "EN",
+      zh: "中文",
+      ja: "日本語",
     },
     feed: {
       kicker: "Readable feed",
@@ -118,6 +126,7 @@ const I18N = {
       display: "显示控制",
       language: "语言",
       languageChoices: "语言选项",
+      displayLanguages: "显示语言",
       theme: "主题色",
       themeChoices: "主题选项",
       cycleLanguages: "切换到下一种语言",
@@ -140,6 +149,11 @@ const I18N = {
       current: "当前语言",
       bilingual: "英文 + 中文",
       trilingual: "三语对照",
+    },
+    displayLanguages: {
+      en: "EN",
+      zh: "中文",
+      ja: "日本語",
     },
     feed: {
       kicker: "阅读信息流",
@@ -194,6 +208,7 @@ const I18N = {
       display: "表示設定",
       language: "言語",
       languageChoices: "言語オプション",
+      displayLanguages: "表示言語",
       theme: "テーマ色",
       themeChoices: "テーマオプション",
       cycleLanguages: "次の言語に切り替える",
@@ -216,6 +231,11 @@ const I18N = {
       current: "現在の言語",
       bilingual: "英語 + 中国語",
       trilingual: "三言語対照",
+    },
+    displayLanguages: {
+      en: "EN",
+      zh: "中文",
+      ja: "日本語",
     },
     feed: {
       kicker: "読みやすいフィード",
@@ -253,7 +273,7 @@ const state = {
   theme: readInitialTheme(),
   query: "",
   type: "all",
-  mode: readStoredMode(),
+  displayLanguages: readStoredDisplayLanguages(),
   data: normalizeData(FALLBACK_DATA),
   articles: [],
   activeId: "",
@@ -282,6 +302,26 @@ function localize(value, fallback = "") {
   return window.HomepageI18n?.localizeValue?.(value, { locale: state.locale, emptyValue: fallback }) || fallback;
 }
 
+function localizeForLanguage(value, language, fallback = "") {
+  if (typeof value === "string") {
+    return language === "en" ? value : "";
+  }
+  return value?.[language] || (language === "en" ? value?.en || fallback : "") || "";
+}
+
+function displayLanguageBlocks(value, fallback = "") {
+  const blocks = normalizeDisplayLanguages(state.displayLanguages)
+    .map((language) => ({ language, text: localizeForLanguage(value, language, fallback) }))
+    .filter((block) => block.text);
+  if (blocks.length) return blocks;
+  const fallbackText = typeof value === "string" ? value : value?.en || fallback;
+  return fallbackText ? [{ language: "en", text: fallbackText }] : [];
+}
+
+function languageAttr(language) {
+  return language === "zh" ? "zh-CN" : language === "ja" ? "ja" : "en";
+}
+
 function readInitialLocale() {
   return window.HomepageI18n?.readStoredLocale?.({ locales: LOCALE_CATALOG }) || "en";
 }
@@ -302,6 +342,37 @@ function readStoredMode() {
 function writeStoredMode(mode) {
   try {
     localStorage.setItem(MODE_KEY, mode);
+  } catch {}
+}
+
+function normalizeDisplayLanguages(languages) {
+  const selected = new Set((languages || []).filter((language) => DISPLAY_LANGUAGE_SEQUENCE.includes(language)));
+  if (!selected.size) selected.add("en");
+  return DISPLAY_LANGUAGE_SEQUENCE.filter((language) => selected.has(language));
+}
+
+function displayLanguagesFromMode(mode) {
+  if (mode === "current") return [readInitialLocale() || "en"];
+  if (mode === "bilingual") return ["en", "zh"];
+  if (mode === "trilingual") return ["en", "zh", "ja"];
+  return ["en"];
+}
+
+function readStoredDisplayLanguages() {
+  try {
+    const stored = JSON.parse(localStorage.getItem(DISPLAY_LANGUAGES_KEY) || "null");
+    if (Array.isArray(stored)) {
+      return normalizeDisplayLanguages(stored);
+    }
+    return normalizeDisplayLanguages(displayLanguagesFromMode(readStoredMode()));
+  } catch {
+    return ["en"];
+  }
+}
+
+function writeStoredDisplayLanguages(languages) {
+  try {
+    localStorage.setItem(DISPLAY_LANGUAGES_KEY, JSON.stringify(normalizeDisplayLanguages(languages)));
   } catch {}
 }
 
@@ -329,6 +400,21 @@ function clip(value, max = 150) {
   const text = normalizeText(value);
   if (text.length <= max) return text;
   return `${text.slice(0, max - 1).trim()}...`;
+}
+
+function headlineFromText(value, max = 180) {
+  const text = normalizeText(value);
+  if (!text) return "";
+  const sentence = text.match(/^(.+?[.!?。！？])(?:\s|$)/)?.[1] || text;
+  if (sentence.length <= max) return sentence;
+  const words = sentence.split(/\s+/);
+  let headline = "";
+  for (const word of words) {
+    const next = headline ? `${headline} ${word}` : word;
+    if (next.length > max) break;
+    headline = next;
+  }
+  return headline || sentence;
 }
 
 function slug(value) {
@@ -363,7 +449,7 @@ function readingMinutes(text) {
 
 function titleFromTweet(builder) {
   const first = builder.tweets?.[0]?.text || "";
-  const quote = clip(first, 78);
+  const quote = headlineFromText(first);
   return quote ? `${builder.name}: ${quote}` : `${builder.name}: recent builder notes`;
 }
 
@@ -595,7 +681,7 @@ function renderControls() {
   }
 
   renderTypeFilter();
-  renderModeSelect();
+  renderLanguageDisplayControl();
 }
 
 function renderTypeFilter() {
@@ -614,21 +700,38 @@ function renderTypeFilter() {
   }
 }
 
-function renderModeSelect() {
-  const select = byId("fb-view-mode");
-  if (!select) return;
-  select.innerHTML = ["english", "current", "bilingual", "trilingual"]
-    .map((mode) => `<option value="${mode}">${escapeHtml(t(`modes.${mode}`))}</option>`)
-    .join("");
-  select.value = state.mode;
-  if (select.dataset.bound !== "true") {
-    select.dataset.bound = "true";
-    select.addEventListener("change", () => {
-      state.mode = select.value;
-      writeStoredMode(state.mode);
-      renderArticleIfOpen();
+function renderLanguageDisplayControl() {
+  document.querySelectorAll(".fb-language-display").forEach((control) => {
+    control.setAttribute("aria-label", t("controls.displayLanguages"));
+    control.innerHTML = DISPLAY_LANGUAGE_SEQUENCE.map((language) => {
+      const selected = state.displayLanguages.includes(language);
+      return `
+        <button
+          class="fb-language-chip${selected ? " is-selected" : ""}"
+          type="button"
+          data-display-language="${language}"
+          aria-pressed="${selected ? "true" : "false"}"
+        >
+          ${escapeHtml(t(`displayLanguages.${language}`))}
+        </button>
+      `;
+    }).join("");
+    control.querySelectorAll("[data-display-language]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const language = button.dataset.displayLanguage;
+        const selected = new Set(state.displayLanguages);
+        if (selected.has(language) && selected.size > 1) {
+          selected.delete(language);
+        } else {
+          selected.add(language);
+        }
+        state.displayLanguages = normalizeDisplayLanguages(Array.from(selected));
+        writeStoredDisplayLanguages(state.displayLanguages);
+        renderLanguageDisplayControl();
+        renderArticleIfOpen();
+      });
     });
-  }
+  });
 }
 
 function searchableText(article) {
@@ -663,8 +766,8 @@ function renderFeed() {
     return;
   }
   list.innerHTML = articles.map((article) => {
-    const title = article.title.en || localize(article.title);
-    const dek = localize(article.dek, article.dek.en || "");
+    const title = displayLanguageBlocks(article.title, article.title.en || "")[0]?.text || article.title.en || "";
+    const dek = displayLanguageBlocks(article.dek, article.dek.en || "")[0]?.text || article.dek.en || "";
     return `
       <button class="fb-story-card" type="button" data-article-id="${escapeHtml(article.id)}">
         <span class="fb-story-body">
@@ -709,39 +812,58 @@ function renderSources() {
 }
 
 function sectionParagraphs(section) {
-  if (typeof section.text === "string") {
-    return [section.text];
-  }
-  if (state.mode === "english") {
-    return [section.text?.en || ""];
-  }
-  if (state.mode === "current") {
-    return [localize(section.text, section.text?.en || "")];
-  }
-  if (state.mode === "trilingual") {
-    return [section.text?.en, section.text?.zh, section.text?.ja].filter(Boolean);
-  }
-  return [section.text?.en, section.text?.zh].filter(Boolean);
+  return displayLanguageBlocks(section.text, section.text?.en || "");
+}
+
+function renderLanguageTextBlocks(blocks, tagName = "p") {
+  const multiple = blocks.length > 1;
+  return blocks
+    .map((block) => `
+      <${tagName} class="${multiple ? "fb-language-block" : ""}" lang="${languageAttr(block.language)}">
+        ${multiple ? `<span class="fb-language-label">${escapeHtml(t(`displayLanguages.${block.language}`))}</span>` : ""}
+        ${escapeHtml(block.text)}
+      </${tagName}>
+    `)
+    .join("");
+}
+
+function renderArticleTitleBlocks(blocks) {
+  return blocks
+    .map((block, index) => {
+      const label = blocks.length > 1 ? `<span class="fb-language-label">${escapeHtml(t(`displayLanguages.${block.language}`))}</span>` : "";
+      if (index === 0) {
+        return `<h1 lang="${languageAttr(block.language)}">${label}${escapeHtml(block.text)}</h1>`;
+      }
+      return `<p class="fb-article-title-translation" lang="${languageAttr(block.language)}">${label}${escapeHtml(block.text)}</p>`;
+    })
+    .join("");
 }
 
 function renderArticle(article) {
   const container = byId("article");
   if (!container || !article) return;
-  const title = state.mode === "english" ? article.title.en : localize(article.title, article.title.en || "");
-  const dek = state.mode === "english" ? article.dek.en : localize(article.dek, article.dek.en || "");
+  const titleBlocks = displayLanguageBlocks(article.title, article.title.en || "");
+  const dekBlocks = displayLanguageBlocks(article.dek, article.dek.en || "");
   const links = [
     ...(article.links || []),
     { label: t("article.github"), href: state.data.sourceRepo },
   ].filter((link) => link.href);
   container.innerHTML = `
-    <button class="fb-article-back" type="button" data-back-to-feed>
-      <span aria-hidden="true">←</span>
-      ${escapeHtml(t("article.back"))}
-    </button>
+    <div class="fb-article-tools">
+      <button class="fb-article-back" type="button" data-back-to-feed>
+        <span aria-hidden="true">←</span>
+        ${escapeHtml(t("article.back"))}
+      </button>
+      <div class="fb-language-display fb-language-display--article" role="group" aria-label="${escapeHtml(t("controls.displayLanguages"))}"></div>
+    </div>
     <header class="fb-article-head">
       <p class="eyebrow">${escapeHtml(typeLabel(article.type))}</p>
-      <h1>${escapeHtml(title)}</h1>
-      <p class="fb-article-dek">${escapeHtml(dek)}</p>
+      <div class="fb-article-title-group">
+        ${renderArticleTitleBlocks(titleBlocks)}
+      </div>
+      <div class="fb-article-dek-group">
+        ${renderLanguageTextBlocks(dekBlocks, "p")}
+      </div>
       <div class="fb-article-meta">
         <span>${escapeHtml(article.source || "")}</span>
         <span>${escapeHtml(formatDate(article.date))}</span>
@@ -752,10 +874,11 @@ function renderArticle(article) {
       ${(article.sections || []).map((section) => {
         const label = localize(section.label, t("article.original"));
         if (section.kind === "quote") {
+          const quoteBlocks = sectionParagraphs(section);
           return `
             <section class="fb-body-section">
               <h2>${escapeHtml(label)}</h2>
-              <blockquote>${escapeHtml(section.text || "")}</blockquote>
+              ${renderLanguageTextBlocks(quoteBlocks, "blockquote")}
               ${section.url ? `<a href="${escapeHtml(section.url)}">${escapeHtml(t("article.original"))}</a>` : ""}
             </section>
           `;
@@ -763,7 +886,7 @@ function renderArticle(article) {
         return `
           <section class="fb-body-section">
             <h2>${escapeHtml(label)}</h2>
-            ${sectionParagraphs(section).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+            ${renderLanguageTextBlocks(sectionParagraphs(section), "p")}
           </section>
         `;
       }).join("")}
@@ -772,6 +895,7 @@ function renderArticle(article) {
       ${links.map((link) => `<a href="${escapeHtml(link.href)}">${escapeHtml(link.label || link.href)}</a>`).join("")}
     </footer>
   `;
+  renderLanguageDisplayControl();
   container.querySelector("[data-back-to-feed]")?.addEventListener("click", closeArticle);
 }
 
