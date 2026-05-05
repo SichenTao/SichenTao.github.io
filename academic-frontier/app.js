@@ -5,7 +5,7 @@ const STORAGE_KEY_LOCAL_DOMAIN = "学术前沿-domain";
 const STORAGE_KEY_THEME = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const SESSION_KEY_LANGUAGE = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
-const STORAGE_KEY_READER_DISPLAY_LANGUAGES = "academic-frontier-reader-display-languages";
+const STORAGE_KEY_READER_DISPLAY_LANGUAGES = "academic-frontier-reader-display-languages-v2";
 const OPEN_RESEARCH_MIN_YEAR = 1950;
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
@@ -174,18 +174,29 @@ function normalizeFilterCount(value) {
   return Number.isFinite(count) && count > 0 ? count : 0;
 }
 
-function normalizeReaderDisplayLanguages(value) {
+function defaultReaderLanguage() {
+  const locale = window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || document.body?.dataset?.defaultLanguage || "en";
+  return READER_DISPLAY_LANGUAGE_SEQUENCE.includes(locale) ? locale : "en";
+}
+
+function defaultReaderDisplayLanguages() {
+  return [defaultReaderLanguage()];
+}
+
+function normalizeReaderDisplayLanguages(value, fallback = defaultReaderDisplayLanguages()) {
   const source = Array.isArray(value)
     ? value
     : String(value || "")
       .split(",")
       .map((item) => item.trim());
   const languages = source.filter((language) => READER_DISPLAY_LANGUAGE_SEQUENCE.includes(language));
-  return languages.length ? [...new Set(languages)] : [...READER_DISPLAY_LANGUAGE_SEQUENCE];
+  const uniqueLanguages = [...new Set(languages)];
+  return uniqueLanguages.length ? uniqueLanguages : [...fallback];
 }
 
 function readStoredReaderDisplayLanguages() {
-  return normalizeReaderDisplayLanguages(readStoredValue(STORAGE_KEY_READER_DISPLAY_LANGUAGES));
+  const stored = readStoredValue(STORAGE_KEY_READER_DISPLAY_LANGUAGES);
+  return stored ? normalizeReaderDisplayLanguages(stored) : defaultReaderDisplayLanguages();
 }
 
 function writeStoredReaderDisplayLanguages(languages) {
@@ -5890,6 +5901,16 @@ function setReaderDisplayLanguages(languages, persist = true) {
   }
 }
 
+function readerDisplayLanguagesEqual(left, right) {
+  const normalizedLeft = normalizeReaderDisplayLanguages(left);
+  const normalizedRight = normalizeReaderDisplayLanguages(right);
+  return normalizedLeft.length === normalizedRight.length && normalizedLeft.every((language, index) => language === normalizedRight[index]);
+}
+
+function languageHtmlAttribute(locale) {
+  return locale === "zh" ? "zh-CN" : locale === "ja" ? "ja" : "en";
+}
+
 function readerAvailableFields(papers = papersForDomain()) {
   return uniqueStrings(papers.flatMap((paper) => paperFieldTags(paper))).sort((left, right) =>
     localizeText(left).localeCompare(localizeText(right), currentLocale())
@@ -6079,7 +6100,7 @@ function renderFrontierReaderToolbar() {
   if (reset) {
     reset.setAttribute("aria-label", ui("resetLabel"));
     reset.setAttribute("title", ui("resetLabel"));
-    reset.disabled = !state.readerQuery && state.readerFieldFilter === "all" && readerDisplayLanguages().length === READER_DISPLAY_LANGUAGE_SEQUENCE.length;
+    reset.disabled = !state.readerQuery && state.readerFieldFilter === "all" && readerDisplayLanguagesEqual(readerDisplayLanguages(), defaultReaderDisplayLanguages());
   }
   const languageGroup = byId("frontier-reader-language-display");
   if (languageGroup) {
@@ -6107,6 +6128,121 @@ function renderFrontierReader() {
   renderFrontierReaderToolbar();
   renderFrontierReaderStories();
   renderFrontierReaderRail();
+}
+
+function readAcademicPaperArticleData() {
+  const source = byId("frontier-paper-detail-data");
+  if (!source) return null;
+  try {
+    return JSON.parse(source.textContent || "{}");
+  } catch (error) {
+    console.error("Failed to parse academic paper article data", error);
+    return null;
+  }
+}
+
+function articleLanguageBlocks(value, fallback = "") {
+  const blocks = readerDisplayLanguages()
+    .map((locale) => {
+      const text = value && typeof value === "object" && !Array.isArray(value)
+        ? value[locale] || value.en || value.zh || value.ja || fallback
+        : locale === "en"
+          ? String(value || fallback || "")
+          : String(fallback || "");
+      return { locale, text: String(text || "").trim() };
+    })
+    .filter((block) => block.text);
+  if (blocks.length) return blocks;
+  const fallbackText = typeof value === "string" ? value : value?.en || value?.zh || value?.ja || fallback;
+  return fallbackText ? [{ locale: defaultReaderLanguage(), text: String(fallbackText).trim() }] : [];
+}
+
+function renderAcademicLanguageLabel(locale) {
+  return `<span class="fb-language-label">${escapeHtml(LOCALE_CATALOG[locale]?.label || locale)}</span>`;
+}
+
+function renderAcademicTitleBlocks(blocks) {
+  return blocks
+    .map((block, index) => {
+      const label = renderAcademicLanguageLabel(block.locale);
+      const text = escapeHtml(block.text);
+      if (index === 0) {
+        return `<h1 lang="${languageHtmlAttribute(block.locale)}">${label}${text}</h1>`;
+      }
+      return `<p class="fb-article-title-translation" lang="${languageHtmlAttribute(block.locale)}">${label}${text}</p>`;
+    })
+    .join("");
+}
+
+function renderAcademicLanguageTextBlocks(blocks, tagName = "p") {
+  return blocks
+    .map((block) => `
+      <${tagName} class="fb-language-block" lang="${languageHtmlAttribute(block.locale)}">
+        ${renderAcademicLanguageLabel(block.locale)}
+        ${formatRichTextForLocale(block.locale, block.text)}
+      </${tagName}>
+    `)
+    .join("");
+}
+
+function renderAcademicArticleLanguageControls() {
+  document.querySelectorAll("[data-academic-article-language-display]").forEach((container) => {
+    const activeLanguages = new Set(readerDisplayLanguages());
+    container.setAttribute("aria-label", ui("readerDisplayLanguagesLabel"));
+    container.innerHTML = READER_DISPLAY_LANGUAGE_SEQUENCE.map((locale) => {
+      const selected = activeLanguages.has(locale);
+      return `
+        <button
+          class="fb-language-chip${selected ? " is-selected" : ""}"
+          type="button"
+          data-academic-article-language="${escapeHtml(locale)}"
+          aria-pressed="${selected ? "true" : "false"}"
+        >
+          ${escapeHtml(LOCALE_CATALOG[locale]?.label || locale)}
+        </button>
+      `;
+    }).join("");
+  });
+}
+
+function renderAcademicPaperArticle() {
+  const container = byId("frontier-paper-article");
+  const article = readAcademicPaperArticleData();
+  if (!container || !article) return;
+
+  const titleBlocks = articleLanguageBlocks(article.title, article.fallbackTitle);
+  const abstractBlocks = articleLanguageBlocks(article.abstract, article.fallbackAbstract);
+  const multipleLanguages = readerDisplayLanguages().length > 1;
+  const metaParts = [article.venue, article.year, article.doi ? `${ui("doiLabel")} ${article.doi}` : ""].filter(Boolean);
+  const links = Array.isArray(article.links) ? article.links.filter((link) => link?.href) : [];
+  container.classList.toggle("is-multilingual", multipleLanguages);
+  container.innerHTML = `
+    <div class="fb-article-tools">
+      <a class="fb-article-back" href="${escapeHtml(article.backHref || pageHref("feed", pageLocale()))}">
+        <span aria-hidden="true">←</span>
+        ${escapeHtml(ui("detailBackAction"))}
+      </a>
+      <div class="fb-language-display fb-language-display--article" data-academic-article-language-display role="group" aria-label="${escapeHtml(ui("readerDisplayLanguagesLabel"))}"></div>
+    </div>
+    <header class="fb-article-head">
+      <p class="eyebrow">${escapeHtml(ui("detailSummaryKicker"))}</p>
+      <div class="fb-article-title-group">${renderAcademicTitleBlocks(titleBlocks)}</div>
+      ${article.authors ? `<div class="fb-article-dek-group"><p>${escapeHtml(ui("authorsLabel"))}: ${escapeHtml(article.authors)}</p></div>` : ""}
+      ${metaParts.length ? `<div class="fb-article-meta">${metaParts.map((part) => `<span>${escapeHtml(part)}</span>`).join("")}</div>` : ""}
+    </header>
+    <div class="fb-article-body">
+      <section class="fb-body-section">
+        <h2>${escapeHtml(ui("detailSummaryTitle"))}</h2>
+        ${renderAcademicLanguageTextBlocks(abstractBlocks, "p")}
+      </section>
+    </div>
+    ${links.length ? `
+      <footer class="fb-article-links">
+        ${links.map((link) => `<a href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${escapeHtml(link.label || link.href)}</a>`).join("")}
+      </footer>
+    ` : ""}
+  `;
+  renderAcademicArticleLanguageControls();
 }
 function renderCardGrid(containerId, items, renderItem) {
   const container = byId(containerId);
@@ -6451,8 +6587,9 @@ function bindReaderControls() {
     if (resetButton) {
       state.readerQuery = "";
       state.readerFieldFilter = "all";
-      setReaderDisplayLanguages(READER_DISPLAY_LANGUAGE_SEQUENCE);
+      setReaderDisplayLanguages(defaultReaderDisplayLanguages());
       renderFrontierReader();
+      renderAcademicPaperArticle();
       return;
     }
 
@@ -6465,6 +6602,20 @@ function bindReaderControls() {
         : [...current, locale];
       setReaderDisplayLanguages(next.length ? next : [locale]);
       renderFrontierReader();
+      renderAcademicPaperArticle();
+      return;
+    }
+
+    const articleLanguageButton = event.target.closest("[data-academic-article-language]");
+    if (articleLanguageButton) {
+      const locale = articleLanguageButton.dataset.academicArticleLanguage || "";
+      const current = readerDisplayLanguages();
+      const next = current.includes(locale)
+        ? current.filter((item) => item !== locale)
+        : [...current, locale];
+      setReaderDisplayLanguages(next.length ? next : [locale]);
+      renderFrontierReader();
+      renderAcademicPaperArticle();
       return;
     }
 
@@ -7012,6 +7163,7 @@ function renderAll() {
     renderPaperControls();
     renderPapers();
     renderFrontierReader();
+    renderAcademicPaperArticle();
     renderMetrics();
     renderTrends();
     renderTeams();
