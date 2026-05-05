@@ -354,15 +354,15 @@ const UI_TEXT = {
     teamsNote: "",
     paperLaneKicker: "Paper list",
     readerTitle: "Academic Frontier",
-    readerSubtitle: "Full Abstract Feed",
+    readerSubtitle: "Paper Entries",
     readerSearchPlaceholder: "Search titles, authors, abstracts, venues, or DOI",
     readerFieldFilterLabel: "Field",
     readerDisplayLanguagesLabel: "Displayed languages",
-    readerOpenAction: "Read detail",
-    readerEmpty: "No abstract stories match the current filters.",
+    readerOpenAction: "Read abstract",
+    readerEmpty: "No paper entries match the current filters.",
     readerRailTitle: "Browse by field",
-    readerRailSubtitle: "Use the feed for reading; keep the full paper library for detailed filtering.",
-    readerTotalLabel: "Abstracts",
+    readerRailSubtitle: "The index shows title, source, authors, metrics, and tags; the abstract is the reading body inside each entry.",
+    readerTotalLabel: "Entries",
     readerYearLabel: "Years",
     readerVenueLabel: "Venues",
     papersTitle: "Paper Library",
@@ -521,9 +521,9 @@ const UI_TEXT = {
     copiedBibtexLabel: "BibTeX copied",
     topLabel: "Top",
     detailAction: "Open detail",
-    detailBackAction: "Back to Paper Library",
+    detailBackAction: "Back to Entries",
     detailSummaryKicker: "Paper detail",
-    detailSummaryTitle: "Record",
+    detailSummaryTitle: "Abstract",
     detailContextTitle: "Archive record",
     detailSourceTitle: "Source bundle",
     teamHomepageAction: "Homepage",
@@ -615,15 +615,15 @@ const UI_TEXT = {
     teamsNote: "",
     paperLaneKicker: "论文列表",
     readerTitle: "学术前沿",
-    readerSubtitle: "完整摘要信息流",
+    readerSubtitle: "论文入口列表",
     readerSearchPlaceholder: "搜索题目、作者、摘要、出版地或 DOI",
     readerFieldFilterLabel: "领域",
     readerDisplayLanguagesLabel: "显示语言",
-    readerOpenAction: "阅读详情",
-    readerEmpty: "当前筛选下没有匹配的摘要文章。",
+    readerOpenAction: "阅读摘要",
+    readerEmpty: "当前筛选下没有匹配的论文入口。",
     readerRailTitle: "按领域浏览",
-    readerRailSubtitle: "首页用于连续阅读摘要；完整筛选和指标判断仍放在论文库中。",
-    readerTotalLabel: "摘要",
+    readerRailSubtitle: "入口页展示题目、来源、作者、指标与标签；摘要正文放在每篇论文页面中阅读。",
+    readerTotalLabel: "入口",
     readerYearLabel: "年份",
     readerVenueLabel: "出版地",
     papersTitle: "论文库",
@@ -781,9 +781,9 @@ const UI_TEXT = {
     copiedBibtexLabel: "已复制 BibTeX",
     topLabel: "Top",
     detailAction: "打开详情",
-    detailBackAction: "返回论文库",
+    detailBackAction: "返回入口列表",
     detailSummaryKicker: "论文详情",
-    detailSummaryTitle: "记录",
+    detailSummaryTitle: "摘要正文",
     detailContextTitle: "归档记录",
     detailSourceTitle: "来源入口",
     teamHomepageAction: "主页",
@@ -876,15 +876,15 @@ const UI_TEXT = {
     teamsNote: "",
     paperLaneKicker: "論文リスト",
     readerTitle: "学術フロンティア",
-    readerSubtitle: "要旨フィード",
+    readerSubtitle: "論文入口リスト",
     readerSearchPlaceholder: "題目・著者・要旨・掲載先・DOIで検索",
     readerFieldFilterLabel: "分野",
     readerDisplayLanguagesLabel: "表示言語",
-    readerOpenAction: "詳細を読む",
-    readerEmpty: "現在の条件に一致する要旨記事はありません。",
+    readerOpenAction: "要旨を読む",
+    readerEmpty: "現在の条件に一致する論文入口はありません。",
     readerRailTitle: "分野で閲覧",
-    readerRailSubtitle: "ホームは要旨を連続して読む場所です。詳細な絞り込みと指標確認は論文庫に残します。",
-    readerTotalLabel: "要旨",
+    readerRailSubtitle: "入口では題目・出典・著者・指標・タグを示し、要旨本文は各論文ページで読めるようにします。",
+    readerTotalLabel: "入口",
     readerYearLabel: "年",
     readerVenueLabel: "掲載先",
     papersTitle: "論文庫",
@@ -1043,9 +1043,9 @@ const UI_TEXT = {
     copiedBibtexLabel: "BibTeX をコピーしました",
     topLabel: "Top",
     detailAction: "詳細を見る",
-    detailBackAction: "論文庫へ戻る",
+    detailBackAction: "入口リストへ戻る",
     detailSummaryKicker: "論文詳細",
-    detailSummaryTitle: "記録",
+    detailSummaryTitle: "要旨本文",
     detailContextTitle: "アーカイブ記録",
     detailSourceTitle: "ソース導線",
     teamHomepageAction: "ホームページ",
@@ -5973,16 +5973,30 @@ function readerStoryMeta(paper) {
 
 function readerStoryLanguageBlocks(paper) {
   return readerDisplayLanguages().map((locale) => {
-    const abstract = formatRichTextForLocale(locale, paper?.abstract || ui("abstractUnavailable"));
-    if (!abstract) return "";
     const title = formatRichTextForLocale(locale, paperDisplayTitleValue(paper));
+    if (!title) return "";
     const label = LOCALE_CATALOG[locale]?.label || locale;
     return `<div class="frontier-reader-language-block" data-reader-language-block="${escapeHtml(locale)}">
       <p class="frontier-reader-language-label">${escapeHtml(label)}</p>
       <h3>${title}</h3>
-      <p class="frontier-reader-abstract rich-text">${abstract}</p>
     </div>`;
   }).join("");
+}
+
+function readerMetricFacts(paper) {
+  const metrics = paper?.metrics || {};
+  const parts = [];
+  if (metrics.impactFactor) parts.push(`${ui("impactFactorLabel")} ${metrics.impactFactor}`);
+  if (metrics.jcrQuartile) parts.push(`${ui("jcrLabel")} ${metrics.jcrQuartile}`);
+  if (metrics.casQuartile) {
+    parts.push(`${ui("casLabel")} ${metrics.casQuartile}${metrics.casTop ? ` ${ui("topLabel")}` : ""}`);
+  }
+  if (metrics.ccfRank) parts.push(`${ui("ccfLabel")} ${metrics.ccfRank}`);
+  const citationCount = paper?.citationCount ?? paper?.citations;
+  if (citationCount !== undefined && citationCount !== null) {
+    parts.push(`${ui("citationsMetricLabel")} ${citationCount}`);
+  }
+  return parts.map((part) => `<span>${escapeHtml(part)}</span>`).join("");
 }
 
 function readerStoryTags(paper) {
@@ -6007,18 +6021,24 @@ function renderFrontierReaderStories() {
   papers.forEach((paper) => {
     const article = el("article", "frontier-reader-card");
     article.dataset.readerPaper = paper?.id || "";
+    article.dataset.readerHref = paperDetailHref(paper);
+    article.tabIndex = 0;
     const authors = paperAuthorNames(paper).slice(0, 4).join(", ");
+    const doi = publicationDoiText(paper);
+    const facts = readerMetricFacts(paper);
     article.innerHTML = `
-      <div class="frontier-reader-meta">
-        <span>${escapeHtml(ui("navPapers"))}</span>
-        ${readerStoryMeta(paper)}
+      <div class="frontier-reader-card-body">
+        <div class="frontier-reader-meta">
+          <span>${escapeHtml(ui("navPapers"))}</span>
+          ${readerStoryMeta(paper)}
+        </div>
+        ${readerStoryLanguageBlocks(paper)}
+        ${authors ? `<p class="frontier-reader-authors"><strong>${escapeHtml(ui("authorsLabel"))}</strong> ${escapeHtml(authors)}</p>` : ""}
+        ${doi ? `<div class="frontier-reader-source-line"><span class="frontier-reader-doi">DOI ${escapeHtml(doi)}</span></div>` : ""}
+        ${facts ? `<div class="frontier-reader-facts">${facts}</div>` : ""}
+        <div class="field-hash-row frontier-reader-tags">${readerStoryTags(paper)}</div>
       </div>
-      ${readerStoryLanguageBlocks(paper)}
-      ${authors ? `<p class="frontier-reader-authors">${escapeHtml(authors)}</p>` : ""}
-      <div class="field-hash-row frontier-reader-tags">${readerStoryTags(paper)}</div>
-      <div class="frontier-reader-actions">
-        <a class="frontier-reader-open" href="${escapeHtml(paperDetailHref(paper))}">${escapeHtml(ui("readerOpenAction"))}</a>
-      </div>
+      <a class="frontier-reader-card-action" href="${escapeHtml(paperDetailHref(paper))}" aria-label="${escapeHtml(ui("readerOpenAction"))}">&rarr;</a>
     `;
     list.appendChild(article);
   });
@@ -6452,7 +6472,25 @@ function bindReaderControls() {
     if (fieldChip) {
       state.readerFieldFilter = fieldChip.dataset.readerFieldChip || "all";
       renderFrontierReader();
+      return;
     }
+
+    const readerCard = event.target.closest("[data-reader-href]");
+    if (readerCard && !event.target.closest("a, button, input, select, textarea")) {
+      const href = readerCard.dataset.readerHref;
+      if (href) window.location.href = href;
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!["Enter", " "].includes(event.key)) return;
+    const readerCard = event.target.closest("[data-reader-href]");
+    if (!readerCard) return;
+    if (event.target.closest("a, button, input, select, textarea")) return;
+    const href = readerCard.dataset.readerHref;
+    if (!href) return;
+    event.preventDefault();
+    window.location.href = href;
   });
 }
 
