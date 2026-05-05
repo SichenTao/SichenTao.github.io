@@ -2804,13 +2804,13 @@ body[data-page="papers"] .page-wash {
 }
 
 .academic-frontier-article-layout {
-  width: min(680px, calc(100% - var(--shell-gutter)));
+  width: min(760px, calc(100% - var(--shell-gutter)));
   gap: 0;
   padding-top: calc(var(--thin-header-clearance, 92px) + 6px);
 }
 
 .fb-article-page {
-  width: min(680px, 100%);
+  width: min(760px, 100%);
   margin: 24px auto 0;
   padding-bottom: 42px;
 }
@@ -2848,6 +2848,7 @@ body[data-page="papers"] .page-wash {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-wrap: nowrap;
 }
 
 .fb-language-display--article {
@@ -2871,6 +2872,7 @@ body[data-page="papers"] .page-wash {
   font: inherit;
   font-size: 0.78rem;
   font-weight: 760;
+  white-space: nowrap;
 }
 
 .fb-language-chip.is-selected {
@@ -2899,7 +2901,8 @@ body[data-page="papers"] .page-wash {
   font-weight: 830;
   line-height: 1.09;
   letter-spacing: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 .fb-article-title-translation {
@@ -2958,6 +2961,7 @@ body[data-page="papers"] .page-wash {
 
 .fb-article-meta span {
   display: inline-flex;
+  min-width: 0;
   align-items: center;
   gap: 6px;
 }
@@ -2975,12 +2979,16 @@ body[data-page="papers"] .page-wash {
   text-underline-offset: 0.16em;
 }
 
-.fb-article-facts,
-.fb-article-tags {
+.fb-article-chip-deck {
   display: flex;
   min-width: 0;
   flex-wrap: wrap;
   gap: 8px;
+}
+
+.fb-article-facts,
+.fb-article-tags {
+  display: contents;
 }
 
 .fb-article-facts span {
@@ -3123,6 +3131,10 @@ body[data-page="papers"] .page-wash {
 
   .fb-article-facts,
   .fb-article-tags {
+    display: contents;
+  }
+
+  .fb-article-chip-deck {
     gap: 6px;
   }
 
@@ -3938,7 +3950,7 @@ body[data-page="feed"] main.shell.layout {
   top: 52px;
   z-index: 14;
   display: grid;
-  grid-template-columns: minmax(0, var(--frontier-feed-main)) minmax(300px, var(--frontier-feed-rail));
+  grid-template-columns: minmax(0, var(--frontier-feed-main)) minmax(430px, 450px);
   gap: var(--frontier-feed-gap);
   align-items: center;
   justify-content: center;
@@ -3949,7 +3961,7 @@ body[data-page="feed"] main.shell.layout {
 
 .frontier-reader-toolbar-actions {
   display: grid;
-  grid-template-columns: minmax(106px, 118px) minmax(164px, 1fr) 44px;
+  grid-template-columns: minmax(104px, 118px) max-content 44px;
   gap: 8px;
   align-items: center;
   justify-content: end;
@@ -4008,26 +4020,31 @@ body[data-page="feed"] main.shell.layout {
 .frontier-reader-language-display {
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 4px;
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .frontier-reader-language-chip {
   appearance: none;
   display: inline-flex;
-  flex: 1 1 0;
+  flex: 0 0 auto;
   min-height: 34px;
   align-items: center;
   justify-content: center;
-  border: 0;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
   border-radius: 999px;
-  background: transparent;
-  color: var(--muted);
+  background: #fff;
+  color: var(--ink-soft);
   cursor: pointer;
+  padding: 0 12px;
   font: inherit;
-  font-size: 0.76rem;
-  font-weight: 720;
+  font-size: 0.78rem;
+  font-weight: 760;
   letter-spacing: 0;
+  white-space: nowrap;
   transition:
     background 160ms ease,
     color 160ms ease,
@@ -4038,13 +4055,14 @@ body[data-page="feed"] main.shell.layout {
 .frontier-reader-language-chip:focus-visible {
   outline: none;
   color: var(--ink);
-  background: rgba(var(--ink-rgb), 0.045);
+  border-color: rgba(var(--ink-rgb), 0.24);
 }
 
 .frontier-reader-language-chip.is-active {
-  background: rgba(var(--ink-rgb), 0.08);
-  color: var(--ink);
-  box-shadow: inset 0 0 0 1px rgba(var(--ink-rgb), 0.08);
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+  box-shadow: none;
 }
 
 .frontier-reader-icon-button {
@@ -4156,7 +4174,7 @@ body[data-page="feed"] main.shell.layout {
 
 .frontier-reader-language-block {
   display: grid;
-  max-width: 42ch;
+  max-width: min(100%, 66ch);
   gap: 5px;
 }
 
@@ -4183,14 +4201,9 @@ body[data-page="feed"] main.shell.layout {
   font-weight: 720;
 }
 
-.frontier-reader-language-block .fb-language-label {
-  display: flex;
-  margin-bottom: 2px;
-}
-
 .frontier-reader-dek-group {
   display: grid;
-  max-width: 54ch;
+  max-width: min(100%, 76ch);
   gap: 5px;
   min-width: 0;
 }
@@ -4203,8 +4216,14 @@ body[data-page="feed"] main.shell.layout {
   line-height: 1.45;
 }
 
-.frontier-reader-facts,
-.frontier-reader-tags {
+.frontier-reader-source-line a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--ink-rgb), 0.22);
+  text-underline-offset: 0.16em;
+}
+
+.frontier-reader-chip-deck {
   display: flex;
   min-width: 0;
   flex-wrap: wrap;
@@ -4212,8 +4231,12 @@ body[data-page="feed"] main.shell.layout {
   padding-top: 3px;
 }
 
-.frontier-reader-facts span,
-.frontier-reader-tags .field-hash-tag {
+.frontier-reader-facts,
+.frontier-reader-tags {
+  display: contents;
+}
+
+.frontier-reader-facts span {
   display: inline-flex;
   align-items: center;
   min-height: 27px;
@@ -4221,13 +4244,15 @@ body[data-page="feed"] main.shell.layout {
   border-radius: 999px;
   padding: 0 10px;
   background: rgba(255, 255, 255, 0.6);
-  color: var(--muted);
+  color: var(--ink-soft);
   font-size: 0.72rem;
   font-weight: 700;
 }
 
-.frontier-reader-facts span {
-  color: var(--ink-soft);
+.frontier-reader-tags .field-hash-tag {
+  min-height: 27px;
+  font-size: 0.72rem;
+  font-weight: 740;
 }
 
 .frontier-reader-card-action {
@@ -4368,7 +4393,7 @@ body[data-page="feed"] main.shell.layout {
   }
 
   .frontier-reader-toolbar-actions {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr) 42px;
   }
 
   .frontier-reader-search,
@@ -4380,6 +4405,22 @@ body[data-page="feed"] main.shell.layout {
 
   .frontier-reader-icon-button {
     width: 42px;
+  }
+
+  .frontier-reader-toolbar-actions select {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .frontier-reader-toolbar-actions .frontier-reader-language-display {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+  }
+
+  .frontier-reader-toolbar-actions .frontier-reader-icon-button {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .frontier-reader-grid {
@@ -4414,8 +4455,7 @@ body[data-page="feed"] main.shell.layout {
     -webkit-line-clamp: 2;
   }
 
-  .frontier-reader-facts,
-  .frontier-reader-tags,
+  .frontier-reader-chip-deck,
   .frontier-reader-card-action {
     display: none;
   }

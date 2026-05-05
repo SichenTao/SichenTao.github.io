@@ -1812,6 +1812,15 @@ function publicationDoiText(item) {
   return /doi\.org\//i.test(primary) ? primary.replace(/^https?:\/\/(?:dx\.)?doi\.org\//i, "") : "";
 }
 
+function publicationDoiUrl(item) {
+  const explicit = normalizeUrl(item?.doiUrl || item?.doi_url);
+  if (explicit) {
+    return explicit;
+  }
+  const doi = publicationDoiText(item);
+  return doi ? `https://doi.org/${doi}` : "";
+}
+
 function publicationMetricYear(item, metricKind) {
   const verification = item?.verification || {};
   const metricYear = verification?.[`${metricKind}_year`];
@@ -5929,6 +5938,41 @@ function languageHtmlAttribute(locale) {
   return locale === "zh" ? "zh-CN" : locale === "ja" ? "ja" : "en";
 }
 
+function publicationDisplayDate(paper) {
+  const rawDate = normalizeUrl(paper?.publicationDate || paper?.publishedDate || paper?.date);
+  if (rawDate) {
+    const match = rawDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (match) {
+      const year = Number.parseInt(match[1], 10);
+      const month = Number.parseInt(match[2], 10);
+      const day = Number.parseInt(match[3], 10);
+      if (currentLocale() === "en") {
+        const monthName = [
+          "",
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ][month] || match[2];
+        return `${monthName} ${day}, ${year}`;
+      }
+      return `${year}年${month}月${day}日`;
+    }
+    if (/^\d{4}$/.test(rawDate)) {
+      return rawDate;
+    }
+  }
+  return paperYearValue(paper);
+}
+
 function readerAvailableFields(papers = papersForDomain()) {
   return uniqueStrings(papers.flatMap((paper) => paperFieldTags(paper))).sort((left, right) =>
     localizeText(left).localeCompare(localizeText(right), currentLocale())
@@ -6002,13 +6046,11 @@ function renderFrontierReaderFieldOptions() {
 }
 
 function readerStoryLanguageBlocks(paper) {
-  const multipleLanguages = readerDisplayLanguages().length > 1;
   return readerDisplayLanguages().map((locale, index) => {
     const title = formatRichTextForLocale(locale, paperDisplayTitleValue(paper));
     if (!title) return "";
-    const label = multipleLanguages ? `<span class="fb-language-label">${escapeHtml(LOCALE_CATALOG[locale]?.label || locale)}</span>` : "";
     return `<div class="frontier-reader-language-block${index > 0 ? " is-translation" : ""}" data-reader-language-block="${escapeHtml(locale)}">
-      ${label}<h3>${title}</h3>
+      <h3>${title}</h3>
     </div>`;
   }).join("");
 }
@@ -6050,19 +6092,29 @@ function readerLeadAuthor(paper) {
 }
 
 function readerStoryMeta(paper) {
+  const dateLabel = publicationDisplayDate(paper);
   const parts = [
     `<span class="frontier-reader-type">${escapeHtml(ui("readerEntryTypeLabel"))}</span>`,
-    readerLeadAuthor(paper) ? `<span>${escapeHtml(readerLeadAuthor(paper))}</span>` : "",
-    paperYearValue(paper) ? `<span>${escapeHtml(paperYearValue(paper))}</span>` : "",
+    dateLabel ? `<span>${escapeHtml(dateLabel)}</span>` : "",
     `<span>${escapeHtml(ui("readerReadTimeLabel"))}</span>`,
   ];
   return parts.filter(Boolean).join("");
 }
 
-function readerStorySourceLine(paper) {
+function readerStorySourceMarkup(paper) {
+  const venue = localizeText(paper?.venue);
+  const venueHref = normalizeUrl(paper?.venue_url || paper?.venueUrl);
+  const doi = publicationDoiText(paper);
+  const doiHref = publicationDoiUrl(paper);
   return [
-    localizeText(paper?.venue),
-    publicationDoiText(paper) ? `DOI ${publicationDoiText(paper)}` : "",
+    venue
+      ? venueHref
+        ? `<a href="${escapeHtml(venueHref)}" target="_blank" rel="noreferrer">${escapeHtml(venue)}</a>`
+        : escapeHtml(venue)
+      : "",
+    doi && doiHref
+      ? `${escapeHtml(ui("doiLabel"))} <a href="${escapeHtml(doiHref)}" target="_blank" rel="noreferrer">${escapeHtml(doiHref)}</a>`
+      : "",
   ].filter(Boolean).join(" · ");
 }
 
@@ -6098,18 +6150,24 @@ function renderFrontierReaderStories() {
     article.dataset.readerHref = paperDetailHref(paper);
     article.tabIndex = 0;
     const authors = paperAuthorNames(paper).join(", ");
-    const sourceLine = readerStorySourceLine(paper);
+    const sourceLine = readerStorySourceMarkup(paper);
     const facts = readerMetricFacts(paper);
+    const tags = readerStoryTags(paper);
+    const chipDeck = facts || tags
+      ? `<div class="frontier-reader-chip-deck">
+          ${facts ? `<div class="frontier-reader-facts">${facts}</div>` : ""}
+          ${tags ? `<div class="field-hash-row frontier-reader-tags">${tags}</div>` : ""}
+        </div>`
+      : "";
     article.innerHTML = `
       <div class="frontier-reader-card-body">
         <span class="frontier-reader-meta">${readerStoryMeta(paper)}</span>
         ${readerStoryLanguageBlocks(paper)}
         <span class="frontier-reader-dek-group">
           ${authors ? `<span class="frontier-reader-authors">${escapeHtml(ui("authorsLabel"))} ${escapeHtml(authors)}</span>` : ""}
-          ${sourceLine ? `<span class="frontier-reader-source-line">${escapeHtml(sourceLine)}</span>` : ""}
+          ${sourceLine ? `<span class="frontier-reader-source-line">${sourceLine}</span>` : ""}
         </span>
-        ${facts ? `<span class="frontier-reader-facts">${facts}</span>` : ""}
-        <div class="field-hash-row frontier-reader-tags">${readerStoryTags(paper)}</div>
+        ${chipDeck}
       </div>
       <a class="frontier-reader-card-action" href="${escapeHtml(paperDetailHref(paper))}" aria-label="${escapeHtml(ui("readerOpenAction"))}">&rarr;</a>
     `;
@@ -6227,7 +6285,8 @@ function articleLanguageBlocks(value, fallback = "") {
 }
 
 function renderAcademicLanguageLabel(locale) {
-  return `<span class="fb-language-label">${escapeHtml(LOCALE_CATALOG[locale]?.label || locale)}</span>`;
+  void locale;
+  return "";
 }
 
 function renderAcademicTitleBlocks(blocks) {
@@ -6282,9 +6341,27 @@ function renderAcademicPaperArticle() {
   const titleBlocks = articleLanguageBlocks(article.title, article.fallbackTitle);
   const abstractBlocks = articleLanguageBlocks(article.abstract, article.fallbackAbstract);
   const multipleLanguages = readerDisplayLanguages().length > 1;
-  const metaParts = [article.venue, article.year, article.doi ? `${ui("doiLabel")} ${article.doi}` : ""].filter(Boolean);
+  const venueHref = normalizeUrl(article.venueHref);
+  const doiHref = normalizeUrl(article.doiHref) || (article.doi ? `https://doi.org/${article.doi}` : "");
+  const metaParts = [
+    article.venue
+      ? venueHref
+        ? `<a href="${escapeHtml(venueHref)}" target="_blank" rel="noreferrer">${escapeHtml(article.venue)}</a>`
+        : escapeHtml(article.venue)
+      : "",
+    article.date || article.year ? escapeHtml(article.date || article.year) : "",
+    article.doi && doiHref
+      ? `${escapeHtml(ui("doiLabel"))} <a href="${escapeHtml(doiHref)}" target="_blank" rel="noreferrer">${escapeHtml(doiHref)}</a>`
+      : "",
+  ].filter(Boolean);
   const facts = articleFactChips(article);
   const tags = articleTagChips(article);
+  const chipDeck = facts || tags
+    ? `<div class="fb-article-chip-deck">
+        ${facts ? `<div class="fb-article-facts">${facts}</div>` : ""}
+        ${tags ? `<div class="field-hash-row fb-article-tags">${tags}</div>` : ""}
+      </div>`
+    : "";
   const links = Array.isArray(article.links) ? article.links.filter((link) => link?.href) : [];
   container.classList.toggle("is-multilingual", multipleLanguages);
   container.innerHTML = `
@@ -6299,9 +6376,8 @@ function renderAcademicPaperArticle() {
       <p class="eyebrow">${escapeHtml(ui("detailSummaryKicker"))}</p>
       <div class="fb-article-title-group">${renderAcademicTitleBlocks(titleBlocks)}</div>
       ${article.authors ? `<div class="fb-article-dek-group"><p>${escapeHtml(ui("authorsLabel"))}: ${escapeHtml(article.authors)}</p></div>` : ""}
-      ${metaParts.length ? `<div class="fb-article-meta">${metaParts.map((part) => `<span>${escapeHtml(part)}</span>`).join("")}</div>` : ""}
-      ${facts ? `<div class="fb-article-facts">${facts}</div>` : ""}
-      ${tags ? `<div class="field-hash-row fb-article-tags">${tags}</div>` : ""}
+      ${metaParts.length ? `<div class="fb-article-meta">${metaParts.map((part) => `<span>${part}</span>`).join("")}</div>` : ""}
+      ${chipDeck}
     </header>
     <div class="fb-article-body">
       <section class="fb-body-section">
