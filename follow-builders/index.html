@@ -42,15 +42,16 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="./styles.css?v=20260505-194800" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260505-194800" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260505-194800" />
-    <script src="./data/follow-builders-data.js?v=20260505-194800"></script>
-    <script src="/assets/shared/homepage-i18n.js?v=20260505-194800"></script>
-    <script src="/assets/shared/homepage-platform.js?v=20260505-194800"></script>
-    <script src="/assets/shared/homepage-components.js?v=20260505-194800"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260505-194800"></script>
-    <script defer src="./app.js?v=20260505-194800"></script>
+    <link rel="stylesheet" href="./styles.css?v=20260505-204947" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260505-204947" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260505-204947" />
+    <script src="./data/follow-builders-data.js?v=20260505-204947"></script>
+    <script src="/assets/shared/homepage-i18n.js?v=20260505-204947"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260505-204947"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260505-204947"></script>
+    <script src="./data/follow-builders-translations.js?v=20260505-204947"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260505-204947"></script>
+    <script defer src="./app.js?v=20260505-204947"></script>
   </head>
   <body data-page="follow-builders">
     <div class="page-wash"></div>
@@ -67,19 +68,11 @@
           <div class="theme-switcher control-switcher" role="group" aria-label="Color theme"></div>
         </div>
         <nav class="topnav" aria-label="Page navigation">
-          <a href="./index.html" aria-current="page">
-            <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg>
-            <span data-i18n="nav.home">Home</span>
-          </a>
-          <a href="./index.html#feed">
+          <a href="./index.html#feed" aria-current="page">
             <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-publications"></use></svg>
             <span data-i18n="nav.feed">Feed</span>
           </a>
-          <a href="./index.html#sources">
-            <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg>
-            <span data-i18n="nav.sources">Sources</span>
-          </a>
-          <a href="https://github.com/zarazhangrui/follow-builders">
+          <a href="./index.html#github">
             <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-code"></use></svg>
             <span data-i18n="nav.github">GitHub</span>
           </a>
@@ -128,12 +121,18 @@
               <h3 data-i18n="sources.blogs">Official blogs</h3>
               <div id="fb-blog-list" class="fb-source-list"></div>
             </section>
-            <section class="fb-rail-section fb-project-note">
-              <h3 data-i18n="sources.projectNoteTitle">Project note</h3>
-              <p data-i18n="sources.projectNoteText">
-                This reader visualizes Zara Zhang's follow-builders open-source project.
-              </p>
-              <a href="https://github.com/zarazhangrui/follow-builders" data-i18n="sources.projectNoteLink">Original project</a>
+            <section class="fb-rail-section fb-github-section" id="github">
+              <h3 data-i18n="github.title">GitHub</h3>
+              <div class="fb-github-list">
+                <a class="fb-github-card" href="https://github.com/zarazhangrui/follow-builders">
+                  <strong data-i18n="github.zaraTitle">Zara Zhang</strong>
+                  <span data-i18n="github.zaraText">Original Follow Builders project</span>
+                </a>
+                <a class="fb-github-card" href="https://github.com/SichenTao">
+                  <strong data-i18n="github.sichenTitle">Sichen Tao</strong>
+                  <span data-i18n="github.sichenText">Homepage and research workspace</span>
+                </a>
+              </div>
             </section>
           </aside>
         </div>

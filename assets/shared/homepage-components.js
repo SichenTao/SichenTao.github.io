@@ -270,6 +270,10 @@
         overview: [["Feed", "Sources", "Article reader"], ["X posts", "Podcasts", "Official blogs"]],
         feed: [["Story cards", "Search", "Filters"], ["Builders", "Posts", "Central feed"]],
         sources: [["AI builders", "Podcasts", "Blogs"], ["GitHub project", "Central source list", "Public feed"]],
+        github: [[
+          { label: "Zara Zhang / follow-builders", href: "https://github.com/zarazhangrui/follow-builders" },
+          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
+        ], ["Original feed", "Reader implementation", "Homepage workspace"]],
       },
       jsps: {
         calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
@@ -329,6 +333,10 @@
         overview: [["信息流", "来源", "文章阅读"], ["X 帖子", "播客", "官方博客"]],
         feed: [["故事卡片", "搜索", "筛选"], ["Builders", "帖子", "中心 feed"]],
         sources: [["AI builders", "播客", "博客"], ["GitHub 项目", "中心来源列表", "公开 feed"]],
+        github: [[
+          { label: "Zara Zhang / follow-builders", href: "https://github.com/zarazhangrui/follow-builders" },
+          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
+        ], ["原项目", "阅读器实现", "个人主页工作区"]],
       },
       jsps: {
         calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
@@ -388,6 +396,10 @@
         overview: [["フィード", "ソース", "記事リーダー"], ["X 投稿", "Podcasts", "公式ブログ"]],
         feed: [["ストーリーカード", "検索", "フィルタ"], ["Builders", "投稿", "中央フィード"]],
         sources: [["AI builders", "Podcasts", "ブログ"], ["GitHub project", "中央ソース", "公開 feed"]],
+        github: [[
+          { label: "Zara Zhang / follow-builders", href: "https://github.com/zarazhangrui/follow-builders" },
+          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
+        ], ["元プロジェクト", "Reader 実装", "個人ワークスペース"]],
       },
       jsps: {
         calls: [["プログラム", "対象者", "優先度"], ["募集中", "区分", "申請者"]],
@@ -422,7 +434,7 @@
       path = parsed.pathname;
       if (site === "followBuilders" && parsed.hash) {
         const hashKey = parsed.hash.replace(/^#/, "");
-        if (["feed", "sources"].includes(hashKey) || hashKey.startsWith("article-")) {
+        if (["feed", "sources", "github"].includes(hashKey) || hashKey.startsWith("article-")) {
           if (hashKey.startsWith("article-")) return "feed";
           return hashKey;
         }
@@ -492,6 +504,7 @@
       overview: ["#feed", "#sources", "#article"],
       feed: ["#fb-story-list", "#fb-search", "#fb-type-filter"],
       sources: ["#fb-builder-list", "#fb-podcast-list", "#fb-blog-list"],
+      github: ["https://github.com/zarazhangrui/follow-builders", "https://github.com/SichenTao"],
     },
     jsps: {
       calls: ["#call-list", "#call-search", "#call-list"],

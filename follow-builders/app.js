@@ -10,8 +10,10 @@ const THEME_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "to
 const LOCALE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const THEME_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const MODE_KEY = "follow-builders-reading-mode";
-const DISPLAY_LANGUAGES_KEY = "follow-builders-display-languages";
+const DISPLAY_LANGUAGES_KEY = "follow-builders-display-languages-v2";
 const TRANSLATION_CACHE_KEY = "follow-builders-content-translations-v1";
+const EMBEDDED_TRANSLATION_CACHE = window.FOLLOW_BUILDERS_TRANSLATION_CACHE || {};
+const LIVE_FEEDS_ENABLED = new URLSearchParams(window.location.search).get("live") === "1";
 const DISPLAY_LANGUAGE_SEQUENCE = ["en", "zh", "ja"];
 const TRANSLATION_TARGETS = {
   zh: "zh-CN",
@@ -59,11 +61,11 @@ const I18N = {
       showMenu: "Show menu",
       hideMenu: "Hide menu",
       searchPlaceholder: "Search builders, posts, podcasts, or sources",
-      filterSource: "Filter source",
+      filterSource: "Source",
       reset: "Reset filters",
     },
     types: {
-      all: "Filter source",
+      all: "Source",
       x: "X posts",
       podcast: "Podcasts",
       blog: "Blogs",
@@ -96,6 +98,13 @@ const I18N = {
       projectNoteTitle: "Project note",
       projectNoteText: "This reader visualizes Zara Zhang's follow-builders open-source project.",
       projectNoteLink: "Original project",
+    },
+    github: {
+      title: "GitHub",
+      zaraTitle: "Zara Zhang",
+      zaraText: "Original Follow Builders project",
+      sichenTitle: "Sichen Tao",
+      sichenText: "Homepage and research workspace",
     },
     article: {
       back: "Back to feed",
@@ -144,11 +153,11 @@ const I18N = {
       showMenu: "展开菜单",
       hideMenu: "收起菜单",
       searchPlaceholder: "搜索 builder、帖子、播客或来源",
-      filterSource: "筛选来源",
+      filterSource: "来源",
       reset: "重置筛选",
     },
     types: {
-      all: "筛选来源",
+      all: "来源",
       x: "X 帖子",
       podcast: "播客",
       blog: "博客",
@@ -181,6 +190,13 @@ const I18N = {
       projectNoteTitle: "项目说明",
       projectNoteText: "本阅读器用于可视化 Zara Zhang 的 follow-builders 开源项目。",
       projectNoteLink: "原项目",
+    },
+    github: {
+      title: "GitHub",
+      zaraTitle: "Zara Zhang",
+      zaraText: "Follow Builders 原始开源项目",
+      sichenTitle: "Sichen Tao",
+      sichenText: "个人主页与研究工作区",
     },
     article: {
       back: "返回信息流",
@@ -228,11 +244,11 @@ const I18N = {
       showMenu: "メニューを開く",
       hideMenu: "メニューを閉じる",
       searchPlaceholder: "builder、投稿、podcast、ソースを検索",
-      filterSource: "ソースを絞り込む",
+      filterSource: "ソース",
       reset: "フィルタをリセット",
     },
     types: {
-      all: "ソースを絞り込む",
+      all: "ソース",
       x: "X 投稿",
       podcast: "Podcast",
       blog: "ブログ",
@@ -266,6 +282,13 @@ const I18N = {
       projectNoteText: "この reader は Zara Zhang の follow-builders オープンソースプロジェクトを可視化します。",
       projectNoteLink: "元プロジェクト",
     },
+    github: {
+      title: "GitHub",
+      zaraTitle: "Zara Zhang",
+      zaraText: "Follow Builders の元プロジェクト",
+      sichenTitle: "Sichen Tao",
+      sichenText: "個人ホームページと研究ワークスペース",
+    },
     article: {
       back: "フィードに戻る",
       original: "原文",
@@ -291,8 +314,9 @@ const state = {
   articles: [],
   activeId: "",
   remoteLoaded: false,
-  translationCache: readStoredTranslationCache(),
+  translationCache: { ...EMBEDDED_TRANSLATION_CACHE, ...readStoredTranslationCache() },
   translationInflight: new Set(),
+  feedTranslationInflight: new Set(),
 };
 
 function escapeHtml(value) {
@@ -358,9 +382,9 @@ function readInitialTheme() {
 function readStoredMode() {
   try {
     const stored = localStorage.getItem(MODE_KEY);
-    return ["english", "current", "bilingual", "trilingual"].includes(stored) ? stored : "english";
+    return ["english", "current", "bilingual", "trilingual"].includes(stored) ? stored : "trilingual";
   } catch {
-    return "english";
+    return "trilingual";
   }
 }
 
@@ -391,7 +415,7 @@ function readStoredDisplayLanguages() {
     }
     return normalizeDisplayLanguages(displayLanguagesFromMode(readStoredMode()));
   } catch {
-    return ["en"];
+    return ["en", "zh", "ja"];
   }
 }
 
@@ -584,6 +608,9 @@ async function translateText(text, language) {
   if (state.translationCache[key]) {
     return state.translationCache[key];
   }
+  if (!LIVE_FEEDS_ENABLED) {
+    return "";
+  }
   const chunks = splitForTranslation(source);
   const translatedChunks = await mapWithConcurrency(chunks, 4, (chunk) => translateChunk(chunk, language));
   const translated = contentText(translatedChunks.join(" "));
@@ -603,6 +630,49 @@ function articleTranslationTargets(article) {
     targets.push({ value: section.text, path: `sections.${index}.text` });
   });
   return targets.filter((target) => target.value?.en);
+}
+
+function feedTranslationTargets(article) {
+  return [
+    { value: article.title, path: "title" },
+    { value: article.dek, path: "dek" },
+  ].filter((target) => target.value?.en);
+}
+
+async function hydrateFeedTranslations(articles) {
+  const languages = normalizeDisplayLanguages(state.displayLanguages).filter((language) => language !== "en");
+  if (!languages.length || !articles?.length) return;
+  const visible = articles.slice(0, 16);
+  const inflightKey = `${visible.map((article) => article.id).join("|")}:${languages.join(",")}`;
+  if (state.feedTranslationInflight.has(inflightKey)) return;
+  const targets = visible.flatMap((article) => feedTranslationTargets(article));
+  const missing = targets.filter((target) => languages.some((language) => !target.value?.[language] && target.value?.en));
+  if (!missing.length) return;
+
+  state.feedTranslationInflight.add(inflightKey);
+  let changed = false;
+  try {
+    await mapWithConcurrency(missing, 4, async (target) => {
+      const translations = await Promise.all(
+        languages.map(async (language) => {
+          if (!target.value?.en || target.value[language]) return null;
+          const translated = await translateText(target.value.en, language);
+          return translated ? { language, translated } : null;
+        }),
+      );
+      translations.filter(Boolean).forEach(({ language, translated }) => {
+        target.value[language] = translated;
+        changed = true;
+      });
+    });
+  } catch (error) {
+    console.warn("Follow Builders feed translation skipped", error);
+  } finally {
+    state.feedTranslationInflight.delete(inflightKey);
+  }
+  if (changed && !document.body.classList.contains("fb-article-open")) {
+    renderFeed();
+  }
 }
 
 async function hydrateArticleTranslations(article) {
@@ -804,10 +874,8 @@ function renderStaticText() {
   document.querySelectorAll(".topnav").forEach((node) => node.setAttribute("aria-label", t("controls.pageNavigation")));
 
   const navHrefs = [
-    statefulHref("/follow-builders/"),
     statefulHref("/follow-builders/", "#feed"),
-    statefulHref("/follow-builders/", "#sources"),
-    "https://github.com/zarazhangrui/follow-builders",
+    statefulHref("/follow-builders/", "#github"),
   ];
   document.querySelectorAll(".topnav a").forEach((link, index) => {
     if (navHrefs[index]) {
@@ -924,6 +992,7 @@ function renderLanguageDisplayControl() {
         state.displayLanguages = normalizeDisplayLanguages(Array.from(selected));
         writeStoredDisplayLanguages(state.displayLanguages);
         renderLanguageDisplayControl();
+        renderFeed();
         renderArticleIfOpen();
       });
     });
@@ -962,8 +1031,8 @@ function renderFeed() {
     return;
   }
   list.innerHTML = articles.map((article) => {
-    const title = displayLanguageBlocks(article.title, article.title.en || "")[0]?.text || article.title.en || "";
-    const dek = displayLanguageBlocks(article.dek, article.dek.en || "")[0]?.text || article.dek.en || "";
+    const titleBlocks = displayLanguageBlocks(article.title, article.title.en || "");
+    const dekBlocks = displayLanguageBlocks(article.dek, article.dek.en || "");
     return `
       <button class="fb-story-card" type="button" data-article-id="${escapeHtml(article.id)}">
         <span class="fb-story-body">
@@ -973,8 +1042,8 @@ function renderFeed() {
             <span>${escapeHtml(formatDate(article.date))}</span>
             <span>${escapeHtml(article.minutes || 1)} ${escapeHtml(t("feed.minRead"))}</span>
           </span>
-          <strong class="fb-story-title">${escapeHtml(title)}</strong>
-          <span class="fb-story-dek">${escapeHtml(dek)}</span>
+          <span class="fb-story-title-group">${renderStoryTextBlocks(titleBlocks, "fb-story-title", "fb-story-title-translation")}</span>
+          <span class="fb-story-dek-group">${renderStoryTextBlocks(dekBlocks, "fb-story-dek", "fb-story-dek-translation")}</span>
           <span class="fb-story-tags">${(article.tags || []).slice(0, 4).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</span>
         </span>
         <span class="fb-story-arrow" aria-hidden="true">→</span>
@@ -984,6 +1053,7 @@ function renderFeed() {
   list.querySelectorAll("[data-article-id]").forEach((button) => {
     button.addEventListener("click", () => openArticle(button.dataset.articleId));
   });
+  hydrateFeedTranslations(articles);
 }
 
 function renderSources() {
@@ -1031,6 +1101,18 @@ function renderLanguageTextBlocks(blocks, tagName = "p") {
     .join("");
 }
 
+function renderStoryTextBlocks(blocks, primaryClass, secondaryClass) {
+  const multiple = blocks.length > 1;
+  return blocks
+    .map((block, index) => {
+      const className = index === 0 ? primaryClass : secondaryClass;
+      const label = multiple ? `<span class="fb-language-label">${escapeHtml(t(`displayLanguages.${block.language}`))}</span>` : "";
+      const tagName = index === 0 && primaryClass === "fb-story-title" ? "strong" : "span";
+      return `<${tagName} class="${className}" lang="${languageAttr(block.language)}">${label}${escapeHtml(block.text)}</${tagName}>`;
+    })
+    .join("");
+}
+
 function renderArticleTitleBlocks(blocks) {
   return blocks
     .map((block, index) => {
@@ -1048,10 +1130,7 @@ function renderArticle(article) {
   if (!container || !article) return;
   const titleBlocks = displayLanguageBlocks(article.title, article.title.en || "");
   const dekBlocks = displayLanguageBlocks(article.dek, article.dek.en || "");
-  const links = [
-    ...(article.links || []),
-    { label: t("article.github"), href: state.data.sourceRepo },
-  ].filter((link) => link.href);
+  const links = (article.links || []).filter((link) => link.href);
   container.innerHTML = `
     <div class="fb-article-tools">
       <button class="fb-article-back" type="button" data-back-to-feed>
@@ -1097,9 +1176,13 @@ function renderArticle(article) {
         `;
       }).join("")}
     </div>
-    <footer class="fb-article-links">
-      ${links.map((link) => `<a href="${escapeHtml(link.href)}">${escapeHtml(link.label || link.href)}</a>`).join("")}
-    </footer>
+    ${
+      links.length
+        ? `<footer class="fb-article-links">
+            ${links.map((link) => `<a href="${escapeHtml(link.href)}">${escapeHtml(link.label || link.href)}</a>`).join("")}
+          </footer>`
+        : ""
+    }
   `;
   renderLanguageDisplayControl();
   container.querySelector("[data-back-to-feed]")?.addEventListener("click", closeArticle);
@@ -1240,7 +1323,9 @@ async function loadRemoteFeeds() {
 document.addEventListener("DOMContentLoaded", () => {
   render();
   handleHash();
-  loadRemoteFeeds();
+  if (LIVE_FEEDS_ENABLED) {
+    loadRemoteFeeds();
+  }
 });
 window.addEventListener("hashchange", handleHash);
 window.addEventListener("popstate", handleHash);
