@@ -70,7 +70,6 @@ select {
 body[data-page="follow-builders"] .header-tools {
   position: relative;
   justify-content: flex-end;
-  width: min(1280px, calc(100% - 48px));
 }
 
 body[data-page="follow-builders"] .fb-site-brand {
@@ -84,10 +83,6 @@ body[data-page="follow-builders"] .fb-site-brand {
 
 body[data-page="follow-builders"] .fb-site-brand::after {
   display: none;
-}
-
-body[data-page="follow-builders"] .header-controls {
-  margin-left: auto;
 }
 
 body[data-page="follow-builders"] .topnav-shell {
@@ -932,10 +927,6 @@ body.fb-article-open .fb-feed-page {
 
   body[data-page="follow-builders"] .topnav {
     flex: 0 0 auto;
-  }
-
-  body[data-page="follow-builders"] .header-controls {
-    margin-left: 0;
   }
 
   body[data-page="follow-builders"] .topnav-shell.use-menu .topnav-toggle {
