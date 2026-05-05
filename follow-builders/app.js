@@ -27,7 +27,7 @@ const I18N = {
     },
     hero: {
       kicker: "Zara Zhang's open project",
-      title: "Follow Builders, Not Influencers",
+      title: "Follow Builders",
       lede: "A clean reading interface for the Follow Builders feed: people building AI products, research, and infrastructure.",
       start: "Start reading",
       source: "Original project",
@@ -97,7 +97,7 @@ const I18N = {
     },
     hero: {
       kicker: "Zara Zhang 的开源项目",
-      title: "Follow Builders, Not Influencers",
+      title: "Follow Builders",
       lede: "把 Follow Builders 的中心 feed 做成干净的阅读界面，关注真正做 AI 产品、研究和基础设施的人。",
       start: "开始阅读",
       source: "原项目",
@@ -167,7 +167,7 @@ const I18N = {
     },
     hero: {
       kicker: "Zara Zhang のオープンプロジェクト",
-      title: "Follow Builders, Not Influencers",
+      title: "Follow Builders",
       lede: "Follow Builders の中央フィードを、AI プロダクト、研究、基盤を実際に作る人々の読みやすい画面として表示します。",
       start: "読み始める",
       source: "元プロジェクト",
