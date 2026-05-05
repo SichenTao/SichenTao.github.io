@@ -3,6 +3,14 @@
 
 :root {
   color-scheme: light;
+  --white-rgb: 255, 255, 255;
+  --ink-rgb: 17, 17, 20;
+  --ink: #111114;
+  --ink-soft: #2d2d32;
+  --muted: #5d5d66;
+  --line: rgba(17, 17, 20, 0.12);
+  --teal: #4b188f;
+  --teal-rgb: 75, 24, 143;
   --fb-bg: #fff;
   --fb-surface: #fff;
   --fb-surface-soft: rgba(255, 255, 255, 0.72);

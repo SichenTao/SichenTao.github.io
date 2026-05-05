@@ -387,8 +387,10 @@ a {
   min-width: max-content;
   border-radius: 18px;
   border: 1px solid var(--line);
-  background: rgba(var(--white-rgb), 0.76);
-  box-shadow: 0 16px 30px rgba(var(--ink-rgb), 0.1);
+  background: rgb(var(--white-rgb));
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--ink-rgb), 0.04),
+    0 18px 34px rgba(var(--ink-rgb), 0.12);
   backdrop-filter: blur(16px) saturate(132%);
   -webkit-backdrop-filter: blur(16px) saturate(132%);
   opacity: 0;
@@ -3538,8 +3540,10 @@ body {
 .theme-trigger {
   width: 30px;
   height: 30px;
-  background: transparent;
-  box-shadow: none;
+  background: rgb(var(--white-rgb));
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--ink-rgb), 0.08),
+    0 8px 18px rgba(var(--ink-rgb), 0.08);
 }
 
 .portal-trigger:hover,
@@ -3549,8 +3553,10 @@ body {
 .theme-trigger:hover,
 .theme-trigger:focus-visible {
   transform: none;
-  background: rgba(var(--ink-rgb), 0.05);
-  box-shadow: none;
+  background: rgb(var(--white-rgb));
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--ink-rgb), 0.12),
+    0 10px 22px rgba(var(--ink-rgb), 0.1);
 }
 
 .locale-trigger .locale-label {
@@ -3643,5 +3649,397 @@ body[data-page="overview"] #overview.hero {
   .topnav-shell.use-menu .topnav {
     right: 0;
     left: auto;
+  }
+}
+body[data-page="feed"] {
+  background: #fff;
+}
+
+body[data-page="feed"] .page-wash {
+  display: block;
+  background: #fff;
+  opacity: 1;
+}
+
+body[data-page="feed"] main.shell.layout {
+  width: min(var(--shell-workbench), calc(100% - var(--shell-gutter)));
+  gap: 28px;
+  padding-top: calc(var(--thin-header-clearance, 92px) - 6px);
+}
+
+.frontier-reader-page {
+  display: grid;
+  gap: 30px;
+}
+
+.frontier-reader-toolbar {
+  position: sticky;
+  top: 52px;
+  z-index: 14;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 0 0 18px;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.1);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.frontier-reader-search,
+.frontier-reader-toolbar-actions {
+  min-height: 42px;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  border-radius: 999px;
+  background: #fff;
+}
+
+.frontier-reader-search {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.frontier-reader-search .ui-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--muted);
+}
+
+.frontier-reader-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  outline: none;
+  font-size: 0.92rem;
+}
+
+.frontier-reader-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px;
+}
+
+.frontier-reader-toolbar-actions select {
+  min-width: 132px;
+  height: 34px;
+  border: 0;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+  padding: 0 30px 0 12px;
+  font-size: 0.82rem;
+  font-weight: 620;
+}
+
+.frontier-reader-language-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.frontier-reader-language-chip,
+.frontier-reader-icon-button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink-soft);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 720;
+}
+
+.frontier-reader-language-chip {
+  min-width: 54px;
+  padding: 0 10px;
+}
+
+.frontier-reader-language-chip.is-active {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+}
+
+.frontier-reader-icon-button {
+  width: 34px;
+  padding: 0;
+}
+
+.frontier-reader-icon-button:disabled {
+  color: rgba(var(--ink-rgb), 0.28);
+  cursor: default;
+}
+
+.frontier-reader-icon-button .ui-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.frontier-reader-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 760px) minmax(280px, 340px);
+  justify-content: center;
+  gap: clamp(42px, 6vw, 86px);
+  align-items: start;
+}
+
+.frontier-reader-main {
+  min-width: 0;
+}
+
+.frontier-reader-section-head {
+  display: grid;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.12);
+}
+
+.frontier-reader-section-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.frontier-reader-section-head h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.4rem, 1.8vw, 1.9rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.frontier-reader-list {
+  display: grid;
+}
+
+.frontier-reader-card {
+  padding: 30px 0;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.1);
+}
+
+.frontier-reader-meta {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.frontier-reader-meta span:not(:last-child)::after {
+  content: "·";
+  margin-left: 8px;
+  color: rgba(var(--ink-rgb), 0.28);
+}
+
+.frontier-reader-language-block {
+  display: grid;
+  gap: 7px;
+}
+
+.frontier-reader-language-block + .frontier-reader-language-block {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.08);
+}
+
+.frontier-reader-language-label {
+  margin: 0;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 760;
+}
+
+.frontier-reader-language-block h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.28rem, 1.65vw, 1.72rem);
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.frontier-reader-abstract {
+  margin: 0;
+  color: var(--ink-soft);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.74;
+}
+
+.frontier-reader-authors {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.frontier-reader-tags {
+  margin-top: 14px;
+}
+
+.frontier-reader-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.frontier-reader-open {
+  color: var(--teal);
+  font-size: 0.86rem;
+  font-weight: 780;
+  text-decoration: none;
+}
+
+.frontier-reader-empty {
+  padding: 42px 0;
+  color: var(--muted);
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.1);
+}
+
+.frontier-reader-rail {
+  position: sticky;
+  top: 112px;
+  min-width: 0;
+  padding-top: 54px;
+  border-top: 1px solid rgba(var(--ink-rgb), 0.12);
+}
+
+.frontier-reader-rail h2 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.25;
+}
+
+.frontier-reader-rail p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.58;
+}
+
+.frontier-reader-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0 20px;
+}
+
+.frontier-reader-stats div {
+  display: grid;
+  gap: 2px;
+}
+
+.frontier-reader-stats strong {
+  color: var(--ink);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.frontier-reader-stats span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.frontier-reader-rail-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.frontier-reader-rail-chip {
+  appearance: none;
+  min-height: 30px;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink-soft);
+  cursor: pointer;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.frontier-reader-rail-chip.is-active {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+@media (max-width: 1060px) {
+  .frontier-reader-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .frontier-reader-toolbar-actions {
+    justify-content: space-between;
+  }
+
+  .frontier-reader-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .frontier-reader-rail {
+    position: static;
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 760px) {
+  body[data-page="feed"] main.shell.layout {
+    padding-top: calc(var(--thin-header-clearance, 86px) - 10px);
+  }
+
+  .frontier-reader-toolbar {
+    position: static;
+    padding-bottom: 14px;
+  }
+
+  .frontier-reader-toolbar-actions {
+    min-height: 0;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    border-radius: 22px;
+  }
+
+  .frontier-reader-toolbar-actions select {
+    flex: 1 1 132px;
+  }
+
+  .frontier-reader-language-display {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+  }
+
+  .frontier-reader-section-head h1 {
+    font-size: 1.42rem;
+  }
+
+  .frontier-reader-card {
+    padding: 26px 0;
+  }
+
+  .frontier-reader-language-block h3 {
+    font-size: 1.34rem;
+  }
+
+  .frontier-reader-abstract {
+    font-size: 0.96rem;
+    line-height: 1.68;
   }
 }

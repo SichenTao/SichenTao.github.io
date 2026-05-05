@@ -5,11 +5,13 @@ const STORAGE_KEY_LOCAL_DOMAIN = "学术前沿-domain";
 const STORAGE_KEY_THEME = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const SESSION_KEY_LANGUAGE = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
+const STORAGE_KEY_READER_DISPLAY_LANGUAGES = "academic-frontier-reader-display-languages";
 const OPEN_RESEARCH_MIN_YEAR = 1950;
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
 const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
 const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
+const READER_DISPLAY_LANGUAGE_SEQUENCE = ["en", "zh", "ja"];
 const PAPER_EXPLICIT_ALL_CATEGORIES = ["year", "type", "problem", "method", "jcr", "cas", "casTop", "impact", "team"];
 const METRIC_EXPLICIT_ALL_CATEGORIES = ["year", "type", "jcr", "cas", "casTop", "impact", "venue"];
 const RESEARCH_EXPLICIT_ALL_CATEGORIES = ["problem", "method", "jcr", "cas", "casTop", "impact", "author"];
@@ -172,6 +174,24 @@ function normalizeFilterCount(value) {
   return Number.isFinite(count) && count > 0 ? count : 0;
 }
 
+function normalizeReaderDisplayLanguages(value) {
+  const source = Array.isArray(value)
+    ? value
+    : String(value || "")
+      .split(",")
+      .map((item) => item.trim());
+  const languages = source.filter((language) => READER_DISPLAY_LANGUAGE_SEQUENCE.includes(language));
+  return languages.length ? [...new Set(languages)] : [...READER_DISPLAY_LANGUAGE_SEQUENCE];
+}
+
+function readStoredReaderDisplayLanguages() {
+  return normalizeReaderDisplayLanguages(readStoredValue(STORAGE_KEY_READER_DISPLAY_LANGUAGES));
+}
+
+function writeStoredReaderDisplayLanguages(languages) {
+  writeStoredValue(STORAGE_KEY_READER_DISPLAY_LANGUAGES, normalizeReaderDisplayLanguages(languages).join(","));
+}
+
 // Keep the "All" badge aligned with the sum of the option badges shown in the same menu.
 function buildCountedMultiSelectOptions({
   items = [],
@@ -239,6 +259,9 @@ const state = {
   researchYearStart: "",
   researchYearEnd: "",
   researchYearOpenEnded: true,
+  readerQuery: "",
+  readerFieldFilter: "all",
+  readerDisplayLanguages: readStoredReaderDisplayLanguages(),
   language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || "en",
   theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || "tohoku",
   localArchiveIndex: {},
@@ -330,6 +353,18 @@ const UI_TEXT = {
     teamsTitle: "Tracked researchers and teams",
     teamsNote: "",
     paperLaneKicker: "Paper list",
+    readerTitle: "Academic Frontier",
+    readerSubtitle: "Full Abstract Feed",
+    readerSearchPlaceholder: "Search titles, authors, abstracts, venues, or DOI",
+    readerFieldFilterLabel: "Field",
+    readerDisplayLanguagesLabel: "Displayed languages",
+    readerOpenAction: "Read detail",
+    readerEmpty: "No abstract stories match the current filters.",
+    readerRailTitle: "Browse by field",
+    readerRailSubtitle: "Use the feed for reading; keep the full paper library for detailed filtering.",
+    readerTotalLabel: "Abstracts",
+    readerYearLabel: "Years",
+    readerVenueLabel: "Venues",
     papersTitle: "Paper Library",
     papersNote: "Search and filter the current paper record.",
     metricsTitle: "Venue Metrics",
@@ -417,7 +452,8 @@ const UI_TEXT = {
     themeTohokuLabel: "Tohoku University",
     themeToyamaLabel: "University of Toyama",
     themeUsstLabel: "University of Shanghai for Science and Technology",
-    navOverview: "Home",
+    navFeed: "Home",
+    navOverview: "Overview",
     navPapers: "Paper Library",
     navMetrics: "Metrics",
     navSignals: "Signals",
@@ -578,6 +614,18 @@ const UI_TEXT = {
     teamsTitle: "已记录研究者与团队",
     teamsNote: "",
     paperLaneKicker: "论文列表",
+    readerTitle: "学术前沿",
+    readerSubtitle: "完整摘要信息流",
+    readerSearchPlaceholder: "搜索题目、作者、摘要、出版地或 DOI",
+    readerFieldFilterLabel: "领域",
+    readerDisplayLanguagesLabel: "显示语言",
+    readerOpenAction: "阅读详情",
+    readerEmpty: "当前筛选下没有匹配的摘要文章。",
+    readerRailTitle: "按领域浏览",
+    readerRailSubtitle: "首页用于连续阅读摘要；完整筛选和指标判断仍放在论文库中。",
+    readerTotalLabel: "摘要",
+    readerYearLabel: "年份",
+    readerVenueLabel: "出版地",
     papersTitle: "论文库",
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
     metricsTitle: "分区与指标参考",
@@ -664,7 +712,8 @@ const UI_TEXT = {
     themeTohokuLabel: "东北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "首页",
+    navFeed: "首页",
+    navOverview: "概览",
     navPapers: "论文库",
     navMetrics: "分区",
     navSignals: "信号",
@@ -826,6 +875,18 @@ const UI_TEXT = {
     teamsTitle: "記録済み研究者・チーム",
     teamsNote: "",
     paperLaneKicker: "論文リスト",
+    readerTitle: "学術フロンティア",
+    readerSubtitle: "要旨フィード",
+    readerSearchPlaceholder: "題目・著者・要旨・掲載先・DOIで検索",
+    readerFieldFilterLabel: "分野",
+    readerDisplayLanguagesLabel: "表示言語",
+    readerOpenAction: "詳細を読む",
+    readerEmpty: "現在の条件に一致する要旨記事はありません。",
+    readerRailTitle: "分野で閲覧",
+    readerRailSubtitle: "ホームは要旨を連続して読む場所です。詳細な絞り込みと指標確認は論文庫に残します。",
+    readerTotalLabel: "要旨",
+    readerYearLabel: "年",
+    readerVenueLabel: "掲載先",
     papersTitle: "論文庫",
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
     metricsTitle: "掲載先指標",
@@ -913,7 +974,8 @@ const UI_TEXT = {
     themeTohokuLabel: "東北大学",
     themeToyamaLabel: "富山大学",
     themeUsstLabel: "上海理工大学",
-    navOverview: "ホーム",
+    navFeed: "ホーム",
+    navOverview: "概要",
     navPapers: "論文庫",
     navMetrics: "指標",
     navSignals: "シグナル",
@@ -1323,6 +1385,7 @@ let metricCopyUiBound = false;
 let focusDeskUiBound = false;
 let researchLauncherUiBound = false;
 let abstractToggleUiBound = false;
+let readerControlsUiBound = false;
 let topnavMenuBound = false;
 let topnavOverflowBound = false;
 let headerControlsPositionBound = false;
@@ -1363,7 +1426,7 @@ function nextThemeName(currentTheme = state.theme || loadInitialTheme()) {
 }
 
 function pageFilename(page = currentPage()) {
-  return page === "overview" ? "index.html" : `${page}.html`;
+  return page === "feed" ? "index.html" : `${page}.html`;
 }
 
 function localeBasePath(locale = pageLocale()) {
@@ -2171,6 +2234,51 @@ function localizeText(value) {
   return EXACT_TRANSLATIONS[text]?.[state.language] || text;
 }
 
+function localizedFieldValueForLocale(locale, value) {
+  if (!value || Array.isArray(value) || typeof value !== "object") {
+    return null;
+  }
+
+  if (window.HomepageI18n?.isLocaleObject?.(value, LOCALE_CATALOG)) {
+    const localized = window.HomepageI18n.localizeValue(value, { locale, locales: LOCALE_CATALOG });
+    return localized === undefined || localized === null ? null : String(localized);
+  }
+
+  const localized = value[locale] ?? value.en ?? value.zh ?? value.ja;
+  return localized === undefined || localized === null ? null : String(localized);
+}
+
+function localizeTextForLocale(locale, value) {
+  if (value === undefined || value === null) {
+    return value;
+  }
+
+  const localizedField = localizedFieldValueForLocale(locale, value);
+  if (localizedField !== null) {
+    return localizedField;
+  }
+
+  const text = String(value);
+  if (locale === "en") {
+    return text;
+  }
+
+  const previousLanguage = state.language;
+  state.language = locale;
+  try {
+    for (const translator of PATTERN_TRANSLATORS) {
+      const match = text.match(translator.regex);
+      if (match) {
+        return translator.render(locale, ...match.slice(1));
+      }
+    }
+  } finally {
+    state.language = previousLanguage;
+  }
+
+  return EXACT_TRANSLATIONS[text]?.[locale] || text;
+}
+
 function paperDisplayTitleValue(paper) {
   return paper?.displayTitle || paper?.title || "";
 }
@@ -2218,6 +2326,40 @@ function buildExternalLinkHtml(label, href) {
 
 function formatRichText(value) {
   const rawValue = localizeText(value);
+  const rawText = rawValue === undefined || rawValue === null ? "" : String(rawValue);
+  if (!rawText) {
+    return "";
+  }
+
+  const tokens = [];
+  const stash = (html) => {
+    const token = `%%HTMLTOKEN${tokens.length}%%`;
+    tokens.push({ token, html });
+    return token;
+  };
+
+  let safe = rawText;
+  safe = safe.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, (_, label, href) => stash(buildExternalLinkHtml(label, href)));
+  safe = safe.replace(/(^|[\s(>])((https?:\/\/|www\.)[^\s<)]+[^\s<.,;:!?])/g, (match, prefix, href) => {
+    const normalizedHref = href.startsWith("www.") ? `https://${href}` : href;
+    return `${prefix}${stash(buildExternalLinkHtml(href, normalizedHref))}`;
+  });
+
+  safe = escapeHtml(safe).replace(/\n/g, "<br>");
+  safe = safe.replace(/\+\+(.+?)\+\+/g, '<strong class="accent-strong">$1</strong>');
+  safe = safe.replace(/\^\^(.+?)\^\^/g, '<span class="accent-inline">$1</span>');
+  safe = safe.replace(/==(.+?)==/g, '<span class="warm-inline-emphasis">$1</span>');
+  safe = safe.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+
+  tokens.forEach(({ token, html }) => {
+    safe = safe.replaceAll(token, html);
+  });
+
+  return safe;
+}
+
+function formatRichTextForLocale(locale, value) {
+  const rawValue = localizeTextForLocale(locale, value);
   const rawText = rawValue === undefined || rawValue === null ? "" : String(rawValue);
   if (!rawText) {
     return "";
@@ -3130,6 +3272,7 @@ function currentPage() {
 function currentPageTitle() {
   const page = currentPage();
   const pageKey = {
+    feed: "navFeed",
     overview: "navOverview",
     papers: "navPapers",
     metrics: "navMetrics",
@@ -3144,7 +3287,7 @@ function currentPageTitle() {
 
 function markCurrentPage() {
   const page = currentPage();
-  ["overview", "papers", "metrics"].forEach((key) => {
+  ["feed", "overview", "papers", "metrics"].forEach((key) => {
     const navId = `nav${key.charAt(0).toUpperCase()}${key.slice(1)}`;
     const link = byId(navId);
     if (!link) return;
@@ -3558,6 +3701,7 @@ function truncateText(value, limit = 420) {
 function renderStaticText() {
   setMetaLanguage();
   [
+    ["navFeed", ui("navFeed")],
     ["navOverview", ui("navOverview")],
     ["navPapers", ui("navPapers")],
     ["navMetrics", ui("navMetrics")],
@@ -3609,7 +3753,7 @@ function renderStaticText() {
     button.setAttribute("title", ui("menuLabel"));
   });
   document.querySelectorAll("#heroShortcuts").forEach((node) => node.setAttribute("aria-label", ui("quickLinksLabel")));
-  setAttr("footerBackHome", "href", pageHref("overview"));
+  setAttr("footerBackHome", "href", pageHref("feed"));
   setAttr("footerOpsMetrics", "href", pageHref("metrics"));
   setProp("pub-search", "placeholder", ui("searchPlaceholder"));
   setAttr("pub-reset", "aria-label", ui("resetLabel"));
@@ -5734,6 +5878,216 @@ function renderMetrics() {
   scheduleAdaptiveFilterControlWidths();
 }
 
+function readerDisplayLanguages() {
+  state.readerDisplayLanguages = normalizeReaderDisplayLanguages(state.readerDisplayLanguages);
+  return state.readerDisplayLanguages;
+}
+
+function setReaderDisplayLanguages(languages, persist = true) {
+  state.readerDisplayLanguages = normalizeReaderDisplayLanguages(languages);
+  if (persist) {
+    writeStoredReaderDisplayLanguages(state.readerDisplayLanguages);
+  }
+}
+
+function readerAvailableFields(papers = papersForDomain()) {
+  return uniqueStrings(papers.flatMap((paper) => paperFieldTags(paper))).sort((left, right) =>
+    localizeText(left).localeCompare(localizeText(right), currentLocale())
+  );
+}
+
+function readerSearchCorpus(paper) {
+  const localizedTextValues = [];
+  READER_DISPLAY_LANGUAGE_SEQUENCE.forEach((locale) => {
+    localizedTextValues.push(
+      localizeTextForLocale(locale, paperDisplayTitleValue(paper)),
+      localizeTextForLocale(locale, paper?.abstract),
+      localizeTextForLocale(locale, paper?.venue)
+    );
+  });
+
+  return normalizeSearchText([
+    paper?.title,
+    paper?.doi,
+    paper?.doiUrl,
+    publicationDoiText(paper),
+    ...paperAuthorNames(paper),
+    ...paperObjectiveTags(paper),
+    ...localizedTextValues,
+  ].join(" "));
+}
+
+function readerFilteredPapers() {
+  const query = normalizeSearchText(state.readerQuery);
+  const fieldFilter = state.readerFieldFilter || "all";
+  return sortPapers(papersForDomain().filter((paper) => {
+    const matchesField = fieldFilter === "all" || paperFieldTags(paper).includes(fieldFilter);
+    const matchesQuery = !query || readerSearchCorpus(paper).includes(query);
+    return matchesField && matchesQuery;
+  }));
+}
+
+function renderFrontierReaderLanguageControls() {
+  const container = byId("frontier-reader-language-display");
+  if (!container) return;
+
+  const activeLanguages = new Set(readerDisplayLanguages());
+  container.innerHTML = "";
+  READER_DISPLAY_LANGUAGE_SEQUENCE.forEach((locale) => {
+    const config = LOCALE_CATALOG[locale];
+    if (!config) return;
+    const button = el("button", `frontier-reader-language-chip${activeLanguages.has(locale) ? " is-active" : ""}`);
+    button.type = "button";
+    button.dataset.frontierReaderLanguage = locale;
+    button.setAttribute("aria-pressed", activeLanguages.has(locale) ? "true" : "false");
+    button.textContent = config.label;
+    container.appendChild(button);
+  });
+}
+
+function renderFrontierReaderFieldOptions() {
+  const select = byId("frontier-reader-field-filter");
+  if (!select) return;
+
+  const fields = readerAvailableFields();
+  const currentValue = fields.includes(state.readerFieldFilter) ? state.readerFieldFilter : "all";
+  state.readerFieldFilter = currentValue;
+  select.innerHTML = "";
+
+  const allOption = new Option(ui("readerFieldFilterLabel"), "all");
+  select.appendChild(allOption);
+  fields.forEach((field) => {
+    select.appendChild(new Option(localizeText(field), field));
+  });
+  select.value = currentValue;
+}
+
+function readerStoryMeta(paper) {
+  const parts = [
+    localizeText(paper?.venue),
+    paperYearValue(paper),
+    publicationDoiText(paper) ? `DOI ${publicationDoiText(paper)}` : "",
+  ].filter(Boolean);
+  return parts.map((part) => `<span>${escapeHtml(part)}</span>`).join("");
+}
+
+function readerStoryLanguageBlocks(paper) {
+  return readerDisplayLanguages().map((locale) => {
+    const abstract = formatRichTextForLocale(locale, paper?.abstract || ui("abstractUnavailable"));
+    if (!abstract) return "";
+    const title = formatRichTextForLocale(locale, paperDisplayTitleValue(paper));
+    const label = LOCALE_CATALOG[locale]?.label || locale;
+    return `<div class="frontier-reader-language-block" data-reader-language-block="${escapeHtml(locale)}">
+      <p class="frontier-reader-language-label">${escapeHtml(label)}</p>
+      <h3>${title}</h3>
+      <p class="frontier-reader-abstract rich-text">${abstract}</p>
+    </div>`;
+  }).join("");
+}
+
+function readerStoryTags(paper) {
+  return paperFieldTags(paper)
+    .slice(0, 4)
+    .map((tag) => `<span class="field-hash-tag">#${escapeHtml(localizeText(tag))}</span>`)
+    .join("");
+}
+
+function renderFrontierReaderStories() {
+  const list = byId("frontier-reader-list");
+  if (!list) return;
+
+  const papers = readerFilteredPapers();
+  list.innerHTML = "";
+
+  if (!papers.length) {
+    list.appendChild(el("div", "frontier-reader-empty", ui("readerEmpty")));
+    return;
+  }
+
+  papers.forEach((paper) => {
+    const article = el("article", "frontier-reader-card");
+    article.dataset.readerPaper = paper?.id || "";
+    const authors = paperAuthorNames(paper).slice(0, 4).join(", ");
+    article.innerHTML = `
+      <div class="frontier-reader-meta">
+        <span>${escapeHtml(ui("navPapers"))}</span>
+        ${readerStoryMeta(paper)}
+      </div>
+      ${readerStoryLanguageBlocks(paper)}
+      ${authors ? `<p class="frontier-reader-authors">${escapeHtml(authors)}</p>` : ""}
+      <div class="field-hash-row frontier-reader-tags">${readerStoryTags(paper)}</div>
+      <div class="frontier-reader-actions">
+        <a class="frontier-reader-open" href="${escapeHtml(paperDetailHref(paper))}">${escapeHtml(ui("readerOpenAction"))}</a>
+      </div>
+    `;
+    list.appendChild(article);
+  });
+}
+
+function renderFrontierReaderRail() {
+  const rail = document.querySelector(".frontier-reader-rail");
+  if (!rail) return;
+
+  const papers = readerFilteredPapers();
+  const allPapers = papersForDomain();
+  const fields = readerAvailableFields(allPapers);
+  const venues = new Set(allPapers.map((paper) => localizeText(paper?.venue)).filter(Boolean));
+  const years = new Set(allPapers.map((paper) => paperYearValue(paper)).filter(Boolean));
+  const chips = fields.slice(0, 18).map((field) => (
+    `<button class="frontier-reader-rail-chip${state.readerFieldFilter === field ? " is-active" : ""}" type="button" data-reader-field-chip="${escapeHtml(field)}">#${escapeHtml(localizeText(field))}</button>`
+  )).join("");
+
+  rail.innerHTML = `
+    <h2 id="frontier-reader-rail-title">${escapeHtml(ui("readerRailTitle"))}</h2>
+    <p>${escapeHtml(ui("readerRailSubtitle"))}</p>
+    <div class="frontier-reader-stats">
+      <div><strong>${escapeHtml(papers.length)}</strong><span>${escapeHtml(ui("readerTotalLabel"))}</span></div>
+      <div><strong>${escapeHtml(years.size)}</strong><span>${escapeHtml(ui("readerYearLabel"))}</span></div>
+      <div><strong>${escapeHtml(venues.size)}</strong><span>${escapeHtml(ui("readerVenueLabel"))}</span></div>
+    </div>
+    <div class="frontier-reader-rail-chips">${chips}</div>
+  `;
+}
+
+function renderFrontierReaderToolbar() {
+  const search = byId("frontier-reader-search");
+  if (search) {
+    search.placeholder = ui("readerSearchPlaceholder");
+    search.value = state.readerQuery;
+  }
+  const reset = byId("frontier-reader-reset");
+  if (reset) {
+    reset.setAttribute("aria-label", ui("resetLabel"));
+    reset.setAttribute("title", ui("resetLabel"));
+    reset.disabled = !state.readerQuery && state.readerFieldFilter === "all" && readerDisplayLanguages().length === READER_DISPLAY_LANGUAGE_SEQUENCE.length;
+  }
+  const languageGroup = byId("frontier-reader-language-display");
+  if (languageGroup) {
+    languageGroup.setAttribute("aria-label", ui("readerDisplayLanguagesLabel"));
+  }
+  const fieldFilter = byId("frontier-reader-field-filter");
+  if (fieldFilter) {
+    fieldFilter.setAttribute("aria-label", ui("readerFieldFilterLabel"));
+  }
+}
+
+function renderFrontierReaderStaticText() {
+  setText("frontier-reader-title", ui("readerTitle"));
+  document.querySelectorAll("[data-reader-subtitle]").forEach((node) => {
+    node.textContent = ui("readerSubtitle");
+  });
+}
+
+function renderFrontierReader() {
+  if (!byId("frontier-reader-list")) return;
+
+  renderFrontierReaderStaticText();
+  renderFrontierReaderFieldOptions();
+  renderFrontierReaderLanguageControls();
+  renderFrontierReaderToolbar();
+  renderFrontierReaderStories();
+  renderFrontierReaderRail();
+}
 function renderCardGrid(containerId, items, renderItem) {
   const container = byId(containerId);
   if (!container) return;
@@ -6051,6 +6405,54 @@ function bindControls() {
     }
     renderPaperControls();
     renderPapers();
+  });
+}
+
+function bindReaderControls() {
+  if (readerControlsUiBound) return;
+  readerControlsUiBound = true;
+
+  document.addEventListener("input", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement) || target.id !== "frontier-reader-search") return;
+    state.readerQuery = target.value;
+    renderFrontierReader();
+  });
+
+  document.addEventListener("change", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement) || target.id !== "frontier-reader-field-filter") return;
+    state.readerFieldFilter = target.value || "all";
+    renderFrontierReader();
+  });
+
+  document.addEventListener("click", (event) => {
+    const resetButton = event.target.closest("#frontier-reader-reset");
+    if (resetButton) {
+      state.readerQuery = "";
+      state.readerFieldFilter = "all";
+      setReaderDisplayLanguages(READER_DISPLAY_LANGUAGE_SEQUENCE);
+      renderFrontierReader();
+      return;
+    }
+
+    const languageButton = event.target.closest("[data-frontier-reader-language]");
+    if (languageButton) {
+      const locale = languageButton.dataset.frontierReaderLanguage || "";
+      const current = readerDisplayLanguages();
+      const next = current.includes(locale)
+        ? current.filter((item) => item !== locale)
+        : [...current, locale];
+      setReaderDisplayLanguages(next.length ? next : [locale]);
+      renderFrontierReader();
+      return;
+    }
+
+    const fieldChip = event.target.closest("[data-reader-field-chip]");
+    if (fieldChip) {
+      state.readerFieldFilter = fieldChip.dataset.readerFieldChip || "all";
+      renderFrontierReader();
+    }
   });
 }
 
@@ -6571,6 +6973,7 @@ function renderAll() {
     renderDomainFocus();
     renderPaperControls();
     renderPapers();
+    renderFrontierReader();
     renderMetrics();
     renderTrends();
     renderTeams();
@@ -6598,6 +7001,7 @@ function init() {
   state.activeDomainId = chooseDefaultDomain();
   document.body.classList.add("is-ready");
   bindControls();
+  bindReaderControls();
   bindMetricControls();
   bindScrollTopButton();
   bindFocusDesk();
