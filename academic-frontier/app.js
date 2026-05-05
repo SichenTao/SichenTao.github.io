@@ -5983,22 +5983,11 @@ function renderFrontierReaderFieldOptions() {
   select.value = currentValue;
 }
 
-function readerStoryMeta(paper) {
-  const parts = [
-    localizeText(paper?.venue),
-    paperYearValue(paper),
-    publicationDoiText(paper) ? `DOI ${publicationDoiText(paper)}` : "",
-  ].filter(Boolean);
-  return parts.map((part) => `<span>${escapeHtml(part)}</span>`).join("");
-}
-
 function readerStoryLanguageBlocks(paper) {
   return readerDisplayLanguages().map((locale) => {
     const title = formatRichTextForLocale(locale, paperDisplayTitleValue(paper));
     if (!title) return "";
-    const label = LOCALE_CATALOG[locale]?.label || locale;
     return `<div class="frontier-reader-language-block" data-reader-language-block="${escapeHtml(locale)}">
-      <p class="frontier-reader-language-label">${escapeHtml(label)}</p>
       <h3>${title}</h3>
     </div>`;
   }).join("");
@@ -6027,6 +6016,20 @@ function readerStoryTags(paper) {
     .join("");
 }
 
+function articleFactChips(article) {
+  return (Array.isArray(article?.facts) ? article.facts : [])
+    .filter(Boolean)
+    .map((fact) => `<span>${escapeHtml(fact)}</span>`)
+    .join("");
+}
+
+function articleTagChips(article) {
+  return (Array.isArray(article?.tags) ? article.tags : [])
+    .filter(Boolean)
+    .map((tag) => `<span class="field-hash-tag">#${escapeHtml(tag)}</span>`)
+    .join("");
+}
+
 function renderFrontierReaderStories() {
   const list = byId("frontier-reader-list");
   if (!list) return;
@@ -6049,10 +6052,6 @@ function renderFrontierReaderStories() {
     const facts = readerMetricFacts(paper);
     article.innerHTML = `
       <div class="frontier-reader-card-body">
-        <div class="frontier-reader-meta">
-          <span>${escapeHtml(ui("navPapers"))}</span>
-          ${readerStoryMeta(paper)}
-        </div>
         ${readerStoryLanguageBlocks(paper)}
         ${authors ? `<p class="frontier-reader-authors"><strong>${escapeHtml(ui("authorsLabel"))}</strong> ${escapeHtml(authors)}</p>` : ""}
         ${doi ? `<div class="frontier-reader-source-line"><span class="frontier-reader-doi">DOI ${escapeHtml(doi)}</span></div>` : ""}
@@ -6214,6 +6213,8 @@ function renderAcademicPaperArticle() {
   const abstractBlocks = articleLanguageBlocks(article.abstract, article.fallbackAbstract);
   const multipleLanguages = readerDisplayLanguages().length > 1;
   const metaParts = [article.venue, article.year, article.doi ? `${ui("doiLabel")} ${article.doi}` : ""].filter(Boolean);
+  const facts = articleFactChips(article);
+  const tags = articleTagChips(article);
   const links = Array.isArray(article.links) ? article.links.filter((link) => link?.href) : [];
   container.classList.toggle("is-multilingual", multipleLanguages);
   container.innerHTML = `
@@ -6229,6 +6230,8 @@ function renderAcademicPaperArticle() {
       <div class="fb-article-title-group">${renderAcademicTitleBlocks(titleBlocks)}</div>
       ${article.authors ? `<div class="fb-article-dek-group"><p>${escapeHtml(ui("authorsLabel"))}: ${escapeHtml(article.authors)}</p></div>` : ""}
       ${metaParts.length ? `<div class="fb-article-meta">${metaParts.map((part) => `<span>${escapeHtml(part)}</span>`).join("")}</div>` : ""}
+      ${facts ? `<div class="fb-article-facts">${facts}</div>` : ""}
+      ${tags ? `<div class="field-hash-row fb-article-tags">${tags}</div>` : ""}
     </header>
     <div class="fb-article-body">
       <section class="fb-body-section">

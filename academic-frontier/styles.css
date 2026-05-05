@@ -2975,6 +2975,33 @@ body[data-page="papers"] .page-wash {
   text-underline-offset: 0.16em;
 }
 
+.fb-article-facts,
+.fb-article-tags {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fb-article-facts span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 9px;
+  border: 1px solid rgba(var(--ink-rgb), 0.11);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 740;
+  line-height: 1;
+}
+
+.fb-article-tags .field-hash-tag {
+  min-height: 26px;
+  font-size: 0.75rem;
+}
+
 .fb-article-body {
   display: grid;
   gap: 24px;
@@ -3092,6 +3119,11 @@ body[data-page="papers"] .page-wash {
   .fb-article-meta {
     gap: 7px;
     font-size: 0.74rem;
+  }
+
+  .fb-article-facts,
+  .fb-article-tags {
+    gap: 6px;
   }
 
   .fb-body-section p,
@@ -4080,23 +4112,6 @@ body[data-page="feed"] main.shell.layout {
   min-width: 0;
 }
 
-.frontier-reader-meta {
-  display: flex;
-  min-width: 0;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 14px;
-  color: var(--muted);
-  font-size: 0.78rem;
-}
-
-.frontier-reader-meta span:not(:last-child)::after {
-  content: "·";
-  margin-left: 8px;
-  color: rgba(var(--ink-rgb), 0.28);
-}
-
 .frontier-reader-language-block {
   display: grid;
   gap: 6px;
@@ -4106,13 +4121,6 @@ body[data-page="feed"] main.shell.layout {
   margin-top: 12px;
   padding-top: 12px;
   border-top: 1px solid rgba(var(--ink-rgb), 0.08);
-}
-
-.frontier-reader-language-label {
-  margin: 0;
-  color: var(--teal);
-  font-size: 0.72rem;
-  font-weight: 760;
 }
 
 .frontier-reader-language-block h3 {
