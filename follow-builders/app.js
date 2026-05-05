@@ -11,7 +11,12 @@ const LOCALE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const THEME_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const MODE_KEY = "follow-builders-reading-mode";
 const DISPLAY_LANGUAGES_KEY = "follow-builders-display-languages";
+const TRANSLATION_CACHE_KEY = "follow-builders-content-translations-v1";
 const DISPLAY_LANGUAGE_SEQUENCE = ["en", "zh", "ja"];
+const TRANSLATION_TARGETS = {
+  zh: "zh-CN",
+  ja: "ja",
+};
 
 const REMOTE_FEEDS = {
   x: "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json",
@@ -54,10 +59,11 @@ const I18N = {
       showMenu: "Show menu",
       hideMenu: "Hide menu",
       searchPlaceholder: "Search builders, posts, podcasts, or sources",
+      filterSource: "Filter source",
       reset: "Reset filters",
     },
     types: {
-      all: "All",
+      all: "Filter source",
       x: "X posts",
       podcast: "Podcasts",
       blog: "Blogs",
@@ -100,6 +106,8 @@ const I18N = {
       transcript: "Transcript excerpt",
       podcast: "Podcast episode",
       github: "Project repository",
+      missingFigure:
+        "The upstream text mentions a figure, but the public feed does not include that image asset. Open the original source for the visual context.",
     },
   },
   zh: {
@@ -136,10 +144,11 @@ const I18N = {
       showMenu: "展开菜单",
       hideMenu: "收起菜单",
       searchPlaceholder: "搜索 builder、帖子、播客或来源",
+      filterSource: "筛选来源",
       reset: "重置筛选",
     },
     types: {
-      all: "全部",
+      all: "筛选来源",
       x: "X 帖子",
       podcast: "播客",
       blog: "博客",
@@ -182,6 +191,7 @@ const I18N = {
       transcript: "字幕节选",
       podcast: "播客节目",
       github: "项目仓库",
+      missingFigure: "上游文本提到了图示，但公开 feed 没有提供对应图片资源；如需查看图，请打开原文。",
     },
   },
   ja: {
@@ -218,10 +228,11 @@ const I18N = {
       showMenu: "メニューを開く",
       hideMenu: "メニューを閉じる",
       searchPlaceholder: "builder、投稿、podcast、ソースを検索",
+      filterSource: "ソースを絞り込む",
       reset: "フィルタをリセット",
     },
     types: {
-      all: "すべて",
+      all: "ソースを絞り込む",
       x: "X 投稿",
       podcast: "Podcast",
       blog: "ブログ",
@@ -264,6 +275,8 @@ const I18N = {
       transcript: "字幕抜粋",
       podcast: "Podcast episode",
       github: "プロジェクトリポジトリ",
+      missingFigure:
+        "上流の本文には図への言及がありますが、公開 feed には画像アセットが含まれていません。図の文脈は原文で確認してください。",
     },
   },
 };
@@ -278,6 +291,8 @@ const state = {
   articles: [],
   activeId: "",
   remoteLoaded: false,
+  translationCache: readStoredTranslationCache(),
+  translationInflight: new Set(),
 };
 
 function escapeHtml(value) {
@@ -287,6 +302,16 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function decodeHtmlEntities(value) {
+  const text = String(value ?? "");
+  if (!/&(?:#\d+|#x[\da-f]+|[a-z][\da-z]+);/i.test(text)) {
+    return text;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.innerHTML = text;
+  return textarea.value;
 }
 
 function byId(id) {
@@ -376,6 +401,21 @@ function writeStoredDisplayLanguages(languages) {
   } catch {}
 }
 
+function readStoredTranslationCache() {
+  try {
+    const value = JSON.parse(localStorage.getItem(TRANSLATION_CACHE_KEY) || "{}");
+    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeStoredTranslationCache() {
+  try {
+    localStorage.setItem(TRANSLATION_CACHE_KEY, JSON.stringify(state.translationCache));
+  } catch {}
+}
+
 function normalizeData(data = {}) {
   return {
     sourceRepo: data.sourceRepo || "https://github.com/zarazhangrui/follow-builders",
@@ -389,17 +429,51 @@ function normalizeData(data = {}) {
   };
 }
 
+function contentText(value) {
+  return decodeHtmlEntities(value)
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function normalizeText(value) {
-  return String(value || "")
+  return contentText(value)
     .replace(/https?:\/\/t\.co\/\S+/g, "")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function multilingualText(value, fallback = "") {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    const en = contentText(value.en || fallback);
+    const zh = contentText(value.zh || "");
+    const ja = contentText(value.ja || "");
+    return {
+      en,
+      zh,
+      ja,
+    };
+  }
+  const en = contentText(value || fallback);
+  return { en, zh: "", ja: "" };
 }
 
 function clip(value, max = 150) {
   const text = normalizeText(value);
   if (text.length <= max) return text;
   return `${text.slice(0, max - 1).trim()}...`;
+}
+
+function clipContent(value, max = 150) {
+  const text = contentText(value);
+  if (text.length <= max) return text;
+  return `${text.slice(0, max - 1).trim()}...`;
+}
+
+const FIGURE_REFERENCE_PATTERN = /\b(?:Figure|Fig\.?|figure|fig\.?)\s*\d+\b/;
+
+function hasFigureReference(value) {
+  const text = typeof value === "string" ? value : Object.values(value || {}).join(" ");
+  return FIGURE_REFERENCE_PATTERN.test(contentText(text));
 }
 
 function headlineFromText(value, max = 180) {
@@ -447,6 +521,127 @@ function readingMinutes(text) {
   return Math.max(1, Math.ceil(words / 220));
 }
 
+function stableHash(value) {
+  let hash = 0;
+  const text = String(value || "");
+  for (let index = 0; index < text.length; index += 1) {
+    hash = (hash * 31 + text.charCodeAt(index)) >>> 0;
+  }
+  return hash.toString(36);
+}
+
+function translationCacheKey(language, text) {
+  return `${language}:${stableHash(text)}:${String(text || "").length}`;
+}
+
+function splitForTranslation(text, maxLength = 1100) {
+  const source = contentText(text);
+  if (!source) return [];
+  const sentences = source.match(/[^.!?。！？]+[.!?。！？]?|\S+/g) || [source];
+  const chunks = [];
+  let current = "";
+  sentences.forEach((sentence) => {
+    const next = current ? `${current} ${sentence.trim()}` : sentence.trim();
+    if (next.length > maxLength && current) {
+      chunks.push(current);
+      current = sentence.trim();
+    } else {
+      current = next;
+    }
+  });
+  if (current) chunks.push(current);
+  return chunks;
+}
+
+async function translateChunk(text, language) {
+  const target = TRANSLATION_TARGETS[language];
+  if (!target || !text) return "";
+  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${encodeURIComponent(target)}&dt=t&q=${encodeURIComponent(text)}`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Translation request failed: ${response.status}`);
+  const payload = await response.json();
+  return contentText((payload?.[0] || []).map((part) => part?.[0] || "").join(""));
+}
+
+async function mapWithConcurrency(items, limit, worker) {
+  const results = new Array(items.length);
+  let cursor = 0;
+  const runners = Array.from({ length: Math.min(limit, items.length) }, async () => {
+    while (cursor < items.length) {
+      const index = cursor;
+      cursor += 1;
+      results[index] = await worker(items[index], index);
+    }
+  });
+  await Promise.all(runners);
+  return results;
+}
+
+async function translateText(text, language) {
+  const source = contentText(text);
+  if (!source || language === "en") return source;
+  const key = translationCacheKey(language, source);
+  if (state.translationCache[key]) {
+    return state.translationCache[key];
+  }
+  const chunks = splitForTranslation(source);
+  const translatedChunks = await mapWithConcurrency(chunks, 4, (chunk) => translateChunk(chunk, language));
+  const translated = contentText(translatedChunks.join(" "));
+  if (translated) {
+    state.translationCache[key] = translated;
+    writeStoredTranslationCache();
+  }
+  return translated;
+}
+
+function articleTranslationTargets(article) {
+  const targets = [
+    { value: article.title, path: "title" },
+    { value: article.dek, path: "dek" },
+  ];
+  (article.sections || []).forEach((section, index) => {
+    targets.push({ value: section.text, path: `sections.${index}.text` });
+  });
+  return targets.filter((target) => target.value?.en);
+}
+
+async function hydrateArticleTranslations(article) {
+  if (!article) return;
+  const languages = normalizeDisplayLanguages(state.displayLanguages).filter((language) => language !== "en");
+  if (!languages.length) return;
+  const inflightKey = `${article.id}:${languages.join(",")}`;
+  if (state.translationInflight.has(inflightKey)) return;
+  const targets = articleTranslationTargets(article).filter((target) =>
+    languages.some((language) => !target.value?.[language] && target.value?.en),
+  );
+  if (!targets.length) return;
+
+  state.translationInflight.add(inflightKey);
+  let changed = false;
+  try {
+    for (const target of targets) {
+      const translations = await Promise.all(
+        languages.map(async (language) => {
+          if (!target.value?.en || target.value[language]) return null;
+          const translated = await translateText(target.value.en, language);
+          return translated ? { language, translated } : null;
+        }),
+      );
+      translations.filter(Boolean).forEach(({ language, translated }) => {
+        target.value[language] = translated;
+        changed = true;
+      });
+    }
+  } catch (error) {
+    console.warn("Follow Builders translation skipped", error);
+  } finally {
+    state.translationInflight.delete(inflightKey);
+  }
+  if (changed && state.activeId === article.id && document.body.classList.contains("fb-article-open")) {
+    renderArticle(article);
+  }
+}
+
 function titleFromTweet(builder) {
   const first = builder.tweets?.[0]?.text || "";
   const quote = headlineFromText(first);
@@ -466,8 +661,8 @@ function xArticle(builder) {
     date: firstDate,
     title: {
       en: titleEn,
-      zh: `${builder.name} 的近期 builder 动态`,
-      ja: `${builder.name} の最新 builder ノート`,
+      zh: "",
+      ja: "",
     },
     dek: {
       en: `${tweets.length} recent X update${tweets.length === 1 ? "" : "s"} from @${builder.handle}.`,
@@ -484,7 +679,7 @@ function xArticle(builder) {
           zh: `原始 X 帖子 ${index + 1}`,
           ja: `元の X 投稿 ${index + 1}`,
         },
-        text: tweet.text || "",
+        text: multilingualText(tweet.text || ""),
         url: tweet.url || "",
         date: tweet.createdAt || "",
       })),
@@ -497,7 +692,7 @@ function xArticle(builder) {
 }
 
 function podcastArticle(episode) {
-  const excerpt = clip(episode.transcript || "", 1400);
+  const excerpt = clipContent(episode.transcript || "", 1400);
   return {
     id: `podcast-${slug(episode.name)}-${slug(episode.guid || episode.title)}`,
     type: "podcast",
@@ -505,8 +700,8 @@ function podcastArticle(episode) {
     date: episode.publishedAt,
     title: {
       en: episode.title || episode.name,
-      zh: episode.title || episode.name,
-      ja: episode.title || episode.name,
+      zh: "",
+      ja: "",
     },
     dek: {
       en: `${episode.name} episode from the podcast feed.`,
@@ -523,7 +718,7 @@ function podcastArticle(episode) {
           zh: "字幕节选",
           ja: "字幕抜粋",
         },
-        text: excerpt,
+        text: multilingualText(excerpt),
         url: episode.url,
         date: episode.publishedAt,
       },
@@ -533,20 +728,23 @@ function podcastArticle(episode) {
 }
 
 function blogArticle(post) {
+  const content = contentText(post.content || post.summary || "");
+  const summary = contentText(post.summary || post.description || "");
+  const title = contentText(post.title || "Official blog update");
   return {
     id: `blog-${slug(post.url || post.title)}`,
     type: "blog",
     source: post.source || post.name || "Official blog",
     date: post.publishedAt || post.date,
     title: {
-      en: post.title || "Official blog update",
-      zh: post.title || "官方博客更新",
-      ja: post.title || "公式ブログ更新",
+      en: title,
+      zh: "",
+      ja: "",
     },
     dek: {
-      en: post.summary || "Official AI company blog post.",
-      zh: post.summary || "AI 公司官方博客文章。",
-      ja: post.summary || "AI 企業の公式ブログ記事です。",
+      en: summary || "Official AI company blog post.",
+      zh: summary || "AI 公司官方博客文章。",
+      ja: summary || "AI 企業の公式ブログ記事です。",
     },
     tags: ["Blog", post.source || post.name].filter(Boolean),
     minutes: readingMinutes(post.content || post.summary || post.title),
@@ -558,11 +756,8 @@ function blogArticle(post) {
           zh: "博客说明",
           ja: "ブログメモ",
         },
-        text: {
-          en: post.content || post.summary || "Open the original blog link for the full post.",
-          zh: post.content || post.summary || "打开原始博客链接查看全文。",
-          ja: post.content || post.summary || "原文ブログリンクから全文を確認できます。",
-        },
+        text: multilingualText(content || summary || "Open the original blog link for the full post."),
+        hasMissingFigure: hasFigureReference(content || summary),
       },
     ],
     links: post.url ? [{ label: post.source || "Blog", href: post.url }] : [],
@@ -687,6 +882,7 @@ function renderControls() {
 function renderTypeFilter() {
   const select = byId("fb-type-filter");
   if (!select) return;
+  select.setAttribute("aria-label", t("controls.filterSource"));
   select.innerHTML = ["all", "x", "podcast", "blog"]
     .map((type) => `<option value="${type}">${escapeHtml(t(`types.${type}`))}</option>`)
     .join("");
@@ -815,6 +1011,14 @@ function sectionParagraphs(section) {
   return displayLanguageBlocks(section.text, section.text?.en || "");
 }
 
+function renderMissingFigureNotice(section) {
+  const figures = Array.isArray(section.figures) ? section.figures : [];
+  if (figures.length || !(section.hasMissingFigure || hasFigureReference(section.text))) {
+    return "";
+  }
+  return `<p class="fb-source-integrity-note">${escapeHtml(t("article.missingFigure"))}</p>`;
+}
+
 function renderLanguageTextBlocks(blocks, tagName = "p") {
   const multiple = blocks.length > 1;
   return blocks
@@ -879,6 +1083,7 @@ function renderArticle(article) {
             <section class="fb-body-section">
               <h2>${escapeHtml(label)}</h2>
               ${renderLanguageTextBlocks(quoteBlocks, "blockquote")}
+              ${renderMissingFigureNotice(section)}
               ${section.url ? `<a href="${escapeHtml(section.url)}">${escapeHtml(t("article.original"))}</a>` : ""}
             </section>
           `;
@@ -887,6 +1092,7 @@ function renderArticle(article) {
           <section class="fb-body-section">
             <h2>${escapeHtml(label)}</h2>
             ${renderLanguageTextBlocks(sectionParagraphs(section), "p")}
+            ${renderMissingFigureNotice(section)}
           </section>
         `;
       }).join("")}
@@ -897,6 +1103,7 @@ function renderArticle(article) {
   `;
   renderLanguageDisplayControl();
   container.querySelector("[data-back-to-feed]")?.addEventListener("click", closeArticle);
+  hydrateArticleTranslations(article);
 }
 
 function openArticle(id, options = {}) {
