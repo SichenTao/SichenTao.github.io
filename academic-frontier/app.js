@@ -364,18 +364,24 @@ const UI_TEXT = {
     teamsTitle: "Tracked researchers and teams",
     teamsNote: "",
     paperLaneKicker: "Paper list",
-    readerTitle: "Academic Frontier",
+    readerTitle: "Latest Papers",
     readerSubtitle: "Paper Entries",
     readerSearchPlaceholder: "Search titles, authors, abstracts, venues, or DOI",
     readerFieldFilterLabel: "Field",
     readerDisplayLanguagesLabel: "Displayed languages",
     readerOpenAction: "Read abstract",
     readerEmpty: "No paper entries match the current filters.",
-    readerRailTitle: "Browse by field",
-    readerRailSubtitle: "The index shows title, source, authors, metrics, and tags; the abstract is the reading body inside each entry.",
-    readerTotalLabel: "Entries",
+    readerEntryTypeLabel: "Paper",
+    readerReadTimeLabel: "1 min read",
+    readerAuthorSuffix: "et al.",
+    readerRailTitle: "Tracked objects",
+    readerRailFieldsTitle: "Research fields",
+    readerRailVenuesTitle: "Publication venues",
+    readerRailYearsTitle: "Years",
+    readerTotalLabel: "Papers",
     readerYearLabel: "Years",
     readerVenueLabel: "Venues",
+    readerAuthorCountLabel: "Authors",
     papersTitle: "Paper Library",
     papersNote: "Search and filter the current paper record.",
     metricsTitle: "Venue Metrics",
@@ -625,18 +631,24 @@ const UI_TEXT = {
     teamsTitle: "已记录研究者与团队",
     teamsNote: "",
     paperLaneKicker: "论文列表",
-    readerTitle: "学术前沿",
+    readerTitle: "论文最新记录",
     readerSubtitle: "论文入口列表",
-    readerSearchPlaceholder: "搜索题目、作者、摘要、出版地或 DOI",
+    readerSearchPlaceholder: "搜索题目、作者、摘要、发表渠道或 DOI",
     readerFieldFilterLabel: "领域",
     readerDisplayLanguagesLabel: "显示语言",
     readerOpenAction: "阅读摘要",
     readerEmpty: "当前筛选下没有匹配的论文入口。",
-    readerRailTitle: "按领域浏览",
-    readerRailSubtitle: "入口页展示题目、来源、作者、指标与标签；摘要正文放在每篇论文页面中阅读。",
-    readerTotalLabel: "入口",
+    readerEntryTypeLabel: "论文",
+    readerReadTimeLabel: "1 分钟阅读",
+    readerAuthorSuffix: "等",
+    readerRailTitle: "追踪对象",
+    readerRailFieldsTitle: "研究领域",
+    readerRailVenuesTitle: "发表渠道",
+    readerRailYearsTitle: "年份",
+    readerTotalLabel: "论文",
     readerYearLabel: "年份",
-    readerVenueLabel: "出版地",
+    readerVenueLabel: "发表渠道",
+    readerAuthorCountLabel: "作者",
     papersTitle: "论文库",
     papersNote: "直接搜索、筛选并判断下一步先读什么。",
     metricsTitle: "分区与指标参考",
@@ -886,18 +898,24 @@ const UI_TEXT = {
     teamsTitle: "記録済み研究者・チーム",
     teamsNote: "",
     paperLaneKicker: "論文リスト",
-    readerTitle: "学術フロンティア",
+    readerTitle: "論文最新記録",
     readerSubtitle: "論文入口リスト",
     readerSearchPlaceholder: "題目・著者・要旨・掲載先・DOIで検索",
     readerFieldFilterLabel: "分野",
     readerDisplayLanguagesLabel: "表示言語",
     readerOpenAction: "要旨を読む",
     readerEmpty: "現在の条件に一致する論文入口はありません。",
-    readerRailTitle: "分野で閲覧",
-    readerRailSubtitle: "入口では題目・出典・著者・指標・タグを示し、要旨本文は各論文ページで読めるようにします。",
-    readerTotalLabel: "入口",
+    readerEntryTypeLabel: "論文",
+    readerReadTimeLabel: "1分で読める",
+    readerAuthorSuffix: "ほか",
+    readerRailTitle: "追跡対象",
+    readerRailFieldsTitle: "研究分野",
+    readerRailVenuesTitle: "掲載先",
+    readerRailYearsTitle: "年",
+    readerTotalLabel: "論文",
     readerYearLabel: "年",
     readerVenueLabel: "掲載先",
+    readerAuthorCountLabel: "著者",
     papersTitle: "論文庫",
     papersNote: "検索・フィルター・読書判断をここでまとめて行う。",
     metricsTitle: "掲載先指標",
@@ -5984,11 +6002,13 @@ function renderFrontierReaderFieldOptions() {
 }
 
 function readerStoryLanguageBlocks(paper) {
-  return readerDisplayLanguages().map((locale) => {
+  const multipleLanguages = readerDisplayLanguages().length > 1;
+  return readerDisplayLanguages().map((locale, index) => {
     const title = formatRichTextForLocale(locale, paperDisplayTitleValue(paper));
     if (!title) return "";
-    return `<div class="frontier-reader-language-block" data-reader-language-block="${escapeHtml(locale)}">
-      <h3>${title}</h3>
+    const label = multipleLanguages ? `<span class="fb-language-label">${escapeHtml(LOCALE_CATALOG[locale]?.label || locale)}</span>` : "";
+    return `<div class="frontier-reader-language-block${index > 0 ? " is-translation" : ""}" data-reader-language-block="${escapeHtml(locale)}">
+      ${label}<h3>${title}</h3>
     </div>`;
   }).join("");
 }
@@ -5996,12 +6016,18 @@ function readerStoryLanguageBlocks(paper) {
 function readerMetricFacts(paper) {
   const metrics = paper?.metrics || {};
   const parts = [];
-  if (metrics.impactFactor) parts.push(`${ui("impactFactorLabel")} ${metrics.impactFactor}`);
-  if (metrics.jcrQuartile) parts.push(`${ui("jcrLabel")} ${metrics.jcrQuartile}`);
-  if (metrics.casQuartile) {
+  if (metrics.impactFactor && metrics.impactFactor !== "__not_listed__") {
+    parts.push(`${ui("impactFactorLabel")} ${metrics.impactFactor}`);
+  }
+  if (metrics.jcrQuartile && metrics.jcrQuartile !== "__not_listed__") {
+    parts.push(`${ui("jcrLabel")} ${metrics.jcrQuartile}`);
+  }
+  if (metrics.casQuartile && metrics.casQuartile !== "__not_listed__") {
     parts.push(`${ui("casLabel")} ${metrics.casQuartile}${metrics.casTop ? ` ${ui("topLabel")}` : ""}`);
   }
-  if (metrics.ccfRank) parts.push(`${ui("ccfLabel")} ${metrics.ccfRank}`);
+  if (metrics.ccfRank && metrics.ccfRank !== "__not_listed__") {
+    parts.push(`${ui("ccfLabel")} ${metrics.ccfRank}`);
+  }
   const citationCount = paper?.citationCount ?? paper?.citations;
   if (citationCount !== undefined && citationCount !== null) {
     parts.push(`${ui("citationsMetricLabel")} ${citationCount}`);
@@ -6014,6 +6040,30 @@ function readerStoryTags(paper) {
     .slice(0, 4)
     .map((tag) => `<span class="field-hash-tag">#${escapeHtml(localizeText(tag))}</span>`)
     .join("");
+}
+
+function readerLeadAuthor(paper) {
+  const authors = paperAuthorNames(paper);
+  if (!authors.length) return "";
+  if (authors.length === 1) return authors[0];
+  return `${authors[0]} ${ui("readerAuthorSuffix")}`;
+}
+
+function readerStoryMeta(paper) {
+  const parts = [
+    `<span class="frontier-reader-type">${escapeHtml(ui("readerEntryTypeLabel"))}</span>`,
+    readerLeadAuthor(paper) ? `<span>${escapeHtml(readerLeadAuthor(paper))}</span>` : "",
+    paperYearValue(paper) ? `<span>${escapeHtml(paperYearValue(paper))}</span>` : "",
+    `<span>${escapeHtml(ui("readerReadTimeLabel"))}</span>`,
+  ];
+  return parts.filter(Boolean).join("");
+}
+
+function readerStorySourceLine(paper) {
+  return [
+    localizeText(paper?.venue),
+    publicationDoiText(paper) ? `DOI ${publicationDoiText(paper)}` : "",
+  ].filter(Boolean).join(" · ");
 }
 
 function articleFactChips(article) {
@@ -6047,15 +6097,18 @@ function renderFrontierReaderStories() {
     article.dataset.readerPaper = paper?.id || "";
     article.dataset.readerHref = paperDetailHref(paper);
     article.tabIndex = 0;
-    const authors = paperAuthorNames(paper).slice(0, 4).join(", ");
-    const doi = publicationDoiText(paper);
+    const authors = paperAuthorNames(paper).join(", ");
+    const sourceLine = readerStorySourceLine(paper);
     const facts = readerMetricFacts(paper);
     article.innerHTML = `
       <div class="frontier-reader-card-body">
+        <span class="frontier-reader-meta">${readerStoryMeta(paper)}</span>
         ${readerStoryLanguageBlocks(paper)}
-        ${authors ? `<p class="frontier-reader-authors"><strong>${escapeHtml(ui("authorsLabel"))}</strong> ${escapeHtml(authors)}</p>` : ""}
-        ${doi ? `<div class="frontier-reader-source-line"><span class="frontier-reader-doi">DOI ${escapeHtml(doi)}</span></div>` : ""}
-        ${facts ? `<div class="frontier-reader-facts">${facts}</div>` : ""}
+        <span class="frontier-reader-dek-group">
+          ${authors ? `<span class="frontier-reader-authors">${escapeHtml(ui("authorsLabel"))} ${escapeHtml(authors)}</span>` : ""}
+          ${sourceLine ? `<span class="frontier-reader-source-line">${escapeHtml(sourceLine)}</span>` : ""}
+        </span>
+        ${facts ? `<span class="frontier-reader-facts">${facts}</span>` : ""}
         <div class="field-hash-row frontier-reader-tags">${readerStoryTags(paper)}</div>
       </div>
       <a class="frontier-reader-card-action" href="${escapeHtml(paperDetailHref(paper))}" aria-label="${escapeHtml(ui("readerOpenAction"))}">&rarr;</a>
@@ -6073,19 +6126,36 @@ function renderFrontierReaderRail() {
   const fields = readerAvailableFields(allPapers);
   const venues = new Set(allPapers.map((paper) => localizeText(paper?.venue)).filter(Boolean));
   const years = new Set(allPapers.map((paper) => paperYearValue(paper)).filter(Boolean));
-  const chips = fields.slice(0, 18).map((field) => (
-    `<button class="frontier-reader-rail-chip${state.readerFieldFilter === field ? " is-active" : ""}" type="button" data-reader-field-chip="${escapeHtml(field)}">#${escapeHtml(localizeText(field))}</button>`
+  const authors = new Set(allPapers.flatMap((paper) => paperAuthorNames(paper)));
+  const fieldChips = fields.slice(0, 18).map((field) => (
+    `<button class="frontier-reader-rail-chip${state.readerFieldFilter === field ? " is-active" : ""}" type="button" data-reader-field-chip="${escapeHtml(field)}">${escapeHtml(localizeText(field))}</button>`
   )).join("");
+  const venueChips = Array.from(venues).sort((left, right) => left.localeCompare(right, currentLocale())).slice(0, 12)
+    .map((venue) => `<span class="frontier-reader-rail-chip">${escapeHtml(venue)}</span>`).join("");
+  const yearChips = Array.from(years).filter(Boolean).sort().reverse().slice(0, 8)
+    .map((year) => `<span class="frontier-reader-rail-chip">${escapeHtml(year)}</span>`).join("");
 
   rail.innerHTML = `
-    <h2 id="frontier-reader-rail-title">${escapeHtml(ui("readerRailTitle"))}</h2>
-    <p>${escapeHtml(ui("readerRailSubtitle"))}</p>
-    <div class="frontier-reader-stats">
-      <div><strong>${escapeHtml(papers.length)}</strong><span>${escapeHtml(ui("readerTotalLabel"))}</span></div>
-      <div><strong>${escapeHtml(years.size)}</strong><span>${escapeHtml(ui("readerYearLabel"))}</span></div>
-      <div><strong>${escapeHtml(venues.size)}</strong><span>${escapeHtml(ui("readerVenueLabel"))}</span></div>
-    </div>
-    <div class="frontier-reader-rail-chips">${chips}</div>
+    <section class="frontier-reader-rail-section">
+      <h2 id="frontier-reader-rail-title">${escapeHtml(ui("readerRailTitle"))}</h2>
+      <div class="frontier-reader-stats">
+        <div><strong>${escapeHtml(allPapers.length)}</strong><span>${escapeHtml(ui("readerTotalLabel"))}</span></div>
+        <div><strong>${escapeHtml(authors.size)}</strong><span>${escapeHtml(ui("readerAuthorCountLabel"))}</span></div>
+        <div><strong>${escapeHtml(venues.size)}</strong><span>${escapeHtml(ui("readerVenueLabel"))}</span></div>
+      </div>
+    </section>
+    <section class="frontier-reader-rail-section">
+      <h3>${escapeHtml(ui("readerRailFieldsTitle"))}</h3>
+      <div class="frontier-reader-rail-chips">${fieldChips}</div>
+    </section>
+    <section class="frontier-reader-rail-section">
+      <h3>${escapeHtml(ui("readerRailVenuesTitle"))}</h3>
+      <div class="frontier-reader-rail-chips">${venueChips}</div>
+    </section>
+    <section class="frontier-reader-rail-section">
+      <h3>${escapeHtml(ui("readerRailYearsTitle"))}</h3>
+      <div class="frontier-reader-rail-chips">${yearChips}</div>
+    </section>
   `;
 }
 
