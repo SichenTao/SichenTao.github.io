@@ -19,6 +19,9 @@ const REMOTE_FEEDS = {
 
 const I18N = {
   en: {
+    brand: {
+      note: "Visualizing Zara Zhang's open-source project",
+    },
     nav: {
       home: "Home",
       feed: "Feed",
@@ -76,6 +79,9 @@ const I18N = {
       builders: "AI builders on X",
       podcasts: "Podcasts",
       blogs: "Official blogs",
+      projectNoteTitle: "Project note",
+      projectNoteText: "This reader visualizes Zara Zhang's follow-builders open-source project.",
+      projectNoteLink: "Original project",
     },
     article: {
       back: "Back to feed",
@@ -89,6 +95,9 @@ const I18N = {
     },
   },
   zh: {
+    brand: {
+      note: "可视化 Zara Zhang 的开源项目",
+    },
     nav: {
       home: "首页",
       feed: "信息流",
@@ -146,6 +155,9 @@ const I18N = {
       builders: "X 上的 AI builders",
       podcasts: "播客",
       blogs: "官方博客",
+      projectNoteTitle: "项目说明",
+      projectNoteText: "本阅读器用于可视化 Zara Zhang 的 follow-builders 开源项目。",
+      projectNoteLink: "原项目",
     },
     article: {
       back: "返回信息流",
@@ -159,6 +171,9 @@ const I18N = {
     },
   },
   ja: {
+    brand: {
+      note: "Zara Zhang のオープンソースプロジェクトを可視化",
+    },
     nav: {
       home: "ホーム",
       feed: "フィード",
@@ -216,6 +231,9 @@ const I18N = {
       builders: "X の AI builders",
       podcasts: "Podcasts",
       blogs: "公式ブログ",
+      projectNoteTitle: "プロジェクトメモ",
+      projectNoteText: "この reader は Zara Zhang の follow-builders オープンソースプロジェクトを可視化します。",
+      projectNoteLink: "元プロジェクト",
     },
     article: {
       back: "フィードに戻る",
@@ -366,26 +384,13 @@ function xArticle(builder) {
       ja: `${builder.name} の最新 builder ノート`,
     },
     dek: {
-      en: `${tweets.length} recent X update${tweets.length === 1 ? "" : "s"} from @${builder.handle}. The page keeps the original posts intact and links back to every source.`,
-      zh: `来自 @${builder.handle} 的 ${tweets.length} 条近期 X 动态。本页保留原文，并把每条内容链接回来源。`,
-      ja: `@${builder.handle} からの最近の X 投稿 ${tweets.length} 件。原文を保持し、それぞれの出典へ戻れるようにしています。`,
+      en: `${tweets.length} recent X update${tweets.length === 1 ? "" : "s"} from @${builder.handle}.`,
+      zh: `来自 @${builder.handle} 的 ${tweets.length} 条近期 X 动态。`,
+      ja: `@${builder.handle} からの最近の X 投稿 ${tweets.length} 件。`,
     },
     tags: ["X", builder.handle, "builder"].filter(Boolean),
     minutes: readingMinutes(bodyText),
     sections: [
-      {
-        kind: "paragraph",
-        label: {
-          en: "Why this builder appears here",
-          zh: "为什么收录这位 builder",
-          ja: "この builder を表示する理由",
-        },
-        text: {
-          en: `${builder.name} is included in the central Follow Builders feed. The goal is to track builders with firsthand work, product decisions, engineering notes, or original AI opinions.`,
-          zh: `${builder.name} 来自 Follow Builders 的中心 feed。这个项目的重点是追踪真正做产品、工程、研究或提出一手 AI 观点的人。`,
-          ja: `${builder.name} は Follow Builders の中央フィードに含まれています。目的は、プロダクト、エンジニアリング、研究、AI に関する一次的な意見を持つ builder を追うことです。`,
-        },
-      },
       ...tweets.map((tweet, index) => ({
         kind: "quote",
         label: {
@@ -418,26 +423,13 @@ function podcastArticle(episode) {
       ja: episode.title || episode.name,
     },
     dek: {
-      en: `${episode.name} episode from the Follow Builders podcast feed. The browser view keeps the episode title, source URL, and transcript excerpt together.`,
-      zh: `来自 Follow Builders 播客 feed 的 ${episode.name} 节目。本阅读器把节目标题、来源链接和字幕节选放在同一篇文章中。`,
-      ja: `Follow Builders の podcast フィードにある ${episode.name} のエピソードです。タイトル、出典 URL、字幕抜粋を同じ記事として表示します。`,
+      en: `${episode.name} episode from the podcast feed.`,
+      zh: `来自 ${episode.name} 的播客节目。`,
+      ja: `${episode.name} の podcast エピソード。`,
     },
     tags: ["Podcast", episode.name].filter(Boolean),
     minutes: readingMinutes(episode.transcript || episode.title),
     sections: [
-      {
-        kind: "paragraph",
-        label: {
-          en: "Podcast context",
-          zh: "播客上下文",
-          ja: "Podcast の文脈",
-        },
-        text: {
-          en: "Follow Builders also watches selected AI podcasts, then lets the agent remix transcripts into a readable update.",
-          zh: "Follow Builders 也会追踪精选 AI 播客，并让 agent 把字幕混编成容易阅读的更新。",
-          ja: "Follow Builders は選定された AI podcast も追跡し、agent が字幕を読みやすい更新に再構成できるようにします。",
-        },
-      },
       {
         kind: "quote",
         label: {
@@ -466,9 +458,9 @@ function blogArticle(post) {
       ja: post.title || "公式ブログ更新",
     },
     dek: {
-      en: post.summary || "Official AI company blog post from the Follow Builders feed.",
-      zh: post.summary || "来自 Follow Builders feed 的 AI 公司官方博客文章。",
-      ja: post.summary || "Follow Builders フィードの AI 企業公式ブログ記事です。",
+      en: post.summary || "Official AI company blog post.",
+      zh: post.summary || "AI 公司官方博客文章。",
+      ja: post.summary || "AI 企業の公式ブログ記事です。",
     },
     tags: ["Blog", post.source || post.name].filter(Boolean),
     minutes: readingMinutes(post.content || post.summary || post.title),
@@ -481,9 +473,9 @@ function blogArticle(post) {
           ja: "ブログメモ",
         },
         text: {
-          en: post.content || post.summary || "The central feed keeps official blog links available for the agent to summarize.",
-          zh: post.content || post.summary || "中心 feed 会保留官方博客链接，方便 agent 后续摘要。",
-          ja: post.content || post.summary || "中央フィードは公式ブログリンクを保持し、agent が要約できるようにします。",
+          en: post.content || post.summary || "Open the original blog link for the full post.",
+          zh: post.content || post.summary || "打开原始博客链接查看全文。",
+          ja: post.content || post.summary || "原文ブログリンクから全文を確認できます。",
         },
       },
     ],
@@ -542,9 +534,12 @@ function renderStaticText() {
     }
   });
 
-  byId("fb-updated").textContent = formatCompactDate(state.data.generatedAt) || "-";
-  byId("fb-builder-count").textContent = String(state.data.sources.x_accounts?.length || state.data.feeds.x.x?.length || 0);
-  byId("fb-podcast-count").textContent = String(state.data.sources.podcasts?.length || 0);
+  const updated = byId("fb-updated");
+  const builderCount = byId("fb-builder-count");
+  const podcastCount = byId("fb-podcast-count");
+  if (updated) updated.textContent = formatCompactDate(state.data.generatedAt) || "-";
+  if (builderCount) builderCount.textContent = String(state.data.sources.x_accounts?.length || state.data.feeds.x.x?.length || 0);
+  if (podcastCount) podcastCount.textContent = String(state.data.sources.podcasts?.length || 0);
 }
 
 function renderControls() {
