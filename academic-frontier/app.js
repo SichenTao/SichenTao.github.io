@@ -205,12 +205,18 @@ function readerDisplayLanguagesStorageKey(locale = defaultReaderLanguage()) {
 }
 
 function readStoredReaderDisplayLanguages() {
-  const stored = readStoredValue(readerDisplayLanguagesStorageKey());
-  return stored ? normalizeReaderDisplayLanguages(stored) : defaultReaderDisplayLanguages();
+  READER_DISPLAY_LANGUAGE_SEQUENCE.forEach((locale) => {
+    try {
+      window.localStorage.removeItem(readerDisplayLanguagesStorageKey(locale));
+    } catch (error) {
+      void error;
+    }
+  });
+  return defaultReaderDisplayLanguages();
 }
 
 function writeStoredReaderDisplayLanguages(languages) {
-  writeStoredValue(readerDisplayLanguagesStorageKey(), normalizeReaderDisplayLanguages(languages).join(","));
+  void languages;
 }
 
 // Keep the "All" badge aligned with the sum of the option badges shown in the same menu.
@@ -6112,8 +6118,11 @@ function readerMetricFacts(paper) {
 }
 
 function readerStoryTags(paper) {
-  return paperFieldTags(paper)
-    .slice(0, 4)
+  const tags = paperFieldTags(paper);
+  const selectedTags = readerFieldFilters().filter((field) => tags.includes(field));
+  const remainingTags = tags.filter((tag) => !selectedTags.includes(tag));
+  const visibleTags = [...selectedTags, ...remainingTags].slice(0, Math.max(4, selectedTags.length));
+  return visibleTags
     .map((tag) => `<span class="field-hash-tag">#${escapeHtml(localizeText(tag))}</span>`)
     .join("");
 }
