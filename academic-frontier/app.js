@@ -183,7 +183,13 @@ function defaultReaderDisplayLanguages(locale = defaultReaderLanguage()) {
   return [defaultReaderLanguage(locale)];
 }
 
-function normalizeReaderDisplayLanguages(value, fallback = defaultReaderDisplayLanguages()) {
+function readerDisplayLanguageSequence(locale = defaultReaderLanguage()) {
+  const primary = defaultReaderLanguage(locale);
+  return window.HomepageComponents?.prioritizeLocaleSequence?.(READER_DISPLAY_LANGUAGE_SEQUENCE, primary, LOCALE_CATALOG)
+    || [primary, ...READER_DISPLAY_LANGUAGE_SEQUENCE.filter((language) => language !== primary)];
+}
+
+function normalizeReaderDisplayLanguages(value, fallback = defaultReaderDisplayLanguages(), locale = defaultReaderLanguage()) {
   const source = Array.isArray(value)
     ? value
     : String(value || "")
@@ -191,7 +197,8 @@ function normalizeReaderDisplayLanguages(value, fallback = defaultReaderDisplayL
       .map((item) => item.trim());
   const languages = source.filter((language) => READER_DISPLAY_LANGUAGE_SEQUENCE.includes(language));
   const uniqueLanguages = [...new Set(languages)];
-  return uniqueLanguages.length ? uniqueLanguages : [...fallback];
+  const selected = uniqueLanguages.length ? uniqueLanguages : [...fallback];
+  return readerDisplayLanguageSequence(locale).filter((language) => selected.includes(language));
 }
 
 function readerDisplayLanguagesStorageKey(locale = defaultReaderLanguage()) {
@@ -5925,20 +5932,20 @@ function renderMetrics() {
 }
 
 function readerDisplayLanguages() {
-  state.readerDisplayLanguages = normalizeReaderDisplayLanguages(state.readerDisplayLanguages);
+  state.readerDisplayLanguages = normalizeReaderDisplayLanguages(state.readerDisplayLanguages, defaultReaderDisplayLanguages(), defaultReaderLanguage());
   return state.readerDisplayLanguages;
 }
 
 function setReaderDisplayLanguages(languages, persist = true) {
-  state.readerDisplayLanguages = normalizeReaderDisplayLanguages(languages);
+  state.readerDisplayLanguages = normalizeReaderDisplayLanguages(languages, defaultReaderDisplayLanguages(), defaultReaderLanguage());
   if (persist) {
     writeStoredReaderDisplayLanguages(state.readerDisplayLanguages);
   }
 }
 
 function readerDisplayLanguagesEqual(left, right) {
-  const normalizedLeft = normalizeReaderDisplayLanguages(left);
-  const normalizedRight = normalizeReaderDisplayLanguages(right);
+  const normalizedLeft = normalizeReaderDisplayLanguages(left, defaultReaderDisplayLanguages(), defaultReaderLanguage());
+  const normalizedRight = normalizeReaderDisplayLanguages(right, defaultReaderDisplayLanguages(), defaultReaderLanguage());
   return normalizedLeft.length === normalizedRight.length && normalizedLeft.every((language, index) => language === normalizedRight[index]);
 }
 
@@ -6049,7 +6056,7 @@ function renderFrontierReaderLanguageControls() {
   if (window.HomepageComponents?.renderLanguageSegmentedControl) {
     window.HomepageComponents.renderLanguageSegmentedControl(container, {
       locales: LOCALE_CATALOG,
-      sequence: READER_DISPLAY_LANGUAGE_SEQUENCE,
+      sequence: readerDisplayLanguageSequence(defaultReaderLanguage()),
       selected: readerDisplayLanguages(),
       choiceClass: "frontier-reader-language-chip",
       activeClass: "is-active",
@@ -6061,7 +6068,7 @@ function renderFrontierReaderLanguageControls() {
 
   const activeLanguages = new Set(readerDisplayLanguages());
   container.innerHTML = "";
-  READER_DISPLAY_LANGUAGE_SEQUENCE.forEach((locale) => {
+  readerDisplayLanguageSequence(defaultReaderLanguage()).forEach((locale) => {
     const config = LOCALE_CATALOG[locale];
     if (!config) return;
     const button = el("button", `frontier-reader-language-chip shared-language-chip${activeLanguages.has(locale) ? " is-active is-selected" : ""}`);
@@ -6349,7 +6356,7 @@ function renderAcademicArticleLanguageControls() {
     if (window.HomepageComponents?.renderLanguageSegmentedControl) {
       window.HomepageComponents.renderLanguageSegmentedControl(container, {
         locales: LOCALE_CATALOG,
-        sequence: READER_DISPLAY_LANGUAGE_SEQUENCE,
+        sequence: readerDisplayLanguageSequence(defaultReaderLanguage()),
         selected: readerDisplayLanguages(),
         choiceClass: "fb-language-chip",
         dataAttribute: "data-academic-article-language",
@@ -6360,7 +6367,7 @@ function renderAcademicArticleLanguageControls() {
 
     const activeLanguages = new Set(readerDisplayLanguages());
     container.setAttribute("aria-label", ui("readerDisplayLanguagesLabel"));
-    container.innerHTML = READER_DISPLAY_LANGUAGE_SEQUENCE.map((locale) => {
+    container.innerHTML = readerDisplayLanguageSequence(defaultReaderLanguage()).map((locale) => {
       const selected = activeLanguages.has(locale);
       return `
         <button

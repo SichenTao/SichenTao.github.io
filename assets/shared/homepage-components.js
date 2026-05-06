@@ -49,6 +49,15 @@
     return locales?.[normalized] ? normalized : Object.keys(locales || {})[0] || "en";
   }
 
+  function prioritizeLocaleSequence(sequence = [], locale = "en", locales = global.HomepageI18n?.LOCALES || {}) {
+    const normalizedSequence = [...new Set((sequence || []).filter((name) => locales?.[name]))];
+    const primary = localeName(locale, locales);
+    return [
+      primary,
+      ...normalizedSequence.filter((name) => name !== primary),
+    ].filter((name, index, values) => locales?.[name] && values.indexOf(name) === index);
+  }
+
   function themeName(theme, themes) {
     const normalized = global.HomepagePlatform?.normalizeTheme?.(theme) || theme || "tohoku";
     return themes?.[normalized] ? normalized : Object.keys(themes || {})[0] || "tohoku";
@@ -1302,6 +1311,7 @@
     iconSprite,
     portalIconMarkup,
     themeTooltip,
+    prioritizeLocaleSequence,
     renderLanguageSegmentedControl,
     renderLocaleSwitcher,
     renderThemeSwitcher,

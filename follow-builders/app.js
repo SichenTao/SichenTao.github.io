@@ -358,7 +358,7 @@ function localizeForLanguage(value, language, fallback = "") {
 }
 
 function displayLanguageBlocks(value, fallback = "") {
-  const blocks = normalizeDisplayLanguages(state.displayLanguages)
+  const blocks = normalizeDisplayLanguages(state.displayLanguages, defaultDisplayLanguages(state.locale), state.locale)
     .map((language) => ({ language, text: localizeForLanguage(value, language, fallback) }))
     .filter((block) => block.text);
   if (blocks.length) return blocks;
@@ -386,7 +386,13 @@ function readInitialTheme() {
   return window.HomepagePlatform?.readStoredTheme?.() || "tohoku";
 }
 
-function normalizeDisplayLanguages(languages, fallback = ["en"]) {
+function displayLanguageSequence(locale = readInitialLocale()) {
+  const primary = defaultDisplayLanguage(locale);
+  return window.HomepageComponents?.prioritizeLocaleSequence?.(DISPLAY_LANGUAGE_SEQUENCE, primary, LOCALE_CATALOG)
+    || [primary, ...DISPLAY_LANGUAGE_SEQUENCE.filter((language) => language !== primary)];
+}
+
+function normalizeDisplayLanguages(languages, fallback = ["en"], locale = readInitialLocale()) {
   const selected = new Set((languages || []).filter((language) => DISPLAY_LANGUAGE_SEQUENCE.includes(language)));
   if (!selected.size) {
     (fallback || []).forEach((language) => {
@@ -396,7 +402,7 @@ function normalizeDisplayLanguages(languages, fallback = ["en"]) {
     });
   }
   if (!selected.size) selected.add("en");
-  return DISPLAY_LANGUAGE_SEQUENCE.filter((language) => selected.has(language));
+  return displayLanguageSequence(locale).filter((language) => selected.has(language));
 }
 
 function defaultDisplayLanguage(locale = readInitialLocale()) {
@@ -415,7 +421,7 @@ function readStoredDisplayLanguages(locale = readInitialLocale()) {
   try {
     const stored = JSON.parse(localStorage.getItem(displayLanguagesStorageKey(locale)) || "null");
     if (Array.isArray(stored)) {
-      return normalizeDisplayLanguages(stored, defaultDisplayLanguages(locale));
+      return normalizeDisplayLanguages(stored, defaultDisplayLanguages(locale), locale);
     }
     return defaultDisplayLanguages(locale);
   } catch {
@@ -425,18 +431,18 @@ function readStoredDisplayLanguages(locale = readInitialLocale()) {
 
 function writeStoredDisplayLanguages(languages, locale = readInitialLocale()) {
   try {
-    localStorage.setItem(displayLanguagesStorageKey(locale), JSON.stringify(normalizeDisplayLanguages(languages)));
+    localStorage.setItem(displayLanguagesStorageKey(locale), JSON.stringify(normalizeDisplayLanguages(languages, defaultDisplayLanguages(locale), locale)));
   } catch {}
 }
 
 function displayLanguagesEqual(left, right) {
-  const normalizedLeft = normalizeDisplayLanguages(left);
-  const normalizedRight = normalizeDisplayLanguages(right);
+  const normalizedLeft = normalizeDisplayLanguages(left, defaultDisplayLanguages(state.locale), state.locale);
+  const normalizedRight = normalizeDisplayLanguages(right, defaultDisplayLanguages(state.locale), state.locale);
   return normalizedLeft.length === normalizedRight.length && normalizedLeft.every((language, index) => language === normalizedRight[index]);
 }
 
 function setDisplayLanguages(languages) {
-  state.displayLanguages = normalizeDisplayLanguages(languages);
+  state.displayLanguages = normalizeDisplayLanguages(languages, defaultDisplayLanguages(state.locale), state.locale);
   writeStoredDisplayLanguages(state.displayLanguages, state.locale);
 }
 
@@ -663,7 +669,7 @@ function feedTranslationTargets(article) {
 }
 
 async function hydrateFeedTranslations(articles) {
-  const languages = normalizeDisplayLanguages(state.displayLanguages).filter((language) => language !== "en");
+  const languages = normalizeDisplayLanguages(state.displayLanguages, defaultDisplayLanguages(state.locale), state.locale).filter((language) => language !== "en");
   if (!languages.length || !articles?.length) return;
   const visible = articles.slice(0, 16);
   const inflightKey = `${visible.map((article) => article.id).join("|")}:${languages.join(",")}`;
@@ -700,7 +706,7 @@ async function hydrateFeedTranslations(articles) {
 
 async function hydrateArticleTranslations(article) {
   if (!article) return;
-  const languages = normalizeDisplayLanguages(state.displayLanguages).filter((language) => language !== "en");
+  const languages = normalizeDisplayLanguages(state.displayLanguages, defaultDisplayLanguages(state.locale), state.locale).filter((language) => language !== "en");
   if (!languages.length) return;
   const inflightKey = `${article.id}:${languages.join(",")}`;
   if (state.translationInflight.has(inflightKey)) return;
@@ -971,7 +977,7 @@ function renderLanguageDisplayControl() {
   if (window.HomepageComponents?.renderLanguageSegmentedControl) {
     window.HomepageComponents.renderLanguageSegmentedControl(".fb-language-display", {
       locales: LOCALE_CATALOG,
-      sequence: DISPLAY_LANGUAGE_SEQUENCE,
+      sequence: displayLanguageSequence(state.locale),
       selected: state.displayLanguages,
       choiceClass: "fb-language-chip",
       dataAttribute: "data-display-language",
@@ -984,7 +990,7 @@ function renderLanguageDisplayControl() {
 
   document.querySelectorAll(".fb-language-display").forEach((control) => {
     control.setAttribute("aria-label", t("controls.displayLanguages"));
-    control.innerHTML = DISPLAY_LANGUAGE_SEQUENCE.map((language) => {
+    control.innerHTML = displayLanguageSequence(state.locale).map((language) => {
       const selected = state.displayLanguages.includes(language);
       return `
         <button
