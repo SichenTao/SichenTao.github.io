@@ -77,8 +77,8 @@ const I18N = {
       trilingual: "Three-language view",
     },
     displayLanguages: {
-      en: "EN",
-      zh: "中文",
+      en: "English",
+      zh: "简体中文",
       ja: "日本語",
     },
     feed: {
@@ -169,8 +169,8 @@ const I18N = {
       trilingual: "三语对照",
     },
     displayLanguages: {
-      en: "EN",
-      zh: "中文",
+      en: "English",
+      zh: "简体中文",
       ja: "日本語",
     },
     feed: {
@@ -260,8 +260,8 @@ const I18N = {
       trilingual: "三言語対照",
     },
     displayLanguages: {
-      en: "EN",
-      zh: "中文",
+      en: "English",
+      zh: "简体中文",
       ja: "日本語",
     },
     feed: {
@@ -371,12 +371,12 @@ function languageAttr(language) {
   return language === "zh" ? "zh-CN" : language === "ja" ? "ja" : "en";
 }
 
-function displayLanguageShortLabel(language) {
-  return {
-    en: "EN",
-    zh: "中文",
+function displayLanguageLabel(language) {
+  return t(`displayLanguages.${language}`) || {
+    en: "English",
+    zh: "简体中文",
     ja: "日本語",
-  }[language] || t(`displayLanguages.${language}`) || language;
+  }[language] || language;
 }
 
 function readInitialLocale() {
@@ -431,6 +431,29 @@ function writeStoredDisplayLanguages(languages) {
   try {
     localStorage.setItem(DISPLAY_LANGUAGES_KEY, JSON.stringify(normalizeDisplayLanguages(languages)));
   } catch {}
+}
+
+function defaultDisplayLanguages() {
+  return normalizeDisplayLanguages(displayLanguagesFromMode(readStoredMode()));
+}
+
+function displayLanguagesEqual(left, right) {
+  const normalizedLeft = normalizeDisplayLanguages(left);
+  const normalizedRight = normalizeDisplayLanguages(right);
+  return normalizedLeft.length === normalizedRight.length && normalizedLeft.every((language, index) => language === normalizedRight[index]);
+}
+
+function setDisplayLanguages(languages) {
+  state.displayLanguages = normalizeDisplayLanguages(languages);
+  writeStoredDisplayLanguages(state.displayLanguages);
+}
+
+function displayControlsDirty() {
+  return !displayLanguagesEqual(state.displayLanguages, defaultDisplayLanguages());
+}
+
+function feedControlsDirty() {
+  return Boolean(state.query) || state.type !== "all" || displayControlsDirty();
 }
 
 function readStoredTranslationCache() {
@@ -937,21 +960,8 @@ function renderControls() {
     }
   }
 
-  const reset = byId("fb-reset");
-  if (reset) {
-    reset.setAttribute("aria-label", t("controls.reset"));
-    reset.title = t("controls.reset");
-    if (reset.dataset.bound !== "true") {
-      reset.dataset.bound = "true";
-      reset.addEventListener("click", () => {
-        state.query = "";
-        state.type = "all";
-        render();
-      });
-    }
-  }
-
   renderLanguageDisplayControl();
+  renderDisplayResetButtons();
 }
 
 function renderLanguageDisplayControl() {
@@ -966,7 +976,7 @@ function renderLanguageDisplayControl() {
           data-display-language="${language}"
           aria-pressed="${selected ? "true" : "false"}"
         >
-          ${escapeHtml(displayLanguageShortLabel(language))}
+          ${escapeHtml(displayLanguageLabel(language))}
         </button>
       `;
     }).join("");
@@ -979,12 +989,38 @@ function renderLanguageDisplayControl() {
         } else {
           selected.add(language);
         }
-        state.displayLanguages = normalizeDisplayLanguages(Array.from(selected));
-        writeStoredDisplayLanguages(state.displayLanguages);
-        renderLanguageDisplayControl();
-        renderFeed();
-        renderArticleIfOpen();
+        setDisplayLanguages(Array.from(selected));
+        render();
       });
+    });
+  });
+}
+
+function resetFeedControls() {
+  state.query = "";
+  state.type = "all";
+  setDisplayLanguages(defaultDisplayLanguages());
+}
+
+function resetDisplayControls() {
+  setDisplayLanguages(defaultDisplayLanguages());
+}
+
+function renderDisplayResetButtons() {
+  document.querySelectorAll("[data-fb-display-reset]").forEach((button) => {
+    const scope = button.dataset.fbDisplayReset || "display";
+    button.setAttribute("aria-label", t("controls.reset"));
+    button.setAttribute("title", t("controls.reset"));
+    button.disabled = scope === "all" ? !feedControlsDirty() : !displayControlsDirty();
+    if (button.dataset.bound === "true") return;
+    button.dataset.bound = "true";
+    button.addEventListener("click", () => {
+      if (scope === "all") {
+        resetFeedControls();
+      } else {
+        resetDisplayControls();
+      }
+      render();
     });
   });
 }
@@ -1124,7 +1160,12 @@ function renderArticle(article) {
         <span aria-hidden="true">←</span>
         ${escapeHtml(t("article.back"))}
       </button>
-      <div class="fb-language-display fb-language-display--article" role="group" aria-label="${escapeHtml(t("controls.displayLanguages"))}"></div>
+      <div class="fb-article-control-group">
+        <div class="fb-language-display fb-language-display--article" role="group" aria-label="${escapeHtml(t("controls.displayLanguages"))}"></div>
+        <button class="fb-icon-button" type="button" data-fb-display-reset="display" aria-label="${escapeHtml(t("controls.reset"))}" title="${escapeHtml(t("controls.reset"))}">
+          <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-reset"></use></svg>
+        </button>
+      </div>
     </div>
     <header class="fb-article-head">
       <p class="eyebrow">${escapeHtml(typeLabel(article.type))}</p>
@@ -1172,6 +1213,7 @@ function renderArticle(article) {
     }
   `;
   renderLanguageDisplayControl();
+  renderDisplayResetButtons();
   container.querySelector("[data-back-to-feed]")?.addEventListener("click", closeArticle);
   hydrateArticleTranslations(article);
 }

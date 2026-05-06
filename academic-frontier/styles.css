@@ -4289,12 +4289,12 @@ body[data-page="feed"] main.shell.layout {
 
 .frontier-reader-rail {
   position: sticky;
-  top: 111px;
+  top: 126px;
   z-index: 15;
   display: grid;
   min-width: 0;
   gap: 28px;
-  margin-top: -92px;
+  margin-top: 52px;
   padding-top: 0;
 }
 

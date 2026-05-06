@@ -385,6 +385,11 @@ body[data-page="follow-builders"] .topnav {
   cursor: pointer;
 }
 
+.fb-icon-button:disabled {
+  color: rgba(17, 17, 20, 0.28);
+  cursor: default;
+}
+
 .fb-icon-button .ui-icon {
   width: 18px;
   height: 18px;
@@ -571,11 +576,11 @@ body[data-page="follow-builders"] .topnav {
 
 .fb-rail {
   position: sticky;
-  top: 103px;
+  top: 126px;
   z-index: 15;
   display: grid;
   gap: 28px;
-  margin-top: -100px;
+  margin-top: 52px;
   padding-top: 0;
 }
 
@@ -712,6 +717,14 @@ body[data-page="follow-builders"] .topnav {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 22px;
+}
+
+.fb-article-control-group {
+  display: flex;
+  min-width: 0;
+  gap: 8px;
+  align-items: center;
+  justify-content: end;
 }
 
 .fb-article-back {
@@ -1101,11 +1114,17 @@ body.fb-article-open .fb-feed-page {
     margin-bottom: 18px;
   }
 
+  .fb-article-control-group {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .fb-language-display--article {
     flex: none;
-    width: 100%;
+    width: auto;
     min-width: 0;
     justify-self: stretch;
+    flex-wrap: wrap;
   }
 
   .fb-article-head {
