@@ -413,8 +413,10 @@
     const workspaceWidth = workspace?.getBoundingClientRect().width || 76;
     const firstRect = firstLink.getBoundingClientRect();
     const topnavAlignedLeft = Math.max(24, Math.round(firstRect.left));
+    const viewportWidth = Math.max(0, global.innerWidth || document.documentElement?.clientWidth || 0);
+    const menuColumnGap = Math.max(48, Math.min(72, viewportWidth * 0.048));
     const minWorkspaceLeft = 24;
-    const minMainLeft = workspace ? minWorkspaceLeft + workspaceWidth + 120 : 24;
+    const minMainLeft = workspace ? minWorkspaceLeft + workspaceWidth + menuColumnGap * 2 : 24;
     const mainLeft = Math.max(topnavAlignedLeft, Math.round(minMainLeft));
     panel.style.setProperty("--portal-mega-main-left", `${mainLeft}px`);
 
@@ -424,7 +426,12 @@
       return;
     }
 
-    const workspaceOffset = Math.max(0, Math.min(380, mainLeft - minWorkspaceLeft));
+    const availableWorkspaceOffset = Math.max(0, mainLeft - minWorkspaceLeft);
+    const desiredWorkspaceOffset = workspaceWidth + menuColumnGap * 2;
+    const workspaceOffset = Math.max(
+      workspaceWidth + menuColumnGap,
+      Math.min(380, Math.min(availableWorkspaceOffset, desiredWorkspaceOffset)),
+    );
     panel.style.setProperty("--portal-mega-workspace-offset", `${Math.round(workspaceOffset)}px`);
 
     const separatorOffset = Math.max(44, Math.min(180, Math.round((workspaceOffset - workspaceWidth) / 2)));

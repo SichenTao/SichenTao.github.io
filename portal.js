@@ -211,7 +211,7 @@ const I18N = {
         ],
         columns: [
           {
-            title: "Related Workspaces",
+            title: "Workspaces",
             items: [
               { label: "Personal Homepage", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
@@ -235,7 +235,7 @@ const I18N = {
         ],
         columns: [
           {
-            title: "Related Workspaces",
+            title: "Workspaces",
             items: [
               { label: "Academic Frontier", href: "/academic-frontier/" },
               { label: "Personal Homepage", href: "/academic/" },
@@ -409,7 +409,7 @@ const I18N = {
         ],
         columns: [
           {
-            title: "相关工作区",
+            title: "工作区",
             items: [
               { label: "个人主页", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
@@ -433,7 +433,7 @@ const I18N = {
         ],
         columns: [
           {
-            title: "相关工作区",
+            title: "工作区",
             items: [
               { label: "学术前沿", href: "/academic-frontier/" },
               { label: "个人主页", href: "/academic/" },
@@ -607,7 +607,7 @@ const I18N = {
         ],
         columns: [
           {
-            title: "関連ワークスペース",
+            title: "ワークスペース",
             items: [
               { label: "個人ホームページ", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
@@ -631,7 +631,7 @@ const I18N = {
         ],
         columns: [
           {
-            title: "関連ワークスペース",
+            title: "ワークスペース",
             items: [
               { label: "学術前沿", href: "/academic-frontier/" },
               { label: "個人ホームページ", href: "/academic/" },
@@ -884,11 +884,24 @@ function renderMegaMenu(key = "portal") {
   }
 
   const isWorkspaceColumn = (column) => /workspace|工作区|ワークスペース/i.test(column?.title || "");
-  const fallbackWorkspaceColumn = (text.mega?.portal?.columns || []).find(isWorkspaceColumn);
-  const workspaceColumns = (menu.columns || []).filter(isWorkspaceColumn);
-  if (!workspaceColumns.length && fallbackWorkspaceColumn) {
-    workspaceColumns.push(fallbackWorkspaceColumn);
-  }
+  const workspaceTitle = { en: "Workspaces", zh: "工作区", ja: "ワークスペース" }[state.locale] || "Workspaces";
+  const workspaceItems = window.HomepagePlatform?.portalItems?.({
+    locale: state.locale,
+    theme: state.theme,
+    currentPath: window.location.pathname,
+  })?.items || [];
+  const workspaceColumns = workspaceItems.length
+    ? [
+        {
+          title: workspaceTitle,
+          items: workspaceItems.map((item) => ({
+            label: item.label,
+            href: item.href,
+            active: item.active,
+          })),
+        },
+      ]
+    : (text.mega?.portal?.columns || []).filter(isWorkspaceColumn);
   const detailColumns = (menu.columns || []).filter((column) => !isWorkspaceColumn(column));
   const columnMarkup = (columns, extraClass = "") =>
     columns
@@ -900,7 +913,7 @@ function renderMegaMenu(key = "portal") {
             ${(column.items || [])
               .map((item) => {
                 const href = portalHref(item.href);
-                return `<a class="portal-mega-link" href="${href}"${externalLinkAttrs(href)}>${escapeHtml(item.label)}</a>`;
+                return `<a class="portal-mega-link${extraClass ? " portal-mega-workspace-link" : ""}${item.active ? " is-active" : ""}" href="${href}"${externalLinkAttrs(href)} ${item.active ? 'aria-current="page"' : ""}>${escapeHtml(item.label)}</a>`;
               })
               .join("")}
           </div>

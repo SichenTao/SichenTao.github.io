@@ -411,8 +411,8 @@ body[data-lang="ja"] .eyebrow {
 .portal-mega-inner--with-workspace::before {
   content: "";
   position: absolute;
-  top: 2px;
-  bottom: -8px;
+  top: 8px;
+  bottom: 8px;
   left: calc(-1 * var(--portal-mega-separator-offset, clamp(110px, 8vw, 160px)));
   width: 1px;
   background: linear-gradient(
@@ -876,15 +876,23 @@ body.portal-mega-open .portal-layout {
   left: auto;
   right: 0;
   display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
   gap: 6px;
+  min-width: 118px;
+  max-width: min(100vw - 28px, 180px);
   padding: 6px;
-  border-radius: 999px;
+  border-radius: 22px;
   border: 1px solid rgba(var(--ink-rgb), 0.12);
   background: rgb(var(--white-rgb));
   box-shadow:
     0 1px 1px rgba(var(--ink-rgb), 0.02),
     0 18px 34px rgba(var(--ink-rgb), 0.1);
   transform: translateY(-6px);
+}
+
+.shared-language-segmented--floating.locale-tray .shared-language-chip {
+  width: 100%;
 }
 
 .locale-switcher:hover .shared-language-segmented--floating.locale-tray,
