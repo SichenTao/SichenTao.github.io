@@ -155,6 +155,9 @@
     if (icon === "follow-builders") {
       return iconSprite("publications", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
     }
+    if (icon === "youtube-to-ebook") {
+      return iconSprite("file", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
+    }
     if (icon === "jsps") {
       return '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />';
     }
@@ -202,6 +205,7 @@
           academic: ["Profile", "Records"],
           frontier: ["Papers", "Metrics"],
           followBuilders: ["Builders", "Reader"],
+          youtubeToEbook: ["Video", "EPUB"],
           jsps: ["Grants", "Deadlines"],
         },
       },
@@ -213,6 +217,7 @@
           academic: ["身份", "记录"],
           frontier: ["论文", "分区"],
           followBuilders: ["Builders", "阅读"],
+          youtubeToEbook: ["视频", "EPUB"],
           jsps: ["科研费", "时间线"],
         },
       },
@@ -224,6 +229,7 @@
           academic: ["プロフィール", "記録"],
           frontier: ["論文", "指標"],
           followBuilders: ["Builders", "読む"],
+          youtubeToEbook: ["動画", "EPUB"],
           jsps: ["科研費", "締切"],
         },
       },
@@ -254,6 +260,7 @@
           { label: "Personal homepage", href: "/academic/" },
           { label: "Academic Frontier", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
+          { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
           { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
         ],
         columns: [
@@ -301,6 +308,15 @@
           { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
         ], ["Original feed", "Reader implementation", "Homepage workspace"]],
       },
+      youtubeToEbook: {
+        overview: [["Article", "Sources", "GitHub"], ["YouTube", "Transcripts", "EPUB"]],
+        article: [["Learning article", "Native flow", "Output boundary"], ["Channel intake", "Article writing", "Homepage publishing"]],
+        sources: [["Seed channels", "Service keys", "Upstream modules"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
+        github: [[
+          { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
+        ], ["Original project", "Homepage workspace", "Static integration"]],
+      },
       jsps: {
         calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
         deadlines: [["Timeline", "Submission dates", "System windows"], ["Upcoming", "Official dates", "Reminders"]],
@@ -317,6 +333,7 @@
           { label: "个人主页", href: "/academic/" },
           { label: "学术前沿", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
+          { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
           { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
         ],
         columns: [
@@ -364,6 +381,15 @@
           { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
         ], ["原项目", "阅读器实现", "个人主页工作区"]],
       },
+      youtubeToEbook: {
+        overview: [["文章", "来源", "GitHub"], ["YouTube", "字幕", "EPUB"]],
+        article: [["学习文章", "原生流程", "输出边界"], ["频道输入", "文章写作", "主页发布"]],
+        sources: [["默认频道", "服务密钥", "上游模块"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
+        github: [[
+          { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
+        ], ["原项目", "主页工作区", "静态集成"]],
+      },
       jsps: {
         calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
         deadlines: [["时间线", "提交日期", "系统开放"], ["近期截止", "官方日期", "提醒"]],
@@ -380,6 +406,7 @@
           { label: "個人ホームページ", href: "/academic/" },
           { label: "学術前沿", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
+          { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
           { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
         ],
         columns: [
@@ -427,6 +454,15 @@
           { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
         ], ["元プロジェクト", "Reader 実装", "個人ワークスペース"]],
       },
+      youtubeToEbook: {
+        overview: [["記事", "ソース", "GitHub"], ["YouTube", "字幕", "EPUB"]],
+        article: [["学習記事", "原生フロー", "出力境界"], ["チャンネル入力", "記事執筆", "homepage 公開"]],
+        sources: [["初期チャンネル", "サービスキー", "上流モジュール"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
+        github: [[
+          { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
+        ], ["元プロジェクト", "Homepage workspace", "静的統合"]],
+      },
       jsps: {
         calls: [["プログラム", "対象者", "優先度"], ["募集中", "区分", "申請者"]],
         deadlines: [["年表", "提出日", "システム期間"], ["今後の締切", "公式日程", "リマインド"]],
@@ -443,10 +479,17 @@
     ja: "クイックリンク",
   };
 
+  const MOBILE_PAGE_SECTION_TITLE = {
+    en: "Pages",
+    zh: "页面",
+    ja: "ページ",
+  };
+
   function siteFromPath(pathname = global.location?.pathname || "/") {
     const path = decodeURIComponent(pathname);
     if (path.startsWith("/academic-frontier/")) return "frontier";
     if (path.startsWith("/follow-builders/")) return "followBuilders";
+    if (path.startsWith("/youtube-to-ebook/")) return "youtubeToEbook";
     if (path.startsWith("/jsps-kakenhi/")) return "jsps";
     if (path.startsWith("/academic/")) return "academic";
     return "portal";
@@ -465,6 +508,12 @@
           return hashKey;
         }
       }
+      if (site === "youtubeToEbook" && parsed.hash) {
+        const hashKey = parsed.hash.replace(/^#/, "");
+        if (["article", "sources", "github"].includes(hashKey)) {
+          return hashKey;
+        }
+      }
     } catch {}
     const clean = decodeURIComponent(path).replace(/\/(?:zh|ja)\//, "/");
     const file = clean.split("/").pop() || "index.html";
@@ -480,6 +529,10 @@
       if (file === "index.html" || clean.endsWith("/follow-builders/")) return "overview";
       return file.replace(/\.html$/, "");
     }
+    if (site === "youtubeToEbook") {
+      if (file === "index.html" || clean.endsWith("/youtube-to-ebook/")) return "overview";
+      return file.replace(/\.html$/, "");
+    }
     if (site === "jsps") {
       if (file === "index.html" || clean.endsWith("/jsps-kakenhi/")) return "calls";
       return file.replace(/\.html$/, "");
@@ -487,6 +540,7 @@
     if (clean === "/") return "workspace";
     if (clean.startsWith("/academic-frontier/")) return "frontier";
     if (clean.startsWith("/follow-builders/")) return "followBuilders";
+    if (clean.startsWith("/youtube-to-ebook/")) return "youtubeToEbook";
     if (clean.startsWith("/jsps-kakenhi/")) return "jsps";
     if (clean.startsWith("/academic/")) return "academic";
     return "workspace";
@@ -531,6 +585,12 @@
       feed: ["#fb-story-list", "#fb-search", "#fb-type-filter"],
       sources: ["#fb-builder-list", "#fb-podcast-list", "#fb-blog-list"],
       github: ["https://github.com/zarazhangrui/follow-builders", "https://github.com/SichenTao"],
+    },
+    youtubeToEbook: {
+      overview: ["#article", "#sources", "#github"],
+      article: ["#article", "#native-flow", "#homepage-integration"],
+      sources: ["#yte-channel-list", "#yte-service-list", "#yte-file-list"],
+      github: ["https://github.com/zarazhangrui/youtube-to-ebook", "https://github.com/SichenTao"],
     },
     jsps: {
       calls: ["#call-list", "#call-search", "#call-list"],
@@ -692,8 +752,8 @@
           ${(workspace.items || [])
             .map(
               (item) => `
-                <a class="topnav-mobile-workspace-link${item.active ? " is-active" : ""}" href="${escapeHtml(item.href)}" ${item.active ? 'aria-current="page"' : ""}>
-                  ${escapeHtml(item.label)}
+                <a class="topnav-mobile-workspace-link${item.active ? " is-active" : ""}" href="${escapeHtml(item.href)}" ${item.active ? 'aria-current="location"' : ""}>
+                  <span>${escapeHtml(item.label)}</span>
                 </a>
               `,
             )
@@ -701,6 +761,11 @@
         </div>
       </div>
     `;
+  }
+
+  function renderMobilePageSectionTitle(locale) {
+    const title = MOBILE_PAGE_SECTION_TITLE[locale] || MOBILE_PAGE_SECTION_TITLE.en;
+    return `<p class="topnav-mobile-section-title">${escapeHtml(title)}</p>`;
   }
 
   function ensureSharedPortalMegaScaffold(root = document) {
@@ -1033,7 +1098,8 @@
     toNodes(config.navSelector || ".topnav").forEach((nav) => {
       nav.querySelectorAll(".topnav-mega-panel").forEach((panel) => panel.remove());
       nav.querySelectorAll(".topnav-mobile-workspaces").forEach((node) => node.remove());
-      nav.insertAdjacentHTML("afterbegin", renderMobileWorkspaceLinks(locale, theme));
+      nav.querySelectorAll(".topnav-mobile-section-title").forEach((node) => node.remove());
+      nav.insertAdjacentHTML("afterbegin", `${renderMobileWorkspaceLinks(locale, theme)}${renderMobilePageSectionTitle(locale)}`);
       Array.from(nav.children)
         .filter((node) => node.matches?.("a"))
         .forEach((link) => {

@@ -47,6 +47,7 @@
       academic: { short: "Homepage", full: "Personal homepage" },
       frontier: { short: "Frontier", full: "Academic Frontier" },
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
+      youtubeToEbook: { short: "YouTube Ebook", full: "YouTube to Ebook" },
       jsps: { short: "JSPS", full: "JSPS KAKENHI" },
     },
     zh: {
@@ -55,6 +56,7 @@
       academic: { short: "个人主页", full: "个人主页" },
       frontier: { short: "学术前沿", full: "学术前沿" },
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
+      youtubeToEbook: { short: "YouTube Ebook", full: "YouTube to Ebook" },
       jsps: { short: "JSPS", full: "JSPS 科研费" },
     },
     ja: {
@@ -63,6 +65,7 @@
       academic: { short: "個人HP", full: "個人ホームページ" },
       frontier: { short: "学術前沿", full: "学術前沿" },
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
+      youtubeToEbook: { short: "YouTube Ebook", full: "YouTube to Ebook" },
       jsps: { short: "JSPS", full: "JSPS 科研費" },
     },
   };
@@ -166,10 +169,10 @@
     const locale = options.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
     const theme = options.theme || readStoredTheme();
     const url = new URL(href, options.origin || global.location?.origin || "https://sichentao.github.io");
-    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/")) {
+    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/") || url.pathname.startsWith("/youtube-to-ebook/")) {
       url.searchParams.set("lang", locale);
     }
-    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/")) {
+    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/") || url.pathname.startsWith("/youtube-to-ebook/")) {
       url.searchParams.set("theme", theme);
     }
     return `${url.pathname}${url.search}`;
@@ -225,6 +228,14 @@
           triggerLabel: labels.followBuilders.short,
           active: currentPath.startsWith("/follow-builders/"),
           icon: "follow-builders",
+        },
+        {
+          id: "youtubeToEbook",
+          href: siteStateHref("/youtube-to-ebook/", { locale, theme }),
+          label: labels.youtubeToEbook.full,
+          triggerLabel: labels.youtubeToEbook.short,
+          active: currentPath.startsWith("/youtube-to-ebook/"),
+          icon: "youtube-to-ebook",
         },
         {
           id: "jsps",

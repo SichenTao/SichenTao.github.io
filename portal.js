@@ -84,7 +84,7 @@ const I18N = {
     page: {
       title: "Sichen Tao | Research Portal",
       description:
-        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Follow Builders, and JSPS KAKENHI workspace.",
+        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Follow Builders, YouTube to Ebook, and JSPS KAKENHI workspace.",
     },
     controls: {
       display: "Display controls",
@@ -105,6 +105,7 @@ const I18N = {
       academic: "Personal Homepage",
       frontier: "Academic Frontier",
       followBuilders: "Follow Builders",
+      youtubeToEbook: "YouTube to Ebook",
       jsps: "JSPS KAKENHI",
     },
     hero: {
@@ -141,6 +142,11 @@ const I18N = {
         intro: "A standalone reader for Zara Zhang's Follow Builders project: AI builders, X posts, podcasts, and official blogs.",
         action: "Open reader",
       },
+      youtubeToEbook: {
+        name: "YouTube to Ebook",
+        intro: "A learning-article workspace where YouTube digest outputs become source-aware homepage reading material.",
+        action: "Open article",
+      },
       jsps: {
         name: "JSPS KAKENHI",
         intro: "A grant-work workspace for calls, forms, deadlines, guides, and official sources.",
@@ -161,6 +167,7 @@ const I18N = {
               { label: "Personal Homepage", href: "/academic/" },
               { label: "Academic Frontier", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
+              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -215,6 +222,7 @@ const I18N = {
             items: [
               { label: "Personal Homepage", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
+              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -252,6 +260,24 @@ const I18N = {
           },
         ],
       },
+      youtubeToEbook: {
+        eyebrow: "YouTube to Ebook",
+        primary: [
+          { label: "Article", href: "/youtube-to-ebook/#article" },
+          { label: "Sources", href: "/youtube-to-ebook/#sources" },
+          { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+        ],
+        columns: [
+          {
+            title: "Project",
+            items: [
+              { label: "Native flow", href: "/youtube-to-ebook/#native-flow" },
+              { label: "Generated article output", href: "/youtube-to-ebook/#homepage-integration" },
+              { label: "EPUB boundary", href: "/youtube-to-ebook/#sources" },
+            ],
+          },
+        ],
+      },
       jsps: {
         eyebrow: "JSPS KAKENHI",
         primary: [
@@ -283,7 +309,7 @@ const I18N = {
   zh: {
     page: {
       title: "陶思晨 | 研究导航页",
-      description: "统一进入个人主页、学术前沿、Follow Builders 与 JSPS 科研费工作台的研究导航页。",
+      description: "统一进入个人主页、学术前沿、Follow Builders、YouTube to Ebook 与 JSPS 科研费工作台的研究导航页。",
     },
     controls: {
       display: "显示控制",
@@ -304,6 +330,7 @@ const I18N = {
       academic: "个人主页",
       frontier: "学术前沿",
       followBuilders: "Follow Builders",
+      youtubeToEbook: "YouTube to Ebook",
       jsps: "JSPS 科研费",
     },
     hero: {
@@ -339,6 +366,11 @@ const I18N = {
         intro: "把 Zara Zhang 的 Follow Builders 项目做成独立阅读器：AI builders、X 动态、播客和官方博客。",
         action: "打开阅读器",
       },
+      youtubeToEbook: {
+        name: "YouTube to Ebook",
+        intro: "把 YouTube digest 产出变成可追溯来源的主页学习文章。",
+        action: "打开文章",
+      },
       jsps: {
         name: "JSPS 科研费",
         intro: "集中处理公募、材料、截止时间与申请指南的科研费工作空间。",
@@ -359,6 +391,7 @@ const I18N = {
               { label: "个人主页", href: "/academic/" },
               { label: "学术前沿", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
+              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -413,6 +446,7 @@ const I18N = {
             items: [
               { label: "个人主页", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
+              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -450,6 +484,24 @@ const I18N = {
           },
         ],
       },
+      youtubeToEbook: {
+        eyebrow: "YouTube to Ebook",
+        primary: [
+          { label: "文章", href: "/youtube-to-ebook/#article" },
+          { label: "来源", href: "/youtube-to-ebook/#sources" },
+          { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+        ],
+        columns: [
+          {
+            title: "项目内容",
+            items: [
+              { label: "原生流程", href: "/youtube-to-ebook/#native-flow" },
+              { label: "生成文章产出", href: "/youtube-to-ebook/#homepage-integration" },
+              { label: "EPUB 发布边界", href: "/youtube-to-ebook/#sources" },
+            ],
+          },
+        ],
+      },
       jsps: {
         eyebrow: "JSPS 科研费",
         primary: [
@@ -481,7 +533,7 @@ const I18N = {
   ja: {
     page: {
       title: "陶思晨 | 研究ポータル",
-      description: "個人ホームページ、学術フロンティア、Follow Builders、JSPS科研費ワークスペースへ入る統合ポータル。",
+      description: "個人ホームページ、学術フロンティア、Follow Builders、YouTube to Ebook、JSPS科研費ワークスペースへ入る統合ポータル。",
     },
     controls: {
       display: "表示コントロール",
@@ -502,6 +554,7 @@ const I18N = {
       academic: "個人ホームページ",
       frontier: "学術フロンティア",
       followBuilders: "Follow Builders",
+      youtubeToEbook: "YouTube to Ebook",
       jsps: "JSPS科研費",
     },
     hero: {
@@ -537,6 +590,11 @@ const I18N = {
         intro: "Zara Zhang の Follow Builders プロジェクトを、AI builders、X 投稿、podcast、公式ブログの読書画面として表示します。",
         action: "リーダーを開く",
       },
+      youtubeToEbook: {
+        name: "YouTube to Ebook",
+        intro: "YouTube digest の出力を source-aware な homepage 学習記事へ変える workspace です。",
+        action: "記事を開く",
+      },
       jsps: {
         name: "JSPS科研費",
         intro: "公募、様式、締切、ガイドをまとめた科研費実務ワークスペースです。",
@@ -557,6 +615,7 @@ const I18N = {
               { label: "個人ホームページ", href: "/academic/" },
               { label: "学術フロンティア", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
+              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -611,6 +670,7 @@ const I18N = {
             items: [
               { label: "個人ホームページ", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
+              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -644,6 +704,24 @@ const I18N = {
               { label: "AI builders on X", href: "/follow-builders/#sources" },
               { label: "AI podcasts", href: "/follow-builders/#sources" },
               { label: "Official blogs", href: "/follow-builders/#sources" },
+            ],
+          },
+        ],
+      },
+      youtubeToEbook: {
+        eyebrow: "YouTube to Ebook",
+        primary: [
+          { label: "記事", href: "/youtube-to-ebook/#article" },
+          { label: "ソース", href: "/youtube-to-ebook/#sources" },
+          { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+        ],
+        columns: [
+          {
+            title: "プロジェクト",
+            items: [
+              { label: "原生フロー", href: "/youtube-to-ebook/#native-flow" },
+              { label: "生成記事の出力", href: "/youtube-to-ebook/#homepage-integration" },
+              { label: "EPUB 公開境界", href: "/youtube-to-ebook/#sources" },
             ],
           },
         ],
@@ -801,13 +879,15 @@ function portalHref(href) {
     return href;
   }
   if (href.startsWith("/academic-frontier/")) {
-    const suffix = href.replace(/^\/academic-frontier\/?/, "");
+    const parsed = new URL(href, window.location.origin);
+    const suffix = parsed.pathname.replace(/^\/academic-frontier\/(?:zh\/|ja\/)?/, "");
     const localePrefix = state.locale === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(state.locale)}/`;
     const frontierHref = `${localePrefix}${suffix}`;
+    const stateHref = `${frontierHref}${parsed.hash || ""}`;
     if (window.HomepagePlatform?.siteStateHref) {
-      return window.HomepagePlatform.siteStateHref(frontierHref, { locale: state.locale, theme: state.theme });
+      return window.HomepagePlatform.siteStateHref(stateHref, { locale: state.locale, theme: state.theme });
     }
-    return frontierHref;
+    return stateHref;
   }
   if (window.HomepagePlatform?.siteStateHref) {
     return window.HomepagePlatform.siteStateHref(href, { locale: state.locale, theme: state.theme });
@@ -828,6 +908,7 @@ function renderTopnav() {
     <a href="${portalHref("/academic/")}" data-portal-menu-key="academic" aria-haspopup="true" aria-expanded="false">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
     <a href="${portalHref("/academic-frontier/")}" data-portal-menu-key="frontier" aria-haspopup="true" aria-expanded="false">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
     <a href="${portalHref("/follow-builders/")}" data-portal-menu-key="followBuilders" aria-haspopup="true" aria-expanded="false">${iconSprite("publications")}<span>${escapeHtml(text.nav.followBuilders)}</span></a>
+    <a href="${portalHref("/youtube-to-ebook/")}" data-portal-menu-key="youtubeToEbook" aria-haspopup="true" aria-expanded="false">${iconSprite("file")}<span>${escapeHtml(text.nav.youtubeToEbook)}</span></a>
     <a href="${portalHref("/jsps-kakenhi/")}" data-portal-menu-key="jsps" aria-haspopup="true" aria-expanded="false">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
   `;
 }
@@ -1067,6 +1148,14 @@ function cardIconMarkup(siteKey) {
     `;
   }
 
+  if (siteKey === "youtubeToEbook") {
+    return `
+      <span class="portal-card-icon portal-card-icon--svg" aria-hidden="true">
+        ${iconSprite("file")}
+      </span>
+    `;
+  }
+
   return `
     <span class="portal-card-icon portal-card-icon--logo" aria-hidden="true">
       <img src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />
@@ -1113,6 +1202,15 @@ function renderCards() {
       title: text.cards.followBuilders.name,
       intro: text.cards.followBuilders.intro,
       action: text.cards.followBuilders.action,
+    },
+    {
+      key: "youtubeToEbook",
+      href: portalHref("/youtube-to-ebook/"),
+      className: "portal-card-youtube-to-ebook",
+      icon: cardIconMarkup("youtubeToEbook"),
+      title: text.cards.youtubeToEbook.name,
+      intro: text.cards.youtubeToEbook.intro,
+      action: text.cards.youtubeToEbook.action,
     },
     {
       key: "jsps",

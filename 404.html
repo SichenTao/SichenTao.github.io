@@ -6,13 +6,13 @@
     <title>Page Not Found | Sichen Tao Research Portals</title>
     <link rel="canonical" href="https://sichentao.github.io/404.html" />
     <link rel="icon" href="./academic/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260507-000329" />
-    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260507-000329" />
-    <link rel="stylesheet" href="./portal.css?v=20260507-000329" />
-    <script src="/assets/shared/homepage-i18n.js?v=20260507-000329"></script>
-    <script src="/assets/shared/homepage-platform.js?v=20260507-000329"></script>
-    <script src="/assets/shared/homepage-components.js?v=20260507-000329"></script>
-    <script defer src="/assets/shared/homepage-shell.js?v=20260507-000329"></script>
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css?v=20260507-010057" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css?v=20260507-010057" />
+    <link rel="stylesheet" href="./portal.css?v=20260507-010057" />
+    <script src="/assets/shared/homepage-i18n.js?v=20260507-010057"></script>
+    <script src="/assets/shared/homepage-platform.js?v=20260507-010057"></script>
+    <script src="/assets/shared/homepage-components.js?v=20260507-010057"></script>
+    <script defer src="/assets/shared/homepage-shell.js?v=20260507-010057"></script>
   </head>
   <body>
     <header class="shell site-header">
@@ -25,7 +25,9 @@
         <nav class="topnav" aria-label="Page navigation">
           <a href="./"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-home"></use></svg><span>Portal</span></a>
           <a href="./academic/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-profiles"></use></svg><span>Homepage</span></a>
+          <a href="./academic-frontier/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-research"></use></svg><span>Frontier</span></a>
           <a href="./follow-builders/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-publications"></use></svg><span>Follow Builders</span></a>
+          <a href="./youtube-to-ebook/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-file"></use></svg><span>YouTube Ebook</span></a>
           <a href="./jsps-kakenhi/"><svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-sources"></use></svg><span>JSPS</span></a>
         </nav>
       </div>
@@ -44,6 +46,7 @@
             <a id="not-found-academic" class="button" href="./academic/">Personal Homepage</a>
             <a id="not-found-frontier" class="button" href="./academic-frontier/">学术前沿</a>
             <a id="not-found-follow-builders" class="button" href="./follow-builders/">Follow Builders</a>
+            <a id="not-found-youtube-to-ebook" class="button" href="./youtube-to-ebook/">YouTube to Ebook</a>
             <a id="not-found-jsps" class="button" href="./jsps-kakenhi/">JSPS workspace</a>
           </div>
         </div>
@@ -60,26 +63,29 @@
             academic: "Personal Homepage",
             frontier: "Academic Frontier",
             followBuilders: "Follow Builders",
+            youtubeToEbook: "YouTube to Ebook",
             jsps: "JSPS workspace",
           },
           zh: {
             title: "未找到页面 | Sichen Tao 研究门户",
             heading: "未找到该页面",
-            body: "你请求的页面当前不可用。可以从统一导航页重新进入个人主页、学术前沿、Follow Builders 或 JSPS 工作台。",
+            body: "你请求的页面当前不可用。可以从统一导航页重新进入个人主页、学术前沿、Follow Builders、YouTube to Ebook 或 JSPS 工作台。",
             portal: "返回导航页",
             academic: "个人主页",
             frontier: "学术前沿",
             followBuilders: "Follow Builders",
+            youtubeToEbook: "YouTube to Ebook",
             jsps: "JSPS 工作台",
           },
           ja: {
             title: "ページが見つかりません | Sichen Tao 研究ポータル",
             heading: "ページが見つかりません",
-            body: "リクエストされたページは利用できません。統一ポータルから個人ホームページ、学術前沿、Follow Builders、JSPS ワークスペースへ戻れます。",
+            body: "リクエストされたページは利用できません。統一ポータルから個人ホームページ、学術前沿、Follow Builders、YouTube to Ebook、JSPS ワークスペースへ戻れます。",
             portal: "ポータルへ戻る",
             academic: "個人ホームページ",
             frontier: "学術前沿",
             followBuilders: "Follow Builders",
+            youtubeToEbook: "YouTube to Ebook",
             jsps: "JSPS ワークスペース",
           },
         };
@@ -94,6 +100,7 @@
           document.getElementById("not-found-academic").textContent = text.academic;
           document.getElementById("not-found-frontier").textContent = text.frontier;
           document.getElementById("not-found-follow-builders").textContent = text.followBuilders;
+          document.getElementById("not-found-youtube-to-ebook").textContent = text.youtubeToEbook;
           document.getElementById("not-found-jsps").textContent = text.jsps;
         }
 
