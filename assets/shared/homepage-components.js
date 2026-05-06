@@ -14,6 +14,23 @@
       .replaceAll("'", "&#39;");
   }
 
+  function classNames(...values) {
+    const seen = new Set();
+    const classes = [];
+    values
+      .flat()
+      .join(" ")
+      .split(/\s+/)
+      .filter(Boolean)
+      .forEach((name) => {
+        if (!seen.has(name)) {
+          seen.add(name);
+          classes.push(name);
+        }
+      });
+    return classes.join(" ");
+  }
+
   function toNodes(target) {
     if (!target) {
       return [];
@@ -797,6 +814,86 @@
     });
   }
 
+  function languageSegmentedItemsHtml(config = {}) {
+    const locales = config.locales || global.HomepageI18n?.LOCALES || {};
+    const sequence = (config.sequence || global.HomepageI18n?.LOCALE_SEQUENCE || Object.keys(locales)).filter((name) => locales[name]);
+    const selected = new Set(
+      (Array.isArray(config.selected) ? config.selected : [config.locale])
+        .map((name) => localeName(name, locales))
+        .filter((name) => locales[name]),
+    );
+    const activeClass = config.activeClass || "is-selected";
+    const choiceClass = classNames(config.choiceClass || "", "shared-language-chip");
+    const dataAttribute = config.dataAttribute || "data-language-choice";
+    const labelFor = typeof config.labelFor === "function"
+      ? config.labelFor
+      : (name, locale) => locale?.label || name.toUpperCase();
+    const nameFor = typeof config.nameFor === "function"
+      ? config.nameFor
+      : (name, locale) => locale?.name || locale?.label || name;
+
+    return sequence
+      .map((name) => {
+        const locale = locales[name];
+        const isSelected = selected.has(name);
+        const label = labelFor(name, locale);
+        const fullName = nameFor(name, locale);
+        const href = typeof config.choiceHref === "function" ? config.choiceHref(name) : "";
+        const selectedClasses = isSelected ? classNames(activeClass, "is-selected") : "";
+        const classes = classNames(choiceClass, selectedClasses);
+        const commonAttrs = `
+          class="${escapeHtml(classes)}"
+          ${dataAttribute}="${escapeHtml(name)}"
+          aria-label="${escapeHtml(fullName)}"
+          title="${escapeHtml(fullName)}"
+        `;
+
+        if (href) {
+          return `
+            <a
+              ${commonAttrs}
+              href="${escapeHtml(href)}"
+              ${isSelected ? 'aria-current="page"' : ""}
+            >
+              <span class="locale-label" aria-hidden="true">${escapeHtml(label)}</span>
+            </a>
+          `;
+        }
+
+        return `
+          <button
+            ${commonAttrs}
+            type="button"
+            aria-pressed="${isSelected ? "true" : "false"}"
+          >
+            <span class="locale-label" aria-hidden="true">${escapeHtml(label)}</span>
+          </button>
+        `;
+      })
+      .join("");
+  }
+
+  function renderLanguageSegmentedControl(target, config = {}) {
+    const locales = config.locales || global.HomepageI18n?.LOCALES || {};
+    const dataAttribute = config.dataAttribute || "data-language-choice";
+    const containerClass = config.containerClass || "";
+    const ariaLabel = config.ariaLabel || config.label || "Language choices";
+
+    toNodes(target).forEach((container) => {
+      container.className = classNames(container.className, containerClass, "shared-language-segmented");
+      container.setAttribute("aria-label", ariaLabel);
+      container.innerHTML = languageSegmentedItemsHtml({ ...config, locales, dataAttribute });
+      container.querySelectorAll(`[${dataAttribute}]`).forEach((choice) => {
+        addChoiceListener(
+          choice,
+          choice.getAttribute(dataAttribute),
+          config.onChoice,
+          choice.tagName.toLowerCase() === "a",
+        );
+      });
+    });
+  }
+
   function renderLocaleSwitcher(target, config = {}) {
     const locales = config.locales || global.HomepageI18n?.LOCALES || {};
     const sequence = (config.sequence || global.HomepageI18n?.LOCALE_SEQUENCE || Object.keys(locales)).filter((name) => locales[name]);
@@ -812,41 +909,15 @@
     toNodes(target).forEach((switcher) => {
       switcher.setAttribute("aria-label", switcherLabel);
       const wasOpen = switcher.classList.contains("is-open");
-      const choices = sequence
-        .map((name) => {
-          const locale = locales[name];
-          const isActive = name === activeLocaleName;
-          const label = locale?.label || name.toUpperCase();
-          const fullName = locale?.name || name;
-          const href = typeof config.choiceHref === "function" ? config.choiceHref(name) : "";
-          if (href) {
-            return `
-              <a
-                class="locale-chip${isActive ? ` ${activeClass}` : ""}"
-                href="${escapeHtml(href)}"
-                data-locale-choice="${escapeHtml(name)}"
-                aria-label="${escapeHtml(fullName)}"
-                title="${escapeHtml(fullName)}"
-                ${isActive ? 'aria-current="page"' : ""}
-              >
-                <span class="locale-label" aria-hidden="true">${escapeHtml(label)}</span>
-              </a>
-            `;
-          }
-          return `
-            <button
-              class="locale-chip${isActive ? ` ${activeClass}` : ""}"
-              type="button"
-              data-locale-choice="${escapeHtml(name)}"
-              aria-pressed="${isActive ? "true" : "false"}"
-              aria-label="${escapeHtml(fullName)}"
-              title="${escapeHtml(fullName)}"
-            >
-              <span class="locale-label" aria-hidden="true">${escapeHtml(label)}</span>
-            </button>
-          `;
-        })
-        .join("");
+      const choices = languageSegmentedItemsHtml({
+        locales,
+        sequence,
+        selected: [activeLocaleName],
+        activeClass,
+        choiceClass: "locale-chip",
+        dataAttribute: "data-locale-choice",
+        choiceHref: config.choiceHref,
+      });
 
       switcher.innerHTML = `
         <button
@@ -861,7 +932,7 @@
           ${languageIconMarkup()}
           <span class="locale-current-label" data-locale-current-label>${escapeHtml(activeLabel)}</span>
         </button>
-        <div class="locale-tray" role="group" aria-label="${escapeHtml(trayLabel)}">
+        <div class="locale-tray shared-language-segmented shared-language-segmented--floating" role="group" aria-label="${escapeHtml(trayLabel)}">
           ${choices}
         </div>
       `;
@@ -1231,6 +1302,7 @@
     iconSprite,
     portalIconMarkup,
     themeTooltip,
+    renderLanguageSegmentedControl,
     renderLocaleSwitcher,
     renderThemeSwitcher,
     renderPortalSwitcher,

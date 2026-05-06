@@ -957,13 +957,38 @@ function renderControls() {
 }
 
 function renderLanguageDisplayControl() {
+  const onChoice = (language) => {
+    const selected = new Set(state.displayLanguages);
+    if (selected.has(language) && selected.size > 1) {
+      selected.delete(language);
+    } else {
+      selected.add(language);
+    }
+    setDisplayLanguages(Array.from(selected));
+    render();
+  };
+
+  if (window.HomepageComponents?.renderLanguageSegmentedControl) {
+    window.HomepageComponents.renderLanguageSegmentedControl(".fb-language-display", {
+      locales: LOCALE_CATALOG,
+      sequence: DISPLAY_LANGUAGE_SEQUENCE,
+      selected: state.displayLanguages,
+      choiceClass: "fb-language-chip",
+      dataAttribute: "data-display-language",
+      ariaLabel: t("controls.displayLanguages"),
+      labelFor: (language) => displayLanguageLabel(language),
+      onChoice,
+    });
+    return;
+  }
+
   document.querySelectorAll(".fb-language-display").forEach((control) => {
     control.setAttribute("aria-label", t("controls.displayLanguages"));
     control.innerHTML = DISPLAY_LANGUAGE_SEQUENCE.map((language) => {
       const selected = state.displayLanguages.includes(language);
       return `
         <button
-          class="fb-language-chip${selected ? " is-selected" : ""}"
+          class="fb-language-chip shared-language-chip${selected ? " is-selected" : ""}"
           type="button"
           data-display-language="${language}"
           aria-pressed="${selected ? "true" : "false"}"
@@ -973,17 +998,7 @@ function renderLanguageDisplayControl() {
       `;
     }).join("");
     control.querySelectorAll("[data-display-language]").forEach((button) => {
-      button.addEventListener("click", () => {
-        const language = button.dataset.displayLanguage;
-        const selected = new Set(state.displayLanguages);
-        if (selected.has(language) && selected.size > 1) {
-          selected.delete(language);
-        } else {
-          selected.add(language);
-        }
-        setDisplayLanguages(Array.from(selected));
-        render();
-      });
+      button.addEventListener("click", () => onChoice(button.dataset.displayLanguage));
     });
   });
 }

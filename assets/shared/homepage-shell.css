@@ -280,6 +280,94 @@
     0 0 0 4px rgba(var(--teal-rgb, 75, 24, 143), 0.14);
 }
 
+.shared-language-segmented {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  max-width: min(100vw - 28px, 420px);
+  flex-wrap: nowrap;
+}
+
+.shared-language-segmented--floating.locale-tray {
+  left: auto;
+  right: 0;
+  display: inline-flex;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--ink-rgb, 17, 17, 20), 0.12);
+  background: rgb(var(--white-rgb, 255, 255, 255));
+  box-shadow:
+    0 1px 1px rgba(var(--ink-rgb, 17, 17, 20), 0.02),
+    0 18px 34px rgba(var(--ink-rgb, 17, 17, 20), 0.1);
+  transform: translateY(-6px);
+}
+
+.locale-switcher:hover .shared-language-segmented--floating.locale-tray,
+.locale-switcher:focus-within .shared-language-segmented--floating.locale-tray,
+.locale-switcher.is-open .shared-language-segmented--floating.locale-tray {
+  transform: translateY(0);
+}
+
+.shared-language-chip.locale-chip,
+.shared-language-chip.fb-language-chip,
+.shared-language-chip.frontier-reader-language-chip,
+.shared-language-chip {
+  appearance: none;
+  display: inline-flex;
+  flex: 0 0 auto;
+  min-width: 0;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(var(--ink-rgb, 17, 17, 20), 0.12);
+  border-radius: 999px;
+  background: rgb(var(--white-rgb, 255, 255, 255));
+  color: var(--ink-soft, rgba(var(--ink-rgb, 17, 17, 20), 0.72));
+  cursor: pointer;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 760;
+  letter-spacing: 0;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: none;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.shared-language-chip .locale-label {
+  display: inline;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: 0;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.shared-language-chip:hover,
+.shared-language-chip:focus-visible {
+  outline: none;
+  color: var(--ink, rgb(var(--ink-rgb, 17, 17, 20)));
+  border-color: rgba(var(--ink-rgb, 17, 17, 20), 0.24);
+  background: rgb(var(--white-rgb, 255, 255, 255));
+  transform: none;
+}
+
+.shared-language-chip.is-selected,
+.shared-language-chip.is-active {
+  border-color: var(--ink, rgb(var(--ink-rgb, 17, 17, 20)));
+  background: var(--ink, rgb(var(--ink-rgb, 17, 17, 20)));
+  color: rgb(var(--white-rgb, 255, 255, 255));
+  box-shadow: none;
+}
+
 .theme-swatch {
   width: 14px;
   height: 14px;

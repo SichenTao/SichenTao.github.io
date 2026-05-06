@@ -6046,12 +6046,25 @@ function renderFrontierReaderLanguageControls() {
   const container = byId("frontier-reader-language-display");
   if (!container) return;
 
+  if (window.HomepageComponents?.renderLanguageSegmentedControl) {
+    window.HomepageComponents.renderLanguageSegmentedControl(container, {
+      locales: LOCALE_CATALOG,
+      sequence: READER_DISPLAY_LANGUAGE_SEQUENCE,
+      selected: readerDisplayLanguages(),
+      choiceClass: "frontier-reader-language-chip",
+      activeClass: "is-active",
+      dataAttribute: "data-frontier-reader-language",
+      ariaLabel: ui("readerDisplayLanguagesLabel"),
+    });
+    return;
+  }
+
   const activeLanguages = new Set(readerDisplayLanguages());
   container.innerHTML = "";
   READER_DISPLAY_LANGUAGE_SEQUENCE.forEach((locale) => {
     const config = LOCALE_CATALOG[locale];
     if (!config) return;
-    const button = el("button", `frontier-reader-language-chip${activeLanguages.has(locale) ? " is-active" : ""}`);
+    const button = el("button", `frontier-reader-language-chip shared-language-chip${activeLanguages.has(locale) ? " is-active is-selected" : ""}`);
     button.type = "button";
     button.dataset.frontierReaderLanguage = locale;
     button.setAttribute("aria-pressed", activeLanguages.has(locale) ? "true" : "false");
@@ -6333,13 +6346,25 @@ function renderAcademicLanguageTextBlocks(blocks, tagName = "p") {
 
 function renderAcademicArticleLanguageControls() {
   document.querySelectorAll("[data-academic-article-language-display]").forEach((container) => {
+    if (window.HomepageComponents?.renderLanguageSegmentedControl) {
+      window.HomepageComponents.renderLanguageSegmentedControl(container, {
+        locales: LOCALE_CATALOG,
+        sequence: READER_DISPLAY_LANGUAGE_SEQUENCE,
+        selected: readerDisplayLanguages(),
+        choiceClass: "fb-language-chip",
+        dataAttribute: "data-academic-article-language",
+        ariaLabel: ui("readerDisplayLanguagesLabel"),
+      });
+      return;
+    }
+
     const activeLanguages = new Set(readerDisplayLanguages());
     container.setAttribute("aria-label", ui("readerDisplayLanguagesLabel"));
     container.innerHTML = READER_DISPLAY_LANGUAGE_SEQUENCE.map((locale) => {
       const selected = activeLanguages.has(locale);
       return `
         <button
-          class="fb-language-chip${selected ? " is-selected" : ""}"
+          class="fb-language-chip shared-language-chip${selected ? " is-selected" : ""}"
           type="button"
           data-academic-article-language="${escapeHtml(locale)}"
           aria-pressed="${selected ? "true" : "false"}"
