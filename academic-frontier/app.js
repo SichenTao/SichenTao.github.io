@@ -185,8 +185,7 @@ function defaultReaderDisplayLanguages(locale = defaultReaderLanguage()) {
 
 function readerDisplayLanguageSequence(locale = defaultReaderLanguage()) {
   const primary = defaultReaderLanguage(locale);
-  return window.HomepageComponents?.prioritizeLocaleSequence?.(READER_DISPLAY_LANGUAGE_SEQUENCE, primary, LOCALE_CATALOG)
-    || [primary, ...READER_DISPLAY_LANGUAGE_SEQUENCE.filter((language) => language !== primary)];
+  return [primary, ...READER_DISPLAY_LANGUAGE_SEQUENCE.filter((language) => language !== primary)];
 }
 
 function normalizeReaderDisplayLanguages(value, fallback = defaultReaderDisplayLanguages(), locale = defaultReaderLanguage()) {
@@ -6043,7 +6042,7 @@ function readerFilteredPapers() {
   const fieldFilters = readerFieldFilters();
   return sortPapers(papersForDomain().filter((paper) => {
     const paperFields = paperFieldTags(paper);
-    const matchesField = !fieldFilters.length || fieldFilters.some((field) => paperFields.includes(field));
+    const matchesField = !fieldFilters.length || fieldFilters.every((field) => paperFields.includes(field));
     const matchesQuery = !query || readerSearchCorpus(paper).includes(query);
     return matchesField && matchesQuery;
   }));
