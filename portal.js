@@ -144,8 +144,8 @@ const I18N = {
       },
       youtubeToEbook: {
         name: "YouTube to Ebook",
-        intro: "A learning-article workspace where YouTube digest outputs become source-aware homepage reading material.",
-        action: "Open article",
+        intro: "A Follow Builders-style article library where YouTube-to-Ebook outputs become searchable adaptive ebooks.",
+        action: "Open library",
       },
       jsps: {
         name: "JSPS KAKENHI",
@@ -263,17 +263,17 @@ const I18N = {
       youtubeToEbook: {
         eyebrow: "YouTube to Ebook",
         primary: [
-          { label: "Article", href: "/youtube-to-ebook/#article" },
+          { label: "Feed", href: "/youtube-to-ebook/#feed" },
           { label: "Sources", href: "/youtube-to-ebook/#sources" },
           { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
         ],
         columns: [
           {
-            title: "Project",
+            title: "Article library",
             items: [
-              { label: "Native flow", href: "/youtube-to-ebook/#native-flow" },
-              { label: "Generated article output", href: "/youtube-to-ebook/#homepage-integration" },
-              { label: "EPUB boundary", href: "/youtube-to-ebook/#sources" },
+              { label: "Adaptive ebook cards", href: "/youtube-to-ebook/#feed" },
+              { label: "Article reader", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
+              { label: "Pipeline sources", href: "/youtube-to-ebook/#sources" },
             ],
           },
         ],
@@ -368,8 +368,8 @@ const I18N = {
       },
       youtubeToEbook: {
         name: "YouTube to Ebook",
-        intro: "把 YouTube digest 产出变成可追溯来源的主页学习文章。",
-        action: "打开文章",
+        intro: "复用 Follow Builders 风格，把 YouTube-to-Ebook 产出承载为可搜索的适配型 ebook 文章库。",
+        action: "打开文章库",
       },
       jsps: {
         name: "JSPS 科研费",
@@ -487,17 +487,17 @@ const I18N = {
       youtubeToEbook: {
         eyebrow: "YouTube to Ebook",
         primary: [
-          { label: "文章", href: "/youtube-to-ebook/#article" },
+          { label: "信息流", href: "/youtube-to-ebook/#feed" },
           { label: "来源", href: "/youtube-to-ebook/#sources" },
           { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
         ],
         columns: [
           {
-            title: "项目内容",
+            title: "文章库",
             items: [
-              { label: "原生流程", href: "/youtube-to-ebook/#native-flow" },
-              { label: "生成文章产出", href: "/youtube-to-ebook/#homepage-integration" },
-              { label: "EPUB 发布边界", href: "/youtube-to-ebook/#sources" },
+              { label: "适配型 ebook 卡片", href: "/youtube-to-ebook/#feed" },
+              { label: "文章阅读器", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
+              { label: "流程来源", href: "/youtube-to-ebook/#sources" },
             ],
           },
         ],
@@ -592,8 +592,8 @@ const I18N = {
       },
       youtubeToEbook: {
         name: "YouTube to Ebook",
-        intro: "YouTube digest の出力を source-aware な homepage 学習記事へ変える workspace です。",
-        action: "記事を開く",
+        intro: "Follow Builders 形式を使い、YouTube-to-Ebook の出力を検索可能な適応型 ebook 記事ライブラリとして公開します。",
+        action: "ライブラリを開く",
       },
       jsps: {
         name: "JSPS科研費",
@@ -711,17 +711,17 @@ const I18N = {
       youtubeToEbook: {
         eyebrow: "YouTube to Ebook",
         primary: [
-          { label: "記事", href: "/youtube-to-ebook/#article" },
+          { label: "フィード", href: "/youtube-to-ebook/#feed" },
           { label: "ソース", href: "/youtube-to-ebook/#sources" },
           { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
         ],
         columns: [
           {
-            title: "プロジェクト",
+            title: "記事ライブラリ",
             items: [
-              { label: "原生フロー", href: "/youtube-to-ebook/#native-flow" },
-              { label: "生成記事の出力", href: "/youtube-to-ebook/#homepage-integration" },
-              { label: "EPUB 公開境界", href: "/youtube-to-ebook/#sources" },
+              { label: "適応型 ebook カード", href: "/youtube-to-ebook/#feed" },
+              { label: "記事リーダー", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
+              { label: "Pipeline sources", href: "/youtube-to-ebook/#sources" },
             ],
           },
         ],

@@ -309,13 +309,13 @@
         ], ["Original feed", "Reader implementation", "Homepage workspace"]],
       },
       youtubeToEbook: {
-        overview: [["Article", "Sources", "GitHub"], ["YouTube", "Transcripts", "EPUB"]],
-        article: [["Learning article", "Native flow", "Output boundary"], ["Channel intake", "Article writing", "Homepage publishing"]],
-        sources: [["Seed channels", "Service keys", "Upstream modules"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
+        overview: [["Feed", "Sources", "Article reader"], ["Adaptive ebooks", "YouTube", "Transcripts"]],
+        feed: [["Article cards", "Search", "Language display"], ["Markdown", "EPUB", "Homepage archive"]],
+        sources: [["Seed channels", "Pipeline services", "Output formats"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
         github: [[
           { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
           { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["Original project", "Homepage workspace", "Static integration"]],
+        ], ["Original project", "Article library", "Static publishing"]],
       },
       jsps: {
         calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
@@ -382,13 +382,13 @@
         ], ["原项目", "阅读器实现", "个人主页工作区"]],
       },
       youtubeToEbook: {
-        overview: [["文章", "来源", "GitHub"], ["YouTube", "字幕", "EPUB"]],
-        article: [["学习文章", "原生流程", "输出边界"], ["频道输入", "文章写作", "主页发布"]],
-        sources: [["默认频道", "服务密钥", "上游模块"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
+        overview: [["信息流", "来源", "文章阅读器"], ["适配型 ebook", "YouTube", "字幕"]],
+        feed: [["文章卡片", "搜索", "语言显示"], ["Markdown", "EPUB", "主页归档"]],
+        sources: [["默认频道", "流程服务", "输出格式"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
         github: [[
           { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
           { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["原项目", "主页工作区", "静态集成"]],
+        ], ["原项目", "文章库", "静态发布"]],
       },
       jsps: {
         calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
@@ -455,13 +455,13 @@
         ], ["元プロジェクト", "Reader 実装", "個人ワークスペース"]],
       },
       youtubeToEbook: {
-        overview: [["記事", "ソース", "GitHub"], ["YouTube", "字幕", "EPUB"]],
-        article: [["学習記事", "原生フロー", "出力境界"], ["チャンネル入力", "記事執筆", "homepage 公開"]],
-        sources: [["初期チャンネル", "サービスキー", "上流モジュール"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
+        overview: [["フィード", "ソース", "記事リーダー"], ["適応型 ebook", "YouTube", "字幕"]],
+        feed: [["記事カード", "検索", "言語表示"], ["Markdown", "EPUB", "Homepage archive"]],
+        sources: [["初期チャンネル", "Pipeline services", "出力形式"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
         github: [[
           { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
           { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["元プロジェクト", "Homepage workspace", "静的統合"]],
+        ], ["元プロジェクト", "記事ライブラリ", "静的公開"]],
       },
       jsps: {
         calls: [["プログラム", "対象者", "優先度"], ["募集中", "区分", "申請者"]],
@@ -510,7 +510,8 @@
       }
       if (site === "youtubeToEbook" && parsed.hash) {
         const hashKey = parsed.hash.replace(/^#/, "");
-        if (["article", "sources", "github"].includes(hashKey)) {
+        if (["feed", "sources", "github"].includes(hashKey) || hashKey.startsWith("article-")) {
+          if (hashKey.startsWith("article-")) return "feed";
           return hashKey;
         }
       }
@@ -587,9 +588,9 @@
       github: ["https://github.com/zarazhangrui/follow-builders", "https://github.com/SichenTao"],
     },
     youtubeToEbook: {
-      overview: ["#article", "#sources", "#github"],
-      article: ["#article", "#native-flow", "#homepage-integration"],
-      sources: ["#yte-channel-list", "#yte-service-list", "#yte-file-list"],
+      overview: ["#feed", "#sources", "#article"],
+      feed: ["#fb-story-list", "#fb-search", "#fb-language-display"],
+      sources: ["#fb-builder-list", "#fb-podcast-list", "#fb-blog-list"],
       github: ["https://github.com/zarazhangrui/youtube-to-ebook", "https://github.com/SichenTao"],
     },
     jsps: {
