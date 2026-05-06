@@ -3935,8 +3935,46 @@ body[data-page="overview"] #overview.hero {
   }
 
   .topnav-shell.use-menu .topnav {
-    right: 0;
+    position: fixed;
+    top: calc(var(--thin-header-height, 44px) + 8px);
+    right: 12px;
     left: auto;
+    width: min(292px, calc(100vw - 24px));
+    max-height: calc(100dvh - var(--thin-header-height, 44px) - 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    gap: 4px;
+    padding: 10px;
+    background: rgba(251, 251, 253, 0.98);
+  }
+
+  .topnav-shell.use-menu .topnav-mobile-workspaces {
+    gap: 4px;
+    padding: 4px 4px 10px;
+  }
+
+  .topnav-mobile-workspaces-title {
+    padding: 0 8px;
+    font-size: 0.7rem;
+  }
+
+  .topnav-shell.use-menu .topnav a {
+    min-height: 34px;
+    padding: 7px 10px;
+    font-size: 0.82rem;
+    line-height: 1.22;
+  }
+
+  .topnav-shell.use-menu .topnav a span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .topnav-shell.use-menu .topnav {
+    right: 8px;
+    width: min(284px, calc(100vw - 16px));
   }
 }
 body[data-page="feed"] {

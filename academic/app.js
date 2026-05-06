@@ -224,7 +224,6 @@ const translations = {
     },
     home: {
       eyebrow: "Artificial Intelligence · High-Performance Computing",
-      current_appointment: "Current appointment",
       contact_identity: "Contact & Identity",
       contact: "Contact",
       identity: "Identity",
@@ -480,7 +479,6 @@ const translations = {
     },
     home: {
       eyebrow: "人工知能・高性能計算",
-      current_appointment: "現職",
       contact_identity: "連絡先・基本情報",
       contact: "連絡先",
       identity: "基本情報",
@@ -736,7 +734,6 @@ const translations = {
     },
     home: {
       eyebrow: "人工智能 · 高性能计算",
-      current_appointment: "现职",
       contact_identity: "联系与基本信息",
       contact: "联系",
       identity: "基本信息",
@@ -3881,7 +3878,6 @@ function applyStaticLocale() {
 
   if (page === "home") {
     setHeroKeylines(t("home.eyebrow"));
-    setTextForSelectors([".hero-identity .eyebrow"], t("home.current_appointment"));
     setTextForSelectors([".hero-profile-card h3"], t("home.contact_identity"));
     setTextForSelectors([".profile-links-section .section-head h2"], t("home.profile_links"));
     setTextForSelectors([".profile-links-section .section-head .eyebrow"], t("home.profile_links_kicker"));

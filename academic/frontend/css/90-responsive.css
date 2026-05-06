@@ -419,12 +419,29 @@
   }
 
   body[data-page="home"] .hero-title-row {
+    position: relative;
+    display: grid;
     justify-content: center;
+    justify-items: center;
     width: 100%;
+    padding-inline: 44px;
   }
 
   body[data-page="home"] .hero h1 {
     font-size: 2.32rem;
+    text-align: center;
+  }
+
+  body[data-page="home"] .hero-name-copy-button {
+    position: absolute;
+    top: 50%;
+    right: max(8px, calc(50% - 178px));
+    transform: translateY(-50%);
+  }
+
+  body[data-page="home"] .hero-name-copy-button:hover,
+  body[data-page="home"] .hero-name-copy-button:focus-visible {
+    transform: translateY(-50%);
   }
 
   body[data-page="home"] .portrait-frame {
@@ -444,28 +461,50 @@
     line-height: 1.45;
   }
 
+  body[data-page="home"] .hero-identity {
+    width: 100%;
+    justify-items: center;
+    text-align: center;
+    gap: 7px;
+  }
+
+  body[data-page="home"] .hero-role {
+    line-height: 1.08;
+    text-align: center;
+  }
+
   body[data-page="home"] .hero-affiliation {
     width: 100%;
-    max-width: 100%;
-    gap: 5px;
+    max-width: min(100%, 30rem);
+    gap: 4px;
+    justify-items: center;
+    text-align: center;
   }
 
   body[data-page="home"] .affiliation-row {
     justify-content: center;
+    column-gap: 6px;
     row-gap: 2px;
+    width: 100%;
   }
 
   body[data-page="home"] .affiliation-row-root {
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     line-height: 1.35;
+    font-weight: 650;
   }
 
   body[data-page="home"] .affiliation-row-unit {
     display: grid;
     justify-items: center;
-    gap: 1px;
-    font-size: 0.78rem;
-    line-height: 1.32;
+    gap: 2px;
+    font-size: 0.82rem;
+    line-height: 1.34;
+    font-weight: 650;
+  }
+
+  body[data-page="home"] .affiliation-node {
+    max-width: 100%;
   }
 
   body[data-page="home"] .affiliation-row-unit .affiliation-separator {

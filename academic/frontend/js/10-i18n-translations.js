@@ -63,7 +63,6 @@ const translations = {
     },
     home: {
       eyebrow: "Artificial Intelligence · High-Performance Computing",
-      current_appointment: "Current appointment",
       contact_identity: "Contact & Identity",
       contact: "Contact",
       identity: "Identity",
@@ -319,7 +318,6 @@ const translations = {
     },
     home: {
       eyebrow: "人工知能・高性能計算",
-      current_appointment: "現職",
       contact_identity: "連絡先・基本情報",
       contact: "連絡先",
       identity: "基本情報",
@@ -575,7 +573,6 @@ const translations = {
     },
     home: {
       eyebrow: "人工智能 · 高性能计算",
-      current_appointment: "现职",
       contact_identity: "联系与基本信息",
       contact: "联系",
       identity: "基本信息",

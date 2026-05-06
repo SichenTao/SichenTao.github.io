@@ -195,6 +195,10 @@
   max-width: min(100%, 680px);
 }
 
+body[data-page="home"] .hero-identity > .eyebrow {
+  display: none;
+}
+
 .hero-role {
   margin: 0;
   font-family: var(--font-display);

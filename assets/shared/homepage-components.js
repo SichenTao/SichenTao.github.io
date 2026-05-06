@@ -262,7 +262,7 @@
         ],
       },
       academic: {
-        home: [["Profile", "Contact", "Statistics", "CV"], ["Appointment", "Affiliation", "AI", "HPC"]],
+        home: [["Profile", "Contact", "Statistics", "CV"], ["Affiliation", "AI", "HPC"]],
         timeline: [["Education", "Appointments", "Research visits"], ["Career history", "Institutions", "Milestones"]],
         publications: [["Search", "Filters", "Metrics", "DOI"], ["Journal papers", "Conference papers", "Citation data"]],
         awards: [["Awards", "IEEE CIS", "JST"], ["Evidence", "Dates", "Awarding bodies"]],
@@ -325,7 +325,7 @@
         ],
       },
       academic: {
-        home: [["个人资料", "联系方式", "统计概览", "简历"], ["任职", "所属", "人工智能", "高性能计算"]],
+        home: [["个人资料", "联系方式", "统计概览", "简历"], ["所属", "人工智能", "高性能计算"]],
         timeline: [["教育经历", "任职经历", "访问经历"], ["时间线", "机构", "关键节点"]],
         publications: [["搜索", "筛选", "指标", "DOI"], ["期刊论文", "会议论文", "被引用"]],
         awards: [["获奖", "IEEE CIS", "JST"], ["证据", "日期", "授奖机构"]],
@@ -388,7 +388,7 @@
         ],
       },
       academic: {
-        home: [["プロフィール", "連絡先", "統計", "CV"], ["現職", "所属", "人工知能", "高性能計算"]],
+        home: [["プロフィール", "連絡先", "統計", "CV"], ["所属", "人工知能", "高性能計算"]],
         timeline: [["学歴", "職歴", "訪問歴"], ["年表", "機関", "節目"]],
         publications: [["検索", "フィルタ", "指標", "DOI"], ["論文", "会議論文", "被引用"]],
         awards: [["受賞", "IEEE CIS", "JST"], ["根拠", "日付", "授与機関"]],
