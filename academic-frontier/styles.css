@@ -2823,6 +2823,14 @@ body[data-page="papers"] .page-wash {
   margin-bottom: 22px;
 }
 
+.fb-article-control-group {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
 .fb-article-back {
   display: inline-flex;
   align-items: center;
@@ -2847,13 +2855,21 @@ body[data-page="papers"] .page-wash {
 .fb-language-display {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 2px;
+  min-height: 44px;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.02),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  padding: 3px;
   flex-wrap: nowrap;
 }
 
 .fb-language-display--article {
-  flex: 0 0 min(252px, 42%);
-  min-width: 208px;
+  flex: 0 0 auto;
+  min-width: 0;
   justify-content: flex-end;
 }
 
@@ -2862,23 +2878,25 @@ body[data-page="papers"] .page-wash {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 34px;
-  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  min-height: 36px;
+  border: 0;
   border-radius: 999px;
-  background: #fff;
-  color: var(--ink-soft);
+  background: transparent;
+  color: var(--muted);
   cursor: pointer;
-  padding: 0 12px;
+  padding: 0 15px;
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 760;
   white-space: nowrap;
 }
 
 .fb-language-chip.is-selected {
-  border-color: var(--ink);
-  background: var(--ink);
-  color: #fff;
+  background: rgba(var(--ink-rgb), 0.08);
+  color: var(--ink);
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--ink-rgb), 0.08),
+    0 1px 2px rgba(var(--ink-rgb), 0.05);
 }
 
 .fb-article-head {
@@ -3098,9 +3116,12 @@ body[data-page="papers"] .page-wash {
     margin-bottom: 18px;
   }
 
+  .fb-article-control-group {
+    justify-content: flex-start;
+  }
+
   .fb-language-display--article {
     flex: none;
-    width: 100%;
     min-width: 0;
     justify-content: flex-start;
   }
@@ -3950,25 +3971,25 @@ body[data-page="feed"] main.shell.layout {
   top: 52px;
   z-index: 14;
   display: grid;
-  grid-template-columns: minmax(0, var(--frontier-feed-main)) minmax(430px, 450px);
+  grid-template-columns: minmax(0, var(--frontier-feed-main)) minmax(260px, var(--frontier-feed-rail));
   gap: var(--frontier-feed-gap);
   align-items: center;
   justify-content: center;
-  padding: 10px 0;
+  padding: 10px 0 8px;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(18px);
 }
 
-.frontier-reader-toolbar-actions {
-  display: grid;
-  grid-template-columns: minmax(104px, 118px) max-content 44px;
+.frontier-reader-heading-actions {
+  display: flex;
   gap: 8px;
   align-items: center;
   justify-content: end;
+  min-width: 0;
 }
 
 .frontier-reader-search,
-.frontier-reader-toolbar-actions select,
+.frontier-reader-field-filter,
 .frontier-reader-language-display,
 .frontier-reader-icon-button {
   min-height: 44px;
@@ -3983,6 +4004,7 @@ body[data-page="feed"] main.shell.layout {
   display: flex;
   align-items: center;
   gap: 10px;
+  grid-column: 1;
   padding: 0 15px;
 }
 
@@ -4003,8 +4025,9 @@ body[data-page="feed"] main.shell.layout {
   font-size: 0.92rem;
 }
 
-.frontier-reader-toolbar-actions select {
-  width: 100%;
+.frontier-reader-field-filter {
+  width: min(166px, 30vw);
+  flex: 0 0 auto;
   appearance: none;
   cursor: pointer;
   outline: none;
@@ -4020,28 +4043,30 @@ body[data-page="feed"] main.shell.layout {
 .frontier-reader-language-display {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.02),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
 }
 
 .frontier-reader-language-chip {
   appearance: none;
   display: inline-flex;
   flex: 0 0 auto;
-  min-height: 34px;
+  min-height: 36px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(var(--ink-rgb), 0.12);
+  border: 0;
   border-radius: 999px;
-  background: #fff;
-  color: var(--ink-soft);
+  background: transparent;
+  color: var(--muted);
   cursor: pointer;
-  padding: 0 12px;
+  padding: 0 15px;
   font: inherit;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 760;
   letter-spacing: 0;
   white-space: nowrap;
@@ -4055,14 +4080,15 @@ body[data-page="feed"] main.shell.layout {
 .frontier-reader-language-chip:focus-visible {
   outline: none;
   color: var(--ink);
-  border-color: rgba(var(--ink-rgb), 0.24);
+  background: rgba(var(--ink-rgb), 0.045);
 }
 
 .frontier-reader-language-chip.is-active {
-  border-color: var(--ink);
-  background: var(--ink);
-  color: #fff;
-  box-shadow: none;
+  background: rgba(var(--ink-rgb), 0.08);
+  color: var(--ink);
+  box-shadow:
+    inset 0 0 0 1px rgba(var(--ink-rgb), 0.08),
+    0 1px 2px rgba(var(--ink-rgb), 0.05);
 }
 
 .frontier-reader-icon-button {
@@ -4098,8 +4124,10 @@ body[data-page="feed"] main.shell.layout {
 
 .frontier-reader-section-head {
   display: flex;
-  gap: 28px;
-  align-items: flex-end;
+  min-height: 52px;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 8px;
   border-bottom: 1px solid rgba(var(--ink-rgb), 0.12);
 }
@@ -4107,7 +4135,7 @@ body[data-page="feed"] main.shell.layout {
 .frontier-reader-section-head h2 {
   order: -1;
   margin: 0;
-  padding-bottom: 13px;
+  padding-bottom: 0;
   color: var(--ink);
   font-family: var(--font-ui, var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif));
   font-size: 0.98rem;
@@ -4292,7 +4320,10 @@ body[data-page="feed"] main.shell.layout {
 }
 
 .frontier-reader-rail-section:first-child {
-  margin-top: 31px;
+  gap: 14px;
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
 }
 
 .frontier-reader-rail h2,
@@ -4304,6 +4335,10 @@ body[data-page="feed"] main.shell.layout {
 }
 
 .frontier-reader-rail h2 {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.12);
   font-size: 1.32rem;
   font-weight: 800;
   line-height: 1.15;
@@ -4392,12 +4427,8 @@ body[data-page="feed"] main.shell.layout {
     padding: 8px 0 10px;
   }
 
-  .frontier-reader-toolbar-actions {
-    grid-template-columns: minmax(0, 1fr) 42px;
-  }
-
   .frontier-reader-search,
-  .frontier-reader-toolbar-actions select,
+  .frontier-reader-field-filter,
   .frontier-reader-language-display,
   .frontier-reader-icon-button {
     min-height: 42px;
@@ -4407,18 +4438,32 @@ body[data-page="feed"] main.shell.layout {
     width: 42px;
   }
 
-  .frontier-reader-toolbar-actions select {
+  .frontier-reader-section-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .frontier-reader-heading-actions {
+    display: grid;
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) 42px;
+  }
+
+  .frontier-reader-field-filter {
+    width: 100%;
     grid-column: 1;
     grid-row: 1;
   }
 
-  .frontier-reader-toolbar-actions .frontier-reader-language-display {
+  .frontier-reader-heading-actions .frontier-reader-language-display {
     grid-column: 1 / -1;
     grid-row: 2;
     justify-self: start;
   }
 
-  .frontier-reader-toolbar-actions .frontier-reader-icon-button {
+  .frontier-reader-heading-actions .frontier-reader-icon-button {
     grid-column: 2;
     grid-row: 1;
   }

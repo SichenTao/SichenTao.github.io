@@ -371,6 +371,14 @@ function languageAttr(language) {
   return language === "zh" ? "zh-CN" : language === "ja" ? "ja" : "en";
 }
 
+function displayLanguageShortLabel(language) {
+  return {
+    en: "EN",
+    zh: "中文",
+    ja: "日本語",
+  }[language] || t(`displayLanguages.${language}`) || language;
+}
+
 function readInitialLocale() {
   return window.HomepageI18n?.readStoredLocale?.({ locales: LOCALE_CATALOG }) || "en";
 }
@@ -976,7 +984,7 @@ function renderLanguageDisplayControl() {
           data-display-language="${language}"
           aria-pressed="${selected ? "true" : "false"}"
         >
-          ${escapeHtml(t(`displayLanguages.${language}`))}
+          ${escapeHtml(displayLanguageShortLabel(language))}
         </button>
       `;
     }).join("");
@@ -1094,7 +1102,6 @@ function renderLanguageTextBlocks(blocks, tagName = "p") {
   return blocks
     .map((block) => `
       <${tagName} class="${multiple ? "fb-language-block" : ""}" lang="${languageAttr(block.language)}">
-        ${multiple ? `<span class="fb-language-label">${escapeHtml(t(`displayLanguages.${block.language}`))}</span>` : ""}
         ${escapeHtml(block.text)}
       </${tagName}>
     `)
@@ -1106,9 +1113,8 @@ function renderStoryTextBlocks(blocks, primaryClass, secondaryClass) {
   return blocks
     .map((block, index) => {
       const className = index === 0 ? primaryClass : secondaryClass;
-      const label = multiple ? `<span class="fb-language-label">${escapeHtml(t(`displayLanguages.${block.language}`))}</span>` : "";
       const tagName = index === 0 && primaryClass === "fb-story-title" ? "strong" : "span";
-      return `<${tagName} class="${className}" lang="${languageAttr(block.language)}">${label}${escapeHtml(block.text)}</${tagName}>`;
+      return `<${tagName} class="${className}" lang="${languageAttr(block.language)}">${escapeHtml(block.text)}</${tagName}>`;
     })
     .join("");
 }
@@ -1116,11 +1122,10 @@ function renderStoryTextBlocks(blocks, primaryClass, secondaryClass) {
 function renderArticleTitleBlocks(blocks) {
   return blocks
     .map((block, index) => {
-      const label = blocks.length > 1 ? `<span class="fb-language-label">${escapeHtml(t(`displayLanguages.${block.language}`))}</span>` : "";
       if (index === 0) {
-        return `<h1 lang="${languageAttr(block.language)}">${label}${escapeHtml(block.text)}</h1>`;
+        return `<h1 lang="${languageAttr(block.language)}">${escapeHtml(block.text)}</h1>`;
       }
-      return `<p class="fb-article-title-translation" lang="${languageAttr(block.language)}">${label}${escapeHtml(block.text)}</p>`;
+      return `<p class="fb-article-title-translation" lang="${languageAttr(block.language)}">${escapeHtml(block.text)}</p>`;
     })
     .join("");
 }

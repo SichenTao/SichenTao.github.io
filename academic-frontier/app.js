@@ -15,6 +15,7 @@ const READER_DISPLAY_LANGUAGE_SEQUENCE = ["en", "zh", "ja"];
 const PAPER_EXPLICIT_ALL_CATEGORIES = ["year", "type", "problem", "method", "jcr", "cas", "casTop", "impact", "team"];
 const METRIC_EXPLICIT_ALL_CATEGORIES = ["year", "type", "jcr", "cas", "casTop", "impact", "venue"];
 const RESEARCH_EXPLICIT_ALL_CATEGORIES = ["problem", "method", "jcr", "cas", "casTop", "impact", "author"];
+const READER_EXPLICIT_ALL_CATEGORIES = ["field"];
 const MULTI_SELECT_ACTIVE_VALUE = "__selected__";
 
 const THEME_CATALOG = {
@@ -271,7 +272,8 @@ const state = {
   researchYearEnd: "",
   researchYearOpenEnded: true,
   readerQuery: "",
-  readerFieldFilter: "all",
+  readerFieldFilters: [],
+  readerExplicitAll: createExplicitAllState(READER_EXPLICIT_ALL_CATEGORIES),
   readerDisplayLanguages: readStoredReaderDisplayLanguages(),
   language: window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || "en",
   theme: window.ACADEMIC_FRONTIER_DEFAULT_THEME || "tohoku",
@@ -368,6 +370,7 @@ const UI_TEXT = {
     readerSubtitle: "Paper Entries",
     readerSearchPlaceholder: "Search titles, authors, abstracts, venues, or DOI",
     readerFieldFilterLabel: "Field",
+    readerSelectedFieldsLabel: "Selected fields",
     readerDisplayLanguagesLabel: "Displayed languages",
     readerOpenAction: "Read abstract",
     readerEmpty: "No paper entries match the current filters.",
@@ -631,10 +634,11 @@ const UI_TEXT = {
     teamsTitle: "已记录研究者与团队",
     teamsNote: "",
     paperLaneKicker: "论文列表",
-    readerTitle: "论文最新记录",
+    readerTitle: "最新论文",
     readerSubtitle: "论文入口列表",
     readerSearchPlaceholder: "搜索题目、作者、摘要、发表渠道或 DOI",
     readerFieldFilterLabel: "领域",
+    readerSelectedFieldsLabel: "已选领域",
     readerDisplayLanguagesLabel: "显示语言",
     readerOpenAction: "阅读摘要",
     readerEmpty: "当前筛选下没有匹配的论文入口。",
@@ -898,10 +902,11 @@ const UI_TEXT = {
     teamsTitle: "記録済み研究者・チーム",
     teamsNote: "",
     paperLaneKicker: "論文リスト",
-    readerTitle: "論文最新記録",
+    readerTitle: "最新論文",
     readerSubtitle: "論文入口リスト",
     readerSearchPlaceholder: "題目・著者・要旨・掲載先・DOIで検索",
     readerFieldFilterLabel: "分野",
+    readerSelectedFieldsLabel: "選択中の分野",
     readerDisplayLanguagesLabel: "表示言語",
     readerOpenAction: "要旨を読む",
     readerEmpty: "現在の条件に一致する論文入口はありません。",
@@ -5934,8 +5939,31 @@ function readerDisplayLanguagesEqual(left, right) {
   return normalizedLeft.length === normalizedRight.length && normalizedLeft.every((language, index) => language === normalizedRight[index]);
 }
 
+function readerFieldFilters() {
+  state.readerFieldFilters = selectionList(state.readerFieldFilters);
+  return state.readerFieldFilters;
+}
+
+function readerControlsDirty() {
+  return Boolean(state.readerQuery)
+    || readerFieldFilters().length > 0
+    || !readerDisplayLanguagesEqual(readerDisplayLanguages(), defaultReaderDisplayLanguages());
+}
+
 function languageHtmlAttribute(locale) {
   return locale === "zh" ? "zh-CN" : locale === "ja" ? "ja" : "en";
+}
+
+function readerLanguageShortLabel(locale) {
+  return {
+    en: "EN",
+    zh: "中文",
+    ja: "日本語",
+  }[locale] || LOCALE_CATALOG[locale]?.label || locale;
+}
+
+function localizedLabelSeparator() {
+  return currentLocale() === "en" ? ": " : "：";
 }
 
 function publicationDisplayDate(paper) {
@@ -6002,9 +6030,10 @@ function readerSearchCorpus(paper) {
 
 function readerFilteredPapers() {
   const query = normalizeSearchText(state.readerQuery);
-  const fieldFilter = state.readerFieldFilter || "all";
+  const fieldFilters = readerFieldFilters();
   return sortPapers(papersForDomain().filter((paper) => {
-    const matchesField = fieldFilter === "all" || paperFieldTags(paper).includes(fieldFilter);
+    const paperFields = paperFieldTags(paper);
+    const matchesField = !fieldFilters.length || fieldFilters.some((field) => paperFields.includes(field));
     const matchesQuery = !query || readerSearchCorpus(paper).includes(query);
     return matchesField && matchesQuery;
   }));
@@ -6023,7 +6052,7 @@ function renderFrontierReaderLanguageControls() {
     button.type = "button";
     button.dataset.frontierReaderLanguage = locale;
     button.setAttribute("aria-pressed", activeLanguages.has(locale) ? "true" : "false");
-    button.textContent = config.label;
+    button.textContent = readerLanguageShortLabel(locale);
     container.appendChild(button);
   });
 }
@@ -6033,16 +6062,23 @@ function renderFrontierReaderFieldOptions() {
   if (!select) return;
 
   const fields = readerAvailableFields();
-  const currentValue = fields.includes(state.readerFieldFilter) ? state.readerFieldFilter : "all";
-  state.readerFieldFilter = currentValue;
-  select.innerHTML = "";
-
-  const allOption = new Option(ui("readerFieldFilterLabel"), "all");
-  select.appendChild(allOption);
-  fields.forEach((field) => {
-    select.appendChild(new Option(localizeText(field), field));
-  });
-  select.value = currentValue;
+  state.readerFieldFilters = readerFieldFilters().filter((field) => fields.includes(field));
+  const selected = new Set(state.readerFieldFilters);
+  const options = [
+    { value: "all", label: ui("readerFieldFilterLabel") },
+    ...fields.map((field) => ({
+      value: field,
+      label: `${selected.has(field) ? "✓ " : ""}${localizeText(field)}`,
+    })),
+  ];
+  if (selected.size) {
+    options.unshift({
+      value: MULTI_SELECT_ACTIVE_VALUE,
+      label: `${selected.size} ${ui("readerSelectedFieldsLabel")}`,
+      hidden: true,
+    });
+  }
+  syncSelectOptions(select, options, selected.size ? MULTI_SELECT_ACTIVE_VALUE : "all");
 }
 
 function readerStoryLanguageBlocks(paper) {
@@ -6164,7 +6200,7 @@ function renderFrontierReaderStories() {
         <span class="frontier-reader-meta">${readerStoryMeta(paper)}</span>
         ${readerStoryLanguageBlocks(paper)}
         <span class="frontier-reader-dek-group">
-          ${authors ? `<span class="frontier-reader-authors">${escapeHtml(ui("authorsLabel"))} ${escapeHtml(authors)}</span>` : ""}
+          ${authors ? `<span class="frontier-reader-authors">${escapeHtml(ui("authorsLabel"))}${localizedLabelSeparator()}${escapeHtml(authors)}</span>` : ""}
           ${sourceLine ? `<span class="frontier-reader-source-line">${sourceLine}</span>` : ""}
         </span>
         ${chipDeck}
@@ -6179,15 +6215,10 @@ function renderFrontierReaderRail() {
   const rail = document.querySelector(".frontier-reader-rail");
   if (!rail) return;
 
-  const papers = readerFilteredPapers();
   const allPapers = papersForDomain();
-  const fields = readerAvailableFields(allPapers);
   const venues = new Set(allPapers.map((paper) => localizeText(paper?.venue)).filter(Boolean));
   const years = new Set(allPapers.map((paper) => paperYearValue(paper)).filter(Boolean));
   const authors = new Set(allPapers.flatMap((paper) => paperAuthorNames(paper)));
-  const fieldChips = fields.slice(0, 18).map((field) => (
-    `<button class="frontier-reader-rail-chip${state.readerFieldFilter === field ? " is-active" : ""}" type="button" data-reader-field-chip="${escapeHtml(field)}">${escapeHtml(localizeText(field))}</button>`
-  )).join("");
   const venueChips = Array.from(venues).sort((left, right) => left.localeCompare(right, currentLocale())).slice(0, 12)
     .map((venue) => `<span class="frontier-reader-rail-chip">${escapeHtml(venue)}</span>`).join("");
   const yearChips = Array.from(years).filter(Boolean).sort().reverse().slice(0, 8)
@@ -6201,10 +6232,6 @@ function renderFrontierReaderRail() {
         <div><strong>${escapeHtml(authors.size)}</strong><span>${escapeHtml(ui("readerAuthorCountLabel"))}</span></div>
         <div><strong>${escapeHtml(venues.size)}</strong><span>${escapeHtml(ui("readerVenueLabel"))}</span></div>
       </div>
-    </section>
-    <section class="frontier-reader-rail-section">
-      <h3>${escapeHtml(ui("readerRailFieldsTitle"))}</h3>
-      <div class="frontier-reader-rail-chips">${fieldChips}</div>
     </section>
     <section class="frontier-reader-rail-section">
       <h3>${escapeHtml(ui("readerRailVenuesTitle"))}</h3>
@@ -6227,7 +6254,7 @@ function renderFrontierReaderToolbar() {
   if (reset) {
     reset.setAttribute("aria-label", ui("resetLabel"));
     reset.setAttribute("title", ui("resetLabel"));
-    reset.disabled = !state.readerQuery && state.readerFieldFilter === "all" && readerDisplayLanguagesEqual(readerDisplayLanguages(), defaultReaderDisplayLanguages());
+    reset.disabled = !readerControlsDirty();
   }
   const languageGroup = byId("frontier-reader-language-display");
   if (languageGroup) {
@@ -6237,6 +6264,14 @@ function renderFrontierReaderToolbar() {
   if (fieldFilter) {
     fieldFilter.setAttribute("aria-label", ui("readerFieldFilterLabel"));
   }
+}
+
+function renderReaderResetButtons() {
+  document.querySelectorAll("[data-frontier-reader-reset]").forEach((reset) => {
+    reset.setAttribute("aria-label", ui("resetLabel"));
+    reset.setAttribute("title", ui("resetLabel"));
+    reset.disabled = !readerControlsDirty();
+  });
 }
 
 function renderFrontierReaderStaticText() {
@@ -6326,7 +6361,7 @@ function renderAcademicArticleLanguageControls() {
           data-academic-article-language="${escapeHtml(locale)}"
           aria-pressed="${selected ? "true" : "false"}"
         >
-          ${escapeHtml(LOCALE_CATALOG[locale]?.label || locale)}
+          ${escapeHtml(readerLanguageShortLabel(locale))}
         </button>
       `;
     }).join("");
@@ -6370,12 +6405,17 @@ function renderAcademicPaperArticle() {
         <span aria-hidden="true">←</span>
         ${escapeHtml(ui("detailBackAction"))}
       </a>
-      <div class="fb-language-display fb-language-display--article" data-academic-article-language-display role="group" aria-label="${escapeHtml(ui("readerDisplayLanguagesLabel"))}"></div>
+      <div class="fb-article-control-group">
+        <div class="fb-language-display fb-language-display--article" data-academic-article-language-display role="group" aria-label="${escapeHtml(ui("readerDisplayLanguagesLabel"))}"></div>
+        <button id="frontier-reader-reset" class="frontier-reader-icon-button" type="button" data-frontier-reader-reset aria-label="${escapeHtml(ui("resetLabel"))}" title="${escapeHtml(ui("resetLabel"))}">
+          <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-reset"></use></svg>
+        </button>
+      </div>
     </div>
     <header class="fb-article-head">
       <p class="eyebrow">${escapeHtml(ui("detailSummaryKicker"))}</p>
       <div class="fb-article-title-group">${renderAcademicTitleBlocks(titleBlocks)}</div>
-      ${article.authors ? `<div class="fb-article-dek-group"><p>${escapeHtml(ui("authorsLabel"))}: ${escapeHtml(article.authors)}</p></div>` : ""}
+      ${article.authors ? `<div class="fb-article-dek-group"><p>${escapeHtml(ui("authorsLabel"))}${localizedLabelSeparator()}${escapeHtml(article.authors)}</p></div>` : ""}
       ${metaParts.length ? `<div class="fb-article-meta">${metaParts.map((part) => `<span>${part}</span>`).join("")}</div>` : ""}
       ${chipDeck}
     </header>
@@ -6392,6 +6432,7 @@ function renderAcademicPaperArticle() {
     ` : ""}
   `;
   renderAcademicArticleLanguageControls();
+  renderReaderResetButtons();
 }
 function renderCardGrid(containerId, items, renderItem) {
   const container = byId(containerId);
@@ -6727,7 +6768,8 @@ function bindReaderControls() {
   document.addEventListener("change", (event) => {
     const target = event.target;
     if (!(target instanceof HTMLElement) || target.id !== "frontier-reader-field-filter") return;
-    state.readerFieldFilter = target.value || "all";
+    state.readerFieldFilters = toggleMenuSelection(state.readerFieldFilters, target.value || "all", state.readerExplicitAll, "field");
+    target.value = "all";
     renderFrontierReader();
   });
 
@@ -6735,7 +6777,8 @@ function bindReaderControls() {
     const resetButton = event.target.closest("#frontier-reader-reset");
     if (resetButton) {
       state.readerQuery = "";
-      state.readerFieldFilter = "all";
+      state.readerFieldFilters = [];
+      resetExplicitAllSelections(state.readerExplicitAll);
       setReaderDisplayLanguages(defaultReaderDisplayLanguages());
       renderFrontierReader();
       renderAcademicPaperArticle();
@@ -6770,7 +6813,7 @@ function bindReaderControls() {
 
     const fieldChip = event.target.closest("[data-reader-field-chip]");
     if (fieldChip) {
-      state.readerFieldFilter = fieldChip.dataset.readerFieldChip || "all";
+      state.readerFieldFilters = toggleMenuSelection(state.readerFieldFilters, fieldChip.dataset.readerFieldChip || "all", state.readerExplicitAll, "field");
       renderFrontierReader();
       return;
     }
