@@ -5,7 +5,7 @@ const STORAGE_KEY_LOCAL_DOMAIN = "学术前沿-domain";
 const STORAGE_KEY_THEME = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
 const SESSION_KEY_LANGUAGE = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const STORAGE_KEY_FOCUS_PROMPT = "academic-frontier-focus-prompt";
-const STORAGE_KEY_READER_DISPLAY_LANGUAGES = "academic-frontier-reader-display-languages-v2";
+const STORAGE_KEY_READER_DISPLAY_LANGUAGES = "academic-frontier-reader-display-languages-v3";
 const OPEN_RESEARCH_MIN_YEAR = 1950;
 const PUBLIC_SITE_NAME = "学术前沿";
 const PUBLIC_SITE_BASE_PATH = "/academic-frontier";
@@ -175,13 +175,12 @@ function normalizeFilterCount(value) {
   return Number.isFinite(count) && count > 0 ? count : 0;
 }
 
-function defaultReaderLanguage() {
-  const locale = window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || document.body?.dataset?.defaultLanguage || "en";
+function defaultReaderLanguage(locale = window.ACADEMIC_FRONTIER_DEFAULT_LANGUAGE || document.body?.dataset?.defaultLanguage || "en") {
   return READER_DISPLAY_LANGUAGE_SEQUENCE.includes(locale) ? locale : "en";
 }
 
-function defaultReaderDisplayLanguages() {
-  return [defaultReaderLanguage()];
+function defaultReaderDisplayLanguages(locale = defaultReaderLanguage()) {
+  return [defaultReaderLanguage(locale)];
 }
 
 function normalizeReaderDisplayLanguages(value, fallback = defaultReaderDisplayLanguages()) {
@@ -195,13 +194,17 @@ function normalizeReaderDisplayLanguages(value, fallback = defaultReaderDisplayL
   return uniqueLanguages.length ? uniqueLanguages : [...fallback];
 }
 
+function readerDisplayLanguagesStorageKey(locale = defaultReaderLanguage()) {
+  return `${STORAGE_KEY_READER_DISPLAY_LANGUAGES}-${defaultReaderLanguage(locale)}`;
+}
+
 function readStoredReaderDisplayLanguages() {
-  const stored = readStoredValue(STORAGE_KEY_READER_DISPLAY_LANGUAGES);
+  const stored = readStoredValue(readerDisplayLanguagesStorageKey());
   return stored ? normalizeReaderDisplayLanguages(stored) : defaultReaderDisplayLanguages();
 }
 
 function writeStoredReaderDisplayLanguages(languages) {
-  writeStoredValue(STORAGE_KEY_READER_DISPLAY_LANGUAGES, normalizeReaderDisplayLanguages(languages).join(","));
+  writeStoredValue(readerDisplayLanguagesStorageKey(), normalizeReaderDisplayLanguages(languages).join(","));
 }
 
 // Keep the "All" badge aligned with the sum of the option badges shown in the same menu.

@@ -9,8 +9,7 @@ const LOCALE_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja
 const THEME_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
 const LOCALE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 const THEME_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
-const MODE_KEY = "follow-builders-reading-mode";
-const DISPLAY_LANGUAGES_KEY = "follow-builders-display-languages-v2";
+const DISPLAY_LANGUAGES_KEY = "follow-builders-display-languages-v3";
 const TRANSLATION_CACHE_KEY = "follow-builders-content-translations-v1";
 const EMBEDDED_TRANSLATION_CACHE = window.FOLLOW_BUILDERS_TRANSLATION_CACHE || {};
 const LIVE_FEEDS_ENABLED = new URLSearchParams(window.location.search).get("live") === "1";
@@ -387,54 +386,47 @@ function readInitialTheme() {
   return window.HomepagePlatform?.readStoredTheme?.() || "tohoku";
 }
 
-function readStoredMode() {
-  try {
-    const stored = localStorage.getItem(MODE_KEY);
-    return ["english", "current", "bilingual", "trilingual"].includes(stored) ? stored : "trilingual";
-  } catch {
-    return "trilingual";
-  }
-}
-
-function writeStoredMode(mode) {
-  try {
-    localStorage.setItem(MODE_KEY, mode);
-  } catch {}
-}
-
-function normalizeDisplayLanguages(languages) {
+function normalizeDisplayLanguages(languages, fallback = ["en"]) {
   const selected = new Set((languages || []).filter((language) => DISPLAY_LANGUAGE_SEQUENCE.includes(language)));
+  if (!selected.size) {
+    (fallback || []).forEach((language) => {
+      if (DISPLAY_LANGUAGE_SEQUENCE.includes(language)) {
+        selected.add(language);
+      }
+    });
+  }
   if (!selected.size) selected.add("en");
   return DISPLAY_LANGUAGE_SEQUENCE.filter((language) => selected.has(language));
 }
 
-function displayLanguagesFromMode(mode) {
-  if (mode === "current") return [readInitialLocale() || "en"];
-  if (mode === "bilingual") return ["en", "zh"];
-  if (mode === "trilingual") return ["en", "zh", "ja"];
-  return ["en"];
+function defaultDisplayLanguage(locale = readInitialLocale()) {
+  return DISPLAY_LANGUAGE_SEQUENCE.includes(locale) ? locale : "en";
 }
 
-function readStoredDisplayLanguages() {
+function defaultDisplayLanguages(locale = readInitialLocale()) {
+  return [defaultDisplayLanguage(locale)];
+}
+
+function displayLanguagesStorageKey(locale = readInitialLocale()) {
+  return `${DISPLAY_LANGUAGES_KEY}-${defaultDisplayLanguage(locale)}`;
+}
+
+function readStoredDisplayLanguages(locale = readInitialLocale()) {
   try {
-    const stored = JSON.parse(localStorage.getItem(DISPLAY_LANGUAGES_KEY) || "null");
+    const stored = JSON.parse(localStorage.getItem(displayLanguagesStorageKey(locale)) || "null");
     if (Array.isArray(stored)) {
-      return normalizeDisplayLanguages(stored);
+      return normalizeDisplayLanguages(stored, defaultDisplayLanguages(locale));
     }
-    return normalizeDisplayLanguages(displayLanguagesFromMode(readStoredMode()));
+    return defaultDisplayLanguages(locale);
   } catch {
-    return ["en", "zh", "ja"];
+    return defaultDisplayLanguages(locale);
   }
 }
 
-function writeStoredDisplayLanguages(languages) {
+function writeStoredDisplayLanguages(languages, locale = readInitialLocale()) {
   try {
-    localStorage.setItem(DISPLAY_LANGUAGES_KEY, JSON.stringify(normalizeDisplayLanguages(languages)));
+    localStorage.setItem(displayLanguagesStorageKey(locale), JSON.stringify(normalizeDisplayLanguages(languages)));
   } catch {}
-}
-
-function defaultDisplayLanguages() {
-  return normalizeDisplayLanguages(displayLanguagesFromMode(readStoredMode()));
 }
 
 function displayLanguagesEqual(left, right) {
@@ -445,11 +437,11 @@ function displayLanguagesEqual(left, right) {
 
 function setDisplayLanguages(languages) {
   state.displayLanguages = normalizeDisplayLanguages(languages);
-  writeStoredDisplayLanguages(state.displayLanguages);
+  writeStoredDisplayLanguages(state.displayLanguages, state.locale);
 }
 
 function displayControlsDirty() {
-  return !displayLanguagesEqual(state.displayLanguages, defaultDisplayLanguages());
+  return !displayLanguagesEqual(state.displayLanguages, defaultDisplayLanguages(state.locale));
 }
 
 function feedControlsDirty() {
@@ -999,11 +991,11 @@ function renderLanguageDisplayControl() {
 function resetFeedControls() {
   state.query = "";
   state.type = "all";
-  setDisplayLanguages(defaultDisplayLanguages());
+  setDisplayLanguages(defaultDisplayLanguages(state.locale));
 }
 
 function resetDisplayControls() {
-  setDisplayLanguages(defaultDisplayLanguages());
+  setDisplayLanguages(defaultDisplayLanguages(state.locale));
 }
 
 function renderDisplayResetButtons() {
@@ -1269,6 +1261,7 @@ function setLocale(localeName) {
   const normalized = window.HomepageI18n?.normalizeLocale?.(localeName, LOCALE_CATALOG) || "";
   if (!normalized || normalized === state.locale) return;
   state.locale = normalized;
+  state.displayLanguages = readStoredDisplayLanguages(normalized);
   window.HomepageI18n?.writeStoredLocale?.(normalized, { locales: LOCALE_CATALOG });
   try {
     localStorage.setItem(LOCALE_KEY, normalized);
