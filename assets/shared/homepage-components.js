@@ -479,12 +479,6 @@
     ja: "クイックリンク",
   };
 
-  const MOBILE_PAGE_SECTION_TITLE = {
-    en: "Pages",
-    zh: "页面",
-    ja: "ページ",
-  };
-
   function siteFromPath(pathname = global.location?.pathname || "/") {
     const path = decodeURIComponent(pathname);
     if (path.startsWith("/academic-frontier/")) return "frontier";
@@ -762,11 +756,6 @@
         </div>
       </div>
     `;
-  }
-
-  function renderMobilePageSectionTitle(locale) {
-    const title = MOBILE_PAGE_SECTION_TITLE[locale] || MOBILE_PAGE_SECTION_TITLE.en;
-    return `<p class="topnav-mobile-section-title">${escapeHtml(title)}</p>`;
   }
 
   function ensureSharedPortalMegaScaffold(root = document) {
@@ -1100,7 +1089,7 @@
       nav.querySelectorAll(".topnav-mega-panel").forEach((panel) => panel.remove());
       nav.querySelectorAll(".topnav-mobile-workspaces").forEach((node) => node.remove());
       nav.querySelectorAll(".topnav-mobile-section-title").forEach((node) => node.remove());
-      nav.insertAdjacentHTML("afterbegin", `${renderMobileWorkspaceLinks(locale, theme)}${renderMobilePageSectionTitle(locale)}`);
+      nav.insertAdjacentHTML("afterbegin", renderMobileWorkspaceLinks(locale, theme));
       Array.from(nav.children)
         .filter((node) => node.matches?.("a"))
         .forEach((link) => {

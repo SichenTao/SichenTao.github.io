@@ -18,7 +18,7 @@ const I18N = {
         "A Follow Builders-style reading workspace where YouTube to Ebook outputs become searchable adaptive ebook articles.",
     },
     brand: { note: "Adaptive ebook articles" },
-    nav: { feed: "Feed", github: "GitHub" },
+    nav: { feed: "Home", github: "GitHub" },
     controls: {
       display: "Display controls",
       language: "Language",
@@ -71,7 +71,7 @@ const I18N = {
       description: "一个复用 Follow Builders UI 的文章承载工作区，用来发布 YouTube to Ebook 生成的适配型 ebook 文章。",
     },
     brand: { note: "适配型 ebook 文章" },
-    nav: { feed: "信息流", github: "GitHub" },
+    nav: { feed: "首页", github: "GitHub" },
     controls: {
       display: "显示控制",
       language: "语言",
@@ -124,7 +124,7 @@ const I18N = {
       description: "Follow Builders の UI を再利用し、YouTube to Ebook の出力を適応型 ebook 記事として公開する workspace。",
     },
     brand: { note: "適応型 ebook 記事" },
-    nav: { feed: "フィード", github: "GitHub" },
+    nav: { feed: "ホーム", github: "GitHub" },
     controls: {
       display: "表示設定",
       language: "言語",
@@ -659,11 +659,11 @@ function renderArticleSection(section) {
       </section>
     `;
   }
-  if (section.markdown) {
+  if (section.kind === "markdown" || section.markdown) {
     return `
       <section class="fb-body-section">
         <h2>${escapeHtml(label)}</h2>
-        ${renderMarkdown(section.markdown)}
+        ${renderMarkdown(section.markdown || section.text)}
       </section>
     `;
   }

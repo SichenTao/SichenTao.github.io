@@ -32,7 +32,7 @@ const I18N = {
     },
     nav: {
       home: "Home",
-      feed: "Feed",
+      feed: "Home",
       sources: "Sources",
       github: "GitHub",
     },
@@ -124,7 +124,7 @@ const I18N = {
     },
     nav: {
       home: "首页",
-      feed: "信息流",
+      feed: "首页",
       sources: "来源",
       github: "GitHub",
     },
@@ -215,7 +215,7 @@ const I18N = {
     },
     nav: {
       home: "ホーム",
-      feed: "フィード",
+      feed: "ホーム",
       sources: "ソース",
       github: "GitHub",
     },

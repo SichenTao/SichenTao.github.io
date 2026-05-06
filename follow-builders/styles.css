@@ -1015,11 +1015,11 @@ body.fb-article-open .fb-feed-page {
   .fb-toolbar {
     grid-template-columns: minmax(0, 1fr);
     gap: 8px;
-  }
-
-  .fb-toolbar {
-    position: static;
-    padding: 12px 0 2px;
+    position: sticky;
+    top: calc(var(--thin-header-height, 44px) + 8px);
+    padding: 8px 0;
+    background: color-mix(in srgb, var(--fb-bg) 96%, transparent);
+    backdrop-filter: blur(18px);
   }
 
   .fb-search {
