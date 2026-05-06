@@ -4090,6 +4090,8 @@ body[data-page="feed"] main.shell.layout {
 }
 
 .frontier-reader-grid {
+  position: relative;
+  z-index: 16;
   display: grid;
   grid-template-columns: minmax(0, var(--frontier-feed-main)) minmax(260px, var(--frontier-feed-rail));
   gap: var(--frontier-feed-gap);
@@ -4099,6 +4101,8 @@ body[data-page="feed"] main.shell.layout {
 }
 
 .frontier-reader-main {
+  position: relative;
+  z-index: 1;
   min-width: 0;
 }
 
@@ -4285,10 +4289,12 @@ body[data-page="feed"] main.shell.layout {
 
 .frontier-reader-rail {
   position: sticky;
-  top: 126px;
+  top: 111px;
+  z-index: 15;
   display: grid;
   min-width: 0;
   gap: 28px;
+  margin-top: -92px;
   padding-top: 0;
 }
 
@@ -4381,6 +4387,7 @@ body[data-page="feed"] main.shell.layout {
 
   .frontier-reader-rail {
     position: static;
+    margin-top: 0;
   }
 
   .frontier-reader-rail-section:first-child {

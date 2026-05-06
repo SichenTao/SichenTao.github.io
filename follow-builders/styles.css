@@ -277,7 +277,7 @@ body[data-page="follow-builders"] .topnav {
 
 .fb-toolbar-actions {
   display: grid;
-  grid-template-columns: minmax(106px, 118px) minmax(164px, 1fr) 44px;
+  grid-template-columns: minmax(164px, 1fr) 44px;
   gap: 8px;
   align-items: center;
   justify-content: end;
@@ -331,29 +331,28 @@ body[data-page="follow-builders"] .topnav {
 .fb-language-display {
   display: flex;
   align-items: center;
-  gap: 2px;
-  padding: 3px;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow:
-    0 1px 1px rgba(0, 0, 0, 0.02),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  gap: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .fb-language-chip {
   appearance: none;
   display: inline-flex;
   flex: 0 0 auto;
-  min-height: 36px;
+  min-height: 34px;
   align-items: center;
   justify-content: center;
-  border: 0;
+  border: 1px solid var(--fb-line);
   border-radius: 999px;
-  background: transparent;
+  background: #fff;
   color: var(--fb-muted);
   cursor: pointer;
-  padding: 0 15px;
+  padding: 0 12px;
   font: inherit;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 760;
   letter-spacing: 0;
   white-space: nowrap;
@@ -367,15 +366,15 @@ body[data-page="follow-builders"] .topnav {
 .fb-language-chip:focus-visible {
   outline: none;
   color: var(--fb-ink);
-  background: rgba(17, 17, 20, 0.045);
+  border-color: rgba(17, 17, 20, 0.24);
+  background: #fff;
 }
 
 .fb-language-chip.is-selected {
-  background: rgba(17, 17, 20, 0.08);
-  color: var(--fb-ink);
-  box-shadow:
-    inset 0 0 0 1px rgba(17, 17, 20, 0.08),
-    0 1px 2px rgba(17, 17, 20, 0.05);
+  border-color: var(--fb-ink);
+  background: var(--fb-ink);
+  color: #fff;
+  box-shadow: none;
 }
 
 .fb-icon-button {
@@ -396,6 +395,8 @@ body[data-page="follow-builders"] .topnav {
 }
 
 .fb-feed-grid {
+  position: relative;
+  z-index: 16;
   display: grid;
   grid-template-columns: minmax(0, var(--fb-feed-main)) minmax(260px, var(--fb-feed-rail));
   gap: var(--fb-feed-gap);
@@ -409,10 +410,20 @@ body[data-page="follow-builders"] .topnav {
 
 .fb-section-head {
   display: flex;
-  gap: 28px;
-  align-items: flex-end;
+  min-height: 52px;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 8px;
   border-bottom: 1px solid var(--fb-line);
+}
+
+.fb-heading-actions {
+  display: flex;
+  min-width: 0;
+  gap: 8px;
+  align-items: center;
+  justify-content: end;
 }
 
 .fb-section-head h2,
@@ -425,7 +436,6 @@ body[data-page="follow-builders"] .topnav {
 .fb-section-head h2 {
   font-family: var(--fb-sans);
   order: -1;
-  padding-bottom: 13px;
   font-size: 0.98rem;
   font-weight: 600;
   line-height: 1.2;
@@ -491,7 +501,7 @@ body[data-page="follow-builders"] .topnav {
 .fb-story-title,
 .fb-story-title-translation {
   margin: 0;
-  max-width: 42ch;
+  max-width: min(100%, 66ch);
   display: block;
   overflow: visible;
   font-family: var(--fb-sans);
@@ -518,7 +528,7 @@ body[data-page="follow-builders"] .topnav {
 .fb-story-dek,
 .fb-story-dek-translation {
   margin: 0;
-  max-width: 54ch;
+  max-width: min(100%, 76ch);
   color: var(--fb-muted);
   font-size: 0.86rem;
   line-height: 1.45;
@@ -561,9 +571,11 @@ body[data-page="follow-builders"] .topnav {
 
 .fb-rail {
   position: sticky;
-  top: 126px;
+  top: 103px;
+  z-index: 15;
   display: grid;
   gap: 28px;
+  margin-top: -100px;
   padding-top: 0;
 }
 
@@ -575,7 +587,7 @@ body[data-page="follow-builders"] .topnav {
 }
 
 .fb-rail-section:first-child {
-  margin-top: 31px;
+  margin-top: 0;
 }
 
 .fb-rail h2 {
@@ -903,6 +915,7 @@ body.fb-article-open .fb-feed-page {
 
   .fb-rail {
     position: static;
+    margin-top: 0;
   }
 }
 
@@ -1005,14 +1018,24 @@ body.fb-article-open .fb-feed-page {
     gap: 8px;
   }
 
-  #fb-type-filter,
-  .fb-language-display {
-    grid-column: 1 / -1;
+  .fb-icon-button {
+    width: 44px;
   }
 
-  .fb-icon-button {
-    grid-column: 2;
-    width: 44px;
+  .fb-section-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    padding-bottom: 10px;
+  }
+
+  .fb-heading-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .fb-heading-actions .fb-language-display {
+    flex-wrap: wrap;
   }
 
   .fb-feed-page {

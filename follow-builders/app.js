@@ -951,25 +951,7 @@ function renderControls() {
     }
   }
 
-  renderTypeFilter();
   renderLanguageDisplayControl();
-}
-
-function renderTypeFilter() {
-  const select = byId("fb-type-filter");
-  if (!select) return;
-  select.setAttribute("aria-label", t("controls.filterSource"));
-  select.innerHTML = ["all", "x", "podcast", "blog"]
-    .map((type) => `<option value="${type}">${escapeHtml(t(`types.${type}`))}</option>`)
-    .join("");
-  select.value = state.type;
-  if (select.dataset.bound !== "true") {
-    select.dataset.bound = "true";
-    select.addEventListener("change", () => {
-      state.type = select.value;
-      renderFeed();
-    });
-  }
 }
 
 function renderLanguageDisplayControl() {
