@@ -135,11 +135,6 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   width: min(1280px, calc(100% - 48px));
 }
 
-body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
-  width: min(760px, 100%);
-  margin-inline: auto;
-}
-
 .yte-detail-mode {
   display: inline-flex;
   align-items: center;
@@ -222,6 +217,13 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
   line-height: 1.55;
 }
 
+.yte-timebar-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+}
+
 .yte-timebar {
   border: 1px solid var(--fb-line);
   border-radius: 18px;
@@ -236,9 +238,34 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
   background: linear-gradient(90deg, rgba(var(--teal-rgb, 75, 24, 143), 0.08), rgba(var(--teal-rgb, 75, 24, 143), 0.16));
 }
 
+.yte-timebar-track::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--yte-progress, 0%);
+  border-radius: inherit;
+  background: rgba(var(--teal-rgb, 75, 24, 143), 0.22);
+  transition: width 0.28s ease;
+}
+
+.yte-timebar-playhead {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: var(--yte-progress, 0%);
+  width: 3px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--teal);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.78);
+  transform: translate(-50%, -50%);
+  transition: left 0.28s ease;
+}
+
 .yte-timebar-dot {
   --marker-color: hsl(calc(155 + var(--yte-index) * 28), 54%, 70%);
   position: absolute;
+  z-index: 5;
   top: 50%;
   left: var(--yte-left);
   width: 18px;
@@ -251,9 +278,50 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
   cursor: pointer;
 }
 
+.yte-timebar-dot.is-active {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 5px rgba(var(--teal-rgb, 75, 24, 143), 0.12), 0 7px 18px rgba(15, 15, 20, 0.16);
+}
+
+.yte-return-time {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  border: 1px solid var(--fb-line);
+  border-radius: 999px;
+  padding: 0 12px;
+  background: #fff;
+  color: var(--fb-ink);
+  box-shadow: 0 10px 24px rgba(15, 15, 20, 0.05);
+  cursor: pointer;
+}
+
+.yte-return-time span {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.yte-return-time time {
+  color: var(--fb-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.yte-return-time:hover,
+.yte-return-time:focus-visible {
+  border-color: rgba(var(--teal-rgb, 75, 24, 143), 0.32);
+  outline: none;
+}
+
 .yte-highlight-list {
   display: grid;
   gap: 7px;
+  max-height: 216px;
+  overflow: auto;
+  padding-right: 2px;
+  overscroll-behavior: contain;
 }
 
 .yte-highlight-item {
@@ -273,9 +341,14 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
 }
 
 .yte-highlight-item:hover,
-.yte-highlight-item:focus-visible {
+.yte-highlight-item:focus-visible,
+.yte-highlight-item.is-active {
   background: #fff;
   outline: 1px solid var(--fb-line);
+}
+
+.yte-highlight-item.is-active {
+  background: rgba(var(--teal-rgb, 75, 24, 143), 0.07);
 }
 
 .yte-highlight-dot {
@@ -337,6 +410,17 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
   gap: 14px;
   border-bottom: 1px solid var(--fb-line);
   padding: 15px 0;
+  scroll-margin-block: 42vh;
+}
+
+.yte-transcript-row.is-active {
+  box-shadow: inset 3px 0 0 var(--teal);
+}
+
+.yte-transcript-row.is-active .yte-transcript-time {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: #fff;
 }
 
 .yte-transcript-time {
@@ -359,7 +443,13 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
   outline: none;
 }
 
-.yte-transcript-row p {
+.yte-transcript-copy {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.yte-transcript-copy p {
   margin: 0;
   color: var(--fb-ink);
   font-family: var(--fb-serif);
@@ -533,10 +623,6 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
     width: min(100%, calc(100vw - 32px));
   }
 
-  body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
-    width: 100%;
-  }
-
   .yte-video-reader {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -551,8 +637,18 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
     border-radius: 16px;
   }
 
+  .yte-timebar-row {
+    grid-template-columns: 1fr;
+  }
+
+  .yte-return-time {
+    justify-self: end;
+    min-height: 38px;
+  }
+
   .yte-highlight-list {
     gap: 6px;
+    max-height: 168px;
   }
 
   .yte-transcript-row {
@@ -566,7 +662,7 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
     width: 52px;
   }
 
-  .yte-transcript-row p {
+  .yte-transcript-copy p {
     font-size: 1rem;
     line-height: 1.62;
   }

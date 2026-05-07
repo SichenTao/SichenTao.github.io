@@ -67,6 +67,7 @@ const I18N = {
       transcript: "Transcript",
       timebar: "Highlights",
       jumpTo: "Jump to",
+      returnToTime: "Return to the current video time",
       videoUnavailable: "Video preview is unavailable. Open the original YouTube page instead.",
     },
   },
@@ -125,6 +126,7 @@ const I18N = {
       transcript: "逐字稿",
       timebar: "高亮时间条",
       jumpTo: "跳转到",
+      returnToTime: "回到当前视频时间点",
       videoUnavailable: "当前视频无法内嵌预览，请打开原 YouTube 页面。",
     },
   },
@@ -183,6 +185,7 @@ const I18N = {
       transcript: "逐語録",
       timebar: "ハイライト時間軸",
       jumpTo: "移動",
+      returnToTime: "現在の動画時刻へ戻る",
       videoUnavailable: "動画プレビューを埋め込めません。元の YouTube ページを開いてください。",
     },
   },
@@ -197,6 +200,15 @@ const state = {
   articles: [],
   activeId: "",
   detailMode: "article",
+  videoSync: {
+    player: null,
+    timer: 0,
+    currentTime: 0,
+    duration: 0,
+    playing: false,
+    lastScrolledStart: null,
+    articleId: "",
+  },
 };
 
 function escapeHtml(value) {
@@ -707,15 +719,24 @@ function cleanTranscriptText(value) {
   return String(value || "").replace(/^(?:>>\s*)+/, "").trim();
 }
 
-function transcriptValue(value, language) {
-  if (typeof value === "string") return cleanTranscriptText(value);
-  if (!value || typeof value !== "object") return "";
-  return cleanTranscriptText(value[language] || value.en || value.zh || value.ja || "");
+function transcriptDisplayLanguages() {
+  return normalizeDisplayLanguages(state.displayLanguages, defaultDisplayLanguages(state.locale), state.locale);
 }
 
-function transcriptPrimaryLanguage() {
-  return normalizeDisplayLanguages(state.displayLanguages, defaultDisplayLanguages(state.locale), state.locale)[0]
-    || defaultDisplayLanguage(state.locale);
+function transcriptTextBlocks(value, languages = transcriptDisplayLanguages()) {
+  const blocks = languages
+    .map((language) => ({
+      language,
+      text: cleanTranscriptText(
+        typeof value === "string"
+          ? (language === "en" ? value : "")
+          : value?.[language] || "",
+      ),
+    }))
+    .filter((block) => block.text);
+  if (blocks.length) return blocks;
+  const fallbackText = cleanTranscriptText(typeof value === "string" ? value : value?.en || "");
+  return fallbackText ? [{ language: "en", text: fallbackText }] : [];
 }
 
 function formatTimestamp(value) {
@@ -735,36 +756,55 @@ function transcriptDuration(article) {
 }
 
 function buildTranscriptBlocks(article) {
-  const language = transcriptPrimaryLanguage();
+  const languages = transcriptDisplayLanguages();
   const blocks = [];
   let block = null;
   transcriptSegments(article).forEach((segment) => {
-    const text = transcriptValue(segment.text, language);
-    if (!text) return;
+    const textBlocks = transcriptTextBlocks(segment.text, languages);
+    if (!textBlocks.length) return;
+    const text = textBlocks[0]?.text || "";
     const start = Number(segment.start) || 0;
     const end = start + (Number(segment.duration) || 0);
     if (!block) {
-      block = { start, end, parts: [], chars: 0 };
+      block = { start, end, partsByLanguage: {}, chars: 0 };
     }
-    const shouldClose = block.parts.length
+    const primaryParts = block.partsByLanguage[textBlocks[0].language] || [];
+    const shouldClose = primaryParts.length
       && (
         block.chars + text.length > 430
         || start - block.end > 8
-        || (/[\.\?!。！？]$/.test(block.parts.at(-1) || "") && block.chars > 220)
+        || (/[\.\?!。！？]$/.test(primaryParts.at(-1) || "") && block.chars > 220)
       );
     if (shouldClose) {
       blocks.push(block);
-      block = { start, end, parts: [], chars: 0 };
+      block = { start, end, partsByLanguage: {}, chars: 0 };
     }
-    block.parts.push(text);
+    textBlocks.forEach((textBlock) => {
+      block.partsByLanguage[textBlock.language] = block.partsByLanguage[textBlock.language] || [];
+      block.partsByLanguage[textBlock.language].push(textBlock.text);
+    });
     block.end = end;
     block.chars += text.length + 1;
   });
-  if (block?.parts.length) blocks.push(block);
+  if (block && Object.keys(block.partsByLanguage).length) blocks.push(block);
   return blocks.map((item) => ({
     start: item.start,
     end: item.end,
-    text: item.parts.join(" ").replace(/\s+/g, " ").trim(),
+    textBlocks: languages
+      .map((language) => ({
+        language,
+        text: (item.partsByLanguage[language] || []).join(" ").replace(/\s+/g, " ").trim(),
+      }))
+      .filter((textBlock) => textBlock.text)
+      .concat(
+        languages.some((language) => item.partsByLanguage[language]?.length)
+          ? []
+          : [{
+              language: "en",
+              text: (item.partsByLanguage.en || []).join(" ").replace(/\s+/g, " ").trim(),
+            }],
+      )
+      .filter((textBlock) => textBlock.text),
   }));
 }
 
@@ -774,7 +814,8 @@ function buildTranscriptHighlights(article, blocks) {
   const targets = [0, 0.22, 0.42, 0.62, 0.82].map((ratio) => duration * ratio);
   return targets.map((target, index) => {
     const block = blocks.find((item) => item.start >= target) || blocks.at(-1);
-    const label = block?.text?.slice(0, 72).replace(/\s+\S*$/, "") || `${t("article.transcript")} ${index + 1}`;
+    const primaryText = block?.textBlocks?.[0]?.text || "";
+    const label = primaryText.slice(0, 72).replace(/\s+\S*$/, "") || `${t("article.transcript")} ${index + 1}`;
     return {
       start: block?.start || 0,
       label,
@@ -790,13 +831,159 @@ function youtubeEmbedUrl(article) {
   return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?enablejsapi=1&playsinline=1&rel=0&origin=${origin}`;
 }
 
+function loadYouTubeIframeApi() {
+  if (window.YT?.Player) return Promise.resolve(window.YT);
+  if (window.__yteYouTubeIframeApiPromise) return window.__yteYouTubeIframeApiPromise;
+  window.__yteYouTubeIframeApiPromise = new Promise((resolve) => {
+    const previousReady = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => {
+      if (typeof previousReady === "function") previousReady();
+      resolve(window.YT);
+    };
+    if (!document.querySelector('script[src="https://www.youtube.com/iframe_api"]')) {
+      const script = document.createElement("script");
+      script.src = "https://www.youtube.com/iframe_api";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  });
+  return window.__yteYouTubeIframeApiPromise;
+}
+
+function teardownVideoSync({ resetTime = false } = {}) {
+  if (state.videoSync.timer) {
+    window.clearInterval(state.videoSync.timer);
+    state.videoSync.timer = 0;
+  }
+  if (state.videoSync.player?.destroy) {
+    try {
+      state.videoSync.player.destroy();
+    } catch {}
+  }
+  state.videoSync.player = null;
+  state.videoSync.playing = false;
+  state.videoSync.lastScrolledStart = null;
+  if (resetTime) {
+    state.videoSync.currentTime = 0;
+    state.videoSync.duration = 0;
+    state.videoSync.articleId = "";
+  }
+}
+
 function seekEmbeddedVideo(seconds) {
+  const value = Number(seconds) || 0;
+  state.videoSync.currentTime = value;
+  updateTranscriptPlaybackUI(value, { autoScroll: true, forceScroll: true });
+  if (state.videoSync.player?.seekTo) {
+    try {
+      state.videoSync.player.seekTo(value, true);
+      state.videoSync.player.playVideo?.();
+      return;
+    } catch {}
+  }
   const iframe = byId("yte-video-player");
   if (!iframe?.contentWindow) return;
-  const seek = JSON.stringify({ event: "command", func: "seekTo", args: [Number(seconds) || 0, true] });
+  const seek = JSON.stringify({ event: "command", func: "seekTo", args: [value, true] });
   const play = JSON.stringify({ event: "command", func: "playVideo", args: [] });
   iframe.contentWindow.postMessage(seek, "*");
   iframe.contentWindow.postMessage(play, "*");
+}
+
+function setupVideoSync(article) {
+  if (state.detailMode !== "transcript" || !articleHasTranscript(article)) return;
+  state.videoSync.articleId = article.id;
+  state.videoSync.duration = transcriptDuration(article);
+  updateTranscriptPlaybackUI(state.videoSync.currentTime, { autoScroll: false, forceScroll: false });
+  loadYouTubeIframeApi().then((YT) => {
+    if (state.detailMode !== "transcript" || state.activeId !== article.id || !byId("yte-video-player")) return;
+    try {
+      state.videoSync.player = new YT.Player("yte-video-player", {
+        events: {
+          onReady: () => {
+            if (state.videoSync.currentTime > 0) {
+              state.videoSync.player.seekTo(state.videoSync.currentTime, true);
+            }
+            startVideoSyncTimer();
+          },
+          onStateChange: (event) => {
+            state.videoSync.playing = event.data === 1;
+            tickVideoSync({ force: event.data === 2 || event.data === 0 });
+          },
+        },
+      });
+    } catch {
+      startVideoSyncTimer();
+    }
+  });
+}
+
+function startVideoSyncTimer() {
+  if (state.videoSync.timer) window.clearInterval(state.videoSync.timer);
+  state.videoSync.timer = window.setInterval(tickVideoSync, 600);
+  tickVideoSync({ force: true });
+}
+
+function tickVideoSync({ force = false } = {}) {
+  const player = state.videoSync.player;
+  if (player?.getCurrentTime) {
+    try {
+      state.videoSync.currentTime = Number(player.getCurrentTime()) || state.videoSync.currentTime || 0;
+      const playerState = player.getPlayerState?.();
+      state.videoSync.playing = playerState === 1;
+    } catch {}
+  }
+  updateTranscriptPlaybackUI(state.videoSync.currentTime, {
+    autoScroll: state.videoSync.playing,
+    forceScroll: force && state.videoSync.playing,
+  });
+}
+
+function activeTimedNode(selector, currentTime) {
+  const nodes = [...document.querySelectorAll(selector)];
+  let active = nodes[0] || null;
+  for (const node of nodes) {
+    const start = Number(node.dataset.transcriptStart || node.dataset.highlightStart || node.dataset.seekStart || 0);
+    const end = Number(node.dataset.transcriptEnd || start);
+    if (currentTime >= start && currentTime < end) return node;
+    if (currentTime >= start) active = node;
+  }
+  return active;
+}
+
+function scrollCurrentPlaybackIntoView({ smooth = true } = {}) {
+  const current = state.videoSync.currentTime || 0;
+  const activeRow = activeTimedNode(".yte-transcript-row", current);
+  const activeHighlight = activeTimedNode(".yte-highlight-item", current);
+  activeRow?.scrollIntoView({ block: "center", behavior: smooth ? "smooth" : "auto" });
+  activeHighlight?.scrollIntoView({ block: "nearest", behavior: smooth ? "smooth" : "auto" });
+}
+
+function updateTranscriptPlaybackUI(currentTime, { autoScroll = false, forceScroll = false } = {}) {
+  const duration = state.videoSync.duration || Number(byId("yte-timebar-track")?.dataset.duration || 0) || 1;
+  const percent = Math.min(100, Math.max(0, (Number(currentTime || 0) / duration) * 100));
+  document.querySelectorAll(".yte-timebar-track").forEach((track) => {
+    track.style.setProperty("--yte-progress", `${percent}%`);
+  });
+
+  const activeRow = activeTimedNode(".yte-transcript-row", currentTime);
+  const activeHighlight = activeTimedNode(".yte-highlight-item", currentTime);
+  const activeDot = activeTimedNode(".yte-timebar-dot", currentTime);
+
+  document.querySelectorAll(".yte-transcript-row.is-active, .yte-highlight-item.is-active, .yte-timebar-dot.is-active")
+    .forEach((node) => node.classList.remove("is-active"));
+  activeRow?.classList.add("is-active");
+  activeHighlight?.classList.add("is-active");
+  activeDot?.classList.add("is-active");
+  document.querySelectorAll("[data-current-video-time]").forEach((node) => {
+    node.textContent = formatTimestamp(currentTime);
+  });
+
+  const activeStart = activeRow ? Number(activeRow.dataset.transcriptStart || 0) : null;
+  if ((autoScroll || forceScroll) && activeRow && (forceScroll || activeStart !== state.videoSync.lastScrolledStart)) {
+    state.videoSync.lastScrolledStart = activeStart;
+    activeRow.scrollIntoView({ block: "center", behavior: "smooth" });
+    activeHighlight?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }
 }
 
 function renderDetailModeSwitch(article) {
@@ -840,22 +1027,30 @@ function renderVideoTranscriptReader(article) {
                 </div>`
               : `<p class="yte-video-unavailable">${escapeHtml(t("article.videoUnavailable"))}</p>`
           }
-          <div class="yte-timebar" aria-label="${escapeHtml(t("article.timebar"))}">
-            <div class="yte-timebar-track">
-              ${highlights.map((item, index) => `
-                <button
-                  class="yte-timebar-dot"
-                  type="button"
-                  data-seek-start="${escapeHtml(item.start)}"
-                  style="--yte-left: ${item.percent.toFixed(2)}%; --yte-index: ${index};"
-                  aria-label="${escapeHtml(`${t("article.jumpTo")} ${formatTimestamp(item.start)}`)}"
-                ></button>
-              `).join("")}
+          <div class="yte-timebar-row">
+            <div class="yte-timebar" aria-label="${escapeHtml(t("article.timebar"))}">
+              <div id="yte-timebar-track" class="yte-timebar-track" data-duration="${escapeHtml(duration)}">
+                <span class="yte-timebar-playhead" aria-hidden="true"></span>
+                ${highlights.map((item, index) => `
+                  <button
+                    class="yte-timebar-dot"
+                    type="button"
+                    data-seek-start="${escapeHtml(item.start)}"
+                    data-highlight-start="${escapeHtml(item.start)}"
+                    style="--yte-left: ${item.percent.toFixed(2)}%; --yte-index: ${index};"
+                    aria-label="${escapeHtml(`${t("article.jumpTo")} ${formatTimestamp(item.start)}`)}"
+                  ></button>
+                `).join("")}
+              </div>
             </div>
+            <button class="yte-return-time" type="button" data-return-to-video-time aria-label="${escapeHtml(t("article.returnToTime"))}" title="${escapeHtml(t("article.returnToTime"))}">
+              <span aria-hidden="true">↧</span>
+              <time data-current-video-time>${escapeHtml(formatTimestamp(state.videoSync.currentTime || 0))}</time>
+            </button>
           </div>
           <div class="yte-highlight-list">
             ${highlights.map((item, index) => `
-              <button class="yte-highlight-item" type="button" data-seek-start="${escapeHtml(item.start)}">
+              <button class="yte-highlight-item" type="button" data-seek-start="${escapeHtml(item.start)}" data-highlight-start="${escapeHtml(item.start)}">
                 <span class="yte-highlight-dot" style="--yte-index: ${index};"></span>
                 <span>${escapeHtml(item.label)}</span>
                 <time>${escapeHtml(formatTimestamp(item.start))}</time>
@@ -872,11 +1067,15 @@ function renderVideoTranscriptReader(article) {
         </header>
         <div class="yte-transcript-list">
           ${blocks.map((block) => `
-            <article class="yte-transcript-row">
+            <article class="yte-transcript-row" data-transcript-start="${escapeHtml(block.start)}" data-transcript-end="${escapeHtml(block.end)}">
               <button class="yte-transcript-time" type="button" data-seek-start="${escapeHtml(block.start)}">
                 ${escapeHtml(formatTimestamp(block.start))}
               </button>
-              <p>${escapeHtml(block.text)}</p>
+              <div class="yte-transcript-copy">
+                ${(block.textBlocks || []).map((textBlock) => `
+                  <p lang="${languageAttr(textBlock.language)}">${escapeHtml(textBlock.text)}</p>
+                `).join("")}
+              </div>
             </article>
           `).join("")}
         </div>
@@ -889,12 +1088,19 @@ function bindArticleDetailControls(container, article) {
   container.querySelectorAll("[data-yte-detail-mode]").forEach((button) => {
     button.addEventListener("click", () => {
       if (button.disabled) return;
-      state.detailMode = button.dataset.yteDetailMode || "article";
+      const nextMode = button.dataset.yteDetailMode || "article";
+      if (nextMode === "transcript" && state.detailMode !== "transcript") {
+        setDisplayLanguages(defaultDisplayLanguages(state.locale));
+      }
+      state.detailMode = nextMode;
       renderArticle(article);
     });
   });
   container.querySelectorAll("[data-seek-start]").forEach((button) => {
     button.addEventListener("click", () => seekEmbeddedVideo(button.dataset.seekStart));
+  });
+  container.querySelectorAll("[data-return-to-video-time]").forEach((button) => {
+    button.addEventListener("click", () => scrollCurrentPlaybackIntoView({ smooth: true }));
   });
 }
 
@@ -902,6 +1108,7 @@ function renderArticle(article) {
   const container = byId("article");
   if (!container || !article) return;
   if (state.detailMode === "transcript" && !articleHasTranscript(article)) state.detailMode = "article";
+  teardownVideoSync({ resetTime: state.detailMode !== "transcript" });
   document.body.classList.toggle("yte-transcript-open", state.detailMode === "transcript");
   const titleBlocks = displayLanguageBlocks(article.title, article.title?.en || "");
   const dekBlocks = displayLanguageBlocks(article.dek, article.dek?.en || "");
@@ -920,17 +1127,20 @@ function renderArticle(article) {
         </button>
       </div>
     </div>
-    <header class="fb-article-head">
-      <p class="eyebrow">${escapeHtml(typeLabel(article.type))}</p>
-      <div class="fb-article-title-group">${renderArticleTitleBlocks(titleBlocks)}</div>
-      <div class="fb-article-dek-group">${renderLanguageTextBlocks(dekBlocks, "p")}</div>
-      <div class="fb-article-meta">
-        <span>${escapeHtml(article.source || "")}</span>
-        <span>${escapeHtml(formatDate(article.date))}</span>
-        <span>${escapeHtml(article.minutes || 1)} ${escapeHtml(t("feed.minRead"))}</span>
-      </div>
-      <span class="fb-story-tags">${articleTags(article).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</span>
-    </header>
+    ${state.detailMode === "article"
+      ? `<header class="fb-article-head">
+          <p class="eyebrow">${escapeHtml(typeLabel(article.type))}</p>
+          <div class="fb-article-title-group">${renderArticleTitleBlocks(titleBlocks)}</div>
+          <div class="fb-article-dek-group">${renderLanguageTextBlocks(dekBlocks, "p")}</div>
+          <div class="fb-article-meta">
+            <span>${escapeHtml(article.source || "")}</span>
+            <span>${escapeHtml(formatDate(article.date))}</span>
+            <span>${escapeHtml(article.minutes || 1)} ${escapeHtml(t("feed.minRead"))}</span>
+          </div>
+          <span class="fb-story-tags">${articleTags(article).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}</span>
+        </header>`
+      : ""
+    }
     ${state.detailMode === "transcript"
       ? renderVideoTranscriptReader(article)
       : `<div class="fb-article-body">
@@ -949,6 +1159,7 @@ function renderArticle(article) {
   renderDisplayResetButtons();
   container.querySelector("[data-back-to-feed]")?.addEventListener("click", closeArticle);
   bindArticleDetailControls(container, article);
+  setupVideoSync(article);
 }
 
 function openArticle(id, options = {}) {
@@ -968,6 +1179,7 @@ function openArticle(id, options = {}) {
 function closeArticle(options = {}) {
   document.body.classList.remove("fb-article-open");
   document.body.classList.remove("yte-transcript-open");
+  teardownVideoSync({ resetTime: true });
   const article = byId("article");
   if (article) article.hidden = true;
   if (options.updateHash !== false) {
