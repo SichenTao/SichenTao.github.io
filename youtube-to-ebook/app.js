@@ -711,8 +711,12 @@ function transcriptSegments(article) {
   return [];
 }
 
+function transcriptPreparedBlocks(article) {
+  return Array.isArray(article?.transcript?.blocks) ? article.transcript.blocks : [];
+}
+
 function articleHasTranscript(article) {
-  return Boolean(article?.video?.id && transcriptSegments(article).length);
+  return Boolean(article?.video?.id && (transcriptPreparedBlocks(article).length || transcriptSegments(article).length));
 }
 
 function cleanTranscriptText(value) {
@@ -739,6 +743,16 @@ function transcriptTextBlocks(value, languages = transcriptDisplayLanguages()) {
   return fallbackText ? [{ language: "en", text: fallbackText }] : [];
 }
 
+function renderTranscriptTextStack(textBlocks = [], className = "yte-transcript-text-stack") {
+  return `
+    <span class="${className}">
+      ${textBlocks.map((textBlock) => `
+        <span lang="${languageAttr(textBlock.language)}">${escapeHtml(textBlock.text)}</span>
+      `).join("")}
+    </span>
+  `;
+}
+
 function formatTimestamp(value) {
   const total = Math.max(0, Math.floor(Number(value) || 0));
   const hours = Math.floor(total / 3600);
@@ -757,6 +771,15 @@ function transcriptDuration(article) {
 
 function buildTranscriptBlocks(article) {
   const languages = transcriptDisplayLanguages();
+  const preparedBlocks = transcriptPreparedBlocks(article);
+  if (preparedBlocks.length) {
+    return preparedBlocks.map((item) => ({
+      start: Number(item.start) || 0,
+      end: Number(item.end) || Number(item.start) || 0,
+      textBlocks: transcriptTextBlocks(item.text, languages),
+    })).filter((item) => item.textBlocks.length);
+  }
+
   const blocks = [];
   let block = null;
   transcriptSegments(article).forEach((segment) => {
@@ -814,11 +837,15 @@ function buildTranscriptHighlights(article, blocks) {
   const targets = [0, 0.22, 0.42, 0.62, 0.82].map((ratio) => duration * ratio);
   return targets.map((target, index) => {
     const block = blocks.find((item) => item.start >= target) || blocks.at(-1);
-    const primaryText = block?.textBlocks?.[0]?.text || "";
-    const label = primaryText.slice(0, 72).replace(/\s+\S*$/, "") || `${t("article.transcript")} ${index + 1}`;
+    const labelBlocks = (block?.textBlocks || []).map((textBlock) => ({
+      language: textBlock.language,
+      text: textBlock.text.slice(0, 76).replace(/\s+\S*$/, "") || `${t("article.transcript")} ${index + 1}`,
+    }));
+    const primaryText = labelBlocks[0]?.text || `${t("article.transcript")} ${index + 1}`;
     return {
       start: block?.start || 0,
-      label,
+      label: primaryText,
+      labelBlocks,
       percent: Math.min(100, Math.max(0, ((block?.start || 0) / duration) * 100)),
     };
   });
@@ -1052,7 +1079,7 @@ function renderVideoTranscriptReader(article) {
             ${highlights.map((item, index) => `
               <button class="yte-highlight-item" type="button" data-seek-start="${escapeHtml(item.start)}" data-highlight-start="${escapeHtml(item.start)}">
                 <span class="yte-highlight-dot" style="--yte-index: ${index};"></span>
-                <span>${escapeHtml(item.label)}</span>
+                ${renderTranscriptTextStack(item.labelBlocks || [{ language: state.locale, text: item.label }], "yte-highlight-copy")}
                 <time>${escapeHtml(formatTimestamp(item.start))}</time>
               </button>
             `).join("")}

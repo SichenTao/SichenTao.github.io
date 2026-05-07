@@ -359,11 +359,23 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   background: var(--marker-color);
 }
 
-.yte-highlight-item span:nth-child(2) {
+.yte-highlight-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.yte-highlight-copy span {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: normal;
+}
+
+.yte-highlight-copy span:not(:first-child) {
+  color: var(--fb-muted);
+  font-size: 0.75rem;
+  font-weight: 650;
 }
 
 .yte-highlight-item time {
@@ -456,6 +468,13 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   font-size: clamp(1.02rem, 1.1vw, 1.22rem);
   line-height: 1.68;
   letter-spacing: 0;
+}
+
+.yte-transcript-copy p:not(:first-child) {
+  color: var(--fb-muted);
+  font-family: var(--fb-sans);
+  font-size: clamp(0.9rem, 0.92vw, 1.02rem);
+  line-height: 1.58;
 }
 
 @media (max-width: 760px) {
