@@ -1093,7 +1093,7 @@ function setupVideoSync(article) {
 
 function startVideoSyncTimer() {
   if (state.videoSync.timer) window.clearInterval(state.videoSync.timer);
-  state.videoSync.timer = window.setInterval(tickVideoSync, 250);
+  state.videoSync.timer = window.setInterval(tickVideoSync, 200);
   tickVideoSync({ force: true });
 }
 
