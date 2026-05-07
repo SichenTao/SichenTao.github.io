@@ -116,15 +116,6 @@ body[data-page="youtube-to-ebook"] .topnav-mobile-workspaces {
   font-size: 0.94rem;
 }
 
-.yte-license-note {
-  margin: 22px 0 0;
-  border-top: 1px solid var(--fb-line);
-  padding-top: 14px;
-  color: var(--fb-muted);
-  font-size: 0.78rem;
-  line-height: 1.55;
-}
-
 .fb-source-list span {
   display: inline-flex;
   align-items: center;
@@ -138,6 +129,243 @@ body[data-page="youtube-to-ebook"] .topnav-mobile-workspaces {
   font-weight: 720;
   line-height: 1.2;
   overflow-wrap: anywhere;
+}
+
+body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
+  width: min(1280px, calc(100% - 48px));
+}
+
+body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
+  width: min(760px, 100%);
+  margin-inline: auto;
+}
+
+.yte-detail-mode {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid var(--fb-line);
+  border-radius: 999px;
+  padding: 3px;
+  background: rgb(255, 255, 255);
+  box-shadow: 0 10px 26px rgba(15, 15, 20, 0.04);
+}
+
+.yte-detail-mode button {
+  min-height: 32px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 14px;
+  background: transparent;
+  color: var(--fb-muted);
+  font: 760 0.78rem/1 var(--fb-sans);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.yte-detail-mode button.is-active {
+  background: var(--fb-ink);
+  color: #fff;
+}
+
+.yte-detail-mode button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.yte-video-reader {
+  display: grid;
+  grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(26px, 4vw, 58px);
+  align-items: start;
+  margin-top: 34px;
+}
+
+.yte-video-pane {
+  min-width: 0;
+}
+
+.yte-video-sticky {
+  position: sticky;
+  top: calc(var(--thin-header-height, 44px) + 24px);
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.yte-video-frame {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--fb-line);
+  border-radius: 20px;
+  background: #0f0f12;
+  box-shadow: 0 20px 54px rgba(15, 15, 20, 0.12);
+  aspect-ratio: 16 / 9;
+}
+
+.yte-video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.yte-video-unavailable {
+  margin: 0;
+  border: 1px solid var(--fb-line);
+  border-radius: 20px;
+  padding: 22px;
+  background: #fff;
+  color: var(--fb-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.yte-timebar {
+  border: 1px solid var(--fb-line);
+  border-radius: 18px;
+  padding: 15px 16px;
+  background: #fff;
+}
+
+.yte-timebar-track {
+  position: relative;
+  height: 20px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(var(--teal-rgb, 75, 24, 143), 0.08), rgba(var(--teal-rgb, 75, 24, 143), 0.16));
+}
+
+.yte-timebar-dot {
+  --marker-color: hsl(calc(155 + var(--yte-index) * 28), 54%, 70%);
+  position: absolute;
+  top: 50%;
+  left: var(--yte-left);
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 999px;
+  background: var(--marker-color);
+  box-shadow: 0 7px 18px rgba(15, 15, 20, 0.16);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.yte-highlight-list {
+  display: grid;
+  gap: 7px;
+}
+
+.yte-highlight-item {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  border: 0;
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--fb-ink);
+  font: 720 0.82rem/1.35 var(--fb-sans);
+  text-align: left;
+  cursor: pointer;
+}
+
+.yte-highlight-item:hover,
+.yte-highlight-item:focus-visible {
+  background: #fff;
+  outline: 1px solid var(--fb-line);
+}
+
+.yte-highlight-dot {
+  --marker-color: hsl(calc(155 + var(--yte-index) * 28), 54%, 64%);
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--marker-color);
+}
+
+.yte-highlight-item span:nth-child(2) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.yte-highlight-item time {
+  color: var(--fb-muted);
+  font-size: 0.74rem;
+  font-weight: 760;
+}
+
+.yte-transcript-pane {
+  min-width: 0;
+}
+
+.yte-transcript-head {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--fb-line);
+  padding-bottom: 16px;
+}
+
+.yte-transcript-head h2 {
+  margin: 0;
+  color: var(--fb-ink);
+  font-family: var(--fb-sans);
+  font-size: clamp(1.28rem, 1.5vw, 1.72rem);
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.yte-transcript-head span {
+  color: var(--fb-muted);
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.yte-transcript-list {
+  display: grid;
+  gap: 0;
+}
+
+.yte-transcript-row {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 14px;
+  border-bottom: 1px solid var(--fb-line);
+  padding: 15px 0;
+}
+
+.yte-transcript-time {
+  position: sticky;
+  top: calc(var(--thin-header-height, 44px) + 18px);
+  align-self: start;
+  width: 58px;
+  min-height: 28px;
+  border: 1px solid rgba(var(--teal-rgb, 75, 24, 143), 0.2);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--teal);
+  font: 800 0.72rem/1 var(--fb-sans);
+  cursor: pointer;
+}
+
+.yte-transcript-time:hover,
+.yte-transcript-time:focus-visible {
+  border-color: var(--teal);
+  outline: none;
+}
+
+.yte-transcript-row p {
+  margin: 0;
+  color: var(--fb-ink);
+  font-family: var(--fb-serif);
+  font-size: clamp(1.02rem, 1.1vw, 1.22rem);
+  line-height: 1.68;
+  letter-spacing: 0;
 }
 
 @media (max-width: 760px) {
@@ -292,6 +520,55 @@ body[data-page="youtube-to-ebook"] .topnav-mobile-workspaces {
   .yte-step-list li {
     grid-template-columns: 34px minmax(0, 1fr);
     gap: 10px;
+  }
+
+  .yte-detail-mode {
+    order: 3;
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 8px;
+  }
+
+  body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
+    width: min(100%, calc(100vw - 32px));
+  }
+
+  body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-head {
+    width: 100%;
+  }
+
+  .yte-video-reader {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 24px;
+  }
+
+  .yte-video-sticky {
+    position: static;
+  }
+
+  .yte-video-frame {
+    border-radius: 16px;
+  }
+
+  .yte-highlight-list {
+    gap: 6px;
+  }
+
+  .yte-transcript-row {
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: 11px;
+    padding: 13px 0;
+  }
+
+  .yte-transcript-time {
+    position: static;
+    width: 52px;
+  }
+
+  .yte-transcript-row p {
+    font-size: 1rem;
+    line-height: 1.62;
   }
 }
 
