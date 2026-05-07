@@ -184,6 +184,78 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
       ],
       "transcript": {
         "language": "en",
+        "highlights": [
+          {
+            "start": 0.08,
+            "end": 276.28,
+            "title": {
+              "en": "From coding tool to work OS",
+              "zh": "从编码工具到工作操作系统",
+              "ja": "coding tool から仕事の OS へ"
+            },
+            "reason": {
+              "en": "The opening frames Codex as a broader agent interface for knowledge work, not just a better code editor.",
+              "zh": "开场把 Codex 定位为知识工作的通用智能体界面，而不只是更好的代码编辑器。",
+              "ja": "冒頭では、Codex を単なる優れた code editor ではなく、知識労働のための agent interface として位置づけています。"
+            }
+          },
+          {
+            "start": 489.2,
+            "end": 759.36,
+            "title": {
+              "en": "Tool rankings age quickly",
+              "zh": "工具判断会快速过期",
+              "ja": "tool 評価はすぐ古くなる"
+            },
+            "reason": {
+              "en": "The team keeps re-testing agents because capability shifts are fast and switching costs are still manageable.",
+              "zh": "团队不断重新测试不同智能体，因为能力变化很快，而切换成本仍然可控。",
+              "ja": "能力の変化が速く、移行コストもまだ管理できるため、team は agent を繰り返し評価しています。"
+            }
+          },
+          {
+            "start": 913.2,
+            "end": 1237.2,
+            "title": {
+              "en": "Private context makes agents useful",
+              "zh": "私有上下文决定智能体实用性",
+              "ja": "private context が agent を実用化する"
+            },
+            "reason": {
+              "en": "The useful workflow connects chats, files, credentials, instructions, and reviewer agents into one operating context.",
+              "zh": "真正有用的工作流会把聊天、文件、密钥、项目说明和审查智能体接入同一个操作上下文。",
+              "ja": "有用な workflow は、chat、file、credential、instruction、reviewer agent を一つの操作 context に接続します。"
+            }
+          },
+          {
+            "start": 1984.56,
+            "end": 2337.92,
+            "title": {
+              "en": "Agent drafts still need ownership",
+              "zh": "智能体草稿仍需人类负责",
+              "ja": "agent の draft には人間の責任が必要"
+            },
+            "reason": {
+              "en": "The agent can draft plans, but the human must set guardrails, verify claims, and stand behind the final document.",
+              "zh": "智能体可以起草方案，但人类必须设定边界、核验论断，并为最终文档负责。",
+              "ja": "agent は plan を起草できますが、人間が guardrail を設定し、主張を確認し、最終文書に責任を持つ必要があります。"
+            }
+          },
+          {
+            "start": 3188.12,
+            "end": 3370.72,
+            "title": {
+              "en": "Adoption is a culture problem",
+              "zh": "采用 AI 也是组织文化问题",
+              "ja": "導入は culture の問題でもある"
+            },
+            "reason": {
+              "en": "The closing discussion shifts from tools to the habits that let teams experiment while still doing urgent work.",
+              "zh": "结尾讨论从工具转向团队习惯：如何在完成紧急工作的同时，为实验留出空间。",
+              "ja": "終盤では tool そのものより、緊急業務を進めながら実験するための team habit に焦点が移ります。"
+            }
+          }
+        ],
         "segments": [
           {
             "start": 0.08,

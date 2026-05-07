@@ -133,6 +133,16 @@ body[data-page="youtube-to-ebook"] .topnav-mobile-workspaces {
 
 body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   width: min(1280px, calc(100% - 48px));
+  margin-top: 0;
+  padding-bottom: 24px;
+}
+
+body[data-page="youtube-to-ebook"].fb-article-open .fb-layout {
+  padding-top: calc(var(--thin-header-height, 44px) + 14px);
+}
+
+body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-tools {
+  margin-bottom: 12px;
 }
 
 .yte-detail-mode {
@@ -173,7 +183,8 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   grid-template-columns: minmax(360px, 0.95fr) minmax(0, 1.05fr);
   gap: clamp(26px, 4vw, 58px);
   align-items: start;
-  margin-top: 34px;
+  min-height: calc(100dvh - var(--thin-header-height, 44px) - 96px);
+  margin-top: 16px;
 }
 
 .yte-video-pane {
@@ -182,7 +193,7 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
 
 .yte-video-sticky {
   position: sticky;
-  top: calc(var(--thin-header-height, 44px) + 24px);
+  top: calc(var(--thin-header-height, 44px) + 12px);
   display: grid;
   gap: 14px;
   min-width: 0;
@@ -262,23 +273,24 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   transition: left 0.28s ease;
 }
 
-.yte-timebar-dot {
+.yte-timebar-range {
   --marker-color: hsl(calc(155 + var(--yte-index) * 28), 54%, 70%);
   position: absolute;
   z-index: 5;
   top: 50%;
   left: var(--yte-left);
-  width: 18px;
-  height: 18px;
+  width: var(--yte-width);
+  min-width: 28px;
+  height: 14px;
   border: 2px solid #fff;
   border-radius: 999px;
   background: var(--marker-color);
   box-shadow: 0 7px 18px rgba(15, 15, 20, 0.16);
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   cursor: pointer;
 }
 
-.yte-timebar-dot.is-active {
+.yte-timebar-range.is-active {
   border-color: var(--teal);
   box-shadow: 0 0 0 5px rgba(var(--teal-rgb, 75, 24, 143), 0.12), 0 7px 18px rgba(15, 15, 20, 0.16);
 }
@@ -287,7 +299,7 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   display: inline-grid;
   grid-template-columns: auto auto;
   align-items: center;
-  gap: 5px;
+  gap: 7px;
   min-height: 44px;
   border: 1px solid var(--fb-line);
   border-radius: 999px;
@@ -298,9 +310,9 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   cursor: pointer;
 }
 
-.yte-return-time span {
-  font-size: 1rem;
-  line-height: 1;
+.yte-return-time .ui-icon {
+  width: 16px;
+  height: 16px;
 }
 
 .yte-return-time time {
@@ -317,8 +329,8 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
 
 .yte-highlight-list {
   display: grid;
-  gap: 7px;
-  max-height: 216px;
+  gap: 8px;
+  max-height: clamp(168px, calc(100dvh - var(--thin-header-height, 44px) - 470px), 276px);
   overflow: auto;
   padding-right: 2px;
   overscroll-behavior: contain;
@@ -326,13 +338,13 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
 
 .yte-highlight-item {
   display: grid;
-  grid-template-columns: 12px minmax(0, 1fr) auto;
-  align-items: center;
+  grid-template-columns: 12px minmax(0, 1fr);
+  align-items: start;
   gap: 10px;
   min-width: 0;
   border: 0;
   border-radius: 14px;
-  padding: 10px 12px;
+  padding: 10px 12px 9px;
   background: rgba(255, 255, 255, 0.72);
   color: var(--fb-ink);
   font: 720 0.82rem/1.35 var(--fb-sans);
@@ -361,39 +373,60 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
 
 .yte-highlight-copy {
   display: grid;
-  gap: 3px;
+  gap: 5px;
   min-width: 0;
 }
 
-.yte-highlight-copy span {
+.yte-highlight-lang {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.yte-highlight-lang:not(:first-child) {
+  color: var(--fb-muted);
+}
+
+.yte-highlight-lang strong {
+  min-width: 0;
+  color: inherit;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+.yte-highlight-lang small {
+  display: -webkit-box;
   min-width: 0;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal;
-}
-
-.yte-highlight-copy span:not(:first-child) {
   color: var(--fb-muted);
-  font-size: 0.75rem;
-  font-weight: 650;
+  font-size: 0.72rem;
+  font-weight: 620;
+  line-height: 1.34;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .yte-highlight-item time {
+  grid-column: 2;
   color: var(--fb-muted);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 760;
 }
 
 .yte-transcript-pane {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
   min-width: 0;
+  max-height: calc(100dvh - var(--thin-header-height, 44px) - 96px);
+  overflow: hidden;
 }
 
 .yte-transcript-head {
   display: grid;
   gap: 6px;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
   border-bottom: 1px solid var(--fb-line);
-  padding-bottom: 16px;
+  padding-bottom: 12px;
 }
 
 .yte-transcript-head h2 {
@@ -414,6 +447,10 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
 .yte-transcript-list {
   display: grid;
   gap: 0;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding-right: 8px;
 }
 
 .yte-transcript-row {
@@ -645,7 +682,8 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
   .yte-video-reader {
     grid-template-columns: 1fr;
     gap: 22px;
-    margin-top: 24px;
+    min-height: auto;
+    margin-top: 18px;
   }
 
   .yte-video-sticky {
@@ -667,7 +705,11 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-page {
 
   .yte-highlight-list {
     gap: 6px;
-    max-height: 168px;
+    max-height: 190px;
+  }
+
+  .yte-transcript-pane {
+    max-height: 58dvh;
   }
 
   .yte-transcript-row {

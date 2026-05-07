@@ -753,6 +753,19 @@ function renderTranscriptTextStack(textBlocks = [], className = "yte-transcript-
   `;
 }
 
+function renderHighlightCopy(item) {
+  return `
+    <span class="yte-highlight-copy">
+      ${(item.copyBlocks || []).map((block) => `
+        <span class="yte-highlight-lang" lang="${languageAttr(block.language)}">
+          <strong>${escapeHtml(block.title)}</strong>
+          ${block.reason ? `<small>${escapeHtml(block.reason)}</small>` : ""}
+        </span>
+      `).join("")}
+    </span>
+  `;
+}
+
 function formatTimestamp(value) {
   const total = Math.max(0, Math.floor(Number(value) || 0));
   const hours = Math.floor(total / 3600);
@@ -834,6 +847,30 @@ function buildTranscriptBlocks(article) {
 function buildTranscriptHighlights(article, blocks) {
   const duration = transcriptDuration(article);
   if (!duration || !blocks.length) return [];
+  const languages = transcriptDisplayLanguages();
+  const curated = Array.isArray(article?.transcript?.highlights) ? article.transcript.highlights : [];
+  if (curated.length) {
+    return curated.map((item, index) => {
+      const start = Number(item.start) || 0;
+      const end = Math.max(start + 1, Number(item.end) || start + 1);
+      const copyBlocks = languages
+        .map((language) => ({
+          language,
+          title: cleanTranscriptText(localizeForLanguage(item.title, language, item.title?.en || "")),
+          reason: cleanTranscriptText(localizeForLanguage(item.reason, language, item.reason?.en || "")),
+        }))
+        .filter((block) => block.title || block.reason);
+      return {
+        start,
+        end,
+        label: copyBlocks[0]?.title || `${t("article.transcript")} ${index + 1}`,
+        copyBlocks,
+        percent: Math.min(100, Math.max(0, (start / duration) * 100)),
+        widthPercent: Math.max(2.8, Math.min(100, ((end - start) / duration) * 100)),
+      };
+    });
+  }
+
   const targets = [0, 0.22, 0.42, 0.62, 0.82].map((ratio) => duration * ratio);
   return targets.map((target, index) => {
     const block = blocks.find((item) => item.start >= target) || blocks.at(-1);
@@ -844,9 +881,11 @@ function buildTranscriptHighlights(article, blocks) {
     const primaryText = labelBlocks[0]?.text || `${t("article.transcript")} ${index + 1}`;
     return {
       start: block?.start || 0,
+      end: block?.end || block?.start || 0,
       label: primaryText,
-      labelBlocks,
+      copyBlocks: labelBlocks.map((textBlock) => ({ ...textBlock, title: textBlock.text, reason: "" })),
       percent: Math.min(100, Math.max(0, ((block?.start || 0) / duration) * 100)),
+      widthPercent: Math.max(2.8, Math.min(100, (((block?.end || block?.start || 0) - (block?.start || 0)) / duration) * 100)),
     };
   });
 }
@@ -970,19 +1009,35 @@ function activeTimedNode(selector, currentTime) {
   let active = nodes[0] || null;
   for (const node of nodes) {
     const start = Number(node.dataset.transcriptStart || node.dataset.highlightStart || node.dataset.seekStart || 0);
-    const end = Number(node.dataset.transcriptEnd || start);
+    const end = Number(node.dataset.transcriptEnd || node.dataset.highlightEnd || start);
     if (currentTime >= start && currentTime < end) return node;
     if (currentTime >= start) active = node;
   }
   return active;
 }
 
+function scrollNodeIntoContainer(node, containerSelector, { smooth = true, block = "center" } = {}) {
+  const container = node?.closest(containerSelector) || document.querySelector(containerSelector);
+  if (!node || !container) return;
+  const nodeTop = node.offsetTop;
+  const nodeBottom = nodeTop + node.offsetHeight;
+  let targetTop = nodeTop - (container.clientHeight - node.offsetHeight) / 2;
+  if (block === "nearest") {
+    if (nodeTop >= container.scrollTop && nodeBottom <= container.scrollTop + container.clientHeight) return;
+    targetTop = nodeTop < container.scrollTop ? nodeTop : nodeBottom - container.clientHeight;
+  }
+  container.scrollTo({
+    top: Math.max(0, targetTop),
+    behavior: smooth ? "smooth" : "auto",
+  });
+}
+
 function scrollCurrentPlaybackIntoView({ smooth = true } = {}) {
   const current = state.videoSync.currentTime || 0;
   const activeRow = activeTimedNode(".yte-transcript-row", current);
   const activeHighlight = activeTimedNode(".yte-highlight-item", current);
-  activeRow?.scrollIntoView({ block: "center", behavior: smooth ? "smooth" : "auto" });
-  activeHighlight?.scrollIntoView({ block: "nearest", behavior: smooth ? "smooth" : "auto" });
+  scrollNodeIntoContainer(activeRow, ".yte-transcript-list", { smooth, block: "center" });
+  scrollNodeIntoContainer(activeHighlight, ".yte-highlight-list", { smooth, block: "nearest" });
 }
 
 function updateTranscriptPlaybackUI(currentTime, { autoScroll = false, forceScroll = false } = {}) {
@@ -994,13 +1049,13 @@ function updateTranscriptPlaybackUI(currentTime, { autoScroll = false, forceScro
 
   const activeRow = activeTimedNode(".yte-transcript-row", currentTime);
   const activeHighlight = activeTimedNode(".yte-highlight-item", currentTime);
-  const activeDot = activeTimedNode(".yte-timebar-dot", currentTime);
+  const activeRange = activeTimedNode(".yte-timebar-range", currentTime);
 
-  document.querySelectorAll(".yte-transcript-row.is-active, .yte-highlight-item.is-active, .yte-timebar-dot.is-active")
+  document.querySelectorAll(".yte-transcript-row.is-active, .yte-highlight-item.is-active, .yte-timebar-range.is-active")
     .forEach((node) => node.classList.remove("is-active"));
   activeRow?.classList.add("is-active");
   activeHighlight?.classList.add("is-active");
-  activeDot?.classList.add("is-active");
+  activeRange?.classList.add("is-active");
   document.querySelectorAll("[data-current-video-time]").forEach((node) => {
     node.textContent = formatTimestamp(currentTime);
   });
@@ -1008,8 +1063,8 @@ function updateTranscriptPlaybackUI(currentTime, { autoScroll = false, forceScro
   const activeStart = activeRow ? Number(activeRow.dataset.transcriptStart || 0) : null;
   if ((autoScroll || forceScroll) && activeRow && (forceScroll || activeStart !== state.videoSync.lastScrolledStart)) {
     state.videoSync.lastScrolledStart = activeStart;
-    activeRow.scrollIntoView({ block: "center", behavior: "smooth" });
-    activeHighlight?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    scrollNodeIntoContainer(activeRow, ".yte-transcript-list", { smooth: true, block: "center" });
+    scrollNodeIntoContainer(activeHighlight, ".yte-highlight-list", { smooth: true, block: "nearest" });
   }
 }
 
@@ -1060,27 +1115,32 @@ function renderVideoTranscriptReader(article) {
                 <span class="yte-timebar-playhead" aria-hidden="true"></span>
                 ${highlights.map((item, index) => `
                   <button
-                    class="yte-timebar-dot"
+                    class="yte-timebar-range"
                     type="button"
                     data-seek-start="${escapeHtml(item.start)}"
                     data-highlight-start="${escapeHtml(item.start)}"
-                    style="--yte-left: ${item.percent.toFixed(2)}%; --yte-index: ${index};"
-                    aria-label="${escapeHtml(`${t("article.jumpTo")} ${formatTimestamp(item.start)}`)}"
+                    data-highlight-end="${escapeHtml(item.end)}"
+                    style="--yte-left: ${item.percent.toFixed(2)}%; --yte-width: ${item.widthPercent.toFixed(2)}%; --yte-index: ${index};"
+                    aria-label="${escapeHtml(`${t("article.jumpTo")} ${formatTimestamp(item.start)}-${formatTimestamp(item.end)}`)}"
                   ></button>
                 `).join("")}
               </div>
             </div>
             <button class="yte-return-time" type="button" data-return-to-video-time aria-label="${escapeHtml(t("article.returnToTime"))}" title="${escapeHtml(t("article.returnToTime"))}">
-              <span aria-hidden="true">↧</span>
+              <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="6.5"></circle>
+                <circle cx="12" cy="12" r="1.8"></circle>
+                <path d="M12 2.8v3.1M12 18.1v3.1M2.8 12h3.1M18.1 12h3.1"></path>
+              </svg>
               <time data-current-video-time>${escapeHtml(formatTimestamp(state.videoSync.currentTime || 0))}</time>
             </button>
           </div>
           <div class="yte-highlight-list">
             ${highlights.map((item, index) => `
-              <button class="yte-highlight-item" type="button" data-seek-start="${escapeHtml(item.start)}" data-highlight-start="${escapeHtml(item.start)}">
+              <button class="yte-highlight-item" type="button" data-seek-start="${escapeHtml(item.start)}" data-highlight-start="${escapeHtml(item.start)}" data-highlight-end="${escapeHtml(item.end)}">
                 <span class="yte-highlight-dot" style="--yte-index: ${index};"></span>
-                ${renderTranscriptTextStack(item.labelBlocks || [{ language: state.locale, text: item.label }], "yte-highlight-copy")}
-                <time>${escapeHtml(formatTimestamp(item.start))}</time>
+                ${renderHighlightCopy(item)}
+                <time>${escapeHtml(`${formatTimestamp(item.start)}-${formatTimestamp(item.end)}`)}</time>
               </button>
             `).join("")}
           </div>
