@@ -12243,7 +12243,7 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             "end": 77.84,
             "text": {
               "en": "There's a new operating system for how and where you're going to get your work done and it's this kind of agent management interface. [music] [music] Hello everybody. Welcome to Codex Camp. Codex for knowledge work. Psyched to have you. Psyched to have you on this auspicious GPT 5.5 day after release day. Hope you're doing well. I'm here with our head of growth, Austin. Austin, say hello.",
-              "zh": "有一个新的操作系统可以告诉您如何以及在哪里完成工作，这就是这种智能体管理界面。[音乐][音乐]大家好。欢迎来到 Codex 训练营。知识工作法典。很高兴有你。很高兴您能在发布日后的 5.5 天迎来这个吉祥的 GPT。希望你一切都好。嗯，我和我们的增长主管奥斯汀一起在这里。奥斯汀，打个招呼。",
+              "zh": "有一个新的操作系统可以告诉您如何以及在哪里完成工作，这就是这种智能体管理界面。[音乐][音乐]大家好。欢迎来到 Codex 训练营。知识工作Codex。很高兴有你。很高兴您能在发布日后的 5.5 天迎来这个吉祥的 GPT。希望你一切都好。嗯，我和我们的增长主管奥斯汀一起在这里。奥斯汀，打个招呼。",
               "ja": "作業をどこでどのように行うかについては、新しいオペレーティング システムが導入され、この種のagent管理インターフェイスが使用されます。[音楽] [音楽] 皆さんこんにちは。コーデックスキャンプへようこそ。ナレッジワークのためのCodex。あなたがいてくれてとても嬉しいです。リリース日から 5.5 日後にこの縁起の良い GPT 5.5 に参加できることを嬉しく思います。元気でいることを願っています。ええと、成長責任者のオースティンと一緒に来ています。オースティン、こんにちは。"
             }
           },
@@ -12252,7 +12252,7 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             "end": 106.56,
             "text": {
               "en": "Hello. We're psyched to have you. We are psyched to do this. Codex is one of those things where, you know, three months ago, six months ago, it was trash. Um, and if anyone from OpenAI is on the call and listening to that, I stand by that 100%. Um, and it was really built for um, senior engineers uh, doing pair programming. So, it was um, it would argue with you, it would make you feel",
-              "zh": "你好。我们很高兴有你。我们很乐意这样做。嗯，法典是其中之一，你知道，三个月前、六个月前，它是很糟。嗯，如果 OpenAI 有人在听这段话，我百分之百仍然这么认为。嗯，它确实是为嗯，高级工程师，进行结对编程而构建的。所以，嗯，它会和你争论，它会让你觉得",
+              "zh": "你好。我们很高兴有你。我们很乐意这样做。嗯，Codex是其中之一，你知道，三个月前、六个月前，它是很糟。嗯，如果 OpenAI 有人在听这段话，我百分之百仍然这么认为。嗯，它确实是为嗯，高级工程师，进行结对编程而构建的。所以，嗯，它会和你争论，它会让你觉得",
               "ja": "こんにちは。私たちはあなたを迎えられてとても興奮しています。私たちはこれをやり遂げる気満々です。ええと、Codex は、3 か月前、6 か月前にはかなりひどい状態だったものの 1 つです。ええと、OpenAI の誰かが電話に出てそれを聞いているのであれば、私は 100% 支持します。ええと、それは本当に、ええと、シニア エンジニアがペア プログラミングを行うために構築されました。それで、それは、ええと、それはあなたと議論し、それはあなたを感じさせるでしょう"
             }
           },
@@ -12278,27 +12278,27 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             "start": 153.76,
             "end": 175.12,
             "text": {
-              "en": "What Anthropic figured out is that if you have a great general-purpose coding agent on your computer, it is actually great for many kinds of knowledge work. If it can write software on its own, it can do many other tasks too.",
-              "zh": "Anthropic 发现的是：如果你的电脑上有一个足够好的通用编码智能体，它其实也很适合很多知识工作。既然它能自己写软件，它也能完成许多其他任务。",
-              "ja": "Anthropic が見抜いたのは、PC 上に優れた汎用 coding agent があれば、それは多くの knowledge work にもかなり有効だということです。自律的に software を書けるなら、ほかの多くの作業も担えます。"
+              "en": "that you used to have in a in a programming environment where you it was built for typing code. You could just type commands into your terminal and then it would start working. And then I think what Anthropic figured out is if you have a great general purpose, if you have a great coding agent on your computer, it's actually really great for any kind of knowledge work. If it can write software on its own, it can do any",
+              "zh": "您曾经在编程环境中使用它，它是为输入代码而构建的。您只需在终端中输入命令即可开始工作。然后我认为 Anthropic 发现的是，如果你有一个伟大的通用目的，如果你的计算机上有一个伟大的编码智能体，那么它实际上对于各种知识工作都非常有用。如果它可以自己编写软件，它可以做任何事情",
+              "ja": "コードを入力するために構築されたプログラミング環境で使用されていたものです。ターミナルにコマンドを入力するだけで機能し始めます。そして、Anthropic が考え出したのは、優れた汎用性があり、コンピュータ上に優れたcoding agent があれば、それは実際にあらゆる種類の知識作業に非常に優れているということです。独自にソフトウェアを作成できれば、何でもできます。"
             }
           },
           {
             "start": 173.44,
             "end": 196.239,
             "text": {
-              "en": "We started moving from a world where programmers delegated tasks inside Claude Code to a world where many kinds of knowledge work are delegated inside Claude Code and similar tools. OpenAI originally seemed to have a split: vibe coding would happen in ChatGPT.",
-              "zh": "我们开始从“程序员把任务委派给 Claude Code”的世界，转向“各种知识工作都被委派给 Claude Code 以及类似工具”的世界。OpenAI 最初似乎有一个分工：氛围编程会发生在 ChatGPT 里。",
-              "ja": "私たちは、programmer が Claude Code の中で task を委任する世界から、さまざまな knowledge work が Claude Code や類似 tool に委任される世界へ移り始めました。OpenAI には当初、vibe coding は ChatGPT で行う、という分担があったように見えます。"
+              "en": "kind of knowledge work on its own. And we started to move from this world where programmers had been delegating had been delegating their tasks starting to delegate their tasks inside of Claude Code to now any kind of knowledge work is being delegated inside of Claude Code and Claude Code and all that kind of stuff. And I think OpenAI they had this original split. It's like oh you're going to do all your vibe coding in",
+              "zh": "一种知识本身的作用。我们开始从程序员一直委派他们的任务开始在Claude Code内部委派他们的任务，到现在各种知识工作都在Claude Code和Claude Code以及所有类似的东西内部委派。我认为 OpenAI 他们有这个最初的分裂。就像哦，你要在其中完成所有的氛围编码",
+              "ja": "ある種の知識はそれ自体で機能します。そして私たちは、プログラマーがタスクを委任し、Claude Code内でタスクを委任し始めていたこの世界から、今ではあらゆる種類のナレッジ ワークがクラ​​ウド コードやClaude Codeなどの内部で委任されている世界に移行し始めました。そして、OpenAI にはこのオリジナルの分割があったと思います。それは、ああ、あなたはすべてのバイブコーディングを行うつもりのようです"
             }
           },
           {
             "start": 193.28,
             "end": 226.72,
             "text": {
-              "en": "ChatGPT. I think OpenAI saw what was starting to happen with Claude Code. Over the last three months or so, they have made a hard pivot on Codex: it has gone from a senior-engineer-only tool for pair programming to my daily driver for this kind of work. I use Codex for everything from deep engineering work to writing to recruiting.",
-              "zh": "ChatGPT。我认为 OpenAI 看到了 Claude Code 正在发生的变化。过去大约三个月里，他们对 Codex 做了一次艰难而明确的转向：它从一个主要给高级工程师结对编程用的工具，变成了我做这类工作的日常主力。我用 Codex 处理从深度工程、写作到招聘的各种事情。",
-              "ja": "ChatGPT です。OpenAI は Claude Code で起き始めていた変化を見たのだと思います。この三か月ほどで、彼らは Codex に大きく舵を切りました。Codex は、pair programming 向けの senior engineer 専用 tool から、この種の仕事における私の日常的な主力 tool になりました。私は深い engineering から writing、recruiting まで Codex を使っています。"
+              "en": "ChatGPT. And I think they saw what was starting to happen with Claude Code and over the last maybe three months or so they have done this hard pivot on Codex where it has gone from a senior engineer only tool that is really for pair programming to I think like it's it is my daily driver for this kind of work I use Codex for everything from deep engineering stuff to writing to recruiting. I do a lot",
+              "zh": "ChatGPT。然后我认为他们看到了Claude Code开始发生的事情，在过去大约三个月左右的时间里，他们在 Codex 上做了这个艰难的转变，它已经从一个真正用于结对编程的高级工程师工具变成了我认为它是我从事此类工作的日常驱动力，我使用 Codex 来处理从深度工程到写作到招聘的所有事情。我做了很多",
+              "ja": "ChatGPT。そして彼らは、Claude Code で何が起こり始めているかを見て、おそらくここ 3 か月ほどで Codex のハード ピボットを実行しました。そこでは、実際にはペア プログラミングのためのシニア エンジニア専用のツールから、そうですね、この種の仕事の私の毎日の原動力になっていると思います、ええと、私はディープ エンジニアリングから執筆、人材採用まで、あらゆる目的で Codex を使用しています。たくさんやります"
             }
           },
           {
@@ -12314,27 +12314,27 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             "start": 248.239,
             "end": 276.32,
             "text": {
-              "en": "The shape coming into focus is a new operating surface for where and how work gets done: an agent-management interface. That is true whether you are using Claude Code in a desktop app or Codex in a desktop app.",
-              "zh": "现在逐渐清晰起来的是一种新的工作入口：你在哪里、怎样完成工作，都围绕一个智能体管理界面展开。无论你是在桌面应用里使用 Claude Code，还是使用 Codex，本质上都是这条路线。",
-              "ja": "いま輪郭が見えてきているのは、仕事をどこで、どのように進めるかを担う新しい操作面、つまり agent-management interface です。desktop app で Claude Code を使う場合でも、Codex を使う場合でも、本質は同じです。"
+              "en": "And I think that they built the best current version of that. Um, and it what it is starting to snap into into focus now is that there's a new operating system for how and where surface for how and where you're going to get your work done. And it's this kind of agent management interface. And that's whether or not you're using Claude Code or Claude Code in the desktop app or Codex in the desktop app. It's becoming this race",
+              "zh": "我认为他们构建了当前最好的版本。嗯，现在开始引起关注的是，有一个新的操作系统，它可以告诉你如何以及在哪里完成你的工作。就是这种智能体管理界面。这取决于您是否在桌面应用程序中使用Claude Code或Claude Code，或者在桌面应用程序中使用 Codex。这场比赛变成了",
+              "ja": "そして、彼らはその最高の現行バージョンを構築したと思います。ええと、今焦点になり始めているのは、仕事をどこでどのように実行するかについての新しいオペレーティング システムが登場したということです。そして、これはこの種のagent管理インターフェイスです。それは、デスクトップ アプリでClaude Codeやクラウド 共同作業を使用しているか、デスクトップ アプリで Codex を使用しているかどうかです。こういうレースになってきてる"
             }
           },
           {
             "start": 274.96,
             "end": 292.479,
             "text": {
-              "en": "Each model company now wants its own surface for agent management: a desktop app for managing agents whose core is a programming agent used for knowledge work. Anthropic has Claude Code.",
-              "zh": "每家模型公司现在都想拥有自己的智能体管理入口：一个用于管理智能体的桌面应用，其核心是一个可用于知识工作的编程智能体。Anthropic 有 Claude Code。",
-              "ja": "各 model company はいま、agent management のための独自の操作面を持とうとしています。中核にあるのは、knowledge work にも使われる programming agent を管理する desktop app です。Anthropic には Claude Code があります。"
+              "en": "between the model companies where every each model company has their own surface like this for agent management, a desktop app for agent management that's at its core a programming agent that's used for knowledge work. Um, Anthropic has Claude Code and Claude Code.",
+              "zh": "在模型公司之间，每个模型公司都有自己的智能体管理界面，这是一个用于智能体管理的桌面应用程序，其核心是用于知识工作的编程智能体。嗯，Anthropic 有Claude Code和Claude Code。",
+              "ja": "モデル企業間では、各モデル企業がagent管理用にこのような独自のサーフェイスを持っています。agent管理用のデスクトップ アプリは、その中核となるナレッジ ワークに使用されるプログラミング agent です。ええと、Anthropic にはClaude Code とClaude Code があります。"
             }
           },
           {
             "start": 288.8,
             "end": 321.12,
             "text": {
-              "en": "OpenAI has Codex. xAI recently essentially bought Cursor, and Google has Antigravity, though I do not think people are seriously using it for this yet. I imagine Google will move here too. That is the race now, and for users who benefit from these tools, it matters to keep moving between them.",
-              "zh": "OpenAI 有 Codex。xAI 最近基本上收购了 Cursor。Google 有 Antigravity，虽然我还不认为人们已经真正把它用于这类工作。我想 Google 也会往这里走。这就是现在的竞赛，而对能从这些工具受益的用户来说，保持在它们之间切换和比较很重要。",
-              "ja": "OpenAI には Codex があります。xAI は最近、実質的に Cursor を買収しました。Google には Antigravity がありますが、この用途で本格的に使われているとはまだ思いません。Google もここへ向かうはずです。これが現在の競争であり、これらの tool の恩恵を受ける user にとっては、複数の tool を行き来して比較し続けることが重要です。"
+              "en": "OpenAI has Codex. xAI recently essentially bought Cursor and and Google is the only one that I mean they have anti-gravity but I don't think no one is seriously using it for that yet but I imagine Google will do this too and that's the race that is the race that's happening and so I think for us who gets who get all the benefits of being able to use these tools it's really important to be be",
+              "zh": "OpenAI 有 Codex。XAI 最近嗯基本上买了Cursor嗯嗯，谷歌是唯一一个我的意思是他们有反重力，但我认为还没有人认真地使用它，但我想谷歌也会这样做，这就是正在发生的比赛，所以我认为对于我们谁得到谁得到呃能够使用这些工具的所有好处呃真的很重要",
+              "ja": "OpenAI にはCodex があります。XAI は最近、ええと本質的にCursor を購入しました、ええと、反重力を持っているのはGoogleだけですが、まだ誰もそれを真剣に使っていないと思いますが、私はGoogleもこれを行うだろうと想像しています、そしてそれが今起こっている競争です、そして私は、これらのツールを使用できることのすべての利益を誰が得るかは私たちにとって非常に重要だと思います"
             }
           },
           {
@@ -12567,7 +12567,7 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             "end": 891.44,
             "text": {
               "en": "and Codex that I can be here. I can be working on our improving our KPI sheet, which I'll like show what I was doing here. And then I can go down to plus one and ship a PR for plus one. And the other thing I found because I did I tried the new ver like I tried the update to the cloud desktop app last week when they when they shipped it and the the stress test I put on it was make a go to market plan for our new product",
-              "zh": "和我可以在这里的法典。我可以致力于改进我们的 KPI 表，我想在其中展示我在这里所做的事情。然后我可以下降到加一并发送加一的 PR。嗯，我发现的另一件事是因为我尝试了新版本，就像上周他们发货时尝试更新云桌面应用程序一样，我对其进行的压力测试是为我们的新产品制定上市计划",
+              "zh": "和我可以在这里的Codex。我可以致力于改进我们的 KPI 表，我想在其中展示我在这里所做的事情。然后我可以下降到加一并发送加一的 PR。嗯，我发现的另一件事是因为我尝试了新版本，就像上周他们发货时尝试更新云桌面应用程序一样，我对其进行的压力测试是为我们的新产品制定上市计划",
               "ja": "そして私がここにいることができるコーデックス。KPI シートの改善に取り組むことができます。ここで何をしていたのかを示したいと思います。そして、プラス 1 に進み、プラス 1 の PR を送信できます。そして、もう一つ私が見つけたのは、先週クラウド デスクトップ アプリが出荷されたときにアップデートを試したのと同じように、新しいバージョンを試してみたことです。私がそれに行ったストレス テストは、新製品の市場投入計画を立てるためでした。"
             }
           },
@@ -12890,27 +12890,27 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             "start": 1732.32,
             "end": 1754.559,
             "text": {
-              "en": "One of my favorite use cases came from an interview Clare did with Lenny. She described a breakthrough that happened when she stopped trying to use one OpenClaw as a master, supercharged OpenClaw, and instead built a suite of six specialized OpenClaws.",
-              "zh": "我最喜欢的用例之一来自 Clare 和 Lenny 的一次访谈。她说，突破发生在她不再试图把一个 OpenClaw 当成全能主智能体，而是搭建了一组六个专门化的 OpenClaw 之后。",
-              "ja": "私の好きな use case の一つは、Clare が Lenny と行った interview から来ています。彼女は、一つの OpenClaw を万能の強化版 master として使おうとするのをやめ、六つの専門化された OpenClaw からなる suite を作ったときに breakthrough があった、と話していました。"
+              "en": "Yeah. One of my favorite use cases was I got I got really inspired by this interview Clarebo did with Lenny where she said how much of a breakthrough she had when she stopped trying to just use an individual OpenClaw as like a master supercharged OpenClaw and had this suite of six like specified open claws.",
+              "zh": "是的。我最喜欢的用例之一是，我从 Clarebo 与 Lenny 的采访中得到了很大的启发，她说，当她不再尝试像大师级增压OpenClaw一样只使用单个OpenClaw，而是拥有这套六个像指定OpenClaw一样的套件时，她取得了多大的突破。",
+              "ja": "うん。私のお気に入りの使用例の 1 つは、クレレボがレニーと行ったこのインタビューに本当にインスピレーションを得たものでした。そこで彼女は、個々のOpenClaw をマスターのスーパーチャージされたOpenClawのように使用しようとするのをやめて、指定された 6 つのOpenClawのような 6 つのOpenClaw を使用したときに、どれだけの画期的な進歩があったのかを語っていました。"
             }
           },
           {
             "start": 1752.399,
             "end": 1779.039,
             "text": {
-              "en": "I think that applies to any kind of agent. There are the new ChatGPT proactive agents, and I got hooked on that. Clare's point was really good. My path toward making this suite of agents for the growth function at Every was simple: open Codex, go into this folder, send it the transcript of Clare's interview with Lenny, and say, 'I want to do this too.'",
-              "zh": "我觉得这适用于各种智能体。比如新的 ChatGPT 主动式智能体，我很快就被它吸引了。Clare 的观点非常好。我想为 Every 的增长职能做一套智能体，路径其实很简单：打开 Codex，进入这个文件夹，把 Clare 和 Lenny 那次访谈的逐字稿发给它，然后说：“我也想做这个。”",
-              "ja": "これはどのような agent にも当てはまると思います。たとえば新しい ChatGPT の proactive agent には、私はすぐ引き込まれました。Clare の指摘はとても良かった。Every の growth function のために agent suite を作る道筋は単純でした。Codex を開き、この folder に入り、Clare と Lenny の interview transcript を渡して、「私もこれをやりたい」と伝えるだけでした。"
+              "en": "I think that applies to any kind of like agent like there's the new ChatGPT like provisional agents like I got hooked on that. I think Cla's point was really good and my path towards making this suite of agents to help with the growth function at every was just going to Codex going to this folder. I actually just sent it the transcript of Claire's interview with Lenny and said like I want to do this too given",
+              "zh": "我认为这适用于任何类型的智能体，就像有新的呃 ChatGPT 像临时智能体，就像我一样，我对此着迷。我认为 Cla 的观点非常好，我制作这套智能体来帮助实现Every 的增长职能的途径就是将 Codex 转到此文件夹。嗯，我实际上刚刚向其发送了克莱尔对莱尼的采访记录，并说我也想这样做",
+              "ja": "それは、私がそれに夢中になったような新しいチャットのような暫定agentのように、あらゆる種類のagent に当てはまると思います。Cla の指摘は本当に良かったと思います。あらゆる成長機能を支援するこのagent スイートを作成するための私の道は、このフォルダーに Codex を追加するだけでした。ええと、実はクレアとレニーのインタビューの記録を送って、私もこれをやりたいと言いました"
             }
           },
           {
             "start": 1777.36,
             "end": 1800.08,
             "text": {
-              "en": "Given everything you know about me and my work, make a plan suggesting six agents we should provision into Slack. Consider that some of them might be Notion custom agents that do the same thing every day, every time. Others might need to be smarter automations. Come back with a plan.",
-              "zh": "请基于你了解的关于我和我的工作的一切，制定一个计划，建议我们应该配置到 Slack 里的六个智能体。考虑其中一些也许应该是 Notion 自定义智能体，用来每天、每次稳定地做同一类事情；另一些则可能需要是更聪明的自动化。然后给我一份计划。",
-              "ja": "私と私の仕事について知っていることを踏まえて、Slack に provision すべき六つの agent を提案する plan を作ってください。その一部は、毎日、毎回同じことを安定して行う Notion custom agent かもしれません。別のものは、より賢い automation である必要があるかもしれません。その plan を出してください。"
+              "en": "everything you know about me and my work. make a plan to suggest six agents that we should provision into our Slack. Um, consider the fact that we might want to make some of them Notion custom agents, which I find work really well, is just like do the same thing every day, every time. Some of them might need to be smarter automations, but like do that, come up with a plan.",
+              "zh": "你所知道的关于我和我的工作的一切。嗯，制定一个计划来建议 6 个智能体，我们应该将其配置到 Slack 中。嗯，考虑一下这样一个事实：我们可能想让其中一些概念成为自定义智能体，我发现这非常有效，就像每天每次都做同样的事情一样。其中一些可能需要更智能的自动化，但像这样做一样，请制定一个计划。",
+              "ja": "私と私の仕事についてあなたが知っていることすべて。Slack にプロビジョニングする必要がある 6 つのagent を提案する計画を立ててください。ええと、一部のユーザーにカスタム agent という概念を持たせたいと思うかもしれないという事実を考えてみましょう。これは本当にうまく機能すると思いますが、これは毎日同じことを毎回行うのと同じです。それらの中には、よりスマートな自動化が必要な場合もありますが、それと同様に、計画を立ててください。"
             }
           },
           {
@@ -13545,7 +13545,7 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
           }
         ],
         "reviewed": {
-          "version": "2026-05-07-context-v1",
+          "version": "2026-05-08-context-v1",
           "source": "deterministic context review",
           "languages": [
             "en",
@@ -13555,7 +13555,8 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
           "preserves": "Automatic YouTube blocks remain in transcript.blocks; reviewed UI reads transcript.reviewedBlocks.",
           "method": [
             "cross-block glossary normalization",
-            "known-context overrides for high-error passages",
+            "term-level ASR correction without summarizing",
+            "reviewed/source word-ratio QA before publish",
             "blocked-token QA before publish"
           ]
         }
