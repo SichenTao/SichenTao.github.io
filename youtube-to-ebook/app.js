@@ -738,8 +738,12 @@ function transcriptSegments(article) {
   return [];
 }
 
-function transcriptPreparedBlocks(article) {
-  return Array.isArray(article?.transcript?.blocks) ? article.transcript.blocks : [];
+function transcriptPreparedBlocks(article, variant = state.transcriptVariant) {
+  const transcript = article?.transcript || {};
+  if (variant === "reviewed" && Array.isArray(transcript.reviewedBlocks) && transcript.reviewedBlocks.length) {
+    return transcript.reviewedBlocks;
+  }
+  return Array.isArray(transcript.blocks) ? transcript.blocks : [];
 }
 
 function articleHasTranscript(article) {
@@ -757,8 +761,16 @@ function proofreadTranscriptText(value, language = "en") {
     .replace(/([。！？、，])\s+/g, "$1");
   const common = [
     [/\bCo+deex\b/gi, "Codex"],
+    [/\bcodeex\b/gi, "Codex"],
+    [/\bco\s+codeex\b/gi, "Codex"],
+    [/\bchat\s*bt\b/gi, "ChatGPT"],
+    [/\bJBT\b/g, "GPT"],
+    [/\bGBT5\b/g, "GPT-5"],
+    [/\bcloud\s+code\b/gi, "Claude Code"],
+    [/\bcloud\s+co-?work\b/gi, "Claude Code"],
     [/\bClaudeecode\b/gi, "Claude Code"],
     [/\bClaude\s*ecode\b/gi, "Claude Code"],
+    [/\bAnthrobic\b/gi, "Anthropic"],
     [/\bgeneralpurpose\b/gi, "general-purpose"],
     [/\bWeb VNC\b/g, "WebVNC"],
     [/\bOpenclaw\b/gi, "OpenClaw"],
@@ -766,12 +778,23 @@ function proofreadTranscriptText(value, language = "en") {
   const byLanguage = {
     zh: [
       [/Co+deex/g, "Codex"],
+      [/codeex/gi, "Codex"],
+      [/chatbt/gi, "ChatGPT"],
+      [/JBT/g, "GPT"],
+      [/GBT5/g, "GPT-5"],
+      [/云代码|克劳德代码/g, "Claude Code"],
+      [/编解码器|代码交换/g, "Codex"],
       [/Claudeecode/g, "Claude Code"],
       [/Web VNC/g, "WebVNC"],
       [/Openclaw/gi, "OpenClaw"],
     ],
     ja: [
       [/Co+deex/g, "Codex"],
+      [/codeex/gi, "Codex"],
+      [/chatbt/gi, "ChatGPT"],
+      [/JBT/g, "GPT"],
+      [/GBT5/g, "GPT-5"],
+      [/クラウド コード|クラウドコード|クロードコード/g, "Claude Code"],
       [/Claudeecode/g, "Claude Code"],
       [/Web VNC/g, "WebVNC"],
       [/Openclaw/gi, "OpenClaw"],
@@ -851,8 +874,9 @@ function transcriptDuration(article) {
 
 function buildTranscriptBlocks(article) {
   const languages = transcriptDisplayLanguages();
-  const proofread = state.transcriptVariant === "reviewed";
-  const preparedBlocks = transcriptPreparedBlocks(article);
+  const hasReviewedBlocks = Array.isArray(article?.transcript?.reviewedBlocks) && article.transcript.reviewedBlocks.length;
+  const proofread = state.transcriptVariant === "reviewed" && !hasReviewedBlocks;
+  const preparedBlocks = transcriptPreparedBlocks(article, state.transcriptVariant);
   if (preparedBlocks.length) {
     return preparedBlocks.map((item) => ({
       start: Number(item.start) || 0,
