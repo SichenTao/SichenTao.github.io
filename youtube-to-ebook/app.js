@@ -9,6 +9,7 @@ const LOCALE_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja
 const THEME_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
 const DISPLAY_LANGUAGES_KEY = "youtube-to-ebook-display-languages-v1";
 const DISPLAY_LANGUAGE_SEQUENCE = ["en", "zh", "ja"];
+const TRANSCRIPT_VARIANT_SEQUENCE = ["reviewed", "youtube"];
 
 const I18N = {
   en: {
@@ -36,6 +37,7 @@ const I18N = {
       reset: "Reset filters",
     },
     displayLanguages: { en: "English", zh: "简体中文", ja: "日本語" },
+    transcriptVariants: { reviewed: "Reviewed transcript", youtube: "YouTube transcript" },
     types: { ebook: "Ebook article", workflow: "Workflow note" },
     feed: {
       title: "Adaptive ebook articles",
@@ -95,6 +97,7 @@ const I18N = {
       reset: "重置筛选",
     },
     displayLanguages: { en: "English", zh: "简体中文", ja: "日本語" },
+    transcriptVariants: { reviewed: "校稿逐字稿", youtube: "YouTube 逐字稿" },
     types: { ebook: "Ebook 文章", workflow: "流程笔记" },
     feed: {
       title: "适配型 ebook 文章",
@@ -154,6 +157,7 @@ const I18N = {
       reset: "フィルタをリセット",
     },
     displayLanguages: { en: "English", zh: "简体中文", ja: "日本語" },
+    transcriptVariants: { reviewed: "校正逐語録", youtube: "YouTube 逐語録" },
     types: { ebook: "Ebook 記事", workflow: "Workflow note" },
     feed: {
       title: "適応型 ebook 記事",
@@ -200,6 +204,7 @@ const state = {
   articles: [],
   activeId: "",
   detailMode: "article",
+  transcriptVariant: "reviewed",
   videoSync: {
     player: null,
     timer: 0,
@@ -335,6 +340,18 @@ function displayLanguageBlocks(value, fallback = "") {
 
 function displayLanguageLabel(language) {
   return t(`displayLanguages.${language}`) || language;
+}
+
+function transcriptVariantLabel(variant) {
+  return t(`transcriptVariants.${variant}`) || variant;
+}
+
+function normalizeTranscriptVariant(variant) {
+  return TRANSCRIPT_VARIANT_SEQUENCE.includes(variant) ? variant : "reviewed";
+}
+
+function setTranscriptVariant(variant) {
+  state.transcriptVariant = normalizeTranscriptVariant(variant);
 }
 
 function normalizeData(data = {}) {
@@ -640,6 +657,16 @@ function renderArticleTitleBlocks(blocks) {
     .join("");
 }
 
+function renderTranscriptTitleBlocks(article) {
+  const blocks = displayLanguageBlocks(article.title, article.video?.title || article.title?.en || "");
+  return blocks
+    .map((block, index) => {
+      if (index === 0) return `<h2 lang="${languageAttr(block.language)}">${escapeHtml(block.text)}</h2>`;
+      return `<p class="yte-transcript-title-translation" lang="${languageAttr(block.language)}">${escapeHtml(block.text)}</p>`;
+    })
+    .join("");
+}
+
 function renderStepBlocks(section) {
   const languages = normalizeDisplayLanguages(state.displayLanguages, defaultDisplayLanguages(state.locale), state.locale);
   return languages.map((language) => {
@@ -723,19 +750,59 @@ function cleanTranscriptText(value) {
   return String(value || "").replace(/^(?:>>\s*)+/, "").trim();
 }
 
+function proofreadTranscriptText(value, language = "en") {
+  let text = cleanTranscriptText(value)
+    .replace(/\s+/g, " ")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/([。！？、，])\s+/g, "$1");
+  const common = [
+    [/\bCo+deex\b/gi, "Codex"],
+    [/\bClaudeecode\b/gi, "Claude Code"],
+    [/\bClaude\s*ecode\b/gi, "Claude Code"],
+    [/\bgeneralpurpose\b/gi, "general-purpose"],
+    [/\bWeb VNC\b/g, "WebVNC"],
+    [/\bOpenclaw\b/gi, "OpenClaw"],
+  ];
+  const byLanguage = {
+    zh: [
+      [/Co+deex/g, "Codex"],
+      [/Claudeecode/g, "Claude Code"],
+      [/Web VNC/g, "WebVNC"],
+      [/Openclaw/gi, "OpenClaw"],
+    ],
+    ja: [
+      [/Co+deex/g, "Codex"],
+      [/Claudeecode/g, "Claude Code"],
+      [/Web VNC/g, "WebVNC"],
+      [/Openclaw/gi, "OpenClaw"],
+    ],
+  };
+  [...common, ...(byLanguage[language] || [])].forEach(([pattern, replacement]) => {
+    text = text.replace(pattern, replacement);
+  });
+  return text.trim();
+}
+
 function transcriptDisplayLanguages() {
   return normalizeDisplayLanguages(state.displayLanguages, defaultDisplayLanguages(state.locale), state.locale);
 }
 
-function transcriptTextBlocks(value, languages = transcriptDisplayLanguages()) {
+function transcriptTextBlocks(value, languages = transcriptDisplayLanguages(), { proofread = false } = {}) {
   const blocks = languages
     .map((language) => ({
       language,
-      text: cleanTranscriptText(
-        typeof value === "string"
-          ? (language === "en" ? value : "")
-          : value?.[language] || "",
-      ),
+      text: proofread
+        ? proofreadTranscriptText(
+            typeof value === "string"
+              ? (language === "en" ? value : "")
+              : value?.[language] || "",
+            language,
+          )
+        : cleanTranscriptText(
+            typeof value === "string"
+              ? (language === "en" ? value : "")
+              : value?.[language] || "",
+          ),
     }))
     .filter((block) => block.text);
   if (blocks.length) return blocks;
@@ -784,19 +851,20 @@ function transcriptDuration(article) {
 
 function buildTranscriptBlocks(article) {
   const languages = transcriptDisplayLanguages();
+  const proofread = state.transcriptVariant === "reviewed";
   const preparedBlocks = transcriptPreparedBlocks(article);
   if (preparedBlocks.length) {
     return preparedBlocks.map((item) => ({
       start: Number(item.start) || 0,
       end: Number(item.end) || Number(item.start) || 0,
-      textBlocks: transcriptTextBlocks(item.text, languages),
+      textBlocks: transcriptTextBlocks(item.text, languages, { proofread }),
     })).filter((item) => item.textBlocks.length);
   }
 
   const blocks = [];
   let block = null;
   transcriptSegments(article).forEach((segment) => {
-    const textBlocks = transcriptTextBlocks(segment.text, languages);
+    const textBlocks = transcriptTextBlocks(segment.text, languages, { proofread });
     if (!textBlocks.length) return;
     const text = textBlocks[0]?.text || "";
     const start = Number(segment.start) || 0;
@@ -936,10 +1004,11 @@ function teardownVideoSync({ resetTime = false } = {}) {
   }
 }
 
-function seekEmbeddedVideo(seconds) {
+function seekEmbeddedVideo(seconds, { smooth = false } = {}) {
   const value = Number(seconds) || 0;
   state.videoSync.currentTime = value;
-  updateTranscriptPlaybackUI(value, { autoScroll: true, forceScroll: true });
+  state.videoSync.lastScrolledStart = null;
+  updateTranscriptPlaybackUI(value, { autoScroll: true, forceScroll: true, smooth });
   if (state.videoSync.player?.seekTo) {
     try {
       state.videoSync.player.seekTo(value, true);
@@ -1040,7 +1109,7 @@ function scrollCurrentPlaybackIntoView({ smooth = true } = {}) {
   scrollNodeIntoContainer(activeHighlight, ".yte-highlight-list", { smooth, block: "nearest" });
 }
 
-function updateTranscriptPlaybackUI(currentTime, { autoScroll = false, forceScroll = false } = {}) {
+function updateTranscriptPlaybackUI(currentTime, { autoScroll = false, forceScroll = false, smooth = true } = {}) {
   const duration = state.videoSync.duration || Number(byId("yte-timebar-track")?.dataset.duration || 0) || 1;
   const percent = Math.min(100, Math.max(0, (Number(currentTime || 0) / duration) * 100));
   document.querySelectorAll(".yte-timebar-track").forEach((track) => {
@@ -1063,8 +1132,8 @@ function updateTranscriptPlaybackUI(currentTime, { autoScroll = false, forceScro
   const activeStart = activeRow ? Number(activeRow.dataset.transcriptStart || 0) : null;
   if ((autoScroll || forceScroll) && activeRow && (forceScroll || activeStart !== state.videoSync.lastScrolledStart)) {
     state.videoSync.lastScrolledStart = activeStart;
-    scrollNodeIntoContainer(activeRow, ".yte-transcript-list", { smooth: true, block: "center" });
-    scrollNodeIntoContainer(activeHighlight, ".yte-highlight-list", { smooth: true, block: "nearest" });
+    scrollNodeIntoContainer(activeRow, ".yte-transcript-list", { smooth, block: "center" });
+    scrollNodeIntoContainer(activeHighlight, ".yte-highlight-list", { smooth, block: "nearest" });
   }
 }
 
@@ -1083,6 +1152,28 @@ function renderDetailModeSwitch(article) {
       >
         ${escapeHtml(t("article.transcriptMode"))}
       </button>
+    </div>
+  `;
+}
+
+function renderTranscriptVariantControl(article) {
+  if (state.detailMode !== "transcript" || !articleHasTranscript(article)) return "";
+  return `
+    <div class="yte-transcript-variant" role="group" aria-label="${escapeHtml(t("article.transcript"))}">
+      ${TRANSCRIPT_VARIANT_SEQUENCE.map((variant) => {
+        const selected = normalizeTranscriptVariant(state.transcriptVariant) === variant;
+        return `
+          <button
+            class="fb-language-chip yte-transcript-variant-chip${selected ? " is-selected" : ""}"
+            type="button"
+            data-transcript-variant="${escapeHtml(variant)}"
+            aria-pressed="${selected ? "true" : "false"}"
+            title="${escapeHtml(transcriptVariantLabel(variant))}"
+          >
+            ${escapeHtml(transcriptVariantLabel(variant))}
+          </button>
+        `;
+      }).join("")}
     </div>
   `;
 }
@@ -1149,7 +1240,7 @@ function renderVideoTranscriptReader(article) {
       <section class="yte-transcript-pane">
         <header class="yte-transcript-head">
           <p class="eyebrow">${escapeHtml(t("article.transcript"))}</p>
-          <h2>${escapeHtml(article.video?.title || localize(article.title))}</h2>
+          <div class="yte-transcript-title-group">${renderTranscriptTitleBlocks(article)}</div>
           <span>${escapeHtml(formatTimestamp(duration))}</span>
         </header>
         <div class="yte-transcript-list">
@@ -1183,8 +1274,16 @@ function bindArticleDetailControls(container, article) {
       renderArticle(article);
     });
   });
+  container.querySelectorAll("[data-transcript-variant]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const nextVariant = normalizeTranscriptVariant(button.dataset.transcriptVariant);
+      if (nextVariant === state.transcriptVariant) return;
+      setTranscriptVariant(nextVariant);
+      renderArticle(article);
+    });
+  });
   container.querySelectorAll("[data-seek-start]").forEach((button) => {
-    button.addEventListener("click", () => seekEmbeddedVideo(button.dataset.seekStart));
+    button.addEventListener("click", () => seekEmbeddedVideo(button.dataset.seekStart, { smooth: false }));
   });
   container.querySelectorAll("[data-return-to-video-time]").forEach((button) => {
     button.addEventListener("click", () => scrollCurrentPlaybackIntoView({ smooth: true }));
@@ -1208,6 +1307,7 @@ function renderArticle(article) {
       </button>
       ${renderDetailModeSwitch(article)}
       <div class="fb-article-control-group">
+        ${renderTranscriptVariantControl(article)}
         <div class="fb-language-display fb-language-display--article" role="group" aria-label="${escapeHtml(t("controls.displayLanguages"))}"></div>
         <button class="fb-icon-button" type="button" data-fb-display-reset="display" aria-label="${escapeHtml(t("controls.reset"))}" title="${escapeHtml(t("controls.reset"))}">
           <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-reset"></use></svg>
@@ -1252,7 +1352,12 @@ function renderArticle(article) {
 function openArticle(id, options = {}) {
   const article = state.articles.find((item) => item.id === id);
   if (!article) return;
-  if (state.activeId !== id) state.detailMode = "article";
+  if (state.activeId !== id) {
+    state.detailMode = articleHasTranscript(article) ? "transcript" : "article";
+    state.transcriptVariant = "reviewed";
+    setDisplayLanguages(defaultDisplayLanguages(state.locale));
+    state.videoSync.currentTime = 0;
+  }
   state.activeId = id;
   document.body.classList.add("fb-article-open");
   byId("article").hidden = false;
@@ -1301,7 +1406,7 @@ function setLocale(localeName) {
   const normalized = window.HomepageI18n?.normalizeLocale?.(localeName, LOCALE_CATALOG) || "";
   if (!normalized || normalized === state.locale) return;
   state.locale = normalized;
-  state.displayLanguages = readStoredDisplayLanguages(normalized);
+  setDisplayLanguages(defaultDisplayLanguages(normalized));
   window.HomepageI18n?.writeStoredLocale?.(normalized, { locales: LOCALE_CATALOG });
   replaceUrlStateParam("lang", normalized);
   render();
