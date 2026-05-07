@@ -62,7 +62,6 @@ const I18N = {
     article: {
       back: "Back to feed",
       links: "Source links",
-      license: "License note",
     },
   },
   zh: {
@@ -115,7 +114,6 @@ const I18N = {
     article: {
       back: "返回信息流",
       links: "来源链接",
-      license: "许可说明",
     },
   },
   ja: {
@@ -168,7 +166,6 @@ const I18N = {
     article: {
       back: "フィードに戻る",
       links: "Source links",
-      license: "ライセンスメモ",
     },
   },
 };
@@ -714,11 +711,6 @@ function renderArticle(article) {
         ? `<footer class="fb-article-links">
             ${links.map((link) => `<a href="${escapeHtml(link.href)}">${escapeHtml(link.label || link.href)}</a>`).join("")}
           </footer>`
-        : ""
-    }
-    ${
-      state.data.upstream?.licenseNote
-        ? `<p class="yte-license-note"><strong>${escapeHtml(t("article.license"))}:</strong> ${escapeHtml(localize(state.data.upstream.licenseNote))}</p>`
         : ""
     }
   `;

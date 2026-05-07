@@ -5,12 +5,7 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
     "name": "zarazhangrui/youtube-to-ebook",
     "repo": "https://github.com/zarazhangrui/youtube-to-ebook",
     "commit": "7f67fd6b55a272012df3767cf6d8c54bd2d7a9f3",
-    "commitLabel": "7f67fd6",
-    "licenseNote": {
-      "en": "The upstream README declares MIT usage, but the inspected snapshot does not include a standalone LICENSE file.",
-      "zh": "上游 README 标注为 MIT 使用方式，但当前快照没有独立 LICENSE 文件。",
-      "ja": "上流 README では MIT とされていますが、確認したスナップショットには独立した LICENSE ファイルはありません。"
-    }
+    "commitLabel": "7f67fd6"
   },
   "lastRun": {
     "id": "20260507_094847",
@@ -178,32 +173,11 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             }
           ]
         },
-        {
-          "kind": "paragraph",
-          "label": {
-            "en": "Why this belongs in the homepage reader",
-            "zh": "为什么它适合进入主页阅读器",
-            "ja": "なぜ homepage reader に入れるべきか"
-          },
-          "text": {
-            "en": "As a video, the episode is a timely conversation. As an ebook article, it becomes a reusable study object: searchable, linkable, and easier to revisit on a phone. This is exactly the role of the YouTube-to-Ebook workspace in the homepage: not to describe the automation, but to absorb its real output into a clean article library.",
-            "zh": "作为视频，它是一场及时的对话；作为 ebook 文章，它变成了可复用的学习对象：可以搜索、可以链接，也更适合在手机上反复阅读。这正是主页中 YouTube-to-Ebook 工作区的意义：不是介绍自动化流程本身，而是把它的真实产出吸收进干净的文章库。",
-            "ja": "動画としては時宜を得た conversation ですが、ebook 記事としては再利用できる study object になります。検索でき、link でき、mobile で読み返しやすいからです。これこそ homepage の YouTube-to-Ebook workspace の役割です。automation 自体を説明するのではなく、その実出力を clean article library に取り込むことです。"
-          }
-        }
       ],
       "links": [
         {
           "label": "Original YouTube video",
           "href": "https://www.youtube.com/watch?v=x9BNBcP_C7Q"
-        },
-        {
-          "label": "Generated EPUB",
-          "href": "/youtube-to-ebook/assets/ebooks/20260507_094847_why-we-switched-from-claude-code-to-codex.epub"
-        },
-        {
-          "label": "Upstream project",
-          "href": "https://github.com/zarazhangrui/youtube-to-ebook"
         }
       ]
     }
