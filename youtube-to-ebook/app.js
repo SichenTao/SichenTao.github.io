@@ -213,6 +213,8 @@ const state = {
     playing: false,
     lastScrolledStart: null,
     articleId: "",
+    seekTarget: null,
+    seekLockUntil: 0,
   },
 };
 
@@ -989,6 +991,10 @@ function youtubeEmbedUrl(article) {
   return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?enablejsapi=1&playsinline=1&rel=0&origin=${origin}`;
 }
 
+function syncNow() {
+  return window.performance?.now ? window.performance.now() : Date.now();
+}
+
 function loadYouTubeIframeApi() {
   if (window.YT?.Player) return Promise.resolve(window.YT);
   if (window.__yteYouTubeIframeApiPromise) return window.__yteYouTubeIframeApiPromise;
@@ -1021,6 +1027,8 @@ function teardownVideoSync({ resetTime = false } = {}) {
   state.videoSync.player = null;
   state.videoSync.playing = false;
   state.videoSync.lastScrolledStart = null;
+  state.videoSync.seekTarget = null;
+  state.videoSync.seekLockUntil = 0;
   if (resetTime) {
     state.videoSync.currentTime = 0;
     state.videoSync.duration = 0;
@@ -1032,7 +1040,14 @@ function seekEmbeddedVideo(seconds, { smooth = false } = {}) {
   const value = Number(seconds) || 0;
   state.videoSync.currentTime = value;
   state.videoSync.lastScrolledStart = null;
+  state.videoSync.seekTarget = value;
+  state.videoSync.seekLockUntil = syncNow() + 1600;
   updateTranscriptPlaybackUI(value, { autoScroll: true, forceScroll: true, smooth });
+  window.requestAnimationFrame?.(() => {
+    if (state.detailMode === "transcript" && state.videoSync.seekTarget === value) {
+      updateTranscriptPlaybackUI(value, { autoScroll: true, forceScroll: true, smooth: false });
+    }
+  });
   if (state.videoSync.player?.seekTo) {
     try {
       state.videoSync.player.seekTo(value, true);
@@ -1078,7 +1093,7 @@ function setupVideoSync(article) {
 
 function startVideoSyncTimer() {
   if (state.videoSync.timer) window.clearInterval(state.videoSync.timer);
-  state.videoSync.timer = window.setInterval(tickVideoSync, 600);
+  state.videoSync.timer = window.setInterval(tickVideoSync, 250);
   tickVideoSync({ force: true });
 }
 
@@ -1086,7 +1101,19 @@ function tickVideoSync({ force = false } = {}) {
   const player = state.videoSync.player;
   if (player?.getCurrentTime) {
     try {
-      state.videoSync.currentTime = Number(player.getCurrentTime()) || state.videoSync.currentTime || 0;
+      const reportedTime = Number(player.getCurrentTime()) || state.videoSync.currentTime || 0;
+      const isSeekLocked = state.videoSync.seekTarget !== null
+        && syncNow() < state.videoSync.seekLockUntil
+        && Math.abs(reportedTime - state.videoSync.seekTarget) > 1.25;
+      if (isSeekLocked) {
+        state.videoSync.currentTime = state.videoSync.seekTarget;
+      } else {
+        state.videoSync.currentTime = reportedTime;
+        if (state.videoSync.seekTarget !== null) {
+          state.videoSync.seekTarget = null;
+          state.videoSync.seekLockUntil = 0;
+        }
+      }
       const playerState = player.getPlayerState?.();
       state.videoSync.playing = playerState === 1;
     } catch {}
@@ -1100,11 +1127,13 @@ function tickVideoSync({ force = false } = {}) {
 function activeTimedNode(selector, currentTime) {
   const nodes = [...document.querySelectorAll(selector)];
   let active = nodes[0] || null;
+  let activeStart = Number(active?.dataset.transcriptStart || active?.dataset.highlightStart || active?.dataset.seekStart || 0);
   for (const node of nodes) {
     const start = Number(node.dataset.transcriptStart || node.dataset.highlightStart || node.dataset.seekStart || 0);
-    const end = Number(node.dataset.transcriptEnd || node.dataset.highlightEnd || start);
-    if (currentTime >= start && currentTime < end) return node;
-    if (currentTime >= start) active = node;
+    if (currentTime >= start && start >= activeStart) {
+      active = node;
+      activeStart = start;
+    }
   }
   return active;
 }

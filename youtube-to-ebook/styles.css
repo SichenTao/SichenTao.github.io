@@ -267,7 +267,6 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-tools {
   width: var(--yte-progress, 0%);
   border-radius: inherit;
   background: rgba(var(--teal-rgb, 75, 24, 143), 0.22);
-  transition: width 0.28s ease;
 }
 
 .yte-timebar-playhead {
@@ -281,7 +280,6 @@ body[data-page="youtube-to-ebook"].yte-transcript-open .fb-article-tools {
   background: var(--teal);
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.78);
   transform: translate(-50%, -50%);
-  transition: left 0.28s ease;
 }
 
 .yte-timebar-range {
