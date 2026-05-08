@@ -47,7 +47,7 @@
       academic: { short: "Homepage", full: "Personal homepage" },
       frontier: { short: "Frontier", full: "Academic Frontier" },
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
-      youtubeToEbook: { short: "YouTube Ebook", full: "YouTube to Ebook" },
+      youtubeToEbook: { short: "YouTube Learner", full: "YouTube Learner" },
       jsps: { short: "JSPS", full: "JSPS KAKENHI" },
     },
     zh: {
@@ -56,7 +56,7 @@
       academic: { short: "个人主页", full: "个人主页" },
       frontier: { short: "学术前沿", full: "学术前沿" },
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
-      youtubeToEbook: { short: "YouTube Ebook", full: "YouTube to Ebook" },
+      youtubeToEbook: { short: "YouTube Learner", full: "YouTube Learner" },
       jsps: { short: "JSPS", full: "JSPS 科研费" },
     },
     ja: {
@@ -65,7 +65,7 @@
       academic: { short: "個人HP", full: "個人ホームページ" },
       frontier: { short: "学術前沿", full: "学術前沿" },
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
-      youtubeToEbook: { short: "YouTube Ebook", full: "YouTube to Ebook" },
+      youtubeToEbook: { short: "YouTube Learner", full: "YouTube Learner" },
       jsps: { short: "JSPS", full: "JSPS 科研費" },
     },
   };

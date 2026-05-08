@@ -205,7 +205,7 @@
           academic: ["Profile", "Records"],
           frontier: ["Papers", "Metrics"],
           followBuilders: ["Builders", "Reader"],
-          youtubeToEbook: ["Video", "EPUB"],
+          youtubeToEbook: ["Video", "Learning"],
           jsps: ["Grants", "Deadlines"],
         },
       },
@@ -217,7 +217,7 @@
           academic: ["身份", "记录"],
           frontier: ["论文", "分区"],
           followBuilders: ["Builders", "阅读"],
-          youtubeToEbook: ["视频", "EPUB"],
+          youtubeToEbook: ["视频", "学习"],
           jsps: ["科研费", "时间线"],
         },
       },
@@ -229,7 +229,7 @@
           academic: ["プロフィール", "記録"],
           frontier: ["論文", "指標"],
           followBuilders: ["Builders", "読む"],
-          youtubeToEbook: ["動画", "EPUB"],
+          youtubeToEbook: ["動画", "学習"],
           jsps: ["科研費", "締切"],
         },
       },
@@ -260,7 +260,7 @@
           { label: "Personal homepage", href: "/academic/" },
           { label: "Academic Frontier", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
-          { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+          { label: "YouTube Learner", href: "/youtube-to-ebook/" },
           { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
         ],
         columns: [
@@ -309,8 +309,8 @@
         ], ["Original feed", "Reader implementation", "Homepage workspace"]],
       },
       youtubeToEbook: {
-        overview: [["Feed", "Sources", "Article reader"], ["Adaptive ebooks", "YouTube", "Transcripts"]],
-        feed: [["Article cards", "Search", "Language display"], ["Markdown", "EPUB", "Homepage archive"]],
+        overview: [["Learning articles", "Video transcript", "Article reader"], ["YouTube", "Read along", "Multilingual"]],
+        feed: [["Article cards", "Search", "Language display"], ["Transcript", "Highlights", "Homepage archive"]],
         sources: [["Seed channels", "Pipeline services", "Output formats"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
         github: [[
           { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
@@ -333,7 +333,7 @@
           { label: "个人主页", href: "/academic/" },
           { label: "学术前沿", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
-          { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+          { label: "YouTube Learner", href: "/youtube-to-ebook/" },
           { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
         ],
         columns: [
@@ -382,8 +382,8 @@
         ], ["原项目", "阅读器实现", "个人主页工作区"]],
       },
       youtubeToEbook: {
-        overview: [["信息流", "来源", "文章阅读器"], ["适配型 ebook", "YouTube", "字幕"]],
-        feed: [["文章卡片", "搜索", "语言显示"], ["Markdown", "EPUB", "主页归档"]],
+        overview: [["学习文章", "视频逐字稿", "文章阅读器"], ["YouTube", "同步阅读", "多语言"]],
+        feed: [["文章卡片", "搜索", "语言显示"], ["逐字稿", "高亮", "主页归档"]],
         sources: [["默认频道", "流程服务", "输出格式"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
         github: [[
           { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
@@ -406,7 +406,7 @@
           { label: "個人ホームページ", href: "/academic/" },
           { label: "学術前沿", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
-          { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+          { label: "YouTube Learner", href: "/youtube-to-ebook/" },
           { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
         ],
         columns: [
@@ -455,8 +455,8 @@
         ], ["元プロジェクト", "Reader 実装", "個人ワークスペース"]],
       },
       youtubeToEbook: {
-        overview: [["フィード", "ソース", "記事リーダー"], ["適応型 ebook", "YouTube", "字幕"]],
-        feed: [["記事カード", "検索", "言語表示"], ["Markdown", "EPUB", "Homepage archive"]],
+        overview: [["学習記事", "動画逐語録", "記事リーダー"], ["YouTube", "読みながら学ぶ", "多言語"]],
+        feed: [["記事カード", "検索", "言語表示"], ["逐語録", "ハイライト", "Homepage archive"]],
         sources: [["初期チャンネル", "Pipeline services", "出力形式"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
         github: [[
           { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },

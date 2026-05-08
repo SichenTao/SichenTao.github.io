@@ -14,11 +14,11 @@ const TRANSCRIPT_VARIANT_SEQUENCE = ["reviewed", "youtube"];
 const I18N = {
   en: {
     page: {
-      title: "YouTube to Ebook | Sichen Tao",
+      title: "YouTube Learner | Sichen Tao",
       description:
-        "A Follow Builders-style reading workspace where YouTube to Ebook outputs become searchable adaptive ebook articles.",
+        "A video learning reader for watching YouTube, reading along, and learning better.",
     },
-    brand: { note: "Adaptive ebook articles" },
+    brand: { note: "Watch YouTube. Read along. Learn better." },
     nav: { feed: "Home", github: "GitHub" },
     controls: {
       display: "Display controls",
@@ -33,15 +33,15 @@ const I18N = {
       menu: "Menu",
       showMenu: "Show menu",
       hideMenu: "Hide menu",
-      searchPlaceholder: "Search ebook articles, sources, or workflows",
+      searchPlaceholder: "Search learning articles, sources, or workflows",
       reset: "Reset filters",
     },
     displayLanguages: { en: "English", zh: "简体中文", ja: "日本語" },
     transcriptVariants: { reviewed: "Reviewed transcript", youtube: "YouTube transcript" },
-    types: { ebook: "Ebook article", workflow: "Workflow note" },
+    types: { ebook: "Learning article", workflow: "Workflow note" },
     feed: {
-      title: "Adaptive ebook articles",
-      empty: "No YouTube to Ebook articles match the current filters.",
+      title: "Learning articles",
+      empty: "No YouTube Learner articles match the current filters.",
       minRead: "min read",
     },
     sources: {
@@ -57,7 +57,7 @@ const I18N = {
     github: {
       title: "GitHub",
       upstreamTitle: "Zara Zhang",
-      upstreamText: "Original YouTube to Ebook project",
+      upstreamText: "Original youtube-to-ebook project",
       sichenTitle: "Sichen Tao",
       sichenText: "Homepage and research workspace",
     },
@@ -75,10 +75,10 @@ const I18N = {
   },
   zh: {
     page: {
-      title: "YouTube to Ebook | 陶思晨",
-      description: "一个复用 Follow Builders UI 的文章承载工作区，用来发布 YouTube to Ebook 生成的适配型 ebook 文章。",
+      title: "YouTube Learner | 陶思晨",
+      description: "一个视频学习阅读器，用来边看 YouTube、边同步阅读、边更好地学习。",
     },
-    brand: { note: "适配型 ebook 文章" },
+    brand: { note: "看 YouTube。同步阅读。学得更好。" },
     nav: { feed: "首页", github: "GitHub" },
     controls: {
       display: "显示控制",
@@ -93,15 +93,15 @@ const I18N = {
       menu: "菜单",
       showMenu: "展开菜单",
       hideMenu: "收起菜单",
-      searchPlaceholder: "搜索 ebook 文章、来源或流程",
+      searchPlaceholder: "搜索学习文章、来源或流程",
       reset: "重置筛选",
     },
     displayLanguages: { en: "English", zh: "简体中文", ja: "日本語" },
     transcriptVariants: { reviewed: "校稿逐字稿", youtube: "YouTube 逐字稿" },
-    types: { ebook: "Ebook 文章", workflow: "流程笔记" },
+    types: { ebook: "学习文章", workflow: "流程笔记" },
     feed: {
-      title: "适配型 ebook 文章",
-      empty: "当前筛选下没有匹配的 YouTube to Ebook 文章。",
+      title: "学习文章",
+      empty: "当前筛选下没有匹配的 YouTube Learner 文章。",
       minRead: "分钟阅读",
     },
     sources: {
@@ -117,7 +117,7 @@ const I18N = {
     github: {
       title: "GitHub",
       upstreamTitle: "Zara Zhang",
-      upstreamText: "YouTube to Ebook 原始项目",
+      upstreamText: "youtube-to-ebook 原始项目",
       sichenTitle: "Sichen Tao",
       sichenText: "个人主页与研究工作区",
     },
@@ -135,10 +135,10 @@ const I18N = {
   },
   ja: {
     page: {
-      title: "YouTube to Ebook | Sichen Tao",
-      description: "Follow Builders の UI を再利用し、YouTube to Ebook の出力を適応型 ebook 記事として公開する workspace。",
+      title: "YouTube Learner | Sichen Tao",
+      description: "YouTube を見ながら読み、よりよく学ぶための動画学習リーダーです。",
     },
-    brand: { note: "適応型 ebook 記事" },
+    brand: { note: "YouTube を見て、読みながら、よりよく学ぶ。" },
     nav: { feed: "ホーム", github: "GitHub" },
     controls: {
       display: "表示設定",
@@ -153,15 +153,15 @@ const I18N = {
       menu: "メニュー",
       showMenu: "メニューを開く",
       hideMenu: "メニューを閉じる",
-      searchPlaceholder: "ebook 記事、source、workflow を検索",
+      searchPlaceholder: "学習記事、source、workflow を検索",
       reset: "フィルタをリセット",
     },
     displayLanguages: { en: "English", zh: "简体中文", ja: "日本語" },
     transcriptVariants: { reviewed: "校正逐語録", youtube: "YouTube 逐語録" },
-    types: { ebook: "Ebook 記事", workflow: "Workflow note" },
+    types: { ebook: "学習記事", workflow: "Workflow note" },
     feed: {
-      title: "適応型 ebook 記事",
-      empty: "現在の条件に一致する YouTube to Ebook 記事はありません。",
+      title: "学習記事",
+      empty: "現在の条件に一致する YouTube Learner 記事はありません。",
       minRead: "分で読む",
     },
     sources: {
@@ -177,7 +177,7 @@ const I18N = {
     github: {
       title: "GitHub",
       upstreamTitle: "Zara Zhang",
-      upstreamText: "元の YouTube to Ebook project",
+      upstreamText: "元の youtube-to-ebook project",
       sichenTitle: "Sichen Tao",
       sichenText: "Homepage and research workspace",
     },

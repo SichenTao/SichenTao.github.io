@@ -84,7 +84,7 @@ const I18N = {
     page: {
       title: "Sichen Tao | Research Portal",
       description:
-        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Follow Builders, YouTube to Ebook, and JSPS KAKENHI workspace.",
+        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Follow Builders, YouTube Learner, and JSPS KAKENHI workspace.",
     },
     controls: {
       display: "Display controls",
@@ -105,7 +105,7 @@ const I18N = {
       academic: "Personal Homepage",
       frontier: "Academic Frontier",
       followBuilders: "Follow Builders",
-      youtubeToEbook: "YouTube to Ebook",
+      youtubeToEbook: "YouTube Learner",
       jsps: "JSPS KAKENHI",
     },
     hero: {
@@ -143,9 +143,9 @@ const I18N = {
         action: "Open reader",
       },
       youtubeToEbook: {
-        name: "YouTube to Ebook",
-        intro: "A Follow Builders-style article library where YouTube-to-Ebook outputs become searchable adaptive ebooks.",
-        action: "Open library",
+        name: "YouTube Learner",
+        intro: "A video learning reader for watching YouTube, reading along, and learning better.",
+        action: "Open learner",
       },
       jsps: {
         name: "JSPS KAKENHI",
@@ -167,7 +167,7 @@ const I18N = {
               { label: "Personal Homepage", href: "/academic/" },
               { label: "Academic Frontier", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
-              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+              { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -222,7 +222,7 @@ const I18N = {
             items: [
               { label: "Personal Homepage", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
-              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+              { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -261,7 +261,7 @@ const I18N = {
         ],
       },
       youtubeToEbook: {
-        eyebrow: "YouTube to Ebook",
+        eyebrow: "YouTube Learner",
         primary: [
           { label: "Feed", href: "/youtube-to-ebook/#feed" },
           { label: "Sources", href: "/youtube-to-ebook/#sources" },
@@ -271,7 +271,7 @@ const I18N = {
           {
             title: "Article library",
             items: [
-              { label: "Adaptive ebook cards", href: "/youtube-to-ebook/#feed" },
+              { label: "Learning article cards", href: "/youtube-to-ebook/#feed" },
               { label: "Article reader", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
               { label: "Pipeline sources", href: "/youtube-to-ebook/#sources" },
             ],
@@ -309,7 +309,7 @@ const I18N = {
   zh: {
     page: {
       title: "陶思晨 | 研究导航页",
-      description: "统一进入个人主页、学术前沿、Follow Builders、YouTube to Ebook 与 JSPS 科研费工作台的研究导航页。",
+      description: "统一进入个人主页、学术前沿、Follow Builders、YouTube Learner 与 JSPS 科研费工作台的研究导航页。",
     },
     controls: {
       display: "显示控制",
@@ -330,7 +330,7 @@ const I18N = {
       academic: "个人主页",
       frontier: "学术前沿",
       followBuilders: "Follow Builders",
-      youtubeToEbook: "YouTube to Ebook",
+      youtubeToEbook: "YouTube Learner",
       jsps: "JSPS 科研费",
     },
     hero: {
@@ -367,9 +367,9 @@ const I18N = {
         action: "打开阅读器",
       },
       youtubeToEbook: {
-        name: "YouTube to Ebook",
-        intro: "复用 Follow Builders 风格，把 YouTube-to-Ebook 产出承载为可搜索的适配型 ebook 文章库。",
-        action: "打开文章库",
+        name: "YouTube Learner",
+        intro: "边看 YouTube，边同步阅读，边更好地学习的视频学习阅读器。",
+        action: "打开学习器",
       },
       jsps: {
         name: "JSPS 科研费",
@@ -391,7 +391,7 @@ const I18N = {
               { label: "个人主页", href: "/academic/" },
               { label: "学术前沿", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
-              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+              { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -446,7 +446,7 @@ const I18N = {
             items: [
               { label: "个人主页", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
-              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+              { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -485,7 +485,7 @@ const I18N = {
         ],
       },
       youtubeToEbook: {
-        eyebrow: "YouTube to Ebook",
+        eyebrow: "YouTube Learner",
         primary: [
           { label: "信息流", href: "/youtube-to-ebook/#feed" },
           { label: "来源", href: "/youtube-to-ebook/#sources" },
@@ -495,7 +495,7 @@ const I18N = {
           {
             title: "文章库",
             items: [
-              { label: "适配型 ebook 卡片", href: "/youtube-to-ebook/#feed" },
+              { label: "学习文章卡片", href: "/youtube-to-ebook/#feed" },
               { label: "文章阅读器", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
               { label: "流程来源", href: "/youtube-to-ebook/#sources" },
             ],
@@ -533,7 +533,7 @@ const I18N = {
   ja: {
     page: {
       title: "陶思晨 | 研究ポータル",
-      description: "個人ホームページ、学術フロンティア、Follow Builders、YouTube to Ebook、JSPS科研費ワークスペースへ入る統合ポータル。",
+      description: "個人ホームページ、学術フロンティア、Follow Builders、YouTube Learner、JSPS科研費ワークスペースへ入る統合ポータル。",
     },
     controls: {
       display: "表示コントロール",
@@ -554,7 +554,7 @@ const I18N = {
       academic: "個人ホームページ",
       frontier: "学術フロンティア",
       followBuilders: "Follow Builders",
-      youtubeToEbook: "YouTube to Ebook",
+      youtubeToEbook: "YouTube Learner",
       jsps: "JSPS科研費",
     },
     hero: {
@@ -591,9 +591,9 @@ const I18N = {
         action: "リーダーを開く",
       },
       youtubeToEbook: {
-        name: "YouTube to Ebook",
-        intro: "Follow Builders 形式を使い、YouTube-to-Ebook の出力を検索可能な適応型 ebook 記事ライブラリとして公開します。",
-        action: "ライブラリを開く",
+        name: "YouTube Learner",
+        intro: "YouTube を見ながら読み、よりよく学ぶための動画学習リーダーです。",
+        action: "リーダーを開く",
       },
       jsps: {
         name: "JSPS科研費",
@@ -615,7 +615,7 @@ const I18N = {
               { label: "個人ホームページ", href: "/academic/" },
               { label: "学術フロンティア", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
-              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+              { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -670,7 +670,7 @@ const I18N = {
             items: [
               { label: "個人ホームページ", href: "/academic/" },
               { label: "Follow Builders", href: "/follow-builders/" },
-              { label: "YouTube to Ebook", href: "/youtube-to-ebook/" },
+              { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -709,7 +709,7 @@ const I18N = {
         ],
       },
       youtubeToEbook: {
-        eyebrow: "YouTube to Ebook",
+        eyebrow: "YouTube Learner",
         primary: [
           { label: "フィード", href: "/youtube-to-ebook/#feed" },
           { label: "ソース", href: "/youtube-to-ebook/#sources" },
@@ -719,7 +719,7 @@ const I18N = {
           {
             title: "記事ライブラリ",
             items: [
-              { label: "適応型 ebook カード", href: "/youtube-to-ebook/#feed" },
+              { label: "学習記事カード", href: "/youtube-to-ebook/#feed" },
               { label: "記事リーダー", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
               { label: "Pipeline sources", href: "/youtube-to-ebook/#sources" },
             ],

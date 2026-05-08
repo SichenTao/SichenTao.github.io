@@ -76,9 +76,9 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
         "ja": "なぜある開発チームは Claude Code から Codex へ移ったのか"
       },
       "dek": {
-        "en": "A real YouTube-to-Ebook import from Every's episode on switching coding agents. The article turns the transcript into a structured long read for review on the homepage.",
-        "zh": "这是一篇由 Every 关于切换编码智能体的视频真实导入生成的 YouTube-to-Ebook 文章。它把字幕整理成适合在主页中复读的结构化长文。",
-        "ja": "Every の coding agent 移行に関する動画から実際に取り込んだ YouTube-to-Ebook 記事です。字幕を、homepage で読み返せる構造化された長文に変換しています。"
+        "en": "A YouTube Learner article imported from Every's episode on switching coding agents. It turns the transcript into a structured long read for review on the homepage.",
+        "zh": "这是一篇由 Every 关于切换编码智能体的视频导入生成的 YouTube Learner 学习文章。它把字幕整理成适合在主页中复读的结构化长文。",
+        "ja": "Every の coding agent 移行に関する動画から取り込んだ YouTube Learner の学習記事です。字幕を、homepage で読み返せる構造化された長文に変換しています。"
       },
       "tags": [
         {
