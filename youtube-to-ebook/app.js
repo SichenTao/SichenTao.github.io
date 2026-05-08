@@ -78,7 +78,7 @@ const I18N = {
       title: "YouTube Learner | 陶思晨",
       description: "一个视频学习阅读器，用来边看 YouTube、边同步阅读、边更好地学习。",
     },
-    brand: { note: "看 YouTube。同步阅读。学得更好。" },
+    brand: { note: "观赏 YouTube，同步读解，化为所学。" },
     nav: { feed: "首页", github: "GitHub" },
     controls: {
       display: "显示控制",
@@ -138,7 +138,7 @@ const I18N = {
       title: "YouTube Learner | Sichen Tao",
       description: "YouTube を見ながら読み、よりよく学ぶための動画学習リーダーです。",
     },
-    brand: { note: "YouTube を見て、読みながら、よりよく学ぶ。" },
+    brand: { note: "YouTubeを観て、読み解き、学びに変える。" },
     nav: { feed: "ホーム", github: "GitHub" },
     controls: {
       display: "表示設定",
