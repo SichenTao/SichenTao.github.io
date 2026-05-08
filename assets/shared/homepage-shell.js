@@ -423,8 +423,12 @@
     if (!workspace) {
       panel.style.removeProperty("--portal-mega-workspace-offset");
       panel.style.removeProperty("--portal-mega-separator-offset");
+      panel.style.removeProperty("--portal-mega-workspace-height");
       return;
     }
+
+    const workspaceHeight = Math.ceil(workspace.getBoundingClientRect().height || 0);
+    panel.style.setProperty("--portal-mega-workspace-height", `${Math.max(0, workspaceHeight)}px`);
 
     const availableWorkspaceOffset = Math.max(0, mainLeft - minWorkspaceLeft);
     const desiredWorkspaceOffset = workspaceWidth + menuColumnGap * 2;

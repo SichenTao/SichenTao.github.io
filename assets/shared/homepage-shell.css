@@ -592,6 +592,7 @@
   width: auto;
   margin-right: 0;
   margin-left: var(--portal-mega-main-left, max(32px, calc((100vw - min(1040px, calc(100vw - 64px))) / 2)));
+  min-height: var(--portal-mega-workspace-height, 0px);
   grid-template-columns: repeat(3, max-content);
   column-gap: clamp(48px, 4.8vw, 72px);
   row-gap: 24px;
