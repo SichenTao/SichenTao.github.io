@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A 股选股</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/selection.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar selection-topbar">
+        <div class="brand-block selection-brand">
+          <p class="eyebrow">Internal Quant Platform</p>
+          <h1>A 股选股</h1>
+          <span>最新选股 · 股票池 · 交易入口</span>
+        </div>
+        <label class="environment-select">
+          <span>交易环境</span>
+          <select id="environment-mode-select" aria-label="交易环境">
+            <option value="paper">模拟交易</option>
+            <option value="live">实盘交易</option>
+          </select>
+        </label>
+        <nav class="nav-tabs" aria-label="页面">
+          <a href="./backtest_workbench.html">交易</a>
+          <a class="is-active" href="./stock_selection.html">选股</a>
+          <a id="terminal-link" href="./trading_terminal.html">交易终端</a>
+          <a id="account-link" href="./account_records.html">收益总结</a>
+        </nav>
+        <div class="status-strip" id="status-strip"></div>
+      </header>
+
+      <section class="simulation-clock" aria-label="模拟场景时间线">
+        <div class="clock-summary">
+          <span id="sim-clock-mode">模拟场景</span>
+          <strong id="sim-clock-current">未生成时间线</strong>
+          <p id="sim-clock-range">进入交易页生成时间线后，选股会跟随同一模拟时刻。</p>
+        </div>
+        <div class="clock-center">
+          <div class="clock-fields">
+            <label class="field compact-field">
+              <span>模拟粒度</span>
+              <select id="frequency-select">
+                <option value="5m">5分钟</option>
+                <option value="15m">15分钟</option>
+                <option value="30m">30分钟</option>
+                <option value="60m">60分钟</option>
+                <option value="120m">120分钟</option>
+                <option value="1d">日线</option>
+                <option value="1w">周线</option>
+                <option value="1mo">月线</option>
+              </select>
+            </label>
+            <label class="field compact-field">
+              <span>步进间隔</span>
+              <select id="step-interval-select">
+                <option value="1">1步</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>开始日期</span>
+              <input id="start-date" type="date" />
+            </label>
+            <label class="field">
+              <span>结束日期</span>
+              <input id="end-date" type="date" />
+            </label>
+            <label class="field cash-field">
+              <span>初始资金</span>
+              <input id="initial-cash" inputmode="numeric" />
+            </label>
+            <div class="clock-actions">
+              <button id="generate-timeline" type="button">生成时间线</button>
+              <button id="time-prev" class="secondary" type="button">步退</button>
+              <button id="time-next" type="button">步进</button>
+              <button id="run-backtest" type="button">全自动运行</button>
+              <button id="time-pause" class="secondary" type="button">暂停</button>
+              <button id="time-reset" class="secondary" type="button">重置</button>
+            </div>
+          </div>
+          <label class="clock-progress">
+            <span id="sim-clock-progress-label">进度 0 / 0</span>
+            <input id="time-progress" type="range" min="0" max="0" value="0" />
+          </label>
+        </div>
+      </section>
+
+      <section class="command-bar selection-command" aria-label="选股命令">
+        <label class="field">
+          <span>选股策略</span>
+          <select id="strategy-select"></select>
+        </label>
+        <label class="field search-box">
+          <span>股票代码 / 名称</span>
+          <input id="symbol-input" autocomplete="off" placeholder="600000.SH / 浦发银行" />
+          <div id="symbol-suggestions" class="suggestions"></div>
+        </label>
+        <button id="open-symbol" type="button">进入</button>
+        <button id="add-manual" class="secondary" type="button">加入自选</button>
+      </section>
+
+      <section class="selection-workbench">
+        <div class="selection-stepper" aria-label="工作流">
+          <div class="step is-active">
+            <b>1</b>
+            <div>
+              <strong>选择策略</strong>
+              <span>切换后台策略，查看候选池与入选股票。</span>
+            </div>
+          </div>
+          <i aria-hidden="true"></i>
+          <div class="step">
+            <b>2</b>
+            <div>
+              <strong>比较候选</strong>
+              <span>按信号、收益、成交额等指标排序确认观察对象。</span>
+            </div>
+          </div>
+          <i aria-hidden="true"></i>
+          <div class="step">
+            <b>3</b>
+            <div>
+              <strong>进入终端</strong>
+              <span>带着策略和股票上下文进入交易回放界面。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="selection-layout">
+          <section class="selection-main">
+            <div class="panel-head decision-head">
+              <div>
+                <h2>候选与入选</h2>
+                <p id="decision-meta"></p>
+              </div>
+              <strong id="selected-count"></strong>
+            </div>
+            <div class="candidate-tools">
+              <button id="show-selected" class="is-active" type="button">入选</button>
+              <button id="show-candidates" type="button">全部候选</button>
+              <button id="open-active" type="button">打开当前</button>
+            </div>
+            <div id="candidate-table" class="candidate-table-wrap"></div>
+          </section>
+        </div>
+
+        <footer class="selection-status">
+          <span id="data-source">数据来源：本地数据镜像</span>
+          <span id="data-coverage">数据覆盖：加载中</span>
+          <span id="selection-update">最后更新：加载中</span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./data/daily_trading_data.js"></script>
+    <script type="module" src="./js/selectionPage.js"></script>
+  </body>
+</html>

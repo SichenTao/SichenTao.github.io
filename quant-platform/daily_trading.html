@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A 股日线选股与模拟交易</title>
+    <link rel="stylesheet" href="./daily_trading.css" />
+  </head>
+  <body>
+    <main class="terminal-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Internal Quant Platform</p>
+          <h1>A 股日线选股与模拟交易</h1>
+        </div>
+        <div class="status-strip" id="status-strip"></div>
+      </header>
+
+      <section class="command-bar" aria-label="策略和股票">
+        <label class="field">
+          <span>策略</span>
+          <select id="strategy-select"></select>
+        </label>
+        <label class="field symbol-field search-box">
+          <span>股票</span>
+          <input id="symbol-input" autocomplete="off" placeholder="600000.SH" />
+          <div id="symbol-suggestions" class="suggestions"></div>
+        </label>
+        <button id="symbol-search" class="command-button" type="button">进入</button>
+        <button id="add-watch" class="command-button secondary" type="button">加入策略</button>
+        <button id="strategy-buy" class="command-button primary" type="button">策略建仓</button>
+      </section>
+
+      <section class="layout">
+        <aside class="panel selection-panel">
+          <div class="panel-head">
+            <div>
+              <h2>选股</h2>
+              <p id="decision-meta"></p>
+            </div>
+            <strong id="selected-count"></strong>
+          </div>
+          <div class="selected-list" id="selected-list"></div>
+          <div class="candidate-tools">
+            <button class="is-active" id="show-selected" type="button">入选</button>
+            <button id="show-candidates" type="button">候选</button>
+          </div>
+          <div id="candidate-table" class="candidate-table-wrap"></div>
+        </aside>
+
+        <section class="panel trading-panel">
+          <div class="stock-header">
+            <div>
+              <p class="eyebrow" id="stock-rank"></p>
+              <h2 id="stock-title"></h2>
+              <p id="stock-name" class="stock-name"></p>
+            </div>
+            <div class="quote-grid" id="quote-grid"></div>
+          </div>
+
+          <div class="market-grid">
+            <div class="chart-block">
+              <div class="chart-toolbar" id="chart-toolbar">
+                <div class="toolbar-section">
+                  <span>周期</span>
+                  <div class="segmented" aria-label="周期">
+                  <button class="is-active" type="button" data-period="daily">日K</button>
+                  <button type="button" data-period="weekly">周K</button>
+                  <button type="button" data-period="monthly">月K</button>
+                  <button type="button" data-period="minute">分时</button>
+                  </div>
+                </div>
+                <div class="toolbar-section">
+                  <span>指标</span>
+                  <div class="segmented" aria-label="指标">
+                  <button class="is-active" type="button" data-indicator="VOL">VOL</button>
+                  <button type="button" data-indicator="MACD">MACD</button>
+                  <button type="button" data-indicator="KDJ">KDJ</button>
+                  <button type="button" data-overlay="MA">MA</button>
+                  <button type="button" data-overlay="BOLL">BOLL</button>
+                  </div>
+                </div>
+                <div class="toolbar-section">
+                  <span>画线</span>
+                  <div class="segmented" aria-label="画线">
+                  <button class="is-active" type="button" data-draw="crosshair">十字</button>
+                  <button type="button" data-draw="trend">趋势线</button>
+                  <button type="button" data-draw="horizontal">水平线</button>
+                  <button type="button" data-draw="clear">清除</button>
+                  </div>
+                </div>
+                <label class="mini-select">
+                  <span>坐标</span>
+                  <select id="scale-select">
+                    <option value="normal">普通</option>
+                    <option value="percent">百分比</option>
+                    <option value="log">对数</option>
+                  </select>
+                </label>
+              </div>
+              <div class="chart-note" id="chart-note"></div>
+              <svg id="daily-chart" class="daily-chart" viewBox="0 0 880 390" role="img" aria-label="日线走势"></svg>
+              <div class="zoom-strip" aria-label="图表缩放范围">
+                <span id="zoom-label">最近数据</span>
+                <input id="zoom-range" type="range" min="0" max="0" value="0" aria-label="移动可见K线范围" />
+                <button id="zoom-reset" type="button">重置视图</button>
+              </div>
+              <div class="range-row" id="range-row"></div>
+            </div>
+
+            <aside class="ticket">
+              <div class="panel-head compact">
+                <h2>模拟交易</h2>
+                <p id="ticket-symbol"></p>
+              </div>
+              <div class="account-grid" id="account-grid"></div>
+              <label class="field">
+                <span>数量</span>
+                <input id="order-quantity" inputmode="numeric" />
+              </label>
+              <div class="ticket-actions">
+                <button id="buy-button" type="button">买入</button>
+                <button id="sell-button" type="button">卖出</button>
+              </div>
+              <div id="target-card" class="target-card"></div>
+              <div id="ledger" class="ledger"></div>
+            </aside>
+          </div>
+
+          <div class="lower-grid">
+            <section>
+              <div class="panel-head compact">
+                <h2>信号</h2>
+                <p id="signal-meta"></p>
+              </div>
+              <div class="signal-grid" id="signal-grid"></div>
+            </section>
+            <section>
+              <div class="panel-head compact">
+                <h2>日线明细</h2>
+                <p id="bar-meta"></p>
+              </div>
+              <div id="daily-tape" class="daily-tape"></div>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./data/daily_trading_data.js"></script>
+    <script src="./daily_trading.js"></script>
+  </body>
+</html>

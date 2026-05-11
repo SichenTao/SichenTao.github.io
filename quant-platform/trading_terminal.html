@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>A 股交易终端</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/chart.css" />
+    <link rel="stylesheet" href="./css/terminal.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar terminal-topbar">
+        <div class="brand-block">
+          <p class="eyebrow">Internal Quant Platform</p>
+          <h1>交易终端</h1>
+          <span>模拟交易 · 实盘只读 · 个股执行</span>
+        </div>
+        <label class="environment-select">
+          <span>交易环境</span>
+          <select id="environment-mode-select" aria-label="交易环境">
+            <option value="paper">模拟交易</option>
+            <option value="live">实盘交易</option>
+          </select>
+        </label>
+        <nav class="nav-tabs" aria-label="页面">
+          <a href="./backtest_workbench.html">交易</a>
+          <a href="./stock_selection.html">选股</a>
+          <a class="is-active" href="./trading_terminal.html">交易终端</a>
+          <a id="account-link" href="./account_records.html">收益总结</a>
+        </nav>
+        <div class="market-ticker" id="market-ticker"></div>
+      </header>
+
+      <section class="simulation-clock" aria-label="模拟场景时间线">
+        <div class="clock-summary">
+          <span id="sim-clock-mode">模拟场景</span>
+          <strong id="sim-clock-current">未生成时间线</strong>
+          <p id="sim-clock-range">交易终端会使用选股和交易页共享的模拟时刻。</p>
+        </div>
+        <div class="clock-center">
+          <div class="clock-fields">
+            <label class="field compact-field">
+              <span>模拟粒度</span>
+              <select id="frequency-select">
+                <option value="5m">5分钟</option>
+                <option value="15m">15分钟</option>
+                <option value="30m">30分钟</option>
+                <option value="60m">60分钟</option>
+                <option value="120m">120分钟</option>
+                <option value="1d">日线</option>
+                <option value="1w">周线</option>
+                <option value="1mo">月线</option>
+              </select>
+            </label>
+            <label class="field compact-field">
+              <span>步进间隔</span>
+              <select id="step-interval-select">
+                <option value="1">1步</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>开始日期</span>
+              <input id="start-date" type="date" />
+            </label>
+            <label class="field">
+              <span>结束日期</span>
+              <input id="end-date" type="date" />
+            </label>
+            <label class="field cash-field">
+              <span>初始资金</span>
+              <input id="initial-cash" inputmode="numeric" />
+            </label>
+            <div class="clock-actions">
+              <button id="generate-timeline" type="button">生成时间线</button>
+              <button id="time-prev" class="secondary" type="button">步退</button>
+              <button id="time-next" type="button">步进</button>
+              <button id="run-backtest" type="button">全自动运行</button>
+              <button id="time-pause" class="secondary" type="button">暂停</button>
+              <button id="time-reset" class="secondary" type="button">重置</button>
+            </div>
+          </div>
+          <label class="clock-progress">
+            <span id="sim-clock-progress-label">进度 0 / 0</span>
+            <input id="time-progress" type="range" min="0" max="0" value="0" />
+          </label>
+        </div>
+      </section>
+
+      <section class="terminal-command" aria-label="交易终端命令">
+        <label class="field search-box">
+          <span>股票代码 / 名称</span>
+          <input id="symbol-input" autocomplete="off" placeholder="600000.SH / 浦发银行" />
+          <div id="symbol-suggestions" class="suggestions"></div>
+        </label>
+        <label class="field mode-field">
+          <span>账户模式</span>
+          <select id="mode-select">
+            <option value="paper">模拟交易</option>
+            <option value="manual">手动记录</option>
+            <option value="live">真实只读</option>
+          </select>
+        </label>
+        <button id="open-symbol" type="button">进入</button>
+        <a class="back-link" id="back-selection" href="./stock_selection.html">回到股票池</a>
+        <div class="session-tools">
+          <span id="session-clock">交易时段 09:30-15:00</span>
+          <button class="secondary" type="button">设置</button>
+        </div>
+      </section>
+
+      <section class="terminal-layout">
+        <aside class="panel left-rail">
+          <div class="sidebar-section">
+            <div class="panel-head">
+              <div>
+                <h2>选股策略</h2>
+                <p id="strategy-meta"></p>
+              </div>
+            </div>
+            <div id="strategy-list" class="strategy-list"></div>
+          </div>
+          <div class="sidebar-section">
+            <div class="panel-head">
+              <div>
+                <h2>股票池</h2>
+                <p id="watch-meta"></p>
+              </div>
+            </div>
+            <label class="pool-search">
+              <input id="pool-filter" autocomplete="off" placeholder="搜索股票池" />
+            </label>
+            <div id="watch-list" class="watch-list"></div>
+          </div>
+        </aside>
+
+        <section class="panel main-workspace">
+          <div class="stock-header">
+            <div>
+              <p class="eyebrow" id="stock-rank"></p>
+              <h2 id="stock-title"></h2>
+              <p id="stock-name"></p>
+            </div>
+            <div class="quote-grid" id="quote-grid"></div>
+          </div>
+
+          <div class="chart-frame">
+            <div class="chart-toolbar" id="chart-toolbar">
+              <div class="toolbar-section">
+                <span>周期</span>
+                <div class="segmented" aria-label="周期">
+                  <button type="button" data-period="5m">5分钟</button>
+                  <button type="button" data-period="15m">15分钟</button>
+                  <button type="button" data-period="30m">30分钟</button>
+                  <button type="button" data-period="60m">60分钟</button>
+                  <button type="button" data-period="120m">120分钟</button>
+                  <button class="is-active" type="button" data-period="daily">日K</button>
+                  <button type="button" data-period="weekly">周K</button>
+                  <button type="button" data-period="monthly">月K</button>
+                  <button type="button" data-period-panel>周期设置</button>
+                </div>
+              </div>
+              <div class="toolbar-section">
+                <span>副图指标</span>
+                <div class="segmented" aria-label="副图指标">
+                  <button class="is-active" type="button" data-indicator="VOL" title="最多同时显示两个副图指标">VOL</button>
+                  <button type="button" data-indicator="MACD">MACD</button>
+                  <button type="button" data-indicator="KDJ">KDJ</button>
+                </div>
+              </div>
+              <div class="toolbar-section">
+                <span>主图叠加</span>
+                <div class="segmented" aria-label="主图叠加">
+                  <button class="is-active" type="button" data-overlay="MA">MA</button>
+                  <button type="button" data-overlay="BOLL">BOLL</button>
+                  <button type="button" data-ma-panel>均线设置</button>
+                </div>
+              </div>
+              <div class="toolbar-section">
+                <span>画线</span>
+                <div class="segmented" aria-label="画线">
+                  <button class="is-active" type="button" data-draw="crosshair">十字</button>
+                  <button type="button" data-draw="trend">趋势线</button>
+                  <button type="button" data-draw="horizontal">水平线</button>
+                  <button type="button" data-draw="fibonacci">黄金分割</button>
+                  <button type="button" data-draw-action="undo" title="撤回上一根画线，快捷键 Cmd/Ctrl+Z">撤回</button>
+                  <button type="button" data-draw="clear">清除</button>
+                </div>
+              </div>
+              <label class="mini-select">
+                <span>坐标</span>
+                <select id="scale-select">
+                  <option value="normal">普通</option>
+                  <option value="percent">百分比</option>
+                  <option value="log">对数</option>
+                </select>
+              </label>
+            </div>
+            <div id="chart-settings-panel" class="chart-settings-panel is-hidden" aria-live="polite"></div>
+            <div id="chart-note" class="chart-note"></div>
+            <svg id="daily-chart" class="daily-chart" viewBox="0 0 880 460" role="img" aria-label="行情走势"></svg>
+            <div class="zoom-strip" aria-label="图表缩放范围">
+              <span id="zoom-label">最近数据</span>
+              <input id="zoom-range" type="range" min="0" max="0" value="0" aria-label="移动可见K线范围" />
+              <button id="zoom-reset" type="button">重置视图</button>
+            </div>
+            <div id="range-row" class="range-row"></div>
+          </div>
+
+          <div class="lower-grid">
+            <section class="signal-panel">
+              <div class="panel-head">
+                <h2>信号提示</h2>
+                <p id="signal-meta"></p>
+              </div>
+              <div id="signal-grid" class="signal-grid"></div>
+            </section>
+            <section class="tape-panel">
+              <div class="panel-head">
+                <h2>当日明细</h2>
+                <p id="bar-meta"></p>
+              </div>
+              <div id="daily-tape" class="daily-tape"></div>
+            </section>
+          </div>
+        </section>
+
+        <aside class="right-rail">
+          <section class="ticket">
+            <div class="panel-head">
+              <div>
+                <h2>模拟交易</h2>
+                <p id="ticket-symbol"></p>
+              </div>
+            </div>
+            <div class="account-title">
+              <strong>我的账户</strong>
+              <span id="account-mode-label">模拟</span>
+            </div>
+            <div class="account-grid" id="account-grid"></div>
+            <div id="strategy-suggestion" class="strategy-suggestion is-hidden"></div>
+            <div class="operation-tabs" aria-label="订单类型">
+              <button class="is-active" type="button" data-order-mode="normal">普通</button>
+              <button type="button" data-order-mode="condition">条件</button>
+              <button type="button" data-order-mode="replay">回放</button>
+            </div>
+            <div id="condition-panel" class="order-mode-panel is-hidden">
+              <div class="condition-grid">
+                <label class="field">
+                  <span>触发价</span>
+                  <input id="trigger-price" inputmode="decimal" />
+                </label>
+                <label class="field">
+                  <span>触发方向</span>
+                  <select id="trigger-side">
+                    <option value="gte">大于等于</option>
+                    <option value="lte">小于等于</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div id="replay-panel" class="order-mode-panel is-hidden">
+              <div class="replay-grid">
+                <label class="field">
+                  <span>回放步长</span>
+                  <select id="replay-step">
+                    <option value="1">1 bar</option>
+                    <option value="5">5 bars</option>
+                    <option value="30">30 bars</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>速度</span>
+                  <select id="replay-speed">
+                    <option value="1">1x</option>
+                    <option value="2">2x</option>
+                    <option value="5">5x</option>
+                  </select>
+                </label>
+              </div>
+              <div class="replay-controls">
+                <button type="button" id="replay-prev">上一步</button>
+                <button type="button" id="replay-play">播放</button>
+                <button type="button" id="replay-next">下一步</button>
+              </div>
+            </div>
+            <div class="order-type-tabs" aria-label="价格类型">
+              <button class="is-active" type="button">限价单</button>
+              <button type="button">市价单</button>
+            </div>
+            <label class="field">
+              <span id="order-price-label">价格</span>
+              <input id="order-price" inputmode="decimal" />
+            </label>
+            <label class="field">
+              <span id="order-quantity-label">数量</span>
+              <input id="order-quantity" inputmode="numeric" />
+            </label>
+            <div class="quick-size" aria-label="快捷仓位">
+              <button class="secondary" type="button" data-size="all">全仓</button>
+              <button class="secondary" type="button" data-size="0.5">1/2</button>
+              <button class="secondary" type="button" data-size="0.33">1/3</button>
+              <button class="secondary" type="button" data-size="0.25">1/4</button>
+            </div>
+            <div class="ticket-hint" id="ticket-hint"></div>
+            <div class="ticket-actions">
+              <button id="buy-button" type="button">买入</button>
+              <button id="sell-button" type="button">卖出</button>
+            </div>
+            <div id="target-card" class="target-card"></div>
+            <div id="position-card" class="position-card"></div>
+            <div class="trade-ledger-block">
+              <h2>当日成交</h2>
+              <div id="ledger" class="ledger"></div>
+            </div>
+          </section>
+        </aside>
+      </section>
+
+      <footer class="terminal-status">
+        <span id="status-market">数据来源：本地数据镜像</span>
+        <span id="status-session">交易时间 09:30-11:30 13:00-15:00</span>
+        <span class="status-dot">已连接</span>
+      </footer>
+    </main>
+
+    <script src="./data/daily_trading_data.js"></script>
+    <script type="module" src="./js/tradingTerminalPage.js"></script>
+  </body>
+</html>
