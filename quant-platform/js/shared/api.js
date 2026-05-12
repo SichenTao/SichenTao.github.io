@@ -12,17 +12,17 @@ export function isBackendUnavailableError(error) {
 
 export async function apiGetJson(path) {
   const url = resolveApiUrl(path);
-  const response = await fetchJson(url);
+  const response = await fetchJson(url, apiFetchOptions());
   return parseJsonResponse(response, path);
 }
 
 export async function apiPostJson(path, payload) {
   const url = resolveApiUrl(path);
-  const response = await fetchJson(url, {
+  const response = await fetchJson(url, apiFetchOptions({
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
-  });
+  }));
   return parseJsonResponse(response, path);
 }
 
@@ -36,8 +36,8 @@ export function resolveApiUrl(path) {
 
 export function apiBaseUrl() {
   if (typeof window === "undefined") return "";
-  const query = new URLSearchParams(window.location.search);
-  const queryBase = query.get("api_base") || query.get("api");
+  const params = connectionParams();
+  const queryBase = params.get("api_base") || params.get("api");
   if (queryBase) {
     const normalized = normalizeApiBase(queryBase);
     try {
@@ -50,6 +50,23 @@ export function apiBaseUrl() {
     if (stored) return normalizeApiBase(stored);
   } catch (_error) {}
   return isPublicFrontend() ? "http://127.0.0.1:8788" : "";
+}
+
+export function apiToken() {
+  if (typeof window === "undefined") return "";
+  const params = connectionParams();
+  const token = params.get("api_token") || params.get("token");
+  if (token) {
+    try {
+      window.localStorage.setItem("internal_quant_platform.api_token", token);
+    } catch (_error) {}
+    return token;
+  }
+  try {
+    return window.localStorage.getItem("internal_quant_platform.api_token") || "";
+  } catch (_error) {
+    return "";
+  }
 }
 
 export function isPublicFrontend() {
@@ -93,6 +110,27 @@ async function fetchJson(url, options = {}) {
       `无法连接本地 spark 后端 ${base}。请确认 SSH 隧道或本地服务已启动，再刷新页面。原始错误：${error?.message || error}`
     );
   }
+}
+
+function apiFetchOptions(options = {}) {
+  const headers = new Headers(options.headers || {});
+  const token = apiToken();
+  if (token) headers.set("X-Fin-Quant-Token", token);
+  return {
+    ...options,
+    headers,
+  };
+}
+
+function connectionParams() {
+  const search = new URLSearchParams(window.location.search || "");
+  const hashText = String(window.location.hash || "").replace(/^#/, "");
+  const hash = new URLSearchParams(hashText);
+  return {
+    get(name) {
+      return hash.get(name) || search.get(name);
+    },
+  };
 }
 
 function normalizeApiBase(value) {
