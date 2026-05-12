@@ -1,10 +1,12 @@
 export class BackendUnavailableError extends Error {
-  constructor(message = "当前公网页面没有连接 spark 后端。") {
+  constructor(message = "当前公网页面没有连接 spark 后端，或缺少授权令牌。") {
     super(message);
     this.name = "BackendUnavailableError";
     this.backendUnavailable = true;
   }
 }
+
+const DEFAULT_PUBLIC_API_BASE = "https://everyday-recommendations-constitute-subjective.trycloudflare.com";
 
 export function isBackendUnavailableError(error) {
   return Boolean(error?.backendUnavailable || error?.name === "BackendUnavailableError");
@@ -49,7 +51,7 @@ export function apiBaseUrl() {
     const stored = window.localStorage.getItem("internal_quant_platform.api_base");
     if (stored) return normalizeApiBase(stored);
   } catch (_error) {}
-  return isPublicFrontend() ? "http://127.0.0.1:8788" : "";
+  return isPublicFrontend() ? DEFAULT_PUBLIC_API_BASE : "";
 }
 
 export function apiToken() {
@@ -96,6 +98,9 @@ export async function parseJsonResponse(response, path = "") {
     }
   }
   if (!response.ok) {
+    if (response.status === 401) {
+      throw new BackendUnavailableError("公网前端已经找到 spark 后端，但缺少或使用了错误的授权令牌。请使用带 api_token 的访问链接。");
+    }
     throw new Error(payload.error || `request failed: ${response.status}`);
   }
   return payload;
