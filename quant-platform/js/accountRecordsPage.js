@@ -1,5 +1,6 @@
 import { escapeHtml, formatMoney, formatNumber, formatPrice, formatSignedPct } from "./shared/format.js";
 import { DEFAULT_INITIAL_CASH, accountIdForMode, loadAccountState, resetAccountState } from "./shared/accountApi.js";
+import { apiGetJson } from "./shared/api.js";
 import { defaultStrategyProfile, normalizeSymbol, statusItems, symbolName } from "./shared/marketData.js";
 import { SymbolSearch } from "./shared/symbolSearch.js";
 import { setupGlobalNavigation } from "./shared/navigation.js";
@@ -12,6 +13,7 @@ const state = {
   strategy: params.get("strategy") || defaultStrategyProfile(),
   symbol: normalizeSymbol(params.get("symbol") || "300632.SZ", "300632.SZ"),
   asOf: params.get("as_of") || params.get("date") || "",
+  dataReadiness: null,
   account: null,
 };
 
@@ -84,6 +86,13 @@ function bindEvents() {
 async function loadAndRender() {
   els.modeSelect.value = state.mode;
   els.resetAccount.disabled = state.mode === "live";
+  if (!state.dataReadiness) {
+    try {
+      state.dataReadiness = await apiGetJson("/api/data/readiness");
+    } catch (_error) {
+      state.dataReadiness = null;
+    }
+  }
   try {
     state.account = await loadAccountState({
       accountId: state.accountId,
@@ -131,7 +140,11 @@ function render() {
 }
 
 function renderStatus() {
-  els.accountStatus.innerHTML = statusItems(state.strategy)
+  const calendarLike = state.dataReadiness ? {
+    latest_trade_date: state.dataReadiness.daily?.last_trade_date || "",
+    data_readiness_summary: state.dataReadiness,
+  } : null;
+  els.accountStatus.innerHTML = statusItems(state.strategy, { calendar: calendarLike })
     .map(([label, value]) => `<div class="status-item"><span>${escapeHtml(label)}</span><strong>${escapeHtml(typeof value === "number" ? formatNumber(value) : value)}</strong></div>`)
     .join("");
 }
