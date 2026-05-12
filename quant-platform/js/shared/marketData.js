@@ -55,16 +55,24 @@ export function candidateRows(profileName) {
   return decisionByProfile(profileName).ranked_candidates || [];
 }
 
-export function statusItems(profileName) {
+export function isPublicStaticPage() {
+  if (typeof window === "undefined") return false;
+  return /(^|\.)github\.io$/i.test(window.location.hostname || "");
+}
+
+export function statusItems(profileName, options = {}) {
   const daily = marketData.daily_data || {};
   const readiness = marketData.data_readiness || {};
   const decision = decisionByProfile(profileName);
+  const dataStatus = options.calendar?.static_fallback || isPublicStaticPage()
+    ? "公网预览"
+    : formatReadinessStatus(readiness.status);
   return [
     ["日线日期", daily.latest_trade_date || "n/a"],
     ["股票池", daily.symbol_count || 0],
     ["候选", decision.eligible_symbol_count || 0],
     ["入选", (decision.selected_symbols || []).length],
-    ["数据", formatReadinessStatus(readiness.status)],
+    ["数据", dataStatus],
   ];
 }
 

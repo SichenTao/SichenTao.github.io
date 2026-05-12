@@ -1,7 +1,7 @@
 import { formatNumber } from "./format.js";
 import { apiGetJson, isBackendUnavailableError } from "./api.js";
 import { buildStaticBacktest } from "./staticSimulation.js";
-import { datesForFrequency, enhanceSimulationDateInput, loadSimulationCalendarAvailability, nearestAvailableDate, syncInputBounds } from "./simulationCalendar.js";
+import { calendarCoverageSummary, datesForFrequency, enhanceSimulationDateInput, loadSimulationCalendarAvailability, nearestAvailableDate, syncInputBounds } from "./simulationCalendar.js";
 
 const STORAGE_KEY = "internal_quant_platform.simulation_scenario.v1";
 const MAX_STORED_STEPS = 5000;
@@ -129,6 +129,7 @@ export function localizeScenarioMessage(message) {
     [/position quantity cannot cover sell order/i, "当前持仓不足以覆盖卖出委托"],
     [/missing market data for current holdings:\s*(.+)/i, (_match, symbols) => `当前持仓缺少行情数据：${symbols}`],
     [/cannot run paper session without bar history/i, "没有历史 K 线，无法运行模拟交易会话"],
+    [/The string did not match the expected pattern/i, "日期或接口地址格式不符合浏览器要求，请使用日历控件选择可用日期后重试"],
     [/当前公网静态网页没有连接 spark 后端/i, "当前公网静态网页没有连接 spark 后端，已尽量使用静态预览数据；完整动态选股、回测和模拟交易请使用 SSH 转发后的 http://127.0.0.1:8788/ 入口"],
   ];
   for (const [pattern, replacement] of replacements) {
@@ -279,6 +280,7 @@ export function setupSimulationScenarioBar({ mode = "paper", onIndexChange, getG
     pause: document.getElementById("time-pause"),
     next: document.getElementById("time-next"),
     reset: document.getElementById("time-reset"),
+    coverage: ensureClockCoverageNote(bar),
   };
   const envMode = mode === "live" ? "live" : "paper";
   bar.classList.toggle("is-hidden", envMode === "live");
@@ -300,6 +302,9 @@ export function setupSimulationScenarioBar({ mode = "paper", onIndexChange, getG
       calendarAvailability = calendar;
       coerceScenarioDateInputs({ notify: false });
       render();
+      if (calendar?.static_fallback) {
+        showScenarioToast("当前是公网静态预览，完整多年行情和策略计算请使用 spark 本地后端入口。", { type: "warning", duration: 5200 });
+      }
     })
     .catch(() => {});
 
@@ -364,6 +369,7 @@ export function setupSimulationScenarioBar({ mode = "paper", onIndexChange, getG
       elements.pause.disabled = generating || !running;
       elements.pause.textContent = "暂停";
     }
+    renderCoverageNote(scenario);
     if (notify && hasTimeline) {
       notifyPage(scenario).finally(syncPlaybackTimer);
     } else {
@@ -672,6 +678,15 @@ export function setupSimulationScenarioBar({ mode = "paper", onIndexChange, getG
     });
   }
 
+  function renderCoverageNote(active) {
+    if (!elements.coverage) return;
+    const frequency = elements.frequency?.value || active?.frequency || "1d";
+    const message = calendarCoverageSummary(calendarAvailability, frequency);
+    elements.coverage.textContent = message;
+    elements.coverage.hidden = !message;
+    bar.classList.toggle("is-static-preview", Boolean(calendarAvailability?.static_fallback));
+  }
+
   function coerceScenarioDateInputs({ notify = false } = {}) {
     if (!calendarAvailability || !elements.startDate || !elements.endDate) return;
     const frequency = normalizedFrequency(elements.frequency?.value || "1d");
@@ -697,6 +712,19 @@ export function setupSimulationScenarioBar({ mode = "paper", onIndexChange, getG
     if (raw && dates.includes(raw)) return raw;
     return nearestAvailableDate(calendarAvailability, frequency, raw || (kind === "end" ? dates[dates.length - 1] : dates[0]), kind === "end" ? "backward" : "forward");
   }
+}
+
+function ensureClockCoverageNote(bar) {
+  if (!bar) return null;
+  let note = bar.querySelector(".clock-coverage-note");
+  if (!note) {
+    note = document.createElement("p");
+    note.className = "clock-coverage-note";
+    note.hidden = true;
+    const center = bar.querySelector(".clock-center") || bar;
+    center.appendChild(note);
+  }
+  return note;
 }
 
 function nextPaint() {

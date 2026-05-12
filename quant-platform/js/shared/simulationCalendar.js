@@ -77,6 +77,25 @@ export function boundsForFrequency(calendar, frequency) {
   };
 }
 
+export function calendarCoverageSummary(calendar, frequency) {
+  if (!calendar) return "";
+  const normalized = normalizeFrequency(frequency);
+  const current = boundsForFrequency(calendar, normalized);
+  const currentLabel = frequencyLabel(normalized);
+  const daily = boundsForFrequency(calendar, "1d");
+  const intraday = boundsForFrequency(calendar, "5m");
+  const currentRange = current.min && current.max ? `${currentLabel} ${current.min} 至 ${current.max}` : `${currentLabel}暂无可用日期`;
+  if (calendar.static_fallback) {
+    return `公网静态预览：${currentRange}。完整多年行情和策略计算只在 spark 本地后端运行，不上传浏览器或 GitHub Pages。`;
+  }
+  const chunks = [];
+  if (daily.min && daily.max) chunks.push(`日线 ${daily.min} 至 ${daily.max}`);
+  if (intraday.min && intraday.max) chunks.push(`5分钟及派生分钟 ${intraday.min} 至 ${intraday.max}`);
+  if (["1w", "1mo"].includes(normalized)) chunks.push(`${currentLabel}由日线聚合到每周期末交易日`);
+  if (["15m", "30m", "60m", "120m"].includes(normalized)) chunks.push(`${currentLabel}由5分钟线本地聚合`);
+  return `本地 spark 数据：${chunks.join("；")}。当前可选 ${currentRange}。`;
+}
+
 export function nearestAvailableDate(calendar, frequency, value, direction = "backward") {
   const dates = datesForFrequency(calendar, frequency);
   if (!dates.length) return "";
@@ -320,7 +339,10 @@ export function syncInputBounds(input, options = {}) {
   const { min, max } = boundsForFrequency(calendar, frequency);
   input.min = min;
   input.max = max;
-  input.title = min && max ? `${frequencyLabel(frequency)}可用区间 ${min} 至 ${max}` : "当前粒度没有可用日期";
+  const suffix = calendar?.static_fallback
+    ? "；这是公网静态预览，完整多年数据保留在 spark 本地后端"
+    : "；数据来自 spark 本地后端";
+  input.title = min && max ? `${frequencyLabel(frequency)}可用区间 ${min} 至 ${max}${suffix}` : "当前粒度没有可用日期";
 }
 
 function normalizeCalendarPayload(payload) {

@@ -421,6 +421,18 @@ body.env-live .simulation-clock {
   gap: 8px;
 }
 
+.clock-coverage-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.simulation-clock.is-static-preview .clock-coverage-note {
+  color: #9f5600;
+}
+
 .clock-center {
   display: grid;
   gap: 10px;

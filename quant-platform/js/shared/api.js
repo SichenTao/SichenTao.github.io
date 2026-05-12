@@ -11,11 +11,13 @@ export function isBackendUnavailableError(error) {
 }
 
 export async function apiGetJson(path) {
+  if (shouldUseStaticFallback(path)) throw new BackendUnavailableError();
   const response = await fetch(path);
   return parseJsonResponse(response, path);
 }
 
 export async function apiPostJson(path, payload) {
+  if (shouldUseStaticFallback(path)) throw new BackendUnavailableError();
   const response = await fetch(path, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -46,4 +48,13 @@ export async function parseJsonResponse(response, path = "") {
     throw new Error(payload.error || `request failed: ${response.status}`);
   }
   return payload;
+}
+
+function shouldUseStaticFallback(path) {
+  if (!String(path || "").startsWith("/api/")) return false;
+  if (typeof window === "undefined") return false;
+  const { hostname, port, pathname } = window.location;
+  if (/(^|\.)github\.io$/i.test(hostname)) return true;
+  if (pathname.startsWith("/quant-platform/") && port !== "8788") return true;
+  return false;
 }

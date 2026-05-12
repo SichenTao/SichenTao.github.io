@@ -5,7 +5,7 @@ import { createManualSession, loadManualReview, loadStrategies, runBacktest, run
 import { SymbolSearch } from "./shared/symbolSearch.js";
 import { setupGlobalNavigation } from "./shared/navigation.js";
 import { buildSimulationScenarioFromBacktest, localizeScenarioMessage, saveSimulationScenario, showScenarioLoading, showScenarioToast } from "./shared/simulationScenario.js";
-import { datesForFrequency, enhanceSimulationDateInput, loadSimulationCalendarAvailability, nearestAvailableDate, syncInputBounds } from "./shared/simulationCalendar.js";
+import { calendarCoverageSummary, datesForFrequency, enhanceSimulationDateInput, loadSimulationCalendarAvailability, nearestAvailableDate, syncInputBounds } from "./shared/simulationCalendar.js";
 
 const params = new URLSearchParams(window.location.search);
 const state = {
@@ -49,6 +49,7 @@ let autoRunActive = false;
 let autoRunInFlight = false;
 let autoRunRenderTick = 0;
 let datePickers = [];
+let clockCoverageNote = null;
 
 const els = {
   strategySelect: document.getElementById("strategy-select"),
@@ -281,6 +282,9 @@ async function boot() {
       updateTradingCalendarForFrequency();
       applyDateBounds();
       coerceDateInputsForCurrentFrequency({ notify: false });
+      if (calendar?.static_fallback) {
+        showScenarioToast("当前是公网静态预览，完整多年行情和策略计算请使用 spark 本地后端入口。", { type: "warning", duration: 5200 });
+      }
     } catch (_error) {
       state.tradingCalendar = [];
     }
@@ -296,6 +300,12 @@ async function boot() {
     renderStrategyOptions();
     renderTradingPolicyOptions();
     renderStatus();
+    if (state.calendarAvailability?.static_fallback && !datesForFrequency(state.calendarAvailability, state.frequency).length) {
+      state.backtest = null;
+      state.message = "公网静态预览未携带本地行情数据。完整多年日期、选股、回测和模拟交易请通过 SSH 转发访问 spark 本地后端 http://127.0.0.1:8788/。";
+      render();
+      return;
+    }
     await runCurrentBacktest({ animate: false, label: "初始化" });
   } finally {
     hideLoading();
@@ -540,7 +550,7 @@ function renderTradingPolicyOptions() {
 }
 
 function renderStatus() {
-  els.status.innerHTML = statusItems(state.strategy)
+  els.status.innerHTML = statusItems(state.strategy, { calendar: state.calendarAvailability })
     .map(([label, value]) => `<div class="status-item"><span>${escapeHtml(label)}</span><strong>${escapeHtml(typeof value === "number" ? formatNumber(value) : value)}</strong></div>`)
     .join("");
   const firstSymbol = firstOrderSymbol();
@@ -558,6 +568,7 @@ function renderStatus() {
     tradingPolicy: state.tradingPolicy,
     period,
   });
+  renderCalendarCoverage();
 }
 
 function renderTimeProgress() {
@@ -565,6 +576,7 @@ function renderTimeProgress() {
   const preparing = Boolean(state.autoRunPreparing);
   const generating = Boolean(state.timelineGenerating);
   document.querySelector(".simulation-clock")?.classList.toggle("is-hidden", live);
+  renderCalendarCoverage();
   if (live) {
     els.generateTimeline.disabled = true;
     els.generateTimeline.classList.remove("is-pending");
@@ -613,6 +625,21 @@ function renderTimeProgress() {
   const atTimelineEnd = hasTimeline && state.selectedDayIndex >= max;
   els.runBacktest.disabled = !timelineReady || preparing || generating || autoRunActive || state.mode === "live" || atTimelineEnd;
   if (timelineReady) publishCurrentScenario(autoRunActive ? "running" : "paused");
+}
+
+function renderCalendarCoverage() {
+  const clock = document.querySelector(".simulation-clock");
+  if (!clock) return;
+  if (!clockCoverageNote) {
+    clockCoverageNote = document.createElement("p");
+    clockCoverageNote.className = "clock-coverage-note";
+    clockCoverageNote.hidden = true;
+    (clock.querySelector(".clock-center") || clock).appendChild(clockCoverageNote);
+  }
+  const message = calendarCoverageSummary(state.calendarAvailability, state.frequency);
+  clockCoverageNote.textContent = message;
+  clockCoverageNote.hidden = !message;
+  clock.classList.toggle("is-static-preview", Boolean(state.calendarAvailability?.static_fallback));
 }
 
 function renderSummary() {

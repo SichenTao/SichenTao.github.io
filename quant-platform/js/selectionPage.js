@@ -4,6 +4,7 @@ import {
   decisionByProfile,
   defaultStrategyProfile,
   ensureStockLoaded,
+  isPublicStaticPage,
   marketData,
   normalizeSymbol,
   selectedSymbols,
@@ -119,6 +120,12 @@ function renderStatus() {
 }
 
 function renderDataCoverage() {
+  if (isPublicStaticPage()) {
+    els.dataSource.textContent = "数据来源：公网静态预览";
+    els.dataCoverage.textContent = "完整多年日线、5分钟线和派生分钟线保留在 spark 本地后端；公网只演示界面，不上传完整行情数据。";
+    els.selectionUpdate.textContent = "完整功能入口：http://127.0.0.1:8788/（通过 SSH 端口转发访问）";
+    return;
+  }
   const readiness = marketData.data_readiness || {};
   const daily = readiness.daily || marketData.daily_data || {};
   const intraday = readiness.intraday || {};

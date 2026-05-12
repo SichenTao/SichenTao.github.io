@@ -5,8 +5,14 @@ const consoleData = () => window.INTERNAL_QUANT_TRADING_CONSOLE_DATA || {};
 export function staticStrategyPayload() {
   const consoleStrategies = consoleData().strategies || [];
   const strategies = (marketData.strategies || []).length ? marketData.strategies : consoleStrategies;
+  const fallbackProfile = {
+    profile_name: "public_preview",
+    strategy_id: "public_preview",
+    label: "公网预览（连接 spark 后端后显示真实策略）",
+    top_n: 0,
+  };
   return {
-    profiles: strategies,
+    profiles: strategies.length ? strategies : [fallbackProfile],
     trading_policies: [
       {
         policy_id: "equal_weight_daily_rebalance",
@@ -14,6 +20,7 @@ export function staticStrategyPayload() {
       },
     ],
     default_trading_policy: "equal_weight_daily_rebalance",
+    default_profile: strategies[0]?.profile_name || fallbackProfile.profile_name,
     static_fallback: true,
   };
 }
@@ -45,6 +52,12 @@ export function buildStaticTradingCalendar() {
     trade_dates: dailyDates,
     calendars_by_frequency: calendarsByFrequency,
     static_fallback: true,
+    spark_local_only: true,
+    coverage_notes: [
+      "公网静态版只携带少量预览数据，用于界面演示。",
+      "完整多年日线、5分钟线和派生分钟线保留在 spark 本地后端，不上传浏览器或 GitHub Pages。",
+      "请通过 SSH 转发后的 http://127.0.0.1:8788/ 使用完整选股、回测和模拟交易能力。",
+    ],
   };
 }
 
