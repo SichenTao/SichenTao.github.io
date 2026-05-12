@@ -18,7 +18,7 @@ import { KLineChart } from "./shared/klineChart.js";
 import { DEFAULT_INITIAL_CASH, accountIdForMode, loadAccountState, preflightAccountOrder, submitAccountOrder } from "./shared/accountApi.js";
 import { SymbolSearch } from "./shared/symbolSearch.js";
 import { setupGlobalNavigation } from "./shared/navigation.js";
-import { currentSimulationStep, loadSimulationScenario, localizeScenarioMessage, setupSimulationScenarioBar, showScenarioLoading } from "./shared/simulationScenario.js";
+import { currentSimulationStep, loadSimulationScenario, localizeScenarioMessage, setupSimulationScenarioBar, showScenarioLoading, showScenarioToast } from "./shared/simulationScenario.js";
 import { loadStrategies } from "./shared/simulationApi.js";
 
 const params = new URLSearchParams(window.location.search);
@@ -165,11 +165,7 @@ const hideLoading = showScenarioLoading("正在初始化交易终端...");
 try {
   await loadTerminalStrategies();
   await ensureStockLoaded(state.symbol, 0);
-  accountState = await loadAccountState({
-    accountId: state.accountId,
-    mode: state.accountMode,
-    initialCash: activeStrategyInitialCash(),
-  });
+  accountState = await loadAccountStateOrStaticFallback();
   render();
 } finally {
   hideLoading();
@@ -181,11 +177,7 @@ function bindEvents() {
     state.accountMode = els.modeSelect.value;
     state.accountId = accountIdForMode(state.accountMode);
     state.orderRisk = null;
-    accountState = await loadAccountState({
-      accountId: state.accountId,
-      mode: state.accountMode,
-      initialCash: activeStrategyInitialCash(),
-    });
+    accountState = await loadAccountStateOrStaticFallback();
     render();
     updateUrl();
   });
@@ -342,6 +334,47 @@ function render() {
   renderToolbar();
   setOrderMode(state.orderMode || "normal");
   renderChart();
+}
+
+async function loadAccountStateOrStaticFallback() {
+  try {
+    return await loadAccountState({
+      accountId: state.accountId,
+      mode: state.accountMode,
+      initialCash: activeStrategyInitialCash(),
+    });
+  } catch (error) {
+    showScenarioToast(localizeScenarioMessage(error.message || String(error)), { type: "warning" });
+    return staticAccountState({
+      accountId: state.accountId,
+      mode: state.accountMode,
+      initialCash: activeStrategyInitialCash(),
+    });
+  }
+}
+
+function staticAccountState({ accountId, mode, initialCash }) {
+  const cash = Number(initialCash || DEFAULT_INITIAL_CASH);
+  return {
+    account_id: accountId,
+    mode,
+    initial_cash: cash,
+    updated_at: new Date().toISOString(),
+    positions: [],
+    fills: [],
+    orders: [],
+    summary: {
+      cash_balance: cash,
+      positions_market_value: 0,
+      net_liquidation_value: cash,
+      total_pnl: 0,
+      return_pct: 0,
+      position_count: 0,
+      order_count: 0,
+      fill_count: 0,
+      rejected_order_count: 0,
+    },
+  };
 }
 
 function renderLinks() {

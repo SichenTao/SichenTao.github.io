@@ -3,7 +3,7 @@ import { DEFAULT_INITIAL_CASH, accountIdForMode, loadAccountState, resetAccountS
 import { defaultStrategyProfile, normalizeSymbol, statusItems, symbolName } from "./shared/marketData.js";
 import { SymbolSearch } from "./shared/symbolSearch.js";
 import { setupGlobalNavigation } from "./shared/navigation.js";
-import { currentSimulationStep, loadSimulationScenario, setupSimulationScenarioBar, showScenarioLoading } from "./shared/simulationScenario.js";
+import { currentSimulationStep, loadSimulationScenario, localizeScenarioMessage, setupSimulationScenarioBar, showScenarioLoading, showScenarioToast } from "./shared/simulationScenario.js";
 
 const params = new URLSearchParams(window.location.search);
 const state = {
@@ -67,11 +67,16 @@ function bindEvents() {
   });
   els.resetAccount.addEventListener("click", async () => {
     if (state.mode === "live") return;
-    state.account = await resetAccountState({
-      accountId: state.accountId,
-      mode: state.mode,
-      initialCash: DEFAULT_INITIAL_CASH,
-    });
+    try {
+      state.account = await resetAccountState({
+        accountId: state.accountId,
+        mode: state.mode,
+        initialCash: DEFAULT_INITIAL_CASH,
+      });
+    } catch (error) {
+      state.account = staticAccountState();
+      showScenarioToast(localizeScenarioMessage(error.message || String(error)), { type: "warning" });
+    }
     render();
   });
 }
@@ -79,12 +84,41 @@ function bindEvents() {
 async function loadAndRender() {
   els.modeSelect.value = state.mode;
   els.resetAccount.disabled = state.mode === "live";
-  state.account = await loadAccountState({
-    accountId: state.accountId,
-    mode: state.mode,
-    initialCash: DEFAULT_INITIAL_CASH,
-  });
+  try {
+    state.account = await loadAccountState({
+      accountId: state.accountId,
+      mode: state.mode,
+      initialCash: DEFAULT_INITIAL_CASH,
+    });
+  } catch (error) {
+    state.account = staticAccountState();
+    showScenarioToast(localizeScenarioMessage(error.message || String(error)), { type: "warning" });
+  }
   render();
+}
+
+function staticAccountState() {
+  const cash = DEFAULT_INITIAL_CASH;
+  return {
+    account_id: state.accountId,
+    mode: state.mode,
+    initial_cash: cash,
+    updated_at: new Date().toISOString(),
+    positions: [],
+    fills: [],
+    orders: [],
+    summary: {
+      cash_balance: cash,
+      positions_market_value: 0,
+      net_liquidation_value: cash,
+      total_pnl: 0,
+      return_pct: 0,
+      position_count: 0,
+      order_count: 0,
+      fill_count: 0,
+      rejected_order_count: 0,
+    },
+  };
 }
 
 function render() {
