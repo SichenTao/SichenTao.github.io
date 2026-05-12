@@ -56,8 +56,15 @@ export function candidateRows(profileName) {
 }
 
 export function isPublicStaticPage() {
+  return isStaticPreviewPage();
+}
+
+export function isStaticPreviewPage() {
   if (typeof window === "undefined") return false;
-  return /(^|\.)github\.io$/i.test(window.location.hostname || "");
+  const { hostname, pathname, port } = window.location;
+  if (/(^|\.)github\.io$/i.test(hostname || "")) return true;
+  if (pathname.startsWith("/quant-platform/") && port !== "8788") return true;
+  return false;
 }
 
 export function statusItems(profileName, options = {}) {
@@ -87,6 +94,7 @@ export async function ensureStockLoaded(symbol, limit = 260) {
     if (requestedLimit === 0 ? existingIsFull : hasEnoughPartial) return existing;
   }
   if (!window.location.protocol.startsWith("http")) return existing || null;
+  if (isStaticPreviewPage()) return existing || null;
   try {
     const response = await fetch(`/api/daily/bars?symbol=${encodeURIComponent(normalized)}&limit=${limit}`);
     if (!response.ok) return null;
@@ -121,6 +129,7 @@ export async function loadIntradayBars(stock, limit = 0) {
   stock.intradayLoaded = true;
   stock.intradayLimit = requestedLimit;
   if (!window.location.protocol.startsWith("http")) return [];
+  if (isStaticPreviewPage()) return [];
   try {
     const response = await fetch(`/api/intraday/bars?symbol=${encodeURIComponent(stock.symbol)}&limit=${requestedLimit}`);
     if (!response.ok) return [];

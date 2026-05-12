@@ -223,6 +223,10 @@ async function refreshSelectionForScenario() {
     state.remoteDecision = null;
     return;
   }
+  if (isPublicStaticPage()) {
+    state.remoteDecision = null;
+    return;
+  }
   const step = currentSimulationStep(loadSimulationScenario());
   const asOf = step?.tradeDate || String(step?.asOf || "").slice(0, 10) || marketData.daily_data?.latest_trade_date || "";
   if (!asOf) {
