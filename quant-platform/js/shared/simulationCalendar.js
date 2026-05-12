@@ -1,13 +1,16 @@
+import { apiGetJson, isBackendUnavailableError } from "./api.js";
+import { buildStaticTradingCalendar } from "./staticSimulation.js";
+
 let calendarPromise = null;
 
 export async function loadSimulationCalendarAvailability() {
   if (!calendarPromise) {
-    calendarPromise = fetch("/api/trading_calendar")
-      .then(async (response) => {
-        const payload = await response.json();
-        if (!response.ok) throw new Error(payload.error || `request failed: ${response.status}`);
-        return normalizeCalendarPayload(payload);
+    calendarPromise = apiGetJson("/api/trading_calendar")
+      .catch((error) => {
+        if (isBackendUnavailableError(error)) return buildStaticTradingCalendar();
+        throw error;
       })
+      .then((payload) => normalizeCalendarPayload(payload))
       .catch((error) => {
         calendarPromise = null;
         throw error;

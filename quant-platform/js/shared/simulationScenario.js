@@ -1,4 +1,6 @@
 import { formatNumber } from "./format.js";
+import { apiGetJson, isBackendUnavailableError } from "./api.js";
+import { buildStaticBacktest } from "./staticSimulation.js";
 import { datesForFrequency, enhanceSimulationDateInput, loadSimulationCalendarAvailability, nearestAvailableDate, syncInputBounds } from "./simulationCalendar.js";
 
 const STORAGE_KEY = "internal_quant_platform.simulation_scenario.v1";
@@ -127,6 +129,7 @@ export function localizeScenarioMessage(message) {
     [/position quantity cannot cover sell order/i, "当前持仓不足以覆盖卖出委托"],
     [/missing market data for current holdings:\s*(.+)/i, (_match, symbols) => `当前持仓缺少行情数据：${symbols}`],
     [/cannot run paper session without bar history/i, "没有历史 K 线，无法运行模拟交易会话"],
+    [/当前公网静态网页没有连接 spark 后端/i, "当前公网静态网页没有连接 spark 后端，已尽量使用静态预览数据；完整动态选股、回测和模拟交易请使用 SSH 转发后的 http://127.0.0.1:8788/ 入口"],
   ];
   for (const [pattern, replacement] of replacements) {
     text = text.replace(pattern, replacement);
@@ -612,10 +615,12 @@ export function setupSimulationScenarioBar({ mode = "paper", onIndexChange, getG
     });
     if (request.tradingPolicy) params.set("trading_policy", request.tradingPolicy);
     const endpoint = isIntradaySimulationFrequency(request.frequency) ? "/api/intraday/strategy-simulation" : "/api/backtest/run";
-    const response = await fetch(`${endpoint}?${params.toString()}`);
-    const payload = await response.json();
-    if (!response.ok) throw new Error(payload.error || `request failed: ${response.status}`);
-    return payload;
+    try {
+      return await apiGetJson(`${endpoint}?${params.toString()}`);
+    } catch (error) {
+      if (isBackendUnavailableError(error)) return buildStaticBacktest(request);
+      throw error;
+    }
   }
 
   function renderScenarioFields(active) {

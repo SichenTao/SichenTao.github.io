@@ -1,3 +1,5 @@
+import { apiGetJson, apiPostJson } from "./api.js";
+
 export const DEFAULT_ACCOUNT_ID = "paper_default";
 export const DEFAULT_ACCOUNT_MODE = "paper";
 export const DEFAULT_INITIAL_CASH = 100000;
@@ -10,7 +12,7 @@ export function accountIdForMode(mode) {
 
 export async function loadAccountState({ accountId = DEFAULT_ACCOUNT_ID, mode = DEFAULT_ACCOUNT_MODE, initialCash = DEFAULT_INITIAL_CASH } = {}) {
   const params = new URLSearchParams({ account: accountId, mode, initial_cash: String(initialCash) });
-  return apiGet(`/api/account/state?${params.toString()}`);
+  return apiGetJson(`/api/account/state?${params.toString()}`);
 }
 
 export async function submitAccountOrder({
@@ -26,7 +28,7 @@ export async function submitAccountOrder({
   asOf = "",
   initialCash = DEFAULT_INITIAL_CASH,
 }) {
-  return apiPost("/api/account/order", {
+  return apiPostJson("/api/account/order", {
     account: accountId,
     mode,
     strategy,
@@ -54,7 +56,7 @@ export async function preflightAccountOrder({
   asOf = "",
   initialCash = DEFAULT_INITIAL_CASH,
 }) {
-  return apiPost("/api/account/order/preflight", {
+  return apiPostJson("/api/account/order/preflight", {
     account: accountId,
     mode,
     strategy,
@@ -70,31 +72,9 @@ export async function preflightAccountOrder({
 }
 
 export async function resetAccountState({ accountId = DEFAULT_ACCOUNT_ID, mode = DEFAULT_ACCOUNT_MODE, initialCash = DEFAULT_INITIAL_CASH } = {}) {
-  return apiPost("/api/account/reset", {
+  return apiPostJson("/api/account/reset", {
     account: accountId,
     mode,
     initial_cash: initialCash,
   });
-}
-
-async function apiGet(path) {
-  const response = await fetch(path);
-  return parseResponse(response);
-}
-
-async function apiPost(path, payload) {
-  const response = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  return parseResponse(response);
-}
-
-async function parseResponse(response) {
-  const payload = await response.json();
-  if (!response.ok) {
-    throw new Error(payload.error || `request failed: ${response.status}`);
-  }
-  return payload;
 }

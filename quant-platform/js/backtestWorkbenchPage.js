@@ -340,6 +340,7 @@ async function runCurrentBacktest({ animate = false, preserveCurrentStep = false
 }
 
 function selectionFallbackMessage(backtest) {
+  if (backtest?.static_fallback_note) return backtest.static_fallback_note;
   if (!backtest?.selection_fallback_used || !Array.isArray(backtest.selection_attempts)) return "";
   const attempts = backtest.selection_attempts;
   const first = attempts[0] || {};

@@ -1,9 +1,22 @@
+import { apiGetJson, apiPostJson, isBackendUnavailableError } from "./api.js";
+import { buildStaticBacktest, buildStaticTradingCalendar, staticStrategyPayload } from "./staticSimulation.js";
+
 export async function loadStrategies() {
-  return apiGet("/api/strategies");
+  try {
+    return await apiGetJson("/api/strategies");
+  } catch (error) {
+    if (isBackendUnavailableError(error)) return staticStrategyPayload();
+    throw error;
+  }
 }
 
 export async function loadTradingCalendar() {
-  return apiGet("/api/trading_calendar");
+  try {
+    return await apiGetJson("/api/trading_calendar");
+  } catch (error) {
+    if (isBackendUnavailableError(error)) return buildStaticTradingCalendar();
+    throw error;
+  }
 }
 
 export async function runBacktest({ strategy, tradingPolicy = "", start, end, initialCash, frequency = "1d" }) {
@@ -15,7 +28,12 @@ export async function runBacktest({ strategy, tradingPolicy = "", start, end, in
     frequency,
   });
   if (tradingPolicy) params.set("trading_policy", tradingPolicy);
-  return apiGet(`/api/backtest/run?${params.toString()}`);
+  try {
+    return await apiGetJson(`/api/backtest/run?${params.toString()}`);
+  } catch (error) {
+    if (isBackendUnavailableError(error)) return buildStaticBacktest({ strategy, tradingPolicy, start, end, initialCash, frequency });
+    throw error;
+  }
 }
 
 export async function runIntradayStrategySimulation({ strategy, tradingPolicy = "", start, end, initialCash, frequency = "5m" }) {
@@ -27,11 +45,16 @@ export async function runIntradayStrategySimulation({ strategy, tradingPolicy = 
     frequency,
   });
   if (tradingPolicy) params.set("trading_policy", tradingPolicy);
-  return apiGet(`/api/intraday/strategy-simulation?${params.toString()}`);
+  try {
+    return await apiGetJson(`/api/intraday/strategy-simulation?${params.toString()}`);
+  } catch (error) {
+    if (isBackendUnavailableError(error)) return buildStaticBacktest({ strategy, tradingPolicy, start, end, initialCash, frequency });
+    throw error;
+  }
 }
 
 export async function createManualSession({ strategy, tradingPolicy = "", start, end, initialCash, frequency = "1d" }) {
-  return apiPost("/api/simulation/session/create", {
+  return apiPostJson("/api/simulation/session/create", {
     strategy,
     trading_policy: tradingPolicy,
     start,
@@ -43,40 +66,20 @@ export async function createManualSession({ strategy, tradingPolicy = "", start,
 
 export async function loadManualSession(sessionId) {
   const params = new URLSearchParams({ session_id: sessionId });
-  return apiGet(`/api/simulation/session/state?${params.toString()}`);
+  return apiGetJson(`/api/simulation/session/state?${params.toString()}`);
 }
 
 export async function loadManualReview({ sessionId, accountId }) {
   const params = new URLSearchParams({ session_id: sessionId });
   if (accountId) params.set("account", accountId);
-  return apiGet(`/api/simulation/session/review?${params.toString()}`);
+  return apiGetJson(`/api/simulation/session/review?${params.toString()}`);
 }
 
 export async function stepManualSession({ sessionId, action, note = "", details = {} }) {
-  return apiPost("/api/simulation/session/step", {
+  return apiPostJson("/api/simulation/session/step", {
     session_id: sessionId,
     action,
     note,
     details,
   });
-}
-
-async function apiGet(path) {
-  const response = await fetch(path);
-  return parseResponse(response);
-}
-
-async function apiPost(path, payload) {
-  const response = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  return parseResponse(response);
-}
-
-async function parseResponse(response) {
-  const payload = await response.json();
-  if (!response.ok) throw new Error(payload.error || `request failed: ${response.status}`);
-  return payload;
 }
