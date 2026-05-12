@@ -630,6 +630,87 @@ body.env-live .simulation-clock + .command-bar {
   line-height: 1.4;
 }
 
+.api-auth-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 280;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(245, 245, 247, 0.66);
+  backdrop-filter: blur(14px);
+}
+
+.api-auth-card {
+  display: grid;
+  gap: 14px;
+  width: min(560px, calc(100vw - 28px));
+  border: 1px solid rgba(29, 29, 31, 0.12);
+  border-radius: 10px;
+  padding: 22px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px rgba(29, 29, 31, 0.18);
+}
+
+.api-auth-eyebrow {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.api-auth-card h2 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.api-auth-message,
+.api-auth-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.api-auth-card label {
+  display: grid;
+  gap: 6px;
+}
+
+.api-auth-card label span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.api-auth-card input {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 11px 12px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+}
+
+.api-auth-card input:focus {
+  border-color: var(--blue);
+  outline: 2px solid rgba(10, 102, 217, 0.18);
+}
+
+.api-auth-card input[name="api_base"] {
+  font-size: 13px;
+}
+
+.api-auth-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .loading-spinner {
   width: 18px;
   height: 18px;
