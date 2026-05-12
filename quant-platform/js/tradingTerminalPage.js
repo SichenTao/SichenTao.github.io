@@ -16,6 +16,7 @@ import {
 } from "./shared/marketData.js";
 import { KLineChart } from "./shared/klineChart.js";
 import { DEFAULT_INITIAL_CASH, accountIdForMode, loadAccountState, preflightAccountOrder, submitAccountOrder } from "./shared/accountApi.js";
+import { apiGetJson } from "./shared/api.js";
 import { SymbolSearch } from "./shared/symbolSearch.js";
 import { setupGlobalNavigation } from "./shared/navigation.js";
 import { currentSimulationStep, loadSimulationScenario, localizeScenarioMessage, setupSimulationScenarioBar, showScenarioLoading, showScenarioToast } from "./shared/simulationScenario.js";
@@ -23,7 +24,7 @@ import { loadStrategies } from "./shared/simulationApi.js";
 
 const params = new URLSearchParams(window.location.search);
 const initialProfile = params.get("strategy") || defaultStrategyProfile();
-const initialSymbol = normalizeSymbol(params.get("symbol") || marketData.default_symbol || "", marketData.default_symbol || "");
+const initialSymbol = normalizeSymbol(params.get("symbol") || marketData.default_symbol || "300632.SZ", marketData.default_symbol || "300632.SZ");
 const initialMode = params.get("mode") || "paper";
 const initialAccountId = params.get("account") || accountIdForMode(initialMode);
 const requestedPeriod = params.get("period") || "daily";
@@ -47,6 +48,7 @@ const state = {
   accountMode: initialMode,
   manualSymbols: [],
   strategies: [],
+  dataReadiness: null,
   period: isSupportedPeriod(initialPeriod) ? initialPeriod : "daily",
   indicators: ["VOL"],
   overlays: { MA: true, BOLL: false },
@@ -164,6 +166,7 @@ bindEvents();
 const hideLoading = showScenarioLoading("正在初始化交易终端...");
 try {
   await loadTerminalStrategies();
+  await loadTerminalReadiness();
   await ensureStockLoaded(state.symbol, 0);
   accountState = await loadAccountStateOrStaticFallback();
   render();
@@ -397,7 +400,7 @@ function renderLinks() {
 }
 
 function renderTerminalStatus() {
-  const readiness = marketData.data_readiness || {};
+  const readiness = state.dataReadiness || marketData.data_readiness || {};
   const daily = readiness.daily || marketData.daily_data || {};
   const intraday = readiness.intraday || {};
   const dailyRange = `${daily.first_trade_date || marketData.daily_data?.first_trade_date || "-"} 至 ${daily.last_trade_date || marketData.daily_data?.latest_trade_date || "-"}`;
@@ -502,8 +505,17 @@ async function loadTerminalStrategies() {
   try {
     const payload = await loadStrategies();
     state.strategies = payload.profiles || [];
+    state.profileName = state.profileName || payload.default_profile || state.strategies[0]?.profile_name || "";
   } catch (_error) {
     state.strategies = [];
+  }
+}
+
+async function loadTerminalReadiness() {
+  try {
+    state.dataReadiness = await apiGetJson("/api/data/readiness");
+  } catch (_error) {
+    state.dataReadiness = null;
   }
 }
 

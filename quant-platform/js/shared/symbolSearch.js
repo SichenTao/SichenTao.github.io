@@ -1,5 +1,5 @@
 import { escapeHtml } from "./format.js";
-import { normalizeSymbol, symbolIndex, symbolIndexBySymbol } from "./marketData.js";
+import { localSymbolMatches, normalizeSymbol, searchSymbols, symbolIndexBySymbol } from "./marketData.js";
 
 export class SymbolSearch {
   constructor({ input, suggestions, onSelect }) {
@@ -8,6 +8,7 @@ export class SymbolSearch {
     this.onSelect = onSelect;
     this.matches = [];
     this.activeIndex = -1;
+    this.requestId = 0;
     this.bind();
   }
 
@@ -34,21 +35,27 @@ export class SymbolSearch {
     });
   }
 
-  render(value) {
+  async render(value) {
     const query = String(value || "").trim().toUpperCase();
     if (!query) {
       this.close();
       return;
     }
-    const compact = query.replace(/\s+/g, "");
-    const matches = symbolIndex
-      .filter((item) => {
-        const symbol = String(item.symbol || "").toUpperCase();
-        const code = symbol.split(".")[0];
-        const name = String(item.name || "").toUpperCase();
-        return symbol.includes(compact) || code.includes(compact) || name.includes(compact) || String(item.name || "").includes(value.trim());
-      })
-      .slice(0, 12);
+    const requestId = this.requestId + 1;
+    this.requestId = requestId;
+    const local = localSymbolMatches(value, 12);
+    if (local.length) {
+      this.setMatches(local, query);
+      return;
+    }
+    this.suggestions.innerHTML = `<button type="button" class="suggestion-row"><strong>${escapeHtml(query)}</strong><span>正在从本地后端搜索</span></button>`;
+    this.suggestions.classList.add("is-open");
+    const matches = await searchSymbols(value, 12);
+    if (requestId !== this.requestId) return;
+    this.setMatches(matches, query);
+  }
+
+  setMatches(matches, query) {
     this.matches = matches;
     this.activeIndex = matches.length ? 0 : -1;
     this.suggestions.innerHTML = matches.length
@@ -90,7 +97,9 @@ export class SymbolSearch {
       this.select(this.matches[this.activeIndex].symbol);
       return;
     }
-    this.select(normalizeSymbol(this.input.value));
+    searchSymbols(this.input.value, 1).then((matches) => {
+      this.select(matches[0]?.symbol || normalizeSymbol(this.input.value));
+    });
   }
 
   select(symbol) {

@@ -292,6 +292,7 @@ async function boot() {
       const payload = await loadStrategies();
       state.strategies = payload.profiles || [];
       state.tradingPolicies = payload.trading_policies || [];
+      state.strategy = state.strategy || payload.default_profile || state.strategies[0]?.profile_name || "";
       state.tradingPolicy = state.tradingPolicy || payload.default_trading_policy || state.tradingPolicies[0]?.policy_id || "";
     } catch (_error) {
       state.strategies = [];

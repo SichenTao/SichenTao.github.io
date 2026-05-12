@@ -4,7 +4,6 @@ import {
   decisionByProfile,
   defaultStrategyProfile,
   ensureStockLoaded,
-  isPublicStaticPage,
   marketData,
   normalizeSymbol,
   selectedSymbols,
@@ -12,6 +11,7 @@ import {
   stockBySymbol,
   symbolName,
 } from "./shared/marketData.js";
+import { apiGetJson } from "./shared/api.js";
 import { SymbolSearch } from "./shared/symbolSearch.js";
 import { setupGlobalNavigation } from "./shared/navigation.js";
 import { currentSimulationStep, loadSimulationScenario, setupSimulationScenarioBar, showScenarioLoading } from "./shared/simulationScenario.js";
@@ -19,11 +19,12 @@ import { loadStrategies } from "./shared/simulationApi.js";
 
 const state = {
   profileName: new URLSearchParams(window.location.search).get("strategy") || defaultStrategyProfile(),
-  symbol: new URLSearchParams(window.location.search).get("symbol") || marketData.default_symbol || "",
+  symbol: normalizeSymbol(new URLSearchParams(window.location.search).get("symbol") || marketData.default_symbol || "300632.SZ", marketData.default_symbol || "300632.SZ"),
   mode: new URLSearchParams(window.location.search).get("mode") || "paper",
   showMode: "candidates",
   manualSymbols: [],
   strategies: [],
+  dataReadiness: null,
   remoteDecision: null,
   selectionRequestId: 0,
 };
@@ -68,6 +69,7 @@ bindEvents();
 const hideLoading = showScenarioLoading("正在初始化选股页面...");
 try {
   await loadStrategyOptions();
+  await loadDataReadiness();
   await refreshSelectionForScenario();
   render();
 } finally {
@@ -120,15 +122,15 @@ function renderStatus() {
 }
 
 function renderDataCoverage() {
-  if (isPublicStaticPage()) {
-    els.dataSource.textContent = "数据来源：公网静态预览";
-    els.dataCoverage.textContent = "完整多年日线、5分钟线和派生分钟线保留在 spark 本地后端；公网只演示界面，不上传完整行情数据。";
-    els.selectionUpdate.textContent = "完整功能入口：http://127.0.0.1:8788/（通过 SSH 端口转发访问）";
-    return;
-  }
-  const readiness = marketData.data_readiness || {};
+  const readiness = state.dataReadiness || marketData.data_readiness || {};
   const daily = readiness.daily || marketData.daily_data || {};
   const intraday = readiness.intraday || {};
+  if (!readiness.status && !daily.symbol_count) {
+    els.dataSource.textContent = "数据来源：正在连接 spark 本地后端";
+    els.dataCoverage.textContent = "公网前端只承接操作界面，行情和计算通过本机隧道访问 spark 后端。";
+    els.selectionUpdate.textContent = "如果长时间无数据，请确认 http://127.0.0.1:8788/api/health 可访问。";
+    return;
+  }
   els.dataSource.textContent = `数据来源：${sourceLabel(daily.source_name)} · ${sourceFeedLabel(daily.source_feed)}`;
   els.dataCoverage.textContent = `数据覆盖：日线 ${daily.first_trade_date || "-"} 至 ${daily.last_trade_date || marketData.daily_data?.latest_trade_date || "-"}，${formatNumber(daily.symbol_count || 0)} 只；5分钟 ${formatNumber(intraday.available_partition_count || 0)}/${formatNumber(intraday.expected_symbol_count || 0)} 只，${formatNumber(intraday.rows_success || 0)} 行`;
   els.selectionUpdate.textContent = `最后更新：${displayGeneratedAt(marketData.generated_at)}`;
@@ -149,6 +151,14 @@ async function loadStrategyOptions() {
     if (!state.profileName) state.profileName = payload.default_profile || state.strategies[0]?.profile_name || defaultStrategyProfile();
   } catch (_error) {
     state.strategies = [];
+  }
+}
+
+async function loadDataReadiness() {
+  try {
+    state.dataReadiness = await apiGetJson("/api/data/readiness");
+  } catch (_error) {
+    state.dataReadiness = null;
   }
 }
 
@@ -223,12 +233,12 @@ async function refreshSelectionForScenario() {
     state.remoteDecision = null;
     return;
   }
-  if (isPublicStaticPage()) {
-    state.remoteDecision = null;
-    return;
-  }
   const step = currentSimulationStep(loadSimulationScenario());
-  const asOf = step?.tradeDate || String(step?.asOf || "").slice(0, 10) || marketData.daily_data?.latest_trade_date || "";
+  const asOf = step?.tradeDate
+    || String(step?.asOf || "").slice(0, 10)
+    || state.dataReadiness?.daily?.last_trade_date
+    || marketData.daily_data?.latest_trade_date
+    || "";
   if (!asOf) {
     state.remoteDecision = null;
     return;
@@ -241,9 +251,7 @@ async function refreshSelectionForScenario() {
       date: asOf,
       limit: "120",
     });
-    const response = await fetch(`/api/selection/run?${params.toString()}`);
-    if (!response.ok) throw new Error(`selection request failed: ${response.status}`);
-    const payload = await response.json();
+    const payload = await apiGetJson(`/api/selection/run?${params.toString()}`);
     if (requestId === state.selectionRequestId) {
       state.remoteDecision = payload;
       const selected = currentSelectedSymbols();
@@ -290,7 +298,7 @@ function dynamicStatusItems(decision) {
     ["股票池", snapshot.symbol_count || 0],
     ["候选", decision.eligible_symbol_count || 0],
     ["入选", (decision.selected_symbols || []).length],
-    ["数据", formatReadinessStatus(marketData.data_readiness?.status)],
+    ["数据", formatReadinessStatus(state.dataReadiness?.status || marketData.data_readiness?.status)],
   ];
 }
 

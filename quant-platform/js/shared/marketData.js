@@ -1,4 +1,5 @@
 import { formatReadinessStatus } from "./format.js";
+import { apiGetJson, isPublicFrontend } from "./api.js";
 
 export const marketData = window.INTERNAL_QUANT_DAILY_TRADING_DATA || {
   strategies: [],
@@ -11,6 +12,7 @@ export const marketData = window.INTERNAL_QUANT_DAILY_TRADING_DATA || {
 
 export const symbolIndex = marketData.symbol_index || [];
 export const symbolIndexBySymbol = Object.fromEntries(symbolIndex.map((item) => [item.symbol, item]));
+const dynamicSymbolIndexBySymbol = {};
 
 export function defaultStrategyProfile() {
   return marketData.project?.default_strategy_profile || marketData.strategies?.[0]?.profile_name || "";
@@ -29,7 +31,7 @@ export function stockBySymbol(symbol) {
 }
 
 export function symbolName(symbol) {
-  return stockBySymbol(symbol)?.name || symbolIndexBySymbol[symbol]?.name || "";
+  return stockBySymbol(symbol)?.name || symbolIndexBySymbol[symbol]?.name || dynamicSymbolIndexBySymbol[symbol]?.name || "";
 }
 
 export function normalizeSymbol(value, fallbackSymbol = marketData.default_symbol || "") {
@@ -56,26 +58,23 @@ export function candidateRows(profileName) {
 }
 
 export function isPublicStaticPage() {
-  return isStaticPreviewPage();
+  return isPublicFrontend();
 }
 
 export function isStaticPreviewPage() {
-  if (typeof window === "undefined") return false;
-  const { hostname, pathname, port } = window.location;
-  if (/(^|\.)github\.io$/i.test(hostname || "")) return true;
-  if (pathname.startsWith("/quant-platform/") && port !== "8788") return true;
-  return false;
+  return isPublicFrontend();
 }
 
 export function statusItems(profileName, options = {}) {
-  const daily = marketData.daily_data || {};
-  const readiness = marketData.data_readiness || {};
+  const summary = options.calendar?.data_readiness_summary || {};
+  const daily = summary.daily || marketData.daily_data || {};
+  const readiness = summary.status ? summary : marketData.data_readiness || {};
   const decision = decisionByProfile(profileName);
-  const dataStatus = options.calendar?.static_fallback || isPublicStaticPage()
+  const dataStatus = options.calendar?.static_fallback
     ? "公网预览"
     : formatReadinessStatus(readiness.status);
   return [
-    ["日线日期", daily.latest_trade_date || "n/a"],
+    ["日线日期", daily.latest_trade_date || daily.last_trade_date || options.calendar?.latest_trade_date || "n/a"],
     ["股票池", daily.symbol_count || 0],
     ["候选", decision.eligible_symbol_count || 0],
     ["入选", (decision.selected_symbols || []).length],
@@ -83,8 +82,39 @@ export function statusItems(profileName, options = {}) {
   ];
 }
 
+export async function searchSymbols(query, limit = 12) {
+  const local = localSymbolMatches(query, limit);
+  if (local.length) return local;
+  const params = new URLSearchParams({ q: String(query || ""), limit: String(limit) });
+  try {
+    const payload = await apiGetJson(`/api/symbol/search?${params.toString()}`);
+    const symbols = Array.isArray(payload.symbols) ? payload.symbols : [];
+    symbols.forEach((item) => {
+      if (item?.symbol) dynamicSymbolIndexBySymbol[item.symbol] = item;
+    });
+    return symbols;
+  } catch (_error) {
+    return [];
+  }
+}
+
+export function localSymbolMatches(query, limit = 12) {
+  const raw = String(query || "").trim();
+  const compact = raw.toUpperCase().replace(/\s+/g, "");
+  if (!compact) return [];
+  return symbolIndex
+    .filter((item) => {
+      const symbol = String(item.symbol || "").toUpperCase();
+      const code = symbol.split(".")[0];
+      const name = String(item.name || "").toUpperCase();
+      return symbol.includes(compact) || code.includes(compact) || name.includes(compact) || String(item.name || "").includes(raw);
+    })
+    .slice(0, limit);
+}
+
 export async function ensureStockLoaded(symbol, limit = 260) {
   const normalized = normalizeSymbol(symbol);
+  if (!normalized) return null;
   const requestedLimit = Number(limit || 0);
   const existing = marketData.symbols?.[normalized];
   if (existing) {
@@ -94,11 +124,8 @@ export async function ensureStockLoaded(symbol, limit = 260) {
     if (requestedLimit === 0 ? existingIsFull : hasEnoughPartial) return existing;
   }
   if (!window.location.protocol.startsWith("http")) return existing || null;
-  if (isStaticPreviewPage()) return existing || null;
   try {
-    const response = await fetch(`/api/daily/bars?symbol=${encodeURIComponent(normalized)}&limit=${limit}`);
-    if (!response.ok) return null;
-    const payload = await response.json();
+    const payload = await apiGetJson(`/api/daily/bars?symbol=${encodeURIComponent(normalized)}&limit=${limit}`);
     if (!payload.bars?.length) return null;
     const bars = payload.bars;
     const latest = bars[bars.length - 1];
@@ -106,7 +133,7 @@ export async function ensureStockLoaded(symbol, limit = 260) {
     marketData.symbols[normalized] = {
       ...previous,
       symbol: normalized,
-      name: previous.name || symbolName(normalized),
+      name: previous.name || payload.name || symbolName(normalized),
       security_id: latest.security_id,
       latest,
       stats: buildStats(bars),
@@ -122,18 +149,15 @@ export async function ensureStockLoaded(symbol, limit = 260) {
 }
 
 export async function loadIntradayBars(stock, limit = 0) {
-  if (!stock) return [];
+  if (!stock?.symbol) return [];
   const requestedLimit = Number(limit || 0);
   const cachedLimit = Number(stock.intradayLimit ?? -1);
   if (stock.intradayLoaded && (cachedLimit === 0 || (requestedLimit > 0 && cachedLimit >= requestedLimit))) return stock.intradayBars || [];
   stock.intradayLoaded = true;
   stock.intradayLimit = requestedLimit;
   if (!window.location.protocol.startsWith("http")) return [];
-  if (isStaticPreviewPage()) return [];
   try {
-    const response = await fetch(`/api/intraday/bars?symbol=${encodeURIComponent(stock.symbol)}&limit=${requestedLimit}`);
-    if (!response.ok) return [];
-    const payload = await response.json();
+    const payload = await apiGetJson(`/api/intraday/bars?symbol=${encodeURIComponent(stock.symbol)}&limit=${requestedLimit}`);
     stock.intradayBars = (payload.bars || []).map((bar) => ({
       symbol: stock.symbol,
       date: bar.local_time ? bar.local_time.replace("T", " ").slice(0, 16) : bar.bar_time,
