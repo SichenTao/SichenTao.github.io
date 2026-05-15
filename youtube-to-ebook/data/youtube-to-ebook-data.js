@@ -1,5 +1,5 @@
 window.YOUTUBE_TO_EBOOK_LIBRARY = {
-  "generatedAt": "2026-05-07T00:48:47.471474+00:00",
+  "generatedAt": "2026-05-15T08:24:49.625567+00:00",
   "sourceRepo": "https://github.com/zarazhangrui/youtube-to-ebook",
   "upstream": {
     "name": "zarazhangrui/youtube-to-ebook",
@@ -8,26 +8,29 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
     "commitLabel": "7f67fd6"
   },
   "lastRun": {
-    "id": "20260507_094847",
-    "generatedAt": "2026-05-07T00:48:47.471474+00:00",
-    "mode": "real-video-transcript-import",
-    "note": "Fetched a real YouTube video and transcript, created an EPUB via upstream send_email.create_epub, and exported a curated homepage article record.",
+    "id": "20260515_172449",
+    "generatedAt": "2026-05-15T08:24:49.625567+00:00",
+    "mode": "single-youtube-learner-import",
+    "note": "Imported one YouTube video into YouTube Learner with timestamped source captions, conservative reviewed blocks, multilingual display blocks, and an optional EPUB asset.",
     "upstreamPath": "/tmp/youtube-to-ebook-upstream",
     "upstreamCommit": "7f67fd6b55a272012df3767cf6d8c54bd2d7a9f3",
     "upstreamCommitLabel": "7f67fd6",
+    "captionLanguage": "ja",
+    "captionSource": "youtube-transcript-api",
     "video": {
-      "id": "x9BNBcP_C7Q",
-      "title": "Why We Switched From Claude Code to Codex",
-      "url": "https://www.youtube.com/watch?v=x9BNBcP_C7Q",
-      "channel": "Every",
-      "transcriptWords": 11259,
-      "duration": 3503
+      "id": "qwp8a0ja-yU",
+      "title": "東北大学【オープン講義】小林 広明「スパコンと量子コンの出会い：新しい時代のスパコンのあり方」",
+      "url": "https://www.youtube.com/watch?v=qwp8a0ja-yU",
+      "channel": "東北大学 機械系 Tohoku Mech Channel",
+      "duration": 2662,
+      "transcriptWords": 14517
     },
-    "epub": "/youtube-to-ebook/assets/ebooks/20260507_094847_why-we-switched-from-claude-code-to-codex.epub"
+    "epub": "/youtube-to-ebook/assets/ebooks/20260515_172449_qwp8a0ja-yu.epub"
   },
   "sources": {
     "channels": [
-      "Every"
+      "Every",
+      "東北大学 機械系 Tohoku Mech Channel"
     ],
     "pipeline": [
       {
@@ -41,15 +44,21 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
       {
         "name": "youtube-to-ebook EPUB writer",
         "url": "https://github.com/zarazhangrui/youtube-to-ebook"
+      },
+      {
+        "name": "translate.googleapis.com",
+        "url": "https://translate.googleapis.com/"
       }
     ],
     "outputs": [
       "Homepage article",
-      "EPUB"
+      "EPUB",
+      "Video transcript reader"
     ],
     "modules": [
       "run_youtube_to_ebook_import.py",
-      "send_email.py#create_epub"
+      "send_email.py#create_epub",
+      "import_youtube_learner_video.py"
     ]
   },
   "articles": [
@@ -13559,6 +13568,9376 @@ window.YOUTUBE_TO_EBOOK_LIBRARY = {
             "reviewed/source word-ratio QA before publish",
             "blocked-token QA before publish"
           ]
+        }
+      }
+    },
+    {
+      "id": "real-qwp8a0ja-yu",
+      "type": "ebook",
+      "source": "東北大学 機械系 Tohoku Mech Channel",
+      "date": "2023-08-29",
+      "minutes": 44,
+      "video": {
+        "id": "qwp8a0ja-yU",
+        "title": "東北大学【オープン講義】小林 広明「スパコンと量子コンの出会い：新しい時代のスパコンのあり方」",
+        "url": "https://www.youtube.com/watch?v=qwp8a0ja-yU",
+        "channel": "東北大学 機械系 Tohoku Mech Channel",
+        "duration": 2662,
+        "transcriptWords": 14517
+      },
+      "asset": {
+        "epub": "/youtube-to-ebook/assets/ebooks/20260515_172449_qwp8a0ja-yu.epub"
+      },
+      "title": {
+        "en": "When supercomputers meet quantum computers",
+        "zh": "超级计算机与量子计算机的相遇",
+        "ja": "スパコンと量子コンの出会い"
+      },
+      "dek": {
+        "en": "Hiroaki Kobayashi's Tohoku University open lecture explains how computers have evolved, why supercomputers still matter, and how quantum annealing can support disaster simulation, evacuation routing, and other optimization tasks.",
+        "zh": "这是东北大学小林广明教授的开放讲义：从计算机七十年的演进讲到超级计算的现实价值，并进一步说明量子退火如何辅助灾害模拟、避难路径规划等优化问题。",
+        "ja": "東北大学・小林広明教授のオープン講義です。コンピュータ70年の進化、スーパーコンピュータの役割、そして量子アニーリングが防災シミュレーションや避難経路最適化にどう関わるかを読み解きます。"
+      },
+      "tags": [
+        {
+          "en": "Supercomputing",
+          "zh": "超级计算",
+          "ja": "スーパーコンピューティング"
+        },
+        {
+          "en": "Quantum computing",
+          "zh": "量子计算",
+          "ja": "量子コンピューティング"
+        },
+        {
+          "en": "Tohoku University",
+          "zh": "东北大学",
+          "ja": "東北大学"
+        },
+        {
+          "en": "Disaster simulation",
+          "zh": "灾害模拟",
+          "ja": "防災シミュレーション"
+        }
+      ],
+      "sections": [
+        {
+          "kind": "paragraph",
+          "label": {
+            "en": "A lecture about the next shape of computing",
+            "zh": "理解下一代计算形态的一场讲义",
+            "ja": "次の計算の姿を考える講義"
+          },
+          "text": {
+            "en": "The lecture starts from familiar digital computation and gradually expands toward high-performance computing and quantum computing. Its useful point is not hype around quantum machines, but the careful distinction between the jobs classical supercomputers remain good at and the combinatorial search problems where quantum annealing may help.",
+            "zh": "这场讲义从我们熟悉的数字计算出发，逐步展开到高性能计算与量子计算。它的价值不在于渲染量子计算的概念，而在于清楚区分传统超级计算仍然擅长的任务，以及量子退火可能发挥作用的组合搜索问题。",
+            "ja": "この講義は、身近なデジタル計算から出発し、高性能計算と量子計算へと視野を広げていきます。重要なのは量子計算を煽ることではなく、従来型スーパーコンピュータが得意とする仕事と、量子アニーリングが効きうる組合せ探索問題を丁寧に分けている点です。"
+          }
+        },
+        {
+          "kind": "paragraph",
+          "label": {
+            "en": "Why it fits YouTube Learner",
+            "zh": "为什么适合作为 YouTube Learner 文章",
+            "ja": "YouTube Learner に向いている理由"
+          },
+          "text": {
+            "en": "As a video, the lecture is easy to follow once. As a timestamped article, it becomes a reusable study object: the reader can search, compare languages, jump back to the video, and revisit the parts on tsunami simulation, evacuation routing, and quantum annealing without replaying the whole lecture.",
+            "zh": "作为视频，它适合顺着听一遍；作为带时间戳的文章，它会变成可复习、可搜索、可多语对照的学习对象。读者可以随时回到讲义中关于海啸模拟、避难路径与量子退火的关键片段，而不必反复拖动整段视频。",
+            "ja": "動画としては一度通して理解しやすく、タイムスタンプ付きの記事としては復習しやすい学習対象になります。津波シミュレーション、避難経路、量子アニーリングに関する箇所へ直接戻れるため、動画全体を何度も探し直す必要がありません。"
+          }
+        }
+      ],
+      "links": [
+        {
+          "label": "Original YouTube video",
+          "href": "https://www.youtube.com/watch?v=qwp8a0ja-yU"
+        },
+        {
+          "label": "Computer Architecture Laboratory",
+          "href": "https://www.cal.is.tohoku.ac.jp/_wp/"
+        },
+        {
+          "label": "Tohoku University Mechanical Systems",
+          "href": "https://www.mech.tohoku.ac.jp/"
+        }
+      ],
+      "transcript": {
+        "language": "ja",
+        "captionSource": "youtube-transcript-api",
+        "segments": [
+          {
+            "start": 10.32,
+            "duration": 3.68,
+            "text": {
+              "ja": "ご紹介ありがとうございましたあのトーク"
+            }
+          },
+          {
+            "start": 12.12,
+            "duration": 5.04,
+            "text": {
+              "ja": "大学の小林と申します"
+            }
+          },
+          {
+            "start": 14.0,
+            "duration": 6.22,
+            "text": {
+              "ja": "これから30分ほどですね私たちが"
+            }
+          },
+          {
+            "start": 17.16,
+            "duration": 7.74,
+            "text": {
+              "ja": "取り組んでおりますいわゆるスパコンと"
+            }
+          },
+          {
+            "start": 20.22,
+            "duration": 5.94,
+            "text": {
+              "ja": "ですねあとは最近皆さん"
+            }
+          },
+          {
+            "start": 24.9,
+            "duration": 3.66,
+            "text": {
+              "ja": "耳にすることがあるかもしれませんけど"
+            }
+          },
+          {
+            "start": 26.16,
+            "duration": 3.959,
+            "text": {
+              "ja": "新しい情報処理技術として量子"
+            }
+          },
+          {
+            "start": 28.56,
+            "duration": 2.94,
+            "text": {
+              "ja": "コンピューターというものが"
+            }
+          },
+          {
+            "start": 30.119,
+            "duration": 3.6,
+            "text": {
+              "ja": "注目されておりますがそれに関する"
+            }
+          },
+          {
+            "start": 31.5,
+            "duration": 7.34,
+            "text": {
+              "ja": "取り組みについて簡単にご紹介したいと"
+            }
+          },
+          {
+            "start": 33.719,
+            "duration": 9.261,
+            "text": {
+              "ja": "思いますで私は東北大学を"
+            }
+          },
+          {
+            "start": 38.84,
+            "duration": 7.44,
+            "text": {
+              "ja": "1988年に卒業しましてですねそれ以降"
+            }
+          },
+          {
+            "start": 42.98,
+            "duration": 6.64,
+            "text": {
+              "ja": "40年近くひたすら早いコンピューターを"
+            }
+          },
+          {
+            "start": 46.28,
+            "duration": 7.599,
+            "text": {
+              "ja": "作るということに取り組んでまいりました"
+            }
+          },
+          {
+            "start": 49.62,
+            "duration": 5.9,
+            "text": {
+              "ja": "で今回皆さんにですね少しその"
+            }
+          },
+          {
+            "start": 53.879,
+            "duration": 5.281,
+            "text": {
+              "ja": "研究の取り組みの"
+            }
+          },
+          {
+            "start": 55.52,
+            "duration": 5.62,
+            "text": {
+              "ja": "ご紹介しようかと思いましてまず簡単に"
+            }
+          },
+          {
+            "start": 59.16,
+            "duration": 4.8,
+            "text": {
+              "ja": "そのコンピューターの仕組みから始まって"
+            }
+          },
+          {
+            "start": 61.14,
+            "duration": 5.4,
+            "text": {
+              "ja": "ですねそれがどういうふうにその早い"
+            }
+          },
+          {
+            "start": 63.96,
+            "duration": 6.5,
+            "text": {
+              "ja": "コンピューター作りにつながっていくのか"
+            }
+          },
+          {
+            "start": 66.54,
+            "duration": 8.1,
+            "text": {
+              "ja": "ということとそれがどういう役割で社会に"
+            }
+          },
+          {
+            "start": 70.46,
+            "duration": 7.479,
+            "text": {
+              "ja": "に役に立っていくかということについてご"
+            }
+          },
+          {
+            "start": 74.64,
+            "duration": 5.4,
+            "text": {
+              "ja": "説明していきたいと思っておりますでまず"
+            }
+          },
+          {
+            "start": 77.939,
+            "duration": 5.401,
+            "text": {
+              "ja": "最初にそのコンピューターの計算源にこれ"
+            }
+          },
+          {
+            "start": 80.04,
+            "duration": 7.5,
+            "text": {
+              "ja": "はすでに皆さんご存知かもしれませんけど"
+            }
+          },
+          {
+            "start": 83.34,
+            "duration": 6.319,
+            "text": {
+              "ja": "古くは1945年にですねアメリカで"
+            }
+          },
+          {
+            "start": 87.54,
+            "duration": 4.02,
+            "text": {
+              "ja": "初めての電子計算機というものが作られて"
+            }
+          },
+          {
+            "start": 89.659,
+            "duration": 5.441,
+            "text": {
+              "ja": "きたのが"
+            }
+          },
+          {
+            "start": 91.56,
+            "duration": 5.12,
+            "text": {
+              "ja": "ルーツになるんですがそれからおよそ80"
+            }
+          },
+          {
+            "start": 95.1,
+            "duration": 6.6,
+            "text": {
+              "ja": "年近くですかね"
+            }
+          },
+          {
+            "start": 96.68,
+            "duration": 8.16,
+            "text": {
+              "ja": "ひたすら大規模化あるいは小型化そして"
+            }
+          },
+          {
+            "start": 101.7,
+            "duration": 5.879,
+            "text": {
+              "ja": "高速化そういった視点でですね"
+            }
+          },
+          {
+            "start": 104.84,
+            "duration": 4.44,
+            "text": {
+              "ja": "コンピューターがどんどん進化してきた"
+            }
+          },
+          {
+            "start": 107.579,
+            "duration": 4.441,
+            "text": {
+              "ja": "わけですね例えば"
+            }
+          },
+          {
+            "start": 109.28,
+            "duration": 4.18,
+            "text": {
+              "ja": "1971年にマイクロプロセッサーと呼ば"
+            }
+          },
+          {
+            "start": 112.02,
+            "duration": 3.239,
+            "text": {
+              "ja": "れるチップが"
+            }
+          },
+          {
+            "start": 113.46,
+            "duration": 4.339,
+            "text": {
+              "ja": "初めて開発されてきましたしそれができる"
+            }
+          },
+          {
+            "start": 115.259,
+            "duration": 7.621,
+            "text": {
+              "ja": "と今度はパソコンの時代が始まったのが"
+            }
+          },
+          {
+            "start": 117.799,
+            "duration": 6.78,
+            "text": {
+              "ja": "77年とでそれ以降皆さんご存知のように"
+            }
+          },
+          {
+            "start": 122.88,
+            "duration": 4.62,
+            "text": {
+              "ja": "Appleとか"
+            }
+          },
+          {
+            "start": 124.579,
+            "duration": 5.561,
+            "text": {
+              "ja": "PCとかですねそういうものがどんどん"
+            }
+          },
+          {
+            "start": 127.5,
+            "duration": 4.98,
+            "text": {
+              "ja": "小型化構成の化してきたわけですけど"
+            }
+          },
+          {
+            "start": 130.14,
+            "duration": 6.54,
+            "text": {
+              "ja": "最近ですとどちらかというとその上での"
+            }
+          },
+          {
+            "start": 132.48,
+            "duration": 7.14,
+            "text": {
+              "ja": "サービスですねGoogleのWeb検索"
+            }
+          },
+          {
+            "start": 136.68,
+            "duration": 6.96,
+            "text": {
+              "ja": "とかFacebookとかまず最近ですと"
+            }
+          },
+          {
+            "start": 139.62,
+            "duration": 6.18,
+            "text": {
+              "ja": "α5が5に5の世界でチャンピオンになっ"
+            }
+          },
+          {
+            "start": 143.64,
+            "duration": 5.58,
+            "text": {
+              "ja": "たとかですね最近ですとチャットGPUT"
+            }
+          },
+          {
+            "start": 145.8,
+            "duration": 5.76,
+            "text": {
+              "ja": "というような早い計算機を使った様々な"
+            }
+          },
+          {
+            "start": 149.22,
+            "duration": 5.82,
+            "text": {
+              "ja": "サービスというものが生み出されてきたと"
+            }
+          },
+          {
+            "start": 151.56,
+            "duration": 5.34,
+            "text": {
+              "ja": "いうのがこの80年の流れになりますで"
+            }
+          },
+          {
+            "start": 155.04,
+            "duration": 4.14,
+            "text": {
+              "ja": "こういったコンピューターというのはです"
+            }
+          },
+          {
+            "start": 156.9,
+            "duration": 5.22,
+            "text": {
+              "ja": "ね色んな形で世の中に出てきてるんですが"
+            }
+          },
+          {
+            "start": 159.18,
+            "duration": 4.919,
+            "text": {
+              "ja": "ただ"
+            }
+          },
+          {
+            "start": 162.12,
+            "duration": 3.259,
+            "text": {
+              "ja": "原理的なところはですねあまり変わってい"
+            }
+          },
+          {
+            "start": 164.099,
+            "duration": 4.701,
+            "text": {
+              "ja": "ないというかですね"
+            }
+          },
+          {
+            "start": 165.379,
+            "duration": 7.121,
+            "text": {
+              "ja": "どういうものを機能化してきたかというと"
+            }
+          },
+          {
+            "start": 168.8,
+            "duration": 8.019,
+            "text": {
+              "ja": "入力と出力と記憶と"
+            }
+          },
+          {
+            "start": 172.5,
+            "duration": 8.94,
+            "text": {
+              "ja": "処理と制御というこの5つの機能をですね"
+            }
+          },
+          {
+            "start": 176.819,
+            "duration": 6.181,
+            "text": {
+              "ja": "ひたすらまあ例えばパソコンですと"
+            }
+          },
+          {
+            "start": 181.44,
+            "duration": 3.54,
+            "text": {
+              "ja": "グラフィックスの処理が早くなるとかです"
+            }
+          },
+          {
+            "start": 183.0,
+            "duration": 4.16,
+            "text": {
+              "ja": "ねあるいはスパコンだと"
+            }
+          },
+          {
+            "start": 184.98,
+            "duration": 5.1,
+            "text": {
+              "ja": "計算を早くするとかスマホだと"
+            }
+          },
+          {
+            "start": 187.16,
+            "duration": 4.9,
+            "text": {
+              "ja": "そのユーザーインターフェースをですね"
+            }
+          },
+          {
+            "start": 190.08,
+            "duration": 5.9,
+            "text": {
+              "ja": "わかりやすくするとかそういうような"
+            }
+          },
+          {
+            "start": 192.06,
+            "duration": 6.899,
+            "text": {
+              "ja": "それぞれの機能を強弱をつけながら様々な"
+            }
+          },
+          {
+            "start": 195.98,
+            "duration": 5.259,
+            "text": {
+              "ja": "ものとしてコンピューターとして生まれて"
+            }
+          },
+          {
+            "start": 198.959,
+            "duration": 4.261,
+            "text": {
+              "ja": "きたとでただまぁ最近ですねネットワーク"
+            }
+          },
+          {
+            "start": 201.239,
+            "duration": 4.321,
+            "text": {
+              "ja": "というものが重要になってきております"
+            }
+          },
+          {
+            "start": 203.22,
+            "duration": 5.46,
+            "text": {
+              "ja": "けどそういうそのコンピューターがお互い"
+            }
+          },
+          {
+            "start": 205.56,
+            "duration": 4.099,
+            "text": {
+              "ja": "通信をして例えば情報交換することによっ"
+            }
+          },
+          {
+            "start": 208.68,
+            "duration": 5.46,
+            "text": {
+              "ja": "てより"
+            }
+          },
+          {
+            "start": 209.659,
+            "duration": 7.72,
+            "text": {
+              "ja": "最新の情報を自分のものとしてまた人に"
+            }
+          },
+          {
+            "start": 214.14,
+            "duration": 5.94,
+            "text": {
+              "ja": "与えるという形で社会に広く使われてきて"
+            }
+          },
+          {
+            "start": 217.379,
+            "duration": 4.021,
+            "text": {
+              "ja": "いるということになりますですので電卓と"
+            }
+          },
+          {
+            "start": 220.08,
+            "duration": 2.46,
+            "text": {
+              "ja": "いうのはこれは"
+            }
+          },
+          {
+            "start": 221.4,
+            "duration": 2.399,
+            "text": {
+              "ja": "計算できますけど"
+            }
+          },
+          {
+            "start": 222.54,
+            "duration": 2.82,
+            "text": {
+              "ja": "判断ができませんのでこれは"
+            }
+          },
+          {
+            "start": 223.799,
+            "duration": 5.961,
+            "text": {
+              "ja": "コンピューターにはならないということに"
+            }
+          },
+          {
+            "start": 225.36,
+            "duration": 8.04,
+            "text": {
+              "ja": "なりますでこのようなコンピューターが"
+            }
+          },
+          {
+            "start": 229.76,
+            "duration": 5.979,
+            "text": {
+              "ja": "早くなってそしてコンパクト化されてきた"
+            }
+          },
+          {
+            "start": 233.4,
+            "duration": 3.74,
+            "text": {
+              "ja": "というのはやっぱりマイクロプロセッサー"
+            }
+          },
+          {
+            "start": 235.739,
+            "duration": 5.22,
+            "text": {
+              "ja": "という"
+            }
+          },
+          {
+            "start": 237.14,
+            "duration": 6.28,
+            "text": {
+              "ja": "1970年にそのインテルが最初に作った"
+            }
+          },
+          {
+            "start": 240.959,
+            "duration": 4.981,
+            "text": {
+              "ja": "ものが始まりになりますけど一つの"
+            }
+          },
+          {
+            "start": 243.42,
+            "duration": 5.039,
+            "text": {
+              "ja": "シリコンのチップの上にたくさんの"
+            }
+          },
+          {
+            "start": 245.94,
+            "duration": 4.079,
+            "text": {
+              "ja": "トランジスタを集積してそのトランジスタ"
+            }
+          },
+          {
+            "start": 248.459,
+            "duration": 4.681,
+            "text": {
+              "ja": "の集積によって"
+            }
+          },
+          {
+            "start": 250.019,
+            "duration": 5.461,
+            "text": {
+              "ja": "いろいろな機能をそのチップ上に持ち込む"
+            }
+          },
+          {
+            "start": 253.14,
+            "duration": 6.12,
+            "text": {
+              "ja": "ことによるそれによる効果というものが"
+            }
+          },
+          {
+            "start": 255.48,
+            "duration": 7.74,
+            "text": {
+              "ja": "非常に大きくなってきますでですのでこの"
+            }
+          },
+          {
+            "start": 259.26,
+            "duration": 6.02,
+            "text": {
+              "ja": "ような仕組みをですねベースにどのように"
+            }
+          },
+          {
+            "start": 263.22,
+            "duration": 6.08,
+            "text": {
+              "ja": "早くしていくかということになりますが"
+            }
+          },
+          {
+            "start": 265.28,
+            "duration": 5.56,
+            "text": {
+              "ja": "まずはそのご存知のようにその"
+            }
+          },
+          {
+            "start": 269.3,
+            "duration": 3.28,
+            "text": {
+              "ja": "コンピューターというのはデジタル"
+            }
+          },
+          {
+            "start": 270.84,
+            "duration": 4.44,
+            "text": {
+              "ja": "コンピューターということになりますのは"
+            }
+          },
+          {
+            "start": 272.58,
+            "duration": 4.08,
+            "text": {
+              "ja": "ご存知かもしれませんけど"
+            }
+          },
+          {
+            "start": 275.28,
+            "duration": 3.18,
+            "text": {
+              "ja": "01で"
+            }
+          },
+          {
+            "start": 276.66,
+            "duration": 6.8,
+            "text": {
+              "ja": "計算が進められるわけですねまあそれは"
+            }
+          },
+          {
+            "start": 278.46,
+            "duration": 8.22,
+            "text": {
+              "ja": "具体的には電気のオンオフあるいは電圧が"
+            }
+          },
+          {
+            "start": 283.46,
+            "duration": 4.56,
+            "text": {
+              "ja": "かかってるかかってないというような2つ"
+            }
+          },
+          {
+            "start": 286.68,
+            "duration": 3.959,
+            "text": {
+              "ja": "の状態を"
+            }
+          },
+          {
+            "start": 288.02,
+            "duration": 4.959,
+            "text": {
+              "ja": "数値化してそれを"
+            }
+          },
+          {
+            "start": 290.639,
+            "duration": 5.461,
+            "text": {
+              "ja": "計算に応用するということになるわけです"
+            }
+          },
+          {
+            "start": 292.979,
+            "duration": 5.94,
+            "text": {
+              "ja": "ですので単純にその10進数の計算という"
+            }
+          },
+          {
+            "start": 296.1,
+            "duration": 5.52,
+            "text": {
+              "ja": "ものが皆さん使うわけですけどそういった"
+            }
+          },
+          {
+            "start": 298.919,
+            "duration": 4.681,
+            "text": {
+              "ja": "ものを全て2進数の計算に"
+            }
+          },
+          {
+            "start": 301.62,
+            "duration": 6.12,
+            "text": {
+              "ja": "置き換わって計算が進められるわけですね"
+            }
+          },
+          {
+            "start": 303.6,
+            "duration": 6.36,
+            "text": {
+              "ja": "その際当然我々その連続量を使ってるわけ"
+            }
+          },
+          {
+            "start": 307.74,
+            "duration": 6.06,
+            "text": {
+              "ja": "ですがそれをデジタル化することによって"
+            }
+          },
+          {
+            "start": 309.96,
+            "duration": 6.72,
+            "text": {
+              "ja": "そこにちょっとしたその表現の"
+            }
+          },
+          {
+            "start": 313.8,
+            "duration": 5.28,
+            "text": {
+              "ja": "差が出てくるわけでそれが例えば音が"
+            }
+          },
+          {
+            "start": 316.68,
+            "duration": 5.76,
+            "text": {
+              "ja": "こもったりですね画像がぼやけたりという"
+            }
+          },
+          {
+            "start": 319.08,
+            "duration": 6.54,
+            "text": {
+              "ja": "ようなことになるわけでなるべくその"
+            }
+          },
+          {
+            "start": 322.44,
+            "duration": 6.539,
+            "text": {
+              "ja": "離散量を細かく表現できるようなデータが"
+            }
+          },
+          {
+            "start": 325.62,
+            "duration": 6.24,
+            "text": {
+              "ja": "求められたそうすると自然にそのいわゆる"
+            }
+          },
+          {
+            "start": 328.979,
+            "duration": 5.301,
+            "text": {
+              "ja": "その2進数の桁数は我々ビットと呼んで"
+            }
+          },
+          {
+            "start": 331.86,
+            "duration": 4.52,
+            "text": {
+              "ja": "ますけどそのビットを増やしてですね"
+            }
+          },
+          {
+            "start": 334.28,
+            "duration": 6.34,
+            "text": {
+              "ja": "いずれに大量の"
+            }
+          },
+          {
+            "start": 336.38,
+            "duration": 7.0,
+            "text": {
+              "ja": "大きなデータをたくさん扱うということが"
+            }
+          },
+          {
+            "start": 340.62,
+            "duration": 4.519,
+            "text": {
+              "ja": "求められるわけですですのでまず最初の"
+            }
+          },
+          {
+            "start": 343.38,
+            "duration": 4.68,
+            "text": {
+              "ja": "アプローチとしては"
+            }
+          },
+          {
+            "start": 345.139,
+            "duration": 5.681,
+            "text": {
+              "ja": "そのこの"
+            }
+          },
+          {
+            "start": 348.06,
+            "duration": 3.78,
+            "text": {
+              "ja": "01のですね制御これ横軸横にちょっと"
+            }
+          },
+          {
+            "start": 350.82,
+            "duration": 3.0,
+            "text": {
+              "ja": "あの"
+            }
+          },
+          {
+            "start": 351.84,
+            "duration": 4.32,
+            "text": {
+              "ja": "絵が書いてありますけどオンオフという"
+            }
+          },
+          {
+            "start": 353.82,
+            "duration": 4.98,
+            "text": {
+              "ja": "このスイッチングをですねいかに早くする"
+            }
+          },
+          {
+            "start": 356.16,
+            "duration": 5.96,
+            "text": {
+              "ja": "かというようなところが最初のアプローチ"
+            }
+          },
+          {
+            "start": 358.8,
+            "duration": 5.87,
+            "text": {
+              "ja": "になってくるわけですそうすると当然その"
+            }
+          },
+          {
+            "start": 362.12,
+            "duration": 4.419,
+            "text": {
+              "ja": "ような仕組みを実現する"
+            }
+          },
+          {
+            "start": 366.539,
+            "duration": 3.481,
+            "text": {
+              "ja": "素子ですねデバイスと呼んでますが"
+            }
+          },
+          {
+            "start": 369.06,
+            "duration": 4.68,
+            "text": {
+              "ja": "古くは"
+            }
+          },
+          {
+            "start": 370.02,
+            "duration": 6.119,
+            "text": {
+              "ja": "40年代まあこれは電子"
+            }
+          },
+          {
+            "start": 373.74,
+            "duration": 5.04,
+            "text": {
+              "ja": "計算機が生まれる前ですけど考え方として"
+            }
+          },
+          {
+            "start": 376.139,
+            "duration": 5.821,
+            "text": {
+              "ja": "はそのデジタルの仕組みを作ろうという"
+            }
+          },
+          {
+            "start": 378.78,
+            "duration": 5.34,
+            "text": {
+              "ja": "ことでそのリレーという機械的なスイッチ"
+            }
+          },
+          {
+            "start": 381.96,
+            "duration": 6.12,
+            "text": {
+              "ja": "を使ってコンピューターを作っていたわけ"
+            }
+          },
+          {
+            "start": 384.12,
+            "duration": 5.94,
+            "text": {
+              "ja": "ですがそれが真空管これはもう皆さん目に"
+            }
+          },
+          {
+            "start": 388.08,
+            "duration": 3.839,
+            "text": {
+              "ja": "することもないかもしれませんけどま高級"
+            }
+          },
+          {
+            "start": 390.06,
+            "duration": 4.56,
+            "text": {
+              "ja": "なオーディオアンペなんかを見ると中に"
+            }
+          },
+          {
+            "start": 391.919,
+            "duration": 5.34,
+            "text": {
+              "ja": "入ったりするわけですけどこのような真空"
+            }
+          },
+          {
+            "start": 394.62,
+            "duration": 5.579,
+            "text": {
+              "ja": "管というその電子的な制御でオンオフを"
+            }
+          },
+          {
+            "start": 397.259,
+            "duration": 5.821,
+            "text": {
+              "ja": "制御するようなデバイスが50年ぐらいに"
+            }
+          },
+          {
+            "start": 400.199,
+            "duration": 5.161,
+            "text": {
+              "ja": "作られてきましたこれでこのスピードが"
+            }
+          },
+          {
+            "start": 403.08,
+            "duration": 3.02,
+            "text": {
+              "ja": "ここに書いてありますがミリセカンド自由"
+            }
+          },
+          {
+            "start": 405.36,
+            "duration": 2.7,
+            "text": {
+              "ja": "の"
+            }
+          },
+          {
+            "start": 406.1,
+            "duration": 5.56,
+            "text": {
+              "ja": "-3乗の"
+            }
+          },
+          {
+            "start": 408.06,
+            "duration": 5.34,
+            "text": {
+              "ja": "速度から-6乗ぐらいの速度まで"
+            }
+          },
+          {
+            "start": 411.66,
+            "duration": 5.159,
+            "text": {
+              "ja": "画期的に速くなってきたということになり"
+            }
+          },
+          {
+            "start": 413.4,
+            "duration": 5.519,
+            "text": {
+              "ja": "ますで同時にいくらかそのサイズ的にも"
+            }
+          },
+          {
+            "start": 416.819,
+            "duration": 4.761,
+            "text": {
+              "ja": "小さくなってきたというところになります"
+            }
+          },
+          {
+            "start": 418.919,
+            "duration": 2.661,
+            "text": {
+              "ja": "大きな"
+            }
+          },
+          {
+            "start": 422.28,
+            "duration": 5.4,
+            "text": {
+              "ja": "革新的な技術としてはトランジスタの発明"
+            }
+          },
+          {
+            "start": 424.259,
+            "duration": 5.701,
+            "text": {
+              "ja": "というのがありますそれが実用化されてき"
+            }
+          },
+          {
+            "start": 427.68,
+            "duration": 5.1,
+            "text": {
+              "ja": "てコンピューターに使われてきたのが19"
+            }
+          },
+          {
+            "start": 429.96,
+            "duration": 6.299,
+            "text": {
+              "ja": "20年ぐらいになるとこういう単独の素子"
+            }
+          },
+          {
+            "start": 432.78,
+            "duration": 6.0,
+            "text": {
+              "ja": "で今まで一本一本のこの真空管という"
+            }
+          },
+          {
+            "start": 436.259,
+            "duration": 4.741,
+            "text": {
+              "ja": "チューブがこの1個の素子に置き換わって"
+            }
+          },
+          {
+            "start": 438.78,
+            "duration": 5.639,
+            "text": {
+              "ja": "くるという時代がやってきますそうすると"
+            }
+          },
+          {
+            "start": 441.0,
+            "duration": 6.78,
+            "text": {
+              "ja": "さらにその名のセカンドのオーダーここに"
+            }
+          },
+          {
+            "start": 444.419,
+            "duration": 6.961,
+            "text": {
+              "ja": "書いてありますねそのミリマイクロなの"
+            }
+          },
+          {
+            "start": 447.78,
+            "duration": 5.94,
+            "text": {
+              "ja": "そしてピコという10の3乗1000分の"
+            }
+          },
+          {
+            "start": 451.38,
+            "duration": 4.98,
+            "text": {
+              "ja": "1ずつこう桁が小さくなってくるような"
+            }
+          },
+          {
+            "start": 453.72,
+            "duration": 5.3,
+            "text": {
+              "ja": "単位になりますけどそのレベルまで落ちて"
+            }
+          },
+          {
+            "start": 456.36,
+            "duration": 6.66,
+            "text": {
+              "ja": "くるわけですでそれで先ほど申し上げた"
+            }
+          },
+          {
+            "start": 459.02,
+            "duration": 7.0,
+            "text": {
+              "ja": "チップ化するという技術が生まれますと"
+            }
+          },
+          {
+            "start": 463.02,
+            "duration": 5.28,
+            "text": {
+              "ja": "それ以降はいかにその一つのチップの中に"
+            }
+          },
+          {
+            "start": 466.02,
+            "duration": 3.179,
+            "text": {
+              "ja": "ですね多くのトランジスタを集積するかと"
+            }
+          },
+          {
+            "start": 468.3,
+            "duration": 4.739,
+            "text": {
+              "ja": "いう"
+            }
+          },
+          {
+            "start": 469.199,
+            "duration": 5.761,
+            "text": {
+              "ja": "技術に変わってきますでこの集積化の技術"
+            }
+          },
+          {
+            "start": 473.039,
+            "duration": 5.901,
+            "text": {
+              "ja": "っていうのは基本的に写真を撮る技術と"
+            }
+          },
+          {
+            "start": 474.96,
+            "duration": 6.62,
+            "text": {
+              "ja": "一緒でしてなるべくこの細かい線をですね"
+            }
+          },
+          {
+            "start": 478.94,
+            "duration": 5.379,
+            "text": {
+              "ja": "限られたエリアに"
+            }
+          },
+          {
+            "start": 481.58,
+            "duration": 4.0,
+            "text": {
+              "ja": "限られたチップ上にこの"
+            }
+          },
+          {
+            "start": 484.319,
+            "duration": 5.761,
+            "text": {
+              "ja": "描いていくという"
+            }
+          },
+          {
+            "start": 485.58,
+            "duration": 7.26,
+            "text": {
+              "ja": "技術になるわけですねそうすると当然その"
+            }
+          },
+          {
+            "start": 490.08,
+            "duration": 7.64,
+            "text": {
+              "ja": "露光する露光のこのビームと呼んでます"
+            }
+          },
+          {
+            "start": 492.84,
+            "duration": 7.859,
+            "text": {
+              "ja": "けどそれの制度を細かくしていくと今や"
+            }
+          },
+          {
+            "start": 497.72,
+            "duration": 5.44,
+            "text": {
+              "ja": "ナノレベルの"
+            }
+          },
+          {
+            "start": 500.699,
+            "duration": 4.161,
+            "text": {
+              "ja": "サイズにまでトランジスタが小さくなって"
+            }
+          },
+          {
+            "start": 503.16,
+            "duration": 4.62,
+            "text": {
+              "ja": "そして今は"
+            }
+          },
+          {
+            "start": 504.86,
+            "duration": 4.72,
+            "text": {
+              "ja": "およそこのチップの上にですね10億"
+            }
+          },
+          {
+            "start": 507.78,
+            "duration": 4.199,
+            "text": {
+              "ja": "トランジスタぐらいが収束されていくん"
+            }
+          },
+          {
+            "start": 509.58,
+            "duration": 4.92,
+            "text": {
+              "ja": "ですねそうしますとその10億"
+            }
+          },
+          {
+            "start": 511.979,
+            "duration": 4.92,
+            "text": {
+              "ja": "トランジスタを使ってじゃあいろんなこと"
+            }
+          },
+          {
+            "start": 514.5,
+            "duration": 5.37,
+            "text": {
+              "ja": "がチップ上にできるというのがその2の"
+            }
+          },
+          {
+            "start": 516.899,
+            "duration": 5.7,
+            "text": {
+              "ja": "からくりになってくるわけですでこれは"
+            }
+          },
+          {
+            "start": 522.599,
+            "duration": 6.081,
+            "text": {
+              "ja": "ムーアの法則という風に呼んでるトレンド"
+            }
+          },
+          {
+            "start": 525.48,
+            "duration": 6.0,
+            "text": {
+              "ja": "を示したものあのトランジスターの集積"
+            }
+          },
+          {
+            "start": 528.68,
+            "duration": 4.96,
+            "text": {
+              "ja": "どうしてトレンドの"
+            }
+          },
+          {
+            "start": 531.48,
+            "duration": 3.68,
+            "text": {
+              "ja": "示したものになりますけど"
+            }
+          },
+          {
+            "start": 533.64,
+            "duration": 4.68,
+            "text": {
+              "ja": "縦軸がですね"
+            }
+          },
+          {
+            "start": 535.16,
+            "duration": 5.739,
+            "text": {
+              "ja": "トランジスタの集積数ですね何個"
+            }
+          },
+          {
+            "start": 538.32,
+            "duration": 5.22,
+            "text": {
+              "ja": "トランジスタが限られたチップエリアに"
+            }
+          },
+          {
+            "start": 540.899,
+            "duration": 7.62,
+            "text": {
+              "ja": "集積されてきたかというのを示したもので"
+            }
+          },
+          {
+            "start": 543.54,
+            "duration": 7.28,
+            "text": {
+              "ja": "これが横軸が年代になりますでこれ縦が"
+            }
+          },
+          {
+            "start": 548.519,
+            "duration": 5.94,
+            "text": {
+              "ja": "ログスケールになってますから"
+            }
+          },
+          {
+            "start": 550.82,
+            "duration": 5.04,
+            "text": {
+              "ja": "いわゆるこの横は線形で増えてきますので"
+            }
+          },
+          {
+            "start": 554.459,
+            "duration": 6.06,
+            "text": {
+              "ja": "その"
+            }
+          },
+          {
+            "start": 555.86,
+            "duration": 8.34,
+            "text": {
+              "ja": "いわゆる指数関数的にですね集積"
+            }
+          },
+          {
+            "start": 560.519,
+            "duration": 7.801,
+            "text": {
+              "ja": "度が上がってきたというのがこれまでの"
+            }
+          },
+          {
+            "start": 564.2,
+            "duration": 5.86,
+            "text": {
+              "ja": "マイクロプロセッサーの進化の"
+            }
+          },
+          {
+            "start": 568.32,
+            "duration": 3.72,
+            "text": {
+              "ja": "原点になってますこれを"
+            }
+          },
+          {
+            "start": 570.06,
+            "duration": 4.1,
+            "text": {
+              "ja": "ムーアの法則これはインテルの創業者の"
+            }
+          },
+          {
+            "start": 572.04,
+            "duration": 6.18,
+            "text": {
+              "ja": "ゴードンムーアという人がですね"
+            }
+          },
+          {
+            "start": 574.16,
+            "duration": 7.06,
+            "text": {
+              "ja": "うちのチップは18"
+            }
+          },
+          {
+            "start": 578.22,
+            "duration": 4.1,
+            "text": {
+              "ja": "ヶ月で2倍に集積度を上げていくんだと"
+            }
+          },
+          {
+            "start": 581.22,
+            "duration": 4.799,
+            "text": {
+              "ja": "いう風に"
+            }
+          },
+          {
+            "start": 582.32,
+            "duration": 6.72,
+            "text": {
+              "ja": "ましてこのようなグラフをですねそれ以降"
+            }
+          },
+          {
+            "start": 586.019,
+            "duration": 6.781,
+            "text": {
+              "ja": "そのインテルのエンジニアは頑張って"
+            }
+          },
+          {
+            "start": 589.04,
+            "duration": 6.58,
+            "text": {
+              "ja": "作り上げてきたというのがこの結果になっ"
+            }
+          },
+          {
+            "start": 592.8,
+            "duration": 5.52,
+            "text": {
+              "ja": "てくるわけですまあ別にその法則がある"
+            }
+          },
+          {
+            "start": 595.62,
+            "duration": 4.279,
+            "text": {
+              "ja": "わけじゃなくてですね結果的にこうなって"
+            }
+          },
+          {
+            "start": 598.32,
+            "duration": 4.38,
+            "text": {
+              "ja": "きたという部分もあるんですが"
+            }
+          },
+          {
+            "start": 599.899,
+            "duration": 4.321,
+            "text": {
+              "ja": "コンピューターの分野ではこのような目標"
+            }
+          },
+          {
+            "start": 602.7,
+            "duration": 5.94,
+            "text": {
+              "ja": "を立ててですね"
+            }
+          },
+          {
+            "start": 604.22,
+            "duration": 6.76,
+            "text": {
+              "ja": "今や2年に2年で倍ぐらいにあるいはそれ"
+            }
+          },
+          {
+            "start": 608.64,
+            "duration": 4.56,
+            "text": {
+              "ja": "より少し長くなっているところもあります"
+            }
+          },
+          {
+            "start": 610.98,
+            "duration": 4.919,
+            "text": {
+              "ja": "けど集積"
+            }
+          },
+          {
+            "start": 613.2,
+            "duration": 5.46,
+            "text": {
+              "ja": "度が上がってきて今や10億トランジスタ"
+            }
+          },
+          {
+            "start": 615.899,
+            "duration": 5.581,
+            "text": {
+              "ja": "レベルの時代になってきてるというところ"
+            }
+          },
+          {
+            "start": 618.66,
+            "duration": 6.96,
+            "text": {
+              "ja": "になりますでそうしますとこの"
+            }
+          },
+          {
+            "start": 621.48,
+            "duration": 6.72,
+            "text": {
+              "ja": "トランジスタを使ってじゃあこれをチップ"
+            }
+          },
+          {
+            "start": 625.62,
+            "duration": 6.3,
+            "text": {
+              "ja": "上で様々なものに応用しましょうという"
+            }
+          },
+          {
+            "start": 628.2,
+            "duration": 4.8,
+            "text": {
+              "ja": "ことでそこでさらにその仕組みの工夫に"
+            }
+          },
+          {
+            "start": 631.92,
+            "duration": 3.419,
+            "text": {
+              "ja": "よって"
+            }
+          },
+          {
+            "start": 633.0,
+            "duration": 4.019,
+            "text": {
+              "ja": "計算を早くしようという"
+            }
+          },
+          {
+            "start": 635.339,
+            "duration": 5.821,
+            "text": {
+              "ja": "技術になってくるわけですね"
+            }
+          },
+          {
+            "start": 637.019,
+            "duration": 7.981,
+            "text": {
+              "ja": "最初のアプローチとしてはこれも皆さん"
+            }
+          },
+          {
+            "start": 641.16,
+            "duration": 6.38,
+            "text": {
+              "ja": "工場のアセンブリラインなんかで見る"
+            }
+          },
+          {
+            "start": 645.0,
+            "duration": 4.32,
+            "text": {
+              "ja": "処理パターンになるんですが"
+            }
+          },
+          {
+            "start": 647.54,
+            "duration": 3.94,
+            "text": {
+              "ja": "ですね"
+            }
+          },
+          {
+            "start": 649.32,
+            "duration": 5.12,
+            "text": {
+              "ja": "逐次的に処理が行われてきますまあ"
+            }
+          },
+          {
+            "start": 651.48,
+            "duration": 6.12,
+            "text": {
+              "ja": "プログラムというのはたくさんの命令から"
+            }
+          },
+          {
+            "start": 654.44,
+            "duration": 4.6,
+            "text": {
+              "ja": "作られてるんですがそれぞれの1個1個の"
+            }
+          },
+          {
+            "start": 657.6,
+            "duration": 4.679,
+            "text": {
+              "ja": "命令を呼び出して"
+            }
+          },
+          {
+            "start": 659.04,
+            "duration": 5.479,
+            "text": {
+              "ja": "解釈して必要なデータを呼び出して"
+            }
+          },
+          {
+            "start": 662.279,
+            "duration": 5.221,
+            "text": {
+              "ja": "計算をして結果を格納するというこういう"
+            }
+          },
+          {
+            "start": 664.519,
+            "duration": 5.981,
+            "text": {
+              "ja": "ステップを繰り返し行ってくるわけですね"
+            }
+          },
+          {
+            "start": 667.5,
+            "duration": 4.92,
+            "text": {
+              "ja": "でこれを単純にこう伸ばしていくとこれは"
+            }
+          },
+          {
+            "start": 670.5,
+            "duration": 3.959,
+            "text": {
+              "ja": "ちょっと別の例になってますけどこれは"
+            }
+          },
+          {
+            "start": 672.42,
+            "duration": 2.82,
+            "text": {
+              "ja": "えっと"
+            }
+          },
+          {
+            "start": 674.459,
+            "duration": 4.021,
+            "text": {
+              "ja": "選択して"
+            }
+          },
+          {
+            "start": 675.24,
+            "duration": 6.659,
+            "text": {
+              "ja": "乾燥して畳んで押し入れにしまうみたいな"
+            }
+          },
+          {
+            "start": 678.48,
+            "duration": 5.82,
+            "text": {
+              "ja": "処理になってますけどそれを"
+            }
+          },
+          {
+            "start": 681.899,
+            "duration": 4.981,
+            "text": {
+              "ja": "順番にこう繰り返していくと時間がこう"
+            }
+          },
+          {
+            "start": 684.3,
+            "duration": 5.099,
+            "text": {
+              "ja": "積み上がっていくというようなことになる"
+            }
+          },
+          {
+            "start": 686.88,
+            "duration": 6.12,
+            "text": {
+              "ja": "わけですねでまあこれを"
+            }
+          },
+          {
+            "start": 689.399,
+            "duration": 5.701,
+            "text": {
+              "ja": "処理を分割して流れ作業で"
+            }
+          },
+          {
+            "start": 693.0,
+            "duration": 5.579,
+            "text": {
+              "ja": "計算時間を短くしようまあ1個1個の計算"
+            }
+          },
+          {
+            "start": 695.1,
+            "duration": 4.58,
+            "text": {
+              "ja": "時間は短くはならないんですけどとただ"
+            }
+          },
+          {
+            "start": 698.579,
+            "duration": 3.481,
+            "text": {
+              "ja": "その"
+            }
+          },
+          {
+            "start": 699.68,
+            "duration": 6.64,
+            "text": {
+              "ja": "時間当たりの"
+            }
+          },
+          {
+            "start": 702.06,
+            "duration": 6.54,
+            "text": {
+              "ja": "処理量というものがこの分割処理によって"
+            }
+          },
+          {
+            "start": 706.32,
+            "duration": 3.9,
+            "text": {
+              "ja": "改善されていくと具体的にはこれ4つの"
+            }
+          },
+          {
+            "start": 708.6,
+            "duration": 4.02,
+            "text": {
+              "ja": "部分"
+            }
+          },
+          {
+            "start": 710.22,
+            "duration": 4.2,
+            "text": {
+              "ja": "処理に分割してそれを多重処理していくと"
+            }
+          },
+          {
+            "start": 712.62,
+            "duration": 4.5,
+            "text": {
+              "ja": "4倍の"
+            }
+          },
+          {
+            "start": 714.42,
+            "duration": 5.22,
+            "text": {
+              "ja": "処理能力になってくるというような仕組み"
+            }
+          },
+          {
+            "start": 717.12,
+            "duration": 4.8,
+            "text": {
+              "ja": "でこれもやはりこういう一連の"
+            }
+          },
+          {
+            "start": 719.64,
+            "duration": 4.319,
+            "text": {
+              "ja": "コンピューターの処理というものをこの"
+            }
+          },
+          {
+            "start": 721.92,
+            "duration": 4.2,
+            "text": {
+              "ja": "ような仕組みで先ほどのトランジスタを"
+            }
+          },
+          {
+            "start": 723.959,
+            "duration": 3.861,
+            "text": {
+              "ja": "使って実現していくということになります"
+            }
+          },
+          {
+            "start": 726.12,
+            "duration": 3.899,
+            "text": {
+              "ja": "で"
+            }
+          },
+          {
+            "start": 727.82,
+            "duration": 4.3,
+            "text": {
+              "ja": "もう一つは"
+            }
+          },
+          {
+            "start": 730.019,
+            "duration": 3.081,
+            "text": {
+              "ja": "並列処理先ほどはパイプライン処理と呼ば"
+            }
+          },
+          {
+            "start": 732.12,
+            "duration": 3.3,
+            "text": {
+              "ja": "れる"
+            }
+          },
+          {
+            "start": 733.1,
+            "duration": 5.08,
+            "text": {
+              "ja": "流れでしてパイプライン処理って"
+            }
+          },
+          {
+            "start": 735.42,
+            "duration": 4.74,
+            "text": {
+              "ja": "パイプラインというところ"
+            }
+          },
+          {
+            "start": 738.18,
+            "duration": 5.159,
+            "text": {
+              "ja": "油のパイプラインを思い出すかもしれませ"
+            }
+          },
+          {
+            "start": 740.16,
+            "duration": 4.739,
+            "text": {
+              "ja": "んけどまぁ同じような考え方でパイプの中"
+            }
+          },
+          {
+            "start": 743.339,
+            "duration": 3.721,
+            "text": {
+              "ja": "をデータを流して"
+            }
+          },
+          {
+            "start": 744.899,
+            "duration": 4.201,
+            "text": {
+              "ja": "処理をその長い流れの中で処理をしていく"
+            }
+          },
+          {
+            "start": 747.06,
+            "duration": 3.0,
+            "text": {
+              "ja": "という考え方でパイプライン処理という風"
+            }
+          },
+          {
+            "start": 749.1,
+            "duration": 2.58,
+            "text": {
+              "ja": "に呼んでます"
+            }
+          },
+          {
+            "start": 750.06,
+            "duration": 4.04,
+            "text": {
+              "ja": "でもう一つは"
+            }
+          },
+          {
+            "start": 751.68,
+            "duration": 6.96,
+            "text": {
+              "ja": "並列処理と呼ばれるものでしてこれは"
+            }
+          },
+          {
+            "start": 754.1,
+            "duration": 7.419,
+            "text": {
+              "ja": "単純にその大きな問題をN分割してそれを"
+            }
+          },
+          {
+            "start": 758.64,
+            "duration": 7.28,
+            "text": {
+              "ja": "N5のコンピューターで"
+            }
+          },
+          {
+            "start": 761.519,
+            "duration": 8.341,
+            "text": {
+              "ja": "並列処理を行うとで最後に結果を集約して"
+            }
+          },
+          {
+            "start": 765.92,
+            "duration": 7.359,
+            "text": {
+              "ja": "全体の回を求めていくというような非常に"
+            }
+          },
+          {
+            "start": 769.86,
+            "duration": 7.26,
+            "text": {
+              "ja": "その単純ですけど効果的な処理方式になり"
+            }
+          },
+          {
+            "start": 773.279,
+            "duration": 6.601,
+            "text": {
+              "ja": "ますただのここで分割とはすいません"
+            }
+          },
+          {
+            "start": 777.12,
+            "duration": 3.659,
+            "text": {
+              "ja": "割り当てと結果の集約というところにです"
+            }
+          },
+          {
+            "start": 779.88,
+            "duration": 2.3,
+            "text": {
+              "ja": "ねその"
+            }
+          },
+          {
+            "start": 780.779,
+            "duration": 5.101,
+            "text": {
+              "ja": "ネットワーキングという"
+            }
+          },
+          {
+            "start": 782.18,
+            "duration": 7.659,
+            "text": {
+              "ja": "データをやり取りする仕組みが必要になっ"
+            }
+          },
+          {
+            "start": 785.88,
+            "duration": 7.079,
+            "text": {
+              "ja": "てきますので単純に処理をN等分したから"
+            }
+          },
+          {
+            "start": 789.839,
+            "duration": 5.24,
+            "text": {
+              "ja": "と言ってN倍になるわけではなくてこの"
+            }
+          },
+          {
+            "start": 792.959,
+            "duration": 5.82,
+            "text": {
+              "ja": "ネットワークを介してデータを集めたり"
+            }
+          },
+          {
+            "start": 795.079,
+            "duration": 5.82,
+            "text": {
+              "ja": "分散したりするというそういう余計な手間"
+            }
+          },
+          {
+            "start": 798.779,
+            "duration": 2.12,
+            "text": {
+              "ja": "がですね"
+            }
+          },
+          {
+            "start": 801.36,
+            "duration": 4.919,
+            "text": {
+              "ja": "処理効率を低下させるというところがあり"
+            }
+          },
+          {
+            "start": 803.279,
+            "duration": 8.821,
+            "text": {
+              "ja": "ますのでそれに関して様々なネットワーク"
+            }
+          },
+          {
+            "start": 806.279,
+            "duration": 7.5,
+            "text": {
+              "ja": "の構成を考えた上で問題に適したより"
+            }
+          },
+          {
+            "start": 812.1,
+            "duration": 3.72,
+            "text": {
+              "ja": "効率の良い"
+            }
+          },
+          {
+            "start": 813.779,
+            "duration": 5.221,
+            "text": {
+              "ja": "ネットワーキングという"
+            }
+          },
+          {
+            "start": 815.82,
+            "duration": 7.019,
+            "text": {
+              "ja": "研究も必要になってくるわけですでこれの"
+            }
+          },
+          {
+            "start": 819.0,
+            "duration": 5.839,
+            "text": {
+              "ja": "一番わかりやすい例としてはまだ私たちが"
+            }
+          },
+          {
+            "start": 822.839,
+            "duration": 4.74,
+            "text": {
+              "ja": "昔やった話なんですけど"
+            }
+          },
+          {
+            "start": 824.839,
+            "duration": 4.361,
+            "text": {
+              "ja": "MRIとかCTといったような3次元の"
+            }
+          },
+          {
+            "start": 827.579,
+            "duration": 4.801,
+            "text": {
+              "ja": "スライス"
+            }
+          },
+          {
+            "start": 829.2,
+            "duration": 7.379,
+            "text": {
+              "ja": "画像を2次元のスライス画像を3次元化し"
+            }
+          },
+          {
+            "start": 832.38,
+            "duration": 7.259,
+            "text": {
+              "ja": "てそれを分散処理して部分画像を生成して"
+            }
+          },
+          {
+            "start": 836.579,
+            "duration": 7.401,
+            "text": {
+              "ja": "全体を集約すると今ではもういろんな病院"
+            }
+          },
+          {
+            "start": 839.639,
+            "duration": 6.721,
+            "text": {
+              "ja": "で当たり前にやられてますけどちょうど"
+            }
+          },
+          {
+            "start": 843.98,
+            "duration": 7.38,
+            "text": {
+              "ja": "19978年ぐらいですかねこういう技術"
+            }
+          },
+          {
+            "start": 846.36,
+            "duration": 5.0,
+            "text": {
+              "ja": "を作って公表したことがございました"
+            }
+          },
+          {
+            "start": 851.6,
+            "duration": 5.919,
+            "text": {
+              "ja": "以上のような技術革新によって"
+            }
+          },
+          {
+            "start": 854.18,
+            "duration": 6.24,
+            "text": {
+              "ja": "コンピューター例えば80年ぐらい車に"
+            }
+          },
+          {
+            "start": 857.519,
+            "duration": 7.201,
+            "text": {
+              "ja": "比べると非常に短い歴史なんですがその"
+            }
+          },
+          {
+            "start": 860.42,
+            "duration": 6.96,
+            "text": {
+              "ja": "80年の間にまあ飛躍的性能が向上してき"
+            }
+          },
+          {
+            "start": 864.72,
+            "duration": 7.44,
+            "text": {
+              "ja": "たというのがあのここでお見せする"
+            }
+          },
+          {
+            "start": 867.38,
+            "duration": 6.82,
+            "text": {
+              "ja": "スライドになりますでえっとここで"
+            }
+          },
+          {
+            "start": 872.16,
+            "duration": 5.88,
+            "text": {
+              "ja": "演算性能というものは書いてありますけど"
+            }
+          },
+          {
+            "start": 874.2,
+            "duration": 5.999,
+            "text": {
+              "ja": "これがあの1秒間にどれぐらいの数の計算"
+            }
+          },
+          {
+            "start": 878.04,
+            "duration": 4.159,
+            "text": {
+              "ja": "ができるかというのを示したものですこれ"
+            }
+          },
+          {
+            "start": 880.199,
+            "duration": 4.981,
+            "text": {
+              "ja": "メモリーサイズこれは"
+            }
+          },
+          {
+            "start": 882.199,
+            "duration": 5.5,
+            "text": {
+              "ja": "Bというのが1バイトという単位になり"
+            }
+          },
+          {
+            "start": 885.18,
+            "duration": 5.7,
+            "text": {
+              "ja": "ますけどおよそ1文字に相当しますです"
+            }
+          },
+          {
+            "start": 887.699,
+            "duration": 5.461,
+            "text": {
+              "ja": "からk点はキロですので6,400"
+            }
+          },
+          {
+            "start": 890.88,
+            "duration": 4.04,
+            "text": {
+              "ja": "文字ですねすいません先ほどのこの"
+            }
+          },
+          {
+            "start": 893.16,
+            "duration": 4.08,
+            "text": {
+              "ja": "0.15"
+            }
+          },
+          {
+            "start": 894.92,
+            "duration": 3.719,
+            "text": {
+              "ja": "mipsこれミックスという風に呼んで"
+            }
+          },
+          {
+            "start": 897.24,
+            "duration": 2.399,
+            "text": {
+              "ja": "ますけど"
+            }
+          },
+          {
+            "start": 898.639,
+            "duration": 4.121,
+            "text": {
+              "ja": "ミリオンインストラクションパーセカンド"
+            }
+          },
+          {
+            "start": 899.639,
+            "duration": 5.841,
+            "text": {
+              "ja": "ということで100万単位での1秒あたり"
+            }
+          },
+          {
+            "start": 902.76,
+            "duration": 2.72,
+            "text": {
+              "ja": "に処理できる"
+            }
+          },
+          {
+            "start": 905.94,
+            "duration": 4.38,
+            "text": {
+              "ja": "計算量ということになりますですのでこれ"
+            }
+          },
+          {
+            "start": 907.68,
+            "duration": 5.839,
+            "text": {
+              "ja": "は15万命令を1秒間に計算できるという"
+            }
+          },
+          {
+            "start": 910.32,
+            "duration": 7.56,
+            "text": {
+              "ja": "ものですこれがおよそ"
+            }
+          },
+          {
+            "start": 913.519,
+            "duration": 6.161,
+            "text": {
+              "ja": "3億6000万円で1965年ですね私が"
+            }
+          },
+          {
+            "start": 917.88,
+            "duration": 3.84,
+            "text": {
+              "ja": "生まれて4年目でしたけどその頃の"
+            }
+          },
+          {
+            "start": 919.68,
+            "duration": 5.459,
+            "text": {
+              "ja": "コンピューターまあこれ非常に高価なその"
+            }
+          },
+          {
+            "start": 921.72,
+            "duration": 5.4,
+            "text": {
+              "ja": "時の多分月収も2万円とかそういう時代"
+            }
+          },
+          {
+            "start": 925.139,
+            "duration": 5.401,
+            "text": {
+              "ja": "だったかもしれませんけど非常に高価で"
+            }
+          },
+          {
+            "start": 927.12,
+            "duration": 7.38,
+            "text": {
+              "ja": "あったということになりますでそれが10"
+            }
+          },
+          {
+            "start": 930.54,
+            "duration": 5.099,
+            "text": {
+              "ja": "年経つと1mips7"
+            }
+          },
+          {
+            "start": 934.5,
+            "duration": 3.42,
+            "text": {
+              "ja": "倍ぐらい"
+            }
+          },
+          {
+            "start": 935.639,
+            "duration": 3.541,
+            "text": {
+              "ja": "計算能力が上がったということになります"
+            }
+          },
+          {
+            "start": 937.92,
+            "duration": 5.219,
+            "text": {
+              "ja": "し"
+            }
+          },
+          {
+            "start": 939.18,
+            "duration": 6.92,
+            "text": {
+              "ja": "扱えるデータも16倍1MBという単位で"
+            }
+          },
+          {
+            "start": 943.139,
+            "duration": 7.38,
+            "text": {
+              "ja": "値段が7200万ということで"
+            }
+          },
+          {
+            "start": 946.1,
+            "duration": 6.06,
+            "text": {
+              "ja": "それのあたりの価格が34倍まで"
+            }
+          },
+          {
+            "start": 950.519,
+            "duration": 4.44,
+            "text": {
+              "ja": "改善されたという"
+            }
+          },
+          {
+            "start": 952.16,
+            "duration": 5.08,
+            "text": {
+              "ja": "たったの10年ですねでなるわけですで"
+            }
+          },
+          {
+            "start": 954.959,
+            "duration": 3.841,
+            "text": {
+              "ja": "これがまあ皆さんこれもちょっと"
+            }
+          },
+          {
+            "start": 957.24,
+            "duration": 5.719,
+            "text": {
+              "ja": "古いところにはありますけどまぁ皆さん"
+            }
+          },
+          {
+            "start": 958.8,
+            "duration": 4.159,
+            "text": {
+              "ja": "よく見るパソコンなんかですともうもはや"
+            }
+          },
+          {
+            "start": 963.3,
+            "duration": 3.8,
+            "text": {
+              "ja": "負けた"
+            }
+          },
+          {
+            "start": 964.68,
+            "duration": 4.7,
+            "text": {
+              "ja": "ギガですねミリオンの上はギガですね"
+            }
+          },
+          {
+            "start": 967.1,
+            "duration": 3.4,
+            "text": {
+              "ja": "160GB"
+            }
+          },
+          {
+            "start": 969.38,
+            "duration": 3.699,
+            "text": {
+              "ja": "インストラクションパーセカンドという"
+            }
+          },
+          {
+            "start": 970.5,
+            "duration": 4.74,
+            "text": {
+              "ja": "ことでこちらも銀河ですねでまあこれも"
+            }
+          },
+          {
+            "start": 973.079,
+            "duration": 4.021,
+            "text": {
+              "ja": "10万円切ってると思いますのでこのよう"
+            }
+          },
+          {
+            "start": 975.24,
+            "duration": 6.18,
+            "text": {
+              "ja": "に"
+            }
+          },
+          {
+            "start": 977.1,
+            "duration": 7.16,
+            "text": {
+              "ja": "価格性能的にはこれぐらいのペースで"
+            }
+          },
+          {
+            "start": 981.42,
+            "duration": 5.159,
+            "text": {
+              "ja": "上がってきたということになります車は"
+            }
+          },
+          {
+            "start": 984.26,
+            "duration": 5.8,
+            "text": {
+              "ja": "100年以上の歴史があるかもしれません"
+            }
+          },
+          {
+            "start": 986.579,
+            "duration": 5.041,
+            "text": {
+              "ja": "けどそんなに値段は変わってないと思うん"
+            }
+          },
+          {
+            "start": 990.06,
+            "duration": 4.86,
+            "text": {
+              "ja": "ですねスピードが速くなるわけでもない"
+            }
+          },
+          {
+            "start": 991.62,
+            "duration": 8.219,
+            "text": {
+              "ja": "ところでですのでよく言われるのがまあ車"
+            }
+          },
+          {
+            "start": 994.92,
+            "duration": 7.279,
+            "text": {
+              "ja": "に比べると非常にペースが指数関数的に"
+            }
+          },
+          {
+            "start": 999.839,
+            "duration": 6.24,
+            "text": {
+              "ja": "上がってきた"
+            }
+          },
+          {
+            "start": 1002.199,
+            "duration": 5.14,
+            "text": {
+              "ja": "非常にその社会的に役に立つ機械だという"
+            }
+          },
+          {
+            "start": 1006.079,
+            "duration": 5.461,
+            "text": {
+              "ja": "風にコンピューターの人は言うんですけど"
+            }
+          },
+          {
+            "start": 1007.339,
+            "duration": 5.881,
+            "text": {
+              "ja": "ただ一方で車の人はですねコンピューター"
+            }
+          },
+          {
+            "start": 1011.54,
+            "duration": 4.64,
+            "text": {
+              "ja": "のようにリブートしたりはしませんみたい"
+            }
+          },
+          {
+            "start": 1013.22,
+            "duration": 2.96,
+            "text": {
+              "ja": "なことを言っていろいろ"
+            }
+          },
+          {
+            "start": 1017.899,
+            "duration": 4.8,
+            "text": {
+              "ja": "議論のあるところでありますけど"
+            }
+          },
+          {
+            "start": 1019.48,
+            "duration": 5.74,
+            "text": {
+              "ja": "単位をちょっと見直してみますとこれよく"
+            }
+          },
+          {
+            "start": 1022.699,
+            "duration": 5.461,
+            "text": {
+              "ja": "作るキロとかこれは一般に使う機能ですね"
+            }
+          },
+          {
+            "start": 1025.22,
+            "duration": 6.719,
+            "text": {
+              "ja": "でえっとメガとかギガというのが多分皆"
+            }
+          },
+          {
+            "start": 1028.16,
+            "duration": 5.639,
+            "text": {
+              "ja": "さんの携帯でよくそのスペックが議論さ"
+            }
+          },
+          {
+            "start": 1031.939,
+            "duration": 4.62,
+            "text": {
+              "ja": "れる時に使われるような単位かと思います"
+            }
+          },
+          {
+            "start": 1033.799,
+            "duration": 5.301,
+            "text": {
+              "ja": "でこれがあの今"
+            }
+          },
+          {
+            "start": 1036.559,
+            "duration": 6.081,
+            "text": {
+              "ja": "扱っている今"
+            }
+          },
+          {
+            "start": 1039.1,
+            "duration": 7.06,
+            "text": {
+              "ja": "使え使われているスパコンレベルになると"
+            }
+          },
+          {
+            "start": 1042.64,
+            "duration": 5.74,
+            "text": {
+              "ja": "テラペタという領域になってでこれからの"
+            }
+          },
+          {
+            "start": 1046.16,
+            "duration": 5.58,
+            "text": {
+              "ja": "スパコンの狙うところが"
+            }
+          },
+          {
+            "start": 1048.38,
+            "duration": 4.82,
+            "text": {
+              "ja": "XAとかゼッタというようなさらにその3"
+            }
+          },
+          {
+            "start": 1051.74,
+            "duration": 5.36,
+            "text": {
+              "ja": "乗"
+            }
+          },
+          {
+            "start": 1053.2,
+            "duration": 5.7,
+            "text": {
+              "ja": "場合あるいは6乗倍というような"
+            }
+          },
+          {
+            "start": 1057.1,
+            "duration": 4.36,
+            "text": {
+              "ja": "ものに"
+            }
+          },
+          {
+            "start": 1058.9,
+            "duration": 5.98,
+            "text": {
+              "ja": "スパコンのターゲットが移りつつあります"
+            }
+          },
+          {
+            "start": 1061.46,
+            "duration": 5.94,
+            "text": {
+              "ja": "これは例えば1秒間にエクサカイの"
+            }
+          },
+          {
+            "start": 1064.88,
+            "duration": 4.56,
+            "text": {
+              "ja": "計算ができるとかこれ"
+            }
+          },
+          {
+            "start": 1067.4,
+            "duration": 4.5,
+            "text": {
+              "ja": "昨年ちょうどアメリカのスパコンがこれを"
+            }
+          },
+          {
+            "start": 1069.44,
+            "duration": 5.16,
+            "text": {
+              "ja": "達成しましたけどそれを行ったりあるいは"
+            }
+          },
+          {
+            "start": 1071.9,
+            "duration": 5.519,
+            "text": {
+              "ja": "その次のターゲットとしては日本ですと"
+            }
+          },
+          {
+            "start": 1074.6,
+            "duration": 6.3,
+            "text": {
+              "ja": "10害というんでしょうかね10の21乗"
+            }
+          },
+          {
+            "start": 1077.419,
+            "duration": 8.061,
+            "text": {
+              "ja": "のデータを扱うとかあるいは計算を扱うと"
+            }
+          },
+          {
+            "start": 1080.9,
+            "duration": 4.58,
+            "text": {
+              "ja": "いうようなレベルになっていくわけです"
+            }
+          },
+          {
+            "start": 1085.539,
+            "duration": 7.541,
+            "text": {
+              "ja": "ですのでこのような集積"
+            }
+          },
+          {
+            "start": 1089.6,
+            "duration": 4.38,
+            "text": {
+              "ja": "技術の向上とあと高性能の技術というもの"
+            }
+          },
+          {
+            "start": 1093.08,
+            "duration": 2.959,
+            "text": {
+              "ja": "を"
+            }
+          },
+          {
+            "start": 1093.98,
+            "duration": 4.5,
+            "text": {
+              "ja": "掛け合わせてその相乗効果によって"
+            }
+          },
+          {
+            "start": 1096.039,
+            "duration": 4.241,
+            "text": {
+              "ja": "スパコンというものが生まれてきましたで"
+            }
+          },
+          {
+            "start": 1098.48,
+            "duration": 5.04,
+            "text": {
+              "ja": "これがいわゆる"
+            }
+          },
+          {
+            "start": 1100.28,
+            "duration": 6.38,
+            "text": {
+              "ja": "科学技術計算に特化したコンピューターと"
+            }
+          },
+          {
+            "start": 1103.52,
+            "duration": 8.7,
+            "text": {
+              "ja": "いうことでその時代の"
+            }
+          },
+          {
+            "start": 1106.66,
+            "duration": 8.74,
+            "text": {
+              "ja": "最高性能のものを呼んでおりますですので"
+            }
+          },
+          {
+            "start": 1112.22,
+            "duration": 5.459,
+            "text": {
+              "ja": "昔そのクレイという人が1976年に"
+            }
+          },
+          {
+            "start": 1115.4,
+            "duration": 4.8,
+            "text": {
+              "ja": "初めてスパコンという新しいカテゴリーで"
+            }
+          },
+          {
+            "start": 1117.679,
+            "duration": 6.181,
+            "text": {
+              "ja": "のコンピュータを作り出したんですがその"
+            }
+          },
+          {
+            "start": 1120.2,
+            "duration": 5.94,
+            "text": {
+              "ja": "時の性能がちょうど240mhzという"
+            }
+          },
+          {
+            "start": 1123.86,
+            "duration": 4.559,
+            "text": {
+              "ja": "単位で"
+            }
+          },
+          {
+            "start": 1126.14,
+            "duration": 5.58,
+            "text": {
+              "ja": "消費電力このぐらいとで"
+            }
+          },
+          {
+            "start": 1128.419,
+            "duration": 5.941,
+            "text": {
+              "ja": "消費電力あたりの性能が2キロフロップ"
+            }
+          },
+          {
+            "start": 1131.72,
+            "duration": 5.339,
+            "text": {
+              "ja": "2000"
+            }
+          },
+          {
+            "start": 1134.36,
+            "duration": 6.42,
+            "text": {
+              "ja": "命令を1Wで計算できるというような時代"
+            }
+          },
+          {
+            "start": 1137.059,
+            "duration": 4.921,
+            "text": {
+              "ja": "だったわけですでそれがその後先ほどの"
+            }
+          },
+          {
+            "start": 1140.78,
+            "duration": 5.759,
+            "text": {
+              "ja": "ような"
+            }
+          },
+          {
+            "start": 1141.98,
+            "duration": 8.579,
+            "text": {
+              "ja": "技術革新によってアメリカが1996年に"
+            }
+          },
+          {
+            "start": 1146.539,
+            "duration": 6.961,
+            "text": {
+              "ja": "初めてテラの性能を持つスパコンを出して"
+            }
+          },
+          {
+            "start": 1150.559,
+            "duration": 6.12,
+            "text": {
+              "ja": "きたというところにありますでその後日本"
+            }
+          },
+          {
+            "start": 1153.5,
+            "duration": 7.5,
+            "text": {
+              "ja": "も頑張りまして地球史見られたというもの"
+            }
+          },
+          {
+            "start": 1156.679,
+            "duration": 7.021,
+            "text": {
+              "ja": "が2002年に40倍の性能を作り上げた"
+            }
+          },
+          {
+            "start": 1161.0,
+            "duration": 4.919,
+            "text": {
+              "ja": "とでこれが並列処理の"
+            }
+          },
+          {
+            "start": 1163.7,
+            "duration": 3.56,
+            "text": {
+              "ja": "程度になりますけど5000個の"
+            }
+          },
+          {
+            "start": 1165.919,
+            "duration": 5.461,
+            "text": {
+              "ja": "コンピューターを"
+            }
+          },
+          {
+            "start": 1167.26,
+            "duration": 6.94,
+            "text": {
+              "ja": "集約して処理をしたとでその時の電力が6"
+            }
+          },
+          {
+            "start": 1171.38,
+            "duration": 5.0,
+            "text": {
+              "ja": "メガワットと書いてるでこれがどんどん"
+            }
+          },
+          {
+            "start": 1174.2,
+            "duration": 5.58,
+            "text": {
+              "ja": "進んでUSが"
+            }
+          },
+          {
+            "start": 1176.38,
+            "duration": 4.2,
+            "text": {
+              "ja": "1ペタというものを2008年に作り上げ"
+            }
+          },
+          {
+            "start": 1179.78,
+            "duration": 2.88,
+            "text": {
+              "ja": "て"
+            }
+          },
+          {
+            "start": 1180.58,
+            "duration": 3.66,
+            "text": {
+              "ja": "その後"
+            }
+          },
+          {
+            "start": 1182.66,
+            "duration": 4.32,
+            "text": {
+              "ja": "Kコンピューターですねこれも日本の"
+            }
+          },
+          {
+            "start": 1184.24,
+            "duration": 4.92,
+            "text": {
+              "ja": "いわゆるフラグシップ地球シミュレーター"
+            }
+          },
+          {
+            "start": 1186.98,
+            "duration": 5.34,
+            "text": {
+              "ja": "に次ぐ"
+            }
+          },
+          {
+            "start": 1189.16,
+            "duration": 5.86,
+            "text": {
+              "ja": "次の世代のコンピューターとしてK"
+            }
+          },
+          {
+            "start": 1192.32,
+            "duration": 5.94,
+            "text": {
+              "ja": "コンピュータちょうど1系会の計算を1"
+            }
+          },
+          {
+            "start": 1195.02,
+            "duration": 5.159,
+            "text": {
+              "ja": "秒間にやろうという目標を立てて日本が"
+            }
+          },
+          {
+            "start": 1198.26,
+            "duration": 5.039,
+            "text": {
+              "ja": "作り上げたコンピューターになりますで"
+            }
+          },
+          {
+            "start": 1200.179,
+            "duration": 5.661,
+            "text": {
+              "ja": "そこでは使う"
+            }
+          },
+          {
+            "start": 1203.299,
+            "duration": 5.521,
+            "text": {
+              "ja": "並列処理の同数としては"
+            }
+          },
+          {
+            "start": 1205.84,
+            "duration": 4.24,
+            "text": {
+              "ja": "88,000個のプロセッサーですね皆"
+            }
+          },
+          {
+            "start": 1208.82,
+            "duration": 6.18,
+            "text": {
+              "ja": "さんのコンピューターの中に入ってる"
+            }
+          },
+          {
+            "start": 1210.08,
+            "duration": 9.54,
+            "text": {
+              "ja": "チップが88,000個をつないでですね"
+            }
+          },
+          {
+            "start": 1215.0,
+            "duration": 6.62,
+            "text": {
+              "ja": "計算させるとでそれで10メガワットの"
+            }
+          },
+          {
+            "start": 1219.62,
+            "duration": 5.82,
+            "text": {
+              "ja": "ちょうど"
+            }
+          },
+          {
+            "start": 1221.62,
+            "duration": 4.78,
+            "text": {
+              "ja": "2万世帯分ぐらいの電力を必要としてまし"
+            }
+          },
+          {
+            "start": 1225.44,
+            "duration": 3.56,
+            "text": {
+              "ja": "た"
+            }
+          },
+          {
+            "start": 1226.4,
+            "duration": 6.72,
+            "text": {
+              "ja": "でその後中国が"
+            }
+          },
+          {
+            "start": 1229.0,
+            "duration": 6.1,
+            "text": {
+              "ja": "対に出てきましてですね中国が新しい"
+            }
+          },
+          {
+            "start": 1233.12,
+            "duration": 6.32,
+            "text": {
+              "ja": "スパコンを"
+            }
+          },
+          {
+            "start": 1235.1,
+            "duration": 4.34,
+            "text": {
+              "ja": "Kの12倍ほどの性能で"
+            }
+          },
+          {
+            "start": 1239.679,
+            "duration": 7.601,
+            "text": {
+              "ja": "4万個のCPUをでさらに5割増しの"
+            }
+          },
+          {
+            "start": 1245.72,
+            "duration": 5.579,
+            "text": {
+              "ja": "消費電力と"
+            }
+          },
+          {
+            "start": 1247.28,
+            "duration": 9.779,
+            "text": {
+              "ja": "でそれに負けずとUSが18年に200"
+            }
+          },
+          {
+            "start": 1251.299,
+            "duration": 7.141,
+            "text": {
+              "ja": "ペタとでそしてまた日本が今例えば飛沫の"
+            }
+          },
+          {
+            "start": 1257.059,
+            "duration": 2.661,
+            "text": {
+              "ja": "シミュレーションなどで有名になりました"
+            }
+          },
+          {
+            "start": 1258.44,
+            "duration": 3.44,
+            "text": {
+              "ja": "けど富岳が"
+            }
+          },
+          {
+            "start": 1259.72,
+            "duration": 5.579,
+            "text": {
+              "ja": "2020年に"
+            }
+          },
+          {
+            "start": 1261.88,
+            "duration": 8.08,
+            "text": {
+              "ja": "537ペタフロップスでこれは"
+            }
+          },
+          {
+            "start": 1265.299,
+            "duration": 8.921,
+            "text": {
+              "ja": "16万近いCPU16万近い並列処理を"
+            }
+          },
+          {
+            "start": 1269.96,
+            "duration": 8.16,
+            "text": {
+              "ja": "実現してしかも30メガワットという非常"
+            }
+          },
+          {
+            "start": 1274.22,
+            "duration": 5.1,
+            "text": {
+              "ja": "に多くの電力を使うということで"
+            }
+          },
+          {
+            "start": 1278.12,
+            "duration": 4.919,
+            "text": {
+              "ja": "達成していますで"
+            }
+          },
+          {
+            "start": 1279.32,
+            "duration": 7.92,
+            "text": {
+              "ja": "昨年アメリカがついに1x3の"
+            }
+          },
+          {
+            "start": 1283.039,
+            "duration": 6.0,
+            "text": {
+              "ja": "領域に入ってここでは皆さん家庭にあるか"
+            }
+          },
+          {
+            "start": 1287.24,
+            "duration": 3.72,
+            "text": {
+              "ja": "もしれませんけどGPUという"
+            }
+          },
+          {
+            "start": 1289.039,
+            "duration": 4.5,
+            "text": {
+              "ja": "グラフィックス処理専用のプロセッサを"
+            }
+          },
+          {
+            "start": 1290.96,
+            "duration": 7.14,
+            "text": {
+              "ja": "使ってですねさらに"
+            }
+          },
+          {
+            "start": 1293.539,
+            "duration": 7.02,
+            "text": {
+              "ja": "計算に特化した仕組みをこの中に導入して"
+            }
+          },
+          {
+            "start": 1298.1,
+            "duration": 6.24,
+            "text": {
+              "ja": "従来のコンピューターのCPUではでき"
+            }
+          },
+          {
+            "start": 1300.559,
+            "duration": 6.12,
+            "text": {
+              "ja": "ないような高性能性を実現して"
+            }
+          },
+          {
+            "start": 1304.34,
+            "duration": 4.56,
+            "text": {
+              "ja": "初めて1x3というレベルに入ってきたと"
+            }
+          },
+          {
+            "start": 1306.679,
+            "duration": 5.221,
+            "text": {
+              "ja": "まあ少し"
+            }
+          },
+          {
+            "start": 1308.9,
+            "duration": 4.759,
+            "text": {
+              "ja": "抑えられて23番目23番目が終わったと"
+            }
+          },
+          {
+            "start": 1311.9,
+            "duration": 5.46,
+            "text": {
+              "ja": "それでも非常に大きな値になりますけど"
+            }
+          },
+          {
+            "start": 1313.659,
+            "duration": 5.88,
+            "text": {
+              "ja": "このようにそのたくさんのCPUを一斉に"
+            }
+          },
+          {
+            "start": 1317.36,
+            "duration": 6.12,
+            "text": {
+              "ja": "使い上げるということになります"
+            }
+          },
+          {
+            "start": 1319.539,
+            "duration": 5.38,
+            "text": {
+              "ja": "スパコンというのはよくF1皆さん今F1"
+            }
+          },
+          {
+            "start": 1323.48,
+            "duration": 3.36,
+            "text": {
+              "ja": "あまり流行ってないからあれかもしれませ"
+            }
+          },
+          {
+            "start": 1324.919,
+            "duration": 3.021,
+            "text": {
+              "ja": "んけど"
+            }
+          },
+          {
+            "start": 1326.84,
+            "duration": 4.339,
+            "text": {
+              "ja": "レーシング"
+            }
+          },
+          {
+            "start": 1327.94,
+            "duration": 7.42,
+            "text": {
+              "ja": "の世界とよく似てると言われるんですけど"
+            }
+          },
+          {
+            "start": 1331.179,
+            "duration": 7.48,
+            "text": {
+              "ja": "非常にその洗練された技術で作られてると"
+            }
+          },
+          {
+            "start": 1335.36,
+            "duration": 5.819,
+            "text": {
+              "ja": "かですねえっと乗りこなすに高度な"
+            }
+          },
+          {
+            "start": 1338.659,
+            "duration": 4.321,
+            "text": {
+              "ja": "テクニックが必要だとかあるいは製造業者"
+            }
+          },
+          {
+            "start": 1341.179,
+            "duration": 4.62,
+            "text": {
+              "ja": "の技術が試されるとか"
+            }
+          },
+          {
+            "start": 1342.98,
+            "duration": 5.1,
+            "text": {
+              "ja": "少量受注生産で効果とかで大量の燃料を"
+            }
+          },
+          {
+            "start": 1345.799,
+            "duration": 3.601,
+            "text": {
+              "ja": "使うとか最近この電気化されてるようです"
+            }
+          },
+          {
+            "start": 1348.08,
+            "duration": 5.479,
+            "text": {
+              "ja": "のでそうでもないのかもしれませんけど"
+            }
+          },
+          {
+            "start": 1349.4,
+            "duration": 6.72,
+            "text": {
+              "ja": "あとまあうるさいとかこれはことがですね"
+            }
+          },
+          {
+            "start": 1353.559,
+            "duration": 5.801,
+            "text": {
+              "ja": "スパコンもですねやはり同じようにその"
+            }
+          },
+          {
+            "start": 1356.12,
+            "duration": 5.46,
+            "text": {
+              "ja": "最新の技術で使われてプログラムするのに"
+            }
+          },
+          {
+            "start": 1359.36,
+            "duration": 4.92,
+            "text": {
+              "ja": "もそれなりの"
+            }
+          },
+          {
+            "start": 1361.58,
+            "duration": 6.06,
+            "text": {
+              "ja": "経験が必要だとかですね気圧力が問われる"
+            }
+          },
+          {
+            "start": 1364.28,
+            "duration": 5.6,
+            "text": {
+              "ja": "とか受注生産高いとか電気を使うとか"
+            }
+          },
+          {
+            "start": 1367.64,
+            "duration": 4.8,
+            "text": {
+              "ja": "うるさいとこれはぜひですね"
+            }
+          },
+          {
+            "start": 1369.88,
+            "duration": 4.9,
+            "text": {
+              "ja": "東北大学スパコンありますので見に行って"
+            }
+          },
+          {
+            "start": 1372.44,
+            "duration": 6.599,
+            "text": {
+              "ja": "いただくとわかりますけど非常にうるさい"
+            }
+          },
+          {
+            "start": 1374.78,
+            "duration": 7.44,
+            "text": {
+              "ja": "ですでただスパコンの利用価値というのは"
+            }
+          },
+          {
+            "start": 1379.039,
+            "duration": 4.741,
+            "text": {
+              "ja": "私たちのその生活を"
+            }
+          },
+          {
+            "start": 1382.22,
+            "duration": 4.68,
+            "text": {
+              "ja": "豊かにしてくるあるいは安全安心して"
+            }
+          },
+          {
+            "start": 1383.78,
+            "duration": 7.92,
+            "text": {
+              "ja": "くれるというようなことに役立つというの"
+            }
+          },
+          {
+            "start": 1386.9,
+            "duration": 6.42,
+            "text": {
+              "ja": "が大きな違いかと思いますでこの"
+            }
+          },
+          {
+            "start": 1391.7,
+            "duration": 5.4,
+            "text": {
+              "ja": "技術を"
+            }
+          },
+          {
+            "start": 1393.32,
+            "duration": 6.9,
+            "text": {
+              "ja": "進める上で必要なアプローチとしては実験"
+            }
+          },
+          {
+            "start": 1397.1,
+            "duration": 5.459,
+            "text": {
+              "ja": "と理論というものがあるわけですけどこう"
+            }
+          },
+          {
+            "start": 1400.22,
+            "duration": 4.52,
+            "text": {
+              "ja": "いうスパコンが登場することによって新た"
+            }
+          },
+          {
+            "start": 1402.559,
+            "duration": 4.821,
+            "text": {
+              "ja": "にシミュレーションという"
+            }
+          },
+          {
+            "start": 1404.74,
+            "duration": 5.38,
+            "text": {
+              "ja": "方法が"
+            }
+          },
+          {
+            "start": 1407.38,
+            "duration": 5.98,
+            "text": {
+              "ja": "出てきたわけですねで今やこの"
+            }
+          },
+          {
+            "start": 1410.12,
+            "duration": 5.76,
+            "text": {
+              "ja": "シミュレーションを使って実験を"
+            }
+          },
+          {
+            "start": 1413.36,
+            "duration": 4.98,
+            "text": {
+              "ja": "効率よく行うとかあるいは理論を分析する"
+            }
+          },
+          {
+            "start": 1415.88,
+            "duration": 6.779,
+            "text": {
+              "ja": "というようなことでこのシミュレーション"
+            }
+          },
+          {
+            "start": 1418.34,
+            "duration": 5.3,
+            "text": {
+              "ja": "が大きな役割を私たちの買う技術の推進や"
+            }
+          },
+          {
+            "start": 1422.659,
+            "duration": 3.361,
+            "text": {
+              "ja": "あるいは"
+            }
+          },
+          {
+            "start": 1423.64,
+            "duration": 5.32,
+            "text": {
+              "ja": "エンジニアリングものづくりと言ったよう"
+            }
+          },
+          {
+            "start": 1426.02,
+            "duration": 4.44,
+            "text": {
+              "ja": "なところで役に立ってきてるわけですで"
+            }
+          },
+          {
+            "start": 1428.96,
+            "duration": 3.36,
+            "text": {
+              "ja": "これが"
+            }
+          },
+          {
+            "start": 1430.46,
+            "duration": 3.66,
+            "text": {
+              "ja": "代表的なスパコンの応用分野になります"
+            }
+          },
+          {
+            "start": 1432.32,
+            "duration": 5.4,
+            "text": {
+              "ja": "けど"
+            }
+          },
+          {
+            "start": 1434.12,
+            "duration": 7.02,
+            "text": {
+              "ja": "効率強い例えば発電の"
+            }
+          },
+          {
+            "start": 1437.72,
+            "duration": 4.92,
+            "text": {
+              "ja": "触媒とかですねあるいはこれ創薬ですね皆"
+            }
+          },
+          {
+            "start": 1441.14,
+            "duration": 3.36,
+            "text": {
+              "ja": "さんのその"
+            }
+          },
+          {
+            "start": 1442.64,
+            "duration": 4.56,
+            "text": {
+              "ja": "病状にあった"
+            }
+          },
+          {
+            "start": 1444.5,
+            "duration": 4.919,
+            "text": {
+              "ja": "薬をテーラーメイドそのカスタム"
+            }
+          },
+          {
+            "start": 1447.2,
+            "duration": 6.06,
+            "text": {
+              "ja": "カスタマイズした形で作り上げるとか"
+            }
+          },
+          {
+            "start": 1449.419,
+            "duration": 7.441,
+            "text": {
+              "ja": "あるいはものづくりとかですねその"
+            }
+          },
+          {
+            "start": 1453.26,
+            "duration": 5.06,
+            "text": {
+              "ja": "の衝突の実験とかあとでご紹介しますよう"
+            }
+          },
+          {
+            "start": 1456.86,
+            "duration": 7.38,
+            "text": {
+              "ja": "に防災"
+            }
+          },
+          {
+            "start": 1458.32,
+            "duration": 8.8,
+            "text": {
+              "ja": "ですねさらには地球環境特にその現在の"
+            }
+          },
+          {
+            "start": 1464.24,
+            "duration": 3.48,
+            "text": {
+              "ja": "その対比潰瘍の状況をシミュレーションし"
+            }
+          },
+          {
+            "start": 1467.12,
+            "duration": 2.58,
+            "text": {
+              "ja": "て"
+            }
+          },
+          {
+            "start": 1467.72,
+            "duration": 3.98,
+            "text": {
+              "ja": "将来の"
+            }
+          },
+          {
+            "start": 1469.7,
+            "duration": 5.64,
+            "text": {
+              "ja": "温暖化の"
+            }
+          },
+          {
+            "start": 1471.7,
+            "duration": 7.18,
+            "text": {
+              "ja": "何て言うんですかねその悪影響を分析する"
+            }
+          },
+          {
+            "start": 1475.34,
+            "duration": 5.219,
+            "text": {
+              "ja": "とかあるいは最近話題になっております"
+            }
+          },
+          {
+            "start": 1478.88,
+            "duration": 3.6,
+            "text": {
+              "ja": "いろんなロケットの発射の"
+            }
+          },
+          {
+            "start": 1480.559,
+            "duration": 4.74,
+            "text": {
+              "ja": "シミュレーションとかですねエンジンの"
+            }
+          },
+          {
+            "start": 1482.48,
+            "duration": 5.059,
+            "text": {
+              "ja": "シミュレーションとかあるいは"
+            }
+          },
+          {
+            "start": 1485.299,
+            "duration": 2.24,
+            "text": {
+              "ja": "宇宙の"
+            }
+          },
+          {
+            "start": 1488.059,
+            "duration": 5.461,
+            "text": {
+              "ja": "宇宙が生まれた時の状況をビッグバンの"
+            }
+          },
+          {
+            "start": 1490.22,
+            "duration": 5.64,
+            "text": {
+              "ja": "状況を解明するとかこう絶対に見ることが"
+            }
+          },
+          {
+            "start": 1493.52,
+            "duration": 4.38,
+            "text": {
+              "ja": "できないようなものを再現するとかですね"
+            }
+          },
+          {
+            "start": 1495.86,
+            "duration": 6.5,
+            "text": {
+              "ja": "あとはこれ"
+            }
+          },
+          {
+            "start": 1497.9,
+            "duration": 4.46,
+            "text": {
+              "ja": "原子力の仕組みまあ特に"
+            }
+          },
+          {
+            "start": 1503.2,
+            "duration": 4.839,
+            "text": {
+              "ja": "いろいろな"
+            }
+          },
+          {
+            "start": 1505.52,
+            "duration": 4.98,
+            "text": {
+              "ja": "原子力の内部構造を評価することによって"
+            }
+          },
+          {
+            "start": 1508.039,
+            "duration": 3.781,
+            "text": {
+              "ja": "その"
+            }
+          },
+          {
+            "start": 1510.5,
+            "duration": 2.76,
+            "text": {
+              "ja": "放射能の状況などもこれで"
+            }
+          },
+          {
+            "start": 1511.82,
+            "duration": 3.54,
+            "text": {
+              "ja": "シミュレーションしたりですねあるいは"
+            }
+          },
+          {
+            "start": 1513.26,
+            "duration": 4.2,
+            "text": {
+              "ja": "最近のその"
+            }
+          },
+          {
+            "start": 1515.36,
+            "duration": 3.179,
+            "text": {
+              "ja": "閣僚発言なんかもシミュレーションを使っ"
+            }
+          },
+          {
+            "start": 1517.46,
+            "duration": 3.66,
+            "text": {
+              "ja": "て"
+            }
+          },
+          {
+            "start": 1518.539,
+            "duration": 4.081,
+            "text": {
+              "ja": "効率強いその"
+            }
+          },
+          {
+            "start": 1521.12,
+            "duration": 4.32,
+            "text": {
+              "ja": "封じ込めというんでしょうかねそれを実現"
+            }
+          },
+          {
+            "start": 1522.62,
+            "duration": 6.96,
+            "text": {
+              "ja": "するようなことがスパコンがあって初めて"
+            }
+          },
+          {
+            "start": 1525.44,
+            "duration": 7.32,
+            "text": {
+              "ja": "できるわけですでこれは"
+            }
+          },
+          {
+            "start": 1529.58,
+            "duration": 4.38,
+            "text": {
+              "ja": "利権に神戸の利権の"
+            }
+          },
+          {
+            "start": 1532.76,
+            "duration": 3.06,
+            "text": {
+              "ja": "計算科学センター"
+            }
+          },
+          {
+            "start": 1533.96,
+            "duration": 6.0,
+            "text": {
+              "ja": "計算科学センターに"
+            }
+          },
+          {
+            "start": 1535.82,
+            "duration": 5.94,
+            "text": {
+              "ja": "設置された日本が開発したスパコン不惑に"
+            }
+          },
+          {
+            "start": 1539.96,
+            "duration": 4.44,
+            "text": {
+              "ja": "なりますこれぜひあの神戸に行った時に"
+            }
+          },
+          {
+            "start": 1541.76,
+            "duration": 4.98,
+            "text": {
+              "ja": "ですね一般公開されてますのでぜひ見て"
+            }
+          },
+          {
+            "start": 1544.4,
+            "duration": 4.56,
+            "text": {
+              "ja": "いただければと思いますが"
+            }
+          },
+          {
+            "start": 1546.74,
+            "duration": 6.5,
+            "text": {
+              "ja": "富士通と利権が共同で開発したものになり"
+            }
+          },
+          {
+            "start": 1548.96,
+            "duration": 6.959,
+            "text": {
+              "ja": "ますけどこれシングル1枚のチップ上に"
+            }
+          },
+          {
+            "start": 1553.24,
+            "duration": 4.72,
+            "text": {
+              "ja": "48個の"
+            }
+          },
+          {
+            "start": 1555.919,
+            "duration": 5.401,
+            "text": {
+              "ja": "計算ユニット"
+            }
+          },
+          {
+            "start": 1557.96,
+            "duration": 7.03,
+            "text": {
+              "ja": "計算装置を集積してでそのそれを一つの"
+            }
+          },
+          {
+            "start": 1561.32,
+            "duration": 6.56,
+            "text": {
+              "ja": "プロセッサーとの単位とした上で"
+            }
+          },
+          {
+            "start": 1567.88,
+            "duration": 5.46,
+            "text": {
+              "ja": "158,0156,000個ですかの"
+            }
+          },
+          {
+            "start": 1570.1,
+            "duration": 6.3,
+            "text": {
+              "ja": "CPUプロセッサーをこの中に詰め込んで"
+            }
+          },
+          {
+            "start": 1573.34,
+            "duration": 7.24,
+            "text": {
+              "ja": "さらにはこれらをネットワークでつないで"
+            }
+          },
+          {
+            "start": 1576.4,
+            "duration": 7.12,
+            "text": {
+              "ja": "一斉に一つの計算を実現しようというもの"
+            }
+          },
+          {
+            "start": 1580.58,
+            "duration": 6.38,
+            "text": {
+              "ja": "になりますで1個1個のプロセッサーは"
+            }
+          },
+          {
+            "start": 1583.52,
+            "duration": 6.259,
+            "text": {
+              "ja": "2ghzということで1秒間に"
+            }
+          },
+          {
+            "start": 1586.96,
+            "duration": 5.56,
+            "text": {
+              "ja": "20億回のスイッチングができるような"
+            }
+          },
+          {
+            "start": 1589.779,
+            "duration": 3.961,
+            "text": {
+              "ja": "ものになっていますで"
+            }
+          },
+          {
+            "start": 1592.52,
+            "duration": 4.32,
+            "text": {
+              "ja": "ちょうど日本の"
+            }
+          },
+          {
+            "start": 1593.74,
+            "duration": 7.48,
+            "text": {
+              "ja": "国の様子は1300億をかけてですね"
+            }
+          },
+          {
+            "start": 1596.84,
+            "duration": 7.319,
+            "text": {
+              "ja": "およそまあえっと5年間で開発したという"
+            }
+          },
+          {
+            "start": 1601.22,
+            "duration": 4.5,
+            "text": {
+              "ja": "ところになりますでまぁ30メガワットと"
+            }
+          },
+          {
+            "start": 1604.159,
+            "duration": 4.38,
+            "text": {
+              "ja": "いうことでこれちょっと"
+            }
+          },
+          {
+            "start": 1605.72,
+            "duration": 5.4,
+            "text": {
+              "ja": "財布を考えるともちろん上がってますから"
+            }
+          },
+          {
+            "start": 1608.539,
+            "duration": 5.401,
+            "text": {
+              "ja": "30億円ぐらい年間かかってるのでそれ"
+            }
+          },
+          {
+            "start": 1611.12,
+            "duration": 4.159,
+            "text": {
+              "ja": "以上の効果を持って使わないといけないと"
+            }
+          },
+          {
+            "start": 1613.94,
+            "duration": 4.88,
+            "text": {
+              "ja": "いうことで"
+            }
+          },
+          {
+            "start": 1615.279,
+            "duration": 3.541,
+            "text": {
+              "ja": "特にその最近"
+            }
+          },
+          {
+            "start": 1619.24,
+            "duration": 6.1,
+            "text": {
+              "ja": "非常に問題になっておりましたけど"
+            }
+          },
+          {
+            "start": 1622.48,
+            "duration": 4.84,
+            "text": {
+              "ja": "新型コロナウイルスの飛沫の"
+            }
+          },
+          {
+            "start": 1625.34,
+            "duration": 4.14,
+            "text": {
+              "ja": "シミュレーションとかもちろん飛沫の"
+            }
+          },
+          {
+            "start": 1627.32,
+            "duration": 4.82,
+            "text": {
+              "ja": "シミュレーションだけではないんですが"
+            }
+          },
+          {
+            "start": 1629.48,
+            "duration": 6.96,
+            "text": {
+              "ja": "創薬とか先ほど示して示しましたような"
+            }
+          },
+          {
+            "start": 1632.14,
+            "duration": 8.2,
+            "text": {
+              "ja": "ものづくりとかあるいは安全安心な社会"
+            }
+          },
+          {
+            "start": 1636.44,
+            "duration": 3.9,
+            "text": {
+              "ja": "最近ですか"
+            }
+          },
+          {
+            "start": 1640.82,
+            "duration": 2.76,
+            "text": {
+              "ja": "ゲリラ豪雨のリアルタイム"
+            }
+          },
+          {
+            "start": 1642.02,
+            "duration": 5.46,
+            "text": {
+              "ja": "シミュレーションといったようなことも"
+            }
+          },
+          {
+            "start": 1643.58,
+            "duration": 6.18,
+            "text": {
+              "ja": "行っているようですでこれよりは少し規模"
+            }
+          },
+          {
+            "start": 1647.48,
+            "duration": 6.079,
+            "text": {
+              "ja": "が小さくなるんですが東北大学にも"
+            }
+          },
+          {
+            "start": 1649.76,
+            "duration": 7.799,
+            "text": {
+              "ja": "スパコンがございましてこれは"
+            }
+          },
+          {
+            "start": 1653.559,
+            "duration": 4.921,
+            "text": {
+              "ja": "私たちとNECが長年共同研究をしており"
+            }
+          },
+          {
+            "start": 1657.559,
+            "duration": 4.74,
+            "text": {
+              "ja": "まして"
+            }
+          },
+          {
+            "start": 1658.48,
+            "duration": 5.1,
+            "text": {
+              "ja": "以下にそのデータ処理を効率よく行うかと"
+            }
+          },
+          {
+            "start": 1662.299,
+            "duration": 3.681,
+            "text": {
+              "ja": "いうような仕組みを"
+            }
+          },
+          {
+            "start": 1663.58,
+            "duration": 6.4,
+            "text": {
+              "ja": "チップ上に表現して"
+            }
+          },
+          {
+            "start": 1665.98,
+            "duration": 5.34,
+            "text": {
+              "ja": "NECが製品化したSXオーロラ翼という"
+            }
+          },
+          {
+            "start": 1669.98,
+            "duration": 4.74,
+            "text": {
+              "ja": "ものです"
+            }
+          },
+          {
+            "start": 1671.32,
+            "duration": 5.82,
+            "text": {
+              "ja": "2018年に初めて出したものなんです"
+            }
+          },
+          {
+            "start": 1674.72,
+            "duration": 6.059,
+            "text": {
+              "ja": "けど基本はもちろん"
+            }
+          },
+          {
+            "start": 1677.14,
+            "duration": 6.46,
+            "text": {
+              "ja": "先ほどの富岳と同じようにですね中に"
+            }
+          },
+          {
+            "start": 1680.779,
+            "duration": 4.741,
+            "text": {
+              "ja": "計算ユニット集約するんですけどそれと"
+            }
+          },
+          {
+            "start": 1683.6,
+            "duration": 4.319,
+            "text": {
+              "ja": "同時にそのデータを"
+            }
+          },
+          {
+            "start": 1685.52,
+            "duration": 6.36,
+            "text": {
+              "ja": "効率よく供給するのメモリーシステムの"
+            }
+          },
+          {
+            "start": 1687.919,
+            "duration": 6.981,
+            "text": {
+              "ja": "開発などにも私たち一緒に取り組んで"
+            }
+          },
+          {
+            "start": 1691.88,
+            "duration": 7.14,
+            "text": {
+              "ja": "まいりましたで"
+            }
+          },
+          {
+            "start": 1694.9,
+            "duration": 8.32,
+            "text": {
+              "ja": "8月からですね新しいシステムが動き始め"
+            }
+          },
+          {
+            "start": 1699.02,
+            "duration": 7.88,
+            "text": {
+              "ja": "ますしえっとですね今一般公開してると"
+            }
+          },
+          {
+            "start": 1703.22,
+            "duration": 6.3,
+            "text": {
+              "ja": "思いますのでちょっとその地下鉄の前の"
+            }
+          },
+          {
+            "start": 1706.9,
+            "duration": 3.759,
+            "text": {
+              "ja": "建物になりますが"
+            }
+          },
+          {
+            "start": 1709.52,
+            "duration": 3.72,
+            "text": {
+              "ja": "サイバーサイエンスセンターというところ"
+            }
+          },
+          {
+            "start": 1710.659,
+            "duration": 5.88,
+            "text": {
+              "ja": "に行きますとこのスパコンを見ることが"
+            }
+          },
+          {
+            "start": 1713.24,
+            "duration": 4.86,
+            "text": {
+              "ja": "できますのでぜひあの帰りに地下鉄に乗る"
+            }
+          },
+          {
+            "start": 1716.539,
+            "duration": 3.961,
+            "text": {
+              "ja": "前にですね"
+            }
+          },
+          {
+            "start": 1718.1,
+            "duration": 4.74,
+            "text": {
+              "ja": "ちょこっと寄って"
+            }
+          },
+          {
+            "start": 1720.5,
+            "duration": 6.059,
+            "text": {
+              "ja": "ご覧いただければというふうに思っており"
+            }
+          },
+          {
+            "start": 1722.84,
+            "duration": 5.699,
+            "text": {
+              "ja": "ますでこのシステムもちろん東北大学だけ"
+            }
+          },
+          {
+            "start": 1726.559,
+            "duration": 4.441,
+            "text": {
+              "ja": "のものではなくてですね"
+            }
+          },
+          {
+            "start": 1728.539,
+            "duration": 5.901,
+            "text": {
+              "ja": "ネットワークを介して日本中の"
+            }
+          },
+          {
+            "start": 1731.0,
+            "duration": 6.6,
+            "text": {
+              "ja": "研究者や大学の学生さんなどが"
+            }
+          },
+          {
+            "start": 1734.44,
+            "duration": 6.16,
+            "text": {
+              "ja": "それぞれの研究のためにお使いになってる"
+            }
+          },
+          {
+            "start": 1737.6,
+            "duration": 4.16,
+            "text": {
+              "ja": "というところになりますでその成果として"
+            }
+          },
+          {
+            "start": 1740.6,
+            "duration": 5.4,
+            "text": {
+              "ja": "は"
+            }
+          },
+          {
+            "start": 1741.76,
+            "duration": 6.94,
+            "text": {
+              "ja": "私たち長年ですねMRJ三菱航空機と飛行"
+            }
+          },
+          {
+            "start": 1746.0,
+            "duration": 5.7,
+            "text": {
+              "ja": "機のシミュレーションの高速化に取り組ん"
+            }
+          },
+          {
+            "start": 1748.7,
+            "duration": 5.099,
+            "text": {
+              "ja": "できたんですが残念ながらもうちょっとの"
+            }
+          },
+          {
+            "start": 1751.7,
+            "duration": 4.74,
+            "text": {
+              "ja": "ところで飛ばなくなってしまってこれ非常"
+            }
+          },
+          {
+            "start": 1753.799,
+            "duration": 4.801,
+            "text": {
+              "ja": "に残念だなとただこの最終的に製品化に"
+            }
+          },
+          {
+            "start": 1756.44,
+            "duration": 5.82,
+            "text": {
+              "ja": "まで一緒に取り組んできたものがござい"
+            }
+          },
+          {
+            "start": 1758.6,
+            "duration": 6.74,
+            "text": {
+              "ja": "ますあと今の時期ですと熱中症の解析を"
+            }
+          },
+          {
+            "start": 1762.26,
+            "duration": 5.76,
+            "text": {
+              "ja": "ですね気象協会のウェブサイトを経営して"
+            }
+          },
+          {
+            "start": 1765.34,
+            "duration": 5.86,
+            "text": {
+              "ja": "その情報を提供しているということが"
+            }
+          },
+          {
+            "start": 1768.02,
+            "duration": 4.94,
+            "text": {
+              "ja": "ございますでいろんなその"
+            }
+          },
+          {
+            "start": 1771.2,
+            "duration": 3.719,
+            "text": {
+              "ja": "環境の下であるいは"
+            }
+          },
+          {
+            "start": 1772.96,
+            "duration": 3.3,
+            "text": {
+              "ja": "お子さんとか"
+            }
+          },
+          {
+            "start": 1774.919,
+            "duration": 4.561,
+            "text": {
+              "ja": "成人とか"
+            }
+          },
+          {
+            "start": 1776.26,
+            "duration": 5.74,
+            "text": {
+              "ja": "歳をされた方とか私みたいなところですね"
+            }
+          },
+          {
+            "start": 1779.48,
+            "duration": 3.54,
+            "text": {
+              "ja": "そう人がいろいろ"
+            }
+          },
+          {
+            "start": 1782.0,
+            "duration": 3.84,
+            "text": {
+              "ja": "条件の中で"
+            }
+          },
+          {
+            "start": 1783.02,
+            "duration": 6.0,
+            "text": {
+              "ja": "暑さを感じるものが違いますのでそういう"
+            }
+          },
+          {
+            "start": 1785.84,
+            "duration": 5.699,
+            "text": {
+              "ja": "ものに即してあの熱中症のアラートを出す"
+            }
+          },
+          {
+            "start": 1789.02,
+            "duration": 6.3,
+            "text": {
+              "ja": "というようなシステムになってございます"
+            }
+          },
+          {
+            "start": 1791.539,
+            "duration": 5.401,
+            "text": {
+              "ja": "あとはですね特大の中が長年研究してきた"
+            }
+          },
+          {
+            "start": 1795.32,
+            "duration": 4.099,
+            "text": {
+              "ja": "ものとしては"
+            }
+          },
+          {
+            "start": 1796.94,
+            "duration": 4.979,
+            "text": {
+              "ja": "垂直時期記録方式これは"
+            }
+          },
+          {
+            "start": 1799.419,
+            "duration": 6.461,
+            "text": {
+              "ja": "皆さんのハードディスクドライブなどで"
+            }
+          },
+          {
+            "start": 1801.919,
+            "duration": 6.12,
+            "text": {
+              "ja": "もう今や実用化されておりますけどこの"
+            }
+          },
+          {
+            "start": 1805.88,
+            "duration": 4.679,
+            "text": {
+              "ja": "垂直時期の仕組みをですね私たちの"
+            }
+          },
+          {
+            "start": 1808.039,
+            "duration": 4.581,
+            "text": {
+              "ja": "スパコンを使ってさらにはそれを"
+            }
+          },
+          {
+            "start": 1810.559,
+            "duration": 5.061,
+            "text": {
+              "ja": "シミュレーションを高速化するような"
+            }
+          },
+          {
+            "start": 1812.62,
+            "duration": 6.1,
+            "text": {
+              "ja": "取り組みを一緒にさせていただきまして"
+            }
+          },
+          {
+            "start": 1815.62,
+            "duration": 7.0,
+            "text": {
+              "ja": "実用化につながっているところですあとは"
+            }
+          },
+          {
+            "start": 1818.72,
+            "duration": 8.64,
+            "text": {
+              "ja": "発電タービンとかですねあるいは高性能の"
+            }
+          },
+          {
+            "start": 1822.62,
+            "duration": 6.84,
+            "text": {
+              "ja": "タイヤとかあとは流体"
+            }
+          },
+          {
+            "start": 1827.36,
+            "duration": 5.12,
+            "text": {
+              "ja": "解析ですね流れを"
+            }
+          },
+          {
+            "start": 1829.46,
+            "duration": 7.14,
+            "text": {
+              "ja": "可視化しておりますけどそのような"
+            }
+          },
+          {
+            "start": 1832.48,
+            "duration": 6.16,
+            "text": {
+              "ja": "見えないものを見えるとかあるいはまだ"
+            }
+          },
+          {
+            "start": 1836.6,
+            "duration": 4.98,
+            "text": {
+              "ja": "作れないものを作るというようなところで"
+            }
+          },
+          {
+            "start": 1838.64,
+            "duration": 6.419,
+            "text": {
+              "ja": "私たちのスパコンが役に立っているところ"
+            }
+          },
+          {
+            "start": 1841.58,
+            "duration": 5.88,
+            "text": {
+              "ja": "ですで今力を入れているものとしては"
+            }
+          },
+          {
+            "start": 1845.059,
+            "duration": 5.22,
+            "text": {
+              "ja": "リアルタイム津波浸水被害予測システムの"
+            }
+          },
+          {
+            "start": 1847.46,
+            "duration": 4.04,
+            "text": {
+              "ja": "開発というものがございますこれは皆さん"
+            }
+          },
+          {
+            "start": 1850.279,
+            "duration": 5.421,
+            "text": {
+              "ja": "ご存知の"
+            }
+          },
+          {
+            "start": 1851.5,
+            "duration": 7.36,
+            "text": {
+              "ja": "2012年11年ですか"
+            }
+          },
+          {
+            "start": 1855.7,
+            "duration": 5.8,
+            "text": {
+              "ja": "東日本大震災が起きてですねまあ東北大学"
+            }
+          },
+          {
+            "start": 1858.86,
+            "duration": 5.939,
+            "text": {
+              "ja": "を含むその東北エリアに非常に甚大な被害"
+            }
+          },
+          {
+            "start": 1861.5,
+            "duration": 5.159,
+            "text": {
+              "ja": "が起きたということがございました特に"
+            }
+          },
+          {
+            "start": 1864.799,
+            "duration": 3.961,
+            "text": {
+              "ja": "津波によってですね多くの方が亡くなった"
+            }
+          },
+          {
+            "start": 1866.659,
+            "duration": 5.4,
+            "text": {
+              "ja": "ということで私たち"
+            }
+          },
+          {
+            "start": 1868.76,
+            "duration": 6.38,
+            "text": {
+              "ja": "被災地の大学としてはですね何かその科学"
+            }
+          },
+          {
+            "start": 1872.059,
+            "duration": 5.941,
+            "text": {
+              "ja": "技術を社会に役立つ取り組みとして"
+            }
+          },
+          {
+            "start": 1875.14,
+            "duration": 7.36,
+            "text": {
+              "ja": "進めていきたいという思いがございました"
+            }
+          },
+          {
+            "start": 1878.0,
+            "duration": 7.799,
+            "text": {
+              "ja": "でそのような中で私たちはその"
+            }
+          },
+          {
+            "start": 1882.5,
+            "duration": 5.039,
+            "text": {
+              "ja": "津波の地震の発生から"
+            }
+          },
+          {
+            "start": 1885.799,
+            "duration": 5.76,
+            "text": {
+              "ja": "津波の"
+            }
+          },
+          {
+            "start": 1887.539,
+            "duration": 6.061,
+            "text": {
+              "ja": "浸水の状況の分析まで一連の処理をですね"
+            }
+          },
+          {
+            "start": 1891.559,
+            "duration": 3.6,
+            "text": {
+              "ja": "スパコンを使って"
+            }
+          },
+          {
+            "start": 1893.6,
+            "duration": 7.079,
+            "text": {
+              "ja": "リアルタイムに出現していこうという"
+            }
+          },
+          {
+            "start": 1895.159,
+            "duration": 8.941,
+            "text": {
+              "ja": "取り組みをこの8年間行って2年前からは"
+            }
+          },
+          {
+            "start": 1900.679,
+            "duration": 6.421,
+            "text": {
+              "ja": "ですね内閣府政府の防災システムの中に"
+            }
+          },
+          {
+            "start": 1904.1,
+            "duration": 6.12,
+            "text": {
+              "ja": "取り入れていただいて何か大きな地震が"
+            }
+          },
+          {
+            "start": 1907.1,
+            "duration": 4.08,
+            "text": {
+              "ja": "起きると私たちのスパコンが動いて皆さん"
+            }
+          },
+          {
+            "start": 1910.22,
+            "duration": 4.19,
+            "text": {
+              "ja": "の"
+            }
+          },
+          {
+            "start": 1914.659,
+            "duration": 4.921,
+            "text": {
+              "ja": "津波が関係しそうなエリアにいらっしゃる"
+            }
+          },
+          {
+            "start": 1917.419,
+            "duration": 5.0,
+            "text": {
+              "ja": "皆さんに対して"
+            }
+          },
+          {
+            "start": 1919.58,
+            "duration": 2.839,
+            "text": {
+              "ja": "警報を出せるような"
+            }
+          },
+          {
+            "start": 1922.539,
+            "duration": 8.981,
+            "text": {
+              "ja": "情報を内閣府という政府の防災機関に防災"
+            }
+          },
+          {
+            "start": 1928.34,
+            "duration": 5.42,
+            "text": {
+              "ja": "対策室に提供するというような試みですで"
+            }
+          },
+          {
+            "start": 1931.52,
+            "duration": 5.519,
+            "text": {
+              "ja": "これは"
+            }
+          },
+          {
+            "start": 1933.76,
+            "duration": 5.279,
+            "text": {
+              "ja": "東日本大震災のところになりますけど地震"
+            }
+          },
+          {
+            "start": 1937.039,
+            "duration": 5.401,
+            "text": {
+              "ja": "が起きますとこの"
+            }
+          },
+          {
+            "start": 1939.039,
+            "duration": 6.581,
+            "text": {
+              "ja": "地盤が変動するんですねで日本にはですね"
+            }
+          },
+          {
+            "start": 1942.44,
+            "duration": 5.58,
+            "text": {
+              "ja": "およそ1300点のGPSの"
+            }
+          },
+          {
+            "start": 1945.62,
+            "duration": 6.0,
+            "text": {
+              "ja": "測位系がありましてそこでそのリアル"
+            }
+          },
+          {
+            "start": 1948.02,
+            "duration": 6.6,
+            "text": {
+              "ja": "タイムに地盤のズレというものを集めて"
+            }
+          },
+          {
+            "start": 1951.62,
+            "duration": 5.88,
+            "text": {
+              "ja": "くるというシステムが出来上がってますで"
+            }
+          },
+          {
+            "start": 1954.62,
+            "duration": 5.159,
+            "text": {
+              "ja": "これを使って私たちはそのコンピューター"
+            }
+          },
+          {
+            "start": 1957.5,
+            "duration": 5.34,
+            "text": {
+              "ja": "を使ってまずそのダンスをこの"
+            }
+          },
+          {
+            "start": 1959.779,
+            "duration": 6.12,
+            "text": {
+              "ja": "震源の仕組みを解明するというのを"
+            }
+          },
+          {
+            "start": 1962.84,
+            "duration": 5.76,
+            "text": {
+              "ja": "だいたい7分以内ぐらいで"
+            }
+          },
+          {
+            "start": 1965.899,
+            "duration": 5.64,
+            "text": {
+              "ja": "処理するようなシステムを開発しましたで"
+            }
+          },
+          {
+            "start": 1968.6,
+            "duration": 4.86,
+            "text": {
+              "ja": "そのデータをですね自動的に"
+            }
+          },
+          {
+            "start": 1971.539,
+            "duration": 4.561,
+            "text": {
+              "ja": "サイバーサイエンスセンターのゴミ箱に"
+            }
+          },
+          {
+            "start": 1973.46,
+            "duration": 4.74,
+            "text": {
+              "ja": "流し込んでですねその"
+            }
+          },
+          {
+            "start": 1976.1,
+            "duration": 3.36,
+            "text": {
+              "ja": "津波の遡上をですね"
+            }
+          },
+          {
+            "start": 1978.2,
+            "duration": 4.56,
+            "text": {
+              "ja": "リアルタイムに計算するという"
+            }
+          },
+          {
+            "start": 1979.46,
+            "duration": 7.079,
+            "text": {
+              "ja": "シミュレーションの高速化技術というもの"
+            }
+          },
+          {
+            "start": 1982.76,
+            "duration": 6.919,
+            "text": {
+              "ja": "を開発しましたでその結果ですが10分"
+            }
+          },
+          {
+            "start": 1986.539,
+            "duration": 5.721,
+            "text": {
+              "ja": "以内で10mメッシュの"
+            }
+          },
+          {
+            "start": 1989.679,
+            "duration": 5.201,
+            "text": {
+              "ja": "リゾリューションマの制度ですね細かさで"
+            }
+          },
+          {
+            "start": 1992.26,
+            "duration": 5.019,
+            "text": {
+              "ja": "6時間分の"
+            }
+          },
+          {
+            "start": 1994.88,
+            "duration": 4.32,
+            "text": {
+              "ja": "浸水状況を"
+            }
+          },
+          {
+            "start": 1997.279,
+            "duration": 4.341,
+            "text": {
+              "ja": "求めるということに"
+            }
+          },
+          {
+            "start": 1999.2,
+            "duration": 6.12,
+            "text": {
+              "ja": "成功しておりますでその結果というのは"
+            }
+          },
+          {
+            "start": 2001.62,
+            "duration": 8.02,
+            "text": {
+              "ja": "このような地図情報とかアニメーションと"
+            }
+          },
+          {
+            "start": 2005.32,
+            "duration": 7.14,
+            "text": {
+              "ja": "いったような分かりやすい形で内閣"
+            }
+          },
+          {
+            "start": 2009.64,
+            "duration": 6.0,
+            "text": {
+              "ja": "府の防災対策室のようなところに提供して"
+            }
+          },
+          {
+            "start": 2012.46,
+            "duration": 4.14,
+            "text": {
+              "ja": "いくとこれが確かにだいたい4分で全体で"
+            }
+          },
+          {
+            "start": 2015.64,
+            "duration": 3.36,
+            "text": {
+              "ja": "20分"
+            }
+          },
+          {
+            "start": 2016.6,
+            "duration": 4.14,
+            "text": {
+              "ja": "リアルタイム性を考えると皆さんじゃあ"
+            }
+          },
+          {
+            "start": 2019.0,
+            "duration": 4.5,
+            "text": {
+              "ja": "すぐに出てほしいなと思うかもしれません"
+            }
+          },
+          {
+            "start": 2020.74,
+            "duration": 4.62,
+            "text": {
+              "ja": "けどまああのまだまだ"
+            }
+          },
+          {
+            "start": 2023.5,
+            "duration": 4.22,
+            "text": {
+              "ja": "改良の余地はあるとは思うんですがただ"
+            }
+          },
+          {
+            "start": 2025.36,
+            "duration": 4.159,
+            "text": {
+              "ja": "大きな津波が来るまで"
+            }
+          },
+          {
+            "start": 2027.72,
+            "duration": 4.42,
+            "text": {
+              "ja": "2026"
+            }
+          },
+          {
+            "start": 2029.519,
+            "duration": 5.14,
+            "text": {
+              "ja": "東日本大震災の時には26分ぐらいあった"
+            }
+          },
+          {
+            "start": 2032.14,
+            "duration": 5.399,
+            "text": {
+              "ja": "んですねますのでこのような情報を提供"
+            }
+          },
+          {
+            "start": 2034.659,
+            "duration": 4.981,
+            "text": {
+              "ja": "することによってより早い"
+            }
+          },
+          {
+            "start": 2037.539,
+            "duration": 4.86,
+            "text": {
+              "ja": "避難が行えるんではないかなというふうに"
+            }
+          },
+          {
+            "start": 2039.64,
+            "duration": 4.2,
+            "text": {
+              "ja": "大きな津波が来る前にですね"
+            }
+          },
+          {
+            "start": 2042.399,
+            "duration": 5.4,
+            "text": {
+              "ja": "警報が出せるんじゃないかなというふうに"
+            }
+          },
+          {
+            "start": 2043.84,
+            "duration": 7.92,
+            "text": {
+              "ja": "思っているところですで今は内閣府の防災"
+            }
+          },
+          {
+            "start": 2047.799,
+            "duration": 5.461,
+            "text": {
+              "ja": "システムとして24時間365日このよう"
+            }
+          },
+          {
+            "start": 2051.76,
+            "duration": 3.659,
+            "text": {
+              "ja": "な地震のモニタリングをしながら"
+            }
+          },
+          {
+            "start": 2053.26,
+            "duration": 5.04,
+            "text": {
+              "ja": "シミュレーションが必要な時には起動する"
+            }
+          },
+          {
+            "start": 2055.419,
+            "duration": 7.381,
+            "text": {
+              "ja": "というようなシステムに出来上がっており"
+            }
+          },
+          {
+            "start": 2058.3,
+            "duration": 6.9,
+            "text": {
+              "ja": "ますで最終的には後でご紹介しますけど皆"
+            }
+          },
+          {
+            "start": 2062.8,
+            "duration": 6.539,
+            "text": {
+              "ja": "さんのスマホとか携帯デバイスにこういう"
+            }
+          },
+          {
+            "start": 2065.2,
+            "duration": 6.0,
+            "text": {
+              "ja": "ような情報をお送りして今いる場所の浸水"
+            }
+          },
+          {
+            "start": 2069.339,
+            "duration": 3.54,
+            "text": {
+              "ja": "がどの今後どうなっていくかとかですね"
+            }
+          },
+          {
+            "start": 2071.2,
+            "duration": 3.54,
+            "text": {
+              "ja": "あるいは"
+            }
+          },
+          {
+            "start": 2072.879,
+            "duration": 3.601,
+            "text": {
+              "ja": "避難経路をどうすればいいかとかそのよう"
+            }
+          },
+          {
+            "start": 2074.74,
+            "duration": 2.639,
+            "text": {
+              "ja": "な形に持っていきたいというふうに思って"
+            }
+          },
+          {
+            "start": 2076.48,
+            "duration": 3.08,
+            "text": {
+              "ja": "おります"
+            }
+          },
+          {
+            "start": 2077.379,
+            "duration": 6.661,
+            "text": {
+              "ja": "どんな時間が"
+            }
+          },
+          {
+            "start": 2079.56,
+            "duration": 7.059,
+            "text": {
+              "ja": "もうちょっとですねそれでこれが高知市今"
+            }
+          },
+          {
+            "start": 2084.04,
+            "duration": 5.22,
+            "text": {
+              "ja": "あの南海トラフ地震というのが非常に心配"
+            }
+          },
+          {
+            "start": 2086.619,
+            "duration": 6.48,
+            "text": {
+              "ja": "されているところですが南海トラフ地震が"
+            }
+          },
+          {
+            "start": 2089.26,
+            "duration": 5.52,
+            "text": {
+              "ja": "起きた時にどのような浸水状況になるかと"
+            }
+          },
+          {
+            "start": 2093.099,
+            "duration": 3.981,
+            "text": {
+              "ja": "いうものをシミュレーションしたものに"
+            }
+          },
+          {
+            "start": 2094.78,
+            "duration": 2.3,
+            "text": {
+              "ja": "なります"
+            }
+          },
+          {
+            "start": 2097.54,
+            "duration": 3.42,
+            "text": {
+              "ja": "津波は来る前にですね川の周りがこう沈下"
+            }
+          },
+          {
+            "start": 2100.0,
+            "duration": 2.7,
+            "text": {
+              "ja": "して"
+            }
+          },
+          {
+            "start": 2100.96,
+            "duration": 6.12,
+            "text": {
+              "ja": "申請が始まるというようなことも分かって"
+            }
+          },
+          {
+            "start": 2102.7,
+            "duration": 7.08,
+            "text": {
+              "ja": "きましたこれは女川の時の"
+            }
+          },
+          {
+            "start": 2107.08,
+            "duration": 5.64,
+            "text": {
+              "ja": "浸水の状況を示したものになりますけどま"
+            }
+          },
+          {
+            "start": 2109.78,
+            "duration": 5.76,
+            "text": {
+              "ja": "あこれはシミュレーションの結果を評価"
+            }
+          },
+          {
+            "start": 2112.72,
+            "duration": 6.06,
+            "text": {
+              "ja": "するために同じような状況で計算をした"
+            }
+          },
+          {
+            "start": 2115.54,
+            "duration": 4.26,
+            "text": {
+              "ja": "ものになりますまあ16mぐらい水が"
+            }
+          },
+          {
+            "start": 2118.78,
+            "duration": 3.66,
+            "text": {
+              "ja": "上がってしまったというようなところが"
+            }
+          },
+          {
+            "start": 2119.8,
+            "duration": 4.2,
+            "text": {
+              "ja": "この絵からもわかっているところですで"
+            }
+          },
+          {
+            "start": 2122.44,
+            "duration": 4.139,
+            "text": {
+              "ja": "もう少しすいませんちょっと時間を"
+            }
+          },
+          {
+            "start": 2124.0,
+            "duration": 3.96,
+            "text": {
+              "ja": "いただいてコンピューター"
+            }
+          },
+          {
+            "start": 2126.579,
+            "duration": 3.361,
+            "text": {
+              "ja": "量子コンですねちょっとあの皆さん"
+            }
+          },
+          {
+            "start": 2127.96,
+            "duration": 3.02,
+            "text": {
+              "ja": "ちょっと時間が押してしまって申し訳ない"
+            }
+          },
+          {
+            "start": 2129.94,
+            "duration": 3.72,
+            "text": {
+              "ja": "んですが"
+            }
+          },
+          {
+            "start": 2130.98,
+            "duration": 6.58,
+            "text": {
+              "ja": "このようなそのスパコンの技術というのは"
+            }
+          },
+          {
+            "start": 2133.66,
+            "duration": 6.6,
+            "text": {
+              "ja": "まあどんどん進化していくところが期待さ"
+            }
+          },
+          {
+            "start": 2137.56,
+            "duration": 5.7,
+            "text": {
+              "ja": "れるわけですがその一方で"
+            }
+          },
+          {
+            "start": 2140.26,
+            "duration": 6.06,
+            "text": {
+              "ja": "微細化の限界とか消費電力先ほど申し上げ"
+            }
+          },
+          {
+            "start": 2143.26,
+            "duration": 6.42,
+            "text": {
+              "ja": "ましたように何メガワットというような"
+            }
+          },
+          {
+            "start": 2146.32,
+            "duration": 5.4,
+            "text": {
+              "ja": "消費電力を一列使うとかですねで当然その"
+            }
+          },
+          {
+            "start": 2149.68,
+            "duration": 5.399,
+            "text": {
+              "ja": "消費電力が大きくなると熱がたくさん出て"
+            }
+          },
+          {
+            "start": 2151.72,
+            "duration": 5.76,
+            "text": {
+              "ja": "きます皆さんパソコンを膝に置いても熱く"
+            }
+          },
+          {
+            "start": 2155.079,
+            "duration": 4.02,
+            "text": {
+              "ja": "なると思いますが今やチップの"
+            }
+          },
+          {
+            "start": 2157.48,
+            "duration": 4.139,
+            "text": {
+              "ja": "熱密度というのは本当にホットプレート"
+            }
+          },
+          {
+            "start": 2159.099,
+            "duration": 4.74,
+            "text": {
+              "ja": "よりも熱いんですねですがこれ発熱の問題"
+            }
+          },
+          {
+            "start": 2161.619,
+            "duration": 3.181,
+            "text": {
+              "ja": "というのが出てきますそうすると当然"
+            }
+          },
+          {
+            "start": 2163.839,
+            "duration": 3.121,
+            "text": {
+              "ja": "新しい"
+            }
+          },
+          {
+            "start": 2164.8,
+            "duration": 5.039,
+            "text": {
+              "ja": "計算の仕組みというものが求められてきて"
+            }
+          },
+          {
+            "start": 2166.96,
+            "duration": 5.34,
+            "text": {
+              "ja": "今注目されているのが"
+            }
+          },
+          {
+            "start": 2169.839,
+            "duration": 4.02,
+            "text": {
+              "ja": "量子コンピューティングですで"
+            }
+          },
+          {
+            "start": 2172.3,
+            "duration": 4.559,
+            "text": {
+              "ja": "量子コンピューター従来のコンピューター"
+            }
+          },
+          {
+            "start": 2173.859,
+            "duration": 5.581,
+            "text": {
+              "ja": "と何が違うかということになりますけどま"
+            }
+          },
+          {
+            "start": 2176.859,
+            "duration": 5.521,
+            "text": {
+              "ja": "あご存知のように"
+            }
+          },
+          {
+            "start": 2179.44,
+            "duration": 5.399,
+            "text": {
+              "ja": "今話しましたように01で動かしていると"
+            }
+          },
+          {
+            "start": 2182.38,
+            "duration": 5.28,
+            "text": {
+              "ja": "で量子コンピューターというのは"
+            }
+          },
+          {
+            "start": 2184.839,
+            "duration": 4.681,
+            "text": {
+              "ja": "原子レベルでの非常に奇妙私にとってみれ"
+            }
+          },
+          {
+            "start": 2187.66,
+            "duration": 3.48,
+            "text": {
+              "ja": "ば奇妙なんですけど奇妙な振る舞いですね"
+            }
+          },
+          {
+            "start": 2189.52,
+            "duration": 4.079,
+            "text": {
+              "ja": "その"
+            }
+          },
+          {
+            "start": 2191.14,
+            "duration": 5.219,
+            "text": {
+              "ja": "ゼロとスピンがこう上向いたり下向いたり"
+            }
+          },
+          {
+            "start": 2193.599,
+            "duration": 4.76,
+            "text": {
+              "ja": "というなこの2つの状態が畳み込んでいる"
+            }
+          },
+          {
+            "start": 2196.359,
+            "duration": 5.881,
+            "text": {
+              "ja": "ような状況が"
+            }
+          },
+          {
+            "start": 2198.359,
+            "duration": 6.22,
+            "text": {
+              "ja": "生じますでその2つの状態が"
+            }
+          },
+          {
+            "start": 2202.24,
+            "duration": 4.859,
+            "text": {
+              "ja": "畳み込まれているなものを"
+            }
+          },
+          {
+            "start": 2204.579,
+            "duration": 4.741,
+            "text": {
+              "ja": "計算に使いましょうと要するに今までは0"
+            }
+          },
+          {
+            "start": 2207.099,
+            "duration": 5.881,
+            "text": {
+              "ja": "か1だったというものを"
+            }
+          },
+          {
+            "start": 2209.32,
+            "duration": 7.2,
+            "text": {
+              "ja": "01が同時に扱えるような状況を使って"
+            }
+          },
+          {
+            "start": 2212.98,
+            "duration": 6.18,
+            "text": {
+              "ja": "計算をさせましょうとで結果というのは"
+            }
+          },
+          {
+            "start": 2216.52,
+            "duration": 4.68,
+            "text": {
+              "ja": "観測するとどれか0か1かに"
+            }
+          },
+          {
+            "start": 2219.16,
+            "duration": 5.4,
+            "text": {
+              "ja": "収まるんですねですので"
+            }
+          },
+          {
+            "start": 2221.2,
+            "duration": 6.54,
+            "text": {
+              "ja": "観測するまでは自由にこう動かしといて"
+            }
+          },
+          {
+            "start": 2224.56,
+            "duration": 5.7,
+            "text": {
+              "ja": "観測するまでの間にうまく結果に"
+            }
+          },
+          {
+            "start": 2227.74,
+            "duration": 5.7,
+            "text": {
+              "ja": "落とし込んでいくというような新しい考え"
+            }
+          },
+          {
+            "start": 2230.26,
+            "duration": 5.099,
+            "text": {
+              "ja": "方での計算というものをが必要になって"
+            }
+          },
+          {
+            "start": 2233.44,
+            "duration": 4.38,
+            "text": {
+              "ja": "くるわけですで"
+            }
+          },
+          {
+            "start": 2235.359,
+            "duration": 4.561,
+            "text": {
+              "ja": "量子コンピューター得意分野っていうのは"
+            }
+          },
+          {
+            "start": 2237.82,
+            "duration": 5.279,
+            "text": {
+              "ja": "代表的なものとしては組み合わせハイテク"
+            }
+          },
+          {
+            "start": 2239.92,
+            "duration": 5.88,
+            "text": {
+              "ja": "化問題というものがありますこれはある"
+            }
+          },
+          {
+            "start": 2243.099,
+            "duration": 4.5,
+            "text": {
+              "ja": "目的を最大化するためにどのような"
+            }
+          },
+          {
+            "start": 2245.8,
+            "duration": 4.16,
+            "text": {
+              "ja": "組み合わせをすればいいかというような"
+            }
+          },
+          {
+            "start": 2247.599,
+            "duration": 6.24,
+            "text": {
+              "ja": "問題になります例えば"
+            }
+          },
+          {
+            "start": 2249.96,
+            "duration": 6.28,
+            "text": {
+              "ja": "日本人のたくさんの街を最短時間で回るに"
+            }
+          },
+          {
+            "start": 2253.839,
+            "duration": 3.961,
+            "text": {
+              "ja": "はどの経路を通ればいいかとかですね"
+            }
+          },
+          {
+            "start": 2256.24,
+            "duration": 4.74,
+            "text": {
+              "ja": "あるいは"
+            }
+          },
+          {
+            "start": 2257.8,
+            "duration": 5.88,
+            "text": {
+              "ja": "渋滞が生じないようにどのようにこう道を"
+            }
+          },
+          {
+            "start": 2260.98,
+            "duration": 6.3,
+            "text": {
+              "ja": "迂回していけばいいかとかですねあるいは"
+            }
+          },
+          {
+            "start": 2263.68,
+            "duration": 4.98,
+            "text": {
+              "ja": "容量が決まっているものにいかにこう高価"
+            }
+          },
+          {
+            "start": 2267.28,
+            "duration": 3.839,
+            "text": {
+              "ja": "なものを"
+            }
+          },
+          {
+            "start": 2268.66,
+            "duration": 5.34,
+            "text": {
+              "ja": "詰め込むかとただしそれぞれのサイズが"
+            }
+          },
+          {
+            "start": 2271.119,
+            "duration": 5.821,
+            "text": {
+              "ja": "違っているのでどれを組み合わせれば最も"
+            }
+          },
+          {
+            "start": 2274.0,
+            "duration": 7.14,
+            "text": {
+              "ja": "効果になるのは後悔になるかは分からない"
+            }
+          },
+          {
+            "start": 2276.94,
+            "duration": 6.179,
+            "text": {
+              "ja": "という問題ですでそういうものを考えて"
+            }
+          },
+          {
+            "start": 2281.14,
+            "duration": 4.38,
+            "text": {
+              "ja": "いくと例えば従来のコンピュータですと"
+            }
+          },
+          {
+            "start": 2283.119,
+            "duration": 4.081,
+            "text": {
+              "ja": "これとこれとこれを組み合わせたらどう"
+            }
+          },
+          {
+            "start": 2285.52,
+            "duration": 3.059,
+            "text": {
+              "ja": "だろうとかこれとこれとこれを組み合わせ"
+            }
+          },
+          {
+            "start": 2287.2,
+            "duration": 3.3,
+            "text": {
+              "ja": "たらどうなるだろうといういわゆる"
+            }
+          },
+          {
+            "start": 2288.579,
+            "duration": 4.981,
+            "text": {
+              "ja": "しらみつぶしにこう調べていくんですね"
+            }
+          },
+          {
+            "start": 2290.5,
+            "duration": 5.52,
+            "text": {
+              "ja": "そうすると対象とするものがどんどん増え"
+            }
+          },
+          {
+            "start": 2293.56,
+            "duration": 4.86,
+            "text": {
+              "ja": "ていくとだんだんこう最初のうちはいいん"
+            }
+          },
+          {
+            "start": 2296.02,
+            "duration": 5.339,
+            "text": {
+              "ja": "ですけどだんだんこの組み合わせの数が"
+            }
+          },
+          {
+            "start": 2298.42,
+            "duration": 5.82,
+            "text": {
+              "ja": "爆発的に増えてなくて最終的に"
+            }
+          },
+          {
+            "start": 2301.359,
+            "duration": 4.5,
+            "text": {
+              "ja": "扱えない規模になってしまいますもう天文"
+            }
+          },
+          {
+            "start": 2304.24,
+            "duration": 4.02,
+            "text": {
+              "ja": "学的な"
+            }
+          },
+          {
+            "start": 2305.859,
+            "duration": 4.26,
+            "text": {
+              "ja": "計算を必要としてくるわけでもちろん今の"
+            }
+          },
+          {
+            "start": 2308.26,
+            "duration": 4.02,
+            "text": {
+              "ja": "スパコンもすごい計算"
+            }
+          },
+          {
+            "start": 2310.119,
+            "duration": 5.821,
+            "text": {
+              "ja": "能力なんですけどそれでは追いつかない"
+            }
+          },
+          {
+            "start": 2312.28,
+            "duration": 5.76,
+            "text": {
+              "ja": "ような数の"
+            }
+          },
+          {
+            "start": 2315.94,
+            "duration": 2.94,
+            "text": {
+              "ja": "計算が必要になってくるとそのような状況"
+            }
+          },
+          {
+            "start": 2318.04,
+            "duration": 2.7,
+            "text": {
+              "ja": "で"
+            }
+          },
+          {
+            "start": 2318.88,
+            "duration": 5.16,
+            "text": {
+              "ja": "量子コンピューターを使うと"
+            }
+          },
+          {
+            "start": 2320.74,
+            "duration": 6.54,
+            "text": {
+              "ja": "01がこう畳み込んでありますので単純に"
+            }
+          },
+          {
+            "start": 2324.04,
+            "duration": 4.579,
+            "text": {
+              "ja": "このものの数だけの"
+            }
+          },
+          {
+            "start": 2327.28,
+            "duration": 4.559,
+            "text": {
+              "ja": "桁を用意すると"
+            }
+          },
+          {
+            "start": 2328.619,
+            "duration": 5.98,
+            "text": {
+              "ja": "これだけの数をこれだけの"
+            }
+          },
+          {
+            "start": 2331.839,
+            "duration": 5.941,
+            "text": {
+              "ja": "組み合わせを瞬時に求められるというのが"
+            }
+          },
+          {
+            "start": 2334.599,
+            "duration": 6.98,
+            "text": {
+              "ja": "理想的な考え方にはなるんですけど"
+            }
+          },
+          {
+            "start": 2337.78,
+            "duration": 3.799,
+            "text": {
+              "ja": "狙っているところですですので"
+            }
+          },
+          {
+            "start": 2341.859,
+            "duration": 7.381,
+            "text": {
+              "ja": "いわゆるN項の対象に対して並列に一斉に"
+            }
+          },
+          {
+            "start": 2347.68,
+            "duration": 3.78,
+            "text": {
+              "ja": "計算が行えるというのが"
+            }
+          },
+          {
+            "start": 2349.24,
+            "duration": 4.099,
+            "text": {
+              "ja": "量子コンピュータのポイントになるわけ"
+            }
+          },
+          {
+            "start": 2351.46,
+            "duration": 3.96,
+            "text": {
+              "ja": "ですねでこれを"
+            }
+          },
+          {
+            "start": 2353.339,
+            "duration": 5.441,
+            "text": {
+              "ja": "いくつか"
+            }
+          },
+          {
+            "start": 2355.42,
+            "duration": 6.24,
+            "text": {
+              "ja": "商用化されているものもありますしまだ"
+            }
+          },
+          {
+            "start": 2358.78,
+            "duration": 5.22,
+            "text": {
+              "ja": "研究段階のものにあるものもあるんですが"
+            }
+          },
+          {
+            "start": 2361.66,
+            "duration": 5.58,
+            "text": {
+              "ja": "我々はですね"
+            }
+          },
+          {
+            "start": 2364.0,
+            "duration": 4.92,
+            "text": {
+              "ja": "量子アニーリングという今商用化が進め"
+            }
+          },
+          {
+            "start": 2367.24,
+            "duration": 4.619,
+            "text": {
+              "ja": "られている"
+            }
+          },
+          {
+            "start": 2368.92,
+            "duration": 5.22,
+            "text": {
+              "ja": "量子コンピューターを使って新たな計算"
+            }
+          },
+          {
+            "start": 2371.859,
+            "duration": 5.401,
+            "text": {
+              "ja": "技術の研究開発に取り組んでおりますで"
+            }
+          },
+          {
+            "start": 2374.14,
+            "duration": 6.3,
+            "text": {
+              "ja": "先ほども言いましたようにいろんな"
+            }
+          },
+          {
+            "start": 2377.26,
+            "duration": 4.8,
+            "text": {
+              "ja": "パターンの組み合わせを並列に探してどっ"
+            }
+          },
+          {
+            "start": 2380.44,
+            "duration": 4.5,
+            "text": {
+              "ja": "か最適なものを"
+            }
+          },
+          {
+            "start": 2382.06,
+            "duration": 6.6,
+            "text": {
+              "ja": "量子効果で求めていくという問題ですこれ"
+            }
+          },
+          {
+            "start": 2384.94,
+            "duration": 7.02,
+            "text": {
+              "ja": "を使って何ができるかというと様々なその"
+            }
+          },
+          {
+            "start": 2388.66,
+            "duration": 6.419,
+            "text": {
+              "ja": "最適化問題ここでは"
+            }
+          },
+          {
+            "start": 2391.96,
+            "duration": 7.619,
+            "text": {
+              "ja": "津波の避難経路を求めようという問題とか"
+            }
+          },
+          {
+            "start": 2395.079,
+            "duration": 6.721,
+            "text": {
+              "ja": "ですねあるいは材料これはゴムなどのよう"
+            }
+          },
+          {
+            "start": 2399.579,
+            "duration": 3.54,
+            "text": {
+              "ja": "な柔らかい材料の"
+            }
+          },
+          {
+            "start": 2401.8,
+            "duration": 4.26,
+            "text": {
+              "ja": "開発の"
+            }
+          },
+          {
+            "start": 2403.119,
+            "duration": 5.901,
+            "text": {
+              "ja": "仮想化技術になるんですけどその"
+            }
+          },
+          {
+            "start": 2406.06,
+            "duration": 2.96,
+            "text": {
+              "ja": "材料と特徴の"
+            }
+          },
+          {
+            "start": 2409.66,
+            "duration": 6.419,
+            "text": {
+              "ja": "組み合わせをですね調べて最も最適なもの"
+            }
+          },
+          {
+            "start": 2413.44,
+            "duration": 6.08,
+            "text": {
+              "ja": "をその中から見つけてきましょうとか"
+            }
+          },
+          {
+            "start": 2416.079,
+            "duration": 5.28,
+            "text": {
+              "ja": "あるいはこれ発電タービンの"
+            }
+          },
+          {
+            "start": 2419.52,
+            "duration": 4.78,
+            "text": {
+              "ja": "シミュレーションになるんですけどこれを"
+            }
+          },
+          {
+            "start": 2421.359,
+            "duration": 8.401,
+            "text": {
+              "ja": "使ってですね実際のタービンの中身をです"
+            }
+          },
+          {
+            "start": 2424.3,
+            "duration": 6.84,
+            "text": {
+              "ja": "ね先ほどの両親アニリンを使って分類して"
+            }
+          },
+          {
+            "start": 2429.76,
+            "duration": 4.5,
+            "text": {
+              "ja": "故障状態を"
+            }
+          },
+          {
+            "start": 2431.14,
+            "duration": 6.66,
+            "text": {
+              "ja": "推計するとかいうような取り組みを進めて"
+            }
+          },
+          {
+            "start": 2434.26,
+            "duration": 6.72,
+            "text": {
+              "ja": "いますでですので"
+            }
+          },
+          {
+            "start": 2437.8,
+            "duration": 6.0,
+            "text": {
+              "ja": "携帯端末にですねこのように避難経路を"
+            }
+          },
+          {
+            "start": 2440.98,
+            "duration": 6.8,
+            "text": {
+              "ja": "出してこれアニリンを使っその量子IDを"
+            }
+          },
+          {
+            "start": 2443.8,
+            "duration": 8.46,
+            "text": {
+              "ja": "使ってなるべく渋滞しないような経路に"
+            }
+          },
+          {
+            "start": 2447.78,
+            "duration": 7.24,
+            "text": {
+              "ja": "経路を選ぶと皆さん今いる地点がGPSで"
+            }
+          },
+          {
+            "start": 2452.26,
+            "duration": 5.28,
+            "text": {
+              "ja": "分かりますのでそこから一番近い"
+            }
+          },
+          {
+            "start": 2455.02,
+            "duration": 4.62,
+            "text": {
+              "ja": "避難所まで逃げるのになるべく人と"
+            }
+          },
+          {
+            "start": 2457.54,
+            "duration": 3.84,
+            "text": {
+              "ja": "ぶつからないような経路をですねこう"
+            }
+          },
+          {
+            "start": 2459.64,
+            "duration": 4.58,
+            "text": {
+              "ja": "組み合わせ問題化して"
+            }
+          },
+          {
+            "start": 2461.38,
+            "duration": 5.479,
+            "text": {
+              "ja": "導きでそれを携帯端末"
+            }
+          },
+          {
+            "start": 2464.22,
+            "duration": 4.6,
+            "text": {
+              "ja": "に提供していこうというような"
+            }
+          },
+          {
+            "start": 2466.859,
+            "duration": 4.74,
+            "text": {
+              "ja": "アプリケーションを今作っているところ"
+            }
+          },
+          {
+            "start": 2468.82,
+            "duration": 2.779,
+            "text": {
+              "ja": "ですまた"
+            }
+          },
+          {
+            "start": 2471.88,
+            "duration": 5.78,
+            "text": {
+              "ja": "避難避難所がたくさんこの浸水後にですね"
+            }
+          },
+          {
+            "start": 2474.4,
+            "duration": 6.36,
+            "text": {
+              "ja": "人がこう避難所に逃げた後にどのような"
+            }
+          },
+          {
+            "start": 2477.66,
+            "duration": 3.88,
+            "text": {
+              "ja": "経路で通る"
+            }
+          },
+          {
+            "start": 2480.76,
+            "duration": 1.68,
+            "text": {
+              "ja": "避難"
+            }
+          },
+          {
+            "start": 2481.54,
+            "duration": 3.9,
+            "text": {
+              "ja": "避難"
+            }
+          },
+          {
+            "start": 2482.44,
+            "duration": 6.48,
+            "text": {
+              "ja": "チームがですねどのような順番でこう"
+            }
+          },
+          {
+            "start": 2485.44,
+            "duration": 4.62,
+            "text": {
+              "ja": "避難所を訪問するとたくさんの人をより"
+            }
+          },
+          {
+            "start": 2488.92,
+            "duration": 3.32,
+            "text": {
+              "ja": "効率よく"
+            }
+          },
+          {
+            "start": 2490.06,
+            "duration": 4.86,
+            "text": {
+              "ja": "助け出すことができるかというような"
+            }
+          },
+          {
+            "start": 2492.24,
+            "duration": 6.359,
+            "text": {
+              "ja": "取り組みを行っているところですちょっと"
+            }
+          },
+          {
+            "start": 2494.92,
+            "duration": 3.679,
+            "text": {
+              "ja": "これ時間も伸びちゃったので"
+            }
+          },
+          {
+            "start": 2500.4,
+            "duration": 5.439,
+            "text": {
+              "ja": "あれこれかでこれあのえっと"
+            }
+          },
+          {
+            "start": 2505.96,
+            "duration": 3.96,
+            "text": {
+              "ja": "濃い"
+            }
+          },
+          {
+            "start": 2506.8,
+            "duration": 5.22,
+            "text": {
+              "ja": "黄色の色がですね最短経路を逃げようとし"
+            }
+          },
+          {
+            "start": 2509.92,
+            "duration": 4.56,
+            "text": {
+              "ja": "た場合のパターンでこれやっぱり団子状態"
+            }
+          },
+          {
+            "start": 2512.02,
+            "duration": 5.339,
+            "text": {
+              "ja": "になるんですねでこれ白い方が"
+            }
+          },
+          {
+            "start": 2514.48,
+            "duration": 5.46,
+            "text": {
+              "ja": "兄者ミーティングを使ってなるべく"
+            }
+          },
+          {
+            "start": 2517.359,
+            "duration": 5.181,
+            "text": {
+              "ja": "逃げ道を広く取るような貝が"
+            }
+          },
+          {
+            "start": 2519.94,
+            "duration": 6.179,
+            "text": {
+              "ja": "求まって逃げた場合ですでこれを"
+            }
+          },
+          {
+            "start": 2522.54,
+            "duration": 6.22,
+            "text": {
+              "ja": "先ほどの高知市のマッピングすると多くの"
+            }
+          },
+          {
+            "start": 2526.119,
+            "duration": 4.101,
+            "text": {
+              "ja": "人がその水を避けながら逃げるというよう"
+            }
+          },
+          {
+            "start": 2528.76,
+            "duration": 3.72,
+            "text": {
+              "ja": "なパターンに"
+            }
+          },
+          {
+            "start": 2530.22,
+            "duration": 3.58,
+            "text": {
+              "ja": "シミュレーションレベルですけどこのよう"
+            }
+          },
+          {
+            "start": 2532.48,
+            "duration": 2.58,
+            "text": {
+              "ja": "な形で"
+            }
+          },
+          {
+            "start": 2533.8,
+            "duration": 2.88,
+            "text": {
+              "ja": "求まってきて"
+            }
+          },
+          {
+            "start": 2535.06,
+            "duration": 2.94,
+            "text": {
+              "ja": "量子コンピューティングの一つの応用とし"
+            }
+          },
+          {
+            "start": 2536.68,
+            "duration": 4.38,
+            "text": {
+              "ja": "ていいんではないかなというふうに思って"
+            }
+          },
+          {
+            "start": 2538.0,
+            "duration": 6.68,
+            "text": {
+              "ja": "ますで先ほどの量子コンピューターは"
+            }
+          },
+          {
+            "start": 2541.06,
+            "duration": 6.059,
+            "text": {
+              "ja": "カナダのDM社という"
+            }
+          },
+          {
+            "start": 2544.68,
+            "duration": 6.52,
+            "text": {
+              "ja": "メーカーが作ったものですけど最近私たち"
+            }
+          },
+          {
+            "start": 2547.119,
+            "duration": 6.061,
+            "text": {
+              "ja": "はNECと一緒にですね国産の量子アニー"
+            }
+          },
+          {
+            "start": 2551.2,
+            "duration": 4.34,
+            "text": {
+              "ja": "リング量子コンピューターの"
+            }
+          },
+          {
+            "start": 2553.18,
+            "duration": 5.64,
+            "text": {
+              "ja": "研究開発に取り組んでおりまして"
+            }
+          },
+          {
+            "start": 2555.54,
+            "duration": 6.52,
+            "text": {
+              "ja": "まだよちよち歩きなんですけどこれから"
+            }
+          },
+          {
+            "start": 2558.82,
+            "duration": 8.039,
+            "text": {
+              "ja": "このような国産のアニーリング技術という"
+            }
+          },
+          {
+            "start": 2562.06,
+            "duration": 6.36,
+            "text": {
+              "ja": "ものを使って多くの社会"
+            }
+          },
+          {
+            "start": 2566.859,
+            "duration": 3.121,
+            "text": {
+              "ja": "階段の開発に"
+            }
+          },
+          {
+            "start": 2568.42,
+            "duration": 4.98,
+            "text": {
+              "ja": "解決に取り組んでいきたいというふうに"
+            }
+          },
+          {
+            "start": 2569.98,
+            "duration": 4.68,
+            "text": {
+              "ja": "思っております最後になりますけどまあ"
+            }
+          },
+          {
+            "start": 2573.4,
+            "duration": 4.32,
+            "text": {
+              "ja": "スパコンいろんな"
+            }
+          },
+          {
+            "start": 2574.66,
+            "duration": 4.8,
+            "text": {
+              "ja": "応用がありますけど皆さんこれから大学に"
+            }
+          },
+          {
+            "start": 2577.72,
+            "duration": 6.06,
+            "text": {
+              "ja": "進まれるあるいは"
+            }
+          },
+          {
+            "start": 2579.46,
+            "duration": 6.119,
+            "text": {
+              "ja": "研究をさらに進めるという上でデータ"
+            }
+          },
+          {
+            "start": 2583.78,
+            "duration": 2.539,
+            "text": {
+              "ja": "処理というものがキーとなってきますです"
+            }
+          },
+          {
+            "start": 2585.579,
+            "duration": 4.861,
+            "text": {
+              "ja": "ので"
+            }
+          },
+          {
+            "start": 2586.319,
+            "duration": 6.28,
+            "text": {
+              "ja": "ぜひですね多くの若い皆さんにこのような"
+            }
+          },
+          {
+            "start": 2590.44,
+            "duration": 5.04,
+            "text": {
+              "ja": "そのデータ処理のスペシャリストとして"
+            }
+          },
+          {
+            "start": 2592.599,
+            "duration": 6.0,
+            "text": {
+              "ja": "多くの社会課題を解決していただくような"
+            }
+          },
+          {
+            "start": 2595.48,
+            "duration": 5.7,
+            "text": {
+              "ja": "分野に入っていただければなというふうに"
+            }
+          },
+          {
+            "start": 2598.599,
+            "duration": 4.081,
+            "text": {
+              "ja": "思ってますこれは"
+            }
+          },
+          {
+            "start": 2601.18,
+            "duration": 3.54,
+            "text": {
+              "ja": "我が国日本が"
+            }
+          },
+          {
+            "start": 2602.68,
+            "duration": 4.86,
+            "text": {
+              "ja": "政府が進めているソサエティ5.0という"
+            }
+          },
+          {
+            "start": 2604.72,
+            "duration": 4.139,
+            "text": {
+              "ja": "そのデータ駆動型の社会のあり方という"
+            }
+          },
+          {
+            "start": 2607.54,
+            "duration": 4.38,
+            "text": {
+              "ja": "ものを"
+            }
+          },
+          {
+            "start": 2608.859,
+            "duration": 5.821,
+            "text": {
+              "ja": "示したものになってますけどデータ分析が"
+            }
+          },
+          {
+            "start": 2611.92,
+            "duration": 6.3,
+            "text": {
+              "ja": "できる人が足りないとかですねこういう"
+            }
+          },
+          {
+            "start": 2614.68,
+            "duration": 6.6,
+            "text": {
+              "ja": "人材の育成というものが非常に社会的な"
+            }
+          },
+          {
+            "start": 2618.22,
+            "duration": 6.8,
+            "text": {
+              "ja": "課題となっておりますですので多くの人"
+            }
+          },
+          {
+            "start": 2621.28,
+            "duration": 6.78,
+            "text": {
+              "ja": "たちがこのような分野に入ってきて新しい"
+            }
+          },
+          {
+            "start": 2625.02,
+            "duration": 5.68,
+            "text": {
+              "ja": "ぜひ一緒に研究を進めていただきたいなと"
+            }
+          },
+          {
+            "start": 2628.06,
+            "duration": 4.519,
+            "text": {
+              "ja": "いうふうに思うところですちょっと時間も"
+            }
+          },
+          {
+            "start": 2630.7,
+            "duration": 4.5,
+            "text": {
+              "ja": "オーバーして申し訳ございませんでしたが"
+            }
+          },
+          {
+            "start": 2632.579,
+            "duration": 4.54,
+            "text": {
+              "ja": "オープンキャンパスで私たち"
+            }
+          },
+          {
+            "start": 2635.2,
+            "duration": 3.56,
+            "text": {
+              "ja": "展示もしてますので"
+            }
+          },
+          {
+            "start": 2637.119,
+            "duration": 4.261,
+            "text": {
+              "ja": "量子コンピューターを触れる"
+            }
+          },
+          {
+            "start": 2638.76,
+            "duration": 3.88,
+            "text": {
+              "ja": "コーナーもありますので時間がありまし"
+            }
+          },
+          {
+            "start": 2641.38,
+            "duration": 4.68,
+            "text": {
+              "ja": "たら"
+            }
+          },
+          {
+            "start": 2642.64,
+            "duration": 6.3,
+            "text": {
+              "ja": "隣のビルの5階の左がエレベーター降りて"
+            }
+          },
+          {
+            "start": 2646.06,
+            "duration": 5.22,
+            "text": {
+              "ja": "左側の奥に研究室がありますのでぜひお"
+            }
+          },
+          {
+            "start": 2648.94,
+            "duration": 5.34,
+            "text": {
+              "ja": "立ち寄りくださいどうもありがとうござい"
+            }
+          },
+          {
+            "start": 2651.28,
+            "duration": 4.83,
+            "text": {
+              "ja": "ました長い間ご清聴ありがとうございまし"
+            }
+          },
+          {
+            "start": 2654.28,
+            "duration": 4.879,
+            "text": {
+              "ja": "た"
+            }
+          }
+        ],
+        "blocks": [
+          {
+            "start": 10.32,
+            "end": 33.719,
+            "text": {
+              "en": "Thank you very much for the introduction.My name is Kobayashi from Talk University.In the next 30 minutes, I will talk about the so-called supercomputer that we are working on.As you may have heard recently, a new information processing technology called quantum computers has been attracting attention.",
+              "zh": "非常感谢您的介绍。我是Talk大学的小林。在接下来的30分钟里，我将谈论我们正在研究的所谓超级计算机。正如您最近可能听说的那样，一种称为量子计算机的新信息处理技术正在引起人们的关注。",
+              "ja": "ご紹介ありがとうございましたあのトーク大学の小林と申しますこれから30分ほどですね私たちが取り組んでおりますいわゆるスパコンとですねあとは最近皆さん耳にすることがあるかもしれませんけど新しい情報処理技術として量子コンピューターというものが注目されておりますがそれに関する"
+            }
+          },
+          {
+            "start": 31.5,
+            "end": 53.879,
+            "text": {
+              "en": "I would like to briefly introduce our efforts.I graduated from Tohoku University in 1988.Since then, I have been working on creating faster computers for nearly 40 years.",
+              "zh": "我想简单介绍一下我们的努力。我于 1988 年毕业于东北大学。从那时起，我一直致力于创造更快的计算机近 40 年。",
+              "ja": "取り組みについて簡単にご紹介したいと思いますで私は東北大学を1988年に卒業しましてですねそれ以降40年近くひたすら早いコンピューターを作るということに取り組んでまいりました"
+            }
+          },
+          {
+            "start": 49.62,
+            "end": 70.46,
+            "text": {
+              "en": "So, this time I would like to introduce some of our research efforts to you, starting with a brief explanation of how the computer works, and how that will lead to the creation of a faster computer.",
+              "zh": "所以，这次我想向大家介绍我们的一些研究工作，首先简要解释计算机的工作原理，以及如何创造出更快的计算机。",
+              "ja": "で今回皆さんにですね少しその研究の取り組みのご紹介しようかと思いましてまず簡単にそのコンピューターの仕組みから始まってですねそれがどういうふうにその早いコンピューター作りにつながっていくのか"
+            }
+          },
+          {
+            "start": 66.54,
+            "end": 89.659,
+            "text": {
+              "en": "I would like to explain what role it plays and how it is useful to society.First of all, the source of the computer's calculations, which you may already know, dates back to 1945 in the United States.",
+              "zh": "我想解释一下它扮演什么角色，它对社会有何用处。 首先，计算机计算的来源，你可能已经知道，可以追溯到1945年的美国。",
+              "ja": "ということとそれがどういう役割で社会にに役に立っていくかということについてご説明していきたいと思っておりますでまず最初にそのコンピューターの計算源にこれはすでに皆さんご存知かもしれませんけど古くは1945年にですねアメリカで"
+            }
+          },
+          {
+            "start": 87.54,
+            "end": 109.28,
+            "text": {
+              "en": "Its roots can be traced back to the creation of the first electronic computer, but in the nearly 80 years since then, computers have continued to evolve with the aim of becoming larger, smaller, and faster.",
+              "zh": "它的根源可以追溯到第一台电子计算机的诞生，但在此后的近 80 年里，计算机不断发展，目标是变得更大、更小、更快。",
+              "ja": "初めての電子計算機というものが作られてきたのがルーツになるんですがそれからおよそ80年近くですかねひたすら大規模化あるいは小型化そして高速化そういった視点でですねコンピューターがどんどん進化してきた"
+            }
+          },
+          {
+            "start": 107.579,
+            "end": 130.14,
+            "text": {
+              "en": "So, for example, in 1971, the first chip called a microprocessor was developed, and when it was developed, the era of personal computers began in 1977, and since then, as you know, Apple, PCs, etc.",
+              "zh": "所以，举个例子，1971年，第一块叫做微处理器的芯片被开发出来，当它开发出来的时候，个人电脑的时代就在1977年开始了，从那时起，如你所知，苹果、PC等。",
+              "ja": "わけですね例えば1971年にマイクロプロセッサーと呼ばれるチップが初めて開発されてきましたしそれができると今度はパソコンの時代が始まったのが77年とでそれ以降皆さんご存知のようにAppleとかPCとかですねそういうものがどんどん"
+            }
+          },
+          {
+            "start": 127.5,
+            "end": 149.22,
+            "text": {
+              "en": "Although the configuration has become smaller, recently it has been more about the services on top of that, such as Google's web search and Facebook.Recently, α5 has become the champion in the world of 5 to 5.Recently, chat GPUT",
+              "zh": "虽然配置变小了，但最近更多的是在此之上的服务，比如谷歌的网络搜索和Facebook。最近α5成为了5对5世界的冠军。最近聊GPUT",
+              "ja": "小型化構成の化してきたわけですけど最近ですとどちらかというとその上でのサービスですねGoogleのWeb検索とかFacebookとかまず最近ですとα5が5に5の世界でチャンピオンになったとかですね最近ですとチャットGPUT"
+            }
+          },
+          {
+            "start": 145.8,
+            "end": 168.8,
+            "text": {
+              "en": "Over the past 80 years, a variety of services have been created using fast computers, such as these. Computers like this have appeared in the world in various forms, but the fundamentals have not changed much.",
+              "zh": "在过去的 80 年里，人们使用诸如此类的快速计算机创建了各种服务。像这样的计算机已经以各种形式出现在世界上，但基本原理并没有太大改变。",
+              "ja": "というような早い計算機を使った様々なサービスというものが生み出されてきたというのがこの80年の流れになりますでこういったコンピューターというのはですね色んな形で世の中に出てきてるんですがただ原理的なところはですねあまり変わっていないというかですね"
+            }
+          },
+          {
+            "start": 165.379,
+            "end": 187.16,
+            "text": {
+              "en": "What we have developed into functions is these five functions: input, output, storage, processing, and control.For example, in the case of a personal computer, graphics processing can be made faster, or in the case of a supercomputer.",
+              "zh": "我们开发成功能的就是这五个功能：输入、输出、存储、处理、控制。比如在个人计算机的情况下，图形处理可以做得更快，或者在超级计算机的情况下。",
+              "ja": "どういうものを機能化してきたかというと入力と出力と記憶と処理と制御というこの5つの機能をですねひたすらまあ例えばパソコンですとグラフィックスの処理が早くなるとかですねあるいはスパコンだと"
+            }
+          },
+          {
+            "start": 184.98,
+            "end": 208.68,
+            "text": {
+              "en": "Computers have been born as a variety of things, with each having its own strengths and weaknesses, such as speeding up calculations or making the user interface easier to understand for smartphones.However, recently, networks have become important, and these computers can interact with each other.",
+              "zh": "计算机诞生时是各种各样的东西，每种东西都有自己的优点和缺点，例如加快计算速度或使智能手机的用户界面更易于理解。但是，最近网络变得越来越重要，这些计算机可以相互交互。",
+              "ja": "計算を早くするとかスマホだとそのユーザーインターフェースをですねわかりやすくするとかそういうようなそれぞれの機能を強弱をつけながら様々なものとしてコンピューターとして生まれてきたとでただまぁ最近ですねネットワークというものが重要になってきておりますけどそういうそのコンピューターがお互い"
+            }
+          },
+          {
+            "start": 205.56,
+            "end": 225.36,
+            "text": {
+              "en": "By communicating and exchanging information, for example, it has been widely used in society to give the latest information as one's own and to others, so calculators can calculate things, but they cannot make decisions, so this is...",
+              "zh": "例如，通过沟通和交换信息，它已经在社会上广泛使用，将最新的信息提供给自己和他人，所以计算器可以计算东西，但不能做出决定，所以这是......",
+              "ja": "通信をして例えば情報交換することによってより最新の情報を自分のものとしてまた人に与えるという形で社会に広く使われてきているということになりますですので電卓というのはこれは計算できますけど判断ができませんのでこれは"
+            }
+          },
+          {
+            "start": 223.799,
+            "end": 245.94,
+            "text": {
+              "en": "The fact that computers have become faster and more compact can be traced back to the microprocessor, which was first created by Intel in 1970.",
+              "zh": "计算机变得更快、更紧凑的事实可以追溯到微处理器，它由英特尔于 1970 年首次创建。",
+              "ja": "コンピューターにはならないということになりますでこのようなコンピューターが早くなってそしてコンパクト化されてきたというのはやっぱりマイクロプロセッサーという1970年にそのインテルが最初に作ったものが始まりになりますけど一つの"
+            }
+          },
+          {
+            "start": 243.42,
+            "end": 265.28,
+            "text": {
+              "en": "The effect of integrating many transistors on a silicon chip and bringing various functions onto that chip by integrating those transistors becomes very large.",
+              "zh": "在硅芯片上集成许多晶体管并通过集成这些晶体管将各种功能带入该芯片的效果变得非常大。",
+              "ja": "シリコンのチップの上にたくさんのトランジスタを集積してそのトランジスタの集積によっていろいろな機能をそのチップ上に持ち込むことによるそれによる効果というものが非常に大きくなってきますでですのでこのような仕組みをですねベースにどのように"
+            }
+          },
+          {
+            "start": 263.22,
+            "end": 286.68,
+            "text": {
+              "en": "As for how to make it faster, first of all, as you may know, the computer is a digital computer, and calculations can proceed with 01. Well, specifically, it can be used to turn electricity on and off, or to change the voltage.",
+              "zh": "至于如何让它更快，首先大家可能知道，计算机是数字计算机，计算可以从01开始。嗯，具体来说，它可以用来打开和关闭电源，或者改变电压。",
+              "ja": "早くしていくかということになりますがまずはそのご存知のようにそのコンピューターというのはデジタルコンピューターということになりますのはご存知かもしれませんけど01で計算が進められるわけですねまあそれは具体的には電気のオンオフあるいは電圧が"
+            }
+          },
+          {
+            "start": 283.46,
+            "end": 303.6,
+            "text": {
+              "en": "It involves converting two states, such as \"on\" and \"off\", into numerical values ​​and applying them to calculations, so everyone simply uses decimal calculations, but all of those things can be converted into binary calculations.",
+              "zh": "它涉及到将“开”和“关”等两种状态转换为数值并应用到计算中，所以大家只是简单地使用十进制计算，但所有这些都可以转换为二进制计算。",
+              "ja": "かかってるかかってないというような2つの状態を数値化してそれを計算に応用するということになるわけですですので単純にその10進数の計算というものが皆さん使うわけですけどそういったものを全て2進数の計算に"
+            }
+          },
+          {
+            "start": 301.62,
+            "end": 325.62,
+            "text": {
+              "en": "In that case, of course we are using that continuous quantity, but by digitizing it, there will be slight differences in the expression, and this will cause things like muffled sound and blurred images, so we will try our best to avoid that.",
+              "zh": "那么，我们当然使用的是连续的量，但是通过数字化，表达上会有细微的差异，这会导致声音低沉、图像模糊，所以我们会尽量避免这种情况。",
+              "ja": "置き換わって計算が進められるわけですねその際当然我々その連続量を使ってるわけですがそれをデジタル化することによってそこにちょっとしたその表現の差が出てくるわけでそれが例えば音がこもったりですね画像がぼやけたりというようなことになるわけでなるべくその"
+            }
+          },
+          {
+            "start": 322.44,
+            "end": 345.139,
+            "text": {
+              "en": "There is a need for data that can express discrete quantities in detail.Then, the number of digits in a binary number is what we call bits, and it is necessary to increase the number of bits.In the end, it is required to handle large amounts of large amounts of data, so the first step is to increase the number of bits.",
+              "zh": "需要能够详细表达离散量的数据。那么，二进制数的位数就是我们所说的位数，就需要增加位数。最终需要处理大量的大量数据，所以第一步就是增加位数。",
+              "ja": "離散量を細かく表現できるようなデータが求められたそうすると自然にそのいわゆるその2進数の桁数は我々ビットと呼んでますけどそのビットを増やしてですねいずれに大量の大きなデータをたくさん扱うということが求められるわけですですのでまず最初の"
+            }
+          },
+          {
+            "start": 343.38,
+            "end": 366.539,
+            "text": {
+              "en": "As for the approach, the first approach is to figure out how to make this on/off switching as fast as there is a little picture on the horizontal axis of this 01 control.Then, of course, we will realize such a mechanism.",
+              "zh": "至于做法，第一个办法就是想办法让这个开关切换的速度和这个01控件的横轴上有一个小图一样快。那么，当然我们就会实现这样一个机制。",
+              "ja": "アプローチとしてはそのこの01のですね制御これ横軸横にちょっとあの絵が書いてありますけどオンオフというこのスイッチングをですねいかに早くするかというようなところが最初のアプローチになってくるわけですそうすると当然そのような仕組みを実現する"
+            }
+          },
+          {
+            "start": 366.539,
+            "end": 390.06,
+            "text": {
+              "en": "It's an element, we call it a device, but back in the 1940s, well, this was before the birth of electronic computers, but the idea was to create a digital system, and computers were made using mechanical switches called relays, which are vacuum tubes.",
+              "zh": "它是一个元素，我们称之为设备，但早在 20 世纪 40 年代，那是在电子计算机诞生之前，但当时的想法是创建一个数字系统，而计算机是使用称为继电器的机械开关（即真空管）制造的。",
+              "ja": "素子ですねデバイスと呼んでますが古くは40年代まあこれは電子計算機が生まれる前ですけど考え方としてはそのデジタルの仕組みを作ろうということでそのリレーという機械的なスイッチを使ってコンピューターを作っていたわけですがそれが真空管これはもう皆さん目に"
+            }
+          },
+          {
+            "start": 388.08,
+            "end": 411.66,
+            "text": {
+              "en": "You may never have to do that, but if you look at high-end audio amplifiers, you'll see that they do go inside. Vacuum tubes, devices that control on/off electronically, were created around 50 years ago.This speed, written here, is milliseconds of freedom to the -3 power.",
+              "zh": "您可能永远不需要这样做，但如果您观察高端音频放大器，您会发现它们确实进入了内部。真空管是一种以电子方式控制开/关的设备，诞生于大约 50 年前。此处所写的速度是毫秒的自由度 -3 次方。",
+              "ja": "することもないかもしれませんけどま高級なオーディオアンペなんかを見ると中に入ったりするわけですけどこのような真空管というその電子的な制御でオンオフを制御するようなデバイスが50年ぐらいに作られてきましたこれでこのスピードがここに書いてありますがミリセカンド自由の-3乗の"
+            }
+          },
+          {
+            "start": 408.06,
+            "end": 429.96,
+            "text": {
+              "en": "This means that the speed has dramatically increased to the -6th power, and at the same time, the size has also decreased somewhat.A major innovative technology was the invention of the transistor, which was put into practical use.",
+              "zh": "这意味着速度大幅提升至-6次方，同时尺寸也有所减小。一项重大创新技术是晶体管的发明，并投入实用。",
+              "ja": "速度から-6乗ぐらいの速度まで画期的に速くなってきたということになりますで同時にいくらかそのサイズ的にも小さくなってきたというところになります大きな革新的な技術としてはトランジスタの発明というのがありますそれが実用化されてき"
+            }
+          },
+          {
+            "start": 427.68,
+            "end": 451.38,
+            "text": {
+              "en": "It was around 1920 that computers began to use this type of device, and the era came when a single element like this began to replace the vacuum tubes that had been used one by one.Then, the second order of the name is written here, that milli-micro.",
+              "zh": "大约在1920年左右，计算机开始使用这种类型的器件，这样的时代到来了，像这样的单个元件开始取代曾经使用的真空管。然后，这里写了名字的第二个顺序，那就是毫微。",
+              "ja": "てコンピューターに使われてきたのが1920年ぐらいになるとこういう単独の素子で今まで一本一本のこの真空管というチューブがこの1個の素子に置き換わってくるという時代がやってきますそうするとさらにその名のセカンドのオーダーここに書いてありますねそのミリマイクロなの"
+            }
+          },
+          {
+            "start": 447.78,
+            "end": 469.199,
+            "text": {
+              "en": "Then, it becomes a pico, which is a unit that becomes smaller by 1/1000 to the power of 10, but it falls to that level, and then the technology of chipping that I mentioned earlier was born, and after that, we started thinking about how many transistors could be integrated into a single chip.",
+              "zh": "然后就变成了pico，就是一个单位变小了1/1000的10次方，但是就降到了这个程度，然后我前面提到的芯片技术就诞生了，之后我们就开始思考一个芯片里可以集成多少个晶体管。",
+              "ja": "そしてピコという10の3乗1000分の1ずつこう桁が小さくなってくるような単位になりますけどそのレベルまで落ちてくるわけですでそれで先ほど申し上げたチップ化するという技術が生まれますとそれ以降はいかにその一つのチップの中にですね多くのトランジスタを集積するかと"
+            }
+          },
+          {
+            "start": 468.3,
+            "end": 490.08,
+            "text": {
+              "en": "The technology for this integration is basically the same as the technology for taking photographs, and involves drawing as fine a line as possible on a chip in a limited area.",
+              "zh": "这种集成的技术与拍照技术基本相同，都是在芯片的有限区域内画出尽可能细的线。",
+              "ja": "いう技術に変わってきますでこの集積化の技術っていうのは基本的に写真を撮る技術と一緒でしてなるべくこの細かい線をですね限られたエリアに限られたチップ上にこの描いていくという"
+            }
+          },
+          {
+            "start": 485.58,
+            "end": 507.78,
+            "text": {
+              "en": "It becomes a technology, so of course we call it the exposure beam, but as we refine the system, transistors have become smaller to the nano-level size, and now...",
+              "zh": "它成为一种技术，所以我们当然称之为曝光光束，但随着我们改进系统，晶体管已经变得更小到纳米级尺寸，现在......",
+              "ja": "技術になるわけですねそうすると当然その露光する露光のこのビームと呼んでますけどそれの制度を細かくしていくと今やナノレベルのサイズにまでトランジスタが小さくなってそして今は"
+            }
+          },
+          {
+            "start": 504.86,
+            "end": 528.68,
+            "text": {
+              "en": "Approximately 1 billion transistors will be converged on this chip.Then, the second mechanism will be that you can use that 1 billion transistors to do various things on the chip.This is a trend called Moore's Law.",
+              "zh": "大约10亿个晶体管将集中在这个芯片上。然后，第二个机制将是你可以使用这10亿个晶体管在芯片上做各种事情。这是一个称为摩尔定律的趋势。",
+              "ja": "およそこのチップの上にですね10億トランジスタぐらいが収束されていくんですねそうしますとその10億トランジスタを使ってじゃあいろんなことがチップ上にできるというのがその2のからくりになってくるわけですでこれはムーアの法則という風に呼んでるトレンド"
+            }
+          },
+          {
+            "start": 525.48,
+            "end": 548.519,
+            "text": {
+              "en": "The graph shows the trend of transistor integration.The vertical axis is the number of transistors integrated.It shows how many transistors have been integrated into a limited chip area.",
+              "zh": "该图显示了晶体管集成度的趋势。纵轴是集成的晶体管数量。它显示了在有限的芯片面积内集成了多少个晶体管。",
+              "ja": "を示したものあのトランジスターの集積どうしてトレンドの示したものになりますけど縦軸がですねトランジスタの集積数ですね何個トランジスタが限られたチップエリアに集積されてきたかというのを示したもので"
+            }
+          },
+          {
+            "start": 543.54,
+            "end": 564.2,
+            "text": {
+              "en": "The horizontal axis is the age, and the vertical axis is the log scale, so the horizontal axis increases linearly, so it accumulates exponentially.",
+              "zh": "横轴是年龄，纵轴是对数尺度，所以横轴是线性增加的，所以是指数累积的。",
+              "ja": "これが横軸が年代になりますでこれ縦がログスケールになってますからいわゆるこの横は線形で増えてきますのでそのいわゆる指数関数的にですね集積"
+            }
+          },
+          {
+            "start": 560.519,
+            "end": 582.32,
+            "text": {
+              "en": "This is the origin of the evolution of microprocessors to date. This is Moore's Law. This is a man named Gordon Moore, the founder of Intel, who said that the density of our chips would double every 18 months.",
+              "zh": "这就是迄今为止微处理器发展的起源。这就是摩尔定律。这是一个叫戈登·摩尔的人，英特尔的创始人，他说我们芯片的密度每18个月就会翻一番。",
+              "ja": "度が上がってきたというのがこれまでのマイクロプロセッサーの進化の原点になってますこれをムーアの法則これはインテルの創業者のゴードンムーアという人がですねうちのチップは18ヶ月で2倍に集積度を上げていくんだと"
+            }
+          },
+          {
+            "start": 581.22,
+            "end": 604.22,
+            "text": {
+              "en": "In other words, the Intel engineers have worked hard to create a graph like this since then, and this is the result.Well, there is no particular rule, but this is how it turned out as a result.In the field of computers, such goals are set.",
+              "zh": "换句话说，从那时起，英特尔工程师就努力创建这样的图表，这就是结果。嗯，没有特定的规则，但结果就是这样。在计算机领域，设定了这样的目标。",
+              "ja": "いう風にましてこのようなグラフをですねそれ以降そのインテルのエンジニアは頑張って作り上げてきたというのがこの結果になってくるわけですまあ別にその法則があるわけじゃなくてですね結果的にこうなってきたという部分もあるんですがコンピューターの分野ではこのような目標"
+            }
+          },
+          {
+            "start": 602.7,
+            "end": 625.62,
+            "text": {
+              "en": "Nowadays, the number of transistors has doubled every two years, or even longer than that in some places, but the degree of integration has increased and we are now in the era of one billion transistors.",
+              "zh": "如今，晶体管的数量每两年就会增加一倍，甚至有的地方比这个还要长，但集成度却提高了，我们现在已经进入了十亿个晶体管的时代。",
+              "ja": "を立ててですね今や2年に2年で倍ぐらいにあるいはそれより少し長くなっているところもありますけど集積度が上がってきて今や10億トランジスタレベルの時代になってきてるというところになりますでそうしますとこの"
+            }
+          },
+          {
+            "start": 621.48,
+            "end": 645.0,
+            "text": {
+              "en": "So let's use transistors and apply this to various things on the chip, and then we will develop a technology to speed up calculations by devising the mechanism. This is the first approach for everyone.",
+              "zh": "因此，让我们使用晶体管并将其应用于芯片上的各种东西，然后我们将开发一种通过设计机制来加速计算的技术。这是每个人的第一个方法。",
+              "ja": "トランジスタを使ってじゃあこれをチップ上で様々なものに応用しましょうということでそこでさらにその仕組みの工夫によって計算を早くしようという技術になってくるわけですね最初のアプローチとしてはこれも皆さん"
+            }
+          },
+          {
+            "start": 641.16,
+            "end": 664.519,
+            "text": {
+              "en": "This is a processing pattern seen on a factory assembly line, where processing is performed sequentially.Well, a program is made up of many instructions, and each instruction is called and interpreted one by one, and the necessary data is called.",
+              "zh": "这是在工厂流水线上看到的一种加工模式，加工是按顺序进行的。那么，一个程序是由很多条指令组成的，每条指令都被一条条地调用和解释，调用必要的数据。",
+              "ja": "工場のアセンブリラインなんかで見る処理パターンになるんですがですね逐次的に処理が行われてきますまあプログラムというのはたくさんの命令から作られてるんですがそれぞれの1個1個の命令を呼び出して解釈して必要なデータを呼び出して"
+            }
+          },
+          {
+            "start": 662.279,
+            "end": 684.3,
+            "text": {
+              "en": "This step of calculating and storing the results is repeated, so if you simply extend it like this, this is a slightly different example, but this is a process of selecting, drying, folding, and storing it in the closet.",
+              "zh": "计算和存储结果的这个步骤是重复的，所以如果你简单地这样扩展，这是一个稍微不同的例子，但这是一个选择、干燥、折叠、存放在衣柜里的过程。",
+              "ja": "計算をして結果を格納するというこういうステップを繰り返し行ってくるわけですねでこれを単純にこう伸ばしていくとこれはちょっと別の例になってますけどこれはえっと選択して乾燥して畳んで押し入れにしまうみたいな処理になってますけどそれを"
+            }
+          },
+          {
+            "start": 681.899,
+            "end": 702.06,
+            "text": {
+              "en": "If you repeat this in order, the time will accumulate like this, so let's divide the process and shorten the calculation time with assembly work.Well, the calculation time for each item will not become shorter.",
+              "zh": "如果按顺序重复的话，时间就会像这样累积起来，所以我们把工序分开，用组装工作来缩短计算时间。嗯，每个项目的计算时间都不会变短。",
+              "ja": "順番にこう繰り返していくと時間がこう積み上がっていくというようなことになるわけですねでまあこれを処理を分割して流れ作業で計算時間を短くしようまあ1個1個の計算時間は短くはならないんですけどとただその"
+            }
+          },
+          {
+            "start": 699.68,
+            "end": 721.92,
+            "text": {
+              "en": "If the amount of processing per hour is improved by this divided processing, specifically, if you divide it into four partial processes and perform multiple processing, the processing capacity will increase four times.",
+              "zh": "如果通过这种分割处理提高每小时的处理量，具体来说，如果将其分成四个部分处理并进行多重处理，则处理能力将增加四倍。",
+              "ja": "時間当たりの処理量というものがこの分割処理によって改善されていくと具体的にはこれ4つの部分処理に分割してそれを多重処理していくと4倍の処理能力になってくるというような仕組みでこれもやはりこういう一連の"
+            }
+          },
+          {
+            "start": 719.64,
+            "end": 743.339,
+            "text": {
+              "en": "Computer processing is realized using this kind of mechanism using the transistors mentioned earlier.The other thing is parallel processing.The flow that I mentioned earlier is called pipeline processing, and when I say pipeline processing, it may remind you of an oil pipeline.",
+              "zh": "计算机处理就是利用前面提到的晶体管的这种机制来实现的。另外就是并行处理。我前面提到的流程称为管道处理，当我说管道处理时，可能会让你想起石油管道。",
+              "ja": "コンピューターの処理というものをこのような仕組みで先ほどのトランジスタを使って実現していくということになりますでもう一つは並列処理先ほどはパイプライン処理と呼ばれる流れでしてパイプライン処理ってパイプラインというところ油のパイプラインを思い出すかもしれませ"
+            }
+          },
+          {
+            "start": 740.16,
+            "end": 761.519,
+            "text": {
+              "en": "Well, it's a similar idea, where data flows through a pipe and processing is done in a long flow, which is called pipeline processing.The other method is called parallel processing, which simply divides a big problem into N and processes it.",
+              "zh": "嗯，是类似的想法，数据流经管道，处理是在很长的流程中完成的，这称为管道处理。另一种方法称为并行处理，它简单地将一个大问题分成N个并处理它。",
+              "ja": "んけどまぁ同じような考え方でパイプの中をデータを流して処理をその長い流れの中で処理をしていくという考え方でパイプライン処理という風に呼んでますでもう一つは並列処理と呼ばれるものでしてこれは単純にその大きな問題をN分割してそれを"
+            }
+          },
+          {
+            "start": 758.64,
+            "end": 782.18,
+            "text": {
+              "en": "When parallel processing is performed on the N5 computer, it is a very simple but effective processing method that aggregates the results at the end and calculates the total number of times.I'm sorry, but when I say \"partition\" here, I mean allocation and aggregation of results.",
+              "zh": "在N5计算机上进行并行处理时，最后聚合结果并计算总次数是一种非常简单但有效的处理方法。很抱歉，我这里说的“分区”是指结果的分配和聚合。",
+              "ja": "N5のコンピューターで並列処理を行うとで最後に結果を集約して全体の回を求めていくというような非常にその単純ですけど効果的な処理方式になりますただのここで分割とはすいません割り当てと結果の集約というところにですねその"
+            }
+          },
+          {
+            "start": 780.779,
+            "end": 800.899,
+            "text": {
+              "en": "Networking, which is a mechanism for exchanging data, is required, so simply dividing the processing into N equal parts does not mean that the processing will be multiplied by N, but there is the extra effort of collecting and distributing data via this network.",
+              "zh": "需要网络作为一种交换数据的机制，因此简单地将处理分为N等份并不意味着处理量将增加N倍，而是需要通过该网络收集和分发数据的额外工作。",
+              "ja": "ネットワーキングというデータをやり取りする仕組みが必要になってきますので単純に処理をN等分したからと言ってN倍になるわけではなくてこのネットワークを介してデータを集めたり分散したりするというそういう余計な手間がですね"
+            }
+          },
+          {
+            "start": 801.36,
+            "end": 824.839,
+            "text": {
+              "en": "Since processing efficiency can be reduced, it is necessary to consider various network configurations and research on more efficient networking that is suitable for the problem.",
+              "zh": "由于处理效率会降低，因此需要考虑各种网络配置并研究适合该问题的更高效的网络。",
+              "ja": "処理効率を低下させるというところがありますのでそれに関して様々なネットワークの構成を考えた上で問題に適したより効率の良いネットワーキングという研究も必要になってくるわけですでこれの一番わかりやすい例としてはまだ私たちが"
+            }
+          },
+          {
+            "start": 822.839,
+            "end": 846.36,
+            "text": {
+              "en": "This is a story that was done a long time ago, but it is common practice in many hospitals now to convert 3D slice images such as MRI and CT into 3D slice images, perform distributed processing to generate partial images, and aggregate the whole image.",
+              "zh": "这是很久以前的故事了，但现在很多医院的普遍做法是将MRI、CT等3D切片图像转换为3D切片图像，进行分布式处理生成部分图像，聚合整个图像。",
+              "ja": "昔やった話なんですけどMRIとかCTといったような3次元のスライス画像を2次元のスライス画像を3次元化してそれを分散処理して部分画像を生成して全体を集約すると今ではもういろんな病院で当たり前にやられてますけどちょうど"
+            }
+          },
+          {
+            "start": 843.98,
+            "end": 867.38,
+            "text": {
+              "en": "Around 19978, we created and announced this kind of technology. Thanks to the technological innovations mentioned above, computers have had a very short history compared to cars, for example, about 80 years, but during that 80 years, their performance has improved dramatically.",
+              "zh": "19978 年左右，我们创建并公布了这种技术。由于上述的技术创新，计算机的历史相对于汽车来说很短，比如80年左右，但在这80年里，计算机的性能得到了巨大的提高。",
+              "ja": "19978年ぐらいですかねこういう技術を作って公表したことがございました以上のような技術革新によってコンピューター例えば80年ぐらい車に比べると非常に短い歴史なんですがその80年の間にまあ飛躍的性能が向上してき"
+            }
+          },
+          {
+            "start": 864.72,
+            "end": 887.699,
+            "text": {
+              "en": "This is the slide I'm going to show you here. Well, it says about computational performance, and this shows how many calculations can be made in one second. Memory size. B is the unit of 1 byte.",
+              "zh": "这就是我要向您展示的幻灯片。嗯，它说的是计算性能，这表明一秒钟可以进行多少次计算。内存大小。 B是以1字节为单位的。",
+              "ja": "たというのがあのここでお見せするスライドになりますでえっとここで演算性能というものは書いてありますけどこれがあの1秒間にどれぐらいの数の計算ができるかというのを示したものですこれメモリーサイズこれはBというのが1バイトという単位になり"
+            }
+          },
+          {
+            "start": 885.18,
+            "end": 905.48,
+            "text": {
+              "en": "However, it corresponds to about one character, so the k point is kilo, so it is 6,400 characters.Sorry, this 0.15mips I mentioned earlier is called a mix, but it can be processed per second in million instructions per second.",
+              "zh": "不过它对应的大概是一个字符，所以k点是kilo，所以是6400个字符。抱歉，我前面提到的这个0.15mips被称为混合，但是每秒可以处理百万条指令。",
+              "ja": "ますけどおよそ1文字に相当しますですからk点はキロですので6,400文字ですねすいません先ほどのこの0.15mipsこれミックスという風に呼んでますけどミリオンインストラクションパーセカンドということで100万単位での1秒あたりに処理できる"
+            }
+          },
+          {
+            "start": 905.94,
+            "end": 927.12,
+            "text": {
+              "en": "In terms of the amount of calculation, this means that it can calculate 150,000 instructions per second.This was about 360 million yen, and it was 1965.It was four years after I was born, and computers at that time were very expensive.At that time, the monthly income was probably 20,000 yen or something like that.",
+              "zh": "从计算量来说，这意味着它每秒可以计算15万条指令。这大约是3.6亿日元，那是1965年。那是我出生四年后，当时的电脑非常昂贵。当时的月收入大概是2万日元左右。",
+              "ja": "計算量ということになりますですのでこれは15万命令を1秒間に計算できるというものですこれがおよそ3億6000万円で1965年ですね私が生まれて4年目でしたけどその頃のコンピューターまあこれ非常に高価なその時の多分月収も2万円とかそういう時代"
+            }
+          },
+          {
+            "start": 925.139,
+            "end": 946.1,
+            "text": {
+              "en": "It may have been, but it was very expensive, so after 10 years, the computing power has increased by about 7 times per mips, and the data that can be handled has increased by 16 times in units of 1 MB.",
+              "zh": "可能是这样，但是非常昂贵，所以10年后，每mips的计算能力增加了约7倍，可处理的数据以1MB为单位增加了16倍。",
+              "ja": "だったかもしれませんけど非常に高価であったということになりますでそれが10年経つと1mips7倍ぐらい計算能力が上がったということになりますし扱えるデータも16倍1MBという単位で"
+            }
+          },
+          {
+            "start": 943.139,
+            "end": 967.1,
+            "text": {
+              "en": "The price is 72 million yen, and the price has improved by 34 times in just 10 years.So, everyone, this is a bit old, but when it comes to personal computers that you often see, it has already lost out.",
+              "zh": "价格是7200万日元，短短10年价格就提升了34倍。所以，各位，这个有点老了，但是说到你们经常看到的个人电脑，它已经落伍了。",
+              "ja": "値段が7200万ということでそれのあたりの価格が34倍まで改善されたというたったの10年ですねでなるわけですでこれがまあ皆さんこれもちょっと古いところにはありますけどまぁ皆さんよく見るパソコンなんかですともうもはや負けた"
+            }
+          },
+          {
+            "start": 964.68,
+            "end": 986.579,
+            "text": {
+              "en": "It's Giga. Above the million mark, it's Giga. 160GB instructions per second, so this one is also Galaxy. Well, I think this one is also under 100,000 yen, so this means that the price and performance of the car has increased at this pace.",
+              "zh": "是吉加。超过百万大关，就是千兆。每秒 160GB 指令，所以这也是 Galaxy。嗯，我认为这辆车也在10万日元以下，所以这意味着汽车的价格和性能以这种速度增长。",
+              "ja": "ギガですねミリオンの上はギガですね160GBインストラクションパーセカンドということでこちらも銀河ですねでまあこれも10万円切ってると思いますのでこのように価格性能的にはこれぐらいのペースで上がってきたということになります車は"
+            }
+          },
+          {
+            "start": 984.26,
+            "end": 1007.339,
+            "text": {
+              "en": "It may have a history of more than 100 years, but I don't think prices have changed that much.It's not like the speed has increased, so it's often said that compared to cars, it's a socially useful machine whose speed has increased exponentially.",
+              "zh": "它可能已经有100多年的历史了，但我认为价格变化并没有那么大。速度并没有提高，所以人们常说，与汽车相比，它是一种对社会有用的机器，速度呈指数级增长。",
+              "ja": "100年以上の歴史があるかもしれませんけどそんなに値段は変わってないと思うんですねスピードが速くなるわけでもないところでですのでよく言われるのがまあ車に比べると非常にペースが指数関数的に上がってきた非常にその社会的に役に立つ機械だという"
+            }
+          },
+          {
+            "start": 1006.079,
+            "end": 1028.16,
+            "text": {
+              "en": "Computer people say this, but on the other hand, people in cars say that they don't reboot like computers do, and there's a lot of debate, but if you look at units a little, you'll see that kilos, which are often made, are commonly used functions.",
+              "zh": "计算机人这么说，但另一方面，汽车里的人说他们不会像计算机那样重新启动，并且有很多争论，但如果你稍微看一下单位，你会发现经常制作的公斤是常用的功能。",
+              "ja": "風にコンピューターの人は言うんですけどただ一方で車の人はですねコンピューターのようにリブートしたりはしませんみたいなことを言っていろいろ議論のあるところでありますけど単位をちょっと見直してみますとこれよく作るキロとかこれは一般に使う機能ですね"
+            }
+          },
+          {
+            "start": 1025.22,
+            "end": 1048.38,
+            "text": {
+              "en": "Well, I think mega and giga are units that are often used when discussing the specs of your mobile phone, and when it comes to the level of supercomputers that are currently being used and used, it becomes a field called terapeta, and what will happen in the future.",
+              "zh": "嗯，我认为兆和千兆是在讨论手机规格时经常使用的单位，而当谈到当前正在使用和使用的超级计算机的水平时，它就变成了一个称为terapeta的领域，以及未来会发生什么。",
+              "ja": "でえっとメガとかギガというのが多分皆さんの携帯でよくそのスペックが議論される時に使われるような単位かと思いますでこれがあの今扱っている今使え使われているスパコンレベルになるとテラペタという領域になってでこれからの"
+            }
+          },
+          {
+            "start": 1046.16,
+            "end": 1069.44,
+            "text": {
+              "en": "The target of supercomputers is shifting to things like XA and Zetta, which are cubed or multiplied by the sixth power.",
+              "zh": "超级计算机的目标正在转向 XA 和 Zetta 之类的东西，它们是三次方或乘以六次方。",
+              "ja": "スパコンの狙うところがXAとかゼッタというようなさらにその3乗場合あるいは6乗倍というようなものにスパコンのターゲットが移りつつありますこれは例えば1秒間にエクサカイの計算ができるとかこれ"
+            }
+          },
+          {
+            "start": 1067.4,
+            "end": 1085.48,
+            "text": {
+              "en": "Just last year, a supercomputer in the United States achieved this goal, and the next target for Japan would be to handle data of 10 to the 21st power, or calculations.",
+              "zh": "就在去年，美国的一台超级计算机实现了这一目标，而日本的下一个目标将是处理10的21次方数据或计算。",
+              "ja": "昨年ちょうどアメリカのスパコンがこれを達成しましたけどそれを行ったりあるいはその次のターゲットとしては日本ですと10害というんでしょうかね10の21乗のデータを扱うとかあるいは計算を扱うというようなレベルになっていくわけです"
+            }
+          },
+          {
+            "start": 1085.539,
+            "end": 1106.66,
+            "text": {
+              "en": "Therefore, by combining these improvements in integration technology with high-performance technology, the synergistic effect created the supercomputer, which is now known as a computer specialized in scientific and technical calculations.",
+              "zh": "因此，通过将这些集成技术的改进与高性能技术相结合，产生协同效应，创造了超级计算机，即现在被称为专门从事科学技术计算的计算机。",
+              "ja": "ですのでこのような集積技術の向上とあと高性能の技術というものを掛け合わせてその相乗効果によってスパコンというものが生まれてきましたでこれがいわゆる科学技術計算に特化したコンピューターと"
+            }
+          },
+          {
+            "start": 1103.52,
+            "end": 1126.14,
+            "text": {
+              "en": "In other words, we call it the highest performance of that era.A long time ago, in 1976, a man named Clay created the first computer in a new category called a supercomputer, and at that time the performance was exactly 240MHz.",
+              "zh": "换句话说，我们称之为那个时代的最高性能。 很久以前，1976年，一个叫克莱的人创造了第一台计算机，属于一个叫做超级计算机的新类别，当时的性能正好是240MHz。",
+              "ja": "いうことでその時代の最高性能のものを呼んでおりますですので昔そのクレイという人が1976年に初めてスパコンという新しいカテゴリーでのコンピュータを作り出したんですがその時の性能がちょうど240mhzという"
+            }
+          },
+          {
+            "start": 1123.86,
+            "end": 1146.539,
+            "text": {
+              "en": "It was a time when the power consumption per unit was about this, and the performance per power consumption could be calculated with 2 kiloflops and 2000 instructions in 1W.",
+              "zh": "当时单位功耗大约就是这个，单位功耗的性能可以用1W 2 kiloflops、2000条指令来计算。",
+              "ja": "単位で消費電力このぐらいとで消費電力あたりの性能が2キロフロップ2000命令を1Wで計算できるというような時代だったわけですでそれがその後先ほどのような"
+            }
+          },
+          {
+            "start": 1141.98,
+            "end": 1165.919,
+            "text": {
+              "en": "Through technological innovation, the United States released the first supercomputer with Tera performance in 1996, and after that, Japan also worked hard, and in 2002, it achieved 40 times the performance in parallel processing.",
+              "zh": "通过技术创新，美国在1996年发布了第一台Tera性能的超级计算机，之后日本也努力，在2002年在并行处理方面实现了40倍的性能。",
+              "ja": "技術革新によってアメリカが1996年に初めてテラの性能を持つスパコンを出してきたというところにありますでその後日本も頑張りまして地球史見られたというものが2002年に40倍の性能を作り上げたとでこれが並列処理の"
+            }
+          },
+          {
+            "start": 1163.7,
+            "end": 1186.98,
+            "text": {
+              "en": "It is said that if 5,000 computers were aggregated and processed, the power at that time would be 6 megawatts, and this progressed rapidly until the US created a 1 peta computer in 2008, and then the K computer.This is also a Japanese computer.",
+              "zh": "据说，如果将5000台计算机聚合起来处理，当时的功率将达到6兆瓦，而且这个进展很快，直到2008年美国制造出1 peta计算机，然后是K计算机。这也是日本计算机。",
+              "ja": "程度になりますけど5000個のコンピューターを集約して処理をしたとでその時の電力が6メガワットと書いてるでこれがどんどん進んでUSが1ペタというものを2008年に作り上げてその後Kコンピューターですねこれも日本の"
+            }
+          },
+          {
+            "start": 1184.24,
+            "end": 1205.84,
+            "text": {
+              "en": "As the next generation computer after the so-called Flagship Earth Simulator, the K computer is a computer built by Japan with the goal of performing exactly one calculation per second.",
+              "zh": "作为所谓旗舰地球模拟器之后的下一代计算机，K计算机是日本制造的一台计算机，其目标是每秒执行一次计算。",
+              "ja": "いわゆるフラグシップ地球シミュレーターに次ぐ次の世代のコンピューターとしてKコンピュータちょうど1系会の計算を1秒間にやろうという目標を立てて日本が作り上げたコンピューターになりますでそこでは使う"
+            }
+          },
+          {
+            "start": 1203.299,
+            "end": 1226.4,
+            "text": {
+              "en": "The equivalent number of parallel processing units is 88,000 processors. If you connect 88,000 chips inside your computer and run a calculation, it would require 10 megawatts of electricity, or about the same amount of power as 20,000 homes.",
+              "zh": "并行处理单元的等效数量为 88,000 个处理器。如果您在计算机内连接 88,000 个芯片并进行计算，则需要 10 兆瓦的电力，大约相当于 20,000 个家庭的电力。",
+              "ja": "並列処理の同数としては88,000個のプロセッサーですね皆さんのコンピューターの中に入ってるチップが88,000個をつないでですね計算させるとでそれで10メガワットのちょうど2万世帯分ぐらいの電力を必要としてまし"
+            }
+          },
+          {
+            "start": 1225.44,
+            "end": 1247.28,
+            "text": {
+              "en": "But then China came out and launched a new supercomputer with 40,000 CPUs, about 12 times the performance of K, and 50% more CPUs.",
+              "zh": "但后来中国出来推出了新的超级计算机，有4万个CPU，性能大约是K的12倍，CPU数量增加了50%。",
+              "ja": "たでその後中国が対に出てきましてですね中国が新しいスパコンをKの12倍ほどの性能で4万個のCPUをでさらに5割増しの"
+            }
+          },
+          {
+            "start": 1245.72,
+            "end": 1265.299,
+            "text": {
+              "en": "Not to be outdone, the US increased power consumption to 200 peta in 2018, and Japan is now famous for its droplet simulation, but Fugaku will increase its consumption in 2020.",
+              "zh": "美国也不甘示弱，2018年将耗电量提高到200 peta，日本现在以液滴模拟闻名，但富岳将在2020年增加耗电量。",
+              "ja": "消費電力とでそれに負けずとUSが18年に200ペタとでそしてまた日本が今例えば飛沫のシミュレーションなどで有名になりましたけど富岳が2020年に"
+            }
+          },
+          {
+            "start": 1261.88,
+            "end": 1283.039,
+            "text": {
+              "en": "At 537 petaflops, this is achieved by realizing nearly 160,000 CPUs, nearly 160,000 parallel processes, and using an extremely large amount of power, 30 megawatts.",
+              "zh": "在 537 petaflops 下，这是通过实现近 160,000 个 CPU、近 160,000 个并行进程以及使用 30 兆瓦的极大功率来实现的。",
+              "ja": "537ペタフロップスでこれは16万近いCPU16万近い並列処理を実現してしかも30メガワットという非常に多くの電力を使うということで達成していますで"
+            }
+          },
+          {
+            "start": 1279.32,
+            "end": 1300.559,
+            "text": {
+              "en": "Last year, the United States finally entered the 1x3 realm, and everyone here is using GPU, a processor dedicated to graphics processing, which you may already have in your home.In addition, a system specialized for calculations has been introduced into this system.",
+              "zh": "去年，美国终于进入了1x3的境界，这里大家都在用GPU，一种专门用于图形处理的处理器，你家里可能已经有了。此外，这个系统还引入了专门用于计算的系统。",
+              "ja": "昨年アメリカがついに1x3の領域に入ってここでは皆さん家庭にあるかもしれませんけどGPUというグラフィックス処理専用のプロセッサを使ってですねさらに計算に特化した仕組みをこの中に導入して"
+            }
+          },
+          {
+            "start": 1298.1,
+            "end": 1319.539,
+            "text": {
+              "en": "When it reaches the level of 1x3 for the first time after realizing high performance that cannot be achieved with conventional computer CPUs, it is suppressed a little, and when the 23rd is over, it is still a very large value, but if you use all those CPUs at once like this,",
+              "zh": "当它在实现传统计算机CPU无法实现的高性能后第一次达到1x3的水平时，它会受到一点抑制，并且当23次结束时，它仍然是一个非常大的值，但如果你像这样一次性使用所有这些CPU，",
+              "ja": "従来のコンピューターのCPUではできないような高性能性を実現して初めて1x3というレベルに入ってきたとまあ少し抑えられて23番目23番目が終わったとそれでも非常に大きな値になりますけどこのようにそのたくさんのCPUを一斉に"
+            }
+          },
+          {
+            "start": 1317.36,
+            "end": 1341.179,
+            "text": {
+              "en": "Supercomputers are often said to be very similar to the world of racing, since F1 isn't very popular right now, but supercomputers are made with very sophisticated technology.",
+              "zh": "人们常说超级计算机与赛车世界非常相似，因为 F1 目前还不太流行，但超级计算机是采用非常复杂的技术制造的。",
+              "ja": "使い上げるということになりますスパコンというのはよくF1皆さん今F1あまり流行ってないからあれかもしれませんけどレーシングの世界とよく似てると言われるんですけど非常にその洗練された技術で作られてるとかですねえっと乗りこなすに高度な"
+            }
+          },
+          {
+            "start": 1338.659,
+            "end": 1361.58,
+            "text": {
+              "en": "It seems like it requires a lot of skill, or the manufacturer's technology is put to the test, or it uses a lot of fuel to produce small quantities to order, or it's effective, and it seems like recently they've been electrified, so maybe that's not the case, but it's also noisy, and that's the case with supercomputers, too.",
+              "zh": "好像需要很多技巧，或者是考验制造商的技术，或者是用大量的燃料来生产小批量的订单，或者是有效的，而且最近好像都电气化了，所以也许不是这样的，但它也很吵，超级计算机也是如此。",
+              "ja": "テクニックが必要だとかあるいは製造業者の技術が試されるとか少量受注生産で効果とかで大量の燃料を使うとか最近この電気化されてるようですのでそうでもないのかもしれませんけどあとまあうるさいとかこれはことがですねスパコンもですねやはり同じようにその最新の技術で使われてプログラムするのに"
+            }
+          },
+          {
+            "start": 1359.36,
+            "end": 1382.22,
+            "text": {
+              "en": "It requires a certain amount of experience, it requires air pressure, it's expensive to make to order, it uses electricity, and it's a must-see.Tohoku University has a supercomputer, so if you go to see it, you'll see that it's very noisy, but the value of using a supercomputer is",
+              "zh": "需要一定的经验，需要气压，定做贵，要用电，一定要看。东北大学有一台超级计算机，所以如果你去看的话，你会发现它很吵，但是使用超级计算机的价值是",
+              "ja": "もそれなりの経験が必要だとかですね気圧力が問われるとか受注生産高いとか電気を使うとかうるさいとこれはぜひですね東北大学スパコンありますので見に行っていただくとわかりますけど非常にうるさいですでただスパコンの利用価値というのは"
+            }
+          },
+          {
+            "start": 1379.039,
+            "end": 1402.559,
+            "text": {
+              "en": "I think the big difference is that it can help enrich our lives or make us feel safe and secure.Therefore, the approaches needed to advance this technology include experiment and theory.",
+              "zh": "我认为最大的区别在于它可以帮助丰富我们的生活或让我们感到安全和有保障。因此，推进这项技术所需的方法包括实验和理论。",
+              "ja": "私たちのその生活を豊かにしてくるあるいは安全安心してくれるというようなことに役立つというのが大きな違いかと思いますでこの技術を進める上で必要なアプローチとしては実験と理論というものがあるわけですけどこう"
+            }
+          },
+          {
+            "start": 1400.22,
+            "end": 1423.64,
+            "text": {
+              "en": "With the advent of supercomputers, a new method called simulation has appeared, and now we can use this simulation to conduct experiments efficiently or analyze theories, and this simulation plays a major role in promoting the technology we buy.",
+              "zh": "随着超级计算机的出现，出现了一种叫做模拟的新方法，现在我们可以利用这种模拟来高效地进行实验或者分析理论，而这种模拟对于我们购买的技术起到了很大的推动作用。",
+              "ja": "いうスパコンが登場することによって新たにシミュレーションという方法が出てきたわけですねで今やこのシミュレーションを使って実験を効率よく行うとかあるいは理論を分析するというようなことでこのシミュレーションが大きな役割を私たちの買う技術の推進や"
+            }
+          },
+          {
+            "start": 1422.659,
+            "end": 1444.5,
+            "text": {
+              "en": "Or, it has become useful in areas such as engineering manufacturing, so this is a typical application field for supercomputers, such as highly efficient catalysts for power generation, or drug discovery.",
+              "zh": "或者，它已经在工程制造等领域发挥作用，因此这是超级计算机的典型应用领域，例如用于发电的高效催化剂或药物发现。",
+              "ja": "あるいはエンジニアリングものづくりと言ったようなところで役に立ってきてるわけですでこれが代表的なスパコンの応用分野になりますけど効率強い例えば発電の触媒とかですねあるいはこれ創薬ですね皆さんのその"
+            }
+          },
+          {
+            "start": 1442.64,
+            "end": 1464.24,
+            "text": {
+              "en": "Things like tailor-made medicines to suit a patient's medical condition, or things like manufacturing, and collision experiments, which I'll introduce later, are disaster prevention.",
+              "zh": "像根据病人的病情量身定制药物，或者后面介绍的制造、碰撞实验等都是防灾。",
+              "ja": "病状にあった薬をテーラーメイドそのカスタムカスタマイズした形で作り上げるとかあるいはものづくりとかですねそのの衝突の実験とかあとでご紹介しますように防災"
+            }
+          },
+          {
+            "start": 1458.32,
+            "end": 1480.559,
+            "text": {
+              "en": "In addition, we can analyze the negative effects of future global warming by simulating the current situation of the global environment, especially the current situation of ulcers, which has become a hot topic recently.",
+              "zh": "此外，我们还可以通过模拟全球环境现状，尤其是最近成为热门话题的溃疡现状，来分析未来全球变暖的负面影响。",
+              "ja": "ですねさらには地球環境特にその現在のその対比潰瘍の状況をシミュレーションして将来の温暖化の何て言うんですかねその悪影響を分析するとかあるいは最近話題になっております"
+            }
+          },
+          {
+            "start": 1478.88,
+            "end": 1502.36,
+            "text": {
+              "en": "Things like simulating the launch of various rockets, simulating engines, elucidating the conditions at the time the universe was created, elucidating the circumstances of the Big Bang, and reproducing things that can never be seen, and especially the mechanism of nuclear power.",
+              "zh": "比如模拟各种火箭的发射，模拟发动机，阐明宇宙诞生时的条件，阐明大爆炸的情况，再现那些永远看不到的东西，尤其是核动力的机制。",
+              "ja": "いろんなロケットの発射のシミュレーションとかですねエンジンのシミュレーションとかあるいは宇宙の宇宙が生まれた時の状況をビッグバンの状況を解明するとかこう絶対に見ることができないようなものを再現するとかですねあとはこれ原子力の仕組みまあ特に"
+            }
+          },
+          {
+            "start": 1503.2,
+            "end": 1525.44,
+            "text": {
+              "en": "By evaluating the internal structure of various nuclear power plants, we can also simulate the radioactivity situation. Or, as the cabinet minister recently said, simulations can be used to efficiently and effectively contain nuclear power.",
+              "zh": "通过评估各个核电站的内部结构，我们还可以模拟放射性情况。或者，正如内阁部长最近所说，模拟可以用来高效、有效地遏制核电。",
+              "ja": "いろいろな原子力の内部構造を評価することによってその放射能の状況などもこれでシミュレーションしたりですねあるいは最近のその閣僚発言なんかもシミュレーションを使って効率強いその封じ込めというんでしょうかねそれを実現"
+            }
+          },
+          {
+            "start": 1522.62,
+            "end": 1544.4,
+            "text": {
+              "en": "Such things can only be done with a supercomputer, so this is a supercomputer developed by Japan that was installed at the Computational Science Center in Kobe.",
+              "zh": "这种事情只有超级计算机才能完成，所以这是一台日本开发的超级计算机，安装在神户计算科学中心。",
+              "ja": "するようなことがスパコンがあって初めてできるわけですでこれは利権に神戸の利権の計算科学センター計算科学センターに設置された日本が開発したスパコン不惑になりますこれぜひあの神戸に行った時に"
+            }
+          },
+          {
+            "start": 1541.76,
+            "end": 1564.99,
+            "text": {
+              "en": "It's open to the public, so please take a look. It was jointly developed by Fujitsu and Concession, and it integrates 48 calculation units on a single chip.",
+              "zh": "它向公众开放，所以请看一下。它由富士通和Concession联合开发，在单个芯片上集成了48个计算单元。",
+              "ja": "ですね一般公開されてますのでぜひ見ていただければと思いますが富士通と利権が共同で開発したものになりますけどこれシングル1枚のチップ上に48個の計算ユニット計算装置を集積してでそのそれを一つの"
+            }
+          },
+          {
+            "start": 1561.32,
+            "end": 1583.52,
+            "text": {
+              "en": "The idea is to pack 158,0156,000 CPU processors into this unit and connect them via a network to perform one calculation all at once.",
+              "zh": "这个想法是将 158,0156,000 个 CPU 处理器封装到这个单元中，并通过网络将它们连接起来，一次性执行一次计算。",
+              "ja": "プロセッサーとの単位とした上で158,0156,000個ですかのCPUプロセッサーをこの中に詰め込んでさらにはこれらをネットワークでつないで一斉に一つの計算を実現しようというもの"
+            }
+          },
+          {
+            "start": 1580.58,
+            "end": 1604.159,
+            "text": {
+              "en": "Now, each processor is 2GHz, which means it can switch 2 billion times per second, and just like in Japan, it took 130 billion yen to develop it in about five years.",
+              "zh": "现在，每个处理器都是2GHz，这意味着每秒可以切换20亿次，就像在日本一样，大约五年的时间里就花费了1300亿日元来开发它。",
+              "ja": "になりますで1個1個のプロセッサーは2ghzということで1秒間に20億回のスイッチングができるようなものになっていますでちょうど日本の国の様子は1300億をかけてですねおよそまあえっと5年間で開発したという"
+            }
+          },
+          {
+            "start": 1601.22,
+            "end": 1618.82,
+            "text": {
+              "en": "By the way, it's 30 megawatts, and of course it's going up a little when you consider the wallet, so it costs about 3 billion yen a year, so it has to be used more effectively than that, especially recently.",
+              "zh": "顺便说一句，它是 30 兆瓦，当然，考虑到钱包，它还会上涨一点，所以每年大约要花费 30 亿日元，所以必须比这更有效地使用它，尤其是最近。",
+              "ja": "ところになりますでまぁ30メガワットということでこれちょっと財布を考えるともちろん上がってますから30億円ぐらい年間かかってるのでそれ以上の効果を持って使わないといけないということで特にその最近"
+            }
+          },
+          {
+            "start": 1619.24,
+            "end": 1640.34,
+            "text": {
+              "en": "This has been a big issue, but it's not just the simulation of droplets from the new coronavirus, but it's also drug discovery, manufacturing as I mentioned earlier, or a safe and secure society these days.",
+              "zh": "这是一个大问题，但这不仅仅是模拟新型冠状病毒的飞沫，而且还涉及我之前提到的药物发现、制造，或者当今安全可靠的社会。",
+              "ja": "非常に問題になっておりましたけど新型コロナウイルスの飛沫のシミュレーションとかもちろん飛沫のシミュレーションだけではないんですが創薬とか先ほど示して示しましたようなものづくりとかあるいは安全安心な社会最近ですか"
+            }
+          },
+          {
+            "start": 1640.82,
+            "end": 1663.58,
+            "text": {
+              "en": "It seems that they are also doing things like real-time simulations of torrential rain, so although the scale is a little smaller than this, Tohoku University also has a supercomputer, and we and NEC have been doing joint research on this for many years.",
+              "zh": "好像他们也在做实时模拟暴雨之类的事情，所以虽然规模比这个小一点，但是东北大学也有一台超级计算机，而且我们和NEC在这方面联合研究了很多年。",
+              "ja": "ゲリラ豪雨のリアルタイムシミュレーションといったようなことも行っているようですでこれよりは少し規模が小さくなるんですが東北大学にもスパコンがございましてこれは私たちとNECが長年共同研究をしておりまして以下にそのデータ処理を効率よく行うかと"
+            }
+          },
+          {
+            "start": 1662.299,
+            "end": 1685.52,
+            "text": {
+              "en": "This is the SX Aurora Wing, which NEC has commercialized by expressing this mechanism on a chip.It was released for the first time in 2018, and the basics are, of course, that the calculation unit is concentrated inside the wing, just like the Fugaku mentioned earlier.",
+              "zh": "这就是SX Aurora Wing，NEC通过在芯片上表达这种机制将其商业化。它于2018年首次发布，其基本原理当然是计算单元集中在机翼内部，就像前面提到的Fugaku一样。",
+              "ja": "いうような仕組みをチップ上に表現してNECが製品化したSXオーロラ翼というものです2018年に初めて出したものなんですけど基本はもちろん先ほどの富岳と同じようにですね中に計算ユニット集約するんですけどそれと"
+            }
+          },
+          {
+            "start": 1683.6,
+            "end": 1706.9,
+            "text": {
+              "en": "At the same time, we have been working together on the development of a memory system that will efficiently supply that data.The new system will start operating in August, and it is now open to the public.",
+              "zh": "与此同时，我们一直在共同开发一种能够有效提供这些数据的存储系统。新系统将于八月开始运行，现已向公众开放。",
+              "ja": "同時にそのデータを効率よく供給するのメモリーシステムの開発などにも私たち一緒に取り組んでまいりましたで8月からですね新しいシステムが動き始めますしえっとですね今一般公開してると"
+            }
+          },
+          {
+            "start": 1703.22,
+            "end": 1726.559,
+            "text": {
+              "en": "If you go to the Cyber ​​Science Center, which is in the building in front of the subway, you can see this supercomputer, so I thought it would be a good idea to stop by and take a look before getting on the subway on your way home.",
+              "zh": "如果你去网络科学中心，就在地铁前面的大楼里，你可以看到这台超级计算机，所以我想在回家的路上乘地铁之前顺便去看看是个好主意。",
+              "ja": "思いますのでちょっとその地下鉄の前の建物になりますがサイバーサイエンスセンターというところに行きますとこのスパコンを見ることができますのでぜひあの帰りに地下鉄に乗る前にですねちょこっと寄ってご覧いただければというふうに思っており"
+            }
+          },
+          {
+            "start": 1722.84,
+            "end": 1746.0,
+            "text": {
+              "en": "Of course, this system is not exclusive to Tohoku University, but is used by researchers and university students all over Japan for their own research via the network.",
+              "zh": "当然，该系统并非东北大学独有，日本各地的研究人员和大学生都通过网络使用该系统进行自己的研究。",
+              "ja": "ますでこのシステムもちろん東北大学だけのものではなくてですねネットワークを介して日本中の研究者や大学の学生さんなどがそれぞれの研究のためにお使いになってるというところになりますでその成果としては"
+            }
+          },
+          {
+            "start": 1741.76,
+            "end": 1765.34,
+            "text": {
+              "en": "We have been working with the MRJ Mitsubishi Aircraft for many years on speeding up the simulation of the airplane, but unfortunately it is about to stop flying, which is a great shame.However, there are some things we worked on together until the final commercialization.",
+              "zh": "我们多年来一直与 MRJ 三菱飞机公司合作，致力于加快飞机的模拟速度，但不幸的是它即将停止飞行，这是一个巨大的耻辱。但是，有一些事情我们一起努力，直到最终商业化。",
+              "ja": "私たち長年ですねMRJ三菱航空機と飛行機のシミュレーションの高速化に取り組んできたんですが残念ながらもうちょっとのところで飛ばなくなってしまってこれ非常に残念だなとただこの最終的に製品化にまで一緒に取り組んできたものがございますあと今の時期ですと熱中症の解析を"
+            }
+          },
+          {
+            "start": 1762.26,
+            "end": 1785.84,
+            "text": {
+              "en": "The Japan Weather Association operates a website and provides information to people under various circumstances, including children, adults, the elderly, and people like me.",
+              "zh": "日本气象协会运营一个网站，为各种情况下的人们提供信息，包括儿童、成人、老年人和像我这样的人。",
+              "ja": "ですね気象協会のウェブサイトを経営してその情報を提供しているということがございますでいろんなその環境の下であるいはお子さんとか成人とか歳をされた方とか私みたいなところですねそう人がいろいろ条件の中で"
+            }
+          },
+          {
+            "start": 1783.02,
+            "end": 1805.88,
+            "text": {
+              "en": "Since the things that feel heat are different, we have a system that issues heatstroke alerts based on those things.The other thing that we have been researching for many years is the vertical time recording method, which is used for your hard disk drives, etc.",
+              "zh": "由于感觉热的东西不同，我们有一个根据这些东西发出中暑警报的系统。我们多年来研究的另一件事是垂直时间记录方法，用于您的硬盘驱动器等。",
+              "ja": "暑さを感じるものが違いますのでそういうものに即してあの熱中症のアラートを出すというようなシステムになってございますあとはですね特大の中が長年研究してきたものとしては垂直時期記録方式これは皆さんのハードディスクドライブなどで"
+            }
+          },
+          {
+            "start": 1801.919,
+            "end": 1822.62,
+            "text": {
+              "en": "This vertical period mechanism has already been put into practical use, and we are working together with them on using our supercomputer to speed up the simulation, which is leading to its practical application.",
+              "zh": "这个垂直周期机构已经投入实际应用，我们正在和他们合作，利用我们的超级计算机来加速模拟，从而走向实际应用。",
+              "ja": "もう今や実用化されておりますけどこの垂直時期の仕組みをですね私たちのスパコンを使ってさらにはそれをシミュレーションを高速化するような取り組みを一緒にさせていただきまして実用化につながっているところですあとは"
+            }
+          },
+          {
+            "start": 1818.72,
+            "end": 1841.58,
+            "text": {
+              "en": "Things like power generation turbines, high-performance tires, and fluid analysis are used to visualize flows, but we can also make things that cannot be seen visible or create things that cannot be made yet.",
+              "zh": "发电涡轮机、高性能轮胎和流体分析等用于可视化流动，但我们也可以使看不见的东西变得可见或创造尚无法制造的东西。",
+              "ja": "発電タービンとかですねあるいは高性能のタイヤとかあとは流体解析ですね流れを可視化しておりますけどそのような見えないものを見えるとかあるいはまだ作れないものを作るというようなところで"
+            }
+          },
+          {
+            "start": 1838.64,
+            "end": 1861.5,
+            "text": {
+              "en": "One area in which our supercomputers are useful is the development of a real-time tsunami flood damage prediction system.This was in November 2012, as you all know, after the Great East Japan Earthquake, Tohoku University.",
+              "zh": "我们的超级计算机可以发挥作用的一个领域是实时海啸洪水灾害预测系统的开发。众所周知，这是在 2012 年 11 月，东日本大地震之后，东北大学。",
+              "ja": "私たちのスパコンが役に立っているところですで今力を入れているものとしてはリアルタイム津波浸水被害予測システムの開発というものがございますこれは皆さんご存知の2012年11年ですか東日本大震災が起きてですねまあ東北大学"
+            }
+          },
+          {
+            "start": 1858.86,
+            "end": 1882.5,
+            "text": {
+              "en": "The Tohoku area, including the tsunami, suffered extremely severe damage.In particular, many people died due to the tsunami, and we, as a university in the affected area, wanted to advance that science and technology as an initiative that would be useful to society.",
+              "zh": "包括海啸在内的东北地区遭受了极其严重的破坏。特别是，许多人因海啸而丧生，作为受灾地区的大学，我们希望将科学技术作为一项对社会有用的举措来推进。",
+              "ja": "を含むその東北エリアに非常に甚大な被害が起きたということがございました特に津波によってですね多くの方が亡くなったということで私たち被災地の大学としてはですね何かその科学技術を社会に役立つ取り組みとして進めていきたいという思いがございました"
+            }
+          },
+          {
+            "start": 1878.0,
+            "end": 1900.679,
+            "text": {
+              "en": "Under these circumstances, we decided to use supercomputers to perform a series of processes in real time, from the occurrence of the tsunami earthquake to the analysis of the tsunami flooding situation.",
+              "zh": "在这种情况下，我们决定使用超级计算机来实时执行一系列过程，从海啸地震的发生到海啸洪水情况的分析。",
+              "ja": "でそのような中で私たちはその津波の地震の発生から津波の浸水の状況の分析まで一連の処理をですねスパコンを使ってリアルタイムに出現していこうという"
+            }
+          },
+          {
+            "start": 1895.159,
+            "end": 1914.41,
+            "text": {
+              "en": "We have been working on this project for the past eight years, and since two years ago it has been incorporated into the Cabinet Office's disaster prevention system.When a major earthquake occurs, our supercomputer is activated to protect everyone.",
+              "zh": "我们在过去的八年里一直致力于这个项目，并从两年前开始将其纳入内阁府的防灾系统。当发生大地震时，我们的超级计算机就会启动以保护所有人。",
+              "ja": "取り組みをこの8年間行って2年前からはですね内閣府政府の防災システムの中に取り入れていただいて何か大きな地震が起きると私たちのスパコンが動いて皆さんの"
+            }
+          },
+          {
+            "start": 1914.659,
+            "end": 1937.039,
+            "text": {
+              "en": "This is an attempt to provide the Cabinet Office, the government's disaster prevention agency, with information that can issue warnings to people in areas likely to be affected by a tsunami.",
+              "zh": "这是为了向政府的防灾机构内阁府提供信息，以便向可能受到海啸影响的地区的人们发出警告。",
+              "ja": "津波が関係しそうなエリアにいらっしゃる皆さんに対して警報を出せるような情報を内閣府という政府の防災機関に防災対策室に提供するというような試みですでこれは"
+            }
+          },
+          {
+            "start": 1933.76,
+            "end": 1957.5,
+            "text": {
+              "en": "When we talk about the Great East Japan Earthquake, when an earthquake occurs, the ground shifts, and Japan has a GPS positioning system with approximately 1,300 points, and a system has been established to collect ground displacement in real time.",
+              "zh": "说到东日本大地震，地震发生时地面会发生位移，日本拥有约1300个点的GPS定位系统，并建立了实时收集地面位移的系统。",
+              "ja": "東日本大震災のところになりますけど地震が起きますとこの地盤が変動するんですねで日本にはですねおよそ1300点のGPSの測位系がありましてそこでそのリアルタイムに地盤のズレというものを集めてくるというシステムが出来上がってますで"
+            }
+          },
+          {
+            "start": 1954.62,
+            "end": 1978.2,
+            "text": {
+              "en": "Using this, we developed a system that uses that computer to process the dance in about seven minutes to elucidate the mechanism of this epicenter, and then automatically dumps that data into the Cyber ​​Science Center's trash can.",
+              "zh": "利用这一点，我们开发了一个系统，使用该计算机在大约七分钟内处理舞蹈，以阐明该震中的机制，然后自动将这些数据转储到网络科学中心的垃圾桶中。",
+              "ja": "これを使って私たちはそのコンピューターを使ってまずそのダンスをこの震源の仕組みを解明するというのをだいたい7分以内ぐらいで処理するようなシステムを開発しましたでそのデータをですね自動的にサイバーサイエンスセンターのゴミ箱に流し込んでですねその"
+            }
+          },
+          {
+            "start": 1976.1,
+            "end": 1999.2,
+            "text": {
+              "en": "We have developed a high-speed simulation technology that calculates the run-up of a tsunami in real time.As a result, we can calculate the flooding situation for 6 hours with a 10m mesh resolution system within 10 minutes.",
+              "zh": "我们开发了一种实时计算海啸爆发的高速模拟技术。因此，我们可以在10分钟内使用10m网格分辨率系统计算出6小时内的洪水情况。",
+              "ja": "津波の遡上をですねリアルタイムに計算するというシミュレーションの高速化技術というものを開発しましたでその結果ですが10分以内で10mメッシュのリゾリューションマの制度ですね細かさで6時間分の浸水状況を"
+            }
+          },
+          {
+            "start": 1997.279,
+            "end": 2020.74,
+            "text": {
+              "en": "If we provide the results in easy-to-understand formats such as map information and animations to places like the Cabinet Office's Disaster Management Office, it will take about 4 minutes, and a total of 20 minutes, considering the real-time nature.",
+              "zh": "如果将结果以地图信息、动画等易于理解的形式提供给内阁府防灾厅等，则需要大约4分钟，考虑到实时性，总共需要20分钟。",
+              "ja": "求めるということに成功しておりますでその結果というのはこのような地図情報とかアニメーションといったような分かりやすい形で内閣府の防災対策室のようなところに提供していくとこれが確かにだいたい4分で全体で20分リアルタイム性を考えると皆さんじゃあ"
+            }
+          },
+          {
+            "start": 2019.0,
+            "end": 2042.399,
+            "text": {
+              "en": "You might want them to come out right away, but I think there's still room for improvement, but in the 2026 Great East Japan Earthquake, it took about 26 minutes for a big tsunami to arrive, so I think by providing this kind of information, we can evacuate faster.",
+              "zh": "你可能希望他们马上出来，但我认为还有改进的空间，但在2026年东日本大地震中，大海啸大约需要26分钟才能到达，所以我认为通过提供此类信息，我们可以更快地疏散。",
+              "ja": "すぐに出てほしいなと思うかもしれませんけどまああのまだまだ改良の余地はあるとは思うんですがただ大きな津波が来るまで2026東日本大震災の時には26分ぐらいあったんですねますのでこのような情報を提供することによってより早い避難が行えるんではないかなというふうに"
+            }
+          },
+          {
+            "start": 2039.64,
+            "end": 2062.8,
+            "text": {
+              "en": "I'm thinking that it might be possible to issue a warning before a large tsunami hits.Currently, the Cabinet Office has created a disaster prevention system that monitors earthquakes like this 24 hours a day, 365 days a year, and activates simulations when necessary.",
+              "zh": "我认为也许可以在大海啸袭来之前发出警报。目前，内阁府已建立了一个防灾系统，可以全年 365 天、每天 24 小时监视此类地震，并在必要时启动模拟。",
+              "ja": "大きな津波が来る前にですね警報が出せるんじゃないかなというふうに思っているところですで今は内閣府の防災システムとして24時間365日このような地震のモニタリングをしながらシミュレーションが必要な時には起動するというようなシステムに出来上がっており"
+            }
+          },
+          {
+            "start": 2058.3,
+            "end": 2079.56,
+            "text": {
+              "en": "Ultimately, as I will introduce later, we would like to send this kind of information to everyone's smartphones and mobile devices, such as what will happen in the future with the flooding in your current location, or what evacuation routes should be taken.",
+              "zh": "最终，正如我稍后将介绍的，我们希望将此类信息发送到每个人的智能手机和移动设备上，例如您当前所在的位置将来会发生洪水，或者应该采取什么疏散路线。",
+              "ja": "ますで最終的には後でご紹介しますけど皆さんのスマホとか携帯デバイスにこういうような情報をお送りして今いる場所の浸水がどの今後どうなっていくかとかですねあるいは避難経路をどうすればいいかとかそのような形に持っていきたいというふうに思っております"
+            }
+          },
+          {
+            "start": 2077.379,
+            "end": 2100.96,
+            "text": {
+              "en": "How much time is coming? So, this is a simulation of what kind of flooding situation would occur if a Nankai Trough earthquake were to occur in Kochi City, where there is a lot of concern right now about that Nankai Trough earthquake.Before the tsunami hits, the area around the river will sink like this.",
+              "zh": "几点到了？所以，这是一个模拟，如果南海海槽地震发生在高知市，将会出现什么样的洪水情况，高知市现在对南海海槽地震有很多关注。在海啸袭来之前，河流周围的地区会像这样下沉。",
+              "ja": "どんな時間がもうちょっとですねそれでこれが高知市今あの南海トラフ地震というのが非常に心配されているところですが南海トラフ地震が起きた時にどのような浸水状況になるかというものをシミュレーションしたものになります津波は来る前にですね川の周りがこう沈下"
+            }
+          },
+          {
+            "start": 2100.0,
+            "end": 2124.0,
+            "text": {
+              "en": "I have also come to know that the application process will begin after the flood.This shows the flooding situation at Onagawa.Well, this is a calculation made under a similar situation in order to evaluate the results of the simulation.Well, we know from this picture that the water rose about 16 meters.",
+              "zh": "我还了解到，洪水过后会开始应用程序。这显示了女川的洪水情况。嗯，这是在类似情况下进行的计算，以便评估模拟结果。嗯，从这张照片我们知道水位上涨了大约16米。",
+              "ja": "して申請が始まるというようなことも分かってきましたこれは女川の時の浸水の状況を示したものになりますけどまあこれはシミュレーションの結果を評価するために同じような状況で計算をしたものになりますまあ16mぐらい水が上がってしまったというようなところがこの絵からもわかっているところですで"
+            }
+          },
+          {
+            "start": 2122.44,
+            "end": 2146.32,
+            "text": {
+              "en": "Sorry to take a little more time, computer quantum computer. Hey everyone, I'm sorry to have taken up your time, but the technology of supercomputers like this is expected to continue to evolve, but on the other hand, I mentioned earlier the limits of miniaturization and power consumption.",
+              "zh": "抱歉，多花点时间，计算机量子计算机。大家好，很抱歉占用了大家的时间，但是像这样的超级计算机的技术预计会继续发展，但另一方面，我之前提到了小型化和功耗的限制。",
+              "ja": "もう少しすいませんちょっと時間をいただいてコンピューター量子コンですねちょっとあの皆さんちょっと時間が押してしまって申し訳ないんですがこのようなそのスパコンの技術というのはまあどんどん進化していくところが期待されるわけですがその一方で微細化の限界とか消費電力先ほど申し上げ"
+            }
+          },
+          {
+            "start": 2143.26,
+            "end": 2166.96,
+            "text": {
+              "en": "As I mentioned earlier, if you use a single line of power, such as several megawatts, of course the larger the power consumption, the more heat will be generated.I think that even if you put your computer on your lap, it will get hot.Nowadays, the heat density of the chip is actually hotter than a hot plate, so the problem of heat generation comes up.If that happens, of course, there will be a new problem.",
+              "zh": "前面我提到过，如果你使用单线电源，比如几兆瓦，当然功耗越大，产生的热量就越多。我想，即使你把电脑放在腿上，它也会变热。现在芯片的热密度实际上比电热板还要热，所以发热的问题就出现了。如果出现这种情况，当然就会有新的问题。",
+              "ja": "ましたように何メガワットというような消費電力を一列使うとかですねで当然その消費電力が大きくなると熱がたくさん出てきます皆さんパソコンを膝に置いても熱くなると思いますが今やチップの熱密度というのは本当にホットプレートよりも熱いんですねですがこれ発熱の問題というのが出てきますそうすると当然新しい"
+            }
+          },
+          {
+            "start": 2164.8,
+            "end": 2187.66,
+            "text": {
+              "en": "Quantum computing is currently attracting attention as there is a demand for a calculation mechanism, so what is the difference between a quantum computer and a conventional computer?As you know, as I just talked about, a quantum computer is running on 01.",
+              "zh": "量子计算目前很受关注，因为有计算机制的需求，那么量子计算机和传统计算机有什么区别呢？大家知道，我刚才讲了，量子计算机是跑在01上的。",
+              "ja": "計算の仕組みというものが求められてきて今注目されているのが量子コンピューティングですで量子コンピューター従来のコンピューターと何が違うかということになりますけどまあご存知のように今話しましたように01で動かしているとで量子コンピューターというのは"
+            }
+          },
+          {
+            "start": 2184.839,
+            "end": 2207.099,
+            "text": {
+              "en": "It's very strange at the atomic level.It's strange to me, but it's a strange behavior.The zero and the spin are pointing upwards and downwards, and a situation arises where these two states are convolved.",
+              "zh": "这在原子层面上非常奇怪。这对我来说很奇怪，但这是一种奇怪的行为。零和自旋指向向上和向下，并且出现了这两种状态卷积的情况。",
+              "ja": "原子レベルでの非常に奇妙私にとってみれば奇妙なんですけど奇妙な振る舞いですねそのゼロとスピンがこう上向いたり下向いたりというなこの2つの状態が畳み込んでいるような状況が生じますでその2つの状態が畳み込まれているなものを"
+            }
+          },
+          {
+            "start": 2204.579,
+            "end": 2227.74,
+            "text": {
+              "en": "Let's use it for calculations.In short, let's use a situation where 01 can handle things that were previously 0 or 1 at the same time.The result will be either 0 or 1 when observed, so you can freely move it like this until you observe it.",
+              "zh": "我们用它来计算吧。总之，我们用一个情况，01可以同时处理以前是0或1的东西。观察到的结果要么是0，要么是1，所以你可以像这样自由移动它，直到你观察到它为止。",
+              "ja": "計算に使いましょうと要するに今までは0か1だったというものを01が同時に扱えるような状況を使って計算をさせましょうとで結果というのは観測するとどれか0か1かに収まるんですねですので観測するまでは自由にこう動かしといて"
+            }
+          },
+          {
+            "start": 2224.56,
+            "end": 2247.599,
+            "text": {
+              "en": "A new way of thinking about calculations that can be successfully applied to results before observation is required.A typical example of quantum computing's specialty is combinatorial high-tech problems.",
+              "zh": "需要一种新的计算思维方式，可以在观察之前成功应用于结果。量子计算专业的一个典型例子是组合高科技问题。",
+              "ja": "観測するまでの間にうまく結果に落とし込んでいくというような新しい考え方での計算というものをが必要になってくるわけですで量子コンピューター得意分野っていうのは代表的なものとしては組み合わせハイテク化問題というものがありますこれはある目的を最大化するためにどのような"
+            }
+          },
+          {
+            "start": 2245.8,
+            "end": 2268.66,
+            "text": {
+              "en": "For example, what route should I take to get around the many Japanese cities in the shortest time? Or how to take detours to avoid traffic jams? Or how expensive something with a fixed capacity should be.",
+              "zh": "例如，我应该走什么路线才能在最短的时间内绕过日本的众多城市？或者如何少走弯路避免堵车？或者说具有固定容量的东西应该有多贵。",
+              "ja": "組み合わせをすればいいかというような問題になります例えば日本人のたくさんの街を最短時間で回るにはどの経路を通ればいいかとかですねあるいは渋滞が生じないようにどのようにこう道を迂回していけばいいかとかですねあるいは容量が決まっているものにいかにこう高価"
+            }
+          },
+          {
+            "start": 2267.28,
+            "end": 2290.5,
+            "text": {
+              "en": "However, since the sizes of each item are different, it is difficult to know which combinations will be most effective or which will result in regret.If you think about such things, for example, in the case of a conventional computer, you might think, ``What if I combine this, this, and this,'' or what would happen if I combined this, this, and this.",
+              "zh": "然而，由于每个项目的大小不同，很难知道哪些组合最有效，或者哪些组合会导致遗憾。如果你考虑这些事情，例如，在传统计算机的情况下，你可能会想，“如果我将这个、这个和这个组合起来会怎样”，或者如果我将这个、这个和这个组合起来会发生什么。",
+              "ja": "なものを詰め込むかとただしそれぞれのサイズが違っているのでどれを組み合わせれば最も効果になるのは後悔になるかは分からないという問題ですでそういうものを考えていくと例えば従来のコンピュータですとこれとこれとこれを組み合わせたらどうだろうとかこれとこれとこれを組み合わせたらどうなるだろうといういわゆる"
+            }
+          },
+          {
+            "start": 2288.579,
+            "end": 2312.28,
+            "text": {
+              "en": "This is a thorough investigation, and as the number of targets increases, things are fine at first, but as the number of combinations increases exponentially, it eventually becomes unmanageable.This requires astronomical calculations, and of course, modern supercomputers are also capable of incredible calculations.",
+              "zh": "这是一项彻底的调查，随着目标数量的增加，一开始一切都很好，但随着组合数量呈指数级增加，最终变得难以管理。这需要天文数字的计算，当然，现代超级计算机也能够进行令人难以置信的计算。",
+              "ja": "しらみつぶしにこう調べていくんですねそうすると対象とするものがどんどん増えていくとだんだんこう最初のうちはいいんですけどだんだんこの組み合わせの数が爆発的に増えてなくて最終的に扱えない規模になってしまいますもう天文学的な計算を必要としてくるわけでもちろん今のスパコンもすごい計算"
+            }
+          },
+          {
+            "start": 2310.119,
+            "end": 2331.839,
+            "text": {
+              "en": "It's an ability, but when you need to calculate a number that you can't keep up with, if you use a quantum computer in such a situation, 01 is convolved like this, so if you simply prepare as many digits as this number.",
+              "zh": "这是一种能力，但是当你需要计算一个你跟不上的数字时，如果你在这种情况下使用量子计算机，01就是这样卷积的，所以如果你简单地准备和这个数字一样多的数字。",
+              "ja": "能力なんですけどそれでは追いつかないような数の計算が必要になってくるとそのような状況で量子コンピューターを使うと01がこう畳み込んでありますので単純にこのものの数だけの桁を用意すると"
+            }
+          },
+          {
+            "start": 2328.619,
+            "end": 2351.46,
+            "text": {
+              "en": "The ideal idea would be to be able to instantly calculate this many combinations of numbers, but what we are aiming for is to be able to perform calculations on so-called N-term targets all at once in parallel.",
+              "zh": "理想的想法是能够立即计算这么多数字的组合，但我们的目标是能够同时并行地对所谓的 N 项目标执行计算。",
+              "ja": "これだけの数をこれだけの組み合わせを瞬時に求められるというのが理想的な考え方にはなるんですけど狙っているところですですのでいわゆるN項の対象に対して並列に一斉に計算が行えるというのが"
+            }
+          },
+          {
+            "start": 2349.24,
+            "end": 2371.859,
+            "text": {
+              "en": "This is the key point of quantum computers, and there are some that have been commercialized, and others that are still in the research stage, but we are currently working on a technology called quantum annealing that is currently being commercialized.",
+              "zh": "这是量子计算机的关键点，有的已经商业化了，有的还在研究阶段，但是我们目前正在研究一种叫做量子量子退火的技术，目前正在商业化。",
+              "ja": "量子コンピュータのポイントになるわけですねでこれをいくつか商用化されているものもありますしまだ研究段階のものにあるものもあるんですが我々はですね量子アニーリングという今商用化が進められている"
+            }
+          },
+          {
+            "start": 2368.92,
+            "end": 2391.96,
+            "text": {
+              "en": "We are working on research and development of new calculation technology using quantum computers.As I said earlier, the problem is to search for various combinations of patterns in parallel and use quantum effects to find the optimal one.What can be done using this is a variety of methods.",
+              "zh": "我们正在致力于研究和开发使用量子计算机的新计算技术。正如我之前所说，问题是并行搜索各种模式组合，并利用量子效应找到最佳组合。使用这一点可以做的事情有很多种。",
+              "ja": "量子コンピューターを使って新たな計算技術の研究開発に取り組んでおりますで先ほども言いましたようにいろんなパターンの組み合わせを並列に探してどっか最適なものを量子効果で求めていくという問題ですこれを使って何ができるかというと様々なその"
+            }
+          },
+          {
+            "start": 2388.66,
+            "end": 2409.02,
+            "text": {
+              "en": "Optimization Problems Here, we are dealing with problems such as finding evacuation routes for tsunamis, and materials.This is a virtualization technology used to develop soft materials such as rubber, and how to understand the materials and their characteristics.",
+              "zh": "优化问题在这里，我们正在处理诸如寻找海啸疏散路线和材料等问题。这是一种虚拟化技术，用于开发橡胶等软材料，以及如何了解材料及其特性。",
+              "ja": "最適化問題ここでは津波の避難経路を求めようという問題とかですねあるいは材料これはゴムなどのような柔らかい材料の開発の仮想化技術になるんですけどその材料と特徴の"
+            }
+          },
+          {
+            "start": 2409.66,
+            "end": 2431.14,
+            "text": {
+              "en": "Let's examine the combinations and find the most optimal one among them.Alternatively, this is a simulation of a power generation turbine, and we can use this to classify the contents of an actual turbine using the parent anilines mentioned earlier.",
+              "zh": "让我们检查这些组合并找到其中最优化的一个。或者，这是对发电涡轮机的模拟，我们可以使用它来使用前面提到的母体苯胺对实际涡轮机的内容进行分类。",
+              "ja": "組み合わせをですね調べて最も最適なものをその中から見つけてきましょうとかあるいはこれ発電タービンのシミュレーションになるんですけどこれを使ってですね実際のタービンの中身をですね先ほどの両親アニリンを使って分類して"
+            }
+          },
+          {
+            "start": 2429.76,
+            "end": 2452.26,
+            "text": {
+              "en": "We're working on things like estimating failure states, so we'll display an evacuation route on a mobile device like this, use aniline, and use that quantum ID to create a route that will avoid traffic jams as much as possible.",
+              "zh": "我们正在研究诸如估计故障状态之类的事情，因此我们将在这样的移动设备上显示疏散路线，使用苯胺，并使用该量子 ID 创建一条尽可能避免交通拥堵的路线。",
+              "ja": "故障状態を推計するとかいうような取り組みを進めていますでですので携帯端末にですねこのように避難経路を出してこれアニリンを使っその量子IDを使ってなるべく渋滞しないような経路に"
+            }
+          },
+          {
+            "start": 2447.78,
+            "end": 2471.599,
+            "text": {
+              "en": "When you select a route, the GPS will tell you where you are, so you can find a route from there to the nearest evacuation center without colliding with other people.We are currently creating an application that will create a combination problem and provide guidance to your mobile device.Also.",
+              "zh": "当您选择路线时，GPS会告诉您您所在的位置，这样您就可以找到从那里到最近的疏散中心的路线，而不会与其他人发生碰撞。我们目前正在创建一个应用程序，该应用程序将创建组合问题并为您的移动设备提供指导。",
+              "ja": "経路を選ぶと皆さん今いる地点がGPSで分かりますのでそこから一番近い避難所まで逃げるのになるべく人とぶつからないような経路をですねこう組み合わせ問題化して導きでそれを携帯端末に提供していこうというようなアプリケーションを今作っているところですまた"
+            }
+          },
+          {
+            "start": 2471.88,
+            "end": 2494.92,
+            "text": {
+              "en": "There are a lot of evacuation shelters.After this flood, what route does the evacuation team take after people flee to the evacuation center?In what order can they visit the evacuation shelters in order to rescue more people more efficiently?",
+              "zh": "避难场所很多。这次洪水过后，人们逃到疏散中心后，疏散队伍会走什么路线？按照什么顺序前往避难场所，才能更高效地救援更多的人？",
+              "ja": "避難避難所がたくさんこの浸水後にですね人がこう避難所に逃げた後にどのような経路で通る避難避難チームがですねどのような順番でこう避難所を訪問するとたくさんの人をより効率よく助け出すことができるかというような"
+            }
+          },
+          {
+            "start": 2492.24,
+            "end": 2514.48,
+            "text": {
+              "en": "I'm working on it. It took a little longer than usual, so the dark yellow color is what you'd expect if you try to escape by taking the shortest route. This is a dumpling after all.",
+              "zh": "我正在努力。花费的时间比平常要长一些，所以如果你试图走最短的路线逃跑，那么深黄色就是你所期望的。这毕竟是饺子啊。",
+              "ja": "取り組みを行っているところですちょっとこれ時間も伸びちゃったのであれこれかでこれあのえっと濃い黄色の色がですね最短経路を逃げようとした場合のパターンでこれやっぱり団子状態"
+            }
+          },
+          {
+            "start": 2512.02,
+            "end": 2535.06,
+            "text": {
+              "en": "So, this is the case where the white one uses the brother meeting to find a shellfish that has as wide an escape route as possible and runs away.If you map this to Kochi City earlier, you will see a pattern in which many people escape while avoiding the water.It is a simulation level, but in this form.",
+              "zh": "所以，这就是白的利用兄弟会寻找一种逃生路线尽可能宽的贝类然后逃跑的情况。如果你早点把这个映射到高知市，你会看到一种很多人一边躲避水一边逃走的模式。这是一个模拟关卡，但是是这种形式。",
+              "ja": "になるんですねでこれ白い方が兄者ミーティングを使ってなるべく逃げ道を広く取るような貝が求まって逃げた場合ですでこれを先ほどの高知市のマッピングすると多くの人がその水を避けながら逃げるというようなパターンにシミュレーションレベルですけどこのような形で"
+            }
+          },
+          {
+            "start": 2533.8,
+            "end": 2555.54,
+            "text": {
+              "en": "The quantum computer I mentioned earlier was made by a Canadian manufacturer called DM, and recently we have been working with NEC to develop a domestically produced quantum annealing quantum computer.",
+              "zh": "前面我提到的量子计算机是加拿大一家叫DM的厂商做的，最近我们一直在和NEC合作开发国产的量子量子退火量子计算机。",
+              "ja": "求まってきて量子コンピューティングの一つの応用としていいんではないかなというふうに思ってますで先ほどの量子コンピューターはカナダのDM社というメーカーが作ったものですけど最近私たちはNECと一緒にですね国産の量子アニーリング量子コンピューターの"
+            }
+          },
+          {
+            "start": 2553.18,
+            "end": 2574.66,
+            "text": {
+              "en": "I'm still in the early stages of research and development, but I would like to use domestically produced annealing technology to help solve many social ladders.In closing, I'd like to say...",
+              "zh": "我还处于研发初期，但我想用国产的量子退火技术来帮助解决很多社会阶梯问题。最后，我想说……",
+              "ja": "研究開発に取り組んでおりましてまだよちよち歩きなんですけどこれからこのような国産のアニーリング技術というものを使って多くの社会階段の開発に解決に取り組んでいきたいというふうに思っております最後になりますけどまあ"
+            }
+          },
+          {
+            "start": 2573.4,
+            "end": 2595.48,
+            "text": {
+              "en": "There are many applications for supercomputers, but data processing will be the key to going on to university or furthering your research, so I would like to encourage many young people to become specialists in such data processing.",
+              "zh": "超级计算机的应用有很多，但数据处理将是进入大学或进一步研究的关键，所以我想鼓励很多年轻人成为数据处理方面的专家。",
+              "ja": "スパコンいろんな応用がありますけど皆さんこれから大学に進まれるあるいは研究をさらに進めるという上でデータ処理というものがキーとなってきますですのでぜひですね多くの若い皆さんにこのようなそのデータ処理のスペシャリストとして"
+            }
+          },
+          {
+            "start": 2592.599,
+            "end": 2614.68,
+            "text": {
+              "en": "I hope that you will enter a field that will solve many social issues.This is a data-driven society that the Japanese government is promoting called Society 5.0, and data analysis is important.",
+              "zh": "我希望你进入一个能够解决很多社会问题的领域。这是日本政府正在推动的一个数据驱动的社会，称为社会5.0，数据分析很重要。",
+              "ja": "多くの社会課題を解決していただくような分野に入っていただければなというふうに思ってますこれは我が国日本が政府が進めているソサエティ5.0というそのデータ駆動型の社会のあり方というものを示したものになってますけどデータ分析が"
+            }
+          },
+          {
+            "start": 2611.92,
+            "end": 2635.2,
+            "text": {
+              "en": "There aren't enough people who can do this.The development of these kinds of human resources has become a very social issue, so I hope that many people will enter this field and work together with us to advance research.I'm sorry that it took a little longer.",
+              "zh": "能做到这一点的人还不够多。这类人力资源的开发已经成为一个非常社会的问题，所以我希望有很多人进入这个领域，和我们一起共同推进研究。很抱歉，花了更长的时间。",
+              "ja": "できる人が足りないとかですねこういう人材の育成というものが非常に社会的な課題となっておりますですので多くの人たちがこのような分野に入ってきて新しいぜひ一緒に研究を進めていただきたいなというふうに思うところですちょっと時間もオーバーして申し訳ございませんでしたが"
+            }
+          },
+          {
+            "start": 2632.579,
+            "end": 2656.11,
+            "text": {
+              "en": "We will be exhibiting at the open campus, so there will be a corner where you can touch quantum computers, so if you have time, please stop by on the 5th floor of the next building, get off the elevator on the left, and the laboratory is in the back on the left. Thank you very much. Thank you for your attention for a long time.",
+              "zh": "我们是在开放的校园里展览，所以会有一个可以触摸量子计算机的角落，所以如果有时间的话，请到隔壁楼的5楼，下电梯左边，实验室就在左边后面。非常感谢。感谢您长期以来的关注。",
+              "ja": "オープンキャンパスで私たち展示もしてますので量子コンピューターを触れるコーナーもありますので時間がありましたら隣のビルの5階の左がエレベーター降りて左側の奥に研究室がありますのでぜひお立ち寄りくださいどうもありがとうございました長い間ご清聴ありがとうございまし"
+            }
+          },
+          {
+            "start": 2654.28,
+            "end": 2659.159,
+            "text": {
+              "en": "Ta",
+              "zh": "塔",
+              "ja": "た"
+            }
+          }
+        ],
+        "reviewedBlocks": [
+          {
+            "start": 10.32,
+            "end": 33.719,
+            "text": {
+              "en": "Thank you very much for introducing me. My name is Kobayashi from Tohoku University. I'll be speaking for about 30 minutes about the so-called supercomputer that we're working on.Also, as you may have heard recently, quantum computers are a new information processing technology that has been attracting attention.",
+              "zh": "非常感谢你介绍我。我叫小林，来自东北大学。我将用大约 30 分钟的时间谈论我们正在研究的所谓超级计算机。另外，正如您最近可能听说的那样，量子计算机是一种备受关注的新型信息处理技术。",
+              "ja": "ご紹介ありがとうございましたあの東北大学の小林と申しますこれから30分ほどですね私たちが取り組んでおりますいわゆるスパコンとですねあとは最近皆さん耳にすることがあるかもしれませんけど新しい情報処理技術として量子コンピュータというものが注目されておりますがそれに関する。"
+            }
+          },
+          {
+            "start": 31.5,
+            "end": 53.879,
+            "text": {
+              "en": "I would like to briefly introduce our efforts.I graduated from Tohoku University in 1988.Since then, I have been working on creating faster computers for nearly 40 years.",
+              "zh": "我想简单介绍一下我们的努力。我于 1988 年毕业于东北大学。从那时起，我一直致力于创造更快的计算机近 40 年。",
+              "ja": "取り組みについて簡単にご紹介したいと思いますで私は東北大学を1988年に卒業しましてですねそれ以降40年近くひたすら速いコンピュータを作るということに取り組んでまいりました。"
+            }
+          },
+          {
+            "start": 49.62,
+            "end": 70.46,
+            "text": {
+              "en": "So this time, I would like to introduce some of our research efforts to you, starting with a brief explanation of how computers work, and how that leads to the creation of faster computers.",
+              "zh": "所以这一次，我想向大家介绍我们的一些研究工作，首先简要解释计算机的工作原理，以及如何创造出更快的计算机。",
+              "ja": "で今回皆さんにですね少しその研究の取り組みのご紹介しようかと思いましてまず簡単にそのコンピュータの仕組みから始まってですねそれがどういうふうにその速いコンピュータ作りにつながっていくのか。"
+            }
+          },
+          {
+            "start": 66.54,
+            "end": 89.659,
+            "text": {
+              "en": "I would like to explain what role it plays and how it is useful to society.First of all, let's start with the source of the computer's calculations.You may already know this, but it was invented in the United States in 1945.",
+              "zh": "我想解释一下它扮演什么角色，它对社会有什么用。首先，我们从计算机计算的来源开始。这个你可能已经知道了，但它是1945年在美国发明的。",
+              "ja": "ということとそれがどういう役割で社会にに役に立っていくかということについてご説明していきたいと思っておりますでまず最初にそのコンピュータの計算源にこれはすでに皆さんご存知かもしれませんけど古くは1945年にですねアメリカで。"
+            }
+          },
+          {
+            "start": 87.54,
+            "end": 109.28,
+            "text": {
+              "en": "It has its roots in the creation of the first electronic computer, but in the nearly 80 years since then, computers have continued to evolve, becoming larger, smaller, and faster.",
+              "zh": "它的根源在于第一台电子计算机的诞生，但在此后的近 80 年里，计算机不断发展，变得更大、更小、更快。",
+              "ja": "初めての電子計算機というものが作られてきたのがルーツになるんですがそれからおよそ80年近くですかねひたすら大規模化あるいは小型化そして高速化そういった視点でですねコンピュータがどんどん進化してきた。"
+            }
+          },
+          {
+            "start": 107.579,
+            "end": 130.14,
+            "text": {
+              "en": "So, for example, in 1971, the first chip called a microprocessor was developed, and when it was developed, the era of personal computers began in 1977, and since then, as you all know, Apple and PCs, etc., have been introduced more and more.",
+              "zh": "所以，比如说，1971年，第一块叫做微处理器的芯片被研制出来，当它研制出来的时候，个人电脑的时代就从1977年开始了，从那时起，众所周知，苹果和PC等，越来越多地被推出。",
+              "ja": "わけですね例えば1971年にマイクロプロセッサーと呼ばれるチップが初めて開発されてきましたしそれができると今度はパソコンの時代が始まったのが77年とでそれ以降皆さんご存知のようにAppleとかPCとかですねそういうものがどんどん。"
+            }
+          },
+          {
+            "start": 127.5,
+            "end": 149.22,
+            "text": {
+              "en": "Although the configuration has become smaller, recently it has been more about the services on top of it, such as Google's web search and Facebook, and recently, the α5 has become the champion in the world of 5 and 5. Recently, chat GPUT.",
+              "zh": "虽然配置变小了，但最近更多的是在它上面的服务，比如谷歌的网络搜索和Facebook，最近α5已经成为5和5世界的冠军。最近聊GPUT。",
+              "ja": "小型化構成の化してきたわけですけど最近ですとどちらかというとその上でのサービスですねGoogleのWeb検索とかFacebookとかまず最近ですとα5が5に5の世界でチャンピオンになったとかですね最近ですとチャットGPUT。"
+            }
+          },
+          {
+            "start": 145.8,
+            "end": 168.8,
+            "text": {
+              "en": "Over the past 80 years, a variety of services have been created using fast computers, and although these computers have appeared in the world in various forms, the fundamentals have not changed much.",
+              "zh": "过去 80 年来，人们使用快速计算机创建了各种服务，尽管这些计算机以各种形式出现在世界上，但其基本原理并没有发生太大变化。",
+              "ja": "というような早い計算機を使った様々なサービスというものが生み出されてきたというのがこの80年の流れになりますでこういったコンピュータというのはですね色んな形で世の中に出てきてるんですがただ原理的なところはですねあまり変わっていないというかですね。"
+            }
+          },
+          {
+            "start": 165.379,
+            "end": 187.16,
+            "text": {
+              "en": "What we have developed into functions is these five functions: input, output, storage, processing, and control.For example, in the case of a personal computer, graphics processing can be made faster, or in the case of a supercomputer.",
+              "zh": "我们开发成功能的就是这五个功能：输入、输出、存储、处理、控制。比如在个人计算机的情况下，图形处理可以做得更快，或者在超级计算机的情况下。",
+              "ja": "どういうものを機能化してきたかというと入力と出力と記憶と処理と制御というこの5つの機能をですねひたすらまあ例えばパソコンですとグラフィックスの処理が早くなるとかですねあるいはスパコンだと。"
+            }
+          },
+          {
+            "start": 184.98,
+            "end": 208.68,
+            "text": {
+              "en": "Computers have been created as a variety of things, each with its own strengths and weaknesses, such as speeding up calculations or making the user interface of a smartphone easier to understand.But recently, networks have become important, and these computers are interconnected.",
+              "zh": "计算机被设计成各种各样的东西，每种东西都有自己的优点和缺点，例如加快计算速度或使智能手机的用户界面更易于理解。但最近，网络变得越来越重要，并且这些计算机相互连接。",
+              "ja": "計算を早くするとかスマホだとそのユーザーインターフェースをですねわかりやすくするとかそういうようなそれぞれの機能を強弱をつけながら様々なものとしてコンピュータとして生まれてきたとでただまぁ最近ですねネットワークというものが重要になってきておりますけどそういうそのコンピュータがお互い。"
+            }
+          },
+          {
+            "start": 205.56,
+            "end": 225.36,
+            "text": {
+              "en": "By communicating and exchanging information, for example, it has been widely used in society to give the latest information to others as one's own, so a calculator can calculate things, but it cannot make decisions.",
+              "zh": "例如，通过沟通和交换信息，社会上已经广泛使用将最新信息作为自己的信息提供给他人，因此计算器可以计算事物，但不能做出决策。",
+              "ja": "通信をして例えば情報交換することによってより最新の情報を自分のものとしてまた人に与えるという形で社会に広く使われてきているということになりますですので電卓というのはこれは計算できますけど判断ができませんのでこれは。"
+            }
+          },
+          {
+            "start": 223.799,
+            "end": 245.94,
+            "text": {
+              "en": "The fact that computers have become faster and more compact can be traced back to the microprocessor, which was first created by Intel in 1970.",
+              "zh": "计算机变得更快、更紧凑的事实可以追溯到微处理器，它由英特尔于 1970 年首次创建。",
+              "ja": "コンピュータにはならないということになりますでこのようなコンピュータが早くなってそしてコンパクト化されてきたというのはやっぱりマイクロプロセッサーという1970年にそのインテルが最初に作ったものが始まりになりますけど一つの。"
+            }
+          },
+          {
+            "start": 243.42,
+            "end": 265.28,
+            "text": {
+              "en": "The effects of integrating a large number of transistors on a silicon chip and bringing various functions onto that chip by integrating those transistors can be very large, so how can we use this type of system as a base?",
+              "zh": "在一块硅芯片上集成大量的晶体管，并通过集成这些晶体管将各种功能带到该芯片上，其效果是非常大的，那么我们如何以这种类型的系统为基础呢？",
+              "ja": "シリコンのチップの上にたくさんのトランジスタを集積してそのトランジスタの集積によっていろいろな機能をそのチップ上に持ち込むことによるそれによる効果というものが非常に大きくなってきますでですのでこのような仕組みをですねベースにどのように。"
+            }
+          },
+          {
+            "start": 263.22,
+            "end": 286.68,
+            "text": {
+              "en": "As for how to make it faster, first of all, as you may know, the computer is a digital computer, and calculations can be done in 01. Specifically, that means turning electricity on and off or voltage.",
+              "zh": "至于如何让它更快，首先大家可能知道，计算机是数字计算机，可以在01中进行计算。具体来说，就是打开和关闭电源或电压。",
+              "ja": "早くしていくかということになりますがまずはそのご存知のようにそのコンピュータというのはデジタルコンピュータということになりますのはご存知かもしれませんけど01で計算が進められるわけですねまあそれは具体的には電気のオンオフあるいは電圧が。"
+            }
+          },
+          {
+            "start": 283.46,
+            "end": 303.6,
+            "text": {
+              "en": "It involves converting two states, such as \"on\" and \"off\", into numerical values ​​and applying them to calculations, so everyone simply uses decimal calculations, but all of that is converted into binary calculations.",
+              "zh": "它涉及到将“开”和“关”等两种状态转换为数值并应用到计算中，所以大家只是简单地使用十进制计算，但所有这些都转换为二进制计算。",
+              "ja": "かかってるかかってないというような2つの状態を数値化してそれを計算に応用するということになるわけですですので単純にその10進数の計算というものが皆さん使うわけですけどそういったものを全て2進数の計算に。"
+            }
+          },
+          {
+            "start": 301.62,
+            "end": 325.62,
+            "text": {
+              "en": "In doing so, we are naturally using that continuous quantity, but by digitizing it, slight differences in expression appear, which can result in, for example, muffled sound or blurred images, so we try to do that as much as possible.",
+              "zh": "这样做时，我们自然会使用连续的量，但通过将其数字化，表达上会出现细微的差异，这可能会导致声音低沉或图像模糊等，因此我们尝试尽可能地做到这一点。",
+              "ja": "置き換わって計算が進められるわけですねその際当然我々その連続量を使ってるわけですがそれをデジタル化することによってそこにちょっとしたその表現の差が出てくるわけでそれが例えば音がこもったりですね画像がぼやけたりというようなことになるわけでなるべくその。"
+            }
+          },
+          {
+            "start": 322.44,
+            "end": 345.139,
+            "text": {
+              "en": "When we need data that can express discrete quantities in detail, we naturally need to increase the number of digits in binary numbers, which we call bits, to handle large amounts of large amounts of data, so the first thing to do is to increase the number of bits.",
+              "zh": "当我们需要能够详细表达离散量的数据时，自然需要增加二进制数的位数，我们称之为比特，以处理大量的大量数据，所以首先要做的就是增加比特数。",
+              "ja": "離散量を細かく表現できるようなデータが求められたそうすると自然にそのいわゆるその2進数の桁数は我々ビットと呼んでますけどそのビットを増やしてですねいずれに大量の大きなデータをたくさん扱うということが求められるわけですですのでまず最初の。"
+            }
+          },
+          {
+            "start": 343.38,
+            "end": 366.539,
+            "text": {
+              "en": "As for the approach, the first approach is to figure out how to make the on/off switching as fast as there is a little picture on the horizontal axis of this 01 control.Then, of course, we will realize such a mechanism.",
+              "zh": "至于做法，第一个办法就是想办法让这个01控件的横轴上有一个小图一样快的开/关切换。那么，当然我们就会实现这样一个机制。",
+              "ja": "アプローチとしてはそのこの01のですね制御これ横軸横にちょっとあの絵が書いてありますけどオンオフというこのスイッチングをですねいかに早くするかというようなところが最初のアプローチになってくるわけですそうすると当然そのような仕組みを実現する。"
+            }
+          },
+          {
+            "start": 366.539,
+            "end": 390.06,
+            "text": {
+              "en": "Elements (we call them devices) go back to the 1940s, well, this was before the birth of electronic computers, but the idea was to create a digital mechanism, and computers were made using mechanical switches called relays, which everyone has already seen.",
+              "zh": "元件（我们称之为设备）可以追溯到 20 世纪 40 年代，好吧，那是在电子计算机诞生之前，但当时的想法是创建一种数字机制，而计算机是使用称为继电器的机械开关制造的，每个人都已经见过了。",
+              "ja": "素子ですねデバイスと呼んでますが古くは40年代まあこれは電子計算機が生まれる前ですけど考え方としてはそのデジタルの仕組みを作ろうということでそのリレーという機械的なスイッチを使ってコンピュータを作っていたわけですがそれが真空管これはもう皆さん目に。"
+            }
+          },
+          {
+            "start": 388.08,
+            "end": 411.66,
+            "text": {
+              "en": "You may never have to do that, but if you look at high-end audio amplifiers, you'll see that devices such as vacuum tubes, which control on/off electronically, were created around 50 years ago.This speed, as written here, is milliseconds of freedom to the -3 power.",
+              "zh": "您可能永远不需要这样做，但如果您查看高端音频放大器，您会发现以电子方式控制开/关的真空管等设备大约是 50 年前创建的。此处所写的速度是毫秒的 -3 次方自由度。",
+              "ja": "することもないかもしれませんけどま高級なオーディオアンペなんかを見ると中に入ったりするわけですけどこのような真空管というその電子的な制御でオンオフを制御するようなデバイスが50年ぐらいに作られてきましたこれでこのスピードがここに書いてありますがミリセカンド自由の-3乗の。"
+            }
+          },
+          {
+            "start": 408.06,
+            "end": 429.96,
+            "text": {
+              "en": "This means that the speed has dramatically increased to about the -6th power, and at the same time, the size has also decreased somewhat.A major innovative technology was the invention of the transistor, which has been put into practical use.",
+              "zh": "这意味着速度大幅提升至约-6次方，同时尺寸也有所减小。一项重大创新技术是晶体管的发明，并已投入实用。",
+              "ja": "速度から-6乗ぐらいの速度まで画期的に速くなってきたということになりますで同時にいくらかそのサイズ的にも小さくなってきたというところになります大きな革新的な技術としてはトランジスタの発明というのがありますそれが実用化されてき。"
+            }
+          },
+          {
+            "start": 427.68,
+            "end": 451.38,
+            "text": {
+              "en": "It was around 1920 that computers began to use these elements, and the era came when single elements like this began to replace the vacuum tubes that had been used one by one.Then, the second order of the name was written here, the millimicro.",
+              "zh": "大约在1920年左右，计算机开始使用这些元件，这样的单一元件开始取代曾经使用的真空管的时代到来了。然后，名字的第二个顺序写在这里，毫微。",
+              "ja": "てコンピュータに使われてきたのが1920年ぐらいになるとこういう単独の素子で今まで一本一本のこの真空管というチューブがこの1個の素子に置き換わってくるという時代がやってきますそうするとさらにその名のセカンドのオーダーここに書いてありますねそのミリマイクロなの。"
+            }
+          },
+          {
+            "start": 447.78,
+            "end": 469.199,
+            "text": {
+              "en": "Then, it becomes a pico, which is a unit of 1/1000 to the power of 10, and it gets down to that level, so when the technology of chipping that I mentioned earlier was born, from then on, we started thinking about how many transistors could be integrated into a single chip.",
+              "zh": "然后就变成了pico，也就是1/1000的10次方的单位，一直到了这个程度，所以当我前面提到的芯片化技术诞生的时候，从那时起我们就开始思考一个芯片里可以集成多少个晶体管。",
+              "ja": "そしてピコという10の3乗1000分の1ずつこう桁が小さくなってくるような単位になりますけどそのレベルまで落ちてくるわけですでそれで先ほど申し上げたチップ化するという技術が生まれますとそれ以降はいかにその一つのチップの中にですね多くのトランジスタを集積するかと。"
+            }
+          },
+          {
+            "start": 468.3,
+            "end": 490.08,
+            "text": {
+              "en": "The technology for this integration is basically the same as the technology for taking photographs, and involves drawing as fine a line as possible on a chip in a limited area.",
+              "zh": "这种集成的技术与拍照技术基本相同，都是在芯片的有限区域内画出尽可能细的线。",
+              "ja": "いう技術に変わってきますでこの集積化の技術っていうのは基本的に写真を撮る技術と一緒でしてなるべくこの細かい線をですね限られたエリアに限られたチップ上にこの描いていくという。"
+            }
+          },
+          {
+            "start": 485.58,
+            "end": 507.78,
+            "text": {
+              "en": "It becomes a technology, and of course we call it the exposure beam, but as we refine the system, transistors have now become small to the nano-level size.",
+              "zh": "它成为一种技术，当然我们称之为曝光光束，但随着我们改进系统，晶体管现在已经变得小到纳米级尺寸。",
+              "ja": "技術になるわけですねそうすると当然その露光する露光のこのビームと呼んでますけどそれの制度を細かくしていくと今やナノレベルのサイズにまでトランジスタが小さくなってそして今は。"
+            }
+          },
+          {
+            "start": 504.86,
+            "end": 528.68,
+            "text": {
+              "en": "Approximately 1 billion transistors will be converged on this chip, and the second mechanism will be that you can use that 1 billion transistors to do a variety of things on the chip, and this is a trend called Moore's Law.",
+              "zh": "大约10亿个晶体管将集中在这个芯片上，第二个机制是你可以用这10亿个晶体管在芯片上做各种各样的事情，这就是摩尔定律的趋势。",
+              "ja": "およそこのチップの上にですね10億トランジスタぐらいが収束されていくんですねそうしますとその10億トランジスタを使ってじゃあいろんなことがチップ上にできるというのがその2のからくりになってくるわけですでこれはムーアの法則という風に呼んでるトレンド。"
+            }
+          },
+          {
+            "start": 525.48,
+            "end": 548.519,
+            "text": {
+              "en": "What it shows is the trend of transistor integration.The vertical axis is the number of transistors integrated.It shows how many transistors have been integrated into a limited chip area.",
+              "zh": "它展示的是晶体管集成化的趋势。纵轴是集成的晶体管数量。它显示了在有限的芯片面积内集成了多少个晶体管。",
+              "ja": "を示したものあのトランジスターの集積どうしてトレンドの示したものになりますけど縦軸がですねトランジスタの集積数ですね何個トランジスタが限られたチップエリアに集積されてきたかというのを示したもので。"
+            }
+          },
+          {
+            "start": 543.54,
+            "end": 564.2,
+            "text": {
+              "en": "The horizontal axis is the age, and the vertical axis is a log scale, so the horizontal axis increases linearly, so it accumulates exponentially.",
+              "zh": "横轴是年龄，纵轴是对数刻度，所以横轴是线性增加的，所以是指数累积的。",
+              "ja": "これが横軸が年代になりますでこれ縦がログスケールになってますからいわゆるこの横は線形で増えてきますのでそのいわゆる指数関数的にですね集積。"
+            }
+          },
+          {
+            "start": 560.519,
+            "end": 582.32,
+            "text": {
+              "en": "This is the origin of the evolution of microprocessors to date. This is Moore's Law. Gordon Moore, the founder of Intel, said that our chips would double in density every 18 months.",
+              "zh": "这就是迄今为止微处理器发展的起源。这就是摩尔定律。英特尔创始人戈登·摩尔表示，我们的芯片密度每 18 个月就会翻一番。",
+              "ja": "度が上がってきたというのがこれまでのマイクロプロセッサーの進化の原点になってますこれをムーアの法則これはインテルの創業者のゴードンムーアという人がですねうちのチップは18ヶ月で2倍に集積度を上げていくんだと。"
+            }
+          },
+          {
+            "start": 581.22,
+            "end": 604.22,
+            "text": {
+              "en": "In other words, this is the result of the Intel engineers who have worked hard to create a graph like this since then.Well, it's not like there's any particular rule, but it's how it turned out as a result, but in the field of computers, this is the goal.",
+              "zh": "换句话说，这是英特尔工程师从那时起就努力创建这样一个图表的结果。嗯，这并不是什么特定的规则，而是结果就是这样，但在计算机领域，这就是目标。",
+              "ja": "いう風にましてこのようなグラフをですねそれ以降そのインテルのエンジニアは頑張って作り上げてきたというのがこの結果になってくるわけですまあ別にその法則があるわけじゃなくてですね結果的にこうなってきたという部分もあるんですがコンピュータの分野ではこのような目標。"
+            }
+          },
+          {
+            "start": 602.7,
+            "end": 625.62,
+            "text": {
+              "en": "Nowadays, in some cases it's about doubling every two years, or even longer than that, but the degree of integration has increased, and we're now in the era of one billion transistors.",
+              "zh": "如今，在某些情况下大约每两年翻一番，甚至更长，但集成度提高了，我们现在正处于十亿个晶体管的时代。",
+              "ja": "を立ててですね今や2年に2年で倍ぐらいにあるいはそれより少し長くなっているところもありますけど集積度が上がってきて今や10億トランジスタレベルの時代になってきてるというところになりますでそうしますとこの。"
+            }
+          },
+          {
+            "start": 621.48,
+            "end": 645.0,
+            "text": {
+              "en": "So let's use transistors and apply this to various things on a chip, and then we will develop a technology to speed up calculations by further devising the mechanism.This is the first approach, everyone.",
+              "zh": "那么我们就用晶体管，把它应用到芯片上的各种东西上，然后我们会开发一种技术，通过进一步设计机制来加速计算。这是第一种方法，大家。",
+              "ja": "トランジスタを使ってじゃあこれをチップ上で様々なものに応用しましょうということでそこでさらにその仕組みの工夫によって計算を早くしようという技術になってくるわけですね最初のアプローチとしてはこれも皆さん。"
+            }
+          },
+          {
+            "start": 641.16,
+            "end": 664.519,
+            "text": {
+              "en": "This is similar to the processing pattern seen on factory assembly lines, where processing is performed sequentially.Well, a program is made up of many instructions, and each instruction is called and interpreted one by one, and the necessary data is called.",
+              "zh": "这类似于工厂流水线上看到的加工模式，加工是按顺序进行的。那么，一个程序是由很多条指令组成的，每条指令都被一条一条地调用和解释，并调用必要的数据。",
+              "ja": "工場のアセンブリラインなんかで見る処理パターンになるんですがですね逐次的に処理が行われてきますまあプログラムというのはたくさんの命令から作られてるんですがそれぞれの1個1個の命令を呼び出して解釈して必要なデータを呼び出して。"
+            }
+          },
+          {
+            "start": 662.279,
+            "end": 684.3,
+            "text": {
+              "en": "This step of calculating and storing the results is repeated, so if you simply extend it like this, this is a slightly different example, but in this case, it's like selecting it, drying it, folding it, and putting it in the closet.",
+              "zh": "计算和存储结果的这个步骤是重复的，所以如果你简单地像这样扩展它，这是一个稍微不同的例子，但在这种情况下，它就像选择它，干燥它，折叠它，然后把它放进衣柜里。",
+              "ja": "計算をして結果を格納するというこういうステップを繰り返し行ってくるわけですねでこれを単純にこう伸ばしていくとこれはちょっと別の例になってますけどこれはえっと選択して乾燥して畳んで押し入れにしまうみたいな処理になってますけどそれを。"
+            }
+          },
+          {
+            "start": 681.899,
+            "end": 702.06,
+            "text": {
+              "en": "If you repeat this in order, the time will accumulate like this, so let's divide the process and shorten the calculation time with assembly work.Well, the calculation time for each item will not be shortened.",
+              "zh": "如果按顺序重复的话，时间就会像这样累积起来，所以我们把工序分开，用组装工作来缩短计算时间。嗯，每个项目的计算时间不会缩短。",
+              "ja": "順番にこう繰り返していくと時間がこう積み上がっていくというようなことになるわけですねでまあこれを処理を分割して流れ作業で計算時間を短くしようまあ1個1個の計算時間は短くはならないんですけどとただその。"
+            }
+          },
+          {
+            "start": 699.68,
+            "end": 721.92,
+            "text": {
+              "en": "If the amount of processing per hour is improved by this divisional processing, specifically, by dividing it into four partial processings and processing them multiplexed, the processing capacity will be quadrupled.",
+              "zh": "如果通过该分割处理，具体而言，通过将其分割为四个部分处理并进行复用处理来提高每小时的处理量，则处理能力将变为四倍。",
+              "ja": "時間当たりの処理量というものがこの分割処理によって改善されていくと具体的にはこれ4つの部分処理に分割してそれを多重処理していくと4倍の処理能力になってくるというような仕組みでこれもやはりこういう一連の。"
+            }
+          },
+          {
+            "start": 719.64,
+            "end": 743.339,
+            "text": {
+              "en": "Computer processing is realized using this kind of mechanism using the transistors mentioned earlier.The other thing is parallel processing.The flow that I mentioned earlier is called pipeline processing, and when I say pipeline processing, it may remind you of an oil pipeline.",
+              "zh": "计算机处理就是利用前面提到的晶体管的这种机制来实现的。另外就是并行处理。我前面提到的流程称为管道处理，当我说管道处理时，可能会让你想起石油管道。",
+              "ja": "コンピュータの処理というものをこのような仕組みで先ほどのトランジスタを使って実現していくということになりますでもう一つは並列処理先ほどはパイプライン処理と呼ばれる流れでしてパイプライン処理ってパイプラインというところ油のパイプラインを思い出すかもしれませ。"
+            }
+          },
+          {
+            "start": 740.16,
+            "end": 761.519,
+            "text": {
+              "en": "Well, it's a similar idea where data flows through a pipe and processing is done in a long flow, which is called pipeline processing.The other method is called parallel processing, which simply divides the big problem into N parts and processes it.",
+              "zh": "嗯，这是类似的想法，数据流经管道，处理是在很长的流程中完成的，这称为管道处理。另一种方法称为并行处理，它简单地将大问题分成N部分并处理它。",
+              "ja": "んけどまぁ同じような考え方でパイプの中をデータを流して処理をその長い流れの中で処理をしていくという考え方でパイプライン処理という風に呼んでますでもう一つは並列処理と呼ばれるものでしてこれは単純にその大きな問題をN分割してそれを。"
+            }
+          },
+          {
+            "start": 758.64,
+            "end": 782.18,
+            "text": {
+              "en": "Parallel processing on the N5 computer is a very simple but effective processing method that aggregates the results at the end to calculate the total number of times.I'm sorry, but when I say \"partition\" here, I mean allocation and aggregation of results.",
+              "zh": "N5计算机上的并行处理是一种非常简单但有效的处理方法，它将最后的结果聚合起来计算总次数。抱歉，我这里说的“分区”是指结果的分配和聚合。",
+              "ja": "N5のコンピュータで並列処理を行うとで最後に結果を集約して全体の回を求めていくというような非常にその単純ですけど効果的な処理方式になりますただのここで分割とはすいません割り当てと結果の集約というところにですねその。"
+            }
+          },
+          {
+            "start": 780.779,
+            "end": 800.899,
+            "text": {
+              "en": "Networking, which is a mechanism for exchanging data, is required, so simply dividing the processing into N equal parts does not mean that the processing will be multiplied by N, but rather requires the extra effort of collecting and distributing data via this network.",
+              "zh": "网络是一种交换数据的机制，这是需要的，因此简单地将处理分为N等份并不意味着处理量将增加N倍，而是需要通过该网络收集和分发数据的额外努力。",
+              "ja": "ネットワーキングというデータをやり取りする仕組みが必要になってきますので単純に処理をN等分したからと言ってN倍になるわけではなくてこのネットワークを介してデータを集めたり分散したりするというそういう余計な手間がですね。"
+            }
+          },
+          {
+            "start": 801.36,
+            "end": 824.839,
+            "text": {
+              "en": "Since there is a reduction in processing efficiency, it is necessary to consider various network configurations and research on more efficient networking that is suitable for the problem, so we are still the easiest example of this.",
+              "zh": "由于存在处理效率的降低，因此需要考虑各种网络配置并研究适合该问题的更高效的网络，因此我们仍然是最简单的例子。",
+              "ja": "処理効率を低下させるというところがありますのでそれに関して様々なネットワークの構成を考えた上で問題に適したより効率の良いネットワーキングという研究も必要になってくるわけですでこれの一番わかりやすい例としてはまだ私たちが。"
+            }
+          },
+          {
+            "start": 822.839,
+            "end": 846.36,
+            "text": {
+              "en": "This is a story that was done a long time ago, but it is now commonplace in many hospitals to convert 3D slice images from MRI and CT into 3D slice images, perform distributed processing to generate partial images, and then aggregate the whole image.",
+              "zh": "这是很久以前的故事了，但现在在很多医院，将 MRI 和 CT 的 3D 切片图像转换为 3D 切片图像，进行分布式处理生成部分图像，然后聚合整个图像，这在很多医院都是司空见惯的。",
+              "ja": "昔やった話なんですけどMRIとかCTといったような3次元のスライス画像を2次元のスライス画像を3次元化してそれを分散処理して部分画像を生成して全体を集約すると今ではもういろんな病院で当たり前にやられてますけどちょうど。"
+            }
+          },
+          {
+            "start": 843.98,
+            "end": 867.38,
+            "text": {
+              "en": "Around 19978, I created and announced this kind of technology. Thanks to the technological innovations mentioned above, computers have had a very short history compared to cars, for example, about 80 years, but during that 80 years, their performance has improved dramatically.",
+              "zh": "19978年左右，我创造并宣布了这种技术。由于上述的技术创新，计算机的历史相对于汽车来说很短，比如80年左右，但在这80年里，计算机的性能得到了巨大的提高。",
+              "ja": "19978年ぐらいですかねこういう技術を作って公表したことがございました以上のような技術革新によってコンピュータ例えば80年ぐらい車に比べると非常に短い歴史なんですがその80年の間にまあ飛躍的性能が向上してき。"
+            }
+          },
+          {
+            "start": 864.72,
+            "end": 887.699,
+            "text": {
+              "en": "This is the slide I'm going to show you here. Well, it says about computational performance, and this shows how many calculations can be made in one second. Memory size. B is the unit of 1 byte.",
+              "zh": "这就是我要向您展示的幻灯片。嗯，它说的是计算性能，这表明一秒钟可以进行多少次计算。内存大小。 B是以1字节为单位的。",
+              "ja": "たというのがあのここでお見せするスライドになりますでえっとここで演算性能というものは書いてありますけどこれがあの1秒間にどれぐらいの数の計算ができるかというのを示したものですこれメモリーサイズこれはBというのが1バイトという単位になり。"
+            }
+          },
+          {
+            "start": 885.18,
+            "end": 905.48,
+            "text": {
+              "en": "However, it is equivalent to about one character, so the k point is kilo, so it is 6,400 characters.Sorry, this 0.15 mips I mentioned earlier is called a mix, but it can be processed per second in million instructions.",
+              "zh": "然而，它相当于大约一个字符，所以k点是kilo，所以是6,400个字符。抱歉，我前面提到的这个0.15 mips被称为混合，但是它可以在百万条指令中每秒处理。",
+              "ja": "ますけどおよそ1文字に相当しますですからk点はキロですので6,400文字ですねすいません先ほどのこの0.15mipsこれミックスという風に呼んでますけどミリオンインストラクションパーセカンドということで100万単位での1秒あたりに処理できる。"
+            }
+          },
+          {
+            "start": 905.94,
+            "end": 927.12,
+            "text": {
+              "en": "In terms of the amount of calculation, this means that 150,000 instructions can be calculated per second.This was about 360 million yen, and it was 1965, four years after I was born, and computers at that time were extremely expensive, and the monthly income was probably 20,000 yen or something like that.",
+              "zh": "从计算量来说，这意味着每秒可以计算15万条指令。这大约是3.6亿日元，那是1965年，也就是我出生四年后，当时的电脑非常昂贵，每月收入大概是2万日元左右。",
+              "ja": "計算量ということになりますですのでこれは15万命令を1秒間に計算できるというものですこれがおよそ3億6000万円で1965年ですね私が生まれて4年目でしたけどその頃のコンピュータまあこれ非常に高価なその時の多分月収も2万円とかそういう時代。"
+            }
+          },
+          {
+            "start": 925.139,
+            "end": 946.1,
+            "text": {
+              "en": "It may have been, but it was extremely expensive, and after 10 years, the computing power has increased by about 7 times per mips, and the data that can be handled has increased by 16 times in units of 1 MB.",
+              "zh": "可能是这样，但代价极其昂贵，10年后，每mips的计算能力增加了约7倍，可处理的数据以1MB为单位增加了16倍。",
+              "ja": "だったかもしれませんけど非常に高価であったということになりますでそれが10年経つと1mips7倍ぐらい計算能力が上がったということになりますし扱えるデータも16倍1MBという単位で。"
+            }
+          },
+          {
+            "start": 943.139,
+            "end": 967.1,
+            "text": {
+              "en": "The price was 72 million yen, and the price has improved by 34 times in just 10 years. Well, everyone, this is a bit old, but when it comes to personal computers that everyone often looks at, it has already lost out.",
+              "zh": "售价为7200万日元，短短10年价格提升了34倍。嗯，大家，这有点老了，但是当谈到大家经常看的个人电脑时，它已经落伍了。",
+              "ja": "値段が7200万ということでそれのあたりの価格が34倍まで改善されたというたったの10年ですねでなるわけですでこれがまあ皆さんこれもちょっと古いところにはありますけどまぁ皆さんよく見るパソコンなんかですともうもはや負けた。"
+            }
+          },
+          {
+            "start": 964.68,
+            "end": 986.579,
+            "text": {
+              "en": "Above the Giga 1 million is the Giga 160GB instruction per second, so this is also the Galaxy, and I think it's under 100,000 yen, so this means that the price and performance of cars have increased at this pace.",
+              "zh": "超过Giga 100万的是每秒Giga 160GB指令，所以这也是Galaxy，而且我认为它低于10万日元，所以这意味着汽车的价格和性能都以这种速度增长。",
+              "ja": "ギガですねミリオンの上はギガですね160GBインストラクションパーセカンドということでこちらも銀河ですねでまあこれも10万円切ってると思いますのでこのように価格性能的にはこれぐらいのペースで上がってきたということになります車は。"
+            }
+          },
+          {
+            "start": 984.26,
+            "end": 1007.339,
+            "text": {
+              "en": "It may have been around for more than 100 years, but I don't think prices have changed that much.It's not that the speed has increased, so it's often said that compared to cars, it's a socially useful machine whose speed has increased exponentially.",
+              "zh": "它可能已经存在了100多年了，但我认为价格没有太大变化。并不是速度提高了，所以人们常说，与汽车相比，它是一种对社会有用的机器，速度呈指数级增长。",
+              "ja": "100年以上の歴史があるかもしれませんけどそんなに値段は変わってないと思うんですねスピードが速くなるわけでもないところでですのでよく言われるのがまあ車に比べると非常にペースが指数関数的に上がってきた非常にその社会的に役に立つ機械だという。"
+            }
+          },
+          {
+            "start": 1006.079,
+            "end": 1028.16,
+            "text": {
+              "en": "Computer people say this, but on the other hand, people in cars say that they don't reboot things like computers do, and there's a lot of debate about it, but if we look at units a little, we'll see that kilos are commonly made, and these are commonly used functions.",
+              "zh": "计算机人这么说，但另一方面，汽车里的人说他们不会像计算机那样重新启动东西，对此有很多争论，但如果我们稍微看一下单位，我们会发现公斤是常用的，这些都是常用的功能。",
+              "ja": "風にコンピュータの人は言うんですけどただ一方で車の人はですねコンピュータのようにリブートしたりはしませんみたいなことを言っていろいろ議論のあるところでありますけど単位をちょっと見直してみますとこれよく作るキロとかこれは一般に使う機能ですね。"
+            }
+          },
+          {
+            "start": 1025.22,
+            "end": 1048.38,
+            "text": {
+              "en": "Well, I think mega and giga are units that are often used when discussing the specs of your mobile phone, and when it comes to the level of supercomputers that are being used today, it will be in the realm of terapeta, and that's what will happen in the future.",
+              "zh": "嗯，我认为兆和千兆是在讨论手机规格时经常使用的单位，当谈到今天使用的超级计算机的水平时，它将属于terapeta的领域，这就是未来将会发生的情况。",
+              "ja": "でえっとメガとかギガというのが多分皆さんの携帯でよくそのスペックが議論される時に使われるような単位かと思いますでこれがあの今扱っている今使え使われているスパコンレベルになるとテラペタという領域になってでこれからの。"
+            }
+          },
+          {
+            "start": 1046.16,
+            "end": 1069.44,
+            "text": {
+              "en": "The target of supercomputers is shifting to XA and Zetta, which are the third power or the sixth power.",
+              "zh": "超级计算机的目标正在转向XA和Zetta，它们是三次方或六次方。",
+              "ja": "スパコンの狙うところがXAとかゼッタというようなさらにその3乗場合あるいは6乗倍というようなものにスパコンのターゲットが移りつつありますこれは例えば1秒間にエクサカイの計算ができるとかこれ。"
+            }
+          },
+          {
+            "start": 1067.4,
+            "end": 1085.48,
+            "text": {
+              "en": "Just last year, a supercomputer in the United States achieved this goal, and if Japan is the next target, it will be at a level where it will be able to handle 10 to the 21st power of data, or calculations.",
+              "zh": "就在去年，美国的一台超级计算机实现了这一目标，如果日本是下一个目标，它将达到能够处理 10 的 21 次方数据或计算的水平。",
+              "ja": "昨年ちょうどアメリカのスパコンがこれを達成しましたけどそれを行ったりあるいはその次のターゲットとしては日本ですと10害というんでしょうかね10の21乗のデータを扱うとかあるいは計算を扱うというようなレベルになっていくわけです。"
+            }
+          },
+          {
+            "start": 1085.539,
+            "end": 1106.66,
+            "text": {
+              "en": "Therefore, the synergistic effect of these improvements in integration technology and high-performance technology has led to the creation of supercomputers, which are so-called computers specialized for scientific and technical calculations.",
+              "zh": "因此，这些集成技术和高性能技术改进的协同效应导致了超级计算机的诞生，即所谓的专门用于科学和技术计算的计算机。",
+              "ja": "ですのでこのような集積技術の向上とあと高性能の技術というものを掛け合わせてその相乗効果によってスパコンというものが生まれてきましたでこれがいわゆる科学技術計算に特化したコンピュータと。"
+            }
+          },
+          {
+            "start": 1103.52,
+            "end": 1126.14,
+            "text": {
+              "en": "In other words, we call it the highest performance of that era.A long time ago, in 1976, a man named Clay created the first computer in a new category called a supercomputer, and at that time the performance was exactly 240MHz.",
+              "zh": "换句话说，我们称之为那个时代的最高性能。 很久以前，1976年，一个叫克莱的人创造了第一台计算机，属于一个叫做超级计算机的新类别，当时的性能正好是240MHz。",
+              "ja": "いうことでその時代の最高性能のものを呼んでおりますですので昔そのクレイという人が1976年に初めてスパコンという新しいカテゴリーでのコンピュータを作り出したんですがその時の性能がちょうど240mhzという。"
+            }
+          },
+          {
+            "start": 1123.86,
+            "end": 1146.539,
+            "text": {
+              "en": "There was a time when the performance per unit of power consumption was such that it was possible to calculate 2 kiloflops and 2000 instructions in 1W, and after that, as mentioned earlier.",
+              "zh": "曾经有一段时间，单位功耗的性能可以在 1W 内计算 2 kiloflops 和 2000 条指令，而在那之后，如前所述。",
+              "ja": "単位で消費電力このぐらいとで消費電力あたりの性能が2キロフロップ2000命令を1Wで計算できるというような時代だったわけですでそれがその後先ほどのような。"
+            }
+          },
+          {
+            "start": 1141.98,
+            "end": 1165.919,
+            "text": {
+              "en": "Through technological innovation, the United States released the first supercomputer with Tera performance in 1996, and after that, Japan also worked hard, and in 2002, it achieved 40 times the performance in parallel processing.",
+              "zh": "通过技术创新，美国在1996年发布了第一台Tera性能的超级计算机，之后日本也努力，在2002年在并行处理方面实现了40倍的性能。",
+              "ja": "技術革新によってアメリカが1996年に初めてテラの性能を持つスパコンを出してきたというところにありますでその後日本も頑張りまして地球史見られたというものが2002年に40倍の性能を作り上げたとでこれが並列処理の。"
+            }
+          },
+          {
+            "start": 1163.7,
+            "end": 1186.98,
+            "text": {
+              "en": "It is said that if 5,000 computers were combined to perform processing, the power at that time would be 6 megawatts. This progressed rapidly, and in 2008, the US created a one-peta system, followed by the K computer, also from Japan.",
+              "zh": "据说，如果将5000台计算机组合在一起进行处理，当时的功率将达到6兆瓦。这一进程进展很快，2008年，美国创建了one-peta系统，随后同样来自日本的K计算机也随之诞生。",
+              "ja": "程度になりますけど5000個のコンピュータを集約して処理をしたとでその時の電力が6メガワットと書いてるでこれがどんどん進んでUSが1ペタというものを2008年に作り上げてその後Kコンピュータですねこれも日本の。"
+            }
+          },
+          {
+            "start": 1184.24,
+            "end": 1205.84,
+            "text": {
+              "en": "The K computer, the next generation computer after the so-called flagship Earth simulator, is a computer built by Japan with the goal of performing exactly one calculation per second.",
+              "zh": "K计算机是继所谓的旗舰地球模拟器之后的下一代计算机，是日本制造的计算机，其目标是每秒执行一次计算。",
+              "ja": "いわゆるフラグシップ地球シミュレータに次ぐ次の世代のコンピュータとしてKコンピュータちょうど1系会の計算を1秒間にやろうという目標を立てて日本が作り上げたコンピュータになりますでそこでは使う。"
+            }
+          },
+          {
+            "start": 1203.299,
+            "end": 1226.4,
+            "text": {
+              "en": "The equivalent number of parallel processing units is 88,000 processors. If you were to connect 88,000 chips inside your computer to perform calculations, that would require 10 megawatts of power, or about the same power as 20,000 households.",
+              "zh": "并行处理单元的等效数量为 88,000 个处理器。如果你要在计算机内部连接 ​​88,000 个芯片来执行计算，则需要 10 兆瓦的电力，大约相当于 20,000 个家庭的电力。",
+              "ja": "並列処理の同数としては88,000個のプロセッサーですね皆さんのコンピュータの中に入ってるチップが88,000個をつないでですね計算させるとでそれで10メガワットのちょうど2万世帯分ぐらいの電力を必要としてまし。"
+            }
+          },
+          {
+            "start": 1225.44,
+            "end": 1247.28,
+            "text": {
+              "en": "But after that, China came out and launched a new supercomputer with 40,000 CPUs, about 12 times the performance of the K, and an increase of 50%.",
+              "zh": "但之后中国又出来推出了新的超级计算机，有4万个CPU，性能大约是K的12倍，提升了50%。",
+              "ja": "たでその後中国が対に出てきましてですね中国が新しいスパコンをKの12倍ほどの性能で4万個のCPUをでさらに5割増しの。"
+            }
+          },
+          {
+            "start": 1245.72,
+            "end": 1265.299,
+            "text": {
+              "en": "Not to be outdone, in terms of power consumption, the US reached 200 petas in 2018, and Japan, which has now become famous for its droplet simulation, for example, Fugaku in 2020.",
+              "zh": "也不甘示弱，在耗电量方面，美国在2018年达到了200peta，而现在以液滴模拟闻名的日本，例如富岳，在2020年也达到了200peta。",
+              "ja": "消費電力とでそれに負けずとUSが18年に200ペタとでそしてまた日本が今例えば飛沫のシミュレーションなどで有名になりましたけど富岳が2020年に。"
+            }
+          },
+          {
+            "start": 1261.88,
+            "end": 1283.039,
+            "text": {
+              "en": "At 537 petaflops, this was achieved by realizing parallel processing of nearly 160,000 CPUs and using an extremely large amount of power, 30 megawatts.",
+              "zh": "537 petaflops 是通过实现近 160,000 个 CPU 的并行处理并使用 30 兆瓦的极大功率来实现的。",
+              "ja": "537ペタフロップスでこれは16万近いCPU16万近い並列処理を実現してしかも30メガワットという非常に多くの電力を使うということで達成していますで。"
+            }
+          },
+          {
+            "start": 1279.32,
+            "end": 1300.559,
+            "text": {
+              "en": "Last year, the United States finally entered the 1x3 realm, using GPUs, processors dedicated to graphics processing, which everyone here may have in their homes.In addition, a system specialized for calculations was introduced into this system.",
+              "zh": "去年，美国终于进入了1x3的领域，使用的是GPU，即专门用于图形处理的处理器，这里每个人家里可能都有。此外，这个系统还引入了专门用于计算的系统。",
+              "ja": "昨年アメリカがついに1x3の領域に入ってここでは皆さん家庭にあるかもしれませんけどGPUというグラフィックス処理専用のプロセッサを使ってですねさらに計算に特化した仕組みをこの中に導入して。"
+            }
+          },
+          {
+            "start": 1298.1,
+            "end": 1319.539,
+            "text": {
+              "en": "When you reach the 1x3 level for the first time by achieving high performance that cannot be achieved with conventional computer CPUs, it is suppressed a little, and when you get to 23rd, it is still a very large value, but when you use all those CPUs at once like this.",
+              "zh": "当你通过实现传统计算机CPU无法实现的高性能而第一次达到1x3水平时，它会受到一点抑制，当你达到第23位时，它仍然是一个非常大的值，但是当你像这样同时使用所有这些CPU时。",
+              "ja": "従来のコンピュータのCPUではできないような高性能性を実現して初めて1x3というレベルに入ってきたとまあ少し抑えられて23番目23番目が終わったとそれでも非常に大きな値になりますけどこのようにそのたくさんのCPUを一斉に。"
+            }
+          },
+          {
+            "start": 1317.36,
+            "end": 1341.179,
+            "text": {
+              "en": "Supercomputers are often said to be very similar to the world of racing, which may be because F1 isn't very popular right now, but they are made with very sophisticated technology.",
+              "zh": "人们常说超级计算机与赛车世界非常相似，这可能是因为F1现在不太流行，但它们是用非常复杂的技术制造的。",
+              "ja": "使い上げるということになりますスパコンというのはよくF1皆さん今F1あまり流行ってないからあれかもしれませんけどレーシングの世界とよく似てると言われるんですけど非常にその洗練された技術で作られてるとかですねえっと乗りこなすに高度な。"
+            }
+          },
+          {
+            "start": 1338.659,
+            "end": 1361.58,
+            "text": {
+              "en": "It seems like it requires a lot of skill, or the manufacturer's technology is put to the test, or it uses a lot of fuel to make small quantities to order, or it's effective, and it seems like recently they've been electrified, so maybe that's not the case, but it's also noisy.Supercomputers are also used in the same way to program using the latest technology.",
+              "zh": "看起来需要很多技巧，或者考验制造商的技术，或者使用大量燃料来少量订购，或者它很有效，而且最近似乎已经电气化了，所以也许事实并非如此，但它也很吵。超级计算机也以同样的方式使用最新技术进行编程。",
+              "ja": "テクニックが必要だとかあるいは製造業者の技術が試されるとか少量受注生産で効果とかで大量の燃料を使うとか最近この電気化されてるようですのでそうでもないのかもしれませんけどあとまあうるさいとかこれはことがですねスパコンもですねやはり同じようにその最新の技術で使われてプログラムするのに。"
+            }
+          },
+          {
+            "start": 1359.36,
+            "end": 1382.22,
+            "text": {
+              "en": "It also requires a certain amount of experience, the pressure is high, the high cost of making to order, and the use of electricity, which is a must-see.Tohoku University has a supercomputer, so if you go to see it, you'll see that it's very noisy, but the value of using a supercomputer is that.",
+              "zh": "还需要一定的经验，压力大，订做成本高，而且要用电，这是必看的。东北大学有一台超级计算机，所以你去看的话，会发现它很吵，但是使用超级计算机的价值就在于此。",
+              "ja": "もそれなりの経験が必要だとかですね気圧力が問われるとか受注生産高いとか電気を使うとかうるさいとこれはぜひですね東北大学スパコンありますので見に行っていただくとわかりますけど非常にうるさいですでただスパコンの利用価値というのは。"
+            }
+          },
+          {
+            "start": 1379.039,
+            "end": 1402.559,
+            "text": {
+              "en": "I think the big difference is that it can help enrich our lives or make us feel safe and secure.Therefore, the approaches needed to advance this technology include experiment and theory.",
+              "zh": "我认为最大的区别在于它可以帮助丰富我们的生活或让我们感到安全和有保障。因此，推进这项技术所需的方法包括实验和理论。",
+              "ja": "私たちのその生活を豊かにしてくるあるいは安全安心してくれるというようなことに役立つというのが大きな違いかと思いますでこの技術を進める上で必要なアプローチとしては実験と理論というものがあるわけですけどこう。"
+            }
+          },
+          {
+            "start": 1400.22,
+            "end": 1423.64,
+            "text": {
+              "en": "With the advent of supercomputers, a new method called simulation has emerged, and now simulations play a major role in promoting the technology we buy, such as conducting experiments efficiently and analyzing theories.",
+              "zh": "随着超级计算机的出现，出现了一种称为模拟的新方法，现在模拟在促进我们购买的技术方面发挥着重要作用，例如有效地进行实验和分析理论。",
+              "ja": "いうスパコンが登場することによって新たにシミュレーションという方法が出てきたわけですねで今やこのシミュレーションを使って実験を効率よく行うとかあるいは理論を分析するというようなことでこのシミュレーションが大きな役割を私たちの買う技術の推進や。"
+            }
+          },
+          {
+            "start": 1422.659,
+            "end": 1444.5,
+            "text": {
+              "en": "It has also become useful in areas such as engineering manufacturing, which is a typical application field for supercomputers, such as efficient catalysts for power generation, or drug discovery.",
+              "zh": "它在工程制造等领域也变得有用，这是超级计算机的典型应用领域，例如发电的高效催化剂或药物发现。",
+              "ja": "あるいはエンジニアリングものづくりと言ったようなところで役に立ってきてるわけですでこれが代表的なスパコンの応用分野になりますけど効率よい例えば発電の触媒とかですねあるいはこれ創薬ですね皆さんのその。"
+            }
+          },
+          {
+            "start": 1442.64,
+            "end": 1464.24,
+            "text": {
+              "en": "Disaster prevention, such as tailor-made medicine to suit a medical condition, or manufacturing, or collision experiments, as I will introduce later.",
+              "zh": "防灾，比如根据病情量身定制药物，或者制造，或者碰撞实验，稍后我会介绍。",
+              "ja": "病状にあった薬をテーラーメイドそのカスタムカスタマイズした形で作り上げるとかあるいはものづくりとかですねそのの衝突の実験とかあとでご紹介しますように防災。"
+            }
+          },
+          {
+            "start": 1458.32,
+            "end": 1480.559,
+            "text": {
+              "en": "Furthermore, there has been a recent hot topic of analyzing the negative effects of future global warming by simulating the global environment, particularly the current atmospheric and oceanic conditions.",
+              "zh": "此外，通过模拟全球环境，特别是当前的大气和海洋条件来分析未来全球变暖的负面影响已成为最近的热门话题。",
+              "ja": "ですねさらには地球環境特にその現在のその大気・海洋の状況をシミュレーションして将来の温暖化の何て言うんですかねその悪影響を分析するとかあるいは最近話題になっております。"
+            }
+          },
+          {
+            "start": 1478.88,
+            "end": 1502.36,
+            "text": {
+              "en": "Things like simulating the launch of various rockets, simulating engines, elucidating the conditions of the Big Bang when the universe was created, and reproducing things that would never be seen, and especially the mechanism of nuclear power.",
+              "zh": "比如模拟各种火箭的发射，模拟发动机，阐明宇宙诞生时大爆炸的条件，再现那些永远看不到的东西，尤其是核动力的机制。",
+              "ja": "いろんなロケットの発射のシミュレーションとかですねエンジンのシミュレーションとかあるいは宇宙の宇宙が生まれた時の状況をビッグバンの状況を解明するとかこう絶対に見ることができないようなものを再現するとかですねあとはこれ原子力の仕組みまあ特に。"
+            }
+          },
+          {
+            "start": 1503.2,
+            "end": 1525.44,
+            "text": {
+              "en": "By evaluating the internal structure of various types of nuclear power, we can also simulate the state of its radioactivity.Also, we can use simulations to effectively contain nuclear fusion, which has recently become a reality.",
+              "zh": "通过评估各类核动力的内部结构，我们还可以模拟其放射性状态。此外，我们还可以通过模拟来有效遏制核聚变，这在最近已成为现实。",
+              "ja": "いろいろな原子力の内部構造を評価することによってその放射能の状況などもこれでシミュレーションしたりですねあるいは最近のその核融合なんかもシミュレーションを使って効率よいその封じ込めというんでしょうかねそれを実現。"
+            }
+          },
+          {
+            "start": 1522.62,
+            "end": 1544.4,
+            "text": {
+              "en": "Such things can only be done with a supercomputer, so this is the Japanese-developed supercomputer Fugaku installed at RIKEN's Center for Computational Science in Kobe.This is a must-see when you go to Kobe.",
+              "zh": "这种事情只有超级计算机才能完成，所以这就是安装在神户理化学研究所计算科学中心的日本开发的超级计算机“富岳”。这是您去神户时必看的地方。",
+              "ja": "するようなことがスパコンがあって初めてできるわけですでこれは理研に神戸の理研の計算科学センター計算科学センターに設置された日本が開発したスパコン富岳になりますこれぜひあの神戸に行った時に。"
+            }
+          },
+          {
+            "start": 1541.76,
+            "end": 1564.99,
+            "text": {
+              "en": "It's open to the public, so please take a look. It was jointly developed by Fujitsu and RIKEN, and it integrates 48 computing units onto a single chip.",
+              "zh": "它向公众开放，所以请看一下。它由富士通和RIKEN联合开发，在单个芯片上集成了48个计算单元。",
+              "ja": "ですね一般公開されてますのでぜひ見ていただければと思いますが富士通と理研が共同で開発したものになりますけどこれシングル1枚のチップ上に48個の計算ユニット計算装置を集積してでそのそれを一つの。"
+            }
+          },
+          {
+            "start": 1561.32,
+            "end": 1583.52,
+            "text": {
+              "en": "The idea was to pack 158,0156,000 CPU processors into this unit and connect them via a network to perform a single calculation all at once.",
+              "zh": "这个想法是将 158,0156,000 个 CPU 处理器打包到这个单元中，并通过网络将它们连接起来，以一次性执行单个计算。",
+              "ja": "プロセッサーとの単位とした上で158,0156,000個ですかのCPUプロセッサーをこの中に詰め込んでさらにはこれらをネットワークでつないで一斉に一つの計算を実現しようというもの。"
+            }
+          },
+          {
+            "start": 1580.58,
+            "end": 1604.159,
+            "text": {
+              "en": "Now, each processor is 2GHz, which means it can switch 2 billion times per second, and just like in Japan, it took 130 billion yen to develop it in about five years.",
+              "zh": "现在，每个处理器都是2GHz，这意味着每秒可以切换20亿次，就像在日本一样，大约五年的时间里就花费了1300亿日元来开发它。",
+              "ja": "になりますで1個1個のプロセッサーは2ghzということで1秒間に20億回のスイッチングができるようなものになっていますでちょうど日本の国の様子は1300億をかけてですねおよそまあえっと5年間で開発したという。"
+            }
+          },
+          {
+            "start": 1601.22,
+            "end": 1618.82,
+            "text": {
+              "en": "By the way, it's 30 megawatts, so of course it's going up a little when you consider the wallet, and it costs about 3 billion yen a year, so it has to be used more effectively than that, especially recently.",
+              "zh": "顺便说一句，它是 30 兆瓦，所以当你考虑到钱包时，它当然会增加一点，每年大约花费 30 亿日元，所以它必须比这更有效地使用，特别是最近。",
+              "ja": "ところになりますでまぁ30メガワットということでこれちょっと財布を考えるともちろん上がってますから30億円ぐらい年間かかってるのでそれ以上の効果を持って使わないといけないということで特にその最近。"
+            }
+          },
+          {
+            "start": 1619.24,
+            "end": 1640.34,
+            "text": {
+              "en": "This has been a big issue, but it's not just the simulation of the droplets of the new coronavirus, but it's also drug discovery, manufacturing as I mentioned earlier, or the safety and security of society.",
+              "zh": "这是一个大问题，但这不仅仅是模拟新冠病毒的飞沫，而且还涉及我之前提到的药物发现、制造，或者社会的安全和保障。",
+              "ja": "非常に問題になっておりましたけど新型コロナウイルスの飛沫のシミュレーションとかもちろん飛沫のシミュレーションだけではないんですが創薬とか先ほど示して示しましたようなものづくりとかあるいは安全安心な社会最近ですか。"
+            }
+          },
+          {
+            "start": 1640.82,
+            "end": 1663.58,
+            "text": {
+              "en": "It seems that they are also doing things like real-time simulations of torrential rain, so although the scale is a little smaller than this, Tohoku University also has a supercomputer, and we and NEC have been doing joint research on this for many years.",
+              "zh": "好像他们也在做实时模拟暴雨之类的事情，所以虽然规模比这个小一点，但是东北大学也有一台超级计算机，而且我们和NEC在这方面联合研究了很多年。",
+              "ja": "ゲリラ豪雨のリアルタイムシミュレーションといったようなことも行っているようですでこれよりは少し規模が小さくなるんですが東北大学にもスパコンがございましてこれは私たちとNECが長年共同研究をしておりまして以下にそのデータ処理を効率よく行うかと。"
+            }
+          },
+          {
+            "start": 1662.299,
+            "end": 1685.52,
+            "text": {
+              "en": "The SX Aurora Wing is a product developed by NEC that expresses this kind of mechanism on a chip.It was released for the first time in 2018, and of course the basic idea is that the calculation unit is concentrated inside the wing, just like the Fugaku mentioned earlier.",
+              "zh": "SX Aurora Wing 是 NEC 开发的一款在芯片上表达这种机制的产品。它于 2018 年首次发布，当然基本思想是计算单元集中在机翼内部，就像前面提到的 Fugaku 一样。",
+              "ja": "いうような仕組みをチップ上に表現してNECが製品化したSXオーロラ翼というものです2018年に初めて出したものなんですけど基本はもちろん先ほどの富岳と同じようにですね中に計算ユニット集約するんですけどそれと。"
+            }
+          },
+          {
+            "start": 1683.6,
+            "end": 1706.9,
+            "text": {
+              "en": "At the same time, we have been working together to develop a memory system to efficiently supply that data, and the new system will start operating in August, and is currently being released to the public.",
+              "zh": "与此同时，我们一直在共同开发一个内存系统来高效地提供这些数据，新系统将于8月份开始运行，目前正在向公众发布。",
+              "ja": "同時にそのデータを効率よく供給するのメモリーシステムの開発などにも私たち一緒に取り組んでまいりましたで8月からですね新しいシステムが動き始めますしえっとですね今一般公開してると。"
+            }
+          },
+          {
+            "start": 1703.22,
+            "end": 1726.559,
+            "text": {
+              "en": "If you go to the Cyber ​​Science Center, which is the building in front of the subway, you can see this supercomputer, so I thought it would be a good idea to stop by and take a look before getting on the subway on your way home.",
+              "zh": "如果你去网络科学中心，也就是地铁前面的大楼，你就可以看到这台超级计算机，所以我想在回家的路上乘地铁之前顺便去看看是个好主意。",
+              "ja": "思いますのでちょっとその地下鉄の前の建物になりますがサイバーサイエンスセンターというところに行きますとこのスパコンを見ることができますのでぜひあの帰りに地下鉄に乗る前にですねちょこっと寄ってご覧いただければというふうに思っており。"
+            }
+          },
+          {
+            "start": 1722.84,
+            "end": 1746.0,
+            "text": {
+              "en": "Of course, this system is not exclusive to Tohoku University, but is used by researchers and university students all over Japan for their own research via the network.",
+              "zh": "当然，该系统并非东北大学独有，日本各地的研究人员和大学生都通过网络使用该系统进行自己的研究。",
+              "ja": "ますでこのシステムもちろん東北大学だけのものではなくてですねネットワークを介して日本中の研究者や大学の学生さんなどがそれぞれの研究のためにお使いになってるというところになりますでその成果としては。"
+            }
+          },
+          {
+            "start": 1741.76,
+            "end": 1765.34,
+            "text": {
+              "en": "We have been working with the MRJ Mitsubishi Aircraft for many years to speed up the simulation of the airplane, but unfortunately it is about to stop flying, which is a great shame.However, there are other things that we worked on together until the final commercialization.",
+              "zh": "我们多年来一直与 MRJ 三菱飞机合作，以加快飞机的模拟速度，但不幸的是它即将停止飞行，这是一个巨大的耻辱。不过，我们还有其他事情一起工作，直到最终商业化。",
+              "ja": "私たち長年ですねMRJ三菱航空機と飛行機のシミュレーションの高速化に取り組んできたんですが残念ながらもうちょっとのところで飛ばなくなってしまってこれ非常に残念だなとただこの最終的に製品化にまで一緒に取り組んできたものがございますあと今の時期ですと熱中症の解析を。"
+            }
+          },
+          {
+            "start": 1762.26,
+            "end": 1785.84,
+            "text": {
+              "en": "The Japan Weather Association operates a website that provides information to people under various circumstances, including children, adults, the elderly, and people like me.",
+              "zh": "日本气象协会运营着一个网站，为各种情况下的人们提供信息，包括儿童、成人、老年人和像我这样的人。",
+              "ja": "ですね気象協会のウェブサイトを経営してその情報を提供しているということがございますでいろんなその環境の下であるいはお子さんとか成人とか歳をされた方とか私みたいなところですねそう人がいろいろ条件の中で。"
+            }
+          },
+          {
+            "start": 1783.02,
+            "end": 1805.88,
+            "text": {
+              "en": "Since we sense heat differently, we have created a system that issues heatstroke alerts based on those things.The other thing that we have been researching for many years is the vertical time recording method, which is used in your hard disk drives.",
+              "zh": "由于我们对热量的感知不同，我们创建了一个根据这些情况发出中暑警报的系统。我们多年来一直在研究的另一件事是垂直时间记录方法，该方法用于硬盘驱动器。",
+              "ja": "暑さを感じるものが違いますのでそういうものに即してあの熱中症のアラートを出すというようなシステムになってございますあとはですね特大の中が長年研究してきたものとしては垂直時期記録方式これは皆さんのハードディスクドライブなどで。"
+            }
+          },
+          {
+            "start": 1801.919,
+            "end": 1822.62,
+            "text": {
+              "en": "This vertical phase mechanism has already been put into practical use, and we are working together with them on using our supercomputer to speed up the simulation, which will lead to its practical application.",
+              "zh": "这个垂直相位机构已经投入实际应用，我们正在和他们一起用我们的超级计算机来加速模拟，这将导致它的实际应用。",
+              "ja": "もう今や実用化されておりますけどこの垂直時期の仕組みをですね私たちのスパコンを使ってさらにはそれをシミュレーションを高速化するような取り組みを一緒にさせていただきまして実用化につながっているところですあとは。"
+            }
+          },
+          {
+            "start": 1818.72,
+            "end": 1841.58,
+            "text": {
+              "en": "Things like power generation turbines and high-performance tires are also used to visualize flows through fluid analysis, but we can make things that cannot be seen seen or create things that cannot be created yet.",
+              "zh": "发电涡轮机和高性能轮胎等也用于通过流体分析来可视化流动，但我们可以制造看不见的东西或创造尚无法创造的东西。",
+              "ja": "発電タービンとかですねあるいは高性能のタイヤとかあとは流体解析ですね流れを可視化しておりますけどそのような見えないものを見えるとかあるいはまだ作れないものを作るというようなところで。"
+            }
+          },
+          {
+            "start": 1838.64,
+            "end": 1861.5,
+            "text": {
+              "en": "One of the areas in which our supercomputers are useful is the development of a real-time tsunami flood damage prediction system.This was in November 2012, as you all know, after the Great East Japan Earthquake occurred at Tohoku University.",
+              "zh": "我们的超级计算机可以发挥作用的领域之一是开发实时海啸洪水灾害预测系统。众所周知，这是在 2012 年 11 月，东北大学发生东日本大地震之后。",
+              "ja": "私たちのスパコンが役に立っているところですで今力を入れているものとしてはリアルタイム津波浸水被害予測システムの開発というものがございますこれは皆さんご存知の2012年11年ですか東日本大震災が起きてですねまあ東北大学。"
+            }
+          },
+          {
+            "start": 1858.86,
+            "end": 1882.5,
+            "text": {
+              "en": "The Tohoku area, including the tsunami, suffered extremely severe damage, and many people died due to the tsunami, so we, as a university in the affected area, wanted to advance the science and technology in some way that would be useful to society.",
+              "zh": "包括海啸在内的东北地区遭受了极其严重的破坏，许多人因海啸而死亡，因此我们作为受灾地区的一所大学，希望以某种对社会有用的方式推进科学技术的发展。",
+              "ja": "を含むその東北エリアに非常に甚大な被害が起きたということがございました特に津波によってですね多くの方が亡くなったということで私たち被災地の大学としてはですね何かその科学技術を社会に役立つ取り組みとして進めていきたいという思いがございました。"
+            }
+          },
+          {
+            "start": 1878.0,
+            "end": 1900.679,
+            "text": {
+              "en": "In such a situation, we are planning to use supercomputers to perform a series of processes in real time, from the occurrence of the tsunami earthquake to the analysis of the tsunami flooding situation.",
+              "zh": "在这种情况下，我们计划使用超级计算机来实时执行一系列过程，从海啸地震的发生到海啸洪水情况的分析。",
+              "ja": "でそのような中で私たちはその津波の地震の発生から津波の浸水の状況の分析まで一連の処理をですねスパコンを使ってリアルタイムに出現していこうという。"
+            }
+          },
+          {
+            "start": 1895.159,
+            "end": 1914.41,
+            "text": {
+              "en": "We've been working on this for the past eight years, and two years ago we started incorporating it into the Cabinet Office's disaster prevention system, so that when a major earthquake occurs, our supercomputer activates and protects everyone.",
+              "zh": "我们已经为此努力了八年，两年前我们开始将其纳入内阁府的防灾系统，以便在发生大地震时，我们的超级计算机启动并保护每个人。",
+              "ja": "取り組みをこの8年間行って2年前からはですね内閣府政府の防災システムの中に取り入れていただいて何か大きな地震が起きると私たちのスパコンが動いて皆さんの。"
+            }
+          },
+          {
+            "start": 1914.659,
+            "end": 1937.039,
+            "text": {
+              "en": "This is an attempt to provide the Cabinet Office, the government's disaster prevention agency, with information that can issue warnings to people in areas likely to be affected by a tsunami.",
+              "zh": "这是为了向政府的防灾机构内阁府提供信息，以便向可能受到海啸影响的地区的人们发出警告。",
+              "ja": "津波が関係しそうなエリアにいらっしゃる皆さんに対して警報を出せるような情報を内閣府という政府の防災機関に防災対策室に提供するというような試みですでこれは。"
+            }
+          },
+          {
+            "start": 1933.76,
+            "end": 1957.5,
+            "text": {
+              "en": "Regarding the Great East Japan Earthquake, when an earthquake occurs, the ground shifts, and Japan has a GPS positioning system with approximately 1,300 points, and a system has been established to collect ground displacement in real time.",
+              "zh": "关于东日本大地震，地震发生时地面会发生位移，日本拥有约1300个点的GPS定位系统，并建立了实时收集地面位移的系统。",
+              "ja": "東日本大震災のところになりますけど地震が起きますとこの地盤が変動するんですねで日本にはですねおよそ1300点のGPSの測位系がありましてそこでそのリアルタイムに地盤のズレというものを集めてくるというシステムが出来上がってますで。"
+            }
+          },
+          {
+            "start": 1954.62,
+            "end": 1978.2,
+            "text": {
+              "en": "Using this, we developed a system that uses that computer to process the dance in about seven minutes to elucidate the mechanism of this epicenter, and then automatically dumps that data into the Cyber ​​Science Center's trash can.",
+              "zh": "利用这一点，我们开发了一个系统，使用该计算机在大约七分钟内处理舞蹈，以阐明该震中的机制，然后自动将这些数据转储到网络科学中心的垃圾桶中。",
+              "ja": "これを使って私たちはそのコンピュータを使ってまずそのダンスをこの震源の仕組みを解明するというのをだいたい7分以内ぐらいで処理するようなシステムを開発しましたでそのデータをですね自動的にサイバーサイエンスセンターのゴミ箱に流し込んでですねその。"
+            }
+          },
+          {
+            "start": 1976.1,
+            "end": 1999.2,
+            "text": {
+              "en": "We have developed a high-speed simulation technology that calculates the run-up of a tsunami in real time, and the result is that within 10 minutes, a resolution map with a 10m mesh can calculate six hours worth of flooding conditions.",
+              "zh": "我们开发了一种高速模拟技术，可以实时计算海啸的爆发，结果是，在 10 分钟内，具有 10m 网格的分辨率地图可以计算出相当于 6 小时的洪水状况。",
+              "ja": "津波の遡上をですねリアルタイムに計算するというシミュレーションの高速化技術というものを開発しましたでその結果ですが10分以内で10mメッシュのリゾリューションマの制度ですね細かさで6時間分の浸水状況を。"
+            }
+          },
+          {
+            "start": 1997.279,
+            "end": 2020.74,
+            "text": {
+              "en": "We have been successful in asking for this, and the results are provided in easy-to-understand formats such as map information and animations to places like the Cabinet Office's Disaster Management Office, which takes approximately 4 minutes, and a total of 20 minutes considering the real-time nature of the project.",
+              "zh": "我们的要求很成功，结果以地图信息和动画等易于理解的格式提供给内阁府防灾办公室等地方，大约需要 4 分钟，考虑到项目的实时性，总共需要 20 分钟。",
+              "ja": "求めるということに成功しておりますでその結果というのはこのような地図情報とかアニメーションといったような分かりやすい形で内閣府の防災対策室のようなところに提供していくとこれが確かにだいたい4分で全体で20分リアルタイム性を考えると皆さんじゃあ。"
+            }
+          },
+          {
+            "start": 2019.0,
+            "end": 2042.399,
+            "text": {
+              "en": "You might want them to come out right away, but I think there's still room for improvement, but in the 2026 Great East Japan Earthquake, it took about 26 minutes for a big tsunami to arrive, so I think providing this kind of information could help people evacuate faster.",
+              "zh": "你可能希望他们马上出来，但我认为还有改进的空间，但在2026年东日本大地震中，大海啸大约需要26分钟才能到达，所以我认为提供此类信息可以帮助人们更快地疏散。",
+              "ja": "すぐに出てほしいなと思うかもしれませんけどまああのまだまだ改良の余地はあるとは思うんですがただ大きな津波が来るまで2026東日本大震災の時には26分ぐらいあったんですねますのでこのような情報を提供することによってより早い避難が行えるんではないかなというふうに。"
+            }
+          },
+          {
+            "start": 2039.64,
+            "end": 2062.8,
+            "text": {
+              "en": "I'm thinking that it might be possible to issue a warning before a large tsunami hits, and the Cabinet Office's disaster prevention system is now set up to monitor earthquakes like this 24 hours a day, 365 days a year, and run simulations when necessary.",
+              "zh": "我认为也许可以在大海啸袭来之前发出警报，内阁府的防灾系统现在已经建立起来，可以一年365天、一天24小时监测这样的地震，并在必要时进行模拟。",
+              "ja": "大きな津波が来る前にですね警報が出せるんじゃないかなというふうに思っているところですで今は内閣府の防災システムとして24時間365日このような地震のモニタリングをしながらシミュレーションが必要な時には起動するというようなシステムに出来上がっており。"
+            }
+          },
+          {
+            "start": 2058.3,
+            "end": 2079.56,
+            "text": {
+              "en": "Ultimately, as I will introduce later, we would like to send this kind of information to your smartphone or mobile device so that you can know what will happen to your current location due to flooding, or what evacuation routes should be taken.",
+              "zh": "最终，正如我稍后将介绍的，我们希望将此类信息发送到您的智能手机或移动设备，以便您知道您当前所在的位置会因洪水而发生什么情况，或者应该采取什么疏散路线。",
+              "ja": "ますで最終的には後でご紹介しますけど皆さんのスマホとか携帯デバイスにこういうような情報をお送りして今いる場所の浸水がどの今後どうなっていくかとかですねあるいは避難経路をどうすればいいかとかそのような形に持っていきたいというふうに思っております。"
+            }
+          },
+          {
+            "start": 2077.379,
+            "end": 2100.96,
+            "text": {
+              "en": "How much time is coming? So this is a simulation of what kind of flooding situation would occur in the event of a Nankai Trough earthquake, which Kochi City is currently very worried about.Before the tsunami hits, the area around the river will sink like this.",
+              "zh": "几点到了？所以这是模拟高知市目前非常担心的南海海槽地震发生时会出现什么样的洪水情况。在海啸来袭之前，河流周围的地区会像这样下沉。",
+              "ja": "どんな時間がもうちょっとですねそれでこれが高知市今あの南海トラフ地震というのが非常に心配されているところですが南海トラフ地震が起きた時にどのような浸水状況になるかというものをシミュレーションしたものになります津波は来る前にですね川の周りがこう沈下。"
+            }
+          },
+          {
+            "start": 2100.0,
+            "end": 2124.0,
+            "text": {
+              "en": "This picture shows the flooding situation in Onagawa, but this is a calculation made under a similar situation to evaluate the simulation results.We also know from this picture that the water rose about 16 meters.",
+              "zh": "这张图显示了女川的洪水情况，但这是在类似情况下进行的计算，以评估模拟结果。从这张图中我们还知道水位上涨了大约16米。",
+              "ja": "して浸水が始まるというようなことも分かってきましたこれは女川の時の浸水の状況を示したものになりますけどまあこれはシミュレーションの結果を評価するために同じような状況で計算をしたものになりますまあ16mぐらい水が上がってしまったというようなところがこの絵からもわかっているところですで。"
+            }
+          },
+          {
+            "start": 2122.44,
+            "end": 2146.32,
+            "text": {
+              "en": "Excuse me for taking a moment to talk about computer quantum computers. Hey everyone, I'm sorry to have taken up your time, but the technology of these supercomputers is expected to continue to evolve, but on the other hand, there are limits to miniaturization and power consumption, which I mentioned earlier.",
+              "zh": "请原谅我花点时间谈论计算机量子计算机。大家好，很抱歉占用了大家的时间，但是这些超级计算机的技术预计会继续发展，但另一方面，小型化和功耗也存在限制，这一点我之前提到过。",
+              "ja": "もう少しすいませんちょっと時間をいただいてコンピュータ量子コンですねちょっとあの皆さんちょっと時間が押してしまって申し訳ないんですがこのようなそのスパコンの技術というのはまあどんどん進化していくところが期待されるわけですがその一方で微細化の限界とか消費電力先ほど申し上げ。"
+            }
+          },
+          {
+            "start": 2143.26,
+            "end": 2166.96,
+            "text": {
+              "en": "As I mentioned above, when you use a single line of power, such as several megawatts, of course the larger the power consumption, the more heat is generated.I think that even if you put your computer on your lap, it will get hot.Nowadays, the heat density of the chip is actually hotter than a hot plate, and this brings up the problem of heat generation.If you do that, of course, a new problem arises.",
+              "zh": "正如我上面提到的，当你使用单线电源，比如几兆瓦时，当然功耗越大，产生的热量就越多。我认为即使你把电脑放在腿上，它也会变热。现在芯片的热密度实际上比电热板还热，这就带来了发热的问题。如果这样做，当然会出现新的问题。",
+              "ja": "ましたように何メガワットというような消費電力を一列使うとかですねで当然その消費電力が大きくなると熱がたくさん出てきます皆さんパソコンを膝に置いても熱くなると思いますが今やチップの熱密度というのは本当にホットプレートよりも熱いんですねですがこれ発熱の問題というのが出てきますそうすると当然新しい。"
+            }
+          },
+          {
+            "start": 2164.8,
+            "end": 2187.66,
+            "text": {
+              "en": "Quantum computing is currently attracting attention as there is a demand for a computational mechanism.What is the difference between a quantum computer and a conventional computer?As you know, as I just mentioned, a quantum computer is running on 01.",
+              "zh": "量子计算目前很受关注，因为有计算机制的需求。量子计算机和传统计算机有什么区别？大家知道，我刚才提到了，量子计算机是跑在01上的。",
+              "ja": "計算の仕組みというものが求められてきて今注目されているのが量子コンピューティングですで量子コンピュータ従来のコンピュータと何が違うかということになりますけどまあご存知のように今話しましたように01で動かしているとで量子コンピュータというのは。"
+            }
+          },
+          {
+            "start": 2184.839,
+            "end": 2207.099,
+            "text": {
+              "en": "It's very strange at the atomic level.It's strange to me, but it's a strange behavior.The zero and the spin go up and down like this, and a situation arises where these two states are convolved.",
+              "zh": "这在原子层面上很奇怪。这对我来说很奇怪，但这是一种奇怪的行为。零和自旋像这样上下移动，并且出现了这两种状态卷积的情况。",
+              "ja": "原子レベルでの非常に奇妙私にとってみれば奇妙なんですけど奇妙な振る舞いですねそのゼロとスピンがこう上向いたり下向いたりというなこの2つの状態が畳み込んでいるような状況が生じますでその2つの状態が畳み込まれているなものを。"
+            }
+          },
+          {
+            "start": 2204.579,
+            "end": 2227.74,
+            "text": {
+              "en": "In short, let's use it for calculations using a situation where 01 can handle things that were previously 0 or 1 at the same time.The result will be either 0 or 1 when observed, so until you observe it, you can move it freely like this.",
+              "zh": "简而言之，让我们用它来计算，01可以同时处理以前是0或1的东西。观察时结果将是0或1，所以在你观察它之前，你可以像这样自由移动它。",
+              "ja": "計算に使いましょうと要するに今までは0か1だったというものを01が同時に扱えるような状況を使って計算をさせましょうとで結果というのは観測するとどれか0か1かに収まるんですねですので観測するまでは自由にこう動かしといて。"
+            }
+          },
+          {
+            "start": 2224.56,
+            "end": 2247.599,
+            "text": {
+              "en": "This requires a new way of thinking about calculations that can be effectively incorporated into the results up to the point of observation.One of the areas in which quantum computers excel is typically the problem of combinatorial high-tech solutions.This is how to maximize a certain objective.",
+              "zh": "这需要一种新的计算思维方式，可以有效地融入到观察点的结果中。量子计算机擅长的领域之一通常是组合高科技解决方案的问题。这就是如何最大化某个目标。",
+              "ja": "観測するまでの間にうまく結果に落とし込んでいくというような新しい考え方での計算というものをが必要になってくるわけですで量子コンピュータ得意分野っていうのは代表的なものとしては組み合わせハイテク化問題というものがありますこれはある目的を最大化するためにどのような。"
+            }
+          },
+          {
+            "start": 2245.8,
+            "end": 2268.66,
+            "text": {
+              "en": "For example, what route should I take to get around the many Japanese cities in the shortest time? Or how to take detours to avoid traffic jams? Or how expensive something with a fixed capacity should be.",
+              "zh": "例如，我应该走什么路线才能在最短的时间内绕过日本的众多城市？或者如何少走弯路避免堵车？或者说具有固定容量的东西应该有多贵。",
+              "ja": "組み合わせをすればいいかというような問題になります例えば日本人のたくさんの街を最短時間で回るにはどの経路を通ればいいかとかですねあるいは渋滞が生じないようにどのようにこう道を迂回していけばいいかとかですねあるいは容量が決まっているものにいかにこう高価。"
+            }
+          },
+          {
+            "start": 2267.28,
+            "end": 2290.5,
+            "text": {
+              "en": "However, since each item has a different size, it is difficult to know which combination will give the most effect or which will result in regret.If you think about such things, for example, in the case of a conventional computer, you might think, ``What if I combine this and this and this, or what will happen if I combine this and this and this?''",
+              "zh": "然而，由于每个项目的大小不同，很难知道哪种组合会产生最大的效果或哪种组合会导致遗憾。如果你考虑这些事情，例如，在传统计算机的情况下，你可能会想，“如果我将这个和这个和这个组合起来会怎样，或者如果我将这个和这个和这个组合起来会发生什么？”",
+              "ja": "なものを詰め込むかとただしそれぞれのサイズが違っているのでどれを組み合わせれば最も効果になるのは後悔になるかは分からないという問題ですでそういうものを考えていくと例えば従来のコンピュータですとこれとこれとこれを組み合わせたらどうだろうとかこれとこれとこれを組み合わせたらどうなるだろうといういわゆる。"
+            }
+          },
+          {
+            "start": 2288.579,
+            "end": 2312.28,
+            "text": {
+              "en": "If you do this, you'll do this exhaustively, and as the number of things you're looking at increases, it'll be fine at first, but as the number of combinations increases exponentially, it will eventually become unmanageable.This will require astronomical calculations, and of course today's supercomputers are also capable of amazing calculations.",
+              "zh": "如果这样做，你就会穷尽一生，随着你看的东西数量的增加，一开始还好，但随着组合数量呈指数级增加，最终会变得难以管理。这将需要天文数字的计算，当然今天的超级计算机也能进行惊人的计算。",
+              "ja": "しらみつぶしにこう調べていくんですねそうすると対象とするものがどんどん増えていくとだんだんこう最初のうちはいいんですけどだんだんこの組み合わせの数が爆発的に増えてなくて最終的に扱えない規模になってしまいますもう天文学的な計算を必要としてくるわけでもちろん今のスパコンもすごい計算。"
+            }
+          },
+          {
+            "start": 2310.119,
+            "end": 2331.839,
+            "text": {
+              "en": "It's a matter of ability, but when you need to calculate a number that you can't keep up with, when you use a quantum computer in that situation, 01 is convolved like this, so you simply prepare as many digits as this number.",
+              "zh": "这是能力的问题，但是当你需要计算一个你跟不上的数字时，当你在那种情况下使用量子计算机时，01就是这样进行卷积的，所以你只需准备与这个数字一样多的数字即可。",
+              "ja": "能力なんですけどそれでは追いつかないような数の計算が必要になってくるとそのような状況で量子コンピュータを使うと01がこう畳み込んでありますので単純にこのものの数だけの桁を用意すると。"
+            }
+          },
+          {
+            "start": 2328.619,
+            "end": 2351.46,
+            "text": {
+              "en": "The ideal idea would be to be able to instantly calculate this many combinations of numbers, but what we are aiming for is to be able to perform calculations on so-called N-term objects all at once in parallel.",
+              "zh": "理想的想法是能够立即计算这么多数字的组合，但我们的目标是能够同时并行地对所谓的 N 项对象执行计算。",
+              "ja": "これだけの数をこれだけの組み合わせを瞬時に求められるというのが理想的な考え方にはなるんですけど狙っているところですですのでいわゆるN項の対象に対して並列に一斉に計算が行えるというのが。"
+            }
+          },
+          {
+            "start": 2349.24,
+            "end": 2371.859,
+            "text": {
+              "en": "This is the key point of quantum computers, and while there are some that have been commercialized and others that are still in the research stage, we are currently working on commercializing quantum annealing.",
+              "zh": "这是量子计算机的关键点，虽然有些已经商业化，有些还处于研究阶段，但我们目前正在致力于量子量子退火的商业化。",
+              "ja": "量子コンピュータのポイントになるわけですねでこれをいくつか商用化されているものもありますしまだ研究段階のものにあるものもあるんですが我々はですね量子アニーリングという今商用化が進められている。"
+            }
+          },
+          {
+            "start": 2368.92,
+            "end": 2391.96,
+            "text": {
+              "en": "We are working on research and development of new calculation technology using quantum computers, and as I said earlier, the problem is to search for combinations of various patterns in parallel and find the optimal one using quantum effects.There are various things that can be done using this.",
+              "zh": "我们正在研究和开发使用量子计算机的新计算技术，正如我之前所说，问题是并行搜索各种模式的组合，并利用量子效应找到最佳的组合。使用它可以做很多事情。",
+              "ja": "量子コンピュータを使って新たな計算技術の研究開発に取り組んでおりますで先ほども言いましたようにいろんなパターンの組み合わせを並列に探してどっか最適なものを量子効果で求めていくという問題ですこれを使って何ができるかというと様々なその。"
+            }
+          },
+          {
+            "start": 2388.66,
+            "end": 2409.02,
+            "text": {
+              "en": "Optimization problems include finding tsunami evacuation routes, and materials.This involves virtualization technology for the development of soft materials such as rubber, and their characteristics.",
+              "zh": "优化问题包括寻找海啸疏散路线和材料。这涉及到橡胶等软材料开发的虚拟化技术及其特性。",
+              "ja": "最適化問題ここでは津波の避難経路を求めようという問題とかですねあるいは材料これはゴムなどのような柔らかい材料の開発の仮想化技術になるんですけどその材料と特徴の。"
+            }
+          },
+          {
+            "start": 2409.66,
+            "end": 2431.14,
+            "text": {
+              "en": "We can investigate combinations and find the most optimal one, or we can use this to simulate a power generation turbine and classify the contents of an actual turbine using quantum annealing.",
+              "zh": "我们可以研究组合并找到最佳组合，或者我们可以用它来模拟发电涡轮机并使用量子量子退火对实际涡轮机的内容进行分类。",
+              "ja": "組み合わせをですね調べて最も最適なものをその中から見つけてきましょうとかあるいはこれ発電タービンのシミュレーションになるんですけどこれを使ってですね実際のタービンの中身をですね先ほどの量子アニーリングを使って分類して。"
+            }
+          },
+          {
+            "start": 2429.76,
+            "end": 2452.26,
+            "text": {
+              "en": "We're working on things like estimating failure states, so we're going to put out an evacuation route on a mobile device like this, and we're going to use annealing, and we're going to use quantum annealing to create a route that doesn't cause traffic jams as much as possible.",
+              "zh": "我们正在研究诸如估计故障状态之类的事情，因此我们将在像这样的移动设备上推出一条疏散路线，我们将使用量子退火，我们将使用量子量子退火来创建一条尽可能不会导致交通拥堵的路线。",
+              "ja": "故障状態を推計するとかいうような取り組みを進めていますでですので携帯端末にですねこのように避難経路を出してこれアニーリングを使っその量子アニーリングを使ってなるべく渋滞しないような経路に。"
+            }
+          },
+          {
+            "start": 2447.78,
+            "end": 2471.599,
+            "text": {
+              "en": "When you select a route, the GPS will tell you where you are, so you can find a route from there to the nearest evacuation center without bumping into people.We are currently creating an application that will create a combination problem and provide guidance to your mobile device.",
+              "zh": "当您选择路线时，GPS会告诉您您所在的位置，这样您就可以找到从那里到最近的疏散中心的路线，而不会撞到人。我们目前正在创建一个应用程序，它将创建组合问题并为您的移动设备提供指导。",
+              "ja": "経路を選ぶと皆さん今いる地点がGPSで分かりますのでそこから一番近い避難所まで逃げるのになるべく人とぶつからないような経路をですねこう組み合わせ問題化して導きでそれを携帯端末に提供していこうというようなアプリケーションを今作っているところですまた。"
+            }
+          },
+          {
+            "start": 2471.88,
+            "end": 2494.92,
+            "text": {
+              "en": "There are many evacuation shelters after this flood, so what route should the evacuation team take after people have fled to the evacuation shelters, and in what order should they visit the evacuation shelters in order to rescue more people more efficiently?",
+              "zh": "这次洪水后的避难场所很多，那么当人们逃到避难场所后，疏散队伍应该走什么路线，按照什么顺序前往避难场所，才能更有效地救援更多的人呢？",
+              "ja": "避難避難所がたくさんこの浸水後にですね人がこう避難所に逃げた後にどのような経路で通る避難避難チームがですねどのような順番でこう避難所を訪問するとたくさんの人をより効率よく助け出すことができるかというような。"
+            }
+          },
+          {
+            "start": 2492.24,
+            "end": 2514.48,
+            "text": {
+              "en": "I'm working on it, but it's taking a little longer, so I'm going to turn it into a dark yellow color.This is the pattern of trying to escape by taking the shortest route, and it looks like a dumpling.",
+              "zh": "我正在做，但是时间有点长，所以我要把它变成深黄色。这是想用最短路线逃跑的图案，看起来像一个饺子。",
+              "ja": "取り組みを行っているところですちょっとこれ時間も伸びちゃったのであれこれかでこれあのえっと濃い黄色の色がですね最短経路を逃げようとした場合のパターンでこれやっぱり団子状態。"
+            }
+          },
+          {
+            "start": 2512.02,
+            "end": 2535.06,
+            "text": {
+              "en": "So, this is the case where the white one uses the brother meeting to find a shellfish that has as wide an escape route as possible and runs away.If you map this to Kochi City earlier, you will see a pattern in which many people escape while avoiding the water.It is like this at the simulation level.",
+              "zh": "所以，这就是白方利用兄弟会寻找一种逃生路线尽可能宽的贝类然后逃跑的情况。如果你早点把这个映射到高知市，你会看到一种很多人一边躲避水一边逃走的模式。在模拟层面上是这样的。",
+              "ja": "になるんですねでこれ白い方が兄者ミーティングを使ってなるべく逃げ道を広く取るような貝が求まって逃げた場合ですでこれを先ほどの高知市のマッピングすると多くの人がその水を避けながら逃げるというようなパターンにシミュレーションレベルですけどこのような形で。"
+            }
+          },
+          {
+            "start": 2533.8,
+            "end": 2555.54,
+            "text": {
+              "en": "The quantum computer I mentioned earlier was made by a Canadian manufacturer called DM, but recently we have been working with NEC on a domestically produced quantum annealing quantum computer.",
+              "zh": "前面我提到的量子计算机是加拿大一家叫DM的厂商做的，但是最近我们一直在和NEC合作研发一款国产的量子量子退火量子计算机。",
+              "ja": "求まってきて量子コンピューティングの一つの応用としていいんではないかなというふうに思ってますで先ほどの量子コンピュータはカナダのDM社というメーカーが作ったものですけど最近私たちはNECと一緒にですね国産の量子アニーリング量子コンピュータの。"
+            }
+          },
+          {
+            "start": 2553.18,
+            "end": 2574.66,
+            "text": {
+              "en": "I'm still in the early stages of research and development, but I would like to use this kind of domestically produced annealing technology to develop and solve many social issues.In closing, though.",
+              "zh": "我现在还处于研发的早期阶段，但是我想用这种国产的量子退火技术来开发和解决很多社会问题。最后，不过。",
+              "ja": "研究開発に取り組んでおりましてまだよちよち歩きなんですけどこれからこのような国産のアニーリング技術というものを使って多くの社会課題の開発に解決に取り組んでいきたいというふうに思っております最後になりますけどまあ。"
+            }
+          },
+          {
+            "start": 2573.4,
+            "end": 2595.48,
+            "text": {
+              "en": "There are many applications for supercomputers, but data processing will be the key to going on to university or furthering your research, so I would like to encourage many young people to become specialists in data processing.",
+              "zh": "超级计算机的应用有很多，但数据处理将是进入大学或进一步研究的关键，所以我想鼓励很多年轻人成为数据处理方面的专家。",
+              "ja": "スパコンいろんな応用がありますけど皆さんこれから大学に進まれるあるいは研究をさらに進めるという上でデータ処理というものがキーとなってきますですのでぜひですね多くの若い皆さんにこのようなそのデータ処理のスペシャリストとして。"
+            }
+          },
+          {
+            "start": 2592.599,
+            "end": 2614.68,
+            "text": {
+              "en": "I hope that you will enter a field that will solve many social issues.This is a data-driven society that Japan's government is promoting called Society 5.0, which is data analysis.",
+              "zh": "我希望你进入一个能够解决很多社会问题的领域。这是日本政府正在推动的一个数据驱动的社会，称为社会5.0，也就是数据分析。",
+              "ja": "多くの社会課題を解決していただくような分野に入っていただければなというふうに思ってますこれは我が国日本が政府が進めているソサエティ5.0というそのデータ駆動型の社会のあり方というものを示したものになってますけどデータ分析が。"
+            }
+          },
+          {
+            "start": 2611.92,
+            "end": 2635.2,
+            "text": {
+              "en": "There aren't enough people who can do this.The development of these kinds of human resources has become a very social issue, so I hope that many people will enter this field and work together with us to advance our research.I apologize for taking up so much time.",
+              "zh": "能够做到这一点的人还不够多。这类人力资源的开发已经成为一个非常社会的问题，所以我希望有更多的人进入这个领域，与我们一起推进我们的研究。很抱歉占用了这么多时间。",
+              "ja": "できる人が足りないとかですねこういう人材の育成というものが非常に社会的な課題となっておりますですので多くの人たちがこのような分野に入ってきて新しいぜひ一緒に研究を進めていただきたいなというふうに思うところですちょっと時間もオーバーして申し訳ございませんでしたが。"
+            }
+          },
+          {
+            "start": 2632.579,
+            "end": 2656.11,
+            "text": {
+              "en": "We will be exhibiting at the open campus, so there will be a corner where you can touch quantum computers, so if you have time, please stop by on the 5th floor of the next building, get off the elevator on the left, and the laboratory is in the back on the left. Thank you very much. Thank you for listening to us for a long time.",
+              "zh": "我们是在开放的校园里展览，所以会有一个可以触摸量子计算机的角落，所以如果有时间的话，请到隔壁楼的5楼，下电梯左边，实验室就在左边后面。非常感谢。感谢您长期以来倾听我们的声音。",
+              "ja": "オープンキャンパスで私たち展示もしてますので量子コンピュータを触れるコーナーもありますので時間がありましたら隣のビルの5階の左がエレベーター降りて左側の奥に研究室がありますのでぜひお立ち寄りくださいどうもありがとうございました長い間ご清聴ありがとうございまし。"
+            }
+          },
+          {
+            "start": 2654.28,
+            "end": 2659.159,
+            "text": {
+              "en": "Ta.",
+              "zh": "塔。",
+              "ja": "た。"
+            }
+          }
+        ],
+        "highlights": [
+          {
+            "start": 10,
+            "end": 95,
+            "title": {
+              "en": "Supercomputers and quantum computers as one story",
+              "zh": "把超级计算与量子计算放在同一条主线中",
+              "ja": "スパコンと量子コンを一つの流れで捉える"
+            },
+            "reason": {
+              "en": "The lecture frames quantum computing as part of a longer search for faster and more useful computation.",
+              "zh": "开场把量子计算放回“如何让计算更快、更有用”的长期脉络中。",
+              "ja": "量子計算を「より速く、より役立つ計算」を求める長い流れの中に位置づけます。"
+            }
+          },
+          {
+            "start": 540,
+            "end": 690,
+            "title": {
+              "en": "The scaling logic behind modern computing",
+              "zh": "现代计算扩展背后的基本逻辑",
+              "ja": "現代計算を支えるスケーリングの考え方"
+            },
+            "reason": {
+              "en": "The speaker connects transistor growth, performance expectations, and the limits that drive architectural change.",
+              "zh": "这一段把晶体管集成度、性能预期和体系结构变化的必要性联系起来。",
+              "ja": "トランジスタ集積度、性能期待、そしてアーキテクチャ変化の必然性をつなげます。"
+            }
+          },
+          {
+            "start": 1180,
+            "end": 1285,
+            "title": {
+              "en": "Performance now includes power and system scale",
+              "zh": "性能已经必须和功耗、系统规模一起理解",
+              "ja": "性能は電力とシステム規模込みで考える"
+            },
+            "reason": {
+              "en": "The discussion of large processor counts and megawatt-class power makes HPC a system-design problem, not just a speed race.",
+              "zh": "处理器数量和兆瓦级功耗说明，HPC 不只是速度竞赛，而是系统设计问题。",
+              "ja": "多数のプロセッサとメガワット級電力の話から、HPC が単なる速度競争ではなくシステム設計問題であることが見えます。"
+            }
+          },
+          {
+            "start": 1985,
+            "end": 2078,
+            "title": {
+              "en": "Real-time tsunami simulation as social infrastructure",
+              "zh": "把实时海啸模拟做成社会基础设施",
+              "ja": "リアルタイム津波シミュレーションを社会基盤にする"
+            },
+            "reason": {
+              "en": "This part shows how simulation can move from research computation into a live disaster-response system.",
+              "zh": "这一段展示模拟如何从研究计算进入实时防灾系统。",
+              "ja": "研究用計算がリアルタイム防災システムへ移っていく具体例です。"
+            }
+          },
+          {
+            "start": 2280,
+            "end": 2395,
+            "title": {
+              "en": "Where quantum annealing may help",
+              "zh": "量子退火可能发挥作用的地方",
+              "ja": "量子アニーリングが効きうる場面"
+            },
+            "reason": {
+              "en": "The lecture explains combinatorial explosion and why parallel search over many combinations is attractive.",
+              "zh": "这里解释组合爆炸，以及为什么量子退火式的并行搜索值得期待。",
+              "ja": "組合せ爆発と、多数の組合せを並列に探す考え方の意味が説明されます。"
+            }
+          },
+          {
+            "start": 2435,
+            "end": 2570,
+            "title": {
+              "en": "Evacuation routing and domestic quantum annealing",
+              "zh": "避难路径规划与国产量子退火",
+              "ja": "避難経路最適化と国産量子アニーリング"
+            },
+            "reason": {
+              "en": "The final application connects optimization, mobile devices, NEC, and practical disaster-response routing.",
+              "zh": "最后的应用把优化问题、移动终端、NEC 与实际避难路径规划连接起来。",
+              "ja": "最適化、携帯端末、NEC、実際の避難経路設計が一つにつながる応用例です。"
+            }
+          }
+        ],
+        "review": {
+          "mode": "conservative-proofread",
+          "note": "Reviewed transcript keeps the same time blocks and approximate information volume; edits are limited to ASR term corrections, punctuation, and spacing.",
+          "sourceLanguage": "ja"
         }
       }
     }
