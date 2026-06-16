@@ -1157,7 +1157,7 @@ function languageIconMarkup() {
 }
 
 function portalSpriteIconMarkup(name) {
-  return `<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
+  return `<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic-homepage/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
 }
 
 function portalHomeIconMarkup() {
@@ -1179,10 +1179,10 @@ function siteStateHref(href, locale = state.locale, theme = state.theme) {
     return window.HomepagePlatform.siteStateHref(href, { locale, theme });
   }
   const url = new URL(href, window.location.origin);
-  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+  if (url.pathname.startsWith("/academic-homepage/") || url.pathname.startsWith("/jsps-kakenhi/")) {
     url.searchParams.set("lang", locale);
   }
-  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+  if (url.pathname.startsWith("/academic-homepage/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/")) {
     url.searchParams.set("theme", theme);
   }
   return `${url.pathname}${url.search}`;
@@ -1517,11 +1517,11 @@ function renderPortalReturnControl() {
       active: currentPath === "/",
     },
     {
-      href: siteStateHref("/academic/"),
+      href: siteStateHref("/academic-homepage/"),
       label: labels.academic.full,
       triggerLabel: labels.academic.short,
-      icon: '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
-      active: currentPath.startsWith("/academic/"),
+      icon: '<img class="portal-chip-logo" src="/academic-homepage/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/academic-homepage/"),
       extraClass: "portal-chip--portrait",
     },
     {

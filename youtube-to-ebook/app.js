@@ -1363,7 +1363,7 @@ function renderArticle(article) {
         ${renderTranscriptVariantControl(article)}
         <div class="fb-language-display fb-language-display--article" role="group" aria-label="${escapeHtml(t("controls.displayLanguages"))}"></div>
         <button class="fb-icon-button" type="button" data-fb-display-reset="display" aria-label="${escapeHtml(t("controls.reset"))}" title="${escapeHtml(t("controls.reset"))}">
-          <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-reset"></use></svg>
+          <svg class="ui-icon" aria-hidden="true"><use href="/academic-homepage/assets/icons/ui-icons.svg#icon-reset"></use></svg>
         </button>
       </div>
     </div>
@@ -1491,8 +1491,8 @@ function syncShell() {
       showMenuLabel: t("controls.showMenu"),
       hideMenuLabel: t("controls.hideMenu"),
       toggleInnerHTML:
-        '<svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-menu"></use></svg><span class="topnav-toggle-label"></span>',
-      hintInnerHTML: '<svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-up"></use></svg>',
+        '<svg class="ui-icon" aria-hidden="true"><use href="/academic-homepage/assets/icons/ui-icons.svg#icon-menu"></use></svg><span class="topnav-toggle-label"></span>',
+      hintInnerHTML: '<svg class="ui-icon" aria-hidden="true"><use href="/academic-homepage/assets/icons/ui-icons.svg#icon-up"></use></svg>',
     },
   });
 }

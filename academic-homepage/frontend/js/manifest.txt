@@ -1,0 +1,15 @@
+00-dom-state-config.js
+10-i18n-translations.js
+11-runtime-storage-utils.js
+12-static-text-catalog.js
+20-localization-format-utils.js
+21-publication-metric-utils.js
+22-theme-routing-utils.js
+30-controls-theme-locale.js
+31-rendering-icon-profile-utils.js
+32-navigation-static-locale.js
+40-home-timeline-renderers.js
+50-page-renderers.js
+60-publication-filters-rendering.js
+80-event-bindings.js
+90-entrypoint.js

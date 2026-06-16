@@ -164,7 +164,7 @@ const I18N = {
           {
             title: "Workspaces",
             items: [
-              { label: "Personal Homepage", href: "/academic/" },
+              { label: "Personal Homepage", href: "/academic-homepage/" },
               { label: "Academic Frontier", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
@@ -183,28 +183,28 @@ const I18N = {
       academic: {
         eyebrow: "Personal homepage",
         primary: [
-          { label: "Overview", href: "/academic/" },
-          { label: "Publications", href: "/academic/publications.html" },
-          { label: "Awards", href: "/academic/awards.html" },
-          { label: "Projects", href: "/academic/projects.html" },
+          { label: "Overview", href: "/academic-homepage/" },
+          { label: "Publications", href: "/academic-homepage/publications.html" },
+          { label: "Awards", href: "/academic-homepage/awards.html" },
+          { label: "Projects", href: "/academic-homepage/projects.html" },
         ],
         columns: [
           {
             title: "Records",
             items: [
-              { label: "Timeline", href: "/academic/timeline.html" },
-              { label: "Service", href: "/academic/service.html" },
-              { label: "Research", href: "/academic/research.html" },
+              { label: "Timeline", href: "/academic-homepage/timeline.html" },
+              { label: "Service", href: "/academic-homepage/service.html" },
+              { label: "Research", href: "/academic-homepage/research.html" },
             ],
           },
           {
             title: "Identity",
             items: [
-              { label: "External profiles", href: "/academic/profiles.html" },
+              { label: "External profiles", href: "/academic-homepage/profiles.html" },
               { label: "Tohoku Cyberscience Center", href: profileLinkHref("tohokuCenter", "en") },
               { label: "High Performance Computing Laboratory", href: profileLinkHref("hpcLab", "en") },
               { label: "Takizawa Lab announcement", href: profileLinkHref("takizawaAnnouncement", "en") },
-              { label: "Curriculum vitae", href: "/academic/assets/docs/CV_SichenTao.pdf" },
+              { label: "Curriculum vitae", href: "/academic-homepage/assets/docs/CV_SichenTao.pdf" },
             ],
           },
         ],
@@ -220,7 +220,7 @@ const I18N = {
           {
             title: "Workspaces",
             items: [
-              { label: "Personal Homepage", href: "/academic/" },
+              { label: "Personal Homepage", href: "/academic-homepage/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
@@ -246,7 +246,7 @@ const I18N = {
             title: "Workspaces",
             items: [
               { label: "Academic Frontier", href: "/academic-frontier/" },
-              { label: "Personal Homepage", href: "/academic/" },
+              { label: "Personal Homepage", href: "/academic-homepage/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
             ],
           },
@@ -388,7 +388,7 @@ const I18N = {
           {
             title: "工作区",
             items: [
-              { label: "个人主页", href: "/academic/" },
+              { label: "个人主页", href: "/academic-homepage/" },
               { label: "学术前沿", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
@@ -407,28 +407,28 @@ const I18N = {
       academic: {
         eyebrow: "个人主页",
         primary: [
-          { label: "概览", href: "/academic/" },
-              { label: "发表论文", href: "/academic/publications.html" },
-          { label: "获奖", href: "/academic/awards.html" },
-          { label: "项目", href: "/academic/projects.html" },
+          { label: "概览", href: "/academic-homepage/" },
+              { label: "发表论文", href: "/academic-homepage/publications.html" },
+          { label: "获奖", href: "/academic-homepage/awards.html" },
+          { label: "项目", href: "/academic-homepage/projects.html" },
         ],
         columns: [
           {
             title: "记录",
             items: [
-              { label: "时间线", href: "/academic/timeline.html" },
-              { label: "审稿与编辑", href: "/academic/service.html" },
-              { label: "研究", href: "/academic/research.html" },
+              { label: "时间线", href: "/academic-homepage/timeline.html" },
+              { label: "审稿与编辑", href: "/academic-homepage/service.html" },
+              { label: "研究", href: "/academic-homepage/research.html" },
             ],
           },
           {
             title: "身份",
             items: [
-              { label: "外部主页", href: "/academic/profiles.html" },
+              { label: "外部主页", href: "/academic-homepage/profiles.html" },
               { label: "东北大学网络科学中心", href: profileLinkHref("tohokuCenter", "zh") },
               { label: "高性能计算研究室", href: profileLinkHref("hpcLab", "zh") },
               { label: "泷泽研究室加入公告", href: profileLinkHref("takizawaAnnouncement", "zh") },
-              { label: "简历 PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
+              { label: "简历 PDF", href: "/academic-homepage/assets/docs/CV_SichenTao.pdf" },
             ],
           },
         ],
@@ -444,7 +444,7 @@ const I18N = {
           {
             title: "工作区",
             items: [
-              { label: "个人主页", href: "/academic/" },
+              { label: "个人主页", href: "/academic-homepage/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
@@ -470,7 +470,7 @@ const I18N = {
             title: "工作区",
             items: [
               { label: "学术前沿", href: "/academic-frontier/" },
-              { label: "个人主页", href: "/academic/" },
+              { label: "个人主页", href: "/academic-homepage/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
             ],
           },
@@ -612,7 +612,7 @@ const I18N = {
           {
             title: "ワークスペース",
             items: [
-              { label: "個人ホームページ", href: "/academic/" },
+              { label: "個人ホームページ", href: "/academic-homepage/" },
               { label: "学術フロンティア", href: "/academic-frontier/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
@@ -631,28 +631,28 @@ const I18N = {
       academic: {
         eyebrow: "個人ホームページ",
         primary: [
-          { label: "概要", href: "/academic/" },
-              { label: "発表論文", href: "/academic/publications.html" },
-          { label: "受賞", href: "/academic/awards.html" },
-          { label: "プロジェクト", href: "/academic/projects.html" },
+          { label: "概要", href: "/academic-homepage/" },
+              { label: "発表論文", href: "/academic-homepage/publications.html" },
+          { label: "受賞", href: "/academic-homepage/awards.html" },
+          { label: "プロジェクト", href: "/academic-homepage/projects.html" },
         ],
         columns: [
           {
             title: "記録",
             items: [
-              { label: "年表", href: "/academic/timeline.html" },
-              { label: "査読・編集", href: "/academic/service.html" },
-              { label: "研究", href: "/academic/research.html" },
+              { label: "年表", href: "/academic-homepage/timeline.html" },
+              { label: "査読・編集", href: "/academic-homepage/service.html" },
+              { label: "研究", href: "/academic-homepage/research.html" },
             ],
           },
           {
             title: "基本情報",
             items: [
-              { label: "外部ホームページ", href: "/academic/profiles.html" },
+              { label: "外部ホームページ", href: "/academic-homepage/profiles.html" },
               { label: "東北大学サイバーサイエンスセンター", href: profileLinkHref("tohokuCenter", "ja") },
               { label: "高性能計算研究室", href: profileLinkHref("hpcLab", "ja") },
               { label: "滝沢研究室着任告知", href: profileLinkHref("takizawaAnnouncement", "ja") },
-              { label: "CV PDF", href: "/academic/assets/docs/CV_SichenTao.pdf" },
+              { label: "CV PDF", href: "/academic-homepage/assets/docs/CV_SichenTao.pdf" },
             ],
           },
         ],
@@ -668,7 +668,7 @@ const I18N = {
           {
             title: "ワークスペース",
             items: [
-              { label: "個人ホームページ", href: "/academic/" },
+              { label: "個人ホームページ", href: "/academic-homepage/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
@@ -694,7 +694,7 @@ const I18N = {
             title: "ワークスペース",
             items: [
               { label: "学術前沿", href: "/academic-frontier/" },
-              { label: "個人ホームページ", href: "/academic/" },
+              { label: "個人ホームページ", href: "/academic-homepage/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
             ],
           },
@@ -782,7 +782,7 @@ function localeText() {
 }
 
 function iconSprite(name, className = "ui-icon") {
-  return `<svg class="${escapeHtml(className)}" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
+  return `<svg class="${escapeHtml(className)}" aria-hidden="true" focusable="false"><use href="/academic-homepage/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
 }
 
 function resolveLocaleName() {
@@ -905,7 +905,7 @@ function renderTopnav() {
   nav.setAttribute("aria-label", text.controls.pageNavigation);
   nav.innerHTML = `
     <a href="/" aria-current="page" data-portal-menu-key="portal" aria-haspopup="true" aria-expanded="false">${iconSprite("home")}<span>${escapeHtml(text.nav.portal)}</span></a>
-    <a href="${portalHref("/academic/")}" data-portal-menu-key="academic" aria-haspopup="true" aria-expanded="false">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
+    <a href="${portalHref("/academic-homepage/")}" data-portal-menu-key="academic" aria-haspopup="true" aria-expanded="false">${iconSprite("profiles")}<span>${escapeHtml(text.nav.academic)}</span></a>
     <a href="${portalHref("/academic-frontier/")}" data-portal-menu-key="frontier" aria-haspopup="true" aria-expanded="false">${iconSprite("research")}<span>${escapeHtml(text.nav.frontier)}</span></a>
     <a href="${portalHref("/follow-builders/")}" data-portal-menu-key="followBuilders" aria-haspopup="true" aria-expanded="false">${iconSprite("publications")}<span>${escapeHtml(text.nav.followBuilders)}</span></a>
     <a href="${portalHref("/youtube-to-ebook/")}" data-portal-menu-key="youtubeToEbook" aria-haspopup="true" aria-expanded="false">${iconSprite("file")}<span>${escapeHtml(text.nav.youtubeToEbook)}</span></a>
@@ -1127,7 +1127,7 @@ function cardIconMarkup(siteKey) {
   if (siteKey === "academic") {
     return `
       <span class="portal-card-icon portal-card-icon--portrait" aria-hidden="true">
-        <img src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />
+        <img src="/academic-homepage/assets/images/avatar-openai.jpg" alt="" loading="lazy" />
       </span>
     `;
   }
@@ -1178,7 +1178,7 @@ function renderCards() {
   const cards = [
     {
       key: "academic",
-      href: portalHref("/academic/"),
+      href: portalHref("/academic-homepage/"),
       className: "portal-card-academic",
       icon: cardIconMarkup("academic"),
       title: text.cards.academic.name,
@@ -1394,8 +1394,8 @@ function renderPortalReturnControl() {
       ${iconSprite("home")}
     </button>
     <div class="portal-tray" role="group" aria-label="${escapeHtml(text.controls.siteSections)}">
-      <a class="portal-chip portal-chip--portrait" href="/academic/" aria-label="${escapeHtml(text.nav.academic)}" title="${escapeHtml(text.nav.academic)}">
-        <img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />
+      <a class="portal-chip portal-chip--portrait" href="/academic-homepage/" aria-label="${escapeHtml(text.nav.academic)}" title="${escapeHtml(text.nav.academic)}">
+        <img class="portal-chip-logo" src="/academic-homepage/assets/images/avatar-openai.jpg" alt="" loading="lazy" />
       </a>
       <a class="portal-chip" href="/academic-frontier/" aria-label="${escapeHtml(text.nav.frontier)}" title="${escapeHtml(text.nav.frontier)}">
         ${iconSprite("research")}

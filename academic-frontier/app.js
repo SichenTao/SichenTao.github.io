@@ -1360,7 +1360,7 @@ function translatedThemeTooltip(themeName) {
 }
 
 function portalSpriteIconMarkup(name) {
-  return `<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
+  return `<svg class="ui-icon" aria-hidden="true" focusable="false"><use href="/academic-homepage/assets/icons/ui-icons.svg#icon-${escapeHtml(name)}"></use></svg>`;
 }
 
 function portalHomeIconMarkup() {
@@ -1382,10 +1382,10 @@ function siteStateHref(href, locale = currentLocale(), theme = state.theme || lo
     return window.HomepagePlatform.siteStateHref(href, { locale, theme });
   }
   const url = new URL(href, window.location.origin);
-  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+  if (url.pathname.startsWith("/academic-homepage/") || url.pathname.startsWith("/jsps-kakenhi/")) {
     url.searchParams.set("lang", locale);
   }
-  if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/")) {
+  if (url.pathname.startsWith("/academic-homepage/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/")) {
     url.searchParams.set("theme", theme);
   }
   return `${url.pathname}${url.search}`;
@@ -4006,11 +4006,11 @@ function renderPortalReturnControl() {
       active: currentPath === "/",
     },
     {
-      href: siteStateHref("/academic/", localeName, themeName),
+      href: siteStateHref("/academic-homepage/", localeName, themeName),
       label: labels.academic.full,
       triggerLabel: labels.academic.short,
-      icon: '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
-      active: currentPath.startsWith("/academic/"),
+      icon: '<img class="portal-chip-logo" src="/academic-homepage/assets/images/avatar-openai.jpg" alt="" loading="lazy" />',
+      active: currentPath.startsWith("/academic-homepage/"),
       extraClass: "portal-chip--portrait",
     },
     {
@@ -6431,7 +6431,7 @@ function renderAcademicPaperArticle() {
       <div class="fb-article-control-group">
         <div class="fb-language-display fb-language-display--article" data-academic-article-language-display role="group" aria-label="${escapeHtml(ui("readerDisplayLanguagesLabel"))}"></div>
         <button id="frontier-reader-reset" class="frontier-reader-icon-button" type="button" data-frontier-reader-reset aria-label="${escapeHtml(ui("resetLabel"))}" title="${escapeHtml(ui("resetLabel"))}">
-          <svg class="ui-icon" aria-hidden="true"><use href="/academic/assets/icons/ui-icons.svg#icon-reset"></use></svg>
+          <svg class="ui-icon" aria-hidden="true"><use href="/academic-homepage/assets/icons/ui-icons.svg#icon-reset"></use></svg>
         </button>
       </div>
     </div>
