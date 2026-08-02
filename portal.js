@@ -84,7 +84,7 @@ const I18N = {
     page: {
       title: "Sichen Tao | Research Portal",
       description:
-        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Follow Builders, YouTube Learner, and JSPS KAKENHI workspace.",
+        "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Conference Radar, Follow Builders, YouTube Learner, and JSPS KAKENHI workspace.",
     },
     controls: {
       display: "Display controls",
@@ -137,6 +137,11 @@ const I18N = {
         intro: "A research workspace for paper records, source links, and venue metrics.",
         action: "Open frontier",
       },
+      conference: {
+        name: "Conference Radar",
+        intro: "Official-source submission deadlines, meeting dates, locations, and Hangzhou–Shanghai signals across research fields.",
+        action: "Open radar",
+      },
       followBuilders: {
         name: "Follow Builders",
         intro: "A standalone reader for Zara Zhang's Follow Builders project: AI builders, X posts, podcasts, and official blogs.",
@@ -166,6 +171,7 @@ const I18N = {
             items: [
               { label: "Personal Homepage", href: "/academic-homepage/" },
               { label: "Academic Frontier", href: "/academic-frontier/" },
+              { label: "Conference Radar", href: "/conference-radar/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
@@ -309,7 +315,7 @@ const I18N = {
   zh: {
     page: {
       title: "陶思晨 | 研究导航页",
-      description: "统一进入个人主页、学术前沿、Follow Builders、YouTube Learner 与 JSPS 科研费工作台的研究导航页。",
+      description: "统一进入个人主页、学术前沿、会议雷达、Follow Builders、YouTube Learner 与 JSPS 科研费工作台的研究导航页。",
     },
     controls: {
       display: "显示控制",
@@ -361,6 +367,11 @@ const I18N = {
         intro: "用于论文记录、来源入口与分区指标整理的研究工作空间。",
         action: "打开前沿页",
       },
+      conference: {
+        name: "会议雷达",
+        intro: "按投稿截止日期汇总多领域会议，并追踪开会时间、地点与杭州／上海动态。",
+        action: "打开会议雷达",
+      },
       followBuilders: {
         name: "Follow Builders",
         intro: "把 Zara Zhang 的 Follow Builders 项目做成独立阅读器：AI builders、X 动态、播客和官方博客。",
@@ -390,6 +401,7 @@ const I18N = {
             items: [
               { label: "个人主页", href: "/academic-homepage/" },
               { label: "学术前沿", href: "/academic-frontier/" },
+              { label: "会议雷达", href: "/conference-radar/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
@@ -533,7 +545,7 @@ const I18N = {
   ja: {
     page: {
       title: "陶思晨 | 研究ポータル",
-      description: "個人ホームページ、学術フロンティア、Follow Builders、YouTube Learner、JSPS科研費ワークスペースへ入る統合ポータル。",
+      description: "個人ホームページ、学術フロンティア、会議レーダー、Follow Builders、YouTube Learner、JSPS科研費ワークスペースへ入る統合ポータル。",
     },
     controls: {
       display: "表示コントロール",
@@ -585,6 +597,11 @@ const I18N = {
         intro: "論文記録、ソース導線、分区指標を整理する研究ワークスペースです。",
         action: "フロンティアを開く",
       },
+      conference: {
+        name: "会議レーダー",
+        intro: "複数分野の投稿締切、開催日、開催地、杭州・上海の会議情報を公式ソースから整理します。",
+        action: "会議レーダーを開く",
+      },
       followBuilders: {
         name: "Follow Builders",
         intro: "Zara Zhang の Follow Builders プロジェクトを、AI builders、X 投稿、podcast、公式ブログの読書画面として表示します。",
@@ -614,6 +631,7 @@ const I18N = {
             items: [
               { label: "個人ホームページ", href: "/academic-homepage/" },
               { label: "学術フロンティア", href: "/academic-frontier/" },
+              { label: "会議レーダー", href: "/conference-radar/" },
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
@@ -1140,6 +1158,14 @@ function cardIconMarkup(siteKey) {
     `;
   }
 
+  if (siteKey === "conference") {
+    return `
+      <span class="portal-card-icon portal-card-icon--logo" aria-hidden="true">
+        <img src="/conference-radar/favicon.svg" alt="" loading="lazy" />
+      </span>
+    `;
+  }
+
   if (siteKey === "followBuilders") {
     return `
       <span class="portal-card-icon portal-card-icon--svg" aria-hidden="true">
@@ -1193,6 +1219,15 @@ function renderCards() {
       title: text.cards.frontier.name,
       intro: text.cards.frontier.intro,
       action: text.cards.frontier.action,
+    },
+    {
+      key: "conference",
+      href: portalHref("/conference-radar/"),
+      className: "portal-card-conference",
+      icon: cardIconMarkup("conference"),
+      title: text.cards.conference.name,
+      intro: text.cards.conference.intro,
+      action: text.cards.conference.action,
     },
     {
       key: "followBuilders",
@@ -1399,6 +1434,9 @@ function renderPortalReturnControl() {
       </a>
       <a class="portal-chip" href="/academic-frontier/" aria-label="${escapeHtml(text.nav.frontier)}" title="${escapeHtml(text.nav.frontier)}">
         ${iconSprite("research")}
+      </a>
+      <a class="portal-chip" href="/conference-radar/" aria-label="${escapeHtml(text.cards.conference.name)}" title="${escapeHtml(text.cards.conference.name)}">
+        <img class="portal-chip-logo" src="/conference-radar/favicon.svg" alt="" loading="lazy" />
       </a>
       <a class="portal-chip" href="/jsps-kakenhi/" aria-label="${escapeHtml(text.nav.jsps)}" title="${escapeHtml(text.nav.jsps)}">
         <img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />

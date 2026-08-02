@@ -629,8 +629,12 @@ body.portal-mega-open .portal-layout {
 
 .portal-grid {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.portal-card-conference {
+  --card-rgb: 75, 24, 143;
 }
 
 .portal-card {
