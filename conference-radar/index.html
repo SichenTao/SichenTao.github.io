@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="tohoku">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f3f1ed" />
+    <meta
+      name="description"
+      content="Conference Radar：按投稿截止日期检索人工智能、高性能计算、系统、安全、数据库、机器人、人机交互等多领域会议，并追踪杭州与上海会议信息。"
+    />
+    <link rel="canonical" href="https://sichentao.github.io/conference-radar/" />
+    <meta property="og:title" content="Conference Radar | Sichen Tao" />
+    <meta
+      property="og:description"
+      content="Official-source conference deadlines, meeting dates, locations, and Hangzhou–Shanghai signals."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sichentao.github.io/conference-radar/" />
+    <title>Conference Radar | Sichen Tao</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="./data/conferences.json" as="fetch" crossorigin />
+    <link rel="stylesheet" href="/assets/shared/homepage-fonts.css" />
+    <link rel="stylesheet" href="/assets/shared/homepage-layout.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (() => {
+        try {
+          const locale = localStorage.getItem("sichen-homepage-locale") || "zh";
+          const theme = localStorage.getItem("sichen-homepage-theme") || "tohoku";
+          document.documentElement.lang = locale === "zh" ? "zh-CN" : locale === "ja" ? "ja" : "en";
+          document.documentElement.dataset.theme = ["tohoku", "toyama", "usst"].includes(theme) ? theme : "tohoku";
+        } catch {}
+      })();
+    </script>
+    <script defer src="./app.js"></script>
+  </head>
+  <body data-page="conference-radar">
+    <a class="skip-link" href="#results">Skip to conference results</a>
+
+    <header class="cr-header" aria-label="Conference Radar header">
+      <div class="cr-shell cr-header-inner">
+        <a class="cr-brand" href="./" aria-label="Conference Radar home">
+          <svg viewBox="0 0 36 36" aria-hidden="true">
+            <circle cx="18" cy="18" r="13"></circle>
+            <circle cx="18" cy="18" r="7"></circle>
+            <path d="M18 18L29 11"></path>
+            <circle class="brand-pulse" cx="29" cy="11" r="2.2"></circle>
+          </svg>
+          <span>
+            <strong>Conference Radar</strong>
+            <small data-i18n="brandNote">Research deadline intelligence</small>
+          </span>
+        </a>
+
+        <nav class="cr-nav" aria-label="Workspace navigation">
+          <a href="/" data-i18n="navPortal">Portal</a>
+          <a href="/academic-frontier/" data-i18n="navFrontier">Academic Frontier</a>
+        </nav>
+
+        <div class="cr-display-controls" aria-label="Display controls">
+          <div class="cr-segmented" id="localeControl" aria-label="Language"></div>
+          <button class="cr-theme-button" id="themeButton" type="button" aria-label="Change color theme">
+            <span class="cr-theme-swatch" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="cr-hero">
+        <div class="cr-shell cr-hero-grid">
+          <div class="cr-hero-copy">
+            <p class="cr-kicker" data-i18n="heroKicker">Official-source conference intelligence</p>
+            <h1 data-i18n="heroTitle">把下一次投稿窗口，看得更早。</h1>
+            <p class="cr-hero-lede" data-i18n="heroLede">
+              聚合多领域核心会议的投稿截止、开会日期与地点；默认只显示从今天起仍可准备的投稿机会。
+            </p>
+            <div class="cr-hero-actions">
+              <a class="cr-primary-action" href="#controls" data-i18n="heroAction">查看开放投稿</a>
+              <button class="cr-text-action" id="localShortcut" type="button" data-i18n="heroLocal">杭州 · 上海雷达</button>
+            </div>
+          </div>
+
+          <div class="cr-radar" aria-hidden="true">
+            <div class="cr-radar-ring cr-radar-ring-1"></div>
+            <div class="cr-radar-ring cr-radar-ring-2"></div>
+            <div class="cr-radar-ring cr-radar-ring-3"></div>
+            <div class="cr-radar-cross cr-radar-cross-x"></div>
+            <div class="cr-radar-cross cr-radar-cross-y"></div>
+            <div class="cr-radar-sweep"></div>
+            <span class="cr-radar-dot cr-radar-dot-a"></span>
+            <span class="cr-radar-dot cr-radar-dot-b"></span>
+            <span class="cr-radar-dot cr-radar-dot-c"></span>
+            <div class="cr-radar-label">
+              <span data-i18n="radarLabel">Next verified deadline</span>
+              <strong id="radarNext">—</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-shell cr-stat-grid" id="statGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="cr-controls" id="controls" aria-label="Conference filters">
+        <div class="cr-shell cr-controls-inner">
+          <label class="cr-search" for="conferenceSearch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg>
+            <span class="sr-only" data-i18n="searchLabel">Search conferences</span>
+            <input id="conferenceSearch" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="搜索会议、领域或城市" />
+            <kbd>/</kbd>
+          </label>
+          <div class="cr-scope-tabs" id="scopeTabs" role="group" aria-label="Conference scope"></div>
+          <label class="cr-sort">
+            <span data-i18n="sortLabel">排序</span>
+            <select id="sortSelect" aria-label="Sort conferences"></select>
+          </label>
+        </div>
+        <div class="cr-shell cr-domain-strip" id="domainFilters" aria-label="Research domains"></div>
+      </section>
+
+      <section class="cr-shell cr-content" id="results" aria-labelledby="resultsTitle">
+        <aside class="cr-rail">
+          <div class="cr-rail-block">
+            <p class="cr-rail-label" data-i18n="nextLabel">Next deadline</p>
+            <div id="nextDeadlineCard"></div>
+          </div>
+          <div class="cr-rail-block cr-local-block">
+            <p class="cr-rail-label" data-i18n="localLabel">Hangzhou · Shanghai</p>
+            <div id="localSummary"></div>
+          </div>
+          <div class="cr-rail-block cr-method-block">
+            <p class="cr-rail-label" data-i18n="methodLabel">Data discipline</p>
+            <p data-i18n="methodCopy">只记录官方来源已经公布的信息；待公布字段保持为空，并显示最近核验日期。</p>
+            <a href="./data/conferences.json" data-i18n="openData">Open data ↗</a>
+          </div>
+        </aside>
+
+        <div class="cr-results-column">
+          <div class="cr-results-head">
+            <div>
+              <p class="cr-kicker" data-i18n="resultsKicker">Deadline index</p>
+              <h2 id="resultsTitle" data-i18n="resultsTitle">仍可准备的投稿窗口</h2>
+            </div>
+            <p id="resultCount" aria-live="polite"></p>
+          </div>
+          <div class="cr-card-list" id="conferenceList" aria-busy="true">
+            <div class="cr-loading-card"></div>
+            <div class="cr-loading-card"></div>
+            <div class="cr-loading-card"></div>
+          </div>
+          <div class="cr-empty" id="emptyState" hidden>
+            <strong data-i18n="emptyTitle">没有匹配的会议</strong>
+            <p data-i18n="emptyCopy">尝试清空搜索词，或切换到“全部记录”。</p>
+            <button id="resetFilters" type="button" data-i18n="reset">重置筛选</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="cr-footer">
+      <div class="cr-shell cr-footer-inner">
+        <div>
+          <strong>Conference Radar</strong>
+          <p data-i18n="footerCopy">A compact research planning surface maintained by Sichen Tao.</p>
+        </div>
+        <p id="dataTimestamp"></p>
+      </div>
+    </footer>
+
+    <noscript>This page needs JavaScript to search and sort conference records. The raw JSON data remains available.</noscript>
+  </body>
+</html>
