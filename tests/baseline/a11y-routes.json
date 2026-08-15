@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "routes": [
+    "/",
+    "/academic-homepage/",
+    "/academic-homepage/publications.html",
+    "/academic-frontier/",
+    "/follow-builders/",
+    "/youtube-to-ebook/",
+    "/jsps-kakenhi/",
+    "/account/"
+  ]
+}

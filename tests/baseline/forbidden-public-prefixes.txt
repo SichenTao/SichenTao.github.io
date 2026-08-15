@@ -1,0 +1,2 @@
+# Quant runs in a separate private deployment and must never enter GitHub Pages.
+/quant-platform/

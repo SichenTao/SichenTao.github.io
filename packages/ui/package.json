@@ -1,0 +1,19 @@
+{
+  "name": "@sichentao/ui",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./css": "./src/styles.css",
+    "./assets": "./src/assets.ts",
+    "./contracts": "./src/contracts.ts",
+    "./dom": "./src/dom.ts"
+  },
+  "peerDependencies": {
+    "@sichentao/design-tokens": "workspace:*"
+  }
+}

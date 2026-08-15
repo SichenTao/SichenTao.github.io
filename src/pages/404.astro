@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/account.css";
+---
+
+<BaseLayout
+  title="Page not found | Sichen Tao"
+  description="The requested page could not be found."
+  canonical="https://sichentao.github.io/404.html"
+  bodyPage="not-found"
+  robots="noindex,follow"
+  stylesheets={["/portal.css"]}
+>
+  <main class="shell not-found" id="main-content">
+    <p class="eyebrow">404</p>
+    <h1>Page not found</h1>
+    <p>The address may have moved during the v2 product-system migration.</p>
+    <a class="account-button account-button-primary" href="/">Return to the research portal</a>
+  </main>
+</BaseLayout>

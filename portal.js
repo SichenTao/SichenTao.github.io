@@ -1,5 +1,7 @@
-const THEME_STORAGE_KEY = window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
-const LOCALE_STORAGE_KEY = window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
+const THEME_STORAGE_KEY =
+  window.HomepagePlatform?.THEME_STORAGE_KEY || "sichen-homepage-theme";
+const LOCALE_STORAGE_KEY =
+  window.HomepageI18n?.STORAGE_KEY || "sichen-homepage-locale";
 
 const LOCALE_CATALOG = window.HomepageI18n?.LOCALES || {
   en: { label: "English", name: "English", lang: "en" },
@@ -37,8 +39,16 @@ const THEME_CATALOG = {
   },
 };
 
-const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || ["tohoku", "toyama", "usst"];
-const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || ["zh", "en", "ja"];
+const THEME_SWITCH_SEQUENCE = window.HomepagePlatform?.THEME_SEQUENCE || [
+  "tohoku",
+  "toyama",
+  "usst",
+];
+const LOCALE_SWITCH_SEQUENCE = window.HomepageI18n?.LOCALE_SEQUENCE || [
+  "zh",
+  "en",
+  "ja",
+];
 
 const PROFILE_LINK_HREFS = {
   tohokuCenter: "https://www.cc.tohoku.ac.jp/english/member/rd/",
@@ -76,7 +86,9 @@ function profileLinkHref(key, locale = "en") {
   if (!localeHrefs) {
     return PROFILE_LINK_HREFS[key] || "#";
   }
-  return localeHrefs[locale] || localeHrefs.en || PROFILE_LINK_HREFS[key] || "#";
+  return (
+    localeHrefs[locale] || localeHrefs.en || PROFILE_LINK_HREFS[key] || "#"
+  );
 }
 
 const I18N = {
@@ -107,6 +119,7 @@ const I18N = {
       followBuilders: "Follow Builders",
       youtubeToEbook: "YouTube Learner",
       jsps: "JSPS KAKENHI",
+      account: "Account",
     },
     hero: {
       eyebrow: "",
@@ -129,27 +142,32 @@ const I18N = {
     cards: {
       academic: {
         name: "Personal Homepage",
-        intro: "The public academic identity: profile, publications, awards, projects, and service.",
+        intro:
+          "The public academic identity: profile, publications, awards, projects, and service.",
         action: "Open homepage",
       },
       frontier: {
         name: "Academic Frontier",
-        intro: "A research workspace for paper records, source links, and venue metrics.",
+        intro:
+          "A research workspace for paper records, source links, and venue metrics.",
         action: "Open frontier",
       },
       followBuilders: {
         name: "Follow Builders",
-        intro: "A standalone reader for Zara Zhang's Follow Builders project: AI builders, X posts, podcasts, and official blogs.",
+        intro:
+          "A standalone reader for Zara Zhang's Follow Builders project: AI builders, X posts, podcasts, and official blogs.",
         action: "Open reader",
       },
       youtubeToEbook: {
         name: "YouTube Learner",
-        intro: "A video learning reader for watching YouTube, reading along, and learning better.",
+        intro:
+          "A video learning reader for watching YouTube, reading along, and learning better.",
         action: "Open learner",
       },
       jsps: {
         name: "JSPS KAKENHI",
-        intro: "A grant-work workspace for calls, forms, deadlines, guides, and official sources.",
+        intro:
+          "A grant-work workspace for calls, forms, deadlines, guides, and official sources.",
         action: "Open workspace",
       },
     },
@@ -169,6 +187,7 @@ const I18N = {
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
+              { label: "Account & Billing", href: "/account/" },
             ],
           },
           {
@@ -184,7 +203,10 @@ const I18N = {
         eyebrow: "Personal homepage",
         primary: [
           { label: "Overview", href: "/academic-homepage/" },
-          { label: "Publications", href: "/academic-homepage/publications.html" },
+          {
+            label: "Publications",
+            href: "/academic-homepage/publications.html",
+          },
           { label: "Awards", href: "/academic-homepage/awards.html" },
           { label: "Projects", href: "/academic-homepage/projects.html" },
         ],
@@ -200,11 +222,26 @@ const I18N = {
           {
             title: "Identity",
             items: [
-              { label: "External profiles", href: "/academic-homepage/profiles.html" },
-              { label: "Tohoku Cyberscience Center", href: profileLinkHref("tohokuCenter", "en") },
-              { label: "High Performance Computing Laboratory", href: profileLinkHref("hpcLab", "en") },
-              { label: "Takizawa Lab announcement", href: profileLinkHref("takizawaAnnouncement", "en") },
-              { label: "Curriculum vitae", href: "/academic-homepage/assets/docs/CV_SichenTao.pdf" },
+              {
+                label: "External profiles",
+                href: "/academic-homepage/profiles.html",
+              },
+              {
+                label: "Tohoku Cyberscience Center",
+                href: profileLinkHref("tohokuCenter", "en"),
+              },
+              {
+                label: "High Performance Computing Laboratory",
+                href: profileLinkHref("hpcLab", "en"),
+              },
+              {
+                label: "Takizawa Lab announcement",
+                href: profileLinkHref("takizawaAnnouncement", "en"),
+              },
+              {
+                label: "Curriculum vitae",
+                href: "/academic-homepage/assets/docs/CV_SichenTao.pdf",
+              },
             ],
           },
         ],
@@ -228,9 +265,7 @@ const I18N = {
           },
           {
             title: "Site",
-            items: [
-              { label: "Return to portal", href: "/" },
-            ],
+            items: [{ label: "Return to portal", href: "/" }],
           },
         ],
       },
@@ -239,7 +274,10 @@ const I18N = {
         primary: [
           { label: "Feed", href: "/follow-builders/#feed" },
           { label: "Sources", href: "/follow-builders/#sources" },
-          { label: "GitHub", href: "https://github.com/zarazhangrui/follow-builders" },
+          {
+            label: "GitHub",
+            href: "https://github.com/zarazhangrui/follow-builders",
+          },
         ],
         columns: [
           {
@@ -265,14 +303,24 @@ const I18N = {
         primary: [
           { label: "Feed", href: "/youtube-to-ebook/#feed" },
           { label: "Sources", href: "/youtube-to-ebook/#sources" },
-          { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+          { label: "Account & Billing", href: "/account/" },
+          {
+            label: "GitHub",
+            href: "https://github.com/zarazhangrui/youtube-to-ebook",
+          },
         ],
         columns: [
           {
             title: "Article library",
             items: [
-              { label: "Learning article cards", href: "/youtube-to-ebook/#feed" },
-              { label: "Article reader", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
+              {
+                label: "Learning article cards",
+                href: "/youtube-to-ebook/#feed",
+              },
+              {
+                label: "Article reader",
+                href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow",
+              },
               { label: "Pipeline sources", href: "/youtube-to-ebook/#sources" },
             ],
           },
@@ -309,7 +357,8 @@ const I18N = {
   zh: {
     page: {
       title: "陶思晨 | 研究导航页",
-      description: "统一进入个人主页、学术前沿、Follow Builders、YouTube Learner 与 JSPS 科研费工作台的研究导航页。",
+      description:
+        "统一进入个人主页、学术前沿、Follow Builders、YouTube Learner 与 JSPS 科研费工作台的研究导航页。",
     },
     controls: {
       display: "显示控制",
@@ -332,6 +381,7 @@ const I18N = {
       followBuilders: "Follow Builders",
       youtubeToEbook: "YouTube Learner",
       jsps: "JSPS 科研费",
+      account: "账户",
     },
     hero: {
       eyebrow: "",
@@ -363,7 +413,8 @@ const I18N = {
       },
       followBuilders: {
         name: "Follow Builders",
-        intro: "把 Zara Zhang 的 Follow Builders 项目做成独立阅读器：AI builders、X 动态、播客和官方博客。",
+        intro:
+          "把 Zara Zhang 的 Follow Builders 项目做成独立阅读器：AI builders、X 动态、播客和官方博客。",
         action: "打开阅读器",
       },
       youtubeToEbook: {
@@ -393,6 +444,7 @@ const I18N = {
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
+              { label: "账户与付费", href: "/account/" },
             ],
           },
           {
@@ -408,7 +460,7 @@ const I18N = {
         eyebrow: "个人主页",
         primary: [
           { label: "概览", href: "/academic-homepage/" },
-              { label: "发表论文", href: "/academic-homepage/publications.html" },
+          { label: "发表论文", href: "/academic-homepage/publications.html" },
           { label: "获奖", href: "/academic-homepage/awards.html" },
           { label: "项目", href: "/academic-homepage/projects.html" },
         ],
@@ -425,10 +477,22 @@ const I18N = {
             title: "身份",
             items: [
               { label: "外部主页", href: "/academic-homepage/profiles.html" },
-              { label: "东北大学网络科学中心", href: profileLinkHref("tohokuCenter", "zh") },
-              { label: "高性能计算研究室", href: profileLinkHref("hpcLab", "zh") },
-              { label: "泷泽研究室加入公告", href: profileLinkHref("takizawaAnnouncement", "zh") },
-              { label: "简历 PDF", href: "/academic-homepage/assets/docs/CV_SichenTao.pdf" },
+              {
+                label: "东北大学网络科学中心",
+                href: profileLinkHref("tohokuCenter", "zh"),
+              },
+              {
+                label: "高性能计算研究室",
+                href: profileLinkHref("hpcLab", "zh"),
+              },
+              {
+                label: "泷泽研究室加入公告",
+                href: profileLinkHref("takizawaAnnouncement", "zh"),
+              },
+              {
+                label: "简历 PDF",
+                href: "/academic-homepage/assets/docs/CV_SichenTao.pdf",
+              },
             ],
           },
         ],
@@ -452,9 +516,7 @@ const I18N = {
           },
           {
             title: "站点",
-            items: [
-              { label: "返回导航页", href: "/" },
-            ],
+            items: [{ label: "返回导航页", href: "/" }],
           },
         ],
       },
@@ -463,7 +525,10 @@ const I18N = {
         primary: [
           { label: "信息流", href: "/follow-builders/#feed" },
           { label: "来源", href: "/follow-builders/#sources" },
-          { label: "GitHub", href: "https://github.com/zarazhangrui/follow-builders" },
+          {
+            label: "GitHub",
+            href: "https://github.com/zarazhangrui/follow-builders",
+          },
         ],
         columns: [
           {
@@ -477,7 +542,10 @@ const I18N = {
           {
             title: "项目内容",
             items: [
-              { label: "X 上的 AI builders", href: "/follow-builders/#sources" },
+              {
+                label: "X 上的 AI builders",
+                href: "/follow-builders/#sources",
+              },
               { label: "AI 播客", href: "/follow-builders/#sources" },
               { label: "官方博客", href: "/follow-builders/#sources" },
             ],
@@ -489,14 +557,21 @@ const I18N = {
         primary: [
           { label: "信息流", href: "/youtube-to-ebook/#feed" },
           { label: "来源", href: "/youtube-to-ebook/#sources" },
-          { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+          { label: "账户与付费", href: "/account/" },
+          {
+            label: "GitHub",
+            href: "https://github.com/zarazhangrui/youtube-to-ebook",
+          },
         ],
         columns: [
           {
             title: "文章库",
             items: [
               { label: "学习文章卡片", href: "/youtube-to-ebook/#feed" },
-              { label: "文章阅读器", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
+              {
+                label: "文章阅读器",
+                href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow",
+              },
               { label: "流程来源", href: "/youtube-to-ebook/#sources" },
             ],
           },
@@ -533,7 +608,8 @@ const I18N = {
   ja: {
     page: {
       title: "陶思晨 | 研究ポータル",
-      description: "個人ホームページ、学術フロンティア、Follow Builders、YouTube Learner、JSPS科研費ワークスペースへ入る統合ポータル。",
+      description:
+        "個人ホームページ、学術フロンティア、Follow Builders、YouTube Learner、JSPS科研費ワークスペースへ入る統合ポータル。",
     },
     controls: {
       display: "表示コントロール",
@@ -556,6 +632,7 @@ const I18N = {
       followBuilders: "Follow Builders",
       youtubeToEbook: "YouTube Learner",
       jsps: "JSPS科研費",
+      account: "アカウント",
     },
     hero: {
       eyebrow: "",
@@ -563,7 +640,8 @@ const I18N = {
       title: "Sichen Tao",
       roleLabel: "人工知能 · 高性能計算",
       role: "助教",
-      affiliation: "東北大学サイバーサイエンスセンター スーパーコンピューティング研究部・高性能計算研究室",
+      affiliation:
+        "東北大学サイバーサイエンスセンター スーパーコンピューティング研究部・高性能計算研究室",
       description: "",
       portraitAlt: "陶思晨のポートレート",
       scrollCue: "ワークスペースへ",
@@ -577,27 +655,32 @@ const I18N = {
     cards: {
       academic: {
         name: "個人ホームページ",
-        intro: "研究者としての公開プロフィール、論文、受賞、プロジェクト、学術サービスをまとめます。",
+        intro:
+          "研究者としての公開プロフィール、論文、受賞、プロジェクト、学術サービスをまとめます。",
         action: "ホームページを開く",
       },
       frontier: {
         name: "学術フロンティア",
-        intro: "論文記録、ソース導線、分区指標を整理する研究ワークスペースです。",
+        intro:
+          "論文記録、ソース導線、分区指標を整理する研究ワークスペースです。",
         action: "フロンティアを開く",
       },
       followBuilders: {
         name: "Follow Builders",
-        intro: "Zara Zhang の Follow Builders プロジェクトを、AI builders、X 投稿、podcast、公式ブログの読書画面として表示します。",
+        intro:
+          "Zara Zhang の Follow Builders プロジェクトを、AI builders、X 投稿、podcast、公式ブログの読書画面として表示します。",
         action: "リーダーを開く",
       },
       youtubeToEbook: {
         name: "YouTube Learner",
-        intro: "YouTube を見ながら読み、よりよく学ぶための動画学習リーダーです。",
+        intro:
+          "YouTube を見ながら読み、よりよく学ぶための動画学習リーダーです。",
         action: "リーダーを開く",
       },
       jsps: {
         name: "JSPS科研費",
-        intro: "公募、様式、締切、ガイドをまとめた科研費実務ワークスペースです。",
+        intro:
+          "公募、様式、締切、ガイドをまとめた科研費実務ワークスペースです。",
         action: "ワークスペースを開く",
       },
     },
@@ -617,6 +700,7 @@ const I18N = {
               { label: "Follow Builders", href: "/follow-builders/" },
               { label: "YouTube Learner", href: "/youtube-to-ebook/" },
               { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
+              { label: "アカウントと支払い", href: "/account/" },
             ],
           },
           {
@@ -632,7 +716,7 @@ const I18N = {
         eyebrow: "個人ホームページ",
         primary: [
           { label: "概要", href: "/academic-homepage/" },
-              { label: "発表論文", href: "/academic-homepage/publications.html" },
+          { label: "発表論文", href: "/academic-homepage/publications.html" },
           { label: "受賞", href: "/academic-homepage/awards.html" },
           { label: "プロジェクト", href: "/academic-homepage/projects.html" },
         ],
@@ -648,11 +732,26 @@ const I18N = {
           {
             title: "基本情報",
             items: [
-              { label: "外部ホームページ", href: "/academic-homepage/profiles.html" },
-              { label: "東北大学サイバーサイエンスセンター", href: profileLinkHref("tohokuCenter", "ja") },
-              { label: "高性能計算研究室", href: profileLinkHref("hpcLab", "ja") },
-              { label: "滝沢研究室着任告知", href: profileLinkHref("takizawaAnnouncement", "ja") },
-              { label: "CV PDF", href: "/academic-homepage/assets/docs/CV_SichenTao.pdf" },
+              {
+                label: "外部ホームページ",
+                href: "/academic-homepage/profiles.html",
+              },
+              {
+                label: "東北大学サイバーサイエンスセンター",
+                href: profileLinkHref("tohokuCenter", "ja"),
+              },
+              {
+                label: "高性能計算研究室",
+                href: profileLinkHref("hpcLab", "ja"),
+              },
+              {
+                label: "滝沢研究室着任告知",
+                href: profileLinkHref("takizawaAnnouncement", "ja"),
+              },
+              {
+                label: "CV PDF",
+                href: "/academic-homepage/assets/docs/CV_SichenTao.pdf",
+              },
             ],
           },
         ],
@@ -676,9 +775,7 @@ const I18N = {
           },
           {
             title: "サイト",
-            items: [
-              { label: "ポータルへ戻る", href: "/" },
-            ],
+            items: [{ label: "ポータルへ戻る", href: "/" }],
           },
         ],
       },
@@ -687,7 +784,10 @@ const I18N = {
         primary: [
           { label: "フィード", href: "/follow-builders/#feed" },
           { label: "ソース", href: "/follow-builders/#sources" },
-          { label: "GitHub", href: "https://github.com/zarazhangrui/follow-builders" },
+          {
+            label: "GitHub",
+            href: "https://github.com/zarazhangrui/follow-builders",
+          },
         ],
         columns: [
           {
@@ -713,14 +813,21 @@ const I18N = {
         primary: [
           { label: "フィード", href: "/youtube-to-ebook/#feed" },
           { label: "ソース", href: "/youtube-to-ebook/#sources" },
-          { label: "GitHub", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
+          { label: "アカウントと支払い", href: "/account/" },
+          {
+            label: "GitHub",
+            href: "https://github.com/zarazhangrui/youtube-to-ebook",
+          },
         ],
         columns: [
           {
             title: "記事ライブラリ",
             items: [
               { label: "学習記事カード", href: "/youtube-to-ebook/#feed" },
-              { label: "記事リーダー", href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow" },
+              {
+                label: "記事リーダー",
+                href: "/youtube-to-ebook/#article-youtube-to-ebook-principle-and-native-flow",
+              },
               { label: "Pipeline sources", href: "/youtube-to-ebook/#sources" },
             ],
           },
@@ -786,7 +893,12 @@ function iconSprite(name, className = "ui-icon") {
 }
 
 function resolveLocaleName() {
-  return window.HomepageI18n?.readStoredLocale?.({ locales: LOCALE_CATALOG, fallback: "en" }) || "en";
+  return (
+    window.HomepageI18n?.readStoredLocale?.({
+      locales: LOCALE_CATALOG,
+      fallback: "en",
+    }) || "en"
+  );
 }
 
 function resolveThemeName() {
@@ -803,12 +915,16 @@ function resolveThemeName() {
 
 function nextLocaleName() {
   const currentIndex = LOCALE_SWITCH_SEQUENCE.indexOf(state.locale);
-  return LOCALE_SWITCH_SEQUENCE[(currentIndex + 1) % LOCALE_SWITCH_SEQUENCE.length];
+  return LOCALE_SWITCH_SEQUENCE[
+    (currentIndex + 1) % LOCALE_SWITCH_SEQUENCE.length
+  ];
 }
 
 function nextThemeName() {
   const currentIndex = THEME_SWITCH_SEQUENCE.indexOf(state.theme);
-  return THEME_SWITCH_SEQUENCE[(currentIndex + 1) % THEME_SWITCH_SEQUENCE.length];
+  return THEME_SWITCH_SEQUENCE[
+    (currentIndex + 1) % THEME_SWITCH_SEQUENCE.length
+  ];
 }
 
 function replaceUrlStateParam(key, value) {
@@ -819,7 +935,11 @@ function replaceUrlStateParam(key, value) {
     } else {
       url.searchParams.set(key, value);
     }
-    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    window.history.replaceState(
+      window.history.state,
+      "",
+      `${url.pathname}${url.search}${url.hash}`,
+    );
   } catch {}
 }
 
@@ -840,7 +960,9 @@ function setMetaContent(selector, value) {
 
 function applyDocumentState() {
   if (window.HomepageI18n?.applyDocumentLocale) {
-    window.HomepageI18n.applyDocumentLocale(state.locale, { locales: LOCALE_CATALOG });
+    window.HomepageI18n.applyDocumentLocale(state.locale, {
+      locales: LOCALE_CATALOG,
+    });
   } else {
     document.documentElement.lang =
       state.locale === "zh" ? "zh-CN" : state.locale === "ja" ? "ja" : "en";
@@ -854,7 +976,10 @@ function applyDocumentState() {
 
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   if (metaThemeColor) {
-    metaThemeColor.setAttribute("content", THEME_CATALOG[state.theme].metaColor);
+    metaThemeColor.setAttribute(
+      "content",
+      THEME_CATALOG[state.theme].metaColor,
+    );
   }
 }
 
@@ -880,17 +1005,29 @@ function portalHref(href) {
   }
   if (href.startsWith("/academic-frontier/")) {
     const parsed = new URL(href, window.location.origin);
-    const suffix = parsed.pathname.replace(/^\/academic-frontier\/(?:zh\/|ja\/)?/, "");
-    const localePrefix = state.locale === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(state.locale)}/`;
+    const suffix = parsed.pathname.replace(
+      /^\/academic-frontier\/(?:zh\/|ja\/)?/,
+      "",
+    );
+    const localePrefix =
+      state.locale === "en"
+        ? "/academic-frontier/"
+        : `/academic-frontier/${encodeURIComponent(state.locale)}/`;
     const frontierHref = `${localePrefix}${suffix}`;
     const stateHref = `${frontierHref}${parsed.hash || ""}`;
     if (window.HomepagePlatform?.siteStateHref) {
-      return window.HomepagePlatform.siteStateHref(stateHref, { locale: state.locale, theme: state.theme });
+      return window.HomepagePlatform.siteStateHref(stateHref, {
+        locale: state.locale,
+        theme: state.theme,
+      });
     }
     return stateHref;
   }
   if (window.HomepagePlatform?.siteStateHref) {
-    return window.HomepagePlatform.siteStateHref(href, { locale: state.locale, theme: state.theme });
+    return window.HomepagePlatform.siteStateHref(href, {
+      locale: state.locale,
+      theme: state.theme,
+    });
   }
   return href;
 }
@@ -910,6 +1047,7 @@ function renderTopnav() {
     <a href="${portalHref("/follow-builders/")}" data-portal-menu-key="followBuilders" aria-haspopup="true" aria-expanded="false">${iconSprite("publications")}<span>${escapeHtml(text.nav.followBuilders)}</span></a>
     <a href="${portalHref("/youtube-to-ebook/")}" data-portal-menu-key="youtubeToEbook" aria-haspopup="true" aria-expanded="false">${iconSprite("file")}<span>${escapeHtml(text.nav.youtubeToEbook)}</span></a>
     <a href="${portalHref("/jsps-kakenhi/")}" data-portal-menu-key="jsps" aria-haspopup="true" aria-expanded="false">${iconSprite("sources")}<span>${escapeHtml(text.nav.jsps)}</span></a>
+    <a href="/account/">${iconSprite("identity")}<span>${escapeHtml(text.nav.account)}</span></a>
   `;
 }
 
@@ -919,8 +1057,13 @@ function keylineMarkup(value) {
     .map((item) => item.trim())
     .filter(Boolean);
   return lines
-    .map((item) => `<span class="portal-keyline-emphasis">${escapeHtml(item)}</span>`)
-    .join(' <span class="portal-keyline-separator" aria-hidden="true">·</span> ');
+    .map(
+      (item) =>
+        `<span class="portal-keyline-emphasis">${escapeHtml(item)}</span>`,
+    )
+    .join(
+      ' <span class="portal-keyline-separator" aria-hidden="true">·</span> ',
+    );
 }
 
 function renderHero() {
@@ -964,13 +1107,17 @@ function renderMegaMenu(key = "portal") {
     return;
   }
 
-  const isWorkspaceColumn = (column) => /workspace|工作区|ワークスペース/i.test(column?.title || "");
-  const workspaceTitle = { en: "Workspaces", zh: "工作区", ja: "ワークスペース" }[state.locale] || "Workspaces";
-  const workspaceItems = window.HomepagePlatform?.portalItems?.({
-    locale: state.locale,
-    theme: state.theme,
-    currentPath: window.location.pathname,
-  })?.items || [];
+  const isWorkspaceColumn = (column) =>
+    /workspace|工作区|ワークスペース/i.test(column?.title || "");
+  const workspaceTitle =
+    { en: "Workspaces", zh: "工作区", ja: "ワークスペース" }[state.locale] ||
+    "Workspaces";
+  const workspaceItems =
+    window.HomepagePlatform?.portalItems?.({
+      locale: state.locale,
+      theme: state.theme,
+      currentPath: window.location.pathname,
+    })?.items || [];
   const workspaceColumns = workspaceItems.length
     ? [
         {
@@ -983,11 +1130,13 @@ function renderMegaMenu(key = "portal") {
         },
       ]
     : (text.mega?.portal?.columns || []).filter(isWorkspaceColumn);
-  const detailColumns = (menu.columns || []).filter((column) => !isWorkspaceColumn(column));
+  const detailColumns = (menu.columns || []).filter(
+    (column) => !isWorkspaceColumn(column),
+  );
   const columnMarkup = (columns, extraClass = "") =>
     columns
-    .map(
-      (column) => `
+      .map(
+        (column) => `
         <div class="portal-mega-column${extraClass ? ` ${extraClass}` : ""}">
           <p class="portal-mega-column-title">${escapeHtml(column.title)}</p>
           <div class="portal-mega-link-list">
@@ -1000,8 +1149,8 @@ function renderMegaMenu(key = "portal") {
           </div>
         </div>
       `,
-    )
-    .join("");
+      )
+      .join("");
 
   panel.dataset.activeKey = key;
   panel.innerHTML = `
@@ -1024,7 +1173,11 @@ function renderMegaMenu(key = "portal") {
 }
 
 function isMegaMenuEnabled() {
-  return window.matchMedia?.("(min-width: 761px) and (hover: hover) and (pointer: fine)")?.matches !== false;
+  return (
+    window.matchMedia?.(
+      "(min-width: 761px) and (hover: hover) and (pointer: fine)",
+    )?.matches !== false
+  );
 }
 
 function closeMegaMenu() {
@@ -1050,7 +1203,10 @@ function openMegaMenu(key, trigger) {
     panel.setAttribute("aria-hidden", "false");
   }
   document.body.classList.add("portal-mega-open");
-  window.HomepageSharedShell?.syncPortalMegaAlignment?.(panel, document.getElementById("portalTopnav"));
+  window.HomepageSharedShell?.syncPortalMegaAlignment?.(
+    panel,
+    document.getElementById("portalTopnav"),
+  );
   document.querySelectorAll("[data-portal-menu-key]").forEach((link) => {
     const isActive = link === trigger;
     link.setAttribute("aria-expanded", isActive ? "true" : "false");
@@ -1080,8 +1236,12 @@ function bindMegaMenuInteractions() {
   };
 
   document.querySelectorAll("[data-portal-menu-key]").forEach((link) => {
-    link.addEventListener("mouseenter", () => openMegaMenu(link.dataset.portalMenuKey || "portal", link));
-    link.addEventListener("focus", () => openMegaMenu(link.dataset.portalMenuKey || "portal", link));
+    link.addEventListener("mouseenter", () =>
+      openMegaMenu(link.dataset.portalMenuKey || "portal", link),
+    );
+    link.addEventListener("focus", () =>
+      openMegaMenu(link.dataset.portalMenuKey || "portal", link),
+    );
   });
 
   if (header.dataset.megaBound !== "true") {
@@ -1170,7 +1330,8 @@ function renderCards() {
     return;
   }
 
-  document.getElementById("portalCardsKicker").textContent = text.section.kicker;
+  document.getElementById("portalCardsKicker").textContent =
+    text.section.kicker;
   document.getElementById("portalCardsTitle").textContent = text.section.title;
   document.getElementById("portalCardsLede").textContent = text.section.lede;
   grid.setAttribute("aria-label", text.section.gridLabel);
@@ -1297,7 +1458,9 @@ function renderLocaleSwitcher() {
   });
 
   document.querySelectorAll("[data-locale-choice]").forEach((button) => {
-    button.addEventListener("click", () => setLocale(button.dataset.localeChoice));
+    button.addEventListener("click", () =>
+      setLocale(button.dataset.localeChoice),
+    );
   });
 }
 
@@ -1354,57 +1517,10 @@ function renderThemeSwitcher() {
   });
 
   document.querySelectorAll("[data-theme-choice]").forEach((button) => {
-    button.addEventListener("click", () => applyTheme(button.dataset.themeChoice));
+    button.addEventListener("click", () =>
+      applyTheme(button.dataset.themeChoice),
+    );
   });
-}
-
-function renderPortalReturnControl() {
-  const controls = document.querySelector(".header-controls");
-  const text = localeText();
-  if (!controls) {
-    return;
-  }
-
-  if (window.HomepageComponents?.renderPortalSwitcher) {
-    window.HomepageComponents.renderPortalSwitcher(controls, {
-      locale: state.locale,
-      theme: state.theme,
-      currentPath: window.location.pathname,
-    });
-    return;
-  }
-
-  let switcher = controls.querySelector(".portal-switcher");
-  if (!switcher) {
-    switcher = document.createElement("div");
-    switcher.className = "portal-switcher control-switcher";
-    controls.insertBefore(switcher, controls.firstElementChild);
-  }
-
-  switcher.innerHTML = `
-    <button
-      class="portal-trigger"
-      type="button"
-      data-portal-trigger
-      aria-haspopup="true"
-      aria-expanded="false"
-      aria-label="${escapeHtml(text.nav.portal)}"
-      title="${escapeHtml(text.nav.portal)}"
-    >
-      ${iconSprite("home")}
-    </button>
-    <div class="portal-tray" role="group" aria-label="${escapeHtml(text.controls.siteSections)}">
-      <a class="portal-chip portal-chip--portrait" href="/academic-homepage/" aria-label="${escapeHtml(text.nav.academic)}" title="${escapeHtml(text.nav.academic)}">
-        <img class="portal-chip-logo" src="/academic-homepage/assets/images/avatar-openai.jpg" alt="" loading="lazy" />
-      </a>
-      <a class="portal-chip" href="/academic-frontier/" aria-label="${escapeHtml(text.nav.frontier)}" title="${escapeHtml(text.nav.frontier)}">
-        ${iconSprite("research")}
-      </a>
-      <a class="portal-chip" href="/jsps-kakenhi/" aria-label="${escapeHtml(text.nav.jsps)}" title="${escapeHtml(text.nav.jsps)}">
-        <img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />
-      </a>
-    </div>
-  `;
 }
 
 function syncHomepageShell() {
@@ -1442,9 +1558,14 @@ function bindWorkspaceScrollCue() {
   cue.dataset.bound = "true";
   cue.addEventListener("click", (event) => {
     event.preventDefault();
-    const reduceMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    const reduceMotion = window.matchMedia?.(
+      "(prefers-reduced-motion: reduce)",
+    )?.matches;
     const targetTop = target.getBoundingClientRect().top + window.scrollY;
-    window.scrollTo({ top: targetTop, behavior: reduceMotion ? "auto" : "smooth" });
+    window.scrollTo({
+      top: targetTop,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
   });
 }
 
@@ -1473,7 +1594,9 @@ function setLocale(localeName) {
   state.locale = localeName;
   replaceUrlStateParam("lang", localeName);
   if (window.HomepageI18n?.writeStoredLocale) {
-    window.HomepageI18n.writeStoredLocale(localeName, { locales: LOCALE_CATALOG });
+    window.HomepageI18n.writeStoredLocale(localeName, {
+      locales: LOCALE_CATALOG,
+    });
   } else {
     try {
       localStorage.setItem(LOCALE_STORAGE_KEY, localeName);

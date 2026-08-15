@@ -1,0 +1,55 @@
+{
+  "name": "sichen-tao-web-product-family",
+  "version": "2.0.0-alpha.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "prepare:public": "node scripts/prepare-public.mjs",
+    "predev": "pnpm prepare:public",
+    "dev": "astro dev",
+    "prebuild": "pnpm prepare:public",
+    "build": "astro build && node scripts/finalize-dist.mjs",
+    "preview": "astro preview",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "typecheck": "astro check && tsc --noEmit -p tsconfig.scripts.json",
+    "typecheck:edge": "deno check --frozen --config supabase/functions/deno.json supabase/functions/create-checkout/index.ts supabase/functions/customer-portal/index.ts supabase/functions/stripe-webhook/index.ts supabase/functions/signed-content-url/index.ts",
+    "test": "pnpm test:unit",
+    "test:unit": "vitest run",
+    "test:design-system": "node docs/design-system/validate.mjs",
+    "test:quality-tools": "node --test tests/baseline/quality-tools.selftest.mjs",
+    "test:links": "node scripts/v2/check-links.mjs --root dist",
+    "test:a11y": "node scripts/v2/check-a11y.mjs",
+    "test:freshness": "node scripts/v2/check-freshness.mjs --manifest content/freshness.json",
+    "test:security": "node scripts/v2/check-security.mjs --root dist",
+    "test:smoke": "node scripts/v2/smoke-test.mjs",
+    "test:all": "pnpm lint && pnpm typecheck && pnpm typecheck:edge && pnpm test:design-system && pnpm test:unit && pnpm test:quality-tools && pnpm build && pnpm test:links && pnpm test:freshness && pnpm test:a11y && pnpm test:security"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
+    "@sichentao/design-tokens": "workspace:*",
+    "@sichentao/product-patterns": "workspace:*",
+    "@sichentao/ui": "workspace:*",
+    "@supabase/supabase-js": "^2.112.3",
+    "astro": "^7.2.2",
+    "stripe": "^22.5.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@astrojs/check": "^0.9.10",
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0",
+    "eslint": "^10.8.1",
+    "eslint-plugin-astro": "^3.1.0",
+    "globals": "^17.11.0",
+    "prettier": "^3.9.6",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.67.0",
+    "vitest": "^4.1.10"
+  }
+}

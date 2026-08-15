@@ -1,0 +1,270 @@
+{
+  "version": 1,
+  "auditPerformedAt": "2026-08-15T17:21:11+08:00",
+  "auditRule": "A refresh timestamp is copied only from the generated artifact that is actually shipped. Reading a newer upstream source without regenerating the shipped artifact does not advance lastSuccessfulRefresh.",
+  "expectedGateDisposition": "fail-until-real-refresh",
+  "releaseValidation": {
+    "validatedAt": "2026-08-15T17:21:11+08:00",
+    "lint": {
+      "status": "pass",
+      "detail": "ESLint and repository-wide Prettier checks passed when invoked with the bundled Node runtime."
+    },
+    "build": {
+      "status": "pass",
+      "detail": "Astro build completed; finalize-dist reported 75 public routes, 17 compatibility routes, 93 noindex evidence routes, and zero Quant artifacts."
+    },
+    "links": {
+      "status": "pass",
+      "detail": "187 HTML files and 2603 local references verified."
+    },
+    "security": {
+      "status": "pass",
+      "detail": "All six security checks passed, including source/artifact secret scans, Quant and dist boundaries, HTML controls, and legacy URL inventory."
+    },
+    "freshness": {
+      "status": "fail",
+      "passingDatasets": ["follow-builders", "jsps-kakenhi"],
+      "failingDatasets": ["academic-frontier", "learning-catalog"],
+      "violations": [
+        "academic-frontier: 2378.4 hours old; budget is 1080 hours",
+        "learning-catalog: 2208.9 hours old; budget is 720 hours"
+      ]
+    }
+  },
+  "datasets": [
+    {
+      "id": "academic-frontier",
+      "artifact": "academic-frontier/data/frontier_data.json",
+      "artifactSha256": "c238cd6a7f9e5c852f21593821e44a2ddcae1d5b3ec6d2a34a9c3a3289c974ec",
+      "artifactBytes": 353930,
+      "embeddedGeneratedAt": "2026-05-08 15:57 JST",
+      "normalizedGeneratedAt": "2026-05-08T15:57:00+09:00",
+      "recordCount": 15,
+      "recordCountDefinition": "papers.length",
+      "additionalCounts": {
+        "sourcesCovered": 15,
+        "teams": 3,
+        "domains": 1,
+        "venues": 32,
+        "downloadQueueEntries": 15
+      },
+      "canonicalSource": {
+        "repository": "git@github.com:SichenTao/SichenTao-homepage-source.git",
+        "commit": "0f4761620f36f0abf703aaec0ebd1ff8893917e5",
+        "workingBranch": "codex/v2-content-refresh",
+        "expectedSkillPath": "subsites/academic-frontier",
+        "actualPath": "subsites/frontier-radar",
+        "localPathFound": true,
+        "collector": "subsites/frontier-radar/scripts/collect_ec_watch.py",
+        "builder": "subsites/frontier-radar/scripts/build_snapshot.py",
+        "documentedRefreshPipeline": "subsites/frontier-radar/scripts/refresh_frontier_data.py",
+        "privateCurationTreeFound": false,
+        "releaseAuditScriptFound": false,
+        "publicArtifactUrl": "https://github.com/SichenTao/SichenTao.github.io/blob/main/academic-frontier/data/frontier_data.json"
+      },
+      "candidateRefresh": {
+        "generatedAt": "2026-08-15 18:14 JST",
+        "artifact": "subsites/frontier-radar/site/data/frontier_data.json",
+        "artifactSha256": "bbc737140251eaff691a33f881d9a204afdbafdd75807315d73a2a028a35e744",
+        "artifactBytes": 87500,
+        "recordCount": 8,
+        "configuredRecordLimit": 8,
+        "trackedResearchers": 3,
+        "sourcesCovered": 8,
+        "overlapWithPublishedCatalog": 1,
+        "candidateOnlyRecords": 7,
+        "publishedOnlyRecords": 14,
+        "recordsWithAbstracts": 4,
+        "transport": "The project collector was executed unchanged except that its fetch_json transport was injected to use curl after the system urllib egress pool returned an OpenAlex daily-budget 429."
+      },
+      "verification": {
+        "jsonParsed": true,
+        "paperSourceUrlsPresent": 15,
+        "refreshExecuted": true,
+        "candidateJsonParsed": true,
+        "candidateBuiltFromOpenAlexAndGitHub": true,
+        "candidateComparedToPublishedArtifact": true,
+        "publishedArtifactModified": false,
+        "releaseAuditExecuted": false
+      },
+      "blockers": [
+        "The canonical repository is available, but it contains subsites/frontier-radar rather than the skill-required subsites/academic-frontier/private/curation tree, and run_frontier_release_audit.py is absent.",
+        "The real collector is capped at 8 records. Its current candidate overlaps only 1 of the 15 published papers; publishing it would remove 14 existing records and reduce catalog coverage from 15 to 8.",
+        "Four of the eight candidate records lack abstracts, and the required hostile review, localization review, rendered-page audit, and PDF completeness audit cannot be completed with the available source workflow.",
+        "Merging the seven new candidate records into the published compiled JSON would make a generated artifact the source of truth, which violates the curation skill and is therefore not performed."
+      ]
+    },
+    {
+      "id": "follow-builders",
+      "artifact": "follow-builders/data/follow-builders-data.json",
+      "artifactSha256": "b0277a3c56778dbec915163bd7eca958e2dd6352cca9303887b09789f553b40f",
+      "artifactBytes": 126344,
+      "embeddedGeneratedAt": "2026-08-15T06:27:33.693Z",
+      "recordCount": 34,
+      "recordCountDefinition": "32 static X posts plus 1 static podcast episode plus 1 static blog post",
+      "staticSnapshot": {
+        "trackedXAccounts": 26,
+        "xBuildersWithPosts": 16,
+        "xPosts": 32,
+        "podcastEpisodes": 1,
+        "blogPosts": 1,
+        "podcastGeneratedAt": "2026-08-15T06:28:08.418Z",
+        "blogGeneratedAt": "2026-08-15T06:28:09.329Z"
+      },
+      "currentUpstreamObservation": {
+        "repository": "git@github.com:zarazhangrui/follow-builders.git",
+        "commit": "20b2db4c89bc6630dd07bcbe66ee264b7eb7ff39",
+        "sourceListUrl": "https://github.com/zarazhangrui/follow-builders/blob/main/config/default-sources.json",
+        "feedXUrl": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json",
+        "feedPodcastsUrl": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-podcasts.json",
+        "feedBlogsUrl": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-blogs.json",
+        "trackedXAccounts": 26,
+        "feedXGeneratedAt": "2026-08-15T06:27:33.693Z",
+        "xBuildersWithPosts": 16,
+        "xPosts": 32,
+        "feedPodcastsGeneratedAt": "2026-08-15T06:28:08.418Z",
+        "podcastEpisodes": 1,
+        "feedBlogsGeneratedAt": "2026-08-15T06:28:09.329Z",
+        "blogPosts": 1
+      },
+      "rebuildMapping": {
+        "sources": "config/default-sources.json",
+        "feeds.x": "feed-x.json",
+        "feeds.podcasts": "feed-podcasts.json",
+        "feeds.blogs": "feed-blogs.json",
+        "generatedAt": "feed-x.json generatedAt, preserving the shipped artifact contract",
+        "browserWrapper": "window.FOLLOW_BUILDERS_SNAPSHOT"
+      },
+      "verification": {
+        "jsonParsed": true,
+        "upstreamReadThroughGitHub": true,
+        "staticArtifactRegenerated": true,
+        "jsonAndBrowserWrapperMatch": true,
+        "sourceCountsMatch": true,
+        "feedStatsMatchRecordArrays": true,
+        "tweetIdsUnique": true,
+        "sourceUrlsValidated": true,
+        "personalSkillStateWritten": false
+      },
+      "blockers": []
+    },
+    {
+      "id": "jsps-kakenhi",
+      "artifact": "jsps-kakenhi/data/kakenhi-data.json",
+      "artifactSha256": "1b7742356fe2e3ea8cd87775d5a52ee915d570c3926ab2681a2fb3ce87171595",
+      "artifactBytes": 853226,
+      "embeddedGeneratedAt": "2026-08-15T18:05:04+09:00",
+      "recordCount": 21,
+      "recordCountDefinition": "programs.length",
+      "additionalCounts": {
+        "publicCallCategories": 22,
+        "callCatalogEntries": 24,
+        "forms": 23,
+        "guides": 164,
+        "timelineEntries": 62,
+        "sourceRegistryEntries": 31,
+        "sourcePages": 39,
+        "snapshotFiles": 41,
+        "openPrograms": 7,
+        "priorityPrograms": 2,
+        "totalPrograms": 21
+      },
+      "canonicalSource": {
+        "repository": "git@github.com:SichenTao/SichenTao-homepage-source.git",
+        "commit": "0f4761620f36f0abf703aaec0ebd1ff8893917e5",
+        "workingBranch": "codex/v2-content-refresh",
+        "path": "subsites/jsps-kakenhi",
+        "localPathFound": true,
+        "refreshScript": "subsites/jsps-kakenhi/scripts/refresh_portal.sh",
+        "builder": "subsites/jsps-kakenhi/build_portal_data.py"
+      },
+      "currentOfficialObservation": {
+        "observedAt": "2026-08-15T18:05:04+09:00",
+        "officialIndexUrl": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html",
+        "officialCallUrl": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+        "officialCallPublishedDate": "2026-07-14",
+        "officialCallWindow": "2026-07-14 through 2026-09-17 16:30 JST",
+        "staticPortalNextDeadline": "2026-09-17T16:30:00+09:00",
+        "staticPortalNextDeadlineStatus": "upcoming"
+      },
+      "verification": {
+        "jsonParsed": true,
+        "officialPagesRead": true,
+        "snapshotRefreshExecuted": true,
+        "portalRebuilt": true,
+        "jsonAndBrowserWrapperMatch": true,
+        "snapshotFilesNonEmpty": true,
+        "sourceAndPublishedEvidenceTreesMatch": true,
+        "programSnapshotPathsExist": true,
+        "youngResearchStatus": "open",
+        "startupSupportStatus": "closed",
+        "resourceTitlesNonEmpty": true,
+        "resourceUrlsSingleAndNormalized": true
+      },
+      "refreshNotes": [
+        "The first refresh attempt stopped before manifest generation because the system Python lacked bs4; the rerun used a project-local virtual environment with beautifulsoup4 4.15.0.",
+        "The refreshed official pages showed FY2027 Early-Career Scientists open through 2026-09-17 and FY2026 Research Activity Start-up Support closed on 2026-05-08, so stale manual multilingual summaries were corrected before the final rebuild.",
+        "An independent review found empty CPD resource titles, comma-joined PDF/DOCX URLs, double-slash paths, and an incorrect priority count. The canonical builder now extracts row labels, splits multi-format links, normalizes URL paths, validates generated resource contracts, and reports 2 priority programs out of 21 total programs."
+      ],
+      "blockers": []
+    },
+    {
+      "id": "learning-catalog",
+      "artifact": "youtube-to-ebook/data/youtube-to-ebook-data.js",
+      "artifactSha256": "6817e9ab5291501f38f94e3a1f33bdd994be69d4dcef5b5ac03b86b219b4e880",
+      "artifactBytes": 1156441,
+      "embeddedGeneratedAt": "2026-05-15T08:24:49.625567+00:00",
+      "recordCount": 2,
+      "recordCountDefinition": "articles.length",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=x9BNBcP_C7Q",
+        "https://www.youtube.com/watch?v=qwp8a0ja-yU"
+      ],
+      "upstream": {
+        "repository": "https://github.com/zarazhangrui/youtube-to-ebook",
+        "pinnedCommit": "7f67fd6b55a272012df3767cf6d8c54bd2d7a9f3",
+        "currentHead": "7f67fd6b55a272012df3767cf6d8c54bd2d7a9f3",
+        "currentHeadCommittedAt": "2026-01-28T14:46:30-08:00",
+        "repositoryCloned": true,
+        "pinnedCommitVerified": true,
+        "genericPipeline": [
+          "get_videos.py: YouTube Data API",
+          "get_transcripts.py: Supadata API",
+          "write_articles.py: Anthropic Claude English article generation",
+          "send_email.py: generic English EPUB and optional Gmail delivery"
+        ],
+        "requiredConfiguration": [
+          "YOUTUBE_API_KEY",
+          "SUPADATA_API_KEY",
+          "ANTHROPIC_API_KEY",
+          "channels.txt"
+        ],
+        "channelsFilePresent": false,
+        "supadataKeyDocumentedInEnvExample": false,
+        "projectSpecificImporterModulesPresent": false,
+        "projectSpecificModulesNamedByArtifact": [
+          "run_youtube_to_ebook_import.py",
+          "import_youtube_learner_video.py",
+          "custom send_email.py#create_epub integration"
+        ]
+      },
+      "verification": {
+        "libraryParsed": true,
+        "epubAssetsPresent": 2,
+        "epubAssetsAreValidZipContainers": true,
+        "sourceUrlCount": 2,
+        "upstreamCommitVerified": true,
+        "canonicalHomepageSourceSearched": true,
+        "publicRepositoryHistorySearched": true,
+        "catalogRegenerated": false,
+        "publishedArtifactModified": false
+      },
+      "blockers": [
+        "The project-specific importer modules named by the shipped artifact are absent from the upstream repository, the canonical homepage source repository, and the public repository history.",
+        "The upstream repository provides only a generic user-configured newsletter pipeline and has no committed channels.txt; it requires YouTube, Supadata, and Anthropic credentials, while .env.example omits the Supadata key required by get_transcripts.py.",
+        "The generic upstream pipeline produces an English newsletter/EPUB, not the shipped timestamped transcript reader, reviewed multilingual sections, source-correction metadata, and per-video EPUB integration.",
+        "A new lastSuccessfulRefresh cannot be claimed without reproducing transcript acquisition, reviewed multilingual article generation, both browser and EPUB artifacts, and their integrity checks."
+      ]
+    }
+  ]
+}

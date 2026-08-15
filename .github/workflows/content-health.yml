@@ -1,0 +1,20 @@
+name: Content Freshness Monitor
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  freshness:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Enforce dataset freshness budgets
+        run: node scripts/v2/check-freshness.mjs --manifest content/freshness.json

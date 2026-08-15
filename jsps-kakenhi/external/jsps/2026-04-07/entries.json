@@ -1,0 +1,149 @@
+[
+  {
+    "group": "公募要領・計画調書等",
+    "title": "特別推進研究・基盤研究（Ｓ）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/toku_s.html",
+    "filename": "02_koubo__toku_s.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "基盤研究（Ａ・Ｂ・Ｃ）・挑戦的研究・若手研究",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html",
+    "filename": "02_koubo__kiban.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "研究活動スタート支援",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html",
+    "filename": "22_startup_support__download.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "奨励研究",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/koubo.html",
+    "filename": "11_shourei__koubo.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "研究成果公開促進費",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/keikaku_dl.html",
+    "filename": "13_seika__keikaku_dl.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "特別研究員奨励費",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/download.html",
+    "filename": "20_tokushourei__download.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "国際共同研究加速基金（国際先導研究）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/05_sendou/koubo.html",
+    "filename": "05_sendou__koubo.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "国際共同研究加速基金（国際共同研究強化）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/01_kyoka/koubo.html",
+    "filename": "01_kyoka__koubo.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "国際共同研究加速基金（海外連携研究）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/04_renkei/koubo.html",
+    "filename": "04_renkei__koubo.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "国際共同研究加速基金（帰国発展研究）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/03_kikoku/koubo.html",
+    "filename": "03_kikoku__koubo.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "公募要領・計画調書等",
+    "title": "「基盤研究（Ｃ）」及び「若手研究」における独立基盤形成支援（試行）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/36_dokuritsu_kiban/download.html",
+    "filename": "36_dokuritsu_kiban__download.html",
+    "page_kind": "call"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "特別推進研究",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/25_tokusui/index.html",
+    "filename": "25_tokusui__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "新学術領域研究（研究領域提案型）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/34_new_scientific/index.html",
+    "filename": "34_new_scientific__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "学術変革領域研究",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/39_transformative/index.html",
+    "filename": "39_transformative__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "基盤研究（Ｓ）",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/12_kiban/index.html",
+    "filename": "12_kiban__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "基盤研究（A・B・C）・挑戦的研究・若手研究",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/03_keikaku/index.html",
+    "filename": "03_keikaku__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "研究活動スタート支援",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/22_startup_support/index.html",
+    "filename": "22_startup_support__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "奨励研究",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/11_shourei/index.html",
+    "filename": "11_shourei__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "研究成果公開促進費",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/13_seika/index.html",
+    "filename": "13_seika__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "特別研究員奨励費",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/20_tokushourei/index.html",
+    "filename": "20_tokushourei__index.html",
+    "page_kind": "directory"
+  },
+  {
+    "group": "各種目のページ",
+    "title": "国際共同研究加速基金",
+    "url": "https://www.jsps.go.jp/j-grantsinaid/35_kokusai/index.html",
+    "filename": "35_kokusai__index.html",
+    "page_kind": "directory"
+  }
+]

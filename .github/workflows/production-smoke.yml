@@ -1,0 +1,28 @@
+name: Production Smoke Monitor
+
+on:
+  schedule:
+    - cron: "43 3 * * *"
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Production base URL
+        required: false
+        default: https://sichentao.github.io/
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Verify production routes
+        env:
+          INPUT_URL: ${{ inputs.base_url }}
+          DEFAULT_URL: https://sichentao.github.io/
+        run: node scripts/v2/smoke-test.mjs --base-url "${INPUT_URL:-$DEFAULT_URL}" --attempts 3 --retry-delay-ms 3000

@@ -1,0 +1,62 @@
+---
+import GlobalShell from "@components/GlobalShell.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const description =
+  "Unified entry portal for Sichen Tao's personal homepage, Academic Frontier, Follow Builders, YouTube Learner, and JSPS KAKENHI workspace.";
+---
+
+<BaseLayout
+  title="Sichen Tao | Research Portal"
+  description={description}
+  canonical="https://sichentao.github.io/"
+  bodyPage="portal"
+  stylesheets={["/portal.css"]}
+>
+  <div class="page-wash"></div>
+  <GlobalShell withMegaMenu />
+
+  <main class="portal-layout" id="main-content">
+    <section class="portal-hero reveal" aria-labelledby="portalTitle">
+      <div class="shell portal-hero-inner">
+        <div class="portal-portrait-card">
+          <img id="portalPortrait" src="/academic-homepage/assets/images/avatar-openai.jpg" alt="" />
+        </div>
+        <div class="portal-hero-copy">
+          <p class="eyebrow" id="portalEyebrow"></p>
+          <p class="native-name" id="portalNativeName"></p>
+          <h1 id="portalTitle"></h1>
+          <div class="hero-identity">
+            <p class="hero-role" id="portalRole"></p>
+            <p class="hero-affiliation" id="portalAffiliation"></p>
+            <p class="eyebrow" id="portalRoleLabel"></p>
+          </div>
+          <p class="lede hero-description" id="portalDescription"></p>
+        </div>
+      </div>
+      <a class="portal-scroll-cue" href="#portalWorkspaces" id="portalScrollCue">
+        <span id="portalScrollCueLabel"></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6 9l6 6 6-6"></path>
+        </svg>
+      </a>
+    </section>
+
+    <section class="portal-directory reveal" id="portalWorkspaces" tabindex="-1" aria-labelledby="portalCardsTitle">
+      <div class="shell portal-directory-inner">
+        <div class="section-head">
+          <div class="section-head-main">
+            <div>
+              <p class="eyebrow" id="portalCardsKicker"></p>
+              <h2 id="portalCardsTitle"></h2>
+            </div>
+            <p class="section-note" id="portalCardsLede"></p>
+          </div>
+        </div>
+        <div class="portal-grid" id="portalGrid" aria-label=""></div>
+      </div>
+    </section>
+  </main>
+
+  <script slot="scripts" is:inline src="/portal.js" defer></script>
+</BaseLayout>

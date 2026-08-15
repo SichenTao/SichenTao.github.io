@@ -1,0 +1,12 @@
+dist
+.generated-public
+node_modules
+academic
+academic-homepage
+academic-frontier
+follow-builders
+youtube-to-ebook
+jsps-kakenhi
+quant-platform
+assets/docs
+pnpm-lock.yaml

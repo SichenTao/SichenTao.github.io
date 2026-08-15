@@ -591,7 +591,10 @@
   position: relative;
   width: auto;
   margin-right: 0;
-  margin-left: var(--portal-mega-main-left, max(32px, calc((100vw - min(1040px, calc(100vw - 64px))) / 2)));
+  margin-left: var(
+    --portal-mega-main-left,
+    max(32px, calc((100vw - min(1040px, calc(100vw - 64px))) / 2))
+  );
   min-height: var(--portal-mega-workspace-height, 0px);
   grid-template-columns: repeat(3, max-content);
   column-gap: clamp(48px, 4.8vw, 72px);
@@ -601,7 +604,9 @@
 .portal-mega-inner--with-workspace .portal-mega-workspace-column {
   position: absolute;
   top: 0;
-  left: calc(-1 * var(--portal-mega-workspace-offset, clamp(260px, 18vw, 380px)));
+  left: calc(
+    -1 * var(--portal-mega-workspace-offset, clamp(260px, 18vw, 380px))
+  );
   min-width: max-content;
   transform: none;
 }
@@ -611,7 +616,9 @@
   position: absolute;
   top: 8px;
   bottom: 8px;
-  left: calc(-1 * var(--portal-mega-separator-offset, clamp(110px, 8vw, 160px)));
+  left: calc(
+    -1 * var(--portal-mega-separator-offset, clamp(110px, 8vw, 160px))
+  );
   width: 1px;
   background: linear-gradient(
     180deg,
@@ -1068,7 +1075,11 @@ body.transient-overlay-reset .award-link-menu {
   border-radius: 24px;
   border: 1px solid rgba(var(--ink-rgb, 17, 17, 20), 0.08);
   background:
-    linear-gradient(180deg, rgba(var(--white-rgb, 255, 255, 255), 0.9), rgba(var(--white-rgb, 255, 255, 255), 0.76)),
+    linear-gradient(
+      180deg,
+      rgba(var(--white-rgb, 255, 255, 255), 0.9),
+      rgba(var(--white-rgb, 255, 255, 255), 0.76)
+    ),
     rgba(var(--white-rgb, 255, 255, 255), 0.6);
   box-shadow: 0 18px 36px rgba(var(--ink-rgb, 17, 17, 20), 0.1);
   backdrop-filter: blur(18px) saturate(126%);
@@ -1358,7 +1369,7 @@ body:not([data-page]) .site-header.shell {
 }
 
 .topnav-shell.use-menu .topnav a {
-  min-height: 38px;
+  min-height: 44px;
   justify-content: flex-start;
   padding: 8px 10px;
   border-radius: 12px;
@@ -1443,7 +1454,7 @@ body:not([data-page]) .layout {
     grid-template-columns: 10px minmax(0, 1fr);
     align-items: center;
     column-gap: 10px;
-    min-height: 38px;
+    min-height: 44px;
     padding: 0 12px;
     border-radius: 12px;
     color: rgba(var(--ink-rgb, 17, 17, 20), 0.66);
@@ -1494,7 +1505,9 @@ body:not([data-page]) .layout {
     font-weight: 760;
   }
 
-  .topnav-shell.use-menu .topnav a.topnav-mobile-workspace-link.is-active::before,
+  .topnav-shell.use-menu
+    .topnav
+    a.topnav-mobile-workspace-link.is-active::before,
   .topnav-shell.use-menu .topnav > a[aria-current="page"]::before {
     background: var(--teal);
   }

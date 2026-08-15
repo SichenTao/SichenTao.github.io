@@ -1,0 +1,8 @@
+# The product owner reviews every production change.
+* @SichenTao
+
+# Release, security, identity, and billing changes require explicit owner review.
+/.github/ @SichenTao
+/scripts/v2/ @SichenTao
+/supabase/ @SichenTao
+/packages/platform-client/ @SichenTao

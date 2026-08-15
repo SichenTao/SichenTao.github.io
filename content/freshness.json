@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "datasets": [
+    {
+      "id": "academic-frontier",
+      "label": "Academic Frontier paper catalog",
+      "recordCount": 15,
+      "lastSuccessfulRefresh": "2026-05-08T15:57:00+09:00",
+      "sourceUrls": [
+        "https://doi.org/10.1109/tevc.2026.3664432",
+        "https://doi.org/10.1080/17445760.2025.2609138",
+        "https://doi.org/10.1016/j.swevo.2025.102149",
+        "https://doi.org/10.1016/j.swevo.2025.102144",
+        "https://doi.org/10.1016/j.eswa.2025.129364",
+        "https://doi.org/10.1145/3750053",
+        "https://doi.org/10.1109/cec65147.2025.11043108",
+        "https://doi.org/10.1145/3730406",
+        "https://doi.org/10.1109/tevc.2026.3663396",
+        "https://doi.org/10.1109/tevc.2025.3555605",
+        "https://doi.org/10.1109/tevc.2025.3541587",
+        "https://doi.org/10.1109/tevc.2025.3614261",
+        "https://doi.org/10.1109/tevc.2024.3388550",
+        "https://doi.org/10.48550/arxiv.2601.18446",
+        "https://doi.org/10.48550/arxiv.2509.08269"
+      ]
+    },
+    {
+      "id": "follow-builders",
+      "label": "Follow Builders static digest feed",
+      "recordCount": 34,
+      "lastSuccessfulRefresh": "2026-08-15T06:27:33.693Z",
+      "sourceUrls": [
+        "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json",
+        "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-podcasts.json",
+        "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-blogs.json"
+      ]
+    },
+    {
+      "id": "jsps-kakenhi",
+      "label": "JSPS KAKENHI tracked program catalog",
+      "recordCount": 21,
+      "lastSuccessfulRefresh": "2026-08-15T18:05:04+09:00",
+      "sourceUrls": [
+        "https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html",
+        "https://www.jsps.go.jp/j-grantsinaid/01_seido/02_schedule/",
+        "https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html"
+      ]
+    },
+    {
+      "id": "learning-catalog",
+      "label": "YouTube Learning article catalog",
+      "recordCount": 2,
+      "lastSuccessfulRefresh": "2026-05-15T08:24:49.625567+00:00",
+      "sourceUrls": [
+        "https://www.youtube.com/watch?v=x9BNBcP_C7Q",
+        "https://www.youtube.com/watch?v=qwp8a0ja-yU",
+        "https://github.com/zarazhangrui/youtube-to-ebook/commit/7f67fd6b55a272012df3767cf6d8c54bd2d7a9f3"
+      ]
+    }
+  ]
+}

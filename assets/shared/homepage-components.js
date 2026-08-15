@@ -3,7 +3,7 @@
     return;
   }
 
-  const DEFAULT_ICON_SPRITE = "/academic/assets/icons/ui-icons.svg";
+  const DEFAULT_ICON_SPRITE = "/academic-homepage/assets/icons/ui-icons.svg";
 
   function escapeHtml(value) {
     return String(value ?? "")
@@ -45,22 +45,37 @@
   }
 
   function localeName(locale, locales) {
-    const normalized = global.HomepageI18n?.normalizeLocale?.(locale, locales) || locale || "en";
-    return locales?.[normalized] ? normalized : Object.keys(locales || {})[0] || "en";
+    const normalized =
+      global.HomepageI18n?.normalizeLocale?.(locale, locales) || locale || "en";
+    return locales?.[normalized]
+      ? normalized
+      : Object.keys(locales || {})[0] || "en";
   }
 
-  function prioritizeLocaleSequence(sequence = [], locale = "en", locales = global.HomepageI18n?.LOCALES || {}) {
-    const normalizedSequence = [...new Set((sequence || []).filter((name) => locales?.[name]))];
+  function prioritizeLocaleSequence(
+    sequence = [],
+    locale = "en",
+    locales = global.HomepageI18n?.LOCALES || {},
+  ) {
+    const normalizedSequence = [
+      ...new Set((sequence || []).filter((name) => locales?.[name])),
+    ];
     const primary = localeName(locale, locales);
     return [
       primary,
       ...normalizedSequence.filter((name) => name !== primary),
-    ].filter((name, index, values) => locales?.[name] && values.indexOf(name) === index);
+    ].filter(
+      (name, index, values) =>
+        locales?.[name] && values.indexOf(name) === index,
+    );
   }
 
   function themeName(theme, themes) {
-    const normalized = global.HomepagePlatform?.normalizeTheme?.(theme) || theme || "tohoku";
-    return themes?.[normalized] ? normalized : Object.keys(themes || {})[0] || "tohoku";
+    const normalized =
+      global.HomepagePlatform?.normalizeTheme?.(theme) || theme || "tohoku";
+    return themes?.[normalized]
+      ? normalized
+      : Object.keys(themes || {})[0] || "tohoku";
   }
 
   function themeLabel(theme, locale) {
@@ -79,11 +94,12 @@
     if (global.HomepagePlatform?.themeTooltip) {
       return global.HomepagePlatform.themeTooltip(theme, locale);
     }
-    const suffix = {
-      en: " theme",
-      zh: "主题色",
-      ja: "テーマ色",
-    }[locale] || " theme";
+    const suffix =
+      {
+        en: " theme",
+        zh: "主题色",
+        ja: "テーマ色",
+      }[locale] || " theme";
     return `${themeLabel(theme, locale)}${suffix}`;
   }
 
@@ -91,13 +107,15 @@
     tohokuCenter: "https://www.cc.tohoku.ac.jp/english/member/rd/",
     hpcLab: "https://www.hpc.is.tohoku.ac.jp/home-en/member-en/",
     takizawaAnnouncement: "https://www.hpc.is.tohoku.ac.jp/event-en/2025/5231/",
-    googleScholar: "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en",
+    googleScholar:
+      "https://scholar.google.com/citations?user=gmOx-i4AAAAJ&hl=en",
     researchMap: "https://researchmap.jp/sichentao?lang=en",
     researchGate: "https://www.researchgate.net/profile/Sichen-Tao",
     github: "https://github.com/SichenTao",
     dblp: "https://dblp.org/pid/283/6924.html",
     orcid: "https://orcid.org/0000-0001-9858-4208",
-    jglobal: "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202601018035308144",
+    jglobal:
+      "https://jglobal.jst.go.jp/en/detail?JGLOBAL_ID=202601018035308144",
     toyamaDissertation: "https://toyama.repo.nii.ac.jp/records/2001776",
   };
 
@@ -124,10 +142,16 @@
     if (!localeHrefs) {
       return PROFILE_LINK_HREFS[key] || "#";
     }
-    return localeHrefs[locale] || localeHrefs.en || PROFILE_LINK_HREFS[key] || "#";
+    return (
+      localeHrefs[locale] || localeHrefs.en || PROFILE_LINK_HREFS[key] || "#"
+    );
   }
 
-  function iconSprite(name, className = "ui-icon", spriteHref = DEFAULT_ICON_SPRITE) {
+  function iconSprite(
+    name,
+    className = "ui-icon",
+    spriteHref = DEFAULT_ICON_SPRITE,
+  ) {
     return `<svg class="${escapeHtml(className)}" aria-hidden="true" focusable="false"><use href="${escapeHtml(spriteHref)}#icon-${escapeHtml(name)}"></use></svg>`;
   }
 
@@ -144,96 +168,141 @@
 
   function portalIconMarkup(icon, options = {}) {
     if (icon === "home") {
-      return iconSprite("home", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
+      return iconSprite(
+        "home",
+        "ui-icon",
+        options.iconSprite || DEFAULT_ICON_SPRITE,
+      );
     }
     if (icon === "portrait") {
-      return '<img class="portal-chip-logo" src="/academic/assets/images/avatar-openai.jpg" alt="" loading="lazy" />';
+      return '<img class="portal-chip-logo" src="/academic-homepage/assets/images/avatar-openai.jpg" alt="" loading="lazy" />';
     }
     if (icon === "frontier" || icon === "radar") {
-      return iconSprite("research", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
+      return iconSprite(
+        "research",
+        "ui-icon",
+        options.iconSprite || DEFAULT_ICON_SPRITE,
+      );
     }
     if (icon === "follow-builders") {
-      return iconSprite("publications", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
+      return iconSprite(
+        "publications",
+        "ui-icon",
+        options.iconSprite || DEFAULT_ICON_SPRITE,
+      );
     }
     if (icon === "youtube-to-ebook") {
-      return iconSprite("file", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
+      return iconSprite(
+        "file",
+        "ui-icon",
+        options.iconSprite || DEFAULT_ICON_SPRITE,
+      );
     }
     if (icon === "jsps") {
       return '<img class="portal-chip-logo" src="/jsps-kakenhi/favicon.png" alt="" loading="lazy" />';
     }
+    if (icon === "account") {
+      return iconSprite(
+        "identity",
+        "ui-icon",
+        options.iconSprite || DEFAULT_ICON_SPRITE,
+      );
+    }
     return typeof icon === "string" ? icon : "";
-  }
-
-  function workspaceIconMarkup(options = {}) {
-    return iconSprite("menu", "ui-icon", options.iconSprite || DEFAULT_ICON_SPRITE);
   }
 
   function statefulHref(href, locale, theme) {
     if (!href) {
       return "#";
     }
-    if (href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("http")) {
+    if (
+      href.startsWith("#") ||
+      href.startsWith("mailto:") ||
+      href.startsWith("http")
+    ) {
       return href;
     }
     let normalizedHref = href;
     if (!href.startsWith("/")) {
       try {
-        normalizedHref = new URL(href, global.location?.href || "https://sichentao.github.io/").pathname;
+        normalizedHref = new URL(
+          href,
+          global.location?.href || "https://sichentao.github.io/",
+        ).pathname;
       } catch {
         normalizedHref = href;
       }
     }
     if (normalizedHref.startsWith("/academic-frontier/")) {
-      const normalizedLocale = global.HomepageI18n?.normalizeLocale?.(locale) || "en";
-      const fileName = normalizedHref.replace(/^\/academic-frontier\/(?:zh\/|ja\/)?/, "");
-      const localizedPath = normalizedLocale === "en"
-        ? `/academic-frontier/${fileName || ""}`
-        : `/academic-frontier/${encodeURIComponent(normalizedLocale)}/${fileName || ""}`;
-      return global.HomepagePlatform?.siteStateHref?.(localizedPath, { locale: normalizedLocale, theme }) || localizedPath;
+      const normalizedLocale =
+        global.HomepageI18n?.normalizeLocale?.(locale) || "en";
+      const fileName = normalizedHref.replace(
+        /^\/academic-frontier\/(?:zh\/|ja\/)?/,
+        "",
+      );
+      const localizedPath =
+        normalizedLocale === "en"
+          ? `/academic-frontier/${fileName || ""}`
+          : `/academic-frontier/${encodeURIComponent(normalizedLocale)}/${fileName || ""}`;
+      return (
+        global.HomepagePlatform?.siteStateHref?.(localizedPath, {
+          locale: normalizedLocale,
+          theme,
+        }) || localizedPath
+      );
     }
-    return global.HomepagePlatform?.siteStateHref?.(normalizedHref, { locale, theme }) || normalizedHref;
+    return (
+      global.HomepagePlatform?.siteStateHref?.(normalizedHref, {
+        locale,
+        theme,
+      }) || normalizedHref
+    );
   }
 
   function workspaceMeta(locale = "en", theme = "tohoku") {
     const labels = global.HomepagePlatform?.portalLabels?.(locale) || {};
-    const text = {
-      en: {
-        kicker: "Workspaces",
-        hint: "Switch workspaces.",
-        tags: {
-          portal: ["Start", "Overview"],
-          academic: ["Profile", "Records"],
-          frontier: ["Papers", "Metrics"],
-          followBuilders: ["Builders", "Reader"],
-          youtubeToEbook: ["Video", "Learning"],
-          jsps: ["Grants", "Deadlines"],
+    const text =
+      {
+        en: {
+          kicker: "Workspaces",
+          hint: "Switch workspaces.",
+          tags: {
+            portal: ["Start", "Overview"],
+            academic: ["Profile", "Records"],
+            frontier: ["Papers", "Metrics"],
+            followBuilders: ["Builders", "Reader"],
+            youtubeToEbook: ["Video", "Learning"],
+            jsps: ["Grants", "Deadlines"],
+            account: ["Identity", "Billing"],
+          },
         },
-      },
-      zh: {
-        kicker: "工作区",
-        hint: "切换主工作区。",
-        tags: {
-          portal: ["起点", "总览"],
-          academic: ["身份", "记录"],
-          frontier: ["论文", "分区"],
-          followBuilders: ["Builders", "阅读"],
-          youtubeToEbook: ["视频", "学习"],
-          jsps: ["科研费", "时间线"],
+        zh: {
+          kicker: "工作区",
+          hint: "切换主工作区。",
+          tags: {
+            portal: ["起点", "总览"],
+            academic: ["身份", "记录"],
+            frontier: ["论文", "分区"],
+            followBuilders: ["Builders", "阅读"],
+            youtubeToEbook: ["视频", "学习"],
+            jsps: ["科研费", "时间线"],
+            account: ["身份", "付费"],
+          },
         },
-      },
-      ja: {
-        kicker: "ワークスペース",
-        hint: "ワークスペースを切り替えます。",
-        tags: {
-          portal: ["起点", "概要"],
-          academic: ["プロフィール", "記録"],
-          frontier: ["論文", "指標"],
-          followBuilders: ["Builders", "読む"],
-          youtubeToEbook: ["動画", "学習"],
-          jsps: ["科研費", "締切"],
+        ja: {
+          kicker: "ワークスペース",
+          hint: "ワークスペースを切り替えます。",
+          tags: {
+            portal: ["起点", "概要"],
+            academic: ["プロフィール", "記録"],
+            frontier: ["論文", "指標"],
+            followBuilders: ["Builders", "読む"],
+            youtubeToEbook: ["動画", "学習"],
+            jsps: ["科研費", "締切"],
+            account: ["本人確認", "支払い"],
+          },
         },
-      },
-    }[locale] || {};
+      }[locale] || {};
     const portalData = global.HomepagePlatform?.portalItems?.({
       locale,
       theme,
@@ -245,7 +314,8 @@
       items: (portalData.items || []).map((item) => ({
         ...item,
         label: item.label || labels[item.id]?.full || item.id,
-        iconMarkup: item.iconMarkup || item.iconHtml || portalIconMarkup(item.icon),
+        iconMarkup:
+          item.iconMarkup || item.iconHtml || portalIconMarkup(item.icon),
         tags: text.tags?.[item.id] || [],
       })),
     };
@@ -257,72 +327,182 @@
         kicker: "Workspaces",
         primary: [
           { label: "Navigation portal", href: "/" },
-          { label: "Personal homepage", href: "/academic/" },
+          { label: "Personal homepage", href: "/academic-homepage/" },
           { label: "Academic Frontier", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
           { label: "YouTube Learner", href: "/youtube-to-ebook/" },
           { label: "JSPS KAKENHI", href: "/jsps-kakenhi/" },
         ],
         columns: [
-          { title: "Homepage", items: ["Profile", "Publications", "Awards", "Projects"] },
-          { title: "Feeds", items: ["Builders on X", "AI podcasts", "Official blogs", "Source links"] },
+          {
+            title: "Homepage",
+            items: ["Profile", "Publications", "Awards", "Projects"],
+          },
+          {
+            title: "Feeds",
+            items: [
+              "Builders on X",
+              "AI podcasts",
+              "Official blogs",
+              "Source links",
+            ],
+          },
         ],
       },
       academic: {
-        home: [["Profile", "Contact", "Statistics", "CV"], ["Affiliation", "AI", "HPC"]],
-        timeline: [["Education", "Appointments", "Research visits"], ["Career history", "Institutions", "Milestones"]],
-        publications: [["Search", "Filters", "Metrics", "DOI"], ["Journal papers", "Conference papers", "Citation data"]],
-        awards: [["Awards", "IEEE CIS", "JST"], ["Evidence", "Dates", "Awarding bodies"]],
-        projects: [["Repositories", "Research directions", "Code"], ["AI", "Optimization", "HPC tools"]],
-        service: [["Reviewing", "Editorial service", "Venues"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [[
-          { label: "Tohoku Cyberscience Center", href: profileLinkHref("tohokuCenter", "en") },
-          { label: "High Performance Computing Laboratory", href: profileLinkHref("hpcLab", "en") },
-          { label: "Takizawa Lab announcement", href: profileLinkHref("takizawaAnnouncement", "en") },
-          { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
-          { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
-          { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
-          { label: "GitHub", href: PROFILE_LINK_HREFS.github },
-          { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
-          { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
-          { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
-        ], [
-          { label: "Official profiles", href: "/academic/profiles.html" },
-          { label: "Author IDs", href: "/academic/profiles.html" },
-          { label: "Code profile", href: PROFILE_LINK_HREFS.github },
-          { label: "Doctoral record", href: PROFILE_LINK_HREFS.toyamaDissertation },
-        ]],
-        research: [["AI", "HPC", "Optimization", "Collaborators"], ["Methods", "Domains", "Research highlights"]],
+        home: [
+          ["Profile", "Contact", "Statistics", "CV"],
+          ["Affiliation", "AI", "HPC"],
+        ],
+        timeline: [
+          ["Education", "Appointments", "Research visits"],
+          ["Career history", "Institutions", "Milestones"],
+        ],
+        publications: [
+          ["Search", "Filters", "Metrics", "DOI"],
+          ["Journal papers", "Conference papers", "Citation data"],
+        ],
+        awards: [
+          ["Awards", "IEEE CIS", "JST"],
+          ["Evidence", "Dates", "Awarding bodies"],
+        ],
+        projects: [
+          ["Repositories", "Research directions", "Code"],
+          ["AI", "Optimization", "HPC tools"],
+        ],
+        service: [
+          ["Reviewing", "Editorial service", "Venues"],
+          ["IEEE Trans", "IEEE", "Elsevier", "Springer"],
+        ],
+        profiles: [
+          [
+            {
+              label: "Tohoku Cyberscience Center",
+              href: profileLinkHref("tohokuCenter", "en"),
+            },
+            {
+              label: "High Performance Computing Laboratory",
+              href: profileLinkHref("hpcLab", "en"),
+            },
+            {
+              label: "Takizawa Lab announcement",
+              href: profileLinkHref("takizawaAnnouncement", "en"),
+            },
+            { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
+            { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
+            { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
+            { label: "GitHub", href: PROFILE_LINK_HREFS.github },
+            { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
+            { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
+            { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
+          ],
+          [
+            {
+              label: "Official profiles",
+              href: "/academic-homepage/profiles.html",
+            },
+            { label: "Author IDs", href: "/academic-homepage/profiles.html" },
+            { label: "Code profile", href: PROFILE_LINK_HREFS.github },
+            {
+              label: "Doctoral record",
+              href: PROFILE_LINK_HREFS.toyamaDissertation,
+            },
+          ],
+        ],
+        research: [
+          ["AI", "HPC", "Optimization", "Collaborators"],
+          ["Methods", "Domains", "Research highlights"],
+        ],
       },
       frontier: {
-        overview: [["Paper library", "Search", "Filters"], ["Recent papers", "DOI", "Abstracts"]],
-        papers: [["Ledger view", "Cards", "Full abstracts"], ["JCR", "CAS", "Impact factor"]],
-        metrics: [["Venue metrics", "JCR", "CAS", "IF"], ["Public evidence", "Source trail", "Year aware"]],
+        overview: [
+          ["Paper library", "Search", "Filters"],
+          ["Recent papers", "DOI", "Abstracts"],
+        ],
+        papers: [
+          ["Ledger view", "Cards", "Full abstracts"],
+          ["JCR", "CAS", "Impact factor"],
+        ],
+        metrics: [
+          ["Venue metrics", "JCR", "CAS", "IF"],
+          ["Public evidence", "Source trail", "Year aware"],
+        ],
       },
       followBuilders: {
-        overview: [["Feed", "Sources", "Article reader"], ["X posts", "Podcasts", "Official blogs"]],
-        feed: [["Story cards", "Search", "Filters"], ["Builders", "Posts", "Central feed"]],
-        sources: [["AI builders", "Podcasts", "Blogs"], ["GitHub project", "Central source list", "Public feed"]],
-        github: [[
-          { label: "Zara Zhang / follow-builders", href: "https://github.com/zarazhangrui/follow-builders" },
-          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["Original feed", "Reader implementation", "Homepage workspace"]],
+        overview: [
+          ["Feed", "Sources", "Article reader"],
+          ["X posts", "Podcasts", "Official blogs"],
+        ],
+        feed: [
+          ["Story cards", "Search", "Filters"],
+          ["Builders", "Posts", "Central feed"],
+        ],
+        sources: [
+          ["AI builders", "Podcasts", "Blogs"],
+          ["GitHub project", "Central source list", "Public feed"],
+        ],
+        github: [
+          [
+            {
+              label: "Zara Zhang / follow-builders",
+              href: "https://github.com/zarazhangrui/follow-builders",
+            },
+            {
+              label: "Sichen Tao / GitHub",
+              href: "https://github.com/SichenTao",
+            },
+          ],
+          ["Original feed", "Reader implementation", "Homepage workspace"],
+        ],
       },
       youtubeToEbook: {
-        overview: [["Learning articles", "Video transcript", "Article reader"], ["YouTube", "Read along", "Multilingual"]],
-        feed: [["Article cards", "Search", "Language display"], ["Transcript", "Highlights", "Homepage archive"]],
-        sources: [["Seed channels", "Pipeline services", "Output formats"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
-        github: [[
-          { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
-          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["Original project", "Article library", "Static publishing"]],
+        overview: [
+          ["Learning articles", "Video transcript", "Article reader"],
+          ["YouTube", "Read along", "Multilingual"],
+        ],
+        feed: [
+          ["Article cards", "Search", "Language display"],
+          ["Transcript", "Highlights", "Homepage archive"],
+        ],
+        sources: [
+          ["Seed channels", "Pipeline services", "Output formats"],
+          ["YouTube API", "Supadata", "Claude", "Gmail"],
+        ],
+        github: [
+          [
+            {
+              label: "Zara Zhang / youtube-to-ebook",
+              href: "https://github.com/zarazhangrui/youtube-to-ebook",
+            },
+            {
+              label: "Sichen Tao / GitHub",
+              href: "https://github.com/SichenTao",
+            },
+          ],
+          ["Original project", "Article library", "Static publishing"],
+        ],
       },
       jsps: {
-        calls: [["Program directory", "Eligibility", "Priority"], ["Open calls", "Groups", "Target applicants"]],
-        deadlines: [["Timeline", "Submission dates", "System windows"], ["Upcoming", "Official dates", "Reminders"]],
-        forms: [["Get Materials", "Notices", "Forms"], ["Application procedures", "Instructions", "Downloads"]],
-        guides: [["Application guides", "FAQ", "e-Rad"], ["Writing support", "Official manuals", "Checklist"]],
-        program: [["Program detail", "Documents", "Actions"], ["Eligibility", "Forms", "Official links"]],
+        calls: [
+          ["Program directory", "Eligibility", "Priority"],
+          ["Open calls", "Groups", "Target applicants"],
+        ],
+        deadlines: [
+          ["Timeline", "Submission dates", "System windows"],
+          ["Upcoming", "Official dates", "Reminders"],
+        ],
+        forms: [
+          ["Get Materials", "Notices", "Forms"],
+          ["Application procedures", "Instructions", "Downloads"],
+        ],
+        guides: [
+          ["Application guides", "FAQ", "e-Rad"],
+          ["Writing support", "Official manuals", "Checklist"],
+        ],
+        program: [
+          ["Program detail", "Documents", "Actions"],
+          ["Eligibility", "Forms", "Official links"],
+        ],
       },
     },
     zh: {
@@ -330,72 +510,174 @@
         kicker: "工作区",
         primary: [
           { label: "导航页", href: "/" },
-          { label: "个人主页", href: "/academic/" },
+          { label: "个人主页", href: "/academic-homepage/" },
           { label: "学术前沿", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
           { label: "YouTube Learner", href: "/youtube-to-ebook/" },
           { label: "JSPS 科研费", href: "/jsps-kakenhi/" },
         ],
         columns: [
-          { title: "个人主页", items: ["个人身份", "发表论文", "获奖", "项目"] },
-          { title: "信息流", items: ["AI builders", "X 动态", "播客", "官方博客"] },
+          {
+            title: "个人主页",
+            items: ["个人身份", "发表论文", "获奖", "项目"],
+          },
+          {
+            title: "信息流",
+            items: ["AI builders", "X 动态", "播客", "官方博客"],
+          },
         ],
       },
       academic: {
-        home: [["个人资料", "联系方式", "统计概览", "简历"], ["所属", "人工智能", "高性能计算"]],
-        timeline: [["教育经历", "任职经历", "访问经历"], ["时间线", "机构", "关键节点"]],
-        publications: [["搜索", "筛选", "指标", "DOI"], ["期刊论文", "会议论文", "被引用"]],
-        awards: [["获奖", "IEEE CIS", "JST"], ["证据", "日期", "授奖机构"]],
-        projects: [["代码仓库", "研究方向", "项目代码"], ["AI", "优化", "HPC 工具"]],
-        service: [["审稿", "编辑服务", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [[
-          { label: "东北大学网络科学中心", href: profileLinkHref("tohokuCenter", "zh") },
-          { label: "高性能计算研究室", href: profileLinkHref("hpcLab", "zh") },
-          { label: "泷泽研究室加入公告", href: profileLinkHref("takizawaAnnouncement", "zh") },
-          { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
-          { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
-          { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
-          { label: "GitHub", href: PROFILE_LINK_HREFS.github },
-          { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
-          { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
-          { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
-        ], [
-          { label: "官方主页", href: "/academic/profiles.html" },
-          { label: "作者标识", href: "/academic/profiles.html" },
-          { label: "代码主页", href: PROFILE_LINK_HREFS.github },
-          { label: "博士论文记录", href: PROFILE_LINK_HREFS.toyamaDissertation },
-        ]],
-        research: [["人工智能", "高性能计算", "优化", "合作者"], ["方法", "应用领域", "研究亮点"]],
+        home: [
+          ["个人资料", "联系方式", "统计概览", "简历"],
+          ["所属", "人工智能", "高性能计算"],
+        ],
+        timeline: [
+          ["教育经历", "任职经历", "访问经历"],
+          ["时间线", "机构", "关键节点"],
+        ],
+        publications: [
+          ["搜索", "筛选", "指标", "DOI"],
+          ["期刊论文", "会议论文", "被引用"],
+        ],
+        awards: [
+          ["获奖", "IEEE CIS", "JST"],
+          ["证据", "日期", "授奖机构"],
+        ],
+        projects: [
+          ["代码仓库", "研究方向", "项目代码"],
+          ["AI", "优化", "HPC 工具"],
+        ],
+        service: [
+          ["审稿", "编辑服务", "出版地"],
+          ["IEEE Trans", "IEEE", "Elsevier", "Springer"],
+        ],
+        profiles: [
+          [
+            {
+              label: "东北大学网络科学中心",
+              href: profileLinkHref("tohokuCenter", "zh"),
+            },
+            {
+              label: "高性能计算研究室",
+              href: profileLinkHref("hpcLab", "zh"),
+            },
+            {
+              label: "泷泽研究室加入公告",
+              href: profileLinkHref("takizawaAnnouncement", "zh"),
+            },
+            { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
+            { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
+            { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
+            { label: "GitHub", href: PROFILE_LINK_HREFS.github },
+            { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
+            { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
+            { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
+          ],
+          [
+            { label: "官方主页", href: "/academic-homepage/profiles.html" },
+            { label: "作者标识", href: "/academic-homepage/profiles.html" },
+            { label: "代码主页", href: PROFILE_LINK_HREFS.github },
+            {
+              label: "博士论文记录",
+              href: PROFILE_LINK_HREFS.toyamaDissertation,
+            },
+          ],
+        ],
+        research: [
+          ["人工智能", "高性能计算", "优化", "合作者"],
+          ["方法", "应用领域", "研究亮点"],
+        ],
       },
       frontier: {
-        overview: [["论文库", "搜索", "筛选"], ["近期论文", "DOI", "摘要"]],
-        papers: [["论文清单", "卡片视图", "完整摘要"], ["JCR", "中科院", "影响因子"]],
-        metrics: [["期刊指标", "JCR", "中科院", "IF"], ["公开证据", "来源线索", "按年份追踪"]],
+        overview: [
+          ["论文库", "搜索", "筛选"],
+          ["近期论文", "DOI", "摘要"],
+        ],
+        papers: [
+          ["论文清单", "卡片视图", "完整摘要"],
+          ["JCR", "中科院", "影响因子"],
+        ],
+        metrics: [
+          ["期刊指标", "JCR", "中科院", "IF"],
+          ["公开证据", "来源线索", "按年份追踪"],
+        ],
       },
       followBuilders: {
-        overview: [["信息流", "来源", "文章阅读"], ["X 帖子", "播客", "官方博客"]],
-        feed: [["故事卡片", "搜索", "筛选"], ["Builders", "帖子", "中心 feed"]],
-        sources: [["AI builders", "播客", "博客"], ["GitHub 项目", "中心来源列表", "公开 feed"]],
-        github: [[
-          { label: "Zara Zhang / follow-builders", href: "https://github.com/zarazhangrui/follow-builders" },
-          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["原项目", "阅读器实现", "个人主页工作区"]],
+        overview: [
+          ["信息流", "来源", "文章阅读"],
+          ["X 帖子", "播客", "官方博客"],
+        ],
+        feed: [
+          ["故事卡片", "搜索", "筛选"],
+          ["Builders", "帖子", "中心 feed"],
+        ],
+        sources: [
+          ["AI builders", "播客", "博客"],
+          ["GitHub 项目", "中心来源列表", "公开 feed"],
+        ],
+        github: [
+          [
+            {
+              label: "Zara Zhang / follow-builders",
+              href: "https://github.com/zarazhangrui/follow-builders",
+            },
+            {
+              label: "Sichen Tao / GitHub",
+              href: "https://github.com/SichenTao",
+            },
+          ],
+          ["原项目", "阅读器实现", "个人主页工作区"],
+        ],
       },
       youtubeToEbook: {
-        overview: [["学习文章", "视频逐字稿", "文章阅读器"], ["YouTube", "同步阅读", "多语言"]],
-        feed: [["文章卡片", "搜索", "语言显示"], ["逐字稿", "高亮", "主页归档"]],
-        sources: [["默认频道", "流程服务", "输出格式"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
-        github: [[
-          { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
-          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["原项目", "文章库", "静态发布"]],
+        overview: [
+          ["学习文章", "视频逐字稿", "文章阅读器"],
+          ["YouTube", "同步阅读", "多语言"],
+        ],
+        feed: [
+          ["文章卡片", "搜索", "语言显示"],
+          ["逐字稿", "高亮", "主页归档"],
+        ],
+        sources: [
+          ["默认频道", "流程服务", "输出格式"],
+          ["YouTube API", "Supadata", "Claude", "Gmail"],
+        ],
+        github: [
+          [
+            {
+              label: "Zara Zhang / youtube-to-ebook",
+              href: "https://github.com/zarazhangrui/youtube-to-ebook",
+            },
+            {
+              label: "Sichen Tao / GitHub",
+              href: "https://github.com/SichenTao",
+            },
+          ],
+          ["原项目", "文章库", "静态发布"],
+        ],
       },
       jsps: {
-        calls: [["项目目录", "申请对象", "优先级"], ["公募中", "项目分组", "申请者类型"]],
-        deadlines: [["时间线", "提交日期", "系统开放"], ["近期截止", "官方日期", "提醒"]],
-        forms: [["获取材料", "通知", "样式"], ["公募要领", "填写说明", "下载链接"]],
-        guides: [["申请指南", "FAQ", "e-Rad"], ["写作辅助", "官方手册", "检查清单"]],
-        program: [["项目详情", "资料", "操作"], ["申请条件", "表格", "官方链接"]],
+        calls: [
+          ["项目目录", "申请对象", "优先级"],
+          ["公募中", "项目分组", "申请者类型"],
+        ],
+        deadlines: [
+          ["时间线", "提交日期", "系统开放"],
+          ["近期截止", "官方日期", "提醒"],
+        ],
+        forms: [
+          ["获取材料", "通知", "样式"],
+          ["公募要领", "填写说明", "下载链接"],
+        ],
+        guides: [
+          ["申请指南", "FAQ", "e-Rad"],
+          ["写作辅助", "官方手册", "检查清单"],
+        ],
+        program: [
+          ["项目详情", "资料", "操作"],
+          ["申请条件", "表格", "官方链接"],
+        ],
       },
     },
     ja: {
@@ -403,72 +685,177 @@
         kicker: "ワークスペース",
         primary: [
           { label: "ナビゲーション", href: "/" },
-          { label: "個人ホームページ", href: "/academic/" },
+          { label: "個人ホームページ", href: "/academic-homepage/" },
           { label: "学術前沿", href: "/academic-frontier/" },
           { label: "Follow Builders", href: "/follow-builders/" },
           { label: "YouTube Learner", href: "/youtube-to-ebook/" },
           { label: "JSPS 科研費", href: "/jsps-kakenhi/" },
         ],
         columns: [
-          { title: "個人ホームページ", items: ["プロフィール", "発表論文", "受賞", "プロジェクト"] },
-          { title: "フィード", items: ["AI builders", "X 投稿", "Podcasts", "公式ブログ"] },
+          {
+            title: "個人ホームページ",
+            items: ["プロフィール", "発表論文", "受賞", "プロジェクト"],
+          },
+          {
+            title: "フィード",
+            items: ["AI builders", "X 投稿", "Podcasts", "公式ブログ"],
+          },
         ],
       },
       academic: {
-        home: [["プロフィール", "連絡先", "統計", "CV"], ["所属", "人工知能", "高性能計算"]],
-        timeline: [["学歴", "職歴", "訪問歴"], ["年表", "機関", "節目"]],
-        publications: [["検索", "フィルタ", "指標", "DOI"], ["論文", "会議論文", "被引用"]],
-        awards: [["受賞", "IEEE CIS", "JST"], ["根拠", "日付", "授与機関"]],
-        projects: [["リポジトリ", "研究方向", "コード"], ["AI", "最適化", "HPC ツール"]],
-        service: [["査読", "編集", "出版地"], ["IEEE Trans", "IEEE", "Elsevier", "Springer"]],
-        profiles: [[
-          { label: "東北大学サイバーサイエンスセンター", href: profileLinkHref("tohokuCenter", "ja") },
-          { label: "高性能計算研究室", href: profileLinkHref("hpcLab", "ja") },
-          { label: "滝沢研究室着任告知", href: profileLinkHref("takizawaAnnouncement", "ja") },
-          { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
-          { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
-          { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
-          { label: "GitHub", href: PROFILE_LINK_HREFS.github },
-          { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
-          { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
-          { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
-        ], [
-          { label: "公式プロフィール", href: "/academic/profiles.html" },
-          { label: "著者ID", href: "/academic/profiles.html" },
-          { label: "コードページ", href: PROFILE_LINK_HREFS.github },
-          { label: "博士論文記録", href: PROFILE_LINK_HREFS.toyamaDissertation },
-        ]],
-        research: [["人工知能", "高性能計算", "最適化", "共同研究者"], ["方法", "応用領域", "研究ハイライト"]],
+        home: [
+          ["プロフィール", "連絡先", "統計", "CV"],
+          ["所属", "人工知能", "高性能計算"],
+        ],
+        timeline: [
+          ["学歴", "職歴", "訪問歴"],
+          ["年表", "機関", "節目"],
+        ],
+        publications: [
+          ["検索", "フィルタ", "指標", "DOI"],
+          ["論文", "会議論文", "被引用"],
+        ],
+        awards: [
+          ["受賞", "IEEE CIS", "JST"],
+          ["根拠", "日付", "授与機関"],
+        ],
+        projects: [
+          ["リポジトリ", "研究方向", "コード"],
+          ["AI", "最適化", "HPC ツール"],
+        ],
+        service: [
+          ["査読", "編集", "出版地"],
+          ["IEEE Trans", "IEEE", "Elsevier", "Springer"],
+        ],
+        profiles: [
+          [
+            {
+              label: "東北大学サイバーサイエンスセンター",
+              href: profileLinkHref("tohokuCenter", "ja"),
+            },
+            {
+              label: "高性能計算研究室",
+              href: profileLinkHref("hpcLab", "ja"),
+            },
+            {
+              label: "滝沢研究室着任告知",
+              href: profileLinkHref("takizawaAnnouncement", "ja"),
+            },
+            { label: "Google Scholar", href: PROFILE_LINK_HREFS.googleScholar },
+            { label: "ResearchMap", href: PROFILE_LINK_HREFS.researchMap },
+            { label: "ResearchGate", href: PROFILE_LINK_HREFS.researchGate },
+            { label: "GitHub", href: PROFILE_LINK_HREFS.github },
+            { label: "DBLP", href: PROFILE_LINK_HREFS.dblp },
+            { label: "ORCID", href: PROFILE_LINK_HREFS.orcid },
+            { label: "J-GLOBAL", href: PROFILE_LINK_HREFS.jglobal },
+          ],
+          [
+            {
+              label: "公式プロフィール",
+              href: "/academic-homepage/profiles.html",
+            },
+            { label: "著者ID", href: "/academic-homepage/profiles.html" },
+            { label: "コードページ", href: PROFILE_LINK_HREFS.github },
+            {
+              label: "博士論文記録",
+              href: PROFILE_LINK_HREFS.toyamaDissertation,
+            },
+          ],
+        ],
+        research: [
+          ["人工知能", "高性能計算", "最適化", "共同研究者"],
+          ["方法", "応用領域", "研究ハイライト"],
+        ],
       },
       frontier: {
-        overview: [["論文庫", "検索", "フィルタ"], ["最新論文", "DOI", "要旨"]],
-        papers: [["論文一覧", "カード", "全文要旨"], ["JCR", "CAS", "インパクトファクター"]],
-        metrics: [["会場指標", "JCR", "CAS", "IF"], ["公式情報", "公開根拠", "年次追跡"]],
+        overview: [
+          ["論文庫", "検索", "フィルタ"],
+          ["最新論文", "DOI", "要旨"],
+        ],
+        papers: [
+          ["論文一覧", "カード", "全文要旨"],
+          ["JCR", "CAS", "インパクトファクター"],
+        ],
+        metrics: [
+          ["会場指標", "JCR", "CAS", "IF"],
+          ["公式情報", "公開根拠", "年次追跡"],
+        ],
       },
       followBuilders: {
-        overview: [["フィード", "ソース", "記事リーダー"], ["X 投稿", "Podcasts", "公式ブログ"]],
-        feed: [["ストーリーカード", "検索", "フィルタ"], ["Builders", "投稿", "中央フィード"]],
-        sources: [["AI builders", "Podcasts", "ブログ"], ["GitHub project", "中央ソース", "公開 feed"]],
-        github: [[
-          { label: "Zara Zhang / follow-builders", href: "https://github.com/zarazhangrui/follow-builders" },
-          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["元プロジェクト", "Reader 実装", "個人ワークスペース"]],
+        overview: [
+          ["フィード", "ソース", "記事リーダー"],
+          ["X 投稿", "Podcasts", "公式ブログ"],
+        ],
+        feed: [
+          ["ストーリーカード", "検索", "フィルタ"],
+          ["Builders", "投稿", "中央フィード"],
+        ],
+        sources: [
+          ["AI builders", "Podcasts", "ブログ"],
+          ["GitHub project", "中央ソース", "公開 feed"],
+        ],
+        github: [
+          [
+            {
+              label: "Zara Zhang / follow-builders",
+              href: "https://github.com/zarazhangrui/follow-builders",
+            },
+            {
+              label: "Sichen Tao / GitHub",
+              href: "https://github.com/SichenTao",
+            },
+          ],
+          ["元プロジェクト", "Reader 実装", "個人ワークスペース"],
+        ],
       },
       youtubeToEbook: {
-        overview: [["学習記事", "動画逐語録", "記事リーダー"], ["YouTube", "読みながら学ぶ", "多言語"]],
-        feed: [["記事カード", "検索", "言語表示"], ["逐語録", "ハイライト", "Homepage archive"]],
-        sources: [["初期チャンネル", "Pipeline services", "出力形式"], ["YouTube API", "Supadata", "Claude", "Gmail"]],
-        github: [[
-          { label: "Zara Zhang / youtube-to-ebook", href: "https://github.com/zarazhangrui/youtube-to-ebook" },
-          { label: "Sichen Tao / GitHub", href: "https://github.com/SichenTao" },
-        ], ["元プロジェクト", "記事ライブラリ", "静的公開"]],
+        overview: [
+          ["学習記事", "動画逐語録", "記事リーダー"],
+          ["YouTube", "読みながら学ぶ", "多言語"],
+        ],
+        feed: [
+          ["記事カード", "検索", "言語表示"],
+          ["逐語録", "ハイライト", "Homepage archive"],
+        ],
+        sources: [
+          ["初期チャンネル", "Pipeline services", "出力形式"],
+          ["YouTube API", "Supadata", "Claude", "Gmail"],
+        ],
+        github: [
+          [
+            {
+              label: "Zara Zhang / youtube-to-ebook",
+              href: "https://github.com/zarazhangrui/youtube-to-ebook",
+            },
+            {
+              label: "Sichen Tao / GitHub",
+              href: "https://github.com/SichenTao",
+            },
+          ],
+          ["元プロジェクト", "記事ライブラリ", "静的公開"],
+        ],
       },
       jsps: {
-        calls: [["プログラム", "対象者", "優先度"], ["募集中", "区分", "申請者"]],
-        deadlines: [["年表", "提出日", "システム期間"], ["今後の締切", "公式日程", "リマインド"]],
-        forms: [["資料取得", "通知", "様式"], ["公募要領", "記入要領", "ダウンロード"]],
-        guides: [["申請ガイド", "FAQ", "e-Rad"], ["執筆支援", "公式手引き", "チェックリスト"]],
-        program: [["プログラム詳細", "資料", "操作"], ["応募条件", "様式", "公式リンク"]],
+        calls: [
+          ["プログラム", "対象者", "優先度"],
+          ["募集中", "区分", "申請者"],
+        ],
+        deadlines: [
+          ["年表", "提出日", "システム期間"],
+          ["今後の締切", "公式日程", "リマインド"],
+        ],
+        forms: [
+          ["資料取得", "通知", "様式"],
+          ["公募要領", "記入要領", "ダウンロード"],
+        ],
+        guides: [
+          ["申請ガイド", "FAQ", "e-Rad"],
+          ["執筆支援", "公式手引き", "チェックリスト"],
+        ],
+        program: [
+          ["プログラム詳細", "資料", "操作"],
+          ["応募条件", "様式", "公式リンク"],
+        ],
       },
     },
   };
@@ -485,7 +872,7 @@
     if (path.startsWith("/follow-builders/")) return "followBuilders";
     if (path.startsWith("/youtube-to-ebook/")) return "youtubeToEbook";
     if (path.startsWith("/jsps-kakenhi/")) return "jsps";
-    if (path.startsWith("/academic/")) return "academic";
+    if (path.startsWith("/academic-homepage/")) return "academic";
     return "portal";
   }
 
@@ -493,18 +880,27 @@
     if (!href) return "";
     let path = href;
     try {
-      const parsed = new URL(href, global.location?.href || "https://sichentao.github.io/");
+      const parsed = new URL(
+        href,
+        global.location?.href || "https://sichentao.github.io/",
+      );
       path = parsed.pathname;
       if (site === "followBuilders" && parsed.hash) {
         const hashKey = parsed.hash.replace(/^#/, "");
-        if (["feed", "sources", "github"].includes(hashKey) || hashKey.startsWith("article-")) {
+        if (
+          ["feed", "sources", "github"].includes(hashKey) ||
+          hashKey.startsWith("article-")
+        ) {
           if (hashKey.startsWith("article-")) return "feed";
           return hashKey;
         }
       }
       if (site === "youtubeToEbook" && parsed.hash) {
         const hashKey = parsed.hash.replace(/^#/, "");
-        if (["feed", "sources", "github"].includes(hashKey) || hashKey.startsWith("article-")) {
+        if (
+          ["feed", "sources", "github"].includes(hashKey) ||
+          hashKey.startsWith("article-")
+        ) {
           if (hashKey.startsWith("article-")) return "feed";
           return hashKey;
         }
@@ -513,23 +909,28 @@
     const clean = decodeURIComponent(path).replace(/\/(?:zh|ja)\//, "/");
     const file = clean.split("/").pop() || "index.html";
     if (site === "academic") {
-      if (file === "index.html" || clean.endsWith("/academic/")) return "home";
+      if (file === "index.html" || clean.endsWith("/academic-homepage/"))
+        return "home";
       return file.replace(/\.html$/, "");
     }
     if (site === "frontier") {
-      if (file === "index.html" || clean.endsWith("/academic-frontier/")) return "overview";
+      if (file === "index.html" || clean.endsWith("/academic-frontier/"))
+        return "overview";
       return file.replace(/\.html$/, "");
     }
     if (site === "followBuilders") {
-      if (file === "index.html" || clean.endsWith("/follow-builders/")) return "overview";
+      if (file === "index.html" || clean.endsWith("/follow-builders/"))
+        return "overview";
       return file.replace(/\.html$/, "");
     }
     if (site === "youtubeToEbook") {
-      if (file === "index.html" || clean.endsWith("/youtube-to-ebook/")) return "overview";
+      if (file === "index.html" || clean.endsWith("/youtube-to-ebook/"))
+        return "overview";
       return file.replace(/\.html$/, "");
     }
     if (site === "jsps") {
-      if (file === "index.html" || clean.endsWith("/jsps-kakenhi/")) return "calls";
+      if (file === "index.html" || clean.endsWith("/jsps-kakenhi/"))
+        return "calls";
       return file.replace(/\.html$/, "");
     }
     if (clean === "/") return "workspace";
@@ -537,13 +938,14 @@
     if (clean.startsWith("/follow-builders/")) return "followBuilders";
     if (clean.startsWith("/youtube-to-ebook/")) return "youtubeToEbook";
     if (clean.startsWith("/jsps-kakenhi/")) return "jsps";
-    if (clean.startsWith("/academic/")) return "academic";
+    if (clean.startsWith("/academic-homepage/")) return "academic";
     return "workspace";
   }
 
   function normalizeMegaGroups(rawGroups = [], locale = "en") {
     return rawGroups.map((items, index) => ({
-      title: index === 0 ? "" : QUICK_COLUMN_TITLE[locale] || QUICK_COLUMN_TITLE.en,
+      title:
+        index === 0 ? "" : QUICK_COLUMN_TITLE[locale] || QUICK_COLUMN_TITLE.en,
       items: Array.isArray(items) ? items : [],
     }));
   }
@@ -561,35 +963,84 @@
 
   const PRIMARY_TARGETS = {
     academic: {
-      home: ["#home", "#hero-contact-list", "#record-nav", "/academic/assets/docs/CV_SichenTao.pdf"],
+      home: [
+        "#home",
+        "#hero-contact-list",
+        "#record-nav",
+        "/academic-homepage/assets/docs/CV_SichenTao.pdf",
+      ],
       timeline: ["#timeline-list", "#timeline-list", "#timeline-list"],
-      publications: ["#pub-search", "#filter-toolbar-label", "#publication-list", "#publication-list"],
+      publications: [
+        "#pub-search",
+        "#filter-toolbar-label",
+        "#publication-list",
+        "#publication-list",
+      ],
       awards: ["#award-page-list", "#award-page-list", "#award-page-list"],
-      projects: ["#project-repo-grid", "#project-direction-list", "#project-repo-grid"],
-      service: ["#service-page-groups", "#service-page-groups", "#service-page-groups"],
-      profiles: ["#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid", "#link-grid"],
-      research: ["#method-tags", "#domain-tags", "#year-bars", "#collaborator-list"],
+      projects: [
+        "#project-repo-grid",
+        "#project-direction-list",
+        "#project-repo-grid",
+      ],
+      service: [
+        "#service-page-groups",
+        "#service-page-groups",
+        "#service-page-groups",
+      ],
+      profiles: [
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+        "#link-grid",
+      ],
+      research: [
+        "#method-tags",
+        "#domain-tags",
+        "#year-bars",
+        "#collaborator-list",
+      ],
     },
     frontier: {
       overview: ["#papers", "#pub-search", "#filter-toolbar-label"],
       papers: ["#paperList", "#paperList", "#paperList"],
-      metrics: ["#venueMetricsList", "#metric-search", "#metric-filter-toolbar-label", "#venueMetricsList"],
+      metrics: [
+        "#venueMetricsList",
+        "#metric-search",
+        "#metric-filter-toolbar-label",
+        "#venueMetricsList",
+      ],
     },
     followBuilders: {
       overview: ["#feed", "#sources", "#article"],
       feed: ["#fb-story-list", "#fb-search", "#fb-type-filter"],
       sources: ["#fb-builder-list", "#fb-podcast-list", "#fb-blog-list"],
-      github: ["https://github.com/zarazhangrui/follow-builders", "https://github.com/SichenTao"],
+      github: [
+        "https://github.com/zarazhangrui/follow-builders",
+        "https://github.com/SichenTao",
+      ],
     },
     youtubeToEbook: {
       overview: ["#feed", "#sources", "#article"],
       feed: ["#fb-story-list", "#fb-search", "#fb-language-display"],
       sources: ["#fb-builder-list", "#fb-podcast-list", "#fb-blog-list"],
-      github: ["https://github.com/zarazhangrui/youtube-to-ebook", "https://github.com/SichenTao"],
+      github: [
+        "https://github.com/zarazhangrui/youtube-to-ebook",
+        "https://github.com/SichenTao",
+      ],
     },
     jsps: {
       calls: ["#call-list", "#call-search", "#call-list"],
-      deadlines: ["#deadline-timeline", "#deadline-programs", "#deadline-timeline"],
+      deadlines: [
+        "#deadline-timeline",
+        "#deadline-programs",
+        "#deadline-timeline",
+      ],
       forms: ["#form-grid", "#form-search", "#form-grid"],
       guides: ["#guide-grid", "#guide-summary", "#guide-grid"],
       program: ["#program-detail", "#program-page-actions", "#program-detail"],
@@ -604,7 +1055,11 @@
     if (target.startsWith("/")) {
       return statefulHref(target, locale, theme);
     }
-    const base = statefulHref(baseHref || global.location?.pathname || "/", locale, theme);
+    const base = statefulHref(
+      baseHref || global.location?.pathname || "/",
+      locale,
+      theme,
+    );
     if (!target || target === "#") {
       return base;
     }
@@ -614,20 +1069,31 @@
   function megaItemHref(item, site, key, index, baseHref, locale, theme) {
     const explicit = typeof item === "string" ? "" : item?.href || "";
     if (explicit) {
-      return /^https?:\/\//i.test(explicit) ? explicit : statefulHref(explicit, locale, theme);
+      return /^https?:\/\//i.test(explicit)
+        ? explicit
+        : statefulHref(explicit, locale, theme);
     }
     return primaryHref(site, key, index, baseHref, locale, theme);
   }
 
   function sharedMegaPanelForKey(key, options = {}) {
-    const locale = localeName(options.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {});
-    const theme = themeName(options.theme || global.HomepagePlatform?.readStoredTheme?.(), global.HomepagePlatform?.THEMES || {});
+    const locale = localeName(
+      options.locale || global.HomepageI18n?.readStoredLocale?.(),
+      global.HomepageI18n?.LOCALES || {},
+    );
+    const theme = themeName(
+      options.theme || global.HomepagePlatform?.readStoredTheme?.(),
+      global.HomepagePlatform?.THEMES || {},
+    );
     const site = options.site || siteFromPath();
     const text = SHARED_MEGA_TEXT[locale] || SHARED_MEGA_TEXT.en;
     if (key === "workspace") {
       return {
         kicker: text.workspace.kicker,
-        primary: text.workspace.primary.map((item) => ({ ...item, href: statefulHref(item.href, locale, theme) })),
+        primary: text.workspace.primary.map((item) => ({
+          ...item,
+          href: statefulHref(item.href, locale, theme),
+        })),
         columns: text.workspace.columns,
       };
     }
@@ -638,52 +1104,23 @@
     const groups = normalizeMegaGroups(rawGroups, locale);
     return {
       kicker: "",
-      primary: groups[0]?.items?.map((item, index) => ({
-        label: menuItemLabel(item),
-        href: megaItemHref(item, site, key, index, options.baseHref, locale, theme),
-      })) || [],
-      columns: groups.slice(1).map((group) => ({ title: group.title, items: group.items })),
+      primary:
+        groups[0]?.items?.map((item, index) => ({
+          label: menuItemLabel(item),
+          href: megaItemHref(
+            item,
+            site,
+            key,
+            index,
+            options.baseHref,
+            locale,
+            theme,
+          ),
+        })) || [],
+      columns: groups
+        .slice(1)
+        .map((group) => ({ title: group.title, items: group.items })),
     };
-  }
-
-  function renderSharedMegaPanel(panel, key) {
-    const columns = (panel.columns || [])
-      .map(
-        (column) => `
-          <div class="shared-mega-column">
-            ${column.title ? `<p class="shared-mega-column-title">${escapeHtml(column.title)}</p>` : ""}
-            <div class="shared-mega-link-list">
-              ${(column.items || [])
-                .map((item) => {
-                  const label = menuItemLabel(item);
-                  const href = typeof item === "string" ? "" : item.href || "";
-                  return href
-                    ? `<a class="shared-mega-keyword" href="${escapeHtml(href)}"${externalLinkAttrs(href)}>${escapeHtml(label)}</a>`
-                    : `<span class="shared-mega-keyword">${escapeHtml(label)}</span>`;
-                })
-                .join("")}
-            </div>
-          </div>
-        `,
-      )
-      .join("");
-    const primary = (panel.primary || [])
-      .map((item) => {
-        const href = item.href && item.href !== "#" ? ` href="${escapeHtml(item.href)}"` : "";
-        return `<a class="shared-mega-primary-link"${href}${externalLinkAttrs(item.href)}>${escapeHtml(item.label)}</a>`;
-      })
-      .join("");
-    return `
-      <div class="topnav-mega-panel" data-topnav-mega-panel="${escapeHtml(key)}" role="group" aria-label="${escapeHtml(panel.kicker || "Navigation")}" hidden>
-        <div class="shared-mega-inner">
-          <div class="shared-mega-primary">
-            ${panel.kicker ? `<p class="shared-mega-kicker">${escapeHtml(panel.kicker)}</p>` : ""}
-            <div class="shared-mega-primary-list">${primary}</div>
-          </div>
-          ${columns ? `<div class="shared-mega-columns">${columns}</div>` : ""}
-        </div>
-      </div>
-    `;
   }
 
   function renderPortalStyleMegaMenu(panel, key) {
@@ -714,7 +1151,10 @@
               ${(column.items || [])
                 .map((item) => {
                   const label = typeof item === "string" ? item : item.label;
-                  const href = typeof item === "string" ? panel.fallbackHref || "#" : item.href || panel.fallbackHref || "#";
+                  const href =
+                    typeof item === "string"
+                      ? panel.fallbackHref || "#"
+                      : item.href || panel.fallbackHref || "#";
                   return `<a class="portal-mega-link" href="${escapeHtml(href)}"${externalLinkAttrs(href)}>${escapeHtml(label)}</a>`;
                 })
                 .join("")}
@@ -724,7 +1164,10 @@
       )
       .join("");
     const primary = (panel.primary || [])
-      .map((item) => `<a class="portal-mega-primary-link" href="${escapeHtml(item.href || "#")}"${externalLinkAttrs(item.href)}>${escapeHtml(item.label)}</a>`)
+      .map(
+        (item) =>
+          `<a class="portal-mega-primary-link" href="${escapeHtml(item.href || "#")}"${externalLinkAttrs(item.href)}>${escapeHtml(item.label)}</a>`,
+      )
       .join("");
     return `
       <div class="portal-mega-inner${workspaceColumn ? " portal-mega-inner--with-workspace" : ""}" data-shared-portal-mega-key="${escapeHtml(key)}">
@@ -761,7 +1204,9 @@
   function ensureSharedPortalMegaScaffold(root = document) {
     let backdrop = document.getElementById("portalMegaBackdrop");
     let panel = document.getElementById("portalMegaMenu");
-    const header = root.querySelector?.(".site-header") || document.querySelector(".site-header");
+    const header =
+      root.querySelector?.(".site-header") ||
+      document.querySelector(".site-header");
     if (!backdrop) {
       backdrop = document.createElement("div");
       backdrop.className = "portal-mega-backdrop";
@@ -794,8 +1239,14 @@
 
   function currentMegaContext(config = {}) {
     return {
-      locale: localeName(config.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {}),
-      theme: themeName(config.theme || global.HomepagePlatform?.readStoredTheme?.(), global.HomepagePlatform?.THEMES || {}),
+      locale: localeName(
+        config.locale || global.HomepageI18n?.readStoredLocale?.(),
+        global.HomepageI18n?.LOCALES || {},
+      ),
+      theme: themeName(
+        config.theme || global.HomepagePlatform?.readStoredTheme?.(),
+        global.HomepagePlatform?.THEMES || {},
+      ),
     };
   }
 
@@ -827,7 +1278,10 @@
         active: item.active,
       })),
     };
-    panel.innerHTML = renderPortalStyleMegaMenu({ ...menu, fallbackHref, workspaceColumn }, key);
+    panel.innerHTML = renderPortalStyleMegaMenu(
+      { ...menu, fallbackHref, workspaceColumn },
+      key,
+    );
     panel.dataset.activeKey = key;
     panel.dataset.activeLocale = locale;
     panel.dataset.activeTheme = theme;
@@ -835,17 +1289,19 @@
     document.body?.classList.remove("shared-mega-open");
     document.body?.classList.add("portal-mega-open");
     global.HomepageSharedShell?.syncPortalMegaAlignment?.(panel, nav);
-    root.querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")?.forEach((node) => {
-      const isActive = node === link;
-      node.setAttribute("aria-expanded", isActive ? "true" : "false");
-      if (isActive) {
-        node.setAttribute("data-mega-active", "true");
-        node.setAttribute("data-shared-mega-active", "true");
-      } else {
-        node.removeAttribute("data-mega-active");
-        node.removeAttribute("data-shared-mega-active");
-      }
-    });
+    root
+      .querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")
+      ?.forEach((node) => {
+        const isActive = node === link;
+        node.setAttribute("aria-expanded", isActive ? "true" : "false");
+        if (isActive) {
+          node.setAttribute("data-mega-active", "true");
+          node.setAttribute("data-shared-mega-active", "true");
+        } else {
+          node.removeAttribute("data-mega-active");
+          node.removeAttribute("data-shared-mega-active");
+        }
+      });
     return true;
   }
 
@@ -862,7 +1318,15 @@
         ? `a[data-shared-mega-active='true'], a[data-mega-active='true'], a[data-shared-mega-key='${activeKey}']`
         : "a[data-shared-mega-active='true'], a[data-mega-active='true']";
       const activeLink = nav.querySelector(selector);
-      return activeLink ? renderPortalMegaForLink(activeLink, { ...config, root, panel, nav, site }) : false;
+      return activeLink
+        ? renderPortalMegaForLink(activeLink, {
+            ...config,
+            root,
+            panel,
+            nav,
+            site,
+          })
+        : false;
     });
   }
 
@@ -880,21 +1344,30 @@
 
   function languageSegmentedItemsHtml(config = {}) {
     const locales = config.locales || global.HomepageI18n?.LOCALES || {};
-    const sequence = (config.sequence || global.HomepageI18n?.LOCALE_SEQUENCE || Object.keys(locales)).filter((name) => locales[name]);
+    const sequence = (
+      config.sequence ||
+      global.HomepageI18n?.LOCALE_SEQUENCE ||
+      Object.keys(locales)
+    ).filter((name) => locales[name]);
     const selected = new Set(
       (Array.isArray(config.selected) ? config.selected : [config.locale])
         .map((name) => localeName(name, locales))
         .filter((name) => locales[name]),
     );
     const activeClass = config.activeClass || "is-selected";
-    const choiceClass = classNames(config.choiceClass || "", "shared-language-chip");
+    const choiceClass = classNames(
+      config.choiceClass || "",
+      "shared-language-chip",
+    );
     const dataAttribute = config.dataAttribute || "data-language-choice";
-    const labelFor = typeof config.labelFor === "function"
-      ? config.labelFor
-      : (name, locale) => locale?.label || name.toUpperCase();
-    const nameFor = typeof config.nameFor === "function"
-      ? config.nameFor
-      : (name, locale) => locale?.name || locale?.label || name;
+    const labelFor =
+      typeof config.labelFor === "function"
+        ? config.labelFor
+        : (name, locale) => locale?.label || name.toUpperCase();
+    const nameFor =
+      typeof config.nameFor === "function"
+        ? config.nameFor
+        : (name, locale) => locale?.name || locale?.label || name;
 
     return sequence
       .map((name) => {
@@ -902,8 +1375,13 @@
         const isSelected = selected.has(name);
         const label = labelFor(name, locale);
         const fullName = nameFor(name, locale);
-        const href = typeof config.choiceHref === "function" ? config.choiceHref(name) : "";
-        const selectedClasses = isSelected ? classNames(activeClass, "is-selected") : "";
+        const href =
+          typeof config.choiceHref === "function"
+            ? config.choiceHref(name)
+            : "";
+        const selectedClasses = isSelected
+          ? classNames(activeClass, "is-selected")
+          : "";
         const classes = classNames(choiceClass, selectedClasses);
         const commonAttrs = `
           class="${escapeHtml(classes)}"
@@ -944,9 +1422,17 @@
     const ariaLabel = config.ariaLabel || config.label || "Language choices";
 
     toNodes(target).forEach((container) => {
-      container.className = classNames(container.className, containerClass, "shared-language-segmented");
+      container.className = classNames(
+        container.className,
+        containerClass,
+        "shared-language-segmented",
+      );
       container.setAttribute("aria-label", ariaLabel);
-      container.innerHTML = languageSegmentedItemsHtml({ ...config, locales, dataAttribute });
+      container.innerHTML = languageSegmentedItemsHtml({
+        ...config,
+        locales,
+        dataAttribute,
+      });
       container.querySelectorAll(`[${dataAttribute}]`).forEach((choice) => {
         addChoiceListener(
           choice,
@@ -960,13 +1446,21 @@
 
   function renderLocaleSwitcher(target, config = {}) {
     const locales = config.locales || global.HomepageI18n?.LOCALES || {};
-    const sequence = (config.sequence || global.HomepageI18n?.LOCALE_SEQUENCE || Object.keys(locales)).filter((name) => locales[name]);
-    const activeLocaleName = localeName(config.locale || global.HomepageI18n?.readStoredLocale?.({ locales }), locales);
+    const sequence = (
+      config.sequence ||
+      global.HomepageI18n?.LOCALE_SEQUENCE ||
+      Object.keys(locales)
+    ).filter((name) => locales[name]);
+    const activeLocaleName = localeName(
+      config.locale || global.HomepageI18n?.readStoredLocale?.({ locales }),
+      locales,
+    );
     const activeLocale = locales[activeLocaleName] || locales.en || {};
     const activeLabel = activeLocale.label || activeLocaleName.toUpperCase();
     const activeName = activeLocale.name || activeLocaleName;
     const switcherLabel = config.ariaLabel || config.label || "Language";
-    const trayLabel = config.trayLabel || config.choiceLabel || "Language choices";
+    const trayLabel =
+      config.trayLabel || config.choiceLabel || "Language choices";
     const triggerLabel = config.triggerLabel || switcherLabel || activeName;
     const activeClass = config.activeClass || "is-active";
 
@@ -1002,20 +1496,38 @@
       `;
 
       switcher.querySelectorAll("[data-locale-choice]").forEach((choice) => {
-        addChoiceListener(choice, choice.dataset.localeChoice, config.onChoice, choice.tagName.toLowerCase() === "a");
+        addChoiceListener(
+          choice,
+          choice.dataset.localeChoice,
+          config.onChoice,
+          choice.tagName.toLowerCase() === "a",
+        );
       });
     });
   }
 
   function renderThemeSwitcher(target, config = {}) {
     const themes = config.themes || global.HomepagePlatform?.THEMES || {};
-    const sequence = (config.sequence || global.HomepagePlatform?.THEME_SEQUENCE || Object.keys(themes)).filter((name) => themes[name]);
-    const locale = localeName(config.locale || global.HomepageI18n?.readStoredLocale?.(), global.HomepageI18n?.LOCALES || {});
-    const activeThemeName = themeName(config.theme || global.HomepagePlatform?.readStoredTheme?.(), themes);
+    const sequence = (
+      config.sequence ||
+      global.HomepagePlatform?.THEME_SEQUENCE ||
+      Object.keys(themes)
+    ).filter((name) => themes[name]);
+    const locale = localeName(
+      config.locale || global.HomepageI18n?.readStoredLocale?.(),
+      global.HomepageI18n?.LOCALES || {},
+    );
+    const activeThemeName = themeName(
+      config.theme || global.HomepagePlatform?.readStoredTheme?.(),
+      themes,
+    );
     const activeTheme = themes[activeThemeName] || themes.tohoku || {};
     const trayLabel = config.trayLabel || "Theme choices";
     const switcherLabel = config.ariaLabel || config.label || "Color theme";
-    const tooltip = typeof config.tooltip === "function" ? config.tooltip : (name) => themeTooltip(name, locale);
+    const tooltip =
+      typeof config.tooltip === "function"
+        ? config.tooltip
+        : (name) => themeTooltip(name, locale);
     const activeTooltip = tooltip(activeThemeName);
     const activeClass = config.activeClass || "is-active";
 
@@ -1060,20 +1572,29 @@
       `;
 
       switcher.querySelectorAll("[data-theme-choice]").forEach((choice) => {
-        addChoiceListener(choice, choice.dataset.themeChoice, config.onChoice, false);
+        addChoiceListener(
+          choice,
+          choice.dataset.themeChoice,
+          config.onChoice,
+          false,
+        );
       });
     });
   }
 
-  function renderPortalSwitcher(targetControls, config = {}) {
+  function renderPortalSwitcher(targetControls) {
     toNodes(targetControls).forEach((controls) => {
       if (!controls) {
         return;
       }
 
-      controls.querySelectorAll(".portal-return-link, .portal-switcher").forEach((node) => node.remove());
+      controls
+        .querySelectorAll(".portal-return-link, .portal-switcher")
+        .forEach((node) => node.remove());
       const headerTools = controls.closest(".header-tools");
-      headerTools?.querySelectorAll(".workspace-switcher").forEach((node) => node.remove());
+      headerTools
+        ?.querySelectorAll(".workspace-switcher")
+        .forEach((node) => node.remove());
     });
   }
 
@@ -1086,15 +1607,29 @@
     const { locale, theme } = currentMegaContext(config);
     const { backdrop, panel } = ensureSharedPortalMegaScaffold(root);
     toNodes(config.navSelector || ".topnav").forEach((nav) => {
-      nav.querySelectorAll(".topnav-mega-panel").forEach((panel) => panel.remove());
-      nav.querySelectorAll(".topnav-mobile-workspaces").forEach((node) => node.remove());
-      nav.querySelectorAll(".topnav-mobile-section-title").forEach((node) => node.remove());
-      nav.insertAdjacentHTML("afterbegin", renderMobileWorkspaceLinks(locale, theme));
+      nav
+        .querySelectorAll(".topnav-mega-panel")
+        .forEach((panel) => panel.remove());
+      nav
+        .querySelectorAll(".topnav-mobile-workspaces")
+        .forEach((node) => node.remove());
+      nav
+        .querySelectorAll(".topnav-mobile-section-title")
+        .forEach((node) => node.remove());
+      nav.insertAdjacentHTML(
+        "afterbegin",
+        renderMobileWorkspaceLinks(locale, theme),
+      );
       Array.from(nav.children)
         .filter((node) => node.matches?.("a"))
         .forEach((link) => {
           const key = megaKeyForHref(link.getAttribute("href"), site);
-          const menu = sharedMegaPanelForKey(key, { locale, theme, site, baseHref: link.getAttribute("href") });
+          const menu = sharedMegaPanelForKey(key, {
+            locale,
+            theme,
+            site,
+            baseHref: link.getAttribute("href"),
+          });
           if (!menu) {
             link.removeAttribute("data-shared-mega-key");
             link.removeAttribute("data-portal-menu-key");
@@ -1107,7 +1642,13 @@
         });
 
       if (panel?.getAttribute("aria-hidden") === "false") {
-        refreshOpenTopnavMegaMenu({ ...config, root, panel, navSelector: nav, site });
+        refreshOpenTopnavMegaMenu({
+          ...config,
+          root,
+          panel,
+          navSelector: nav,
+          site,
+        });
       }
 
       if (nav.dataset.sharedMegaBound === "true") {
@@ -1125,28 +1666,40 @@
         clearTimer();
         document.body?.classList.remove("portal-mega-open", "shared-mega-open");
         panel?.setAttribute("aria-hidden", "true");
-        root.querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")?.forEach((link) => {
-          link.setAttribute("aria-expanded", "false");
-          link.removeAttribute("data-mega-active");
-          link.removeAttribute("data-shared-mega-active");
-        });
+        root
+          .querySelectorAll?.("[data-portal-menu-key], [data-shared-mega-key]")
+          ?.forEach((link) => {
+            link.setAttribute("aria-expanded", "false");
+            link.removeAttribute("data-mega-active");
+            link.removeAttribute("data-shared-mega-active");
+          });
       };
       const activate = (link) => {
         if (!link?.dataset?.sharedMegaKey) {
           return;
         }
         clearTimer();
-        document.querySelectorAll(".control-switcher.is-open").forEach((switcher) => {
-          switcher.classList.remove("is-open");
-          switcher
-            .querySelector("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]")
-            ?.setAttribute("aria-expanded", "false");
-        });
-        if (!global.matchMedia?.("(min-width: 761px) and (hover: hover) and (pointer: fine)")?.matches) {
+        document
+          .querySelectorAll(".control-switcher.is-open")
+          .forEach((switcher) => {
+            switcher.classList.remove("is-open");
+            switcher
+              .querySelector(
+                "[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]",
+              )
+              ?.setAttribute("aria-expanded", "false");
+          });
+        if (
+          !global.matchMedia?.(
+            "(min-width: 761px) and (hover: hover) and (pointer: fine)",
+          )?.matches
+        ) {
           close();
           return;
         }
-        if (!renderPortalMegaForLink(link, { ...config, root, panel, nav, site })) {
+        if (
+          !renderPortalMegaForLink(link, { ...config, root, panel, nav, site })
+        ) {
           return;
         }
       };
@@ -1177,7 +1730,9 @@
         link.addEventListener("focus", () => activate(link));
       });
       nav.closest(".site-header")?.addEventListener("mouseenter", clearTimer);
-      nav.closest(".site-header")?.addEventListener("mouseleave", scheduleClose);
+      nav
+        .closest(".site-header")
+        ?.addEventListener("mouseleave", scheduleClose);
       nav.addEventListener("focusin", (event) => {
         const link = event.target.closest?.("a[data-shared-mega-key]");
         if (link && nav.contains(link)) {
@@ -1202,7 +1757,11 @@
         }
       });
       global.addEventListener("resize", () => {
-        if (!global.matchMedia?.("(min-width: 761px) and (hover: hover) and (pointer: fine)")?.matches) {
+        if (
+          !global.matchMedia?.(
+            "(min-width: 761px) and (hover: hover) and (pointer: fine)",
+          )?.matches
+        ) {
           close();
         }
       });
@@ -1210,47 +1769,49 @@
   }
 
   function controlLabels(locale = "en") {
-    return {
-      en: {
-        display: "Display controls",
-        language: "Language",
-        languageChoices: "Language choices",
-        cycleLanguages: "Switch to the next language",
-        theme: "Color theme",
-        themeChoices: "Theme choices",
-        cycleThemes: "Switch to the next theme",
-        pageNavigation: "Page navigation",
-        menu: "Menu",
-        showMenu: "Show menu",
-        hideMenu: "Hide menu",
-      },
-      zh: {
-        display: "显示控制",
-        language: "语言",
-        languageChoices: "语言选项",
-        cycleLanguages: "切换到下一种语言",
-        theme: "主题色",
-        themeChoices: "主题选项",
-        cycleThemes: "切换到下一个主题",
-        pageNavigation: "页面导航",
-        menu: "菜单",
-        showMenu: "展开菜单",
-        hideMenu: "收起菜单",
-      },
-      ja: {
-        display: "表示設定",
-        language: "言語",
-        languageChoices: "言語オプション",
-        cycleLanguages: "次の言語に切り替える",
-        theme: "テーマ色",
-        themeChoices: "テーマオプション",
-        cycleThemes: "次のテーマに切り替える",
-        pageNavigation: "ページナビゲーション",
-        menu: "メニュー",
-        showMenu: "メニューを開く",
-        hideMenu: "メニューを閉じる",
-      },
-    }[locale] || controlLabels("en");
+    return (
+      {
+        en: {
+          display: "Display controls",
+          language: "Language",
+          languageChoices: "Language choices",
+          cycleLanguages: "Switch to the next language",
+          theme: "Color theme",
+          themeChoices: "Theme choices",
+          cycleThemes: "Switch to the next theme",
+          pageNavigation: "Page navigation",
+          menu: "Menu",
+          showMenu: "Show menu",
+          hideMenu: "Hide menu",
+        },
+        zh: {
+          display: "显示控制",
+          language: "语言",
+          languageChoices: "语言选项",
+          cycleLanguages: "切换到下一种语言",
+          theme: "主题色",
+          themeChoices: "主题选项",
+          cycleThemes: "切换到下一个主题",
+          pageNavigation: "页面导航",
+          menu: "菜单",
+          showMenu: "展开菜单",
+          hideMenu: "收起菜单",
+        },
+        ja: {
+          display: "表示設定",
+          language: "言語",
+          languageChoices: "言語オプション",
+          cycleLanguages: "次の言語に切り替える",
+          theme: "テーマ色",
+          themeChoices: "テーマオプション",
+          cycleThemes: "次のテーマに切り替える",
+          pageNavigation: "ページナビゲーション",
+          menu: "メニュー",
+          showMenu: "メニューを開く",
+          hideMenu: "メニューを閉じる",
+        },
+      }[locale] || controlLabels("en")
+    );
   }
 
   function nextName(current, sequence, catalog) {
@@ -1265,23 +1826,44 @@
   function renderStaticControlCluster(config = {}) {
     const locales = config.locales || global.HomepageI18n?.LOCALES || {};
     const themes = config.themes || global.HomepagePlatform?.THEMES || {};
-    const localeSequence = config.localeSequence || global.HomepageI18n?.LOCALE_SEQUENCE || Object.keys(locales);
-    const themeSequence = config.themeSequence || global.HomepagePlatform?.THEME_SEQUENCE || Object.keys(themes);
+    const localeSequence =
+      config.localeSequence ||
+      global.HomepageI18n?.LOCALE_SEQUENCE ||
+      Object.keys(locales);
+    const themeSequence =
+      config.themeSequence ||
+      global.HomepagePlatform?.THEME_SEQUENCE ||
+      Object.keys(themes);
 
     function readLocale() {
-      return localeName(global.HomepageI18n?.readStoredLocale?.({ locales }) || document.documentElement.lang || "en", locales);
+      return localeName(
+        global.HomepageI18n?.readStoredLocale?.({ locales }) ||
+          document.documentElement.lang ||
+          "en",
+        locales,
+      );
     }
 
     function readTheme() {
-      return themeName(global.HomepagePlatform?.readStoredTheme?.() || document.documentElement.dataset.theme || "tohoku", themes);
+      return themeName(
+        global.HomepagePlatform?.readStoredTheme?.() ||
+          document.documentElement.dataset.theme ||
+          "tohoku",
+        themes,
+      );
     }
 
     function render() {
       const locale = readLocale();
       const theme = readTheme();
-      const labels = { ...controlLabels(locale), ...(config.labels?.[locale] || config.labels || {}) };
+      const labels = {
+        ...controlLabels(locale),
+        ...(config.labels?.[locale] || config.labels || {}),
+      };
 
-      document.querySelectorAll(".header-controls").forEach((node) => node.setAttribute("aria-label", labels.display));
+      document
+        .querySelectorAll(".header-controls")
+        .forEach((node) => node.setAttribute("aria-label", labels.display));
       renderLocaleSwitcher(config.localeTarget || ".locale-switcher", {
         locale,
         locales,

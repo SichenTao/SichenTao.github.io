@@ -1,0 +1,97 @@
+---
+import "@sichentao/product-patterns/css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  bodyPage?: string;
+  lang?: "en" | "zh-CN" | "ja";
+  robots?: string;
+  stylesheets?: string[];
+  ogImage?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = new URL(Astro.url.pathname, Astro.site).href,
+  bodyPage = "portal",
+  lang = "en",
+  robots = "index,follow",
+  stylesheets = [],
+  ogImage = "https://sichentao.github.io/academic-homepage/sichen_portal.png",
+} = Astro.props;
+
+const csp = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "form-action 'self' https://checkout.stripe.com",
+  "script-src 'self' 'unsafe-inline' https://www.youtube.com https://www.youtube-nocookie.com https://s.ytimg.com",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob: https:",
+  "font-src 'self' data:",
+  "media-src 'self' blob: https:",
+  "frame-src https://www.youtube.com https://www.youtube-nocookie.com https://checkout.stripe.com",
+  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://api.stripe.com",
+  "worker-src 'self' blob:",
+].join("; ");
+---
+
+<!doctype html>
+<html lang={lang} data-theme="tohoku">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#eee7f8" />
+    <meta http-equiv="Content-Security-Policy" content={csp} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/assets/shared/homepage-fonts.css" />
+    <link rel="stylesheet" href="/assets/shared/homepage-shell.css" />
+    <link rel="stylesheet" href="/assets/shared/homepage-frame.css" />
+    <link rel="stylesheet" href="/assets/v2/runtime.css" />
+    {stylesheets.map((href) => <link rel="stylesheet" href={href} />)}
+    <script is:inline>
+      (() => {
+        const themes = { tohoku: "#eee7f8", toyama: "#edf4f7", usst: "#f7eded" };
+        try {
+          const locale = localStorage.getItem("sichen-homepage-locale");
+          document.documentElement.lang = locale === "zh" ? "zh-CN" : locale === "ja" ? "ja" : "en";
+          const savedTheme = localStorage.getItem("sichen-homepage-theme");
+          const theme = savedTheme && themes[savedTheme] ? savedTheme : "tohoku";
+          document.documentElement.dataset.theme = theme;
+          document.querySelector('meta[name="theme-color"]')?.setAttribute("content", themes[theme]);
+        } catch {
+          document.documentElement.lang = "en";
+          document.documentElement.dataset.theme = "tohoku";
+        }
+      })();
+    </script>
+    <script is:inline src="/assets/shared/homepage-i18n.js"></script>
+    <script is:inline src="/assets/shared/homepage-platform.js"></script>
+    <script is:inline src="/assets/shared/homepage-components.js"></script>
+    <slot name="head" />
+  </head>
+  <body data-page={bodyPage}>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <slot />
+    <script is:inline src="/assets/shared/homepage-shell.js" defer></script>
+    <script is:inline src="/assets/v2/runtime.js" defer></script>
+    <slot name="scripts" />
+  </body>
+</html>

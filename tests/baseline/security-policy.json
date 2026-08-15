@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "requiredCspDirectives": {
+    "default-src": ["'self'"],
+    "base-uri": ["'self'"],
+    "object-src": ["'none'"]
+  },
+  "allowedReferrerPolicies": [
+    "no-referrer",
+    "same-origin",
+    "strict-origin",
+    "strict-origin-when-cross-origin"
+  ],
+  "forbidInlineEventHandlers": true,
+  "requireNoopenerForBlankTargets": true,
+  "requireIntegrityForExternalScripts": true
+}

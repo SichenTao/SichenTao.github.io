@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "datasets": [
+    {
+      "id": "academic-frontier",
+      "maximumAgeHours": 1080,
+      "minimumRecordCount": 15
+    },
+    {
+      "id": "follow-builders",
+      "maximumAgeHours": 168,
+      "minimumRecordCount": 1
+    },
+    {
+      "id": "jsps-kakenhi",
+      "maximumAgeHours": 168,
+      "minimumRecordCount": 1
+    },
+    {
+      "id": "learning-catalog",
+      "maximumAgeHours": 720,
+      "minimumRecordCount": 2
+    }
+  ]
+}

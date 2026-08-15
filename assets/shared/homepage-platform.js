@@ -4,7 +4,10 @@
   }
 
   const THEME_STORAGE_KEY = "sichen-homepage-theme";
-  const LEGACY_THEME_STORAGE_KEYS = ["academic-frontier-theme", "kakenhi-portal-theme"];
+  const LEGACY_THEME_STORAGE_KEYS = [
+    "academic-frontier-theme",
+    "kakenhi-portal-theme",
+  ];
   const THEME_SEQUENCE = ["tohoku", "toyama", "usst"];
   const DEFAULT_THEME = "tohoku";
   const THEMES = {
@@ -49,6 +52,7 @@
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
       youtubeToEbook: { short: "YouTube Learner", full: "YouTube Learner" },
       jsps: { short: "JSPS", full: "JSPS KAKENHI" },
+      account: { short: "Account", full: "Account & Billing" },
     },
     zh: {
       tray: "功能主页",
@@ -58,6 +62,7 @@
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
       youtubeToEbook: { short: "YouTube Learner", full: "YouTube Learner" },
       jsps: { short: "JSPS", full: "JSPS 科研费" },
+      account: { short: "账户", full: "账户与付费" },
     },
     ja: {
       tray: "機能ページ",
@@ -67,6 +72,7 @@
       followBuilders: { short: "Follow Builders", full: "Follow Builders" },
       youtubeToEbook: { short: "YouTube Learner", full: "YouTube Learner" },
       jsps: { short: "JSPS", full: "JSPS 科研費" },
+      account: { short: "アカウント", full: "アカウントと支払い" },
     },
   };
 
@@ -85,7 +91,9 @@
   }
 
   function normalizeTheme(value) {
-    const raw = String(value || "").trim().toLowerCase();
+    const raw = String(value || "")
+      .trim()
+      .toLowerCase();
     if (!raw) {
       return "";
     }
@@ -97,24 +105,33 @@
 
   function readStoredTheme(options = {}) {
     const queryParam = options.queryParam || "theme";
-    const queryTheme = normalizeTheme(new URLSearchParams(global.location?.search || "").get(queryParam));
+    const queryTheme = normalizeTheme(
+      new URLSearchParams(global.location?.search || "").get(queryParam),
+    );
     if (queryTheme) {
       return queryTheme;
     }
 
-    const storageKeys = [options.storageKey || THEME_STORAGE_KEY, ...(options.legacyKeys || LEGACY_THEME_STORAGE_KEYS)];
+    const storageKeys = [
+      options.storageKey || THEME_STORAGE_KEY,
+      ...(options.legacyKeys || LEGACY_THEME_STORAGE_KEYS),
+    ];
     for (const key of storageKeys) {
       const localValue = normalizeTheme(storageGet(global.localStorage, key));
       if (localValue) {
         return localValue;
       }
-      const sessionValue = normalizeTheme(storageGet(global.sessionStorage, key));
+      const sessionValue = normalizeTheme(
+        storageGet(global.sessionStorage, key),
+      );
       if (sessionValue) {
         return sessionValue;
       }
     }
 
-    const documentTheme = normalizeTheme(global.document?.documentElement?.dataset?.theme);
+    const documentTheme = normalizeTheme(
+      global.document?.documentElement?.dataset?.theme,
+    );
     return documentTheme || DEFAULT_THEME;
   }
 
@@ -138,7 +155,9 @@
     if (global.document?.documentElement) {
       global.document.documentElement.dataset.theme = normalized;
     }
-    const metaThemeColor = global.document?.querySelector?.('meta[name="theme-color"]');
+    const metaThemeColor = global.document?.querySelector?.(
+      'meta[name="theme-color"]',
+    );
     if (metaThemeColor) {
       metaThemeColor.setAttribute("content", THEMES[normalized].metaColor);
     }
@@ -152,47 +171,75 @@
     const normalized = normalizeTheme(themeName) || DEFAULT_THEME;
     const labels = THEMES[normalized]?.labels || {};
     const localeName = global.HomepageI18n?.normalizeLocale(locale) || "en";
-    return labels[localeName] || labels.en || THEMES[normalized]?.label || normalized;
+    return (
+      labels[localeName] || labels.en || THEMES[normalized]?.label || normalized
+    );
   }
 
   function themeTooltip(themeName, locale = "en") {
     const localeName = global.HomepageI18n?.normalizeLocale(locale) || "en";
-    const suffix = {
-      en: " theme",
-      zh: "主题色",
-      ja: "テーマ色",
-    }[localeName] || " theme";
+    const suffix =
+      {
+        en: " theme",
+        zh: "主题色",
+        ja: "テーマ色",
+      }[localeName] || " theme";
     return `${themeLabel(themeName, localeName)}${suffix}`;
   }
 
   function siteStateHref(href, options = {}) {
-    const locale = options.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
+    const locale =
+      options.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
     const theme = options.theme || readStoredTheme();
-    const url = new URL(href, options.origin || global.location?.origin || "https://sichentao.github.io");
-    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/") || url.pathname.startsWith("/youtube-to-ebook/")) {
+    const url = new URL(
+      href,
+      options.origin ||
+        global.location?.origin ||
+        "https://sichentao.github.io",
+    );
+    if (
+      url.pathname.startsWith("/academic-homepage/") ||
+      url.pathname.startsWith("/jsps-kakenhi/") ||
+      url.pathname.startsWith("/follow-builders/") ||
+      url.pathname.startsWith("/youtube-to-ebook/")
+    ) {
       url.searchParams.set("lang", locale);
     }
-    if (url.pathname.startsWith("/academic/") || url.pathname.startsWith("/academic-frontier/") || url.pathname.startsWith("/jsps-kakenhi/") || url.pathname.startsWith("/follow-builders/") || url.pathname.startsWith("/youtube-to-ebook/")) {
+    if (
+      url.pathname.startsWith("/academic-homepage/") ||
+      url.pathname.startsWith("/academic-frontier/") ||
+      url.pathname.startsWith("/jsps-kakenhi/") ||
+      url.pathname.startsWith("/follow-builders/") ||
+      url.pathname.startsWith("/youtube-to-ebook/")
+    ) {
       url.searchParams.set("theme", theme);
     }
     return `${url.pathname}${url.search}`;
   }
 
   function academicFrontierHref(locale = "en", theme = readStoredTheme()) {
-    const normalizedLocale = global.HomepageI18n?.normalizeLocale(locale) || "en";
-    const href = normalizedLocale === "en" ? "/academic-frontier/" : `/academic-frontier/${encodeURIComponent(normalizedLocale)}/`;
+    const normalizedLocale =
+      global.HomepageI18n?.normalizeLocale(locale) || "en";
+    const href =
+      normalizedLocale === "en"
+        ? "/academic-frontier/"
+        : `/academic-frontier/${encodeURIComponent(normalizedLocale)}/`;
     return siteStateHref(href, { locale: normalizedLocale, theme });
   }
 
   function portalLabels(locale = "en") {
-    const normalizedLocale = global.HomepageI18n?.normalizeLocale(locale) || "en";
+    const normalizedLocale =
+      global.HomepageI18n?.normalizeLocale(locale) || "en";
     return PORTAL_LABELS[normalizedLocale] || PORTAL_LABELS.en;
   }
 
   function portalItems(options = {}) {
-    const locale = options.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
+    const locale =
+      options.locale || global.HomepageI18n?.readStoredLocale?.() || "en";
     const theme = options.theme || readStoredTheme();
-    const currentPath = decodeURIComponent(options.currentPath || global.location?.pathname || "/");
+    const currentPath = decodeURIComponent(
+      options.currentPath || global.location?.pathname || "/",
+    );
     const labels = portalLabels(locale);
     return {
       labels,
@@ -207,10 +254,10 @@
         },
         {
           id: "academic",
-          href: siteStateHref("/academic/", { locale, theme }),
+          href: siteStateHref("/academic-homepage/", { locale, theme }),
           label: labels.academic.full,
           triggerLabel: labels.academic.short,
-          active: currentPath.startsWith("/academic/"),
+          active: currentPath.startsWith("/academic-homepage/"),
           icon: "portrait",
         },
         {
@@ -244,6 +291,14 @@
           triggerLabel: labels.jsps.short,
           active: currentPath.startsWith("/jsps-kakenhi/"),
           icon: "jsps",
+        },
+        {
+          id: "account",
+          href: "/account/",
+          label: labels.account.full,
+          triggerLabel: labels.account.short,
+          active: currentPath.startsWith("/account/"),
+          icon: "account",
         },
       ],
     };

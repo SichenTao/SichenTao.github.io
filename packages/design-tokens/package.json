@@ -1,0 +1,15 @@
+{
+  "name": "@sichentao/design-tokens",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./css": "./src/index.css",
+    "./fonts.css": "./src/fonts.css",
+    "./tokens.css": "./src/tokens.css"
+  }
+}

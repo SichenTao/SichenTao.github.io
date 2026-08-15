@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "contentType": "text/html",
+      "mustContain": ["<html"]
+    },
+    {
+      "path": "/academic-homepage/",
+      "status": 200,
+      "contentType": "text/html",
+      "mustContain": ["<html"]
+    },
+    {
+      "path": "/academic-frontier/",
+      "status": 200,
+      "contentType": "text/html",
+      "mustContain": ["<html"]
+    },
+    {
+      "path": "/follow-builders/",
+      "status": 200,
+      "contentType": "text/html",
+      "mustContain": ["<html"]
+    },
+    {
+      "path": "/youtube-to-ebook/",
+      "status": 200,
+      "contentType": "text/html",
+      "mustContain": ["<html"]
+    },
+    {
+      "path": "/jsps-kakenhi/",
+      "status": 200,
+      "contentType": "text/html",
+      "mustContain": ["<html"]
+    },
+    {
+      "path": "/account/",
+      "status": 200,
+      "contentType": "text/html",
+      "mustContain": ["<html"]
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "contentType": "text/plain",
+      "mustContain": ["Sitemap:"]
+    },
+    {
+      "path": "/sitemap.xml",
+      "status": 200,
+      "contentType": "xml",
+      "mustContain": ["<urlset"]
+    },
+    {
+      "path": "/quant-platform/",
+      "status": 404,
+      "contentType": "text/html",
+      "mustNotContain": ["X-Fin-Quant-Token", "api_base"]
+    }
+  ]
+}

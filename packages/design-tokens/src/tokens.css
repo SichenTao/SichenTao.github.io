@@ -1,0 +1,190 @@
+/*
+ * v2 design foundations extracted from the production homepage cascade.
+ * data-theme values stay compatible with sichen-homepage-theme.
+ */
+:root,
+:root[data-theme="tohoku"] {
+  color-scheme: light;
+
+  --st-color-canvas: #f5f5f7;
+  --st-color-canvas-soft: #fbfbfd;
+  --st-color-canvas-soft-rgb: 251, 251, 253;
+  --st-color-canvas-band: #f5f5f7;
+  --st-color-surface: rgba(255, 255, 255, 0.78);
+  --st-color-surface-strong: rgba(255, 255, 255, 0.94);
+  --st-color-surface-deep: rgba(245, 245, 247, 0.94);
+  --st-color-ink: #111111;
+  --st-color-ink-rgb: 17, 17, 17;
+  --st-color-ink-soft: #2d2741;
+  --st-color-muted: #514c63;
+  --st-color-text-muted: #514c63;
+  --st-color-line: rgba(17, 17, 17, 0.1);
+  --st-color-line-strong: rgba(17, 17, 17, 0.16);
+  --st-color-accent: #3e1485;
+  --st-color-accent-rgb: 62, 20, 133;
+  --st-color-accent-soft: #e5daf6;
+  --st-color-secondary: #000000;
+  --st-color-secondary-rgb: 0, 0, 0;
+  --st-color-secondary-soft: #efefef;
+  --st-color-tertiary: #766d6c;
+  --st-color-tertiary-rgb: 118, 109, 108;
+  --st-color-tertiary-soft: #ece8e7;
+  --st-action-primary-background: linear-gradient(
+    135deg,
+    #3d1587 0%,
+    #4a1d93 100%
+  );
+  --st-action-primary-ink: rgba(255, 255, 255, 0.98);
+}
+
+:root[data-theme="toyama"] {
+  --st-color-ink: #15212a;
+  --st-color-ink-rgb: 21, 33, 42;
+  --st-color-ink-soft: #39505e;
+  --st-color-muted: #5d7482;
+  --st-color-text-muted: #39505e;
+  --st-color-line: rgba(21, 33, 42, 0.1);
+  --st-color-line-strong: rgba(21, 33, 42, 0.16);
+  --st-color-accent: #466d7f;
+  --st-color-accent-rgb: 70, 109, 127;
+  --st-color-accent-soft: #ddeaef;
+  --st-color-secondary: #244e63;
+  --st-color-secondary-rgb: 36, 78, 99;
+  --st-color-secondary-soft: #dfe9ee;
+  --st-color-tertiary: #7d98a5;
+  --st-color-tertiary-rgb: 125, 152, 165;
+  --st-color-tertiary-soft: #eaf1f4;
+  --st-action-primary-background: linear-gradient(
+    135deg,
+    rgba(70, 109, 127, 0.13),
+    rgba(125, 152, 165, 0.16)
+  );
+  --st-action-primary-ink: #15212a;
+}
+
+:root[data-theme="usst"] {
+  --st-color-ink: #21191a;
+  --st-color-ink-rgb: 33, 25, 26;
+  --st-color-ink-soft: #5c3b42;
+  --st-color-muted: #7b5961;
+  --st-color-text-muted: #7b5961;
+  --st-color-line: rgba(33, 25, 26, 0.1);
+  --st-color-line-strong: rgba(33, 25, 26, 0.16);
+  --st-color-accent: #b51c2f;
+  --st-color-accent-rgb: 181, 28, 47;
+  --st-color-accent-soft: #f3dadd;
+  --st-color-secondary: #0f429b;
+  --st-color-secondary-rgb: 15, 66, 155;
+  --st-color-secondary-soft: #e1e8f8;
+  --st-color-tertiary: #8d5f69;
+  --st-color-tertiary-rgb: 141, 95, 105;
+  --st-color-tertiary-soft: #efe4e6;
+  --st-action-primary-background: linear-gradient(
+    135deg,
+    rgba(181, 28, 47, 0.13),
+    rgba(141, 95, 105, 0.16)
+  );
+  --st-action-primary-ink: #21191a;
+}
+
+:root {
+  --st-color-white-rgb: 255, 255, 255;
+  --st-color-info: #0a66d9;
+  --st-color-info-rgb: 10, 102, 217;
+  --st-color-info-soft: #eaf2ff;
+  --st-color-info-ink: #043b83;
+  --st-color-success: #039855;
+  --st-color-success-rgb: 3, 152, 85;
+  --st-color-danger: #d92d20;
+  --st-color-danger-rgb: 217, 45, 32;
+  --st-color-danger-soft: #fff1f2;
+  --st-color-danger-ink: #7a130c;
+  --st-color-warning: #b76e00;
+  --st-color-warning-rgb: 183, 110, 0;
+  --st-color-warning-soft: #fff8e8;
+  --st-color-warning-ink: #6b3f00;
+
+  --st-font-ui:
+    "Sora", -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI Variable", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --st-font-display:
+    "Newsreader", "Iowan Old Style", "Apple Garamond", "Palatino Linotype",
+    "Book Antiqua", Georgia, serif;
+  --st-font-cjk:
+    "PingFang SC", "Noto Sans SC", "Microsoft YaHei UI", "Microsoft YaHei",
+    "Segoe UI", sans-serif;
+  --st-font-ja:
+    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP",
+    "Yu Gothic UI", "Yu Gothic", Meiryo, "Segoe UI", sans-serif;
+  --st-font-mono:
+    "IBM Plex Mono", "SFMono-Regular", "SF Mono", "Cascadia Mono", Consolas,
+    "Liberation Mono", monospace;
+
+  --st-text-xs: 0.68rem;
+  --st-text-sm: 0.78rem;
+  --st-text-label: 0.88rem;
+  --st-text-body: 0.92rem;
+  --st-text-body-lg: 1rem;
+  --st-text-title: 1.18rem;
+  --st-text-heading: clamp(1.38rem, 1.22rem + 0.28vw, 1.5rem);
+  --st-text-display-sm: clamp(2rem, 4vw, 2.8rem);
+  --st-text-display: clamp(2.9rem, 6.4vw, 5.1rem);
+
+  --st-leading-tight: 1.2;
+  --st-leading-ui: 1.35;
+  --st-leading-body: 1.5;
+  --st-leading-reading: 1.72;
+
+  --st-weight-regular: 400;
+  --st-weight-medium: 500;
+  --st-weight-semibold: 600;
+  --st-weight-strong: 650;
+  --st-weight-bold: 700;
+  --st-weight-heavy: 760;
+
+  --st-space-1: 2px;
+  --st-space-2: 4px;
+  --st-space-3: 6px;
+  --st-space-4: 8px;
+  --st-space-5: 10px;
+  --st-space-6: 12px;
+  --st-space-7: 14px;
+  --st-space-8: 16px;
+  --st-space-9: 18px;
+  --st-space-10: 20px;
+  --st-space-12: 24px;
+  --st-space-14: 28px;
+  --st-space-16: 32px;
+
+  --st-radius-xs: 6px;
+  --st-radius-sm: 8px;
+  --st-radius-md: 14px;
+  --st-radius-lg: 18px;
+  --st-radius-xl: 24px;
+  --st-radius-2xl: 34px;
+  --st-radius-pill: 999px;
+
+  --st-shadow-subtle: 0 12px 20px rgba(var(--st-color-ink-rgb), 0.05);
+  --st-shadow-card: 0 16px 28px rgba(var(--st-color-ink-rgb), 0.08);
+  --st-shadow-float: 0 18px 34px rgba(var(--st-color-ink-rgb), 0.12);
+  --st-shadow-page: 0 22px 54px rgba(0, 0, 0, 0.08);
+  --st-shadow-accent: 0 14px 28px rgba(var(--st-color-accent-rgb), 0.18);
+
+  --st-motion-fast: 160ms;
+  --st-motion-standard: 180ms;
+  --st-motion-slow: 220ms;
+  --st-motion-enter: 320ms;
+  --st-motion-reveal: 560ms;
+  --st-ease-standard: ease;
+  --st-ease-emphasized: ease-in-out;
+
+  --st-control-sm: 30px;
+  --st-control-md: 34px;
+  --st-control-lg: 44px;
+  --st-header-height: 44px;
+  --st-shell-gutter: clamp(20px, 5vw, 72px);
+  --st-shell-readable: 1180px;
+  --st-shell-wide: 1440px;
+  --st-shell-workbench: 1600px;
+  --st-shell-portal: 1480px;
+}

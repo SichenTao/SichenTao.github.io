@@ -182,36 +182,68 @@ a {
 }
 
 .orb-a {
-  background: radial-gradient(circle at 16% 16%, rgba(var(--teal-rgb), 0.14), transparent 24%);
+  background: radial-gradient(
+    circle at 16% 16%,
+    rgba(var(--teal-rgb), 0.14),
+    transparent 24%
+  );
 }
 
 .orb-b {
   animation-duration: 16s;
-  background: radial-gradient(circle at 82% 18%, rgba(var(--gold-rgb), 0.14), transparent 28%);
+  background: radial-gradient(
+    circle at 82% 18%,
+    rgba(var(--gold-rgb), 0.14),
+    transparent 28%
+  );
 }
 
 :root[data-theme="tohoku"] .orb-a {
-  background: radial-gradient(circle at 16% 16%, rgba(var(--teal-rgb), 0.24), transparent 28%);
+  background: radial-gradient(
+    circle at 16% 16%,
+    rgba(var(--teal-rgb), 0.24),
+    transparent 28%
+  );
 }
 
 :root[data-theme="tohoku"] .orb-b {
-  background: radial-gradient(circle at 82% 18%, rgba(var(--gold-rgb), 0.2), transparent 30%);
+  background: radial-gradient(
+    circle at 82% 18%,
+    rgba(var(--gold-rgb), 0.2),
+    transparent 30%
+  );
 }
 
 :root[data-theme="toyama"] .orb-a {
-  background: radial-gradient(circle at 16% 16%, rgba(var(--teal-rgb), 0.18), transparent 28%);
+  background: radial-gradient(
+    circle at 16% 16%,
+    rgba(var(--teal-rgb), 0.18),
+    transparent 28%
+  );
 }
 
 :root[data-theme="toyama"] .orb-b {
-  background: radial-gradient(circle at 82% 18%, rgba(var(--gold-rgb), 0.18), transparent 30%);
+  background: radial-gradient(
+    circle at 82% 18%,
+    rgba(var(--gold-rgb), 0.18),
+    transparent 30%
+  );
 }
 
 :root[data-theme="usst"] .orb-a {
-  background: radial-gradient(circle at 16% 16%, rgba(var(--teal-rgb), 0.2), transparent 28%);
+  background: radial-gradient(
+    circle at 16% 16%,
+    rgba(var(--teal-rgb), 0.2),
+    transparent 28%
+  );
 }
 
 :root[data-theme="usst"] .orb-b {
-  background: radial-gradient(circle at 82% 18%, rgba(var(--clay-rgb), 0.16), transparent 30%);
+  background: radial-gradient(
+    circle at 82% 18%,
+    rgba(var(--clay-rgb), 0.16),
+    transparent 30%
+  );
 }
 
 .shell {
@@ -331,7 +363,13 @@ body[data-lang="ja"] .eyebrow {
   font-weight: 600;
   padding: 0 0.12em;
   border-radius: 0.18em;
-  background: linear-gradient(180deg, transparent 0%, transparent 54%, rgba(236, 199, 92, 0.54) 54%, rgba(236, 199, 92, 0.3) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 54%,
+    rgba(236, 199, 92, 0.54) 54%,
+    rgba(236, 199, 92, 0.3) 100%
+  );
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -394,7 +432,10 @@ body[data-lang="ja"] .eyebrow {
   position: relative;
   width: auto;
   margin-right: 0;
-  margin-left: var(--portal-mega-main-left, max(32px, calc((100vw - min(1040px, calc(100vw - 64px))) / 2)));
+  margin-left: var(
+    --portal-mega-main-left,
+    max(32px, calc((100vw - min(1040px, calc(100vw - 64px))) / 2))
+  );
   grid-template-columns: repeat(3, max-content);
   column-gap: clamp(48px, 4.8vw, 72px);
   row-gap: 24px;
@@ -403,7 +444,9 @@ body[data-lang="ja"] .eyebrow {
 .portal-mega-inner--with-workspace .portal-mega-workspace-column {
   position: absolute;
   top: 0;
-  left: calc(-1 * var(--portal-mega-workspace-offset, clamp(260px, 18vw, 380px)));
+  left: calc(
+    -1 * var(--portal-mega-workspace-offset, clamp(260px, 18vw, 380px))
+  );
   min-width: max-content;
   transform: none;
 }
@@ -413,7 +456,9 @@ body[data-lang="ja"] .eyebrow {
   position: absolute;
   top: 8px;
   bottom: 8px;
-  left: calc(-1 * var(--portal-mega-separator-offset, clamp(110px, 8vw, 160px)));
+  left: calc(
+    -1 * var(--portal-mega-separator-offset, clamp(110px, 8vw, 160px))
+  );
   width: 1px;
   background: linear-gradient(
     180deg,
@@ -590,7 +635,12 @@ body.portal-mega-open .portal-layout {
   padding: clamp(78px, 11svh, 128px) 0 clamp(52px, 8svh, 92px);
   scroll-margin-top: 0;
   background:
-    linear-gradient(180deg, rgba(var(--white-rgb), 0.1), rgba(var(--white-rgb), 0.62) 34%, rgba(var(--surface-deep-rgb), 0.7)),
+    linear-gradient(
+      180deg,
+      rgba(var(--white-rgb), 0.1),
+      rgba(var(--white-rgb), 0.62) 34%,
+      rgba(var(--surface-deep-rgb), 0.7)
+    ),
     var(--bg);
 }
 

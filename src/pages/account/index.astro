@@ -1,0 +1,107 @@
+---
+import GlobalShell from "@components/GlobalShell.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/account.css";
+
+const description = "Sign in, review learning access, and manage billing for Sichen Tao learning products.";
+---
+
+<BaseLayout
+  title="Account & Billing | Sichen Tao"
+  description={description}
+  canonical="https://sichentao.github.io/account/"
+  bodyPage="account"
+  robots="noindex,nofollow"
+  stylesheets={["/portal.css"]}
+>
+  <div class="page-wash"></div>
+  <GlobalShell />
+
+  <main class="account-layout" id="main-content">
+    <section class="shell account-hero" aria-labelledby="account-title">
+      <p class="eyebrow" data-account-copy="eyebrow">Account platform</p>
+      <h1 id="account-title" data-account-copy="title">Account & Billing</h1>
+      <p class="account-lede" data-account-copy="lede">
+        One account for learning progress, bookmarks, notes, subscription access, and future product memberships.
+      </p>
+      <p class="account-status st-alert" id="account-status" role="status" aria-live="polite" data-account-copy="statusChecking">Checking account service…</p>
+    </section>
+
+    <section class="shell account-grid" aria-label="Account controls">
+      <article class="account-card st-card" id="sign-in-card">
+        <div class="account-card-heading">
+          <p class="account-card-kicker" data-account-copy="identityKicker">Identity</p>
+          <h2 data-account-copy="signIn">Sign in</h2>
+        </div>
+        <form id="magic-link-form" class="account-form">
+          <label for="account-email" data-account-copy="emailAddress">Email address</label>
+          <div class="account-inline-field">
+            <input class="st-input" id="account-email" name="email" type="email" autocomplete="email" required />
+            <button class="account-button account-button-primary st-button st-button--primary st-control--lg" type="submit" data-account-copy="sendMagicLink">Send magic link</button>
+          </div>
+        </form>
+        <div class="account-divider"><span data-account-copy="orContinue">or continue with</span></div>
+        <div class="account-provider-grid">
+          <button class="account-button st-button st-button--secondary st-control--lg" type="button" data-provider="google">Google</button>
+          <button class="account-button st-button st-button--secondary st-control--lg" type="button" data-provider="github">GitHub</button>
+        </div>
+        <p class="account-help" data-account-copy="authHelp">Authentication uses short-lived sessions. Payment card data stays with Stripe.</p>
+      </article>
+
+      <article class="account-card st-card" id="profile-card" hidden>
+        <div class="account-card-heading">
+          <p class="account-card-kicker" data-account-copy="signedInKicker">Signed in</p>
+          <h2 id="profile-name">Account</h2>
+        </div>
+        <dl class="account-definition-list">
+          <div><dt data-account-copy="emailLabel">Email</dt><dd id="profile-email"></dd></div>
+          <div><dt data-account-copy="userIdLabel">User ID</dt><dd id="profile-id"></dd></div>
+        </dl>
+        <div class="account-actions">
+          <button class="account-button account-button-primary st-button st-button--primary st-control--lg" type="button" id="billing-portal-button" data-account-copy="manageBilling">
+            Manage billing
+          </button>
+          <button class="account-button st-button st-button--secondary st-control--lg" type="button" id="sign-out-button" data-account-copy="signOut">Sign out</button>
+        </div>
+      </article>
+
+      <article class="account-card account-card-wide st-card" id="entitlement-card" hidden>
+        <div class="account-card-heading">
+          <p class="account-card-kicker" data-account-copy="accessKicker">Access</p>
+          <h2 data-account-copy="entitlementsTitle">Your product entitlements</h2>
+        </div>
+        <div id="entitlement-list" class="entitlement-list" aria-live="polite"></div>
+      </article>
+
+      <article class="account-card account-card-wide st-card" id="plan-card">
+        <div class="account-card-heading">
+          <p class="account-card-kicker">YouTube Learner</p>
+          <h2 data-account-copy="choosePlan">Choose a learning plan</h2>
+        </div>
+        <div class="account-plan-grid">
+          <section class="account-plan">
+            <h3 data-account-copy="freePlan">Free</h3>
+            <p data-account-copy="freeDescription">Public video, article previews, and local learning progress.</p>
+            <span class="account-plan-label" data-account-copy="publicAccess">Current public access</span>
+          </section>
+          <section class="account-plan account-plan-featured">
+            <h3 data-account-copy="monthlyPlan">Member monthly</h3>
+            <p data-account-copy="monthlyDescription">Full transcript search, synced progress, bookmarks, notes, and authorized exports.</p>
+            <button class="account-button account-button-primary st-button st-button--primary st-control--lg" type="button" data-plan="premium_monthly" data-account-copy="checkout">
+              Continue to Checkout
+            </button>
+          </section>
+          <section class="account-plan">
+            <h3 data-account-copy="annualPlan">Member annual</h3>
+            <p data-account-copy="annualDescription">The same member access with annual billing configured through Stripe.</p>
+            <button class="account-button st-button st-button--secondary st-control--lg" type="button" data-plan="premium_annual" data-account-copy="checkout">Continue to Checkout</button>
+          </section>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    import "../../scripts/account";
+  </script>
+</BaseLayout>

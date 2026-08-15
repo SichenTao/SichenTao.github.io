@@ -1,0 +1,6 @@
+# v2 release infrastructure and private-by-default account shell.
+/.nojekyll
+/account/index.html
+/robots.txt
+/sitemap.xml
+/release-manifest.json

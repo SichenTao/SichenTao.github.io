@@ -8,7 +8,6 @@
   let switcherDocumentBound = false;
   let topnavDocumentBound = false;
   let headerControlsPositionBound = false;
-  let topnavOverflowBound = false;
   let headerControlsPositionTicking = false;
   let runtime = {
     root: document,
@@ -46,7 +45,9 @@
       return;
     }
     switcher.classList.toggle("is-open", expanded);
-    const trigger = switcher.querySelector("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]");
+    const trigger = switcher.querySelector(
+      "[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]",
+    );
     if (trigger) {
       trigger.setAttribute("aria-expanded", expanded ? "true" : "false");
     }
@@ -78,7 +79,10 @@
     }
 
     qsa(".control-switcher", root).forEach((switcher) => {
-      if (switcher.dataset.sharedHoverBound === "true" || switcher.dataset.switcherHoverBound === "true") {
+      if (
+        switcher.dataset.sharedHoverBound === "true" ||
+        switcher.dataset.switcherHoverBound === "true"
+      ) {
         return;
       }
       switcher.dataset.sharedHoverBound = "true";
@@ -105,7 +109,10 @@
     if (!trigger) {
       return;
     }
-    if (trigger.dataset.sharedToggleBound === "true" || trigger.dataset.switcherToggleBound === "true") {
+    if (
+      trigger.dataset.sharedToggleBound === "true" ||
+      trigger.dataset.switcherToggleBound === "true"
+    ) {
       return;
     }
     trigger.dataset.sharedToggleBound = "true";
@@ -119,8 +126,10 @@
       }
 
       const isPointerHoverOpen =
-        global.matchMedia("(hover: hover) and (pointer: fine)").matches && switcher.matches(":hover");
-      const shouldExpand = isPointerHoverOpen || !switcher.classList.contains("is-open");
+        global.matchMedia("(hover: hover) and (pointer: fine)").matches &&
+        switcher.matches(":hover");
+      const shouldExpand =
+        isPointerHoverOpen || !switcher.classList.contains("is-open");
       qsa(".control-switcher", runtime.root).forEach((other) => {
         clearSwitcherCloseTimer(other);
         setSwitcherExpandedState(other, false);
@@ -140,7 +149,10 @@
     runtime.switchers = config;
     bindSwitcherHoverBehavior(runtime.root);
 
-    qsa("[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]", runtime.root).forEach(bindSwitcherTrigger);
+    qsa(
+      "[data-locale-trigger], [data-theme-trigger], [data-portal-trigger]",
+      runtime.root,
+    ).forEach(bindSwitcherTrigger);
 
     if (switcherDocumentBound) {
       return;
@@ -191,8 +203,12 @@
   function updateHeaderControlsPosition() {
     const config = runtime.controls || {};
     const root = config.root || document;
-    const controls = root.querySelector(config.controlsSelector || ".header-controls");
-    const nav = root.querySelector(config.navSelector || ".topnav-shell, .topnav");
+    const controls = root.querySelector(
+      config.controlsSelector || ".header-controls",
+    );
+    const nav = root.querySelector(
+      config.navSelector || ".topnav-shell, .topnav",
+    );
     const header = root.querySelector(config.headerSelector || ".site-header");
     if (!controls || !nav || !header) {
       return;
@@ -210,17 +226,31 @@
     const navRect = nav.getBoundingClientRect();
     const headerRect = header.getBoundingClientRect();
     const controlsRect = controls.getBoundingClientRect();
-    const useMobileLayout = global.matchMedia(`(max-width: ${breakpoint}px)`).matches;
+    const useMobileLayout = global.matchMedia(
+      `(max-width: ${breakpoint}px)`,
+    ).matches;
     const gutterGap = useMobileLayout ? mobileGap : desktopGap;
     const referenceLeft = Math.min(headerRect.left, navRect.left);
-    const nextTop = Math.round(navRect.top + (navRect.height - controlsRect.height) / 2);
-    const nextLeft = Math.round(Math.max(8, referenceLeft - (useMobileLayout ? 0 : controlsRect.width + gutterGap)));
+    const nextTop = Math.round(
+      navRect.top + (navRect.height - controlsRect.height) / 2,
+    );
+    const nextLeft = Math.round(
+      Math.max(
+        8,
+        referenceLeft - (useMobileLayout ? 0 : controlsRect.width + gutterGap),
+      ),
+    );
     const reserveNavSpace =
       !useMobileLayout && nextLeft <= 8
-        ? Math.ceil(Math.max(0, controlsRect.width + gutterGap + 8 - referenceLeft))
+        ? Math.ceil(
+            Math.max(0, controlsRect.width + gutterGap + 8 - referenceLeft),
+          )
         : 0;
 
-    controls.style.setProperty("--header-controls-top", `${Math.max(8, nextTop)}px`);
+    controls.style.setProperty(
+      "--header-controls-top",
+      `${Math.max(8, nextTop)}px`,
+    );
     controls.style.setProperty("--header-controls-left", `${nextLeft}px`);
     controls.style.setProperty("--header-controls-shift", "0px");
     if (!useMobileLayout) {
@@ -234,13 +264,17 @@
     }
     const config = runtime.topnav || {};
     const breakpoint = config.breakpoint || 760;
-    const useMobileLayout = global.matchMedia(`(max-width: ${breakpoint}px)`).matches;
+    const useMobileLayout = global.matchMedia(
+      `(max-width: ${breakpoint}px)`,
+    ).matches;
     if (!useMobileLayout) {
       shell.style.marginLeft = "";
       return;
     }
 
-    const controls = (config.root || document).querySelector(config.controlsSelector || ".header-controls");
+    const controls = (config.root || document).querySelector(
+      config.controlsSelector || ".header-controls",
+    );
     if (!controls || !controlsUseViewportPositioning(controls)) {
       shell.style.marginLeft = "";
       return;
@@ -276,10 +310,15 @@
 
     headerControlsPositionBound = true;
     global.addEventListener("resize", scheduleHeaderControlsPositionUpdate);
-    global.addEventListener("orientationchange", scheduleHeaderControlsPositionUpdate);
+    global.addEventListener(
+      "orientationchange",
+      scheduleHeaderControlsPositionUpdate,
+    );
     global.addEventListener("load", scheduleHeaderControlsPositionUpdate);
     if (document.fonts?.ready) {
-      document.fonts.ready.then(scheduleHeaderControlsPositionUpdate).catch(() => {});
+      document.fonts.ready
+        .then(scheduleHeaderControlsPositionUpdate)
+        .catch(() => {});
     }
   }
 
@@ -301,7 +340,8 @@
     toggle.dataset.topnavToggle = "true";
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-haspopup", "true");
-    toggle.innerHTML = config.toggleInnerHTML || '<span class="topnav-toggle-label"></span>';
+    toggle.innerHTML =
+      config.toggleInnerHTML || '<span class="topnav-toggle-label"></span>';
 
     shell.appendChild(toggle);
     shell.appendChild(nav);
@@ -370,7 +410,9 @@
   }
 
   function blurTransientMenuFocus() {
-    const selectors = runtime.topnav?.transientBlurSelector || ".publication-metric-menu, .publication-head-actions, .award-link-actions";
+    const selectors =
+      runtime.topnav?.transientBlurSelector ||
+      ".publication-metric-menu, .publication-head-actions, .award-link-actions";
     const active = document.activeElement;
     if (!(active instanceof HTMLElement)) {
       return;
@@ -397,11 +439,19 @@
       }
       const rect = node.getBoundingClientRect();
       const style = global.getComputedStyle(node);
-      return rect.width > 0 && rect.height > 0 && style.display !== "none" && style.visibility !== "hidden";
+      return (
+        rect.width > 0 &&
+        rect.height > 0 &&
+        style.display !== "none" &&
+        style.visibility !== "hidden"
+      );
     });
   }
 
-  function syncPortalMegaAlignment(panel = document.getElementById("portalMegaMenu"), nav = document.querySelector(".topnav")) {
+  function syncPortalMegaAlignment(
+    panel = document.getElementById("portalMegaMenu"),
+    nav = document.querySelector(".topnav"),
+  ) {
     if (!panel || !nav) {
       return;
     }
@@ -413,10 +463,15 @@
     const workspaceWidth = workspace?.getBoundingClientRect().width || 76;
     const firstRect = firstLink.getBoundingClientRect();
     const topnavAlignedLeft = Math.max(24, Math.round(firstRect.left));
-    const viewportWidth = Math.max(0, global.innerWidth || document.documentElement?.clientWidth || 0);
+    const viewportWidth = Math.max(
+      0,
+      global.innerWidth || document.documentElement?.clientWidth || 0,
+    );
     const menuColumnGap = Math.max(48, Math.min(72, viewportWidth * 0.048));
     const minWorkspaceLeft = 24;
-    const minMainLeft = workspace ? minWorkspaceLeft + workspaceWidth + menuColumnGap * 2 : 24;
+    const minMainLeft = workspace
+      ? minWorkspaceLeft + workspaceWidth + menuColumnGap * 2
+      : 24;
     const mainLeft = Math.max(topnavAlignedLeft, Math.round(minMainLeft));
     panel.style.setProperty("--portal-mega-main-left", `${mainLeft}px`);
 
@@ -427,8 +482,13 @@
       return;
     }
 
-    const workspaceHeight = Math.ceil(workspace.getBoundingClientRect().height || 0);
-    panel.style.setProperty("--portal-mega-workspace-height", `${Math.max(0, workspaceHeight)}px`);
+    const workspaceHeight = Math.ceil(
+      workspace.getBoundingClientRect().height || 0,
+    );
+    panel.style.setProperty(
+      "--portal-mega-workspace-height",
+      `${Math.max(0, workspaceHeight)}px`,
+    );
 
     const availableWorkspaceOffset = Math.max(0, mainLeft - minWorkspaceLeft);
     const desiredWorkspaceOffset = workspaceWidth + menuColumnGap * 2;
@@ -436,10 +496,19 @@
       workspaceWidth + menuColumnGap,
       Math.min(380, Math.min(availableWorkspaceOffset, desiredWorkspaceOffset)),
     );
-    panel.style.setProperty("--portal-mega-workspace-offset", `${Math.round(workspaceOffset)}px`);
+    panel.style.setProperty(
+      "--portal-mega-workspace-offset",
+      `${Math.round(workspaceOffset)}px`,
+    );
 
-    const separatorOffset = Math.max(44, Math.min(180, Math.round((workspaceOffset - workspaceWidth) / 2)));
-    panel.style.setProperty("--portal-mega-separator-offset", `${separatorOffset}px`);
+    const separatorOffset = Math.max(
+      44,
+      Math.min(180, Math.round((workspaceOffset - workspaceWidth) / 2)),
+    );
+    panel.style.setProperty(
+      "--portal-mega-separator-offset",
+      `${separatorOffset}px`,
+    );
   }
 
   function syncTopnavMenus(config = {}) {
@@ -476,11 +545,18 @@
         }
       }
 
-      nav.setAttribute("aria-label", config.navAriaLabel || nav.getAttribute("aria-label") || "Primary navigation");
+      nav.setAttribute(
+        "aria-label",
+        config.navAriaLabel ||
+          nav.getAttribute("aria-label") ||
+          "Primary navigation",
+      );
 
       if (nav.dataset.sharedTopnavScrollBound !== "true") {
         nav.dataset.sharedTopnavScrollBound = "true";
-        nav.addEventListener("scroll", () => updateTopnavOverflowState(nav), { passive: true });
+        nav.addEventListener("scroll", () => updateTopnavOverflowState(nav), {
+          passive: true,
+        });
       }
     });
 
@@ -519,14 +595,20 @@
         suspendTransientOverlays();
       }
     });
-    global.addEventListener("resize", () => {
-      const breakpoint = runtime.topnav?.breakpoint || 760;
-      if (global.innerWidth > breakpoint) {
-        closeTopnavMenus(runtime.root);
-      }
-      refreshTopnavOverflowHints();
-    }, { passive: true });
-    global.addEventListener("load", refreshTopnavOverflowHints, { passive: true });
+    global.addEventListener(
+      "resize",
+      () => {
+        const breakpoint = runtime.topnav?.breakpoint || 760;
+        if (global.innerWidth > breakpoint) {
+          closeTopnavMenus(runtime.root);
+        }
+        refreshTopnavOverflowHints();
+      },
+      { passive: true },
+    );
+    global.addEventListener("load", refreshTopnavOverflowHints, {
+      passive: true,
+    });
     global.addEventListener("blur", () => {
       closeAllSwitchers(runtime.root);
       closeTopnavMenus(runtime.root);
@@ -545,10 +627,12 @@
       }
     });
     if (document.fonts?.ready) {
-      document.fonts.ready.then(() => {
-        refreshTopnavOverflowHints();
-        global.setTimeout(refreshTopnavOverflowHints, 120);
-      }).catch(() => {});
+      document.fonts.ready
+        .then(() => {
+          refreshTopnavOverflowHints();
+          global.setTimeout(refreshTopnavOverflowHints, 120);
+        })
+        .catch(() => {});
     } else {
       global.setTimeout(refreshTopnavOverflowHints, 120);
     }

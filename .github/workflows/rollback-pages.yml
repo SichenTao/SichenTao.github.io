@@ -1,0 +1,122 @@
+name: Roll Back GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Successful Deploy GitHub Pages workflow run ID
+        required: true
+        type: string
+      source_sha:
+        description: Full 40-character commit SHA used by that run
+        required: true
+        type: string
+      confirmation:
+        description: Type ROLLBACK to confirm production replacement
+        required: true
+        type: string
+
+permissions:
+  actions: read
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-production
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Validate rollback request
+    runs-on: ubuntu-latest
+    outputs:
+      run_id: ${{ steps.inputs.outputs.run_id }}
+      source_sha: ${{ steps.inputs.outputs.source_sha }}
+    steps:
+      - name: Validate immutable identifiers and confirmation
+        id: inputs
+        env:
+          INPUT_RUN_ID: ${{ inputs.run_id }}
+          INPUT_SOURCE_SHA: ${{ inputs.source_sha }}
+          INPUT_CONFIRMATION: ${{ inputs.confirmation }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$INPUT_CONFIRMATION" == "ROLLBACK" ]] || { echo "confirmation must equal ROLLBACK" >&2; exit 1; }
+          [[ "$INPUT_RUN_ID" =~ ^[0-9]+$ ]] || { echo "run_id must contain digits only" >&2; exit 1; }
+          [[ "$INPUT_SOURCE_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "source_sha must be a full lowercase commit SHA" >&2; exit 1; }
+          echo "run_id=$INPUT_RUN_ID" >> "$GITHUB_OUTPUT"
+          echo "source_sha=$INPUT_SOURCE_SHA" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    name: Restore exact artifact
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout current verification tools
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Verify artifact provenance
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXPECTED_RUN_ID: ${{ needs.validate.outputs.run_id }}
+          EXPECTED_SOURCE_SHA: ${{ needs.validate.outputs.source_sha }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          run_json="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$EXPECTED_RUN_ID")"
+          [[ "$(jq -r '.path' <<< "$run_json")" == ".github/workflows/deploy-pages.yml" ]] || { echo "run was not produced by deploy-pages.yml" >&2; exit 1; }
+          [[ "$(jq -r '.conclusion' <<< "$run_json")" == "success" ]] || { echo "source deployment run did not succeed" >&2; exit 1; }
+          [[ "$(jq -r '.head_branch' <<< "$run_json")" == "main" ]] || { echo "source deployment was not built from main" >&2; exit 1; }
+          [[ "$(jq -r '.head_sha' <<< "$run_json")" == "$EXPECTED_SOURCE_SHA" ]] || { echo "source_sha does not match the workflow run" >&2; exit 1; }
+
+      - name: Download immutable production artifact
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ needs.validate.outputs.run_id }}
+          name: pages-dist-${{ needs.validate.outputs.source_sha }}
+          path: dist
+
+      - name: Re-verify downloaded artifact
+        run: |
+          node scripts/v2/check-url-inventory.mjs --root dist --mode release
+          node scripts/v2/check-links.mjs --root dist
+          node scripts/v2/check-security.mjs --root dist --repo-root .
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Package rollback for Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+      - name: Deploy rollback artifact
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  smoke:
+    name: Verify restored production
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Run smoke test
+        env:
+          DEPLOYED_URL: ${{ needs.deploy.outputs.page_url }}
+        run: node scripts/v2/smoke-test.mjs --base-url "$DEPLOYED_URL" --attempts 6 --retry-delay-ms 5000

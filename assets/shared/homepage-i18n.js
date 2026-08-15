@@ -4,7 +4,10 @@
   }
 
   const STORAGE_KEY = "sichen-homepage-locale";
-  const LEGACY_STORAGE_KEYS = ["academic-frontier-language", "kakenhi-portal-locale"];
+  const LEGACY_STORAGE_KEYS = [
+    "academic-frontier-language",
+    "kakenhi-portal-locale",
+  ];
   const DEFAULT_LOCALE = "en";
   const LOCALES = {
     en: { label: "English", name: "English", lang: "en" },
@@ -28,7 +31,9 @@
   }
 
   function normalizeLocale(value, allowedLocales = LOCALES) {
-    const raw = String(value || "").trim().toLowerCase();
+    const raw = String(value || "")
+      .trim()
+      .toLowerCase();
     if (!raw) {
       return "";
     }
@@ -49,17 +54,27 @@
   }
 
   function htmlLang(locale) {
-    return LOCALES[normalizeLocale(locale)]?.lang || LOCALES[DEFAULT_LOCALE].lang;
+    return (
+      LOCALES[normalizeLocale(locale)]?.lang || LOCALES[DEFAULT_LOCALE].lang
+    );
   }
 
   function fallbackChain(locale, options = {}) {
     const allowedLocales = options.locales || LOCALES;
     const primary = normalizeLocale(locale, allowedLocales) || DEFAULT_LOCALE;
     const chain = [primary];
-    const preferredFallbacks = options.fallbacks || [DEFAULT_LOCALE, "zh", "ja"];
+    const preferredFallbacks = options.fallbacks || [
+      DEFAULT_LOCALE,
+      "zh",
+      "ja",
+    ];
     preferredFallbacks.forEach((candidate) => {
       const normalized = normalizeLocale(candidate, allowedLocales);
-      if (normalized && allowedLocales[normalized] && !chain.includes(normalized)) {
+      if (
+        normalized &&
+        allowedLocales[normalized] &&
+        !chain.includes(normalized)
+      ) {
         chain.push(normalized);
       }
     });
@@ -69,26 +84,42 @@
   function readStoredLocale(options = {}) {
     const allowedLocales = options.locales || LOCALES;
     const queryParam = options.queryParam || "lang";
-    const fallback = normalizeLocale(options.fallback, allowedLocales) || DEFAULT_LOCALE;
+    const fallback =
+      normalizeLocale(options.fallback, allowedLocales) || DEFAULT_LOCALE;
 
-    const queryLocale = normalizeLocale(new URLSearchParams(global.location?.search || "").get(queryParam), allowedLocales);
+    const queryLocale = normalizeLocale(
+      new URLSearchParams(global.location?.search || "").get(queryParam),
+      allowedLocales,
+    );
     if (queryLocale) {
       return queryLocale;
     }
 
-    const storageKeys = [options.storageKey || STORAGE_KEY, ...(options.legacyKeys || LEGACY_STORAGE_KEYS)];
+    const storageKeys = [
+      options.storageKey || STORAGE_KEY,
+      ...(options.legacyKeys || LEGACY_STORAGE_KEYS),
+    ];
     for (const key of storageKeys) {
-      const sessionValue = normalizeLocale(storageGet(global.sessionStorage, key), allowedLocales);
+      const sessionValue = normalizeLocale(
+        storageGet(global.sessionStorage, key),
+        allowedLocales,
+      );
       if (sessionValue) {
         return sessionValue;
       }
-      const localValue = normalizeLocale(storageGet(global.localStorage, key), allowedLocales);
+      const localValue = normalizeLocale(
+        storageGet(global.localStorage, key),
+        allowedLocales,
+      );
       if (localValue) {
         return localValue;
       }
     }
 
-    const documentLocale = normalizeLocale(global.document?.documentElement?.lang, allowedLocales);
+    const documentLocale = normalizeLocale(
+      global.document?.documentElement?.lang,
+      allowedLocales,
+    );
     return documentLocale || fallback;
   }
 
@@ -111,9 +142,11 @@
 
   function applyDocumentLocale(locale, options = {}) {
     const allowedLocales = options.locales || LOCALES;
-    const normalized = normalizeLocale(locale, allowedLocales) || DEFAULT_LOCALE;
+    const normalized =
+      normalizeLocale(locale, allowedLocales) || DEFAULT_LOCALE;
     if (global.document?.documentElement) {
-      global.document.documentElement.lang = allowedLocales[normalized]?.lang || htmlLang(normalized);
+      global.document.documentElement.lang =
+        allowedLocales[normalized]?.lang || htmlLang(normalized);
     }
     if (global.document?.body && options.bodyDataset !== false) {
       global.document.body.dataset.lang = normalized;
@@ -127,15 +160,27 @@
     }
     return String(key)
       .split(".")
-      .reduce((current, segment) => (current && current[segment] !== undefined ? current[segment] : undefined), source);
+      .reduce(
+        (current, segment) =>
+          current && current[segment] !== undefined
+            ? current[segment]
+            : undefined,
+        source,
+      );
   }
 
   function formatMessage(template, values = {}) {
-    return String(template ?? "").replace(/\{(\w+)\}/g, (_, key) => values[key] ?? "");
+    return String(template ?? "").replace(
+      /\{(\w+)\}/g,
+      (_, key) => values[key] ?? "",
+    );
   }
 
   function text(catalog, key, options = {}) {
-    const chain = fallbackChain(options.locale, { locales: options.locales, fallbacks: options.fallbacks });
+    const chain = fallbackChain(options.locale, {
+      locales: options.locales,
+      fallbacks: options.fallbacks,
+    });
     for (const locale of chain) {
       const value = getPath(catalog?.[locale], key);
       if (value !== undefined && value !== null) {
@@ -152,9 +197,11 @@
   function isLocaleObject(value, locales = LOCALES) {
     return Boolean(
       value &&
-        typeof value === "object" &&
-        !Array.isArray(value) &&
-        Object.keys(locales).some((locale) => Object.prototype.hasOwnProperty.call(value, locale)),
+      typeof value === "object" &&
+      !Array.isArray(value) &&
+      Object.keys(locales).some((locale) =>
+        Object.prototype.hasOwnProperty.call(value, locale),
+      ),
     );
   }
 
@@ -167,15 +214,35 @@
     }
 
     const locales = options.locales || LOCALES;
-    const chain = fallbackChain(options.locale, { locales, fallbacks: options.fallbacks });
+    const chain = fallbackChain(options.locale, {
+      locales,
+      fallbacks: options.fallbacks,
+    });
     for (const locale of chain) {
-      if (value[locale] !== undefined && value[locale] !== null && value[locale] !== "") {
+      if (
+        value[locale] !== undefined &&
+        value[locale] !== null &&
+        value[locale] !== ""
+      ) {
         return value[locale];
       }
     }
 
-    for (const key of options.canonicalKeys || ["canonical", "official", "source", "value", "text", "title", "name", "label"]) {
-      if (value[key] !== undefined && value[key] !== null && value[key] !== "") {
+    for (const key of options.canonicalKeys || [
+      "canonical",
+      "official",
+      "source",
+      "value",
+      "text",
+      "title",
+      "name",
+      "label",
+    ]) {
+      if (
+        value[key] !== undefined &&
+        value[key] !== null &&
+        value[key] !== ""
+      ) {
         return value[key];
       }
     }
@@ -188,7 +255,10 @@
     }
 
     const locales = options.locales || LOCALES;
-    const chain = fallbackChain(options.locale, { locales, fallbacks: options.fallbacks });
+    const chain = fallbackChain(options.locale, {
+      locales,
+      fallbacks: options.fallbacks,
+    });
     const direct = record[field];
     if (isLocaleObject(direct, locales)) {
       return localizeValue(direct, options);

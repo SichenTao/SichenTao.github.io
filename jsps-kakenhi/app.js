@@ -1420,6 +1420,14 @@ function applyI18n() {
   document.querySelectorAll(".locale-switcher").forEach((node) => node.setAttribute("aria-label", t("common.language")));
   document.querySelectorAll(".theme-switcher").forEach((node) => node.setAttribute("aria-label", t("common.theme")));
   document.querySelectorAll(".topnav").forEach((node) => node.setAttribute("aria-label", t("common.pageNavigation")));
+  const callStatusFilter = document.getElementById("call-status-filter");
+  const callGroupFilter = document.getElementById("call-group-filter");
+  const callAudienceFilter = document.getElementById("call-audience-filter");
+  const callSortFilter = document.getElementById("call-sort-filter");
+  callStatusFilter?.setAttribute("aria-label", t("calls.statusAll"));
+  callGroupFilter?.setAttribute("aria-label", t("calls.groupAll"));
+  callAudienceFilter?.setAttribute("aria-label", t("calls.audienceAll"));
+  callSortFilter?.setAttribute("aria-label", t("calls.sortDeadline"));
   const placeholderMap = {
     "call-search": t("calls.searchPlaceholder"),
     "form-search": t("forms.searchPlaceholder"),

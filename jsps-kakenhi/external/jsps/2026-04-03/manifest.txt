@@ -1,0 +1,6 @@
+snapshot_date=2026-04-03
+fetched_at=2026-04-03T16:59:54+09:00
+public_call_index_url=https://www.jsps.go.jp/j-grantsinaid/02_koubo/index.html
+kiban_url=https://www.jsps.go.jp/j-grantsinaid/02_koubo/kiban.html
+startup_url=https://www.jsps.go.jp/j-grantsinaid/22_startup_support/download.html
+faq_url=https://www.jsps.go.jp/j-grantsinaid/01_seido/05_faq/index.html

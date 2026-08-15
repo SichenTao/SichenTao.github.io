@@ -376,6 +376,17 @@ function applyStaticLocale() {
       els.pubReset.setAttribute("aria-label", t("filters.reset"));
       els.pubReset.setAttribute("title", t("filters.reset"));
     }
+    const localeName = resolveLocaleName();
+    const filterLabels = localeName === "zh"
+      ? { year: "发表年份", type: "发表类型", status: "发表状态", venue: "发表刊物", sort: "论文排序" }
+      : localeName === "ja"
+        ? { year: "発表年", type: "発表種別", status: "発表状態", venue: "掲載先", sort: "論文の並べ替え" }
+        : { year: "Publication year", type: "Publication type", status: "Publication status", venue: "Publication venue", sort: "Sort publications" };
+    els.yearFilter?.setAttribute("aria-label", filterLabels.year);
+    els.typeFilter?.setAttribute("aria-label", filterLabels.type);
+    els.statusFilter?.setAttribute("aria-label", filterLabels.status);
+    els.venueFilter?.setAttribute("aria-label", filterLabels.venue);
+    els.sortFilter?.setAttribute("aria-label", filterLabels.sort);
     document.querySelectorAll("#sort-filter option[value='recent']").forEach((node) => {
       node.textContent = t("filters.sort_recent");
     });
@@ -388,9 +399,6 @@ function applyStaticLocale() {
     document.querySelectorAll("#sort-filter option[value='title']").forEach((node) => {
       node.textContent = t("filters.sort_title");
     });
-    if (els.venueFilter) {
-      els.venueFilter.setAttribute("aria-label", t("controls.venue_filters"));
-    }
     if (els.quickFilterChips) {
       els.quickFilterChips.setAttribute("aria-label", t("controls.quick_publication_filters"));
     }
